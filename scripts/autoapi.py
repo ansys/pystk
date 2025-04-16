@@ -1,59 +1,66 @@
-import _ast
 import ast
 import os
 from pathlib import Path
 import textwrap
+from typing import Union
 
 
-class ManualRSTGenerator(object):
-    core_namespace = "ansys.stk.core"
-
-    def __init__(self, module_dir, doc_dir):
+class ManualRSTGenerator:
+    def __init__(self, core_namespace, module_dir, doc_dir):
+        self.core_namespace = core_namespace
         self.module_dir = module_dir
         self.doc_dir = doc_dir
 
     def generate_rst_for_manual_modules(self, auto_files):
+        auto_file_paths = [Path(f).resolve() for f in auto_files]
+
         for path in Path(self.module_dir).rglob("*.py"):
-            is_autofile = False
-            is_internal_file = False
-            for auto_file in auto_files:
-                if auto_file.replace("/", "\\") in str(path):
-                    is_autofile = True
-            if "\\internal\\" in str(path):
-                is_internal_file = True
-            if not is_autofile and not is_internal_file and str(path).endswith(".py"):
+            path_resolved = path.resolve()
+            is_autofile = any(
+                auto_path in path_resolved.parents or auto_path == path_resolved for auto_path in auto_file_paths
+            )
+            is_internal_file = "internal" in path.parts
+
+            if not is_autofile and not is_internal_file:
                 self._generate_rst_for_pymodule(str(path))
 
     def _wrap_python_code_snippets(self, unformatted_docstring: str):
-        formatted_docstring = ""
+        lines = unformatted_docstring.splitlines()
+        formatted_lines = []
 
         in_snippet = False
-        for line in unformatted_docstring.splitlines():
-            if not in_snippet and len(line) - len(line.lstrip()) > 0:  # found indentation
+        for line in lines:
+            stripped = line.lstrip()
+            indent_level = len(line) - len(stripped)
+
+            if not in_snippet and indent_level > 0 and stripped:
                 in_snippet = True
-                formatted_docstring += ".. code-block:: python\n\n"
-            elif in_snippet and len(line) - len(line.lstrip()) == 0:  # found end of indentation
+                formatted_lines.append(".. code-block:: python\n")
+                formatted_lines.append("")
+
+            elif in_snippet and indent_level == 0 and stripped:
                 in_snippet = False
 
-            formatted_docstring += line + "\n"
+            formatted_lines.append(line)
 
-        return formatted_docstring.rstrip()
+        return "\n".join(formatted_lines).rstrip()
 
-    def _generate_rst_for_pymodule(self, path_to_src_file: str):
-        relative_namespace = (
-            path_to_src_file[len(self.module_dir) :].replace("\\__init__.py", "").replace(".py", "").replace("\\", ".")
-        )
+    def _generate_rst_for_pymodule(self, path_to_src_file: Union[str, Path]):
+        path_to_src_file = Path(path_to_src_file).resolve()
+        module_dir_path = Path(self.module_dir).resolve()
+        relative_path = path_to_src_file.relative_to(module_dir_path)
+
+        # DBG: output file should have the same name as the module
+        if path_to_src_file.name == "__init__.py" and path_to_src_file.parent == module_dir_path:
+            return
+
+        relative_namespace = ".".join(relative_path.with_suffix("").parts).replace(".__init__", "")
         full_namespace = self.core_namespace + relative_namespace
-
         containing_namespace = ".".join(full_namespace.split(".")[:-1])
         module_name = full_namespace.split(".")[-1]
 
-        if path_to_src_file == self.module_dir + "\\__init__.py":
-            return
-
-        out_file_path = self.doc_dir + "\\".join(relative_namespace.split(".")) + ".rst"
-        if not os.path.exists(os.path.split(out_file_path)[0]):
-            os.makedirs(os.path.split(out_file_path)[0])
+        out_file_path = Path(self.doc_dir) / relative_path.with_suffix(".rst")
+        out_file_path.parent.mkdir(parents=True, exist_ok=True)
 
         with (
             open(path_to_src_file, "r", encoding="utf-8") as in_file,
@@ -64,531 +71,320 @@ class ManualRSTGenerator(object):
             submodules = []
             subpackages = []
 
-            if path_to_src_file.endswith("__init__.py"):
-                this_dir = os.path.split(path_to_src_file)[0]
-                dir_contents = os.listdir(this_dir)
+            if path_to_src_file.name == "__init__.py":
+                for entry in path_to_src_file.parent.iterdir():
+                    if entry.is_file() and entry.suffix == ".py" and entry.name != "__init__.py":
+                        submodules.append(entry.stem)
+                    elif entry.is_dir() and entry.name != "__pycache__":
+                        subpackages.append(entry.name)
 
-                for content in dir_contents:
-                    if (
-                        os.path.isfile(os.path.join(this_dir, content))
-                        and content.endswith(".py")
-                        and not content.endswith("__init__.py")
-                    ):
-                        submodules.append(content.replace(".py", ""))
-                    elif os.path.isdir(os.path.join(this_dir, content)) and content != "__pycache__":
-                        subpackages.append(content)
-
-            type_definitions = [
-                type_defintion for type_defintion in tree.body if isinstance(type_defintion, _ast.ClassDef)
-            ]
+            type_definitions = [node for node in tree.body if isinstance(node, ast.ClassDef)]
             enums = [
-                type_definition
-                for type_definition in type_definitions
-                if (
-                    "IntEnum" in [base.id for base in type_definition.bases]
-                    or "IntFlag" in [base.id for base in type_definition.bases]
-                )
+                td
+                for td in type_definitions
+                if any(getattr(base, "id", "") in ("IntEnum", "IntFlag") for base in td.bases)
+            ]
+            interfaces = [td for td in type_definitions if td not in enums and td.name.startswith("I")]
+            classes = [
+                td
+                for td in type_definitions
+                if td not in enums and not td.name.startswith("_") and td not in interfaces
             ]
 
-            classes = []
-            interfaces = []
+            def write_line(lines):
+                out_file.writelines([line + "\n" for line in lines])
 
-            for type_definition in type_definitions:
-                if type_definition not in enums:
-                    if type_definition.name.startswith("I"):
-                        interfaces.append(type_definition)
-                    elif not type_definition.name.startswith("_"):
-                        classes.append(type_definition)
-
-            out_file.writelines(
+            write_line(
                 [
-                    "The ``" + module_name + "`` module\n",
-                    "======" + (len(module_name) * "=") + "=========\n",
-                    "\n",
-                    ".. py:module:: " + containing_namespace + "." + module_name + "\n",
-                    "\n",
+                    f"The ``{module_name}`` module",
+                    "=" * (len(module_name) + 20),
+                    "",
+                    f".. py:module:: {containing_namespace}.{module_name}",
+                    "",
                 ]
             )
 
-            if len(subpackages) + len(submodules) + len(interfaces) + len(classes) + len(enums) > 0:
-                out_file.writelines(
-                    [
-                        "Summary\n",
-                        "-------\n",
-                        "\n",
-                        ".. tab-set::\n",
-                        "\n",
-                    ]
-                )
+            if any([subpackages, submodules, interfaces, classes, enums]):
+                write_line(["Summary", "-------", "", ".. tab-set::", ""])
 
-                if len(subpackages) > 0:
-                    out_file.writelines(
+                def write_list_tab(title, items, formatter):
+                    write_line(
                         [
-                            "    .. tab-item:: Subpackages\n",
-                            "\n",
-                            "        .. list-table::\n",
-                            "            :header-rows: 0\n",
-                            "            :widths: auto\n",
-                            "\n",
+                            f"    .. tab-item:: {title}",
+                            "",
+                            "        .. list-table::",
+                            "            :header-rows: 0",
+                            "            :widths: auto",
+                            "",
                         ]
                     )
+                    for item in items:
+                        write_line([f"            * - {formatter(item)}", ""])
 
-                    for subpackage in subpackages:
-                        out_file.write(
-                            f"            * - :py:obj:`~{containing_namespace}.{module_name}.{subpackage}`\n"
-                        )
-
-                    out_file.write("\n")
-                    out_file.write("\n")
-
-                if len(submodules) > 0:
-                    out_file.writelines(
-                        [
-                            "    .. tab-item:: Submodules\n",
-                            "\n",
-                            "        .. list-table::\n",
-                            "            :header-rows: 0\n",
-                            "            :widths: auto\n",
-                            "\n",
-                        ]
+                if subpackages:
+                    write_list_tab(
+                        "Subpackages", subpackages, lambda sp: f":py:obj:`~{containing_namespace}.{module_name}.{sp}`"
                     )
 
-                    for submodule in submodules:
-                        out_file.write(f"            * - :py:obj:`~{containing_namespace}.{module_name}.{submodule}`\n")
+                if submodules:
+                    write_list_tab(
+                        "Submodules", submodules, lambda sm: f":py:obj:`~{containing_namespace}.{module_name}.{sm}`"
+                    )
 
-                    out_file.write("\n")
-                    out_file.write("\n")
-
-                for definition_type, definitions in {
-                    "Interfaces": interfaces,
-                    "Classes": classes,
-                    "Enums": enums,
-                }.items():
-                    if len(definitions) > 0:
-                        out_file.writelines(
-                            [
-                                "    .. tab-item:: " + definition_type + "\n",
-                                "\n",
-                                "        .. list-table::\n",
-                                "            :header-rows: 0\n",
-                                "            :widths: auto\n",
-                                "\n",
-                            ]
+                for def_type, defs in [("Interfaces", interfaces), ("Classes", classes), ("Enums", enums)]:
+                    if defs:
+                        write_list_tab(
+                            def_type,
+                            defs,
+                            lambda d: f":py:class:`~{containing_namespace}.{module_name}.{d.name}`"
+                            + (
+                                f"\n              - {ast.get_docstring(d).splitlines()[0]}"
+                                if ast.get_docstring(d)
+                                else ""
+                            ),
                         )
 
-                        for definition in definitions:
-                            out_file.write(
-                                f"            * - :py:class:`~{containing_namespace}.{module_name}.{definition.name}`\n"
-                            )
-                            if ast.get_docstring(definition) is not None:
-                                out_file.write(f"              - {ast.get_docstring(definition).splitlines()[0]}\n")
-                            out_file.write("\n")
+            write_line(["Description", "-----------", ""])
+            if len(tree.body) > 0 and isinstance(tree.body[0], ast.Expr) and isinstance(tree.body[0].value, ast.Str):
+                write_line([tree.body[0].value.s.strip(), ""])
 
-                        out_file.write("\n")
+            write_line([f".. py:currentmodule:: {containing_namespace}.{module_name}", "", ".. TABLE OF CONTENTS", ""])
 
-                out_file.write("\n")
+            def write_toc_block(items, symbol, folder_name):
+                if items:
+                    write_line([".. toctree::", "    :titlesonly:", "    :maxdepth: 1", "    :hidden:", ""])
+                    for item in items:
+                        write_line([f"     {symbol} {item}<{module_name}/{item}>"])
 
-            out_file.writelines(["Description\n", "-----------\n", "\n"])
+            write_toc_block(subpackages, "🖿", "subpackage")
+            write_toc_block(submodules, "🗎", "submodule")
 
-            if len(tree.body) > 0 and hasattr(tree.body[0], "value") and hasattr(tree.body[0].value, "value"):
-                out_file.write(tree.body[0].value.value.strip() + "\n")
-                out_file.write("\n")
+            if any([classes, interfaces, enums]):
+                for def_type, defs in [("Interfaces", interfaces), ("Classes", classes), ("Enums", enums)]:
+                    if defs:
+                        symbol = {"Interfaces": "", "Classes": "", "Enums": "≔ "}[def_type]
+                        write_line([".. toctree::", "    :titlesonly:", "    :maxdepth: 1", "    :hidden:", ""])
+                        for d in defs:
+                            write_line([f"     {symbol}{d.name}<{module_name}/{d.name}>"])
 
-            out_file.writelines(
-                [
-                    ".. py:currentmodule:: " + containing_namespace + "." + module_name + "\n",
-                    "\n",
-                    ".. TABLE OF CONTENTS\n",
-                    "\n",
-                ]
-            )
-
-            if len(subpackages) > 0:
-                out_file.writelines(
-                    [".. toctree::\n", "    :titlesonly:\n", "    :maxdepth: 1\n", "    :hidden:\n", "\n"]
-                )
-
-                for subpackage in subpackages:
-                    out_file.write(f"     🖿 {subpackage}<{module_name}/{subpackage}>\n")
-
-                out_file.write("\n")
-                out_file.write("\n")
-
-            if len(submodules) > 0:
-                out_file.writelines(
-                    [".. toctree::\n", "    :titlesonly:\n", "    :maxdepth: 1\n", "    :hidden:\n", "\n"]
-                )
-
-                for submodule in submodules:
-                    out_file.write(f"     🗎 {submodule}<{module_name}/{submodule}>\n")
-
-                out_file.write("\n")
-                out_file.write("\n")
-
-            if len(classes) + len(interfaces) + len(enums) > 0:
-                for definition_type, definitions in {
-                    "Interfaces": interfaces,
-                    "Classes": classes,
-                    "Enums": enums,
-                }.items():
-                    if len(definitions) > 0:
-                        out_file.writelines(
-                            [".. toctree::\n", "    :titlesonly:\n", "    :maxdepth: 1\n", "    :hidden:\n", "\n"]
-                        )
-
-                        link_symbol_map = {"Interfaces": "", "Classes": "", "Enums": "≔ "}
-
-                        for definition in definitions:
-                            out_file.write(
-                                "     "
-                                + link_symbol_map[definition_type]
-                                + f"{definition.name}<{module_name}/{definition.name}>\n"
-                            )
-
-                        out_file.write("\n")
-
-                out_file.write("\n")
-
-            for obj_definition in classes + interfaces:
-                self._generate_rst_for_pyobj(obj_definition, containing_namespace, module_name, out_file_path)
-
-            for enum_definition in enums:
-                self._generate_rst_for_pyenum(enum_definition, containing_namespace, module_name, out_file_path)
-
-        return
+            for obj in classes + interfaces:
+                self._generate_rst_for_pyobj(obj, containing_namespace, module_name, str(out_file_path))
+            for enum in enums:
+                self._generate_rst_for_pyenum(enum, containing_namespace, module_name, str(out_file_path))
 
     def _generate_rst_for_pyobj(self, obj_definition, containing_namespace, module_name, module_rst_file_path):
-        out_obj_file_path = (
-            os.path.join(os.path.split(module_rst_file_path)[0], module_name, obj_definition.name) + ".rst"
-        )
-        if not os.path.exists(os.path.split(out_obj_file_path)[0]):
-            os.makedirs(os.path.split(out_obj_file_path)[0])
-        with open(out_obj_file_path, "w", encoding="utf-8") as out_obj_file:
-            out_obj_file.writelines(
+        out_dir = os.path.join(os.path.dirname(module_rst_file_path), module_name)
+        out_obj_file_path = os.path.join(out_dir, obj_definition.name + ".rst")
+        os.makedirs(out_dir, exist_ok=True)
+
+        fq_name = f"{containing_namespace}.{module_name}.{obj_definition.name}"
+        base_classes = ", ".join(base.id for base in obj_definition.bases if hasattr(base, "id"))
+
+        def write_docstring(f, docstring, indent="   "):
+            if docstring:
+                formatted = self._wrap_python_code_snippets(docstring)
+                f.write(textwrap.indent(formatted, indent) + "\n\n")
+
+        def write_summary_table(f, title, items, ref_type):
+            if not items:
+                return
+            f.writelines(
                 [
-                    obj_definition.name + "\n",
-                    len(obj_definition.name) * "=" + "\n",
-                    "\n",
-                    ".. py:class:: " + containing_namespace + "." + module_name + "." + obj_definition.name + "\n",
-                    "\n",
-                    "   " + ", ".join(base.id for base in obj_definition.bases) + "\n",
-                    "\n",
+                    ".. tab-set::\n\n",
+                    f"    .. tab-item:: {title}\n\n",
+                    "        .. list-table::\n",
+                    "            :header-rows: 0\n",
+                    "            :widths: auto\n\n",
+                ]
+            )
+            for item in items:
+                f.write(f"            * - :py:{ref_type}:~{fq_name}.{item.name}\n")
+                doc = ast.get_docstring(item)
+                if doc:
+                    f.write(f"              - {doc.splitlines()[0]}\n")
+            f.write("\n")
+
+        def parse_args(method):
+            args = []
+            defaults = list(method.args.defaults or [])
+            default_offset = len(method.args.args) - len(defaults)
+
+            for i, arg in enumerate(method.args.args):
+                arg_str = arg.arg
+                if arg.annotation and hasattr(arg.annotation, "id"):
+                    arg_str += f": {arg.annotation.id}"
+                if i >= default_offset and defaults:
+                    default = defaults[i - default_offset]
+                    if isinstance(default, ast.Constant):
+                        arg_str += f" = {default.value!r}"
+                args.append(arg_str)
+            return ", ".join(args)
+
+        def parse_return_type(node):
+            if isinstance(node, ast.Constant):
+                return "None"
+            if node and hasattr(node, "id"):
+                return node.id
+            return ""
+
+        with open(out_obj_file_path, "w", encoding="utf-8") as f:
+            f.writelines(
+                [
+                    f"{obj_definition.name}\n",
+                    "=" * len(obj_definition.name) + "\n\n",
+                    f".. py:class:: {fq_name}\n\n",
+                    f"   {base_classes}\n\n",
+                ]
+            )
+            write_docstring(f, ast.get_docstring(obj_definition))
+            f.write(f".. py:currentmodule:: {obj_definition.name}\n\n\n")
+
+            methods = [m for m in obj_definition.body if isinstance(m, ast.FunctionDef) and not m.name.startswith("_")]
+            props = [m for m in methods if any(getattr(d, "id", None) == "property" for d in m.decorator_list)]
+            setters = [m for m in methods if any(getattr(d, "attr", None) == "setter" for d in m.decorator_list)]
+            methods = [m for m in methods if m not in props and m not in setters]
+
+            if props or methods:
+                f.write("Overview\n--------\n\n")
+            write_summary_table(f, "Methods", methods, "attr")
+            write_summary_table(f, "Properties", props, "attr")
+
+            f.writelines(
+                [
+                    "Import detail\n-------------\n\n",
+                    ".. code-block:: python\n\n",
+                    f"    from {containing_namespace}.{module_name} import {obj_definition.name}\n\n\n",
                 ]
             )
 
-            if ast.get_docstring(obj_definition) is not None:
-                formatted_docstring = self._wrap_python_code_snippets(ast.get_docstring(obj_definition))
-                out_obj_file.write(f"{textwrap.indent(formatted_docstring, '   ')}\n")
-                out_obj_file.write("\n")
-
-            out_obj_file.writelines([".. py:currentmodule:: " + obj_definition.name + "\n", "\n", "\n"])
-
-            def is_property(method):
-                return (
-                    next((x for x in method.decorator_list if hasattr(x, "id") and x.id == "property"), None)
-                    is not None
-                )
-
-            def is_setter(method):
-                return (
-                    next((x for x in method.decorator_list if (hasattr(x, "attr") and x.attr == "setter")), None)
-                    is not None
-                )
-
-            filtered_methods = [
-                n for n in obj_definition.body if isinstance(n, ast.FunctionDef) and not n.name.startswith("_")
-            ]
-            properties = [method for method in filtered_methods if is_property(method)]
-            setters = [method for method in filtered_methods if is_setter(method)]
-            filtered_methods = [
-                method for method in filtered_methods if method not in properties and method not in setters
-            ]
-
-            if len(properties) > 0 or len(filtered_methods) > 0:
-                out_obj_file.writelines(
-                    [
-                        "Overview\n",
-                        "--------\n",
-                        "\n",
-                    ]
-                )
-
-            if len(filtered_methods) > 0:
-                out_obj_file.writelines(
-                    [
-                        ".. tab-set::\n",
-                        "\n",
-                        "    .. tab-item:: Methods\n",
-                        "\n",
-                        "        .. list-table::\n",
-                        "            :header-rows: 0\n",
-                        "            :widths: auto\n",
-                        "\n",
-                    ]
-                )
-
-                for method in filtered_methods:
-                    out_obj_file.write(
-                        f"            * - :py:attr:`~{containing_namespace}.{module_name}.{obj_definition.name}.{method.name}`\n"
-                    )
-                    if ast.get_docstring(method) is not None:
-                        lines = ast.get_docstring(method).splitlines()
-                        out_obj_file.write(f"              - {lines[0]}\n")
-                        if len(lines) > 1:
-                            for line in lines[1:]:
-                                out_obj_file.write(f"                {line}\n")
-
-                out_obj_file.write("\n")
-
-            if len(properties) > 0:
-                out_obj_file.writelines(
-                    [
-                        ".. tab-set::\n",
-                        "\n",
-                        "    .. tab-item:: Properties\n",
-                        "\n",
-                        "        .. list-table::\n",
-                        "            :header-rows: 0\n",
-                        "            :widths: auto\n",
-                        "\n",
-                    ]
-                )
-
-                for prop in properties:
-                    out_obj_file.write(
-                        f"            * - :py:attr:`~{containing_namespace}.{module_name}.{obj_definition.name}.{prop.name}`\n"
-                    )
-                    if ast.get_docstring(prop) is not None:
-                        lines = ast.get_docstring(prop).splitlines()
-                        out_obj_file.write(f"              - {lines[0]}\n")
-                        if len(lines) > 1:
-                            for line in lines[1:]:
-                                out_obj_file.write(f"                {line}\n")
-
-                out_obj_file.write("\n")
-
-            out_obj_file.writelines(
-                [
-                    "Import detail\n",
-                    "-------------\n",
-                    "\n",
-                    ".. code-block:: python\n",
-                    "\n",
-                    f"    from {containing_namespace}.{module_name} import {obj_definition.name}\n",
-                    "\n",
-                    "\n",
-                ]
-            )
-
-            if len(properties) > 0:
-                out_obj_file.writelines(
-                    [
-                        "Property detail\n",
-                        "---------------\n",
-                        "\n",
-                    ]
-                )
-
-                for prop in properties:
-                    ret = ""
-                    has_self = False
-
-                    if isinstance(prop.returns, ast.Constant):
-                        ret = "None"
-                    else:
-                        if prop.returns is not None and hasattr(prop.returns, "id"):
-                            ret = prop.returns.id
-                        else:
-                            ret = ""
-
-                    out_obj_file.writelines(
+            if props:
+                f.write("Property detail\n---------------\n\n")
+                for p in props:
+                    ret_type = parse_return_type(p.returns)
+                    f.writelines(
                         [
-                            f".. py:property:: {prop.name}\n",
-                            f"    :canonical: {containing_namespace}.{module_name}.{obj_definition.name}.{prop.name}\n",
-                            f"    :type: {ret}\n",
-                            "\n",
+                            f".. py:property:: {p.name}\n",
+                            f"    :canonical: {fq_name}.{p.name}\n",
+                            f"    :type: {ret_type}\n\n",
                         ]
                     )
+                    write_docstring(f, ast.get_docstring(p), "    ")
 
-                    if ast.get_docstring(prop) is not None:
-                        lines = ast.get_docstring(prop).splitlines()
-                        out_obj_file.write(f"    {lines[0]}\n")
-                        if len(lines) > 1:
-                            for line in lines[1:]:
-                                out_obj_file.write(f"    {line}\n")
-                        out_obj_file.write("\n")
-
-                out_obj_file.write("\n")
-
-            if len(filtered_methods) > 0:
-                out_obj_file.writelines(
-                    [
-                        "Method detail\n",
-                        "-------------\n",
-                        "\n",
-                    ]
-                )
-
-                for method in filtered_methods:
-                    args = ""
-                    ret = ""
-                    first = True
-                    has_self = False
-                    default_index = 0
-                    for index, arg in enumerate(method.args.args):
-                        if not first:
-                            args += ", "
-                        first = False
-                        args += arg.arg
-                        if arg.annotation is not None and hasattr(arg.annotation, "id"):
-                            args += ": " + arg.annotation.id
-                            if method.args.defaults is not None and default_index < len(method.args.defaults):
-                                default = method.args.defaults[default_index]
-                                if isinstance(default, ast.Constant):
-                                    args += " = " + str(default.value)
-                                    default_index += 1
-
-                    if isinstance(method.returns, ast.Constant):
-                        ret = " -> None"
-                    else:
-                        if method.returns is not None and hasattr(method.returns, "id"):
-                            ret = " -> " + method.returns.id
-                        else:
-                            ret = ""
-
-                    out_obj_file.writelines(
+            if methods:
+                f.write("Method detail\n-------------\n\n")
+                for m in methods:
+                    arg_str = parse_args(m)
+                    ret_type = parse_return_type(m.returns)
+                    f.writelines(
                         [
-                            f".. py:method:: {method.name}({args}){ret}\n",
-                            f"    :canonical: {containing_namespace}.{module_name}.{obj_definition.name}.{method.name}\n",
-                            "\n",
+                            f".. py:method:: {m.name}({arg_str})",
+                            f"{' -> ' + ret_type if ret_type else ''}\n",
+                            f"    :canonical: {fq_name}.{m.name}\n\n",
                         ]
                     )
+                    write_docstring(f, ast.get_docstring(m), "    ")
 
-                    if ast.get_docstring(method) is not None:
-                        lines = ast.get_docstring(method).splitlines()
-                        out_obj_file.write(f"    {lines[0]}\n")
-                        if len(lines) > 1:
-                            for line in lines[1:]:
-                                out_obj_file.write(f"    {line}\n")
-                        out_obj_file.write("\n")
-
-                    filtered_args = [
-                        arg
-                        for arg in method.args.args
-                        if arg.annotation is not None and hasattr(arg.annotation, "id") and arg.annotation.id != "self"
+                    args_with_types = [
+                        (a.arg, a.annotation.id)
+                        for a in m.args.args
+                        if a.annotation and hasattr(a.annotation, "id") and a.arg != "self"
                     ]
-                    if len(filtered_args) > 0:
-                        out_obj_file.write("    :Parameters:\n")
-                        out_obj_file.write("\n")
-                        for arg in filtered_args:
-                            type_hint = ""
-                            if arg.annotation is not None and hasattr(arg.annotation, "id"):
-                                type_hint = f" : :obj:`~{arg.annotation.id}`"
-                            out_obj_file.write(f"    **{arg.arg}**{type_hint}\n")
+                    if args_with_types:
+                        f.write("    :Parameters:\n\n")
+                        for arg, type_hint in args_with_types:
+                            f.write(f"    **{arg}** : :obj:~{type_hint}\n")
+                        f.write("\n")
 
-                        out_obj_file.write("\n")
-
-                    return_type = ""
-                    if isinstance(method.returns, ast.Constant):
-                        return_type = "None"
-                    else:
-                        if method.returns is not None and hasattr(method.returns, "id"):
-                            return_type = method.returns.id
-
-                    if return_type != "":
-                        out_obj_file.writelines(
+                    if ret_type:
+                        f.writelines(
                             [
-                                "    :Returns:\n",
-                                "\n",
-                                f"        :obj:`~{return_type}`\n",
-                                "\n",
+                                "    :Returns:\n\n",
+                                f"        :obj:~{ret_type}\n\n",
                             ]
                         )
 
-                out_obj_file.write("\n")
+            f.write("\n")
 
-    def _generate_rst_for_pyenum(self, enum_definition, containing_namespace, module_name, module_rst_file_path):
-        out_enum_file_path = (
-            os.path.join(os.path.split(module_rst_file_path)[0], module_name, enum_definition.name) + ".rst"
-        )
-        if not os.path.exists(os.path.split(out_enum_file_path)[0]):
-            os.makedirs(os.path.split(out_enum_file_path)[0])
-        with open(out_enum_file_path, "w", encoding="utf-8") as out_enum_file:
-            out_enum_file.writelines(
+    def _generate_rst_for_pyenum(self, enum_def, namespace, module_name, module_rst_path):
+        output_dir = os.path.join(os.path.dirname(module_rst_path), module_name)
+        os.makedirs(output_dir, exist_ok=True)
+
+        out_path = os.path.join(output_dir, f"{enum_def.name}.rst")
+        with open(out_path, "w", encoding="utf-8") as f:
+            # Header and class declaration
+            f.writelines(
                 [
-                    enum_definition.name + "\n",
-                    len(enum_definition.name) * "=" + "\n",
-                    "\n",
-                    ".. py:class:: " + containing_namespace + "." + module_name + "." + enum_definition.name + "\n",
-                    "\n",
-                    "   " + ", ".join(base.id for base in enum_definition.bases) + "\n",
-                    "\n",
+                    f"{enum_def.name}\n",
+                    f"{'=' * len(enum_def.name)}\n\n",
+                    f".. py:class:: {namespace}.{module_name}.{enum_def.name}\n\n",
+                    f"   {', '.join(base.id for base in enum_def.bases)}\n\n",
                 ]
             )
 
-            if ast.get_docstring(enum_definition) is not None:
-                out_enum_file.write(f"{textwrap.indent(ast.get_docstring(enum_definition), '   ')}\n")
-                out_enum_file.write("\n")
+            # Class docstring
+            docstring = ast.get_docstring(enum_def)
+            if docstring:
+                f.write(f"{textwrap.indent(docstring, '   ')}\n\n")
 
-            out_enum_file.writelines(
-                [
-                    ".. py:currentmodule:: " + enum_definition.name + "\n",
-                    "\n",
-                    "\n",
-                ]
-            )
+            # Set current module context
+            f.writelines([f".. py:currentmodule:: {enum_def.name}\n\n\n"])
 
-            enum_value_content = []
-            for index, element in enumerate(enum_definition.body):
-                if isinstance(element, ast.Assign):
-                    enum_value = element.targets[0].id
-                    enum_constant = element.value.value
-                    docstring = None
-                    if index + 1 < len(enum_definition.body):
-                        maybe_docstring = enum_definition.body[index + 1]
-                        if isinstance(maybe_docstring, ast.Expr):
-                            if isinstance(maybe_docstring.value, ast.Constant):
-                                docstring = maybe_docstring.value.value
-                    enum_value_content.append({"value": enum_value, "constant": enum_constant, "docstring": docstring})
+            # Extract enum members and their docstrings
+            members = []
+            for i, node in enumerate(enum_def.body):
+                if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name):
+                    name = node.targets[0].id
+                    value = node.value.value if isinstance(node.value, ast.Constant) else None
+                    doc = None
+                    if i + 1 < len(enum_def.body):
+                        next_node = enum_def.body[i + 1]
+                        if isinstance(next_node, ast.Expr) and isinstance(next_node.value, ast.Constant):
+                            doc = next_node.value.value
+                    members.append({"name": name, "value": value, "doc": doc})
 
-            if len(enum_value_content) > 0:
-                out_enum_file.writelines(
+            # Render enum member table if present
+            if members:
+                f.writelines(
                     [
                         "Overview\n",
-                        "--------\n",
-                        "\n",
-                        ".. tab-set::\n",
-                        "\n",
-                        "    .. tab-item:: Members\n",
-                        "\n",
+                        "--------\n\n",
+                        ".. tab-set::\n\n",
+                        "    .. tab-item:: Members\n\n",
                         "        .. list-table::\n",
                         "            :header-rows: 0\n",
-                        "            :widths: auto\n",
-                        "\n",
+                        "            :widths: auto\n\n",
                     ]
                 )
+                for m in members:
+                    f.write(f"            * - :py:attr:~{m['name']}\n")
+                    if m["doc"]:
+                        lines = m["doc"].splitlines()
+                        f.write(f"              - {lines[0]}\n")
+                        for line in lines[1:]:
+                            f.write(f"                {line}\n")
+                f.write("\n")
 
-                for value_content in enum_value_content:
-                    val = value_content["value"]
-                    out_enum_file.write(f"            * - :py:attr:`~{val}`\n")
-                    if value_content["docstring"] is not None:
-                        lines = value_content["docstring"].splitlines()
-                        out_enum_file.write(f"              - {lines[0]}\n")
-                        if len(lines) > 1:
-                            for line in lines[1:]:
-                                out_enum_file.write(f"                {line}\n")
-                    out_enum_file.write("\n")
-                out_enum_file.write("\n")
-
-            out_enum_file.writelines(
+            # Import statement
+            f.writelines(
                 [
                     "Import detail\n",
-                    "-------------\n",
-                    "\n",
-                    ".. code-block:: python\n",
-                    "\n",
-                    f"    from {containing_namespace}.{module_name} import {enum_definition.name}\n",
-                    "\n",
-                    "\n",
+                    "-------------\n\n",
+                    ".. code-block:: python\n\n",
+                    f"    from {namespace}.{module_name} import {enum_def.name}\n\n\n",
                 ]
             )
+
+
+def main():
+    namespace = "ansys.stk.extensions"
+    module_path = Path(__file__).resolve().parent.parent / "extensions" / "src" / "ansys" / "stk"
+    doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "ansys" / "stk"
+
+    auto_files = list(module_path.rglob("*.py"))  # ensure it's a list
+    auto_files = []
+    autoapi = ManualRSTGenerator(namespace, module_path, doc_path)
+    autoapi.generate_rst_for_manual_modules([])
+
+
+if __name__ == "__main__":
+    main()
