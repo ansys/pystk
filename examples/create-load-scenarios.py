@@ -58,6 +58,7 @@ propagator.propagate()  # To propagate the orbit
 # +
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
+
 plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
