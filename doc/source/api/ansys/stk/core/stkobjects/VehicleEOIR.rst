@@ -5,7 +5,7 @@ VehicleEOIR
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIR`
 
-   AgVeEOIR interface class.
+   VehicleEOIR interface class.
 
 .. py:currentmodule:: VehicleEOIR
 

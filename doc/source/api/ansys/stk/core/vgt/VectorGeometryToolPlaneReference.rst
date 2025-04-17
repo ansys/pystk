@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneReference.set_plane`
               - Set a new plane.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneReference.get_plane`
-              - Return the actual plane object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+              - Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: get_plane(self) -> IVectorGeometryToolPlane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneReference.get_plane
 
-    Return the actual plane object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+    Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
 
     :Returns:
 

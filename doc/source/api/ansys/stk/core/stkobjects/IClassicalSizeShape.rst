@@ -3,7 +3,7 @@ IClassicalSizeShape
 
 .. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShape
 
-   Base Interface for SizeShape property. IAgClassicalSizeShapeAltitude, IAgClassicalSizeShapeMeanMotion, IAgClassicalSizeShapePeriod, IAgClassicalSizeShapeRadius and IAgClassicalSizeShapeSemimajorAxis derive from this.
+   Base Interface for SizeShape property. ClassicalSizeShapeAltitude, ClassicalSizeShapeMeanMotion, ClassicalSizeShapePeriod, ClassicalSizeShapeRadius and ClassicalSizeShapeSemimajorAxis derive from this.
 
 .. py:currentmodule:: IClassicalSizeShape
 

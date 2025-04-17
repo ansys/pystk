@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffsetLabel.z`
               - The Z value of the offset, used only when the offset frame is Cartesian, where positive and negative values move the label out of and into the screen, respectively. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffsetLabel.offset_frame`
-              - The frame used in computing the offset. A member of the AgEOffsetFrameType enumeration.
+              - The frame used in computing the offset. A member of the OffsetFrameType enumeration.
 
 
 
@@ -70,6 +70,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffsetLabel.offset_frame
     :type: OffsetFrameType
 
-    The frame used in computing the offset. A member of the AgEOffsetFrameType enumeration.
+    The frame used in computing the offset. A member of the OffsetFrameType enumeration.
 
 

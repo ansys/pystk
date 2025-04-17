@@ -3,7 +3,7 @@ MilitaryStandard2525bSymbols
 
 .. py:class:: ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols
 
-   AgStdMil2525bSymbols class provides methods to create 2525b symbols.
+   MilitaryStandard2525bSymbols class provides methods to create 2525b symbols.
 
 .. py:currentmodule:: MilitaryStandard2525bSymbols
 

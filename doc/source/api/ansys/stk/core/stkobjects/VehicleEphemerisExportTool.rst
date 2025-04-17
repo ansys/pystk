@@ -3,7 +3,7 @@ VehicleEphemerisExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisExportTool
 
-   AgVeEphemerisTypeSTK Class.
+   VehicleEphemerisExportTool Class.
 
 .. py:currentmodule:: VehicleEphemerisExportTool
 

@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.options_filename`
               - If used, the associated SNOPT specifications file may define any of the various SNOPT options. Options in the file that conflict with options specified elsewhere will take precedence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info`
-              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the RuntimeTypeInfo interface to access properties at runtime.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.use_console_monitor`
               - Whether to use the out-of-process console monitor for the optimizer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.allow_internal_primal_infeasibility_measure_normalization`
@@ -100,7 +100,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info
     :type: RuntimeTypeInfo
 
-    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the RuntimeTypeInfo interface to access properties at runtime.
 
 .. py:property:: use_console_monitor
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.use_console_monitor

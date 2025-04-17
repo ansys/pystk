@@ -3,7 +3,7 @@ LineTargetGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetGraphics3D
 
-   The AgLtVO class.
+   The LineTargetGraphics3D class.
 
 .. py:currentmodule:: LineTargetGraphics3D
 

@@ -57,7 +57,7 @@ Summary
               - Log message types.
 
             * - :py:class:`~ansys.stk.core.uiapplication.ApplicationConstants`
-              - AgEAppConstants contains base IDs for various structures.
+              - ApplicationConstants contains base IDs for various structures.
 
             * - :py:class:`~ansys.stk.core.uiapplication.ApplicationErrorCodes`
               - App error codes.

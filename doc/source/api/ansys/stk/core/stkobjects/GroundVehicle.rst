@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.graphics_3d`
               - Get the ground vehicle's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.export_tools`
-              - Return the IAgGvExportTools interface.
+              - Return the GroundVehicleExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.atmosphere`
               - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.radar_clutter_map`
@@ -129,7 +129,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.export_tools
     :type: GroundVehicleExportTools
 
-    Return the IAgGvExportTools interface.
+    Return the GroundVehicleExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.atmosphere

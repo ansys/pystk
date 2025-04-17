@@ -3,7 +3,7 @@ LineTargetGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetGraphics
 
-   The AgLtGraphics class.
+   The LineTargetGraphics class.
 
 .. py:currentmodule:: LineTargetGraphics
 

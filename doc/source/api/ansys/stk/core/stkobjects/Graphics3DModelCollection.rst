@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.remove`
               - Remove an item at the given index.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.item`
-              - Return an IAgVoModelItem at the given index.
+              - Return an Graphics3DModelItem at the given index.
 
     .. tab-item:: Properties
         
@@ -98,7 +98,7 @@ Method detail
 .. py:method:: item(self, index: int) -> Graphics3DModelItem
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.item
 
-    Return an IAgVoModelItem at the given index.
+    Return an Graphics3DModelItem at the given index.
 
     :Parameters:
 

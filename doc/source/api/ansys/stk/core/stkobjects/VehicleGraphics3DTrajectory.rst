@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectory
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory
 
-   AgLvVOTrajectory Class.
+   LaunchVehicleGraphics3DTrajectory Class.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectory
 

@@ -3,7 +3,7 @@ UnitPreferencesUnitCollection
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnitCollection
 
-   Object that contains a collection of IAgUnitPrefsUnit.
+   Object that contains a collection of UnitPreferencesUnit.
 
 .. py:currentmodule:: UnitPreferencesUnitCollection
 
@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection.count`
               - Return the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum`
-              - Return an enumeration of AgUnitPrefsUnit.
+              - Return an enumeration of UnitPreferencesUnit.
 
 
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum
     :type: EnumeratorProxy
 
-    Return an enumeration of AgUnitPrefsUnit.
+    Return an enumeration of UnitPreferencesUnit.
 
 
 Method detail

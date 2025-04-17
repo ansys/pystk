@@ -48,7 +48,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable`
               - Return whether the VGT component can be duplicated.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context`
-              - Return the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
+              - Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchComponentInstance or AnalysisWorkbenchComponentTemplate interface.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_information`
               - Return the component type information.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path`
@@ -114,7 +114,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Return the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
+    Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchComponentInstance or AnalysisWorkbenchComponentTemplate interface.
 
 .. py:property:: type_information
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_information

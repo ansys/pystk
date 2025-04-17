@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvShapeModel value.
+              - An invalid VehicleSpaceEnvironmentShapeModel value.
 
             * - :py:attr:`~PLATE`
               - Models the thermal properties of the vehicle using a plate.

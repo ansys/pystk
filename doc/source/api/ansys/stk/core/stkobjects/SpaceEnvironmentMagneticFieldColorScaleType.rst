@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvMagFieldColorScale value.
+              - An invalid SpaceEnvironmentMagneticFieldColorScaleType value.
 
             * - :py:attr:`~LINEAR`
               - Assign colors based upon a linear scaling from minimum to maximum value.

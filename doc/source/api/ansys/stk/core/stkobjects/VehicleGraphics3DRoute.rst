@@ -3,7 +3,7 @@ VehicleGraphics3DRoute
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DRoute
 
-   AgVeVORoute2 Class.
+   VehicleGraphics3DRoute2 Class.
 
 .. py:currentmodule:: VehicleGraphics3DRoute
 

@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.to_array`
               - Return a four-dimensional array of min/max lat/lon values beginning at a given position and having specified number of rows.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.item`
-              - Get an IAgAccessCnstrZone interface using an index.
+              - Get an AccessConstraintLatitudeLongitudeZone interface using an index.
 
     .. tab-item:: Properties
         
@@ -52,7 +52,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type`
               - Get the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum`
-              - Enumerate the IAgAccessCnstrZone interfaces.
+              - Enumerate the AccessConstraintLatitudeLongitudeZone interfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step`
               - Maximum time step used in adaptive sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_relative_motion`
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum
     :type: EnumeratorProxy
 
-    Enumerate the IAgAccessCnstrZone interfaces.
+    Enumerate the AccessConstraintLatitudeLongitudeZone interfaces.
 
 .. py:property:: maximum_time_step
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step
@@ -214,7 +214,7 @@ Method detail
 .. py:method:: item(self, index: int) -> AccessConstraintLatitudeLongitudeZone
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.item
 
-    Get an IAgAccessCnstrZone interface using an index.
+    Get an AccessConstraintLatitudeLongitudeZone interface using an index.
 
     :Parameters:
 

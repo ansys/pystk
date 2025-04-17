@@ -4634,6 +4634,7 @@
    <Mapping ParentScope="IAgAdditionalGainLossCollection" OldName="RemoveAt" NewName="remove_at" Category="method" />
    <Mapping ParentScope="IAgAdditionalGainLossCollection" OldName="Add" NewName="add" Category="method" />
    <Mapping ParentScope="IAgAdditionalGainLossCollection" OldName="Clear" NewName="clear" Category="method" />
+   <Mapping OldName="IAgCRPluginConfiguration" NewName="CommRadPluginConfiguration" Category="interface" />
    <Mapping ParentScope="IAgCRPluginConfiguration" OldName="GetProperty" NewName="get_property" Category="method" />
    <Mapping ParentScope="IAgCRPluginConfiguration" OldName="SetProperty" NewName="set_property" Category="method" />
    <Mapping ParentScope="IAgCRPluginConfiguration" OldName="AvailableProperties" NewName="available_properties" Category="method" />
@@ -10834,6 +10835,7 @@
    <Mapping OldName="AgScatteringPointProviderRangeOverCFARCells" NewName="ScatteringPointProviderRangeOverCFARCells" Category="class" />
    <Mapping OldName="AgScatteringPointProviderSmoothOblateEarth" NewName="ScatteringPointProviderSmoothOblateEarth" Category="class" />
    <Mapping OldName="AgScatteringPointProviderPlugin" NewName="ScatteringPointProviderPlugin" Category="class" />
+   <Mapping OldName="AgCRPluginConfiguration" NewName="CommRadPluginConfiguration" Category="class" />
    <Mapping OldName="AgRadarJamming" NewName="RadarJamming" Category="class" />
    <Mapping OldName="AgRFInterference" NewName="RFInterference" Category="class" />
    <Mapping OldName="AgRFFilterModel" NewName="RFFilterModel" Category="class" />
