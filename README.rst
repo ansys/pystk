@@ -154,5 +154,5 @@ categorized by version, along with brief descriptions of each change.
 .. _contribute: https://stk.docs.pyansys.com/version/dev/contribute.html
 .. _artifacts: https://stk.docs.pyansys.com/version/dev/artifacts.html
 
-.. _LICENSE: https://github.com/ansys-internal/pystk/blob/main/LICENSE
-.. _CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md
+.. _LICENSE: https://github.com/ansys/pystk/blob/main/LICENSE
+.. _CHANGELOG: https://github.com/ansys/pystk/blob/main/CHANGELOG.md

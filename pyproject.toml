@@ -10,19 +10,24 @@ readme = "README.rst"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.maintainers@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
-    # TODO: remove all 'Private' classifiers prior to the public release
-    "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
 ]
@@ -80,6 +85,8 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
+# TODO: Note sure about this naming, should we use graphics ?
+# See https://dev.docs.pyansys.com/how-to/packaging.html#optional-target-recommendations-in-the-pyansys-ecosystem
 visualization = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.4",
@@ -87,19 +94,22 @@ visualization = [
     "simplejpeg==1.8.2",
     "sidecar==0.7.0"
 ]
+# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
     "bandit==1.8.3",
     "safety==3.3.0",
+    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
 name = "ansys.stk.core"
 
 [project.urls]
-Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Discussions = "https://github.com/ansys/pystk/discussions"
 Documentation = "https://stk.docs.pyansys.com/"
-Source = "https://github.com/pyansys/pystk"
-Tracker = "https://github.com/pyansys/pystk/issues"
+Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Issues = "https://github.com/ansys/pystk/issues"
+Source = "https://github.com/ansys/pystk"
 
 [tool.ruff]
 line-length = 120
