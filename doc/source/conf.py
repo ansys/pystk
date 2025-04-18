@@ -172,7 +172,6 @@ autosectionlabel_maxdepth = 6
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-linkcheck_timeout = 60
 linkcheck_ignore = [
     "https://www.ansys.com/*",
     # Requires sign-in
