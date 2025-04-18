@@ -99,6 +99,7 @@ jobs:
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
+          fail-level: 'warning'
 
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
