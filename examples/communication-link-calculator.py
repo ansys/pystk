@@ -53,7 +53,7 @@ root.rewind()
 
 # ## Add analytical and visual terrain
 
-# Use an STK terrain file (file extension .pdtt) included with the STK install to add analytical terrain to the scenario. The file contains information on the terrain around the scientists' camp site. Use a Connect command to find the path to the RaistingStation.pdtt file:
+# Use an STK terrain file (file extension PDTT) included with the STK install to add analytical terrain to the scenario. The file contains information on the terrain around the scientists' camp site. Use a Connect command to find the path to the RaistingStation.pdtt file:
 
 # +
 import pathlib
@@ -82,7 +82,7 @@ terrain = scenario.terrain.item("Earth").terrain_collection.add(
 
 # ## Add a satellite
 
-# The Earth observation satellite is in a sun-synchronous orbit. It can thus be modelled by an SGP4 propagator, which is used for LEO satellites. The satellite communicating with the camp has a common name of TerraSarX, which corresponds to a space surveillance catalog number of 31698.
+# The Earth observation satellite is in a sun-synchronous orbit. It can thus be modelled by an SGP4 propagator, which is used for LEO satellites. The satellite communicating with the camp has a common name of TerraSarX, which corresponds to a space surveillance catalog number of $31698$.
 
 # To add the satellite, first insert a satellite object:
 
@@ -200,7 +200,7 @@ sensor_to_satellite_access_df
 
 # The sensor is able to access the satellite six times throughout the duration of the scenario.
 
-# The access between the sensor and the satellite can be seen in the 3D graphics window approximately 1389 seconds after the scenario begins:
+# The access between the sensor and the satellite can be seen in the 3D graphics window approximately $1389$ seconds after the scenario begins:
 
 root.current_time = 1389.458394
 globe.camera.position = [2703.568833967754, -5862.711497073381, 9424.82507431983]
@@ -321,7 +321,7 @@ receiver_basic_access.data_providers.item("Access Data").execute(
     scenario.start_time, scenario.stop_time
 ).data_sets.to_pandas_dataframe()
 
-# Before adding a terrain mask, there were 6 accesses between the receiver and transmitter. By adding a terrain mask, the accesses blocked by terrain have been removed from the report, and there are now only 4 accesses between the receiver and transmitter.
+# Before adding a terrain mask, there were $6$ accesses between the receiver and transmitter. By adding a terrain mask, the accesses blocked by terrain have been removed from the report, and there are now only $4$ accesses between the receiver and transmitter.
 
 # ## Model environmental factors
 
@@ -347,7 +347,7 @@ receiver_environmental_link_df = (
 )
 receiver_environmental_link_df.head(10)[link_budget_columns]
 
-# After adding environmental factor models, the atmospheric and rain losses are now greater than 0. However, the losses are minimal, so the losses in C/N and Eb/No are also minimal.
+# After adding environmental factor models, the atmospheric and rain losses are now greater than $0$. However, the losses are minimal, so the losses in C/N and Eb/No are also minimal.
 
 # ## Model system noise temperature
 

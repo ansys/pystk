@@ -400,7 +400,7 @@ radar_dome_access_df = (
 
 radar_dome_access_df
 
-# The fixed sensor can view the aircraft for approximately 3173 seconds.
+# The fixed sensor can view the aircraft for approximately $3173$ seconds.
 
 # ## Generate an AER report
 
@@ -563,7 +563,7 @@ sweeping_access_df["duration"] = pd.to_numeric(sweeping_access_df["duration"])
 sweeping_access_df.mean(numeric_only=True)["duration"]
 # -
 
-# The average duration of access was approximately 0.111 seconds.
+# The average duration of access was approximately $0.111$ seconds.
 
 # ## Visualize access with a graph
 
@@ -712,7 +712,7 @@ ax.minorticks_on()
 
 plt.show()
 # -
-# The graph shows that all of the sensors can see the aircraft during its flight, with the fixed radar dome able to see the aircraft for the longest duration of time. However, because the sweeping radar sees the aircraft for very short bursts of time, it is difficult to make out the different accesses. To better see the sweeping radar's accesses, create a plot zoomed in on the access between 16:54 and 16:56:
+# The graph shows that all of the sensors can see the aircraft during its flight, with the fixed radar dome able to see the aircraft for the longest duration of time. However, because the sweeping radar sees the aircraft for very short bursts of time, it is difficult to make out the different accesses. To better see the sweeping radar's accesses, create a plot zoomed in on the access between 16:54 and 16:56.
 
 
 # +

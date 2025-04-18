@@ -126,7 +126,7 @@ plotter.show()
 #
 # The data providers can be used to find the state vector of an object at a given epoch and with respect to a reference frame.
 
-# First, a utility function for converting a ``DataProviderResult`` instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
+# First, an utility function for converting a ``DataProviderResult`` instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
 
 
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
