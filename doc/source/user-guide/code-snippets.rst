@@ -1138,7 +1138,7 @@ Start STK runtime and get a reference to the STK object root
 
 .. _CreateSTKNew:
 
-Start STK desktop and get a reference to the STK object root
+Start STK Desktop and get a reference to the STK object root
 ============================================================
 
 .. code-block:: python

@@ -138,6 +138,8 @@ class SnippetsRSTGenerator(object):
             for snippet in self.all_snippets:
                 description = snippet["description"].capitalize()
 
+                description = re.sub(r"\b(stk desktop(?! application))\b", "STK Desktop", description)
+
                 # Substitutions to make vale happy
                 vale_substitutions = {
                     "2d": "2D",
