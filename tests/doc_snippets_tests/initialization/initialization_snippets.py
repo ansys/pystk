@@ -113,7 +113,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateSTKNew",
-        description="Start STK desktop and get a reference to the STK object root",
+        description="Start STK Desktop and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )

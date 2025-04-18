@@ -171,7 +171,7 @@ Start STK Runtime and get a reference to the STK object root
     root = stk.new_object_root()
 
 
-Start STK desktop and get a reference to the STK object root
+Start STK Desktop and get a reference to the STK object root
 
 .. code-block:: python
 
