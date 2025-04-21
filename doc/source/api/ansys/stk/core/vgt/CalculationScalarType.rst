@@ -77,7 +77,7 @@ Overview
               - Standard deviation of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types.
 
             * - :py:attr:`~CALCULATION_ALONG_TRAJECTORY`
-              - Calculations Along Trajectory. Use IAgCrdnCalcScalarPointInVolumeCalc to access it.
+              - Calculations Along Trajectory. Use CalculationToolScalarAlongTrajectory to access it.
 
             * - :py:attr:`~CUSTOM_INLINE_SCRIPT`
               - Custom inline script scalar.

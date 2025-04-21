@@ -25,11 +25,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.is_access_supported`
               - Determine whether or not the object supports Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.get_access`
-              - Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
+              - Return an Access object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.get_access_to_object`
-              - Return an IAgStkAccess object associated with this STK object and another STK object.
+              - Return an Access object associated with this STK object and another STK object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.create_one_point_access`
-              - Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
+              - Create one point access to the supplied object name. The Remove method in OnePointAccess should be called when you are done with the data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.unload`
               - Remove the object from the scenario.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.supports_analysis_workbench`
@@ -44,7 +44,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.parent`
-              - Return the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
+              - Return the parent object or null if the object has become orphaned. The exception is StkObjectRoot object which is a topmost element and does not have a parent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.path`
               - Return the object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.instance_name`
@@ -66,7 +66,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.has_children`
               - Return true if the object has direct descendants.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_coverage`
-              - Return an IAgStkObjectCoverage object.
+              - Return an ObjectCoverage object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.access_constraints`
               - Get the constraints imposed on the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_files`
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.parent
     :type: IStkObject
 
-    Return the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
+    Return the parent object or null if the object has become orphaned. The exception is StkObjectRoot object which is a topmost element and does not have a parent.
 
 .. py:property:: path
     :canonical: ansys.stk.core.stkobjects.IStkObject.path
@@ -171,7 +171,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
     :type: ObjectCoverage
 
-    Return an IAgStkObjectCoverage object.
+    Return an ObjectCoverage object.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStkObject.access_constraints
@@ -256,7 +256,7 @@ Method detail
 .. py:method:: get_access(self, object_path: str) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access
 
-    Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
+    Return an Access object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
 
     :Parameters:
 
@@ -269,7 +269,7 @@ Method detail
 .. py:method:: get_access_to_object(self, object: IStkObject) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access_to_object
 
-    Return an IAgStkAccess object associated with this STK object and another STK object.
+    Return an Access object associated with this STK object and another STK object.
 
     :Parameters:
 
@@ -283,7 +283,7 @@ Method detail
 .. py:method:: create_one_point_access(self, path_to_object: str) -> OnePointAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.create_one_point_access
 
-    Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
+    Create one point access to the supplied object name. The Remove method in OnePointAccess should be called when you are done with the data.
 
     :Parameters:
 

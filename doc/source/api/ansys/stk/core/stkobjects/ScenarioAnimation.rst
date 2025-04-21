@@ -46,11 +46,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta`
               - Amount of time between refresh updates. The actual refresh delta is limited by the minimum time necessary to draw the scenario. The refresh time varies with processor performance, graphics hardware and scenario complexity. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type`
-              - Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
+              - Animation end time or loop-at time. A member of the ScenarioEndLoopType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type`
-              - Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
+              - Refresh Delta or high speed. A member of the ScenarioRefreshDeltaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
-              - Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
+              - Time step, real time (with offset) or a multiple of real time. A member of the ScenarioTimeStepType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause`
               - Animation XRealtime Continue from Paused Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_period`
@@ -105,19 +105,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type
     :type: ScenarioEndLoopType
 
-    Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
+    Animation end time or loop-at time. A member of the ScenarioEndLoopType enumeration.
 
 .. py:property:: refresh_delta_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type
     :type: ScenarioRefreshDeltaType
 
-    Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
+    Refresh Delta or high speed. A member of the ScenarioRefreshDeltaType enumeration.
 
 .. py:property:: animation_step_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type
     :type: ScenarioTimeStepType
 
-    Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
+    Time step, real time (with offset) or a multiple of real time. A member of the ScenarioTimeStepType enumeration.
 
 .. py:property:: continue_x_real_time_from_pause
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause

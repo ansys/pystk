@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvF10p7Source value.
+              - An invalid VehicleSpaceEnvironmentF10P7SourceType value.
 
             * - :py:attr:`~FILE`
               - Set the F10.7 flux source to use a flux file.

@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics.show_orbit`
               - Specify whether the planet's orbit path displays. This option affects only the perspective and orthographic map projections.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics.orbit_display`
-              - The factor used in determining how much of the orbit displays. A member of the AgEPlOrbitDisplayType enumeration.
+              - The factor used in determining how much of the orbit displays. A member of the PlanetOrbitDisplayType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics.orbit_display_data`
               - If time is used to determine how much of the orbit displays, specify a time value.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics.line_style`
@@ -110,7 +110,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.orbit_display
     :type: PlanetOrbitDisplayType
 
-    The factor used in determining how much of the orbit displays. A member of the AgEPlOrbitDisplayType enumeration.
+    The factor used in determining how much of the orbit displays. A member of the PlanetOrbitDisplayType enumeration.
 
 .. py:property:: orbit_display_data
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.orbit_display_data

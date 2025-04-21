@@ -5,7 +5,7 @@ AnalysisWorkbenchPlaneFindInAxesResult
 
    Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`
 
-   Contains the results returned with IAgCrdnPlane.FindInAxes method.
+   Contains the results returned with IVectorGeometryToolPlane.FindInAxes method.
 
 .. py:currentmodule:: AnalysisWorkbenchPlaneFindInAxesResult
 

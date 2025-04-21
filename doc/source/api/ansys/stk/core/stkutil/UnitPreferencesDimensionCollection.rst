@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.item`
-              - Return an IAgUnitPrefsDim given a Dimension name or an index.
+              - Return an UnitPreferencesDimension given a Dimension name or an index.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.set_current_unit`
               - Return the Current unit for a Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.get_current_unit_abbrv`
@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.julian_date_offset`
               - The JulianDateOffset.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum`
-              - Return a collection of IAgUnitPrefsDim.
+              - Return a collection of UnitPreferencesDimension.
 
 
 
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum
     :type: EnumeratorProxy
 
-    Return a collection of IAgUnitPrefsDim.
+    Return a collection of UnitPreferencesDimension.
 
 
 Method detail
@@ -90,7 +90,7 @@ Method detail
 .. py:method:: item(self, index_or_name: typing.Any) -> UnitPreferencesDimension
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.item
 
-    Return an IAgUnitPrefsDim given a Dimension name or an index.
+    Return an UnitPreferencesDimension given a Dimension name or an index.
 
     :Parameters:
 

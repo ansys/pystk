@@ -67,7 +67,7 @@ Summary
               - Interface used to access a waypoint in the Aviator catalog.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Airport`
-              - Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
+              - Do not use this interface, as it is deprecated. Use IARINC424Item instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem`
               - Interface used to access the options for an DAFIF Item found in the Aviator catalog.
@@ -666,10 +666,10 @@ Summary
               - Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPowerplant`
-              - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbofanBasicABProp instead.
+              - Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABPropulsion instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbojetBasicABPowerplant`
-              - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead.
+              - Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABPropulsion instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion`
               - Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.

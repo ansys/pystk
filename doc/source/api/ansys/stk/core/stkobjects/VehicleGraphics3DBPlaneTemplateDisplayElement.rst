@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTemplateDisplayElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement
 
-   Element of IAgVeVOBPlaneTemplateDisplayCollection.
+   Element of VehicleGraphics3DBPlaneTemplateDisplayCollection.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneTemplateDisplayElement
 

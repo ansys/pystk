@@ -3,7 +3,7 @@ IEOIR
 
 .. py:class:: ansys.stk.core.stkobjects.IEOIR
 
-   Property used to access IAgEOIR interface.
+   Property used to access IEOIR interface.
 
 .. py:currentmodule:: IEOIR
 

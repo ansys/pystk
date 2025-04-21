@@ -3,7 +3,7 @@ IGraphics3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.IGraphics3DModel
 
-   AgVOModel used to access the 3D model attributes.
+   IGraphics3DModel used to access the 3D model attributes.
 
 .. py:currentmodule:: IGraphics3DModel
 
@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_data`
               - Get the model data property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_type`
-              - Get or set the model type property. A member of the AgEModelType enumeration.
+              - Get or set the model type property. A member of the ModelType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
               - Articulation property.
 
@@ -71,7 +71,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_type
     :type: ModelType
 
-    Get or set the model type property. A member of the AgEModelType enumeration.
+    Get or set the model type property. A member of the ModelType enumeration.
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation

@@ -5,7 +5,7 @@ Subset
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
-   The AgSubset class.
+   The Subset class.
 
 .. py:currentmodule:: Subset
 

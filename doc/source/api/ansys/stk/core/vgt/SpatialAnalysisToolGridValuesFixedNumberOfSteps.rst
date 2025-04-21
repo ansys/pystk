@@ -27,9 +27,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
               - The number of steps between coordinate values.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum`
-              - Minimum coordinate value as IAgQuantity.
+              - Minimum coordinate value as Quantity.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum`
-              - Maximum coordinate value as IAgQuantity.
+              - Maximum coordinate value as Quantity.
 
 
 
@@ -66,12 +66,12 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum
     :type: Quantity
 
-    Minimum coordinate value as IAgQuantity.
+    Minimum coordinate value as Quantity.
 
 .. py:property:: maximum
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum
     :type: Quantity
 
-    Maximum coordinate value as IAgQuantity.
+    Maximum coordinate value as Quantity.
 
 

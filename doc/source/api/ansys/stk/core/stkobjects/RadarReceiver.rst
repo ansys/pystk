@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_rfstc_type`
               - Set the RF STC Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_ifstc_type`
@@ -58,9 +58,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.system_noise_temperature`
               - Get the system noise temperature interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_rfstc`
@@ -169,13 +169,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets an array of supported model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Gets the current filter model.
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.system_noise_temperature
@@ -273,7 +273,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgRadarReceiver instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarReceiver instead. Sets the current filter model by name.
 
     :Parameters:
 

@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvMaterial value.
+              - An invalid VehicleSpaceEnvironmentMaterial value.
 
             * - :py:attr:`~ALUMINUM`
               - Uses aluminum for particle impact computations.

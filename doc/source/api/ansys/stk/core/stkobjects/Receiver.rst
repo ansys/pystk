@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Receiver instead. Sets the current receiver model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets the current receiver model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction`
-              - Refraction method, a member of the AgESnRefractionType enumeration.
+              - Refraction method, a member of the SensorRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction_supported_types`
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction_model`
@@ -178,19 +178,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Receiver.supported_models
     :type: list
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Receiver.model
     :type: IReceiverModel
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets the current receiver model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction
     :type: SensorRefractionType
 
-    Refraction method, a member of the AgESnRefractionType enumeration.
+    Refraction method, a member of the SensorRefractionType enumeration.
 
 .. py:property:: refraction_supported_types
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction_supported_types
@@ -248,7 +248,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Receiver.set_model
 
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on Receiver instead. Sets the current receiver model by name.
 
     :Parameters:
 
