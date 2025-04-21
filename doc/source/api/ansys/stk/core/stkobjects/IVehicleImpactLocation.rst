@@ -3,7 +3,7 @@ IVehicleImpactLocation
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleImpactLocation
 
-   Base interface IAgVeImpactLocation. IAgVeImpactLocationLaunchAzEl and IAgVeImpactLocationPoint derive from this.
+   Base interface IVehicleImpactLocation. VehicleImpactLocationLaunchAzEl and VehicleImpactLocationPoint derive from this.
 
 .. py:currentmodule:: IVehicleImpactLocation
 

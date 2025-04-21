@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSearchTrack.waveform`
               - Get the interface for configuring the search/track waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSearchTrack.doppler_clutter_filters`
-              - Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+              - Get the RadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSearchTrack.doppler_clutter_filters
     :type: RadarDopplerClutterFilters
 
-    Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+    Get the RadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 Method detail

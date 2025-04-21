@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.item`
-              - Given an index, returns an IAgTerrain interface.
+              - Given an index, returns an Terrain interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.add`
               - Add a terrain item to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.remove`
@@ -72,7 +72,7 @@ Method detail
 .. py:method:: item(self, index: int) -> Terrain
     :canonical: ansys.stk.core.stkobjects.TerrainCollection.item
 
-    Given an index, returns an IAgTerrain interface.
+    Given an index, returns an Terrain interface.
 
     :Parameters:
 

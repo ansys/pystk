@@ -3,7 +3,7 @@ IVehicleSolarFluxGeoMagnitude
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitude
 
-   Base Interface IAgVeSolarFluxGeoMag. IAgVeSolarFluxGeoMagEnterManually and IAgVeSolarFluxGeoMagUseFile derive from this interface.
+   Base Interface IVehicleSolarFluxGeoMagnitude. SolarFluxGeoMagneticValueSettings and SolarFluxGeoMagneticFileSettings derive from this interface.
 
 .. py:currentmodule:: IVehicleSolarFluxGeoMagnitude
 

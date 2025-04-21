@@ -56,7 +56,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.access_constraints`
               - Get the constraints imposed on the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.export_tools`
-              - Return the IAgMsExportTools interface.
+              - Return the MissileExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.space_environment`
               - Return the missile's SpaceEnvironment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.atmosphere`
@@ -181,7 +181,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Missile.export_tools
     :type: MissileExportTools
 
-    Return the IAgMsExportTools interface.
+    Return the MissileExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Missile.space_environment

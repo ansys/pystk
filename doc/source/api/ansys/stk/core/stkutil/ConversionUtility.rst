@@ -27,23 +27,23 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_date_array`
               - Convert the specified dates from a given unit to another unit.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_quantity`
-              - Create an IAgQuantity interface with the given dimension, unit and value.
+              - Create an Quantity interface with the given dimension, unit and value.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_date`
-              - Create an IAgDate interface with the given unit and value.
+              - Create an Date interface with the given unit and value.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_position_on_earth`
-              - Create an IAgPosition interface with earth as its central body.
+              - Create an IPosition interface with earth as its central body.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_position_array`
               - Convert the specified position values from a given position type to another position type.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_direction`
-              - Create an IAgDirection interface.
+              - Create an IDirection interface.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_orientation`
-              - Create an IAgOrientation interface.
+              - Create an IOrientation interface.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_orbit_state_on_earth`
-              - Create an IAgOrbitState interface with earth as its central body.
+              - Create an IOrbitState interface with earth as its central body.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_position_on_cb`
-              - Create an IAgPosition interface using the supplied central body.
+              - Create an IPosition interface using the supplied central body.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_orbit_state_on_cb`
-              - Create an IAgOrbitState interface using the supplied central body.
+              - Create an IOrbitState interface using the supplied central body.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.query_direction_cosine_matrix`
               - Return a Direction Cosine Matrix (DCM).
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.query_direction_cosine_matrix_array`
@@ -133,7 +133,7 @@ Method detail
 .. py:method:: new_quantity(self, dimension: str, unit_abbrv: str, value: float) -> Quantity
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_quantity
 
-    Create an IAgQuantity interface with the given dimension, unit and value.
+    Create an Quantity interface with the given dimension, unit and value.
 
     :Parameters:
 
@@ -148,7 +148,7 @@ Method detail
 .. py:method:: new_date(self, unit_abbrv: str, value: str) -> Date
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_date
 
-    Create an IAgDate interface with the given unit and value.
+    Create an Date interface with the given unit and value.
 
     :Parameters:
 
@@ -162,7 +162,7 @@ Method detail
 .. py:method:: new_position_on_earth(self) -> IPosition
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_position_on_earth
 
-    Create an IAgPosition interface with earth as its central body.
+    Create an IPosition interface with earth as its central body.
 
     :Returns:
 
@@ -186,7 +186,7 @@ Method detail
 .. py:method:: new_direction(self) -> IDirection
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_direction
 
-    Create an IAgDirection interface.
+    Create an IDirection interface.
 
     :Returns:
 
@@ -195,7 +195,7 @@ Method detail
 .. py:method:: new_orientation(self) -> IOrientation
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_orientation
 
-    Create an IAgOrientation interface.
+    Create an IOrientation interface.
 
     :Returns:
 
@@ -204,7 +204,7 @@ Method detail
 .. py:method:: new_orbit_state_on_earth(self) -> IOrbitState
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_orbit_state_on_earth
 
-    Create an IAgOrbitState interface with earth as its central body.
+    Create an IOrbitState interface with earth as its central body.
 
     :Returns:
 
@@ -213,7 +213,7 @@ Method detail
 .. py:method:: new_position_on_cb(self, central_body_name: str) -> IPosition
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_position_on_cb
 
-    Create an IAgPosition interface using the supplied central body.
+    Create an IPosition interface using the supplied central body.
 
     :Parameters:
 
@@ -226,7 +226,7 @@ Method detail
 .. py:method:: new_orbit_state_on_cb(self, central_body_name: str) -> IOrbitState
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_orbit_state_on_cb
 
-    Create an IAgOrbitState interface using the supplied central body.
+    Create an IOrbitState interface using the supplied central body.
 
     :Parameters:
 

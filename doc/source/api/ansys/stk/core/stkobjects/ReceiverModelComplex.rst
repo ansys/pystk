@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.set_demodulator`
               - Set the current demodulator model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.set_polarization_type`
@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.pre_receive_gains_losses`
               - Get the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelComplex.pre_demodulator_gains_losses`
@@ -107,13 +107,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverModelComplex.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReceiverModelComplex.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelComplex.pre_receive_gains_losses
@@ -257,7 +257,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelComplex.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelComplex instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelComplex instead. Sets the current filter model by name.
 
     :Parameters:
 

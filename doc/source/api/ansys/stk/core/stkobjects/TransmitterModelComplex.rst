@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.set_modulator`
               - Set the current modulator model by name.
 
@@ -50,9 +50,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.supported_modulators`
               - Get an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelComplex.modulator`
@@ -125,13 +125,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Gets the current filter model.
 
 .. py:property:: supported_modulators
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.supported_modulators
@@ -185,7 +185,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelComplex.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelComplex instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelComplex instead. Sets the current filter model by name.
 
     :Parameters:
 

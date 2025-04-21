@@ -3,7 +3,7 @@ TimeToolIntervalsVectorResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolIntervalsVectorResult
 
-   Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
+   Contains the results returned with ITimeToolTimeIntervalCollection.FindIntervalCollection method.
 
 .. py:currentmodule:: TimeToolIntervalsVectorResult
 

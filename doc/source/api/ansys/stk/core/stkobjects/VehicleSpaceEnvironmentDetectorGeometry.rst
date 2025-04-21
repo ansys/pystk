@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvDetectorGeometry value.
+              - An invalid VehicleSpaceEnvironmentDetectorGeometry value.
 
             * - :py:attr:`~SEMI_INFINITE_SLAB`
               - Uses semi-infinite slab model.

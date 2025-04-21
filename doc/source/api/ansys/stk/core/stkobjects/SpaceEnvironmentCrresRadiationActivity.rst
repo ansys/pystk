@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvCrresProtonActivity value.
+              - An invalid SpaceEnvironmentCrresProtonActivity value.
 
             * - :py:attr:`~ACTIVE`
               - Models an enhanced geomagnetic flux environment.

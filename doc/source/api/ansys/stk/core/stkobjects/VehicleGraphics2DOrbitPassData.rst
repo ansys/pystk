@@ -3,7 +3,7 @@ VehicleGraphics2DOrbitPassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData
 
-   AgVeGfxPassData Class.
+   VehicleGraphics2DOrbitPassData Class.
 
 .. py:currentmodule:: VehicleGraphics2DOrbitPassData
 

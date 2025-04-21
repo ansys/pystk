@@ -3,7 +3,7 @@ RotationRateAndOffset
 
 .. py:class:: ansys.stk.core.stkobjects.RotationRateAndOffset
 
-   AgVeSpin Class.
+   RotationRateAndOffset Class.
 
 .. py:currentmodule:: RotationRateAndOffset
 

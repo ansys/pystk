@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.set_embedded_model`
-              - Do not use this method, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Sets the current antenna model by name.
+              - Do not use this method, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Sets the current antenna model by name.
 
     .. tab-item:: Properties
         
@@ -34,9 +34,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.linked_antenna_object`
               - Get or set the linked antenna object.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.supported_embedded_models`
-              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model`
-              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
+              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model_orientation`
               - Get or set the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model_component_linking`
@@ -77,13 +77,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaControl.supported_embedded_models
     :type: list
 
-    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Gets an array of supported model names.
 
 .. py:property:: embedded_model
     :canonical: ansys.stk.core.stkobjects.AntennaControl.embedded_model
     :type: IAntennaModel
 
-    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
+    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Gets the current antenna model.
 
 .. py:property:: embedded_model_orientation
     :canonical: ansys.stk.core.stkobjects.AntennaControl.embedded_model_orientation
@@ -110,7 +110,7 @@ Method detail
 .. py:method:: set_embedded_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaControl.set_embedded_model
 
-    Do not use this method, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Sets the current antenna model by name.
+    Do not use this method, as it is deprecated. Use EmbeddedModelComponentLinking on AntennaControl instead. Sets the current antenna model by name.
 
     :Parameters:
 

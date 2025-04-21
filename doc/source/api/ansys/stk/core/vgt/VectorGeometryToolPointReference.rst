@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointReference.set_point`
               - Set a new point.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointReference.get_point`
-              - Return the actual point object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+              - Return the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: get_point(self) -> IVectorGeometryToolPoint
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointReference.get_point
 
-    Return the actual point object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+    Return the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
 
     :Returns:
 

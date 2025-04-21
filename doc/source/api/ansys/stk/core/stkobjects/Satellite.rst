@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.propagator_supported_types`
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.export_tools`
-              - Return the IAgSaExportTools interface.
+              - Return the SatelliteExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.space_environment`
               - Get the SpaceEnvironment properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.reference_vehicle`
@@ -223,7 +223,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Satellite.export_tools
     :type: SatelliteExportTools
 
-    Return the IAgSaExportTools interface.
+    Return the SatelliteExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Satellite.space_environment

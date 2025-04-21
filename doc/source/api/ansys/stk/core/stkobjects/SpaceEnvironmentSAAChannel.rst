@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvSAAChannel value.
+              - An invalid SpaceEnvironmentSAAChannel value.
 
             * - :py:attr:`~CHANNEL_23_MEV`
               - Models proton energies > 23 MeV.

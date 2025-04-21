@@ -20,10 +20,10 @@ Summary
         
 
             * - :py:class:`~ansys.stk.core.stkutil.ILocationData`
-              - Base interface IAgLocationData. IAgPosition derives from this interface.
+              - Base interface ILocationData. IPosition derives from this interface.
 
             * - :py:class:`~ansys.stk.core.stkutil.IPosition`
-              - IAgPosition provides access to the position of the object.
+              - IPosition provides access to the position of the object.
 
             * - :py:class:`~ansys.stk.core.stkutil.IDirection`
               - Interface to set and retrieve direction options for aligned and constrained vectors.
@@ -53,7 +53,7 @@ Summary
               - Interface to set and retrieve the coordinate type used to specify the orbit state.
 
             * - :py:class:`~ansys.stk.core.stkutil.IRuntimeTypeInfoProvider`
-              - Access point for IAgRuntimeTypeInfo.
+              - Access point for RuntimeTypeInfo.
 
     
     .. tab-item:: Classes
@@ -73,7 +73,7 @@ Summary
               - Object that contains info on the unit.
 
             * - :py:class:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection`
-              - Object that contains a collection of IAgUnitPrefsUnit.
+              - Object that contains a collection of UnitPreferencesUnit.
 
             * - :py:class:`~ansys.stk.core.stkutil.UnitPreferencesDimension`
               - Object that contains info on the Dimension.
@@ -162,19 +162,19 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.RuntimeTypeInfo`
               - Runtime Type info coclass.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationAzEl`
+            * - :py:class:`~ansys.stk.core.stkutil.CommRadOrientationAzEl`
               - AzEl orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationEulerAngles`
+            * - :py:class:`~ansys.stk.core.stkutil.CommRadOrientationEulerAngles`
               - Euler Angles orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationQuaternion`
+            * - :py:class:`~ansys.stk.core.stkutil.CommRadOrientationQuaternion`
               - Quaternion orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationYPRAngles`
+            * - :py:class:`~ansys.stk.core.stkutil.CommRadOrientationYPRAngles`
               - Yaw-Pitch Roll (YPR) Angles orientation system.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationOffsetCart`
+            * - :py:class:`~ansys.stk.core.stkutil.CommRadOrientationOffsetCart`
               - Orientation offset cartesian.
 
 
@@ -306,11 +306,11 @@ in the STK X and STK Objects libraries.
      PropertyInfo<stkutil/PropertyInfo>
      PropertyInfoCollection<stkutil/PropertyInfoCollection>
      RuntimeTypeInfo<stkutil/RuntimeTypeInfo>
-     AgCROrientationAzEl<stkutil/AgCROrientationAzEl>
-     AgCROrientationEulerAngles<stkutil/AgCROrientationEulerAngles>
-     AgCROrientationQuaternion<stkutil/AgCROrientationQuaternion>
-     AgCROrientationYPRAngles<stkutil/AgCROrientationYPRAngles>
-     AgCROrientationOffsetCart<stkutil/AgCROrientationOffsetCart>
+     CommRadOrientationAzEl<stkutil/CommRadOrientationAzEl>
+     CommRadOrientationEulerAngles<stkutil/CommRadOrientationEulerAngles>
+     CommRadOrientationQuaternion<stkutil/CommRadOrientationQuaternion>
+     CommRadOrientationYPRAngles<stkutil/CommRadOrientationYPRAngles>
+     CommRadOrientationOffsetCart<stkutil/CommRadOrientationOffsetCart>
 
 .. toctree::
     :titlesonly:

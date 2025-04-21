@@ -3,7 +3,7 @@ IFlightPathAngle
 
 .. py:class:: ansys.stk.core.stkobjects.IFlightPathAngle
 
-   Base Interface IAgFlightPathAngle. IAgMixedSphericalFPAHorizontal, IAgMixedSphericalFPAVertical, IAgSphericalFPAHorizontal and IAgSphericalFPAVertical derive from this.
+   Base Interface IFlightPathAngle. MixedSphericalFlightPathAngleHorizontal, MixedSphericalFlightPathAngleVertical, SphericalFlightPathAngleHorizontal and SphericalFlightPathAngleVertical derive from this.
 
 .. py:currentmodule:: IFlightPathAngle
 

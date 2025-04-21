@@ -3,7 +3,7 @@ IVolumetricGridDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.IVolumetricGridDefinition
 
-   Base interface IAgVmGridDefinition. IAgVmGridSpatialCalculation and IAgVmExternalFile implement this interface.
+   Base interface IVolumetricGridDefinition. VolumetricGridSpatialCalculation and VolumetricExternalFile implement this interface.
 
 .. py:currentmodule:: IVolumetricGridDefinition
 

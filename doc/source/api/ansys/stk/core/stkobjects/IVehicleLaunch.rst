@@ -3,7 +3,7 @@ IVehicleLaunch
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleLaunch
 
-   Base interface IAgVeLaunch. IAgVeLaunchLLA and IAgVeLaunchLLR derive from this.
+   Base interface IVehicleLaunch. LaunchVehicleLocationDetic and LaunchVehicleLocationCentric derive from this.
 
 .. py:currentmodule:: IVehicleLaunch
 

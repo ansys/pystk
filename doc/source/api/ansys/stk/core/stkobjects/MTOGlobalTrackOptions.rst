@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size`
               - Block size used when allocating new tracks. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference`
-              - Criterion used to reference the altitude. A member of the AgEAltRefType enumeration.
+              - Criterion used to reference the altitude. A member of the AltitudeReferenceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.is_static`
               - Opt whether to make the MTO static.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.maximum_number_of_points_before_pruning`
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference
     :type: AltitudeReferenceType
 
-    Criterion used to reference the altitude. A member of the AgEAltRefType enumeration.
+    Criterion used to reference the altitude. A member of the AltitudeReferenceType enumeration.
 
 .. py:property:: is_static
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.is_static
