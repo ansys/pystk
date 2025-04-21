@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNote.note`
               - Note property.
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNote.show_note`
-              - Property specifying when the note is displayed. A member of the AgENoteShowType enumeration.
+              - Property specifying when the note is displayed. A member of the NoteShowType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNote.show_label`
               - Property specifying whether the label is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNote.intervals`
@@ -50,7 +50,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LabelNote.show_note
     :type: NoteShowType
 
-    Property specifying when the note is displayed. A member of the AgENoteShowType enumeration.
+    Property specifying when the note is displayed. A member of the NoteShowType enumeration.
 
 .. py:property:: show_label
     :canonical: ansys.stk.core.stkobjects.LabelNote.show_label

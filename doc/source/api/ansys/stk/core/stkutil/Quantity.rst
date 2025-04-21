@@ -21,13 +21,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.convert_to_unit`
               - Change the value in this quantity to the specified unit.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.add`
-              - Add the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+              - Add the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.subtract`
-              - Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+              - Subtracts the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.multiply_qty`
-              - Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+              - Multiplies the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.divide_qty`
-              - Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar.
+              - Divides the value from the Quantity interface to this interface. The dimensions must be similar.
 
     .. tab-item:: Properties
         
@@ -97,7 +97,7 @@ Method detail
 .. py:method:: add(self, quantity: Quantity) -> Quantity
     :canonical: ansys.stk.core.stkutil.Quantity.add
 
-    Add the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+    Add the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
 
     :Parameters:
 
@@ -110,7 +110,7 @@ Method detail
 .. py:method:: subtract(self, quantity: Quantity) -> Quantity
     :canonical: ansys.stk.core.stkutil.Quantity.subtract
 
-    Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+    Subtracts the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
 
     :Parameters:
 
@@ -123,7 +123,7 @@ Method detail
 .. py:method:: multiply_qty(self, quantity: Quantity) -> Quantity
     :canonical: ansys.stk.core.stkutil.Quantity.multiply_qty
 
-    Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
+    Multiplies the value from the Quantity interface to this interface. Returns a new Quantity. The dimensions must be similar.
 
     :Parameters:
 
@@ -136,7 +136,7 @@ Method detail
 .. py:method:: divide_qty(self, quantity: Quantity) -> Quantity
     :canonical: ansys.stk.core.stkutil.Quantity.divide_qty
 
-    Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar.
+    Divides the value from the Quantity interface to this interface. The dimensions must be similar.
 
     :Parameters:
 

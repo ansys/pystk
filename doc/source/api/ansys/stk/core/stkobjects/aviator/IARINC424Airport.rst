@@ -3,7 +3,7 @@ IARINC424Airport
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IARINC424Airport
 
-   Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
+   Do not use this interface, as it is deprecated. Use IARINC424Item instead.
 
 .. py:currentmodule:: IARINC424Airport
 

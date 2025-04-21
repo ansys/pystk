@@ -20,13 +20,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~COURSE_MODE_TRUE`
-              - Enumeration AgEAvtrEphemShiftRotateCourseMode:eCourseModeTrue.
+              - Enumeration EphemShiftRotateCourseMode:eCourseModeTrue.
 
             * - :py:attr:`~COURSE_MODE_MAGNITUDE`
-              - Enumeration AgEAvtrEphemShiftRotateCourseMode:eCourseModeMag.
+              - Enumeration EphemShiftRotateCourseMode:eCourseModeMag.
 
             * - :py:attr:`~COURSE_MODE_RELATIVE`
-              - Enumeration AgEAvtrEphemShiftRotateCourseMode:eCourseModeRel.
+              - Enumeration EphemShiftRotateCourseMode:eCourseModeRel.
 
 
 Import detail

@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScheduleTimeCollection.remove_schedule`
               - Remove an interval using the interval interface. Start/Stop use DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScheduleTimeCollection.item`
-              - Retrieve and IAgScheduleTime interface given an index.
+              - Retrieve and ScheduleTime interface given an index.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScheduleTimeCollection.deconflict`
               - Deconflicts the schedule time intervals.
 
@@ -127,7 +127,7 @@ Method detail
 .. py:method:: item(self, index: int) -> ScheduleTime
     :canonical: ansys.stk.core.stkobjects.ScheduleTimeCollection.item
 
-    Retrieve and IAgScheduleTime interface given an index.
+    Retrieve and ScheduleTime interface given an index.
 
     :Parameters:
 

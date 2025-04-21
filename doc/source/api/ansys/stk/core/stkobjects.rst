@@ -45,7 +45,7 @@ Summary
               - Represents the instance of STK object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAccessInterval`
-              - Base interface for IAgTimePeriod and IAgIntervalCollection.
+              - Base interface for ITimePeriod and TimeIntervalCollection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
               - Figure of Merit definition.
@@ -72,19 +72,19 @@ Summary
               - Interface for a control which manages the linking or embedding of a component from the component browser.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IDisplayTimesData`
-              - Base Interface IAgDisplayTimesData. IAgIntervalCollection, IAgDuringAccess and IAgDisplayTimesTimeComponent derive from this.
+              - Base Interface IDisplayTimesData. TimeIntervalCollection, DisplayTimesDuringAccess and DisplayTimesTimeComponent derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
               - The display time interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ITerrainNormData`
-              - Base Interface IAgTerrainNormData. IAgTerrainNormSlopeAzimuth derives from this interface.
+              - Base Interface ITerrainNormData. TerrainNormalSlopeAzimuth derives from this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
               - Provide the information about the lifetime of the object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`
-              - Base interface IAgVeLeadTrailData.
+              - Base interface IVehicleLeadTrailData.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
               - The percentage of the leading or trailing portion of a vehicle's path that will display in the 2D or 3D window.
@@ -93,43 +93,43 @@ Summary
               - Configure the amount of time to display the vehicle's path in 2D or 3D window.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
-              - AgAccessConstraint used to access the AccessConstraint attributes.
+              - AccessConstraint used to access the AccessConstraint attributes.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase`
               - Access Constraint used for min/max constraints.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarkerData`
-              - Base Interface IAgVOMarkerData.
+              - Base Interface IGraphics3DMarkerData.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelData`
-              - IAgVOModelData base interface. IAgVOModelFile and IAgVOModelCollection derive from this.
+              - IGraphics3DModelData base interface. Graphics3DModelFile and Graphics3DModelCollection derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModel`
-              - AgVOModel used to access the 3D model attributes.
+              - IGraphics3DModel used to access the 3D model attributes.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`
-              - IAgVORefCrdn used to access the shared properties of all 3D RefCrdn.
+              - IGraphics3DReferenceAnalysisWorkbenchComponent used to access the shared properties of all 3D RefCrdn.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition`
               - Interface to set and retrieve the LLA position type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
-              - Base Interface for SizeShape property. IAgClassicalSizeShapeAltitude, IAgClassicalSizeShapeMeanMotion, IAgClassicalSizeShapePeriod, IAgClassicalSizeShapeRadius and IAgClassicalSizeShapeSemimajorAxis derive from this.
+              - Base Interface for SizeShape property. ClassicalSizeShapeAltitude, ClassicalSizeShapeMeanMotion, ClassicalSizeShapePeriod, ClassicalSizeShapeRadius and ClassicalSizeShapeSemimajorAxis derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IOrientationAscNode`
-              - Base Interface to IAgOrientationAscNodeLAN and IAgOrientationAscNodeRAAN.
+              - Base Interface to OrientationLongitudeOfAscending and OrientationRightAscensionOfAscendingNode.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
-              - Base Interface of all IAgClassicalLocation* interfaces.
+              - Base Interface of all IClassicalLocation* interfaces.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGeodeticSize`
-              - Base Interface IAgGeodeticSize. IAgGeodeticSizeAltitude and IAgGeodeticSizeRadius derive from this.
+              - Base Interface IGeodeticSize. DeticSizeAltitude and DeticSizeRadius derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayActionVariable`
               - Interface for Delaunay Variable L, which is related to the two-body orbital energy.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
-              - Base Interface IAgFlightPathAngle. IAgMixedSphericalFPAHorizontal, IAgMixedSphericalFPAVertical, IAgSphericalFPAHorizontal and IAgSphericalFPAVertical derive from this.
+              - Base Interface IFlightPathAngle. MixedSphericalFlightPathAngleHorizontal, MixedSphericalFlightPathAngleVertical, SphericalFlightPathAngleHorizontal and SphericalFlightPathAngleVertical derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
               - Provide methods for accessing spatial information for an object.
@@ -153,22 +153,22 @@ Summary
               - A base interface for the Refraction Models.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IDisplayDistance`
-              - Base interface IAgDisplayDistance. IAgSnProjDisplayDistance, IAgSnProjConstantAlt and IAgSnProjObjectAlt derive from this.
+              - Base interface IDisplayDistance. ISensorProjectionDisplayDistance, SensorProjectionConstantAltitude and SensorProjectionObjectAltitude derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance`
-              - IAgSnProjDisplayDistance Interface for setting projection altitude options for a sensor.
+              - ISensorProjectionDisplayDistance Interface for setting projection altitude options for a sensor.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`
-              - Base interface IAgSnPattern. IAgSnComplexConicPattern, IAgSnCustomPattern, IAgSnHalfPowerPattern, IAgSnRectangularPattern, IAgSnSARPattern, IAgSnEOIRPattern and IAgSnSimpleConicPattern implement this interface.
+              - Base interface ISensorPattern. SensorComplexConicPattern, SensorCustomPattern, SensorHalfPowerPattern, SensorRectangularPattern, SensorSARPattern, SensorEOIRPattern and SensorSimpleConicPattern implement this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresight`
-              - Base interface IAgSnPtTrgtBsight. IAgSnPtTrgtBsightFixed and IAgSnPtTrgtBsightTrack derive from this.
+              - Base interface ISensorPointingTargetedBoresight. SensorPointingTargetedBoresightFixed and SensorPointingTargetedBoresightTrack derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`
-              - Base interface IAgSnPointing. IAgSnPt3DModel, IAgSnPtExternal, IAgSnPtFixed, IAgSnPtFixedAxes, IAgSnPtGrazingAlt, IAgSnPtTargeted, IAgSnPtAlongVector and IAgSnPtSchedule implement this interface.
+              - Base interface ISensorPointing. SensorPointing3DModel, SensorPointingExternal, SensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, SensorPointingTargeted, SensorPointingAlongVector and SensorPointingSchedule implement this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAzElMaskData`
-              - Base interface IAgAzElMaskData. IAgSnAzElMaskFile implements this interface.
+              - Base interface IAzElMaskData. SensorAzElMaskFile implements this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapInheritable`
               - Do not use this interface, as it is deprecated. This interface is no longer used and there is no alternative. Provides access to the properties and methods defining a radar inheritable clutter map.
@@ -177,13 +177,13 @@ Summary
               - Provide access to the properties and methods defining the platform RF environment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAreaTypeData`
-              - Base interface IAgAreaTypeData. IAgAreaTypePatternCollection and IAgAreaTypeEllipse derive from it.
+              - Base interface IAreaTypeData. AreaTypePatternCollection and AreaTypeEllipse derive from it.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IPositionSourceData`
-              - Base interface to IAgPlPosCentralBody and IAgPlPosFile.
+              - Base interface to PlanetPositionCentralBody and PlanetPositionFile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IOrbitDisplayData`
-              - IAgOrbitDisplayData Interface. IAgPlOrbitDisplayTime derives from this.
+              - IOrbitDisplayData Interface. PlanetOrbitDisplayTime derives from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IPolarization`
               - Provide the base interface for the a polarization object.
@@ -240,7 +240,7 @@ Summary
               - Provide access to the properties and methods defining a simple optical antenna model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContour`
-              - IAgAntennaContour Interface for a antenna's contour properties.
+              - IAntennaContour Interface for a antenna's contour properties.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
               - Provide access to a beam selection strategy.
@@ -282,10 +282,10 @@ Summary
               - Provide access to the properties and methods defining a radar STC attenuation map.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel`
-              - Do not use this interface, as it is deprecated. Use IAgScatteringPointProvider interface instead. Provides access to the properties and methods defining a radar clutter geometry model.
+              - Do not use this interface, as it is deprecated. Use IScatteringPointProvider interface instead. Provides access to the properties and methods defining a radar clutter geometry model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin`
-              - Do not use this interface, as it is deprecated. Use IAgScatteringPointProviderPlugin interface instead. Provides access to the properties and methods defining a radar clutter geometry plugin model.
+              - Do not use this interface, as it is deprecated. Use ScatteringPointProviderPlugin interface instead. Provides access to the properties and methods defining a radar clutter geometry plugin model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode`
               - Interface which defines an continuous wave analysis.
@@ -315,13 +315,13 @@ Summary
               - Provide access to the properties and methods defining a bistatic receiver mode.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModel`
-              - Do not use this interface, as it is deprecated. Use IAgScatteringPointModel interface instead. Provides access to the properties and methods defining a radar clutter map model.
+              - Do not use this interface, as it is deprecated. Use IScatteringPointModel interface instead. Provides access to the properties and methods defining a radar clutter map model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin`
-              - Do not use this interface, as it is deprecated. Use IAgScatteringPointModelPlugin interface instead. Provides access to the properties and methods defining a radar clutter map plugin model.
+              - Do not use this interface, as it is deprecated. Use ScatteringPointModelPlugin interface instead. Provides access to the properties and methods defining a radar clutter map plugin model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient`
-              - Do not use this interface, as it is deprecated. Use IAgScatteringPointModelConstantCoefficient interface instead. Provides access to the properties and methods defining a radar clutter map constant coefficient model.
+              - Do not use this interface, as it is deprecated. Use ScatteringPointModelConstantCoefficient interface instead. Provides access to the properties and methods defining a radar clutter map constant coefficient model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
               - Provide access to the properties and methods defining a radar cross section compute Strategy.
@@ -387,7 +387,7 @@ Summary
               - Load Method Data interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitude`
-              - Base Interface IAgVeSolarFluxGeoMag. IAgVeSolarFluxGeoMagEnterManually and IAgVeSolarFluxGeoMagUseFile derive from this interface.
+              - Base Interface IVehicleSolarFluxGeoMagnitude. SolarFluxGeoMagneticValueSettings and SolarFluxGeoMagneticFileSettings derive from this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IPropagator`
               - Base vehicle propagator interface.
@@ -396,16 +396,16 @@ Summary
               - Base interface for the altitude references.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpact`
-              - Base Interface IAgVeImpact. IAgVeImpactLLA and IAgVeImpactLLR derive from this.
+              - Base Interface IVehicleImpact. VehicleImpactLocationDetic and VehicleImpactLocationCentric derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControl`
-              - Base Interface IAgVeLaunchControl. IAgVeLaunchControlFixedApogeeAlt, IAgVeLaunchControlFixedDeltaV, IAgVeLaunchControlDixedDeltaVMinEcc and IAgVeLaunchControlTimeOfFlight derive from this.
+              - Base Interface IVehicleLaunchControl. LaunchVehicleControlFixedApogeeAltitude, LaunchVehicleControlFixedDeltaV, IVehicleLaunchControlDixedDeltaVMinEcc and IVehicleLaunchControlTimeOfFlight derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunch`
-              - Base interface IAgVeLaunch. IAgVeLaunchLLA and IAgVeLaunchLLR derive from this.
+              - Base interface IVehicleLaunch. LaunchVehicleLocationDetic and LaunchVehicleLocationCentric derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLocation`
-              - Base interface IAgVeImpactLocation. IAgVeImpactLocationLaunchAzEl and IAgVeImpactLocationPoint derive from this.
+              - Base interface IVehicleImpactLocation. VehicleImpactLocationLaunchAzEl and VehicleImpactLocationPoint derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
               - A common base interface for GPS almanac properties.
@@ -423,10 +423,10 @@ Summary
               - Standard attitude profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPass`
-              - interface IAgVeGfxPass. IAgVeGfxPassShowPasses and IAgVeGfxPassResolution derive from this.
+              - interface IVehicleGraphics2DPass. VehicleGraphics2DPassShowPasses and VehicleGraphics2DPassResolution derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`
-              - Base Interface IAgVeGfxTimeEventType. IAgVeGfxTimeEventTypeLine, IAgVeGfxTimeEventTypeMarker and IAgVeGfxTimeEventTypeText derive from this.
+              - Base Interface IVehicleGraphics2DTimeEventType. VehicleGraphics2DTimeEventTypeLine, VehicleGraphics2DTimeEventTypeMarker and VehicleGraphics2DTimeEventTypeText derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`
               - Base Interface for Vehicle 2D Graphics Attributes.
@@ -438,7 +438,7 @@ Summary
               - Provide access to non-trivial properties of 2D vehicle attributes.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevation`
-              - Base Interface IAgVeGfxElevation. IAgVeGfxElevationGroundElevation, IAgVeGfxElevationsSwathHalfWidth and IAgVeGfxElevationsSwathHalfAngle derive from this.
+              - Base Interface IVehicleGraphics2DElevation. VehicleGraphics2DElevationGroundElevation, IVehicleGraphics2DElevationsSwathHalfWidth and IVehicleGraphics2DElevationsSwathHalfAngle derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views.
@@ -453,13 +453,13 @@ Summary
               - Base Proximity graphics interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScale`
-              - Base Interface IAgVeVOSigmaScale. IAgVeVOSigmaScaleScale and IAgVeVOSigmaScaleProbability derive from this.
+              - Base Interface IVehicleGraphics3DSigmaScale. VehicleGraphics3DSigmaScaleScale and VehicleGraphics3DSigmaScaleProbability derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributes`
-              - Base Interface IAgVeVOAttributes. IAgVeVOAttributesBasic and IAgVeVOAttributesIntervals derive from this.
+              - Base Interface IVehicleGraphics3DAttributes. VehicleGraphics3DAttributesBasic and VehicleGraphics3DAttributesIntervals derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`
-              - Base interface IAgVeVOTickData. IAgVeVOTickDataLine and IAgVeVOTickDataPoint derive from this.
+              - Base interface IVehicleGraphics3DTickData. VehicleGraphics3DTickDataLine and VehicleGraphics3DTickDataPoint derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
               - 2D Graphics common for all Great Arc Vehicles.
@@ -474,25 +474,25 @@ Summary
               - A base class for BPlane target point position interfaces.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IEOIR`
-              - Property used to access IAgEOIR interface.
+              - Property used to access IEOIR interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngle`
-              - Base Interface IAgVeBreakAngle. IAgVeBreakAngleBreakByLatitude and IAgVeBreakAngleBreakByLongitude derive from this.
+              - Base Interface IVehicleBreakAngle. VehicleBreakAngleBreakByLatitude and VehicleBreakAngleBreakByLongitude derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumbering`
-              - Base Interaface IAgVePassNumbering. IAgVePassNumberingDateOfFirstPass and IAgVePassNumberingFirstPassNum derive from this.
+              - Base Interaface IVehiclePassNumbering. PassBreakNumberingDateOfFirstPass and PassBreakNumberingFirstPassNumber derive from this.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxes`
-              - IAgVeCoordinateAxes.
+              - IVehicleCoordinateAxes.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IChainTimePeriod`
               - Chain time period options.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBounds`
-              - Base interface for IAgCvBoundsCustom, IAgCvBoundsGlobal, IAgCvBoundsLat, IAgCvBoundsLatLines, IAgCvBoundsLonLines, IAgCvBoundsCustomBoundary.
+              - Base interface for ICoverageBoundsCustom, CoverageBoundsGlobal, CoverageBoundsLatitude, CoverageBoundsLatitudeLines, CoverageBoundsLongitudeLines, CoverageBoundsCustomBoundary.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ICoverageResolution`
-              - Base interface for IAgCvResolutionArea, IAgCvResolutionDistance and IAgCvResolutionLatLon, used to define coverage resolution (spacing between grid points).
+              - Base interface for CoverageResolutionArea, CoverageResolutionDistance and CoverageResolutionLatLon, used to define coverage resolution (spacing between grid points).
 
             * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours`
               - Coverage contours.
@@ -504,7 +504,7 @@ Summary
               - Navigation Accuracy Figure of Merit type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
-              - IAgFmDefinitionData.
+              - IFigureOfMeritDefinitionData.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime`
               - Response Time Figure of Merit.
@@ -513,7 +513,7 @@ Summary
               - Dilution Of Precision Figure of Merit.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IConstellationConstraintRestriction`
-              - A base interface for all interfaces returned by the Restriction property of the IAgCnConstraints interface. It can be cast to IAgCnCnstrObjectRestriction.
+              - A base interface for all interfaces returned by the Restriction property of the ConstellationConstraints interface. It can be cast to ConstellationConstraintObjectRestriction.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IEventDetectionStrategy`
               - Define a base interface for the event detection strategies.
@@ -525,7 +525,7 @@ Summary
               - Represents an attitude slew base type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IVolumetricGridDefinition`
-              - Base interface IAgVmGridDefinition. IAgVmGridSpatialCalculation and IAgVmExternalFile implement this interface.
+              - Base interface IVolumetricGridDefinition. VolumetricGridSpatialCalculation and VolumetricExternalFile implement this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
               - A shape object interface.
@@ -854,7 +854,7 @@ Summary
               - Class defining the Exclusion Zone constraint.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody`
-              - Do not use this class, as it is deprecated. Use AgAccessCnstrCbObstruction instead. Class defining Central Body Obstruction constraints.
+              - Do not use this class, as it is deprecated. Use AccessConstraintCentralBodyObstruction instead. Class defining Central Body Obstruction constraints.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection`
               - Collection of Exclusion Zones used in Exclusion Zone constraint.
@@ -1238,7 +1238,7 @@ Summary
               - SGP4 propagator. Allows the user to load segments from online.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorSGP4OnlineAutoLoad`
-              - Do not use this class, as it is deprecated. Use AgVeSGP4OnlineLoad instead. SGP4 propagator. Allows the user to load the most current segment from online.
+              - Do not use this class, as it is deprecated. Use PropagatorSGP4OnlineLoad instead. SGP4 propagator. Allows the user to load the most current segment from online.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection`
               - List of Ground Ellipses.
@@ -1301,7 +1301,7 @@ Summary
               - Aligned and Constrained attitude profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.RotationRateAndOffset`
-              - AgVeSpin Class.
+              - RotationRateAndOffset Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AttitudeProfileAlignedAndConstrained`
               - Aligned and Constrained attitude profile.
@@ -1436,7 +1436,7 @@ Summary
               - 2D Graphics pass properties: lead/trail for ground tracks.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData`
-              - AgVeGfxPassData Class.
+              - VehicleGraphics2DOrbitPassData Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData`
               - 2D Graphics ground track and trajectory properties.
@@ -1613,10 +1613,10 @@ Summary
               - 3D velocity covariance ellipsoids.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryProximity`
-              - AgVeTrajectoryProximity Class.
+              - VehicleGraphics3DTrajectoryProximity Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory`
-              - AgLvVOTrajectory Class.
+              - LaunchVehicleGraphics3DTrajectory Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTrackData`
               - 3D leading/trailing track data for launch vehicles and missiles.
@@ -1625,7 +1625,7 @@ Summary
               - 3D ground track and trajectory data for a launch vehicle or missile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData`
-              - AgLvVOTrajectory2 Class.
+              - LaunchVehicleGraphics3DTrajectory2 Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks`
               - Tick mark data for launch vehicles and missiles.
@@ -1640,7 +1640,7 @@ Summary
               - Collection of Waypoint Markers .
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DRoute`
-              - AgVeVORoute2 Class.
+              - VehicleGraphics3DRoute2 Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelPointing`
               - List of pointable model elements.
@@ -1676,13 +1676,13 @@ Summary
               - 3D marker for great arc vehicles.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement`
-              - Element of IAgVeVOBPlaneTemplateDisplayCollection.
+              - Element of VehicleGraphics3DBPlaneTemplateDisplayCollection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection`
               - 3D DisplayElements collection for BPlane.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate`
-              - An element of IAgVeVOBPlaneTemplatesCollection.
+              - An element of VehicleGraphics3DBPlaneTemplatesCollection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplatesCollection`
               - A list of available b-plane templates.
@@ -1703,13 +1703,13 @@ Summary
               - 3D BPlane TargetPoint.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance`
-              - An element in the IAgVeVOBPlanePointCollection.
+              - An element in the VehicleGraphics3DBPlanePointCollection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstancesCollection`
               - A list of available b-plane instances.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection`
-              - AgVeVOBPlaneCollection Class.
+              - VehicleGraphics3DBPlanePointCollection Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes`
               - 3D BPlanes properties.
@@ -1730,7 +1730,7 @@ Summary
               - 2D Graphics properties for ground vehicles.
 
             * - :py:class:`~ansys.stk.core.stkobjects.GroundVehicleGraphics3D`
-              - AgGvVOVO Class.
+              - GroundVehicleGraphics3DVO Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Missile`
               - Missile object.
@@ -1853,13 +1853,13 @@ Summary
               - Line Target Path properties.
 
             * - :py:class:`~ansys.stk.core.stkobjects.LineTargetGraphics`
-              - The AgLtGraphics class.
+              - The LineTargetGraphics class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.LineTargetGraphics3D`
-              - The AgLtVO class.
+              - The LineTargetGraphics3D class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageDefinition`
-              - The AgCoverageDefinition class.
+              - The CoverageDefinition class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions`
               - Custom Regions.
@@ -1943,7 +1943,7 @@ Summary
               - 2D graphics display options for the coverage grid.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics3D`
-              - AgCvVOStatic Class.
+              - CoverageGraphics3DStatic Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics3DAttributes`
               - 3D animation or static graphics options.
@@ -1958,7 +1958,7 @@ Summary
               - Chain constraints.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Chain`
-              - AgChain Class is used to access the methods and properties of the STK Chain Object.
+              - Chain Class is used to access the methods and properties of the STK Chain Object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ChainConnection`
               - Class defining Chain connections.
@@ -2066,7 +2066,7 @@ Summary
               - Animation graphics for a Figure of Merit.
 
             * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics`
-              - AgFmGfxGraphics Class.
+              - FigureOfMeritGraphics Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor`
               - Color ramp method for contours: select start and end colors to define spectrum segment.
@@ -2114,16 +2114,16 @@ Summary
               - GPS Attitude profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.StkObjectModelContext`
-              - AgStkObjectModelContext class provides methods to create instance of AgStkObjectRoot class.
+              - StkObjectModelContext class provides methods to create instance of StkObjectRoot class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols`
-              - AgStdMil2525bSymbols class provides methods to create 2525b symbols.
+              - MilitaryStandard2525bSymbols class provides methods to create 2525b symbols.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageGridInspector`
-              - AgCvGridInspector class provides methods to use the grid inspector tool for coverage definition.
+              - CoverageGridInspector class provides methods to use the grid inspector tool for coverage definition.
 
             * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector`
-              - AgFmGridInspector class provides methods to use the grid inspector tool for FOM.
+              - FigureOfMeritGridInspector class provides methods to use the grid inspector tool for FOM.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail`
               - Vapor trail attributes.
@@ -2210,31 +2210,31 @@ Summary
               - The Ship Export Tools.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool`
-              - AgVeEphemerisTypeCode500 Class.
+              - VehicleEphemerisCode500ExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool`
-              - AgVeEphemerisTypeCCSDS Class.
+              - VehicleEphemerisCCSDSExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool`
-              - AgVeEphemerisTypeSTK Class.
+              - VehicleEphemerisExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool`
-              - AgVeEphemerisTypeSpice Class.
+              - VehicleEphemerisSPICEExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ExportToolTimePeriod`
               - Specify Time Period.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool`
-              - AgVeExternalFileAttitude Class.
+              - VehicleAttitudeExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorDefinitionExportTool`
-              - AgVeExternalFileAttitude Class.
+              - PropagatorDefinitionExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom`
               - Custom.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ExportToolStepSize`
-              - AgStepSize Class.
+              - ExportToolStepSize Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ProgressBarEventArguments`
               - Represents a structure used by the Percent Complete events.
@@ -2282,7 +2282,7 @@ Summary
               - Allow the user to create vehicle's ephemeris by appending ephemeris points.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorRealtimeCartesianPoints`
-              - AgVeRealtimeCartesianPoint Class.
+              - PropagatorRealtimeCartesianPoints Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorRealtimeHeadingPitch`
               - Add one ephemeris point using latitude/longitude/altitude coordinate system.
@@ -2507,7 +2507,7 @@ Summary
               - The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisBinaryExportTool`
-              - AgVeEphemerisTypeSTKBinary Class.
+              - VehicleEphemerisBinaryExportTool Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.OrbitState`
               - Class defining orbit state.
@@ -3211,7 +3211,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderPlugin`
               - Class defining a plugin scattering point provider.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AgCRPluginConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommRadPluginConfiguration`
               - Class defining plugin configuration.
 
             * - :py:class:`~ansys.stk.core.stkobjects.RadarJamming`
@@ -3779,7 +3779,7 @@ Summary
               - Attribute based component link/embed control.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Volumetric`
-              - The AgVolumetric class.
+              - The Volumetric class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation`
               - Class defining the volume grid spatial calculation.
@@ -3830,10 +3830,10 @@ Summary
               - The Volumetric Export Tool.
 
             * - :py:class:`~ansys.stk.core.stkobjects.SatelliteCollection`
-              - The AgSatelliteCollection class.
+              - The SatelliteCollection class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Subset`
-              - The AgSubset class.
+              - The Subset class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ElementConfiguration`
               - Class defining an element configuration.
@@ -4076,13 +4076,13 @@ Summary
               - Plume shape class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.EOIRShape`
-              - AgEOIRShape class.
+              - EOIRShape class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCollection`
               - Collection of shapes.
 
             * - :py:class:`~ansys.stk.core.stkobjects.EOIRMaterialElement`
-              - AgEOIRMaterialElement class.
+              - EOIRMaterialElement class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.EOIRMaterialElementCollection`
               - Collection of material elements.
@@ -4091,13 +4091,13 @@ Summary
               - Stage base class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.EOIR`
-              - AgEOIR interface class.
+              - EOIR interface class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.MissileEOIR`
-              - AgMsEOIR interface class.
+              - MissileEOIR interface class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleEOIR`
-              - AgVeEOIR interface class.
+              - VehicleEOIR interface class.
 
 
     .. tab-item:: Enums
@@ -4108,7 +4108,7 @@ Summary
         
 
             * - :py:class:`~ansys.stk.core.stkobjects.Constants`
-              - AgEConstants contains base IDs for various structures.
+              - Constants contains base IDs for various structures.
 
             * - :py:class:`~ansys.stk.core.stkobjects.HelpContextIdentifierType`
               - Help context IDs.
@@ -4189,7 +4189,7 @@ Summary
               - Methods for connecting geometric elements.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarkerOriginType`
-              - Options for the AgVOMarker X or Y Origin property.
+              - Options for the Graphics3DMarker X or Y Origin property.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistanceType`
               - Label swap distance options.
@@ -4447,7 +4447,7 @@ Summary
               - Font format for data display.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AttitudeStandardType`
-              - AgEAttitudeStandardType tells the user which interface to cast to. eRouteAttitudeStandard -> IAgVeRouteAttitudeStandard, eTrajectoryAttitudeStandard -> IAgVeTrajectoryAttitudeStandard, eOrbitAttitudeStanard -> IAgVeOrbitAttitudeStandard.
+              - AttitudeStandardType tells the user which interface to cast to. eRouteAttitudeStandard -> AttitudeStandardRoute, eTrajectoryAttitudeStandard -> AttitudeStandardTrajectory, eOrbitAttitudeStanard -> AttitudeStandardOrbit.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitude`
               - Available attitude types.
@@ -6284,7 +6284,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ScatteringPointProviderRangeOverCFARCells<stkobjects/ScatteringPointProviderRangeOverCFARCells>
      ScatteringPointProviderSmoothOblateEarth<stkobjects/ScatteringPointProviderSmoothOblateEarth>
      ScatteringPointProviderPlugin<stkobjects/ScatteringPointProviderPlugin>
-     AgCRPluginConfiguration<stkobjects/AgCRPluginConfiguration>
+     CommRadPluginConfiguration<stkobjects/CommRadPluginConfiguration>
      RadarJamming<stkobjects/RadarJamming>
      RFInterference<stkobjects/RFInterference>
      RFFilterModel<stkobjects/RFFilterModel>

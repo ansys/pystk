@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvMagneticExternalField value.
+              - An invalid SpaceEnvironmentMagneticExternalField value.
 
             * - :py:attr:`~NONE`
               - Indicate that no external field is modeled.

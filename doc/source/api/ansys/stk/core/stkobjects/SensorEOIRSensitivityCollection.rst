@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.item`
-              - Given an index, returns an IAgSnEOIRRadiometricPair interface.
+              - Given an index, returns an SensorEOIRRadiometricPair interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.add`
               - Add a radiometric pair.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.remove_at`
@@ -70,7 +70,7 @@ Method detail
 .. py:method:: item(self, index: int) -> SensorEOIRRadiometricPair
     :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.item
 
-    Given an index, returns an IAgSnEOIRRadiometricPair interface.
+    Given an index, returns an SensorEOIRRadiometricPair interface.
 
     :Parameters:
 

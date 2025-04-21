@@ -419,4 +419,9 @@
    <Mapping OldName="AgPropertyInfo" NewName="PropertyInfo" Category="class" />
    <Mapping OldName="AgPropertyInfoCollection" NewName="PropertyInfoCollection" Category="class" />
    <Mapping OldName="AgRuntimeTypeInfo" NewName="RuntimeTypeInfo" Category="class" />
+   <Mapping OldName="AgCROrientationAzEl" NewName="CommRadOrientationAzEl" Category="class" />
+   <Mapping OldName="AgCROrientationEulerAngles" NewName="CommRadOrientationEulerAngles" Category="class" />
+   <Mapping OldName="AgCROrientationQuaternion" NewName="CommRadOrientationQuaternion" Category="class" />
+   <Mapping OldName="AgCROrientationYPRAngles" NewName="CommRadOrientationYPRAngles" Category="class" />
+   <Mapping OldName="AgCROrientationOffsetCart" NewName="CommRadOrientationOffsetCart" Category="class" />
 </Mappings>

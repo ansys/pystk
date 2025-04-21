@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.graphics_3d`
               - Get the ship's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.export_tools`
-              - Return the IAgShExportTools interface.
+              - Return the ShipExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.atmosphere`
               - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.radar_clutter_map`
@@ -72,7 +72,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Ship.export_tools
     :type: ShipExportTools
 
-    Return the IAgShExportTools interface.
+    Return the ShipExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Ship.atmosphere

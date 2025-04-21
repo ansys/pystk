@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Sets the current filter model by name.
 
     .. tab-item:: Properties
         
@@ -40,9 +40,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.saturated_power`
               - Get or set the saturated power.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex.antenna_control`
@@ -91,13 +91,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Gets the current filter model.
 
 .. py:property:: saturated_power
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.saturated_power
@@ -144,7 +144,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelComplex instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelComplex instead. Sets the current filter model by name.
 
     :Parameters:
 

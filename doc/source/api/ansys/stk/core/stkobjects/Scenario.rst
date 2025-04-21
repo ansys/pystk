@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_existing_accesses`
               - Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path`
-              - Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+              - Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     .. tab-item:: Properties
         
@@ -355,7 +355,7 @@ Method detail
 .. py:method:: get_access_between_objects_by_path(self, object_path1: str, object_path2: str) -> Access
     :canonical: ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path
 
-    Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+    Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     :Parameters:
 

@@ -44,9 +44,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.color`
               - Get or set the color in which swath graphics are displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.line_style`
-              - Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
+              - Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the LineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.line_width`
-              - Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
+              - Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the LineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.time_interval_count`
               - Number of Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.minimum_step`
@@ -91,13 +91,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Swath.line_style
     :type: LineStyle
 
-    Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
+    Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the LineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.Swath.line_width
     :type: LineWidth
 
-    Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
+    Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the LineWidth enumeration.
 
 .. py:property:: time_interval_count
     :canonical: ansys.stk.core.stkobjects.Swath.time_interval_count

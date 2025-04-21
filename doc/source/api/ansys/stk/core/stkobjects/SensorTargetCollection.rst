@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.item`
-              - Given an index, returns an IAgSnTarget interface.
+              - Given an index, returns an SensorTarget interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.add`
               - Add a target.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove`
@@ -78,7 +78,7 @@ Method detail
 .. py:method:: item(self, index: int) -> SensorTarget
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.item
 
-    Given an index, returns an IAgSnTarget interface.
+    Given an index, returns an SensorTarget interface.
 
     :Parameters:
 

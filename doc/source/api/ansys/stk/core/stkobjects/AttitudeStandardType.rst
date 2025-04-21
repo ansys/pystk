@@ -20,13 +20,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ROUTE_ATTITUDE_STANDARD`
-              - Cast to IAgVeRouteAttitudeStandard interface.
+              - Cast to AttitudeStandardRoute interface.
 
             * - :py:attr:`~TRAJECTORY_ATTITUDE_STANDARD`
-              - Cast to IAgVeTrajectoryAttitudeStandard interface.
+              - Cast to AttitudeStandardTrajectory interface.
 
             * - :py:attr:`~ORBIT_ATTITUDE_STANDARD`
-              - Cast to IAgVeOrbitAttitudeStandard interface.
+              - Cast to AttitudeStandardOrbit interface.
 
 
 Import detail

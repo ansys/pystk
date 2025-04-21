@@ -6,7 +6,7 @@ What is a scenario?
 
 A scenario in the Ansys STK® application is an instance of an analytical or operational task that you are modeling with STK. 
 
-In the PySTK API, the :py:class:`ansys.stk.core.stkobjects.Scenario` object defines the context in which the properties and behavior of other objects are defined. Here you can enter global settings for time, units of measure, graphics attributes, and many other features, some of which can be overridden locally for specific objects.
+In the PySTK API, the :py:class:`~ansys.stk.core.stkobjects.Scenario` object defines the context in which the properties and behavior of other objects are defined. Here you can enter global settings for time, units of measure, graphics attributes, and many other features, some of which can be overridden locally for specific objects.
 
 Saving an STK application scenario
 ==================================
