@@ -27,7 +27,8 @@ Nemo
 Pandas
 periapsis
 prograde
-[Pp]recessing
+Precessing
+precessing
 PySTK
 Python
 STK
