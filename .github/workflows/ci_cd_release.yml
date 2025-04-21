@@ -77,10 +77,10 @@ jobs:
       contents: read
       id-token: write
     strategy:
-       matrix:
-           os: [ubuntu-latest, windows-latest]
-           python-version: [, '3.11', '3.12', '3.13']
-           target: ['all', 'grpc', 'visualization']
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: [, '3.11', '3.12', '3.13']
+        target: ['all', 'grpc', 'visualization']
     steps:
       - name: "Build a wheelhouse of the Python library"
         uses: ansys/actions/build-wheelhouse@v9
