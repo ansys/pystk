@@ -28,13 +28,13 @@ Analysis Workbench
   - :ref:`Create a new fixed in axes vector <CreateFixedAxesVector>`
   - :ref:`Create a new displacement vector <CreateDisplacementVector>`
   - :ref:`Get a default vgt component on vehicle <GetVGTCompVehicle>`
-  - :ref:`Get the center point and inertial system of earth's central body <GetVGTPoint>`
+  - :ref:`Get the center point and inertial system of Earth central body <GetVGTPoint>`
 Camera
   - :ref:`Change the camera reference frame <CameraReferenceFrame>`
   - :ref:`Change the camera view to imagery extents <CameraExtents>`
 Colors
-  - :ref:`Get and set a four-channel color for the graphics of an stk application object <GetSetRGBAColor>`
-  - :ref:`Get and set a three-channel color for the graphics of an stk application object <GetSetRGBColor>`
+  - :ref:`Get and set a four-channel color for the graphics of an STK graphics primitive <GetSetRGBAColor>`
+  - :ref:`Get and set a three-channel color for the graphics of an STK graphics primitive <GetSetRGBColor>`
 Connect
   - :ref:`Extract data from connect results <ResultsConnectCommand>`
   - :ref:`Use arrays to send and retrieve data with connect <ConnectCommandArrays>`
@@ -65,12 +65,12 @@ Graphics
   - :ref:`Compute interpolated positions along a great arc <GreatArcInterpolatorPrimitives>`
   - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
-  - :ref:`Attach to an already running stk runtime instance and get a reference to the stk application object root <AttachSTKRuntimeSnippet>`
-  - :ref:`Start stk runtime and get a reference to the stk object root <CreateSTKRuntimeNewSnippet>`
-  - :ref:`Start stk desktop and get a reference to the stk object root <CreateSTKNew>`
-  - :ref:`Get a reference to the stk object root using a running stk desktop application instance <AttachSTK>`
-  - :ref:`Initialize stk engine in no graphics mode and get a reference to the stk object root <StartSTKEngineSnippetWithoutGfx>`
-  - :ref:`Initialize stk engine with graphics and get a reference to the stk object root <StartSTKEngineWithGfx>`
+  - :ref:`Attach to an already running STK runtime instance and get a reference to the STK object root <AttachSTKRuntimeSnippet>`
+  - :ref:`Start STK runtime and get a reference to the STK object root <CreateSTKRuntimeNewSnippet>`
+  - :ref:`Start STK desktop and get a reference to the STK object root <CreateSTKNew>`
+  - :ref:`Get a reference to the STK object root using a running STK desktop application instance <AttachSTK>`
+  - :ref:`Initialize STK Engine in no graphics mode and get a reference to the STK object root <StartSTKEngineSnippetWithoutGfx>`
+  - :ref:`Initialize STK Engine with graphics and get a reference to the STK object root <StartSTKEngineWithGfx>`
 Scenario
   Scenario Management
     - :ref:`Change the scenario font <ScenarioFont>`
@@ -79,9 +79,9 @@ Scenario
     - :ref:`Set the current scenario's time period <SetScenarioTimePeriod>`
     - :ref:`Set unit preferences for the object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
-    - :ref:`Close the stk application <CloseSTK>`
-    - :ref:`Manage stk desktop application events <STKDesktopEvents>`
-    - :ref:`Manage stk engine application events <STKEngineEvents>`
+    - :ref:`Close the STK desktop application <CloseSTK>`
+    - :ref:`Manage STK desktop application events <STKDesktopEvents>`
+    - :ref:`Manage STK Engine events <STKEngineEvents>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -92,11 +92,11 @@ STK Objects
     - :ref:`Compute and extract access interval times <ExtractAccessIntervals>`
     - :ref:`Compute an access for one point <ComputeAccessPoint>`
     - :ref:`Compute an access with advanced settings <ComputeAccessAdvancedSettings>`
-    - :ref:`Compute an access between two stk objects (using object path) <ComputeAccessPaths>`
-    - :ref:`Compute an access between two stk objects (using istkobject interface) <ComputeAccess>`
+    - :ref:`Compute an access between two STK objects (using object path) <ComputeAccessPaths>`
+    - :ref:`Compute an access between two STK objects (using istkobject interface) <ComputeAccess>`
     - :ref:`Remove all access constraints except for line of sight <RemoveAllConstraints>`
     - :ref:`Add an exclusion zone access constraint <AddExclusionZoneConstraint>`
-    - :ref:`Add multiple access constraints of the same type to an stk object <AddMultipleConstraint>`
+    - :ref:`Add multiple access constraints of the same type to an STK object <AddMultipleConstraint>`
     - :ref:`Add and configure an altitude access constraint <AddAltitudeConstraint>`
     - :ref:`Add and configure a central body obstruction access constraint <AddCbObstructionConstraint>`
     - :ref:`Add and configure a sun elevation angle access constraint <AddSunElevationAngleConstraint>`
@@ -588,7 +588,7 @@ Get a default VGT component on vehicle
 
 .. _GetVGTPoint:
 
-Get the center point and inertial system of Earth's central body
+Get the center point and inertial system of Earth central body
 ================================================================
 
 .. code-block:: python
@@ -629,7 +629,7 @@ Change the camera view to imagery extents
 
 .. _GetSetRGBAColor:
 
-Get and set a four-channel color for the graphics of an STK application object
+Get and set a four-channel color for the graphics of an STK graphics primitive
 ==============================================================================
 
 .. code-block:: python
@@ -651,7 +651,7 @@ Get and set a four-channel color for the graphics of an STK application object
 
 .. _GetSetRGBColor:
 
-Get and set a three-channel color for the graphics of an STK application object
+Get and set a three-channel color for the graphics of an STK graphics primitive
 ===============================================================================
 
 .. code-block:: python
@@ -1108,7 +1108,7 @@ Combine enumerations with the logical or operator
 
 .. _AttachSTKRuntimeSnippet:
 
-Attach to an already running STK runtime instance and get a reference to the STK application object root
+Attach to an already running STK runtime instance and get a reference to the STK object root
 ========================================================================================================
 
 .. code-block:: python
@@ -1334,8 +1334,8 @@ Create a new scenario
 
 .. _CloseSTK:
 
-Close the STK application
-=========================
+Close the STK desktop application
+=================================
 
 .. code-block:: python
 
@@ -1376,8 +1376,8 @@ Manage STK desktop application events
 
 .. _STKEngineEvents:
 
-Manage STK Engine application events
-====================================
+Manage STK Engine events
+========================
 
 .. code-block:: python
 

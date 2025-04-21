@@ -56,7 +56,7 @@ APIs/helper functions that facilitate specific workflows.
 What's included in the API
 ==========================
 
-The PySTK API offers a variety of options to automate and customize the STK application and to
+The PySTK API offers a variety of options to automate and customize STK and to
 integrate its technology into other workflows. Additional options enable you to
 interface to STK externally through gRPC (Remote Procedure Calls), and to
 develop custom applications.

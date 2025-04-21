@@ -9,7 +9,7 @@ Local prerequisites
 To get started using PySTK locally, the following is required:
 
 - Python 
-- A licensed version of the Ansys STK® Desktop application or STK Engine
+- A licensed version of the Ansys STK® desktop application or STK Engine
 
 Install Python
 ^^^^^^^^^^^^^^
@@ -25,13 +25,13 @@ https://jupyter.org/install.
 
     If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 
-Install STK Desktop or STK Engine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install the STK desktop application or STK Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The STK Desktop application or STK Engine must be installed and licensed on your machine.
+The STK desktop application or STK Engine must be installed and licensed on your machine.
 
-Install STK Desktop
-^^^^^^^^^^^^^^^^^^^
+Install the STK desktop application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 STK desktop software is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details on installing the STK application.
 

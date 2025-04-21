@@ -64,8 +64,8 @@ represented using the :obj:`list` class.
   :end-at: command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
   :dedent:
 
-STK application interfaces and classes
---------------------------------------
+STK interfaces and classes
+--------------------------
 
 The STK object model is comprised of programming interfaces that are 
 implemented by Python classes located in the provided modules. With few 
@@ -74,7 +74,7 @@ interfaces. You may immediately access any method from the inherited
 interfaces without casting, although in some situations casting may improve 
 IDE auto-complete feature results. These classes have a reference to an STK 
 object; this reference is removed upon calling ``del()`` on the Python class. 
-Because these classes are references to STK application objects, you cannot 
+Because these classes are references to STK objects, you cannot 
 create them directly from Python; objects must be returned from PySTK methods.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/stk_objects/facility/facility_snippets.py
@@ -203,7 +203,7 @@ Events
 ======
 
 Events are mechanisms that enable you to respond to specific changes or 
-actions occurring within an STK application scenario or the application 
+actions occurring within an STK scenario or the application 
 itself. Events enable you to automate responses to particular triggers, such 
 as when a scenario reaches a certain time, when an object's state changes, or 
 when specific conditions are met during a simulation.
@@ -213,7 +213,7 @@ attaching custom Python functions or scripts that are executed automatically
 when predefined conditions are satisfied. For instance, you might want to log 
 specific data whenever a satellite enters a certain region or when a 
 communication link is established between two objects. Events enable you to 
-hook into the STK application's processes and respond in real-time, 
+hook into STK processes and respond in real-time, 
 streamlining workflows and enhancing your scenario's capabilities.
 
 You can access events directly in applicable parent objects, as displayed in 
@@ -259,7 +259,7 @@ no longer needed. Refer to the following example for using
   :dedent:
 
 The STK desktop application user interface might become unresponsive to user 
-input when Python has event subscribers, and the STK application tries to call
+input when Python has event subscribers, and STK tries to call
 back into the Python interpreter to notify of an event. That callback relies 
 on the Windows message loop to be dispatched. To work around this issue, 
 Windows messages need to be dispatched through the Windows message queue. This
