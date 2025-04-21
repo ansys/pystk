@@ -1,0 +1,8 @@
+extends: Google.Headings
+message: "'%s' should use sentence-style capitalization."
+level: warning
+scope: heading
+match: $sentence
+exceptions:
+  - Start STK desktop and get a reference to STK object root
+  - Manage STK desktop events
