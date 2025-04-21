@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvSAAFluxLevel value.
+              - An invalid SpaceEnvironmentSAAFluxLevel value.
 
             * - :py:attr:`~GREATER_THAN_BACKGROUND_BY_3_SIGMA`
               - Represents flux values greater than the background environment by 3 sigma.

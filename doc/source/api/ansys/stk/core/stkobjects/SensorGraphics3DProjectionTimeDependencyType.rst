@@ -20,10 +20,10 @@ Overview
             :widths: auto
 
             * - :py:attr:`~CONSTANT`
-              - Use a constant length at all times. This length can be set with the SpaceProjection or Targeting property on the IAgSnVO interface depending on the sensor's pointing settings.
+              - Use a constant length at all times. This length can be set with the SpaceProjection or Targeting property on the SensorGraphics3D interface depending on the sensor's pointing settings.
 
             * - :py:attr:`~TIME_VARYING`
-              - Use a user provided list of times and lengths. The times and lengths can be set with the ProjectionIntervals or TargetProjectionIntervals property on the IAgSnVO interface depending on the sensor's pointing settings.
+              - Use a user provided list of times and lengths. The times and lengths can be set with the ProjectionIntervals or TargetProjectionIntervals property on the SensorGraphics3D interface depending on the sensor's pointing settings.
 
 
 Import detail

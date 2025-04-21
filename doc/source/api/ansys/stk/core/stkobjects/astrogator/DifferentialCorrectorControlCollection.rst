@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.count`
               - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.provide_runtime_type_info`
-              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the RuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.provide_runtime_type_info
     :type: RuntimeTypeInfo
 
-    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the RuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail

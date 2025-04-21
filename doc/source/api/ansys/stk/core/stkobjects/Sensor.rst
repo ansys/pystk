@@ -23,17 +23,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_pattern_type`
               - Set the pattern type.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_pointing_type`
-              - Set the sensor's pointing type, using the AgESnPointing enumeration.
+              - Set the sensor's pointing type, using the SensorPointing enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_pointing_external_file`
               - Set the external pointing type.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.reset_az_el_mask`
               - Reset the az-el mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_az_el_mask`
-              - Set the az-el mask type, using the AgEAzElMaskType enumeration.
+              - Set the az-el mask type, using the AzElMaskType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_az_el_mask_file`
               - Path and file name of az-el mask file.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.set_location_type`
-              - Set the sensor's location type, a member of the AgESnLocation enumeration.
+              - Set the sensor's location type, a member of the SensorLocation enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view`
@@ -46,11 +46,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.pattern_type`
-              - Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
+              - Criterion for defining the sensor pattern. A member of the SensorPattern enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.pattern`
               - Get data defining the sensor pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.pointing_type`
-              - The sensor's pointing type. A member of the AgESnPointing enumeration.
+              - The sensor's pointing type. A member of the SensorPointing enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.pointing`
               - Get pointing data for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.az_el_mask`
@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.detector_pitch`
               - Detector pitch used in defining senor resolution. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction`
-              - Refraction method, a member of the AgESnRefractionType enumeration.
+              - Refraction method, a member of the SensorRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.graphics`
               - Get the 2D Graphics properties for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.graphics_3d`
@@ -137,7 +137,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.pattern_type
     :type: SensorPattern
 
-    Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
+    Criterion for defining the sensor pattern. A member of the SensorPattern enumeration.
 
 .. py:property:: pattern
     :canonical: ansys.stk.core.stkobjects.Sensor.pattern
@@ -149,7 +149,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.pointing_type
     :type: SensorPointing
 
-    The sensor's pointing type. A member of the AgESnPointing enumeration.
+    The sensor's pointing type. A member of the SensorPointing enumeration.
 
 .. py:property:: pointing
     :canonical: ansys.stk.core.stkobjects.Sensor.pointing
@@ -185,7 +185,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction
     :type: SensorRefractionType
 
-    Refraction method, a member of the AgESnRefractionType enumeration.
+    Refraction method, a member of the SensorRefractionType enumeration.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Sensor.graphics
@@ -270,7 +270,7 @@ Method detail
 .. py:method:: set_pointing_type(self, pointing_type: SensorPointing) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_type
 
-    Set the sensor's pointing type, using the AgESnPointing enumeration.
+    Set the sensor's pointing type, using the SensorPointing enumeration.
 
     :Parameters:
 
@@ -307,7 +307,7 @@ Method detail
 .. py:method:: set_az_el_mask(self, az_el_mask_type: AzElMaskType) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_az_el_mask
 
-    Set the az-el mask type, using the AgEAzElMaskType enumeration.
+    Set the az-el mask type, using the AzElMaskType enumeration.
 
     :Parameters:
 
@@ -343,7 +343,7 @@ Method detail
 .. py:method:: set_location_type(self, location_type: SensorLocation) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_location_type
 
-    Set the sensor's location type, a member of the AgESnLocation enumeration.
+    Set the sensor's location type, a member of the SensorLocation enumeration.
 
     :Parameters:
 

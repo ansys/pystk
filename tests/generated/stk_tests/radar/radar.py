@@ -2718,7 +2718,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Clutter Geometry CSharp Example", spp.name)
 
         sppPlugin: "ScatteringPointProviderPlugin" = clr.CastAs(spp, ScatteringPointProviderPlugin)
-        pluginConfig: "IAgCRPluginConfiguration" = sppPlugin.plugin_configuration
+        pluginConfig: "CommRadPluginConfiguration" = sppPlugin.plugin_configuration
         arProps = pluginConfig.available_properties
         Assert.assertEqual(2, Array.Length(arProps))
         Assert.assertEqual("PatchArea", str(arProps[0]))
@@ -2974,7 +2974,7 @@ class EarlyBoundTests(TestBase):
             ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                 Assert.assertIsNotNone(rawPluginObject)
 
-            pluginConfiguration: "IAgCRPluginConfiguration" = plugin.plugin_configuration
+            pluginConfiguration: "CommRadPluginConfiguration" = plugin.plugin_configuration
             availableProperties = pluginConfiguration.available_properties
             Assert.assertEqual(2, Array.Length(availableProperties))
             Assert.assertEqual("ConstantCoefficient", availableProperties[0])
@@ -3720,7 +3720,7 @@ class EarlyBoundTests(TestBase):
                 ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                     Assert.assertIsNotNone(objRaw)
 
-                pluginConfig: "IAgCRPluginConfiguration" = probOfDetPlugin.plugin_configuration
+                pluginConfig: "CommRadPluginConfiguration" = probOfDetPlugin.plugin_configuration
                 arProps = pluginConfig.available_properties
                 Assert.assertEqual(2, Array.Length(arProps))
                 pluginConfig.set_property("ProbabilityOfFalseAlarm", 1e-05)
@@ -3750,7 +3750,7 @@ class EarlyBoundTests(TestBase):
                 ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                     Assert.assertIsNotNone(objRaw)
 
-                pluginConfig: "IAgCRPluginConfiguration" = probOfDetPlugin.plugin_configuration
+                pluginConfig: "CommRadPluginConfiguration" = probOfDetPlugin.plugin_configuration
                 arProps = pluginConfig.available_properties
                 Assert.assertEqual(2, Array.Length(arProps))
                 pluginConfig.set_property("ProbabilityOfFalseAlarm", 0.0001)

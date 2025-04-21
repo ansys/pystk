@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Sets the current radar model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Radar instead. Sets the current radar model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets the current radar model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets the current radar model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction`
-              - Refraction method, a member of the AgESnRefractionType enumeration.
+              - Refraction method, a member of the SensorRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction_supported_types`
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction_model`
@@ -69,19 +69,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Radar.supported_models
     :type: list
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Radar.model
     :type: IRadarModel
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets the current radar model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Radar instead. Gets the current radar model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Radar.refraction
     :type: SensorRefractionType
 
-    Refraction method, a member of the AgESnRefractionType enumeration.
+    Refraction method, a member of the SensorRefractionType enumeration.
 
 .. py:property:: refraction_supported_types
     :canonical: ansys.stk.core.stkobjects.Radar.refraction_supported_types
@@ -133,7 +133,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Radar.set_model
 
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Sets the current radar model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on Radar instead. Sets the current radar model by name.
 
     :Parameters:
 

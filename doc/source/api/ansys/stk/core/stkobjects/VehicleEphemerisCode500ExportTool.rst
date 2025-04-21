@@ -3,7 +3,7 @@ VehicleEphemerisCode500ExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool
 
-   AgVeEphemerisTypeCode500 Class.
+   VehicleEphemerisCode500ExportTool Class.
 
 .. py:currentmodule:: VehicleEphemerisCode500ExportTool
 

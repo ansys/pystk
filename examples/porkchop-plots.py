@@ -10,7 +10,7 @@
 #
 # ## Problem statement
 #
-# The goal of this tutorial is to reproduce the porkchop in Fig. 4 from  [NASA's Interplanetary Mission Design Handbook, Volume I, Part 2](https://ntrs.nasa.gov/api/citations/19840010158/downloads/19840010158.pdf). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
+# The goal of this tutorial is to reproduce the porkchop in Fig. 4 from  NASA's Interplanetary Mission Design Handbook, Volume I, Part 2, available for download [here](https://ntrs.nasa.gov/citations/19840010158). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
 #
 # ![Fig. 7 directly taken from NASA's manual](./img/nasa-porkchop.png)
 

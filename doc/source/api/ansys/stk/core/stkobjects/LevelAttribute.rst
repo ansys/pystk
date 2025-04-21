@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.color`
               - Color in which contours at the given level are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.line_style`
-              - The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
+              - The style of the line representing contours at the given level. A member of the LineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.line_width`
               - The width of the line representing contours at the given level.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.show_label`
@@ -64,7 +64,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LevelAttribute.line_style
     :type: LineStyle
 
-    The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
+    The style of the line representing contours at the given level. A member of the LineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.LevelAttribute.line_width

@@ -3,7 +3,7 @@ ISensorPattern
 
 .. py:class:: ansys.stk.core.stkobjects.ISensorPattern
 
-   Base interface IAgSnPattern. IAgSnComplexConicPattern, IAgSnCustomPattern, IAgSnHalfPowerPattern, IAgSnRectangularPattern, IAgSnSARPattern, IAgSnEOIRPattern and IAgSnSimpleConicPattern implement this interface.
+   Base interface ISensorPattern. SensorComplexConicPattern, SensorCustomPattern, SensorHalfPowerPattern, SensorRectangularPattern, SensorSARPattern, SensorEOIRPattern and SensorSimpleConicPattern implement this interface.
 
 .. py:currentmodule:: ISensorPattern
 

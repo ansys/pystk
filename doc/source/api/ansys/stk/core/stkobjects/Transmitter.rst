@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Sets the current transmitter model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Sets the current transmitter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Gets the current transmitter model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets the current transmitter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.refraction`
-              - Refraction method, a member of the AgESnRefractionType enumeration.
+              - Refraction method, a member of the SensorRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.refraction_supported_types`
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.refraction_model`
@@ -169,19 +169,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Transmitter.supported_models
     :type: list
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Transmitter.model
     :type: ITransmitterModel
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Gets the current transmitter model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets the current transmitter model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Transmitter.refraction
     :type: SensorRefractionType
 
-    Refraction method, a member of the AgESnRefractionType enumeration.
+    Refraction method, a member of the SensorRefractionType enumeration.
 
 .. py:property:: refraction_supported_types
     :canonical: ansys.stk.core.stkobjects.Transmitter.refraction_supported_types
@@ -239,7 +239,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Transmitter.set_model
 
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgTransmitter instead. Sets the current transmitter model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Sets the current transmitter model by name.
 
     :Parameters:
 
