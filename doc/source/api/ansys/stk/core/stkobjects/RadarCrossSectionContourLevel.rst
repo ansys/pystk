@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.color`
               - Get or set the contour level color.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.line_style`
-              - Select the line style, displayed for the contour level, from the AgELineStyle enumeration.
+              - Select the line style, displayed for the contour level, from the LineStyle enumeration.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.line_style
     :type: LineStyle
 
-    Select the line style, displayed for the contour level, from the AgELineStyle enumeration.
+    Select the line style, displayed for the contour level, from the LineStyle enumeration.
 
 

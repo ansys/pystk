@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.end_update`
               - Signals the object that the batch update is complete.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands`
-              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.isolate`
               - Make the unit preferences of the current instance isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf`
@@ -556,7 +556,7 @@ Method detail
 .. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
-    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
 
     :Parameters:
 

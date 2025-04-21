@@ -3,7 +3,7 @@ TimeToolInstantOccurrenceResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstantOccurrenceResult
 
-   Contains the results returned with IAgCrdnEvent.FindOccurrence method.
+   Contains the results returned with ITimeToolInstant.FindOccurrence method.
 
 .. py:currentmodule:: TimeToolInstantOccurrenceResult
 

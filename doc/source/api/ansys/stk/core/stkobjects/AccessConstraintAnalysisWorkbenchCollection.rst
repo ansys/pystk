@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.get_available_references`
               - Return an array of available References.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.item`
-              - Get an IAgAccessCnstrAWB interface using an index.
+              - Get an AccessConstraintAnalysisWorkbench interface using an index.
 
     .. tab-item:: Properties
         
@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.count`
               - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._new_enum`
-              - Enumerate the IAgAccessCnstrAWB interfaces.
+              - Enumerate the AccessConstraintAnalysisWorkbench interfaces.
 
 
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._new_enum
     :type: EnumeratorProxy
 
-    Enumerate the IAgAccessCnstrAWB interfaces.
+    Enumerate the AccessConstraintAnalysisWorkbench interfaces.
 
 
 Method detail
@@ -140,7 +140,7 @@ Method detail
 .. py:method:: item(self, index: int) -> AccessConstraintAnalysisWorkbench
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.item
 
-    Get an IAgAccessCnstrAWB interface using an index.
+    Get an AccessConstraintAnalysisWorkbench interface using an index.
 
     :Parameters:
 

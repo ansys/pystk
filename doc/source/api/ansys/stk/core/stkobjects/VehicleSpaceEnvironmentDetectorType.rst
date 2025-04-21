@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvDetectorType value.
+              - An invalid VehicleSpaceEnvironmentDetectorType value.
 
             * - :py:attr:`~AIR`
               - Uses air as the shielding material for radiation dose computations.

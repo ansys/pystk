@@ -3,7 +3,7 @@ ISensorPointing
 
 .. py:class:: ansys.stk.core.stkobjects.ISensorPointing
 
-   Base interface IAgSnPointing. IAgSnPt3DModel, IAgSnPtExternal, IAgSnPtFixed, IAgSnPtFixedAxes, IAgSnPtGrazingAlt, IAgSnPtTargeted, IAgSnPtAlongVector and IAgSnPtSchedule implement this interface.
+   Base interface ISensorPointing. SensorPointing3DModel, SensorPointingExternal, SensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, SensorPointingTargeted, SensorPointingAlongVector and SensorPointingSchedule implement this interface.
 
 .. py:currentmodule:: ISensorPointing
 

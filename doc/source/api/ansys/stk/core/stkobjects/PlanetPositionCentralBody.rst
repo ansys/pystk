@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.radius`
               - The radius of the selected central body. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephemeris_source`
-              - The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
+              - The ephemeris source for the selected central body. A member of the EphemSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies`
               - Return an array of all available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephemeris_source_types`
@@ -70,7 +70,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephemeris_source
     :type: EphemSourceType
 
-    The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
+    The ephemeris source for the selected central body. A member of the EphemSourceType enumeration.
 
 .. py:property:: available_central_bodies
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies

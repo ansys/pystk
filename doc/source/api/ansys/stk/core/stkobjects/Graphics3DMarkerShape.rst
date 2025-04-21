@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarkerShape.style`
-              - The 2D marker type that represents the object in the 3D Graphics window. A member of the AgE3dMarkerShape enumeration.
+              - The 2D marker type that represents the object in the 3D Graphics window. A member of the MarkerShape3d enumeration.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarkerShape.style
     :type: MarkerShape3d
 
-    The 2D marker type that represents the object in the 3D Graphics window. A member of the AgE3dMarkerShape enumeration.
+    The 2D marker type that represents the object in the 3D Graphics window. A member of the MarkerShape3d enumeration.
 
 

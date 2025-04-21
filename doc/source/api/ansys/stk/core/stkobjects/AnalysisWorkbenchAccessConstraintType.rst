@@ -20,16 +20,16 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ANGLE`
-              - Angle. Use interface IAgAccessCnstrAWB.
+              - Angle. Use interface AccessConstraintAnalysisWorkbench.
 
             * - :py:attr:`~VECTOR_MAGNITUDE`
-              - Vector magnitude. Use interface IAgAccessCnstrAWB.
+              - Vector magnitude. Use interface AccessConstraintAnalysisWorkbench.
 
             * - :py:attr:`~CONDITION`
-              - Coordinate condition constraint. Use interface IAgAccessCnstrAWB.
+              - Coordinate condition constraint. Use interface AccessConstraintAnalysisWorkbench.
 
             * - :py:attr:`~CALCULATION_SCALAR`
-              - Scalar Calculation (Calc Scalar) constraint. Use interface IAgAccessCnstrAWB.
+              - Scalar Calculation (Calc Scalar) constraint. Use interface AccessConstraintAnalysisWorkbench.
 
 
 Import detail

@@ -20,13 +20,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ALTITUDE_MODE_MSL`
-              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeMSL.
+              - Enumeration EphemShiftRotateAltitudeMode:eAltModeMSL.
 
             * - :py:attr:`~ALTITUDE_MODE_WGS`
-              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeWGS.
+              - Enumeration EphemShiftRotateAltitudeMode:eAltModeWGS.
 
             * - :py:attr:`~ALTITUDE_MODE_RELATIVE`
-              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeRel.
+              - Enumeration EphemShiftRotateAltitudeMode:eAltModeRel.
 
 
 Import detail

@@ -3,7 +3,7 @@ PropagatorDefinitionExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.PropagatorDefinitionExportTool
 
-   AgVeExternalFileAttitude Class.
+   PropagatorDefinitionExportTool Class.
 
 .. py:currentmodule:: PropagatorDefinitionExportTool
 

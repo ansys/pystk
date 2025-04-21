@@ -3,7 +3,7 @@ EOIRShape
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShape
 
-   AgEOIRShape class.
+   EOIRShape class.
 
 .. py:currentmodule:: EOIRShape
 

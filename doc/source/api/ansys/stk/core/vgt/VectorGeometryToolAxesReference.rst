@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesReference.set_axes`
               - Set a new axes.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesReference.get_axes`
-              - Return the actual axes object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+              - Return the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: get_axes(self) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesReference.get_axes
 
-    Return the actual axes object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+    Return the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
 
     :Returns:
 

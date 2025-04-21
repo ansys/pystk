@@ -3,7 +3,7 @@ ICoverageBounds
 
 .. py:class:: ansys.stk.core.stkobjects.ICoverageBounds
 
-   Base interface for IAgCvBoundsCustom, IAgCvBoundsGlobal, IAgCvBoundsLat, IAgCvBoundsLatLines, IAgCvBoundsLonLines, IAgCvBoundsCustomBoundary.
+   Base interface for ICoverageBoundsCustom, CoverageBoundsGlobal, CoverageBoundsLatitude, CoverageBoundsLatitudeLines, CoverageBoundsLongitudeLines, CoverageBoundsCustomBoundary.
 
 .. py:currentmodule:: ICoverageBounds
 

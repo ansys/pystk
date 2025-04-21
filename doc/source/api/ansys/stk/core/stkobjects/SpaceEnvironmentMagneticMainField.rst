@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvMagneticMainField value.
+              - An invalid SpaceEnvironmentMagneticMainField value.
 
             * - :py:attr:`~IGRF`
               - Models the main geomagnetic field using the IGRF model.

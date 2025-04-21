@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvDoseChannel value.
+              - An invalid VehicleSpaceEnvironmentDoseChannel value.
 
             * - :py:attr:`~HIGH_LINEAR_ENERGY_TRANSPORT`
               - Characterizes high linear energy transport.
