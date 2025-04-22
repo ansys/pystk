@@ -37,7 +37,7 @@ all = [
     "grpcio",
     "protobuf",
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.4",
+    "numpy==2.2.5",
     "Pillow==11.2.1",
     "simplejpeg==1.8.2",
     "sidecar==0.7.0",
@@ -50,7 +50,7 @@ grpc = [
 tests = [
     "libcst==1.7.0",
     "matplotlib==3.10.1",
-    "numpy==2.2.4",
+    "numpy==2.2.5",
     "pytest==8.3.5",
     "pytest-cov==6.1.1",
     "pytz==2025.2",
@@ -82,7 +82,7 @@ doc = [
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.4",
+    "numpy==2.2.5",
     "Pillow==11.2.1",
     "simplejpeg==1.8.2",
     "sidecar==0.7.0"
