@@ -145,8 +145,12 @@ class ManualRSTGenerator:
                         )
 
             write_line(["Description", "-----------", ""])
-            if len(tree.body) > 0 and isinstance(tree.body[0], ast.Expr) and isinstance(tree.body[0].value, ast.Str):
-                write_line([tree.body[0].value.s.strip(), ""])
+            if (
+                len(tree.body) > 0
+                and isinstance(tree.body[0], ast.Expr)
+                and isinstance(tree.body[0].value, ast.Constant)
+            ):
+                write_line([tree.body[0].value.value.strip(), ""])
 
             write_line([f".. py:currentmodule:: {containing_namespace}.{module_name}", "", ".. TABLE OF CONTENTS", ""])
 
@@ -376,6 +380,7 @@ class ManualRSTGenerator:
 
 
 def main():
+    """Entry point of the script."""
     namespace = "ansys.stk.extensions"
     module_path = Path(__file__).resolve().parent.parent / "extensions" / "src" / "ansys" / "stk"
     doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "ansys" / "stk"
