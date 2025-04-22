@@ -50,8 +50,6 @@ class ManualRSTGenerator:
         module_dir_path = Path(self.module_dir).resolve()
         relative_path = path_to_src_file.relative_to(module_dir_path)
 
-        print(f"Relative path: {relative_path}", flush=True)
-
         if path_to_src_file.name == "__init__.py" and path_to_src_file.parent == module_dir_path:
             return
 
@@ -60,12 +58,11 @@ class ManualRSTGenerator:
         containing_namespace = ".".join(full_namespace.split(".")[:-1])
         module_name = full_namespace.split(".")[-1]
 
-        print(f"Module name: {module_name}", flush=True)
-        print(f"Containing namespace: {containing_namespace}", flush=True)
-        print(f"Full namespace: {full_namespace}", flush=True)
-        print(f"Relative namespace: {relative_namespace}", flush=True)
+        if path_to_src_file.name == "__init__.py":
+            out_file_path = Path(self.doc_dir) / relative_path.parent.with_suffix(".rst")
+        else:
+            out_file_path = Path(self.doc_dir) / relative_path.with_suffix(".rst")
 
-        out_file_path = Path(self.doc_dir) / relative_path.with_suffix(".rst")
         out_file_path.parent.mkdir(parents=True, exist_ok=True)
 
         with (
@@ -386,7 +383,7 @@ class ManualRSTGenerator:
 
 
 def autodoc_extensions():
-    """Automatically generate RST files for the extenions package."""
+    """Automatically generate RST files for the extensions package."""
     namespace = "ansys.stk"
     module_path = Path(__file__).resolve().parent.parent / "extensions" / "src" / "ansys" / "stk"
     doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "ansys" / "stk"
