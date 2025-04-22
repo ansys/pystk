@@ -216,6 +216,25 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         root.units_preferences.item("DateFormat").set_current_unit("UTCG")
         root.units_preferences.item("Distance").set_current_unit("km")
 
+    def test_SetScenarioTimePeriodSnippet(self):
+        root = self.get_root()
+        self.SetScenarioTimePeriodSnippet(root)
+
+    @code_snippet(
+        name="SetScenarioTimePeriod",
+        description="Set the current scenario's time period",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~Scenario | stkobjects~Scenario~set_time_period",
+    )
+    def SetScenarioTimePeriodSnippet(self, root):
+        # StkObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        scenario.set_time_period(
+            start_time="1 Jan 2012 12:00:00.000", 
+            stop_time="2 Jan 2012 12:00:00.000"
+        )
+        # Use scenario.start_time, scenario.stop_time to get time period
+
     @category("Graphics Tests")
     def test_ScenarioAnimationModeSnippet(self):
         self.ScenarioAnimationModeSnippet(self.get_root())

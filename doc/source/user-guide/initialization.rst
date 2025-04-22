@@ -115,7 +115,7 @@ Create a Tkinter window with a map control and a globe control
 Initialize STKRuntime
 ======================
 
-STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use the :py:mod:`~ansys.stk.core.stkruntime` module to start or attach to a running STKRuntime application. Once the :py:class:`ansys.stk.core.stkruntime.STKRuntimeApplication` object is obtained, interact with STK, via :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` obtained from calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root`. Shutting down the remote STKRuntime process is possible by calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown`, or using the `user_control=False` option when starting the application.
+STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use the :py:mod:`~ansys.stk.core.stkruntime` module to start or attach to a running STKRuntime application. Once the :py:class:`~ansys.stk.core.stkruntime.STKRuntimeApplication` object is obtained, interact with STK, via :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` obtained from calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root`. Shutting down the remote STKRuntime process is possible by calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown`, or using the `user_control=False` option when starting the application.
 
 Start a new STKRuntime instance
 -------------------------------

@@ -42,9 +42,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.project_at_altitude_object`
               - The altitude of the object to which the sensor is projected (if this option for setting projection distance is selected).
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.intersection_type`
-              - The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
+              - The type of intersections to be shown. A member of the IntersectionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.distance_type`
-              - The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
+              - The criterion used for determining the projection distance. A member of the SensorProjectionDistanceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.distance_data`
               - Value of the criterion used for determining the projection distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.fill_persistence`
@@ -109,13 +109,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorProjection.intersection_type
     :type: IntersectionType
 
-    The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
+    The type of intersections to be shown. A member of the IntersectionType enumeration.
 
 .. py:property:: distance_type
     :canonical: ansys.stk.core.stkobjects.SensorProjection.distance_type
     :type: SensorProjectionDistanceType
 
-    The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
+    The criterion used for determining the projection distance. A member of the SensorProjectionDistanceType enumeration.
 
 .. py:property:: distance_data
     :canonical: ansys.stk.core.stkobjects.SensorProjection.distance_data

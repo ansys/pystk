@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.Date.subtract`
               - Subtracts the value in the given unit and returns a new date interface.
             * - :py:attr:`~ansys.stk.core.stkutil.Date.span`
-              - Subtracts the value from the IAgDate interface and returns an IAgQuantity.
+              - Subtracts the value from the Date interface and returns an Quantity.
 
     .. tab-item:: Properties
         
@@ -161,7 +161,7 @@ Method detail
 .. py:method:: span(self, date: Date) -> Quantity
     :canonical: ansys.stk.core.stkutil.Date.span
 
-    Subtracts the value from the IAgDate interface and returns an IAgQuantity.
+    Subtracts the value from the Date interface and returns an Quantity.
 
     :Parameters:
 

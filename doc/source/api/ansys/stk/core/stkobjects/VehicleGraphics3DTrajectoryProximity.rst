@@ -5,7 +5,7 @@ VehicleGraphics3DTrajectoryProximity
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximity`
 
-   AgVeTrajectoryProximity Class.
+   VehicleGraphics3DTrajectoryProximity Class.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectoryProximity
 

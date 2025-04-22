@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.item`
-              - Return an IAgLevelAttribute given an index number.
+              - Return an LevelAttribute given an index number.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.remove`
-              - Remove an IAgLevelAttribute Item with given index.
+              - Remove an LevelAttribute Item with given index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.remove_all`
-              - Remove all IAgLevelAttribute.
+              - Remove all LevelAttribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level`
               - Add a level.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level_range`
@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.count`
               - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum`
-              - Enumerates through IAgLevelAttributeCollection.
+              - Enumerates through LevelAttributeCollection.
 
 
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum
     :type: EnumeratorProxy
 
-    Enumerates through IAgLevelAttributeCollection.
+    Enumerates through LevelAttributeCollection.
 
 
 Method detail
@@ -73,7 +73,7 @@ Method detail
 .. py:method:: item(self, index: int) -> LevelAttribute
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.item
 
-    Return an IAgLevelAttribute given an index number.
+    Return an LevelAttribute given an index number.
 
     :Parameters:
 
@@ -87,7 +87,7 @@ Method detail
 .. py:method:: remove(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove
 
-    Remove an IAgLevelAttribute Item with given index.
+    Remove an LevelAttribute Item with given index.
 
     :Parameters:
 
@@ -100,7 +100,7 @@ Method detail
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove_all
 
-    Remove all IAgLevelAttribute.
+    Remove all LevelAttribute.
 
     :Returns:
 

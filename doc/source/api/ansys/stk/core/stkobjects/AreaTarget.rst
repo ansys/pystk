@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics_3d`
               - Get the area target's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type`
-              - The method for defining the area target boundary. A member of the AgEAreaType enumeration.
+              - The method for defining the area target boundary. A member of the AreaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type_data`
               - Get the data defining the boundary with the selected method.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_terrain_data`
@@ -199,7 +199,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type
     :type: AreaType
 
-    The method for defining the area target boundary. A member of the AgEAreaType enumeration.
+    The method for defining the area target boundary. A member of the AreaType enumeration.
 
 .. py:property:: area_type_data
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type_data

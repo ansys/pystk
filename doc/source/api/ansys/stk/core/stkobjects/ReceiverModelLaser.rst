@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_demodulator`
               - Set the current demodulator model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.set_polarization_type`
@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses`
               - Get the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demodulator_gains_losses`
@@ -107,13 +107,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses
@@ -257,7 +257,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelLaser instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelLaser instead. Sets the current filter model by name.
 
     :Parameters:
 

@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRBandCollection.item`
-              - Given an index, returns an IAgSnEOIRBand interface.
+              - Given an index, returns an SensorEOIRBand interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRBandCollection.add`
               - Add a target.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRBandCollection.remove_at`
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: item(self, index: int) -> SensorEOIRBand
     :canonical: ansys.stk.core.stkobjects.SensorEOIRBandCollection.item
 
-    Given an index, returns an IAgSnEOIRBand interface.
+    Given an index, returns an SensorEOIRBand interface.
 
     :Parameters:
 

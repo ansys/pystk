@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemReference.set_system`
               - Set a new system.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemReference.get_system`
-              - Return the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+              - Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: get_system(self) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemReference.get_system
 
-    Return the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+    Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
 
     :Returns:
 

@@ -31,11 +31,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.decimal_digits`
               - Set the precision, or number of digits that should display to the right of the decimal point, with which real numbers should display.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.notation`
-              - Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
+              - Set the legend numeric notation. A member of the VolumetricLegendNumericNotationType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.text_color`
               - Set the color of the legend text.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.level_order`
-              - Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
+              - Set the legend numeric notation. A member of the VolumetricLevelOrder enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.maximum_color_squares`
               - Set the number of colors per row or column depending on the selected LevelOrder. Number between 1 and 1000.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.color_square_width`
@@ -96,7 +96,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.notation
     :type: VolumetricLegendNumericNotationType
 
-    Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
+    Set the legend numeric notation. A member of the VolumetricLegendNumericNotationType enumeration.
 
 .. py:property:: text_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.text_color
@@ -108,7 +108,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.level_order
     :type: VolumetricLevelOrder
 
-    Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
+    Set the legend numeric notation. A member of the VolumetricLevelOrder enumeration.
 
 .. py:property:: maximum_color_squares
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.maximum_color_squares

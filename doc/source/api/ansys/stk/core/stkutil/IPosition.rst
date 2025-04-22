@@ -3,7 +3,7 @@ IPosition
 
 .. py:class:: ansys.stk.core.stkutil.IPosition
 
-   IAgPosition provides access to the position of the object.
+   IPosition provides access to the position of the object.
 
 .. py:currentmodule:: IPosition
 

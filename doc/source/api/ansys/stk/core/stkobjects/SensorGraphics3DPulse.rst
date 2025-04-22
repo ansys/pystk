@@ -34,11 +34,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.length`
               - Pulse length, how much physical space a given pulse occupies. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.style`
-              - Select an available sine or box style from the AgESnVOPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
+              - Select an available sine or box style from the SensorGraphics3DPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.enable_smooth`
               - Opt whether to enable averaging of pixels over the range of the pulse to achieve smoother, better viewing quality.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.pulse_frequency_preset`
-              - Select a frequency option from the AgESnVOPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
+              - Select a frequency option from the SensorGraphics3DPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.frequency_value`
               - If ePulseFrequencyCustom is selected for the PreselFreq property, specify the custom frequency value. Uses Frequency Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse.show_sensor_pulse_in_opposite_direction`
@@ -79,7 +79,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DPulse.style
     :type: SensorGraphics3DPulseStyle
 
-    Select an available sine or box style from the AgESnVOPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
+    Select an available sine or box style from the SensorGraphics3DPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
 
 .. py:property:: enable_smooth
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DPulse.enable_smooth
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DPulse.pulse_frequency_preset
     :type: SensorGraphics3DPulseFrequencyPreset
 
-    Select a frequency option from the AgESnVOPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
+    Select a frequency option from the SensorGraphics3DPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
 
 .. py:property:: frequency_value
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DPulse.frequency_value

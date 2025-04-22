@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvApSource value.
+              - An invalid VehicleSpaceEnvironmentApSource value.
 
             * - :py:attr:`~FILE`
               - Set the Ap flux source to use a flux file.
