@@ -7,6 +7,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import sys
 import toml
 import xml.etree.ElementTree as ET
 import zipfile
@@ -74,12 +75,6 @@ html_theme_options = {
         "limit": 10,
         "minMatchCharLength": 2,
     },
-    "ansys_sphinx_theme_autoapi": {
-        "project": "ansys-stk-extensions",
-        "directory": "extensions/src/ansys",
-        "output": "api",
-        "add_toctree_entry": False,
-    },
 }
 html_static_path = ["_static"]
 html_css_files = [
@@ -89,7 +84,6 @@ html_js_files = []
 
 # Sphinx extensions
 extensions = [
-    "ansys_sphinx_theme.extension.autoapi",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
@@ -701,21 +695,26 @@ def read_migration_tables(app: sphinx.application.Sphinx):
             "mappings": mappings,
         }
 
+def run_autoapi(app: sphinx.application.Sphinx):
+    """
+    Run the autoapi script to generate API documentation.
 
-def rename_api_index_files(app):
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
 
-    SOURCE_DIR = pathlib.Path(app.srcdir) / "api" / "ansys" / "stk" / "extensions"
-    for filepath in SOURCE_DIR.glob("**/*.rst"):
-        is_index_file = filepath.name == "index.rst"
-        if not is_index_file:
-            continue
+    """
+    logger = logging.getLogger(__name__)
+    logger.info("\nWriting reST files for API documentation...", color="green")
 
-        new_filepath = filepath.parent.parent / f"{filepath.parent.name}.rst"
-        print(f"Old filepath: {filepath}", flush=True)
-        print(f"New filepath: {new_filepath}", flush=True)
+    scritps_dir = pathlib.Path(app.srcdir).parent.parent / "scripts"
+    sys.path.append(str(scritps_dir.resolve()))
 
-        new_filepath.write_text(filepath.read_text(encoding="utf-8"), encoding="utf-8")
-        filepath.unlink()
+    from autoapi import autodoc_extensions
+    autodoc_extensions()
+
+    logger.info("Done!\n")
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -736,7 +735,7 @@ def setup(app: sphinx.application.Sphinx):
     app.connect("builder-inited", read_migration_tables)
 
     if BUILD_API:
-        app.connect("builder-inited", rename_api_index_files)
+        app.connect("builder-inited", run_autoapi)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)

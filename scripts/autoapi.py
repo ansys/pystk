@@ -379,16 +379,19 @@ class ManualRSTGenerator:
             )
 
 
-def main():
-    """Entry point of the script."""
+def autodoc_extensions():
+    """Automatically generate RST files for the extenions package."""
     namespace = "ansys.stk.extensions"
     module_path = Path(__file__).resolve().parent.parent / "extensions" / "src" / "ansys" / "stk"
     doc_path = Path(__file__).resolve().parent.parent / "doc" / "source" / "api" / "ansys" / "stk"
 
-    auto_files = list(module_path.rglob("*.py"))  # ensure it's a list
-    auto_files = []
     autoapi = ManualRSTGenerator(namespace, module_path, doc_path)
-    autoapi.generate_rst_for_manual_modules([])
+    autoapi.generate_rst_for_manual_modules(auto_files=[])
+
+
+def main():
+    """Main function to execute the script."""
+    autodoc_extensions()
 
 
 if __name__ == "__main__":
