@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingSpinning.spin_axis_cone_angle`
               - The cone angle used in defining the spin axis, i.e. the angle between the spin axis and the sensor boresight. As the boresight spins about the spin axis, it maintains this angular distance away from the spin axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingSpinning.scan_mode`
-              - The scan mode of the sensor, a member of the AgESnScanMode enumeration.
+              - The scan mode of the sensor, a member of the SensorScanMode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingSpinning.clock_angle_start`
               - The start angle, i.e. the angle about the sensor's spin axis at which scanning begins. Zero is relative to the X axis in the spin axis coordinate frame. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingSpinning.clock_angle_stop`
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorPointingSpinning.scan_mode
     :type: SensorScanMode
 
-    The scan mode of the sensor, a member of the AgESnScanMode enumeration.
+    The scan mode of the sensor, a member of the SensorScanMode enumeration.
 
 .. py:property:: clock_angle_start
     :canonical: ansys.stk.core.stkobjects.SensorPointingSpinning.clock_angle_start

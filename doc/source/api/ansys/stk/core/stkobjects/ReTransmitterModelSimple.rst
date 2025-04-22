@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Sets the current filter model by name.
 
     .. tab-item:: Properties
         
@@ -40,9 +40,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.saturated_eirp`
               - Get or set the saturated eirp.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter_component_linking`
@@ -89,13 +89,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Gets the current filter model.
 
 .. py:property:: saturated_eirp
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.saturated_eirp
@@ -136,7 +136,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReTransmitterModelSimple instead. Sets the current filter model by name.
 
     :Parameters:
 

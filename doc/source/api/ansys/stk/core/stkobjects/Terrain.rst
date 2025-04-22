@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Terrain.location`
               - Location of the terrain contained in the terrain data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.Terrain.file_type`
-              - Type of terrain data file. A member of the AgETerrainFileType enumeration.
+              - Type of terrain data file. A member of the TerrainFileType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Terrain.southwest_latitude`
               - Latitude of the southwest corner of the terrain contained in the terrain data file. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Terrain.southwest_longitude`
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Terrain.file_type
     :type: TerrainFileType
 
-    Type of terrain data file. A member of the AgETerrainFileType enumeration.
+    Type of terrain data file. A member of the TerrainFileType enumeration.
 
 .. py:property:: southwest_latitude
     :canonical: ansys.stk.core.stkobjects.Terrain.southwest_latitude

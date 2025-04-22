@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAdvancedSettings.recompute_automatically`
               - Automatically recompute data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAdvancedSettings.save_computed_data_type`
-              - Get save computed data type. A member of the AgEVmSaveComputedDataType enumeration.
+              - Get save computed data type. A member of the VolumetricSaveComputedDataType enumeration.
 
 
 
@@ -46,6 +46,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricAdvancedSettings.save_computed_data_type
     :type: VolumetricSaveComputedDataType
 
-    Get save computed data type. A member of the AgEVmSaveComputedDataType enumeration.
+    Get save computed data type. A member of the VolumetricSaveComputedDataType enumeration.
 
 

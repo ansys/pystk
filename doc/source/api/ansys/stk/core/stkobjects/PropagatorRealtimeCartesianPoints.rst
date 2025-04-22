@@ -3,7 +3,7 @@ PropagatorRealtimeCartesianPoints
 
 .. py:class:: ansys.stk.core.stkobjects.PropagatorRealtimeCartesianPoints
 
-   AgVeRealtimeCartesianPoint Class.
+   PropagatorRealtimeCartesianPoints Class.
 
 .. py:currentmodule:: PropagatorRealtimeCartesianPoints
 

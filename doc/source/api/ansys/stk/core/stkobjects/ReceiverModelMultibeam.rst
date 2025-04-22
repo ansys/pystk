@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_demodulator`
               - Set the current demodulator model by name.
 
@@ -34,9 +34,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_receive_gains_losses`
               - Get the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demodulator_gains_losses`
@@ -99,13 +99,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_receive_gains_losses
@@ -231,7 +231,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelMultibeam instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMultibeam instead. Sets the current filter model by name.
 
     :Parameters:
 

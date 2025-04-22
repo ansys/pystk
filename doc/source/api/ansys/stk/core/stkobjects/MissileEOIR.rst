@@ -5,7 +5,7 @@ MissileEOIR
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIR`
 
-   AgMsEOIR interface class.
+   MissileEOIR interface class.
 
 .. py:currentmodule:: MissileEOIR
 

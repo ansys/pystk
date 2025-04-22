@@ -3,7 +3,7 @@ TimeToolTimeIntervalCollectionOccurredResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionOccurredResult
 
-   Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method.
+   Contains the results returned with ITimeToolTimeIntervalCollection.Occurred method.
 
 .. py:currentmodule:: TimeToolTimeIntervalCollectionOccurredResult
 

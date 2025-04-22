@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.set_mode`
-              - Do not use this method, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Sets the current radar mode by name.
+              - Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Sets the current radar mode by name.
 
     .. tab-item:: Properties
         
@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Gets an array of supported mode names.
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.mode`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Gets the current radar mode.
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter`
               - Get the radar transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.receiver`
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes
     :type: list
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Gets an array of supported mode names.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.mode
     :type: IRadarModeMonostatic
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Gets the current radar mode.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter
@@ -123,7 +123,7 @@ Method detail
 .. py:method:: set_mode(self, mode_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.set_mode
 
-    Do not use this method, as it is deprecated. Use ModeComponentLinking on IAgRadarModelMonostatic instead. Sets the current radar mode by name.
+    Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Sets the current radar mode by name.
 
     :Parameters:
 

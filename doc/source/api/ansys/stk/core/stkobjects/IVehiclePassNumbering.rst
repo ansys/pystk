@@ -3,7 +3,7 @@ IVehiclePassNumbering
 
 .. py:class:: ansys.stk.core.stkobjects.IVehiclePassNumbering
 
-   Base Interaface IAgVePassNumbering. IAgVePassNumberingDateOfFirstPass and IAgVePassNumberingFirstPassNum derive from this.
+   Base Interaface IVehiclePassNumbering. PassBreakNumberingDateOfFirstPass and PassBreakNumberingFirstPassNumber derive from this.
 
 .. py:currentmodule:: IVehiclePassNumbering
 

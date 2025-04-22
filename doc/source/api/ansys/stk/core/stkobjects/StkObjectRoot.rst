@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.end_update`
               - Signals the object that the batch update is complete.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands`
-              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.isolate`
               - Make the unit preferences of the current instance isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf`
@@ -263,12 +263,12 @@ Manage STK Desktop events
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
 
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
 
-    # Now open a tkinter window that processing COM messages.
+    # Now open a tkinter window that processing Windows messages.
     from tkinter import Tk
 
     window = Tk()
@@ -556,7 +556,7 @@ Method detail
 .. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
-    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
 
     :Parameters:
 

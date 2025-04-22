@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Target.set_az_el_mask`
-              - Set an az-el mask. A member of the AgEAzElMaskType enumeration.
+              - Set an az-el mask. A member of the AzElMaskType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Target.reset_az_el_mask`
               - Reset the az-el mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Target.get_az_el_mask`
-              - Get the az-el mask. A member of the AgEAzElMaskType enumeration.
+              - Get the az-el mask. A member of the AzElMaskType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Target.get_az_el_mask_data`
               - Get az-el mask data.
 
@@ -222,7 +222,7 @@ Method detail
 .. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Target.set_az_el_mask
 
-    Set an az-el mask. A member of the AgEAzElMaskType enumeration.
+    Set an az-el mask. A member of the AzElMaskType enumeration.
 
     :Parameters:
 
@@ -252,7 +252,7 @@ Method detail
 .. py:method:: get_az_el_mask(self) -> AzElMaskType
     :canonical: ansys.stk.core.stkobjects.Target.get_az_el_mask
 
-    Get the az-el mask. A member of the AgEAzElMaskType enumeration.
+    Get the az-el mask. A member of the AzElMaskType enumeration.
 
     :Returns:
 

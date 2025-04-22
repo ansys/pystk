@@ -3,7 +3,7 @@ VehicleEphemerisBinaryExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisBinaryExportTool
 
-   AgVeEphemerisTypeSTKBinary Class.
+   VehicleEphemerisBinaryExportTool Class.
 
 .. py:currentmodule:: VehicleEphemerisBinaryExportTool
 

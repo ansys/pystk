@@ -1563,16 +1563,16 @@ Summary
               - The calculation object location source Types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravitationalParameterSource`
-              - The source of the gravitational parameter for a CAgVAStateCalcGravitationalParameter calculation object.
+              - The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ReferenceRadiusSource`
-              - The source of the reference radius for a CAgVAStateCalcReferenceRadius calculation object.
+              - The source of the reference radius for a CStateCalcReferenceRadius calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravityCoefficientNormalizationType`
-              - The normalization type for the CAgVAStateCalcGravCoeff calculation object.
+              - The normalization type for the CStateCalcGravCoeff calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravityCoefficientType`
-              - The coefficient type for the CAgVAStateCalcGravCoeff calculation object.
+              - The coefficient type for the CStateCalcGravCoeff calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.STMPerturbationVariables`
               - The initial and final Cartesian variational variables that describe an STM element.

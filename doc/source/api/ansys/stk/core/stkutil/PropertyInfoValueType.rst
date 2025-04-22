@@ -26,10 +26,10 @@ Overview
               - Property is of type real.
 
             * - :py:attr:`~QUANTITY`
-              - Property is of type IAgQuantity.
+              - Property is of type Quantity.
 
             * - :py:attr:`~DATE`
-              - Property is of type IAgDate.
+              - Property is of type Date.
 
             * - :py:attr:`~STRING`
               - Property is of type string.

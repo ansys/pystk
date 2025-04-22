@@ -130,22 +130,22 @@ Summary
               - Represents the results of evaluating a scalar component.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalResult`
-              - Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
+              - Contains the results returned with ITimeToolTimeIntervalList.FindIntervals method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantOccurrenceResult`
-              - Contains the results returned with IAgCrdnEvent.FindOccurrence method.
+              - Contains the results returned with ITimeToolInstant.FindOccurrence method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFindTimesResult`
               - Return a collection of intervals and an array of times.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalsVectorResult`
-              - Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
+              - Contains the results returned with ITimeToolTimeIntervalCollection.FindIntervalCollection method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionOccurredResult`
-              - Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method.
+              - Contains the results returned with ITimeToolTimeIntervalCollection.Occurred method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalListResult`
-              - Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
+              - Contains the results returned with ITimeToolTimeIntervalList.FindIntervals method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalVectorCollection`
               - A collection of interval collections.
@@ -958,61 +958,61 @@ Summary
               - Represents well-known VGT Axes.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindResult`
-              - Represents result returned with IAgCrdnAngle.FindCoordinates method.
+              - Represents result returned with IVectorGeometryToolAngle.FindCoordinates method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
+              - Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFrom method.
+              - Contains the results returned with IVectorGeometryToolAxes.TransformFrom method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
+              - Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesFindInAxesResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxes method.
+              - Contains the results returned with IVectorGeometryToolAxes.FindInAxes method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
+              - Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInAxesResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxes method.
+              - Contains the results returned with IVectorGeometryToolPlane.FindInAxes method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method.
+              - Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInSystemResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystem method.
+              - Contains the results returned with IVectorGeometryToolPlane.FindInSystem method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
+              - Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPointLocateInSystemResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
+              - Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPointLocateInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
+              - Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemTransformResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
+              - Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemTransformWithRateResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
+              - Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemFindInSystemResult`
-              - Contains the results returned with IAgCrdnSystem.FindInSystem method.
+              - Contains the results returned with IVectorGeometryToolSystem.FindInSystem method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchVectorFindInAxesResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxes method.
+              - Contains the results returned with IVectorGeometryToolVector.FindInAxes method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchVectorFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
+              - Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
+              - Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngle method.
+              - Contains the results returned with IVectorGeometryToolAngle.FindAngle method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolInterval`
               - Represents an interval.

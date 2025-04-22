@@ -3,7 +3,7 @@ IVehicleBreakAngle
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleBreakAngle
 
-   Base Interface IAgVeBreakAngle. IAgVeBreakAngleBreakByLatitude and IAgVeBreakAngleBreakByLongitude derive from this.
+   Base Interface IVehicleBreakAngle. VehicleBreakAngleBreakByLatitude and VehicleBreakAngleBreakByLongitude derive from this.
 
 .. py:currentmodule:: IVehicleBreakAngle
 

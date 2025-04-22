@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.add`
               - Add a new element to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.remove_by_type`
-              - Remove an element from the collection using the AgEVeConsiderAnalysisType type.
+              - Remove an element from the collection using the VehicleConsiderAnalysisType type.
 
     .. tab-item:: Properties
         
@@ -122,7 +122,7 @@ Method detail
 .. py:method:: remove_by_type(self, param_type: VehicleConsiderAnalysisType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.remove_by_type
 
-    Remove an element from the collection using the AgEVeConsiderAnalysisType type.
+    Remove an element from the collection using the VehicleConsiderAnalysisType type.
 
     :Parameters:
 

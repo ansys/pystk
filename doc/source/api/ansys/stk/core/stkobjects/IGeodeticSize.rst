@@ -3,7 +3,7 @@ IGeodeticSize
 
 .. py:class:: ansys.stk.core.stkobjects.IGeodeticSize
 
-   Base Interface IAgGeodeticSize. IAgGeodeticSizeAltitude and IAgGeodeticSizeRadius derive from this.
+   Base Interface IGeodeticSize. DeticSizeAltitude and DeticSizeRadius derive from this.
 
 .. py:currentmodule:: IGeodeticSize
 

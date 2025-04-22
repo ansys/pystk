@@ -30,11 +30,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_border_wall`
               - Display the border for the area target as a solid or translucent wall that extends from the lower edge altitude to the upper edge altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_altitude_reference`
-              - Reference used in defining the upper edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
+              - Reference used in defining the upper edge of the border wall. A member of the BorderWallUpperLowerEdgeAltitudeReference enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_height`
               - Height of the upper edge of the border wall.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_altitude_reference`
-              - Reference used in defining the lower edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
+              - Reference used in defining the lower edge of the border wall. A member of the BorderWallUpperLowerEdgeAltitudeReference enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_height`
               - Height of the lower edge of the border wall.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_wall_translucency`
@@ -69,7 +69,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_altitude_reference
     :type: BorderWallUpperLowerEdgeAltitudeReference
 
-    Reference used in defining the upper edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
+    Reference used in defining the upper edge of the border wall. A member of the BorderWallUpperLowerEdgeAltitudeReference enumeration.
 
 .. py:property:: upper_edge_height
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_height
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_altitude_reference
     :type: BorderWallUpperLowerEdgeAltitudeReference
 
-    Reference used in defining the lower edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
+    Reference used in defining the lower edge of the border wall. A member of the BorderWallUpperLowerEdgeAltitudeReference enumeration.
 
 .. py:property:: lower_edge_height
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_height

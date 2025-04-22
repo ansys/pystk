@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.percent_translucency`
               - Specify the percent translucency of the sensor projection. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.projection_type`
-              - Select the projection type from the AgESnVOProjectionType enumeration.
+              - Select the projection type from the SensorGraphics3DProjectionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.space_projection`
               - Length of the sensor's projection when it is not intersecting the Earth. In this case, distance is computed so that the projection of the outermost point on the contour along the boresight is equal to the specified distance. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.targeting`
@@ -106,7 +106,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_type
     :type: SensorGraphics3DProjectionType
 
-    Select the projection type from the AgESnVOProjectionType enumeration.
+    Select the projection type from the SensorGraphics3DProjectionType enumeration.
 
 .. py:property:: space_projection
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.space_projection

@@ -5,7 +5,7 @@ Volumetric
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
-   The AgVolumetric class.
+   The Volumetric class.
 
 .. py:currentmodule:: Volumetric
 
@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.set_volume_grid_definition_type`
-              - Set volume grid definition type, using the AgEVmDefinitionType enumeration.
+              - Set volume grid definition type, using the VolumetricDefinitionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.compute`
               - Compute computations for Volumetric.
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.clear`
@@ -38,7 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.volume_grid_definition_type`
-              - Get Volume Grid definition type. A member of the AgEVmDefinitionType enumeration.
+              - Get Volume Grid definition type. A member of the VolumetricDefinitionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.volume_grid_definition`
               - Get Volume Grid definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.Volumetric.volume_analysis_interval`
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_grid_definition_type
     :type: VolumetricDefinitionType
 
-    Get Volume Grid definition type. A member of the AgEVmDefinitionType enumeration.
+    Get Volume Grid definition type. A member of the VolumetricDefinitionType enumeration.
 
 .. py:property:: volume_grid_definition
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_grid_definition
@@ -99,7 +99,7 @@ Method detail
 .. py:method:: set_volume_grid_definition_type(self, vm_grid_calc_type: VolumetricDefinitionType) -> None
     :canonical: ansys.stk.core.stkobjects.Volumetric.set_volume_grid_definition_type
 
-    Set volume grid definition type, using the AgEVmDefinitionType enumeration.
+    Set volume grid definition type, using the VolumetricDefinitionType enumeration.
 
     :Parameters:
 

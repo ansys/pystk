@@ -5,7 +5,7 @@ AnalysisWorkbenchPointLocateInSystemWithRateResult
 
    Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`
 
-   Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
+   Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method.
 
 .. py:currentmodule:: AnalysisWorkbenchPointLocateInSystemWithRateResult
 

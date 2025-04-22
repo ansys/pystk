@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Sets the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Sets the current filter model by name.
 
     .. tab-item:: Properties
         
@@ -42,9 +42,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit`
               - Get or set the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter_component_linking`
@@ -103,13 +103,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.supported_filters
     :type: list
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter
     :type: IRFFilterModel
 
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Gets the current filter model.
 
 .. py:property:: maximum_power_limit
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit
@@ -154,7 +154,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.set_filter
 
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Sets the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on RadarTransmitterMultifunction instead. Sets the current filter model by name.
 
     :Parameters:
 

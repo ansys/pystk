@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours`
               - Display the range contours as a filled polygon on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style`
-              - Get or set the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
+              - Get or set the style in which the range contours polygon is filled. A member of the FillStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes`
               - The collection of level attributes defining the way in which the range contours are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.number_of_decimal_digits`
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style
     :type: FillStyle
 
-    Get or set the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
+    Get or set the style in which the range contours polygon is filled. A member of the FillStyle enumeration.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes

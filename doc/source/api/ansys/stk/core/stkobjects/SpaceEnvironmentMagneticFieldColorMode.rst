@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvMagFieldColorMode value.
+              - An invalid SpaceEnvironmentMagneticFieldColorMode value.
 
             * - :py:attr:`~FIELD_MAGNITUDE`
               - Color field lines according to the magnitude of the magnetic field.
