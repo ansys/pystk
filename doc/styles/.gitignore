@@ -1,5 +1,4 @@
 *
 !**/ANSYS/accept.txt
 !**/ANSYS/reject.txt
-!/Custom/*.yml
 !.gitignore

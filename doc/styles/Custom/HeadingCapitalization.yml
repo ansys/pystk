@@ -1,8 +1,0 @@
-# Custom capitalization rule for headings with acronym STK
-extends: capitalization
-message: "'%s' should use sentence-style capitalization."
-level: warning
-scope: heading
-match: $sentence
-exceptions:
-  - STK
