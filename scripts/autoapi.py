@@ -1,17 +1,40 @@
+"""Automatically generate reStructuredText files for Python modules and classes."""
+
 import ast
-import os
 from pathlib import Path
 import textwrap
 from typing import Union
 
 
 class ManualRSTGenerator:
+    """Generates reStructuredText files for Python modules and classes."""
+
     def __init__(self, core_namespace, module_dir, doc_dir):
+        """Initialize the generator.
+
+        Parameters
+        ----------
+        core_namespace : str
+            The namespace for the modules.
+        module_dir : pathlib.Path
+            Path to the directory containing the Python modules.
+        doc_dir : pathlib.Path
+            Path to the directory where to save the generated RST files.
+
+        """
         self.core_namespace = core_namespace
         self.module_dir = module_dir
         self.doc_dir = doc_dir
 
     def generate_rst_for_manual_modules(self, auto_files):
+        """Generate RST files for Python modules.
+
+        Parameters
+        ----------
+        auto_files : list
+            List of files to be excluded from RST generation.
+
+        """
         auto_file_paths = [Path(f).resolve() for f in auto_files]
 
         for path in Path(self.module_dir).rglob("*.py"):
@@ -25,6 +48,14 @@ class ManualRSTGenerator:
                 self._generate_rst_for_pymodule(str(path))
 
     def _wrap_python_code_snippets(self, unformatted_docstring: str):
+        """Wrap Python code snippets in the docstring with code-block directive.
+
+        Parameters
+        ----------
+        unformatted_docstring : str
+            The unformatted docstring.
+
+        """
         lines = unformatted_docstring.splitlines()
         formatted_lines = []
 
@@ -46,6 +77,13 @@ class ManualRSTGenerator:
         return "\n".join(formatted_lines).rstrip()
 
     def _generate_rst_for_pymodule(self, path_to_src_file: Union[str, Path]):
+        """Generate RST file for a Python module.
+
+        Parameters
+        ----------
+        path_to_src_file : str or pathlib.Path
+            Path to the source file.
+        """
         path_to_src_file = Path(path_to_src_file).resolve()
         module_dir_path = Path(self.module_dir).resolve()
         relative_path = path_to_src_file.relative_to(module_dir_path)
@@ -66,8 +104,8 @@ class ManualRSTGenerator:
         out_file_path.parent.mkdir(parents=True, exist_ok=True)
 
         with (
-            open(path_to_src_file, "r", encoding="utf-8") as in_file,
-            open(out_file_path, "w", encoding="utf-8") as out_file,
+            path_to_src_file.open("r", encoding="utf-8") as in_file,
+            out_file_path.open("w", encoding="utf-8") as out_file,
         ):
             tree = ast.parse(in_file.read())
 
@@ -180,9 +218,23 @@ class ManualRSTGenerator:
                 self._generate_rst_for_pyenum(enum, containing_namespace, module_name, str(out_file_path))
 
     def _generate_rst_for_pyobj(self, obj_definition, containing_namespace, module_name, module_rst_file_path):
-        out_dir = os.path.join(os.path.dirname(module_rst_file_path), module_name)
-        out_obj_file_path = os.path.join(out_dir, obj_definition.name + ".rst")
-        os.makedirs(out_dir, exist_ok=True)
+        """Generate RST file for a Python object (class or interface).
+
+        Parameters
+        ----------
+        obj_definition : ast.ClassDef
+            Object definition in the AST.
+        containing_namespace : str
+            The namespace containing the object.
+        module_name : str
+            Name of the module.
+        module_rst_file_path : str
+            Path to the module RST file.
+
+        """
+        out_dir = module_rst_file_path.parent.resolve() / module_name
+        out_dir = out_dir / f"{obj_definition.name}.rst"
+        out_dir.mkdir(parents=True, exist_ok=True)
 
         fq_name = f"{containing_namespace}.{module_name}.{obj_definition.name}"
         base_classes = ", ".join(base.id for base in obj_definition.bases if hasattr(base, "id"))
@@ -234,7 +286,7 @@ class ManualRSTGenerator:
                 return node.id
             return ""
 
-        with open(out_obj_file_path, "w", encoding="utf-8") as f:
+        with out_dir.open("w", encoding="utf-8") as f:
             f.writelines(
                 [
                     f"{obj_definition.name}\n",
@@ -313,11 +365,25 @@ class ManualRSTGenerator:
             f.write("\n")
 
     def _generate_rst_for_pyenum(self, enum_def, namespace, module_name, module_rst_path):
-        output_dir = os.path.join(os.path.dirname(module_rst_path), module_name)
-        os.makedirs(output_dir, exist_ok=True)
+        """Generate RST file for a Python enum.
 
-        out_path = os.path.join(output_dir, f"{enum_def.name}.rst")
-        with open(out_path, "w", encoding="utf-8") as f:
+        Parameters
+        ----------
+        enum_def : ast.ClassDef
+            Enum definition in the AST.
+        namespace : str
+            Namespace containing the enum.
+        module_name : str
+            Name of the module.
+        module_rst_path : str
+            Path to the module RST file.
+
+        """
+        output_dir = module_rst_path.parent.resolve() / module_name
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        out_path = output_dir / f"{enum_def.name}.rst"
+        with out_path.open("w", encoding="utf-8") as f:
             # Header and class declaration
             f.writelines(
                 [
@@ -393,7 +459,7 @@ def autodoc_extensions():
 
 
 def main():
-    """Main function to execute the script."""
+    """Entry point for the script."""
     autodoc_extensions()
 
 
