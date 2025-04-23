@@ -5,15 +5,15 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "ansys-stk-core"
 dynamic = ["version"]
-description = "A Python API for STK"
+description = "The next generation Python API for STK."
 readme = "README.rst"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.maintainers@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
@@ -21,6 +21,8 @@ classifiers = [
     "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
@@ -31,21 +33,28 @@ dependencies = [
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [project.optional-dependencies]
-# TODO: the approval of PEP 735 should allow the usage of dependency groups
-# https://peps.python.org/pep-0735/
+# TODO: split between dependency groups and installation targets with the release of pip v25.1
+# https://github.com/pypa/pip/milestone/78
 all = [
-    "grpcio",
-    "protobuf",
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.5",
-    "Pillow==11.2.1",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0",
-    "libcst==1.7.0"
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.5",
+    "Pillow>=11.2.1",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
+    "libcst>=1.7.0"
 ]
 grpc = [
-    "grpcio",
-    "protobuf",
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+]
+jupyter = [
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.4",
+    "Pillow>=11.1.0",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
 ]
 tests = [
     "libcst==1.7.0",
@@ -79,13 +88,6 @@ doc = [
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
-]
-visualization = [
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.5",
-    "Pillow==11.2.1",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0"
 ]
 vulnerabilities = [
     "bandit==1.8.3",
