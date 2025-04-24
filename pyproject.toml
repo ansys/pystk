@@ -17,14 +17,17 @@ maintainers = [
 ]
 
 classifiers = [
-    # TODO: remove all 'Private' classifiers prior to the public release
-    "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
 ]
@@ -89,19 +92,22 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
+# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
     "bandit==1.8.3",
     "safety==3.3.0",
+    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
 name = "ansys.stk.core"
 
 [project.urls]
-Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Discussions = "https://github.com/ansys/pystk/discussions"
 Documentation = "https://stk.docs.pyansys.com/"
-Source = "https://github.com/pyansys/pystk"
-Tracker = "https://github.com/pyansys/pystk/issues"
+Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Issues = "https://github.com/ansys/pystk/issues"
+Source = "https://github.com/ansys/pystk"
 
 [tool.ruff]
 line-length = 120
