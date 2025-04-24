@@ -8,7 +8,7 @@
 #
 # ## Problem statement
 #
-# Two satellites present circular orbits. The first satellite has an inclination of $97.3^\circ$ and an altitude of 400 km. The second satellite has a RAAN of $340^\circ$. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of $-23.5^\circ$ and $23.5^\circ$. Use a point resolution of $3.0^\circ$. Determine which satellite achieves higher coverage of the tropics region and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.
+# Two satellites present circular orbits. The first satellite has an inclination of $97.3^\circ$ and an altitude of $400$ km. The second satellite has a RAAN of $340^\circ$. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of $-23.5^\circ$ and $23.5^\circ$. Use a point resolution of $3.0^\circ$. Determine which satellite achieves higher coverage of the tropics region and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.
 #
 # ## Launch a new STK instance
 #
@@ -181,17 +181,15 @@ access_by_latitude = tropics.data_providers.item("Coverage by Latitude")
 asset_data_provider_results = access_by_asset.execute()
 latitude_data_provider_results = access_by_latitude.execute()
 
-# Convert the results to pandas ``dataframes`` or numpy arrays to better understand the data:
-
 # **Which satellite achieved a higher average coverage of the tropics region?**
 
 # Converting to a pandas ``dataframe`` makes the answer clear:
 
 asset_data_provider_results.data_sets.to_pandas_dataframe()
 
-# **Answer:** the satellite ``PolarSat`` achieved higher average coverage of the tropics region with an average coverage percentage of 2.704572194409824.
+# **Answer:** the satellite ``PolarSat`` achieved higher average coverage of the tropics region with an average coverage percentage of $2.704572194409824$.
 
-# Or, convert to a numpy array:
+# **Note:** converting to a numpy array is also possible:
 
 asset_data_provider_results.data_sets.to_numpy_array()
 
