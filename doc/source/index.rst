@@ -64,5 +64,6 @@ and payloads in a realistic mission context. You are viewing version |version|.
    user-guide
    api
    examples
+   changelog
    contribute
    artifacts
