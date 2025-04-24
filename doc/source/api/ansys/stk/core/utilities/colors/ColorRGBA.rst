@@ -29,7 +29,7 @@ Overview
 Examples
 --------
 
-Get and set a four-channel color for the graphics of an STK application object
+Get and set a four-channel color for the graphics of an STK graphics primitive
 
 .. code-block:: python
 

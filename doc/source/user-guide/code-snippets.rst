@@ -27,7 +27,7 @@ Analysis Workbench
   - :ref:`Create a new cross product vector <CreateCrossProductVector>`
   - :ref:`Create a new fixed in axes vector <CreateFixedAxesVector>`
   - :ref:`Create a new displacement vector <CreateDisplacementVector>`
-  - :ref:`Get a default vgt component on vehicle <GetVGTCompVehicle>`
+  - :ref:`Get a default VGT component on vehicle <GetVGTCompVehicle>`
   - :ref:`Get the center point and inertial system of Earth central body <GetVGTPoint>`
 Camera
   - :ref:`Change the camera reference frame <CameraReferenceFrame>`
@@ -48,7 +48,7 @@ Data Analysis
   - :ref:`Load a numpy array with flight profile data <FlightProfileNumpyArray>`
 Graphics
   GlobeOverlays
-    - :ref:`Control the lighting of the 3d scene <SceneLighting>`
+    - :ref:`Control the lighting of the 3D scene <SceneLighting>`
     - :ref:`Control the display of stars and water texture <DisplayStarsWater>`
     - :ref:`Add imagery and terrain to the scene <AddTerrainImagery>`
 
@@ -67,7 +67,7 @@ Graphics
 Initialization
   - :ref:`Attach to an already running STK runtime instance and get a reference to the STK object root <AttachSTKRuntimeSnippet>`
   - :ref:`Start STK runtime and get a reference to the STK object root <CreateSTKRuntimeNewSnippet>`
-  - :ref:`Start STK desktop and get a reference to the STK object root <CreateSTKNew>`
+  - :ref:`Start STK Desktop and get a reference to the STK object root <CreateSTKNew>`
   - :ref:`Get a reference to the STK object root using a running STK desktop application instance <AttachSTK>`
   - :ref:`Initialize STK Engine in no graphics mode and get a reference to the STK object root <StartSTKEngineSnippetWithoutGfx>`
   - :ref:`Initialize STK Engine with graphics and get a reference to the STK object root <StartSTKEngineWithGfx>`
@@ -106,7 +106,7 @@ STK Objects
     - :ref:`Return a list of available constraints <AvailableAccessConstraints>`
     - :ref:`Get handle to the object access constraints <AccessConstraints>`
   AdvCAT
-    - :ref:`Create a new advcat object <CreateCAT>`
+    - :ref:`Create a new AdvCat object <CreateCAT>`
   Aircraft
     - :ref:`Set the attitude of the aircraft <AircraftAttitude>`
     - :ref:`Add array of waypoints to aircraft <AddAircraftArrayPoints>`
@@ -140,10 +140,10 @@ STK Objects
     - :ref:`Use an interval data provider <IntervalDataProvider>`
   Facility
     Graphics
-      - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
+      - :ref:`Display the AzEl mask in 2D/3D <FacilityAzElMaskDisplay>`
 
-    - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
-    - :ref:`Get the cartesian position of a facility <GetPositionFacility>`
+    - :ref:`Add an AzEl mask to a facility <AzElMaskFacility>`
+    - :ref:`Get the Cartesian position of a facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of a facility <SetPositionFacility>`
     - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
     - :ref:`Get a valid reference to a facility <GetValidFacility>`
@@ -160,34 +160,34 @@ STK Objects
   Missile
     - :ref:`Create a new missile (on the current scenario central body) <CreateMissile>`
   MTO
-    - :ref:`Load multi-track object (mto) track points from a file <MTOLoadTrack>`
-    - :ref:`Create a new mto (on the current scenario central body) <CreateMTO>`
+    - :ref:`Load multi-track object (MTO) track points from a file <MTOLoadTrack>`
+    - :ref:`Create a new MTO (on the current scenario central body) <CreateMTO>`
   Object Coverage
     - :ref:`Compute object coverage <ComputeObjectCoverage>`
   Planet
     Graphics
-      - :ref:`Modify a planet's 2d properties <ModifyPlanet2DGraphics>`
+      - :ref:`Modify a planet's 2D properties <ModifyPlanet2DGraphics>`
 
     - :ref:`Create a new planet <CreatePlanet>`
   Satellite
     Graphics
-      - :ref:`Add a vector to display in 3d <AddGraphicsVector>`
-      - :ref:`Add fixed system orbit system in 3d display <GraphicsOrbitSystem>`
+      - :ref:`Add a vector to display in 3D <AddGraphicsVector>`
+      - :ref:`Add fixed system orbit system in 3D display <GraphicsOrbitSystem>`
       - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
-      - :ref:`Change the 3d model and marker properties <GraphicsModel>`
-      - :ref:`Display drop lines in 3d window <GraphicsDropline>`
-      - :ref:`Add a data display to the 3d window <GraphicsDataDisplay>`
+      - :ref:`Change the 3D model and marker properties <GraphicsModel>`
+      - :ref:`Display drop lines in 3D window <GraphicsDropline>`
+      - :ref:`Add a data display to the 3D window <GraphicsDataDisplay>`
       - :ref:`Change the display label of the vehicle <GraphicsLabel>`
-      - :ref:`Set 2d/3d pass display properties <GraphicsPass>`
+      - :ref:`Set 2D/3D pass display properties <GraphicsPass>`
       - :ref:`Set vehicle lighting properties <GraphicsLighting>`
-      - :ref:`Set 2d swath <GraphicsSwath>`
-      - :ref:`Set 2d/3d range contours <GraphicsRangeContours>`
-      - :ref:`Set 2d/3d elevation contours <GraphicsElevationContours>`
-      - :ref:`Set 2d display times to custom and add intervals <CustomGraphics2D>`
-      - :ref:`Set 2d graphics display properties <BasicGraphics2D>`
+      - :ref:`Set 2D swath <GraphicsSwath>`
+      - :ref:`Set 2D/3D range contours <GraphicsRangeContours>`
+      - :ref:`Set 2D/3D elevation contours <GraphicsElevationContours>`
+      - :ref:`Set 2D display times to custom and add intervals <CustomGraphics2D>`
+      - :ref:`Set 2D graphics display properties <BasicGraphics2D>`
       - :ref:`Change the graphics resolution of the orbit for a smooth path <SatelliteGraphicsResolution>`
     Astrogator
-      - :ref:`Run the astrogator® mission control sequence (mcs) <AstrogatorRunMCS>`
+      - :ref:`Run the Astrogator® mission control sequence (MCS) <AstrogatorRunMCS>`
 
     - :ref:`Set satellite attitude external <SatelliteAttitudeExternal>`
     - :ref:`Set satellite attitude targeting <SatelliteAttitudeTarget>`
@@ -195,9 +195,9 @@ STK Objects
     - :ref:`Export an ephemeris file to a scenario folder <ExportEphemerisFile>`
     - :ref:`Set satellite propagator to sgp4 and propagate <SGP4Satellite>`
     - :ref:`Set satellite propagator to spice and propagate <SPICESatellite>`
-    - :ref:`Set satellite propagator to astrogator and clear segments <AstrogatorSatellite>`
-    - :ref:`Set satellite propagator to hpop and set force model properties <HPOPSatellite>`
-    - :ref:`Set satellite propagator to j4 and assign cartesian position <J4Satellite>`
+    - :ref:`Set satellite propagator to Astrogator and clear segments <AstrogatorSatellite>`
+    - :ref:`Set satellite propagator to HPOP and set force model properties <HPOPSatellite>`
+    - :ref:`Set satellite propagator to j4 and assign Cartesian position <J4Satellite>`
     - :ref:`Set the initial state of a satellite and propagate <SatelliteInitialState>`
     - :ref:`Create a satellite (on the current scenario central body) <CreateSatellite>`
   Sensor
@@ -205,14 +205,14 @@ STK Objects
       - :ref:`Sensor persistence <SensorPersistence>`
 
     - :ref:`Sensor body mask <SensorBodyMask>`
-    - :ref:`Define sensor pointing fixed axes ypr <DefineSensorPointingFixedAxesYPR>`
-    - :ref:`Define sensor pointing fixed ypr <DefineSensorPointingFixedYPR>`
+    - :ref:`Define sensor pointing fixed axes YPR <DefineSensorPointingFixedAxesYPR>`
+    - :ref:`Define sensor pointing fixed YPR <DefineSensorPointingFixedYPR>`
     - :ref:`Define sensor pointing fixed axes quaternion <DefineSensorPointingFixedAxesQuaternion>`
     - :ref:`Define sensor pointing fixed quaternion <DefineSensorPointingFixedQuaternion>`
-    - :ref:`Define sensor pointing fixed axes euler <DefineSensorPointingFixedAxesEuler>`
-    - :ref:`Define sensor pointing fixed euler <DefineSensorPointingFixedEuler>`
-    - :ref:`Define sensor pointing fixed axes azel <DefineSensorPointingFixedAxesAzEl>`
-    - :ref:`Define sensor pointing fixed azel <DefineSensorPointingFixedAzEl>`
+    - :ref:`Define sensor pointing fixed axes Euler <DefineSensorPointingFixedAxesEuler>`
+    - :ref:`Define sensor pointing fixed Euler <DefineSensorPointingFixedEuler>`
+    - :ref:`Define sensor pointing fixed axes AzEl <DefineSensorPointingFixedAxesAzEl>`
+    - :ref:`Define sensor pointing fixed AzEl <DefineSensorPointingFixedAzEl>`
     - :ref:`Set sensor properties <SensorProperties>`
     - :ref:`Attach a sensor object to a vehicle <CreateSensor>`
   Communications
@@ -589,7 +589,7 @@ Get a default VGT component on vehicle
 .. _GetVGTPoint:
 
 Get the center point and inertial system of Earth central body
-================================================================
+==============================================================
 
 .. code-block:: python
 
@@ -1109,7 +1109,7 @@ Combine enumerations with the logical or operator
 .. _AttachSTKRuntimeSnippet:
 
 Attach to an already running STK runtime instance and get a reference to the STK object root
-========================================================================================================
+============================================================================================
 
 .. code-block:: python
 

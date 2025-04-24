@@ -27227,7 +27227,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> bodyAxes = vgtSat.axes.item("Body")
     >>> icrfAxes = vgtSat.axes.item("ICRF")
 
-    Get the Center point and Inertial System of Earth's central body:
+    Get the Center point and Inertial System of Earth central body:
     >>> # StkObjectRoot root: STK Object Model root
     >>> centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     >>> icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")

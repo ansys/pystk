@@ -106,7 +106,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="STKEngineEvents",
-        description="Manage STK Engine library events",
+        description="Manage STK Engine events",
         category="Scenario | Scenario Management",
         eid="stkobjects~StkObjectRoot",
     )
@@ -176,7 +176,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CloseSTK",
-        description="Close the STK application",
+        description="Close the STK desktop application",
         category="Scenario | Scenario Management",
         eid="uiapplication~UiApplication",
     )

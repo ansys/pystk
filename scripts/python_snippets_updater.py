@@ -93,6 +93,31 @@ class SnippetsRSTGenerator(object):
             current_level["snippets"].append({"description": snip["description"], "name": snip["name"]})
         return snippet_tree
 
+    def _capitalize_description(self, description):
+        description = re.sub(r"\b(stk desktop(?! application))\b", "STK Desktop", description.capitalize())
+
+        # Substitutions to make vale happy
+        vale_substitutions = {
+            "2d": "2D",
+            "3d": "3D",
+            "advcat": "AdvCat",
+            "astrogator": "Astrogator",
+            "azel": "AzEl",
+            "cartesian": "Cartesian",
+            "earth": "Earth",
+            "euler": "Euler",
+            "hpop": "HPOP",
+            "mcs": "MCS",
+            "mto": "MTO",
+            "stk engine": "STK Engine",
+            "stk": "STK",
+            "vgt": "VGT",
+            "ypr": "YPR",
+        }
+
+        ored_substitutions = "|".join(vale_substitutions)
+        return re.sub(rf"\b({ored_substitutions})\b", lambda s: vale_substitutions[s[1]], description)
+
     def _write_snippet_tree(self, out_file, tree, indentation):
         sub_cats = tree["sub_cats"].keys()
         for node_name in sub_cats:
@@ -104,7 +129,9 @@ class SnippetsRSTGenerator(object):
             )  # Required by Sphinx to avoid warning: Block quote ends without a blank line; unexpected unindent.
         for snippet in tree["snippets"]:
             out_file.write(
-                "{}- :ref:`{} <{}>`\n".format(indentation * " ", snippet["description"].capitalize(), snippet["name"])
+                "{}- :ref:`{} <{}>`\n".format(
+                    indentation * " ", self._capitalize_description(snippet["description"]), snippet["name"]
+                )
             )
 
     def write_rst(self):
@@ -136,30 +163,7 @@ class SnippetsRSTGenerator(object):
             out_file.write("\n")
 
             for snippet in self.all_snippets:
-                description = snippet["description"].capitalize()
-
-                description = re.sub(r"\b(stk desktop(?! application))\b", "STK Desktop", description)
-
-                # Substitutions to make vale happy
-                vale_substitutions = {
-                    "2d": "2D",
-                    "3d": "3D",
-                    "advcat": "AdvCat",
-                    "astrogator": "Astrogator",
-                    "azel": "AzEl",
-                    "cartesian": "Cartesian",
-                    "earth": "Earth",
-                    "euler": "Euler",
-                    "hpop": "HPOP",
-                    "mcs": "MCS",
-                    "mto": "MTO",
-                    "stk engine": "STK Engine",
-                    "stk": "STK",
-                    "vgt": "VGT",
-                    "ypr": "YPR",
-                }
-                ored_substitutions = "|".join(vale_substitutions)
-                description = re.sub(rf"\b({ored_substitutions})\b", lambda s: vale_substitutions[s[1]], description)
+                description = self._capitalize_description(snippet["description"])
 
                 snippet_format = """
                 .. _{}:
