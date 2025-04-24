@@ -21,6 +21,20 @@ concurrency:
 
 jobs:
 
+  update-changelog:
+    name: "Update changelog"
+    if: contains(github.ref, 'refs/tags')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: ansys/actions/doc-deploy-changelog@v9
+        with:
+          token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+          bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+          bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }}
+
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
@@ -296,6 +310,7 @@ jobs:
           library-name: ${{ env.LIBRARY_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
           generate_release_notes: false
+          changelog-release-notes: true
           add-artifact-attestation-notes: true
 
   doc-deploy-stable:
