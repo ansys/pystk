@@ -55,7 +55,7 @@ propagator.propagate()  # To propagate the orbit
 #
 # It is possible to display the created scenario by using PySTK widgets for Jupyter:
 
-# +
+# + tags=["nbsphinx-thumbnail"]
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
@@ -83,7 +83,7 @@ root.close_scenario()
 
 # ## Load an existing scenario
 
-# Load an existing scenario by opening the .sc (scenario) file:
+# Load an existing scenario by opening the SC (scenario) file:
 
 # Open an existing scenario
 scenario = root.load_scenario(str(scenario_path))

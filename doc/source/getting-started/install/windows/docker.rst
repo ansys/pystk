@@ -39,9 +39,9 @@ must be contained inside of the ``stk-engine`` directory.
     ├── stk-engine
     │   └── distributions/
     │          └── Place STK Engine artifacts here
-    ├── stk-engine-py310
     ├── stk-engine-py311
     ├── stk-engine-py312
+    ├── stk-engine-py313
     └── stk-engine-pybase
 
 Build Docker images
