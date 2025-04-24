@@ -106,7 +106,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="STKEngineEvents",
-        description="Manage STK Engine application events",
+        description="Manage STK Engine library events",
         category="Scenario | Scenario Management",
         eid="stkobjects~StkObjectRoot",
     )
