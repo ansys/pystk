@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -513,7 +513,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConfigureProcedureTimeOptions",
-        description="Configure a procedure time options",
+        description="Configure a procedure's time options",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
         eid="stkobjects.aviator~IProcedure | stkobjects.aviator~ProcedureTimeOptions",
     )

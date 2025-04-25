@@ -10,7 +10,7 @@
 #
 # ## Problem statement
 #
-# A satellite presents a circular and equatorial orbit with a periapsis radius of 6700 kilometers. Propagate this parking orbit for 2 hours. Next, apply a bi-elliptic transfer to raise the apoapsis radius first up to 80000 km, and then achieve a final orbit with a periapsis radius of 42238 km. Finally, propagate the new orbit for 1 day.
+# A satellite presents a circular and equatorial orbit with a periapsis radius of $6700$ kilometers. Propagate this parking orbit for $2$ hours. Next, apply a bi-elliptic transfer to raise the apoapsis radius first up to $80000$ km, and then achieve a final orbit with a periapsis radius of $42238$ km. Finally, propagate the new orbit for $1$ day.
 #
 # Compute the required $\Delta v$ for each impulse of the maneuver.
 
@@ -73,7 +73,7 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 # Start by adding a new segment to the main sequence for modeling the initial state of the satellite:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import SegmentType, TargetSequenceAction
+from ansys.stk.core.stkobjects.astrogator import SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
@@ -99,7 +99,7 @@ initial_state.element.true_anomaly = 0.00
 
 # ## Propagate the parking orbit of the satellite
 #
-# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the bi-elliptic transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
+# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the bi-elliptic transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for $7200$ seconds, that is $2$ hours.
 
 parking_orbit_propagate = satellite.propagator.main_sequence.insert(
     SegmentType.PROPAGATE, "Parking Orbit Propagate", "-"
@@ -300,7 +300,7 @@ desired_eccentricity.tolerance = 0.01
 
 # ## Propagation along the final orbit
 #
-# Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
+# Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of $86400$ seconds.
 
 propagate_final_orbit = satellite.propagator.main_sequence.insert(
     SegmentType.PROPAGATE, "Final State Propagate", "-"

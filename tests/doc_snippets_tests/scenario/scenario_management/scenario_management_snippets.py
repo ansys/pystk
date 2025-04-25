@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -134,7 +134,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="STKDesktopEvents",
-        description="Manage STK Desktop events",
+        description="Manage STK Desktop application events",
         category="Scenario | Scenario Management",
         eid="stkobjects~StkObjectRoot",
     )
@@ -176,7 +176,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CloseSTK",
-        description="Close STK",
+        description="Close the STK desktop application",
         category="Scenario | Scenario Management",
         eid="uiapplication~UiApplication",
     )
@@ -207,7 +207,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SetUnitPreferences",
-        description="Set unit preferences for Object Model",
+        description="Set unit preferences for the Object Model",
         category="Scenario | Scenario Management",
         eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~units_preferences",
     )
@@ -273,7 +273,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ScenarioFont",
-        description="Change scenario font",
+        description="Change the scenario font",
         category="Scenario | Scenario Management",
         eid="stkobjects~ScenarioGraphics3D",
     )

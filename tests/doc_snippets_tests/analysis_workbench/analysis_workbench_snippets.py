@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -63,7 +63,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetVGTPoint",
-        description="Get Center point and Inertial System of Earth central body",
+        description="Get the Center point and Inertial System of Earth central body",
         category="Analysis Workbench",
         eid="vgt~AnalysisWorkbenchComponentProvider",
     )
@@ -83,7 +83,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetVGTCompVehicle",
-        description="Get default VGT component on vehicle",
+        description="Get a default VGT component on vehicle",
         category="Analysis Workbench",
         eid="vgt~AnalysisWorkbenchComponentProvider",
     )
@@ -369,7 +369,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateAlignedConstrainedAxes",
-        description="Create a new Aligned and Constrained Axes",
+        description="Create new Aligned and Constrained Axes",
         category="Analysis Workbench",
         eid="vgt~AnalysisWorkbenchComponentProvider",
     )
@@ -482,7 +482,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetScalarAndEvaluate",
-        description="Get a Scalar component and evaluate at a time",
+        description="Get a Scalar component and evaluate at a specific time",
         category="Analysis Workbench",
         eid="vgt~AnalysisWorkbenchComponentProvider",
     )
@@ -557,7 +557,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetTimesFromTimeInstant",
-        description="Get Times From Defined Time Instant and create an cell array",
+        description="Get Times From a Defined Time Instant and create an cell array",
         category="Analysis Workbench",
         eid="vgt~AnalysisWorkbenchComponentProvider",
     )

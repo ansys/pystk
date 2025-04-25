@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -78,7 +78,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddAircraftPoints",
-        description="Set Great Arc Propagator and Add Individual Waypoints to Aircraft",
+        description="Set the Great Arc Propagator and Add Individual Waypoints to an Aircraft",
         category="STK Objects | Aircraft",
         eid="stkobjects~Aircraft",
     )

@@ -219,7 +219,7 @@ aer_df = (
 )
 aer_df
 
-# Notice that the first access ends and the second access begins at an approximate elevation angle of 30 degrees. There is a break in access when the elevation angle exceeds 30 degrees due to the modeled cone of silence.
+# Notice that the first access ends and the second access begins at an approximate elevation angle of $30$ degrees. There is a break in access when the elevation angle exceeds $30$ degrees due to the modeled cone of silence.
 
 # It is also possible to see this cone of silence on a plot of the aircraft's elevation when it is accessed by the sensor:
 
@@ -382,7 +382,7 @@ airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.
 
 # ## Determine the probability of detection
 
-# For this radar, the probability of detection (Pdet) is based on a value of 0.800000 or higher, with 1 being the highest value. Determine the Pdet for a large aircraft, a medium aircraft, a small aircraft, and a bird by changing the aircraft's constant RCS value to simulate different sized-targets.
+# For this radar, the probability of detection (Pdet) is based on a value of $0.800000$ or higher, with $1$ being the highest value. Determine the Pdet for a large aircraft, a medium aircraft, a small aircraft, and a bird by changing the aircraft's constant RCS value to simulate different sized-targets.
 
 # Start by determining the Pdet of the large turboprop aircraft.
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -74,7 +74,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GreatArcInterpolatorPrimitives",
-        description="Great Arc Interpolator Primitives",
+        description="Compute interpolated positions along a great arc",
         category="Graphics",
         eid="graphics~GreatArcInterpolatorFactory",
     )

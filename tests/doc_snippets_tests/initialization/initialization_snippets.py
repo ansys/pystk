@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -55,7 +55,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="StartSTKEngineWithGfx",
-        description="Initialize STK Engine with graphics and get a reference to STK Object Root",
+        description="Initialize STK Engine with graphics and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
@@ -74,7 +74,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="StartSTKEngineSnippetWithoutGfx",
-        description="Initialize STK Engine in no graphics mode and get a reference to STK Object Root",
+        description="Initialize STK Engine in no graphics mode and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
@@ -94,7 +94,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AttachSTK",
-        description="Get a reference to STK Object Root using a running STK Desktop instance",
+        description="Get a reference to the STK object root using a running STK desktop application instance",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
@@ -113,7 +113,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateSTKNew",
-        description="Start STK Desktop and get a reference to STK Object Root",
+        description="Start STK Desktop and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
@@ -136,7 +136,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateSTKRuntimeNewSnippet",
-        description="Start STK Runtime and get a reference to STK Object Root",
+        description="Start STK Runtime and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
@@ -155,7 +155,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AttachSTKRuntimeSnippet",
-        description="Attach to an already running STK Runtime and get a reference to STK Object Root",
+        description="Attach to an already running STK Runtime instance and get a reference to the STK object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )

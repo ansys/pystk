@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -152,7 +152,7 @@ class ChainSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ChainStrandIntervals",
-        description="Prints the strand intervals of chain object",
+        description="Print the strand intervals of chain object",
         category="STK Objects | Chain",
         eid="stkobjects~Chain",
     )

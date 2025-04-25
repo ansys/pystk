@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -161,7 +161,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
 
     Examples
     --------
-    Close STK:
+    Close the STK desktop application:
     >>> # AgUiApplication uiApplication: STK Application
     >>> uiApplication.shutdown()
     """

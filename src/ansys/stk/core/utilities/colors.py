@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -37,7 +37,7 @@ class Color(object):
 
     Examples
     --------
-    Get and set a four-channel color for the graphics of an STK object:
+    Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
     >>> 
     >>> manager = root.current_scenario.scene_manager
@@ -53,7 +53,7 @@ class Color(object):
     >>> 
     >>> point.set_cartographic_with_colors('Earth', lla_pts, colors)
 
-    Get and set a three-channel color for the graphics of an STK object:
+    Get and set a three-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.stkobjects import STKObjectType
     >>> from ansys.stk.core.utilities.colors import Color, Colors
     >>> 
@@ -111,7 +111,7 @@ class ColorRGBA(object):
 
     Examples
     --------
-    Get and set a four-channel color for the graphics of an STK object:
+    Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
     >>> 
     >>> manager = root.current_scenario.scene_manager
@@ -170,7 +170,7 @@ class Colors(object):
 
     Examples
     --------
-    Get and set a four-channel color for the graphics of an STK object:
+    Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
     >>> 
     >>> manager = root.current_scenario.scene_manager
@@ -186,7 +186,7 @@ class Colors(object):
     >>> 
     >>> point.set_cartographic_with_colors('Earth', lla_pts, colors)
 
-    Get and set a three-channel color for the graphics of an STK object:
+    Get and set a three-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.stkobjects import STKObjectType
     >>> from ansys.stk.core.utilities.colors import Color, Colors
     >>> 

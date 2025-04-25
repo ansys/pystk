@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -62,7 +62,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AstrogatorRunMCS",
-        description="Run the Astrogator MCS",
+        description="Run the Astrogator® mission control sequence (MCS)",
         category="STK Objects | Satellite | Astrogator",
         eid="stkobjects.astrogator~MCSDriver",
     )

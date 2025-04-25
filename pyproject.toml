@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "ansys-stk-core"
 dynamic = ["version"]
-description = "A Python API for STK"
+description = "The next generation Python API for STK."
 readme = "README.rst"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
@@ -17,12 +17,17 @@ maintainers = [
 ]
 
 classifiers = [
-    # TODO: remove all 'Private' classifiers prior to the public release
-    "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
 ]
@@ -31,21 +36,28 @@ dependencies = [
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [project.optional-dependencies]
-# TODO: the approval of PEP 735 should allow the usage of dependency groups
-# https://peps.python.org/pep-0735/
+# TODO: split between dependency groups and installation targets with the release of pip v25.1
+# https://github.com/pypa/pip/milestone/78
 all = [
-    "grpcio",
-    "protobuf",
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.5",
-    "Pillow==11.2.1",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0",
-    "libcst==1.7.0"
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.5",
+    "Pillow>=11.2.1",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
+    "libcst>=1.7.0"
 ]
 grpc = [
-    "grpcio",
-    "protobuf",
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+]
+jupyter = [
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.4",
+    "Pillow>=11.1.0",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
 ]
 tests = [
     "libcst==1.7.0",
@@ -80,26 +92,22 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
-visualization = [
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.5",
-    "Pillow==11.2.1",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0"
-]
+# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
     "bandit==1.8.3",
     "safety==3.3.0",
+    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
 name = "ansys.stk.core"
 
 [project.urls]
-homepage = "https://www.ansys.com/products/missions/ansys-stk"
+discussions = "https://github.com/ansys/pystk/discussions"
 documentation = "https://stk.docs.pyansys.com/"
+homepage = "https://www.ansys.com/products/missions/ansys-stk"
+issues = "https://github.com/ansys/pystk/issues"
 source = "https://github.com/ansys/pystk"
-tracker = "https://github.com/ansys/pystk/issues"
 
 [tool.ruff]
 line-length = 120

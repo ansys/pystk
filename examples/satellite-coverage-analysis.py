@@ -243,7 +243,7 @@ satisfied_by_time_df = (
 
 satisfied_by_time_df
 
-# The overall satisfaction of the coverage was 85.68%.
+# The overall satisfaction of the coverage was $85.68$%.
 
 # Visualize the data with a line chart:
 
@@ -364,4 +364,4 @@ satisfied_by_time_lighting_df = (
 
 satisfied_by_time_lighting_df
 
-# The percent satisfaction dropped from 85.65% to 14.75% when considering lighting conditions.
+# The percent satisfaction dropped from $85.65$% to $14.75$% when considering lighting conditions.

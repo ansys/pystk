@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -3785,7 +3785,7 @@ class IProcedure(object):
     >>> # Use standard 1976 atmosphere
     >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
 
-    Configure a procedure time options:
+    Configure a procedure's time options:
     >>> # IProcedure procedure: Procedure object
     >>> # Get the time in epoch seconds
     >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
@@ -8269,7 +8269,7 @@ class ProcedureTimeOptions(SupportsDeleteCallback):
 
     Examples
     --------
-    Configure a procedure time options:
+    Configure a procedure's time options:
     >>> # IProcedure procedure: Procedure object
     >>> # Get the time in epoch seconds
     >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")

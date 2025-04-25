@@ -49,7 +49,7 @@ Overview
 Examples
 --------
 
-Define area target boundary and position from list of lat/lon/alt
+Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 

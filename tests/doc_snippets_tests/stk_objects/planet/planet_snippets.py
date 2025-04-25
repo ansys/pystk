@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -75,7 +75,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyPlanet2DGraphics",
-        description="Modify Planet 2D Properties",
+        description="Modify a Planet's 2D Properties",
         category="STK Objects | Planet | Graphics",
         eid="stkobjects~Planet",
     )

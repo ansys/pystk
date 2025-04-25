@@ -386,7 +386,7 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
-                    for target in ["all", "grpc", "visualization"]
+                    for target in ["all", "grpc", "jupyter"]
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }

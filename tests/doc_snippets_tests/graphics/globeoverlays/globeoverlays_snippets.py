@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -88,7 +88,7 @@ class GlobeOverlaysSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="DisplayStarsWater",
-        description="Control Display of Stars and Water Texture",
+        description="Control the Display of Stars and Water Texture",
         category="Graphics | GlobeOverlays",
         eid="graphics~Scene",
     )

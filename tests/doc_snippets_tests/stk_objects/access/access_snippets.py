@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -417,7 +417,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ComputeAccessAdvancedSettings",
-        description="Compute Access with Advanced Settings",
+        description="Compute an Access with Advanced Settings",
         category="STK Objects | Access",
         eid="stkobjects~Access",
     )

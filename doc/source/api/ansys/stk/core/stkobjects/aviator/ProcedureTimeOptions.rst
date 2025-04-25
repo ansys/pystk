@@ -55,7 +55,7 @@ Overview
 Examples
 --------
 
-Configure a procedure time options
+Configure a procedure's time options
 
 .. code-block:: python
 
