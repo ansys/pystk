@@ -8,8 +8,8 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.12'
-  LIBRARY_NAME: 'ansys-stk-core'
-  LIBRARY_NAMESPACE: 'ansys.stk.core'
+  ANSYS_STK_CORE: 'ansys-stk-core'
+  ANSYS_STK_EXTENSIONS: 'ansys-stk-extensions'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22:04'
   PYSTK_DIR: '/home/stk/pystk'
@@ -36,7 +36,6 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
@@ -69,9 +68,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fail-level: "warning"
 
-  build-wheelhouse:
-    name: "Build wheelhouse for latest Python versions"
+  build-wheelhouse-core:
+    name: "Wheelhouse ${{ env.ANSYS_STK_CORE }} / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
     runs-on: ${{ matrix.os }}
+    needs: [code-style, doc-style]
     permissions:
       attestations: write
       contents: read
@@ -82,19 +82,38 @@ jobs:
         python-version: ['3.11', '3.12', '3.13']
         target: ['all', 'grpc', 'jupyter']
     steps:
-      - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v9
+      - uses: ansys/actions/build-wheelhouse@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.ANSYS_STK_CORE }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
           attest-provenance: true
 
+  build-wheelhouse-extensions:
+    name: "Wheelhouse ${{ env.ANSYS_STK_EXTENSIONS }} / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    runs-on: ${{ matrix.os }}
+    needs: [code-style, doc-style]
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: ansys/actions/build-wheelhouse@v9
+        with:
+          library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          attest-provenance: true
+
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
-    needs: build-wheelhouse
+    needs: [build-wheelhouse-core, build-wheelhouse-extensions]
     timeout-minutes: 90
     steps:
 
@@ -256,52 +275,79 @@ jobs:
           docker logs ${{ env.STK_CONTAINER }}
           docker rm ${{ env.STK_CONTAINER }}
 
-  build-library:
-    name: "Build library"
+  build-library-core:
+    name: "Build ${{ env.ANSYS_STK_CORE }} library"
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.ANSYS_STK_CORE }}
           attest-provenance: true
 
-  release:
-    name: Release project
-    needs: [build-library, doc-build]
+  build-library-extensions:
+    name: "Build ${{ env.ANSYS_STK_EXTENSIONS }} library"
     runs-on: ubuntu-latest
-    # Specifying a GitHub environment is optional, but strongly encouraged
+    needs: [doc-build, tests]
+    steps:
+      - uses: ansys/actions/build-library@v9
+        with:
+          library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
+          attest-provenance: true
+
+  release-pypi:
+    name: "Release ${{ matrix.library }} package"
+    needs: [build-library-core, build-wheelhouse-extensions, doc-build]
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        # HACK: can reference environment variables in matrix strategy
+        library: ['ansys-stk-core', 'ansys-stk-extensions']
+    steps:
+      - name: "Download ${{ matrix.library }} artifacts"
+        uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
+        with:
+          name: ${{ matrix.library }}-artifacts
+          path: ${{ matrix.library }}-artifacts
+
+      - name: "Release to private PyPI index"
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        with:
+          repository-url: "https://pkgs.dev.azure.com/pyansys/_packaging/pyansys/pypi/upload"
+          print-hash: true
+          packages-dir: ${{ matrix.library }}-artifacts
+          skip-existing: false
+
+  release-github:
+    name: "Release ${{ matrix.library }} package"
+    needs: release-pypi
+    runs-on: ubuntu-latest
     environment: release
     permissions:
       id-token: write
       contents: write
     steps:
-      - name: Download the library artifacts from build-library step
+
+      - name: "Download all generated artifacts"
         uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
         with:
-          name: ${{ env.LIBRARY_NAME }}-artifacts
-          path: ${{ env.LIBRARY_NAME }}-artifacts
+          path: artifacts
 
-      - name: Release to private PyPI index
-        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
-        with:
-          repository-url: "https://pkgs.dev.azure.com/pyansys/_packaging/pyansys/pypi/upload"
-          print-hash: true
-          packages-dir: ${{ env.LIBRARY_NAME }}-artifacts
-          skip-existing: false
-
-      - name: Release to GitHub
-        uses: ansys/actions/release-github@v9
-        with:
-          library-name: ${{ env.LIBRARY_NAME }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          generate_release_notes: false
-          add-artifact-attestation-notes: true
-
+      - name: "Release to GitHub"
+        env: 
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        run: |
+          gh release create "${{ github.ref_name }}" ./artifacts
+          
   doc-deploy-stable:
     name: Deploy stable documentation
     runs-on: ubuntu-latest
-    needs: [release]
+    needs: [release-github]
     steps:
       - uses: ansys/actions/doc-deploy-stable@v9
         with:
