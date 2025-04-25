@@ -1,14 +1,14 @@
 Install PySTK in a Windows container
 ####################################
 
-This guideline covers the installation of PySTK inside a Windows-based Docker
+This topic provides details on installing PySTK inside a Windows-based Docker
 container.
 
 Download Dockerfiles
 ====================
 
 Start by downloading the PySTK Docker images for Windows. The images contain
-the latest three stable version of Python.
+the latest three stable versions of Python.
 
 .. jinja:: docker_images
 
@@ -107,7 +107,7 @@ Start a container
 =================
 
 With the artifacts and the license in place, start a Docker container and share
-the working directory as a volume. This allows to write scripts using the tools
+the working directory as a volume. This enables you to write scripts using the tools
 in the host machine while isolating their execution inside the container.
 
 Syntax
@@ -126,7 +126,7 @@ Syntax
 Command breakdown
 -----------------
 
-The docker run command is utilized to create and run a container from a Docker
+Use the docker run command to create and run a container from a Docker
 image. Various options are available to customize the container creation
 process.
 

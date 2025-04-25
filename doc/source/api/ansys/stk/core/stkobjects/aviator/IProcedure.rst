@@ -69,7 +69,7 @@ Configure the wind and atmosphere for a procedure
     basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
 
 
-Configure a procedure time options
+Configure a procedure's time options
 
 .. code-block:: python
 

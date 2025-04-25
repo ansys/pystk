@@ -89,7 +89,7 @@ Add an AzEl Mask to a Facility
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
 
-Get the cartesian position of the facility
+Get the cartesian position of a facility
 
 .. code-block:: python
 
@@ -97,7 +97,7 @@ Get the cartesian position of the facility
     (x, y, z) = facility.position.query_cartesian()
 
 
-Set the geodetic position of the facility
+Set the geodetic position of a facility
 
 .. code-block:: python
 

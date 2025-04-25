@@ -11,8 +11,8 @@
 .. Ansys products
 
 .. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
-.. _STK: https://www.ansys.com/products/missions/ansys-stk
-.. _STK distribution artifacts: https://support.agi.com/downloads/5/
+.. _STK software: https://www.ansys.com/products/missions/ansys-stk
+.. _STK software distribution artifacts: https://support.agi.com/downloads/5/
 .. _STK Programming Help: https://help.agi.com/stkdevkit/index.htm
 .. _STK Engine: https://support.agi.com/downloads
 .. _PyAnsys: https://docs.pyansys.com
