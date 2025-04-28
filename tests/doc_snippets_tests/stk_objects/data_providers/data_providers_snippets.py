@@ -62,7 +62,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="IntervalDataProvider",
-        description="Using an interval Data Provider",
+        description="Use an interval Data Provider",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )
@@ -97,7 +97,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="TimeDependentDataProviderElements",
-        description="Using a Time Dependent Data Provider and requesting only specified elements",
+        description="Use a Time Dependent Data Provider and requesting only specified elements",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )
@@ -132,7 +132,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GroupsDataProvider",
-        description="Extracting Elements from Data Providers with Groups",
+        description="Extract Elements from Data Providers with Groups",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )
@@ -175,7 +175,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="DataProviderPreData",
-        description="Extracting Elements from Data Providers with pre-data",
+        description="Extract Elements from Data Providers with pre-data",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )
@@ -209,7 +209,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SingleTimeDataProvider",
-        description="Getting Data for a Single Point in Time",
+        description="Get Data for a Single Point in Time",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )
@@ -233,7 +233,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SingleTimesDataProvider",
-        description="Getting Data for Specific Points and Elements",
+        description="Get Data for Specific Points and Elements",
         category="STK Objects | Data Providers",
         eid="stkobjects~DataProviderCollection",
     )

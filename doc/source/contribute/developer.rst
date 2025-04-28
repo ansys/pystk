@@ -208,7 +208,7 @@ Build the Docker containers
 STK is containerized using Docker. This allows you to deploy the project in
 multiple environments without having to worry about dependencies.
 
-Although building a Docker container is not required if you have `STK`_
+Although building a Docker container is not required if you have `STK software`_
 installed in your local machine, it helps to isolate all your development
 environment.
 

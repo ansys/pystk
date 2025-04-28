@@ -1,13 +1,13 @@
 About PySTK
 ###########
 
-PySTK is the next generation Python API for Ansys Systems Toolkit (STK). The
+PySTK is the next generation Python API for Ansys Systems Toolkit® (STK®) software. The
 API is an evolution of the existing STK Python API with the following goals:
 
 - PyAnsys compliance:
 
   - The API integrates with the rest of `PyAnsys`_ , enabling you to connect
-    STK with other Ansys products.
+    STK software with other Ansys products.
 
   - The API adopts the PyAnsys guidelines, including similar packaging, naming
     conventions, and documentation.

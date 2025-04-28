@@ -86,7 +86,7 @@ class MTOSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="MTOLoadTrack",
-        description="Load MTO track points from file",
+        description="Load multi-track object (MTO) track points from a file",
         category="STK Objects | MTO",
         eid="stkobjects~MTO",
     )

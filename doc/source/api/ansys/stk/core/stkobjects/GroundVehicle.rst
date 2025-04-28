@@ -48,7 +48,7 @@ Overview
 Examples
 --------
 
-Add Array of Waypoints to Ground Vehicle and Interpolate over Terrain
+Add Array of Waypoints to a Ground Vehicle and Interpolate over Terrain
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ Add Array of Waypoints to Ground Vehicle and Interpolate over Terrain
     route.propagate()
 
 
-Set Great Arc Propagator and Add Individual Waypoints to Ground Vehicle
+Set the Great Arc Propagator and Add Individual Waypoints to a Ground Vehicle
 
 .. code-block:: python
 
