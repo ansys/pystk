@@ -22,11 +22,11 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.IDrawElement`
               - Draw element.
 
-            * - :py:class:`~ansys.stk.core.stkx.IDrawElementRect`
-              - Define a rectangle in control coordinates.
-
             * - :py:class:`~ansys.stk.core.stkx.IDrawElementCollection`
               - Collection of elements to draw on the control.
+
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElementRect`
+              - Define a rectangle in control coordinates.
 
     
     .. tab-item:: Classes
@@ -36,14 +36,44 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.Graphics3DControlBase`
-              - AGI Globe control.
+            * - :py:class:`~ansys.stk.core.stkx.DataObject`
+              - Data Object for OLE drag & drop operations.
+
+            * - :py:class:`~ansys.stk.core.stkx.DataObjectFiles`
+              - Collection of files for OLE drag & drop operations.
+
+            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemCollection`
+              - Collection of elements to draw on map control.
+
+            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemRect`
+              - Define a rectangle in window coordinates for map control.
+
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementCollection`
+              - Collection of elements to draw on the control.
+
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementLine`
+              - Define a line in window coordinates.
+
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementRect`
+              - Define a rectangle in window coordinates.
 
             * - :py:class:`~ansys.stk.core.stkx.Graphics2DControlBase`
               - AGI Map control.
 
+            * - :py:class:`~ansys.stk.core.stkx.Graphics3DControlBase`
+              - AGI Globe control.
+
+            * - :py:class:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase`
+              - AGI Graphics Analysis Control.
+
+            * - :py:class:`~ansys.stk.core.stkx.ObjectPathCollection`
+              - Collection of object paths.
+
             * - :py:class:`~ansys.stk.core.stkx.PickInfoData`
               - Single mouse pick result.
+
+            * - :py:class:`~ansys.stk.core.stkx.RubberBandPickInfoData`
+              - Rubber-band mouse pick result.
 
             * - :py:class:`~ansys.stk.core.stkx.STKXApplication`
               - STK X Application object.
@@ -51,44 +81,14 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.STKXApplicationPartnerAccess`
               - STK X Application Partner Access object.
 
-            * - :py:class:`~ansys.stk.core.stkx.DataObject`
-              - Data Object for OLE drag & drop operations.
-
-            * - :py:class:`~ansys.stk.core.stkx.DataObjectFiles`
-              - Collection of files for OLE drag & drop operations.
-
-            * - :py:class:`~ansys.stk.core.stkx.RubberBandPickInfoData`
-              - Rubber-band mouse pick result.
-
-            * - :py:class:`~ansys.stk.core.stkx.ObjectPathCollection`
-              - Collection of object paths.
-
-            * - :py:class:`~ansys.stk.core.stkx.DrawElementRect`
-              - Define a rectangle in window coordinates.
-
-            * - :py:class:`~ansys.stk.core.stkx.DrawElementCollection`
-              - Collection of elements to draw on the control.
-
-            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemRect`
-              - Define a rectangle in window coordinates for map control.
-
-            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemCollection`
-              - Collection of elements to draw on map control.
-
-            * - :py:class:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase`
-              - AGI Graphics Analysis Control.
-
-            * - :py:class:`~ansys.stk.core.stkx.WindowProjectionPosition`
-              - Projected window position result.
-
-            * - :py:class:`~ansys.stk.core.stkx.DrawElementLine`
-              - Define a line in window coordinates.
+            * - :py:class:`~ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs`
+              - Arguments for the OnConControlQuitReceived event.
 
             * - :py:class:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs`
               - Provide information about an SSL certificate that is expired or invalid.
 
-            * - :py:class:`~ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs`
-              - Arguments for the OnConControlQuitReceived event.
+            * - :py:class:`~ansys.stk.core.stkx.WindowProjectionPosition`
+              - Projected window position result.
 
 
     .. tab-item:: Enums
@@ -98,20 +98,11 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.ShiftValues`
-              - State of the Shift/Ctrl/Alt keys.
-
             * - :py:class:`~ansys.stk.core.stkx.ButtonValues`
               - Numeric value of the mouse button pressed.
 
-            * - :py:class:`~ansys.stk.core.stkx.OLEDropMode`
-              - Specify how to handle OLE drop operations.
-
-            * - :py:class:`~ansys.stk.core.stkx.MouseMode`
-              - Mouse modes.
-
-            * - :py:class:`~ansys.stk.core.stkx.LoggingMode`
-              - Specify the state of the log file.
+            * - :py:class:`~ansys.stk.core.stkx.FeatureCodes`
+              - The enumeration values are used to check availability of a given feature.
 
             * - :py:class:`~ansys.stk.core.stkx.Graphics2DAnalysisMode`
               - Specify the mode of Gfx Analysis Control.
@@ -119,17 +110,26 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.Graphics2DDrawCoordinates`
               - Specify the draw coordinates for Map Control.
 
-            * - :py:class:`~ansys.stk.core.stkx.ShowProgressImage`
-              - Specify to show progress image.
+            * - :py:class:`~ansys.stk.core.stkx.LoggingMode`
+              - Specify the state of the log file.
 
-            * - :py:class:`~ansys.stk.core.stkx.FeatureCodes`
-              - The enumeration values are used to check availability of a given feature.
+            * - :py:class:`~ansys.stk.core.stkx.MouseMode`
+              - Mouse modes.
+
+            * - :py:class:`~ansys.stk.core.stkx.OLEDropMode`
+              - Specify how to handle OLE drop operations.
 
             * - :py:class:`~ansys.stk.core.stkx.ProgressImageXOrigin`
               - Specify to align progress image X origin.
 
             * - :py:class:`~ansys.stk.core.stkx.ProgressImageYOrigin`
               - Specify to align progress image Y origin.
+
+            * - :py:class:`~ansys.stk.core.stkx.ShiftValues`
+              - State of the Shift/Ctrl/Alt keys.
+
+            * - :py:class:`~ansys.stk.core.stkx.ShowProgressImage`
+              - Specify to show progress image.
 
 
 
@@ -179,47 +179,47 @@ Solar Panel Tool
     :hidden:
 
      IDrawElement<stkx/IDrawElement>
-     IDrawElementRect<stkx/IDrawElementRect>
      IDrawElementCollection<stkx/IDrawElementCollection>
+     IDrawElementRect<stkx/IDrawElementRect>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     Graphics3DControlBase<stkx/Graphics3DControlBase>
-     Graphics2DControlBase<stkx/Graphics2DControlBase>
-     PickInfoData<stkx/PickInfoData>
-     STKXApplication<stkx/STKXApplication>
-     STKXApplicationPartnerAccess<stkx/STKXApplicationPartnerAccess>
      DataObject<stkx/DataObject>
      DataObjectFiles<stkx/DataObjectFiles>
-     RubberBandPickInfoData<stkx/RubberBandPickInfoData>
-     ObjectPathCollection<stkx/ObjectPathCollection>
-     DrawElementRect<stkx/DrawElementRect>
-     DrawElementCollection<stkx/DrawElementCollection>
-     Draw2DElemRect<stkx/Draw2DElemRect>
      Draw2DElemCollection<stkx/Draw2DElemCollection>
-     GraphicsAnalysisControlBase<stkx/GraphicsAnalysisControlBase>
-     WindowProjectionPosition<stkx/WindowProjectionPosition>
+     Draw2DElemRect<stkx/Draw2DElemRect>
+     DrawElementCollection<stkx/DrawElementCollection>
      DrawElementLine<stkx/DrawElementLine>
-     STKXSSLCertificateErrorEventArgs<stkx/STKXSSLCertificateErrorEventArgs>
+     DrawElementRect<stkx/DrawElementRect>
+     Graphics2DControlBase<stkx/Graphics2DControlBase>
+     Graphics3DControlBase<stkx/Graphics3DControlBase>
+     GraphicsAnalysisControlBase<stkx/GraphicsAnalysisControlBase>
+     ObjectPathCollection<stkx/ObjectPathCollection>
+     PickInfoData<stkx/PickInfoData>
+     RubberBandPickInfoData<stkx/RubberBandPickInfoData>
+     STKXApplication<stkx/STKXApplication>
+     STKXApplicationPartnerAccess<stkx/STKXApplicationPartnerAccess>
      STKXConControlQuitReceivedEventArgs<stkx/STKXConControlQuitReceivedEventArgs>
+     STKXSSLCertificateErrorEventArgs<stkx/STKXSSLCertificateErrorEventArgs>
+     WindowProjectionPosition<stkx/WindowProjectionPosition>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ ShiftValues<stkx/ShiftValues>
     ≔ ButtonValues<stkx/ButtonValues>
-    ≔ OLEDropMode<stkx/OLEDropMode>
-    ≔ MouseMode<stkx/MouseMode>
-    ≔ LoggingMode<stkx/LoggingMode>
+    ≔ FeatureCodes<stkx/FeatureCodes>
     ≔ Graphics2DAnalysisMode<stkx/Graphics2DAnalysisMode>
     ≔ Graphics2DDrawCoordinates<stkx/Graphics2DDrawCoordinates>
-    ≔ ShowProgressImage<stkx/ShowProgressImage>
-    ≔ FeatureCodes<stkx/FeatureCodes>
+    ≔ LoggingMode<stkx/LoggingMode>
+    ≔ MouseMode<stkx/MouseMode>
+    ≔ OLEDropMode<stkx/OLEDropMode>
     ≔ ProgressImageXOrigin<stkx/ProgressImageXOrigin>
     ≔ ProgressImageYOrigin<stkx/ProgressImageYOrigin>
+    ≔ ShiftValues<stkx/ShiftValues>
+    ≔ ShowProgressImage<stkx/ShowProgressImage>
 

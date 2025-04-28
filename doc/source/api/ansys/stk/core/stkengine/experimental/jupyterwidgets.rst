@@ -17,14 +17,8 @@ Summary
             * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.AsyncioTimerManager`
               - Provide timer support for animation in jupyter notebooks.
 
-            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHostVTable`
-              - Structure of the vtable for IRemoteFrameBufferHost.
-
-            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHost`
-              - Implements IRemoteFrameBufferHost.
-
-            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase`
-              - Base class for Jupyter controls.
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.GfxAnalysisWidget`
+              - The Graphics Analysis widget for jupyter.
 
             * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.GlobeWidget`
               - The 3D Globe widget for jupyter.
@@ -32,8 +26,14 @@ Summary
             * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.MapWidget`
               - The 2D Map widget for jupyter.
 
-            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.GfxAnalysisWidget`
-              - The Graphics Analysis widget for jupyter.
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHost`
+              - Implements IRemoteFrameBufferHost.
+
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHostVTable`
+              - Structure of the vtable for IRemoteFrameBufferHost.
+
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase`
+              - Base class for Jupyter controls.
 
 
 
@@ -52,11 +52,11 @@ Map and globe widgets for Jupyter Notebooks using Remote Frame Buffer.
     :hidden:
 
      AsyncioTimerManager<jupyterwidgets/AsyncioTimerManager>
-     RemoteFrameBufferHostVTable<jupyterwidgets/RemoteFrameBufferHostVTable>
-     RemoteFrameBufferHost<jupyterwidgets/RemoteFrameBufferHost>
-     WidgetBase<jupyterwidgets/WidgetBase>
+     GfxAnalysisWidget<jupyterwidgets/GfxAnalysisWidget>
      GlobeWidget<jupyterwidgets/GlobeWidget>
      MapWidget<jupyterwidgets/MapWidget>
-     GfxAnalysisWidget<jupyterwidgets/GfxAnalysisWidget>
+     RemoteFrameBufferHost<jupyterwidgets/RemoteFrameBufferHost>
+     RemoteFrameBufferHostVTable<jupyterwidgets/RemoteFrameBufferHostVTable>
+     WidgetBase<jupyterwidgets/WidgetBase>
 
 
