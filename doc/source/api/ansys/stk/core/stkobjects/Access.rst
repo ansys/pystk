@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_providers`
               - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period`
-              - Specify the time period option. A member of the AgEAccessTimeType enumeration.
+              - Specify the time period option. A member of the AccessTimeType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.graphics`
               - Get the Graphics properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.advanced`
@@ -52,7 +52,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.computed_access_interval_times`
               - Return a list of the computed access interval times.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period_data`
-              - Return an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
+              - Return an TimeIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an AccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an AccessAllowedTimeIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.analysis_workbench_components`
               - Get a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.save_computed_data`
@@ -116,7 +116,7 @@ Compute and extract access interval times
     access.specify_access_intervals(computedIntervals)
 
 
-Compute Access with Advanced Settings
+Compute an Access with Advanced Settings
 
 .. code-block:: python
 
@@ -179,7 +179,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period
     :type: AccessTimeType
 
-    Specify the time period option. A member of the AgEAccessTimeType enumeration.
+    Specify the time period option. A member of the AccessTimeType enumeration.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Access.graphics
@@ -209,7 +209,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period_data
     :type: IAccessInterval
 
-    Return an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
+    Return an TimeIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an AccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an AccessAllowedTimeIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
 
 .. py:property:: analysis_workbench_components
     :canonical: ansys.stk.core.stkobjects.Access.analysis_workbench_components

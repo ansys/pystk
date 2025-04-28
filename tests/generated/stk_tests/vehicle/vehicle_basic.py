@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -4389,32 +4389,38 @@ class PropagatorHPOPHelper(object):
         oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
 
         # LowAltAtmosDensityModel (UNKNOWN)
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NONE
-        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmos_density_model)
-        self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmosphere_density_model)
+        self.m_logger.WriteLine6(
+            "\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmosphere_density_model
+        )
         with pytest.raises(Exception):
             oDrag.blending_range = 50.0
 
         # LowAltAtmosDensityModel (MSIS90)
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
-        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmos_density_model)
-        self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmosphere_density_model)
+        self.m_logger.WriteLine6(
+            "\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmosphere_density_model
+        )
         self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
         # BlendingRange
         oDrag.blending_range = 50.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
         # LowAltAtmosDensityModel (MSIS00)
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NRLMSISE2000
-        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NRLMSISE2000, oDrag.low_altitude_atmos_density_model)
-        self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NRLMSISE2000
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NRLMSISE2000, oDrag.low_altitude_atmosphere_density_model)
+        self.m_logger.WriteLine6(
+            "\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmosphere_density_model
+        )
         self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
         # BlendingRange
         oDrag.blending_range = 30.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
         # Reset LowAltAtmosDensityModel
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NONE
-        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmosphere_density_model)
 
         # LowAltAtmosphericDensityModel
         # Try to set to equivalent of "None"

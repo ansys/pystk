@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -36,7 +36,6 @@ from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -2582,7 +2581,6 @@ longitude = 121;"""
     # endregion
 
     # region AppendRun
-    @category("Causes crashes")
     def test_AppendRun(self):
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
         initialState: "MCSInitialState" = MCSInitialState(

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.set_mode`
-              - Do not use this method, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Sets the current radar mode by name.
+              - Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Sets the current radar mode by name.
 
     .. tab-item:: Properties
         
@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Gets an array of supported mode names.
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Gets the current radar mode.
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver`
               - Get the radar receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry`
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes
     :type: list
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Gets an array of supported mode names.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode
     :type: IRadarModeBistaticReceiver
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Gets the current radar mode.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver
@@ -123,7 +123,7 @@ Method detail
 .. py:method:: set_mode(self, mode_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.set_mode
 
-    Do not use this method, as it is deprecated. Use ModeComponentLinking on IAgRadarModelBistaticReceiver instead. Sets the current radar mode by name.
+    Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Sets the current radar mode by name.
 
     :Parameters:
 

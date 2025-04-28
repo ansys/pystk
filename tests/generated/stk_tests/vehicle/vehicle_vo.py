@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -465,7 +465,7 @@ class VOVelocityCovarianceHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oVelCovariance: "VehicleGraphics3DVelCovariance"):
+    def Run(self, oVelCovariance: "VehicleGraphics3DVelocityCovariance"):
         self.m_logger.WriteLine("----- THE VO VELOCITY COVARIANCE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oVelCovariance)
 

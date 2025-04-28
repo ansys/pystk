@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -6435,7 +6435,7 @@ class AtmosphereHelper(object):
         ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
             Assert.assertIsNotNone(rawPluginObject)
 
-        pluginConfigPy: "IAgCRPluginConfiguration" = plugin.plugin_configuration
+        pluginConfigPy: "CommRadPluginConfiguration" = plugin.plugin_configuration
         arPropsPy = pluginConfigPy.available_properties
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):

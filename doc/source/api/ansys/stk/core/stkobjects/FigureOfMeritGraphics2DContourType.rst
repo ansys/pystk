@@ -23,7 +23,7 @@ Overview
               - Block Fill: color is applied to a region that contains points of a certain contour level.
 
             * - :py:attr:`~SMOOTH_FILL`
-              - Smooth Fill: color is applied smoothly over all points in the grid to differentiate contour levels. NOTE: Not a valid choice when BoundsType (IAgCvGrid) is set to LatLine, LonLine or CustomBoundary.
+              - Smooth Fill: color is applied smoothly over all points in the grid to differentiate contour levels. NOTE: Not a valid choice when BoundsType (CoverageGrid) is set to LatLine, LonLine or CustomBoundary.
 
 
 Import detail

@@ -3,7 +3,7 @@ ExportToolStepSize
 
 .. py:class:: ansys.stk.core.stkobjects.ExportToolStepSize
 
-   AgStepSize Class.
+   ExportToolStepSize Class.
 
 .. py:currentmodule:: ExportToolStepSize
 

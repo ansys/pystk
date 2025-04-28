@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~HORIZONTAL`
               - Horizontal
 
-            * - :py:attr:`~RHCP`
+            * - :py:attr:`~RIGHT_HAND_CIRCULAR_POLARIZATION`
               - RHCP
 
-            * - :py:attr:`~LHCP`
+            * - :py:attr:`~LEFT_HAND_CIRCULAR_POLARIZATION`
               - LHCP
 
 

@@ -3,7 +3,7 @@ ISensorPointingTargetedBoresight
 
 .. py:class:: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresight
 
-   Base interface IAgSnPtTrgtBsight. IAgSnPtTrgtBsightFixed and IAgSnPtTrgtBsightTrack derive from this.
+   Base interface ISensorPointingTargetedBoresight. SensorPointingTargetedBoresightFixed and SensorPointingTargetedBoresightTrack derive from this.
 
 .. py:currentmodule:: ISensorPointingTargetedBoresight
 

@@ -56,7 +56,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.access_constraints`
               - Get the constraints imposed on the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.export_tools`
-              - Return the IAgLvExportTools interface.
+              - Return the LaunchVehicleExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.space_environment`
               - Return the launch vehicle's SpaceEnvironment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.atmosphere`
@@ -157,7 +157,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.export_tools
     :type: LaunchVehicleExportTools
 
-    Return the IAgLvExportTools interface.
+    Return the LaunchVehicleExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.space_environment

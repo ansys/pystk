@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -62,7 +62,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
         name="CreateVehicle",
         description="Create a New Ground Vehicle (on the current scenario central body)",
         category="STK Objects | Ground Vehicle",
-        eid="STKObjects~IAgGroundVehicle",
+        eid="stkobjects~GroundVehicle",
     )
     def CreateVehicleSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -79,9 +79,9 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddGroundVehiclePoints",
-        description="Set Great Arc Propagator and Add Individual Waypoints to Ground Vehicle",
+        description="Set the Great Arc Propagator and Add Individual Waypoints to a Ground Vehicle",
         category="STK Objects | Ground Vehicle",
-        eid="STKObjects~IAgGroundVehicle",
+        eid="stkobjects~GroundVehicle",
     )
     def AddGroundVehiclePointsSnippet(self, groundVehicle):
         # GroundVehicle grndVehicle: Ground Vehicle object
@@ -115,9 +115,9 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddGroundVehicleArrayPoints",
-        description="Add Array of Waypoints to Ground Vehicle and Interpolate over Terrain",
+        description="Add Array of Waypoints to a Ground Vehicle and Interpolate over Terrain",
         category="STK Objects | Ground Vehicle",
-        eid="STKObjects~IAgGroundVehicle",
+        eid="stkobjects~GroundVehicle",
     )
     def AddGroundVehicleArrayPointsSnippet(self, grndVehicle):
         # GroundVehicle grndVehicle: Ground Vehicle object

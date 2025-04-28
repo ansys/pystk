@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingTargeted.boresight`
-              - The targeted sensor's boresight type, a member of the AgESnPtTrgtBsightType enumeration.
+              - The targeted sensor's boresight type, a member of the SensorPointingTargetedBoresightType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingTargeted.boresight_data`
               - Get orientation data for the selected boresight type.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingTargeted.enable_access_times`
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargeted.boresight
     :type: SensorPointingTargetedBoresightType
 
-    The targeted sensor's boresight type, a member of the AgESnPtTrgtBsightType enumeration.
+    The targeted sensor's boresight type, a member of the SensorPointingTargetedBoresightType enumeration.
 
 .. py:property:: boresight_data
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargeted.boresight_data

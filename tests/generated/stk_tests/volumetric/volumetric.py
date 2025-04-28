@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -30,7 +30,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -58,7 +58,7 @@ class MTOSnippets(CodeSnippetsTestBase):
         name="CreateMTO",
         description="Create a New MTO (on the current scenario central body)",
         category="STK Objects | MTO",
-        eid="STKObjects~IAgMto",
+        eid="stkobjects~MTO",
     )
     def CreateMTOSnippet(self, root, scenario):
         # Scenario scenario: Scenario object
@@ -86,9 +86,9 @@ class MTOSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="MTOLoadTrack",
-        description="Load MTO track points from file",
+        description="Load multi-track object (MTO) track points from a file",
         category="STK Objects | MTO",
-        eid="STKObjects~IAgMto",
+        eid="stkobjects~MTO",
     )
     def MTOLoadTrackSnippet(self, mto):
         # load_points expects the path an Ephemeris file path

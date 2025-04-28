@@ -2,15 +2,17 @@
 
 .. _PySTK repository: https://github.com/ansys-internal/pystk
 .. _PySTK issues: https://github.com/ansys-internal/pystk/issues
+.. _PySTK pull requests: https://github.com/ansys-internal/pystk/pulls
 .. _PySTK discussions: https://github.com/ansys-internal/pystk/discussions
 .. _PySTK labels: https://github.com/ansys-internal/pystk/labels
 .. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
+.. _code snippet directory: https://github.com/ansys-internal/pystk/tree/main/tests/doc_snippets_tests
 
 .. Ansys products
 
 .. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
-.. _STK: https://www.ansys.com/products/missions/ansys-stk
-.. _STK distribution artifacts: https://support.agi.com/downloads/5/
+.. _STK software: https://www.ansys.com/products/missions/ansys-stk
+.. _STK software distribution artifacts: https://support.agi.com/downloads/5/
 .. _STK Programming Help: https://help.agi.com/stkdevkit/index.htm
 .. _STK Engine: https://support.agi.com/downloads
 .. _PyAnsys: https://docs.pyansys.com
@@ -32,6 +34,7 @@
 .. _Markdown: https://www.markdownguide.org/
 .. _myst-parser: https://myst-parser.readthedocs.io/en/latest/
 .. _jupytext: https://jupytext.readthedocs.io/en/latest/
+.. _pytest: https://docs.pytest.org/en/stable/
 
 .. Docker links
 
@@ -51,3 +54,4 @@
 
 .. _Contributor Covenant Code of Conduct: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
 .. _git: https://git-scm.com/
+.. _IntelliSense: https://code.visualstudio.com/docs/editing/intellisense

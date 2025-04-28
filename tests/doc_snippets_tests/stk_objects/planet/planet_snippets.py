@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -57,7 +57,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
         name="CreatePlanet",
         description="Create a New Planet",
         category="STK Objects | Planet",
-        eid="STKObjects~IAgPlanet",
+        eid="stkobjects~Planet",
     )
     def CreatePlanetSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -75,9 +75,9 @@ class PlanetSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyPlanet2DGraphics",
-        description="Modify Planet 2D Properties",
+        description="Modify a Planet's 2D Properties",
         category="STK Objects | Planet | Graphics",
-        eid="STKObjects~IAgPlanet",
+        eid="stkobjects~Planet",
     )
     def PlanetGraphicsSnippet(self, planet):
         # Planet planet: Planet object

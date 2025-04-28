@@ -5,7 +5,7 @@ SatelliteCollection
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
-   The AgSatelliteCollection class.
+   The SatelliteCollection class.
 
 .. py:currentmodule:: SatelliteCollection
 

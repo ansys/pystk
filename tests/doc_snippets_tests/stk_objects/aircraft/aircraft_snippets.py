@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -62,7 +62,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
         name="CreateAircraft",
         description="Create a New Aircraft (on the current scenario central body)",
         category="STK Objects | Aircraft",
-        eid="STKObjects~IAgAircraft",
+        eid="stkobjects~Aircraft",
     )
     def CreateAircraftSnippet(self, root):
         # StkObjectRoot root: STK Object Model root
@@ -78,9 +78,9 @@ class AircraftSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddAircraftPoints",
-        description="Set Great Arc Propagator and Add Individual Waypoints to Aircraft",
+        description="Set the Great Arc Propagator and Add Individual Waypoints to an Aircraft",
         category="STK Objects | Aircraft",
-        eid="STKObjects~IAgAircraft",
+        eid="stkobjects~Aircraft",
     )
     def AddAircraftPointsSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object
@@ -116,7 +116,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
         name="AddAircraftArrayPoints",
         description="Add Array of Waypoints to Aircraft",
         category="STK Objects | Aircraft",
-        eid="STKObjects~IAgAircraft",
+        eid="stkobjects~Aircraft",
     )
     def AddAircraftArrayPointsSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object
@@ -137,7 +137,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
         name="AircraftAttitude",
         description="Set the Attitude of the Aircraft",
         category="STK Objects | Aircraft",
-        eid="STKObjects~IAgAircraft",
+        eid="stkobjects~Aircraft",
     )
     def AircraftAttitudeSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object

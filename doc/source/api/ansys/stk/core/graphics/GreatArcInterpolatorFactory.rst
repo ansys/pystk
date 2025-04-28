@@ -29,7 +29,7 @@ Overview
 Examples
 --------
 
-Great Arc Interpolator Primitives
+Compute interpolated positions along a great arc
 
 .. code-block:: python
 

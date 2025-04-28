@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -51,6 +51,22 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     def get_scenario(self):
         return CodeSnippetsTestBase.m_Root.current_scenario
+    
+    def test_CylinderFillEnumerationSnippet(self):
+        self.CylinderFillEnumerationSnippet()
+
+    @code_snippet(
+        name="CylinderFillEnumeration",
+        description="Combine enumerations with the logical OR operator",
+        category="Graphics",
+        eid="graphics~CylinderFillOptions",
+    )
+    def CylinderFillEnumerationSnippet(self):
+        from ansys.stk.core.graphics import CylinderFillOptions
+
+        # CylinderFillOptions inherits from enum.IntFlag and may be combined
+        # using the `|` operator
+        cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
 
     @category("VO Tests")
     def test_GreatArcInterpolatorSnippet(self):
@@ -58,9 +74,9 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GreatArcInterpolatorPrimitives",
-        description="Great Arc Interpolator Primitives",
+        description="Compute interpolated positions along a great arc",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsGreatArcInterpolatorFactory",
+        eid="graphics~GreatArcInterpolatorFactory",
     )
     def GreatArcInterpolatorSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -81,7 +97,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="DrawNewSurfaceMeshPrimitive",
         description="Draw a new Surface Mesh",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsSurfaceMeshPrimitive",
+        eid="graphics~SurfaceMeshPrimitive",
     )
     def SurfaceMeshPrimitiveSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -113,7 +129,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="SurfaceExtentTriangulator",
         description="Draw a new Surface Extent Triangulator",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsSurfacePolygonTriangulatorInitializer",
+        eid="graphics~SurfacePolygonTriangulatorInitializer",
     )
     def SurfaceExtentTriangulatorSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -147,7 +163,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="TextPrimitive",
         description="Draw a new Text Primitive",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsTextBatchPrimitive",
+        eid="graphics~TextBatchPrimitive",
     )
     def TextPrimitiveSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -167,7 +183,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="DrawNewTextureScreenOverlay",
         description="Draw a new Texture Screen Overlay",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsTextureScreenOverlay",
+        eid="graphics~TextureScreenOverlay",
     )
     def TextureScreenOverlaySnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -198,7 +214,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="BoundingSpherePrimitive",
         description="Create a Bounding Sphere",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsBoundingSphere",
+        eid="graphics~BoundingSphere",
     )
     def BoundingSpherePrimitiveSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -213,7 +229,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="PointPrimitive",
         description="Draw a Point Primitive and set properties",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsPointBatchPrimitive",
+        eid="graphics~PointBatchPrimitive",
     )
     def PointPrimitiveSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -240,7 +256,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="SolidBoxPrimitive",
         description="Draw a Solid Box Primitive and set properties",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsSolidPrimitive",
+        eid="graphics~SolidPrimitive",
     )
     def SolidBoxPrimitiveSnippet(self, root, scenario):
         # Scenario scenario: Scenario object
@@ -272,7 +288,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="SolidEllipsoidPrimitive",
         description="Draw a Solid Ellipsoid Primitive and set properties",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsSolidPrimitive",
+        eid="graphics~SolidPrimitive",
     )
     def SolidEllipsoidPrimitiveSnippet(self, root, scenario):
         # Scenario scenario: Scenario object
@@ -306,7 +322,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="SolidCylinderPrimitive",
         description="Draw a Solid Cylinder Primitive and set properties",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsSolidPrimitive",
+        eid="graphics~SolidPrimitive",
     )
     def SolidCylinderPrimitiveSnippet(self, root, scenario):
         # Scenario scenario: Scenario object
@@ -349,7 +365,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="DisplayPrimitiveInterval",
         description="Display a Primitive During an Interval",
         category="Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsCompositeDisplayCondition",
+        eid="graphics~CompositeDisplayCondition",
     )
     def DisplayPrimitiveIntervalSnippet(self, root, scenario, model):
         # Scenario scenario: Scenario object

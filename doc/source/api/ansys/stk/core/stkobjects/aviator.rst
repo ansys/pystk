@@ -67,7 +67,7 @@ Summary
               - Interface used to access a waypoint in the Aviator catalog.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Airport`
-              - Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
+              - Do not use this interface, as it is deprecated. Use IARINC424Item instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem`
               - Interface used to access the options for an DAFIF Item found in the Aviator catalog.
@@ -666,10 +666,10 @@ Summary
               - Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPowerplant`
-              - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbofanBasicABProp instead.
+              - Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABPropulsion instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbojetBasicABPowerplant`
-              - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead.
+              - Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABPropulsion instead.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion`
               - Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
@@ -815,13 +815,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions`
               - Class defining fast operations (without error or constraint checks) for time options for the current procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity`
               - Class defining the target position and velocity strategies for basic maneuvers.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisyBearingRange`
               - Class defining the position and velocity strategy, Noisy Bearing Range.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget`
               - Class defining the position and velocity strategy, Noisy Surface Target.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic`
@@ -937,7 +937,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindModelType`
               - The wind model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindAtmosModelSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindAtmosphereModelSource`
               - The source for the wind or atmosphere model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessageInterpolationType`
@@ -1234,7 +1234,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverGlideSpeedControlMode`
               - The modes used to define basic maneuver glide speed control modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TargetPositionVelType`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TargetPositionVelocityType`
               - The target pos/vel type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.EphemShiftRotateAltitudeMode`
@@ -1534,9 +1534,9 @@ Object Model components specifically designed to support STK Aviator.
      BasicManeuverStrategyPitch3D<aviator/BasicManeuverStrategyPitch3D>
      RefuelDumpProperties<aviator/RefuelDumpProperties>
      ProcedureFastTimeOptions<aviator/ProcedureFastTimeOptions>
-     BasicManeuverTargetPositionVel<aviator/BasicManeuverTargetPositionVel>
-     BasicManeuverTargetPositionVelNoisyBearingRange<aviator/BasicManeuverTargetPositionVelNoisyBearingRange>
-     BasicManeuverTargetPositionVelNoisySurfTarget<aviator/BasicManeuverTargetPositionVelNoisySurfTarget>
+     BasicManeuverTargetPositionVelocity<aviator/BasicManeuverTargetPositionVelocity>
+     BasicManeuverTargetPositionVelocityNoisyBearingRange<aviator/BasicManeuverTargetPositionVelocityNoisyBearingRange>
+     BasicManeuverTargetPositionVelocityNoisySurfTarget<aviator/BasicManeuverTargetPositionVelocityNoisySurfTarget>
      AdvancedFixedWingFourPointAerodynamic<aviator/AdvancedFixedWingFourPointAerodynamic>
      MissileFourPointAerodynamic<aviator/MissileFourPointAerodynamic>
      FourPointAerodynamic<aviator/FourPointAerodynamic>
@@ -1578,7 +1578,7 @@ Object Model components specifically designed to support STK Aviator.
     ≔ PointToPointMode<aviator/PointToPointMode>
     ≔ AltitudeConstraintManeuverMode<aviator/AltitudeConstraintManeuverMode>
     ≔ WindModelType<aviator/WindModelType>
-    ≔ WindAtmosModelSource<aviator/WindAtmosModelSource>
+    ≔ WindAtmosphereModelSource<aviator/WindAtmosphereModelSource>
     ≔ ADDSMessageInterpolationType<aviator/ADDSMessageInterpolationType>
     ≔ ADDSMissingMessageType<aviator/ADDSMissingMessageType>
     ≔ ADDSMessageExtrapolationType<aviator/ADDSMessageExtrapolationType>
@@ -1677,7 +1677,7 @@ Object Model components specifically designed to support STK Aviator.
     ≔ Pitch3DControlMode<aviator/Pitch3DControlMode>
     ≔ RefuelDumpMode<aviator/RefuelDumpMode>
     ≔ BasicManeuverGlideSpeedControlMode<aviator/BasicManeuverGlideSpeedControlMode>
-    ≔ TargetPositionVelType<aviator/TargetPositionVelType>
+    ≔ TargetPositionVelocityType<aviator/TargetPositionVelocityType>
     ≔ EphemShiftRotateAltitudeMode<aviator/EphemShiftRotateAltitudeMode>
     ≔ EphemShiftRotateCourseMode<aviator/EphemShiftRotateCourseMode>
 

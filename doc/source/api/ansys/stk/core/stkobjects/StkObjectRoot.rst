@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.end_update`
               - Signals the object that the batch update is complete.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands`
-              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+              - Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.isolate`
               - Make the unit preferences of the current instance isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf`
@@ -103,7 +103,7 @@ Overview
 Examples
 --------
 
-Extract data from Connect result
+Extract data from Connect results
 
 .. code-block:: python
 
@@ -114,6 +114,22 @@ Extract data from Connect result
         print(cmdRes)
 
 
+Use arrays to send and retrieve data with Connect
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+    first_message = command_results.item(0)
+    also_first_message = command_results[0]
+
+    for message in command_results:
+        print(message.count)
+
+
 Execute multiple Connect commands
 
 .. code-block:: python
@@ -122,23 +138,49 @@ Execute multiple Connect commands
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 
-Execute Connect command
+Execute a Connect command
 
 .. code-block:: python
 
     root.execute_command("New / */Target MyTarget")
 
 
-Start STK and get a reference to STK Object Root
+Attach to an already running STK Runtime instance and get a reference to the STK object root
 
 .. code-block:: python
 
-    # Start new instance of STK
+    # Attach to already running instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.attach_to_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Start STK Runtime and get a reference to the STK object root
+
+.. code-block:: python
+
+    # Start new instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.start_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Start STK Desktop and get a reference to the STK object root
+
+.. code-block:: python
+
+    # Start new instance of STK Desktop
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
     # ...
@@ -147,33 +189,46 @@ Start STK and get a reference to STK Object Root
     stk.shutdown()
 
 
-Get a reference to STK Object Root using a running STK instance
+Get a reference to the STK object root using a running STK desktop application instance
 
 .. code-block:: python
 
-    # Get reference to running STK instance
+    # Get reference to running STK Desktop instance
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.attach_to_application()
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
 
-Start STK Engine and get a reference to STK Object Root
+Initialize STK Engine in no graphics mode and get a reference to the STK object root
 
 .. code-block:: python
 
-    # Start new instance of STK Engine
+    # Initialize STK Engine without graphics in the current process
     from ansys.stk.core.stkengine import STKEngine
 
-    stk = STKEngine.StartApplication(no_graphics=False)  # optionally, no_graphics = True
+    stk = STKEngine.start_application(no_graphics=True)
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.new_object_root()
 
 
-Set unit preferences for Object Model
+Initialize STK Engine with graphics and get a reference to the STK object root
+
+.. code-block:: python
+
+    # Initialize STK Engine with graphics in the current process
+    from ansys.stk.core.stkengine import STKEngine
+
+    stk = STKEngine.start_application(no_graphics=False)
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Set unit preferences for the Object Model
 
 .. code-block:: python
 
@@ -188,6 +243,57 @@ Create a new Scenario
 
     # StkObjectRoot root: STK Object Model Root
     root.new_scenario("Example_Scenario")
+
+
+Manage STK Desktop application events
+
+.. code-block:: python
+
+    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.stk.core.stkobjects import STKObjectType
+
+    def on_stk_object_added_custom_callback(path:str):
+        print(f'{path} has been added.')
+
+    stk = STKDesktop.start_application(visible=True)
+    root = stk.root
+    root.new_scenario('ExampleScenario')
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    scenario = root.current_scenario
+
+    # on_stk_object_added_custom_callback is successfully called when the next line is executed
+    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+
+    # Now switch control to the desktop application and create another facility.
+    # The user interface becomes unresponsive.
+
+    # Now open a tkinter window that processing Windows messages.
+    from tkinter import Tk
+
+    window = Tk()
+    window.mainloop()
+
+
+Manage STK Engine events
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    def on_scenario_new_custom_callback(path: str):
+        print(f'Scenario {path} has been created.')
+
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+
+    root.new_scenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+    # all finished with events, unsubscribe
+    skt_object_root_events.unsubscribe()
 
 
 Close an open Scenario
@@ -227,7 +333,7 @@ Property detail
     Examples
     --------
 
-    Set unit preferences for Object Model
+    Set unit preferences for the Object Model
 
     .. code-block:: python
 
@@ -450,7 +556,7 @@ Method detail
 .. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
-    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
+    Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode.
 
     :Parameters:
 

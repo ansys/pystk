@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.number_of_label_decimal_digits`
               - Get or set the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.line_width`
-              - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
+              - Select the line width in which antenna 2D graphics display from the LineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.color_method`
               - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.start_color`
@@ -137,7 +137,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.line_width
     :type: LineWidth
 
-    Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
+    Select the line width in which antenna 2D graphics display from the LineWidth enumeration.
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.color_method

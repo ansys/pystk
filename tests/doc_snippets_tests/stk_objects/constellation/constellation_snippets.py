@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -65,7 +65,7 @@ class ConstellationSnippets(CodeSnippetsTestBase):
         name="CreateConstellation",
         description="Define a constellation",
         category="STK Objects | Constellation",
-        eid="STKObjects~IAgConstellation",
+        eid="stkobjects~Constellation",
     )
     def CreateConstellationSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model Root

@@ -26,7 +26,7 @@ Overview
               - Set the minimum airspeed value and type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.set_max_airspeed`
               - Set the maximum airspeed value and type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.cancel_target_position_velocity`
               - Cancel the position velocity strategies for Rel Speed Alt.
 
     .. tab-item:: Properties
@@ -75,7 +75,7 @@ Overview
               - Get or set the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_velocity_strategies`
               - Get the position velocity strategies for Rel Speed Alt.
 
 
@@ -211,9 +211,9 @@ Property detail
 
     Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_vel_strategies
-    :type: BasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_velocity_strategies
+    :type: BasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for Rel Speed Alt.
 
@@ -297,8 +297,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.cancel_target_position_velocity
 
     Cancel the position velocity strategies for Rel Speed Alt.
 

@@ -3,7 +3,7 @@ IAntennaContour
 
 .. py:class:: ansys.stk.core.stkobjects.IAntennaContour
 
-   IAgAntennaContour Interface for a antenna's contour properties.
+   IAntennaContour Interface for a antenna's contour properties.
 
 .. py:currentmodule:: IAntennaContour
 
@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.number_of_label_decimal_digits`
               - Get or set the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.line_width`
-              - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
+              - Select the line width in which antenna 2D graphics display from the LineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.color_method`
               - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.start_color`
@@ -87,7 +87,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.line_width
     :type: LineWidth
 
-    Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
+    Select the line width in which antenna 2D graphics display from the LineWidth enumeration.
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.color_method

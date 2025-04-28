@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -63,7 +63,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="CreateSensor",
         description="Attach a Sensor Object to a Vehicle",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSensor",
+        eid="stkobjects~Sensor",
     )
     def CreateSensorSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -83,7 +83,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="SensorProperties",
         description="Set Sensor Properties",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSensor",
+        eid="stkobjects~Sensor",
     )
     def SensorPropertiesSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -109,7 +109,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedAzEl",
         description="Define sensor pointing fixed AzEl",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixed|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedAzEl",
+        eid="stkobjects~SensorPointingFixed|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_az_el",
     )
     def DefineSensorPointingFixedAzElSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -130,7 +130,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedAxesAzEl",
         description="Define sensor pointing fixed axes AzEl",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixedAxes|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedAxesAzEl",
+        eid="stkobjects~SensorPointingFixedInAxes|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_axes_az_el",
     )
     def DefineSensorPointingFixedAxesAzElSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -151,7 +151,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedEuler",
         description="Define sensor pointing fixed Euler",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixed|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedEuler",
+        eid="stkobjects~SensorPointingFixed|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_euler",
     )
     def DefineSensorPointingFixedEulerSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -172,7 +172,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedAxesEuler",
         description="Define sensor pointing fixed axes Euler",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixedAxes|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedAxesEuler",
+        eid="stkobjects~SensorPointingFixedInAxes|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_axes_euler",
     )
     def DefineSensorPointingFixedAxesEulerSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -195,7 +195,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedQuaternion",
         description="Define sensor pointing fixed Quaternion",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixed|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedQuat",
+        eid="stkobjects~SensorPointingFixed|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_quaternion",
     )
     def DefineSensorPointingFixedQuaternionSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -216,7 +216,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedAxesQuaternion",
         description="Define sensor pointing fixed axes Quaternion",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixedAxes|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedAxesQuat",
+        eid="stkobjects~SensorPointingFixedInAxes|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_axes_quaternion",
     )
     def DefineSensorPointingFixedAxesQuaternionSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -237,7 +237,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedYPR",
         description="Define sensor pointing fixed YPR",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixed|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedYPR",
+        eid="stkobjects~SensorPointingFixed|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_ypr",
     )
     def DefineSensorPointingFixedYPRSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -258,7 +258,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="DefineSensorPointingFixedAxesYPR",
         description="Define sensor pointing fixed axes YPR",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSnPtFixedAxes|STKObjects~IAgSnCommonTasks|STKObjects~IAgSnCommonTasks~SetPointingFixedAxesYPR",
+        eid="stkobjects~SensorPointingFixedInAxes|stkobjects~SensorCommonTasks|stkobjects~SensorCommonTasks~set_pointing_fixed_axes_ypr",
     )
     def DefineSensorPointingFixedAxesYPRSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -279,7 +279,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="SensorBodyMask",
         description="Sensor Body Mask",
         category="STK Objects | Sensor",
-        eid="STKObjects~IAgSensor",
+        eid="stkobjects~Sensor",
     )
     def SensorBodyMaskSnippet(self, sensor):
         # Sensor sensor: Sensor object
@@ -303,7 +303,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         name="SensorPersistence",
         description="Sensor Persistence",
         category="STK Objects | Sensor | Graphics",
-        eid="STKObjects~IAgSnProjection",
+        eid="stkobjects~SensorProjection",
     )
     def SensorPersistenceSnippet(self, sensor):
         # Sensor sensor: Sensor object

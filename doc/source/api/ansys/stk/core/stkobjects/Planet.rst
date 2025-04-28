@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.graphics_3d`
               - Get the planet's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.position_source`
-              - The criterion for defining the planet. A member of the AgEPlPositionSourceType enumeration.
+              - The criterion for defining the planet. A member of the PlanetPositionSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.position_source_data`
               - Get definitional data for the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.common_tasks`
@@ -38,7 +38,7 @@ Overview
 Examples
 --------
 
-Modify Planet 2D Properties
+Modify a Planet's 2D Properties
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Planet.position_source
     :type: PlanetPositionSourceType
 
-    The criterion for defining the planet. A member of the AgEPlPositionSourceType enumeration.
+    The criterion for defining the planet. A member of the PlanetPositionSourceType enumeration.
 
 .. py:property:: position_source_data
     :canonical: ansys.stk.core.stkobjects.Planet.position_source_data

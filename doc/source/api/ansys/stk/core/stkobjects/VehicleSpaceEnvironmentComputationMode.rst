@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgEVeSpEnvComputationMode value.
+              - An invalid VehicleSpaceEnvironmentComputationMode value.
 
             * - :py:attr:`~NASA`
               - Uses only NASAELE and NASAPRO models.

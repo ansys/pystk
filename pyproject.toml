@@ -5,24 +5,29 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "ansys-stk-core"
 dynamic = ["version"]
-description = "A Python API for STK"
+description = "The next generation Python API for STK."
 readme = "README.rst"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.maintainers@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
-    # TODO: remove all 'Private' classifiers prior to the public release
-    "Private :: Do Not Upload",
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
 ]
@@ -31,41 +36,52 @@ dependencies = [
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
 [project.optional-dependencies]
-# TODO: the approval of PEP 735 should allow the usage of dependency groups
-# https://peps.python.org/pep-0735/
+# TODO: split between dependency groups and installation targets with the release of pip v25.1
+# https://github.com/pypa/pip/milestone/78
 all = [
-    "grpcio",
-    "protobuf",
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.3",
-    "Pillow==11.1.0",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0",
-    "libcst==1.6.0"
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.5",
+    "Pillow>=11.2.1",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
+    "libcst>=1.7.0"
 ]
 grpc = [
-    "grpcio",
-    "protobuf",
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
+]
+jupyter = [
+    "jupyter-rfb>=0.5.1",
+    "numpy>=2.2.4",
+    "Pillow>=11.1.0",
+    "simplejpeg>=1.8.2",
+    "sidecar>=0.7.0",
 ]
 tests = [
+    "libcst==1.7.0",
+    "matplotlib==3.10.1",
+    "numpy==2.2.5",
     "pytest==8.3.5",
-    "pytest-cov==6.0.0",
-    "pytz==2025.1",
+    "pytest-cov==6.1.1",
+    "pytz==2025.2",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.3",
-    "libcst==1.6.0"
+    "scipy==1.15.2",
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.2",
+    "ansys-sphinx-theme==1.4.2",
     "build==1.2.2.post1",
-    "jupyterlab==4.3.5",
+    "jupyterlab==4.4.1",
     "jupytext==1.16.7",
     "jupyter-server==2.15.0",
+    "libcst==1.7.0",
     "myst-parser==4.0.1",
-    "nbsphinx==0.9.6",
+    "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
+    "scipy==1.15.2",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
@@ -74,27 +90,24 @@ doc = [
     "matplotlib==3.10.1",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
+    "toml==0.10.2",
 ]
-visualization = [
-    "jupyter-rfb==0.5.1",
-    "numpy==2.2.3",
-    "Pillow==11.1.0",
-    "simplejpeg==1.8.2",
-    "sidecar==0.7.0"
-]
+# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
     "bandit==1.8.3",
     "safety==3.3.0",
+    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
 name = "ansys.stk.core"
 
 [project.urls]
-Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Discussions = "https://github.com/ansys/pystk/discussions"
 Documentation = "https://stk.docs.pyansys.com/"
-Source = "https://github.com/pyansys/pystk"
-Tracker = "https://github.com/pyansys/pystk/issues"
+Homepage = "https://www.ansys.com/products/missions/ansys-stk"
+Issues = "https://github.com/ansys/pystk/issues"
+Source = "https://github.com/ansys/pystk"
 
 [tool.ruff]
 line-length = 120
@@ -137,6 +150,10 @@ convention = "numpy"
 combine-as-imports = true
 force-sort-within-sections = true
 known-first-party = ["ansys"]
+
+[tool.ruff.lint.pep8-naming]
+# Ignore overridden ast/libcst functions
+extend-ignore-names = ["visit_*", "leave_*"]
 
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375

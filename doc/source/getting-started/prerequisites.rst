@@ -9,7 +9,7 @@ Local prerequisites
 To get started using PySTK locally, the following is required:
 
 - Python 
-- A licensed version of STK Desktop or STK Engine
+- A licensed version of the Ansys STK® desktop application or STK Engine
 
 Install Python
 ^^^^^^^^^^^^^^
@@ -25,24 +25,24 @@ https://jupyter.org/install.
 
     If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 
-Install STK Desktop or STK Engine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install the STK Desktop application or STK Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-STK Desktop or STK Engine must be installed and licensed on your machine.
+The STK desktop application or STK Engine must be installed and licensed on your machine.
 
-Install STK Desktop
-^^^^^^^^^^^^^^^^^^^
+Install the STK Desktop application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-STK desktop is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details on installing STK.
+STK desktop software is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details on installing the STK application.
 
 .. note::
 
-    Once installed, refer to the `Licensing STK help topic <https://help.agi.com/stk/Content/licensing/licensing.htm>`_ for information on licensing STK.
+    Once installed, refer to the `Licensing STK help topic <https://help.agi.com/stk/Content/licensing/licensing.htm>`_ for information on licensing STK software.
 
 Install STK Engine
 ^^^^^^^^^^^^^^^^^^
 
-STK Engine is available on Windows and Linux platforms. It enables you to build an app that harnesses the analytical power and visual capabilities of STK. 
+STK Engine is available on Windows and Linux platforms. It enables you to build an app that harnesses the analytical power and visual capabilities of the STK application. 
 
 - For Windows installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.htm>`_ for details on installing STK Engine. 
 

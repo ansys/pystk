@@ -17,6 +17,13 @@ Contributing as a documentarian
 
         Showcase the capabilities of PySTK by adding a new example. 
 
+    .. grid-item-card:: :fa:`clone` Add a new code snippet
+        :padding: 2 2 2 2
+        :link: write-snippets
+        :link-type: ref
+
+        Demonstrate a common PySTK task by adding a new code snippet.
+
     .. grid-item-card:: :fa:`file-code` Build the documentation
         :padding: 2 2 2 2
         :link: build-documentation
@@ -116,6 +123,120 @@ Finally, here are some tips for writing examples:
   is inserted in its place. Jupyter widgets are included in
   :py:mod:`~ansys.stk.core.stkengine.experimental.jupyterwidgets`.
 
+.. _write-snippets:
+
+Write a new code snippet
+========================
+
+The :ref:`code snippets <PySTK code snippets>` demonstrate how to perform
+common tasks in PySTK. Code snippets are written in `pytest`_ test functions 
+in the `code snippet directory`_ and are run as part of the 
+tests. They are also included in the documentation, providing PySTK users 
+useful templates for the building blocks of PySTK scenario design. This 
+enables the snippets to appear:
+
+- On the API reference pages for the elements used in the snippet
+- On the :ref:`code snippets <PySTK code snippets>` landing page
+- In the quick info provided by code completion tools such as `IntelliSense`_
+
+To contribute your own code snippet, first identify the critical API element 
+or elements used in the snippet. In the following example, the primary element 
+of interest is the :py:class:`~ansys.stk.core.stkobjects.Scenario` object. 
+Additionally, for instructional purposes, this example demonstrates the 
+process of attaching this snippet to its
+:py:meth:`~ansys.stk.core.stkobjects.Scenario.set_time_period()` method.
+
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :start-after: def SetScenarioTimePeriodSnippet
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
+
+Next, wrap the snippet in a method with a descriptive name ending with 
+``Snippet``. If the method consumes a non-self parameter, add a comment to the 
+first line of the method describing its type to orient the user to the 
+snippet's assumed configuration. Decorate this method with PySTK's 
+``@code_snippet`` decorator:
+
+.. list-table::
+    :header-rows: 1
+    :widths: auto
+    
+    * - **Attribute**
+      - **Description**
+    * - **name**
+      - A Pascal-cased name briefly describing the snippet's objective (tip: use this name followed by ``Snippet`` to name the function enclosing the snippet)
+    * - **description**
+      - A sentence-style phrase describing the task performed in the snippet
+    * - **category**
+      - A ``|``-separated list describing the organization of the capability. See the :ref:`code snippets <PySTK code snippets>` landing page for the list of existing categories and subcategories. New categories can be created on a need basis.
+    * - **eid**
+      - A ``|``-separated list of ids for the one or more elements previously identified as central to the snippet. Each id should be of the form ``<module>~<class/interface name>(~<method/property name>)`` where ``module`` represents the namespace of the module where the element is defined, starting after ``ansys.stk.core``. Omit the parenthesized portion if the ``eid`` corresponds to a class or interface.
+
+Here is an example of a decorated method for the preceding code snippet:
+
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :prepend: @code_snippet(
+  :start-after: name="SetScenarioTimePeriod",
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
+
+Next, add a pytest-discoverable method (beginning with ``test``) that calls
+the decorated method. This new method should perform any configuration that 
+the decorated method assumes upon entry. When automating this configuration, 
+you may assume that an STK application is started and a basic STK scenario is 
+open. You may access the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
+for this application using ``self.get_root()``.
+
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :start-at: def test_SetScenarioTimePeriodSnippet
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
+
+Copy these methods into the file corresponding to the value provided for the 
+``@code_snippet`` decorator's ``category`` attribute. 
+
+.. note:: 
+
+    If you created a new category for this attribute, you may also need to 
+    create a new test file. If this is the case, create a copy of 
+    ``template_snippets.py`` in the `code snippet directory`_ and rename the copy 
+    ``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. 
+    If necessary, create directories matching the category organization up to 
+    ``doc_snippets_tests``.
+
+Run the tests defined in the `code snippet directory`_ and make sure 
+your new snippet runs and passes.
+
+.. vale off
+
+.. code-block:: console
+
+   $ python -m tox -e test-snippets
+
+.. vale on
+
+To ensure properly formatted changes (including additions, deletions, and 
+modifications) to the snippets in the `code snippet directory`_ are 
+propagated to the corresponding documentation and source files, PySTK provides 
+a snippet updater tool.
+
+.. vale off
+
+.. code-block:: console
+
+   $ python -m tox -e doc-snippets
+
+.. vale on
+
+View the changes using a diff application to ensure the process completed 
+smoothly. Once you have verified these changes, you are ready to open a PR on
+the `PySTK pull requests`_ page.
 
 .. _build-documentation:
 
@@ -123,8 +244,8 @@ Build the documentation
 =======================
 
 `Tox`_ is used for automating the build of the documentation. There are
-different environments for cleaning the build, and building the documentation
-in different formats such as HTML. , and running the tests. The following
+different environments for cleaning the build, running the tests, and building
+the documentation in different formats such as HTML or PDF. The following
 environments are available:
 
 The following

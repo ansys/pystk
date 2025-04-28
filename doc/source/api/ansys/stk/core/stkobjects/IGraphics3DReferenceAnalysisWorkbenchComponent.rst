@@ -3,7 +3,7 @@ IGraphics3DReferenceAnalysisWorkbenchComponent
 
 .. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent
 
-   IAgVORefCrdn used to access the shared properties of all 3D RefCrdn.
+   IGraphics3DReferenceAnalysisWorkbenchComponent used to access the shared properties of all 3D RefCrdn.
 
 .. py:currentmodule:: IGraphics3DReferenceAnalysisWorkbenchComponent
 
@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_identifier`
-              - Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
+              - Type of component (vector, axes, angle, plane, point). A member of the GeometricElementType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.name`
               - Get the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.visible`
@@ -45,7 +45,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_identifier
     :type: GeometricElementType
 
-    Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
+    Type of component (vector, axes, angle, plane, point). A member of the GeometricElementType enumeration.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.name

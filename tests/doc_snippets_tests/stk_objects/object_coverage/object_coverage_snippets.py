@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -64,7 +64,7 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
         name="ComputeObjectCoverage",
         description="Compute Object Coverage",
         category="STK Objects | Object Coverage",
-        eid="STKObjects~IAgStkObjectCoverage",
+        eid="stkobjects~ObjectCoverage",
     )
     def ComputeObjectCoverageSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object

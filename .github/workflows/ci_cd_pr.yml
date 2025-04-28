@@ -46,7 +46,7 @@ jobs:
     name: "Check pull-request title follows conventional commits"
     runs-on: ubuntu-latest
     steps:
-      - uses: ansys/actions/check-pr-title@v8
+      - uses: ansys/actions/check-pr-title@v9
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -58,7 +58,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: check-pr-title
     steps:
-      - uses: ansys/actions/code-style@v8
+      - uses: ansys/actions/code-style@v9
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -93,12 +93,13 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v8
+      - uses: ansys/actions/doc-style@v9
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
+          fail-level: 'warning'
 
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
@@ -113,10 +114,10 @@ jobs:
        matrix:
            os: [ubuntu-latest, windows-latest]
            python-version: ['3.11', '3.12', '3.13']
-           target: ['all', 'grpc', 'visualization']
+           target: ['all', 'grpc', 'jupyter']
     steps:
       - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v8
+        uses: ansys/actions/build-wheelhouse@v9
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           operating-system: ${{ matrix.os }}
@@ -462,6 +463,6 @@ jobs:
         !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v8
+      - uses: ansys/actions/build-library@v9
         with:
           library-name: ${{ env.LIBRARY_NAME }}

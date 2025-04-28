@@ -40,11 +40,11 @@ Overview
               - Get the Y component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.position_z`
               - Get the Z component of the position vector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_x`
               - Get the X component of the velocity vector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_y`
               - Get the Y component of the velocity vector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_z`
               - Get the Z component of the velocity vector.
 
 
@@ -126,20 +126,20 @@ Property detail
 
     Get the Z component of the position vector.
 
-.. py:property:: vel_x
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_x
+.. py:property:: velocity_x
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_x
     :type: float
 
     Get the X component of the velocity vector.
 
-.. py:property:: vel_y
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_y
+.. py:property:: velocity_y
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_y
     :type: float
 
     Get the Y component of the velocity vector.
 
-.. py:property:: vel_z
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.vel_z
+.. py:property:: velocity_z
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_z
     :type: float
 
     Get the Z component of the velocity vector.

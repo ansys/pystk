@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReference.set_vector`
               - Set a new vector.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReference.get_vector`
-              - Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+              - Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: get_vector(self) -> IVectorGeometryToolVector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReference.get_vector
 
-    Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+    Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
 
     :Returns:
 

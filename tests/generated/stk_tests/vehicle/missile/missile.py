@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -35,7 +35,6 @@ from vehicle.vehicle_vo import *
 from ansys.stk.core.stkobjects import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -137,7 +136,6 @@ class EarlyBoundTests(TestBase):
     # region BasicAttitude
     @category("Basic Tests")
     @category("Orientation Test")
-    @category("Causes crashes")
     def test_BasicAttitude(self):
         TestBase.logger.WriteLine("----- THE BASIC ATTITUDE TEST ----- BEGIN -----")
         # AttitudeType
@@ -228,7 +226,6 @@ class EarlyBoundTests(TestBase):
 
     # region SpatialInfo
     @category("SpatialInfo")
-    @category("Causes crashes")
     def test_SpatialInfo(self):
         helper = SpatialInfoHelper(TestBase.Application)
         helper.Run(clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject))

@@ -1297,7 +1297,7 @@ map_plotter.show()
 
 # ## Determine when the lead aircraft lands
 
-# To determine when the lead aircraft lands, get the aircraft's Flight Profile By Time report, calculate the data over the duration of the scenario, with an interval of 60 seconds, and convert the data to a pandas dataframe:
+# To determine when the lead aircraft lands, get the aircraft's Flight Profile By Time report, calculate the data over the duration of the scenario, with an interval of $60$ seconds, and convert the data to a pandas dataframe:
 
 lead_flight_profile_df = (
     lead_aircraft.data_providers.item("Flight Profile By Time")
@@ -1313,7 +1313,7 @@ print(
 
 # ## Determine the wing aircraft's altitude when the lead aircraft lands
 
-# Get the wing aircraft's Flight Profile By Time report, calculate the data over the duration of the scenario, with an interval of 60 seconds, and convert the data to a pandas dataframe:
+# Get the wing aircraft's Flight Profile By Time report, calculate the data over the duration of the scenario, with an interval of $60$ seconds, and convert the data to a pandas dataframe:
 
 wing_flight_profile_df = (
     wing_aircraft.data_providers.item("Flight Profile By Time")

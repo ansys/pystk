@@ -20,7 +20,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~UNKNOWN`
-              - An invalid AgESpEnvNasaModelsActivity value.
+              - An invalid SpaceEnvironmentNasaModelsActivity value.
 
             * - :py:attr:`~SOLAR_MINIMUM`
               - Set the NASA models to use values appropriate for the minimum of the solar cycle.

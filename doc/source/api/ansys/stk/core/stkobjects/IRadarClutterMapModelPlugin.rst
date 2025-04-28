@@ -3,7 +3,7 @@ IRadarClutterMapModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin
 
-   Do not use this interface, as it is deprecated. Use IAgScatteringPointModelPlugin interface instead. Provides access to the properties and methods defining a radar clutter map plugin model.
+   Do not use this interface, as it is deprecated. Use ScatteringPointModelPlugin interface instead. Provides access to the properties and methods defining a radar clutter map plugin model.
 
 .. py:currentmodule:: IRadarClutterMapModelPlugin
 
@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin.plugin_configuration`
-              - Do not use this property, as it is deprecated. Use PluginConfiguration on IAgScatteringPointModelPlugin instead. Gets the plugin configuration interface.
+              - Do not use this property, as it is deprecated. Use PluginConfiguration on ScatteringPointModelPlugin instead. Gets the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin.raw_plugin_object`
-              - Do not use this property, as it is deprecated. Use RawPluginObject on IAgScatteringPointModelPlugin instead. Gets the raw plugin IUnknown interface.
+              - Do not use this property, as it is deprecated. Use RawPluginObject on ScatteringPointModelPlugin instead. Gets the raw plugin IUnknown interface.
 
 
 Import detail
@@ -37,14 +37,14 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin.plugin_configuration
-    :type: AgCRPluginConfiguration
+    :type: CommRadPluginConfiguration
 
-    Do not use this property, as it is deprecated. Use PluginConfiguration on IAgScatteringPointModelPlugin instead. Gets the plugin configuration interface.
+    Do not use this property, as it is deprecated. Use PluginConfiguration on ScatteringPointModelPlugin instead. Gets the plugin configuration interface.
 
 .. py:property:: raw_plugin_object
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin.raw_plugin_object
     :type: typing.Any
 
-    Do not use this property, as it is deprecated. Use RawPluginObject on IAgScatteringPointModelPlugin instead. Gets the raw plugin IUnknown interface.
+    Do not use this property, as it is deprecated. Use RawPluginObject on ScatteringPointModelPlugin instead. Gets the raw plugin IUnknown interface.
 
 

@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.get_result_value`
               - Return a result value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.run`
-              - Run the segment in individual segment mode.  See IAgVADriverMCS.
+              - Run the segment in individual segment mode.  See MCSDriver.
 
     .. tab-item:: Properties
         
@@ -114,7 +114,7 @@ Method detail
 .. py:method:: run(self) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.run
 
-    Run the segment in individual segment mode.  See IAgVADriverMCS.
+    Run the segment in individual segment mode.  See MCSDriver.
 
     :Returns:
 

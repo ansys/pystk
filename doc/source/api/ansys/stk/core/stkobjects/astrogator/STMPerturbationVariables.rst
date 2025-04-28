@@ -28,13 +28,13 @@ Overview
             * - :py:attr:`~POSITION_Z`
               - Designates the initial or final variation in the 'z' component of position.
 
-            * - :py:attr:`~VEL_X`
+            * - :py:attr:`~VELOCITY_X`
               - Designates the initial or final variation in the 'x' component of velocity.
 
-            * - :py:attr:`~VEL_Y`
+            * - :py:attr:`~VELOCITY_Y`
               - Designates the initial or final variation in the 'y' component of velocity.
 
-            * - :py:attr:`~VEL_Z`
+            * - :py:attr:`~VELOCITY_Z`
               - Designates the initial or final variation in the 'z' component of velocity.
 
 

@@ -44,7 +44,7 @@ Overview
 Examples
 --------
 
-Set initial state of satellite and propagate
+Set the initial state of a satellite and propagate
 
 .. code-block:: python
 
