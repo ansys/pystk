@@ -116,7 +116,7 @@ Compute and extract access interval times
     access.specify_access_intervals(computedIntervals)
 
 
-Compute Access with Advanced Settings
+Compute an Access with Advanced Settings
 
 .. code-block:: python
 

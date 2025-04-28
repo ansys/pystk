@@ -1,11 +1,11 @@
 Install PySTK locally in Windows
 ################################
 
-This guideline covers the local installation of PySTK in Windows platforms.
+This topic provides details on installing PySTK in Windows platforms.
 
 .. note::
 
-    This guide assumes that you have a local installation of STK and a valid
+    This topic assumes that you have a local installation of STK and a valid
     license in your machine.
 
 Download artifacts
@@ -87,7 +87,7 @@ Jupyter widgets for visualization. These features require some extra artifacts
 to be installed, either pulling those dependencies from the public PyPi
 registry or from the wheelhouses included on the :ref:`artifacts <Artifacts>`
 page. A wheelhouse provide all the required dependencies. It facilitates
-deploying PySTK on isolated networks that do not have access to the public Pypi
+deploying PySTK on isolated networks that do not have access to the public PyPi
 registry.
 
 Start by selecting the additional feature group to install with PySTK. Finally,

@@ -88,7 +88,7 @@ class GlobeOverlaysSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="DisplayStarsWater",
-        description="Control Display of Stars and Water Texture",
+        description="Control the Display of Stars and Water Texture",
         category="Graphics | GlobeOverlays",
         eid="graphics~Scene",
     )

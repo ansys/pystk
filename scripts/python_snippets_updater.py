@@ -23,7 +23,7 @@ class SnippetsParser(object):
     def parse_all_snippets(self):
         """Parse and return a representation of the PySTK code snippets."""
         for file in list(self.doc_snippets_dir.rglob("*_snippets.py")):
-            with Path.open(file, "r") as in_file:
+            with Path.open(file, "r", encoding="utf-8") as in_file:
                 tree = ast.parse(in_file.read())
                 in_file.seek(0)
                 file_content = in_file.readlines()
@@ -93,6 +93,31 @@ class SnippetsRSTGenerator(object):
             current_level["snippets"].append({"description": snip["description"], "name": snip["name"]})
         return snippet_tree
 
+    def _capitalize_description(self, description):
+        description = re.sub(r"\b(stk desktop(?! application))\b", "STK Desktop", description.capitalize())
+
+        # Substitutions to make vale happy
+        vale_substitutions = {
+            "2d": "2D",
+            "3d": "3D",
+            "advcat": "AdvCat",
+            "astrogator": "Astrogator",
+            "azel": "AzEl",
+            "cartesian": "Cartesian",
+            "earth": "Earth",
+            "euler": "Euler",
+            "hpop": "HPOP",
+            "mcs": "MCS",
+            "mto": "MTO",
+            "stk engine": "STK Engine",
+            "stk": "STK",
+            "vgt": "VGT",
+            "ypr": "YPR",
+        }
+
+        ored_substitutions = "|".join(vale_substitutions)
+        return re.sub(rf"\b({ored_substitutions})\b", lambda s: vale_substitutions[s[1]], description)
+
     def _write_snippet_tree(self, out_file, tree, indentation):
         sub_cats = tree["sub_cats"].keys()
         for node_name in sub_cats:
@@ -104,7 +129,9 @@ class SnippetsRSTGenerator(object):
             )  # Required by Sphinx to avoid warning: Block quote ends without a blank line; unexpected unindent.
         for snippet in tree["snippets"]:
             out_file.write(
-                "{}- :ref:`{} <{}>`\n".format(indentation * " ", snippet["description"].capitalize(), snippet["name"])
+                "{}- :ref:`{} <{}>`\n".format(
+                    indentation * " ", self._capitalize_description(snippet["description"]), snippet["name"]
+                )
             )
 
     def write_rst(self):
@@ -113,7 +140,7 @@ class SnippetsRSTGenerator(object):
             Path.mkdir(Path(self.destination).parent, parents=True)
 
         Path.chmod(self.destination, stat.S_IREAD | stat.S_IWRITE)
-        with Path.open(self.destination, "w") as out_file:
+        with Path.open(self.destination, "w", encoding="utf-8") as out_file:
             rst_header = textwrap.dedent(
                 """
             PySTK code snippets
@@ -136,28 +163,7 @@ class SnippetsRSTGenerator(object):
             out_file.write("\n")
 
             for snippet in self.all_snippets:
-                description = snippet["description"].capitalize()
-
-                # Substitutions to make vale happy
-                vale_substitutions = {
-                    "2d": "2D",
-                    "3d": "3D",
-                    "advcat": "AdvCat",
-                    "astrogator": "Astrogator",
-                    "azel": "AzEl",
-                    "cartesian": "Cartesian",
-                    "earth": "Earth",
-                    "euler": "Euler",
-                    "hpop": "HPOP",
-                    "mcs": "MCS",
-                    "mto": "MTO",
-                    "stk engine": "STK Engine",
-                    "stk": "STK",
-                    "vgt": "VGT",
-                    "ypr": "YPR",
-                }
-                ored_substitutions = "|".join(vale_substitutions)
-                description = re.sub(rf"\b({ored_substitutions})\b", lambda s: vale_substitutions[s[1]], description)
+                description = self._capitalize_description(snippet["description"])
 
                 snippet_format = """
                 .. _{}:
@@ -214,7 +220,7 @@ class SnippetsRSTInjector(object):
 
     def _inject_class_docstrings(self):
         for filename in self.api_doc_dir.rglob("*.rst"):
-            with Path.open(filename, "r") as in_file:
+            with Path.open(filename, "r", encoding="utf-8") as in_file:
                 original_content = in_file.read()
 
             matched = re.match(r"([\S\s]*)(Examples\n--------[\S\s]*?)(Import detail[\S\s]*)", original_content)
@@ -222,7 +228,7 @@ class SnippetsRSTInjector(object):
                 matched = re.match(r"([\S\s]*)(Import detail[\S\s]*)", original_content)
 
             if matched:
-                with Path.open(filename, "w") as out_file:
+                with Path.open(filename, "w", encoding="utf-8") as out_file:
                     out_file.seek(0)
                     out_file.write(matched.group(1))
                     out_file.write(self._format_class_examples(str(filename)))
@@ -243,7 +249,7 @@ class SnippetsRSTInjector(object):
 
     def _remove_method_docstring_examples(self):
         for filename in self.api_doc_dir.rglob("*.rst"):
-            with Path(filename).open("r") as in_file:
+            with Path(filename).open("r", encoding="utf-8") as in_file:
                 original_content = in_file.read()
                 in_file.close()
 
@@ -255,7 +261,7 @@ class SnippetsRSTInjector(object):
             for method_examples in matched:
                 original_content = original_content.replace(method_examples, "")
 
-                with Path.open(filename, "w") as out_file:
+                with Path.open(filename, "w", encoding="utf-8") as out_file:
                     out_file.seek(0)
                     out_file.write(original_content)
                     out_file.truncate()
@@ -266,7 +272,7 @@ class SnippetsRSTInjector(object):
             filename = target.rsplit(":", 1)[0]
             method_name = target.rsplit(":", 1)[1]
 
-            with Path(filename).open("r") as in_file:
+            with Path(filename).open("r", encoding="utf-8") as in_file:
                 original_content = in_file.read()
                 in_file.close()
 
@@ -283,7 +289,7 @@ class SnippetsRSTInjector(object):
                 formatted_examples = self._format_method_examples(target)
                 original_content = original_content.replace(matched.group(1), matched.group(1) + formatted_examples)
 
-                with Path.open(filename, "w") as out_file:
+                with Path.open(filename, "w", encoding="utf-8") as out_file:
                     out_file.seek(0)
                     out_file.write(original_content)
                     out_file.truncate()
@@ -367,13 +373,13 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         self.local_targets = local_targets
 
         new_tree = None
-        with Path.open(path, "r") as file:
+        with Path.open(path, "r", encoding="utf-8") as file:
             source = file.read()
             tree = libcst.metadata.MetadataWrapper(libcst.parse_module(source))
 
             new_tree = tree.visit(self)
 
-        with Path.open(path, "w") as file:
+        with Path.open(path, "w", encoding="utf-8") as file:
             file.write(new_tree.code)
 
     def visit_FunctionDef(self, node: libcst.FunctionDef) -> bool:

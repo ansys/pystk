@@ -25,6 +25,7 @@ namespace
 Nemo
 [Nn]um[Pp]y
 Pandas
+PySTK
 periapsis
 prograde
 Precessing

@@ -69,7 +69,7 @@ Overview
 Examples
 --------
 
-Control Display of Stars and Water Texture
+Control the Display of Stars and Water Texture
 
 .. code-block:: python
 

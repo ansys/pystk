@@ -4197,7 +4197,7 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     >>> # Clear all segments from the MCS
     >>> driver.main_sequence.remove_all()
 
-    Run the Astrogator MCS:
+    Run the Astrogator® mission control sequence (MCS):
     >>> # MCSDriver driver: MCS driver interface
     >>> driver.run_mcs()
     """

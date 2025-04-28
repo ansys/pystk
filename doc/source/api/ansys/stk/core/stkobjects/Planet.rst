@@ -38,7 +38,7 @@ Overview
 Examples
 --------
 
-Modify Planet 2D Properties
+Modify a Planet's 2D Properties
 
 .. code-block:: python
 

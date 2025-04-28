@@ -65,7 +65,7 @@ class CameraSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CameraExtents",
-        description="Change camera view to Imagery Extents",
+        description="Change the camera view to Imagery Extents",
         category="Camera",
         eid="graphics~Camera",
     )
@@ -84,7 +84,7 @@ class CameraSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CameraReferenceFrame",
-        description="Change camera reference frame",
+        description="Change the camera reference frame",
         category="Camera",
         eid="graphics~Camera",
     )

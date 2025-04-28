@@ -38,7 +38,7 @@ Overview
 Examples
 --------
 
-Load MTO track points from file
+Load multi-track object (MTO) track points from a file
 
 .. code-block:: python
 
