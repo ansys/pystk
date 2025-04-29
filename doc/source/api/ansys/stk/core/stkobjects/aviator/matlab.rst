@@ -19,20 +19,20 @@ Summary
             :widths: auto
         
 
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.BasicManeuverMATLABFactory`
+              - Class defining the factory to create the basic maneuver PropNav strategies.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance`
+              - Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D`
+              - Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
+
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNavigation`
               - Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABProfile`
               - Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D`
-              - Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance`
-              - Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.BasicManeuverMATLABFactory`
-              - Class defining the factory to create the basic maneuver PropNav strategies.
 
 
 
@@ -55,9 +55,9 @@ Aerospace Toolbox functions to define the force modeling of the aircraft.
     :maxdepth: 1
     :hidden:
 
+     BasicManeuverMATLABFactory<matlab/BasicManeuverMATLABFactory>
+     StrategyMATLAB3DGuidance<matlab/StrategyMATLAB3DGuidance>
+     StrategyMATLABFull3D<matlab/StrategyMATLABFull3D>
      StrategyMATLABNavigation<matlab/StrategyMATLABNavigation>
      StrategyMATLABProfile<matlab/StrategyMATLABProfile>
-     StrategyMATLABFull3D<matlab/StrategyMATLABFull3D>
-     StrategyMATLAB3DGuidance<matlab/StrategyMATLAB3DGuidance>
-     BasicManeuverMATLABFactory<matlab/BasicManeuverMATLABFactory>
 
