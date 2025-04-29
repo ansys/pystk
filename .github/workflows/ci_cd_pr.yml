@@ -373,6 +373,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install tox && rm -rf .tox"
 
+      - name: "Run the extension tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=extensions && tox -e tests-extensions-cov"
+
       - name: "Run the API migration assistant tests"
         run: |
           docker exec \
