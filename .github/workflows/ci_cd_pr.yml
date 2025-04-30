@@ -222,10 +222,10 @@ jobs:
             docker exec \
               --workdir ${{ env.PYSTK_DIR }} \
               ${{ env.STK_CONTAINER }} /bin/bash -c \
-              "python -m pip install tox && rm -rf .tox"
+              "python -m pip install --upgrade pip tox && rm -rf .tox"
           else
             python --version
-            python -m pip install tox && rm -rf .tox
+            python -m pip install --upgrade pip tox && rm -rf .tox
           fi
 
       # Render the documentation including or excluding different sections
