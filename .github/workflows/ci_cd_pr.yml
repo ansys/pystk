@@ -106,10 +106,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: doc-style
     if: |
-      always() &&
-        (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -129,10 +127,8 @@ jobs:
     runs-on: ${{ matrix.runner }}
     needs: build-wheelhouse
     if: |
-      always() &&
-        (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -329,10 +325,8 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      always() &&
-        (needs.code-style.result == 'success' || needs.code-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -457,10 +451,7 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     if: |
-      always() &&
-        (needs.doc-build.result == 'success' || needs.doc-build.result == 'skipped') &&
-        (needs.tests.result == 'success' || needs.tests.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v9
