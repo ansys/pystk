@@ -5,6 +5,8 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.13'
+  ANSYS_STK_CORE: 'ansys-stk-core'
+  ANSYS_STK_EXTENSIONS: 'ansys-stk-extensions'
   MINIMUM_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
@@ -438,20 +440,35 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "coverage combine aviator stknogfx stkgfx vgt snippets migration"
 
-      - name: "Generate total coverage report"
+      - name: "Generate coverage report for ${{ env.ANSYS_STK_CORE }}"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html -d .cov/total-html"
+            "coverage html -d .cov/${{ env.ANSYS_STK_CORE }}-coverage"
 
-      - name: "Upload coverage results"
+      - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "coverage html -d .cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage"
+
+      - name: "Upload ${{ env.ANSYS_STK_CORE }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         uses: actions/upload-artifact@v4
         with:
-          path: .cov/total-html
-          name: html-coverage
+          path: .cov/${{ env.ANSYS_STK_CORE }}-coverage
+          name: ${{ env.ANSYS_STK_CORE }}-coverage
+
+      - name: "Upload ${{ env.ANSYS_STK_EXTENSIONS }} coverage results"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: .cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage
+          name: ${{ env.ANSYS_STK_EXTENSIONS }}-coverage
 
       - name: "Stop the container"
         if: always()
