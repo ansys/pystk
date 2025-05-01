@@ -421,7 +421,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install .[tests]"
+            "python -m pip install --group tests ."
 
       - name: "Combine all coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
