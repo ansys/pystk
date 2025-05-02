@@ -131,7 +131,7 @@ templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
 exclude_examples = []
-exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst", "changelog/*.md"]
 
 # Ignore warnings
 suppress_warnings = [
