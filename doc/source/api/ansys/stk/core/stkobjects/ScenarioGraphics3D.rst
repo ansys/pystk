@@ -63,7 +63,7 @@ Overview
 Examples
 --------
 
-Change scenario font
+Change the scenario font
 
 .. code-block:: python
 

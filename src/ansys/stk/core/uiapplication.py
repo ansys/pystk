@@ -161,7 +161,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
 
     Examples
     --------
-    Close STK:
+    Close the STK desktop application:
     >>> # AgUiApplication uiApplication: STK Application
     >>> uiApplication.shutdown()
     """

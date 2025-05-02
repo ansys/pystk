@@ -55,7 +55,7 @@ Overview
 Examples
 --------
 
-Configure the Contours of the FOM and define a color ramp
+Configure the Contours of the figure of merit (FOM) and define a color ramp
 
 .. code-block:: python
 

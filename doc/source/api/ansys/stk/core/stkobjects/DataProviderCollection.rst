@@ -51,7 +51,7 @@ Overview
 Examples
 --------
 
-Getting Data for Specific Points and Elements
+Get Data for Specific Points and Elements
 
 .. code-block:: python
 
@@ -66,7 +66,7 @@ Getting Data for Specific Points and Elements
     passes = satPassesDP.get_array(1)
 
 
-Getting Data for a Single Point in Time
+Get Data for a Single Point in Time
 
 .. code-block:: python
 
@@ -79,7 +79,7 @@ Getting Data for a Single Point in Time
     passes = satPassDP.data_sets.get_data_set_by_name("Precision Pass Number").get_values()
 
 
-Extracting Elements from Data Providers with pre-data
+Extract Elements from Data Providers with pre-data
 
 .. code-block:: python
 
@@ -102,7 +102,7 @@ Extracting Elements from Data Providers with pre-data
     facTODz = datasets.get_data_set_by_name("z").get_values()
 
 
-Extracting Elements from Data Providers with Groups
+Extract Elements from Data Providers with Groups
 
 .. code-block:: python
 
@@ -134,7 +134,7 @@ Extracting Elements from Data Providers with Groups
     satvz = satVelDP.data_sets.get_data_set_by_name("z").get_values()
 
 
-Using a Time Dependent Data Provider and requesting only specified elements
+Use a Time Dependent Data Provider and requesting only specified elements
 
 .. code-block:: python
 
@@ -157,7 +157,7 @@ Using a Time Dependent Data Provider and requesting only specified elements
     satq4 = satDP.data_sets.item(4).get_values()
 
 
-Using an interval Data Provider
+Use an interval Data Provider
 
 .. code-block:: python
 

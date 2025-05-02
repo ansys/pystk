@@ -417,7 +417,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ComputeAccessAdvancedSettings",
-        description="Compute Access with Advanced Settings",
+        description="Compute an Access with Advanced Settings",
         category="STK Objects | Access",
         eid="stkobjects~Access",
     )

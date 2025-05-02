@@ -92,7 +92,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SatelliteInitialState",
-        description="Set initial state of satellite and propagate",
+        description="Set the initial state of a satellite and propagate",
         category="STK Objects | Satellite",
         eid="stkobjects~OrbitStateClassical",
     )
@@ -279,7 +279,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ExportEphemerisFile",
-        description="Export an ephemeris file to scenario folder",
+        description="Export an ephemeris file to a scenario folder",
         category="STK Objects | Satellite",
         eid="stkobjects~SatelliteExportTools",
     )

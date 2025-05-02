@@ -39,7 +39,7 @@ Overview
 Examples
 --------
 
-Export an ephemeris file to scenario folder
+Export an ephemeris file to a scenario folder
 
 .. code-block:: python
 

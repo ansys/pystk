@@ -14,14 +14,14 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~ansys.stk.core.stkdesktop.ThreadMarshaller`
-              - Automate multiple STK instances from one Python script using threads.
+            * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktop`
+              - Create, initialize, and manage STK Desktop application instances.
 
             * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication`
               - Interact with an STK Desktop application.
 
-            * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktop`
-              - Create, initialize, and manage STK Desktop application instances.
+            * - :py:class:`~ansys.stk.core.stkdesktop.ThreadMarshaller`
+              - Automate multiple STK instances from one Python script using threads.
 
 
 
@@ -39,8 +39,8 @@ Starts STK Desktop or attaches to an already running STK Desktop, and provides a
     :maxdepth: 1
     :hidden:
 
-     ThreadMarshaller<stkdesktop/ThreadMarshaller>
-     STKDesktopApplication<stkdesktop/STKDesktopApplication>
      STKDesktop<stkdesktop/STKDesktop>
+     STKDesktopApplication<stkdesktop/STKDesktopApplication>
+     ThreadMarshaller<stkdesktop/ThreadMarshaller>
 
 
