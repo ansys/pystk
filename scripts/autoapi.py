@@ -120,17 +120,25 @@ class ManualRSTGenerator:
                         subpackages.append(entry.name)
 
             type_definitions = [node for node in tree.body if isinstance(node, ast.ClassDef)]
-            enums = [
-                td
-                for td in type_definitions
-                if any(getattr(base, "id", "") in ("IntEnum", "IntFlag") for base in td.bases)
-            ]
-            interfaces = [td for td in type_definitions if td not in enums and td.name.startswith("I")]
-            classes = [
-                td
-                for td in type_definitions
-                if td not in enums and not td.name.startswith("_") and td not in interfaces
-            ]
+            enums = sorted(
+                [
+                    td
+                    for td in type_definitions
+                    if any(getattr(base, "id", "") in ("IntEnum", "IntFlag") for base in td.bases)
+                ],
+                key=lambda x: x.name,
+            )
+            interfaces = sorted(
+                [td for td in type_definitions if td not in enums and td.name.startswith("I")], key=lambda x: x.name
+            )
+            classes = sorted(
+                [
+                    td
+                    for td in type_definitions
+                    if td not in enums and not td.name.startswith("_") and td not in interfaces
+                ],
+                key=lambda x: x.name,
+            )
 
             def write_line(lines):
                 out_file.writelines([line + "\n" for line in lines])
