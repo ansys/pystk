@@ -20,14 +20,6 @@ concurrency:
 
 jobs:
 
-  check-pr-title:
-    name: "Check pull-request title follows conventional commits"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ansys/actions/check-pr-title@v8
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
   labeler:
     name: "Labels"
     permissions:
@@ -50,6 +42,22 @@ jobs:
        uses: actions/labeler@v5.0.0
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  changelog-fragment:
+    name: "Create changelog fragment"
+    needs: [labeler]
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ansys/actions/doc-changelog@v9
+      with:
+        token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+        use-conventional-commits: true
+        use-default-towncrier-config: true
+        bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+        bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }
 
   vulnerabilities:
     name: "Vulnerabilities"
@@ -96,7 +104,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: vulnerabilities
     steps:
-      - uses: ansys/actions/code-style@v8
+      - uses: ansys/actions/code-style@v9
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -131,30 +139,29 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v8
+      - uses: ansys/actions/doc-style@v9
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
+          fail-level: 'warning'
 
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
     needs: doc-style
     if: |
-      always() &&
-        (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
            python-version: ['3.11', '3.12', '3.13']
-           target: ['all', 'grpc', 'visualization']
+           target: ['all', 'grpc', 'jupyter']
     steps:
       - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v8
+        uses: ansys/actions/build-wheelhouse@v9
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           operating-system: ${{ matrix.os }}
@@ -166,10 +173,8 @@ jobs:
     runs-on: ${{ matrix.runner }}
     needs: build-wheelhouse
     if: |
-      always() &&
-        (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -366,10 +371,8 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      always() &&
-        (needs.code-style.result == 'success' || needs.code-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -494,12 +497,9 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     if: |
-      always() &&
-        (needs.doc-build.result == 'success' || needs.doc-build.result == 'skipped') &&
-        (needs.tests.result == 'success' || needs.tests.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v8
+      - uses: ansys/actions/build-library@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.LIBRARY_NAME }
