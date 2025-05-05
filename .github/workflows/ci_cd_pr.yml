@@ -44,7 +44,7 @@ jobs:
 
   changelog-fragment:
     name: "Create changelog fragment"
-    needs: [labeler]
+    needs: labeler
     permissions:
       contents: write
       pull-requests: write
@@ -500,4 +500,4 @@ jobs:
     steps:
       - uses: ansys/actions/build-library@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }
+          library-name: ${{ env.LIBRARY_NAME }}
