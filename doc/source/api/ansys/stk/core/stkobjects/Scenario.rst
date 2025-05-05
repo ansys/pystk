@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_existing_accesses`
               - Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path`
-              - Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+              - Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     .. tab-item:: Properties
         
@@ -88,6 +88,21 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.laser_environment`
               - Return the laser environment.
 
+
+
+Examples
+--------
+
+Set the current scenario's time period
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000",
+        stop_time="2 Jan 2012 12:00:00.000"
+    )
 
 
 Import detail
@@ -300,6 +315,21 @@ Method detail
 
 
 
+    Examples
+    --------
+
+    Set the current scenario's time period
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        scenario.set_time_period(
+            start_time="1 Jan 2012 12:00:00.000",
+            stop_time="2 Jan 2012 12:00:00.000"
+        )
+
+
 .. py:method:: set_dirty(self) -> None
     :canonical: ansys.stk.core.stkobjects.Scenario.set_dirty
 
@@ -325,7 +355,7 @@ Method detail
 .. py:method:: get_access_between_objects_by_path(self, object_path1: str, object_path2: str) -> Access
     :canonical: ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path
 
-    Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+    Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     :Parameters:
 

@@ -5,15 +5,28 @@ Examples
 
     {% if build_examples %}
 
+    Fundamental concepts
+    ====================
+
+    This series of tutorials demonstrates how to perform fundamental actions in PySTK.
+
+    .. nbgallery::
+        :caption: Fundamental concepts
+
+        examples/create-load-scenarios
+        examples/results-graphs
+
     Basic examples
     ==============
     
-    This series of tutorials explains basic examples involving STK objects using Python and PySTK.
+    This series of tutorials provides basic examples involving Ansys STK® application objects using Python and PySTK.
     
     .. nbgallery::
         :caption: Basic examples
     
+        examples/create-load-scenarios
         examples/facility-to-satellite-access
+        examples/results-graphs
         examples/sensor-access
     
     Coverage examples
@@ -30,7 +43,7 @@ Examples
     Space mission
     =============
     
-    This series of tutorials explain how to model and simulate orbital maneuvers using Python and PySTK.
+    This series of tutorials explains how to model and simulate orbital maneuvers using Python and PySTK.
     
     .. nbgallery::
         :caption: Orbital maneuvers
@@ -47,7 +60,7 @@ Examples
     Communications and radar
     ========================
     
-    This series of tutorials explain how to model and simulate communications and radar systems using Python and PySTK.
+    This series of tutorials explains how to model and simulate communications and radar systems using Python and PySTK.
     
     .. nbgallery::
         :caption: Communications and radar
@@ -58,7 +71,7 @@ Examples
     Aviator mission planning
     ========================
     
-    This series of tutorials explain how to model and simulate aircraft missions using Python and PySTK's Aviator capabilities.
+    This series of tutorials explains how to model and simulate aircraft missions using Python and PySTK's Aviator capabilities.
     
     .. nbgallery::
         :caption: Aviator mission planning

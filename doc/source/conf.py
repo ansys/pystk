@@ -7,6 +7,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import toml
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -42,6 +43,12 @@ html_context = {
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
     "page_assets": {
+        "getting-started/install/windows/local": {
+            "needs_datatables": True,
+        },
+        "getting-started/install/linux/local": {
+            "needs_datatables": True,
+        },
         "user-guide/migration": {
             "needs_datatables": True,
         },
@@ -124,7 +131,7 @@ templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
 exclude_examples = []
-exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst", "changelog/*.md"]
 
 # Ignore warnings
 suppress_warnings = [
@@ -172,6 +179,9 @@ linkcheck_ignore = [
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
+    # TODO: Determine a way to link to examples without breaking the linkcheck
+    # https://github.com/ansys-internal/pystk/issues/657
+    r"../examples/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -317,6 +327,24 @@ def get_file_size_in_mb(file_path):
     file_size_bytes = path.stat().st_size
     return file_size_bytes / (1024 * 1024)
 
+def read_optional_dependencies_from_pyproject():
+    """Read the extra dependencies declared in the project file."""
+    pyproject = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
+    if not pyproject.exists():
+        raise ValueError(f"The file {pyproject} does not exist.")
+
+    pyproject_content = toml.loads(pyproject.read_text(encoding="utf-8"))
+    exclude_targets = ["doc", "tests", "vulnerabilities"]
+    optional_dependencies = {
+        target: {
+            (pkg.split("==")[0] if "==" in pkg else pkg): (pkg.split("==")[1] if "==" in pkg else "latest")
+            for pkg in deps
+        }
+        for target, deps in pyproject_content["project"]["optional-dependencies"].items()
+        if target not in exclude_targets
+    }
+
+    return optional_dependencies
 
 STATIC_PATH = pathlib.Path(__file__).parent / "_static"
 ARTIFACTS_PATH = STATIC_PATH / "artifacts"
@@ -357,13 +385,14 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
-                    for target in ["all", "grpc", "visualization"]
+                    for target in ["all", "grpc", "jupyter"]
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
             for platform in ["windows", "ubuntu"]
         }
     },
+    "optional_dependencies": {"optional_dependencies": read_optional_dependencies_from_pyproject()},
 }
 
 # -- autodoc configuration ---------------------------------------------------

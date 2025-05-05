@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -63,7 +63,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="CreateReceiver",
         description="Create a New Receiver Object",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def CreateReceiverSnippet(self, satellite):
         # IStkObject satellite: STK object
@@ -83,7 +83,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverModel",
         description="Modify Receiver Model Type",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverModelSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -106,7 +106,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverAntenna",
         description="Modify Receiver Embedded Antenna",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverAntennaSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -130,7 +130,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverPolarization",
         description="Modify Receiver Polarization Properties",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverPolarizationSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -155,7 +155,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverOrientation",
         description="Modify Orientation of the Receiver Antenna",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverOrientationSnippet(self, receiver):
         # Complex receivers Only
@@ -183,7 +183,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverSysNoiseTemp",
         description="Modify Receiver System Noise Temperature",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverSysNoiseTempSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -205,7 +205,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverDemodulator",
         description="Modify Receiver Demodulator Properties",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverDemodulatorSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -227,7 +227,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ModifyReceiverFilter",
         description="Modify Receiver Filter Properties",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ModifyReceiverFilterSnippet(self, receiver):
         # Receiver receiver: Receiver object
@@ -253,7 +253,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         name="ReceiverAdditionalGain",
         description="Receiver additional Gain",
         category="STK Objects | Communications | Receiver",
-        eid="STKObjects~IAgReceiver",
+        eid="stkobjects~Receiver",
     )
     def ReceiverAdditionalGainSnippet(self, receiver):
         # Receiver receiver: Receiver object

@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics_3d`
               - Get the area target's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type`
-              - The method for defining the area target boundary. A member of the AgEAreaType enumeration.
+              - The method for defining the area target boundary. A member of the AreaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type_data`
               - Get the data defining the boundary with the selected method.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_terrain_data`
@@ -67,7 +67,7 @@ List all points in an area target
             print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
 
 
-Define area target boundary and position from list of lat/lon/alt (using common tasks)
+Define an area target boundary and position from a list of lat/lon/alt (using common tasks)
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Define area target boundary and position from list of lat/lon/alt (using common 
     areaTarget.common_tasks.set_area_type_pattern(boundary)
 
 
-Define area target boundary and position from list of lat/lon/alt
+Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
@@ -199,7 +199,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type
     :type: AreaType
 
-    The method for defining the area target boundary. A member of the AgEAreaType enumeration.
+    The method for defining the area target boundary. A member of the AreaType enumeration.
 
 .. py:property:: area_type_data
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type_data

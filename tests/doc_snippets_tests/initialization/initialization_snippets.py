@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -50,64 +50,120 @@ class InitializationSnippets(CodeSnippetsTestBase):
         return CodeSnippetsTestBase.m_Root.CurrentScenario
 
     @pytest.mark.skip(reason="Only one STKEngine instance is allowed per process")
-    def test_StartSTKEngineSnippet(self):
-        self.StartSTKEngineSnippet(self.get_root())
+    def test_StartSTKEngineWithGfxSnippet(self):
+        self.StartSTKEngineWithGfxSnippet()
 
     @code_snippet(
-        name="StartSTKEngine",
-        description="Start STK Engine and get a reference to STK Object Root",
+        name="StartSTKEngineWithGfx",
+        description="Initialize STK Engine with graphics and get a reference to the STK object root",
         category="Initialization",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
-    def StartSTKEngineSnippet(self, root):
-        # Start new instance of STK Engine
+    def StartSTKEngineWithGfxSnippet(self):
+        # Initialize STK Engine with graphics in the current process
         from ansys.stk.core.stkengine import STKEngine
 
-        stk = STKEngine.StartApplication(no_graphics=False)  # optionally, no_graphics = True
+        stk = STKEngine.start_application(no_graphics=False)
 
-        # Get the IAgStkObjectRoot interface
+        # Get the STK Object Root interface
+        root = stk.new_object_root()
+
+    @pytest.mark.skip(reason="Only one STKEngine instance is allowed per process")
+    def test_StartSTKEngineWithoutGfxSnippet(self):
+        self.StartSTKEngineWithoutGfxSnippet()
+
+    @code_snippet(
+        name="StartSTKEngineSnippetWithoutGfx",
+        description="Initialize STK Engine in no graphics mode and get a reference to the STK object root",
+        category="Initialization",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def StartSTKEngineWithoutGfxSnippet(self):
+        # Initialize STK Engine without graphics in the current process
+        from ansys.stk.core.stkengine import STKEngine
+
+        stk = STKEngine.start_application(no_graphics=True)
+
+        # Get the STK Object Root interface
         root = stk.new_object_root()
 
     @pytest.mark.skip(reason="Require STK Desktop to be already running")
     @category("ExcludeOnLinux")
     def test_AttachSTKSnippet(self):
-        self.AttachSTKSnippet(self.get_root())
+        self.AttachSTKSnippet()
 
     @code_snippet(
         name="AttachSTK",
-        description="Get a reference to STK Object Root using a running STK instance",
+        description="Get a reference to the STK object root using a running STK desktop application instance",
         category="Initialization",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
-    def AttachSTKSnippet(self, root):
-        # Get reference to running STK instance
+    def AttachSTKSnippet(self):
+        # Get reference to running STK Desktop instance
         from ansys.stk.core.stkdesktop import STKDesktop
 
         stk = STKDesktop.attach_to_application()
 
-        # Get the IAgStkObjectRoot interface
+        # Get the STK Object Root interface
         root = stk.root
 
     @category("ExcludeOnLinux")
     def test_CreateSTKNewSnippet(self):
-        self.CreateSTKNewSnippet(self.get_root())
+        self.CreateSTKNewSnippet()
 
     @code_snippet(
         name="CreateSTKNew",
-        description="Start STK and get a reference to STK Object Root",
+        description="Start STK Desktop and get a reference to the STK object root",
         category="Initialization",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
-    def CreateSTKNewSnippet(self, root):
-        # Start new instance of STK
+    def CreateSTKNewSnippet(self):
+        # Start new instance of STK Desktop
         from ansys.stk.core.stkdesktop import STKDesktop
 
         stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
-        # Get the IAgStkObjectRoot interface
+        # Get the STK Object Root interface
         root = stk.root
 
         # ...
 
         # Clean-up when done
         stk.shutdown()
+
+    def test_CreateSTKRuntimeNewSnippet(self):
+        self.CreateSTKRuntimeNewSnippet()
+
+    @code_snippet(
+        name="CreateSTKRuntimeNewSnippet",
+        description="Start STK Runtime and get a reference to the STK object root",
+        category="Initialization",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def CreateSTKRuntimeNewSnippet(self):
+        # Start new instance of STK Runtime
+        from ansys.stk.core.stkruntime import STKRuntime
+
+        stk = STKRuntime.start_application()
+
+        # Get the STK Object Root interface
+        root = stk.new_object_root()
+
+    @pytest.mark.skip(reason="Require STK Runtime to be already running")
+    def test_AttachSTKRuntimeSnippet(self):
+        self.AttachSTKRuntimeSnippet()
+
+    @code_snippet(
+        name="AttachSTKRuntimeSnippet",
+        description="Attach to an already running STK Runtime instance and get a reference to the STK object root",
+        category="Initialization",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def AttachSTKRuntimeSnippet(self):
+        # Attach to already running instance of STK Runtime
+        from ansys.stk.core.stkruntime import STKRuntime
+
+        stk = STKRuntime.attach_to_application()
+
+        # Get the STK Object Root interface
+        root = stk.new_object_root()

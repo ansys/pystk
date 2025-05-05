@@ -3,7 +3,7 @@ ISensorProjectionDisplayDistance
 
 .. py:class:: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance
 
-   IAgSnProjDisplayDistance Interface for setting projection altitude options for a sensor.
+   ISensorProjectionDisplayDistance Interface for setting projection altitude options for a sensor.
 
 .. py:currentmodule:: ISensorProjectionDisplayDistance
 

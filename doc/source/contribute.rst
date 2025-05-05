@@ -19,7 +19,7 @@ Start by selecting your role in the project:
         :link-type: doc
         :padding: 2 2 2 2
 
-        Report bugs, suggesting features, and ask questions.
+        Report bugs, suggest features, and ask questions.
 
     .. grid-item-card:: :fa:`book` Documentarian
         :link: contribute/documentarian

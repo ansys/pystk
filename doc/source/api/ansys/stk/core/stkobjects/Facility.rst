@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.set_az_el_mask`
-              - Set an az-el mask. A member of the AgEAzElMaskType enumeration.
+              - Set an az-el mask. A member of the AzElMaskType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.reset_az_el_mask`
               - Reset the az-el mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.get_az_el_mask`
-              - Get the az-el mask. A member of the AgEAzElMaskType enumeration.
+              - Get the az-el mask. A member of the AzElMaskType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.get_az_el_mask_data`
               - Get az-el mask data.
 
@@ -89,7 +89,15 @@ Add an AzEl Mask to a Facility
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
 
-Set the geodetic position of the facility
+Get the cartesian position of a facility
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    (x, y, z) = facility.position.query_cartesian()
+
+
+Set the geodetic position of a facility
 
 .. code-block:: python
 
@@ -101,6 +109,17 @@ Set the geodetic position of the facility
 
     # Set altitude to a distance above the ground
     facility.height_above_ground = 0.05  # km
+
+
+Create a facility and set its height relative to ground level
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
 
 
 Create a facility (on the current scenario central body)
@@ -255,7 +274,7 @@ Method detail
 .. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Facility.set_az_el_mask
 
-    Set an az-el mask. A member of the AgEAzElMaskType enumeration.
+    Set an az-el mask. A member of the AzElMaskType enumeration.
 
     :Parameters:
 
@@ -285,7 +304,7 @@ Method detail
 .. py:method:: get_az_el_mask(self) -> AzElMaskType
     :canonical: ansys.stk.core.stkobjects.Facility.get_az_el_mask
 
-    Get the az-el mask. A member of the AgEAzElMaskType enumeration.
+    Get the az-el mask. A member of the AzElMaskType enumeration.
 
     :Returns:
 

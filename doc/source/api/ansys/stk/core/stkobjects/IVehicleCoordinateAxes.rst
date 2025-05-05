@@ -3,7 +3,7 @@ IVehicleCoordinateAxes
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleCoordinateAxes
 
-   IAgVeCoordinateAxes.
+   IVehicleCoordinateAxes.
 
 .. py:currentmodule:: IVehicleCoordinateAxes
 

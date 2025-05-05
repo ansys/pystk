@@ -115,7 +115,7 @@ Create a new Time Instant
     timeEpoch.epoch = 3600
 
 
-Get Times From Defined Time Instant and create an cell array
+Get Times From a Defined Time Instant and create an cell array
 
 .. code-block:: python
 
@@ -158,7 +158,7 @@ Create a new Attitude Parameter Set
     paraSet.reference_axes = icrfAxes
 
 
-Get a Scalar component and evaluate at a time
+Get a Scalar component and evaluate at a specific time
 
 .. code-block:: python
 
@@ -205,7 +205,7 @@ Create a new Assembled System
     assemSys.reference_axes.set_axes(bodyAxes)
 
 
-Create a new Aligned and Constrained Axes
+Create new Aligned and Constrained Axes
 
 .. code-block:: python
 
@@ -337,7 +337,7 @@ Create a new Displacement Vector
     Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
 
 
-Get default VGT component on vehicle
+Get a default VGT component on vehicle
 
 .. code-block:: python
 
@@ -352,7 +352,7 @@ Get default VGT component on vehicle
     icrfAxes = vgtSat.axes.item("ICRF")
 
 
-Get Center point and Inertial System of Earth central body
+Get the Center point and Inertial System of Earth central body
 
 .. code-block:: python
 

@@ -37,7 +37,7 @@ Overview
               - Get the maximum time at which formation might be possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.formation_point`
               - Get or set the position that the aircraft will be locked onto while in formation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.interpolate_point_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.interpolate_point_position_velocity`
               - Get or set the option to use interpolation to determine the formation point's speed and position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.duration`
               - Get or set the duration of the procedure.
@@ -91,8 +91,8 @@ Property detail
 
     Get or set the position that the aircraft will be locked onto while in formation.
 
-.. py:property:: interpolate_point_position_vel
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.interpolate_point_position_vel
+.. py:property:: interpolate_point_position_velocity
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.interpolate_point_position_velocity
     :type: bool
 
     Get or set the option to use interpolation to determine the formation point's speed and position.

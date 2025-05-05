@@ -10,14 +10,14 @@ Analysis Workbench
   - :ref:`Create a new collection of interval list <CreateCollectionList>`
   - :ref:`Create a new time interval <CreateTimeInterval>`
   - :ref:`Create a new time instant <CreateTimeInstant>`
-  - :ref:`Get times from defined time instant and create an cell array <GetTimesFromTimeInstant>`
+  - :ref:`Get times from a defined time instant and create an cell array <GetTimesFromTimeInstant>`
   - :ref:`Create a new orbit parameter set <CreateOrbitParameterSet>`
   - :ref:`Create a new attitude parameter set <CreateAttitudeParameterSet>`
-  - :ref:`Get a scalar component and evaluate at a time <GetScalarAndEvaluate>`
+  - :ref:`Get a scalar component and evaluate at a specific time <GetScalarAndEvaluate>`
   - :ref:`Create a data element scalar <CreateDataElementScalar>`
   - :ref:`Create a new vector magnitude scalar <CreateVectorMagScalar>`
   - :ref:`Create a new assembled system <CreateAssembledSystem>`
-  - :ref:`Create a new aligned and constrained axes <CreateAlignedConstrainedAxes>`
+  - :ref:`Create new aligned and constrained axes <CreateAlignedConstrainedAxes>`
   - :ref:`Create a new between vectors angle <CreateBetweenAngle>`
   - :ref:`Create a new fixed at time instant point <CreateFixedTimeInstantPoint>`
   - :ref:`Create a new model attachment point <CreateModelAttachmentPoint>`
@@ -27,19 +27,29 @@ Analysis Workbench
   - :ref:`Create a new cross product vector <CreateCrossProductVector>`
   - :ref:`Create a new fixed in axes vector <CreateFixedAxesVector>`
   - :ref:`Create a new displacement vector <CreateDisplacementVector>`
-  - :ref:`Get default vgt component on vehicle <GetVGTCompVehicle>`
-  - :ref:`Get center point and inertial system of earth central body <GetVGTPoint>`
+  - :ref:`Get a default VGT component on vehicle <GetVGTCompVehicle>`
+  - :ref:`Get the center point and inertial system of Earth central body <GetVGTPoint>`
 Camera
-  - :ref:`Change camera reference frame <CameraReferenceFrame>`
-  - :ref:`Change camera view to imagery extents <CameraExtents>`
+  - :ref:`Change the camera reference frame <CameraReferenceFrame>`
+  - :ref:`Change the camera view to imagery extents <CameraExtents>`
+Colors
+  - :ref:`Get and set a four-channel color for the graphics of an STK graphics primitive <GetSetRGBAColor>`
+  - :ref:`Get and set a three-channel color for the graphics of an STK graphics primitive <GetSetRGBColor>`
 Connect
-  - :ref:`Extract data from connect result <ResultsConnectCommand>`
+  - :ref:`Extract data from connect results <ResultsConnectCommand>`
+  - :ref:`Use arrays to send and retrieve data with connect <ConnectCommandArrays>`
   - :ref:`Execute multiple connect commands <ConnectCommandMultiple>`
-  - :ref:`Execute connect command <ConnectCommand>`
+  - :ref:`Execute a connect command <ConnectCommand>`
+Data Analysis
+  - :ref:`Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe <CoverageDefinitionResultsPandasDataFrameHeatMap>`
+  - :ref:`Compute descriptive statistics for access measurements using a pandas dataframe <DescriptiveStatisticsPandasDataFrame>`
+  - :ref:`Convert access data provider results to a pandas dataframe <AccessResultsToPandasDataFrame>`
+  - :ref:`Convert coverage definition data provider results to a pandas dataframe <CoverageDefinitionResultsToPandasDataFrame>`
+  - :ref:`Load a numpy array with flight profile data <FlightProfileNumpyArray>`
 Graphics
   GlobeOverlays
-    - :ref:`Control the lighting of the 3d scene <SceneLighting>`
-    - :ref:`Control display of stars and water texture <DisplayStarsWater>`
+    - :ref:`Control the lighting of the 3D scene <SceneLighting>`
+    - :ref:`Control the display of stars and water texture <DisplayStarsWater>`
     - :ref:`Add imagery and terrain to the scene <AddTerrainImagery>`
 
   - :ref:`Display a primitive during an interval <DisplayPrimitiveInterval>`
@@ -52,19 +62,26 @@ Graphics
   - :ref:`Draw a new text primitive <TextPrimitive>`
   - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
   - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
-  - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
+  - :ref:`Compute interpolated positions along a great arc <GreatArcInterpolatorPrimitives>`
+  - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
-  - :ref:`Start stk and get a reference to stk object root <CreateSTKNew>`
-  - :ref:`Get a reference to stk object root using a running stk instance <AttachSTK>`
-  - :ref:`Start stk engine and get a reference to stk object root <StartSTKEngine>`
+  - :ref:`Attach to an already running STK runtime instance and get a reference to the STK object root <AttachSTKRuntimeSnippet>`
+  - :ref:`Start STK runtime and get a reference to the STK object root <CreateSTKRuntimeNewSnippet>`
+  - :ref:`Start STK Desktop and get a reference to the STK object root <CreateSTKNew>`
+  - :ref:`Get a reference to the STK object root using a running STK desktop application instance <AttachSTK>`
+  - :ref:`Initialize STK Engine in no graphics mode and get a reference to the STK object root <StartSTKEngineSnippetWithoutGfx>`
+  - :ref:`Initialize STK Engine with graphics and get a reference to the STK object root <StartSTKEngineWithGfx>`
 Scenario
   Scenario Management
-    - :ref:`Change scenario font <ScenarioFont>`
+    - :ref:`Change the scenario font <ScenarioFont>`
     - :ref:`Reset the scenario time <ScenarioReset>`
     - :ref:`Change animation mode <ScenarioAnimationMode>`
-    - :ref:`Set unit preferences for object model <SetUnitPreferences>`
+    - :ref:`Set the current scenario's time period <SetScenarioTimePeriod>`
+    - :ref:`Set unit preferences for the object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
-    - :ref:`Close stk <CloseSTK>`
+    - :ref:`Close the STK desktop application <CloseSTK>`
+    - :ref:`Manage STK desktop application events <STKDesktopEvents>`
+    - :ref:`Manage STK Engine events <STKEngineEvents>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -74,12 +91,12 @@ STK Objects
     - :ref:`Configure the access analysis time period to specified time instants <ConfigureAccessInterval>`
     - :ref:`Compute and extract access interval times <ExtractAccessIntervals>`
     - :ref:`Compute an access for one point <ComputeAccessPoint>`
-    - :ref:`Compute access with advanced settings <ComputeAccessAdvancedSettings>`
-    - :ref:`Compute an access between two stk objects (using object path) <ComputeAccessPaths>`
-    - :ref:`Compute an access between two stk objects (using istkobject interface) <ComputeAccess>`
+    - :ref:`Compute an access with advanced settings <ComputeAccessAdvancedSettings>`
+    - :ref:`Compute an access between two STK objects (using object path) <ComputeAccessPaths>`
+    - :ref:`Compute an access between two STK objects (using istkobject interface) <ComputeAccess>`
     - :ref:`Remove all access constraints except for line of sight <RemoveAllConstraints>`
     - :ref:`Add an exclusion zone access constraint <AddExclusionZoneConstraint>`
-    - :ref:`Add multiple access constraints of the same type to an stk object <AddMultipleConstraint>`
+    - :ref:`Add multiple access constraints of the same type to an STK object <AddMultipleConstraint>`
     - :ref:`Add and configure an altitude access constraint <AddAltitudeConstraint>`
     - :ref:`Add and configure a central body obstruction access constraint <AddCbObstructionConstraint>`
     - :ref:`Add and configure a sun elevation angle access constraint <AddSunElevationAngleConstraint>`
@@ -89,21 +106,21 @@ STK Objects
     - :ref:`Return a list of available constraints <AvailableAccessConstraints>`
     - :ref:`Get handle to the object access constraints <AccessConstraints>`
   AdvCAT
-    - :ref:`Create a new advcat object <CreateCAT>`
+    - :ref:`Create a new AdvCat object <CreateCAT>`
   Aircraft
     - :ref:`Set the attitude of the aircraft <AircraftAttitude>`
     - :ref:`Add array of waypoints to aircraft <AddAircraftArrayPoints>`
-    - :ref:`Set great arc propagator and add individual waypoints to aircraft <AddAircraftPoints>`
+    - :ref:`Set the great arc propagator and add individual waypoints to an aircraft <AddAircraftPoints>`
     - :ref:`Create a new aircraft (on the current scenario central body) <CreateAircraft>`
   Area Target
     - :ref:`List all points in an area target <ListAreaTargetPoints>`
-    - :ref:`Define area target boundary and position from list of lat/lon/alt (using common tasks) <CreateBoundaryAreaTargetList>`
-    - :ref:`Define area target boundary and position from list of lat/lon/alt <CreateBoundaryAreaTarget>`
+    - :ref:`Define an area target boundary and position from a list of lat/lon/alt (using common tasks) <CreateBoundaryAreaTargetList>`
+    - :ref:`Define an area target boundary and position from a list of lat/lon/alt <CreateBoundaryAreaTarget>`
     - :ref:`Set an elliptical area target (using common tasks) <CreateAreaTargetCommon>`
     - :ref:`Set an elliptical area target <CreateEllipticalAreaTarget>`
     - :ref:`Create an area target (on the current scenario central body) <CreateAreaTarget>`
   Chain
-    - :ref:`Prints the strand intervals of chain object <ChainStrandIntervals>`
+    - :ref:`Print the strand intervals of chain object <ChainStrandIntervals>`
     - :ref:`Define and compute a chain (advanced) <CreateChainAdvanced>`
     - :ref:`Define and compute a chain (basic) <ComputeChain>`
     - :ref:`Create a chain (on the current scenario central body) <CreateChain>`
@@ -115,84 +132,87 @@ STK Objects
     - :ref:`Set the coverage interval to an object's availability analysis interval <SetCoverageIntervalToAvailability>`
     - :ref:`Create a new coverage definition (on the current scenario central body) <CreateCoverage>`
   Data Providers
-    - :ref:`Getting data for specific points and elements <SingleTimesDataProvider>`
-    - :ref:`Getting data for a single point in time <SingleTimeDataProvider>`
-    - :ref:`Extracting elements from data providers with pre-data <DataProviderPreData>`
-    - :ref:`Extracting elements from data providers with groups <GroupsDataProvider>`
-    - :ref:`Using a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
-    - :ref:`Using an interval data provider <IntervalDataProvider>`
+    - :ref:`Get data for specific points and elements <SingleTimesDataProvider>`
+    - :ref:`Get data for a single point in time <SingleTimeDataProvider>`
+    - :ref:`Extract elements from data providers with pre-data <DataProviderPreData>`
+    - :ref:`Extract elements from data providers with groups <GroupsDataProvider>`
+    - :ref:`Use a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
+    - :ref:`Use an interval data provider <IntervalDataProvider>`
   Facility
     Graphics
-      - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
+      - :ref:`Display the AzEl mask in 2D/3D <FacilityAzElMaskDisplay>`
 
-    - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
-    - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
+    - :ref:`Add an AzEl mask to a facility <AzElMaskFacility>`
+    - :ref:`Get the Cartesian position of a facility <GetPositionFacility>`
+    - :ref:`Set the geodetic position of a facility <SetPositionFacility>`
+    - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
+    - :ref:`Get a valid reference to a facility <GetValidFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
-    - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
+    - :ref:`Configure the contours of the figure of merit (fom) and define a color ramp <FOMContoursColorRamp>`
     - :ref:`Create a new figure of merit of type access duration <CreateFOM>`
   Ground Vehicle
-    - :ref:`Add array of waypoints to ground vehicle and interpolate over terrain <AddGroundVehicleArrayPoints>`
-    - :ref:`Set great arc propagator and add individual waypoints to ground vehicle <AddGroundVehiclePoints>`
+    - :ref:`Add array of waypoints to a ground vehicle and interpolate over terrain <AddGroundVehicleArrayPoints>`
+    - :ref:`Set the great arc propagator and add individual waypoints to a ground vehicle <AddGroundVehiclePoints>`
     - :ref:`Create a new ground vehicle (on the current scenario central body) <CreateVehicle>`
   Line Target
     - :ref:`Create a new line target (on the current scenario central body) <CreateLineTarget>`
   Missile
     - :ref:`Create a new missile (on the current scenario central body) <CreateMissile>`
   MTO
-    - :ref:`Load mto track points from file <MTOLoadTrack>`
-    - :ref:`Create a new mto (on the current scenario central body) <CreateMTO>`
+    - :ref:`Load multi-track object (MTO) track points from a file <MTOLoadTrack>`
+    - :ref:`Create a new MTO (on the current scenario central body) <CreateMTO>`
   Object Coverage
     - :ref:`Compute object coverage <ComputeObjectCoverage>`
   Planet
     Graphics
-      - :ref:`Modify planet 2d properties <ModifyPlanet2DGraphics>`
+      - :ref:`Modify a planet's 2D properties <ModifyPlanet2DGraphics>`
 
     - :ref:`Create a new planet <CreatePlanet>`
   Satellite
     Graphics
-      - :ref:`Add a vector to display in 3d <AddGraphicsVector>`
-      - :ref:`Add fixed system orbit system in 3d display <GraphicsOrbitSystem>`
+      - :ref:`Add a vector to display in 3D <AddGraphicsVector>`
+      - :ref:`Add fixed system orbit system in 3D display <GraphicsOrbitSystem>`
       - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
-      - :ref:`Change the 3d model and marker properties <GraphicsModel>`
-      - :ref:`Display drop lines in 3d window <GraphicsDropline>`
-      - :ref:`Add a data display to the 3d window <GraphicsDataDisplay>`
+      - :ref:`Change the 3D model and marker properties <GraphicsModel>`
+      - :ref:`Display drop lines in 3D window <GraphicsDropline>`
+      - :ref:`Add a data display to the 3D window <GraphicsDataDisplay>`
       - :ref:`Change the display label of the vehicle <GraphicsLabel>`
-      - :ref:`Set 2d/3d pass display properties <GraphicsPass>`
+      - :ref:`Set 2D/3D pass display properties <GraphicsPass>`
       - :ref:`Set vehicle lighting properties <GraphicsLighting>`
-      - :ref:`Set 2d swath <GraphicsSwath>`
-      - :ref:`Set 2d/3d range contours <GraphicsRangeContours>`
-      - :ref:`Set 2d/3d elevation contours <GraphicsElevationContours>`
-      - :ref:`Set 2d display times to custom and add intervals <CustomGraphics2D>`
-      - :ref:`Set 2d graphics display properties <BasicGraphics2D>`
+      - :ref:`Set 2D swath <GraphicsSwath>`
+      - :ref:`Set 2D/3D range contours <GraphicsRangeContours>`
+      - :ref:`Set 2D/3D elevation contours <GraphicsElevationContours>`
+      - :ref:`Set 2D display times to custom and add intervals <CustomGraphics2D>`
+      - :ref:`Set 2D graphics display properties <BasicGraphics2D>`
       - :ref:`Change the graphics resolution of the orbit for a smooth path <SatelliteGraphicsResolution>`
     Astrogator
-      - :ref:`Run the astrogator mcs <AstrogatorRunMCS>`
+      - :ref:`Run the Astrogator® mission control sequence (MCS) <AstrogatorRunMCS>`
 
     - :ref:`Set satellite attitude external <SatelliteAttitudeExternal>`
     - :ref:`Set satellite attitude targeting <SatelliteAttitudeTarget>`
     - :ref:`Set satellite attitude basic spinning <SatelliteAttitudeSpinning>`
-    - :ref:`Export an ephemeris file to scenario folder <ExportEphemerisFile>`
+    - :ref:`Export an ephemeris file to a scenario folder <ExportEphemerisFile>`
     - :ref:`Set satellite propagator to sgp4 and propagate <SGP4Satellite>`
     - :ref:`Set satellite propagator to spice and propagate <SPICESatellite>`
-    - :ref:`Set satellite propagator to astrogator and clear segments <AstrogatorSatellite>`
-    - :ref:`Set satellite propagator to hpop and set force model properties <HPOPSatellite>`
-    - :ref:`Set satellite propagator to j4 and assign cartesian position <J4Satellite>`
-    - :ref:`Set initial state of satellite and propagate <SatelliteInitialState>`
+    - :ref:`Set satellite propagator to Astrogator and clear segments <AstrogatorSatellite>`
+    - :ref:`Set satellite propagator to HPOP and set force model properties <HPOPSatellite>`
+    - :ref:`Set satellite propagator to j4 and assign Cartesian position <J4Satellite>`
+    - :ref:`Set the initial state of a satellite and propagate <SatelliteInitialState>`
     - :ref:`Create a satellite (on the current scenario central body) <CreateSatellite>`
   Sensor
     Graphics
       - :ref:`Sensor persistence <SensorPersistence>`
 
     - :ref:`Sensor body mask <SensorBodyMask>`
-    - :ref:`Define sensor pointing fixed axes ypr <DefineSensorPointingFixedAxesYPR>`
-    - :ref:`Define sensor pointing fixed ypr <DefineSensorPointingFixedYPR>`
+    - :ref:`Define sensor pointing fixed axes YPR <DefineSensorPointingFixedAxesYPR>`
+    - :ref:`Define sensor pointing fixed YPR <DefineSensorPointingFixedYPR>`
     - :ref:`Define sensor pointing fixed axes quaternion <DefineSensorPointingFixedAxesQuaternion>`
     - :ref:`Define sensor pointing fixed quaternion <DefineSensorPointingFixedQuaternion>`
-    - :ref:`Define sensor pointing fixed axes euler <DefineSensorPointingFixedAxesEuler>`
-    - :ref:`Define sensor pointing fixed euler <DefineSensorPointingFixedEuler>`
-    - :ref:`Define sensor pointing fixed axes azel <DefineSensorPointingFixedAxesAzEl>`
-    - :ref:`Define sensor pointing fixed azel <DefineSensorPointingFixedAzEl>`
+    - :ref:`Define sensor pointing fixed axes Euler <DefineSensorPointingFixedAxesEuler>`
+    - :ref:`Define sensor pointing fixed Euler <DefineSensorPointingFixedEuler>`
+    - :ref:`Define sensor pointing fixed axes AzEl <DefineSensorPointingFixedAxesAzEl>`
+    - :ref:`Define sensor pointing fixed AzEl <DefineSensorPointingFixedAzEl>`
     - :ref:`Set sensor properties <SensorProperties>`
     - :ref:`Attach a sensor object to a vehicle <CreateSensor>`
   Communications
@@ -214,12 +234,12 @@ STK Objects
       - :ref:`Create a new receiver object <CreateReceiver>`
     Transmitter
       - :ref:`Transmitter additional gain <TransmitteradditionalGain>`
-      - :ref:`Modify transmitter filter <ModifyTransmitterFilter>`
-      - :ref:`Modify transmitter modulator properties <ModifyTransmitterModulator>`
-      - :ref:`Modify transmitter orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
-      - :ref:`Modify transmitter polarization properties <ModifyTransmitterPolarizationProperties>`
-      - :ref:`Modify transmitter embedded antenna <ModifyTransmitterAntenna>`
-      - :ref:`Modify transmitter model type <ModifyTransmitter>`
+      - :ref:`Modify a transmitter filter <ModifyTransmitterFilter>`
+      - :ref:`Modify a transmitter's modulator properties <ModifyTransmitterModulator>`
+      - :ref:`Modify a transmitter's orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
+      - :ref:`Modify a transmitter's polarization properties <ModifyTransmitterPolarizationProperties>`
+      - :ref:`Modify a transmitter's embedded antenna <ModifyTransmitterAntenna>`
+      - :ref:`Modify a transmitter's model type <ModifyTransmitter>`
       - :ref:`Create a new transmitter object <CreateTransmitter>`
   Vehicles
     Common
@@ -233,7 +253,7 @@ STK Objects
           - :ref:`Configure a runway site <ConfigureRunwaySite>`
           - :ref:`Configure a runway site from a runway in the aviator catalog <ConfigureRunwayFromCatalog>`
           - :ref:`Configure the wind and atmosphere for a procedure <ConfigureProcedureWindAtmos>`
-          - :ref:`Configure a procedure time options <ConfigureProcedureTimeOptions>`
+          - :ref:`Configure a procedure's time options <ConfigureProcedureTimeOptions>`
           - :ref:`Rename a procedure and its site <ConfigureProcedure>`
           - :ref:`Configure the performance models to be used in the phase <ConfigurePhasePerformanceModels>`
           - :ref:`Configure the basic cruise performance model of an aircraft <ConfigureBasicCruisePerfModel>`
@@ -295,8 +315,8 @@ Create a new time instant
 
 .. _GetTimesFromTimeInstant:
 
-Get times from defined time instant and create an cell array
-============================================================
+Get times from a defined time instant and create an cell array
+==============================================================
 
 .. code-block:: python
 
@@ -344,8 +364,8 @@ Create a new attitude parameter set
 
 .. _GetScalarAndEvaluate:
 
-Get a scalar component and evaluate at a time
-=============================================
+Get a scalar component and evaluate at a specific time
+======================================================
 
 .. code-block:: python
 
@@ -399,8 +419,8 @@ Create a new assembled system
 
 .. _CreateAlignedConstrainedAxes:
 
-Create a new aligned and constrained axes
-=========================================
+Create new aligned and constrained axes
+=======================================
 
 .. code-block:: python
 
@@ -551,8 +571,8 @@ Create a new displacement vector
 
 .. _GetVGTCompVehicle:
 
-Get default VGT component on vehicle
-====================================
+Get a default VGT component on vehicle
+======================================
 
 .. code-block:: python
 
@@ -568,8 +588,8 @@ Get default VGT component on vehicle
 
 .. _GetVGTPoint:
 
-Get center point and inertial system of Earth central body
-==========================================================
+Get the center point and inertial system of Earth central body
+==============================================================
 
 .. code-block:: python
 
@@ -579,8 +599,8 @@ Get center point and inertial system of Earth central body
 
 .. _CameraReferenceFrame:
 
-Change camera reference frame
-=============================
+Change the camera reference frame
+=================================
 
 .. code-block:: python
 
@@ -594,8 +614,8 @@ Change camera reference frame
 
 .. _CameraExtents:
 
-Change camera view to imagery extents
-=====================================
+Change the camera view to imagery extents
+=========================================
 
 .. code-block:: python
 
@@ -607,10 +627,48 @@ Change camera view to imagery extents
     manager.scenes.item(0).camera.view_extent("Earth", extent)
     manager.render()
 
+.. _GetSetRGBAColor:
+
+Get and set a four-channel color for the graphics of an STK graphics primitive
+==============================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.utilities.colors import Colors, ColorRGBA
+
+    manager = root.current_scenario.scene_manager
+    point = manager.initializers.point_batch_primitive.initialize()
+
+    lla_pts = [ 39.88, -75.25, 0,
+                38.85, -77.04, 0,
+                37.37, -121.92, 0 ]
+
+    colors = [ Colors.Red,
+            ColorRGBA(Colors.Blue, 127),
+            Colors.from_rgba(0, 255, 0, 127) ]
+
+    point.set_cartographic_with_colors('Earth', lla_pts, colors)
+
+.. _GetSetRGBColor:
+
+Get and set a three-channel color for the graphics of an STK graphics primitive
+===============================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import STKObjectType
+    from ansys.stk.core.utilities.colors import Color, Colors
+
+    facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+
+    facility.graphics.color = Colors.Blue
+    facility.graphics.color = Color.from_rgb(127, 255, 212)
+    (r, g, b) = facility.graphics.color.get_rgb()
+
 .. _ResultsConnectCommand:
 
-Extract data from connect result
-================================
+Extract data from connect results
+=================================
 
 .. code-block:: python
 
@@ -619,6 +677,24 @@ Extract data from connect result
     for i in range(0, result.count):
         cmdRes = result.item(i)
         print(cmdRes)
+
+.. _ConnectCommandArrays:
+
+Use arrays to send and retrieve data with connect
+=================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+    first_message = command_results.item(0)
+    also_first_message = command_results[0]
+
+    for message in command_results:
+        print(message.count)
 
 .. _ConnectCommandMultiple:
 
@@ -632,12 +708,134 @@ Execute multiple connect commands
 
 .. _ConnectCommand:
 
-Execute connect command
-=======================
+Execute a connect command
+=========================
 
 .. code-block:: python
 
     root.execute_command("New / */Target MyTarget")
+
+.. _CoverageDefinitionResultsPandasDataFrameHeatMap:
+
+Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe
+====================================================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_all_regions_elements = coverage_data_provider.elements
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+
+    # reshape the DataFrame based on column values
+    pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+
+    # plot heat map that shows duration by asset name by region
+    plt.xlabel('Duration by Asset', fontsize=20)
+    plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
+
+    plt.ylabel('Region Name', fontsize=20)
+    plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
+
+    im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
+    plt.colorbar(orientation='vertical')
+
+.. _DescriptiveStatisticsPandasDataFrame:
+
+Compute descriptive statistics for access measurements using a pandas dataframe
+===============================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    import pandas as pd
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
+    all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+
+.. _AccessResultsToPandasDataFrame:
+
+Convert access data provider results to a pandas dataframe
+==========================================================
+
+.. code-block:: python
+
+    # Access facility_sensor_satellite_access: Access calculation
+    # compute data provider results for basic Access
+    field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+
+    access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+        self.get_scenario().start_time, self.get_scenario().stop_time, field_names
+    )
+
+    # convert dataset collection in a row format as a Pandas DataFrame
+    index_column = 'Access Number'
+    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+
+.. _CoverageDefinitionResultsToPandasDataFrame:
+
+Convert coverage definition data provider results to a pandas dataframe
+=======================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+.. _FlightProfileNumpyArray:
+
+Load a numpy array with flight profile data
+===========================================
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    from scipy.spatial import ConvexHull
+    import matplotlib.pyplot as plt
+
+    # compute data provider results for an aircraft's Flight Profile By Time
+    field_names = ['Mach #', 'Altitude']
+    time_step_sec = 1.0
+
+    flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
+    flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+
+    # convert dataset collection in a row format as a Numpy array
+    flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
+
+    # plot estimated fligth envelope as a convex hull
+    hull = ConvexHull(flight_profile_data_arr)
+
+    plt.figure(figsize=(15, 10))
+    for simplex in hull.simplices:
+        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+
+    plt.title('Estimated Flight Envelope', fontsize=15)
+    plt.xlabel('Mach Number', fontsize=15)
+    plt.ylabel('Altitude', fontsize=15)
+
+    plt.tick_params(axis='x', labelsize=15)
+    plt.tick_params(axis='y', labelsize=15)
+    plt.grid(visible=True)
 
 .. _DisplayPrimitiveInterval:
 
@@ -880,8 +1078,8 @@ Draw a new surface mesh
 
 .. _GreatArcInterpolatorPrimitives:
 
-Great arc interpolator primitives
-=================================
+Compute interpolated positions along a great arc
+================================================
 
 .. code-block:: python
 
@@ -895,19 +1093,62 @@ Great arc interpolator primitives
     interpolator.granularity = 0.1
     result = interpolator.interpolate(positionArray)
 
-.. _CreateSTKNew:
+.. _CylinderFillEnumeration:
 
-Start STK and get a reference to STK object root
-================================================
+Combine enumerations with the logical or operator
+=================================================
 
 .. code-block:: python
 
-    # Start new instance of STK
+    from ansys.stk.core.graphics import CylinderFillOptions
+
+    # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    # using the `|` operator
+    cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+
+.. _AttachSTKRuntimeSnippet:
+
+Attach to an already running STK runtime instance and get a reference to the STK object root
+============================================================================================
+
+.. code-block:: python
+
+    # Attach to already running instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.attach_to_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+.. _CreateSTKRuntimeNewSnippet:
+
+Start STK runtime and get a reference to the STK object root
+============================================================
+
+.. code-block:: python
+
+    # Start new instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.start_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+.. _CreateSTKNew:
+
+Start STK Desktop and get a reference to the STK object root
+============================================================
+
+.. code-block:: python
+
+    # Start new instance of STK Desktop
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
     # ...
@@ -917,32 +1158,47 @@ Start STK and get a reference to STK object root
 
 .. _AttachSTK:
 
-Get a reference to STK object root using a running STK instance
-===============================================================
+Get a reference to the STK object root using a running STK desktop application instance
+=======================================================================================
 
 .. code-block:: python
 
-    # Get reference to running STK instance
+    # Get reference to running STK Desktop instance
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.attach_to_application()
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
-.. _StartSTKEngine:
+.. _StartSTKEngineSnippetWithoutGfx:
 
-Start STK Engine and get a reference to STK object root
-=======================================================
+Initialize STK Engine in no graphics mode and get a reference to the STK object root
+====================================================================================
 
 .. code-block:: python
 
-    # Start new instance of STK Engine
+    # Initialize STK Engine without graphics in the current process
     from ansys.stk.core.stkengine import STKEngine
 
-    stk = STKEngine.StartApplication(no_graphics=False)  # optionally, no_graphics = True
+    stk = STKEngine.start_application(no_graphics=True)
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+.. _StartSTKEngineWithGfx:
+
+Initialize STK Engine with graphics and get a reference to the STK object root
+==============================================================================
+
+.. code-block:: python
+
+    # Initialize STK Engine with graphics in the current process
+    from ansys.stk.core.stkengine import STKEngine
+
+    stk = STKEngine.start_application(no_graphics=False)
+
+    # Get the STK Object Root interface
     root = stk.new_object_root()
 
 .. _SceneLighting:
@@ -962,8 +1218,8 @@ Control the lighting of the 3D scene
 
 .. _DisplayStarsWater:
 
-Control display of stars and water texture
-==========================================
+Control the display of stars and water texture
+==============================================
 
 .. code-block:: python
 
@@ -1005,8 +1261,8 @@ Add imagery and terrain to the scene
 
 .. _ScenarioFont:
 
-Change scenario font
-====================
+Change the scenario font
+========================
 
 .. code-block:: python
 
@@ -1041,10 +1297,24 @@ Change animation mode
     scenario.animation_settings.animation_step_value = 1  # second
     scenario.animation_settings.refresh_delta = 0.03  # second
 
+.. _SetScenarioTimePeriod:
+
+Set the current scenario's time period
+======================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000",
+        stop_time="2 Jan 2012 12:00:00.000"
+    )
+
 .. _SetUnitPreferences:
 
-Set unit preferences for object model
-=====================================
+Set unit preferences for the object model
+=========================================
 
 .. code-block:: python
 
@@ -1064,13 +1334,68 @@ Create a new scenario
 
 .. _CloseSTK:
 
-Close STK
-=========
+Close the STK desktop application
+=================================
 
 .. code-block:: python
 
     # AgUiApplication uiApplication: STK Application
     uiApplication.shutdown()
+
+.. _STKDesktopEvents:
+
+Manage STK desktop application events
+=====================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.stk.core.stkobjects import STKObjectType
+
+    def on_stk_object_added_custom_callback(path:str):
+        print(f'{path} has been added.')
+
+    stk = STKDesktop.start_application(visible=True)
+    root = stk.root
+    root.new_scenario('ExampleScenario')
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    scenario = root.current_scenario
+
+    # on_stk_object_added_custom_callback is successfully called when the next line is executed
+    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+
+    # Now switch control to the desktop application and create another facility.
+    # The user interface becomes unresponsive.
+
+    # Now open a tkinter window that processing Windows messages.
+    from tkinter import Tk
+
+    window = Tk()
+    window.mainloop()
+
+.. _STKEngineEvents:
+
+Manage STK Engine events
+========================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    def on_scenario_new_custom_callback(path: str):
+        print(f'Scenario {path} has been created.')
+
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+
+    root.new_scenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+    # all finished with events, unsubscribe
+    skt_object_root_events.unsubscribe()
 
 .. _CloseScenario:
 
@@ -1216,8 +1541,8 @@ Compute an access for one point
 
 .. _ComputeAccessAdvancedSettings:
 
-Compute access with advanced settings
-=====================================
+Compute an access with advanced settings
+========================================
 
 .. code-block:: python
 
@@ -1478,8 +1803,8 @@ Add array of waypoints to aircraft
 
 .. _AddAircraftPoints:
 
-Set great arc propagator and add individual waypoints to aircraft
-=================================================================
+Set the great arc propagator and add individual waypoints to an aircraft
+========================================================================
 
 .. code-block:: python
 
@@ -1535,8 +1860,8 @@ List all points in an area target
 
 .. _CreateBoundaryAreaTargetList:
 
-Define area target boundary and position from list of lat/lon/alt (using common tasks)
-======================================================================================
+Define an area target boundary and position from a list of lat/lon/alt (using common tasks)
+===========================================================================================
 
 .. code-block:: python
 
@@ -1553,8 +1878,8 @@ Define area target boundary and position from list of lat/lon/alt (using common 
 
 .. _CreateBoundaryAreaTarget:
 
-Define area target boundary and position from list of lat/lon/alt
-=================================================================
+Define an area target boundary and position from a list of lat/lon/alt
+======================================================================
 
 .. code-block:: python
 
@@ -1620,8 +1945,8 @@ Create an area target (on the current scenario central body)
 
 .. _ChainStrandIntervals:
 
-Prints the strand intervals of chain object
-===========================================
+Print the strand intervals of chain object
+==========================================
 
 .. code-block:: python
 
@@ -1792,8 +2117,8 @@ Create a new coverage definition (on the current scenario central body)
 
 .. _SingleTimesDataProvider:
 
-Getting data for specific points and elements
-=============================================
+Get data for specific points and elements
+=========================================
 
 .. code-block:: python
 
@@ -1809,8 +2134,8 @@ Getting data for specific points and elements
 
 .. _SingleTimeDataProvider:
 
-Getting data for a single point in time
-=======================================
+Get data for a single point in time
+===================================
 
 .. code-block:: python
 
@@ -1824,8 +2149,8 @@ Getting data for a single point in time
 
 .. _DataProviderPreData:
 
-Extracting elements from data providers with pre-data
-=====================================================
+Extract elements from data providers with pre-data
+==================================================
 
 .. code-block:: python
 
@@ -1849,8 +2174,8 @@ Extracting elements from data providers with pre-data
 
 .. _GroupsDataProvider:
 
-Extracting elements from data providers with groups
-===================================================
+Extract elements from data providers with groups
+================================================
 
 .. code-block:: python
 
@@ -1883,8 +2208,8 @@ Extracting elements from data providers with groups
 
 .. _TimeDependentDataProviderElements:
 
-Using a time dependent data provider and requesting only specified elements
-===========================================================================
+Use a time dependent data provider and requesting only specified elements
+=========================================================================
 
 .. code-block:: python
 
@@ -1908,8 +2233,8 @@ Using a time dependent data provider and requesting only specified elements
 
 .. _IntervalDataProvider:
 
-Using an interval data provider
-===============================
+Use an interval data provider
+=============================
 
 .. code-block:: python
 
@@ -1957,10 +2282,20 @@ Add an AzEl mask to a facility
     # Facility facility: Facility Object
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
+.. _GetPositionFacility:
+
+Get the Cartesian position of a facility
+========================================
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    (x, y, z) = facility.position.query_cartesian()
+
 .. _SetPositionFacility:
 
-Set the geodetic position of the facility
-=========================================
+Set the geodetic position of a facility
+=======================================
 
 .. code-block:: python
 
@@ -1972,6 +2307,41 @@ Set the geodetic position of the facility
 
     # Set altitude to a distance above the ground
     facility.height_above_ground = 0.05  # km
+
+.. _SetHeightFacility:
+
+Create a facility and set its height relative to ground level
+=============================================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
+
+.. _GetValidFacility:
+
+Get a valid reference to a facility
+===================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.utilities.exceptions import STKRuntimeError
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    try:
+        # this facility is not a valid STK reference
+        my_facility_attempt = Facility()
+        my_facility_attempt.height_above_ground = 123.4
+    except STKRuntimeError as e:
+        print(e)
+
+    # this facility represents a valid STK object
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
 
 .. _CreateFacility:
 
@@ -1985,8 +2355,8 @@ Create a facility (on the current scenario central body)
 
 .. _FOMContoursColorRamp:
 
-Configure the contours of the fom and define a color ramp
-=========================================================
+Configure the contours of the figure of merit (fom) and define a color ramp
+===========================================================================
 
 .. code-block:: python
 
@@ -2022,8 +2392,8 @@ Create a new figure of merit of type access duration
 
 .. _AddGroundVehicleArrayPoints:
 
-Add array of waypoints to ground vehicle and interpolate over terrain
-=====================================================================
+Add array of waypoints to a ground vehicle and interpolate over terrain
+=======================================================================
 
 .. code-block:: python
 
@@ -2043,8 +2413,8 @@ Add array of waypoints to ground vehicle and interpolate over terrain
 
 .. _AddGroundVehiclePoints:
 
-Set great arc propagator and add individual waypoints to ground vehicle
-=======================================================================
+Set the great arc propagator and add individual waypoints to a ground vehicle
+=============================================================================
 
 .. code-block:: python
 
@@ -2115,8 +2485,8 @@ Create a new missile (on the current scenario central body)
 
 .. _MTOLoadTrack:
 
-Load MTO track points from file
-===============================
+Load multi-track object (MTO) track points from a file
+======================================================
 
 .. code-block:: python
 
@@ -2171,8 +2541,8 @@ Compute object coverage
 
 .. _ModifyPlanet2DGraphics:
 
-Modify planet 2D properties
-===========================
+Modify a planet's 2D properties
+===============================
 
 .. code-block:: python
 
@@ -2502,8 +2872,8 @@ Set satellite attitude basic spinning
 
 .. _ExportEphemerisFile:
 
-Export an ephemeris file to scenario folder
-===========================================
+Export an ephemeris file to a scenario folder
+=============================================
 
 .. code-block:: python
 
@@ -2622,8 +2992,8 @@ Set satellite propagator to j4 and assign Cartesian position
 
 .. _SatelliteInitialState:
 
-Set initial state of satellite and propagate
-============================================
+Set the initial state of a satellite and propagate
+==================================================
 
 .. code-block:: python
 
@@ -3007,8 +3377,8 @@ Transmitter additional gain
 
 .. _ModifyTransmitterFilter:
 
-Modify transmitter filter
-=========================
+Modify a transmitter filter
+===========================
 
 .. code-block:: python
 
@@ -3023,8 +3393,8 @@ Modify transmitter filter
 
 .. _ModifyTransmitterModulator:
 
-Modify transmitter modulator properties
-=======================================
+Modify a transmitter's modulator properties
+===========================================
 
 .. code-block:: python
 
@@ -3035,8 +3405,8 @@ Modify transmitter modulator properties
 
 .. _ModifyTransmitterPolarizationOrientationAndPosition:
 
-Modify transmitter orientation and position
-===========================================
+Modify a transmitter's orientation and position
+===============================================
 
 .. code-block:: python
 
@@ -3052,8 +3422,8 @@ Modify transmitter orientation and position
 
 .. _ModifyTransmitterPolarizationProperties:
 
-Modify transmitter polarization properties
-==========================================
+Modify a transmitter's polarization properties
+==============================================
 
 .. code-block:: python
 
@@ -3068,8 +3438,8 @@ Modify transmitter polarization properties
 
 .. _ModifyTransmitterAntenna:
 
-Modify transmitter embedded antenna
-===================================
+Modify a transmitter's embedded antenna
+=======================================
 
 .. code-block:: python
 
@@ -3082,8 +3452,8 @@ Modify transmitter embedded antenna
 
 .. _ModifyTransmitter:
 
-Modify transmitter model type
-=============================
+Modify a transmitter's model type
+=================================
 
 .. code-block:: python
 
@@ -3106,8 +3476,8 @@ Create a new transmitter object
 
 .. _AstrogatorRunMCS:
 
-Run the Astrogator MCS
-======================
+Run the Astrogator® mission control sequence (MCS)
+==================================================
 
 .. code-block:: python
 
@@ -3245,7 +3615,7 @@ Configure the weather and atmosphere of the mission
     # Get the wind model used for the mission
     windModel = mission.wind_model
     # Let's use the mission model
-    windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3258,7 +3628,7 @@ Configure the weather and atmosphere of the mission
     # Get the atmosphere model used for the mission
     atmosphere = mission.atmosphere_model
     # Let's use the mission model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
@@ -3326,7 +3696,7 @@ Configure the wind and atmosphere for a procedure
     # Get the wind model for the procedure
     windModel = procedure.wind_model
     # Use the procedure model
-    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3339,7 +3709,7 @@ Configure the wind and atmosphere for a procedure
     # Get the atmosphere model used for the procedure
     atmosphere = procedure.atmosphere_model
     # Let's use the procedure model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
@@ -3347,8 +3717,8 @@ Configure the wind and atmosphere for a procedure
 
 .. _ConfigureProcedureTimeOptions:
 
-Configure a procedure time options
-==================================
+Configure a procedure's time options
+====================================
 
 .. code-block:: python
 

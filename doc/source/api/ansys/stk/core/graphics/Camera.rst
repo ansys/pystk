@@ -105,7 +105,7 @@ Overview
 Examples
 --------
 
-Change camera reference frame
+Change the camera reference frame
 
 .. code-block:: python
 
@@ -118,7 +118,7 @@ Change camera reference frame
     manager.render()
 
 
-Change camera view to Imagery Extents
+Change the camera view to Imagery Extents
 
 .. code-block:: python
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27062,7 +27062,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> timeEpoch = timeInstFactory.create_epoch("FixedTime", "Fixed Epoch Time")
     >>> timeEpoch.epoch = 3600
 
-    Get Times From Defined Time Instant and create an cell array:
+    Get Times From a Defined Time Instant and create an cell array:
     >>> # StkObjectRoot root: STK Object Model Root
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
@@ -27093,7 +27093,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> paraSet.axes = bodyAxes
     >>> paraSet.reference_axes = icrfAxes
 
-    Get a Scalar component and evaluate at a time:
+    Get a Scalar component and evaluate at a specific time:
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # Scenario scenario: Scenario object
     >>> deticLatitude = vgtSat.calculation_scalars.item("GroundTrajectory.Detic.LLA.Latitude")
@@ -27124,7 +27124,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> assemSys.origin_point.set_point(fixedPt)
     >>> assemSys.reference_axes.set_axes(bodyAxes)
 
-    Create a new Aligned and Constrained Axes:
+    Create new Aligned and Constrained Axes:
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     >>> # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
@@ -27216,7 +27216,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> VectFactory = vgtSat.vectors.factory
     >>> Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
 
-    Get default VGT component on vehicle:
+    Get a default VGT component on vehicle:
     >>> # Satellite satellite: Satellite object
     >>> vgtSat = satellite.analysis_workbench_components
     >>> # Get handle to the Center point on the satellite
@@ -27227,7 +27227,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> bodyAxes = vgtSat.axes.item("Body")
     >>> icrfAxes = vgtSat.axes.item("ICRF")
 
-    Get Center point and Inertial System of Earth central body:
+    Get the Center point and Inertial System of Earth central body:
     >>> # StkObjectRoot root: STK Object Model root
     >>> centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     >>> icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")

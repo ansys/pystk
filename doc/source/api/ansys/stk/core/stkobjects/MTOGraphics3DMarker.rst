@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.pixel_size`
               - The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_type`
-              - Specify a 3D marker type to represent the object at the specified threshold. A member of the AgEMarkerType enumeration.
+              - Specify a 3D marker type to represent the object at the specified threshold. A member of the MarkerType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.angle`
               - The angle representing the amount of rotation of the marker. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.x_origin`
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_type
     :type: MarkerType
 
-    Specify a 3D marker type to represent the object at the specified threshold. A member of the AgEMarkerType enumeration.
+    Specify a 3D marker type to represent the object at the specified threshold. A member of the MarkerType enumeration.
 
 .. py:property:: angle
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.angle

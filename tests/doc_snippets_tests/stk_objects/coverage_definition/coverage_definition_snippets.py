@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -66,7 +66,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         name="CreateCoverage",
         description="Create a New Coverage Definition (on the current scenario central body)",
         category="STK Objects | Coverage Definition",
-        eid="STKObjects~IAgCoverageDefinition",
+        eid="stkobjects~CoverageDefinition",
     )
     def CreateCoverageSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -100,7 +100,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         name="SetCoverageIntervalToAvailability",
         description="Set the Coverage Interval to an object's availability Analysis interval",
         category="STK Objects | Coverage Definition",
-        eid="STKObjects~IAgCoverageDefinition",
+        eid="stkobjects~CoverageDefinition",
     )
     def CoverageIntervalSnippet(self, satellite, coverage):
         # Satellite satellite: Satellite object
@@ -122,7 +122,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         name="CoverageAdvanced",
         description="Set Advanced Settings for Coverage",
         category="STK Objects | Coverage Definition",
-        eid="STKObjects~IAgCoverageDefinition",
+        eid="stkobjects~CoverageDefinition",
     )
     def CoverageAdvancedSnippet(self, coverage):
         # CoverageDefinition coverage: Coverage object
@@ -143,7 +143,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         name="CoverageCompute",
         description="Compute Coverage",
         category="STK Objects | Coverage Definition",
-        eid="STKObjects~IAgCoverageDefinition",
+        eid="stkobjects~CoverageDefinition",
     )
     def CoverageComputeSnippet(self, coverage):
         # CoverageDefinition coverage: Coverage object

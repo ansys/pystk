@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -56,7 +56,7 @@ class MissileSnippets(CodeSnippetsTestBase):
         name="CreateMissile",
         description="Create a New Missile (on the current scenario central body)",
         category="STK Objects | Missile",
-        eid="STKObjects~IAgMissile",
+        eid="stkobjects~Missile",
     )
     def CreateMissileSnippet(self, root, scenario):
         # Scenario scenario: Scenario object

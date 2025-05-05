@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -34,7 +34,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -809,12 +808,12 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(STMPerturbationVariables.POSITION_Y, cartStmElem.initial_state_component)
             cartStmElem.initial_state_component = STMPerturbationVariables.POSITION_Z
             Assert.assertEqual(STMPerturbationVariables.POSITION_Z, cartStmElem.initial_state_component)
-            cartStmElem.initial_state_component = STMPerturbationVariables.VEL_X
-            Assert.assertEqual(STMPerturbationVariables.VEL_X, cartStmElem.initial_state_component)
-            cartStmElem.initial_state_component = STMPerturbationVariables.VEL_Y
-            Assert.assertEqual(STMPerturbationVariables.VEL_Y, cartStmElem.initial_state_component)
-            cartStmElem.initial_state_component = STMPerturbationVariables.VEL_Z
-            Assert.assertEqual(STMPerturbationVariables.VEL_Z, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STMPerturbationVariables.VELOCITY_X
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_X, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STMPerturbationVariables.VELOCITY_Y
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_Y, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STMPerturbationVariables.VELOCITY_Z
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_Z, cartStmElem.initial_state_component)
 
             cartStmElem.final_state_component = STMPerturbationVariables.POSITION_X
             Assert.assertEqual(STMPerturbationVariables.POSITION_X, cartStmElem.final_state_component)
@@ -822,12 +821,12 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(STMPerturbationVariables.POSITION_Y, cartStmElem.final_state_component)
             cartStmElem.final_state_component = STMPerturbationVariables.POSITION_Z
             Assert.assertEqual(STMPerturbationVariables.POSITION_Z, cartStmElem.final_state_component)
-            cartStmElem.final_state_component = STMPerturbationVariables.VEL_X
-            Assert.assertEqual(STMPerturbationVariables.VEL_X, cartStmElem.final_state_component)
-            cartStmElem.final_state_component = STMPerturbationVariables.VEL_Y
-            Assert.assertEqual(STMPerturbationVariables.VEL_Y, cartStmElem.final_state_component)
-            cartStmElem.final_state_component = STMPerturbationVariables.VEL_Z
-            Assert.assertEqual(STMPerturbationVariables.VEL_Z, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STMPerturbationVariables.VELOCITY_X
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_X, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STMPerturbationVariables.VELOCITY_Y
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_Y, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STMPerturbationVariables.VELOCITY_Z
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_Z, cartStmElem.final_state_component)
 
             cartSTMs.remove((clr.CastAs(cartStmElem, IComponentInfo)).name)
 
@@ -1055,15 +1054,15 @@ class EarlyBoundTests(TestBase):
             (ICloneable(envElems["AtmosDensity"])).clone_object(), StateCalcEnvironment
         )
         Assert.assertIsNotNone(env)
-        env.atmos_model_name = "Atmospheric Models/Cira72"
-        Assert.assertEqual("Cira72", env.atmos_model_name)
+        env.atmosphere_model_name = "Atmospheric Models/Cira72"
+        Assert.assertEqual("Cira72", env.atmosphere_model_name)
         env.central_body_name = "Pluto"
         Assert.assertEqual("Pluto", env.central_body_name)
         envElems.remove((clr.CastAs(env, IComponentInfo)).name)
 
         env = clr.CastAs((ICloneable(envElems["AtmosTemperature"])).clone_object(), StateCalcEnvironment)
-        env.atmos_model_name = "Atmospheric Models/US Standard Atmosphere"
-        Assert.assertEqual("US Standard Atmosphere", env.atmos_model_name)
+        env.atmosphere_model_name = "Atmospheric Models/US Standard Atmosphere"
+        Assert.assertEqual("US Standard Atmosphere", env.atmosphere_model_name)
         env.central_body_name = "Mars"
         Assert.assertEqual("Mars", env.central_body_name)
         envElems.remove((clr.CastAs(env, IComponentInfo)).name)
@@ -2483,8 +2482,8 @@ class EarlyBoundTests(TestBase):
 
             eigvec.state_variable = STMPerturbationVariables.POSITION_Z
             Assert.assertEqual(STMPerturbationVariables.POSITION_Z, eigvec.state_variable)
-            eigvec.state_variable = STMPerturbationVariables.VEL_Z
-            Assert.assertEqual(STMPerturbationVariables.VEL_Z, eigvec.state_variable)
+            eigvec.state_variable = STMPerturbationVariables.VELOCITY_Z
+            Assert.assertEqual(STMPerturbationVariables.VELOCITY_Z, eigvec.state_variable)
 
             eigvec.eigenvector_complex_part = ComplexNumber.IMAGINARY
             Assert.assertEqual(ComplexNumber.IMAGINARY, eigvec.eigenvector_complex_part)
@@ -2608,8 +2607,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SegmentState.FINAL, posDiffOtherSeg.segment_state_to_use)
 
         stopCond.user_calculation_object_name = "Segments/Velocity Difference Across Segments"
-        velDiffOtherSeg: "StateCalcVelDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calculation_object, StateCalcVelDifferenceOtherSegment
+        velDiffOtherSeg: "StateCalcVelocityDifferenceOtherSegment" = clr.CastAs(
+            stopCond.user_calculation_object, StateCalcVelocityDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", velDiffOtherSeg.other_segment_name)
         velDiffOtherSeg.other_segment_name = "Initial State"
@@ -2622,8 +2621,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SegmentState.FINAL, velDiffOtherSeg.segment_state_to_use)
 
         stopCond.user_calculation_object_name = "Segments/Position Velocity Difference Across Segments"
-        posvelDiffOtherSeg: "StateCalcPositionVelDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calculation_object, StateCalcPositionVelDifferenceOtherSegment
+        posvelDiffOtherSeg: "StateCalcPositionVelocityDifferenceOtherSegment" = clr.CastAs(
+            stopCond.user_calculation_object, StateCalcPositionVelocityDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", posvelDiffOtherSeg.other_segment_name)
         posvelDiffOtherSeg.other_segment_name = "Initial State"
@@ -2788,8 +2787,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth Inertial", vMag.coord_system_name)
         sphericalElems.remove((clr.CastAs(vMag, IComponentInfo)).name)
 
-        VAz: "StateCalcVelAz" = clr.CastAs(
-            (ICloneable(sphericalElems["Velocity Azimuth"])).clone_object(), StateCalcVelAz
+        VAz: "StateCalcVelocityAz" = clr.CastAs(
+            (ICloneable(sphericalElems["Velocity Azimuth"])).clone_object(), StateCalcVelocityAz
         )
         Assert.assertIsNotNone(VAz)
         VAz.coord_system_name = "CentralBody/Earth Inertial"
@@ -2850,8 +2849,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth Inertial", InAsympRA.coord_system_name)
         targetElems.remove((clr.CastAs(InAsympRA, IComponentInfo)).name)
 
-        InVAzP: "StateCalcInVelAzAtPeriapsis" = clr.CastAs(
-            (ICloneable(targetElems["Incoming Vel Az at Periapsis"])).clone_object(), StateCalcInVelAzAtPeriapsis
+        InVAzP: "StateCalcInVelocityAzAtPeriapsis" = clr.CastAs(
+            (ICloneable(targetElems["Incoming Vel Az at Periapsis"])).clone_object(), StateCalcInVelocityAzAtPeriapsis
         )
         Assert.assertIsNotNone(InVAzP)
         InVAzP.coord_system_name = "CentralBody/Earth Inertial"
@@ -2874,8 +2873,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth Inertial", OutAsympRA.coord_system_name)
         targetElems.remove((clr.CastAs(OutAsympRA, IComponentInfo)).name)
 
-        OutVAzP: "StateCalcOutVelAzAtPeriapsis" = clr.CastAs(
-            (ICloneable(targetElems["Outgoing Vel Az at Periapsis"])).clone_object(), StateCalcOutVelAzAtPeriapsis
+        OutVAzP: "StateCalcOutVelocityAzAtPeriapsis" = clr.CastAs(
+            (ICloneable(targetElems["Outgoing Vel Az at Periapsis"])).clone_object(), StateCalcOutVelocityAzAtPeriapsis
         )
         Assert.assertIsNotNone(OutVAzP)
         OutVAzP.coord_system_name = "CentralBody/Earth Inertial"
@@ -4472,8 +4471,8 @@ class EarlyBoundTests(TestBase):
         dens.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, dens.sun_position)
 
-        dens.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, dens.atmos_data_source)
+        dens.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, dens.atmosphere_data_source)
 
         dens.f10 = 160
         Assert.assertEqual(160, dens.f10)
@@ -4554,46 +4553,46 @@ class EarlyBoundTests(TestBase):
 
         file1: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dens.atmos_aug_data_file = file1
+            dens.atmosphere_aug_data_file = file1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dens.atmos_aug_dtc_file = file1
+            dens.atmosphere_aug_dtc_file = file1
 
-        dens.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, dens.atmos_data_source)
+        dens.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, dens.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
 
-        dens.atmos_data_filename = file
-        Assert.assertEqual(file, dens.atmos_data_filename)
+        dens.atmosphere_data_filename = file
+        Assert.assertEqual(file, dens.atmosphere_data_filename)
         if dens.uses_augmented_space_weather:
             Assert.assertTrue(dens.uses_augmented_space_weather)
 
-            dens.atmos_aug_data_file = file
-            Assert.assertEqual(file, dens.atmos_aug_data_file)
+            dens.atmosphere_aug_data_file = file
+            Assert.assertEqual(file, dens.atmosphere_aug_data_file)
             with pytest.raises(Exception, match=RegexSubstringMatch("Cannot find file")):
-                dens.atmos_aug_data_file = r"C:\Temp\bogus.txt"
+                dens.atmosphere_aug_data_file = r"C:\Temp\bogus.txt"
 
-            dens.atmos_aug_dtc_file = file
-            Assert.assertEqual(file, dens.atmos_aug_dtc_file)
+            dens.atmosphere_aug_dtc_file = file
+            Assert.assertEqual(file, dens.atmosphere_aug_dtc_file)
             with pytest.raises(Exception, match=RegexSubstringMatch("Cannot find file")):
-                dens.atmos_aug_dtc_file = r"C:\Temp\bogus.txt"
+                dens.atmosphere_aug_dtc_file = r"C:\Temp\bogus.txt"
 
         else:
             Assert.assertFalse(dens.uses_augmented_space_weather)
 
-            tempVal: str = dens.atmos_aug_data_file
+            tempVal: str = dens.atmosphere_aug_data_file
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                dens.atmos_aug_data_file = tempVal
+                dens.atmosphere_aug_data_file = tempVal
 
-            tempVal = dens.atmos_aug_dtc_file
+            tempVal = dens.atmosphere_aug_dtc_file
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                dens.atmos_aug_dtc_file = tempVal
+                dens.atmosphere_aug_dtc_file = tempVal
 
-        dens.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, dens.atmos_data_geo_magnetic_flux_update_rate)
+        dens.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, dens.atmosphere_data_geo_magnetic_flux_update_rate)
 
-        dens.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, dens.atmos_data_geo_magnetic_flux_source)
+        dens.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, dens.atmosphere_data_geo_magnetic_flux_source)
 
         Assert.assertFalse(dens.computes_pressure)
         Assert.assertFalse(dens.computes_temperature)
@@ -4738,12 +4737,12 @@ class EarlyBoundTests(TestBase):
         srpVarArea.sun_position = SunPosition.APPARENT
         Assert.assertEqual(SunPosition.APPARENT, srpVarArea.sun_position)
 
-        srpVarArea.atmos_altitude = 0
-        Assert.assertEqual(0, srpVarArea.atmos_altitude)
-        srpVarArea.atmos_altitude = 100
-        Assert.assertEqual(100, srpVarArea.atmos_altitude)
+        srpVarArea.atmosphere_altitude = 0
+        Assert.assertEqual(0, srpVarArea.atmosphere_altitude)
+        srpVarArea.atmosphere_altitude = 100
+        Assert.assertEqual(100, srpVarArea.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            srpVarArea.atmos_altitude = -1
+            srpVarArea.atmosphere_altitude = -1
 
         self.TestCentralBodyCollection(srpVarArea.eclipsing_bodies)
 
@@ -4803,12 +4802,12 @@ class EarlyBoundTests(TestBase):
         srpReflectionPlugin.plugin_identifier = "SRP Example XXX"
         Assert.assertEqual("SRP Example XXX", srpReflectionPlugin.plugin_identifier)
 
-        srpReflectionPlugin.atmos_altitude = 0
-        Assert.assertEqual(0, srpReflectionPlugin.atmos_altitude)
-        srpReflectionPlugin.atmos_altitude = 100
-        Assert.assertEqual(100, srpReflectionPlugin.atmos_altitude)
+        srpReflectionPlugin.atmosphere_altitude = 0
+        Assert.assertEqual(0, srpReflectionPlugin.atmosphere_altitude)
+        srpReflectionPlugin.atmosphere_altitude = 100
+        Assert.assertEqual(100, srpReflectionPlugin.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            srpReflectionPlugin.atmos_altitude = -1
+            srpReflectionPlugin.atmosphere_altitude = -1
 
         srpReflectionPlugin.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, srpReflectionPlugin.shadow_model)
@@ -4889,8 +4888,8 @@ class EarlyBoundTests(TestBase):
         cira72.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, cira72.sun_position)
 
-        cira72.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, cira72.atmos_data_source)
+        cira72.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, cira72.atmosphere_data_source)
 
         f10p7: int = 160
         cira72.f_10_p7 = f10p7
@@ -4904,18 +4903,18 @@ class EarlyBoundTests(TestBase):
         cira72.kp = kp
         Assert.assertEqual(kp, cira72.kp)
 
-        cira72.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, cira72.atmos_data_source)
+        cira72.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, cira72.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        cira72.atmos_data_filename = file
-        Assert.assertEqual(file, cira72.atmos_data_filename)
+        cira72.atmosphere_data_filename = file
+        Assert.assertEqual(file, cira72.atmosphere_data_filename)
 
-        cira72.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, cira72.atmos_data_geo_magnetic_flux_update_rate)
+        cira72.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, cira72.atmosphere_data_geo_magnetic_flux_update_rate)
 
-        cira72.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, cira72.atmos_data_geo_magnetic_flux_source)
+        cira72.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, cira72.atmosphere_data_geo_magnetic_flux_source)
 
         Assert.assertFalse(cira72.computes_pressure)
         Assert.assertFalse(cira72.computes_temperature)
@@ -4992,8 +4991,8 @@ class EarlyBoundTests(TestBase):
         dtm2012.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, dtm2012.sun_position)
 
-        dtm2012.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, dtm2012.atmos_data_source)
+        dtm2012.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, dtm2012.atmosphere_data_source)
 
         dtm2012.f_10_p7 = 160
         Assert.assertEqual(160, dtm2012.f_10_p7)
@@ -5012,26 +5011,28 @@ class EarlyBoundTests(TestBase):
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2012.atmos_data_filename = file
+            dtm2012.atmosphere_data_filename = file
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2012.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+            dtm2012.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2012.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+            dtm2012.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
 
-        dtm2012.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, dtm2012.atmos_data_source)
+        dtm2012.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, dtm2012.atmosphere_data_source)
 
         file = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        dtm2012.atmos_data_filename = file
-        Assert.assertEqual(file, dtm2012.atmos_data_filename)
+        dtm2012.atmosphere_data_filename = file
+        Assert.assertEqual(file, dtm2012.atmosphere_data_filename)
 
-        dtm2012.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, dtm2012.atmos_data_geo_magnetic_flux_update_rate)
+        dtm2012.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY, dtm2012.atmosphere_data_geo_magnetic_flux_update_rate
+        )
 
-        dtm2012.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, dtm2012.atmos_data_geo_magnetic_flux_source)
+        dtm2012.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, dtm2012.atmosphere_data_geo_magnetic_flux_source)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             dtm2012.f_10_p7 = 160
@@ -5099,8 +5100,8 @@ class EarlyBoundTests(TestBase):
         dtm2020.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, dtm2020.sun_position)
 
-        dtm2020.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, dtm2020.atmos_data_source)
+        dtm2020.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, dtm2020.atmosphere_data_source)
 
         dtm2020.f_10_p7 = 160
         Assert.assertEqual(160, dtm2020.f_10_p7)
@@ -5119,26 +5120,28 @@ class EarlyBoundTests(TestBase):
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2020.atmos_data_filename = file
+            dtm2020.atmosphere_data_filename = file
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2020.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+            dtm2020.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            dtm2020.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+            dtm2020.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
 
-        dtm2020.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, dtm2020.atmos_data_source)
+        dtm2020.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, dtm2020.atmosphere_data_source)
 
         file = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        dtm2020.atmos_data_filename = file
-        Assert.assertEqual(file, dtm2020.atmos_data_filename)
+        dtm2020.atmosphere_data_filename = file
+        Assert.assertEqual(file, dtm2020.atmosphere_data_filename)
 
-        dtm2020.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, dtm2020.atmos_data_geo_magnetic_flux_update_rate)
+        dtm2020.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY, dtm2020.atmosphere_data_geo_magnetic_flux_update_rate
+        )
 
-        dtm2020.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, dtm2020.atmos_data_geo_magnetic_flux_source)
+        dtm2020.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, dtm2020.atmosphere_data_geo_magnetic_flux_source)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             dtm2020.f_10_p7 = 160
@@ -5203,19 +5206,19 @@ class EarlyBoundTests(TestBase):
         hp.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, hp.sun_position)
 
-        hp.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, hp.atmos_data_source)
+        hp.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, hp.atmosphere_data_source)
 
         f10p7avg: int = 165
         hp.f_10_p7_avg = f10p7avg
         Assert.assertEqual(f10p7avg, hp.f_10_p7_avg)
 
-        hp.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, hp.atmos_data_source)
+        hp.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, hp.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        hp.atmos_data_filename = file
-        Assert.assertEqual(file, hp.atmos_data_filename)
+        hp.atmosphere_data_filename = file
+        Assert.assertEqual(file, hp.atmosphere_data_filename)
 
         Assert.assertFalse(hp.computes_pressure)
         Assert.assertFalse(hp.computes_temperature)
@@ -5274,8 +5277,8 @@ class EarlyBoundTests(TestBase):
         msis1986.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, msis1986.sun_position)
 
-        msis1986.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, msis1986.atmos_data_source)
+        msis1986.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, msis1986.atmosphere_data_source)
 
         f10p7: int = 160
         msis1986.f_10_p7 = f10p7
@@ -5289,18 +5292,20 @@ class EarlyBoundTests(TestBase):
         msis1986.kp = kp
         Assert.assertEqual(kp, msis1986.kp)
 
-        msis1986.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, msis1986.atmos_data_source)
+        msis1986.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, msis1986.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        msis1986.atmos_data_filename = file
-        Assert.assertEqual(file, msis1986.atmos_data_filename)
+        msis1986.atmosphere_data_filename = file
+        Assert.assertEqual(file, msis1986.atmosphere_data_filename)
 
-        msis1986.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, msis1986.atmos_data_geo_magnetic_flux_update_rate)
+        msis1986.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY, msis1986.atmosphere_data_geo_magnetic_flux_update_rate
+        )
 
-        msis1986.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, msis1986.atmos_data_geo_magnetic_flux_source)
+        msis1986.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, msis1986.atmosphere_data_geo_magnetic_flux_source)
 
         Assert.assertFalse(msis1986.computes_pressure)
         Assert.assertFalse(msis1986.computes_temperature)
@@ -5359,8 +5364,8 @@ class EarlyBoundTests(TestBase):
         msise1990.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, msise1990.sun_position)
 
-        msise1990.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, msise1990.atmos_data_source)
+        msise1990.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, msise1990.atmosphere_data_source)
 
         f10p7: int = 160
         msise1990.f_10_p7 = f10p7
@@ -5374,18 +5379,20 @@ class EarlyBoundTests(TestBase):
         msise1990.kp = kp
         Assert.assertEqual(kp, msise1990.kp)
 
-        msise1990.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, msise1990.atmos_data_source)
+        msise1990.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, msise1990.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        msise1990.atmos_data_filename = file
-        Assert.assertEqual(file, msise1990.atmos_data_filename)
+        msise1990.atmosphere_data_filename = file
+        Assert.assertEqual(file, msise1990.atmosphere_data_filename)
 
-        msise1990.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, msise1990.atmos_data_geo_magnetic_flux_update_rate)
+        msise1990.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY, msise1990.atmosphere_data_geo_magnetic_flux_update_rate
+        )
 
-        msise1990.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, msise1990.atmos_data_geo_magnetic_flux_source)
+        msise1990.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, msise1990.atmosphere_data_geo_magnetic_flux_source)
 
         Assert.assertFalse(msise1990.computes_pressure)
         Assert.assertFalse(msise1990.computes_temperature)
@@ -5444,8 +5451,8 @@ class EarlyBoundTests(TestBase):
         nrlmsise2000.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, nrlmsise2000.sun_position)
 
-        nrlmsise2000.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, nrlmsise2000.atmos_data_source)
+        nrlmsise2000.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, nrlmsise2000.atmosphere_data_source)
 
         f10p7: int = 160
         nrlmsise2000.f_10_p7 = f10p7
@@ -5459,20 +5466,20 @@ class EarlyBoundTests(TestBase):
         nrlmsise2000.kp = kp
         Assert.assertEqual(kp, nrlmsise2000.kp)
 
-        nrlmsise2000.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, nrlmsise2000.atmos_data_source)
+        nrlmsise2000.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, nrlmsise2000.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        nrlmsise2000.atmos_data_filename = file
-        Assert.assertEqual(file, nrlmsise2000.atmos_data_filename)
+        nrlmsise2000.atmosphere_data_filename = file
+        Assert.assertEqual(file, nrlmsise2000.atmosphere_data_filename)
 
-        nrlmsise2000.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        nrlmsise2000.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
         Assert.assertEqual(
-            GeoMagneticFluxUpdateRate.RATE3_HOURLY, nrlmsise2000.atmos_data_geo_magnetic_flux_update_rate
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY, nrlmsise2000.atmosphere_data_geo_magnetic_flux_update_rate
         )
 
-        nrlmsise2000.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, nrlmsise2000.atmos_data_geo_magnetic_flux_source)
+        nrlmsise2000.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, nrlmsise2000.atmosphere_data_geo_magnetic_flux_source)
 
         Assert.assertFalse(nrlmsise2000.computes_pressure)
         Assert.assertFalse(nrlmsise2000.computes_temperature)
@@ -5584,8 +5591,8 @@ class EarlyBoundTests(TestBase):
         jr.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, jr.sun_position)
 
-        jr.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, jr.atmosphere_data_source)
 
         f10p7: int = 160
         jr.f_10_p7 = f10p7
@@ -5599,18 +5606,18 @@ class EarlyBoundTests(TestBase):
         jr.kp = kp
         Assert.assertEqual(kp, jr.kp)
 
-        jr.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, jr.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        jr.atmos_data_filename = file
-        Assert.assertEqual(file, jr.atmos_data_filename)
+        jr.atmosphere_data_filename = file
+        Assert.assertEqual(file, jr.atmosphere_data_filename)
 
-        jr.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, jr.atmos_data_geo_magnetic_flux_update_rate)
+        jr.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, jr.atmosphere_data_geo_magnetic_flux_update_rate)
 
-        jr.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, jr.atmos_data_geo_magnetic_flux_source)
+        jr.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, jr.atmosphere_data_geo_magnetic_flux_source)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -5746,8 +5753,8 @@ class EarlyBoundTests(TestBase):
         jr.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, jr.sun_position)
 
-        jr.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, jr.atmosphere_data_source)
 
         f10p7: int = 160
         jr.f_10_p7 = f10p7
@@ -5761,18 +5768,18 @@ class EarlyBoundTests(TestBase):
         jr.kp = kp
         Assert.assertEqual(kp, jr.kp)
 
-        jr.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, jr.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        jr.atmos_data_filename = file
-        Assert.assertEqual(file, jr.atmos_data_filename)
+        jr.atmosphere_data_filename = file
+        Assert.assertEqual(file, jr.atmosphere_data_filename)
 
-        jr.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
-        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, jr.atmos_data_geo_magnetic_flux_update_rate)
+        jr.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY
+        Assert.assertEqual(GeoMagneticFluxUpdateRate.RATE3_HOURLY, jr.atmosphere_data_geo_magnetic_flux_update_rate)
 
-        jr.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
-        Assert.assertEqual(GeoMagneticFluxSource.AP, jr.atmos_data_geo_magnetic_flux_source)
+        jr.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.AP
+        Assert.assertEqual(GeoMagneticFluxSource.AP, jr.atmosphere_data_geo_magnetic_flux_source)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -5841,8 +5848,8 @@ class EarlyBoundTests(TestBase):
         jr.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, jr.sun_position)
 
-        jr.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, jr.atmosphere_data_source)
 
         f10p7: int = 160
         jr.f_10_p7 = f10p7
@@ -5856,20 +5863,20 @@ class EarlyBoundTests(TestBase):
         jr.kp = kp
         Assert.assertEqual(kp, jr.kp)
 
-        jr.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, jr.atmos_data_source)
+        jr.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, jr.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        jr.atmos_data_filename = file
-        Assert.assertEqual(file, jr.atmos_data_filename)
+        jr.atmosphere_data_filename = file
+        Assert.assertEqual(file, jr.atmosphere_data_filename)
 
-        jr.atmos_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY_CUBIC_SPLINE
+        jr.atmosphere_data_geo_magnetic_flux_update_rate = GeoMagneticFluxUpdateRate.RATE3_HOURLY_CUBIC_SPLINE
         Assert.assertEqual(
-            GeoMagneticFluxUpdateRate.RATE3_HOURLY_CUBIC_SPLINE, jr.atmos_data_geo_magnetic_flux_update_rate
+            GeoMagneticFluxUpdateRate.RATE3_HOURLY_CUBIC_SPLINE, jr.atmosphere_data_geo_magnetic_flux_update_rate
         )
 
-        jr.atmos_data_geo_magnetic_flux_source = GeoMagneticFluxSource.KP
-        Assert.assertEqual(GeoMagneticFluxSource.KP, jr.atmos_data_geo_magnetic_flux_source)
+        jr.atmosphere_data_geo_magnetic_flux_source = GeoMagneticFluxSource.KP
+        Assert.assertEqual(GeoMagneticFluxSource.KP, jr.atmosphere_data_geo_magnetic_flux_source)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -5938,8 +5945,8 @@ class EarlyBoundTests(TestBase):
         jb.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, jb.sun_position)
 
-        jb.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, jb.atmos_data_source)
+        jb.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, jb.atmosphere_data_source)
 
         jb.f10 = 160
         Assert.assertEqual(160, jb.f10)
@@ -5989,25 +5996,25 @@ class EarlyBoundTests(TestBase):
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            jb.atmos_aug_data_file = file
+            jb.atmosphere_aug_data_file = file
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            jb.atmos_aug_dtc_file = file
+            jb.atmosphere_aug_dtc_file = file
 
-        jb.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, jb.atmos_data_source)
+        jb.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, jb.atmosphere_data_source)
 
         file = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
 
-        jb.atmos_aug_data_file = file
-        Assert.assertEqual(file, jb.atmos_aug_data_file)
+        jb.atmosphere_aug_data_file = file
+        Assert.assertEqual(file, jb.atmosphere_aug_data_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot find file")):
-            jb.atmos_aug_data_file = r"C:\Temp\bogus.txt"
+            jb.atmosphere_aug_data_file = r"C:\Temp\bogus.txt"
 
-        jb.atmos_aug_dtc_file = file
-        Assert.assertEqual(file, jb.atmos_aug_dtc_file)
+        jb.atmosphere_aug_dtc_file = file
+        Assert.assertEqual(file, jb.atmosphere_aug_dtc_file)
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot find file")):
-            jb.atmos_aug_dtc_file = r"C:\Temp\bogus.txt"
+            jb.atmosphere_aug_dtc_file = r"C:\Temp\bogus.txt"
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             jb.f10 = 160
@@ -6108,19 +6115,19 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             mg.density_type = MarsGRAMDensityType.RANDOMLY_PERTURBED
 
-        mg.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, mg.atmosphere_data_source)
 
         f10p7: int = 160
         mg.f_10_p7 = f10p7
         Assert.assertEqual(f10p7, mg.f_10_p7)
 
-        mg.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, mg.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        mg.atmos_data_filename = file
-        Assert.assertEqual(file, mg.atmos_data_filename)
+        mg.atmosphere_data_filename = file
+        Assert.assertEqual(file, mg.atmosphere_data_filename)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -6212,19 +6219,19 @@ class EarlyBoundTests(TestBase):
         mg.density_type = MarsGRAMDensityType.RANDOMLY_PERTURBED
         Assert.assertEqual(MarsGRAMDensityType.RANDOMLY_PERTURBED, mg.density_type)
 
-        mg.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, mg.atmosphere_data_source)
 
         f10p7: int = 160
         mg.f_10_p7 = f10p7
         Assert.assertEqual(f10p7, mg.f_10_p7)
 
-        mg.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, mg.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        mg.atmos_data_filename = file
-        Assert.assertEqual(file, mg.atmos_data_filename)
+        mg.atmosphere_data_filename = file
+        Assert.assertEqual(file, mg.atmosphere_data_filename)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -6316,19 +6323,19 @@ class EarlyBoundTests(TestBase):
         mg.density_type = MarsGRAMDensityType.RANDOMLY_PERTURBED
         Assert.assertEqual(MarsGRAMDensityType.RANDOMLY_PERTURBED, mg.density_type)
 
-        mg.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, mg.atmosphere_data_source)
 
         f10p7: int = 160
         mg.f_10_p7 = f10p7
         Assert.assertEqual(f10p7, mg.f_10_p7)
 
-        mg.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, mg.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        mg.atmos_data_filename = file
-        Assert.assertEqual(file, mg.atmos_data_filename)
+        mg.atmosphere_data_filename = file
+        Assert.assertEqual(file, mg.atmosphere_data_filename)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -6420,19 +6427,19 @@ class EarlyBoundTests(TestBase):
         mg.density_type = MarsGRAMDensityType.RANDOMLY_PERTURBED
         Assert.assertEqual(MarsGRAMDensityType.RANDOMLY_PERTURBED, mg.density_type)
 
-        mg.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, mg.atmosphere_data_source)
 
         f10p7: int = 160
         mg.f_10_p7 = f10p7
         Assert.assertEqual(f10p7, mg.f_10_p7)
 
-        mg.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, mg.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        mg.atmos_data_filename = file
-        Assert.assertEqual(file, mg.atmos_data_filename)
+        mg.atmosphere_data_filename = file
+        Assert.assertEqual(file, mg.atmosphere_data_filename)
 
         # default appears to be false,
         # attr is also ReadOnly
@@ -6555,22 +6562,22 @@ class EarlyBoundTests(TestBase):
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
-        mg.atmos_data_source = AtmosDataSource.CONSTANT
-        Assert.assertEqual(AtmosDataSource.CONSTANT, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.CONSTANT
+        Assert.assertEqual(AtmosphereDataSource.CONSTANT, mg.atmosphere_data_source)
 
         f10p7: int = 160
         mg.f_10_p7 = f10p7
         Assert.assertEqual(f10p7, mg.f_10_p7)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            mg.atmos_data_filename = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
+            mg.atmosphere_data_filename = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
 
-        mg.atmos_data_source = AtmosDataSource.FILE
-        Assert.assertEqual(AtmosDataSource.FILE, mg.atmos_data_source)
+        mg.atmosphere_data_source = AtmosphereDataSource.FILE
+        Assert.assertEqual(AtmosphereDataSource.FILE, mg.atmosphere_data_source)
 
         file: str = TestBase.GetScenarioFile("SpaceWeather-All-v1.2.txt")
-        mg.atmos_data_filename = file
-        Assert.assertEqual(file, mg.atmos_data_filename)
+        mg.atmosphere_data_filename = file
+        Assert.assertEqual(file, mg.atmosphere_data_filename)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mg.f_10_p7 = f10p7
@@ -6668,8 +6675,8 @@ class EarlyBoundTests(TestBase):
             pass
 
     def TestAeroT20(self, t20: "SRPAerospaceT20"):
-        t20.atmos_altitude = 1
-        Assert.assertEqual(1, t20.atmos_altitude)
+        t20.atmosphere_altitude = 1
+        Assert.assertEqual(1, t20.atmosphere_altitude)
 
         t20.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, t20.shadow_model)
@@ -6705,8 +6712,8 @@ class EarlyBoundTests(TestBase):
         )  # default value, update whenever Sun.cb file changes
 
     def TestAeroT30(self, t30: "SRPAerospaceT30"):
-        t30.atmos_altitude = 1
-        Assert.assertEqual(1, t30.atmos_altitude)
+        t30.atmosphere_altitude = 1
+        Assert.assertEqual(1, t30.atmosphere_altitude)
 
         t30.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, t30.shadow_model)
@@ -6742,8 +6749,8 @@ class EarlyBoundTests(TestBase):
         )  # default value, update whenever Sun.cb file changes
 
     def TestSRPGSPM04aIIA(self, i04aIIA: "SRPGSPM04aIIA"):
-        i04aIIA.atmos_altitude = 1
-        Assert.assertEqual(1, i04aIIA.atmos_altitude)
+        i04aIIA.atmosphere_altitude = 1
+        Assert.assertEqual(1, i04aIIA.atmosphere_altitude)
 
         i04aIIA.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, i04aIIA.shadow_model)
@@ -6779,8 +6786,8 @@ class EarlyBoundTests(TestBase):
         )  # default value, update whenever Sun.cb file changes
 
     def TestSRPGSPM04aIIR(self, i04aIIR: "SRPGSPM04aIIR"):
-        i04aIIR.atmos_altitude = 1
-        Assert.assertEqual(1, i04aIIR.atmos_altitude)
+        i04aIIR.atmosphere_altitude = 1
+        Assert.assertEqual(1, i04aIIR.atmosphere_altitude)
 
         i04aIIR.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, i04aIIR.shadow_model)
@@ -6816,8 +6823,8 @@ class EarlyBoundTests(TestBase):
         )  # default value, update whenever Sun.cb file changes
 
     def TestSRPGSPM04aeIIA(self, i04aeIIA: "SRPGSPM04aeIIA"):
-        i04aeIIA.atmos_altitude = 1
-        Assert.assertEqual(1, i04aeIIA.atmos_altitude)
+        i04aeIIA.atmosphere_altitude = 1
+        Assert.assertEqual(1, i04aeIIA.atmosphere_altitude)
 
         i04aeIIA.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, i04aeIIA.shadow_model)
@@ -6853,8 +6860,8 @@ class EarlyBoundTests(TestBase):
         )  # default value, update whenever Sun.cb file changes
 
     def TestSRPGSPM04aeIIR(self, i04aeIIR: "SRPGSPM04aeIIR"):
-        i04aeIIR.atmos_altitude = 1
-        Assert.assertEqual(1, i04aeIIR.atmos_altitude)
+        i04aeIIR.atmosphere_altitude = 1
+        Assert.assertEqual(1, i04aeIIR.atmosphere_altitude)
 
         i04aeIIR.shadow_model = ShadowModel.CYLINDRICAL
         Assert.assertEqual(ShadowModel.CYLINDRICAL, i04aeIIR.shadow_model)
@@ -7229,9 +7236,9 @@ class EarlyBoundTests(TestBase):
         sphere.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, sphere.sun_position)
 
-        Assert.assertEqual(0, sphere.atmos_altitude)
-        sphere.atmos_altitude = 8
-        Assert.assertEqual(8, sphere.atmos_altitude)
+        Assert.assertEqual(0, sphere.atmosphere_altitude)
+        sphere.atmosphere_altitude = 8
+        Assert.assertEqual(8, sphere.atmosphere_altitude)
 
         self.TestCentralBodyCollection(sphere.eclipsing_bodies)
 
@@ -7318,9 +7325,9 @@ class EarlyBoundTests(TestBase):
         tabareavec.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, tabareavec.sun_position)
 
-        Assert.assertEqual(0, tabareavec.atmos_altitude)
-        tabareavec.atmos_altitude = 8
-        Assert.assertEqual(8, tabareavec.atmos_altitude)
+        Assert.assertEqual(0, tabareavec.atmosphere_altitude)
+        tabareavec.atmosphere_altitude = 8
+        Assert.assertEqual(8, tabareavec.atmosphere_altitude)
 
         self.TestCentralBodyCollection(tabareavec.eclipsing_bodies)
 
@@ -7401,11 +7408,11 @@ class EarlyBoundTests(TestBase):
         nplate.sun_position = SunPosition.TRUE
         Assert.assertEqual(SunPosition.TRUE, nplate.sun_position)
 
-        Assert.assertEqual(0, nplate.atmos_altitude)
-        nplate.atmos_altitude = 8
-        Assert.assertEqual(8, nplate.atmos_altitude)
+        Assert.assertEqual(0, nplate.atmosphere_altitude)
+        nplate.atmosphere_altitude = 8
+        Assert.assertEqual(8, nplate.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            nplate.atmos_altitude = -1
+            nplate.atmosphere_altitude = -1
 
         self.TestCentralBodyCollection(nplate.eclipsing_bodies)
 

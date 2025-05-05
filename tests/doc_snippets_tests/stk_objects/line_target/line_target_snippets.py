@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -56,7 +56,7 @@ class LineTargetSnippets(CodeSnippetsTestBase):
         name="CreateLineTarget",
         description="Create a New Line Target (on the current scenario central body)",
         category="STK Objects | Line Target",
-        eid="STKObjects~IAgLineTarget",
+        eid="stkobjects~LineTarget",
     )
     def CreateLineTargetSnippet(self, scenario):
         # Scenario scenario: Scenario object

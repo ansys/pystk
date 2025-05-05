@@ -56,7 +56,7 @@ Overview
               - Unsupported or unknown atmospheric density model.
 
             * - :py:attr:`~USER_DEFINED`
-              - Do not use this enumeration, as it is deprecated. This option is no longer available for IAgVeHPOPForceModelDrag. User-defined atmospheric density model.
+              - Do not use this enumeration, as it is deprecated. This option is no longer available for VehicleHPOPForceModelDrag. User-defined atmospheric density model.
 
             * - :py:attr:`~DTM2012`
               - DTM 2012: The Drag Temperature Model (DTM), 2012 version, is a semi-empirical model which computes the temperature, density, and composition of the thermosphere. Developed at CNES. Valid range of 120 - 1500 km.

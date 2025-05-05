@@ -3,7 +3,7 @@ VehicleGraphics3DBPlanePointCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection
 
-   AgVeVOBPlaneCollection Class.
+   VehicleGraphics3DBPlanePointCollection Class.
 
 .. py:currentmodule:: VehicleGraphics3DBPlanePointCollection
 

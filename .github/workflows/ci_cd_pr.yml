@@ -61,10 +61,9 @@ jobs:
   vulnerabilities:
     name: "Vulnerabilities"
     runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: labeler
     steps:
+
       - name: "Checkout project"
         uses: actions/checkout@v4
 

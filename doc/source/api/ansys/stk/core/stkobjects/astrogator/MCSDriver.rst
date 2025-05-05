@@ -72,7 +72,7 @@ Set satellite propagator to Astrogator and clear segments
     driver.main_sequence.remove_all()
 
 
-Run the Astrogator MCS
+Run the Astrogator® mission control sequence (MCS)
 
 .. code-block:: python
 

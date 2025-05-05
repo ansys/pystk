@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -56,7 +56,7 @@ class ChainSnippets(CodeSnippetsTestBase):
         name="CreateChain",
         description="Create a chain (on the current scenario central body)",
         category="STK Objects | Chain",
-        eid="STKObjects~IAgChain",
+        eid="stkobjects~Chain",
     )
     def CreateChainSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -81,7 +81,7 @@ class ChainSnippets(CodeSnippetsTestBase):
         name="ComputeChain",
         description="Define and compute a chain (basic)",
         category="STK Objects | Chain",
-        eid="STKObjects~IAgChain",
+        eid="stkobjects~Chain",
     )
     def ComputeChainSnippet(self, chain):
         # Chain chain: Chain object
@@ -110,7 +110,7 @@ class ChainSnippets(CodeSnippetsTestBase):
         name="CreateChainAdvanced",
         description="Define and compute a chain (advanced)",
         category="STK Objects | Chain",
-        eid="STKObjects~IAgChain",
+        eid="stkobjects~Chain",
     )
     def CreateChainAdvancedSnippet(self, root, chain, satellite):
         # Chain chain: Chain object
@@ -152,9 +152,9 @@ class ChainSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ChainStrandIntervals",
-        description="Prints the strand intervals of chain object",
+        description="Print the strand intervals of chain object",
         category="STK Objects | Chain",
-        eid="STKObjects~IAgChain",
+        eid="stkobjects~Chain",
     )
     def ChainStrandIntervalsSnippet(self, chain):
         # Chain chain: Chain Object

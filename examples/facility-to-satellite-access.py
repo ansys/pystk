@@ -8,7 +8,7 @@
 
 # ## Problem statement
 
-# A facility is located at latitude $40^\circ$ and longitude $-80^\circ$. The facility includes a sensor with a pattern type of complex conic, with an inner cone half angle of $50^\circ$, an outer cone half angle of $90^\circ$, a minimum clock angle of $0^\circ$, and a maximum clock angle of $90^\circ$. The sensor has a maximum range of 40 km. The sensor interacts with the International Space Station (SSN number 25544), which has an SPG4 propagator. This satellite can also only be seen if it is directly illuminated by the Sun.
+# A facility is located at latitude $40^\circ$ and longitude $-80^\circ$. The facility includes a sensor with a pattern type of complex conic, with an inner cone half angle of $50^\circ$, an outer cone half angle of $90^\circ$, a minimum clock angle of $0^\circ$, and a maximum clock angle of $90^\circ$. The sensor has a maximum range of $40$ km. The sensor interacts with the International Space Station (SSN number $25544$), which has an SPG4 propagator. This satellite can also only be seen if it is directly illuminated by the Sun.
 #
 # Calculate the time periods during which the sensor can communicate with the satellite. Find the azimuth, elevation, and range of the satellite during these access periods. Finally, create a vector between the facility and satellite, and, for each access interval, determine at what time this vector was at a minimum magnitude.
 
@@ -120,7 +120,7 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 
 # The ``access_constraints`` property of the sensor holds an ``AccessConstraintCollection``, which has an ``add_constraint`` method. Use this method to add a range constraint using the ``ACCESS_CONSTRAINTS`` enumeration.
 
-# Add an access constraint to the sensor defining a maximum range of 40 km:
+# Add an access constraint to the sensor defining a maximum range of $40$ km:
 
 # +
 from ansys.stk.core.stkobjects import AccessConstraintType
@@ -138,7 +138,7 @@ access_constraint.maximum = 40
 
 # **Note:** this portion requires internet access.
 
-# First, create the satellite using online data for the International Space Station (SSN number 25544):
+# First, create the satellite using online data for the International Space Station (SSN number $25544$):
 
 # +
 from ansys.stk.core.stkobjects import PropagatorType
@@ -297,7 +297,7 @@ vector.destination.set_point(
 )
 # -
 
-# Visualize the vector and set its size to 4.0:
+# Visualize the vector and set its size to $4.0$:
 
 # +
 from ansys.stk.core.stkobjects import GeometricElementType

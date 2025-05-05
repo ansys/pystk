@@ -2,19 +2,18 @@
 3D
 apoapsis
 application
-ANSYS
-Ansys
-ansys
+(?i)Ansys
 Astrogator
 Dockerfiles
+[Dd]ata[Ff]rame[s]?
 documentarians
+eid
 ephemerides
 cartodetic
 FOM
 fom
 Hohmann
 IIF
-Python
 intervisibility
 IPython
 Keplerian
@@ -24,17 +23,21 @@ MCS
 MTO
 namespace
 Nemo
-numpy
+[Nn]um[Pp]y
+Pandas
 PySTK
 periapsis
 prograde
 Precessing
 precessing
-STK 
+PySTK
+Python
+STK
 STK Desktop
 STKEngine
 STK Engine
 Subpackages
+Tkinter
 Tox
 triangulator
 waypoint

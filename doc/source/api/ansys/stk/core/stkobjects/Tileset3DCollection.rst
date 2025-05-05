@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.item`
-              - Given an index, returns an IAg3DTileset interface.
+              - Given an index, returns an Tileset3D interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.add`
               - Add a 3DTileset item to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.remove`
@@ -72,7 +72,7 @@ Method detail
 .. py:method:: item(self, index: int) -> Tileset3D
     :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.item
 
-    Given an index, returns an IAg3DTileset interface.
+    Given an index, returns an Tileset3D interface.
 
     :Parameters:
 

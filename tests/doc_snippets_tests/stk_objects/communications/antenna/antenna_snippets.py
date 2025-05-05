@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -63,7 +63,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         name="CreateAntenna",
         description="Create a New Antenna Object",
         category="STK Objects | Communications | Antenna",
-        eid="STKObjects~IAgAntenna",
+        eid="stkobjects~Antenna",
     )
     def CreateAntennaSnippet(self, satellite):
         # IStkObject satellite: STK object
@@ -83,7 +83,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         name="ModifyAntenna",
         description="Modify Antenna Model Type",
         category="STK Objects | Communications | Antenna",
-        eid="STKObjects~IAgAntenna",
+        eid="stkobjects~Antenna",
     )
     def ModifyAntennaSnippet(self, antenna):
         # Antenna antenna: Antenna object
@@ -108,7 +108,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         name="ModifyAntennaRefraction",
         description="Modify Antenna Refraction",
         category="STK Objects | Communications | Antenna",
-        eid="STKObjects~IAgAntenna",
+        eid="stkobjects~Antenna",
     )
     def ModifyAntennaRefractionSnippet(self, antenna):
         # Antenna antenna: Antenna object
@@ -133,7 +133,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         name="ModifyAntennaOrientation",
         description="Modify Antenna Orientation and Position",
         category="STK Objects | Communications | Antenna",
-        eid="STKObjects~IAgAntenna",
+        eid="stkobjects~Antenna",
     )
     def ModifyAntennaOrientationSnippet(self, antenna):
         # Antenna antenna: Antenna object
@@ -158,7 +158,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         name="ModifyAntennaGraphics",
         description="Modify Antenna Graphics",
         category="STK Objects | Communications | Antenna",
-        eid="STKObjects~IAgAntenna",
+        eid="stkobjects~Antenna",
     )
     def ModifyAntennaGraphicsSnippet(self, antenna):
         # Antenna antenna: Antenna object

@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneInstance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance
 
-   An element in the IAgVeVOBPlanePointCollection.
+   An element in the VehicleGraphics3DBPlanePointCollection.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneInstance
 

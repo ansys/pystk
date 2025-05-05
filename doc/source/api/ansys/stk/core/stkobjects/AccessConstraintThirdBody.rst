@@ -5,7 +5,7 @@ AccessConstraintThirdBody
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
-   Do not use this class, as it is deprecated. Use AgAccessCnstrCbObstruction instead. Class defining Central Body Obstruction constraints.
+   Do not use this class, as it is deprecated. Use AccessConstraintCentralBodyObstruction instead. Class defining Central Body Obstruction constraints.
 
 .. py:currentmodule:: AccessConstraintThirdBody
 
@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.is_obstruction_assigned`
-              - Do not use this method, as it is deprecated. Use IsObstructionAssigned on IAgAccessCnstrCbObstruction instead. Check whether a third body is already assigned.
+              - Do not use this method, as it is deprecated. Use IsObstructionAssigned on AccessConstraintCentralBodyObstruction instead. Check whether a third body is already assigned.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.add_obstruction`
-              - Do not use this method, as it is deprecated. Use AddObstruction on IAgAccessCnstrCbObstruction instead. Adds an Obstruction by Name.
+              - Do not use this method, as it is deprecated. Use AddObstruction on AccessConstraintCentralBodyObstruction instead. Adds an Obstruction by Name.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.remove_obstruction`
-              - Do not use this method, as it is deprecated. Use RemoveObstruction on IAgAccessCnstrCbObstruction instead. Remove an Obstruction by Name.
+              - Do not use this method, as it is deprecated. Use RemoveObstruction on AccessConstraintCentralBodyObstruction instead. Remove an Obstruction by Name.
 
     .. tab-item:: Properties
         
@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.assigned_obstructions`
-              - Do not use this property, as it is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
+              - Do not use this property, as it is deprecated. Use AssignedObstructions on AccessConstraintCentralBodyObstruction instead. Gets the Assigned Obstructions.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.available_obstructions`
-              - Do not use this property, as it is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
+              - Do not use this property, as it is deprecated. Use AvailableObstructions on AccessConstraintCentralBodyObstruction instead. Gets the Available Obstructions.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.assigned_obstructions
     :type: list
 
-    Do not use this property, as it is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
+    Do not use this property, as it is deprecated. Use AssignedObstructions on AccessConstraintCentralBodyObstruction instead. Gets the Assigned Obstructions.
 
 .. py:property:: available_obstructions
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.available_obstructions
     :type: list
 
-    Do not use this property, as it is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
+    Do not use this property, as it is deprecated. Use AvailableObstructions on AccessConstraintCentralBodyObstruction instead. Gets the Available Obstructions.
 
 
 Method detail
@@ -71,7 +71,7 @@ Method detail
 .. py:method:: is_obstruction_assigned(self, obstruction: str) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.is_obstruction_assigned
 
-    Do not use this method, as it is deprecated. Use IsObstructionAssigned on IAgAccessCnstrCbObstruction instead. Check whether a third body is already assigned.
+    Do not use this method, as it is deprecated. Use IsObstructionAssigned on AccessConstraintCentralBodyObstruction instead. Check whether a third body is already assigned.
 
     :Parameters:
 
@@ -84,7 +84,7 @@ Method detail
 .. py:method:: add_obstruction(self, obstruction: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.add_obstruction
 
-    Do not use this method, as it is deprecated. Use AddObstruction on IAgAccessCnstrCbObstruction instead. Adds an Obstruction by Name.
+    Do not use this method, as it is deprecated. Use AddObstruction on AccessConstraintCentralBodyObstruction instead. Adds an Obstruction by Name.
 
     :Parameters:
 
@@ -97,7 +97,7 @@ Method detail
 .. py:method:: remove_obstruction(self, obstruction: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.remove_obstruction
 
-    Do not use this method, as it is deprecated. Use RemoveObstruction on IAgAccessCnstrCbObstruction instead. Remove an Obstruction by Name.
+    Do not use this method, as it is deprecated. Use RemoveObstruction on AccessConstraintCentralBodyObstruction instead. Remove an Obstruction by Name.
 
     :Parameters:
 

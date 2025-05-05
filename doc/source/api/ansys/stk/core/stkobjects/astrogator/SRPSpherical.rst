@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPSpherical.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPSpherical.atmosphere_altitude`
               - Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPSpherical.shadow_model`
               - Get or set the shadow model type.
@@ -54,8 +54,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: atmos_altitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.SRPSpherical.atmos_altitude
+.. py:property:: atmosphere_altitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPSpherical.atmosphere_altitude
     :type: float
 
     Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.

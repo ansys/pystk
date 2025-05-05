@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -119,7 +119,18 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class CylinderFillOptions(IntFlag):
-    """Cylinder faces that can be filled."""
+    """
+    Cylinder faces that can be filled.
+
+    Examples
+    --------
+    Combine enumerations with the logical OR operator:
+    >>> from ansys.stk.core.graphics import CylinderFillOptions
+    >>> 
+    >>> # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    >>> # using the `|` operator
+    >>> cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+    """
    
     WALL = 1
     """Fill the cylinder's wall."""
@@ -7937,7 +7948,7 @@ class Camera(SupportsDeleteCallback):
 
     Examples
     --------
-    Change camera reference frame:
+    Change the camera reference frame:
     >>> # Scenario scenario: Scenario object
     >>> # StkObjectRoot root: STK Object Model Root
     >>> manager = scenario.scene_manager
@@ -7946,7 +7957,7 @@ class Camera(SupportsDeleteCallback):
     >>> )
     >>> manager.render()
 
-    Change camera view to Imagery Extents:
+    Change the camera view to Imagery Extents:
     >>> # Scenario scenario: Scenario object
     >>> # AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object
     >>> manager = scenario.scene_manager
@@ -14965,7 +14976,7 @@ class Scene(SupportsDeleteCallback):
 
     Examples
     --------
-    Control Display of Stars and Water Texture:
+    Control the Display of Stars and Water Texture:
     >>> # Scenario scenario: Scenario object
     >>> # Turn off the stars and water texture
     >>> manager = scenario.scene_manager
@@ -19525,7 +19536,7 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
 
     Examples
     --------
-    Great Arc Interpolator Primitives:
+    Compute interpolated positions along a great arc:
     >>> # Scenario scenario: Scenario object
     >>> # Create a array of LLA values and interoplate them over the specified
     >>> # central body

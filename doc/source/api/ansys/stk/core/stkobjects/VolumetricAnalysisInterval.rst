@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type`
-              - Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
+              - Evaluate spatial calculation type, using the VolumetricSpatialCalculationEvaluationType enumeration.
 
     .. tab-item:: Properties
         
@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.analysis_interval`
               - The volume analysis interval or interval list.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type`
-              - Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
+              - Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
               - The time array when Evaluation of spatial calculation at times from time array is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
     :type: VolumetricSpatialCalculationEvaluationType
 
-    Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
+    Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
 
 .. py:property:: time_array
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array
@@ -99,7 +99,7 @@ Method detail
 .. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VolumetricSpatialCalculationEvaluationType) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type
 
-    Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
+    Evaluate spatial calculation type, using the VolumetricSpatialCalculationEvaluationType enumeration.
 
     :Parameters:
 

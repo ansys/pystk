@@ -213,7 +213,7 @@
    <Mapping ParentScope="AgEAvtrWindAtmosModelSource" OldName="eScenarioModel" NewName="SCENARIO_MODEL" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrWindAtmosModelSource" OldName="eMissionModel" NewName="MISSION_MODEL" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrWindAtmosModelSource" OldName="eProcedureModel" NewName="PROCEDURE_MODEL" Category="enum_value" />
-   <Mapping OldName="AgEAvtrWindAtmosModelSource" NewName="WindAtmosModelSource" Category="enum_type" />
+   <Mapping OldName="AgEAvtrWindAtmosModelSource" NewName="WindAtmosphereModelSource" Category="enum_type" />
    <Mapping ParentScope="AgEAvtrADDSMsgInterpType" OldName="eInterpOnePoint" NewName="INTERPOLATION_ONE_POINT" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrADDSMsgInterpType" OldName="eInterpTwoPoint" NewName="INTERPOLATION_TWO_POINT" Category="enum_value" />
    <Mapping OldName="AgEAvtrADDSMsgInterpType" NewName="ADDSMessageInterpolationType" Category="enum_type" />
@@ -661,10 +661,10 @@
    <Mapping ParentScope="AgEAvtrBasicManeuverGlideSpeedControlMode" OldName="eGlideSpeedImmediateChange" NewName="GLIDE_SPEED_IMMEDIATE_CHANGE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrBasicManeuverGlideSpeedControlMode" OldName="eGlideSpeedAtAltitude" NewName="GLIDE_SPEED_AT_ALTITUDE" Category="enum_value" />
    <Mapping OldName="AgEAvtrBasicManeuverGlideSpeedControlMode" NewName="BasicManeuverGlideSpeedControlMode" Category="enum_type" />
-   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eSurfaceTargetPosVel" NewName="SURFACE_TARGET_POSITION_VEL" Category="enum_value" />
-   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eBearingRangeTargetPosVel" NewName="BEARING_RANGE_TARGET_POSITION_VEL" Category="enum_value" />
-   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eDisabledPosVel" NewName="DISABLED_POSITION_VEL" Category="enum_value" />
-   <Mapping OldName="AgEAvtrTargetPosVelType" NewName="TargetPositionVelType" Category="enum_type" />
+   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eSurfaceTargetPosVel" NewName="SURFACE_TARGET_POSITION_VELOCITY" Category="enum_value" />
+   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eBearingRangeTargetPosVel" NewName="BEARING_RANGE_TARGET_POSITION_VELOCITY" Category="enum_value" />
+   <Mapping ParentScope="AgEAvtrTargetPosVelType" OldName="eDisabledPosVel" NewName="DISABLED_POSITION_VELOCITY" Category="enum_value" />
+   <Mapping OldName="AgEAvtrTargetPosVelType" NewName="TargetPositionVelocityType" Category="enum_type" />
    <Mapping ParentScope="AgEAvtrEphemShiftRotateAltMode" OldName="eAltModeMSL" NewName="ALTITUDE_MODE_MSL" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrEphemShiftRotateAltMode" OldName="eAltModeWGS" NewName="ALTITUDE_MODE_WGS" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrEphemShiftRotateAltMode" OldName="eAltModeRel" NewName="ALTITUDE_MODE_RELATIVE" Category="enum_value" />
@@ -1859,13 +1859,13 @@
    <Mapping ParentScope="IAgAvtrAircraftTerrainFollowModel" OldName="MaxPitchAngle" NewName="max_pitch_angle" Category="method" />
    <Mapping ParentScope="IAgAvtrAircraftTerrainFollowModel" OldName="TerrainWindow" NewName="terrain_window" Category="method" />
    <Mapping ParentScope="IAgAvtrAircraftTerrainFollowModel" OldName="MaxLoadFactor" NewName="max_load_factor" Category="method" />
-   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVel" NewName="BasicManeuverTargetPositionVel" Category="interface" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="TargetPosVelType" NewName="target_position_vel_type" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="TargetPosVelTypeString" NewName="target_position_vel_type_string" Category="method" />
+   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVel" NewName="BasicManeuverTargetPositionVelocity" Category="interface" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="TargetPosVelType" NewName="target_position_velocity_type" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="TargetPosVelTypeString" NewName="target_position_velocity_type_string" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="ModeAsNoisyBrgRng" NewName="mode_as_noisy_bearing_range" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="ModeAsNoisySurfTgt" NewName="mode_as_noisy_surf_target" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="ApplyPosVel" NewName="apply_position_vel" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="CancelPosVel" NewName="cancel_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="ApplyPosVel" NewName="apply_position_velocity" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVel" OldName="CancelPosVel" NewName="cancel_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrPropulsionThrust" NewName="PropulsionThrust" Category="interface" />
    <Mapping ParentScope="IAgAvtrPropulsionThrust" OldName="UseConstantThrust" NewName="use_constant_thrust" Category="method" />
    <Mapping ParentScope="IAgAvtrPropulsionThrust" OldName="ConstantThrust" NewName="constant_thrust" Category="method" />
@@ -2049,8 +2049,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="HOBSMaxAngle" NewName="hobs_max_angle" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="HOBSAngleTol" NewName="hobs_angle_tol" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="CompensateForCoriolisAccel" NewName="compensate_for_coriolis_acceleration" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyIntercept" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyRelativeBearing" NewName="BasicManeuverStrategyRelativeBearing" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="TargetName" NewName="target_name" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="ValidTargetNames" NewName="valid_target_names" Category="method" />
@@ -2063,8 +2063,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="ControlLimitHorizAccel" NewName="control_limit_horizontal_acceleration" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="SetControlLimit" NewName="set_control_limit" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="CompensateForCoriolisAccel" NewName="compensate_for_coriolis_acceleration" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeBearing" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyRelativeCourse" NewName="BasicManeuverStrategyRelativeCourse" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="TargetName" NewName="target_name" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="ValidTargetNames" NewName="valid_target_names" Category="method" />
@@ -2085,8 +2085,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="HOBSMaxAngle" NewName="hobs_max_angle" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="HOBSAngleTol" NewName="hobs_angle_tol" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="CompensateForCoriolisAccel" NewName="compensate_for_coriolis_acceleration" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeCourse" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyRendezvous" NewName="BasicManeuverStrategyRendezvous" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="TargetName" NewName="target_name" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="ValidTargetNames" NewName="valid_target_names" Category="method" />
@@ -2110,8 +2110,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="AirspeedFactor" NewName="airspeed_factor" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="SetAirspeedFactor" NewName="set_airspeed_factor" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="StopCondition" NewName="stop_condition" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRendezvous" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyStationkeeping" NewName="BasicManeuverStrategyStationkeeping" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="TargetName" NewName="target_name" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="ValidTargetNames" NewName="valid_target_names" Category="method" />
@@ -2134,8 +2134,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="ControlLimitHorizAccel" NewName="control_limit_horizontal_acceleration" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="SetControlLimit" NewName="set_control_limit" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="CompensateForCoriolisAccel" NewName="compensate_for_coriolis_acceleration" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyStationkeeping" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyRelativeFPA" NewName="BasicManeuverStrategyRelativeFlightPathAngle" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeFPA" OldName="FPA" NewName="flight_path_angle" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelativeFPA" OldName="AnchorAltOffset" NewName="anchor_altitude_offset" Category="method" />
@@ -2181,8 +2181,8 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="SetMaxAirspeed" NewName="set_max_airspeed" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="StopCondition" NewName="stop_condition" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="CompensateForCoriolisAccel" NewName="compensate_for_coriolis_acceleration" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverStrategyRelSpeedAlt" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="IAgAvtrBasicManeuverStrategyBezier" NewName="BasicManeuverStrategyBezier" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyBezier" OldName="ReferenceFrame" NewName="reference_frame" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyBezier" OldName="Altitude" NewName="altitude" Category="method" />
@@ -2271,23 +2271,23 @@
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyPitch3D" OldName="StopWhenFPAAchieved" NewName="stop_when_flight_path_angle_achieved" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyPitch3D" OldName="AirspeedOptions" NewName="airspeed_options" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverStrategyPitch3D" OldName="WindForceEffectiveArea" NewName="wind_force_effective_area" Category="method" />
-   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" NewName="BasicManeuverTargetPositionVelNoisyBearingRange" Category="interface" />
+   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" NewName="BasicManeuverTargetPositionVelocityNoisyBearingRange" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="NewRandomEngineSeed" NewName="new_random_engine_seed" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="SmoothingConstant" NewName="smoothing_constant" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="VelocityTimeStep" NewName="velocity_time_step" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="AngleErrorStdDev" NewName="angle_error_std_dev" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="RangeErrorStdDev" NewName="range_error_std_dev" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="ApplyPosVel" NewName="apply_position_vel" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="CancelPosVel" NewName="cancel_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="ApplyPosVel" NewName="apply_position_velocity" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="CancelPosVel" NewName="cancel_position_velocity" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng" OldName="SetBaseDynStateLinkName" NewName="set_base_dynamic_state_link_name" Category="method" />
-   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" NewName="BasicManeuverTargetPositionVelNoisySurfTarget" Category="interface" />
+   <Mapping OldName="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" NewName="BasicManeuverTargetPositionVelocityNoisySurfTarget" Category="interface" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="NewRandomEngineSeed" NewName="new_random_engine_seed" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="MeasurementTimeStep" NewName="measurement_time_step" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="PositionCEP" NewName="position_cep" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="CourseError" NewName="course_error" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="SpeedError" NewName="speed_error" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="ApplyPosVel" NewName="apply_position_vel" Category="method" />
-   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="CancelPosVel" NewName="cancel_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="ApplyPosVel" NewName="apply_position_velocity" Category="method" />
+   <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="CancelPosVel" NewName="cancel_position_velocity" Category="method" />
    <Mapping ParentScope="IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt" OldName="SetBaseDynStateLinkName" NewName="set_base_dynamic_state_link_name" Category="method" />
    <Mapping OldName="IAgAvtrTakeoffNormal" NewName="TakeoffNormal" Category="interface" />
    <Mapping ParentScope="IAgAvtrTakeoffNormal" OldName="TakeoffClimbAngle" NewName="takeoff_climb_angle" Category="method" />
@@ -2820,7 +2820,7 @@
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="FindFirstValidStartTime" NewName="find_first_valid_start_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="MaximumTime" NewName="maximum_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="FormationPoint" NewName="formation_point" Category="method" />
-   <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="InterpolatePointPosVel" NewName="interpolate_point_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="InterpolatePointPosVel" NewName="interpolate_point_position_velocity" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="AltitudeOffset" NewName="altitude_offset" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="FuelFlowType" NewName="fuel_flow_type" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFormationRecover" OldName="OverrideFuelFlowValue" NewName="override_fuel_flow_value" Category="method" />
@@ -2864,7 +2864,7 @@
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="StartTime" NewName="start_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="MaximumTime" NewName="maximum_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="FormationPoint" NewName="formation_point" Category="method" />
-   <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="InterpolatePointPosVel" NewName="interpolate_point_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="InterpolatePointPosVel" NewName="interpolate_point_position_velocity" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="Duration" NewName="duration" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="UseMaxPointStopTime" NewName="use_max_point_stop_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureVGTPoint" OldName="FuelFlowType" NewName="fuel_flow_type" Category="method" />
@@ -3160,9 +3160,9 @@
    <Mapping OldName="AgAvtrBasicManeuverStrategyPitch3D" NewName="BasicManeuverStrategyPitch3D" Category="class" />
    <Mapping OldName="AgAvtrRefuelDumpProperties" NewName="RefuelDumpProperties" Category="class" />
    <Mapping OldName="AgAvtrProcedureFastTimeOptions" NewName="ProcedureFastTimeOptions" Category="class" />
-   <Mapping OldName="AgAvtrBasicManeuverTargetPosVel" NewName="BasicManeuverTargetPositionVel" Category="class" />
-   <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisyBrgRng" NewName="BasicManeuverTargetPositionVelNoisyBearingRange" Category="class" />
-   <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisySurfTgt" NewName="BasicManeuverTargetPositionVelNoisySurfTarget" Category="class" />
+   <Mapping OldName="AgAvtrBasicManeuverTargetPosVel" NewName="BasicManeuverTargetPositionVelocity" Category="class" />
+   <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisyBrgRng" NewName="BasicManeuverTargetPositionVelocityNoisyBearingRange" Category="class" />
+   <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisySurfTgt" NewName="BasicManeuverTargetPositionVelocityNoisySurfTarget" Category="class" />
    <Mapping OldName="AgAvtrAdvFixedWingFourPointAero" NewName="AdvancedFixedWingFourPointAerodynamic" Category="class" />
    <Mapping OldName="AgAvtrMissileFourPointAero" NewName="MissileFourPointAerodynamic" Category="class" />
    <Mapping OldName="AgAvtrFourPointAero" NewName="FourPointAerodynamic" Category="class" />

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_custom`
               - Set grid values type to custom values.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_number_of_steps`
-              - Set grid values type to fixed number of steps with min and max as IAgQuantity.
+              - Set grid values type to fixed number of steps with min and max as Quantity.
 
     .. tab-item:: Properties
         
@@ -117,7 +117,7 @@ Method detail
 .. py:method:: set_fixed_number_of_steps(self, min: Quantity, max: Quantity, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_number_of_steps
 
-    Set grid values type to fixed number of steps with min and max as IAgQuantity.
+    Set grid values type to fixed number of steps with min and max as Quantity.
 
     :Parameters:
 

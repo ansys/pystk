@@ -3,7 +3,7 @@ CoverageGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3D
 
-   AgCvVOStatic Class.
+   CoverageGraphics3DStatic Class.
 
 .. py:currentmodule:: CoverageGraphics3D
 

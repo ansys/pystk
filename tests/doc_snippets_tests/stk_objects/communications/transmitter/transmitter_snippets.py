@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -62,7 +62,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
         name="CreateTransmitter",
         description="Create a New Transmitter Object",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def CreateTransmitterSnippet(self, satellite):
         # IStkObject satellite: STK object
@@ -80,9 +80,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitter",
-        description="Modify Transmitter Model Type",
+        description="Modify a Transmitter's Model Type",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -104,9 +104,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterAntenna",
-        description="Modify Transmitter Embedded Antenna",
+        description="Modify a Transmitter's Embedded Antenna",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterAntennaSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -128,9 +128,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterPolarizationProperties",
-        description="Modify Transmitter Polarization Properties",
+        description="Modify a Transmitter's Polarization Properties",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterPolarizationPropertiesSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -154,9 +154,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterPolarizationOrientationAndPosition",
-        description="Modify Transmitter Orientation and Position",
+        description="Modify a Transmitter's Orientation and Position",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterPolarizationOrientationAndPositionSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -181,9 +181,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterModulator",
-        description="Modify Transmitter Modulator Properties",
+        description="Modify a Transmitter's Modulator Properties",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterModulatorSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -203,9 +203,9 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterFilter",
-        description="Modify Transmitter Filter",
+        description="Modify a Transmitter Filter",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def ModifyTransmitterFilterSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object
@@ -231,7 +231,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
         name="TransmitteradditionalGain",
         description="Transmitter additional Gain",
         category="STK Objects | Communications | Transmitter",
-        eid="STKObjects~IAgTransmitter",
+        eid="stkobjects~Transmitter",
     )
     def TransmitteradditionalGainSnippet(self, transmitter):
         # Transmitter transmitter: Transmitter object

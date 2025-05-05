@@ -5,7 +5,7 @@ EOIR
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIR`
 
-   AgEOIR interface class.
+   EOIR interface class.
 
 .. py:currentmodule:: EOIR
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -28,7 +28,6 @@ from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkobjects import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -252,9 +251,9 @@ class EarlyBoundTests(TestBase):
 
         wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
         with pytest.raises(Exception, match=RegexSubstringMatch("procedure model")):
-            wind.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+            wind.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
 
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         wind.wind_model_type = WindModelType.CONSTANT_WIND
         addsWind: "WindModelADDS" = None
         with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
@@ -263,29 +262,29 @@ class EarlyBoundTests(TestBase):
         constWind: "WindModelConstant" = wind.mode_as_constant
         constWind.wind_speed = 1
         Assert.assertAlmostEqual(1, constWind.wind_speed, delta=tolerance)
-        wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         wind.wind_model_type = WindModelType.CONSTANT_WIND
         wind.copy()
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         wind.paste()
 
         Assert.assertAlmostEqual(0, constWind.wind_speed, delta=tolerance)
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
         procWind: "WindModel" = proc1.wind_model
-        procWind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        procWind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         procConstWind: "WindModelConstant" = procWind.mode_as_constant
 
         Assert.assertAlmostEqual(0, procConstWind.wind_speed, delta=tolerance)
         with pytest.raises(Exception, match=RegexSubstringMatch("cannot be edited from the procedure")):
             procWind.wind_model_type = WindModelType.CONSTANT_WIND
 
-        procWind.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+        procWind.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
         procWind.wind_model_type = WindModelType.CONSTANT_WIND
         procConstWind.wind_speed = 1
         Assert.assertAlmostEqual(1, procConstWind.wind_speed, delta=tolerance)
 
-        wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         wind.copy()
         procWind.paste()
         Assert.assertAlmostEqual(0, procConstWind.wind_speed, delta=tolerance)
@@ -300,7 +299,7 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         wind.wind_model_type = WindModelType.CONSTANT_WIND
         constWind: "WindModelConstant" = wind.mode_as_constant
 
@@ -313,9 +312,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
             constWind.wind_speed = 1
 
-        wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         wind.copy()
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         wind.paste()
 
     # endregion
@@ -325,7 +324,7 @@ class EarlyBoundTests(TestBase):
     @category("ExcludeOnLinux")
     def test_WindModelADDS(self):
         wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
             wind.wind_model_type = WindModelType.ADDS
 
@@ -341,9 +340,9 @@ class EarlyBoundTests(TestBase):
         wind.wind_model_type = WindModelType.DISABLED
         # TryCatchAssertBlock.ExpectedException("must be set", delegate () { ADDSWind.InterpBlendTime = 1; });
 
-        wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         wind.copy()
-        wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        wind.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         wind.paste()
 
     # endregion
@@ -353,9 +352,9 @@ class EarlyBoundTests(TestBase):
     def test_Atmosphere(self):
         atmos: "AtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
         with pytest.raises(Exception, match=RegexSubstringMatch("procedure model")):
-            atmos.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+            atmos.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
 
-        atmos.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         basicAtmos: "AtmosphereModelBasic" = atmos.mode_as_basic
         basicAtmos.basic_model_type = AtmosphereModelType.STANDARD1976
 
@@ -363,22 +362,22 @@ class EarlyBoundTests(TestBase):
         basicAtmos.temperature = 300
         Assert.assertEqual(300, basicAtmos.temperature)
 
-        atmos.atmosphere_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         atmos.copy()
-        atmos.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         atmos.paste()
 
         Assert.assertEqual(288.15, basicAtmos.temperature)
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
         procAtmos: "AtmosphereModel" = proc1.atmosphere_model
-        procAtmos.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        procAtmos.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         procAtmosBasic: "AtmosphereModelBasic" = procAtmos.mode_as_basic
 
         with pytest.raises(Exception, match=RegexSubstringMatch("cannot be edited from the procedure")):
             procAtmosBasic.use_non_standard_atmosphere = True
 
-        procAtmos.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+        procAtmos.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
         procAtmosBasic.use_non_standard_atmosphere = True
         Assert.assertTrue(procAtmosBasic.use_non_standard_atmosphere)
 
@@ -394,7 +393,7 @@ class EarlyBoundTests(TestBase):
     @category("Weather Tests")
     def test_BasicAtmosphereModel(self):
         atmos: "AtmosphereModel" = EarlyBoundTests.AG_Mission.atmosphere_model
-        atmos.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         basicAtmos: "AtmosphereModelBasic" = atmos.mode_as_basic
         basicAtmos.basic_model_type = AtmosphereModelType.STANDARD1976
 
@@ -405,9 +404,9 @@ class EarlyBoundTests(TestBase):
         basicAtmos.temperature = 290
         Assert.assertEqual(290, basicAtmos.temperature)
 
-        atmos.atmosphere_model_source = WindAtmosModelSource.SCENARIO_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.SCENARIO_MODEL
         atmos.copy()
-        atmos.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        atmos.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         atmos.paste()
 
     # endregion
@@ -1474,8 +1473,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(("Center" == str(formRecov.formation_point)))
         formRecov.formation_point = "Missile SubPoint(Detic)"
         Assert.assertTrue(("Missile SubPoint(Detic)" == str(formRecov.formation_point)))
-        formRecov.interpolate_point_position_vel = True
-        Assert.assertTrue(formRecov.interpolate_point_position_vel)
+        formRecov.interpolate_point_position_velocity = True
+        Assert.assertTrue(formRecov.interpolate_point_position_velocity)
 
         formRecov.altitude_offset = 5
         Assert.assertEqual(5, formRecov.altitude_offset)
@@ -3028,8 +3027,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(("Center" == str(vgtProc.formation_point)))
         vgtProc.formation_point = "AC2 SubPoint(Detic)"
         Assert.assertTrue(("AC2 SubPoint(Detic)" == str(vgtProc.formation_point)))
-        vgtProc.interpolate_point_position_vel = True
-        Assert.assertTrue(vgtProc.interpolate_point_position_vel)
+        vgtProc.interpolate_point_position_velocity = True
+        Assert.assertTrue(vgtProc.interpolate_point_position_velocity)
 
         vgtProc.duration = 5
         Assert.assertEqual(5, vgtProc.duration)
@@ -3880,7 +3879,7 @@ class EarlyBoundTests(TestBase):
         intercept.compensate_for_coriolis_acceleration = True
         Assert.assertTrue(intercept.compensate_for_coriolis_acceleration)
 
-        self.Test_IAgAvtrBasicManeuverTargetPosVel(intercept.position_vel_strategies)
+        self.Test_IAgAvtrBasicManeuverTargetPosVel(intercept.position_velocity_strategies)
 
         missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
         missileObj.unload()
@@ -9289,63 +9288,75 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgAvtrBasicManeuverTargetPosVel
-    def Test_IAgAvtrBasicManeuverTargetPosVel(self, targetPosVel: "BasicManeuverTargetPositionVel"):
+    def Test_IAgAvtrBasicManeuverTargetPosVel(self, targetPosVel: "BasicManeuverTargetPositionVelocity"):
         # Initial state
-        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
-        Assert.assertEqual(TargetPositionVelType.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
-
-        targetPosVel.target_position_vel_type = TargetPositionVelType.DISABLED_POSITION_VEL
-        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
-        Assert.assertEqual(TargetPositionVelType.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
-
-        targetPosVel.target_position_vel_type = TargetPositionVelType.SURFACE_TARGET_POSITION_VEL
-        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_vel_type_string)
-        Assert.assertEqual(TargetPositionVelType.SURFACE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type)
-
-        targetPosVel.target_position_vel_type = TargetPositionVelType.BEARING_RANGE_TARGET_POSITION_VEL
-        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_velocity_type_string)
         Assert.assertEqual(
-            TargetPositionVelType.BEARING_RANGE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type
+            TargetPositionVelocityType.DISABLED_POSITION_VELOCITY, targetPosVel.target_position_velocity_type
         )
 
-        targetPosVel.target_position_vel_type_string = "DisabledTargetPosVel"
-        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
-        Assert.assertEqual(TargetPositionVelType.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
-
-        targetPosVel.target_position_vel_type_string = "NoisySurfaceTargetPosVel"
-        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_vel_type_string)
-        Assert.assertEqual(TargetPositionVelType.SURFACE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type)
-
-        targetPosVel.target_position_vel_type_string = "NoisyBearingRangeTargetPosVel"
-        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_vel_type_string)
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.DISABLED_POSITION_VELOCITY
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_velocity_type_string)
         Assert.assertEqual(
-            TargetPositionVelType.BEARING_RANGE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type
+            TargetPositionVelocityType.DISABLED_POSITION_VELOCITY, targetPosVel.target_position_velocity_type
+        )
+
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.SURFACE_TARGET_POSITION_VELOCITY
+        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_velocity_type_string)
+        Assert.assertEqual(
+            TargetPositionVelocityType.SURFACE_TARGET_POSITION_VELOCITY, targetPosVel.target_position_velocity_type
+        )
+
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.BEARING_RANGE_TARGET_POSITION_VELOCITY
+        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_velocity_type_string)
+        Assert.assertEqual(
+            TargetPositionVelocityType.BEARING_RANGE_TARGET_POSITION_VELOCITY,
+            targetPosVel.target_position_velocity_type,
+        )
+
+        targetPosVel.target_position_velocity_type_string = "DisabledTargetPosVel"
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_velocity_type_string)
+        Assert.assertEqual(
+            TargetPositionVelocityType.DISABLED_POSITION_VELOCITY, targetPosVel.target_position_velocity_type
+        )
+
+        targetPosVel.target_position_velocity_type_string = "NoisySurfaceTargetPosVel"
+        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_velocity_type_string)
+        Assert.assertEqual(
+            TargetPositionVelocityType.SURFACE_TARGET_POSITION_VELOCITY, targetPosVel.target_position_velocity_type
+        )
+
+        targetPosVel.target_position_velocity_type_string = "NoisyBearingRangeTargetPosVel"
+        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_velocity_type_string)
+        Assert.assertEqual(
+            TargetPositionVelocityType.BEARING_RANGE_TARGET_POSITION_VELOCITY,
+            targetPosVel.target_position_velocity_type,
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Incorrect PosVel Type specified")):
-            targetPosVel.target_position_vel_type_string = "BogusTargetPosVel"
+            targetPosVel.target_position_velocity_type_string = "BogusTargetPosVel"
 
-        targetPosVel.target_position_vel_type = TargetPositionVelType.DISABLED_POSITION_VEL
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.DISABLED_POSITION_VELOCITY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
-            nbr1: "BasicManeuverTargetPositionVelNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
+            nbr1: "BasicManeuverTargetPositionVelocityNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
-            nst1: "BasicManeuverTargetPositionVelNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
+            nst1: "BasicManeuverTargetPositionVelocityNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
 
-        targetPosVel.target_position_vel_type = TargetPositionVelType.SURFACE_TARGET_POSITION_VEL
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.SURFACE_TARGET_POSITION_VELOCITY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
-            nbr1: "BasicManeuverTargetPositionVelNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
+            nbr1: "BasicManeuverTargetPositionVelocityNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
         self.Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(targetPosVel.mode_as_noisy_surf_target)
 
-        targetPosVel.target_position_vel_type = TargetPositionVelType.BEARING_RANGE_TARGET_POSITION_VEL
+        targetPosVel.target_position_velocity_type = TargetPositionVelocityType.BEARING_RANGE_TARGET_POSITION_VELOCITY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
-            nst1: "BasicManeuverTargetPositionVelNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
+            nst1: "BasicManeuverTargetPositionVelocityNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
         self.Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(targetPosVel.mode_as_noisy_bearing_range)
 
     # endregion
 
     # region Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(
-        self, noisyBrgRng: "BasicManeuverTargetPositionVelNoisyBearingRange"
+        self, noisyBrgRng: "BasicManeuverTargetPositionVelocityNoisyBearingRange"
     ):
         noisyBrgRng.new_random_engine_seed()
 
@@ -9383,16 +9394,16 @@ class EarlyBoundTests(TestBase):
         noisyBrgRng.range_error_std_dev = 40
         Assert.assertAlmostEqual(40, noisyBrgRng.range_error_std_dev, delta=1e-05)
 
-        noisyBrgRng.apply_position_vel()
+        noisyBrgRng.apply_position_velocity()
         # System.Windows.Forms.MessageBox.Show("noisyBrnRng done");
 
-        noisyBrgRng.cancel_position_vel()
+        noisyBrgRng.cancel_position_velocity()
 
     # endregion
 
     # region Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(
-        self, noisySurfTgt: "BasicManeuverTargetPositionVelNoisySurfTarget"
+        self, noisySurfTgt: "BasicManeuverTargetPositionVelocityNoisySurfTarget"
     ):
         noisySurfTgt.new_random_engine_seed()
 
@@ -9425,9 +9436,9 @@ class EarlyBoundTests(TestBase):
         noisySurfTgt.speed_error = 40
         Assert.assertAlmostEqual(40, noisySurfTgt.speed_error, delta=1e-05)
 
-        noisySurfTgt.apply_position_vel()
+        noisySurfTgt.apply_position_velocity()
         # System.Windows.Forms.MessageBox.Show("noisySurfTgt done");
 
-        noisySurfTgt.cancel_position_vel()
+        noisySurfTgt.cancel_position_velocity()
 
     # endregion

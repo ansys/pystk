@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCondition.condition`
-              - Condition uses the AgECnstrLighting enum.
+              - Condition uses the ConstraintLighting enum.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCondition.condition
     :type: ConstraintLighting
 
-    Condition uses the AgECnstrLighting enum.
+    Condition uses the ConstraintLighting enum.
 
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import os
+import pytest
 import sys
 
 from ansys.stk.core.stkdesktop import STKDesktop
@@ -70,7 +71,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="OpenVdfSTK",
         description="Open a Viewer Data File",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~LoadVDF",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~load_vdf",
     )
     def OpenVdfSTKSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -89,11 +90,81 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CloseScenario",
         description="Close an open Scenario",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~CloseScenario",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~close_scenario",
     )
     def CloseScenarioSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
         root.close_scenario()
+
+    def test_STKEngineEventsSnippet(self):
+        try:
+            root = self.get_root()
+            root.close_scenario()
+            self.STKEngineEventsSnippet(self.get_root())
+        finally:
+            self.reset_to_default_scenario()
+
+    @code_snippet(
+        name="STKEngineEvents",
+        description="Manage STK Engine events",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def STKEngineEventsSnippet(self, root):
+        # StkObjectRoot root: STK Object Model Root
+        def on_scenario_new_custom_callback(path: str):
+            print(f'Scenario {path} has been created.')
+
+        skt_object_root_events = root.subscribe()
+        skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+        
+        root.new_scenario('ExampleScenario')
+        # callback should be executed now
+
+        # remove the callback from the handler
+        skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+        # all finished with events, unsubscribe
+        skt_object_root_events.unsubscribe()
+
+    @pytest.mark.skip(reason="User interface interaction required to prevent application from hanging")
+    @category("ExcludeOnLinux")
+    def test_STKDesktopEventsSnippet(self):
+        self.STKDesktopEventsSnippet()
+
+    @code_snippet(
+        name="STKDesktopEvents",
+        description="Manage STK Desktop application events",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def STKDesktopEventsSnippet(self):
+        from ansys.stk.core.stkdesktop import STKDesktop
+        from ansys.stk.core.stkobjects import STKObjectType
+
+        def on_stk_object_added_custom_callback(path:str):
+            print(f'{path} has been added.')
+
+        stk = STKDesktop.start_application(visible=True)
+        root = stk.root
+        root.new_scenario('ExampleScenario')
+        skt_object_root_events = root.subscribe()
+        skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+        scenario = root.current_scenario
+
+        # on_stk_object_added_custom_callback is successfully called when the next line is executed
+        facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+
+        # Now switch control to the desktop application and create another facility.
+        # The user interface becomes unresponsive.
+
+        # Now open a tkinter window that processing Windows messages.
+        from tkinter import Tk
+
+        window = Tk()
+        window.mainloop()
+        # Switch control to the desktop application and create another facility.
+        # The user interface is responsive and the event callback is successful.
 
     @category("ExcludeOnLinux")
     def test_CloseSTKSnippet(self):
@@ -105,9 +176,9 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CloseSTK",
-        description="Close STK",
+        description="Close the STK desktop application",
         category="Scenario | Scenario Management",
-        eid="AgUiApplicationLib~IAgUiApplication",
+        eid="uiapplication~UiApplication",
     )
     def CloseSTKSnippet(self, uiApplication):
         # AgUiApplication uiApplication: STK Application
@@ -125,7 +196,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CreateScenario",
         description="Create a new Scenario",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~NewScenario",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~new_scenario",
     )
     def CreateScenarioSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -136,14 +207,33 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SetUnitPreferences",
-        description="Set unit preferences for Object Model",
+        description="Set unit preferences for the Object Model",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~UnitPreferences",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~units_preferences",
     )
     def SetUnitPreferencesSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
         root.units_preferences.item("DateFormat").set_current_unit("UTCG")
         root.units_preferences.item("Distance").set_current_unit("km")
+
+    def test_SetScenarioTimePeriodSnippet(self):
+        root = self.get_root()
+        self.SetScenarioTimePeriodSnippet(root)
+
+    @code_snippet(
+        name="SetScenarioTimePeriod",
+        description="Set the current scenario's time period",
+        category="Scenario | Scenario Management",
+        eid="stkobjects~Scenario | stkobjects~Scenario~set_time_period",
+    )
+    def SetScenarioTimePeriodSnippet(self, root):
+        # StkObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        scenario.set_time_period(
+            start_time="1 Jan 2012 12:00:00.000", 
+            stop_time="2 Jan 2012 12:00:00.000"
+        )
+        # Use scenario.start_time, scenario.stop_time to get time period
 
     @category("Graphics Tests")
     def test_ScenarioAnimationModeSnippet(self):
@@ -153,7 +243,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="ScenarioAnimationMode",
         description="Change animation mode",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgAnimation",
+        eid="stkobjects~IAnimation",
     )
     def ScenarioAnimationModeSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -171,7 +261,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="ScenarioReset",
         description="Reset the scenario time",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgAnimation",
+        eid="stkobjects~IAnimation",
     )
     def ScenarioResetSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -183,9 +273,9 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ScenarioFont",
-        description="Change scenario font",
+        description="Change the scenario font",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgScVO",
+        eid="stkobjects~ScenarioGraphics3D",
     )
     def ScenarioFontSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root

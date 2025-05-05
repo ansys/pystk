@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -28,10 +28,10 @@ types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 """
 
-__all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
-"AgCROrientationYPRAngles", "AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
-"CoordinateSystem", "Cylindrical", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", 
-"DirectionXYZ", "DoublesCollection", "EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode", 
+__all__ = ["AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "CommRadOrientationAzEl", "CommRadOrientationEulerAngles", 
+"CommRadOrientationOffsetCart", "CommRadOrientationQuaternion", "CommRadOrientationYPRAngles", "ConversionUtility", "CoordinateSystem", 
+"Cylindrical", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", "DirectionXYZ", 
+"DoublesCollection", "EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode", 
 "ExecuteMultipleCommandsResult", "FillStyle", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
 "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
 "IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LineStyle", "LogMessageDisplayID", "LogMessageType", 
@@ -4353,10 +4353,10 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5310750197822733971, 15113477984957915526), RuntimeTypeInfo)
 agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
-class AgCROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class CommRadOrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """AzEl orientation method."""
     def __init__(self, source_object=None):
-        """Construct an object of type AgCROrientationAzEl."""
+        """Construct an object of type CommRadOrientationAzEl."""
         SupportsDeleteCallback.__init__(self)
         IOrientationAzEl.__init__(self, source_object)
         IOrientation.__init__(self, source_object)
@@ -4371,15 +4371,15 @@ class AgCROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOf
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AgCROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, CommRadOrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), AgCROrientationAzEl)
-agcls.AgTypeNameMap["AgCROrientationAzEl"] = AgCROrientationAzEl
+agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), CommRadOrientationAzEl)
+agcls.AgTypeNameMap["CommRadOrientationAzEl"] = CommRadOrientationAzEl
 
-class AgCROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class CommRadOrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Euler Angles orientation method."""
     def __init__(self, source_object=None):
-        """Construct an object of type AgCROrientationEulerAngles."""
+        """Construct an object of type CommRadOrientationEulerAngles."""
         SupportsDeleteCallback.__init__(self)
         IOrientationEulerAngles.__init__(self, source_object)
         IOrientation.__init__(self, source_object)
@@ -4394,15 +4394,15 @@ class AgCROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrienta
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AgCROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, CommRadOrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), AgCROrientationEulerAngles)
-agcls.AgTypeNameMap["AgCROrientationEulerAngles"] = AgCROrientationEulerAngles
+agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), CommRadOrientationEulerAngles)
+agcls.AgTypeNameMap["CommRadOrientationEulerAngles"] = CommRadOrientationEulerAngles
 
-class AgCROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class CommRadOrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Quaternion orientation method."""
     def __init__(self, source_object=None):
-        """Construct an object of type AgCROrientationQuaternion."""
+        """Construct an object of type CommRadOrientationQuaternion."""
         SupportsDeleteCallback.__init__(self)
         IOrientationQuaternion.__init__(self, source_object)
         IOrientation.__init__(self, source_object)
@@ -4417,15 +4417,15 @@ class AgCROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientati
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AgCROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, CommRadOrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), AgCROrientationQuaternion)
-agcls.AgTypeNameMap["AgCROrientationQuaternion"] = AgCROrientationQuaternion
+agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), CommRadOrientationQuaternion)
+agcls.AgTypeNameMap["CommRadOrientationQuaternion"] = CommRadOrientationQuaternion
 
-class AgCROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class CommRadOrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, source_object=None):
-        """Construct an object of type AgCROrientationYPRAngles."""
+        """Construct an object of type CommRadOrientationYPRAngles."""
         SupportsDeleteCallback.__init__(self)
         IOrientationYPRAngles.__init__(self, source_object)
         IOrientation.__init__(self, source_object)
@@ -4440,15 +4440,15 @@ class AgCROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientation
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AgCROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, CommRadOrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), AgCROrientationYPRAngles)
-agcls.AgTypeNameMap["AgCROrientationYPRAngles"] = AgCROrientationYPRAngles
+agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), CommRadOrientationYPRAngles)
+agcls.AgTypeNameMap["CommRadOrientationYPRAngles"] = CommRadOrientationYPRAngles
 
-class AgCROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
+class CommRadOrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
     """Orientation offset cartesian."""
     def __init__(self, source_object=None):
-        """Construct an object of type AgCROrientationOffsetCart."""
+        """Construct an object of type CommRadOrientationOffsetCart."""
         SupportsDeleteCallback.__init__(self)
         ICartesian3Vector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -4459,7 +4459,7 @@ class AgCROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AgCROrientationOffsetCart, [ICartesian3Vector])
+        set_class_attribute(self, attrname, value, CommRadOrientationOffsetCart, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), AgCROrientationOffsetCart)
-agcls.AgTypeNameMap["AgCROrientationOffsetCart"] = AgCROrientationOffsetCart
+agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), CommRadOrientationOffsetCart)
+agcls.AgTypeNameMap["CommRadOrientationOffsetCart"] = CommRadOrientationOffsetCart

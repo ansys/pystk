@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -58,9 +58,9 @@ class ConnectSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConnectCommand",
-        description="Execute Connect command",
+        description="Execute a Connect command",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ConnectCommandSnippet(self, root):
         root.execute_command("New / */Target MyTarget")
@@ -75,11 +75,32 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommandMultiple",
         description="Execute multiple Connect commands",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ConnectCommandMultipleSnippet(self, root):
         commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
         root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
+
+    def test_ConnectCommandArraysSnippet(self):
+        self.ConnectCommandArraysSnippet(self.get_root())
+
+    @code_snippet(
+        name="ConnectCommandArrays",
+        description="Use arrays to send and retrieve data with Connect",
+        category="Connect",
+        eid="stkobjects~StkObjectRoot",
+    )
+    def ConnectCommandArraysSnippet(self, root):
+        from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+        connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+        command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+        first_message = command_results.item(0)
+        also_first_message = command_results[0]
+
+        for message in command_results:
+            print(message.count)
 
     def test_ResultsConnectCommandSnippet(self):
         try:
@@ -90,9 +111,9 @@ class ConnectSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ResultsConnectCommand",
-        description="Extract data from Connect result",
+        description="Extract data from Connect results",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ResultsConnectCommandSnippet(self, root):
         result = root.execute_command('Report_RM */Place/MyPlace Style "Cartesian Position"')

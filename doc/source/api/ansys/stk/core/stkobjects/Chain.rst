@@ -5,7 +5,7 @@ Chain
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
-   AgChain Class is used to access the methods and properties of the STK Chain Object.
+   Chain Class is used to access the methods and properties of the STK Chain Object.
 
 .. py:currentmodule:: Chain
 
@@ -91,7 +91,7 @@ Overview
 Examples
 --------
 
-Prints the strand intervals of chain object
+Print the strand intervals of chain object
 
 .. code-block:: python
 

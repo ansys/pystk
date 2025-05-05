@@ -25,9 +25,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.color`
               - The color in which sensor graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.line_style`
-              - Select the line style in which sensor 2D graphics display from the AgELineStyle enumeration.
+              - Select the line style in which sensor 2D graphics display from the LineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.line_width`
-              - Select the line width in which sensor 2D graphics display from the AgELineWidth enumeration.
+              - Select the line width in which sensor 2D graphics display from the LineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.enable_boresight_graphics_2d`
               - Opt whether to display boresight graphics for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.boresight_color`
@@ -78,13 +78,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.line_style
     :type: LineStyle
 
-    Select the line style in which sensor 2D graphics display from the AgELineStyle enumeration.
+    Select the line style in which sensor 2D graphics display from the LineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.line_width
     :type: LineWidth
 
-    Select the line width in which sensor 2D graphics display from the AgELineWidth enumeration.
+    Select the line width in which sensor 2D graphics display from the LineWidth enumeration.
 
 .. py:property:: enable_boresight_graphics_2d
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.enable_boresight_graphics_2d

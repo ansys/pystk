@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -54,20 +54,20 @@ __all__ = ["ADDSForecastType", "ADDSMessage", "ADDSMessageCollection", "ADDSMess
 "BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelativeBearing", "BasicManeuverStrategyRelativeCourse", 
 "BasicManeuverStrategyRelativeFlightPathAngle", "BasicManeuverStrategyRelativeSpeedAltitude", "BasicManeuverStrategyRendezvous", 
 "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", "BasicManeuverStrategySmoothAcceleration", "BasicManeuverStrategySmoothTurn", 
-"BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", "BasicManeuverTargetPositionVel", 
-"BasicManeuverTargetPositionVelNoisyBearingRange", "BasicManeuverTargetPositionVelNoisySurfTarget", "CEAFuelType", "CalculationOptions", 
-"Catalog", "ClimbAndDescentTransitions", "ClimbSpeedType", "ClosureMode", "ClosureValue", "Configuration", "CruiseAirspeedAndProfileOptions", 
-"CruiseAirspeedOptions", "CruiseAirspeedProfile", "CruiseMaxPerformanceSpeedType", "CruiseSpeed", "DAFIFHelipad", "DAFIFRunway", 
-"DAFIFSource", "DAFIFWaypoint", "DelayAltitudeMode", "DelayTurnDirection", "DepartureSpeedMode", "DescentSpeedType", "EnrouteAndDelayOptions", 
-"EnrouteOptions", "EnrouteTurnDirectionOptions", "EphemShiftRotateAltitudeMode", "EphemShiftRotateCourseMode", "ErrorCodes", 
-"ExtEphemFlightMode", "FlightLineProcedureType", "FlyAOALeftRight", "FlyToFlightPathAngleMode", "FormationFlyerStopCondition", 
-"FourPointAerodynamic", "FuelFlowType", "FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", "FuelTankExternal", "FuelTankInternal", 
-"HoldRefuelDumpMode", "HoldingDirection", "HoldingEntryManeuver", "HoldingProfileMode", "HoverAltitudeMode", "HoverAltitudeOptions", 
-"HoverHeadingMode", "HoverMode", "IARINC424Airport", "IARINC424Item", "IAdvancedFixedWingGeometry", "IAdvancedFixedWingPowerplant", 
-"IAutomationStrategyFactory", "IAviatorVehicle", "IBasicFixedWingLiftHelper", "IBasicManeuverStrategy", "ICatalogAirport", 
-"ICatalogItem", "ICatalogNavaid", "ICatalogRunway", "ICatalogSource", "ICatalogVTOLPoint", "ICatalogWaypoint", "IConnect", 
-"ICruiseAirspeedAndProfileOptions", "IDAFIFItem", "IEnrouteAndDelayOptions", "IPerformanceModel", "IProcedure", "ISite", 
-"ISiteUnknown", "IStation", "IVerticalPlaneOptions", "InterceptMode", "JetEngineExhaustNozzleType", "JetEngineIntakeType", 
+"BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", "BasicManeuverTargetPositionVelocity", 
+"BasicManeuverTargetPositionVelocityNoisyBearingRange", "BasicManeuverTargetPositionVelocityNoisySurfTarget", "CEAFuelType", 
+"CalculationOptions", "Catalog", "ClimbAndDescentTransitions", "ClimbSpeedType", "ClosureMode", "ClosureValue", "Configuration", 
+"CruiseAirspeedAndProfileOptions", "CruiseAirspeedOptions", "CruiseAirspeedProfile", "CruiseMaxPerformanceSpeedType", "CruiseSpeed", 
+"DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DelayAltitudeMode", "DelayTurnDirection", "DepartureSpeedMode", 
+"DescentSpeedType", "EnrouteAndDelayOptions", "EnrouteOptions", "EnrouteTurnDirectionOptions", "EphemShiftRotateAltitudeMode", 
+"EphemShiftRotateCourseMode", "ErrorCodes", "ExtEphemFlightMode", "FlightLineProcedureType", "FlyAOALeftRight", "FlyToFlightPathAngleMode", 
+"FormationFlyerStopCondition", "FourPointAerodynamic", "FuelFlowType", "FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", 
+"FuelTankExternal", "FuelTankInternal", "HoldRefuelDumpMode", "HoldingDirection", "HoldingEntryManeuver", "HoldingProfileMode", 
+"HoverAltitudeMode", "HoverAltitudeOptions", "HoverHeadingMode", "HoverMode", "IARINC424Airport", "IARINC424Item", "IAdvancedFixedWingGeometry", 
+"IAdvancedFixedWingPowerplant", "IAutomationStrategyFactory", "IAviatorVehicle", "IBasicFixedWingLiftHelper", "IBasicManeuverStrategy", 
+"ICatalogAirport", "ICatalogItem", "ICatalogNavaid", "ICatalogRunway", "ICatalogSource", "ICatalogVTOLPoint", "ICatalogWaypoint", 
+"IConnect", "ICruiseAirspeedAndProfileOptions", "IDAFIFItem", "IEnrouteAndDelayOptions", "IPerformanceModel", "IProcedure", 
+"ISite", "ISiteUnknown", "IStation", "IVerticalPlaneOptions", "InterceptMode", "JetEngineExhaustNozzleType", "JetEngineIntakeType", 
 "JetEngineTechnologyLevel", "JetEngineTurbineType", "JetFuelType", "JoinExitArcMethod", "LandingApproachFixRangeMode", "LandingCruiseAirspeedAndProfileOptions", 
 "LandingEnrouteOptions", "LandingEnterDownwindPattern", "LandingInterceptGlideslope", "LandingStandardInstrumentApproach", 
 "LandingVerticalPlaneOptions", "LaunchAttitudeMode", "LaunchDynamicStateBearingReference", "LaunchDynamicStateCoordFrame", 
@@ -95,11 +95,12 @@ __all__ = ["ADDSForecastType", "ADDSMessage", "ADDSMessageCollection", "ADDSMess
 "SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", "SiteSuperProcedure", "SiteType", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", 
 "SiteWaypoint", "SiteWaypointFromCatalog", "SmoothAccelerationLeftRight", "SmoothAccelerationStopConditions", "SmoothTurnFlightPathAngleMode", 
 "SmoothTurnMode", "StationCollection", "StationkeepingStopCondition", "StraightAheadReferenceFrame", "TakeoffDeparturePoint", 
-"TakeoffLandingSpeedMode", "TakeoffLowTransition", "TakeoffMode", "TakeoffNormal", "TargetPositionVelType", "TrajectoryBlendMode", 
+"TakeoffLandingSpeedMode", "TakeoffLowTransition", "TakeoffMode", "TakeoffNormal", "TargetPositionVelocityType", "TrajectoryBlendMode", 
 "TransitionToHoverMode", "TurbineMode", "TurnDirection", "TurnMode", "UserRunway", "UserRunwaySource", "UserVTOLPoint", 
 "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", "VTOLFinalHeadingMode", "VTOLHeadingMode", "VTOLPointCategory", 
 "VTOLRateMode", "VTOLTransitionMode", "VTOLTranslationFinalCourseMode", "VTOLTranslationMode", "VertLandingMode", "VerticalPlaneAndFlightPathOptions", 
-"VerticalPlaneOptions", "WaypointCategory", "WindAtmosModelSource", "WindModel", "WindModelADDS", "WindModelConstant", "WindModelType"]
+"VerticalPlaneOptions", "WaypointCategory", "WindAtmosphereModelSource", "WindModel", "WindModelADDS", "WindModelConstant", 
+"WindModelType"]
 
 from ctypes import POINTER
 from enum import IntEnum
@@ -884,7 +885,7 @@ WindModelType.DISABLED.__doc__ = "Disabled wind model."
 
 agcls.AgTypeNameMap["WindModelType"] = WindModelType
 
-class WindAtmosModelSource(IntEnum):
+class WindAtmosphereModelSource(IntEnum):
     """The source for the wind or atmosphere model."""
    
     SCENARIO_MODEL = 0
@@ -894,11 +895,11 @@ class WindAtmosModelSource(IntEnum):
     PROCEDURE_MODEL = 2
     """Procedure Model."""
 
-WindAtmosModelSource.SCENARIO_MODEL.__doc__ = "Scenario Model."
-WindAtmosModelSource.MISSION_MODEL.__doc__ = "Mission Model."
-WindAtmosModelSource.PROCEDURE_MODEL.__doc__ = "Procedure Model."
+WindAtmosphereModelSource.SCENARIO_MODEL.__doc__ = "Scenario Model."
+WindAtmosphereModelSource.MISSION_MODEL.__doc__ = "Mission Model."
+WindAtmosphereModelSource.PROCEDURE_MODEL.__doc__ = "Procedure Model."
 
-agcls.AgTypeNameMap["WindAtmosModelSource"] = WindAtmosModelSource
+agcls.AgTypeNameMap["WindAtmosphereModelSource"] = WindAtmosphereModelSource
 
 class ADDSMessageInterpolationType(IntEnum):
     """The interpolation method for the wind conditions."""
@@ -2633,21 +2634,21 @@ BasicManeuverGlideSpeedControlMode.GLIDE_SPEED_AT_ALTITUDE.__doc__ = "Achieve sp
 
 agcls.AgTypeNameMap["BasicManeuverGlideSpeedControlMode"] = BasicManeuverGlideSpeedControlMode
 
-class TargetPositionVelType(IntEnum):
+class TargetPositionVelocityType(IntEnum):
     """The target pos/vel type."""
    
-    SURFACE_TARGET_POSITION_VEL = 0
+    SURFACE_TARGET_POSITION_VELOCITY = 0
     """Noisy Surface Target PosVel."""
-    BEARING_RANGE_TARGET_POSITION_VEL = 1
+    BEARING_RANGE_TARGET_POSITION_VELOCITY = 1
     """Noisy Bearing Range Target PosVel."""
-    DISABLED_POSITION_VEL = 2
+    DISABLED_POSITION_VELOCITY = 2
     """Disabled Target PosVel."""
 
-TargetPositionVelType.SURFACE_TARGET_POSITION_VEL.__doc__ = "Noisy Surface Target PosVel."
-TargetPositionVelType.BEARING_RANGE_TARGET_POSITION_VEL.__doc__ = "Noisy Bearing Range Target PosVel."
-TargetPositionVelType.DISABLED_POSITION_VEL.__doc__ = "Disabled Target PosVel."
+TargetPositionVelocityType.SURFACE_TARGET_POSITION_VELOCITY.__doc__ = "Noisy Surface Target PosVel."
+TargetPositionVelocityType.BEARING_RANGE_TARGET_POSITION_VELOCITY.__doc__ = "Noisy Bearing Range Target PosVel."
+TargetPositionVelocityType.DISABLED_POSITION_VELOCITY.__doc__ = "Disabled Target PosVel."
 
-agcls.AgTypeNameMap["TargetPositionVelType"] = TargetPositionVelType
+agcls.AgTypeNameMap["TargetPositionVelocityType"] = TargetPositionVelocityType
 
 class EphemShiftRotateAltitudeMode(IntEnum):
     """Ephem alt mode."""
@@ -3765,7 +3766,7 @@ class IProcedure(object):
     >>> # Get the wind model for the procedure
     >>> windModel = procedure.wind_model
     >>> # Use the procedure model
-    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -3778,13 +3779,13 @@ class IProcedure(object):
     >>> # Get the atmosphere model used for the procedure
     >>> atmosphere = procedure.atmosphere_model
     >>> # Let's use the procedure model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
     >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
 
-    Configure a procedure time options:
+    Configure a procedure's time options:
     >>> # IProcedure procedure: Procedure object
     >>> # Get the time in epoch seconds
     >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
@@ -7442,7 +7443,7 @@ class Mission(SupportsDeleteCallback):
     >>> # Get the wind model used for the mission
     >>> windModel = mission.wind_model
     >>> # Let's use the mission model
-    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -7455,7 +7456,7 @@ class Mission(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the mission
     >>> atmosphere = mission.atmosphere_model
     >>> # Let's use the mission model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -8268,7 +8269,7 @@ class ProcedureTimeOptions(SupportsDeleteCallback):
 
     Examples
     --------
-    Configure a procedure time options:
+    Configure a procedure's time options:
     >>> # IProcedure procedure: Procedure object
     >>> # Get the time in epoch seconds
     >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
@@ -20249,7 +20250,7 @@ class WindModel(SupportsDeleteCallback):
     >>> # Get the wind model used for the mission
     >>> windModel = mission.wind_model
     >>> # Let's use the mission model
-    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20262,7 +20263,7 @@ class WindModel(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the mission
     >>> atmosphere = mission.atmosphere_model
     >>> # Let's use the mission model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -20277,7 +20278,7 @@ class WindModel(SupportsDeleteCallback):
     >>> # Get the wind model for the procedure
     >>> windModel = procedure.wind_model
     >>> # Use the procedure model
-    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20290,7 +20291,7 @@ class WindModel(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the procedure
     >>> atmosphere = procedure.atmosphere_model
     >>> # Let's use the procedure model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -20351,17 +20352,17 @@ class WindModel(SupportsDeleteCallback):
 
     _get_wind_model_source_metadata = { "offset" : _get_wind_model_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WindAtmosModelSource),) }
+            "marshallers" : (agmarshall.EnumArg(WindAtmosphereModelSource),) }
     @property
-    def wind_model_source(self) -> "WindAtmosModelSource":
+    def wind_model_source(self) -> "WindAtmosphereModelSource":
         """Get or set the wind model source."""
         return self._intf.get_property(WindModel._metadata, WindModel._get_wind_model_source_metadata)
 
     _set_wind_model_source_metadata = { "offset" : _set_wind_model_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WindAtmosModelSource),) }
+            "marshallers" : (agmarshall.EnumArg(WindAtmosphereModelSource),) }
     @wind_model_source.setter
-    def wind_model_source(self, value:"WindAtmosModelSource") -> None:
+    def wind_model_source(self, value:"WindAtmosphereModelSource") -> None:
         """Get or set the wind model source."""
         return self._intf.set_property(WindModel._metadata, WindModel._set_wind_model_source_metadata, value)
 
@@ -20428,7 +20429,7 @@ class WindModelConstant(SupportsDeleteCallback):
     >>> # Get the wind model used for the mission
     >>> windModel = mission.wind_model
     >>> # Let's use the mission model
-    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20441,7 +20442,7 @@ class WindModelConstant(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the mission
     >>> atmosphere = mission.atmosphere_model
     >>> # Let's use the mission model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -20456,7 +20457,7 @@ class WindModelConstant(SupportsDeleteCallback):
     >>> # Get the wind model for the procedure
     >>> windModel = procedure.wind_model
     >>> # Use the procedure model
-    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20469,7 +20470,7 @@ class WindModelConstant(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the procedure
     >>> atmosphere = procedure.atmosphere_model
     >>> # Let's use the procedure model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -20943,7 +20944,7 @@ class AtmosphereModel(SupportsDeleteCallback):
     >>> # Get the wind model used for the mission
     >>> windModel = mission.wind_model
     >>> # Let's use the mission model
-    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20956,7 +20957,7 @@ class AtmosphereModel(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the mission
     >>> atmosphere = mission.atmosphere_model
     >>> # Let's use the mission model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -20971,7 +20972,7 @@ class AtmosphereModel(SupportsDeleteCallback):
     >>> # Get the wind model for the procedure
     >>> windModel = procedure.wind_model
     >>> # Use the procedure model
-    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -20984,7 +20985,7 @@ class AtmosphereModel(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the procedure
     >>> atmosphere = procedure.atmosphere_model
     >>> # Let's use the procedure model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -21026,17 +21027,17 @@ class AtmosphereModel(SupportsDeleteCallback):
 
     _get_atmosphere_model_source_metadata = { "offset" : _get_atmosphere_model_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WindAtmosModelSource),) }
+            "marshallers" : (agmarshall.EnumArg(WindAtmosphereModelSource),) }
     @property
-    def atmosphere_model_source(self) -> "WindAtmosModelSource":
+    def atmosphere_model_source(self) -> "WindAtmosphereModelSource":
         """Get or set the atmosphere model source."""
         return self._intf.get_property(AtmosphereModel._metadata, AtmosphereModel._get_atmosphere_model_source_metadata)
 
     _set_atmosphere_model_source_metadata = { "offset" : _set_atmosphere_model_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WindAtmosModelSource),) }
+            "marshallers" : (agmarshall.EnumArg(WindAtmosphereModelSource),) }
     @atmosphere_model_source.setter
-    def atmosphere_model_source(self, value:"WindAtmosModelSource") -> None:
+    def atmosphere_model_source(self, value:"WindAtmosphereModelSource") -> None:
         """Get or set the atmosphere model source."""
         return self._intf.set_property(AtmosphereModel._metadata, AtmosphereModel._set_atmosphere_model_source_metadata, value)
 
@@ -21093,7 +21094,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     >>> # Get the wind model used for the mission
     >>> windModel = mission.wind_model
     >>> # Let's use the mission model
-    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -21106,7 +21107,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the mission
     >>> atmosphere = mission.atmosphere_model
     >>> # Let's use the mission model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -21121,7 +21122,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     >>> # Get the wind model for the procedure
     >>> windModel = procedure.wind_model
     >>> # Use the procedure model
-    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Let's use constant wind
     >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
     >>> # Get the constant wind model options
@@ -21134,7 +21135,7 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     >>> # Get the atmosphere model used for the procedure
     >>> atmosphere = procedure.atmosphere_model
     >>> # Let's use the procedure model
-    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     >>> # Get the basic atmosphere options
     >>> basicAtmosphere = atmosphere.mode_as_basic
     >>> # Use standard 1976 atmosphere
@@ -24352,8 +24353,8 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _set_hobs_angle_tol_method_offset = 30
     _get_compensate_for_coriolis_acceleration_method_offset = 31
     _set_compensate_for_coriolis_acceleration_method_offset = 32
-    _get_position_vel_strategies_method_offset = 33
-    _cancel_target_position_vel_method_offset = 34
+    _get_position_velocity_strategies_method_offset = 33
+    _cancel_target_position_velocity_method_offset = 34
     _metadata = {
         "iid_data" : (5313400505422947784, 17687416165806767533),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -24614,20 +24615,20 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     def compensate_for_coriolis_acceleration(self, value:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._set_compensate_for_coriolis_acceleration_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Intercept."""
-        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Intercept."""
-        return self._intf.invoke(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -24648,7 +24649,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _property_names[hobs_max_angle] = "hobs_max_angle"
     _property_names[hobs_angle_tol] = "hobs_angle_tol"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyIntercept."""
@@ -24689,8 +24690,8 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     _set_control_limit_method_offset = 14
     _get_compensate_for_coriolis_acceleration_method_offset = 15
     _set_compensate_for_coriolis_acceleration_method_offset = 16
-    _get_position_vel_strategies_method_offset = 17
-    _cancel_target_position_vel_method_offset = 18
+    _get_position_velocity_strategies_method_offset = 17
+    _cancel_target_position_velocity_method_offset = 18
     _metadata = {
         "iid_data" : (4866238946930048015, 14417521249700002203),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -24825,20 +24826,20 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     def compensate_for_coriolis_acceleration(self, value:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_compensate_for_coriolis_acceleration_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Relative Bearing."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Relative Bearing."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -24850,7 +24851,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
     _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeBearing."""
@@ -24907,8 +24908,8 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _set_hobs_angle_tol_method_offset = 30
     _get_compensate_for_coriolis_acceleration_method_offset = 31
     _set_compensate_for_coriolis_acceleration_method_offset = 32
-    _get_position_vel_strategies_method_offset = 33
-    _cancel_target_position_vel_method_offset = 34
+    _get_position_velocity_strategies_method_offset = 33
+    _cancel_target_position_velocity_method_offset = 34
     _metadata = {
         "iid_data" : (5054084160759805633, 8063128821334535086),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25171,20 +25172,20 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     def compensate_for_coriolis_acceleration(self, value:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._set_compensate_for_coriolis_acceleration_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Relative Course."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Relative Course."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -25204,7 +25205,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _property_names[hobs_max_angle] = "hobs_max_angle"
     _property_names[hobs_angle_tol] = "hobs_angle_tol"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeCourse."""
@@ -25266,8 +25267,8 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _set_airspeed_factor_method_offset = 35
     _get_stop_condition_method_offset = 36
     _set_stop_condition_method_offset = 37
-    _get_position_vel_strategies_method_offset = 38
-    _cancel_target_position_vel_method_offset = 39
+    _get_position_velocity_strategies_method_offset = 38
+    _cancel_target_position_velocity_method_offset = 39
     _metadata = {
         "iid_data" : (5284660652818080215, 12593108281635057289),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25570,20 +25571,20 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
         """Get or set the stopping condition for the maneuver."""
         return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_stop_condition_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Rendezvous."""
-        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Rendezvous."""
-        return self._intf.invoke(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -25605,7 +25606,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[use_separate_airspeed_control] = "use_separate_airspeed_control"
     _property_names[airspeed_factor] = "airspeed_factor"
     _property_names[stop_condition] = "stop_condition"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRendezvous."""
@@ -25666,8 +25667,8 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _set_control_limit_method_offset = 34
     _get_compensate_for_coriolis_acceleration_method_offset = 35
     _set_compensate_for_coriolis_acceleration_method_offset = 36
-    _get_position_vel_strategies_method_offset = 37
-    _cancel_target_position_vel_method_offset = 38
+    _get_position_velocity_strategies_method_offset = 37
+    _cancel_target_position_velocity_method_offset = 38
     _metadata = {
         "iid_data" : (5315651566696080808, 8511792787367462056),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25962,20 +25963,20 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     def compensate_for_coriolis_acceleration(self, value:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_compensate_for_coriolis_acceleration_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Station Keeping."""
-        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Station Keeping."""
-        return self._intf.invoke(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -25997,7 +25998,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
     _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyStationkeeping."""
@@ -26315,8 +26316,8 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
     _set_stop_condition_method_offset = 34
     _get_compensate_for_coriolis_acceleration_method_offset = 35
     _set_compensate_for_coriolis_acceleration_method_offset = 36
-    _get_position_vel_strategies_method_offset = 37
-    _cancel_target_position_vel_method_offset = 38
+    _get_position_velocity_strategies_method_offset = 37
+    _cancel_target_position_velocity_method_offset = 38
     _metadata = {
         "iid_data" : (5691163621320581131, 205069969700959880),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -26609,20 +26610,20 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
     def compensate_for_coriolis_acceleration(self, value:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_compensate_for_coriolis_acceleration_metadata, value)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "BasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for Rel Speed Alt."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for Rel Speed Alt."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -26644,7 +26645,7 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
     _property_names[max_airspeed_type] = "max_airspeed_type"
     _property_names[stop_condition] = "stop_condition"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeSpeedAltitude."""
@@ -30588,8 +30589,8 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _get_maximum_time_method_offset = 8
     _get_formation_point_method_offset = 9
     _set_formation_point_method_offset = 10
-    _get_interpolate_point_position_vel_method_offset = 11
-    _set_interpolate_point_position_vel_method_offset = 12
+    _get_interpolate_point_position_velocity_method_offset = 11
+    _set_interpolate_point_position_velocity_method_offset = 12
     _get_altitude_offset_method_offset = 13
     _set_altitude_offset_method_offset = 14
     _get_fuel_flow_type_method_offset = 15
@@ -30701,21 +30702,21 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
         """Get or set the position that the aircraft will be locked onto while in formation."""
         return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_formation_point_metadata, value)
 
-    _get_interpolate_point_position_vel_metadata = { "offset" : _get_interpolate_point_position_vel_method_offset,
+    _get_interpolate_point_position_velocity_metadata = { "offset" : _get_interpolate_point_position_velocity_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def interpolate_point_position_vel(self) -> bool:
+    def interpolate_point_position_velocity(self) -> bool:
         """Get or set the option to use interpolation to determine the formation point's speed and position."""
-        return self._intf.get_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._get_interpolate_point_position_vel_metadata)
+        return self._intf.get_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._get_interpolate_point_position_velocity_metadata)
 
-    _set_interpolate_point_position_vel_metadata = { "offset" : _set_interpolate_point_position_vel_method_offset,
+    _set_interpolate_point_position_velocity_metadata = { "offset" : _set_interpolate_point_position_velocity_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @interpolate_point_position_vel.setter
-    def interpolate_point_position_vel(self, value:bool) -> None:
+    @interpolate_point_position_velocity.setter
+    def interpolate_point_position_velocity(self, value:bool) -> None:
         """Get or set the option to use interpolation to determine the formation point's speed and position."""
-        return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_interpolate_point_position_vel_metadata, value)
+        return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_interpolate_point_position_velocity_metadata, value)
 
     _get_altitude_offset_metadata = { "offset" : _get_altitude_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30930,7 +30931,7 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _property_names[start_time] = "start_time"
     _property_names[maximum_time] = "maximum_time"
     _property_names[formation_point] = "formation_point"
-    _property_names[interpolate_point_position_vel] = "interpolate_point_position_vel"
+    _property_names[interpolate_point_position_velocity] = "interpolate_point_position_velocity"
     _property_names[altitude_offset] = "altitude_offset"
     _property_names[fuel_flow_type] = "fuel_flow_type"
     _property_names[override_fuel_flow_value] = "override_fuel_flow_value"
@@ -31399,8 +31400,8 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _get_maximum_time_method_offset = 5
     _get_formation_point_method_offset = 6
     _set_formation_point_method_offset = 7
-    _get_interpolate_point_position_vel_method_offset = 8
-    _set_interpolate_point_position_vel_method_offset = 9
+    _get_interpolate_point_position_velocity_method_offset = 8
+    _set_interpolate_point_position_velocity_method_offset = 9
     _get_duration_method_offset = 10
     _set_duration_method_offset = 11
     _get_use_max_point_stop_time_method_offset = 12
@@ -31478,21 +31479,21 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
         """Get or set the position that the aircraft will be locked onto while in formation."""
         return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_formation_point_metadata, value)
 
-    _get_interpolate_point_position_vel_metadata = { "offset" : _get_interpolate_point_position_vel_method_offset,
+    _get_interpolate_point_position_velocity_metadata = { "offset" : _get_interpolate_point_position_velocity_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def interpolate_point_position_vel(self) -> bool:
+    def interpolate_point_position_velocity(self) -> bool:
         """Get or set the option to use interpolation to determine the formation point's speed and position."""
-        return self._intf.get_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._get_interpolate_point_position_vel_metadata)
+        return self._intf.get_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._get_interpolate_point_position_velocity_metadata)
 
-    _set_interpolate_point_position_vel_metadata = { "offset" : _set_interpolate_point_position_vel_method_offset,
+    _set_interpolate_point_position_velocity_metadata = { "offset" : _set_interpolate_point_position_velocity_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @interpolate_point_position_vel.setter
-    def interpolate_point_position_vel(self, value:bool) -> None:
+    @interpolate_point_position_velocity.setter
+    def interpolate_point_position_velocity(self, value:bool) -> None:
         """Get or set the option to use interpolation to determine the formation point's speed and position."""
-        return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_interpolate_point_position_vel_metadata, value)
+        return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_interpolate_point_position_velocity_metadata, value)
 
     _get_duration_metadata = { "offset" : _get_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31610,7 +31611,7 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _property_names[start_time] = "start_time"
     _property_names[maximum_time] = "maximum_time"
     _property_names[formation_point] = "formation_point"
-    _property_names[interpolate_point_position_vel] = "interpolate_point_position_vel"
+    _property_names[interpolate_point_position_velocity] = "interpolate_point_position_velocity"
     _property_names[duration] = "duration"
     _property_names[use_max_point_stop_time] = "use_max_point_stop_time"
     _property_names[fuel_flow_type] = "fuel_flow_type"
@@ -40602,98 +40603,98 @@ class ProcedureFastTimeOptions(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5256046032572971350, 11552615131980125109), ProcedureFastTimeOptions)
 agcls.AgTypeNameMap["ProcedureFastTimeOptions"] = ProcedureFastTimeOptions
 
-class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
+class BasicManeuverTargetPositionVelocity(SupportsDeleteCallback):
     """Interface used to access target position and velocity strategies for basic maneuvers."""
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_target_position_vel_type_method_offset = 1
-    _set_target_position_vel_type_method_offset = 2
-    _get_target_position_vel_type_string_method_offset = 3
-    _set_target_position_vel_type_string_method_offset = 4
+    _get_target_position_velocity_type_method_offset = 1
+    _set_target_position_velocity_type_method_offset = 2
+    _get_target_position_velocity_type_string_method_offset = 3
+    _set_target_position_velocity_type_string_method_offset = 4
     _get_mode_as_noisy_bearing_range_method_offset = 5
     _get_mode_as_noisy_surf_target_method_offset = 6
-    _apply_position_vel_method_offset = 7
-    _cancel_position_vel_method_offset = 8
+    _apply_position_velocity_method_offset = 7
+    _cancel_position_velocity_method_offset = 8
     _metadata = {
         "iid_data" : (5569224259406810828, 11943865142217919666),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverTargetPositionVel)
+        return get_interface_property(attrname, BasicManeuverTargetPositionVelocity)
     
-    _get_target_position_vel_type_metadata = { "offset" : _get_target_position_vel_type_method_offset,
+    _get_target_position_velocity_type_metadata = { "offset" : _get_target_position_velocity_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TargetPositionVelType),) }
+            "marshallers" : (agmarshall.EnumArg(TargetPositionVelocityType),) }
     @property
-    def target_position_vel_type(self) -> "TargetPositionVelType":
+    def target_position_velocity_type(self) -> "TargetPositionVelocityType":
         """Get or set the target pos vel type."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_target_position_vel_type_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._get_target_position_velocity_type_metadata)
 
-    _set_target_position_vel_type_metadata = { "offset" : _set_target_position_vel_type_method_offset,
+    _set_target_position_velocity_type_metadata = { "offset" : _set_target_position_velocity_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(TargetPositionVelType),) }
-    @target_position_vel_type.setter
-    def target_position_vel_type(self, value:"TargetPositionVelType") -> None:
+            "marshallers" : (agmarshall.EnumArg(TargetPositionVelocityType),) }
+    @target_position_velocity_type.setter
+    def target_position_velocity_type(self, value:"TargetPositionVelocityType") -> None:
         """Get or set the target pos vel type."""
-        return self._intf.set_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._set_target_position_vel_type_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._set_target_position_velocity_type_metadata, value)
 
-    _get_target_position_vel_type_string_metadata = { "offset" : _get_target_position_vel_type_string_method_offset,
+    _get_target_position_velocity_type_string_metadata = { "offset" : _get_target_position_velocity_type_string_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def target_position_vel_type_string(self) -> str:
+    def target_position_velocity_type_string(self) -> str:
         """Get or set the target pos vel as a string value. Use this for custom models."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_target_position_vel_type_string_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._get_target_position_velocity_type_string_metadata)
 
-    _set_target_position_vel_type_string_metadata = { "offset" : _set_target_position_vel_type_string_method_offset,
+    _set_target_position_velocity_type_string_metadata = { "offset" : _set_target_position_velocity_type_string_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @target_position_vel_type_string.setter
-    def target_position_vel_type_string(self, value:str) -> None:
+    @target_position_velocity_type_string.setter
+    def target_position_velocity_type_string(self, value:str) -> None:
         """Get or set the target pos vel as a string value. Use this for custom models."""
-        return self._intf.set_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._set_target_position_vel_type_string_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._set_target_position_velocity_type_string_metadata, value)
 
     _get_mode_as_noisy_bearing_range_metadata = { "offset" : _get_mode_as_noisy_bearing_range_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_noisy_bearing_range(self) -> "BasicManeuverTargetPositionVelNoisyBearingRange":
+    def mode_as_noisy_bearing_range(self) -> "BasicManeuverTargetPositionVelocityNoisyBearingRange":
         """Get the options for a noisy bearing range velocity strategy."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_bearing_range_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._get_mode_as_noisy_bearing_range_metadata)
 
     _get_mode_as_noisy_surf_target_metadata = { "offset" : _get_mode_as_noisy_surf_target_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_noisy_surf_target(self) -> "BasicManeuverTargetPositionVelNoisySurfTarget":
+    def mode_as_noisy_surf_target(self) -> "BasicManeuverTargetPositionVelocityNoisySurfTarget":
         """Get the options for a noisy surface target position velocity strategy."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_surf_target_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._get_mode_as_noisy_surf_target_metadata)
 
-    _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
+    _apply_position_velocity_metadata = { "offset" : _apply_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def apply_position_vel(self) -> None:
+    def apply_position_velocity(self) -> None:
         """Apply the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._apply_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._apply_position_velocity_metadata, )
 
-    _cancel_position_vel_metadata = { "offset" : _cancel_position_vel_method_offset,
+    _cancel_position_velocity_metadata = { "offset" : _cancel_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_position_vel(self) -> None:
+    def cancel_position_velocity(self) -> None:
         """Cancel the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._cancel_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocity._metadata, BasicManeuverTargetPositionVelocity._cancel_position_velocity_metadata, )
 
-    _property_names[target_position_vel_type] = "target_position_vel_type"
-    _property_names[target_position_vel_type_string] = "target_position_vel_type_string"
+    _property_names[target_position_velocity_type] = "target_position_velocity_type"
+    _property_names[target_position_velocity_type_string] = "target_position_velocity_type_string"
     _property_names[mode_as_noisy_bearing_range] = "mode_as_noisy_bearing_range"
     _property_names[mode_as_noisy_surf_target] = "mode_as_noisy_surf_target"
 
     def __init__(self, source_object=None):
-        """Construct an object of type BasicManeuverTargetPositionVel."""
+        """Construct an object of type BasicManeuverTargetPositionVelocity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVel)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelocity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -40701,12 +40702,12 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVel, [BasicManeuverTargetPositionVel, ])
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocity, [BasicManeuverTargetPositionVelocity, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5720707950419700583, 14220721990871486647), BasicManeuverTargetPositionVel)
-agcls.AgTypeNameMap["BasicManeuverTargetPositionVel"] = BasicManeuverTargetPositionVel
+agcls.AgClassCatalog.add_catalog_entry((5720707950419700583, 14220721990871486647), BasicManeuverTargetPositionVelocity)
+agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocity"] = BasicManeuverTargetPositionVelocity
 
-class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
+class BasicManeuverTargetPositionVelocityNoisyBearingRange(SupportsDeleteCallback):
     """Interface used to access target position and velocity strategy, NoisyBrnRng."""
 
     _num_methods = 12
@@ -40720,8 +40721,8 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     _set_angle_error_std_dev_method_offset = 7
     _get_range_error_std_dev_method_offset = 8
     _set_range_error_std_dev_method_offset = 9
-    _apply_position_vel_method_offset = 10
-    _cancel_position_vel_method_offset = 11
+    _apply_position_velocity_method_offset = 10
+    _cancel_position_velocity_method_offset = 11
     _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
         "iid_data" : (5036622950677551442, 17790904143506270117),
@@ -40729,14 +40730,14 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisyBearingRange)
+        return get_interface_property(attrname, BasicManeuverTargetPositionVelocityNoisyBearingRange)
     
     _new_random_engine_seed_metadata = { "offset" : _new_random_engine_seed_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
         """Generate a new random engine seed."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._new_random_engine_seed_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._new_random_engine_seed_metadata, )
 
     _get_smoothing_constant_metadata = { "offset" : _get_smoothing_constant_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40744,14 +40745,14 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     @property
     def smoothing_constant(self) -> float:
         """Get or set the smoothing constant property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_smoothing_constant_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._get_smoothing_constant_metadata)
 
     _set_smoothing_constant_metadata = { "offset" : _set_smoothing_constant_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @smoothing_constant.setter
     def smoothing_constant(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_smoothing_constant_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._set_smoothing_constant_metadata, value)
 
     _get_velocity_time_step_metadata = { "offset" : _get_velocity_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40759,14 +40760,14 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     @property
     def velocity_time_step(self) -> float:
         """Get or set the velocity time step property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_velocity_time_step_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._get_velocity_time_step_metadata)
 
     _set_velocity_time_step_metadata = { "offset" : _set_velocity_time_step_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @velocity_time_step.setter
     def velocity_time_step(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_velocity_time_step_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._set_velocity_time_step_metadata, value)
 
     _get_angle_error_std_dev_metadata = { "offset" : _get_angle_error_std_dev_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40774,14 +40775,14 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     @property
     def angle_error_std_dev(self) -> float:
         """Get or set the angle error standard deviation property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_angle_error_std_dev_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._get_angle_error_std_dev_metadata)
 
     _set_angle_error_std_dev_metadata = { "offset" : _set_angle_error_std_dev_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @angle_error_std_dev.setter
     def angle_error_std_dev(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_angle_error_std_dev_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._set_angle_error_std_dev_metadata, value)
 
     _get_range_error_std_dev_metadata = { "offset" : _get_range_error_std_dev_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40789,35 +40790,35 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     @property
     def range_error_std_dev(self) -> float:
         """Get or set the range error standard deviation property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_range_error_std_dev_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._get_range_error_std_dev_metadata)
 
     _set_range_error_std_dev_metadata = { "offset" : _set_range_error_std_dev_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @range_error_std_dev.setter
     def range_error_std_dev(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_range_error_std_dev_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._set_range_error_std_dev_metadata, value)
 
-    _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
+    _apply_position_velocity_metadata = { "offset" : _apply_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def apply_position_vel(self) -> None:
+    def apply_position_velocity(self) -> None:
         """Apply the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._apply_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._apply_position_velocity_metadata, )
 
-    _cancel_position_vel_metadata = { "offset" : _cancel_position_vel_method_offset,
+    _cancel_position_velocity_metadata = { "offset" : _cancel_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_position_vel(self) -> None:
+    def cancel_position_velocity(self) -> None:
         """Cancel the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._cancel_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._cancel_position_velocity_metadata, )
 
     _set_base_dynamic_state_link_name_metadata = { "offset" : _set_base_dynamic_state_link_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_base_dynamic_state_link_name(self, value:str) -> None:
         """Set the BaseDynStateLinkName."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_base_dynamic_state_link_name_metadata, value)
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisyBearingRange._metadata, BasicManeuverTargetPositionVelocityNoisyBearingRange._set_base_dynamic_state_link_name_metadata, value)
 
     _property_names[smoothing_constant] = "smoothing_constant"
     _property_names[velocity_time_step] = "velocity_time_step"
@@ -40825,9 +40826,9 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     _property_names[range_error_std_dev] = "range_error_std_dev"
 
     def __init__(self, source_object=None):
-        """Construct an object of type BasicManeuverTargetPositionVelNoisyBearingRange."""
+        """Construct an object of type BasicManeuverTargetPositionVelocityNoisyBearingRange."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelNoisyBearingRange)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelocityNoisyBearingRange)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -40835,12 +40836,12 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBearingRange, [BasicManeuverTargetPositionVelNoisyBearingRange, ])
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocityNoisyBearingRange, [BasicManeuverTargetPositionVelocityNoisyBearingRange, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5183636736005802859, 6010191698451056009), BasicManeuverTargetPositionVelNoisyBearingRange)
-agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisyBearingRange"] = BasicManeuverTargetPositionVelNoisyBearingRange
+agcls.AgClassCatalog.add_catalog_entry((5183636736005802859, 6010191698451056009), BasicManeuverTargetPositionVelocityNoisyBearingRange)
+agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocityNoisyBearingRange"] = BasicManeuverTargetPositionVelocityNoisyBearingRange
 
-class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
+class BasicManeuverTargetPositionVelocityNoisySurfTarget(SupportsDeleteCallback):
     """Interface used to access target position and velocity strategy, Surf Tgt Pos Vel."""
 
     _num_methods = 12
@@ -40854,8 +40855,8 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     _set_course_error_method_offset = 7
     _get_speed_error_method_offset = 8
     _set_speed_error_method_offset = 9
-    _apply_position_vel_method_offset = 10
-    _cancel_position_vel_method_offset = 11
+    _apply_position_velocity_method_offset = 10
+    _cancel_position_velocity_method_offset = 11
     _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
         "iid_data" : (5603321029489925551, 13135773816960132759),
@@ -40863,14 +40864,14 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisySurfTarget)
+        return get_interface_property(attrname, BasicManeuverTargetPositionVelocityNoisySurfTarget)
     
     _new_random_engine_seed_metadata = { "offset" : _new_random_engine_seed_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
         """Generate a new random engine seed."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._new_random_engine_seed_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._new_random_engine_seed_metadata, )
 
     _get_measurement_time_step_metadata = { "offset" : _get_measurement_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40878,14 +40879,14 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     @property
     def measurement_time_step(self) -> float:
         """Get or set the measurement time step property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_measurement_time_step_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._get_measurement_time_step_metadata)
 
     _set_measurement_time_step_metadata = { "offset" : _set_measurement_time_step_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @measurement_time_step.setter
     def measurement_time_step(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_measurement_time_step_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._set_measurement_time_step_metadata, value)
 
     _get_position_cep_metadata = { "offset" : _get_position_cep_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40893,14 +40894,14 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     @property
     def position_cep(self) -> float:
         """Get or set the position CEP property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_position_cep_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._get_position_cep_metadata)
 
     _set_position_cep_metadata = { "offset" : _set_position_cep_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @position_cep.setter
     def position_cep(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_position_cep_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._set_position_cep_metadata, value)
 
     _get_course_error_metadata = { "offset" : _get_course_error_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40908,14 +40909,14 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     @property
     def course_error(self) -> float:
         """Get or set the course error property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_course_error_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._get_course_error_metadata)
 
     _set_course_error_metadata = { "offset" : _set_course_error_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @course_error.setter
     def course_error(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_course_error_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._set_course_error_metadata, value)
 
     _get_speed_error_metadata = { "offset" : _get_speed_error_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40923,35 +40924,35 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     @property
     def speed_error(self) -> float:
         """Get or set the speed error property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_speed_error_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._get_speed_error_metadata)
 
     _set_speed_error_metadata = { "offset" : _set_speed_error_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @speed_error.setter
     def speed_error(self, value:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_speed_error_metadata, value)
+        return self._intf.set_property(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._set_speed_error_metadata, value)
 
-    _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
+    _apply_position_velocity_metadata = { "offset" : _apply_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def apply_position_vel(self) -> None:
+    def apply_position_velocity(self) -> None:
         """Apply the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._apply_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._apply_position_velocity_metadata, )
 
-    _cancel_position_vel_metadata = { "offset" : _cancel_position_vel_method_offset,
+    _cancel_position_velocity_metadata = { "offset" : _cancel_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_position_vel(self) -> None:
+    def cancel_position_velocity(self) -> None:
         """Cancel the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._cancel_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._cancel_position_velocity_metadata, )
 
     _set_base_dynamic_state_link_name_metadata = { "offset" : _set_base_dynamic_state_link_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_base_dynamic_state_link_name(self, value:str) -> None:
         """Set the BaseDynStateLinkName."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_base_dynamic_state_link_name_metadata, value)
+        return self._intf.invoke(BasicManeuverTargetPositionVelocityNoisySurfTarget._metadata, BasicManeuverTargetPositionVelocityNoisySurfTarget._set_base_dynamic_state_link_name_metadata, value)
 
     _property_names[measurement_time_step] = "measurement_time_step"
     _property_names[position_cep] = "position_cep"
@@ -40959,9 +40960,9 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     _property_names[speed_error] = "speed_error"
 
     def __init__(self, source_object=None):
-        """Construct an object of type BasicManeuverTargetPositionVelNoisySurfTarget."""
+        """Construct an object of type BasicManeuverTargetPositionVelocityNoisySurfTarget."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelNoisySurfTarget)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelocityNoisySurfTarget)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -40969,10 +40970,10 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTarget, [BasicManeuverTargetPositionVelNoisySurfTarget, ])
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelocityNoisySurfTarget, [BasicManeuverTargetPositionVelocityNoisySurfTarget, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelNoisySurfTarget)
-agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisySurfTarget"] = BasicManeuverTargetPositionVelNoisySurfTarget
+agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelocityNoisySurfTarget)
+agcls.AgTypeNameMap["BasicManeuverTargetPositionVelocityNoisySurfTarget"] = BasicManeuverTargetPositionVelocityNoisySurfTarget
 
 class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
     """Interface used to access the options for the FourPoint aerodynamic strategy in the advanced fixed wing tool."""

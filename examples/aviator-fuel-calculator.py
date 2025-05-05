@@ -16,7 +16,7 @@
 #
 # - A basic acceleration performance model with level turns and climb and descent transitions scaled by atmosphere density, and a basic fixed wing strategy for modeling aerodynamics and propulsion
 # - A basic climb performance model using aero/propulsion fuel flow
-# - A basic cruise performance model designating that the aircraft climbs to 25000 ft and levels off
+# - A basic cruise performance model designating that the aircraft climbs to $25000$ ft and levels off
 # - A basic descent performance model using aero/propulsion fuel flow
 # - A basic landing performance model using aero/propulsion fuel flow
 # - A basic takeoff performance model using aero/propulsion fuel flow
@@ -104,13 +104,13 @@ aviator_propagator = aircraft.route.aviator_propagator
 
 # ## Insert a runway at Telluride Regional Airport
 
-# It is now possible to use the Aviator propagator to insert places of interest. Use the Aviator runway catalog to insert a runway at Telluride Regional Airport by loading a file containing information about runways. This file is included with the STK install.
+# It is now possible to use the Aviator propagator to insert places of interest. Use the Aviator runway catalog to insert a runway at Telluride Regional Airport by loading a file containing information about runways. This file is included with the STK installation.
 
 # First, get the runway catalog:
 
 runway_catalog = aviator_propagator.aviator_catalog.runway_category
 
-# Then, upload the "FAANFD18" file provided with the STK install containing information about runways in ARINC424 format. To do so, use a Connect command to find the STK install directory and navigate to the proper file, then set the file as the master data file for ARINC424 runways:
+# Then, upload the "FAANFD18" file provided with the STK install containing information about runways in ARINC424 format. To do so, use a Connect command to find the STK installation directory and navigate to the proper file, then set the file as the master data file for ARINC424 runways:
 
 # +
 import pathlib
@@ -127,7 +127,7 @@ runway_catalog.arinc424_runways.master_data_filepath = str(
 )
 # -
 
-# The runway catalog now contains information about the runways included in the file. View the names of the first 5 runways (alphabetically) in the catalog:
+# The runway catalog now contains information about the runways included in the file. View the names of the first $5$ runways (alphabetically) in the catalog:
 
 runway_catalog.arinc424_runways.child_names[:5]
 
@@ -347,7 +347,7 @@ takeoff_procedure = phase.procedures.add(
 )
 # -
 
-# Then, set the takeoff procedure's site to the catalog entry for the CITY OF COLORADO SPRINGS MUNI 17L 35R runway so that the procedure starts from the runway:
+# Then, set the takeoff procedure's site to the catalog entry for the "CITY OF COLORADO SPRINGS MUNI 17L 35R" runway so that the procedure starts from the runway:
 
 takeoff_procedure.site.set_catalog_runway(colorado_springs_runway)
 
@@ -489,7 +489,7 @@ cones_procedure.altitude_options.use_default_cruise_altitude = False
 
 cones_procedure.altitude_options.altitude = 15000
 
-# Next, configure the procedure's enroute options to use a turn factor of 5:
+# Next, configure the procedure's enroute options to use a turn factor of $5$:
 
 cones_procedure.enroute_options.max_turn_radius_factor = 5
 

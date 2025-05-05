@@ -1,4 +1,4 @@
-# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -5071,15 +5071,15 @@ class GatorHelper(object):
                                             )
                                             + "  "
                                         )
-                                        + Double.ToString(elem.vel_x)
+                                        + Double.ToString(elem.velocity_x)
                                     )
                                     + "  "
                                 )
-                                + Double.ToString(elem.vel_y)
+                                + Double.ToString(elem.velocity_y)
                             )
                             + "  "
                         )
-                        + Double.ToString(elem.vel_z)
+                        + Double.ToString(elem.velocity_z)
                     )
                     + "  "
                 )
@@ -5173,15 +5173,15 @@ class GatorHelper(object):
                                             )
                                             + "  "
                                         )
-                                        + Double.ToString(elem.vel_x)
+                                        + Double.ToString(elem.velocity_x)
                                     )
                                     + "  "
                                 )
-                                + Double.ToString(elem.vel_y)
+                                + Double.ToString(elem.velocity_y)
                             )
                             + "  "
                         )
-                        + Double.ToString(elem.vel_z)
+                        + Double.ToString(elem.velocity_z)
                     )
                     + "  "
                 )
