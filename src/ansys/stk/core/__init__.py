@@ -27,11 +27,11 @@ A Python API for Systems Tool Kit (STK).
 """
  
 
-from . import graphics, stkobjects, stkrfchannelmodeler, stkutil, vgt
+from . import analysis_workbench, graphics, stkobjects, stkrfchannelmodeler, stkutil
 from .stkobjects import astrogator, aviator
 
 __version__ = "0.1.dev0"
 """Current version of PySTK."""
 
-__all__ = ["__version__", "graphics", "stkobjects", "stkutil", "vgt", "stkrfchannelmodeler", "astrogator", "aviator"]
+__all__ = ["__version__", "analysis_workbench", "graphics", "stkobjects", "stkutil", "stkrfchannelmodeler", "astrogator", "aviator"]
 """Available modules when using wildcard import."""
