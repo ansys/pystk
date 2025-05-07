@@ -71,7 +71,7 @@ This example provides the Python implementation for computing descriptive statis
   :language: py
   :tab-width: 4
   :start-after: def DescriptiveStatisticsPandasDataFrameSnippet
-  :end-at: all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+  :end-at: all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
   :dedent:
 
 This produces the following data table:
@@ -87,7 +87,7 @@ This example provides the Python implementation for plotting a heat map of ``Dur
   :language: py
   :tab-width: 4
   :start-after: def CoverageDefinitionResultsPandasDataFrameHeatMapSnippet
-  :end-at: plt.colorbar(orientation='vertical')
+  :end-at: plt.colorbar(orientation="vertical")
   :dedent:
 
 This produces the following data map:
