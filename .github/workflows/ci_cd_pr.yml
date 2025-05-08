@@ -119,31 +119,52 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fail-level: 'warning'
 
-  build-wheelhouse:
-    name: "Build wheelhouse for latest Python versions"
+  build-wheelhouse-core:
+    name: "Wheelhouse ${{ env.ANSYS_STK_CORE }} / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
     runs-on: ${{ matrix.os }}
-    needs: doc-style
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+    needs: [code-style, doc-style]
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
     strategy:
-       matrix:
-           os: [ubuntu-latest, windows-latest]
-           python-version: ['3.11', '3.12', '3.13']
-           target: ['all', 'grpc', 'jupyter']
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.11', '3.12', '3.13']
+        target: ['all', 'grpc', 'jupyter']
     steps:
-      - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v9
+      - uses: ansys/actions/build-wheelhouse@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.ANSYS_STK_CORE }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
+          attest-provenance: true
+
+  build-wheelhouse-extensions:
+    name: "Wheelhouse ${{ env.ANSYS_STK_EXTENSIONS }} / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    runs-on: ${{ matrix.os }}
+    needs: [code-style, doc-style]
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: ansys/actions/build-wheelhouse@v9
+        with:
+          library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          attest-provenance: true
 
   doc-build:
     name: "Doc build"
     runs-on: ${{ matrix.runner }}
-    needs: build-wheelhouse
+    needs: [build-wheelhouse-core, build-wheelhouse-extensions]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'docs:skip')
