@@ -181,19 +181,15 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.12', '3.13']
+    defaults:
+      working-directory: extensions
     steps:
-
-      - name: "Checkout project"
-        uses: actions/checkout@v4
-
       - uses: ansys/actions/build-wheelhouse@v9
-        working-directory: extensions
         with:
           library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           attest-provenance: true
-          checkout: false
 
   doc-build:
     name: "Doc build"
