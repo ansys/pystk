@@ -106,3 +106,7 @@
 - name: 'docker'
   description: Docker maintenance related
   color: 000075
+
+- name: 'blocked'
+  description: Cannot be completed until other tasks are resolved
+  color: 000000
