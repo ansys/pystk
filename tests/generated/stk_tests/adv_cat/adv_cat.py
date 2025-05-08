@@ -25,7 +25,7 @@ from test_util import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from ansys.stk.core.stkobjects import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):

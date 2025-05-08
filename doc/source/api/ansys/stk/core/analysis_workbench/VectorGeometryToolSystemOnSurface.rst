@@ -1,0 +1,69 @@
+VectorGeometryToolSystemOnSurface
+=================================
+
+.. py:class:: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface
+
+   Bases: :py:class:`~ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.analysis_workbench.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.analysis_workbench.IAnalysisWorkbenchComponent`
+
+   A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
+
+.. py:currentmodule:: VectorGeometryToolSystemOnSurface
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body`
+              - Specify a central body.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.azimuth_angle`
+              - An angle by which the topocentric axes is rotated.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level`
+              - Specify whether to use the Mean Sea Level as the reference shape.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.position`
+              - Specify the position of the system's origin.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolSystemOnSurface
+
+
+Property detail
+---------------
+
+.. py:property:: central_body
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body
+    :type: AnalysisWorkbenchCentralBodyReference
+
+    Specify a central body.
+
+.. py:property:: azimuth_angle
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.azimuth_angle
+    :type: float
+
+    An angle by which the topocentric axes is rotated.
+
+.. py:property:: use_mean_sea_level
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level
+    :type: bool
+
+    Specify whether to use the Mean Sea Level as the reference shape.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.position
+    :type: AnalysisWorkbenchPositionLLA
+
+    Specify the position of the system's origin.
+
+
