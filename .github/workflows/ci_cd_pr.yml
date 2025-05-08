@@ -446,7 +446,7 @@ jobs:
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${{ env.PYSTK_DIR }}/.cov \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "coverage combine aviator stknogfx stkgfx vgt snippets migration"
 
@@ -454,17 +454,17 @@ jobs:
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${{ env.PYSTK_DIR }}/.cov \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html -d .cov/${{ env.ANSYS_STK_CORE }}-coverage"
+            "coverage html -d ${{ env.ANSYS_STK_CORE }}-coverage"
 
       - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${{ env.PYSTK_DIR }}/.cov \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html -d .cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage"
+            "coverage html -d ${{ env.ANSYS_STK_EXTENSIONS }}-coverage"
 
       - name: "Upload ${{ env.ANSYS_STK_CORE }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
