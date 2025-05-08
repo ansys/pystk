@@ -154,12 +154,21 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.12', '3.13']
     steps:
+
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Change directory"
+        run: |
+          cd extensions
+
       - uses: ansys/actions/build-wheelhouse@v9
         with:
           library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           attest-provenance: true
+          checkout: false
 
   doc-build:
     name: "Doc build"
