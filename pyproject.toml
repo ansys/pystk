@@ -68,7 +68,7 @@ tests = [
     "pytz==2025.2",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "scipy==1.15.2",
+    "scipy==1.15.3",
 ]
 doc = [
     "ansys-sphinx-theme==1.4.4",
@@ -81,7 +81,7 @@ doc = [
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
-    "scipy==1.15.2",
+    "scipy==1.15.3",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
