@@ -22,6 +22,7 @@
 
 """Records calls to an API."""
 
+import ast
 import inspect
 import logging
 from pathlib import Path
@@ -82,7 +83,7 @@ class Recorder:
 
         sys.setprofile(self._trace_call)
 
-        [eval(cmd) for cmd in bootstrap]
+        [ast.literal_eval(cmd) for cmd in bootstrap]
 
         sys.setprofile(None)
 

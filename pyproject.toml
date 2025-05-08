@@ -94,7 +94,7 @@ doc = [
 ]
 # NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
-    "bandit==1.8.3",
+    "bandit[toml]==1.8.3",
     "safety==3.3.0",
     "marshmallow==3.26.1",
 ]
@@ -220,3 +220,10 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
+
+[tool.bandit]
+skips = [
+    "B405", # Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks.
+    "B406", # Using escape to parse untrusted XML data is known to be vulnerable to XML attacks.
+    "B314", # Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks.
+]
