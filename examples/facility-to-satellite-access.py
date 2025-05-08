@@ -286,7 +286,7 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 # Create a vector between the satellite and facility objects:
 
 # +
-from ansys.stk.core.vgt import VectorType
+from ansys.stk.core.analysis_workbench import VectorType
 
 
 vector = facility.analysis_workbench_components.vectors.factory.create(

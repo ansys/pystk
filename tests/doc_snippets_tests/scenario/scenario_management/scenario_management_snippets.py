@@ -113,12 +113,12 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
     def STKEngineEventsSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
         def on_scenario_new_custom_callback(path: str):
-            print(f'Scenario {path} has been created.')
+            print(f"Scenario {path} has been created.")
 
         skt_object_root_events = root.subscribe()
         skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
-        
-        root.new_scenario('ExampleScenario')
+
+        root.new_scenario("ExampleScenario")
         # callback should be executed now
 
         # remove the callback from the handler
@@ -142,18 +142,18 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         from ansys.stk.core.stkdesktop import STKDesktop
         from ansys.stk.core.stkobjects import STKObjectType
 
-        def on_stk_object_added_custom_callback(path:str):
-            print(f'{path} has been added.')
+        def on_stk_object_added_custom_callback(path: str):
+            print(f"{path} has been added.")
 
         stk = STKDesktop.start_application(visible=True)
         root = stk.root
-        root.new_scenario('ExampleScenario')
+        root.new_scenario("ExampleScenario")
         skt_object_root_events = root.subscribe()
         skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
         scenario = root.current_scenario
 
         # on_stk_object_added_custom_callback is successfully called when the next line is executed
-        facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+        facility = scenario.children.new(STKObjectType.FACILITY, "Exton")
 
         # Now switch control to the desktop application and create another facility.
         # The user interface becomes unresponsive.
@@ -229,10 +229,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
     def SetScenarioTimePeriodSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
-        scenario.set_time_period(
-            start_time="1 Jan 2012 12:00:00.000", 
-            stop_time="2 Jan 2012 12:00:00.000"
-        )
+        scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
         # Use scenario.start_time, scenario.stop_time to get time period
 
     @category("Graphics Tests")

@@ -93,8 +93,10 @@ class ConnectSnippets(CodeSnippetsTestBase):
     def ConnectCommandArraysSnippet(self, root):
         from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
-        connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
-        command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+        connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+        command_results = root.execute_multiple_commands(
+            connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
+        )
 
         first_message = command_results.item(0)
         also_first_message = command_results[0]
