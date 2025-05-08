@@ -185,6 +185,7 @@ jobs:
       run:
         working-directory: extensions
     steps:
+      - uses: actions/checkout@v4
       - uses: ansys/actions/build-wheelhouse@v9
         with:
           library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
