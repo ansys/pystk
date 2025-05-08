@@ -191,6 +191,7 @@ jobs:
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           attest-provenance: true
+          checkout: false
 
   doc-build:
     name: "Doc build"
