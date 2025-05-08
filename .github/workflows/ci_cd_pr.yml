@@ -158,11 +158,8 @@ jobs:
       - name: "Checkout project"
         uses: actions/checkout@v4
 
-      - name: "Change directory"
-        run: |
-          cd extensions
-
       - uses: ansys/actions/build-wheelhouse@v9
+        working-directory: extensions
         with:
           library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
           operating-system: ${{ matrix.os }}
