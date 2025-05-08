@@ -71,7 +71,7 @@ tests = [
     "scipy==1.15.2",
 ]
 doc = [
-    "ansys-sphinx-theme==1.4.2",
+    "ansys-sphinx-theme==1.4.4",
     "build==1.2.2.post1",
     "jupyterlab==4.4.1",
     "jupytext==1.17.1",

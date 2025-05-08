@@ -56,7 +56,7 @@ html_context = {
     },
 }
 html_theme_options = {
-    "header_links_before_dropdown": 6,
+    "header_links_before_dropdown": 7,
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
@@ -79,6 +79,7 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
+    "css/search.css",
 ]
 html_js_files = []
 
