@@ -182,7 +182,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.12', '3.13']
     defaults:
-      working-directory: extensions
+      run:
+        working-directory: extensions
     steps:
       - uses: ansys/actions/build-wheelhouse@v9
         with:
