@@ -31,7 +31,7 @@ from orbit_state_helper import *
 from orientation_helper import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 # region ExportDataFileHelper

@@ -61,7 +61,7 @@ represented using the :obj:`list` class.
   :language: py
   :tab-width: 4
   :start-after: def ConnectCommandArraysSnippet
-  :end-at: command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+  :end-at: print(message.count)
   :dedent:
 
 STK interfaces and classes
@@ -150,7 +150,7 @@ as a list of ``Color`` and/or ``ColorRGBA`` objects. ``Color`` objects always ha
   :language: py
   :tab-width: 4
   :start-after: def GetSetRGBAColorSnippet
-  :end-at: point.set_cartographic_with_colors('Earth', lla_pts, colors)
+  :end-at: point.set_cartographic_with_colors("Earth", lla_pts, colors)
   :dedent:
 
 

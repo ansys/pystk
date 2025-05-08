@@ -29,7 +29,7 @@ from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkutil import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]

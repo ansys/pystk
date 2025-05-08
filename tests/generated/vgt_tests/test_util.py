@@ -43,7 +43,7 @@ from ansys.stk.core.stkrfchannelmodeler import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkutil import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 from ansys.stk.core.utilities.exceptions import *
 from app_provider import TestTarget
 
