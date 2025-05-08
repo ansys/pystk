@@ -42,13 +42,57 @@ jobs:
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  check-pr-title:
-    name: "Check pull-request title follows conventional commits"
+  changelog-fragment:
+    name: "Create changelog fragment"
+    needs: labeler
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: ansys/actions/check-pr-title@v9
+    - uses: ansys/actions/doc-changelog@v9
+      with:
+        token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+        use-conventional-commits: true
+        use-default-towncrier-config: true
+        bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+        bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }}
+
+  vulnerabilities:
+    name: "Vulnerabilities"
+    runs-on: ubuntu-latest
+    needs: labeler
+    steps:
+
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
+        uses: actions/setup-python@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: "Install Tox"
+        run: |
+          python -m pip install tox
+
+      - name: "Scan code vulnerabilities"
+        run: |
+          tox -e vulnerabilities-code
+
+      - name: "Scan dependencies vulnerabilities"
+        run: |
+          tox -e vulnerabilities-deps
+
+      # TODO: "Security Advisories" are only available in public repositories
+      # https://github.com/ansys-internal/pystk/issues/607
+      # 
+      # - uses: ansys/actions/check-vulnerabilities@v8
+      #   with:
+      #     python-version: ${{ env.MAIN_PYTHON_VERSION }}
+      #     python-package-name: ${{ env.LIBRARY_NAME }}
+      #     token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+      #     dev-mode: true
 
   code-style:
     name: "Code style checks"
@@ -56,7 +100,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: check-pr-title
+    needs: vulnerabilities
     steps:
       - uses: ansys/actions/code-style@v9
         with: 
@@ -68,7 +112,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: check-pr-title
+    needs: vulnerabilities
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
@@ -106,10 +150,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: doc-style
     if: |
-      always() &&
-        (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -129,10 +171,8 @@ jobs:
     runs-on: ${{ matrix.runner }}
     needs: build-wheelhouse
     if: |
-      always() &&
-        (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -329,10 +369,8 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      always() &&
-        (needs.code-style.result == 'success' || needs.code-style.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -457,10 +495,7 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     if: |
-      always() &&
-        (needs.doc-build.result == 'success' || needs.doc-build.result == 'skipped') &&
-        (needs.tests.result == 'success' || needs.tests.result == 'skipped') &&
-        !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v9

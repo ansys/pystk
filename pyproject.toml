@@ -71,7 +71,7 @@ tests = [
     "scipy==1.15.2",
 ]
 doc = [
-    "ansys-sphinx-theme==1.4.2",
+    "ansys-sphinx-theme==1.4.4",
     "build==1.2.2.post1",
     "jupyterlab==4.4.1",
     "jupytext==1.17.1",
@@ -94,7 +94,7 @@ doc = [
 ]
 # NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
-    "bandit==1.8.3",
+    "bandit[toml]==1.8.3",
     "safety==3.3.0",
     "marshmallow==4.0.0",
 ]
@@ -108,6 +108,7 @@ Documentation = "https://stk.docs.pyansys.com/"
 Homepage = "https://www.ansys.com/products/missions/ansys-stk"
 Issues = "https://github.com/ansys/pystk/issues"
 Source = "https://github.com/ansys/pystk"
+Changelog = "https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst"
 
 [tool.ruff]
 line-length = 120
@@ -175,3 +176,54 @@ source = [
 
 [tool.coverage.report]
 show_missing = true
+
+[tool.towncrier]
+package = "ansys.stk.core"
+directory = "doc/source/changelog"
+filename = "doc/source/changelog.rst"
+start_string = ".. towncrier release notes start\n"
+template = "doc/source/changelog/template"
+title_format = "`{version} <https://github.com/ansys/pystk/releases/tag/v{version}>`_ - {project_date}"
+issue_format = "`#{issue} <https://github.com/ansys/pystk/pull/{issue}>`_"
+
+[[tool.towncrier.type]]
+directory = "added"
+name = "Added"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "dependencies"
+name = "Dependencies"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "documentation"
+name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "fixed"
+name = "Fixed"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "maintenance"
+name = "Maintenance"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "miscellaneous"
+name = "Miscellaneous"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "test"
+name = "Test"
+showcontent = true
+
+[tool.bandit]
+skips = [
+    "B405", # Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks.
+    "B406", # Using escape to parse untrusted XML data is known to be vulnerable to XML attacks.
+    "B314", # Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks.
+]

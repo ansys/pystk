@@ -64,3 +64,8 @@
   - all:
       - changed-files:
           - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']
+
+'blocked':
+  - all:
+      - changed-files:
+          - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']

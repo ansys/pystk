@@ -639,15 +639,11 @@ Get and set a four-channel color for the graphics of an STK graphics primitive
     manager = root.current_scenario.scene_manager
     point = manager.initializers.point_batch_primitive.initialize()
 
-    lla_pts = [ 39.88, -75.25, 0,
-                38.85, -77.04, 0,
-                37.37, -121.92, 0 ]
+    lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
 
-    colors = [ Colors.Red,
-            ColorRGBA(Colors.Blue, 127),
-            Colors.from_rgba(0, 255, 0, 127) ]
+    colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
 
-    point.set_cartographic_with_colors('Earth', lla_pts, colors)
+    point.set_cartographic_with_colors("Earth", lla_pts, colors)
 
 .. _GetSetRGBColor:
 
@@ -687,8 +683,10 @@ Use arrays to send and retrieve data with connect
 
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
-    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
-    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+    connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+    command_results = root.execute_multiple_commands(
+        connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
+    )
 
     first_message = command_results.item(0)
     also_first_message = command_results[0]
@@ -727,25 +725,27 @@ Create a heat map of coverage definition results graphing duration by asset usin
     import numpy as np
 
     # compute data provider results for All Regions by Pass coverage
-    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     coverage_data = coverage_data_provider.execute()
 
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     coverage_all_regions_elements = coverage_data_provider.elements
-    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(
+        data_provider_elements=coverage_all_regions_elements
+    )
 
     # reshape the DataFrame based on column values
-    pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+    pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
 
     # plot heat map that shows duration by asset name by region
-    plt.xlabel('Duration by Asset', fontsize=20)
+    plt.xlabel("Duration by Asset", fontsize=20)
     plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
 
-    plt.ylabel('Region Name', fontsize=20)
+    plt.ylabel("Region Name", fontsize=20)
     plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
 
-    im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
-    plt.colorbar(orientation='vertical')
+    im = plt.imshow(pivot, cmap="YlGnBu", aspect="auto", interpolation="none")
+    plt.colorbar(orientation="vertical")
 
 .. _DescriptiveStatisticsPandasDataFrame:
 
@@ -758,14 +758,14 @@ Compute descriptive statistics for access measurements using a pandas dataframe
     import pandas as pd
 
     # compute data provider results for All Regions by Pass coverage
-    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     coverage_data = coverage_data_provider.execute()
 
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
     # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-    all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
 
 .. _AccessResultsToPandasDataFrame:
 
@@ -776,14 +776,14 @@ Convert access data provider results to a pandas dataframe
 
     # Access facility_sensor_satellite_access: Access calculation
     # compute data provider results for basic Access
-    field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+    field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
 
-    access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+    access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
         self.get_scenario().start_time, self.get_scenario().stop_time, field_names
     )
 
     # convert dataset collection in a row format as a Pandas DataFrame
-    index_column = 'Access Number'
+    index_column = "Access Number"
     access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
 
 .. _CoverageDefinitionResultsToPandasDataFrame:
@@ -795,7 +795,7 @@ Convert coverage definition data provider results to a pandas dataframe
 
     # CoverageDefinition coverage: Coverage object
     # compute data provider results for All Regions by Pass coverage
-    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     coverage_data = coverage_data_provider.execute()
 
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
@@ -813,11 +813,13 @@ Load a numpy array with flight profile data
     import matplotlib.pyplot as plt
 
     # compute data provider results for an aircraft's Flight Profile By Time
-    field_names = ['Mach #', 'Altitude']
+    field_names = ["Mach #", "Altitude"]
     time_step_sec = 1.0
 
-    flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
-    flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+    flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
+    flight_profile_data = flight_profile_data_provider.execute_elements(
+        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+    )
 
     # convert dataset collection in a row format as a Numpy array
     flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
@@ -829,12 +831,12 @@ Load a numpy array with flight profile data
     for simplex in hull.simplices:
         plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
 
-    plt.title('Estimated Flight Envelope', fontsize=15)
-    plt.xlabel('Mach Number', fontsize=15)
-    plt.ylabel('Altitude', fontsize=15)
+    plt.title("Estimated Flight Envelope", fontsize=15)
+    plt.xlabel("Mach Number", fontsize=15)
+    plt.ylabel("Altitude", fontsize=15)
 
-    plt.tick_params(axis='x', labelsize=15)
-    plt.tick_params(axis='y', labelsize=15)
+    plt.tick_params(axis="x", labelsize=15)
+    plt.tick_params(axis="y", labelsize=15)
     plt.grid(visible=True)
 
 .. _DisplayPrimitiveInterval:
@@ -1306,10 +1308,7 @@ Set the current scenario's time period
 
     # StkObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
-    scenario.set_time_period(
-        start_time="1 Jan 2012 12:00:00.000",
-        stop_time="2 Jan 2012 12:00:00.000"
-    )
+    scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
 
 .. _SetUnitPreferences:
 
@@ -1352,18 +1351,18 @@ Manage STK desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
-    def on_stk_object_added_custom_callback(path:str):
-        print(f'{path} has been added.')
+    def on_stk_object_added_custom_callback(path: str):
+        print(f"{path} has been added.")
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
-    root.new_scenario('ExampleScenario')
+    root.new_scenario("ExampleScenario")
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+    facility = scenario.children.new(STKObjectType.FACILITY, "Exton")
 
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
@@ -1383,12 +1382,12 @@ Manage STK Engine events
 
     # StkObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path: str):
-        print(f'Scenario {path} has been created.')
+        print(f"Scenario {path} has been created.")
 
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
-    root.new_scenario('ExampleScenario')
+    root.new_scenario("ExampleScenario")
     # callback should be executed now
 
     # remove the callback from the handler
