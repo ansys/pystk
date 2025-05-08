@@ -120,7 +120,7 @@ jobs:
           fail-level: 'warning'
 
   build-wheelhouse-core:
-    name: "Wheelhouse ${{ env.ANSYS_STK_CORE }} / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
+    name: "Wheelhouse ansys-stk-core / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:
@@ -142,7 +142,7 @@ jobs:
           attest-provenance: true
 
   build-wheelhouse-extensions:
-    name: "Wheelhouse ${{ env.ANSYS_STK_EXTENSIONS }} / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk-extensions / ${{ matrix.os }} / ${{ matrix.python-version }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:
