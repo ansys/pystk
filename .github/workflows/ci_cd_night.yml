@@ -80,6 +80,7 @@ jobs:
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           attest-provenance: true
+          working-directory: ./extensions
 
   doc-build:
     name: "Doc build"
