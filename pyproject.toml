@@ -61,7 +61,7 @@ jupyter = [
 ]
 tests = [
     "libcst==1.7.0",
-    "matplotlib==3.10.1",
+    "matplotlib==3.10.3",
     "numpy==2.2.5",
     "pytest==8.3.5",
     "pytest-cov==6.1.1",
@@ -87,7 +87,7 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.3",
-    "matplotlib==3.10.1",
+    "matplotlib==3.10.3",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
