@@ -73,9 +73,9 @@ tests = [
 doc = [
     "ansys-sphinx-theme==1.4.4",
     "build==1.2.2.post1",
-    "jupyterlab==4.4.1",
+    "jupyterlab==4.4.2",
     "jupytext==1.17.1",
-    "jupyter-server==2.15.0",
+    "jupyter-server==2.16.0",
     "libcst==1.7.0",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
