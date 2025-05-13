@@ -463,7 +463,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile ./extensions/pyproject.toml --directory=.cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage --fail-under=90"
+            "coverage html --rcfile ./extensions/pyproject.toml --datafile=.cov/extensions --directory=.cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage --fail-under=90"
 
       - name: "Upload ${{ env.ANSYS_STK_EXTENSIONS }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
