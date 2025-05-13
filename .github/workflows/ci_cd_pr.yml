@@ -547,8 +547,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     strategy:
-      library: ['ansys-stk-core', 'ansys-stk-extensions']
-      library-directory: ['.', 'extensions']
+      matrix:
+        library: ['ansys-stk-core', 'ansys-stk-extensions']
+        library-directory: ['.', 'extensions']
       fail-fast: false
     steps:
       - uses: ansys/actions/build-library@v9
