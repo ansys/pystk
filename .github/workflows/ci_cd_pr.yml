@@ -450,6 +450,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
+      - name: "Display layout"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "ls -R ."
+
       - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
