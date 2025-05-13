@@ -455,7 +455,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "ls -R ."
+            "ls -Ra .cov"
 
       - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
