@@ -120,8 +120,10 @@ Use arrays to send and retrieve data with Connect
 
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
-    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
-    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+    connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+    command_results = root.execute_multiple_commands(
+        connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
+    )
 
     first_message = command_results.item(0)
     also_first_message = command_results[0]
@@ -252,18 +254,18 @@ Manage STK Desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
-    def on_stk_object_added_custom_callback(path:str):
-        print(f'{path} has been added.')
+    def on_stk_object_added_custom_callback(path: str):
+        print(f"{path} has been added.")
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
-    root.new_scenario('ExampleScenario')
+    root.new_scenario("ExampleScenario")
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
+    facility = scenario.children.new(STKObjectType.FACILITY, "Exton")
 
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
@@ -281,12 +283,12 @@ Manage STK Engine events
 
     # StkObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path: str):
-        print(f'Scenario {path} has been created.')
+        print(f"Scenario {path} has been created.")
 
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
-    root.new_scenario('ExampleScenario')
+    root.new_scenario("ExampleScenario")
     # callback should be executed now
 
     # remove the callback from the handler

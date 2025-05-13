@@ -28,7 +28,7 @@ from logger import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 class BugFixes(TestBase):
