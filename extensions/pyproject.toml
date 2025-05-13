@@ -33,7 +33,22 @@ dependencies = [
 name = "ansys.stk.extensions"
 
 [project.urls]
-homepage = "https://www.ansys.com/products/missions/ansys-stk"
+discussions = "https://github.com/ansys/pystk/discussions"
 documentation = "https://stk.docs.pyansys.com/"
+homepage = "https://www.ansys.com/products/missions/ansys-stk"
+issues = "https://github.com/ansys/pystk/issues"
 source = "https://github.com/ansys/pystk"
-tracker = "https://github.com/ansys/pystk/issues"
+changelog = "https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst"
+
+[tool.coverage.paths]
+source = [
+    "src",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/ansys/stk/extensions"]
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true

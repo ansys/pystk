@@ -168,13 +168,11 @@ extend-ignore-names = ["visit_*", "leave_*"]
 [tool.coverage.paths]
 source = [
     "src",
-    "extensions/src",
 ]
 
 [tool.coverage.run]
-# Set to the actual import names of the modules to be tested
 branch = true
-source = ["src/ansys/stk/core", "extensions/src/ansys/stk/extensions"]
+source = ["src/ansys/stk/core"]
 relative_files = true
 
 [tool.coverage.report]
