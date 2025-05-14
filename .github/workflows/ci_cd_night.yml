@@ -301,9 +301,9 @@ jobs:
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }}/.cov \
+            --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=.cov/core && coverage combine aviator stknogfx stkgfx vgt snippets migration"
+            "export COVERAGE_FILE=.cov/core && coverage combine .cov/"
 
       - name: "Generate coverage report for ${{ env.ANSYS_STK_CORE }}"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
