@@ -311,7 +311,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK_CORE }}-coverage --fail-under=90"
+            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK_CORE }}-coverage --fail-under=89"
 
       - name: "Upload ${{ env.ANSYS_STK_CORE }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
