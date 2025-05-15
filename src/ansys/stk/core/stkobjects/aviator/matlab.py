@@ -74,53 +74,54 @@ class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+
     @property
     def function_name(self) -> str:
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_function_name_metadata)
 
-    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
     def function_name(self, value:str) -> None:
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._set_function_name_metadata, value)
 
-    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def check_for_errors(self) -> bool:
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
     def check_for_errors(self, value:bool) -> None:
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._set_check_for_errors_metadata, value)
 
-    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def display_output(self) -> bool:
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_display_output_metadata)
 
-    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
     def display_output(self, value:bool) -> None:
         """Get or set the option to display the output from the MATLAB function."""
@@ -171,53 +172,54 @@ class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+
     @property
     def function_name(self) -> str:
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(StrategyMATLABProfile._metadata, StrategyMATLABProfile._get_function_name_metadata)
 
-    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
     def function_name(self, value:str) -> None:
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(StrategyMATLABProfile._metadata, StrategyMATLABProfile._set_function_name_metadata, value)
 
-    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(StrategyMATLABProfile._metadata, StrategyMATLABProfile._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def check_for_errors(self) -> bool:
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(StrategyMATLABProfile._metadata, StrategyMATLABProfile._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
     def check_for_errors(self, value:bool) -> None:
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(StrategyMATLABProfile._metadata, StrategyMATLABProfile._set_check_for_errors_metadata, value)
 
-    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def display_output(self) -> bool:
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(StrategyMATLABProfile._metadata, StrategyMATLABProfile._get_display_output_metadata)
 
-    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
     def display_output(self, value:bool) -> None:
         """Get or set the option to display the output from the MATLAB function."""
@@ -268,53 +270,54 @@ class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+
     @property
     def function_name(self) -> str:
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._get_function_name_metadata)
 
-    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
     def function_name(self, value:str) -> None:
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._set_function_name_metadata, value)
 
-    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def check_for_errors(self) -> bool:
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
     def check_for_errors(self, value:bool) -> None:
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._set_check_for_errors_metadata, value)
 
-    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def display_output(self) -> bool:
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(StrategyMATLABFull3D._metadata, StrategyMATLABFull3D._get_display_output_metadata)
 
-    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
     def display_output(self, value:bool) -> None:
         """Get or set the option to display the output from the MATLAB function."""
@@ -387,227 +390,228 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_target_name_metadata = { "offset" : _get_target_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
+    _set_target_name_metadata = { "offset" : _set_target_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _get_valid_target_names_metadata = { "offset" : _get_valid_target_names_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg,) }
+    _get_target_resolution_metadata = { "offset" : _get_target_resolution_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    _set_target_resolution_metadata = { "offset" : _set_target_resolution_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    _get_use_stop_time_to_go_metadata = { "offset" : _get_use_stop_time_to_go_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_stop_time_to_go_metadata = { "offset" : _get_stop_time_to_go_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    _set_stop_time_to_go_metadata = { "offset" : _set_stop_time_to_go_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
+            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
+    _get_use_stop_slant_range_metadata = { "offset" : _get_use_stop_slant_range_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_stop_slant_range_metadata = { "offset" : _get_stop_slant_range_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    _set_stop_slant_range_metadata = { "offset" : _set_stop_slant_range_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
+            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
+    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_closure_mode_metadata = { "offset" : _get_closure_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
+    _set_closure_mode_metadata = { "offset" : _set_closure_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
+    _get_hobs_max_angle_metadata = { "offset" : _get_hobs_max_angle_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    _set_hobs_max_angle_metadata = { "offset" : _set_hobs_max_angle_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    _get_hobs_angle_tol_metadata = { "offset" : _get_hobs_angle_tol_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    _set_hobs_angle_tol_metadata = { "offset" : _set_hobs_angle_tol_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    _get_compute_tas_dot_metadata = { "offset" : _get_compute_tas_dot_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_compute_tas_dot_metadata = { "offset" : _set_compute_tas_dot_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+
     @property
     def target_name(self) -> str:
         """Get or set the target name."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_target_name_metadata)
 
-    _set_target_name_metadata = { "offset" : _set_target_name_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @target_name.setter
     def target_name(self, value:str) -> None:
         """Get or set the target name."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_target_name_metadata, value)
 
-    _get_valid_target_names_metadata = { "offset" : _get_valid_target_names_method_offset,
-            "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.LPSafearrayArg,) }
     @property
     def valid_target_names(self) -> list:
         """Return the valid target names."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_valid_target_names_metadata)
 
-    _get_target_resolution_metadata = { "offset" : _get_target_resolution_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_resolution(self) -> float:
         """Get or set the target position/velocity sampling resolution."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_target_resolution_metadata)
 
-    _set_target_resolution_metadata = { "offset" : _set_target_resolution_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
     @target_resolution.setter
     def target_resolution(self, value:float) -> None:
         """Get or set the target position/velocity sampling resolution."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_target_resolution_metadata, value)
 
-    _get_use_stop_time_to_go_metadata = { "offset" : _get_use_stop_time_to_go_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def use_stop_time_to_go(self) -> bool:
         """Get the option to specify a time to go stopping condition."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_use_stop_time_to_go_metadata)
 
-    _get_stop_time_to_go_metadata = { "offset" : _get_stop_time_to_go_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def stop_time_to_go(self) -> float:
         """Get the stop time from the target at which the maneuver will stop."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_stop_time_to_go_metadata)
 
-    _set_stop_time_to_go_metadata = { "offset" : _set_stop_time_to_go_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_stop_time_to_go(self, enable:bool, time:float) -> None:
         """Set the option to use the stop time from target stopping condition and set the according value."""
         return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_stop_time_to_go_metadata, enable, time)
 
-    _get_use_stop_slant_range_metadata = { "offset" : _get_use_stop_slant_range_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def use_stop_slant_range(self) -> bool:
         """Get the option to specify a range from target stopping condition."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_use_stop_slant_range_metadata)
 
-    _get_stop_slant_range_metadata = { "offset" : _get_stop_slant_range_method_offset,
-            "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def stop_slant_range(self) -> float:
         """Get the range from the target at which the maneuver will stop."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_stop_slant_range_metadata)
 
-    _set_stop_slant_range_metadata = { "offset" : _set_stop_slant_range_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_stop_slant_range(self, enable:bool, range:float) -> None:
         """Set the option to use the stop slant range stopping condition and set the according value."""
         return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_stop_slant_range_metadata, enable, range)
 
-    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def function_name(self) -> str:
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_function_name_metadata)
 
-    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
     def function_name(self, value:str) -> None:
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_function_name_metadata, value)
 
-    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def check_for_errors(self) -> bool:
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
     def check_for_errors(self, value:bool) -> None:
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_check_for_errors_metadata, value)
 
-    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def display_output(self) -> bool:
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_display_output_metadata)
 
-    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
     def display_output(self, value:bool) -> None:
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_display_output_metadata, value)
 
-    _get_closure_mode_metadata = { "offset" : _get_closure_mode_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
     @property
     def closure_mode(self) -> "ClosureMode":
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_closure_mode_metadata)
 
-    _set_closure_mode_metadata = { "offset" : _set_closure_mode_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
     @closure_mode.setter
     def closure_mode(self, value:"ClosureMode") -> None:
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_closure_mode_metadata, value)
 
-    _get_hobs_max_angle_metadata = { "offset" : _get_hobs_max_angle_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
     @property
     def hobs_max_angle(self) -> typing.Any:
         """Get or set the closure high off boresight max angle."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_hobs_max_angle_metadata)
 
-    _set_hobs_max_angle_metadata = { "offset" : _set_hobs_max_angle_method_offset,
-            "arg_types" : (agcom.Variant,),
-            "marshallers" : (agmarshall.VariantArg,) }
     @hobs_max_angle.setter
     def hobs_max_angle(self, value:typing.Any) -> None:
         """Get or set the closure high off boresight max angle."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_hobs_max_angle_metadata, value)
 
-    _get_hobs_angle_tol_metadata = { "offset" : _get_hobs_angle_tol_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
     @property
     def hobs_angle_tol(self) -> typing.Any:
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_hobs_angle_tol_metadata)
 
-    _set_hobs_angle_tol_metadata = { "offset" : _set_hobs_angle_tol_method_offset,
-            "arg_types" : (agcom.Variant,),
-            "marshallers" : (agmarshall.VariantArg,) }
     @hobs_angle_tol.setter
     def hobs_angle_tol(self, value:typing.Any) -> None:
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_hobs_angle_tol_metadata, value)
 
-    _get_compute_tas_dot_metadata = { "offset" : _get_compute_tas_dot_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def compute_tas_dot(self) -> bool:
         """Get or set the option to allow MATLAB to compute the true airspeed for the aircraft."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_compute_tas_dot_metadata)
 
-    _set_compute_tas_dot_metadata = { "offset" : _set_compute_tas_dot_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @compute_tas_dot.setter
     def compute_tas_dot(self, value:bool) -> None:
         """Get or set the option to allow MATLAB to compute the true airspeed for the aircraft."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_compute_tas_dot_metadata, value)
 
-    _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def airspeed_options(self) -> "IBasicManeuverAirspeedOptions":
         """Get the airspeed options."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_airspeed_options_metadata)
 
-    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def position_velocity_strategies(self) -> "IBasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for MATLAB 3D Guidance."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for MATLAB 3D Guidance."""
         return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._cancel_target_position_velocity_metadata, )

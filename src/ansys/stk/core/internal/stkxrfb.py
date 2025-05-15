@@ -64,6 +64,7 @@ class IRemoteFrameBufferHost(object):
     _refresh_metadata = { "offset" : _refresh_method_offset,
             "arg_types" : (),
             "marshallers" : () }
+
     def refresh(self) -> None:
         """Request a new frame to be displayed."""
         return self._intf.invoke(IRemoteFrameBufferHost._metadata, IRemoteFrameBufferHost._refresh_metadata, )
@@ -115,104 +116,105 @@ class IRemoteFrameBuffer(object):
     _snap_to_rbg_raster_metadata = { "offset" : _snap_to_rbg_raster_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.PVoidArg,) }
+    _set_to_offscreen_rendering_metadata = { "offset" : _set_to_offscreen_rendering_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_resize_metadata = { "offset" : _notify_resize_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_left_button_up_metadata = { "offset" : _notify_left_button_up_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_right_button_up_metadata = { "offset" : _notify_right_button_up_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_middle_button_up_metadata = { "offset" : _notify_middle_button_up_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_left_button_down_metadata = { "offset" : _notify_left_button_down_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_right_button_down_metadata = { "offset" : _notify_right_button_down_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_middle_button_down_metadata = { "offset" : _notify_middle_button_down_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_mouse_move_metadata = { "offset" : _notify_mouse_move_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _notify_mouse_wheel_metadata = { "offset" : _notify_mouse_wheel_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
+    _set_host_metadata = { "offset" : _set_host_method_offset,
+            "arg_types" : (agcom.PVOID,),
+            "marshallers" : (agmarshall.InterfaceInArg("IRemoteFrameBufferHost"),) }
+    _render_to_directx_texture_metadata = { "offset" : _render_to_directx_texture_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    _set_to_directx_rendering_metadata = { "offset" : _set_to_directx_rendering_method_offset,
+            "arg_types" : (agcom.INT, agcom.INT, agcom.PVOID, agcom.PVOID, agcom.PVOID, agcom.PVOID,),
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg,) }
+    _update_directx_rendering_texture_metadata = { "offset" : _update_directx_rendering_texture_method_offset,
+            "arg_types" : (agcom.PVOID, agcom.PVOID,),
+            "marshallers" : (agmarshall.PVoidArg, agmarshall.PVoidArg,) }
+
     def snap_to_rbg_raster(self, rbg_raster_ptr:agcom.PVOID) -> None:
         """Capture the current scene to a raster."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._snap_to_rbg_raster_metadata, rbg_raster_ptr)
 
-    _set_to_offscreen_rendering_metadata = { "offset" : _set_to_offscreen_rendering_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg,) }
     def set_to_offscreen_rendering(self, initial_width:int, initial_height:int) -> None:
         """Switch to offscreen rendering."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_to_offscreen_rendering_metadata, initial_width, initial_height)
 
-    _notify_resize_metadata = { "offset" : _notify_resize_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_resize(self, left:int, top:int, width:int, height:int) -> None:
         """Notifies that a resize event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_resize_metadata, left, top, width, height)
 
-    _notify_left_button_up_metadata = { "offset" : _notify_left_button_up_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_left_button_up(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse left button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_left_button_up_metadata, x, y, key_state)
 
-    _notify_right_button_up_metadata = { "offset" : _notify_right_button_up_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_right_button_up(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse right button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_right_button_up_metadata, x, y, key_state)
 
-    _notify_middle_button_up_metadata = { "offset" : _notify_middle_button_up_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_middle_button_up(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse middle button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_middle_button_up_metadata, x, y, key_state)
 
-    _notify_left_button_down_metadata = { "offset" : _notify_left_button_down_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_left_button_down(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse left button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_left_button_down_metadata, x, y, key_state)
 
-    _notify_right_button_down_metadata = { "offset" : _notify_right_button_down_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_right_button_down(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse right button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_right_button_down_metadata, x, y, key_state)
 
-    _notify_middle_button_down_metadata = { "offset" : _notify_middle_button_down_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_middle_button_down(self, x:int, y:int, key_state:int) -> None:
         """Notifies that a mouse middle button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_middle_button_down_metadata, x, y, key_state)
 
-    _notify_mouse_move_metadata = { "offset" : _notify_mouse_move_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_move(self, x:int, y:int, buttons:int, key_state:int) -> None:
         """Notifies that a mouse move event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_move_metadata, x, y, buttons, key_state)
 
-    _notify_mouse_wheel_metadata = { "offset" : _notify_mouse_wheel_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_wheel(self, x:int, y:int, steps:int, key_state:int) -> None:
         """Notifies that a mouse wheel event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_wheel_metadata, x, y, steps, key_state)
 
-    _set_host_metadata = { "offset" : _set_host_method_offset,
-            "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IRemoteFrameBufferHost"),) }
     def set_host(self, host:"IRemoteFrameBufferHost") -> None:
         """Set the host using this remote frame buffer."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_host_metadata, host)
 
-    _render_to_directx_texture_metadata = { "offset" : _render_to_directx_texture_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def render_to_directx_texture(self) -> None:
         """Render to the DirectX texture configured by SetToDirectXRendering()."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._render_to_directx_texture_metadata, )
 
-    _set_to_directx_rendering_metadata = { "offset" : _set_to_directx_rendering_method_offset,
-            "arg_types" : (agcom.INT, agcom.INT, agcom.PVOID, agcom.PVOID, agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg,) }
     def set_to_directx_rendering(self, initial_width:int, initial_height:int, hwnd:agcom.PVOID, direct_x_device:agcom.PVOID, direct_x_texture:agcom.PVOID, direct_x_shared_handle:agcom.PVOID) -> None:
         """Switch to rendering to the specified Dirext X texture."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_to_directx_rendering_metadata, initial_width, initial_height, hwnd, direct_x_device, direct_x_texture, direct_x_shared_handle)
 
-    _update_directx_rendering_texture_metadata = { "offset" : _update_directx_rendering_texture_method_offset,
-            "arg_types" : (agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.PVoidArg, agmarshall.PVoidArg,) }
     def update_directx_rendering_texture(self, direct_x_texture:agcom.PVOID, direct_x_shared_handle:agcom.PVOID) -> None:
         """Update Dirext X texture (for instance after a resize)."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._update_directx_rendering_texture_metadata, direct_x_texture, direct_x_shared_handle)

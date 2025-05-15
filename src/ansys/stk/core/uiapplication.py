@@ -144,6 +144,7 @@ class IUiApplicationPartnerAccess(object):
     _grant_partner_access_metadata = { "offset" : _grant_partner_access_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+
     def grant_partner_access(self, vendor:str, product:str, key:str) -> typing.Any:
         """Provide object model root for authorized business partners."""
         return self._intf.invoke(IUiApplicationPartnerAccess._metadata, IUiApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
@@ -216,283 +217,284 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _load_personality_metadata = { "offset" : _load_personality_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
+    _get_personality_metadata = { "offset" : _get_personality_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _get_visible_metadata = { "offset" : _get_visible_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_visible_metadata = { "offset" : _set_visible_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_user_control_metadata = { "offset" : _get_user_control_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_user_control_metadata = { "offset" : _set_user_control_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_windows_metadata = { "offset" : _get_windows_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _get_height_metadata = { "offset" : _get_height_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_height_metadata = { "offset" : _set_height_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_width_metadata = { "offset" : _get_width_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_width_metadata = { "offset" : _set_width_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_left_metadata = { "offset" : _get_left_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_left_metadata = { "offset" : _set_left_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_top_metadata = { "offset" : _get_top_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_top_metadata = { "offset" : _set_top_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
+    _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
+    _activate_metadata = { "offset" : _activate_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    _get_most_recently_used_list_metadata = { "offset" : _get_most_recently_used_list_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _file_open_dialog_metadata = { "offset" : _file_open_dialog_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
+    _get_path_metadata = { "offset" : _get_path_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _create_object_metadata = { "offset" : _create_object_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    _file_save_as_dialog_metadata = { "offset" : _file_save_as_dialog_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
+    _quit_metadata = { "offset" : _quit_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    _file_open_dialog_extension_metadata = { "offset" : _file_open_dialog_extension_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    _get_hwnd_metadata = { "offset" : _get_hwnd_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _directory_picker_dialog_metadata = { "offset" : _directory_picker_dialog_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
+    _get_message_pending_delay_metadata = { "offset" : _get_message_pending_delay_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_message_pending_delay_metadata = { "offset" : _set_message_pending_delay_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_personality2_metadata = { "offset" : _get_personality2_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _open_log_file_metadata = { "offset" : _open_log_file_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ApplicationOpenLogFileMode), agmarshall.VariantBoolArg,) }
+    _log_message_metadata = { "offset" : _log_message_method_offset,
+            "arg_types" : (agcom.LONG, agcom.BSTR,),
+            "marshallers" : (agmarshall.EnumArg(ApplicationLogMessageType), agmarshall.BStrArg,) }
+    _get_log_file_metadata = { "offset" : _get_log_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _get_display_alerts_metadata = { "offset" : _get_display_alerts_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_display_alerts_metadata = { "offset" : _set_display_alerts_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _create_application_metadata = { "offset" : _create_application_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _get_process_id_metadata = { "offset" : _get_process_id_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+
     def load_personality(self, pers_name:str) -> None:
         """Load a personality by its name."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._load_personality_metadata, pers_name)
 
-    _get_personality_metadata = { "offset" : _get_personality_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def personality(self) -> typing.Any:
         """Return a reference to the currently loaded personality."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_personality_metadata)
 
-    _get_visible_metadata = { "offset" : _get_visible_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def visible(self) -> bool:
         """Get or set whether the main window is visible."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_visible_metadata)
 
-    _set_visible_metadata = { "offset" : _set_visible_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
     def visible(self, new_value:bool) -> None:
         """Get or set whether the main window is visible."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_visible_metadata, new_value)
 
-    _get_user_control_metadata = { "offset" : _get_user_control_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def user_control(self) -> bool:
         """Get or set whether the application is user controlled."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_user_control_metadata)
 
-    _set_user_control_metadata = { "offset" : _set_user_control_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @user_control.setter
     def user_control(self, new_value:bool) -> None:
         """Get or set whether the application is user controlled."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_user_control_metadata, new_value)
 
-    _get_windows_metadata = { "offset" : _get_windows_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def windows(self) -> "IWindowsCollection":
         """Return a collection of windows."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_windows_metadata)
 
-    _get_height_metadata = { "offset" : _get_height_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def height(self) -> int:
         """Get or set a height of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_height_metadata)
 
-    _set_height_metadata = { "offset" : _set_height_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @height.setter
     def height(self, new_value:int) -> None:
         """Get or set a height of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_height_metadata, new_value)
 
-    _get_width_metadata = { "offset" : _get_width_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def width(self) -> int:
         """Get or set a width of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_width_metadata)
 
-    _set_width_metadata = { "offset" : _set_width_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @width.setter
     def width(self, new_value:int) -> None:
         """Get or set a width of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_width_metadata, new_value)
 
-    _get_left_metadata = { "offset" : _get_left_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def left(self) -> int:
         """Get or set a vertical coordinate of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_left_metadata)
 
-    _set_left_metadata = { "offset" : _set_left_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @left.setter
     def left(self, new_value:int) -> None:
         """Get or set a vertical coordinate of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_left_metadata, new_value)
 
-    _get_top_metadata = { "offset" : _get_top_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def top(self) -> int:
         """Get or set a horizontal coordinate of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_top_metadata)
 
-    _set_top_metadata = { "offset" : _set_top_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @top.setter
     def top(self, new_value:int) -> None:
         """Get or set a horizontal coordinate of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_top_metadata, new_value)
 
-    _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @property
     def window_state(self) -> "ApplicationWindowState":
         """Get or set the state of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_window_state_metadata)
 
-    _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @window_state.setter
     def window_state(self, new_value:"ApplicationWindowState") -> None:
         """Get or set the state of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_window_state_metadata, new_value)
 
-    _activate_metadata = { "offset" : _activate_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def activate(self) -> None:
         """Activates the application's main window."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._activate_metadata, )
 
-    _get_most_recently_used_list_metadata = { "offset" : _get_most_recently_used_list_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def most_recently_used_list(self) -> "MostRecentlyUsedCollection":
         """Return a collection most recently used files."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_most_recently_used_list_metadata)
 
-    _file_open_dialog_metadata = { "offset" : _file_open_dialog_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def file_open_dialog(self, default_ext:str, filter:str, initial_dir:str) -> str:
         """Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_metadata, default_ext, filter, initial_dir, OutArg())
 
-    _get_path_metadata = { "offset" : _get_path_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def path(self) -> str:
         """Return the complete path to the application, excluding the final separator and name of the application. Read-only String."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_path_metadata)
 
-    _create_object_metadata = { "offset" : _create_object_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def create_object(self, prog_id:str, remote_server:str) -> typing.Any:
         """Only works from local HTML pages and scripts."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._create_object_metadata, prog_id, remote_server, OutArg())
 
-    _file_save_as_dialog_metadata = { "offset" : _file_save_as_dialog_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def file_save_as_dialog(self, default_ext:str, filter:str, initial_dir:str) -> str:
         """Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._file_save_as_dialog_metadata, default_ext, filter, initial_dir, OutArg())
 
-    _quit_metadata = { "offset" : _quit_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def quit(self) -> None:
         """Shuts down the application."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._quit_metadata, )
 
-    _file_open_dialog_extension_metadata = { "offset" : _file_open_dialog_extension_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def file_open_dialog_extension(self, allow_multi_select:bool, default_ext:str, filter:str, initial_dir:str) -> "UiFileOpenDialogExtension":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_extension_metadata, allow_multi_select, default_ext, filter, initial_dir, OutArg())
 
-    _get_hwnd_metadata = { "offset" : _get_hwnd_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def hwnd(self) -> int:
         """Return an HWND handle associated with the application main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_hwnd_metadata)
 
-    _directory_picker_dialog_metadata = { "offset" : _directory_picker_dialog_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def directory_picker_dialog(self, title:str, initial_dir:str) -> str:
         """Brings up the Directory Picker Dialog and returns a selected directory name."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._directory_picker_dialog_metadata, title, initial_dir, OutArg())
 
-    _get_message_pending_delay_metadata = { "offset" : _get_message_pending_delay_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def message_pending_delay(self) -> int:
         """Get or set message-pending delay for server busy dialog (in milliseconds)."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_message_pending_delay_metadata)
 
-    _set_message_pending_delay_metadata = { "offset" : _set_message_pending_delay_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @message_pending_delay.setter
     def message_pending_delay(self, new_value:int) -> None:
         """Get or set message-pending delay for server busy dialog (in milliseconds)."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_message_pending_delay_metadata, new_value)
 
-    _get_personality2_metadata = { "offset" : _get_personality2_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def personality2(self) -> typing.Any:
         """Return an new instance of the root object of the STK Object Model."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_personality2_metadata)
 
-    _open_log_file_metadata = { "offset" : _open_log_file_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ApplicationOpenLogFileMode), agmarshall.VariantBoolArg,) }
     def open_log_file(self, log_file_name:str, log_file_mode:"ApplicationOpenLogFileMode") -> bool:
         """Specify the current log file to be written to."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, log_file_name, log_file_mode, OutArg())
 
-    _log_message_metadata = { "offset" : _log_message_method_offset,
-            "arg_types" : (agcom.LONG, agcom.BSTR,),
-            "marshallers" : (agmarshall.EnumArg(ApplicationLogMessageType), agmarshall.BStrArg,) }
     def log_message(self, msg_type:"ApplicationLogMessageType", msg:str) -> None:
         """Log the Message specified."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._log_message_metadata, msg_type, msg)
 
-    _get_log_file_metadata = { "offset" : _get_log_file_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def log_file(self) -> str:
         """Get the current log files full path."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_log_file_metadata)
 
-    _get_display_alerts_metadata = { "offset" : _get_display_alerts_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def display_alerts(self) -> bool:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_display_alerts_metadata)
 
-    _set_display_alerts_metadata = { "offset" : _set_display_alerts_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_alerts.setter
     def display_alerts(self, display_alerts:bool) -> None:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_display_alerts_metadata, display_alerts)
 
-    _create_application_metadata = { "offset" : _create_application_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     def create_application(self) -> "UiApplication":
         """Create a new instance of the application model root object."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._create_application_metadata, OutArg())
 
-    _get_process_id_metadata = { "offset" : _get_process_id_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def process_id(self) -> int:
         """Get process id for the current instance."""
@@ -566,21 +568,22 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+
     def item(self, index:typing.Any) -> str:
         """Get the MRU at the specified index."""
         return self._intf.invoke(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._item_metadata, index, OutArg())
 
-    _get_count_metadata = { "offset" : _get_count_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Get the total count of MRUs in the collection."""
         return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get_count_metadata)
 
-    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the MRU collection."""
@@ -640,22 +643,23 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
+
     @property
     def count(self) -> int:
         """Get the total count of files in the collection."""
         return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get_count_metadata)
 
-    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the file collection."""
         return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get__new_enum_metadata)
 
-    _item_metadata = { "offset" : _item_method_offset,
-            "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, n_index:int) -> str:
         """Get the file at the specified index."""
         return self._intf.invoke(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._item_metadata, n_index, OutArg())
@@ -704,46 +708,47 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
     _get_file_name_metadata = { "offset" : _get_file_name_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _set_file_name_metadata = { "offset" : _set_file_name_method_offset,
+            "arg_types" : (agcom.PVOID,),
+            "marshallers" : (agmarshall.InterfaceInArg("UiFileOpenDialogExtensionCollection"),) }
+    _get_filter_description_metadata = { "offset" : _get_filter_description_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _set_filter_description_metadata = { "offset" : _set_filter_description_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _get_filter_pattern_metadata = { "offset" : _get_filter_pattern_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _set_filter_pattern_metadata = { "offset" : _set_filter_pattern_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+
     @property
     def file_name(self) -> "UiFileOpenDialogExtensionCollection":
         """Get or set the multiple file open collection."""
         return self._intf.get_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._get_file_name_metadata)
 
-    _set_file_name_metadata = { "offset" : _set_file_name_method_offset,
-            "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("UiFileOpenDialogExtensionCollection"),) }
     @file_name.setter
     def file_name(self, value:"UiFileOpenDialogExtensionCollection") -> None:
         """Get or set the multiple file open collection."""
         return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_file_name_metadata, value)
 
-    _get_filter_description_metadata = { "offset" : _get_filter_description_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filter_description(self) -> str:
         """Get or set the file open dialog filter description."""
         return self._intf.get_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._get_filter_description_metadata)
 
-    _set_filter_description_metadata = { "offset" : _set_filter_description_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @filter_description.setter
     def filter_description(self, new_value:str) -> None:
         """Get or set the file open dialog filter description."""
         return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_filter_description_metadata, new_value)
 
-    _get_filter_pattern_metadata = { "offset" : _get_filter_pattern_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filter_pattern(self) -> str:
         """Get or set the file open dialog filter pattern."""
         return self._intf.get_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._get_filter_pattern_metadata)
 
-    _set_filter_pattern_metadata = { "offset" : _set_filter_pattern_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @filter_pattern.setter
     def filter_pattern(self, new_value:str) -> None:
         """Get or set the file open dialog filter pattern."""

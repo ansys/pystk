@@ -56,20 +56,21 @@ class STKXInitialize(SupportsDeleteCallback):
     _initialize_activation_context_metadata = { "offset" : _initialize_activation_context_method_offset,
             "arg_types" : (),
             "marshallers" : () }
+    _initialize_data_metadata = { "offset" : _initialize_data_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
+    _initialize_data_ex_metadata = { "offset" : _initialize_data_ex_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
+
     def initialize_activation_context(self) -> None:
         """Initialize the activation context to be used by STK Engine based on the current activation context."""
         return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_activation_context_metadata, )
 
-    _initialize_data_metadata = { "offset" : _initialize_data_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def initialize_data(self, install_home:str, config_directory:str) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
         return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_metadata, install_home, config_directory)
 
-    _initialize_data_ex_metadata = { "offset" : _initialize_data_ex_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
     def initialize_data_ex(self, install_home:str, config_directory:str, defaults:bool, styles:bool, vgt:bool, amm:bool, gator:bool, online_data:bool, online_sgp4:bool) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
         return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, install_home, config_directory, defaults, styles, vgt, amm, gator, online_data, online_sgp4)

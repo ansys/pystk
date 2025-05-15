@@ -167,50 +167,51 @@ class WindowsCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _arrange_metadata = { "offset" : _arrange_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeStyle),) }
+    _add_metadata = { "offset" : _add_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.Variant, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+
     def item(self, index_or_caption:typing.Any) -> "Window":
         """Retrieve a window object."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._item_metadata, index_or_caption, OutArg())
 
-    _get_count_metadata = { "offset" : _get_count_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Return a total number of window objects in the collection."""
         return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get_count_metadata)
 
-    _arrange_metadata = { "offset" : _arrange_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WindowArrangeStyle),) }
     def arrange(self, arrange_style:"WindowArrangeStyle") -> None:
         """Arranges the application windows using the specified style."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrange_style)
 
-    _add_metadata = { "offset" : _add_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.Variant, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def add(self, plugin_id:str, init_data:typing.Any) -> "Window":
         """Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, plugin_id, init_data, OutArg())
 
-    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the windows in the collection."""
         return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get__new_enum_metadata)
 
-    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
-            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "Window":
         """Retrieve a window object by index in collection."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._get_item_by_index_metadata, index, OutArg())
 
-    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
-            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "Window":
         """Retrieve a window object by name of window object."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._get_item_by_name_metadata, name, OutArg())
@@ -277,179 +278,180 @@ class Window(SupportsDeleteCallback):
     _get_caption_metadata = { "offset" : _get_caption_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
+    _set_caption_metadata = { "offset" : _set_caption_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _activate_metadata = { "offset" : _activate_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
+    _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
+    _close_metadata = { "offset" : _close_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    _get_height_metadata = { "offset" : _get_height_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_height_metadata = { "offset" : _set_height_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_width_metadata = { "offset" : _get_width_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_width_metadata = { "offset" : _set_width_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_left_metadata = { "offset" : _get_left_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_left_metadata = { "offset" : _set_left_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_top_metadata = { "offset" : _get_top_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _set_top_metadata = { "offset" : _set_top_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get_dock_style_metadata = { "offset" : _get_dock_style_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
+    _set_dock_style_metadata = { "offset" : _set_dock_style_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
+    _get_no_workbook_close_metadata = { "offset" : _get_no_workbook_close_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_no_workbook_close_metadata = { "offset" : _set_no_workbook_close_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_unpinned_metadata = { "offset" : _get_unpinned_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_unpinned_metadata = { "offset" : _set_unpinned_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_can_pin_metadata = { "offset" : _get_can_pin_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_toolbars_metadata = { "offset" : _get_toolbars_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    _get_service_by_name_metadata = { "offset" : _get_service_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    _get_service_by_type_metadata = { "offset" : _get_service_by_type_method_offset,
+            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.EnumArg(WindowServiceType), agmarshall.InterfaceOutArg,) }
+
     @property
     def caption(self) -> str:
         """Get or set the window caption. Can only be set within UI plugins for the non unique windows they own."""
         return self._intf.get_property(Window._metadata, Window._get_caption_metadata)
 
-    _set_caption_metadata = { "offset" : _set_caption_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
     @caption.setter
     def caption(self, caption:str) -> None:
         """Get or set  the window caption. Can only be set within UI plugins for the non unique windows they own."""
         return self._intf.set_property(Window._metadata, Window._set_caption_metadata, caption)
 
-    _activate_metadata = { "offset" : _activate_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def activate(self) -> None:
         """Activates the window."""
         return self._intf.invoke(Window._metadata, Window._activate_metadata, )
 
-    _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @property
     def window_state(self) -> "ApplicationWindowState":
         """The window state."""
         return self._intf.get_property(Window._metadata, Window._get_window_state_metadata)
 
-    _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @window_state.setter
     def window_state(self, new_value:"ApplicationWindowState") -> None:
         return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, new_value)
 
-    _close_metadata = { "offset" : _close_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
     def close(self) -> None:
         """Close the window."""
         return self._intf.invoke(Window._metadata, Window._close_metadata, )
 
-    _get_height_metadata = { "offset" : _get_height_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def height(self) -> int:
         """The window height."""
         return self._intf.get_property(Window._metadata, Window._get_height_metadata)
 
-    _set_height_metadata = { "offset" : _set_height_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @height.setter
     def height(self, new_value:int) -> None:
         return self._intf.set_property(Window._metadata, Window._set_height_metadata, new_value)
 
-    _get_width_metadata = { "offset" : _get_width_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def width(self) -> int:
         """The window width."""
         return self._intf.get_property(Window._metadata, Window._get_width_metadata)
 
-    _set_width_metadata = { "offset" : _set_width_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @width.setter
     def width(self, new_value:int) -> None:
         return self._intf.set_property(Window._metadata, Window._set_width_metadata, new_value)
 
-    _get_left_metadata = { "offset" : _get_left_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def left(self) -> int:
         """The window horizontal position."""
         return self._intf.get_property(Window._metadata, Window._get_left_metadata)
 
-    _set_left_metadata = { "offset" : _set_left_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @left.setter
     def left(self, new_value:int) -> None:
         return self._intf.set_property(Window._metadata, Window._set_left_metadata, new_value)
 
-    _get_top_metadata = { "offset" : _get_top_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def top(self) -> int:
         """The window vertical position."""
         return self._intf.get_property(Window._metadata, Window._get_top_metadata)
 
-    _set_top_metadata = { "offset" : _set_top_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LongArg,) }
     @top.setter
     def top(self, new_value:int) -> None:
         return self._intf.set_property(Window._metadata, Window._set_top_metadata, new_value)
 
-    _get_dock_style_metadata = { "offset" : _get_dock_style_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
     @property
     def dock_style(self) -> "WindowDockStyle":
         """The window docking style."""
         return self._intf.get_property(Window._metadata, Window._get_dock_style_metadata)
 
-    _set_dock_style_metadata = { "offset" : _set_dock_style_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
     @dock_style.setter
     def dock_style(self, new_value:"WindowDockStyle") -> None:
         return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, new_value)
 
-    _get_no_workbook_close_metadata = { "offset" : _get_no_workbook_close_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def no_workbook_close(self) -> bool:
         """Whether to close the window when the application workbook is loaded/closed."""
         return self._intf.get_property(Window._metadata, Window._get_no_workbook_close_metadata)
 
-    _set_no_workbook_close_metadata = { "offset" : _set_no_workbook_close_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_workbook_close.setter
     def no_workbook_close(self, new_value:bool) -> None:
         return self._intf.set_property(Window._metadata, Window._set_no_workbook_close_metadata, new_value)
 
-    _get_unpinned_metadata = { "offset" : _get_unpinned_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def unpinned(self) -> bool:
         """The window's pinned state."""
         return self._intf.get_property(Window._metadata, Window._get_unpinned_metadata)
 
-    _set_unpinned_metadata = { "offset" : _set_unpinned_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @unpinned.setter
     def unpinned(self, new_value:bool) -> None:
         return self._intf.set_property(Window._metadata, Window._set_unpinned_metadata, new_value)
 
-    _get_can_pin_metadata = { "offset" : _get_can_pin_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def can_pin(self) -> bool:
         """Return whether the window supports pinning."""
         return self._intf.get_property(Window._metadata, Window._get_can_pin_metadata)
 
-    _get_toolbars_metadata = { "offset" : _get_toolbars_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def toolbars(self) -> "ToolbarCollection":
         """Return the window's toolbar collection."""
         return self._intf.get_property(Window._metadata, Window._get_toolbars_metadata)
 
-    _get_service_by_name_metadata = { "offset" : _get_service_by_name_method_offset,
-            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_service_by_name(self, name:str) -> typing.Any:
         """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name."""
         return self._intf.invoke(Window._metadata, Window._get_service_by_name_metadata, name, OutArg())
 
-    _get_service_by_type_metadata = { "offset" : _get_service_by_type_method_offset,
-            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(WindowServiceType), agmarshall.InterfaceOutArg,) }
     def get_service_by_type(self, service_type:"WindowServiceType") -> typing.Any:
         """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
         return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, service_type, OutArg())
@@ -504,45 +506,46 @@ class Toolbar(SupportsDeleteCallback):
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
+    _get_caption_metadata = { "offset" : _get_caption_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    _get_visible_metadata = { "offset" : _get_visible_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _set_visible_metadata = { "offset" : _set_visible_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    _get_float_state_metadata = { "offset" : _get_float_state_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
+    _set_float_state_metadata = { "offset" : _set_float_state_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
+
     @property
     def identifier(self) -> int:
         """The identity."""
         return self._intf.get_property(Toolbar._metadata, Toolbar._get_identifier_metadata)
 
-    _get_caption_metadata = { "offset" : _get_caption_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def caption(self) -> str:
         """The caption."""
         return self._intf.get_property(Toolbar._metadata, Toolbar._get_caption_metadata)
 
-    _get_visible_metadata = { "offset" : _get_visible_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def visible(self) -> bool:
         """The visibility."""
         return self._intf.get_property(Toolbar._metadata, Toolbar._get_visible_metadata)
 
-    _set_visible_metadata = { "offset" : _set_visible_method_offset,
-            "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
     def visible(self, new_value:bool) -> None:
         return self._intf.set_property(Toolbar._metadata, Toolbar._set_visible_metadata, new_value)
 
-    _get_float_state_metadata = { "offset" : _get_float_state_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
     @property
     def float_state(self) -> "WindowArrangeState":
         """The float state."""
         return self._intf.get_property(Toolbar._metadata, Toolbar._get_float_state_metadata)
 
-    _set_float_state_metadata = { "offset" : _set_float_state_method_offset,
-            "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
     @float_state.setter
     def float_state(self, new_value:"WindowArrangeState") -> None:
         return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, new_value)
@@ -603,43 +606,44 @@ class ToolbarCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    _get_toolbar_by_id_metadata = { "offset" : _get_toolbar_by_id_method_offset,
+            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+
     def item(self, index_or_caption:typing.Any) -> "Toolbar":
         """Retrieve a toolbar object."""
         return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._item_metadata, index_or_caption, OutArg())
 
-    _get_count_metadata = { "offset" : _get_count_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Return a total number of toolbars in the collection."""
         return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get_count_metadata)
 
-    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the toolbars in the collection."""
         return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get__new_enum_metadata)
 
-    _get_toolbar_by_id_metadata = { "offset" : _get_toolbar_by_id_method_offset,
-            "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def get_toolbar_by_id(self, id:int) -> "Toolbar":
         """Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object."""
         return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._get_toolbar_by_id_metadata, id, OutArg())
 
-    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
-            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "Toolbar":
         """Retrieve a toolbar object based on the index in the collection."""
         return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._get_item_by_index_metadata, index, OutArg())
 
-    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
-            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "Toolbar":
         """Retrieve a toolbar object based on the name of the Toolbar in the collection."""
         return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._get_item_by_name_metadata, name, OutArg())
@@ -683,6 +687,7 @@ class WindowMapObject(SupportsDeleteCallback):
     _get_map_id_metadata = { "offset" : _get_map_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
+
     @property
     def map_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 2D map."""
@@ -723,6 +728,7 @@ class WindowGlobeObject(SupportsDeleteCallback):
     _get_scene_id_metadata = { "offset" : _get_scene_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
+
     @property
     def scene_id(self) -> int:
         """A unique identifier associated with the window that can be used with Connect to control the 3D globe."""
