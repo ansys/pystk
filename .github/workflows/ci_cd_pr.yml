@@ -543,17 +543,18 @@ jobs:
           docker rm ${{ env.STK_CONTAINER }}
 
   build-libraries:
-    name: "Build ${{ matrix.library }} library"
+    name: "Build ${{ matrix.library.name }} library"
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     strategy:
       matrix:
-        library: ['ansys-stk-core', 'ansys-stk-extensions']
-        library-directory: ['.', 'extensions']
+        library:
+          - {"name": "ansys-stk-core", "directory": "."}
+          - {"name": "ansys-stk-extensions", "directory": "extensions"}
       fail-fast: false
     steps:
       - uses: ansys/actions/build-library@v9
         with:
-          library-name: ${{ matrix.library }}
-          working-directory: ${{ matrix.library-directory }}
+          library-name: ${{ matrix.library.name }}
+          working-directory: ${{ matrix.library.directory }}
           attest-provenance: true
