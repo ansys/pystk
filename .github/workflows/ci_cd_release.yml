@@ -392,6 +392,7 @@ jobs:
           changelog-release-notes: true
           generate-release-notes: false
           token: ${{ secrets.GITHUB_TOKEN }}
+          only-code: true
 
   doc-deploy-stable:
     name: Deploy stable documentation
