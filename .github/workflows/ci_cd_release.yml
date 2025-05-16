@@ -344,6 +344,10 @@ jobs:
           - {"name": "ansys-stk-core", "directory": "."}
           - {"name": "ansys-stk-extensions", "directory": "extensions"}
       fail-fast: false
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
     steps:
       - uses: ansys/actions/build-library@v9
         with:
