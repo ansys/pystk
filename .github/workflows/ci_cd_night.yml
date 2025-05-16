@@ -43,7 +43,6 @@ jobs:
   build-wheelhouse-core:
     name: "Wheelhouse ansys-stk-core / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
     runs-on: ${{ matrix.os }}
-    needs: [code-style, doc-style]
     permissions:
       attestations: write
       contents: read
@@ -65,7 +64,6 @@ jobs:
   build-wheelhouse-extensions:
     name: "Wheelhouse ansys-stk-extensions / ${{ matrix.os }} / ${{ matrix.python-version }}"
     runs-on: ${{ matrix.os }}
-    needs: [code-style, doc-style]
     permissions:
       attestations: write
       contents: read
