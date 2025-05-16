@@ -274,6 +274,10 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
     steps:
       - uses: ansys/actions/build-library@v9
         with:
