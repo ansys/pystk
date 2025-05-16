@@ -1,0 +1,54 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "ansys-stk-extensions"
+dynamic = ["version"]
+description = "A set of extensions for PySTK."
+readme = "README.rst"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
+]
+maintainers = [
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
+]
+
+classifiers = [
+    # TODO: remove all 'Private' classifiers prior to the public release
+    "Private :: Do Not Upload",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+
+[project.optional-dependencies]
+
+[tool.flit.module]
+name = "ansys.stk.extensions"
+
+[project.urls]
+discussions = "https://github.com/ansys/pystk/discussions"
+documentation = "https://stk.docs.pyansys.com/"
+homepage = "https://www.ansys.com/products/missions/ansys-stk"
+issues = "https://github.com/ansys/pystk/issues"
+source = "https://github.com/ansys/pystk"
+changelog = "https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst"
+
+[tool.coverage.paths]
+source = [
+    "src",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/ansys/stk/extensions"]
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
