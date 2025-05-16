@@ -381,8 +381,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: release
     permissions:
-      id-token: write
+      attestations: write
       contents: write
+      id-token: write
     steps:
       - uses: ansys/actions/release-github@v9
         with:
