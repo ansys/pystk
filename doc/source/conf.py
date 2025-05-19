@@ -184,6 +184,9 @@ linkcheck_ignore = [
     # TODO: Determine a way to link to examples without breaking the linkcheck
     # https://github.com/ansys-internal/pystk/issues/657
     r"../examples/",
+    # TODO: changelog links
+    # https://github.com/ansys-internal/pystk/issues/706
+    f"https://github.com/ansys/{html_context['github_repo']}/*",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
