@@ -388,7 +388,7 @@ jobs:
       - name: "Release ${{ matrix.library }} to private PyPI index"
         uses: ansys/actions/release-pypi-private@v9
         with:
-          library-name: ${{ matrix.library-name }}
+          library-name: ${{ matrix.library }}
           twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
 
   release-github:
