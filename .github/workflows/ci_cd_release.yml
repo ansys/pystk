@@ -403,12 +403,13 @@ jobs:
     steps:
       - uses: ansys/actions/release-github@v9
         with:
-          additional-artifacts: "${{ env.ANSYS_STK_EXTENSIONS }}-artifacts"
-          add-artifact-attestation-notes: true
-          changelog-release-notes: true
-          generate-release-notes: false
+          library-name: ${{ env.ANSYS_STK_CORE }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          additional-artifacts: "${{ env.ANSYS_STK_EXTENSIONS }}-artifacts"
+          changelog-release-notes: true
           only-code: true
+          add-artifact-attestation-notes: true
+          generate_release_notes: false
 
   doc-deploy-stable:
     name: Deploy stable documentation
