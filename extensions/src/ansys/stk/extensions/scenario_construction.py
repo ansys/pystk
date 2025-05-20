@@ -28,7 +28,7 @@ A set of convenience utilities to facilitate the construction of scenarios.
 
 from typing import Dict
 
-from ansys.stk.core.stkobjects import Scenario, StkObjectRoot, STKObjectType, IStkObject
+from ansys.stk.core.stkobjects import IStkObject, Scenario, StkObjectRoot, STKObjectType
 
 
 def construct_scenario_from_dict(root: StkObjectRoot, dict: Dict) -> Scenario:
