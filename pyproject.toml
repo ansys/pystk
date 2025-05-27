@@ -60,7 +60,7 @@ jupyter = [
     "sidecar>=0.7.0",
 ]
 tests = [
-    "libcst==1.7.0",
+    "libcst==1.8.0",
     "matplotlib==3.10.3",
     "numpy==2.2.6",
     "pytest==8.3.5",
@@ -76,7 +76,7 @@ doc = [
     "jupyterlab==4.4.2",
     "jupytext==1.17.1",
     "jupyter-server==2.16.0",
-    "libcst==1.7.0",
+    "libcst==1.8.0",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
