@@ -5,6 +5,8 @@ from pathlib import Path
 import textwrap
 from typing import Union
 
+from numpydoc.docscrape import NumpyDocString
+
 
 class ManualRSTGenerator:
     """Generates reStructuredText files for Python modules and classes."""
@@ -111,6 +113,7 @@ class ManualRSTGenerator:
 
             submodules = []
             subpackages = []
+            functions = []
 
             if path_to_src_file.name == "__init__.py":
                 for entry in path_to_src_file.parent.iterdir():
@@ -140,6 +143,12 @@ class ManualRSTGenerator:
                 key=lambda x: x.name,
             )
 
+            function_definitions = [node for node in tree.body if isinstance(node, ast.FunctionDef)]
+            functions = sorted(
+                [func_def for func_def in function_definitions if not func_def.name.startswith("_")],
+                key=lambda x: x.name,
+            )
+
             def write_line(lines):
                 out_file.writelines([line + "\n" for line in lines])
 
@@ -153,7 +162,7 @@ class ManualRSTGenerator:
                 ]
             )
 
-            if any([subpackages, submodules, interfaces, classes, enums]):
+            if any([subpackages, submodules, interfaces, classes, enums, functions]):
                 write_line(["Summary", "-------", "", ".. tab-set::", ""])
 
                 def write_list_tab(title, items, formatter):
@@ -180,12 +189,18 @@ class ManualRSTGenerator:
                         "Submodules", submodules, lambda sm: f":py:obj:`~{containing_namespace}.{module_name}.{sm}`"
                     )
 
-                for def_type, defs in [("Interfaces", interfaces), ("Classes", classes), ("Enums", enums)]:
+                for def_type, defs in [
+                    ("Interfaces", interfaces),
+                    ("Classes", classes),
+                    ("Enums", enums),
+                    ("Functions", functions),
+                ]:
                     if defs:
+                        tag = ":py:class:" if def_type != "Functions" else ":py:func:"
                         write_list_tab(
                             def_type,
                             defs,
-                            lambda d: f":py:class:`~{containing_namespace}.{module_name}.{d.name}`"
+                            lambda d: f"{tag}`~{containing_namespace}.{module_name}.{d.name}`"
                             + (
                                 f"\n              - {ast.get_docstring(d).splitlines()[0]}"
                                 if ast.get_docstring(d)
@@ -212,10 +227,15 @@ class ManualRSTGenerator:
             write_toc_block(subpackages, "🖿", "subpackage")
             write_toc_block(submodules, "🗎", "submodule")
 
-            if any([classes, interfaces, enums]):
-                for def_type, defs in [("Interfaces", interfaces), ("Classes", classes), ("Enums", enums)]:
+            if any([classes, interfaces, enums, functions]):
+                for def_type, defs in [
+                    ("Interfaces", interfaces),
+                    ("Classes", classes),
+                    ("Enums", enums),
+                    ("Functions", functions),
+                ]:
                     if defs:
-                        symbol = {"Interfaces": "", "Classes": "", "Enums": "≔ "}[def_type]
+                        symbol = {"Interfaces": "", "Classes": "", "Enums": "≔ ", "Functions": ""}[def_type]
                         write_line([".. toctree::", "    :titlesonly:", "    :maxdepth: 1", "    :hidden:", ""])
                         for d in defs:
                             write_line([f"     {symbol}{d.name}<{module_name}/{d.name}>"])
@@ -224,6 +244,33 @@ class ManualRSTGenerator:
                 self._generate_rst_for_pyobj(obj, containing_namespace, module_name, str(out_file_path))
             for enum in enums:
                 self._generate_rst_for_pyenum(enum, containing_namespace, module_name, str(out_file_path))
+            for func in functions:
+                self._generate_rst_for_pyfunc(func, containing_namespace, module_name, str(out_file_path))
+
+    @staticmethod
+    def _parse_args(method):
+        args = []
+        defaults = list(method.args.defaults or [])
+        default_offset = len(method.args.args) - len(defaults)
+
+        for i, arg in enumerate(method.args.args):
+            arg_str = arg.arg
+            if arg.annotation and hasattr(arg.annotation, "id"):
+                arg_str += f": {arg.annotation.id}"
+            if i >= default_offset and defaults:
+                default = defaults[i - default_offset]
+                if isinstance(default, ast.Constant):
+                    arg_str += f" = {default.value!r}"
+            args.append(arg_str)
+        return ", ".join(args)
+
+    @staticmethod
+    def _parse_return_type(node):
+        if isinstance(node, ast.Constant):
+            return "None"
+        if node and hasattr(node, "id"):
+            return node.id
+        return ""
 
     def _generate_rst_for_pyobj(self, obj_definition, containing_namespace, module_name, module_rst_file_path):
         """Generate RST file for a Python object (class or interface).
@@ -271,29 +318,6 @@ class ManualRSTGenerator:
                     f.write(f"              - {doc.splitlines()[0]}\n")
             f.write("\n")
 
-        def parse_args(method):
-            args = []
-            defaults = list(method.args.defaults or [])
-            default_offset = len(method.args.args) - len(defaults)
-
-            for i, arg in enumerate(method.args.args):
-                arg_str = arg.arg
-                if arg.annotation and hasattr(arg.annotation, "id"):
-                    arg_str += f": {arg.annotation.id}"
-                if i >= default_offset and defaults:
-                    default = defaults[i - default_offset]
-                    if isinstance(default, ast.Constant):
-                        arg_str += f" = {default.value!r}"
-                args.append(arg_str)
-            return ", ".join(args)
-
-        def parse_return_type(node):
-            if isinstance(node, ast.Constant):
-                return "None"
-            if node and hasattr(node, "id"):
-                return node.id
-            return ""
-
         with out_dir.open("w", encoding="utf-8") as f:
             f.writelines(
                 [
@@ -327,7 +351,7 @@ class ManualRSTGenerator:
             if props:
                 f.write("Property detail\n---------------\n\n")
                 for p in props:
-                    ret_type = parse_return_type(p.returns)
+                    ret_type = ManualRSTGenerator._parse_return_type(p.returns)
                     f.writelines(
                         [
                             f".. py:property:: {p.name}\n",
@@ -340,8 +364,8 @@ class ManualRSTGenerator:
             if methods:
                 f.write("Method detail\n-------------\n\n")
                 for m in methods:
-                    arg_str = parse_args(m)
-                    ret_type = parse_return_type(m.returns)
+                    arg_str = ManualRSTGenerator._parse_args(m)
+                    ret_type = ManualRSTGenerator._parse_return_type(m.returns)
                     f.writelines(
                         [
                             f".. py:method:: {m.name}({arg_str})",
@@ -371,6 +395,127 @@ class ManualRSTGenerator:
                         )
 
             f.write("\n")
+
+    def _generate_rst_for_pyfunc(self, func_def, namespace, module_name, module_rst_path):
+        """Generate RST file for a Python function.
+
+        Parameters
+        ----------
+        func_def : ast.FunctionDef
+            Function definition in the AST.
+        namespace : str
+            Namespace containing the enum.
+        module_name : str
+            Name of the module.
+        module_rst_path : str
+            Path to the module RST file.
+
+        """
+        output_dir = Path(module_rst_path).parent.resolve() / module_name
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        out_path = output_dir / f"{func_def.name}.rst"
+        with out_path.open("w", encoding="utf-8") as f:
+            # Header and class declaration
+            f.writelines(
+                [
+                    f"{func_def.name}\n",
+                    f"{'=' * len(func_def.name)}\n\n",
+                ]
+            )
+
+            arg_str = ManualRSTGenerator._parse_args(func_def)
+            ret_type = ManualRSTGenerator._parse_return_type(func_def.returns)
+            fq_name = f"{namespace}.{module_name}.{func_def.name}"
+            f.writelines(
+                [
+                    f".. py:function:: {func_def.name}({arg_str})",
+                    f"{' -> ' + ret_type if ret_type else ''}\n",
+                    f"    :canonical: {fq_name}\n\n",
+                ]
+            )
+
+            # Function docstring
+            rawdocstring = ast.get_docstring(func_def)
+            docstring = None
+            if rawdocstring:
+                docstring = NumpyDocString(rawdocstring)
+
+            if docstring:
+                if "Summary" in docstring:
+                    f.write(f"{textwrap.indent("\n".join(docstring['Summary']), '    ')}\n\n")
+                if "Extended Summary" in docstring:
+                    f.write(f"{textwrap.indent("\n".join(docstring['Extended Summary']), '    ')}\n\n")
+
+            args_with_types = [
+                (a.arg, a.annotation.id)
+                for a in func_def.args.args
+                if a.annotation and hasattr(a.annotation, "id") and a.arg != "self"
+            ]
+            if args_with_types:
+                f.write("    :Parameters:\n\n")
+                for arg, type_hint in args_with_types:
+                    f.write(f"        **{arg}** : :obj:`~{type_hint}`\n")
+                    if docstring and "Parameters" in docstring:
+                        param_candidates = [p for p in docstring["Parameters"] if p.name == arg]
+                        if len(param_candidates) > 0:
+                            param = param_candidates[0]
+                            if len(param.desc) > 0:
+                                f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
+                    f.write("\n")
+                f.write("\n")
+
+            if ret_type:
+                f.writelines(
+                    [
+                        "    :Returns:\n\n",
+                        f"        :obj:`~{ret_type}`\n",
+                    ]
+                )
+                if docstring and "Returns" in docstring and len(docstring["Returns"]) == 1:
+                    ret = docstring["Returns"][0]
+                    f.write(f"{textwrap.indent("\n".join(ret.desc), '        ')}\n")
+                f.write("\n")
+
+            if docstring and "Raises" in docstring and len(docstring["Raises"]) == 1:
+                ret = docstring["Raises"][0]
+                f.writelines(
+                    [
+                        "    :Raises:\n\n",
+                        f"        :obj:`~{ret.type}`\n",
+                        f"{textwrap.indent("\n".join(ret.desc), '        ')}\n",
+                    ]
+                )
+            f.write("\n")
+
+            if docstring and "Examples" in docstring:
+                f.write("    :Examples:\n\n")
+                in_code_block = False
+                for example_line in docstring["Examples"]:
+                    if in_code_block and not example_line.startswith(">>>"):
+                        in_code_block = False
+                        f.write("\n\n")
+                    if not in_code_block and example_line.startswith(">>> "):
+                        in_code_block = True
+                        f.write("\n      .. code-block:: python\n\n")
+                    if in_code_block:
+                        f.write(f"{textwrap.indent(example_line[len(">>> "):], '        ')}\n")
+                    else:
+                        f.write(f"{textwrap.indent(example_line, '      ')}\n")
+                f.write("\n")
+
+            # Set current module context
+            f.writelines([f".. py:currentmodule:: {func_def.name}\n\n\n"])
+
+            # Import statement
+            f.writelines(
+                [
+                    "Import detail\n",
+                    "-------------\n\n",
+                    ".. code-block:: python\n\n",
+                    f"    from {namespace}.{module_name} import {func_def.name}\n\n\n",
+                ]
+            )
 
     def _generate_rst_for_pyenum(self, enum_def, namespace, module_name, module_rst_path):
         """Generate RST file for a Python enum.
