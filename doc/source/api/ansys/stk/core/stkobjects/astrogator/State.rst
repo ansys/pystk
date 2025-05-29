@@ -193,7 +193,8 @@ Method detail
 
     :Parameters:
 
-    **element_type** : :obj:`~ElementSetType`
+        **element_type** : :obj:`~ElementSetType`
+
 
     :Returns:
 
@@ -236,7 +237,8 @@ Method detail
 
     :Parameters:
 
-    **frame_name** : :obj:`~str`
+        **frame_name** : :obj:`~str`
+
 
     :Returns:
 

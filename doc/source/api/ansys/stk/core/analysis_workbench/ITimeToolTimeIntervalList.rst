@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 

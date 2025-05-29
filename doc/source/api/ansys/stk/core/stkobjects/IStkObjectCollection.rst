@@ -94,7 +94,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -108,8 +109,10 @@ Method detail
 
     :Parameters:
 
-    **class_type** : :obj:`~STKObjectType`
-    **inst_name** : :obj:`~str`
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -122,8 +125,10 @@ Method detail
 
     :Parameters:
 
-    **class_type** : :obj:`~STKObjectType`
-    **inst_name** : :obj:`~str`
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -136,7 +141,8 @@ Method detail
 
     :Parameters:
 
-    **class_type** : :obj:`~STKObjectType`
+        **class_type** : :obj:`~STKObjectType`
+
 
     :Returns:
 
@@ -149,9 +155,12 @@ Method detail
 
     :Parameters:
 
-    **class_type** : :obj:`~STKObjectType`
-    **inst_name** : :obj:`~str`
-    **central_body_name** : :obj:`~str`
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -165,8 +174,10 @@ Method detail
 
     :Parameters:
 
-    **class_type** : :obj:`~STKObjectType`
-    **inst_name** : :obj:`~str`
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -179,7 +190,8 @@ Method detail
 
     :Parameters:
 
-    **file_path** : :obj:`~str`
+        **file_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -192,8 +204,10 @@ Method detail
 
     :Parameters:
 
-    **object_to_clone** : :obj:`~IStkObject`
-    **new_object_name** : :obj:`~str`
+        **object_to_clone** : :obj:`~IStkObject`
+
+        **new_object_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -206,7 +220,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -219,7 +234,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

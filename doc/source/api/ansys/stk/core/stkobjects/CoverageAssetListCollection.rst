@@ -91,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -105,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -127,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -141,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -154,7 +158,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -167,7 +172,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -180,7 +186,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 

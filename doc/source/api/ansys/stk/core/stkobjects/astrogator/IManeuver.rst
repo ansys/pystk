@@ -86,7 +86,8 @@ Method detail
 
     :Parameters:
 
-    **attitude_control_type** : :obj:`~AttitudeControl`
+        **attitude_control_type** : :obj:`~AttitudeControl`
+
 
     :Returns:
 
@@ -101,8 +102,10 @@ Method detail
 
     :Parameters:
 
-    **propulsion_method** : :obj:`~PropulsionMethod`
-    **value** : :obj:`~str`
+        **propulsion_method** : :obj:`~PropulsionMethod`
+
+        **value** : :obj:`~str`
+
 
     :Returns:
 

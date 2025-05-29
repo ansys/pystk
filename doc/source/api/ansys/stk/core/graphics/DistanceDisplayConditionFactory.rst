@@ -52,8 +52,10 @@ Method detail
 
     :Parameters:
 
-    **minimum_distance** : :obj:`~float`
-    **maximum_distance** : :obj:`~float`
+        **minimum_distance** : :obj:`~float`
+
+        **maximum_distance** : :obj:`~float`
+
 
     :Returns:
 

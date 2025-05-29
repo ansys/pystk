@@ -104,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **profile_name** : :obj:`~str`
+        **profile_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -117,7 +118,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -133,7 +135,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_profile_name** : :obj:`~typing.Any`
+        **index_or_profile_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -156,7 +159,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -169,8 +173,10 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~ProfileInsertDirection`
+        **index_or_name** : :obj:`~typing.Any`
+
+        **direction** : :obj:`~ProfileInsertDirection`
+
 
     :Returns:
 
@@ -183,9 +189,12 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~IProfile`
-    **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~ProfileInsertDirection`
+        **profile** : :obj:`~IProfile`
+
+        **index_or_name** : :obj:`~typing.Any`
+
+        **direction** : :obj:`~ProfileInsertDirection`
+
 
     :Returns:
 
@@ -198,9 +207,12 @@ Method detail
 
     :Parameters:
 
-    **profile_name** : :obj:`~str`
-    **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~ProfileInsertDirection`
+        **profile_name** : :obj:`~str`
+
+        **index_or_name** : :obj:`~typing.Any`
+
+        **direction** : :obj:`~ProfileInsertDirection`
+
 
     :Returns:
 
@@ -213,7 +225,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -226,7 +239,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

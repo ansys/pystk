@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -113,7 +115,8 @@ Method detail
 
     :Parameters:
 
-    **param_type** : :obj:`~VehicleConsiderAnalysisType`
+        **param_type** : :obj:`~VehicleConsiderAnalysisType`
+
 
     :Returns:
 
@@ -126,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **param_type** : :obj:`~VehicleConsiderAnalysisType`
+        **param_type** : :obj:`~VehicleConsiderAnalysisType`
+
 
     :Returns:
 

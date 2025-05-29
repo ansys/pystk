@@ -99,7 +99,8 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~ThirdBodyMode`
+        **mode** : :obj:`~ThirdBodyMode`
+
 
     :Returns:
 

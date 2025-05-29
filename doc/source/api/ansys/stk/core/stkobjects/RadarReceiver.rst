@@ -258,7 +258,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~PolarizationType`
+        **value** : :obj:`~PolarizationType`
+
 
     :Returns:
 
@@ -277,7 +278,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -294,7 +296,8 @@ Method detail
 
     :Parameters:
 
-    **type_name** : :obj:`~str`
+        **type_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -310,7 +313,8 @@ Method detail
 
     :Parameters:
 
-    **type_name** : :obj:`~str`
+        **type_name** : :obj:`~str`
+
 
     :Returns:
 

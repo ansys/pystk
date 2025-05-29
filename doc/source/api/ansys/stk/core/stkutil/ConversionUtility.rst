@@ -75,10 +75,14 @@ Method detail
 
     :Parameters:
 
-    **dimension_name** : :obj:`~str`
-    **from_unit** : :obj:`~str`
-    **to_unit** : :obj:`~str`
-    **from_value** : :obj:`~float`
+        **dimension_name** : :obj:`~str`
+
+        **from_unit** : :obj:`~str`
+
+        **to_unit** : :obj:`~str`
+
+        **from_value** : :obj:`~float`
+
 
     :Returns:
 
@@ -91,9 +95,12 @@ Method detail
 
     :Parameters:
 
-    **from_unit** : :obj:`~str`
-    **to_unit** : :obj:`~str`
-    **from_value** : :obj:`~str`
+        **from_unit** : :obj:`~str`
+
+        **to_unit** : :obj:`~str`
+
+        **from_value** : :obj:`~str`
+
 
     :Returns:
 
@@ -106,10 +113,14 @@ Method detail
 
     :Parameters:
 
-    **dimension_name** : :obj:`~str`
-    **from_unit** : :obj:`~str`
-    **to_unit** : :obj:`~str`
-    **quantity_values** : :obj:`~list`
+        **dimension_name** : :obj:`~str`
+
+        **from_unit** : :obj:`~str`
+
+        **to_unit** : :obj:`~str`
+
+        **quantity_values** : :obj:`~list`
+
 
     :Returns:
 
@@ -122,9 +133,12 @@ Method detail
 
     :Parameters:
 
-    **from_unit** : :obj:`~str`
-    **to_unit** : :obj:`~str`
-    **from_values** : :obj:`~list`
+        **from_unit** : :obj:`~str`
+
+        **to_unit** : :obj:`~str`
+
+        **from_values** : :obj:`~list`
+
 
     :Returns:
 
@@ -137,9 +151,12 @@ Method detail
 
     :Parameters:
 
-    **dimension** : :obj:`~str`
-    **unit_abbrv** : :obj:`~str`
-    **value** : :obj:`~float`
+        **dimension** : :obj:`~str`
+
+        **unit_abbrv** : :obj:`~str`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -152,8 +169,10 @@ Method detail
 
     :Parameters:
 
-    **unit_abbrv** : :obj:`~str`
-    **value** : :obj:`~str`
+        **unit_abbrv** : :obj:`~str`
+
+        **value** : :obj:`~str`
+
 
     :Returns:
 
@@ -175,9 +194,12 @@ Method detail
 
     :Parameters:
 
-    **position_type** : :obj:`~PositionType`
-    **position_array** : :obj:`~list`
-    **convert_to** : :obj:`~PositionType`
+        **position_type** : :obj:`~PositionType`
+
+        **position_array** : :obj:`~list`
+
+        **convert_to** : :obj:`~PositionType`
+
 
     :Returns:
 
@@ -217,7 +239,8 @@ Method detail
 
     :Parameters:
 
-    **central_body_name** : :obj:`~str`
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -230,7 +253,8 @@ Method detail
 
     :Parameters:
 
-    **central_body_name** : :obj:`~str`
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -243,7 +267,8 @@ Method detail
 
     :Parameters:
 
-    **input_orientation** : :obj:`~IOrientation`
+        **input_orientation** : :obj:`~IOrientation`
+
 
     :Returns:
 
@@ -256,7 +281,8 @@ Method detail
 
     :Parameters:
 
-    **input_orientation** : :obj:`~IOrientation`
+        **input_orientation** : :obj:`~IOrientation`
+
 
     :Returns:
 
@@ -278,7 +304,8 @@ Method detail
 
     :Parameters:
 
-    **input_direction** : :obj:`~IDirection`
+        **input_direction** : :obj:`~IDirection`
+
 
     :Returns:
 
@@ -291,7 +318,8 @@ Method detail
 
     :Parameters:
 
-    **input_position** : :obj:`~IPosition`
+        **input_position** : :obj:`~IPosition`
+
 
     :Returns:
 

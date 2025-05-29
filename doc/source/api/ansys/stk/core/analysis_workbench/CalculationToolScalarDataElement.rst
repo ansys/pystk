@@ -131,8 +131,10 @@ Method detail
 
     :Parameters:
 
-    **data_provider** : :obj:`~str`
-    **element_name** : :obj:`~str`
+        **data_provider** : :obj:`~str`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -145,9 +147,12 @@ Method detail
 
     :Parameters:
 
-    **data_provider** : :obj:`~str`
-    **type_name** : :obj:`~str`
-    **element_name** : :obj:`~str`
+        **data_provider** : :obj:`~str`
+
+        **type_name** : :obj:`~str`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 

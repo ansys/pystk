@@ -167,7 +167,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -180,7 +181,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -193,7 +195,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -206,7 +209,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -219,7 +223,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -232,7 +237,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -245,7 +251,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -258,7 +265,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 

@@ -105,7 +105,8 @@ Method detail
 
     :Parameters:
 
-    **calc_list** : :obj:`~list`
+        **calc_list** : :obj:`~list`
+
 
     :Returns:
 

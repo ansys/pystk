@@ -519,7 +519,8 @@ Method detail
 
     :Parameters:
 
-    **feature** : :obj:`~VectorGeometryToolComponentType`
+        **feature** : :obj:`~VectorGeometryToolComponentType`
+
 
     :Returns:
 
@@ -533,7 +534,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 

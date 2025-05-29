@@ -221,7 +221,8 @@ Method detail
 
     :Parameters:
 
-    **pers_name** : :obj:`~str`
+        **pers_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -260,9 +261,12 @@ Method detail
 
     :Parameters:
 
-    **default_ext** : :obj:`~str`
-    **filter** : :obj:`~str`
-    **initial_dir** : :obj:`~str`
+        **default_ext** : :obj:`~str`
+
+        **filter** : :obj:`~str`
+
+        **initial_dir** : :obj:`~str`
+
 
     :Returns:
 
@@ -276,8 +280,10 @@ Method detail
 
     :Parameters:
 
-    **prog_id** : :obj:`~str`
-    **remote_server** : :obj:`~str`
+        **prog_id** : :obj:`~str`
+
+        **remote_server** : :obj:`~str`
+
 
     :Returns:
 
@@ -290,9 +296,12 @@ Method detail
 
     :Parameters:
 
-    **default_ext** : :obj:`~str`
-    **filter** : :obj:`~str`
-    **initial_dir** : :obj:`~str`
+        **default_ext** : :obj:`~str`
+
+        **filter** : :obj:`~str`
+
+        **initial_dir** : :obj:`~str`
+
 
     :Returns:
 
@@ -314,10 +323,14 @@ Method detail
 
     :Parameters:
 
-    **allow_multi_select** : :obj:`~bool`
-    **default_ext** : :obj:`~str`
-    **filter** : :obj:`~str`
-    **initial_dir** : :obj:`~str`
+        **allow_multi_select** : :obj:`~bool`
+
+        **default_ext** : :obj:`~str`
+
+        **filter** : :obj:`~str`
+
+        **initial_dir** : :obj:`~str`
+
 
     :Returns:
 
@@ -331,8 +344,10 @@ Method detail
 
     :Parameters:
 
-    **title** : :obj:`~str`
-    **initial_dir** : :obj:`~str`
+        **title** : :obj:`~str`
+
+        **initial_dir** : :obj:`~str`
+
 
     :Returns:
 
@@ -348,8 +363,10 @@ Method detail
 
     :Parameters:
 
-    **log_file_name** : :obj:`~str`
-    **log_file_mode** : :obj:`~ApplicationOpenLogFileMode`
+        **log_file_name** : :obj:`~str`
+
+        **log_file_mode** : :obj:`~ApplicationOpenLogFileMode`
+
 
     :Returns:
 
@@ -362,8 +379,10 @@ Method detail
 
     :Parameters:
 
-    **msg_type** : :obj:`~ApplicationLogMessageType`
-    **msg** : :obj:`~str`
+        **msg_type** : :obj:`~ApplicationLogMessageType`
+
+        **msg** : :obj:`~str`
+
 
     :Returns:
 

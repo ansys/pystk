@@ -128,7 +128,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -142,7 +143,8 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AccessConstraintType`
+        **constraint** : :obj:`~AccessConstraintType`
+
 
     :Returns:
 
@@ -155,7 +157,8 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AccessConstraintType`
+        **constraint** : :obj:`~AccessConstraintType`
+
 
     :Returns:
 
@@ -168,7 +171,8 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AccessConstraintType`
+        **constraint** : :obj:`~AccessConstraintType`
+
 
     :Returns:
 
@@ -181,7 +185,8 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AccessConstraintType`
+        **constraint** : :obj:`~AccessConstraintType`
+
 
     :Returns:
 
@@ -203,7 +208,8 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AccessConstraintType`
+        **constraint** : :obj:`~AccessConstraintType`
+
 
     :Returns:
 
@@ -216,7 +222,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -229,7 +236,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -242,7 +250,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -255,7 +264,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -268,7 +278,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -286,7 +297,8 @@ Method detail
 
     :Parameters:
 
-    **cnstr_name** : :obj:`~str`
+        **cnstr_name** : :obj:`~str`
+
 
     :Returns:
 

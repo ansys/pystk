@@ -127,7 +127,8 @@ Method detail
 
     :Parameters:
 
-    **propagator** : :obj:`~LookAheadPropagator`
+        **propagator** : :obj:`~LookAheadPropagator`
+
 
     :Returns:
 

@@ -46,7 +46,8 @@ Method detail
 
     :Parameters:
 
-    **no_graphics** : :obj:`~bool`
+        **no_graphics** : :obj:`~bool`
+
 
     :Returns:
 

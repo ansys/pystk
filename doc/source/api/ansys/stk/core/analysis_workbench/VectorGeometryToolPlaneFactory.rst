@@ -43,9 +43,12 @@ Method detail
 
     :Parameters:
 
-    **plane_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **plane_type** : :obj:`~PlaneType`
+        **plane_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **plane_type** : :obj:`~PlaneType`
+
 
     :Returns:
 
@@ -58,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~PlaneType`
+        **type** : :obj:`~PlaneType`
+
 
     :Returns:
 

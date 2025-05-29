@@ -137,7 +137,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~PolarizationType`
+        **value** : :obj:`~PolarizationType`
+
 
     :Returns:
 

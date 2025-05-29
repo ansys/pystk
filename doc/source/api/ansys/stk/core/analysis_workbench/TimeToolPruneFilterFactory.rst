@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IntervalPruneFilterType`
+        **filter** : :obj:`~IntervalPruneFilterType`
+
 
     :Returns:
 

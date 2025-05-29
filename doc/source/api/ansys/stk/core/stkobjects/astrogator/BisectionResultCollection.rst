@@ -70,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -85,8 +86,10 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
-    **result_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
+        **result_path** : :obj:`~str`
+
 
     :Returns:
 

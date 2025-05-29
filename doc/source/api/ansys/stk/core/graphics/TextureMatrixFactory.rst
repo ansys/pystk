@@ -56,22 +56,38 @@ Method detail
 
     :Parameters:
 
-    **m11** : :obj:`~float`
-    **m12** : :obj:`~float`
-    **m13** : :obj:`~float`
-    **m14** : :obj:`~float`
-    **m21** : :obj:`~float`
-    **m22** : :obj:`~float`
-    **m23** : :obj:`~float`
-    **m24** : :obj:`~float`
-    **m31** : :obj:`~float`
-    **m32** : :obj:`~float`
-    **m33** : :obj:`~float`
-    **m34** : :obj:`~float`
-    **m41** : :obj:`~float`
-    **m42** : :obj:`~float`
-    **m43** : :obj:`~float`
-    **m44** : :obj:`~float`
+        **m11** : :obj:`~float`
+
+        **m12** : :obj:`~float`
+
+        **m13** : :obj:`~float`
+
+        **m14** : :obj:`~float`
+
+        **m21** : :obj:`~float`
+
+        **m22** : :obj:`~float`
+
+        **m23** : :obj:`~float`
+
+        **m24** : :obj:`~float`
+
+        **m31** : :obj:`~float`
+
+        **m32** : :obj:`~float`
+
+        **m33** : :obj:`~float`
+
+        **m34** : :obj:`~float`
+
+        **m41** : :obj:`~float`
+
+        **m42** : :obj:`~float`
+
+        **m43** : :obj:`~float`
+
+        **m44** : :obj:`~float`
+
 
     :Returns:
 
@@ -84,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **matrix** : :obj:`~list`
+        **matrix** : :obj:`~list`
+
 
     :Returns:
 
@@ -97,10 +114,14 @@ Method detail
 
     :Parameters:
 
-    **corner0** : :obj:`~list`
-    **corner1** : :obj:`~list`
-    **corner2** : :obj:`~list`
-    **corner3** : :obj:`~list`
+        **corner0** : :obj:`~list`
+
+        **corner1** : :obj:`~list`
+
+        **corner2** : :obj:`~list`
+
+        **corner3** : :obj:`~list`
+
 
     :Returns:
 

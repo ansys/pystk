@@ -82,8 +82,10 @@ Method detail
 
     :Parameters:
 
-    **layer_count** : :obj:`~int`
-    **max_altitude** : :obj:`~float`
+        **layer_count** : :obj:`~int`
+
+        **max_altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -96,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **pp_layer_heights** : :obj:`~list`
+        **pp_layer_heights** : :obj:`~list`
+
 
     :Returns:
 

@@ -90,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **conditions** : :obj:`~list`
+        **conditions** : :obj:`~list`
+
 
     :Returns:
 
@@ -103,8 +104,10 @@ Method detail
 
     :Parameters:
 
-    **ref** : :obj:`~ISpatialAnalysisToolVolume`
-    **pos** : :obj:`~int`
+        **ref** : :obj:`~ISpatialAnalysisToolVolume`
+
+        **pos** : :obj:`~int`
+
 
     :Returns:
 
@@ -117,7 +120,8 @@ Method detail
 
     :Parameters:
 
-    **pos** : :obj:`~int`
+        **pos** : :obj:`~int`
+
 
     :Returns:
 
@@ -130,7 +134,8 @@ Method detail
 
     :Parameters:
 
-    **pos** : :obj:`~int`
+        **pos** : :obj:`~int`
+
 
     :Returns:
 

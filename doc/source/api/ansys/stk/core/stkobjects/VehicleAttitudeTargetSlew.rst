@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **slew_mode** : :obj:`~VehicleSlewMode`
+        **slew_mode** : :obj:`~VehicleSlewMode`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **slew_mode** : :obj:`~VehicleSlewMode`
+        **slew_mode** : :obj:`~VehicleSlewMode`
+
 
     :Returns:
 

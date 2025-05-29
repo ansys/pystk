@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **tick_data** : :obj:`~TickData`
+        **tick_data** : :obj:`~TickData`
+
 
     :Returns:
 
@@ -102,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **tick_data** : :obj:`~TickData`
+        **tick_data** : :obj:`~TickData`
+
 
     :Returns:
 

@@ -180,8 +180,10 @@ Method detail
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 
@@ -197,8 +199,10 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~FlyToFlightPathAngleMode`
-    **value** : :obj:`~typing.Any`
+        **mode** : :obj:`~FlyToFlightPathAngleMode`
+
+        **value** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -213,8 +217,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude_rate** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -230,9 +236,12 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 

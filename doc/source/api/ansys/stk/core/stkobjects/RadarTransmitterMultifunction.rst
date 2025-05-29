@@ -139,7 +139,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~PolarizationType`
+        **value** : :obj:`~PolarizationType`
+
 
     :Returns:
 
@@ -158,7 +159,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

@@ -45,9 +45,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **type** : :obj:`~ConditionSetType`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **type** : :obj:`~ConditionSetType`
+
 
     :Returns:
 
@@ -60,8 +63,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -74,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~ConditionSetType`
+        **type** : :obj:`~ConditionSetType`
+
 
     :Returns:
 

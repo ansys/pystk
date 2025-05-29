@@ -86,7 +86,8 @@ Method detail
 
     :Parameters:
 
-    **object_name** : :obj:`~str`
+        **object_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **object_name** : :obj:`~str`
+        **object_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -112,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **object_name** : :obj:`~str`
+        **object_name** : :obj:`~str`
+
 
     :Returns:
 

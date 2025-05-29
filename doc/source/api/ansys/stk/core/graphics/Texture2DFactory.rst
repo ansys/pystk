@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -56,7 +57,8 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
+        **raster** : :obj:`~IRaster`
+
 
     :Returns:
 

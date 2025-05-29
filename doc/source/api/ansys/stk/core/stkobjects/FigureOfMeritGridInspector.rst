@@ -96,8 +96,10 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -119,7 +121,8 @@ Method detail
 
     :Parameters:
 
-    **region_name** : :obj:`~str`
+        **region_name** : :obj:`~str`
+
 
     :Returns:
 

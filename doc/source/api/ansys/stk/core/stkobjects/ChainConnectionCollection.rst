@@ -81,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -95,8 +96,10 @@ Method detail
 
     :Parameters:
 
-    **from_object** : :obj:`~IStkObject`
-    **to_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~IStkObject`
+
+        **to_object** : :obj:`~IStkObject`
+
 
     :Returns:
 
@@ -109,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -122,8 +126,10 @@ Method detail
 
     :Parameters:
 
-    **from_object** : :obj:`~IStkObject`
-    **to_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~IStkObject`
+
+        **to_object** : :obj:`~IStkObject`
+
 
     :Returns:
 
@@ -136,10 +142,14 @@ Method detail
 
     :Parameters:
 
-    **from_object** : :obj:`~IStkObject`
-    **to_object** : :obj:`~IStkObject`
-    **min_num_uses** : :obj:`~int`
-    **max_num_uses** : :obj:`~int`
+        **from_object** : :obj:`~IStkObject`
+
+        **to_object** : :obj:`~IStkObject`
+
+        **min_num_uses** : :obj:`~int`
+
+        **max_num_uses** : :obj:`~int`
+
 
     :Returns:
 
@@ -152,11 +162,16 @@ Method detail
 
     :Parameters:
 
-    **from_object** : :obj:`~IStkObject`
-    **to_object** : :obj:`~IStkObject`
-    **min_num_uses** : :obj:`~int`
-    **max_num_uses** : :obj:`~int`
-    **parent_restriction** : :obj:`~ChainParentPlatformRestriction`
+        **from_object** : :obj:`~IStkObject`
+
+        **to_object** : :obj:`~IStkObject`
+
+        **min_num_uses** : :obj:`~int`
+
+        **max_num_uses** : :obj:`~int`
+
+        **parent_restriction** : :obj:`~ChainParentPlatformRestriction`
+
 
     :Returns:
 

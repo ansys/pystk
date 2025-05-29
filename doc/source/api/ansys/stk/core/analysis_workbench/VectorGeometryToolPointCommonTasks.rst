@@ -45,10 +45,14 @@ Method detail
 
     :Parameters:
 
-    **reference_system** : :obj:`~IVectorGeometryToolSystem`
-    **latitude** : :obj:`~typing.Any`
-    **longitude** : :obj:`~typing.Any`
-    **altitude** : :obj:`~float`
+        **reference_system** : :obj:`~IVectorGeometryToolSystem`
+
+        **latitude** : :obj:`~typing.Any`
+
+        **longitude** : :obj:`~typing.Any`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -61,10 +65,14 @@ Method detail
 
     :Parameters:
 
-    **reference_system** : :obj:`~IVectorGeometryToolSystem`
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **reference_system** : :obj:`~IVectorGeometryToolSystem`
+
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
@@ -77,12 +85,18 @@ Method detail
 
     :Parameters:
 
-    **point** : :obj:`~IVectorGeometryToolPoint`
-    **reference_system** : :obj:`~IVectorGeometryToolSystem`
-    **intervals** : :obj:`~list`
-    **min_step** : :obj:`~float`
-    **max_step** : :obj:`~float`
-    **target_rate** : :obj:`~typing.Any`
+        **point** : :obj:`~IVectorGeometryToolPoint`
+
+        **reference_system** : :obj:`~IVectorGeometryToolSystem`
+
+        **intervals** : :obj:`~list`
+
+        **min_step** : :obj:`~float`
+
+        **max_step** : :obj:`~float`
+
+        **target_rate** : :obj:`~typing.Any`
+
 
     :Returns:
 

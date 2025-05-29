@@ -45,7 +45,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -58,8 +59,10 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **load_audio** : :obj:`~bool`
+        **uri** : :obj:`~str`
+
+        **load_audio** : :obj:`~bool`
+
 
     :Returns:
 
@@ -72,8 +75,10 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **audio_uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
+        **audio_uri** : :obj:`~str`
+
 
     :Returns:
 

@@ -70,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~Graphics3DLabelSwapDistanceType`
+        **value** : :obj:`~Graphics3DLabelSwapDistanceType`
+
 
     :Returns:
 

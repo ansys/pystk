@@ -158,7 +158,8 @@ Method detail
 
     :Parameters:
 
-    **altitude_ref** : :obj:`~VehicleAltitudeReference`
+        **altitude_ref** : :obj:`~VehicleAltitudeReference`
+
 
     :Returns:
 
@@ -171,7 +172,8 @@ Method detail
 
     :Parameters:
 
-    **altitude_ref** : :obj:`~VehicleAltitudeReference`
+        **altitude_ref** : :obj:`~VehicleAltitudeReference`
+
 
     :Returns:
 
@@ -189,7 +191,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -202,7 +205,8 @@ Method detail
 
     :Parameters:
 
-    **array_of_way_points** : :obj:`~list`
+        **array_of_way_points** : :obj:`~list`
+
 
     :Returns:
 
@@ -215,7 +219,8 @@ Method detail
 
     :Parameters:
 
-    **array_of_way_points** : :obj:`~list`
+        **array_of_way_points** : :obj:`~list`
+
 
     :Returns:
 
@@ -228,7 +233,8 @@ Method detail
 
     :Parameters:
 
-    **array_of_way_points** : :obj:`~list`
+        **array_of_way_points** : :obj:`~list`
+
 
     :Returns:
 

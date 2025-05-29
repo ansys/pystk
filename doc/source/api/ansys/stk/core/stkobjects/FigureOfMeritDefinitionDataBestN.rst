@@ -82,7 +82,8 @@ Method detail
 
     :Parameters:
 
-    **best_n_metric** : :obj:`~FigureOfMeritMethod`
+        **best_n_metric** : :obj:`~FigureOfMeritMethod`
+
 
     :Returns:
 

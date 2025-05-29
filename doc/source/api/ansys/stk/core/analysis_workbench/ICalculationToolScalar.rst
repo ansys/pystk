@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -110,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -123,7 +126,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -146,7 +150,8 @@ Method detail
 
     :Parameters:
 
-    **times** : :obj:`~list`
+        **times** : :obj:`~list`
+
 
     :Returns:
 
@@ -159,7 +164,8 @@ Method detail
 
     :Parameters:
 
-    **times** : :obj:`~list`
+        **times** : :obj:`~list`
+
 
     :Returns:
 
@@ -172,7 +178,8 @@ Method detail
 
     :Parameters:
 
-    **ref_array** : :obj:`~ITimeToolTimeArray`
+        **ref_array** : :obj:`~ITimeToolTimeArray`
+
 
     :Returns:
 
@@ -185,7 +192,8 @@ Method detail
 
     :Parameters:
 
-    **ref_array** : :obj:`~ITimeToolTimeArray`
+        **ref_array** : :obj:`~ITimeToolTimeArray`
+
 
     :Returns:
 

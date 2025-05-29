@@ -157,7 +157,8 @@ Method detail
 
     :Parameters:
 
-    **child_name** : :obj:`~str`
+        **child_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -171,7 +172,8 @@ Method detail
 
     :Parameters:
 
-    **child_name** : :obj:`~str`
+        **child_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -184,8 +186,10 @@ Method detail
 
     :Parameters:
 
-    **child_type** : :obj:`~str`
-    **child_name** : :obj:`~str`
+        **child_type** : :obj:`~str`
+
+        **child_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -198,7 +202,8 @@ Method detail
 
     :Parameters:
 
-    **child_item** : :obj:`~str`
+        **child_item** : :obj:`~str`
+
 
     :Returns:
 

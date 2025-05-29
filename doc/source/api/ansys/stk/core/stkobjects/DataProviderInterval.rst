@@ -49,8 +49,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -63,9 +65,12 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
-    **element_names** : :obj:`~list`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+        **element_names** : :obj:`~list`
+
 
     :Returns:
 
@@ -78,9 +83,12 @@ Method detail
 
     :Parameters:
 
-    **event_array** : :obj:`~ITimeToolTimeArray`
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **event_array** : :obj:`~ITimeToolTimeArray`
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -93,10 +101,14 @@ Method detail
 
     :Parameters:
 
-    **event_array** : :obj:`~ITimeToolTimeArray`
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
-    **element_names** : :obj:`~list`
+        **event_array** : :obj:`~ITimeToolTimeArray`
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+        **element_names** : :obj:`~list`
+
 
     :Returns:
 

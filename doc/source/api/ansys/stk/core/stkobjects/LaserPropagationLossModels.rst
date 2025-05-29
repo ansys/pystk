@@ -90,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -106,7 +107,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 

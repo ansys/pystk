@@ -176,8 +176,10 @@ Method detail
 
     :Parameters:
 
-    **new_name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **new_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -199,7 +201,8 @@ Method detail
 
     :Parameters:
 
-    **component** : :obj:`~IAnalysisWorkbenchComponent`
+        **component** : :obj:`~IAnalysisWorkbenchComponent`
+
 
     :Returns:
 
@@ -213,8 +216,10 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
-    **comments** : :obj:`~str`
+        **filename** : :obj:`~str`
+
+        **comments** : :obj:`~str`
+
 
     :Returns:
 
@@ -227,7 +232,8 @@ Method detail
 
     :Parameters:
 
-    **new_name** : :obj:`~str`
+        **new_name** : :obj:`~str`
+
 
     :Returns:
 

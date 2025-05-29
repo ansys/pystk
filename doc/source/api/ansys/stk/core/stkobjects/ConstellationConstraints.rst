@@ -107,7 +107,8 @@ Method detail
 
     :Parameters:
 
-    **restriction** : :obj:`~ConstellationConstraintRestrictionType`
+        **restriction** : :obj:`~ConstellationConstraintRestrictionType`
+
 
     :Returns:
 
@@ -122,7 +123,8 @@ Method detail
 
     :Parameters:
 
-    **restriction** : :obj:`~ConstellationConstraintRestrictionType`
+        **restriction** : :obj:`~ConstellationConstraintRestrictionType`
+
 
     :Returns:
 

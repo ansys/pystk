@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **antenna_type** : :obj:`~str`
+        **antenna_type** : :obj:`~str`
+
 
     :Returns:
 

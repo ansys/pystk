@@ -49,7 +49,8 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
+        **path** : :obj:`~str`
+
 
     :Returns:
 
@@ -62,7 +63,8 @@ Method detail
 
     :Parameters:
 
-    **point** : :obj:`~IVectorGeometryToolPoint`
+        **point** : :obj:`~IVectorGeometryToolPoint`
+
 
     :Returns:
 
@@ -84,7 +86,8 @@ Method detail
 
     :Parameters:
 
-    **point** : :obj:`~IVectorGeometryToolPoint`
+        **point** : :obj:`~IVectorGeometryToolPoint`
+
 
     :Returns:
 

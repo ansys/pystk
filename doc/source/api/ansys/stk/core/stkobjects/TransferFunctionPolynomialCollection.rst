@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -102,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **coefficient** : :obj:`~float`
+        **coefficient** : :obj:`~float`
+
 
     :Returns:
 
@@ -115,8 +118,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **coefficient** : :obj:`~float`
+        **index** : :obj:`~int`
+
+        **coefficient** : :obj:`~float`
+
 
     :Returns:
 

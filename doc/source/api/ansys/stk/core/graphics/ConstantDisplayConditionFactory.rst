@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **display** : :obj:`~bool`
+        **display** : :obj:`~bool`
+
 
     :Returns:
 

@@ -100,8 +100,10 @@ Method detail
 
     :Parameters:
 
-    **calculate_aoa** : :obj:`~bool`
-    **max_aoa** : :obj:`~typing.Any`
+        **calculate_aoa** : :obj:`~bool`
+
+        **max_aoa** : :obj:`~typing.Any`
+
 
     :Returns:
 

@@ -347,9 +347,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **overwrite** : :obj:`~bool`
-    **make_default** : :obj:`~bool`
+        **name** : :obj:`~str`
+
+        **overwrite** : :obj:`~bool`
+
+        **make_default** : :obj:`~bool`
+
 
     :Returns:
 

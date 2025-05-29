@@ -40,7 +40,8 @@ Method detail
 
     :Parameters:
 
-    **obj** : :obj:`~IUnknown`
+        **obj** : :obj:`~IUnknown`
+
 
     :Returns:
 

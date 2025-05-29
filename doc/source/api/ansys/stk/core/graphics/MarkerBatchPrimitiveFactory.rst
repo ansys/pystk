@@ -62,7 +62,8 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -75,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **size_source** : :obj:`~MarkerBatchSizeSource`
+        **size_source** : :obj:`~MarkerBatchSizeSource`
+
 
     :Returns:
 
@@ -88,8 +90,10 @@ Method detail
 
     :Parameters:
 
-    **size_source** : :obj:`~MarkerBatchSizeSource`
-    **sort_order** : :obj:`~MarkerBatchSortOrder`
+        **size_source** : :obj:`~MarkerBatchSizeSource`
+
+        **sort_order** : :obj:`~MarkerBatchSortOrder`
+
 
     :Returns:
 
@@ -102,9 +106,12 @@ Method detail
 
     :Parameters:
 
-    **size_source** : :obj:`~MarkerBatchSizeSource`
-    **sort_order** : :obj:`~MarkerBatchSortOrder`
-    **set_hint** : :obj:`~SetHint`
+        **size_source** : :obj:`~MarkerBatchSizeSource`
+
+        **sort_order** : :obj:`~MarkerBatchSortOrder`
+
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -117,10 +124,14 @@ Method detail
 
     :Parameters:
 
-    **size_source** : :obj:`~MarkerBatchSizeSource`
-    **sort_order** : :obj:`~MarkerBatchSortOrder`
-    **set_hint** : :obj:`~SetHint`
-    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+        **size_source** : :obj:`~MarkerBatchSizeSource`
+
+        **sort_order** : :obj:`~MarkerBatchSortOrder`
+
+        **set_hint** : :obj:`~SetHint`
+
+        **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+
 
     :Returns:
 
@@ -133,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+        **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+
 
     :Returns:
 

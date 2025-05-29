@@ -183,7 +183,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics2DAttributeType`
+
 
     :Returns:
 
@@ -196,7 +197,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics2DAttributeType`
+
 
     :Returns:
 

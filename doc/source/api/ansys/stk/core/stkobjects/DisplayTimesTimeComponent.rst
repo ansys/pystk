@@ -51,7 +51,8 @@ Method detail
 
     :Parameters:
 
-    **component** : :obj:`~IAnalysisWorkbenchComponent`
+        **component** : :obj:`~IAnalysisWorkbenchComponent`
+
 
     :Returns:
 
@@ -64,7 +65,8 @@ Method detail
 
     :Parameters:
 
-    **qualified_path** : :obj:`~str`
+        **qualified_path** : :obj:`~str`
+
 
     :Returns:
 

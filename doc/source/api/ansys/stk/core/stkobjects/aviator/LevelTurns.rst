@@ -172,8 +172,10 @@ Method detail
 
     :Parameters:
 
-    **turn_mode** : :obj:`~TurnMode`
-    **turn_value** : :obj:`~typing.Any`
+        **turn_mode** : :obj:`~TurnMode`
+
+        **turn_value** : :obj:`~typing.Any`
+
 
     :Returns:
 

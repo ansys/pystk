@@ -126,7 +126,8 @@ Method detail
 
     :Parameters:
 
-    **ignore_error** : :obj:`~bool`
+        **ignore_error** : :obj:`~bool`
+
 
     :Returns:
 
@@ -140,7 +141,8 @@ Method detail
 
     :Parameters:
 
-    **ignore_error_permanently** : :obj:`~bool`
+        **ignore_error_permanently** : :obj:`~bool`
+
 
     :Returns:
 

@@ -56,7 +56,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~ICatalogWaypoint`
+        **value** : :obj:`~ICatalogWaypoint`
+
 
     :Returns:
 

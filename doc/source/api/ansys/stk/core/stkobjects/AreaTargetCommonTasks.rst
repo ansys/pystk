@@ -43,9 +43,12 @@ Method detail
 
     :Parameters:
 
-    **semi_major_axis** : :obj:`~float`
-    **semi_minor_axis** : :obj:`~float`
-    **bearing** : :obj:`~typing.Any`
+        **semi_major_axis** : :obj:`~float`
+
+        **semi_minor_axis** : :obj:`~float`
+
+        **bearing** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -58,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **lat_lons** : :obj:`~list`
+        **lat_lons** : :obj:`~list`
+
 
     :Returns:
 

@@ -72,7 +72,8 @@ Method detail
 
     :Parameters:
 
-    **mcs_stop** : :obj:`~MCSStop`
+        **mcs_stop** : :obj:`~MCSStop`
+
 
     :Returns:
 

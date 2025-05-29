@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -97,8 +98,10 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -111,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **item_index** : :obj:`~int`
+        **item_index** : :obj:`~int`
+
 
     :Returns:
 

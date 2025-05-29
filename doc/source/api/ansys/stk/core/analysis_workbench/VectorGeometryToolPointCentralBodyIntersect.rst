@@ -162,8 +162,10 @@ Method detail
 
     :Parameters:
 
-    **minimum** : :obj:`~float`
-    **maximum** : :obj:`~float`
+        **minimum** : :obj:`~float`
+
+        **maximum** : :obj:`~float`
+
 
     :Returns:
 

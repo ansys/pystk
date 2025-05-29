@@ -45,7 +45,8 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
+        **font** : :obj:`~GraphicsFont`
+
 
     :Returns:
 
@@ -58,8 +59,10 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
-    **set_hint** : :obj:`~SetHint`
+        **font** : :obj:`~GraphicsFont`
+
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -72,9 +75,12 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
-    **set_hint** : :obj:`~SetHint`
-    **render_in_screen_space** : :obj:`~bool`
+        **font** : :obj:`~GraphicsFont`
+
+        **set_hint** : :obj:`~SetHint`
+
+        **render_in_screen_space** : :obj:`~bool`
+
 
     :Returns:
 

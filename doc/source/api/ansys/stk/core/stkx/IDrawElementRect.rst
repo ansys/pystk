@@ -113,10 +113,14 @@ Method detail
 
     :Parameters:
 
-    **left** : :obj:`~int`
-    **top** : :obj:`~int`
-    **right** : :obj:`~int`
-    **bottom** : :obj:`~int`
+        **left** : :obj:`~int`
+
+        **top** : :obj:`~int`
+
+        **right** : :obj:`~int`
+
+        **bottom** : :obj:`~int`
+
 
     :Returns:
 

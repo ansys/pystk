@@ -74,7 +74,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -88,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **graph_name** : :obj:`~str`
+        **graph_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -101,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **graph_name** : :obj:`~str`
+        **graph_name** : :obj:`~str`
+
 
     :Returns:
 

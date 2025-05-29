@@ -47,11 +47,16 @@ Method detail
 
     :Parameters:
 
-    **origin_point** : :obj:`~IVectorGeometryToolPoint`
-    **qx** : :obj:`~float`
-    **qy** : :obj:`~float`
-    **qz** : :obj:`~float`
-    **qs** : :obj:`~float`
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
+
 
     :Returns:
 
@@ -64,11 +69,16 @@ Method detail
 
     :Parameters:
 
-    **origin_point** : :obj:`~IVectorGeometryToolPoint`
-    **sequence** : :obj:`~EulerOrientationSequenceType`
-    **a** : :obj:`~typing.Any`
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
+        **a** : :obj:`~typing.Any`
+
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -81,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 
@@ -94,12 +105,18 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
-    **intervals** : :obj:`~list`
-    **min_step** : :obj:`~float`
-    **max_step** : :obj:`~float`
-    **target_rate** : :obj:`~typing.Any`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **intervals** : :obj:`~list`
+
+        **min_step** : :obj:`~float`
+
+        **max_step** : :obj:`~float`
+
+        **target_rate** : :obj:`~typing.Any`
+
 
     :Returns:
 

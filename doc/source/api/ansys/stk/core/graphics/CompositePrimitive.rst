@@ -87,7 +87,8 @@ Method detail
 
     :Parameters:
 
-    **primitive** : :obj:`~IPrimitive`
+        **primitive** : :obj:`~IPrimitive`
+
 
     :Returns:
 
@@ -100,7 +101,8 @@ Method detail
 
     :Parameters:
 
-    **primitive** : :obj:`~IPrimitive`
+        **primitive** : :obj:`~IPrimitive`
+
 
     :Returns:
 
@@ -113,7 +115,8 @@ Method detail
 
     :Parameters:
 
-    **primitive** : :obj:`~IPrimitive`
+        **primitive** : :obj:`~IPrimitive`
+
 
     :Returns:
 

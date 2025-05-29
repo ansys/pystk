@@ -63,10 +63,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -79,9 +83,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 
@@ -94,10 +101,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -110,9 +121,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 
@@ -125,12 +139,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **major_axis_radius** : :obj:`~float`
-    **minor_axis_radius** : :obj:`~float`
-    **bearing** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **major_axis_radius** : :obj:`~float`
+
+        **minor_axis_radius** : :obj:`~float`
+
+        **bearing** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -143,11 +163,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **major_axis_radius** : :obj:`~float`
-    **minor_axis_radius** : :obj:`~float`
-    **bearing** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **major_axis_radius** : :obj:`~float`
+
+        **minor_axis_radius** : :obj:`~float`
+
+        **bearing** : :obj:`~float`
+
 
     :Returns:
 
@@ -160,12 +185,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **major_axis_radius** : :obj:`~float`
-    **minor_axis_radius** : :obj:`~float`
-    **bearing** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **major_axis_radius** : :obj:`~float`
+
+        **minor_axis_radius** : :obj:`~float`
+
+        **bearing** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -178,11 +209,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **major_axis_radius** : :obj:`~float`
-    **minor_axis_radius** : :obj:`~float`
-    **bearing** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **major_axis_radius** : :obj:`~float`
+
+        **minor_axis_radius** : :obj:`~float`
+
+        **bearing** : :obj:`~float`
+
 
     :Returns:
 
@@ -195,13 +231,20 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **inner_radius** : :obj:`~float`
-    **outer_radius** : :obj:`~float`
-    **start_bearing** : :obj:`~float`
-    **end_bearing** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **inner_radius** : :obj:`~float`
+
+        **outer_radius** : :obj:`~float`
+
+        **start_bearing** : :obj:`~float`
+
+        **end_bearing** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -214,12 +257,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **inner_radius** : :obj:`~float`
-    **outer_radius** : :obj:`~float`
-    **start_bearing** : :obj:`~float`
-    **end_bearing** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **inner_radius** : :obj:`~float`
+
+        **outer_radius** : :obj:`~float`
+
+        **start_bearing** : :obj:`~float`
+
+        **end_bearing** : :obj:`~float`
+
 
     :Returns:
 
@@ -232,13 +281,20 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **inner_radius** : :obj:`~float`
-    **outer_radius** : :obj:`~float`
-    **start_bearing** : :obj:`~float`
-    **end_bearing** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **inner_radius** : :obj:`~float`
+
+        **outer_radius** : :obj:`~float`
+
+        **start_bearing** : :obj:`~float`
+
+        **end_bearing** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -251,12 +307,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **center** : :obj:`~list`
-    **inner_radius** : :obj:`~float`
-    **outer_radius** : :obj:`~float`
-    **start_bearing** : :obj:`~float`
-    **end_bearing** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **center** : :obj:`~list`
+
+        **inner_radius** : :obj:`~float`
+
+        **outer_radius** : :obj:`~float`
+
+        **start_bearing** : :obj:`~float`
+
+        **end_bearing** : :obj:`~float`
+
 
     :Returns:
 

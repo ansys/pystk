@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,10 +90,14 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **uri** : :obj:`~str`
-    **source_type** : :obj:`~Tileset3DSourceType`
-    **reference_frame** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **uri** : :obj:`~str`
+
+        **source_type** : :obj:`~Tileset3DSourceType`
+
+        **reference_frame** : :obj:`~str`
+
 
     :Returns:
 
@@ -105,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

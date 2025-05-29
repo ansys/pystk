@@ -54,8 +54,10 @@ Method detail
 
     :Parameters:
 
-    **minimum_altitude** : :obj:`~float`
-    **maximum_altitude** : :obj:`~float`
+        **minimum_altitude** : :obj:`~float`
+
+        **maximum_altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -68,9 +70,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **minimum_altitude** : :obj:`~float`
-    **maximum_altitude** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **minimum_altitude** : :obj:`~float`
+
+        **maximum_altitude** : :obj:`~float`
+
 
     :Returns:
 

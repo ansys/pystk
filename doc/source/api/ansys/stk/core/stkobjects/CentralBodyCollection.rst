@@ -98,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **central_name** : :obj:`~str`
+        **central_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -115,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -129,7 +131,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -142,7 +145,8 @@ Method detail
 
     :Parameters:
 
-    **cb_name** : :obj:`~str`
+        **cb_name** : :obj:`~str`
+
 
     :Returns:
 

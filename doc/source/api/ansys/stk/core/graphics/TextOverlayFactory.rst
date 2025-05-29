@@ -47,7 +47,8 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
+        **font** : :obj:`~GraphicsFont`
+
 
     :Returns:
 
@@ -60,11 +61,16 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
-    **x_pixels** : :obj:`~float`
-    **y_pixels** : :obj:`~float`
-    **width_pixels** : :obj:`~float`
-    **height_pixels** : :obj:`~float`
+        **font** : :obj:`~GraphicsFont`
+
+        **x_pixels** : :obj:`~float`
+
+        **y_pixels** : :obj:`~float`
+
+        **width_pixels** : :obj:`~float`
+
+        **height_pixels** : :obj:`~float`
+
 
     :Returns:
 
@@ -77,9 +83,12 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
-    **position** : :obj:`~list`
-    **size** : :obj:`~list`
+        **font** : :obj:`~GraphicsFont`
+
+        **position** : :obj:`~list`
+
+        **size** : :obj:`~list`
+
 
     :Returns:
 
@@ -92,11 +101,16 @@ Method detail
 
     :Parameters:
 
-    **font** : :obj:`~GraphicsFont`
-    **width** : :obj:`~float`
-    **width_unit** : :obj:`~ScreenOverlayUnit`
-    **height** : :obj:`~float`
-    **height_unit** : :obj:`~ScreenOverlayUnit`
+        **font** : :obj:`~GraphicsFont`
+
+        **width** : :obj:`~float`
+
+        **width_unit** : :obj:`~ScreenOverlayUnit`
+
+        **height** : :obj:`~float`
+
+        **height_unit** : :obj:`~ScreenOverlayUnit`
+
 
     :Returns:
 

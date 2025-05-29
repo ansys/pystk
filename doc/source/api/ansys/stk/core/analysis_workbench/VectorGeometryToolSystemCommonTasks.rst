@@ -43,9 +43,12 @@ Method detail
 
     :Parameters:
 
-    **latitude** : :obj:`~typing.Any`
-    **longitude** : :obj:`~typing.Any`
-    **altitude** : :obj:`~float`
+        **latitude** : :obj:`~typing.Any`
+
+        **longitude** : :obj:`~typing.Any`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -58,8 +61,10 @@ Method detail
 
     :Parameters:
 
-    **origin_point** : :obj:`~IVectorGeometryToolPoint`
-    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 

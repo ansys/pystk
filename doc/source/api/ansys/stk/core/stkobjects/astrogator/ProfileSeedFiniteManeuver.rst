@@ -72,7 +72,8 @@ Method detail
 
     :Parameters:
 
-    **mcs_maneuver** : :obj:`~MCSManeuver`
+        **mcs_maneuver** : :obj:`~MCSManeuver`
+
 
     :Returns:
 

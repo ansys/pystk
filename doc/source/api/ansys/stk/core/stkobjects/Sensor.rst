@@ -259,7 +259,8 @@ Method detail
 
     :Parameters:
 
-    **pattern_type** : :obj:`~SensorPattern`
+        **pattern_type** : :obj:`~SensorPattern`
+
 
     :Returns:
 
@@ -274,7 +275,8 @@ Method detail
 
     :Parameters:
 
-    **pointing_type** : :obj:`~SensorPointing`
+        **pointing_type** : :obj:`~SensorPointing`
+
 
     :Returns:
 
@@ -287,7 +289,8 @@ Method detail
 
     :Parameters:
 
-    **sensor_pointing_file** : :obj:`~str`
+        **sensor_pointing_file** : :obj:`~str`
+
 
     :Returns:
 
@@ -311,7 +314,8 @@ Method detail
 
     :Parameters:
 
-    **az_el_mask_type** : :obj:`~AzElMaskType`
+        **az_el_mask_type** : :obj:`~AzElMaskType`
+
 
     :Returns:
 
@@ -324,7 +328,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -347,7 +352,8 @@ Method detail
 
     :Parameters:
 
-    **location_type** : :obj:`~SensorLocation`
+        **location_type** : :obj:`~SensorLocation`
+
 
     :Returns:
 
@@ -363,7 +369,8 @@ Method detail
 
     :Parameters:
 
-    **model** : :obj:`~SensorRefractionType`
+        **model** : :obj:`~SensorRefractionType`
+
 
     :Returns:
 
@@ -381,7 +388,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
