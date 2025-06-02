@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+
 
     :Returns:
 
@@ -102,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+
 
     :Returns:
 

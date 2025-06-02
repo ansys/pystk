@@ -69,7 +69,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~BeamSelectionStrategyType`
+        **value** : :obj:`~BeamSelectionStrategyType`
+
 
     :Returns:
 

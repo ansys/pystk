@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **spatial_calc_eval_type** : :obj:`~VolumetricSpatialCalculationEvaluationType`
+        **spatial_calc_eval_type** : :obj:`~VolumetricSpatialCalculationEvaluationType`
+
 
     :Returns:
 

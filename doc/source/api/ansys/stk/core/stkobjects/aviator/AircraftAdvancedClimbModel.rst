@@ -152,8 +152,10 @@ Method detail
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 
@@ -174,8 +176,10 @@ Method detail
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 
@@ -191,7 +195,8 @@ Method detail
 
     :Parameters:
 
-    **angle** : :obj:`~typing.Any`
+        **angle** : :obj:`~typing.Any`
+
 
     :Returns:
 

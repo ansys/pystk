@@ -96,7 +96,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineConstant`
+        **param** : :obj:`~ControlEngineConstant`
+
 
     :Returns:
 
@@ -109,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineConstant`
+        **param** : :obj:`~ControlEngineConstant`
+
 
     :Returns:
 
@@ -122,7 +124,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineConstant`
+        **param** : :obj:`~ControlEngineConstant`
+
 
     :Returns:
 

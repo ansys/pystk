@@ -142,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **band** : :obj:`~RasterBand`
+        **band** : :obj:`~RasterBand`
+
 
     :Returns:
 

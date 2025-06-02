@@ -45,7 +45,8 @@ Method detail
 
     :Parameters:
 
-    **fixed_step** : :obj:`~float`
+        **fixed_step** : :obj:`~float`
+
 
     :Returns:
 
@@ -58,7 +59,8 @@ Method detail
 
     :Parameters:
 
-    **curvature_tolerance** : :obj:`~float`
+        **curvature_tolerance** : :obj:`~float`
+
 
     :Returns:
 
@@ -71,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **relative_tolerance** : :obj:`~float`
+        **relative_tolerance** : :obj:`~float`
+
 
     :Returns:
 

@@ -280,7 +280,8 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -293,8 +294,10 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
 
     :Returns:
 
@@ -307,9 +310,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -322,8 +328,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -336,9 +344,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
 
     :Returns:
 
@@ -351,10 +362,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -367,8 +382,10 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -381,9 +398,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
 
     :Returns:
 
@@ -396,9 +416,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -411,11 +434,16 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -428,9 +456,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -443,10 +474,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
 
     :Returns:
 
@@ -459,10 +494,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -475,12 +514,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -493,7 +538,8 @@ Method detail
 
     :Parameters:
 
-    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+        **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
+
 
     :Returns:
 
@@ -519,7 +565,8 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
+        **central_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -532,8 +579,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **axis** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **axis** : :obj:`~list`
+
 
     :Returns:
 

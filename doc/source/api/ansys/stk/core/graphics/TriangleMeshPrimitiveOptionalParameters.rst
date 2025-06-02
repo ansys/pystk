@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **texture_coordinates** : :obj:`~list`
+        **texture_coordinates** : :obj:`~list`
+
 
     :Returns:
 
@@ -56,7 +57,8 @@ Method detail
 
     :Parameters:
 
-    **colors** : :obj:`~list`
+        **colors** : :obj:`~list`
+
 
     :Returns:
 

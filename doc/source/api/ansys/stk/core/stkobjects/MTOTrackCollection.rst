@@ -107,7 +107,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -121,7 +122,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -143,7 +145,8 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
+        **track_id** : :obj:`~int`
+
 
     :Returns:
 
@@ -156,11 +159,16 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
-    **time_vals** : :obj:`~list`
-    **lat_vals** : :obj:`~list`
-    **lon_vals** : :obj:`~list`
-    **alt_vals** : :obj:`~list`
+        **track_id** : :obj:`~int`
+
+        **time_vals** : :obj:`~list`
+
+        **lat_vals** : :obj:`~list`
+
+        **lon_vals** : :obj:`~list`
+
+        **alt_vals** : :obj:`~list`
+
 
     :Returns:
 
@@ -173,7 +181,8 @@ Method detail
 
     :Parameters:
 
-    **command_file** : :obj:`~str`
+        **command_file** : :obj:`~str`
+
 
     :Returns:
 
@@ -186,7 +195,8 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
+        **track_id** : :obj:`~int`
+
 
     :Returns:
 
@@ -201,7 +211,8 @@ Method detail
 
     :Parameters:
 
-    **track** : :obj:`~MTOTrack`
+        **track** : :obj:`~MTOTrack`
+
 
     :Returns:
 
@@ -214,7 +225,8 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
+        **track_id** : :obj:`~int`
+
 
     :Returns:
 
@@ -227,8 +239,10 @@ Method detail
 
     :Parameters:
 
-    **starting_track_id** : :obj:`~int`
-    **numberof_tracks** : :obj:`~int`
+        **starting_track_id** : :obj:`~int`
+
+        **numberof_tracks** : :obj:`~int`
+
 
     :Returns:
 
@@ -241,7 +255,8 @@ Method detail
 
     :Parameters:
 
-    **tracks** : :obj:`~list`
+        **tracks** : :obj:`~list`
+
 
     :Returns:
 
@@ -254,7 +269,8 @@ Method detail
 
     :Parameters:
 
-    **track_ids** : :obj:`~list`
+        **track_ids** : :obj:`~list`
+
 
     :Returns:
 
@@ -267,13 +283,20 @@ Method detail
 
     :Parameters:
 
-    **track_ids_array** : :obj:`~list`
-    **num_pts_per_track_array** : :obj:`~list`
-    **datatype** : :obj:`~MTOInputDataType`
-    **times_array** : :obj:`~list`
-    **x_or_lats_array** : :obj:`~list`
-    **y_or_lons_array** : :obj:`~list`
-    **z_or_alts_array** : :obj:`~list`
+        **track_ids_array** : :obj:`~list`
+
+        **num_pts_per_track_array** : :obj:`~list`
+
+        **datatype** : :obj:`~MTOInputDataType`
+
+        **times_array** : :obj:`~list`
+
+        **x_or_lats_array** : :obj:`~list`
+
+        **y_or_lons_array** : :obj:`~list`
+
+        **z_or_alts_array** : :obj:`~list`
+
 
     :Returns:
 
@@ -286,13 +309,20 @@ Method detail
 
     :Parameters:
 
-    **track_ids_array** : :obj:`~list`
-    **num_pts_per_track_array** : :obj:`~list`
-    **datatype** : :obj:`~MTOInputDataType`
-    **times_array** : :obj:`~list`
-    **x_or_lats_array** : :obj:`~list`
-    **y_or_lons_array** : :obj:`~list`
-    **z_or_alts_array** : :obj:`~list`
+        **track_ids_array** : :obj:`~list`
+
+        **num_pts_per_track_array** : :obj:`~list`
+
+        **datatype** : :obj:`~MTOInputDataType`
+
+        **times_array** : :obj:`~list`
+
+        **x_or_lats_array** : :obj:`~list`
+
+        **y_or_lons_array** : :obj:`~list`
+
+        **z_or_alts_array** : :obj:`~list`
+
 
     :Returns:
 
@@ -305,7 +335,8 @@ Method detail
 
     :Parameters:
 
-    **command_system** : :obj:`~str`
+        **command_system** : :obj:`~str`
+
 
     :Returns:
 

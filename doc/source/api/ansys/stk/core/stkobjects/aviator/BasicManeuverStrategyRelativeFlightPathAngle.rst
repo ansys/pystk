@@ -190,8 +190,10 @@ Method detail
 
     :Parameters:
 
-    **control_limit_mode** : :obj:`~ProfileControlLimit`
-    **control_limit_value** : :obj:`~typing.Any`
+        **control_limit_mode** : :obj:`~ProfileControlLimit`
+
+        **control_limit_value** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -207,8 +209,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -223,8 +227,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -239,8 +245,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -255,8 +263,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 

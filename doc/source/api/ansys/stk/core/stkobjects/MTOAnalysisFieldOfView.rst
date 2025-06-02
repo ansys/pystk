@@ -78,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -104,8 +106,10 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
-    **time** : :obj:`~typing.Any`
+        **track_id** : :obj:`~int`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -118,9 +122,12 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~MTOVisibilityMode`
-    **tracks** : :obj:`~list`
-    **time** : :obj:`~typing.Any`
+        **mode** : :obj:`~MTOVisibilityMode`
+
+        **tracks** : :obj:`~list`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -133,8 +140,10 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~MTOVisibilityMode`
-    **time** : :obj:`~typing.Any`
+        **mode** : :obj:`~MTOVisibilityMode`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -151,9 +160,12 @@ Method detail
 
     :Parameters:
 
-    **any_or_all** : :obj:`~MTOTrackEvaluationType`
-    **tracks** : :obj:`~list`
-    **time** : :obj:`~typing.Any`
+        **any_or_all** : :obj:`~MTOTrackEvaluationType`
+
+        **tracks** : :obj:`~list`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 

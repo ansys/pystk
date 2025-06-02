@@ -226,8 +226,10 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~AzElMaskType`
-    **data** : :obj:`~typing.Any`
+        **type** : :obj:`~AzElMaskType`
+
+        **data** : :obj:`~typing.Any`
+
 
     :Returns:
 

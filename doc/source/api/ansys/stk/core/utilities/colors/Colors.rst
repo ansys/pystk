@@ -109,9 +109,12 @@ Method detail
 
     :Parameters:
 
-    **r** : :obj:`~int`
-    **g** : :obj:`~int`
-    **b** : :obj:`~int`
+        **r** : :obj:`~int`
+
+        **g** : :obj:`~int`
+
+        **b** : :obj:`~int`
+
 
     :Returns:
 
@@ -124,10 +127,14 @@ Method detail
 
     :Parameters:
 
-    **r** : :obj:`~int`
-    **g** : :obj:`~int`
-    **b** : :obj:`~int`
-    **a** : :obj:`~int`
+        **r** : :obj:`~int`
+
+        **g** : :obj:`~int`
+
+        **b** : :obj:`~int`
+
+        **a** : :obj:`~int`
+
 
     :Returns:
 

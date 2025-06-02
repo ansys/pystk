@@ -41,9 +41,12 @@ Method detail
 
     :Parameters:
 
-    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **font** : :obj:`~GraphicsFont`
+        **reference_frame** : :obj:`~IVectorGeometryToolSystem`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **font** : :obj:`~GraphicsFont`
+
 
     :Returns:
 

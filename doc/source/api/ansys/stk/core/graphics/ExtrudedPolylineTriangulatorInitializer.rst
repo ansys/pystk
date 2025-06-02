@@ -63,9 +63,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **bottom_positions** : :obj:`~list`
-    **top_positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **bottom_positions** : :obj:`~list`
+
+        **top_positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -78,10 +81,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **bottom_positions** : :obj:`~list`
-    **top_positions** : :obj:`~list`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **bottom_positions** : :obj:`~list`
+
+        **top_positions** : :obj:`~list`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -94,9 +101,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **bottom_positions** : :obj:`~list`
-    **top_positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **bottom_positions** : :obj:`~list`
+
+        **top_positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -109,10 +119,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **bottom_positions** : :obj:`~list`
-    **top_positions** : :obj:`~list`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **bottom_positions** : :obj:`~list`
+
+        **top_positions** : :obj:`~list`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -125,10 +139,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **bottom_altitude** : :obj:`~float`
-    **top_altitude** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **bottom_altitude** : :obj:`~float`
+
+        **top_altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -141,11 +159,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **bottom_altitude** : :obj:`~float`
-    **top_altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **bottom_altitude** : :obj:`~float`
+
+        **top_altitude** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -158,10 +181,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **bottom_altitude** : :obj:`~float`
-    **top_altitude** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **bottom_altitude** : :obj:`~float`
+
+        **top_altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -174,11 +201,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **bottom_altitude** : :obj:`~float`
-    **top_altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **bottom_altitude** : :obj:`~float`
+
+        **top_altitude** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -191,9 +223,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -206,10 +241,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -222,9 +261,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -237,10 +279,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 

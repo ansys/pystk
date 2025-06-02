@@ -47,8 +47,10 @@ Method detail
 
     :Parameters:
 
-    **scene** : :obj:`~Scene`
-    **on** : :obj:`~bool`
+        **scene** : :obj:`~Scene`
+
+        **on** : :obj:`~bool`
+
 
     :Returns:
 
@@ -61,7 +63,8 @@ Method detail
 
     :Parameters:
 
-    **scene** : :obj:`~Scene`
+        **scene** : :obj:`~Scene`
+
 
     :Returns:
 
@@ -74,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **scene** : :obj:`~Scene`
+        **scene** : :obj:`~Scene`
+
 
     :Returns:
 

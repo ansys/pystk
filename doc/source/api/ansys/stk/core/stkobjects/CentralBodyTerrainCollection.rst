@@ -81,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~typing.Any`
+        **index** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -110,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

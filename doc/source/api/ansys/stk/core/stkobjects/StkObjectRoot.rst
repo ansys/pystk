@@ -415,7 +415,8 @@ Method detail
 
     :Parameters:
 
-    **connect_command** : :obj:`~str`
+        **connect_command** : :obj:`~str`
+
 
     :Returns:
 
@@ -428,7 +429,8 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
+        **path** : :obj:`~str`
+
 
     :Returns:
 
@@ -461,7 +463,8 @@ Method detail
 
     :Parameters:
 
-    **scenario_name** : :obj:`~str`
+        **scenario_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -494,7 +497,8 @@ Method detail
 
     :Parameters:
 
-    **sc_file_name** : :obj:`~str`
+        **sc_file_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -509,7 +513,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -522,7 +527,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -562,8 +568,10 @@ Method detail
 
     :Parameters:
 
-    **connect_commands** : :obj:`~list`
-    **action** : :obj:`~ExecuteMultipleCommandsMode`
+        **connect_commands** : :obj:`~list`
+
+        **action** : :obj:`~ExecuteMultipleCommandsMode`
+
 
     :Returns:
 
@@ -588,8 +596,10 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
-    **password** : :obj:`~str`
+        **path** : :obj:`~str`
+
+        **password** : :obj:`~str`
+
 
     :Returns:
 
@@ -615,7 +625,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -641,10 +652,14 @@ Method detail
 
     :Parameters:
 
-    **vdf_file_name** : :obj:`~str`
-    **password** : :obj:`~str`
-    **description** : :obj:`~str`
-    **window_id** : :obj:`~str`
+        **vdf_file_name** : :obj:`~str`
+
+        **password** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **window_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -658,7 +673,8 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
+        **path** : :obj:`~str`
+
 
     :Returns:
 
@@ -680,7 +696,8 @@ Method detail
 
     :Parameters:
 
-    **file_name** : :obj:`~str`
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -693,8 +710,10 @@ Method detail
 
     :Parameters:
 
-    **vdf_path** : :obj:`~str`
-    **password** : :obj:`~str`
+        **vdf_path** : :obj:`~str`
+
+        **password** : :obj:`~str`
+
 
     :Returns:
 
@@ -707,9 +726,12 @@ Method detail
 
     :Parameters:
 
-    **vdf_path** : :obj:`~str`
-    **password** : :obj:`~str`
-    **version** : :obj:`~float`
+        **vdf_path** : :obj:`~str`
+
+        **password** : :obj:`~str`
+
+        **version** : :obj:`~float`
+
 
     :Returns:
 
@@ -722,7 +744,8 @@ Method detail
 
     :Parameters:
 
-    **sdf_path** : :obj:`~str`
+        **sdf_path** : :obj:`~str`
+
 
     :Returns:
 

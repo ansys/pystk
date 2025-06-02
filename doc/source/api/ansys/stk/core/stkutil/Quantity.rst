@@ -86,7 +86,8 @@ Method detail
 
     :Parameters:
 
-    **unit_abbrv** : :obj:`~str`
+        **unit_abbrv** : :obj:`~str`
+
 
     :Returns:
 
@@ -101,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **quantity** : :obj:`~Quantity`
+        **quantity** : :obj:`~Quantity`
+
 
     :Returns:
 
@@ -114,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **quantity** : :obj:`~Quantity`
+        **quantity** : :obj:`~Quantity`
+
 
     :Returns:
 
@@ -127,7 +130,8 @@ Method detail
 
     :Parameters:
 
-    **quantity** : :obj:`~Quantity`
+        **quantity** : :obj:`~Quantity`
+
 
     :Returns:
 
@@ -140,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **quantity** : :obj:`~Quantity`
+        **quantity** : :obj:`~Quantity`
+
 
     :Returns:
 

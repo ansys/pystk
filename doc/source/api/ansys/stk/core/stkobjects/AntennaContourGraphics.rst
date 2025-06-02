@@ -80,7 +80,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AntennaContourType`
+        **value** : :obj:`~AntennaContourType`
+
 
     :Returns:
 
@@ -94,7 +95,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AntennaContourType`
+        **value** : :obj:`~AntennaContourType`
+
 
     :Returns:
 

@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **file** : :obj:`~str`
+        **file** : :obj:`~str`
+
 
     :Returns:
 
@@ -56,8 +57,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **ephem_source** : :obj:`~EphemSourceType`
+        **central_body** : :obj:`~str`
+
+        **ephem_source** : :obj:`~EphemSourceType`
+
 
     :Returns:
 

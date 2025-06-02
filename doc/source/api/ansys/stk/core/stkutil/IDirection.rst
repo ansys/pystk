@@ -85,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~DirectionType`
+        **type** : :obj:`~DirectionType`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **direction** : :obj:`~IDirection`
+        **direction** : :obj:`~IDirection`
+
 
     :Returns:
 
@@ -112,9 +114,12 @@ Method detail
 
     :Parameters:
 
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
-    **sequence** : :obj:`~EulerDirectionSequence`
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
+        **sequence** : :obj:`~EulerDirectionSequence`
+
 
     :Returns:
 
@@ -127,8 +132,10 @@ Method detail
 
     :Parameters:
 
-    **pitch** : :obj:`~typing.Any`
-    **roll** : :obj:`~typing.Any`
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -141,8 +148,10 @@ Method detail
 
     :Parameters:
 
-    **ra** : :obj:`~typing.Any`
-    **dec** : :obj:`~typing.Any`
+        **ra** : :obj:`~typing.Any`
+
+        **dec** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -155,9 +164,12 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
@@ -170,7 +182,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerDirectionSequence`
+        **sequence** : :obj:`~EulerDirectionSequence`
+
 
     :Returns:
 
@@ -183,7 +196,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~PRSequence`
+        **sequence** : :obj:`~PRSequence`
+
 
     :Returns:
 
@@ -214,7 +228,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerDirectionSequence`
+        **sequence** : :obj:`~EulerDirectionSequence`
+
 
     :Returns:
 
@@ -227,7 +242,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~PRSequence`
+        **sequence** : :obj:`~PRSequence`
+
 
     :Returns:
 

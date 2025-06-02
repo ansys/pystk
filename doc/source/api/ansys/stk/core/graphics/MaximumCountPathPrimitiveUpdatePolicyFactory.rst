@@ -52,8 +52,10 @@ Method detail
 
     :Parameters:
 
-    **maximum_count** : :obj:`~int`
-    **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+        **maximum_count** : :obj:`~int`
+
+        **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+
 
     :Returns:
 

@@ -72,8 +72,10 @@ Method detail
 
     :Parameters:
 
-    **start_epoch** : :obj:`~typing.Any`
-    **stop_epoch** : :obj:`~typing.Any`
+        **start_epoch** : :obj:`~typing.Any`
+
+        **stop_epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 

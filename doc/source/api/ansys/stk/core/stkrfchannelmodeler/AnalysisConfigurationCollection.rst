@@ -83,7 +83,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -110,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AnalysisConfiguration`
+        **value** : :obj:`~AnalysisConfiguration`
+
 
     :Returns:
 
@@ -123,8 +126,10 @@ Method detail
 
     :Parameters:
 
-    **model_type** : :obj:`~AnalysisConfigurationModelType`
-    **configuration_name** : :obj:`~str`
+        **model_type** : :obj:`~AnalysisConfigurationModelType`
+
+        **configuration_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -137,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AnalysisConfiguration`
+        **value** : :obj:`~AnalysisConfiguration`
+
 
     :Returns:
 
@@ -159,7 +165,8 @@ Method detail
 
     :Parameters:
 
-    **configuration_name** : :obj:`~str`
+        **configuration_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -172,7 +179,8 @@ Method detail
 
     :Parameters:
 
-    **configuration_name** : :obj:`~str`
+        **configuration_name** : :obj:`~str`
+
 
     :Returns:
 

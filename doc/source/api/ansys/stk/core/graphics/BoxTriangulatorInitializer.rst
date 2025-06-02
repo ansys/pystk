@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **size** : :obj:`~list`
+        **size** : :obj:`~list`
+
 
     :Returns:
 

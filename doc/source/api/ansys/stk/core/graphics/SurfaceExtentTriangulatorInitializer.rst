@@ -43,8 +43,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **extent** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
 
     :Returns:
 
@@ -57,10 +59,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **extent** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 

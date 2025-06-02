@@ -291,7 +291,8 @@ Method detail
 
     :Parameters:
 
-    **propagator** : :obj:`~PropagatorType`
+        **propagator** : :obj:`~PropagatorType`
+
 
     :Returns:
 
@@ -306,7 +307,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 
@@ -319,7 +321,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 
@@ -341,7 +344,8 @@ Method detail
 
     :Parameters:
 
-    **propagator** : :obj:`~PropagatorType`
+        **propagator** : :obj:`~PropagatorType`
+
 
     :Returns:
 

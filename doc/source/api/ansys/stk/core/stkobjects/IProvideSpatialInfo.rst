@@ -40,7 +40,8 @@ Method detail
 
     :Parameters:
 
-    **recycle** : :obj:`~bool`
+        **recycle** : :obj:`~bool`
+
 
     :Returns:
 

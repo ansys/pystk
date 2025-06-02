@@ -159,9 +159,12 @@ Method detail
 
     :Parameters:
 
-    **x_value** : :obj:`~float`
-    **y_value** : :obj:`~float`
-    **z_value** : :obj:`~float`
+        **x_value** : :obj:`~float`
+
+        **y_value** : :obj:`~float`
+
+        **z_value** : :obj:`~float`
+
 
     :Returns:
 
@@ -183,9 +186,12 @@ Method detail
 
     :Parameters:
 
-    **azimuth_value** : :obj:`~typing.Any`
-    **elevation_value** : :obj:`~typing.Any`
-    **magnitude_value** : :obj:`~float`
+        **azimuth_value** : :obj:`~typing.Any`
+
+        **elevation_value** : :obj:`~typing.Any`
+
+        **magnitude_value** : :obj:`~float`
+
 
     :Returns:
 

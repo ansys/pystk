@@ -116,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~FigureOfMeritMethod`
+        **method** : :obj:`~FigureOfMeritMethod`
+
 
     :Returns:
 
@@ -129,7 +130,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~FigureOfMeritMethod`
+        **method** : :obj:`~FigureOfMeritMethod`
+
 
     :Returns:
 
@@ -144,7 +146,8 @@ Method detail
 
     :Parameters:
 
-    **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
+        **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
+
 
     :Returns:
 
@@ -157,7 +160,8 @@ Method detail
 
     :Parameters:
 
-    **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
+        **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
+
 
     :Returns:
 

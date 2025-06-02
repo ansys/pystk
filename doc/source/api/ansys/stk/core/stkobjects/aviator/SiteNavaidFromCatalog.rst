@@ -56,7 +56,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~ICatalogNavaid`
+        **value** : :obj:`~ICatalogNavaid`
+
 
     :Returns:
 

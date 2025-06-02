@@ -91,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~Quantity`
+        **value** : :obj:`~Quantity`
+
 
     :Returns:
 
@@ -113,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~Quantity`
+        **value** : :obj:`~Quantity`
+
 
     :Returns:
 
@@ -126,8 +128,10 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~Quantity`
-    **max** : :obj:`~Quantity`
+        **min** : :obj:`~Quantity`
+
+        **max** : :obj:`~Quantity`
+
 
     :Returns:
 

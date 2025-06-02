@@ -61,8 +61,10 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~Date`
-    **next_time** : :obj:`~Date`
+        **time** : :obj:`~Date`
+
+        **next_time** : :obj:`~Date`
+
 
     :Returns:
 

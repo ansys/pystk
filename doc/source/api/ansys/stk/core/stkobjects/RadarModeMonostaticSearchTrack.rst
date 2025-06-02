@@ -70,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~RadarWaveformSearchTrackType`
+        **value** : :obj:`~RadarWaveformSearchTrackType`
+
 
     :Returns:
 

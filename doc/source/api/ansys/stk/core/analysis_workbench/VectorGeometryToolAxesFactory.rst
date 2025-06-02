@@ -64,9 +64,12 @@ Method detail
 
     :Parameters:
 
-    **axes_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **axes_type** : :obj:`~AxesType`
+        **axes_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **axes_type** : :obj:`~AxesType`
+
 
     :Returns:
 
@@ -79,7 +82,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~AxesType`
+        **type** : :obj:`~AxesType`
+
 
     :Returns:
 
@@ -93,9 +97,12 @@ Method detail
 
     :Parameters:
 
-    **axes_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **display_name** : :obj:`~str`
+        **axes_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **display_name** : :obj:`~str`
+
 
     :Returns:
 

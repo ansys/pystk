@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
+        **key** : :obj:`~str`
+
 
     :Returns:
 
@@ -103,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
+        **key** : :obj:`~str`
+
 
     :Returns:
 
@@ -125,7 +127,8 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
+        **key** : :obj:`~str`
+
 
     :Returns:
 
@@ -138,8 +141,10 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
-    **value** : :obj:`~str`
+        **key** : :obj:`~str`
+
+        **value** : :obj:`~str`
+
 
     :Returns:
 
@@ -153,7 +158,8 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
+        **key** : :obj:`~str`
+
 
     :Returns:
 
@@ -166,8 +172,10 @@ Method detail
 
     :Parameters:
 
-    **key** : :obj:`~str`
-    **is_read_only** : :obj:`~bool`
+        **key** : :obj:`~str`
+
+        **is_read_only** : :obj:`~bool`
+
 
     :Returns:
 

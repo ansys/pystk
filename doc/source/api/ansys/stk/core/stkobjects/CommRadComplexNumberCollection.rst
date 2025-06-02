@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -104,8 +106,10 @@ Method detail
 
     :Parameters:
 
-    **real** : :obj:`~float`
-    **imaginary** : :obj:`~float`
+        **real** : :obj:`~float`
+
+        **imaginary** : :obj:`~float`
+
 
     :Returns:
 
@@ -118,9 +122,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **real** : :obj:`~float`
-    **imaginary** : :obj:`~float`
+        **index** : :obj:`~int`
+
+        **real** : :obj:`~float`
+
+        **imaginary** : :obj:`~float`
+
 
     :Returns:
 

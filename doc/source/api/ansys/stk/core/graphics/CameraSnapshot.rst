@@ -49,8 +49,10 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
-    **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
+        **filename** : :obj:`~str`
+
+        **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
+
 
     :Returns:
 
@@ -63,10 +65,14 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
-    **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
-    **width_in_inches** : :obj:`~float`
-    **dots_per_inch** : :obj:`~float`
+        **filename** : :obj:`~str`
+
+        **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
+
+        **width_in_inches** : :obj:`~float`
+
+        **dots_per_inch** : :obj:`~float`
+
 
     :Returns:
 

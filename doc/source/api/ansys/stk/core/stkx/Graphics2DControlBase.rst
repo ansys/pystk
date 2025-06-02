@@ -227,7 +227,8 @@ Method detail
 
     :Parameters:
 
-    **picture** : :obj:`~IPictureDisp`
+        **picture** : :obj:`~IPictureDisp`
+
 
     :Returns:
 
@@ -261,8 +262,10 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~int`
-    **y** : :obj:`~int`
+        **x** : :obj:`~int`
+
+        **y** : :obj:`~int`
+
 
     :Returns:
 
@@ -285,7 +288,8 @@ Method detail
 
     :Parameters:
 
-    **win_id** : :obj:`~int`
+        **win_id** : :obj:`~int`
+
 
     :Returns:
 
@@ -298,10 +302,14 @@ Method detail
 
     :Parameters:
 
-    **left** : :obj:`~int`
-    **top** : :obj:`~int`
-    **right** : :obj:`~int`
-    **bottom** : :obj:`~int`
+        **left** : :obj:`~int`
+
+        **top** : :obj:`~int`
+
+        **right** : :obj:`~int`
+
+        **bottom** : :obj:`~int`
+
 
     :Returns:
 
@@ -316,10 +324,14 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
-    **draw_coords** : :obj:`~Graphics2DDrawCoordinates`
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
+        **draw_coords** : :obj:`~Graphics2DDrawCoordinates`
+
 
     :Returns:
 
@@ -333,7 +345,8 @@ Method detail
 
     :Parameters:
 
-    **cursor_file_name** : :obj:`~str`
+        **cursor_file_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -355,7 +368,8 @@ Method detail
 
     :Parameters:
 
-    **cursor_handle** : :obj:`~int`
+        **cursor_handle** : :obj:`~int`
+
 
     :Returns:
 

@@ -40,7 +40,8 @@ Method detail
 
     :Parameters:
 
-    **command** : :obj:`~str`
+        **command** : :obj:`~str`
+
 
     :Returns:
 

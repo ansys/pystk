@@ -91,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -105,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -127,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -140,10 +143,14 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -156,7 +163,8 @@ Method detail
 
     :Parameters:
 
-    **mto_track_points** : :obj:`~str`
+        **mto_track_points** : :obj:`~str`
+
 
     :Returns:
 
@@ -169,10 +177,14 @@ Method detail
 
     :Parameters:
 
-    **time_vals** : :obj:`~list`
-    **lat_vals** : :obj:`~list`
-    **lon_vals** : :obj:`~list`
-    **alt_vals** : :obj:`~list`
+        **time_vals** : :obj:`~list`
+
+        **lat_vals** : :obj:`~list`
+
+        **lon_vals** : :obj:`~list`
+
+        **alt_vals** : :obj:`~list`
+
 
     :Returns:
 
@@ -187,10 +199,14 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
 
     :Returns:
 

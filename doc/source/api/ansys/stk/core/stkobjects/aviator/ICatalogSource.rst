@@ -64,7 +64,8 @@ Method detail
 
     :Parameters:
 
-    **aircraft_name** : :obj:`~str`
+        **aircraft_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -77,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **child_name** : :obj:`~str`
+        **child_name** : :obj:`~str`
+
 
     :Returns:
 

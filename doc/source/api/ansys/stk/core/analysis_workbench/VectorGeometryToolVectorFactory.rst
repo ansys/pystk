@@ -70,9 +70,12 @@ Method detail
 
     :Parameters:
 
-    **vector_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **vector_type** : :obj:`~VectorType`
+        **vector_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **vector_type** : :obj:`~VectorType`
+
 
     :Returns:
 
@@ -85,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~VectorType`
+        **type** : :obj:`~VectorType`
+
 
     :Returns:
 
@@ -98,9 +102,12 @@ Method detail
 
     :Parameters:
 
-    **vector_name** : :obj:`~str`
-    **origin_point** : :obj:`~IVectorGeometryToolPoint`
-    **dest_point** : :obj:`~IVectorGeometryToolPoint`
+        **vector_name** : :obj:`~str`
+
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **dest_point** : :obj:`~IVectorGeometryToolPoint`
+
 
     :Returns:
 
@@ -114,9 +121,12 @@ Method detail
 
     :Parameters:
 
-    **vector_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **display_name** : :obj:`~str`
+        **vector_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **display_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -129,9 +139,12 @@ Method detail
 
     :Parameters:
 
-    **vector_name** : :obj:`~str`
-    **vector_a** : :obj:`~IVectorGeometryToolVector`
-    **vector_b** : :obj:`~IVectorGeometryToolVector`
+        **vector_name** : :obj:`~str`
+
+        **vector_a** : :obj:`~IVectorGeometryToolVector`
+
+        **vector_b** : :obj:`~IVectorGeometryToolVector`
+
 
     :Returns:
 
@@ -144,9 +157,12 @@ Method detail
 
     :Parameters:
 
-    **vector_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **file_name** : :obj:`~str`
+        **vector_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 

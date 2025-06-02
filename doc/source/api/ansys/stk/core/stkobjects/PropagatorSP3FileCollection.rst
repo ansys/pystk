@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -111,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **file_path** : :obj:`~str`
+        **file_path** : :obj:`~str`
+
 
     :Returns:
 

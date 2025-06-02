@@ -185,7 +185,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~CommSystemLinkSelectionCriteriaType`
+        **value** : :obj:`~CommSystemLinkSelectionCriteriaType`
+
 
     :Returns:
 

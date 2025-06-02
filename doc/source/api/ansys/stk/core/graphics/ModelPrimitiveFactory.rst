@@ -54,7 +54,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -67,8 +68,10 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **up_axis** : :obj:`~ModelUpAxis`
+        **uri** : :obj:`~str`
+
+        **up_axis** : :obj:`~ModelUpAxis`
+
 
     :Returns:
 

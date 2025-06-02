@@ -43,9 +43,12 @@ Method detail
 
     :Parameters:
 
-    **system_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **system_type** : :obj:`~SystemType`
+        **system_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **system_type** : :obj:`~SystemType`
+
 
     :Returns:
 
@@ -58,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~SystemType`
+        **type** : :obj:`~SystemType`
+
 
     :Returns:
 

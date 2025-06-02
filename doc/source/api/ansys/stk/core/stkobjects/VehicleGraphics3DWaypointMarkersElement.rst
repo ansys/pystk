@@ -111,7 +111,8 @@ Method detail
 
     :Parameters:
 
-    **marker_file** : :obj:`~str`
+        **marker_file** : :obj:`~str`
+
 
     :Returns:
 

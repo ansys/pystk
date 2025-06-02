@@ -96,7 +96,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -109,9 +110,12 @@ Method detail
 
     :Parameters:
 
-    **segment_type** : :obj:`~SegmentType`
-    **segment_name** : :obj:`~str`
-    **segment_to_insert_before** : :obj:`~str`
+        **segment_type** : :obj:`~SegmentType`
+
+        **segment_name** : :obj:`~str`
+
+        **segment_to_insert_before** : :obj:`~str`
+
 
     :Returns:
 
@@ -124,7 +128,8 @@ Method detail
 
     :Parameters:
 
-    **segment_name_to_remove** : :obj:`~str`
+        **segment_name_to_remove** : :obj:`~str`
+
 
     :Returns:
 
@@ -148,7 +153,8 @@ Method detail
 
     :Parameters:
 
-    **segment_name_to_cut** : :obj:`~str`
+        **segment_name_to_cut** : :obj:`~str`
+
 
     :Returns:
 
@@ -161,7 +167,8 @@ Method detail
 
     :Parameters:
 
-    **segment_to_paste_before** : :obj:`~str`
+        **segment_to_paste_before** : :obj:`~str`
+
 
     :Returns:
 
@@ -174,8 +181,10 @@ Method detail
 
     :Parameters:
 
-    **segment** : :obj:`~IMCSSegment`
-    **segment_to_insert_before** : :obj:`~str`
+        **segment** : :obj:`~IMCSSegment`
+
+        **segment_to_insert_before** : :obj:`~str`
+
 
     :Returns:
 
@@ -188,8 +197,10 @@ Method detail
 
     :Parameters:
 
-    **segment_name** : :obj:`~str`
-    **segment_to_insert_before** : :obj:`~str`
+        **segment_name** : :obj:`~str`
+
+        **segment_to_insert_before** : :obj:`~str`
+
 
     :Returns:
 
@@ -203,7 +214,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -216,7 +228,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

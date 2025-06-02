@@ -62,7 +62,8 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
+        **path** : :obj:`~str`
+
 
     :Returns:
 
@@ -75,8 +76,10 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
-    **property_value** : :obj:`~typing.Any`
+        **path** : :obj:`~str`
+
+        **property_value** : :obj:`~typing.Any`
+
 
     :Returns:
 

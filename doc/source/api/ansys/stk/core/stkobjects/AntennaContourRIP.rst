@@ -81,9 +81,12 @@ Method detail
 
     :Parameters:
 
-    **azimuth_resolution** : :obj:`~float`
-    **elevation_resolution** : :obj:`~float`
-    **max_elevation** : :obj:`~float`
+        **azimuth_resolution** : :obj:`~float`
+
+        **elevation_resolution** : :obj:`~float`
+
+        **max_elevation** : :obj:`~float`
+
 
     :Returns:
 

@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **eclipsing_body** : :obj:`~str`
+        **eclipsing_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **eclipsing_body** : :obj:`~str`
+        **eclipsing_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -102,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **eclipsing_body** : :obj:`~str`
+        **eclipsing_body** : :obj:`~str`
+
 
     :Returns:
 

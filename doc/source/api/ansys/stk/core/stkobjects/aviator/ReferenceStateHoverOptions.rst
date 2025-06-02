@@ -189,8 +189,10 @@ Method detail
 
     :Parameters:
 
-    **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
-    **value** : :obj:`~float`
+        **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -222,8 +224,10 @@ Method detail
 
     :Parameters:
 
-    **attitude_rate_type** : :obj:`~ReferenceStateAttitudeMode`
-    **value** : :obj:`~typing.Any`
+        **attitude_rate_type** : :obj:`~ReferenceStateAttitudeMode`
+
+        **value** : :obj:`~typing.Any`
+
 
     :Returns:
 

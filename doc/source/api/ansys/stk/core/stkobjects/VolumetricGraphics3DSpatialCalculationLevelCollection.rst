@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **level** : :obj:`~int`
+        **level** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **level** : :obj:`~int`
+        **level** : :obj:`~int`
+
 
     :Returns:
 
@@ -111,9 +113,12 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~float`
-    **color** : :obj:`~agcolor.Color`
-    **translucency** : :obj:`~float`
+        **value** : :obj:`~float`
+
+        **color** : :obj:`~agcolor.Color`
+
+        **translucency** : :obj:`~float`
+
 
     :Returns:
 

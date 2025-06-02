@@ -221,7 +221,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -260,7 +261,8 @@ Method detail
 
     :Parameters:
 
-    **object_path** : :obj:`~str`
+        **object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -273,7 +275,8 @@ Method detail
 
     :Parameters:
 
-    **object** : :obj:`~IStkObject`
+        **object** : :obj:`~IStkObject`
+
 
     :Returns:
 
@@ -287,7 +290,8 @@ Method detail
 
     :Parameters:
 
-    **path_to_object** : :obj:`~str`
+        **path_to_object** : :obj:`~str`
+
 
     :Returns:
 
@@ -320,7 +324,8 @@ Method detail
 
     :Parameters:
 
-    **new_object_name** : :obj:`~str`
+        **new_object_name** : :obj:`~str`
+
 
     :Returns:
 

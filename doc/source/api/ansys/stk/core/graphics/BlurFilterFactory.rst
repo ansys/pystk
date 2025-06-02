@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~BlurMethod`
+        **method** : :obj:`~BlurMethod`
+
 
     :Returns:
 

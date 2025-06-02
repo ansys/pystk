@@ -217,9 +217,12 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
@@ -238,7 +241,8 @@ Method detail
 
     :Parameters:
 
-    **other_configuration** : :obj:`~Configuration`
+        **other_configuration** : :obj:`~Configuration`
+
 
     :Returns:
 

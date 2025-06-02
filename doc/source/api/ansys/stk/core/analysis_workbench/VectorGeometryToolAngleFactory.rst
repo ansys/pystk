@@ -43,9 +43,12 @@ Method detail
 
     :Parameters:
 
-    **angle_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **angle_type** : :obj:`~AngleType`
+        **angle_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **angle_type** : :obj:`~AngleType`
+
 
     :Returns:
 
@@ -58,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~AngleType`
+        **type** : :obj:`~AngleType`
+
 
     :Returns:
 

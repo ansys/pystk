@@ -284,8 +284,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -353,8 +355,10 @@ Method detail
 
     :Parameters:
 
-    **object_path1** : :obj:`~str`
-    **object_path2** : :obj:`~str`
+        **object_path1** : :obj:`~str`
+
+        **object_path2** : :obj:`~str`
+
 
     :Returns:
 

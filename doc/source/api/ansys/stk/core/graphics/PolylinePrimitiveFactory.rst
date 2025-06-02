@@ -87,8 +87,10 @@ Method detail
 
     :Parameters:
 
-    **interpolator** : :obj:`~IPositionInterpolator`
-    **set_hint** : :obj:`~SetHint`
+        **interpolator** : :obj:`~IPositionInterpolator`
+
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -101,8 +103,10 @@ Method detail
 
     :Parameters:
 
-    **polyline_type** : :obj:`~PolylineType`
-    **set_hint** : :obj:`~SetHint`
+        **polyline_type** : :obj:`~PolylineType`
+
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -115,7 +119,8 @@ Method detail
 
     :Parameters:
 
-    **interpolator** : :obj:`~IPositionInterpolator`
+        **interpolator** : :obj:`~IPositionInterpolator`
+
 
     :Returns:
 
@@ -128,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -141,7 +147,8 @@ Method detail
 
     :Parameters:
 
-    **polyline_type** : :obj:`~PolylineType`
+        **polyline_type** : :obj:`~PolylineType`
+
 
     :Returns:
 

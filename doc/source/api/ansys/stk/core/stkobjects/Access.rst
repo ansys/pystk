@@ -273,8 +273,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -290,7 +292,8 @@ Method detail
 
     :Parameters:
 
-    **access_intervals** : :obj:`~list`
+        **access_intervals** : :obj:`~list`
+
 
     :Returns:
 
@@ -305,7 +308,8 @@ Method detail
 
     :Parameters:
 
-    **event_interval_list** : :obj:`~ITimeToolTimeIntervalList`
+        **event_interval_list** : :obj:`~ITimeToolTimeIntervalList`
+
 
     :Returns:
 

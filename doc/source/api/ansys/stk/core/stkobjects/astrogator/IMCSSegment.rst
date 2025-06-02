@@ -105,7 +105,8 @@ Method detail
 
     :Parameters:
 
-    **result_name** : :obj:`~str`
+        **result_name** : :obj:`~str`
+
 
     :Returns:
 

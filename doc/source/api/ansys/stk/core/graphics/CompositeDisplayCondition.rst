@@ -133,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -147,7 +148,8 @@ Method detail
 
     :Parameters:
 
-    **count** : :obj:`~int`
+        **count** : :obj:`~int`
+
 
     :Returns:
 
@@ -160,8 +162,10 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
@@ -174,7 +178,8 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -187,9 +192,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **index** : :obj:`~int`
+
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
@@ -202,8 +210,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **display_condition** : :obj:`~IDisplayCondition`
+        **index** : :obj:`~int`
+
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -216,7 +226,8 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -229,7 +240,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -251,7 +263,8 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -264,8 +277,10 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
@@ -278,7 +293,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -291,8 +307,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **negate** : :obj:`~bool`
+        **index** : :obj:`~int`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 

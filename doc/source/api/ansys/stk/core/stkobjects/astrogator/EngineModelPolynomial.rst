@@ -94,7 +94,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineModelPolynomial`
+        **param** : :obj:`~ControlEngineModelPolynomial`
+
 
     :Returns:
 
@@ -107,7 +108,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineModelPolynomial`
+        **param** : :obj:`~ControlEngineModelPolynomial`
+
 
     :Returns:
 
@@ -120,7 +122,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineModelPolynomial`
+        **param** : :obj:`~ControlEngineModelPolynomial`
+
 
     :Returns:
 

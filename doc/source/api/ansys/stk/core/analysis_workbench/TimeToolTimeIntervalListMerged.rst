@@ -102,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
 
     :Returns:
 
@@ -115,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
 
     :Returns:
 
@@ -128,7 +130,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
 
     :Returns:
 
@@ -141,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
 
     :Returns:
 
@@ -154,7 +158,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
 
     :Returns:
 
@@ -167,7 +172,8 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
 
     :Returns:
 
@@ -180,8 +186,10 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
-    **pos** : :obj:`~int`
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
+        **pos** : :obj:`~int`
+
 
     :Returns:
 
@@ -194,8 +202,10 @@ Method detail
 
     :Parameters:
 
-    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
-    **pos** : :obj:`~int`
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
+        **pos** : :obj:`~int`
+
 
     :Returns:
 
@@ -208,7 +218,8 @@ Method detail
 
     :Parameters:
 
-    **pos** : :obj:`~int`
+        **pos** : :obj:`~int`
+
 
     :Returns:
 
@@ -230,7 +241,8 @@ Method detail
 
     :Parameters:
 
-    **pos** : :obj:`~int`
+        **pos** : :obj:`~int`
+
 
     :Returns:
 

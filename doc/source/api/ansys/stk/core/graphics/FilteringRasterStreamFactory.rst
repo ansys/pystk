@@ -41,8 +41,10 @@ Method detail
 
     :Parameters:
 
-    **raster_stream** : :obj:`~IRasterStream`
-    **filter** : :obj:`~IRasterFilter`
+        **raster_stream** : :obj:`~IRasterStream`
+
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 

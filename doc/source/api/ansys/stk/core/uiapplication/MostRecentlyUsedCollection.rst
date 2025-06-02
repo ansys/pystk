@@ -68,7 +68,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~typing.Any`
+        **index** : :obj:`~typing.Any`
+
 
     :Returns:
 

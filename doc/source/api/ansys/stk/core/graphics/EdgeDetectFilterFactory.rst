@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~EdgeDetectMethod`
+        **method** : :obj:`~EdgeDetectMethod`
+
 
     :Returns:
 

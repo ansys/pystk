@@ -47,10 +47,14 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -63,13 +67,20 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
-    **lat_rate** : :obj:`~float`
-    **lon_rate** : :obj:`~float`
-    **alt_rate** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
+        **lat_rate** : :obj:`~float`
+
+        **lon_rate** : :obj:`~float`
+
+        **alt_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -82,10 +93,14 @@ Method detail
 
     :Parameters:
 
-    **times** : :obj:`~list`
-    **lats** : :obj:`~list`
-    **lons** : :obj:`~list`
-    **alts** : :obj:`~list`
+        **times** : :obj:`~list`
+
+        **lats** : :obj:`~list`
+
+        **lons** : :obj:`~list`
+
+        **alts** : :obj:`~list`
+
 
     :Returns:
 
@@ -98,13 +113,20 @@ Method detail
 
     :Parameters:
 
-    **times** : :obj:`~list`
-    **lats** : :obj:`~list`
-    **lons** : :obj:`~list`
-    **alts** : :obj:`~list`
-    **lat_rates** : :obj:`~list`
-    **lon_rates** : :obj:`~list`
-    **alt_rates** : :obj:`~list`
+        **times** : :obj:`~list`
+
+        **lats** : :obj:`~list`
+
+        **lons** : :obj:`~list`
+
+        **alts** : :obj:`~list`
+
+        **lat_rates** : :obj:`~list`
+
+        **lon_rates** : :obj:`~list`
+
+        **alt_rates** : :obj:`~list`
+
 
     :Returns:
 

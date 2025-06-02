@@ -163,9 +163,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **normals** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **normals** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -178,10 +181,14 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **normals** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+        **positions** : :obj:`~list`
+
+        **normals** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+
 
     :Returns:
 
@@ -194,7 +201,8 @@ Method detail
 
     :Parameters:
 
-    **triangulator** : :obj:`~ITriangulatorResult`
+        **triangulator** : :obj:`~ITriangulatorResult`
+
 
     :Returns:
 
