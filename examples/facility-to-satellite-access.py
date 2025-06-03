@@ -62,7 +62,7 @@ from ansys.stk.core.stkobjects import STKObjectType
 facility = root.current_scenario.children.new(STKObjectType.FACILITY, "Philadelphia")
 # -
 
-# **Note:** the “new” method returns an object of the ``IStkObject`` type.
+# **Note:** the “new” method returns an object of the ``ISTKObject`` type.
 
 # ### Set the facility position
 
@@ -289,7 +289,7 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 
 # ### Create a vector between the satellite and facility objects
 
-# AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench capability is located in the ``vgt`` property of the ``IStkObject`` interface.
+# AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench capability is located in the ``vgt`` property of the ``ISTKObject`` interface.
 
 # Create a vector between the satellite and facility objects:
 
