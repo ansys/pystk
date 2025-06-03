@@ -43,10 +43,14 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **size** : :obj:`~int`
-    **font_style** : :obj:`~FontStyle`
-    **outline** : :obj:`~bool`
+        **name** : :obj:`~str`
+
+        **size** : :obj:`~int`
+
+        **font_style** : :obj:`~FontStyle`
+
+        **outline** : :obj:`~bool`
+
 
     :Returns:
 
@@ -59,8 +63,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **size** : :obj:`~int`
+        **name** : :obj:`~str`
+
+        **size** : :obj:`~int`
+
 
     :Returns:
 

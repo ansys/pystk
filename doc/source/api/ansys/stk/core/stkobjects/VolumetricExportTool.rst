@@ -102,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **file_name** : :obj:`~str`
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 

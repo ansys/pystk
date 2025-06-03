@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~FacetTileset`
+        **value** : :obj:`~FacetTileset`
+
 
     :Returns:
 
@@ -104,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -126,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~FacetTileset`
+        **value** : :obj:`~FacetTileset`
+
 
     :Returns:
 

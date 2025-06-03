@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **srp_model** : :obj:`~SolarRadiationPressureModelType`
+        **srp_model** : :obj:`~SolarRadiationPressureModelType`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **srp_model** : :obj:`~SolarRadiationPressureModelType`
+        **srp_model** : :obj:`~SolarRadiationPressureModelType`
+
 
     :Returns:
 

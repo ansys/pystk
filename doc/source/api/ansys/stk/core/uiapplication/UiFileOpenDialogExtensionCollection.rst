@@ -70,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **n_index** : :obj:`~int`
+        **n_index** : :obj:`~int`
+
 
     :Returns:
 

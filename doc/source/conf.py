@@ -7,6 +7,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import sys
 import toml
 import xml.etree.ElementTree as ET
 import zipfile
@@ -55,7 +56,7 @@ html_context = {
     },
 }
 html_theme_options = {
-    "header_links_before_dropdown": 6,
+    "header_links_before_dropdown": 7,
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
@@ -78,6 +79,7 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
+    "css/search.css",
 ]
 html_js_files = []
 
@@ -131,7 +133,7 @@ templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
 exclude_examples = []
-exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst", "changelog/*.md"]
 
 # Ignore warnings
 suppress_warnings = [
@@ -182,6 +184,9 @@ linkcheck_ignore = [
     # TODO: Determine a way to link to examples without breaking the linkcheck
     # https://github.com/ansys-internal/pystk/issues/657
     r"../examples/",
+    # TODO: changelog links
+    # https://github.com/ansys-internal/pystk/issues/706
+    f"https://github.com/ansys/{html_context['github_repo']}/*",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -692,6 +697,27 @@ def read_migration_tables(app: sphinx.application.Sphinx):
             "mappings": mappings,
         }
 
+def run_autoapi(app: sphinx.application.Sphinx):
+    """
+    Run the autoapi script to generate API documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    logger = logging.getLogger(__name__)
+    logger.info("\nWriting reST files for API documentation...", color="green")
+
+    scritps_dir = pathlib.Path(app.srcdir).parent.parent / "scripts"
+    sys.path.append(str(scritps_dir.resolve()))
+
+    from autoapi import autodoc_extensions
+    autodoc_extensions()
+
+    logger.info("Done!\n")
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -709,6 +735,9 @@ def setup(app: sphinx.application.Sphinx):
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     app.connect("builder-inited", read_migration_tables)
+
+    if BUILD_API:
+        app.connect("builder-inited", run_autoapi)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)

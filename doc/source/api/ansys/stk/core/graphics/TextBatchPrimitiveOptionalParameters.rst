@@ -106,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **origins** : :obj:`~list`
+        **origins** : :obj:`~list`
+
 
     :Returns:
 
@@ -119,7 +120,8 @@ Method detail
 
     :Parameters:
 
-    **eye_offsets** : :obj:`~list`
+        **eye_offsets** : :obj:`~list`
+
 
     :Returns:
 
@@ -132,7 +134,8 @@ Method detail
 
     :Parameters:
 
-    **pixel_offsets** : :obj:`~list`
+        **pixel_offsets** : :obj:`~list`
+
 
     :Returns:
 
@@ -145,7 +148,8 @@ Method detail
 
     :Parameters:
 
-    **colors** : :obj:`~list`
+        **colors** : :obj:`~list`
+
 
     :Returns:
 

@@ -45,8 +45,10 @@ Method detail
 
     :Parameters:
 
-    **band** : :obj:`~RasterBand`
-    **adjustment** : :obj:`~int`
+        **band** : :obj:`~RasterBand`
+
+        **adjustment** : :obj:`~int`
+
 
     :Returns:
 

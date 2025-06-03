@@ -45,8 +45,10 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **extent** : :obj:`~list`
+        **uri** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
 
     :Returns:
 
@@ -59,8 +61,10 @@ Method detail
 
     :Parameters:
 
-    **color** : :obj:`~agcolor.Color`
-    **extent** : :obj:`~list`
+        **color** : :obj:`~agcolor.Color`
+
+        **extent** : :obj:`~list`
+
 
     :Returns:
 
@@ -73,8 +77,10 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
-    **extent** : :obj:`~list`
+        **raster** : :obj:`~IRaster`
+
+        **extent** : :obj:`~list`
+
 
     :Returns:
 

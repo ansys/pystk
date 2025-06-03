@@ -84,9 +84,12 @@ Method detail
 
     :Parameters:
 
-    **parameter_type** : :obj:`~UpdateParam`
-    **action_type** : :obj:`~UpdateAction`
-    **value** : :obj:`~float`
+        **parameter_type** : :obj:`~UpdateParam`
+
+        **action_type** : :obj:`~UpdateAction`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -99,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **parameter_type** : :obj:`~UpdateParam`
+        **parameter_type** : :obj:`~UpdateParam`
+
 
     :Returns:
 
@@ -112,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **parameter_type** : :obj:`~UpdateParam`
+        **parameter_type** : :obj:`~UpdateParam`
+
 
     :Returns:
 
@@ -125,8 +130,10 @@ Method detail
 
     :Parameters:
 
-    **parameter_name** : :obj:`~UpdateParam`
-    **action_type** : :obj:`~UpdateAction`
+        **parameter_name** : :obj:`~UpdateParam`
+
+        **action_type** : :obj:`~UpdateAction`
+
 
     :Returns:
 
@@ -139,8 +146,10 @@ Method detail
 
     :Parameters:
 
-    **parameter_name** : :obj:`~UpdateParam`
-    **value** : :obj:`~float`
+        **parameter_name** : :obj:`~UpdateParam`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -153,7 +162,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlUpdate`
+        **param** : :obj:`~ControlUpdate`
+
 
     :Returns:
 
@@ -166,7 +176,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlUpdate`
+        **param** : :obj:`~ControlUpdate`
+
 
     :Returns:
 
@@ -179,7 +190,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlUpdate`
+        **param** : :obj:`~ControlUpdate`
+
 
     :Returns:
 

@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~PositionType`
+        **type** : :obj:`~PositionType`
+
 
     :Returns:
 
@@ -117,7 +118,8 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~IPosition`
+        **position** : :obj:`~IPosition`
+
 
     :Returns:
 
@@ -130,9 +132,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **alt** : :obj:`~float`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -145,9 +150,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **alt** : :obj:`~float`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -160,9 +168,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **radius** : :obj:`~float`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 
@@ -175,9 +186,12 @@ Method detail
 
     :Parameters:
 
-    **radius** : :obj:`~float`
-    **z** : :obj:`~float`
-    **lon** : :obj:`~typing.Any`
+        **radius** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
+        **lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -190,9 +204,12 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
@@ -205,9 +222,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **alt** : :obj:`~float`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -220,9 +240,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **alt** : :obj:`~float`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 

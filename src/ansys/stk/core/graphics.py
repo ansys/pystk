@@ -91,6 +91,12 @@ from ctypes import POINTER
 from enum import IntEnum, IntFlag
 import typing
 
+from .analysis_workbench import (
+    IVectorGeometryToolAxes,
+    IVectorGeometryToolPoint,
+    IVectorGeometryToolSystem,
+    IVectorGeometryToolVector,
+)
 from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
 from .internal.apiutil import (
     EnumeratorProxy,
@@ -112,7 +118,6 @@ from .internal.eventutil import (
 from .stkutil import Date, IOrientation
 from .utilities import colors as agcolor
 from .utilities.exceptions import STKRuntimeError
-from .vgt import IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem, IVectorGeometryToolVector
 
 
 def _raise_uninitialized_error(*args):

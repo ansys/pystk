@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_caption** : :obj:`~typing.Any`
+        **index_or_caption** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -90,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **arrange_style** : :obj:`~WindowArrangeStyle`
+        **arrange_style** : :obj:`~WindowArrangeStyle`
+
 
     :Returns:
 
@@ -103,8 +105,10 @@ Method detail
 
     :Parameters:
 
-    **plugin_id** : :obj:`~str`
-    **init_data** : :obj:`~typing.Any`
+        **plugin_id** : :obj:`~str`
+
+        **init_data** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -118,7 +122,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -131,7 +136,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

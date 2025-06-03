@@ -352,7 +352,8 @@ Method detail
 
     :Parameters:
 
-    **time_period_type** : :obj:`~ChainTimePeriodType`
+        **time_period_type** : :obj:`~ChainTimePeriodType`
+
 
     :Returns:
 
@@ -368,7 +369,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 

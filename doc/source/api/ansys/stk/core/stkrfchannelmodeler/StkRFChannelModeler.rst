@@ -110,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **transceiver** : :obj:`~Transceiver`
+        **transceiver** : :obj:`~Transceiver`
+
 
     :Returns:
 
@@ -123,7 +124,8 @@ Method detail
 
     :Parameters:
 
-    **analysis_configuration** : :obj:`~AnalysisConfiguration`
+        **analysis_configuration** : :obj:`~AnalysisConfiguration`
+
 
     :Returns:
 
@@ -140,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **gpu_device_ids** : :obj:`~list`
+        **gpu_device_ids** : :obj:`~list`
+
 
     :Returns:
 
@@ -153,7 +156,8 @@ Method detail
 
     :Parameters:
 
-    **analysis_configuration_name** : :obj:`~str`
+        **analysis_configuration_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -166,7 +170,8 @@ Method detail
 
     :Parameters:
 
-    **analysis_configuration_name** : :obj:`~str`
+        **analysis_configuration_name** : :obj:`~str`
+
 
     :Returns:
 

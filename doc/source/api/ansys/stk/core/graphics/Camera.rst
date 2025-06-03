@@ -313,8 +313,10 @@ Method detail
 
     :Parameters:
 
-    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
-    **sphere** : :obj:`~BoundingSphere`
+        **reference_frame** : :obj:`~IVectorGeometryToolSystem`
+
+        **sphere** : :obj:`~BoundingSphere`
+
 
     :Returns:
 
@@ -327,8 +329,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **position** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **position** : :obj:`~list`
+
 
     :Returns:
 
@@ -341,8 +345,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **position** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **position** : :obj:`~list`
+
 
     :Returns:
 
@@ -355,8 +361,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **position** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **position** : :obj:`~list`
+
 
     :Returns:
 
@@ -369,8 +377,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **position** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **position** : :obj:`~list`
+
 
     :Returns:
 
@@ -383,8 +393,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
+        **central_body** : :obj:`~str`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 
@@ -397,8 +409,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **extent** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
 
     :Returns:
 
@@ -411,11 +425,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **west** : :obj:`~float`
-    **south** : :obj:`~float`
-    **east** : :obj:`~float`
-    **north** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **west** : :obj:`~float`
+
+        **south** : :obj:`~float`
+
+        **east** : :obj:`~float`
+
+        **north** : :obj:`~float`
+
 
     :Returns:
 
@@ -428,10 +447,14 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **camera_position** : :obj:`~IVectorGeometryToolPoint`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
-    **up_axis** : :obj:`~list`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **camera_position** : :obj:`~IVectorGeometryToolPoint`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **up_axis** : :obj:`~list`
+
 
     :Returns:
 
@@ -444,9 +467,12 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **camera_position** : :obj:`~IVectorGeometryToolPoint`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **camera_position** : :obj:`~IVectorGeometryToolPoint`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
 
     :Returns:
 
@@ -459,10 +485,14 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **camera_position** : :obj:`~IVectorGeometryToolPoint`
-    **direction** : :obj:`~IVectorGeometryToolVector`
-    **up_axis** : :obj:`~list`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **camera_position** : :obj:`~IVectorGeometryToolPoint`
+
+        **direction** : :obj:`~IVectorGeometryToolVector`
+
+        **up_axis** : :obj:`~list`
+
 
     :Returns:
 
@@ -475,9 +505,12 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **camera_position** : :obj:`~IVectorGeometryToolPoint`
-    **direction** : :obj:`~IVectorGeometryToolVector`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **camera_position** : :obj:`~IVectorGeometryToolPoint`
+
+        **direction** : :obj:`~IVectorGeometryToolVector`
+
 
     :Returns:
 
@@ -490,10 +523,14 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
-    **offset** : :obj:`~list`
-    **up_axis** : :obj:`~list`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **offset** : :obj:`~list`
+
+        **up_axis** : :obj:`~list`
+
 
     :Returns:
 
@@ -506,9 +543,12 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
-    **offset** : :obj:`~list`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **offset** : :obj:`~list`
+
 
     :Returns:
 
@@ -521,10 +561,14 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
-    **direction** : :obj:`~IVectorGeometryToolVector`
-    **up_axis** : :obj:`~list`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **direction** : :obj:`~IVectorGeometryToolVector`
+
+        **up_axis** : :obj:`~list`
+
 
     :Returns:
 
@@ -537,9 +581,12 @@ Method detail
 
     :Parameters:
 
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **reference_point** : :obj:`~IVectorGeometryToolPoint`
-    **direction** : :obj:`~IVectorGeometryToolVector`
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **reference_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **direction** : :obj:`~IVectorGeometryToolVector`
+
 
     :Returns:
 

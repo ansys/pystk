@@ -82,7 +82,8 @@ Method detail
 
     :Parameters:
 
-    **mcs_segment** : :obj:`~IMCSSegment`
+        **mcs_segment** : :obj:`~IMCSSegment`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **stopping_condition** : :obj:`~StoppingCondition`
+        **stopping_condition** : :obj:`~StoppingCondition`
+
 
     :Returns:
 

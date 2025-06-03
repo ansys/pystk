@@ -52,8 +52,10 @@ Method detail
 
     :Parameters:
 
-    **duration** : :obj:`~float`
-    **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+        **duration** : :obj:`~float`
+
+        **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+
 
     :Returns:
 

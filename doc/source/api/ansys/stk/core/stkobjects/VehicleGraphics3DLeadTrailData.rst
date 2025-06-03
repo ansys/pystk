@@ -116,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **lead_data** : :obj:`~LeadTrailData`
+        **lead_data** : :obj:`~LeadTrailData`
+
 
     :Returns:
 
@@ -129,7 +130,8 @@ Method detail
 
     :Parameters:
 
-    **trail_data** : :obj:`~LeadTrailData`
+        **trail_data** : :obj:`~LeadTrailData`
+
 
     :Returns:
 
@@ -146,7 +148,8 @@ Method detail
 
     :Parameters:
 
-    **data** : :obj:`~LeadTrailData`
+        **data** : :obj:`~LeadTrailData`
+
 
     :Returns:
 

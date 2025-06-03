@@ -188,7 +188,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -202,7 +203,8 @@ Method detail
 
     :Parameters:
 
-    **path_point** : :obj:`~PathPoint`
+        **path_point** : :obj:`~PathPoint`
+
 
     :Returns:
 
@@ -215,7 +217,8 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -228,7 +231,8 @@ Method detail
 
     :Parameters:
 
-    **path_point** : :obj:`~PathPoint`
+        **path_point** : :obj:`~PathPoint`
+
 
     :Returns:
 
@@ -241,7 +245,8 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -263,7 +268,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -285,7 +291,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

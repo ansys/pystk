@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **mode_name** : :obj:`~str`
+        **mode_name** : :obj:`~str`
+
 
     :Returns:
 

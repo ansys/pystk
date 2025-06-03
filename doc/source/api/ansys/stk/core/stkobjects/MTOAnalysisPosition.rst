@@ -66,7 +66,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -79,8 +80,10 @@ Method detail
 
     :Parameters:
 
-    **track_ids** : :obj:`~list`
-    **time** : :obj:`~typing.Any`
+        **track_ids** : :obj:`~list`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -93,8 +96,10 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
-    **time** : :obj:`~typing.Any`
+        **track_id** : :obj:`~int`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 

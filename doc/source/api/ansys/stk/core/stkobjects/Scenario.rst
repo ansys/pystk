@@ -99,10 +99,7 @@ Set the current scenario's time period
 
     # StkObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
-    scenario.set_time_period(
-        start_time="1 Jan 2012 12:00:00.000",
-        stop_time="2 Jan 2012 12:00:00.000"
-    )
+    scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
 
 
 Import detail
@@ -287,8 +284,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -324,10 +323,7 @@ Method detail
 
         # StkObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
-        scenario.set_time_period(
-            start_time="1 Jan 2012 12:00:00.000",
-            stop_time="2 Jan 2012 12:00:00.000"
-        )
+        scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
 
 
 .. py:method:: set_dirty(self) -> None
@@ -359,8 +355,10 @@ Method detail
 
     :Parameters:
 
-    **object_path1** : :obj:`~str`
-    **object_path2** : :obj:`~str`
+        **object_path1** : :obj:`~str`
+
+        **object_path2** : :obj:`~str`
+
 
     :Returns:
 

@@ -138,7 +138,8 @@ Method detail
 
     :Parameters:
 
-    **launch** : :obj:`~VehicleLaunch`
+        **launch** : :obj:`~VehicleLaunch`
+
 
     :Returns:
 
@@ -151,7 +152,8 @@ Method detail
 
     :Parameters:
 
-    **launch** : :obj:`~VehicleLaunch`
+        **launch** : :obj:`~VehicleLaunch`
+
 
     :Returns:
 
@@ -167,7 +169,8 @@ Method detail
 
     :Parameters:
 
-    **impact_location** : :obj:`~VehicleImpactLocation`
+        **impact_location** : :obj:`~VehicleImpactLocation`
+
 
     :Returns:
 
@@ -180,7 +183,8 @@ Method detail
 
     :Parameters:
 
-    **impact_location** : :obj:`~VehicleImpactLocation`
+        **impact_location** : :obj:`~VehicleImpactLocation`
+
 
     :Returns:
 

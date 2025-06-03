@@ -1,13 +1,17 @@
 # The labels declared in this file are the ones avialables 
 # https://github.com/ansys-internal/pystk/labels
 
-# -- Defects and glitches labels----------------------------------------------
+# -- Defects, glitches, and vulnerabilities labels ---------------------------
 
 - name: 'bug'
   description: Defects or glitches reported by users or developers
   color: d42a34
 
 - name: 'fix'
+  description:  Pull requests related to resolving problems or errors
+  color: d42a34
+
+- name: 'vulnerability'
   description:  Pull requests related to resolving problems or errors
   color: d42a34
 
@@ -106,3 +110,7 @@
 - name: 'docker'
   description: Docker maintenance related
   color: 000075
+
+- name: 'blocked'
+  description: Cannot be completed until other tasks are resolved
+  color: 000000

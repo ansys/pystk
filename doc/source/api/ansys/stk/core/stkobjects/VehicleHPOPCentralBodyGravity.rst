@@ -112,8 +112,10 @@ Method detail
 
     :Parameters:
 
-    **maximum_degree** : :obj:`~int`
-    **maximum_order** : :obj:`~int`
+        **maximum_degree** : :obj:`~int`
+
+        **maximum_order** : :obj:`~int`
+
 
     :Returns:
 

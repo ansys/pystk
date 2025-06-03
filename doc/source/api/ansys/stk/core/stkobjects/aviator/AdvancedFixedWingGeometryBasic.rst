@@ -71,7 +71,8 @@ Method detail
 
     :Parameters:
 
-    **aspect_ratio** : :obj:`~float`
+        **aspect_ratio** : :obj:`~float`
+
 
     :Returns:
 

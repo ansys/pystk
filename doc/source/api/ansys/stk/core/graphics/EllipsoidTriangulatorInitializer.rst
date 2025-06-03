@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **radii** : :obj:`~list`
+        **radii** : :obj:`~list`
+
 
     :Returns:
 
@@ -56,9 +57,12 @@ Method detail
 
     :Parameters:
 
-    **radii** : :obj:`~list`
-    **slices** : :obj:`~int`
-    **stacks** : :obj:`~int`
+        **radii** : :obj:`~list`
+
+        **slices** : :obj:`~int`
+
+        **stacks** : :obj:`~int`
+
 
     :Returns:
 

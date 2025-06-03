@@ -198,7 +198,8 @@ Method detail
 
     :Parameters:
 
-    **selection** : :obj:`~BaseSelection`
+        **selection** : :obj:`~BaseSelection`
+
 
     :Returns:
 

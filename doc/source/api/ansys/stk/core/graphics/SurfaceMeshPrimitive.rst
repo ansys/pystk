@@ -166,7 +166,8 @@ Method detail
 
     :Parameters:
 
-    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
+        **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
+
 
     :Returns:
 
@@ -179,7 +180,8 @@ Method detail
 
     :Parameters:
 
-    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
+        **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
+
 
     :Returns:
 
@@ -192,7 +194,8 @@ Method detail
 
     :Parameters:
 
-    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+        **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+
 
     :Returns:
 

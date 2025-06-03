@@ -202,7 +202,8 @@ Method detail
 
     :Parameters:
 
-    **gravity_model_name** : :obj:`~str`
+        **gravity_model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -216,8 +217,10 @@ Method detail
 
     :Parameters:
 
-    **gravity_model** : :obj:`~CentralBodyGravityModel`
-    **unique_name** : :obj:`~str`
+        **gravity_model** : :obj:`~CentralBodyGravityModel`
+
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -230,7 +233,8 @@ Method detail
 
     :Parameters:
 
-    **gravity_model_name** : :obj:`~str`
+        **gravity_model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -245,7 +249,8 @@ Method detail
 
     :Parameters:
 
-    **shape_name** : :obj:`~str`
+        **shape_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -258,8 +263,10 @@ Method detail
 
     :Parameters:
 
-    **shape** : :obj:`~CentralBodyShape`
-    **unique_name** : :obj:`~str`
+        **shape** : :obj:`~CentralBodyShape`
+
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -272,7 +279,8 @@ Method detail
 
     :Parameters:
 
-    **shape_name** : :obj:`~str`
+        **shape_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -287,7 +295,8 @@ Method detail
 
     :Parameters:
 
-    **attitude_name** : :obj:`~str`
+        **attitude_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -300,8 +309,10 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~CentralBodyAttitude`
-    **unique_name** : :obj:`~str`
+        **attitude** : :obj:`~CentralBodyAttitude`
+
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -314,7 +325,8 @@ Method detail
 
     :Parameters:
 
-    **attitude_name** : :obj:`~str`
+        **attitude_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -328,7 +340,8 @@ Method detail
 
     :Parameters:
 
-    **ephemeris_name** : :obj:`~str`
+        **ephemeris_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -342,8 +355,10 @@ Method detail
 
     :Parameters:
 
-    **ephemeris** : :obj:`~CentralBodyEphemeris`
-    **unique_name** : :obj:`~str`
+        **ephemeris** : :obj:`~CentralBodyEphemeris`
+
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -356,7 +371,8 @@ Method detail
 
     :Parameters:
 
-    **ephemeris_name** : :obj:`~str`
+        **ephemeris_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -369,7 +385,8 @@ Method detail
 
     :Parameters:
 
-    **gravity_model_name** : :obj:`~str`
+        **gravity_model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -382,7 +399,8 @@ Method detail
 
     :Parameters:
 
-    **gravity_model_name** : :obj:`~str`
+        **gravity_model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -404,7 +422,8 @@ Method detail
 
     :Parameters:
 
-    **gravity_model** : :obj:`~CentralBodyComponentGravityModel`
+        **gravity_model** : :obj:`~CentralBodyComponentGravityModel`
+
 
     :Returns:
 
@@ -417,7 +436,8 @@ Method detail
 
     :Parameters:
 
-    **shape_name** : :obj:`~str`
+        **shape_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -430,7 +450,8 @@ Method detail
 
     :Parameters:
 
-    **shape_name** : :obj:`~str`
+        **shape_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -452,7 +473,8 @@ Method detail
 
     :Parameters:
 
-    **shape** : :obj:`~ICentralBodyComponentShape`
+        **shape** : :obj:`~ICentralBodyComponentShape`
+
 
     :Returns:
 
@@ -465,7 +487,8 @@ Method detail
 
     :Parameters:
 
-    **attitude_name** : :obj:`~str`
+        **attitude_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -478,7 +501,8 @@ Method detail
 
     :Parameters:
 
-    **attitude_name** : :obj:`~str`
+        **attitude_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -500,7 +524,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~ICentralBodyComponentAttitude`
+        **attitude** : :obj:`~ICentralBodyComponentAttitude`
+
 
     :Returns:
 
@@ -513,7 +538,8 @@ Method detail
 
     :Parameters:
 
-    **ephemeris_name** : :obj:`~str`
+        **ephemeris_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -526,7 +552,8 @@ Method detail
 
     :Parameters:
 
-    **ephemeris_name** : :obj:`~str`
+        **ephemeris_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -548,7 +575,8 @@ Method detail
 
     :Parameters:
 
-    **ephemeris** : :obj:`~ICentralBodyComponentEphemeris`
+        **ephemeris** : :obj:`~ICentralBodyComponentEphemeris`
+
 
     :Returns:
 

@@ -215,9 +215,14 @@ for i in range(0, access_intervals.count):
         "Range"
     ).get_values()
 
-# Alternately, convert the data provider data sets to a pandas ``dataframe`` or numpy array:
+# Alternately, convert all the data provider data sets corresponding to the entire scenario duration to a pandas ``dataframe``:
 
-aer_df = data_provider_result.data_sets.to_pandas_dataframe()
+aer_df = (
+    access.data_providers.item("AER Data")
+    .group.item("Default")
+    .execute(scenario.start_time, scenario.stop_time, 1)
+    .data_sets.to_pandas_dataframe()
+)
 aer_df
 
 # Visualize the data using a line chart:
@@ -230,21 +235,22 @@ import pandas as pd
 
 # Convert columns to correct types
 aer_df["time"] = pd.to_datetime(aer_df["time"])
-aer_df.set_index("time", inplace=True)
 cols = ["azimuth", "elevation", "range"]
 aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
 
 # Create a plot and duplicate the x-axis
-fig, ax1 = plt.subplots(figsize=(8, 8))
+fig, ax1 = plt.subplots(figsize=(10, 8))
 ax2 = ax1.twinx()
 
-# Plot range, azimuth, and elevation
-(line1,) = ax2.plot(aer_df.index, aer_df["range"], color="hotpink", label="Range (km)")
-(line2,) = ax1.plot(
-    aer_df.index, aer_df["azimuth"], color="skyblue", label="Azimuth (deg)"
+# Plot range, azimuth, and elevation, grouped by access interval
+aer_df.groupby(by=["access number"]).plot(
+    "time", "range", color="hotpink", label="Range (km)", ax=ax2
 )
-(line3,) = ax1.plot(
-    aer_df.index, aer_df["elevation"], color="gold", label="Elevation (deg)"
+aer_df.groupby(by=["access number"]).plot(
+    "time", "azimuth", color="skyblue", label="Azimuth (deg)", ax=ax1
+)
+aer_df.groupby(by=["access number"]).plot(
+    "time", "elevation", color="gold", label="Elevation (deg)", ax=ax1
 )
 
 # Set title and axes labels
@@ -254,9 +260,11 @@ ax1.set_ylabel("Angle (deg)")
 ax2.set_ylabel("Distance (km)")
 
 # Combine legends
-lines = [line1, line2, line3]
+lines = ax1.get_lines() + ax2.get_lines()
 labels = [line.get_label() for line in lines]
-ax1.legend(lines, labels, shadow=True)
+unique = [(h, l) for i, (h, l) in enumerate(zip(lines, labels)) if l not in labels[:i]]
+ax1.legend(*zip(*unique), shadow=True, loc="lower center")
+ax2.get_legend().remove()
 
 # Configure style
 ax1.set_facecolor("whitesmoke")
@@ -266,8 +274,8 @@ ax1.grid(visible=True, which="both", linestyle="--")
 formatter = md.DateFormatter("%H:%M")
 ax1.xaxis.set_major_formatter(formatter)
 # Set major and minor locators
-xlocator_major = md.MinuteLocator(interval=2)
-xlocator_minor = md.MinuteLocator(interval=1)
+xlocator_major = md.HourLocator(interval=2)
+xlocator_minor = md.HourLocator(interval=1)
 ax1.xaxis.set_major_locator(xlocator_major)
 ax1.xaxis.set_minor_locator(xlocator_minor)
 plt.show()
@@ -286,7 +294,7 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 # Create a vector between the satellite and facility objects:
 
 # +
-from ansys.stk.core.vgt import VectorType
+from ansys.stk.core.analysis_workbench import VectorType
 
 
 vector = facility.analysis_workbench_components.vectors.factory.create(

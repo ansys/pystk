@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **propagator_type** : :obj:`~PropagatorType`
+        **propagator_type** : :obj:`~PropagatorType`
+
 
     :Returns:
 
@@ -56,7 +57,8 @@ Method detail
 
     :Parameters:
 
-    **object_type** : :obj:`~STKObjectType`
+        **object_type** : :obj:`~STKObjectType`
+
 
     :Returns:
 

@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **component_name** : :obj:`~str`
+        **component_name** : :obj:`~str`
+
 
     :Returns:
 

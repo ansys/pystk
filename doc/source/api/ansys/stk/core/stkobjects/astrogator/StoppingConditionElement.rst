@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlStoppingCondition`
+        **param** : :obj:`~ControlStoppingCondition`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlStoppingCondition`
+        **param** : :obj:`~ControlStoppingCondition`
+
 
     :Returns:
 
@@ -110,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlStoppingCondition`
+        **param** : :obj:`~ControlStoppingCondition`
+
 
     :Returns:
 

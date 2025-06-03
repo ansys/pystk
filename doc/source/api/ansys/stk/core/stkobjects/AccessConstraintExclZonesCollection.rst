@@ -131,7 +131,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -153,10 +154,14 @@ Method detail
 
     :Parameters:
 
-    **min_lat** : :obj:`~typing.Any`
-    **min_lon** : :obj:`~typing.Any`
-    **max_lat** : :obj:`~typing.Any`
-    **max_lon** : :obj:`~typing.Any`
+        **min_lat** : :obj:`~typing.Any`
+
+        **min_lon** : :obj:`~typing.Any`
+
+        **max_lat** : :obj:`~typing.Any`
+
+        **max_lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -169,11 +174,16 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **min_lat** : :obj:`~typing.Any`
-    **min_lon** : :obj:`~typing.Any`
-    **max_lat** : :obj:`~typing.Any`
-    **max_lon** : :obj:`~typing.Any`
+        **index** : :obj:`~int`
+
+        **min_lat** : :obj:`~typing.Any`
+
+        **min_lon** : :obj:`~typing.Any`
+
+        **max_lat** : :obj:`~typing.Any`
+
+        **max_lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -186,7 +196,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -199,8 +210,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **length** : :obj:`~int`
+        **index** : :obj:`~int`
+
+        **length** : :obj:`~int`
+
 
     :Returns:
 
@@ -218,7 +231,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

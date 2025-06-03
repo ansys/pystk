@@ -60,8 +60,10 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
-    **projection** : :obj:`~IProjection`
+        **raster** : :obj:`~IRaster`
+
+        **projection** : :obj:`~IProjection`
+
 
     :Returns:
 

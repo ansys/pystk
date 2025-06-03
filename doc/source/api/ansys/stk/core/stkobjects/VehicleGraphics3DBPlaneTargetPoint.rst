@@ -99,7 +99,8 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~VehicleGraphics3DBPlaneTargetPointPosition`
+        **position** : :obj:`~VehicleGraphics3DBPlaneTargetPointPosition`
+
 
     :Returns:
 
@@ -112,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~VehicleGraphics3DBPlaneTargetPointPosition`
+        **position** : :obj:`~VehicleGraphics3DBPlaneTargetPointPosition`
+
 
     :Returns:
 

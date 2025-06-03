@@ -82,7 +82,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -105,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **elem_type** : :obj:`~str`
+        **elem_type** : :obj:`~str`
+
 
     :Returns:
 
@@ -118,7 +120,8 @@ Method detail
 
     :Parameters:
 
-    **draw_elem** : :obj:`~IDrawElement`
+        **draw_elem** : :obj:`~IDrawElement`
+
 
     :Returns:
 

@@ -221,7 +221,8 @@ Method detail
 
     :Parameters:
 
-    **consider_prev_proc** : :obj:`~bool`
+        **consider_prev_proc** : :obj:`~bool`
+
 
     :Returns:
 
@@ -236,9 +237,12 @@ Method detail
 
     :Parameters:
 
-    **min_time** : :obj:`~typing.Any`
-    **max_time** : :obj:`~typing.Any`
-    **step_time** : :obj:`~float`
+        **min_time** : :obj:`~typing.Any`
+
+        **max_time** : :obj:`~typing.Any`
+
+        **step_time** : :obj:`~float`
+
 
     :Returns:
 

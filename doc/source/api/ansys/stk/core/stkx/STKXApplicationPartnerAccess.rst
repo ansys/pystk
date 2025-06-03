@@ -41,9 +41,12 @@ Method detail
 
     :Parameters:
 
-    **vendor** : :obj:`~str`
-    **product** : :obj:`~str`
-    **key** : :obj:`~str`
+        **vendor** : :obj:`~str`
+
+        **product** : :obj:`~str`
+
+        **key** : :obj:`~str`
+
 
     :Returns:
 

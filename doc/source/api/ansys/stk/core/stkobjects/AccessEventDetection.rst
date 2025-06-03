@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **event_detection** : :obj:`~EventDetection`
+        **event_detection** : :obj:`~EventDetection`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **event_detection** : :obj:`~EventDetection`
+        **event_detection** : :obj:`~EventDetection`
+
 
     :Returns:
 

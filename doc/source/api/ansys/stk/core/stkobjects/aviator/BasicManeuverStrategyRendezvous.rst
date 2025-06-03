@@ -235,8 +235,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **collision_avoidance** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **collision_avoidance** : :obj:`~float`
+
 
     :Returns:
 
@@ -273,8 +275,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **airspeed_factor** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **airspeed_factor** : :obj:`~float`
+
 
     :Returns:
 

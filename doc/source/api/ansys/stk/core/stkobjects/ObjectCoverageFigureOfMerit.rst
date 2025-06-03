@@ -91,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **defn** : :obj:`~FigureOfMeritDefinitionType`
+        **defn** : :obj:`~FigureOfMeritDefinitionType`
+
 
     :Returns:
 
@@ -104,7 +105,8 @@ Method detail
 
     :Parameters:
 
-    **defn** : :obj:`~FigureOfMeritDefinitionType`
+        **defn** : :obj:`~FigureOfMeritDefinitionType`
+
 
     :Returns:
 
@@ -119,7 +121,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~FigureOfMeritConstraintName`
+        **constraint_name** : :obj:`~FigureOfMeritConstraintName`
+
 
     :Returns:
 
@@ -133,7 +136,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~str`
+        **constraint_name** : :obj:`~str`
+
 
     :Returns:
 

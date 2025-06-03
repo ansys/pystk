@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **flip_axis** : :obj:`~RasterFlipAxis`
+        **flip_axis** : :obj:`~RasterFlipAxis`
+
 
     :Returns:
 

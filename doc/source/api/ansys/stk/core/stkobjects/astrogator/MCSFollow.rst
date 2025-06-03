@@ -179,7 +179,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlFollow`
+        **param** : :obj:`~ControlFollow`
+
 
     :Returns:
 
@@ -192,7 +193,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlFollow`
+        **param** : :obj:`~ControlFollow`
+
 
     :Returns:
 
@@ -205,7 +207,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlFollow`
+        **param** : :obj:`~ControlFollow`
+
 
     :Returns:
 

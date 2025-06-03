@@ -72,7 +72,8 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
+        **central_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -85,8 +86,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 

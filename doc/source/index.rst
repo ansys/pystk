@@ -66,3 +66,4 @@ and payloads in a realistic mission context. You are viewing version |version|.
    examples
    contribute
    artifacts
+   changelog

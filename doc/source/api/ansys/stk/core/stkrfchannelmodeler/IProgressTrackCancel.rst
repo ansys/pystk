@@ -60,8 +60,10 @@ Method detail
 
     :Parameters:
 
-    **progress** : :obj:`~int`
-    **message** : :obj:`~str`
+        **progress** : :obj:`~int`
+
+        **message** : :obj:`~str`
+
 
     :Returns:
 

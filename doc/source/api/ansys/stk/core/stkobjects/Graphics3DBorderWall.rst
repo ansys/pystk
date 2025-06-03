@@ -142,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **ref_type** : :obj:`~BorderWallUpperLowerEdgeAltitudeReference`
+        **ref_type** : :obj:`~BorderWallUpperLowerEdgeAltitudeReference`
+
 
     :Returns:
 

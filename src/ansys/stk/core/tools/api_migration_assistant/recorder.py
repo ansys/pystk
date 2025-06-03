@@ -82,7 +82,7 @@ class Recorder:
 
         sys.setprofile(self._trace_call)
 
-        [eval(cmd) for cmd in bootstrap]
+        [eval(cmd) for cmd in bootstrap] # nosec: B307
 
         sys.setprofile(None)
 

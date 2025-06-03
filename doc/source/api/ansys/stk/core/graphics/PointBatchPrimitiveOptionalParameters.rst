@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **pixel_sizes** : :obj:`~list`
+        **pixel_sizes** : :obj:`~list`
+
 
     :Returns:
 

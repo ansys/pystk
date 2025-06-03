@@ -78,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **options** : :obj:`~dict`
+        **options** : :obj:`~dict`
+
 
     :Returns:
 
@@ -91,8 +92,10 @@ Method detail
 
     :Parameters:
 
-    **max_batch** : :obj:`~int`
-    **disable_batching** : :obj:`~bool`
+        **max_batch** : :obj:`~int`
+
+        **disable_batching** : :obj:`~bool`
+
 
     :Returns:
 

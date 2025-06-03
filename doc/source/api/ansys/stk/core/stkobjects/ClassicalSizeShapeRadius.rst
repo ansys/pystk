@@ -74,8 +74,10 @@ Method detail
 
     :Parameters:
 
-    **apogee_radius** : :obj:`~float`
-    **perigee_radius** : :obj:`~float`
+        **apogee_radius** : :obj:`~float`
+
+        **perigee_radius** : :obj:`~float`
+
 
     :Returns:
 

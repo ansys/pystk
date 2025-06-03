@@ -138,7 +138,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~IProfile`
+        **profile** : :obj:`~IProfile`
+
 
     :Returns:
 
@@ -151,7 +152,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~IProfile`
+        **profile** : :obj:`~IProfile`
+
 
     :Returns:
 
@@ -164,7 +166,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~str`
+        **profile** : :obj:`~str`
+
 
     :Returns:
 
@@ -177,7 +180,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~str`
+        **profile** : :obj:`~str`
+
 
     :Returns:
 

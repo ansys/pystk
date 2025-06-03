@@ -87,7 +87,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -101,8 +102,10 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~GeometricElementType`
-    **name** : :obj:`~str`
+        **type** : :obj:`~GeometricElementType`
+
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -115,7 +118,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -137,8 +141,10 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~GeometricElementType`
-    **name** : :obj:`~str`
+        **type** : :obj:`~GeometricElementType`
+
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -152,8 +158,10 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~GeometricElementType`
-    **name** : :obj:`~str`
+        **type** : :obj:`~GeometricElementType`
+
+        **name** : :obj:`~str`
+
 
     :Returns:
 

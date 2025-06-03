@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,8 +90,10 @@ Method detail
 
     :Parameters:
 
-    **location** : :obj:`~str`
-    **terrain_file_type** : :obj:`~TerrainFileType`
+        **location** : :obj:`~str`
+
+        **terrain_file_type** : :obj:`~TerrainFileType`
+
 
     :Returns:
 
@@ -103,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

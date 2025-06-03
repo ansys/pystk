@@ -134,8 +134,10 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
 
     :Returns:
 

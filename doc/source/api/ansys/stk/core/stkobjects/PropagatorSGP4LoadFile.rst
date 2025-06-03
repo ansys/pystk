@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **ssc_num** : :obj:`~str`
+        **ssc_num** : :obj:`~str`
+
 
     :Returns:
 
@@ -90,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **segments** : :obj:`~list`
+        **segments** : :obj:`~list`
+
 
     :Returns:
 

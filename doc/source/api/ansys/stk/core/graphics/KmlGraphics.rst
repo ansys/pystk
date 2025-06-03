@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **kml_uri** : :obj:`~str`
+        **kml_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -90,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **kml_uri** : :obj:`~str`
+        **kml_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -103,7 +105,8 @@ Method detail
 
     :Parameters:
 
-    **kml_document** : :obj:`~str`
+        **kml_document** : :obj:`~str`
+
 
     :Returns:
 
@@ -116,7 +119,8 @@ Method detail
 
     :Parameters:
 
-    **kml_uri** : :obj:`~str`
+        **kml_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -129,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **kml_uri** : :obj:`~str`
+        **kml_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -142,7 +147,8 @@ Method detail
 
     :Parameters:
 
-    **kml_document** : :obj:`~str`
+        **kml_document** : :obj:`~str`
+
 
     :Returns:
 
@@ -155,7 +161,8 @@ Method detail
 
     :Parameters:
 
-    **kml_document** : :obj:`~KmlDocument`
+        **kml_document** : :obj:`~KmlDocument`
+
 
     :Returns:
 

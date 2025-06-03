@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **vm_grid_calc_type** : :obj:`~VolumetricDefinitionType`
+        **vm_grid_calc_type** : :obj:`~VolumetricDefinitionType`
+
 
     :Returns:
 

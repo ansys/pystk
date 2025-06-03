@@ -79,9 +79,12 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
-    **name** : :obj:`~str`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -94,7 +97,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -116,9 +120,12 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
-    **name** : :obj:`~str`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -131,7 +138,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

@@ -203,8 +203,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude_rate** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -219,8 +221,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **altitude_rate** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **altitude_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -236,9 +240,12 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 

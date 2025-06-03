@@ -166,10 +166,14 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
-    **max_num_accesses_to_find** : :obj:`~int`
-    **min_duration** : :obj:`~float`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+        **max_num_accesses_to_find** : :obj:`~int`
+
+        **min_duration** : :obj:`~float`
+
 
     :Returns:
 

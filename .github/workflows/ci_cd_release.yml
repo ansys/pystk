@@ -1,25 +1,39 @@
 name: release
 on:
   push:
-    branches:
-      - 'release/*'
     tags:
       - "v*.*.*"
 
 env:
-  MAIN_PYTHON_VERSION: '3.12'
-  LIBRARY_NAME: 'ansys-stk-core'
-  LIBRARY_NAMESPACE: 'ansys.stk.core'
+  MINIMUM_PYTHON_VERSION: '3.11'
+  MAIN_PYTHON_VERSION: '3.13'
+  ANSYS_STK_CORE: 'ansys-stk-core'
+  ANSYS_STK_EXTENSIONS: 'ansys-stk-extensions'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22:04'
+  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  QUARTO_VERSION: '1.5.55'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+
+  update-changelog:
+    name: "Update changelog"
+    if: contains(github.ref, 'refs/tags')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: ansys/actions/doc-deploy-changelog@v9
+        with:
+          token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+          bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+          bot-email: ${{ secrets.PYANSYS_CI_BOT_EMAIL }}
 
   code-style:
     name: "Code style checks"
@@ -36,7 +50,6 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
@@ -69,9 +82,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fail-level: "warning"
 
-  build-wheelhouse:
-    name: "Build wheelhouse for latest Python versions"
+  build-wheelhouse-core:
+    name: "Wheelhouse ansys-stk-core / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
     runs-on: ${{ matrix.os }}
+    needs: [code-style, doc-style]
     permissions:
       attestations: write
       contents: read
@@ -82,19 +96,39 @@ jobs:
         python-version: ['3.11', '3.12', '3.13']
         target: ['all', 'grpc', 'jupyter']
     steps:
-      - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v9
+      - uses: ansys/actions/build-wheelhouse@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.ANSYS_STK_CORE }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
           attest-provenance: true
 
+  build-wheelhouse-extensions:
+    name: "Wheelhouse ansys-stk-extensions / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    runs-on: ${{ matrix.os }}
+    needs: [code-style, doc-style]
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: ansys/actions/build-wheelhouse@v9
+        with:
+          library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          attest-provenance: true
+          working-directory: ./extensions
+
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
-    needs: build-wheelhouse
+    needs: [build-wheelhouse-core, build-wheelhouse-extensions]
     timeout-minutes: 90
     steps:
 
@@ -118,13 +152,29 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install pandoc for building the examples"
+      - name: "Install system dependencies required for building examples"
         run: |
           docker exec \
             --user root \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "apt update && apt install -y pandoc"
+            "apt update && apt install -y wget pandoc"
+
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${{ env.QUARTO_VERSION }}/quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "dpkg -i quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "quarto install tinytex"
 
       - name: "Install Tox"
         run: |
@@ -140,7 +190,7 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
-      - name: "Upload combined artifacts"
+      - name: "Upload HTML documentation artifacts"
         uses: actions/upload-artifact@v4
         with:
           path: doc/_build/html
@@ -159,7 +209,9 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        python: ["3.11", "3.12", "3.13"]
+        # TODO: restore support for Python 3.13
+        # https://github.com/ansys-internal/pystk/issues/557
+        python: ["3.11", "3.12"]
       fail-fast: false
     steps:
 
@@ -190,64 +242,106 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install tox && rm -rf .tox"
 
-      - name: "Run the aviator tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=aviator && tox -e tests-aviator-graphics-cov-linux"
-
-      - name: "Run the stk tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=stk && tox -e tests-stk-graphics-cov-linux"
-
-      - name: "Run the vgt tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
-
-      - name: "Run the doc snippet tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
-
       - name: "Install coverage dependencies"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install .[tests]"
 
-      - name: "Combine all coverage results"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+      # PySTK Extensions
+
+      - name: "Run the extension tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stk vgt snippets"
+            "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
-      - name: "Generate total coverage report"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+      - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html -d .cov/total-html"
+            "coverage html --rcfile ./extensions/pyproject.toml --data-file=.cov/extensions --directory=.cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage --fail-under=90"
 
-      - name: "Upload coverage results"
-        if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
+      - name: "Upload ${{ env.ANSYS_STK_EXTENSIONS }} coverage results"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         uses: actions/upload-artifact@v4
         with:
-          path: .cov/total-html
-          name: html-coverage
+          path: .cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage
+          name: ${{ env.ANSYS_STK_EXTENSIONS }}-coverage
+
+      - name: "Clean coverage results"
+        run: |
+          rm -rf .cov && mkdir .cov
+
+      # -- PySTK Core
+
+      - name: "Run the API migration assistant tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-graphics-cov-linux"
+
+      - name: "Run the aviator tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/aviator && tox -e tests-core-aviator-graphics-cov-linux"
+
+      - name: "Run the non graphics stk tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/stknogfx && tox -e tests-core-stk-nographics-cov-linux"
+
+      - name: "Run the graphics only stk tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/stkgfx && tox -e tests-core-stk-graphicsonly-cov-linux"
+
+      - name: "Run the vgt tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/vgt && tox -e tests-core-vgt-graphics-cov-linux"
+
+      - name: "Run the doc snippet tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
+
+      - name: "Combine all coverage results"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }}/.cov \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=core && coverage combine aviator stknogfx stkgfx vgt snippets migration"
+
+      - name: "Generate coverage report for ${{ env.ANSYS_STK_CORE }}"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK_CORE }}-coverage --fail-under=89"
+
+      - name: "Upload ${{ env.ANSYS_STK_CORE }} coverage results"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: .cov/${{ env.ANSYS_STK_CORE }}-coverage
+          name: ${{ env.ANSYS_STK_CORE }}-coverage
 
       - name: "Stop the container"
         if: always()
@@ -256,52 +350,71 @@ jobs:
           docker logs ${{ env.STK_CONTAINER }}
           docker rm ${{ env.STK_CONTAINER }}
 
-  build-library:
-    name: "Build library"
+  build-libraries:
+    name: "Build ${{ matrix.library.name }} library"
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
+    strategy:
+      matrix:
+        library:
+          - {"name": "ansys-stk-core", "directory": "."}
+          - {"name": "ansys-stk-extensions", "directory": "extensions"}
+      fail-fast: false
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
     steps:
       - uses: ansys/actions/build-library@v9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ matrix.library.name }}
+          working-directory: ${{ matrix.library.directory }}
           attest-provenance: true
 
-  release:
-    name: Release project
-    needs: [build-library, doc-build]
+  release-private-pypi:
+    name: "Release ${{ matrix.library }} to private PyPI"
+    needs: build-libraries
     runs-on: ubuntu-latest
-    # Specifying a GitHub environment is optional, but strongly encouraged
     environment: release
     permissions:
       id-token: write
       contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        # HACK: can reference environment variables in matrix strategy
+        library: ['ansys-stk-core', 'ansys-stk-extensions']
     steps:
-      - name: Download the library artifacts from build-library step
-        uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
+      - name: "Release ${{ matrix.library }} to private PyPI index"
+        uses: ansys/actions/release-pypi-private@v9
         with:
-          name: ${{ env.LIBRARY_NAME }}-artifacts
-          path: ${{ env.LIBRARY_NAME }}-artifacts
+          library-name: ${{ matrix.library }}
+          twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
 
-      - name: Release to private PyPI index
-        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+  release-github:
+    name: "Release to GitHub"
+    needs: release-private-pypi
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      attestations: write
+      contents: write
+      id-token: write
+    steps:
+      - uses: ansys/actions/release-github@v9
         with:
-          repository-url: "https://pkgs.dev.azure.com/pyansys/_packaging/pyansys/pypi/upload"
-          print-hash: true
-          packages-dir: ${{ env.LIBRARY_NAME }}-artifacts
-          skip-existing: false
-
-      - name: Release to GitHub
-        uses: ansys/actions/release-github@v9
-        with:
-          library-name: ${{ env.LIBRARY_NAME }}
+          library-name: ${{ env.ANSYS_STK_CORE }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          generate_release_notes: false
+          additional-artifacts: "${{ env.ANSYS_STK_EXTENSIONS }}-artifacts"
+          changelog-release-notes: true
+          only-code: true
           add-artifact-attestation-notes: true
+          generate_release_notes: false
 
   doc-deploy-stable:
     name: Deploy stable documentation
     runs-on: ubuntu-latest
-    needs: [release]
+    needs: [release-github]
     steps:
       - uses: ansys/actions/doc-deploy-stable@v9
         with:

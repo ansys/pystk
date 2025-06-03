@@ -110,8 +110,10 @@ Method detail
 
     :Parameters:
 
-    **course** : :obj:`~typing.Any`
-    **use_magnetic_course** : :obj:`~bool`
+        **course** : :obj:`~typing.Any`
+
+        **use_magnetic_course** : :obj:`~bool`
+
 
     :Returns:
 
@@ -124,7 +126,8 @@ Method detail
 
     :Parameters:
 
-    **heading_change** : :obj:`~typing.Any`
+        **heading_change** : :obj:`~typing.Any`
+
 
     :Returns:
 
