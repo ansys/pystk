@@ -183,7 +183,7 @@ source = [
 
 [tool.coverage.run]
 branch = true
-source = ["src/ansys/stk/core"]
+source = ["src/ansys/stk"]
 relative_files = true
 
 [tool.coverage.report]
