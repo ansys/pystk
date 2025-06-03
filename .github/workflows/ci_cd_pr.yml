@@ -502,7 +502,7 @@ jobs:
           docker rm ${{ env.STK_CONTAINER }}
 
   build-library:
-    name: "Build ${{ env.ANSYS_STK }} library"
+    name: "Build library"
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     permissions:
