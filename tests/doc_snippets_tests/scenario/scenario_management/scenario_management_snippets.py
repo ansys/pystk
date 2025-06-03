@@ -71,10 +71,10 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="OpenVdfSTK",
         description="Open a Viewer Data File",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~load_vdf",
+        eid="stkobjects~STKObjectRoot | stkobjects~STKObjectRoot~load_vdf",
     )
     def OpenVdfSTKSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
         root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
 
@@ -90,10 +90,10 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CloseScenario",
         description="Close an open Scenario",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~close_scenario",
+        eid="stkobjects~STKObjectRoot | stkobjects~STKObjectRoot~close_scenario",
     )
     def CloseScenarioSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         root.close_scenario()
 
     def test_STKEngineEventsSnippet(self):
@@ -108,10 +108,10 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="STKEngineEvents",
         description="Manage STK Engine events",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def STKEngineEventsSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         def on_scenario_new_custom_callback(path: str):
             print(f"Scenario {path} has been created.")
 
@@ -136,7 +136,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="STKDesktopEvents",
         description="Manage STK Desktop application events",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def STKDesktopEventsSnippet(self):
         from ansys.stk.core.stkdesktop import STKDesktop
@@ -196,10 +196,10 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CreateScenario",
         description="Create a new Scenario",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~new_scenario",
+        eid="stkobjects~STKObjectRoot | stkobjects~STKObjectRoot~new_scenario",
     )
     def CreateScenarioSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         root.new_scenario("Example_Scenario")
 
     def test_SetUnitPreferencesSnippet(self):
@@ -209,10 +209,10 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="SetUnitPreferences",
         description="Set unit preferences for the Object Model",
         category="Scenario | Scenario Management",
-        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~units_preferences",
+        eid="stkobjects~STKObjectRoot | stkobjects~STKObjectRoot~units_preferences",
     )
     def SetUnitPreferencesSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         root.units_preferences.item("DateFormat").set_current_unit("UTCG")
         root.units_preferences.item("Distance").set_current_unit("km")
 
@@ -227,7 +227,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Scenario | stkobjects~Scenario~set_time_period",
     )
     def SetScenarioTimePeriodSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
         scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
         # Use scenario.start_time, scenario.stop_time to get time period
@@ -243,7 +243,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IAnimation",
     )
     def ScenarioAnimationModeSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
         root.animation_options = AnimationOptionType.STOP
         root.mode = AnimationEndTimeMode.X_REAL_TIME
@@ -261,7 +261,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IAnimation",
     )
     def ScenarioResetSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         root.rewind()
 
     @category("Graphics Tests")
@@ -275,7 +275,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         eid="stkobjects~ScenarioGraphics3D",
     )
     def ScenarioFontSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
         scenario.graphics_3d.medium_font.name = "Arial"
         scenario.graphics_3d.medium_font.point_size = 18

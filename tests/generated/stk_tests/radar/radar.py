@@ -48,10 +48,10 @@ class EarlyBoundTests(TestBase):
     ANTENNA1_NAME: str = "Antenna1Test"
     ANTENNA2_NAME: str = "Antenna2Test"
 
-    oSat: "IStkObject" = None
-    oAntenna1: "IStkObject" = None
-    oAntenna2: "IStkObject" = None
-    oRadar: "IStkObject" = None
+    oSat: "ISTKObject" = None
+    oAntenna1: "ISTKObject" = None
+    oAntenna2: "ISTKObject" = None
+    oRadar: "ISTKObject" = None
     radar: "Radar" = None
 
     # 2D
@@ -4445,8 +4445,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oRadar: "IStkObject" = oFac.children.new(STKObjectType.RADAR, "Radar1")
+        oFac: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oRadar: "ISTKObject" = oFac.children.new(STKObjectType.RADAR, "Radar1")
         Assert.assertIsNotNone(oRadar)
         Assert.assertEqual(STKObjectType.RADAR, oRadar.class_type)
         oHelper.Run(oRadar)

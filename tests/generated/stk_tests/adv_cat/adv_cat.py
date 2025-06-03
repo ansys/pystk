@@ -74,7 +74,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_ACAT)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_ACAT)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_ACAT)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -94,8 +94,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_ACAT, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_ACAT)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_ACAT, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_ACAT)).object_files)
 
     # endregion
 

@@ -46,7 +46,7 @@ class LinkToObjectHelper(object):
         # IsIntrinsic
         self.m_logger.WriteLine4("\tCurrent IsIntrinsic flag is: {0}", oLink.is_intrinsic)
         # LinkedObject
-        oObject: "IStkObject" = oLink.linked_object
+        oObject: "ISTKObject" = oLink.linked_object
         if oObject != None:
             self.m_logger.WriteLine7("\t{0} is linked to: {1}", strObjectName, oObject.path)
 
@@ -94,7 +94,7 @@ class STKObjectHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oObject: "IStkObject"):
+    def Run(self, oObject: "ISTKObject"):
         Assert.assertIsNotNone(oObject)
         self.m_logger.WriteLine("----- STK OBJECT TEST ----- BEGIN -----")
         # InstanceName
@@ -139,7 +139,7 @@ class STKObjectHelper(object):
         oObject.export(TestBase.GetScenarioFile("Export", "ExportedObject"))
         oObject.instance_name = strValue
         # Parent
-        oParent: "IStkObject" = oObject.parent
+        oParent: "ISTKObject" = oObject.parent
         Assert.assertIsNotNone(oParent)
         self.m_logger.WriteLine7("\tThe parent object for {0} is {1}", oObject.instance_name, oParent.instance_name)
         # DataProviders
@@ -173,13 +173,13 @@ class STKObjectHelper(object):
         if oObject.is_access_supported():
             self.m_logger.WriteLine5("\tThe {0} supports an Access.", oObject.instance_name)
             # GetAccess
-            oAccess: "Access" = oObject.get_access((IStkObject(oSatellite)).path)
+            oAccess: "Access" = oObject.get_access((ISTKObject(oSatellite)).path)
             Assert.assertIsNotNone(oAccess)
             oAHelper = StkAccessHelper()
             oAHelper.Run(oAccess, oObject.root)
 
             # GetAccessToObject
-            oAccess = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
+            oAccess = oObject.get_access_to_object(clr.CastAs(oSatellite, ISTKObject))
             Assert.assertIsNotNone(oAccess)
             oAHelper.Run(oAccess, oObject.root)
 
@@ -191,9 +191,9 @@ class STKObjectHelper(object):
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.instance_name)
             with pytest.raises(Exception):
-                oAccess: "Access" = oObject.get_access((IStkObject(oSatellite)).path)
+                oAccess: "Access" = oObject.get_access((ISTKObject(oSatellite)).path)
             with pytest.raises(Exception):
-                oAccess: "Access" = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
+                oAccess: "Access" = oObject.get_access_to_object(clr.CastAs(oSatellite, ISTKObject))
             with pytest.raises(Exception):
                 acc: "AccessConstraintCollection" = oObject.access_constraints
             with pytest.raises(Exception):
@@ -201,7 +201,7 @@ class STKObjectHelper(object):
 
         oObject.root.current_scenario.children.unload(STKObjectType.SATELLITE, "MIR")
         # Root
-        oRoot: "StkObjectRoot" = oObject.root
+        oRoot: "STKObjectRoot" = oObject.root
         Assert.assertIsNotNone(oRoot)
 
         # Object Files
@@ -246,7 +246,7 @@ class STKObjectHelper(object):
     # endregion
 
     # region OnePtAccess
-    def OnePtAccess(self, oObj: "IStkObject"):
+    def OnePtAccess(self, oObj: "ISTKObject"):
         onePtAccess: "OnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
         onePtAccess.start_time = "1 Jul 2007 00:00:00.000"
         Assert.assertEqual("1 Jul 2007 00:00:00.000", onePtAccess.start_time)
@@ -326,16 +326,16 @@ class STKObjectHelper(object):
             self.m_logger.WriteLine(("\t" + str(file)))
 
     # region Children
-    def Children(self, oObject: "IStkObject"):
+    def Children(self, oObject: "ISTKObject"):
         Assert.assertIsNotNone(oObject)
         # Children
-        oCollection: "IStkObjectCollection" = oObject.children
+        oCollection: "ISTKObjectCollection" = oObject.children
         Assert.assertIsNotNone(oCollection)
         if oCollection.count > 0:
-            x: "IStkObject" = oCollection[0]
+            x: "ISTKObject" = oCollection[0]
             name: str = x.instance_name
-            y: "IStkObject" = oCollection.get_item_by_index(0)
-            z: "IStkObject" = oCollection.get_item_by_name(name)
+            y: "ISTKObject" = oCollection.get_item_by_index(0)
+            z: "ISTKObject" = oCollection.get_item_by_name(name)
             Assert.assertEqual(x.instance_name, y.instance_name)
             Assert.assertEqual(x.instance_name, z.instance_name)
 
@@ -386,7 +386,7 @@ class STKObjectHelper(object):
                 Assert.fail("Sensor should be an available child object of the {0} object", oObject.class_type)
 
             # New
-            oSensor: "IStkObject" = oCollection.new(STKObjectType.SENSOR, "Radar")
+            oSensor: "ISTKObject" = oCollection.new(STKObjectType.SENSOR, "Radar")
             Assert.assertIsNotNone(oSensor)
             # Unload
             oCollection.unload(STKObjectType.SENSOR, "Radar")
@@ -401,36 +401,36 @@ class STKObjectHelper(object):
                 )
 
         # _NewEnum
-        stkObject1: "IStkObject"
+        stkObject1: "ISTKObject"
         # _NewEnum
         for stkObject1 in oCollection:
             self.m_logger.WriteLine5("\t\tChildren: {0}", stkObject1.instance_name)
 
         if oCollection.count > 0:
             # Item
-            oEObject: "IStkObject" = oCollection[0]
+            oEObject: "ISTKObject" = oCollection[0]
             Assert.assertIsNotNone(oEObject)
 
         # GetElements
-        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(STKObjectType.SENSOR)
+        oOECollection: "ISTKObjectElementCollection" = oCollection.get_elements(STKObjectType.SENSOR)
         Assert.assertIsNotNone(oOECollection)
         # Count
         self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.count)
         # _NewEnum
-        stkObject2: "IStkObject"
+        stkObject2: "ISTKObject"
         # _NewEnum
         for stkObject2 in oOECollection:
             self.m_logger.WriteLine5("\t\tElement: {0}", stkObject2.instance_name)
 
         if oOECollection.count > 0:
             # Item
-            oEObject: "IStkObject" = oOECollection[0]
+            oEObject: "ISTKObject" = oOECollection[0]
             Assert.assertIsNotNone(oEObject)
 
     # endregion
 
     # region Metadata
-    def Metadata(self, oObject: "IStkObject"):
+    def Metadata(self, oObject: "ISTKObject"):
         metadata: "KeyValueCollection" = oObject.metadata
 
         Assert.assertEqual(0, metadata.count)
@@ -900,7 +900,7 @@ class StkAccessHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oAccess: "Access", oRoot: "StkObjectRoot"):
+    def Run(self, oAccess: "Access", oRoot: "STKObjectRoot"):
         self.m_logger.WriteLine("----- STK ACCESS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oAccess)
         Assert.assertIsNotNone(oRoot)
@@ -1163,12 +1163,12 @@ class StkAccessHelper(object):
 
 # region VODataDisplayHelper
 class VODataDisplayHelper(object):
-    def __init__(self, oRoot: "StkObjectRoot"):
+    def __init__(self, oRoot: "STKObjectRoot"):
         self.m_bIsAccessRequired: bool = False
         self.m_bIsChain: bool = False
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "StkObjectRoot" = oRoot
+        self.m_oRoot: "STKObjectRoot" = oRoot
 
     # endregion
 

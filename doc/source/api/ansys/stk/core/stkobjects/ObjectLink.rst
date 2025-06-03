@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.ObjectLink.linked_object
-    :type: IStkObject
+    :type: ISTKObject
 
     Return the STK object associated with the instance.
 

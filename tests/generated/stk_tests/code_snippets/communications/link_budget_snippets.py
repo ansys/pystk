@@ -31,9 +31,9 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         super(LinkBudgetSnippets, self).__init__(*args, **kwargs)
 
     m_DefaultSatName: str = "GEO"
-    m_Satellite: "IStkObject" = None
+    m_Satellite: "ISTKObject" = None
     m_DefaultFacilityName: str = "Facility1"
-    m_Facility: "IStkObject" = None
+    m_Facility: "ISTKObject" = None
     m_XmtrObject: "Transmitter" = None
     m_DefaultXmtrName: str = "MyXmtr"
     m_RcvrObject: "Receiver" = None
@@ -57,7 +57,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
+        scenario: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario
 
         LinkBudgetSnippets.m_Satellite = scenario.children.new(
             STKObjectType.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
@@ -122,8 +122,8 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         self.ComputeLinkBudgetSimple(LinkBudgetSnippets.m_XmtrObject, LinkBudgetSnippets.m_RcvrObject)
 
     def ComputeLinkBudgetSimple(self, geoTransmitter: "Transmitter", facilityReceiver: "Receiver"):
-        xmtrAsStkObject: "IStkObject" = clr.CastAs(geoTransmitter, IStkObject)
-        rcvrAsStkObject: "IStkObject" = clr.CastAs(facilityReceiver, IStkObject)
+        xmtrAsStkObject: "ISTKObject" = clr.CastAs(geoTransmitter, ISTKObject)
+        rcvrAsStkObject: "ISTKObject" = clr.CastAs(facilityReceiver, ISTKObject)
 
         # Set the transmitter to the simple model
         geoTransmitter.model_component_linking.set_component("Simple Transmitter Model")
@@ -208,8 +208,8 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         facilityDish: "Antenna",
         scenarioRFEnv: "RFEnvironment",
     ):
-        xmtrAsStkObject: "IStkObject" = clr.CastAs(geoTransmitter, IStkObject)
-        rcvrAsStkObject: "IStkObject" = clr.CastAs(facilityReceiver, IStkObject)
+        xmtrAsStkObject: "ISTKObject" = clr.CastAs(geoTransmitter, ISTKObject)
+        rcvrAsStkObject: "ISTKObject" = clr.CastAs(facilityReceiver, ISTKObject)
 
         # Enable the rain loss computation on the scenario RF environment
         scenarioRFEnv.propagation_channel.enable_rain_loss = True

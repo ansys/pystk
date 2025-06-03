@@ -65,10 +65,10 @@ class ShipSnippets(CodeSnippetsTestBase):
 
     # region CreateShipOnCurrentScenarioCentralBody
     def test_CreateShipOnCurrentScenarioCentralBody(self):
-        (IStkObject(ShipSnippets.m_Object)).unload()
+        (ISTKObject(ShipSnippets.m_Object)).unload()
         self.CreateShipOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateShipOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateShipOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the Ship
         ship: "Ship" = clr.CastAs(root.current_scenario.children.new(STKObjectType.SHIP, "MyShip"), Ship)
 
@@ -96,7 +96,7 @@ class ShipSnippets(CodeSnippetsTestBase):
         ship.set_route_type(PropagatorType.STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
-        propagator: "PropagatorStkExternal" = clr.CastAs(ship.route, PropagatorStkExternal)
+        propagator: "PropagatorSTKExternal" = clr.CastAs(ship.route, PropagatorSTKExternal)
 
     # endregion
 

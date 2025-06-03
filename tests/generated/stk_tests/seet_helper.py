@@ -59,7 +59,7 @@ class SEETHelper(object):
         SEETHelper.Test_IAgVeVOSAA(veVOSAA)
 
     @staticmethod
-    def TestComputations(obj: "IStkObject", spEnv: "SpaceEnvironment", startTime: typing.Any, stopTime: typing.Any):
+    def TestComputations(obj: "ISTKObject", spEnv: "SpaceEnvironment", startTime: typing.Any, stopTime: typing.Any):
         startOM: float = 0
         stopOM: float = 0
         startDP: float = 0

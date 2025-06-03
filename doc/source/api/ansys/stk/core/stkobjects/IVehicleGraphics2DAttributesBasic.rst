@@ -41,7 +41,7 @@ Set 2D Graphics display properties
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change the line width, style, color and marker
 

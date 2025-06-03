@@ -93,7 +93,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         # so this will differ from the convention for nessecity
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
-    def CreateSignaledEventIntervalCollection(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEventIntervalCollection(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components

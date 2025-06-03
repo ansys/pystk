@@ -3,7 +3,7 @@ Sensor
 
 .. py:class:: ansys.stk.core.stkobjects.Sensor
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Class defining the Sensor class.
 

@@ -91,7 +91,7 @@ Create a new Time Interval
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -105,7 +105,7 @@ Create a new Time Instant
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -119,7 +119,7 @@ Get Times From a Defined Time Instant and create an cell array
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -356,7 +356,7 @@ Get the Center point and Inertial System of Earth central body
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 

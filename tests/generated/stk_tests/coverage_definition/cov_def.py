@@ -72,7 +72,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_COV)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_COV)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_COV)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -94,7 +94,7 @@ class EarlyBoundTests(TestBase):
         bounds: "CoverageBounds" = EarlyBoundTests.AG_COV.grid.bounds_type
         EarlyBoundTests.AG_COV.grid.bounds_type = CoverageBounds.LATITUDE
         oHelper = STKObjectHelper()
-        oCov: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        oCov: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_COV, ISTKObject)
         oHelper.Run(oCov)
         oHelper.TestObjectFilesArray(oCov.object_files)
         EarlyBoundTests.AG_COV.grid.bounds_type = bounds
@@ -508,7 +508,7 @@ class EarlyBoundTests(TestBase):
             # Ellipses
             #
 
-            place: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place")
+            place: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place")
 
             # Get collection
             ellipsesCollection: "CoverageEllipseCollection" = boundsCustomRegions.ellipses
@@ -593,7 +593,7 @@ class EarlyBoundTests(TestBase):
             ExceptionAssert.Throws(code8)
 
             # Add with facility
-            facility: "IStkObject" = TestBase.Application.current_scenario.children.new(
+            facility: "ISTKObject" = TestBase.Application.current_scenario.children.new(
                 STKObjectType.FACILITY, "Facility"
             )
             ellipse2: "CoverageEllipse" = ellipsesCollection.add(facility.path)
@@ -605,7 +605,7 @@ class EarlyBoundTests(TestBase):
             ellipse2.bearing = 40
 
             # Add with target
-            target: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target")
+            target: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target")
             ellipse3: "CoverageEllipse" = ellipsesCollection.add(target.path)
             Assert.assertIsNotNone(ellipse3)
             Assert.assertEqual(3, ellipsesCollection.count)
@@ -631,7 +631,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(ellipseItem.semi_major_axis, 10)
 
             # Get center point
-            center: "IStkObject" = ellipseItem.center
+            center: "ISTKObject" = ellipseItem.center
             Assert.assertIsNotNone(center)
             Assert.assertEqual(place.path, center.path)
 
@@ -1758,9 +1758,9 @@ class EarlyBoundTests(TestBase):
         boundRegion: "CoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
         )
-        boundRegion.area_targets.add((IStkObject(areaTarget)).path)
+        boundRegion.area_targets.add((ISTKObject(areaTarget)).path)
 
-        EarlyBoundTests.AG_COV.asset_list.add((IStkObject(aircraft)).path)
+        EarlyBoundTests.AG_COV.asset_list.add((ISTKObject(aircraft)).path)
 
         EarlyBoundTests.AG_COV.grid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LONGITUDE
         latLonResolution: "CoverageResolutionLatLon" = clr.CastAs(
@@ -1941,7 +1941,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_COV.clear_accesses()
         EarlyBoundTests.AG_COV.compute_accesses()
 
-        objCov: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        objCov: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_COV, ISTKObject)
         dpSelectedPointCoverage: "DataProviderInterval" = clr.CastAs(
             objCov.data_providers["Selected Point Coverage"], DataProviderInterval
         )
@@ -2043,9 +2043,9 @@ class EarlyBoundTests(TestBase):
         boundRegion: "CoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
         )
-        boundRegion.area_targets.add((IStkObject(areaTarget)).path)
+        boundRegion.area_targets.add((ISTKObject(areaTarget)).path)
 
-        EarlyBoundTests.AG_COV.asset_list.add((IStkObject(aircraft)).path)
+        EarlyBoundTests.AG_COV.asset_list.add((ISTKObject(aircraft)).path)
 
         EarlyBoundTests.AG_COV.grid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LONGITUDE
         latLonResolution: "CoverageResolutionLatLon" = clr.CastAs(
@@ -2104,7 +2104,7 @@ class EarlyBoundTests(TestBase):
 
         gridPointLocations = []
         group: "DataProviderFixed" = clr.CastAs(
-            (IStkObject(covDef)).data_providers["Grid Point Locations"], DataProviderFixed
+            (ISTKObject(covDef)).data_providers["Grid Point Locations"], DataProviderFixed
         )
         execElements = ["Latitude", "Longitude"]
         result: "DataProviderResult" = group.execute_elements(execElements)
@@ -2437,7 +2437,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- ASSETS TEST ----- BEGIN -----")
 
         # AssetList
-        sat2: "IStkObject" = TestBase.Application.current_scenario.children["Satellite2"]
+        sat2: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite2"]
         toPropagate: "Satellite" = clr.CastAs(sat2, Satellite)
         twoBody: "PropagatorTwoBody" = clr.CastAs(toPropagate.propagator, PropagatorTwoBody)
         twoBody.propagate()
@@ -2688,8 +2688,8 @@ class EarlyBoundTests(TestBase):
             helper.GfxAnimationContours(oGraphics.animation_settings.contours, False, False)
 
             # Object Coverage
-            ac: "IStkObject" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "ObjCovAircraft"), IStkObject
+            ac: "ISTKObject" = clr.CastAs(
+                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "ObjCovAircraft"), ISTKObject
             )
             helper.GfxObjectCoverage(ac.object_coverage)
             TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "ObjCovAircraft")
@@ -2756,7 +2756,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(method, method2)
 
         finally:
-            (IStkObject(covDef)).unload()
+            (ISTKObject(covDef)).unload()
 
     def test_CustomPointAltitudeMethodException(self):
         def code15():
@@ -2772,7 +2772,7 @@ class EarlyBoundTests(TestBase):
                 pointDef.point_altitude_method = CoveragePointAltitudeMethod.FILE_VALUES
 
             finally:
-                (IStkObject(covDef)).unload()
+                (ISTKObject(covDef)).unload()
 
         ex = ExceptionAssert.Throws(code15)
         StringAssert.Contains("Cannot modify read-only attribute", str(ex), "Exception message mismatch")
@@ -2782,7 +2782,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("BUG68304")
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        scenarioObj: "IStkObject" = TestBase.Application.current_scenario
+        scenarioObj: "ISTKObject" = TestBase.Application.current_scenario
         scenario.set_time_period("7 Sep 2012 16:00:00.000", "8 Sep 2012 16:00:00.000")
 
         sat: "Satellite" = clr.CastAs(scenarioObj.children.new(STKObjectType.SATELLITE, "Satellite1"), Satellite)

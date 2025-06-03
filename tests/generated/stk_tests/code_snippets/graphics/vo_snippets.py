@@ -64,7 +64,7 @@ class VOSnippets(CodeSnippetsTestBase):
         self.DelayGraphicsUpdates(CodeSnippetsTestBase.m_Root)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "Satellite1")
 
-    def DelayGraphicsUpdates(self, root: "StkObjectRoot"):
+    def DelayGraphicsUpdates(self, root: "STKObjectRoot"):
         satellite: "Satellite" = clr.CastAs(root.current_scenario.children["Satellite1"], Satellite)
         voElt: "Graphics3DDataDisplayElement" = satellite.graphics_3d.data_display[0]
 

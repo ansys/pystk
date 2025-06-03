@@ -76,10 +76,10 @@ class GPSSnippets(CodeSnippetsTestBase):
         self.ConfigureGPSWithAlmanac(
             propagator,
             TestBase.GetScenarioFile("CodeSnippetsTests", "GPSAlmanac.alm"),
-            (IStkObject(GPSSnippets.m_Object)).root.current_scenario,
+            (ISTKObject(GPSSnippets.m_Object)).root.current_scenario,
         )
 
-    def ConfigureGPSWithAlmanac(self, propagator: "PropagatorGPS", almanacPath: str, scenario: "IStkObject"):
+    def ConfigureGPSWithAlmanac(self, propagator: "PropagatorGPS", almanacPath: str, scenario: "ISTKObject"):
         # Configure properties
         # Use the scenario's analysis interval
         propagator.ephemeris_interval.set_implicit_interval(

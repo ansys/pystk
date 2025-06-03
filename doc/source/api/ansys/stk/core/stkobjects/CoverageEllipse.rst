@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: center
     :canonical: ansys.stk.core.stkobjects.CoverageEllipse.center
-    :type: IStkObject
+    :type: ISTKObject
 
     Center object.
 
