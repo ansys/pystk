@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "ansys-stk-core"
+name = "ansys-stk"
 dynamic = ["version"]
 description = "The next generation Python API for STK."
 readme = "README.rst"
@@ -30,6 +30,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation by default
 ]
 
 [project.scripts]
@@ -38,6 +39,7 @@ pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_mi
 # NOTE: The `project.optional-dependencies` section is used to define optional
 # dependencies that users can install to enable additional features.
 [project.optional-dependencies]
+<<<<<<< HEAD
 all = [
     # Target: grpc
     "grpcio>=1.71.0",
@@ -49,6 +51,10 @@ all = [
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
     "libcst>=1.7.0",
+core = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
+]
+extensions = [
 ]
 grpc = [
     "grpcio>=1.71.0",
@@ -66,6 +72,10 @@ jupyter = [
 # only available when a developer clones the repository and installs the package
 # for local development.
 [dependency-groups]
+vulnerabilities = [
+    "bandit[toml]==1.8.3",
+    "safety==3.3.0",
+]
 tests = [
     "libcst==1.8.0",
     "matplotlib==3.10.3",
@@ -99,13 +109,9 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
-vulnerabilities = [
-    "bandit[toml]==1.8.3",
-    "safety==3.3.0",
-]
 
 [tool.flit.module]
-name = "ansys.stk.core"
+name = "ansys.stk"
 
 [project.urls]
 discussions = "https://github.com/ansys/pystk/discussions"
