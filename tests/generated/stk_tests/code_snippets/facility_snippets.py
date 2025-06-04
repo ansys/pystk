@@ -74,7 +74,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         )
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create a facility on current scenario central body
         facility: "Facility" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility"), Facility
@@ -89,7 +89,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         )
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityOnEarth(self, root: "StkObjectRoot"):
+    def CreateFacilityOnEarth(self, root: "STKObjectRoot"):
         facility: "Facility" = clr.CastAs(
             root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "MyFacility", "Earth"), Facility
         )
@@ -103,7 +103,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     def test_CreateFacilityOnOtherPlanet(self):
         self.CreateFacilityOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityOnOtherPlanet(self, root: "StkObjectRoot"):
+    def CreateFacilityOnOtherPlanet(self, root: "STKObjectRoot"):
         facObject: "Facility" = clr.CastAs(
             root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "Facility1", "Mars"), Facility
         )
@@ -117,7 +117,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     def test_CreateFacilityFromFacilityDatabase(self):
         self.CreateFacilityFromFacilityDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreateFacilityFromFacilityDatabase(self, root: "StkObjectRoot"):
+    def CreateFacilityFromFacilityDatabase(self, root: "STKObjectRoot"):
         # Get STK database location using Connect
         result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]

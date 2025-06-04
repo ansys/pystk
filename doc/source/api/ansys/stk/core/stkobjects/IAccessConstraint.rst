@@ -39,7 +39,7 @@ Get access between objects by path using the existing accesses
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     scenario = root.current_scenario
     accesses = scenario.get_existing_accesses()
 
@@ -56,7 +56,7 @@ Configure the access interval to the availability time span of the object where 
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")

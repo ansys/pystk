@@ -52,7 +52,7 @@ Set satellite propagator to SPICE and propagate
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]

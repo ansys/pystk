@@ -35,10 +35,10 @@ class ReportComparison(object):
 
     # region AddReport
 
-    def AddReport(self, ReportObject: "IStkObject", ReportData: str):
+    def AddReport(self, ReportObject: "ISTKObject", ReportData: str):
         self._reports.append(ReportComparison.ReportEntry(((("GetReport " + ReportObject.path) + " ") + ReportData)))
 
-    def AddReport2(self, ReportObject: "IStkObject", ReportData: str, Delta: float):
+    def AddReport2(self, ReportObject: "ISTKObject", ReportData: str, Delta: float):
         self._reports.append(
             ReportComparison.ReportEntry(((("GetReport " + ReportObject.path) + " ") + ReportData), Delta)
         )
@@ -53,7 +53,7 @@ class ReportComparison(object):
 
     # region TakeOMSnapshot
 
-    def TakeOMSnapshot(self, oRoot: "StkObjectRoot"):
+    def TakeOMSnapshot(self, oRoot: "STKObjectRoot"):
         for report in self._reports:
             report.Execute(oRoot)
 
@@ -63,7 +63,7 @@ class ReportComparison(object):
 
     # region TakeConnectSnapshot
 
-    def TakeConnectSnapshot(self, oRoot: "StkObjectRoot"):
+    def TakeConnectSnapshot(self, oRoot: "STKObjectRoot"):
         for report in self._reports:
             report.Execute(oRoot)
 
@@ -188,7 +188,7 @@ class ReportComparison(object):
 
         # region Execute
 
-        def Execute(self, oRoot: "StkObjectRoot"):
+        def Execute(self, oRoot: "STKObjectRoot"):
             Assert.assertIsNotNone(oRoot)
             self._report.clear()
             res: "ExecuteCommandResult" = oRoot.execute_command(self._name)

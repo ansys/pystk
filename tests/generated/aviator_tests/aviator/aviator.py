@@ -42,7 +42,7 @@ class EarlyBoundTests(TestBase):
     def InitHelper():
         TestBase.LoadTestScenario(Path.Combine("AviatorTests", "AviatorTests.sc"))
 
-        scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
+        scenario: "ISTKObject" = clr.CastAs(TestBase.Application.current_scenario, ISTKObject)
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
         EarlyBoundTests.AG_AC = Aircraft(
             (EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AIRCRAFT, "AviatorAC"))
@@ -89,7 +89,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Static DataMembers
-    AG_Scenario: "IStkObject" = None
+    AG_Scenario: "ISTKObject" = None
     AG_AC: "Aircraft" = None
     AG_AvtrProp: "AviatorPropagator" = None
     AG_AvtrCatalog: "Catalog" = None
@@ -98,7 +98,7 @@ class EarlyBoundTests(TestBase):
     AG_Phases: "PhaseCollection" = None
     AG_Procedures: "ProcedureCollection" = None
     AG_AvtrAircraft: "AircraftModel" = None
-    AG_Target: "IStkObject" = None
+    AG_Target: "ISTKObject" = None
     # endregion
 
     # region Mission
@@ -956,7 +956,7 @@ class EarlyBoundTests(TestBase):
     def test_AreaTargetSearch(self):
         self.EmptyProcedures()
 
-        areaTargetObj: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        areaTargetObj: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
         areaTargetProc: "ProcedureAreaTargetSearch" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
                 SiteType.SITE_STK_AREA_TARGET, ProcedureType.PROCEDURE_AREA_TARGET_SEARCH
@@ -1436,8 +1436,8 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
         EarlyBoundTests.AG_AvtrProp.propagate()
 
-        acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
-        ac2Obj: "IStkObject" = acObj.copy_object("AC2")
+        acObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AC, ISTKObject)
+        ac2Obj: "ISTKObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
@@ -1951,8 +1951,8 @@ class EarlyBoundTests(TestBase):
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
         EarlyBoundTests.AG_AvtrProp.propagate()
 
-        acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
-        ac2Obj: "IStkObject" = acObj.copy_object("AC2")
+        acObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AC, ISTKObject)
+        ac2Obj: "ISTKObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
@@ -2181,9 +2181,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10001, launchProc.override_fuel_flow)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(launchProc, IProcedure))
-        missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
+        missileObj: "ISTKObject" = clr.CastAs(missile, ISTKObject)
         missileObj.unload()
-        missileObj2: "IStkObject" = clr.CastAs(missile2, IStkObject)
+        missileObj2: "ISTKObject" = clr.CastAs(missile2, ISTKObject)
         missileObj2.unload()
 
     # endregion
@@ -2291,9 +2291,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10001, launchProc.override_fuel_flow)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(launchProc, IProcedure))
-        missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
+        missileObj: "ISTKObject" = clr.CastAs(missile, ISTKObject)
         missileObj.unload()
-        missileObj2: "IStkObject" = clr.CastAs(missile2, IStkObject)
+        missileObj2: "ISTKObject" = clr.CastAs(missile2, ISTKObject)
         missileObj2.unload()
 
     # endregion
@@ -2997,8 +2997,8 @@ class EarlyBoundTests(TestBase):
         )
         EarlyBoundTests.AG_AvtrProp.propagate()
 
-        acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
-        ac2Obj: "IStkObject" = acObj.copy_object("AC2")
+        acObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AC, ISTKObject)
+        ac2Obj: "ISTKObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
@@ -3881,7 +3881,7 @@ class EarlyBoundTests(TestBase):
 
         self.Test_IAgAvtrBasicManeuverTargetPosVel(intercept.position_velocity_strategies)
 
-        missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
+        missileObj: "ISTKObject" = clr.CastAs(missile, ISTKObject)
         missileObj.unload()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4437,8 +4437,8 @@ class EarlyBoundTests(TestBase):
             basicManeuver.profile, BasicManeuverStrategyRelativeSpeedAltitude
         )
 
-        acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
-        testAC: "IStkObject" = acObj.copy_object("LeaderAC")
+        acObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AC, ISTKObject)
+        testAC: "ISTKObject" = acObj.copy_object("LeaderAC")
         relSpeedAlt.target_name = "Aircraft/LeaderAC"
         Assert.assertEqual("Aircraft/LeaderAC", relSpeedAlt.target_name)
         Assert.assertEqual(targetName, relCourse.target_name)
@@ -4521,8 +4521,8 @@ class EarlyBoundTests(TestBase):
             ProcedureBasicManeuver,
         )
 
-        acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
-        testAC: "IStkObject" = acObj.copy_object("LeaderAC")
+        acObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AC, ISTKObject)
+        testAC: "ISTKObject" = acObj.copy_object("LeaderAC")
 
         basicManeuver.navigation_strategy_type = "Rendezvous/Formation"
         formation: "BasicManeuverStrategyRendezvous" = clr.CastAs(
@@ -5027,8 +5027,8 @@ class EarlyBoundTests(TestBase):
     def test_RelativeToPrevProcedure(self):
         self.EmptyProcedures()
 
-        areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
-        place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
+        areaTarget: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        place: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
@@ -5058,8 +5058,8 @@ class EarlyBoundTests(TestBase):
     def test_RelativeToStationarySTKObject(self):
         self.EmptyProcedures()
 
-        areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
-        place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
+        areaTarget: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        place: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SiteType.SITE_RELATIVE_TO_STATIONARY_STK_OBJECT, ProcedureType.PROCEDURE_ENROUTE
@@ -5246,8 +5246,8 @@ class EarlyBoundTests(TestBase):
     def test_STKAreaTarget(self):
         self.EmptyProcedures()
 
-        areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
-        areaTarget2: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget2")
+        areaTarget: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        areaTarget2: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget2")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SiteType.SITE_STK_AREA_TARGET, ProcedureType.PROCEDURE_AREA_TARGET_SEARCH
@@ -5305,9 +5305,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue((Array.Length(names) >= 2))
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
-        missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
+        missileObj: "ISTKObject" = clr.CastAs(missile, ISTKObject)
         missileObj.unload()
-        missileObj2: "IStkObject" = clr.CastAs(missile2, IStkObject)
+        missileObj2: "ISTKObject" = clr.CastAs(missile2, ISTKObject)
         missileObj2.unload()
 
     # endregion
@@ -5317,8 +5317,8 @@ class EarlyBoundTests(TestBase):
     def test_STKObjectWaypoint(self):
         self.EmptyProcedures()
 
-        areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
-        place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
+        areaTarget: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        place: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SiteType.SITE_STK_OBJECT_WAYPOINT, ProcedureType.PROCEDURE_ENROUTE
@@ -5415,8 +5415,8 @@ class EarlyBoundTests(TestBase):
     def test_STKStaticObject(self):
         self.EmptyProcedures()
 
-        areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
-        place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
+        areaTarget: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget")
+        place: "ISTKObject" = EarlyBoundTests.AG_Scenario.children.new(STKObjectType.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SiteType.SITE_STK_STATIC_OBJECT, ProcedureType.PROCEDURE_ENROUTE
@@ -5476,9 +5476,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue((Array.Length(names) >= 2))
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
-        missileObj: "IStkObject" = clr.CastAs(missile, IStkObject)
+        missileObj: "ISTKObject" = clr.CastAs(missile, ISTKObject)
         missileObj.unload()
-        missileObj2: "IStkObject" = clr.CastAs(missile2, IStkObject)
+        missileObj2: "ISTKObject" = clr.CastAs(missile2, ISTKObject)
         missileObj2.unload()
 
     # endregion

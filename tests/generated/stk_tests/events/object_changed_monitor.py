@@ -32,10 +32,10 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
     def __exit__(self, exception_type, exception_value, exception_traceback):
         self.Dispose()
 
-    def __init__(self, root: "StkObjectRoot"):
+    def __init__(self, root: "STKObjectRoot"):
         self._lastSender: str = None
         self._counter: int = 0
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
 
         self.csToPy_OnStkObjectChangedSubscription = (self._root).subscribe()
         self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed += self._root_OnStkObjectChanged
@@ -51,7 +51,7 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
     def Terminate(self):
         self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed -= self._root_OnStkObjectChanged
 
-    def _root_OnStkObjectChanged(self, pArgs: "StkObjectChangedEventArguments"):
+    def _root_OnStkObjectChanged(self, pArgs: "STKObjectChangedEventArguments"):
         sPath: str = pArgs.path
         self._counter += 1
         self._lastSender = pArgs.path

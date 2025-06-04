@@ -31,10 +31,10 @@ from ansys.stk.core.analysis_workbench import *
 
 # region DisplayTimesHelper
 class DisplayTimesHelper(object):
-    def __init__(self, oRoot: "StkObjectRoot"):
+    def __init__(self, oRoot: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "StkObjectRoot" = oRoot
+        self.m_oRoot: "STKObjectRoot" = oRoot
 
     # endregion
 
@@ -913,7 +913,7 @@ class ObjectLinkCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "ObjectLinkCollection", oRoot: "StkObjectRoot"):
+    def Run(self, oCollection: "ObjectLinkCollection", oRoot: "STKObjectRoot"):
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oRoot)
         self.m_logger.WriteLine("ObjectLinkCollection test:")
@@ -1061,7 +1061,7 @@ class ObjectLinkCollectionHelper(object):
 
         # AddObject
         strName = str(arAvailable[0])
-        oObject: "IStkObject" = oRoot.get_object_from_path(strName)
+        oObject: "ISTKObject" = oRoot.get_object_from_path(strName)
         Assert.assertIsNotNone(oObject)
         oCollection.add_object(oObject)
         self.m_logger.WriteLine5("\tObject {0} was added to collection.", oObject.path)

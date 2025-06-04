@@ -38,7 +38,7 @@ class EarlyBoundTests(TestBase):
 
     # region DataMembers
     COMMSYSTEM_NAME: str = "CommSystem1"
-    oCommSystem: "IStkObject" = None
+    oCommSystem: "ISTKObject" = None
     commSystem: "CommSystem" = None
     # endregion
 
@@ -55,10 +55,10 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.commSystem = clr.CastAs(EarlyBoundTests.oCommSystem, CommSystem)
 
             # Set up objects needed for Interference, Transmitters, and Receivers tests.
-            oTrans1: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
+            oTrans1: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
                 STKObjectType.TRANSMITTER, "Transmitter1"
             )
-            oRec1: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
+            oRec1: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
                 STKObjectType.RECEIVER, "Receiver1"
             )
             const1: "Constellation" = clr.CastAs(
@@ -67,10 +67,10 @@ class EarlyBoundTests(TestBase):
             const1.objects.add_object(oTrans1)
             const1.objects.add_object(oRec1)
 
-            oTrans2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
+            oTrans2: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
                 STKObjectType.TRANSMITTER, "Transmitter2"
             )
-            oRec2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
+            oRec2: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
                 STKObjectType.RECEIVER, "Receiver2"
             )
             const2: "Constellation" = clr.CastAs(

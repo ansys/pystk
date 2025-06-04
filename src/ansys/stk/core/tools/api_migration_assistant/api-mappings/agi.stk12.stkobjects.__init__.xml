@@ -2601,7 +2601,7 @@
    <Mapping OldName="IAgTimePeriodValue" NewName="TimePeriodValue" Category="interface" />
    <Mapping ParentScope="IAgTimePeriodValue" OldName="Value" NewName="value" Category="method" />
    <Mapping ParentScope="IAgTimePeriodValue" OldName="Type" NewName="type" Category="method" />
-   <Mapping OldName="IAgStkObject" NewName="IStkObject" Category="interface" />
+   <Mapping OldName="IAgStkObject" NewName="ISTKObject" Category="interface" />
    <Mapping ParentScope="IAgStkObject" OldName="Parent" NewName="parent" Category="method" />
    <Mapping ParentScope="IAgStkObject" OldName="Path" NewName="path" Category="method" />
    <Mapping ParentScope="IAgStkObject" OldName="InstanceName" NewName="instance_name" Category="method" />
@@ -2785,14 +2785,14 @@
    <Mapping ParentScope="IAgKeyValueCollection" OldName="Keys" NewName="keys" Category="method" />
    <Mapping ParentScope="IAgKeyValueCollection" OldName="GetReadOnly" NewName="get_read_only" Category="method" />
    <Mapping ParentScope="IAgKeyValueCollection" OldName="SetReadOnly" NewName="set_read_only" Category="method" />
-   <Mapping OldName="IAgStkObjectElementCollection" NewName="IStkObjectElementCollection" Category="interface" />
+   <Mapping OldName="IAgStkObjectElementCollection" NewName="ISTKObjectElementCollection" Category="interface" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="Count" NewName="count" Category="method" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="Item" NewName="item" Category="method" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="Contains" NewName="contains" Category="method" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="GetItemByIndex" NewName="get_item_by_index" Category="method" />
    <Mapping ParentScope="IAgStkObjectElementCollection" OldName="GetItemByName" NewName="get_item_by_name" Category="method" />
-   <Mapping OldName="IAgStkObjectCollection" NewName="IStkObjectCollection" Category="interface" />
+   <Mapping OldName="IAgStkObjectCollection" NewName="ISTKObjectCollection" Category="interface" />
    <Mapping ParentScope="IAgStkObjectCollection" OldName="Count" NewName="count" Category="method" />
    <Mapping ParentScope="IAgStkObjectCollection" OldName="Item" NewName="item" Category="method" />
    <Mapping ParentScope="IAgStkObjectCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
@@ -2831,7 +2831,7 @@
    <Mapping ParentScope="IAgStdMil2525bSymbols" OldName="FillEnabled" NewName="fill_enabled" Category="method" />
    <Mapping ParentScope="IAgStdMil2525bSymbols" OldName="SymbolImageSize" NewName="symbol_image_size" Category="method" />
    <Mapping ParentScope="IAgStdMil2525bSymbols" OldName="CreateSymbol" NewName="create_symbol" Category="method" />
-   <Mapping OldName="IAgStkObjectRoot" NewName="StkObjectRoot" Category="interface" />
+   <Mapping OldName="IAgStkObjectRoot" NewName="STKObjectRoot" Category="interface" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="ExecuteCommand" NewName="execute_command" Category="method" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="LoadScenario" NewName="load_scenario" Category="method" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="CloseScenario" NewName="close_scenario" Category="method" />
@@ -2905,7 +2905,7 @@
    <Mapping ParentScope="IAgAnimation" OldName="Step" NewName="step" Category="method" />
    <Mapping ParentScope="IAgAnimation" OldName="AnimationOptions" NewName="animation_options" Category="method" />
    <Mapping ParentScope="IAgAnimation" OldName="HighSpeed" NewName="high_speed" Category="method" />
-   <Mapping OldName="IAgStkObjectModelContext" NewName="StkObjectModelContext" Category="interface" />
+   <Mapping OldName="IAgStkObjectModelContext" NewName="STKObjectModelContext" Category="interface" />
    <Mapping ParentScope="IAgStkObjectModelContext" OldName="Create" NewName="create" Category="method" />
    <Mapping ParentScope="IAgStkObjectModelContext" OldName="CreateRestrictive" NewName="create_restrictive" Category="method" />
    <Mapping OldName="IAgComponentInfo" NewName="IComponentInfo" Category="interface" />
@@ -7079,7 +7079,7 @@
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="Segments" NewName="segments" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="AvailableBodyNames" NewName="available_body_names" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
-   <Mapping OldName="IAgVePropagatorStkExternal" NewName="PropagatorStkExternal" Category="interface" />
+   <Mapping OldName="IAgVePropagatorStkExternal" NewName="PropagatorSTKExternal" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorStkExternal" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorStkExternal" OldName="StartTime" NewName="start_time" Category="method" />
    <Mapping ParentScope="IAgVePropagatorStkExternal" OldName="StopTime" NewName="stop_time" Category="method" />
@@ -9923,7 +9923,7 @@
    <Mapping OldName="IAgEOIRShapeCylinder" NewName="EOIRShapeCylinder" Category="interface" />
    <Mapping ParentScope="IAgEOIRShapeCylinder" OldName="Radius" NewName="radius" Category="method" />
    <Mapping ParentScope="IAgEOIRShapeCylinder" OldName="Height" NewName="height" Category="method" />
-   <Mapping OldName="IAgStkObjectChangedEventArgs" NewName="StkObjectChangedEventArguments" Category="interface" />
+   <Mapping OldName="IAgStkObjectChangedEventArgs" NewName="STKObjectChangedEventArguments" Category="interface" />
    <Mapping ParentScope="IAgStkObjectChangedEventArgs" OldName="Path" NewName="path" Category="method" />
    <Mapping OldName="IAgScenarioBeforeSaveEventArgs" NewName="ScenarioBeforeSaveEventArguments" Category="interface" />
    <Mapping ParentScope="IAgScenarioBeforeSaveEventArgs" OldName="Path" NewName="path" Category="method" />
@@ -9937,15 +9937,15 @@
    <Mapping ParentScope="IAgPctCmpltEventArgs" OldName="CanCancel" NewName="can_cancel" Category="method" />
    <Mapping ParentScope="IAgPctCmpltEventArgs" OldName="PercentCompleted" NewName="percent_completed" Category="method" />
    <Mapping ParentScope="IAgPctCmpltEventArgs" OldName="Message" NewName="message" Category="method" />
-   <Mapping OldName="IAgStkObjectPreDeleteEventArgs" NewName="StkObjectPreDeleteEventArguments" Category="interface" />
+   <Mapping OldName="IAgStkObjectPreDeleteEventArgs" NewName="STKObjectPreDeleteEventArguments" Category="interface" />
    <Mapping ParentScope="IAgStkObjectPreDeleteEventArgs" OldName="Path" NewName="path" Category="method" />
    <Mapping ParentScope="IAgStkObjectPreDeleteEventArgs" OldName="Continue" NewName="continue_object_deletion" Category="method" />
-   <Mapping OldName="IAgStkObjectCutCopyPasteEventArgs" NewName="StkObjectCutCopyPasteEventArguments" Category="interface" />
+   <Mapping OldName="IAgStkObjectCutCopyPasteEventArgs" NewName="STKObjectCutCopyPasteEventArguments" Category="interface" />
    <Mapping ParentScope="IAgStkObjectCutCopyPasteEventArgs" OldName="SelectedObjectPath" NewName="selected_object_path" Category="method" />
    <Mapping ParentScope="IAgStkObjectCutCopyPasteEventArgs" OldName="ObjectPaths" NewName="object_paths" Category="method" />
    <Mapping ParentScope="IAgStkObjectCutCopyPasteEventArgs" OldName="PastedObjectPaths" NewName="pasted_object_paths" Category="method" />
-   <Mapping OldName="AgStkObject" NewName="StkObject" Category="class" />
-   <Mapping OldName="AgStkObjectRoot" NewName="StkObjectRoot" Category="class" />
+   <Mapping OldName="AgStkObject" NewName="STKObject" Category="class" />
+   <Mapping OldName="AgStkObjectRoot" NewName="STKObjectRoot" Category="class" />
    <Mapping OldName="AgLevelAttribute" NewName="LevelAttribute" Category="class" />
    <Mapping OldName="AgLevelAttributeCollection" NewName="LevelAttributeCollection" Category="class" />
    <Mapping OldName="AgBasicAzElMask" NewName="BasicAzElMask" Category="class" />
@@ -10148,7 +10148,7 @@
    <Mapping OldName="AgVePropagatorLOP" NewName="PropagatorLOP" Category="class" />
    <Mapping OldName="AgVePropagatorSGP4" NewName="PropagatorSGP4" Category="class" />
    <Mapping OldName="AgVePropagatorSPICE" NewName="PropagatorSPICE" Category="class" />
-   <Mapping OldName="AgVePropagatorStkExternal" NewName="PropagatorStkExternal" Category="class" />
+   <Mapping OldName="AgVePropagatorStkExternal" NewName="PropagatorSTKExternal" Category="class" />
    <Mapping OldName="AgVePropagatorTwoBody" NewName="PropagatorTwoBody" Category="class" />
    <Mapping OldName="AgVePropagatorUserExternal" NewName="PropagatorUserExternal" Category="class" />
    <Mapping OldName="AgVeLvInitialState" NewName="LaunchVehicleInitialState" Category="class" />
@@ -10469,7 +10469,7 @@
    <Mapping OldName="AgFmVOAttributes" NewName="FigureOfMeritGraphics3DAttributes" Category="class" />
    <Mapping OldName="AgFmVO" NewName="FigureOfMeritGraphics3D" Category="class" />
    <Mapping OldName="AgVeProfileGPS" NewName="AttitudeProfileGPS" Category="class" />
-   <Mapping OldName="AgStkObjectModelContext" NewName="StkObjectModelContext" Category="class" />
+   <Mapping OldName="AgStkObjectModelContext" NewName="STKObjectModelContext" Category="class" />
    <Mapping OldName="AgStdMil2525bSymbols" NewName="MilitaryStandard2525bSymbols" Category="class" />
    <Mapping OldName="AgCvGridInspector" NewName="CoverageGridInspector" Category="class" />
    <Mapping OldName="AgFmGridInspector" NewName="FigureOfMeritGridInspector" Category="class" />
@@ -10511,7 +10511,7 @@
    <Mapping OldName="AgVeCoordinateAxesCustom" NewName="VehicleCoordinateAxesCustom" Category="class" />
    <Mapping OldName="AgExportToolStepSize" NewName="ExportToolStepSize" Category="class" />
    <Mapping OldName="AgPctCmpltEventArgs" NewName="ProgressBarEventArguments" Category="class" />
-   <Mapping OldName="AgStkObjectChangedEventArgs" NewName="StkObjectChangedEventArguments" Category="class" />
+   <Mapping OldName="AgStkObjectChangedEventArgs" NewName="STKObjectChangedEventArguments" Category="class" />
    <Mapping OldName="AgVeEclipsingBodies" NewName="VehicleEclipsingBodies" Category="class" />
    <Mapping OldName="AgLocationCrdnPoint" NewName="LocationVectorGeometryToolPoint" Category="class" />
    <Mapping OldName="AgTimePeriod" NewName="TimePeriod" Category="class" />
@@ -10550,7 +10550,7 @@
    <Mapping OldName="AgVePropagatorGPS" NewName="PropagatorGPS" Category="class" />
    <Mapping OldName="AgAvailableFeatures" NewName="AvailableFeatures" Category="class" />
    <Mapping OldName="AgScenarioBeforeSaveEventArgs" NewName="ScenarioBeforeSaveEventArguments" Category="class" />
-   <Mapping OldName="AgStkObjectPreDeleteEventArgs" NewName="StkObjectPreDeleteEventArguments" Category="class" />
+   <Mapping OldName="AgStkObjectPreDeleteEventArgs" NewName="STKObjectPreDeleteEventArguments" Category="class" />
    <Mapping OldName="AgVePropagatorSGP4CommonTasks" NewName="PropagatorSGP4CommonTasks" Category="class" />
    <Mapping OldName="AgVeSGP4AutoUpdateProperties" NewName="PropagatorSGP4AutoUpdateProperties" Category="class" />
    <Mapping OldName="AgVeSGP4AutoUpdateFileSource" NewName="PropagatorSGP4AutoUpdateFileSource" Category="class" />
@@ -11098,7 +11098,7 @@
    <Mapping OldName="AgDrTimeVarExtremumResult" NewName="DataProviderResultTimeVaryingExtremumResult" Category="class" />
    <Mapping OldName="AgDrStatistics" NewName="DataProviderResultStatistics" Category="class" />
    <Mapping OldName="AgVOModelGltfImageBased" NewName="Graphics3DModelglTFImageBased" Category="class" />
-   <Mapping OldName="AgStkObjectCutCopyPasteEventArgs" NewName="StkObjectCutCopyPasteEventArguments" Category="class" />
+   <Mapping OldName="AgStkObjectCutCopyPasteEventArgs" NewName="STKObjectCutCopyPasteEventArguments" Category="class" />
    <Mapping OldName="AgStkPreferencesPythonPlugins" NewName="PreferencesPythonPlugins" Category="class" />
    <Mapping OldName="AgPathCollection" NewName="PathCollection" Category="class" />
    <Mapping OldName="AgAdvCAT" NewName="AdvCAT" Category="class" />

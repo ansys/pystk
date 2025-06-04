@@ -63,7 +63,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (IStkObject(AstrogatorSnippets.m_Satellite)).unload()
+        (ISTKObject(AstrogatorSnippets.m_Satellite)).unload()
         AstrogatorSnippets.m_Object = None
 
     # endregion

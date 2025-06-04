@@ -59,7 +59,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         eid="stkobjects~AreaTarget",
     )
     def CreateAreaTargetSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
 
         # Create the AreaTarget on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
@@ -80,7 +80,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         eid="stkobjects~AreaTarget",
     )
     def CreateEllipticalAreaTargetSnippet(self, root, areaTarget):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AreaTarget areaTarget: AreaTarget object
 
         # By using the fine grained interfaces,
@@ -108,7 +108,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         eid="stkobjects~AreaTarget",
     )
     def CreateAreaTargetCommonSnippet(self, areaTarget):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AreaTarget areaTarget: AreaTarget object
 
         # By using the CommonTasks interface
@@ -129,7 +129,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         eid="stkobjects~AreaTarget | stkobjects~AreaTypePatternCollection",
     )
     def CreateBoundaryAreaTargetSnippet(self, root, areaTarget):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AreaTarget areaTarget: AreaTarget object
 
         # By using the fine grained interfaces,

@@ -59,7 +59,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
 
     # region SetStkOjbectDisplayToAlwaysOn
     def test_SetStkOjbectDisplayToAlwaysOn(self):
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
+        facility: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             STKObjectType.FACILITY, "facility1"
         )
 
@@ -67,7 +67,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.FACILITY, "facility1")
 
-    def SetStkOjbectDisplayToAlwaysOn(self, stkObject: "IStkObject"):
+    def SetStkOjbectDisplayToAlwaysOn(self, stkObject: "ISTKObject"):
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         display.set_display_status_type(DisplayTimesType.ALWAYS_ON)
 
@@ -75,7 +75,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
 
     # region SetStkObjectDisplayToUseIntervalsMode
     def test_SetStkObjectDisplayToUseIntervalsMode(self):
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
+        facility: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             STKObjectType.FACILITY, "facility1"
         )
 
@@ -83,7 +83,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.FACILITY, "facility1")
 
-    def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "IStkObject"):
+    def SetStkObjectDisplayToUseIntervalsMode(self, stkObject: "ISTKObject"):
         # Attempt to cast STK Object to the IDisplayTime interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
@@ -105,7 +105,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
     def test_SetStkObjectDisplayToUseDuringAccessMode(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.STAR, "star1")
-        facility: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
+        facility: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
             STKObjectType.FACILITY, "facility1"
         )
 
@@ -115,7 +115,7 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.STAR, "star1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite1")
 
-    def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "IStkObject"):
+    def SetStkObjectDisplayToUseDuringAccessMode(self, stkObject: "ISTKObject"):
         # Attempt to cast STK Object to the IDisplayTime interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:

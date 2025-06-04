@@ -70,10 +70,10 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
 
     # region CreateLaunchVehicleOnCurrentScenarioCentralBody
     def test_CreateLaunchVehicleOnCurrentScenarioCentralBody(self):
-        (IStkObject(LaunchVehicleSnippets.m_Object)).unload()
+        (ISTKObject(LaunchVehicleSnippets.m_Object)).unload()
         self.CreateLaunchVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateLaunchVehicleOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateLaunchVehicleOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the Launch vehicle
         launchVehicle: "LaunchVehicle" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "MyLaunchVehicle"), LaunchVehicle

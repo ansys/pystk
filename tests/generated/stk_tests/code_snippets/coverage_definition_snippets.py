@@ -77,7 +77,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         )
         self.CreateCoverageDefinition(CodeSnippetsTestBase.m_Root)
 
-    def CreateCoverageDefinition(self, root: "StkObjectRoot"):
+    def CreateCoverageDefinition(self, root: "STKObjectRoot"):
         # Create the CoverageDefinition
         cd: "CoverageDefinition" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "cd1"), CoverageDefinition
@@ -165,7 +165,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     # region DefineGridConstraintOptions
     def test_DefineGridConstraintOptions(self):
-        fac: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.FACILITY, "North")
+        fac: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.FACILITY, "North")
         fac.children.new(STKObjectType.RECEIVER, "rec")
         self.DefineGridConstraintOptions(CoverageDefinitionSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.FACILITY, "North")
@@ -279,12 +279,12 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
     # region ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes
     def test_ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(self):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
-        coverage: "IStkObject" = (IStkObject(scenario)).children.new(
+        coverage: "ISTKObject" = (ISTKObject(scenario)).children.new(
             STKObjectType.COVERAGE_DEFINITION, "CoverageForCodeSnippet"
         )
 
-        aircraft: "Aircraft" = Aircraft((IStkObject(scenario)).children.new(STKObjectType.AIRCRAFT, "Aircraft1"))
-        (IStkObject(aircraft)).children.new(STKObjectType.SENSOR, "AircraftSensor1")
+        aircraft: "Aircraft" = Aircraft((ISTKObject(scenario)).children.new(STKObjectType.AIRCRAFT, "Aircraft1"))
+        (ISTKObject(aircraft)).children.new(STKObjectType.SENSOR, "AircraftSensor1")
         aircraft.set_route_type(PropagatorType.GREAT_ARC)
         greatArc: "PropagatorGreatArc" = PropagatorGreatArc(aircraft.route)
 
@@ -295,8 +295,8 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         ]
         greatArc.set_points_smooth_rate_and_propagate(waypoints)
 
-        (CoverageDefinition(coverage)).asset_list.add((IStkObject(aircraft)).path)
-        (CoverageDefinition(coverage)).asset_list.add((IStkObject(aircraft)).children[0].path)
+        (CoverageDefinition(coverage)).asset_list.add((ISTKObject(aircraft)).path)
+        (CoverageDefinition(coverage)).asset_list.add((ISTKObject(aircraft)).children[0].path)
 
         try:
             self.ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(
@@ -304,11 +304,11 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
             )
 
         finally:
-            (IStkObject(aircraft)).unload()
+            (ISTKObject(aircraft)).unload()
             coverage.unload()
 
     def ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(
-        self, stkRoot: "StkObjectRoot", coverage: "CoverageDefinition"
+        self, stkRoot: "STKObjectRoot", coverage: "CoverageDefinition"
     ):
         currentDateFormat: str = stkRoot.units_preferences.get_current_unit_abbrv("DateFormat")
 
@@ -320,7 +320,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         cvAsset: "CoverageAssetListElement"
 
         for cvAsset in coverage.asset_list:
-            subAsset: "IStkObject" = stkRoot.get_object_from_path(cvAsset.object_name)
+            subAsset: "ISTKObject" = stkRoot.get_object_from_path(cvAsset.object_name)
             if subAsset.analysis_workbench_components.time_intervals.contains("AvailabilityTimeSpan"):
                 availableTimeSpan: "TimeToolTimeIntervalResult" = subAsset.analysis_workbench_components.time_intervals[
                     "AvailabilityTimeSpan"

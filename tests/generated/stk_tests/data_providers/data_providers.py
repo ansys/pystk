@@ -54,8 +54,8 @@ class EarlyBoundTests(TestBase):
 
     # region CompoundUnits
     def test_CompoundUnits(self):
-        obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        transmitter: "IStkObject" = obj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
+        obj: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        transmitter: "ISTKObject" = obj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
         # Run the specific data provider that is known to return data using compound units.
         # The columns containing the compound units are "Data Rate" and "Saturated Flux Density".
@@ -67,7 +67,7 @@ class EarlyBoundTests(TestBase):
             resInfo: "DataProviderResult" = (clr.CastAs(dpInfo, DataProviderFixed)).execute()
 
             #
-            root: "StkObjectRoot" = None
+            root: "STKObjectRoot" = None
             if TestBase.ApplicationProvider.Target == TestTarget.eStk:
                 root = TestBase.Application
             else:
@@ -214,7 +214,7 @@ class EarlyBoundTests(TestBase):
 
     # region RowsVSColumns
     def test_TestRowsAgainstColumns(self):
-        obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        obj: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         dpName: str = "Sunlight"
         dpPath: str = "Lighting Times//" + dpName
         info: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(dpPath)
@@ -263,7 +263,7 @@ class EarlyBoundTests(TestBase):
 
     # region CoarseGrainedDataProviders
     def test_CoarseGrainedDPs(self):
-        obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        obj: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
 
         elems = ["Time", "Azimuth"]
 
@@ -416,10 +416,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
@@ -507,10 +507,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
@@ -596,10 +596,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAir: "IStkObject" = oScenario.children["a340"]
+        oAir: "ISTKObject" = oScenario.children["a340"]
         Assert.assertEqual(oScenario.children["a340"], oAir)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oAir.data_providers["Cartesian Position"])
@@ -691,10 +691,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
@@ -740,10 +740,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- TestDataSetNames ----- BEGIN -----")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oProvider: "IDataProvider" = IDataProvider(oFacility.data_providers["Cartesian Position"])
@@ -792,10 +792,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oAngles: "IDataProvider" = IDataProvider(oFacility.data_providers["Lighting AER"])
@@ -867,7 +867,7 @@ class EarlyBoundTests(TestBase):
     @category("SEET")
     @category("VO Tests")
     def test_DPNames(self):
-        o: "IStkObject" = (IStkObject(TestBase.Application)).children[0].children["Satellite1"]
+        o: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         # string sInstanceName = o.InstanceName;
         sAllNames: str = ""
         count: int = o.data_providers.count
@@ -898,9 +898,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaAdvCat
     def test_DPSchemaAdvCat(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        acObj: "IStkObject" = scenChildren["AdvCAT1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        acObj: "ISTKObject" = scenChildren["AdvCAT1"]
 
         schema: str = None
         schema = acObj.data_providers.get_schema()
@@ -990,9 +990,9 @@ class EarlyBoundTests(TestBase):
     # region DPSchemaAircraft
     @category("Graphics Tests")
     def test_DPSchemaAircraft(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren["a340"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren["a340"]
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1072,10 +1072,10 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaAntenna
     def test_DPSchemaAntenna(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
-        antObj: "IStkObject" = satObj.children.new(STKObjectType.ANTENNA, "tempAnt1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        antObj: "ISTKObject" = satObj.children.new(STKObjectType.ANTENNA, "tempAnt1")
 
         schema: str = None
         schema = antObj.data_providers.get_schema()
@@ -1133,9 +1133,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaAreaTarget
     def test_DPSchemaAreaTarget(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        atObj: "IStkObject" = scenChildren.new(STKObjectType.AREA_TARGET, "WardsAreaTarget1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        atObj: "ISTKObject" = scenChildren.new(STKObjectType.AREA_TARGET, "WardsAreaTarget1")
 
         schema: str = None
         schema = atObj.data_providers.get_schema()
@@ -1208,9 +1208,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaChain
     def test_DPSchemaChain(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.CHAIN, "chain1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.CHAIN, "chain1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1251,9 +1251,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaCommSystem
     def test_DPSchemaCommSystem(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.COMM_SYSTEM, "CommSystem1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.COMM_SYSTEM, "CommSystem1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1323,9 +1323,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaConstellation
     def test_DPSchemaConstellation(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        constObj: "IStkObject" = scenChildren["gps_const"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        constObj: "ISTKObject" = scenChildren["gps_const"]
 
         schema: str = None
         schema = constObj.data_providers.get_schema()
@@ -1350,9 +1350,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaCoverageDef
     def test_DPSchemaCoverageDef(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "covdef1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "covdef1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1394,9 +1394,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaFacility
     def test_DPSchemaFacility(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        facObj: "IStkObject" = scenChildren["Facility1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        facObj: "ISTKObject" = scenChildren["Facility1"]
 
         schema: str = None
         schema = facObj.data_providers.get_schema()
@@ -1460,10 +1460,10 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaFigureOfMerit
     def test_DPSchemaFigureOfMerit(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        cd: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "cv1")
-        fom: "IStkObject" = cd.children.new(STKObjectType.FIGURE_OF_MERIT, "fom1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        cd: "ISTKObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "cv1")
+        fom: "ISTKObject" = cd.children.new(STKObjectType.FIGURE_OF_MERIT, "fom1")
 
         schema: str = None
         schema = fom.data_providers.get_schema()
@@ -1520,9 +1520,9 @@ class EarlyBoundTests(TestBase):
     # region DPSchemaGrndVeh
     @category("Graphics Tests")
     def test_DPSchemaGrndVeh(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.GROUND_VEHICLE, "grndveh")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.GROUND_VEHICLE, "grndveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1593,9 +1593,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaLnchVeh
     def test_DPSchemaLnchVeh(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.LAUNCH_VEHICLE, "lnchveh")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.LAUNCH_VEHICLE, "lnchveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1665,9 +1665,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaMissile
     def test_DPSchemaMissile(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.MISSILE, "mis")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.MISSILE, "mis")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1737,9 +1737,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaPlanet
     def test_DPSchemaPlanet(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.PLANET, "plnt")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.PLANET, "plnt")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1793,10 +1793,10 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaRadar
     def test_DPSchemaRadar(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
-        radarObj: "IStkObject" = satObj.children.new(STKObjectType.RADAR, "tempRadar1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        radarObj: "ISTKObject" = satObj.children.new(STKObjectType.RADAR, "tempRadar1")
 
         schema: str = None
         schema = radarObj.data_providers.get_schema()
@@ -1851,11 +1851,11 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaReceiver
     def test_DPSchemaReceiver(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren["Satellite1"]
-        satChildren: "IStkObjectCollection" = satObj.children
-        recObj: "IStkObject" = satChildren["Receiver1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren["Satellite1"]
+        satChildren: "ISTKObjectCollection" = satObj.children
+        recObj: "ISTKObject" = satChildren["Receiver1"]
 
         schema: str = None
         schema = recObj.data_providers.get_schema()
@@ -1909,9 +1909,9 @@ class EarlyBoundTests(TestBase):
     # region DPSchemaSatellite
     @category("Graphics Tests")
     def test_DPSchemaSatellite(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren["Satellite1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren["Satellite1"]
 
         schema: str = None
         schema = satObj.data_providers.get_schema()
@@ -1983,8 +1983,8 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaScenario
     def test_DPSchemaScenario(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
 
         schema: str = None
         schema = scenObj.data_providers.get_schema()
@@ -2040,11 +2040,11 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaSensor
     def test_DPSchemaSensor(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren["Satellite1"]
-        satChildren: "IStkObjectCollection" = satObj.children
-        senObj: "IStkObject" = satChildren["Sensor1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren["Satellite1"]
+        satChildren: "ISTKObjectCollection" = satObj.children
+        senObj: "ISTKObject" = satChildren["Sensor1"]
 
         schema: str = None
         schema = senObj.data_providers.get_schema()
@@ -2100,9 +2100,9 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaStar
     def test_DPSchemaStar(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STKObjectType.STAR, "star1")
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        obj: "ISTKObject" = scenChildren.new(STKObjectType.STAR, "star1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -2145,10 +2145,10 @@ class EarlyBoundTests(TestBase):
 
     # region DPSchemaTransmitter
     def test_DPSchemaTransmitter(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren["Satellite1"]
-        tranObj: "IStkObject" = None
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren["Satellite1"]
+        tranObj: "ISTKObject" = None
         try:
             tranObj = satObj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
@@ -2208,7 +2208,7 @@ class EarlyBoundTests(TestBase):
 
     # region DPEnumerateConstraints
     def test_DPEnumerateConstraints(self):
-        o: "IStkObject" = (IStkObject(TestBase.Application)).children[0].children["Satellite1"]
+        o: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         count: int = o.data_providers.count
 
         i: int = 0
@@ -2223,7 +2223,7 @@ class EarlyBoundTests(TestBase):
 
     # region DPEnumProviders
     def test_DPEnumProviders(self):
-        o: "IStkObject" = (IStkObject(TestBase.Application)).children[0].children["Satellite1"]
+        o: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         count: int = o.data_providers.count
 
         i: int = 0
@@ -2242,8 +2242,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
-            scenObj: "IStkObject" = TestBase.Application.current_scenario
-            oSatellite: "IStkObject" = scenObj.children["Satellite1"]
+            scenObj: "ISTKObject" = TestBase.Application.current_scenario
+            oSatellite: "ISTKObject" = scenObj.children["Satellite1"]
             oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
@@ -2340,8 +2340,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
-            scenObj: "IStkObject" = TestBase.Application.current_scenario
-            oSatellite: "IStkObject" = scenObj.children["Satellite1"]
+            scenObj: "ISTKObject" = TestBase.Application.current_scenario
+            oSatellite: "ISTKObject" = scenObj.children["Satellite1"]
             oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
@@ -2410,8 +2410,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- ExecSingleElementsArray TEST ----- BEGIN -----")
         TestBase.Application.units_preferences.reset_units()
 
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
         oProvider: "DataProviderTimeVarying" = DataProviderTimeVarying(oGroup.group["Fixed"])
 
@@ -2442,8 +2442,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
-            scenObj: "IStkObject" = TestBase.Application.current_scenario
-            oSatellite: "IStkObject" = scenObj.children["Satellite1"]
+            scenObj: "ISTKObject" = TestBase.Application.current_scenario
+            oSatellite: "ISTKObject" = scenObj.children["Satellite1"]
             oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
@@ -2509,7 +2509,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- START STOP TIME TEST ----- BEGIN -----")
         TestBase.Application.units_preferences.reset_units()
 
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         Assert.assertIsNotNone(oSa)
 
         oScenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
@@ -2554,10 +2554,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
         Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oFacility.data_providers["Lighting Times"])
@@ -2611,10 +2611,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- FACILITY CARTESIAN POSITION TEST ----- BEGIN -----")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oProvider: "IDataProvider" = IDataProvider(oFacility.data_providers["Cartesian Position"])
@@ -2671,13 +2671,13 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
-        oSensor: "IStkObject" = oSatellite.children["Sensor1"]
+        oSensor: "ISTKObject" = oSatellite.children["Sensor1"]
         Assert.assertEqual(oSatellite.children["Sensor1"], oSensor)
 
         oProvider: "IDataProvider" = IDataProvider(oSensor.data_providers["Pattern Intersection"])
@@ -2739,7 +2739,7 @@ class EarlyBoundTests(TestBase):
         # Verifying random datasets and their values
         oResult: "DataProviderResult" = (
             DataProviderTimeVarying(
-                (IStkObject(TestBase.Application)).children[0].children["Satellite1"].data_providers["Beta Angle"]
+                (ISTKObject(TestBase.Application)).children[0].children["Satellite1"].data_providers["Beta Angle"]
             )
         ).execute(arStartTime, arStopTime, 998)
         Assert.assertIsNotNone(oResult)
@@ -2797,10 +2797,10 @@ class EarlyBoundTests(TestBase):
     def test_SatelliteArticulation(self):
         # Running Articulation report for a satellite using DataProviderFixed.Exec
         TestBase.logger.WriteLine("----- SATELLITE ARTICULATION TEST ----- BEGIN -----")
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oProvider: "IDataProvider" = IDataProvider(oSatellite.data_providers["Articulation"])
@@ -2842,7 +2842,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("************************************************************************")
 
         oProviderInfo: "IDataProviderInfo" = (
-            (IStkObject(TestBase.Application)).children[0].children["Satellite2"].data_providers["RIC Coordinates"]
+            (ISTKObject(TestBase.Application)).children[0].children["Satellite2"].data_providers["RIC Coordinates"]
         )
         Assert.assertIsNotNone(oProviderInfo)
         TestBase.logger.WriteLine("Default Settings:")
@@ -2961,10 +2961,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
@@ -3036,10 +3036,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Cartesian Position"])
@@ -3099,10 +3099,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAir: "IStkObject" = oScenario.children["a340"]
+        oAir: "ISTKObject" = oScenario.children["a340"]
         Assert.assertEqual(oScenario.children["a340"], oAir)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oAir.data_providers["Cartesian Position"])
@@ -3165,10 +3165,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- AREATARGET AREA GROUP ELEMENTS TEST ----- BEGIN -----")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAreaTarget: "IStkObject" = oScenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
+        oAreaTarget: "ISTKObject" = oScenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         Assert.assertEqual(oScenario.children["AreaTarget1"], oAreaTarget)
 
         oAT: "AreaTarget" = AreaTarget(oScenario.children["AreaTarget1"])
@@ -3209,10 +3209,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- FACILITY CARTESIAN POSITION ELEMENTS TEST ----- BEGIN -----")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oProvider: "IDataProvider" = IDataProvider(oFacility.data_providers["Cartesian Position"])
@@ -3260,10 +3260,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
         Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oFacility: "IStkObject" = oScenario.children["Facility1"]
+        oFacility: "ISTKObject" = oScenario.children["Facility1"]
         Assert.assertEqual(oScenario.children["Facility1"], oFacility)
 
         oGroup: "DataProviderGroup" = DataProviderGroup(oFacility.data_providers["Lighting Times"])
@@ -3315,13 +3315,13 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oSatellite: "IStkObject" = oScenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = oScenario.children["Satellite1"]
         Assert.assertEqual(oScenario.children["Satellite1"], oSatellite)
 
-        oSensor: "IStkObject" = oSatellite.children["Sensor1"]
+        oSensor: "ISTKObject" = oSatellite.children["Sensor1"]
         Assert.assertEqual(oSatellite.children["Sensor1"], oSensor)
 
         oProvider: "IDataProvider" = IDataProvider(oSensor.data_providers["Pattern Intersection"])
@@ -3361,7 +3361,7 @@ class EarlyBoundTests(TestBase):
     # region TestElements
     def test_TestElements(self):
         TestBase.logger.WriteLine("----- ELEMENTS TEST ----- BEGIN -----")
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         Assert.assertIsNotNone(oSatellite)
 
         # Active Constraints
@@ -3389,7 +3389,7 @@ class EarlyBoundTests(TestBase):
             iIndex += 1
 
         # Lighting AER
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         oInfo = oFacility.data_providers["Lighting AER"]
         Assert.assertIsNotNone(oInfo)
         # logger.WriteLine("\tName = {0}, Type = {1}, IsGroup = {2}",
@@ -3452,7 +3452,7 @@ class EarlyBoundTests(TestBase):
         dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
 
         oGroup: "DataProviderGroup" = clr.CastAs(
-            (IStkObject(TestBase.Application))
+            (ISTKObject(TestBase.Application))
             .children["DataProvidersTests"]
             .children["Satellite1"]
             .data_providers["Cartesian Position"],
@@ -3467,7 +3467,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
-        oObject: "IStkObject" = (IStkObject(TestBase.Application)).children[0].children["Satellite1"]
+        oObject: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         Assert.assertIsNotNone(oObject)
         oDataProvider: "IDataProvider" = IDataProvider(oObject.data_providers["Beta Angle"])
         Assert.assertIsNotNone(oDataProvider)
@@ -3503,10 +3503,10 @@ class EarlyBoundTests(TestBase):
 
     # region ObjectCoverage
     def test_ObjectCoverage(self):
-        oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
-        Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
+        oScenario: "ISTKObject" = (ISTKObject(TestBase.Application)).children["DataProvidersTests"]
+        Assert.assertEqual((ISTKObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAircraft: "IStkObject" = oScenario.children["a340"]
+        oAircraft: "ISTKObject" = oScenario.children["a340"]
         Assert.assertEqual(oScenario.children["a340"], oAircraft)
         # Assign the gps constellation as the asset for the a340 single object coverage calculation.
         # Assert.IsNotNull(Application.ExecuteCommand("Cov */Aircraft/a340 Asset */Constellation/gps_const Assign"));
@@ -3596,11 +3596,11 @@ class EarlyBoundTests(TestBase):
 
     # region TestElementPastNames
     def test_TestElementPastNames(self):
-        scenObj: "IStkObject" = TestBase.Application.current_scenario
-        scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren["Satellite1"]
-        satChildren: "IStkObjectCollection" = satObj.children
-        recObj: "IStkObject" = satChildren["Receiver1"]
+        scenObj: "ISTKObject" = TestBase.Application.current_scenario
+        scenChildren: "ISTKObjectCollection" = scenObj.children
+        satObj: "ISTKObject" = scenChildren["Satellite1"]
+        satChildren: "ISTKObjectCollection" = satObj.children
+        recObj: "ISTKObject" = satChildren["Receiver1"]
 
         recDP: "IDataProvider" = clr.CastAs(recObj.data_providers["Basic Properties"], IDataProvider)
         Assert.assertIsNotNone(recDP)
@@ -3663,7 +3663,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario("Test")
         scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.set_time_period("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
-        fac: "IStkObject" = None
+        fac: "ISTKObject" = None
         fac = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.RunAllDataProviders(fac)
         sat: "Satellite" = Satellite(
@@ -3672,32 +3672,32 @@ class EarlyBoundTests(TestBase):
         twoBody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
         twoBody.propagate()
-        self.RunAllDataProviders(IStkObject(sat))
+        self.RunAllDataProviders(ISTKObject(sat))
         self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.ADVCAT, "AdvCat1"))
         ac: "Aircraft" = Aircraft(
             TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "Aircraft1")
         )
         self.GenerateGreatArcVeh(PropagatorGreatArc(ac.route))
-        self.RunAllDataProviders(IStkObject(ac))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.ANTENNA, "Antenna1"))
+        self.RunAllDataProviders(ISTKObject(ac))
+        self.RunAllDataProviders((ISTKObject(sat)).children.new(STKObjectType.ANTENNA, "Antenna1"))
         at: "AreaTarget" = AreaTarget(
             TestBase.Application.current_scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         )
         at.area_type = AreaType.ELLIPSE
-        self.RunAllDataProviders(IStkObject(at))
-        attCov: "IStkObject" = (IStkObject(sat)).children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoverage1")
+        self.RunAllDataProviders(ISTKObject(at))
+        attCov: "ISTKObject" = (ISTKObject(sat)).children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoverage1")
         self.RunAllDataProviders(attCov)
         self.RunAllDataProviders(attCov.children.new(STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
         chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "Chain1"))
-        chain.objects.add_object(IStkObject(sat))
-        chain.objects.add_object(IStkObject(ac))
-        self.RunAllDataProviders(IStkObject(chain))
+        chain.objects.add_object(ISTKObject(sat))
+        chain.objects.add_object(ISTKObject(ac))
+        self.RunAllDataProviders(ISTKObject(chain))
         constellation: "Constellation" = Constellation(
             TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "Constellation1")
         )
-        constellation.objects.add_object(IStkObject(sat))
-        self.RunAllDataProviders(IStkObject(constellation))
-        covDef: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        constellation.objects.add_object(ISTKObject(sat))
+        self.RunAllDataProviders(ISTKObject(constellation))
+        covDef: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.COVERAGE_DEFINITION, "CovDef1"
         )
         self.RunAllDataProviders(covDef)
@@ -3706,41 +3706,41 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "GroundVehicle1")
         )
         self.GenerateGreatArcVeh(PropagatorGreatArc(gv.route))
-        self.RunAllDataProviders(IStkObject(gv))
+        self.RunAllDataProviders(ISTKObject(gv))
         lv: "LaunchVehicle" = LaunchVehicle(
             TestBase.Application.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "LaunchVehicle1")
         )
         ascent: "PropagatorSimpleAscent" = PropagatorSimpleAscent(lv.trajectory)
         ascent.propagate()
-        self.RunAllDataProviders(IStkObject(lv))
+        self.RunAllDataProviders(ISTKObject(lv))
         lt: "LineTarget" = LineTarget(
             TestBase.Application.current_scenario.children.new(STKObjectType.LINE_TARGET, "LineTarget1")
         )
         lt.points.add(0, 0)
         lt.points.add(10, 10)
         lt.points.anchor_point = 0
-        self.RunAllDataProviders(IStkObject(lt))
+        self.RunAllDataProviders(ISTKObject(lt))
         missile: "Missile" = Missile(
             TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "Missile1")
         )
         ballistic: "PropagatorBallistic" = PropagatorBallistic(missile.trajectory)
         ballistic.propagate()
-        self.RunAllDataProviders(IStkObject(missile))
+        self.RunAllDataProviders(ISTKObject(missile))
         self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Planet1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RADAR, "Radar1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RECEIVER, "Receiver1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.SENSOR, "Sensor1"))
+        self.RunAllDataProviders((ISTKObject(sat)).children.new(STKObjectType.RADAR, "Radar1"))
+        self.RunAllDataProviders((ISTKObject(sat)).children.new(STKObjectType.RECEIVER, "Receiver1"))
+        self.RunAllDataProviders((ISTKObject(sat)).children.new(STKObjectType.SENSOR, "Sensor1"))
         ship: "Ship" = Ship(TestBase.Application.current_scenario.children.new(STKObjectType.SHIP, "Ship1"))
         self.GenerateGreatArcVeh(PropagatorGreatArc(ship.route))
-        self.RunAllDataProviders(IStkObject(ship))
+        self.RunAllDataProviders(ISTKObject(ship))
         self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.STAR, "Star1"))
         self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
+        self.RunAllDataProviders((ISTKObject(sat)).children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
         self.RunAllDataProviders(fac.children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
-        access: "Access" = (IStkObject(sat)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(sat)).get_access("Facility/Facility1")
         access.compute_access()
         self.ExecDataProviders(access.data_providers, "")
-        coverage: "ObjectCoverage" = (IStkObject(sat)).object_coverage
+        coverage: "ObjectCoverage" = (ISTKObject(sat)).object_coverage
         coverage.assets.add("Facility/Facility1")
         coverage.compute()
         self.ExecDataProviders(coverage.data_providers, "")
@@ -3765,7 +3765,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- DataProviderInterval_SmartIntervals ----- BEGIN -----")
         TestBase.Application.units_preferences.reset_units()
 
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         oScenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
@@ -3835,8 +3835,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
-            scenObj: "IStkObject" = TestBase.Application.current_scenario
-            oSatellite: "IStkObject" = scenObj.children["Satellite1"]
+            scenObj: "ISTKObject" = TestBase.Application.current_scenario
+            oSatellite: "ISTKObject" = scenObj.children["Satellite1"]
             oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Lighting Times"])
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Sunlight"])
 
@@ -3875,8 +3875,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
-            scenObj: "IStkObject" = TestBase.Application.current_scenario
-            oSatellite: "IStkObject" = scenObj.children["Satellite1"]
+            scenObj: "ISTKObject" = TestBase.Application.current_scenario
+            oSatellite: "ISTKObject" = scenObj.children["Satellite1"]
             oGroup: "DataProviderGroup" = DataProviderGroup(oSatellite.data_providers["Lighting Times"])
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Sunlight"])
 
@@ -3929,7 +3929,7 @@ class EarlyBoundTests(TestBase):
         times = [oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch()]
         elems = ["Time", "Azimuth"]
 
-        obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        obj: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         timeVar: "DataProviderTimeVarying" = clr.CastAs(obj.data_providers["Lighting AER"], DataProviderTimeVarying)
 
         result: "DataProviderResult" = timeVar.execute(
@@ -4012,7 +4012,7 @@ class EarlyBoundTests(TestBase):
             else:
                 self.ExecDataPrv(dp, path)
 
-    def RunAllDataProviders(self, oObj: "IStkObject"):
+    def RunAllDataProviders(self, oObj: "ISTKObject"):
         path: str = oObj.path[
             31:
         ]  # e.g.,  strip off:  /Application/STK/Scenario/Test/   to leave:   Satellite/Satellite1
@@ -4124,7 +4124,7 @@ class EarlyBoundTests(TestBase):
 
     # region Enumerate available data providers for all objects
 
-    def EnumerateObjectDataProviders(self, obj: "IStkObject", action):
+    def EnumerateObjectDataProviders(self, obj: "ISTKObject", action):
         # logger.WriteLine("****** {0}  ********", obj.Path);
         dpi: "IDataProviderInfo"
         # logger.WriteLine("****** {0}  ********", obj.Path);
@@ -4137,9 +4137,9 @@ class EarlyBoundTests(TestBase):
             else:
                 action(dpi)
 
-    def RecursiveObjectWalk(self, parent: "IStkObject", action):
+    def RecursiveObjectWalk(self, parent: "ISTKObject", action):
         self.EnumerateObjectDataProviders(parent, action)
-        child: "IStkObject"
+        child: "ISTKObject"
         for child in parent.children:
             self.RecursiveObjectWalk(child, action)
 
@@ -4150,7 +4150,7 @@ class EarlyBoundTests(TestBase):
             )  # This test is memory intensive and in debug it runs out of memory and a malloc failure causes it to assert later in code.
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "DataProvidersTests.sc"))
-        sc: "IStkObject" = TestBase.Application.current_scenario
+        sc: "ISTKObject" = TestBase.Application.current_scenario
         Assert.assertIsNotNone(sc, "Load a scenario first.")
         try:
             self.RecursiveObjectWalk(sc, (self.DoValidDataProvider))
@@ -4162,7 +4162,7 @@ class EarlyBoundTests(TestBase):
     def test_EnumerateInvalidDataProviders(self):
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "DataProvidersTests.sc"))
-        sc: "IStkObject" = TestBase.Application.current_scenario
+        sc: "ISTKObject" = TestBase.Application.current_scenario
         Assert.assertIsNotNone(sc, "Load a scenario first.")
         try:
             self.RecursiveObjectWalk(sc, (self.DoInvalidDataProvider))
@@ -4183,7 +4183,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestComputeStatistic(self, dataPrv: str, elemName: str, stat: "StatisticType", val: float):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_interval_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 16:00:00.00"
         )
@@ -4204,7 +4204,7 @@ class EarlyBoundTests(TestBase):
     def test_TestComputeTimeVarExtremum(
         self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum", val: float, time: str
     ):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
@@ -4227,7 +4227,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
@@ -4242,7 +4242,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
@@ -4259,7 +4259,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestPreDataRequired(self, dataPrv: str, expected: bool):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(oSa.data_providers[dataPrv], IDataProvider)
         Assert.assertEqual(expected, dp.pre_data_required)
 
@@ -4272,7 +4272,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestPreDataDescription(self, dataPrv: str, expected: str):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(oSa.data_providers[dataPrv], IDataProvider)
         Assert.assertEqual(expected, dp.pre_data_description)
 
@@ -4281,8 +4281,8 @@ class EarlyBoundTests(TestBase):
 
         expectedTimes = ["1 Jun 2004 16:49:45.864", "1 Jun 2004 18:24:55.776", "1 Jun 2004 20:00:05.225"]
 
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility2")
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oFac: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility2")
         acc: "Access" = oSa.get_access_to_object(oFac)
         acc.compute_access()
         res: "DataProviderResult" = acc.data_providers.get_data_provider_time_varying_from_path(
@@ -4302,8 +4302,8 @@ class EarlyBoundTests(TestBase):
             i += 1
 
     def test_TestFailComputeTimeVarExtremum(self):
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        oSensor: "IStkObject" = oSatellite.children["Sensor1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSensor: "ISTKObject" = oSatellite.children["Sensor1"]
 
         oProvider: "IDataProvider" = IDataProvider(oSensor.data_providers["Pattern Intersection"])
         res: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute(
@@ -4316,7 +4316,7 @@ class EarlyBoundTests(TestBase):
             )
 
     def test_TestFailComputeStatistic(self):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(
             "Shadow LLA/Fixed"
         ).execute("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0)
@@ -4333,7 +4333,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestDPIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
         )
@@ -4348,7 +4348,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestDPIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
         )
@@ -4364,7 +4364,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestDPIsStatisticAvailableTrue(self, dataPrv: str, elemName: str, stat: "StatisticType"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
         )
@@ -4379,7 +4379,7 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_TestDPIsTimeVarExtremumAvailableTrue(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
-        oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        oSa: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
         )

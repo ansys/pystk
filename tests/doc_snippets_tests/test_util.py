@@ -69,7 +69,7 @@ class frmStkX:
 
 class EngineLifetimeManager:
     stk = None
-    root: "StkObjectRoot" = None
+    root: "STKObjectRoot" = None
     locked = False
     target = None
     ctrlWindow = None
@@ -913,10 +913,10 @@ class Application:
 
 
 class IAgAppProvider:
-    def CreateApplication(self, ignored) -> "StkObjectRoot":
+    def CreateApplication(self, ignored) -> "STKObjectRoot":
         return None
 
-    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return None
 
     def InstantiateSTKXApplication(self) -> "STKXApplication":
@@ -940,10 +940,10 @@ class PythonStkApplicationProvider(IAgAppProvider):
             )
         PythonStkApplicationProvider.Application = self.stk.root
 
-    def CreateApplication(self, ignored) -> "StkObjectRoot":
+    def CreateApplication(self, ignored) -> "STKObjectRoot":
         return self.stk.root
 
-    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
 
 
@@ -965,10 +965,10 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
             )
         PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
 
-    def CreateApplication(self, ignored) -> "StkObjectRoot":
+    def CreateApplication(self, ignored) -> "STKObjectRoot":
         return self.stk.new_object_root()
 
-    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
 
     def InstantiateSTKXApplication(self) -> "STKXApplication":
@@ -984,10 +984,10 @@ class PythonStkXApplicationProvider(IAgAppProvider):
         self.stk: "STKEngineApplication" = STKEngine.start_application(no_graphics=False)
         PythonStkXApplicationProvider.Application = self.stk.new_object_root()
 
-    def CreateApplication(self, ignored) -> "StkObjectRoot":
+    def CreateApplication(self, ignored) -> "STKObjectRoot":
         return self.stk.new_object_root()
 
-    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
 
     def InstantiateSTKXApplication(self) -> "STKXApplication":
@@ -1003,17 +1003,17 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
         self.stk: "STKEngineApplication" = STKEngine.start_application(no_graphics=True)
         PythonStkXNoGfxApplicationProvider.Application = self.stk.new_object_root()
 
-    def CreateApplication(self, ignored) -> "StkObjectRoot":
+    def CreateApplication(self, ignored) -> "STKObjectRoot":
         return self.stk.new_object_root()
 
-    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+    def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
 
 
 class TestBase(unittest.TestCase):
-    Application: "StkObjectRoot" = None
+    Application: "STKObjectRoot" = None
     stk = None
-    root: "StkObjectRoot" = None
+    root: "STKObjectRoot" = None
     logger = Logger()
     NoGraphicsMode = True
     Units: "UnitPreferencesDimensionCollection" = None
@@ -1042,7 +1042,7 @@ class TestBase(unittest.TestCase):
         TestBase.ApplicationProvider: IAgAppProvider = EngineLifetimeManager.Initialize()
         TestBase.Target = TestBase.ApplicationProvider.Target
         TestBase.stk = TestBase.ApplicationProvider.stk
-        TestBase.root: "StkObjectRoot" = TestBase.ApplicationProvider.Application
+        TestBase.root: "STKObjectRoot" = TestBase.ApplicationProvider.Application
 
         # Try to recover if previous test aborted with a scenario loaded
         if TestBase.root.current_scenario != None:

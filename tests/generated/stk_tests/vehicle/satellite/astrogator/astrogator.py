@@ -1246,7 +1246,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "AstgLeader57325"), Satellite
         )
         leader.set_propagator_type(PropagatorType.ASTROGATOR)
-        follow.leader.bind_to_object((IStkObject(leader)).path)
+        follow.leader.bind_to_object((ISTKObject(leader)).path)
         Assert.assertEqual(follow.leader.name, "Satellite/AstgLeader57325")
 
         follow.spacecraft_and_fuel_tank_type = FollowSpacecraftAndFuelTank.LEADER
@@ -2659,7 +2659,7 @@ longitude = 121;"""
 
         # set up getting the SMA from the ephemeris, not the states of the segments
         astgValues: "DataProviderGroup" = clr.CastAs(
-            (IStkObject(EarlyBoundTests.AG_SAT)).data_providers["Astrogator Values"], DataProviderGroup
+            (ISTKObject(EarlyBoundTests.AG_SAT)).data_providers["Astrogator Values"], DataProviderGroup
         )
         dp: "DataProviderTimeVarying" = clr.CastAs(astgValues.group["Keplerian Elems"], DataProviderTimeVarying)
         elems = ["Time", "Semimajor_Axis"]
@@ -3139,7 +3139,7 @@ longitude = 121;"""
         Assert.assertEqual(RunCode.MARCHING, seg.properties.last_run_code)
 
         # TODO: fix NUNIT2JUNIT test conversion to handle OnPercentCompleteUpdate tests
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     def Application_OnPercentCompleteUpdate(self, args: "ProgressBarEventArguments"):
         args.cancel()
@@ -3223,7 +3223,7 @@ longitude = 121;"""
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochControl.values[2])
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochResult.values[2])
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -3272,7 +3272,7 @@ longitude = 121;"""
         result.custom_display_unit = "hr"
         Assert.assertEqual("hr", result.custom_display_unit)
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -3335,7 +3335,7 @@ longitude = 121;"""
         geodeticElem.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", geodeticElem.central_body_name)
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -3389,7 +3389,7 @@ longitude = 121;"""
         Assert.assertAlmostEqual(
             0.5773502691896258, float((IMCSSegment(initState)).get_result_value("Vector_Z")), delta=1e-09
         )
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -3458,7 +3458,7 @@ longitude = 121;"""
         driver.run_mcs()
 
         # Run the data provider
-        satObj: "IStkObject" = clr.CastAs(sat, IStkObject)
+        satObj: "ISTKObject" = clr.CastAs(sat, ISTKObject)
         intvl: "DataProviderInterval" = clr.CastAs(satObj.data_providers["Maneuver Summary"], DataProviderInterval)
         result: "DataProviderResult" = intvl.execute(scene.start_time, scene.stop_time)
         intervals: "DataProviderResultIntervalCollection" = result.intervals
@@ -3611,7 +3611,7 @@ longitude = 121;"""
         Assert.assertEqual("Constant_Thrust_and_Isp", dataSet[1])
         Assert.assertEqual("Constant_Thrust_and_Isp", dataSet[2])
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -4220,7 +4220,7 @@ longitude = 121;"""
         resultff.tolerance = 0.1
         # endregion
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     @staticmethod
     def ScriptingToolParametersCheckNameValue(expectedName: str, expectedValue: int, rtti2: "RuntimeTypeInfo"):
@@ -4346,7 +4346,7 @@ longitude = 121;"""
         resultff.desired_value = 15000
         resultff.tolerance = 0.1
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -4462,7 +4462,7 @@ longitude = 121;"""
             graphs.remove(graph)
 
         Assert.assertTrue((graphs.count == 0))
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     # endregion
 
@@ -4483,11 +4483,11 @@ longitude = 121;"""
         driver.run_mcs()
 
         timevar: "DataProviderTimeVarying" = (
-            IStkObject(satellite)
+            ISTKObject(satellite)
         ).data_providers.get_data_provider_time_varying_from_path("Astrogator Targeter Data")
         Assert.assertIsNotNone(timevar)  # Verify 58379
 
-        interval: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+        interval: "DataProviderInterval" = (ISTKObject(satellite)).data_providers.get_data_provider_interval_from_path(
             "Maneuver Summary"
         )
         elements = ["Maneuver Number", "Start Time"]
@@ -4501,7 +4501,7 @@ longitude = 121;"""
         dataSetcount1: int = result.intervals[0].data_sets.count
         Assert.assertEqual(2, dataSetcount1)
 
-        interval2: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+        interval2: "DataProviderInterval" = (ISTKObject(satellite)).data_providers.get_data_provider_interval_from_path(
             "Astrogator MCS Ephemeris Segments"
         )
         elements2 = ["Segment Name", "Segment Type", "Start Time"]
@@ -4515,7 +4515,7 @@ longitude = 121;"""
         dataSetcount2: int = result2.intervals[0].data_sets.count
         Assert.assertEqual(3, dataSetcount2)
 
-        interval3: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+        interval3: "DataProviderInterval" = (ISTKObject(satellite)).data_providers.get_data_provider_interval_from_path(
             "Astrogator MCS Ephemeris Segments"
         )
 
@@ -4530,7 +4530,7 @@ longitude = 121;"""
         dataSetcount3: int = result3.intervals[0].data_sets.count
         Assert.assertEqual(6, dataSetcount3)
 
-        interval4: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+        interval4: "DataProviderInterval" = (ISTKObject(satellite)).data_providers.get_data_provider_interval_from_path(
             "Astrogator MCS Ephemeris Segments"
         )
         elements4 = ["Bogus"]
@@ -5546,7 +5546,7 @@ longitude = 121;"""
         driver.main_sequence.insert_by_name("Examples/Hohmann Transfer", "-")
         Assert.assertIsNotNone(driver.main_sequence["Hohmann Transfer1"])
 
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     def test_SpacesInVGTPath(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - SpacesInVGTPath START")
@@ -5582,8 +5582,8 @@ longitude = 121;"""
             vecX.vector_name = "Invalid/VGT Position"
         with pytest.raises(Exception):
             vecX.vector_name = "Satellite/VGT Invalid"
-        (IStkObject(satWithSpaces)).unload()
-        (IStkObject(sat)).unload()
+        (ISTKObject(satWithSpaces)).unload()
+        (ISTKObject(sat)).unload()
 
     @category("ExcludeOnLinux")
     def test_MarsGRAM(self):
