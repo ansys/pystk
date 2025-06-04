@@ -28,7 +28,7 @@ A set of convenience utilities to facilitate the access and manipulation of STK 
 
 import pandas as pd
 
-from ansys.stk.core.stkobjects import DATA_PROVIDER_TYPE, Access, IStkObject
+from ansys.stk.core.stkobjects import Access, DataProviderType, IStkObject
 
 
 class DataProviderExtension(object):
@@ -105,17 +105,17 @@ class DataProviderExtension(object):
         provider_info = self.base_object.data_providers.get_data_provider_information_from_path(provider_path)
         panda = None
         match provider_info.type:
-            case DATA_PROVIDER_TYPE.FIXED:
+            case DataProviderType.FIXED:
                 panda = self._get_fixed_data(self, provider_path, elements, pre_data)
                 pass
-            case DATA_PROVIDER_TYPE.INTERVAL:
+            case DataProviderType.INTERVAL:
                 if start_time is None:
                     start_time = scenario.start_time
                 if stop_time is None:
                     stop_time = scenario.stop_time
                 panda = self._get_interval_data(self, provider_path, start_time, stop_time, elements, pre_data)
                 pass
-            case DATA_PROVIDER_TYPE.TIME_VARYING:
+            case DataProviderType.TIME_VARYING:
                 if start_time is None:
                     start_time = scenario.start_time
                 if stop_time is None:
