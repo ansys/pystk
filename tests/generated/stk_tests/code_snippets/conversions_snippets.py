@@ -60,7 +60,7 @@ class ConversionsSnippets(CodeSnippetsTestBase):
     def test_ConvertPositionToAnotherRepresentation(self):
         self.ConvertPositionToAnotherRepresentation(CodeSnippetsTestBase.m_Root)
 
-    def ConvertPositionToAnotherRepresentation(self, root: "StkObjectRoot"):
+    def ConvertPositionToAnotherRepresentation(self, root: "STKObjectRoot"):
         converter: "ConversionUtility" = root.conversion_utility
 
         # ConvertPositionArray expects a two dimensional array of positions

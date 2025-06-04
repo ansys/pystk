@@ -60,7 +60,7 @@ Reset the scenario time
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.rewind()
 
 
@@ -68,7 +68,7 @@ Change animation mode
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     root.animation_options = AnimationOptionType.STOP
     root.mode = AnimationEndTimeMode.X_REAL_TIME

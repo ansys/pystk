@@ -287,7 +287,7 @@
    <Mapping ParentScope="IAgStkRfcmGpuProperties" OldName="ProcessorCount" NewName="processor_count" Category="method" />
    <Mapping ParentScope="IAgStkRfcmGpuProperties" OldName="SpeedMHz" NewName="speed_mhz" Category="method" />
    <Mapping ParentScope="IAgStkRfcmGpuProperties" OldName="MemoryGB" NewName="memory_gb" Category="method" />
-   <Mapping OldName="IAgStkRFChannelModeler" NewName="StkRFChannelModeler" Category="interface" />
+   <Mapping OldName="IAgStkRFChannelModeler" NewName="STKRFChannelModeler" Category="interface" />
    <Mapping ParentScope="IAgStkRFChannelModeler" OldName="TransceiverCollection" NewName="transceiver_collection" Category="method" />
    <Mapping ParentScope="IAgStkRFChannelModeler" OldName="AnalysisConfigurationCollection" NewName="analysis_configuration_collection" Category="method" />
    <Mapping ParentScope="IAgStkRFChannelModeler" OldName="DuplicateTransceiver" NewName="duplicate_transceiver" Category="method" />
@@ -328,7 +328,7 @@
    <Mapping OldName="AgStkRfcmCommunicationsTransceiverConfigurationCollection" NewName="CommunicationsTransceiverConfigurationCollection" Category="class" />
    <Mapping OldName="AgStkRfcmAnalysisConfigurationCollection" NewName="AnalysisConfigurationCollection" Category="class" />
    <Mapping OldName="AgStkRfcmComputeOptions" NewName="ComputeOptions" Category="class" />
-   <Mapping OldName="AgStkRFChannelModeler" NewName="StkRFChannelModeler" Category="class" />
+   <Mapping OldName="AgStkRFChannelModeler" NewName="STKRFChannelModeler" Category="class" />
    <Mapping OldName="AgStkRfcmCommunicationsTransceiverModel" NewName="CommunicationsTransceiverModel" Category="class" />
    <Mapping OldName="AgStkRfcmRadarTransceiverModel" NewName="RadarTransceiverModel" Category="class" />
    <Mapping OldName="AgStkRfcmRangeDopplerResponse" NewName="RangeDopplerResponse" Category="class" />

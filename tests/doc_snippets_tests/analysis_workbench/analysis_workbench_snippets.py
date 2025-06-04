@@ -68,7 +68,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         eid="analysis_workbench~AnalysisWorkbenchComponentProvider",
     )
     def GetVGTPointSnippet(self, root):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
         icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 
@@ -562,7 +562,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         eid="analysis_workbench~AnalysisWorkbenchComponentProvider",
     )
     def GetTimesFromTimeInstantSnippet(self, root, vgtSat):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
         # Change DateFormat dimension to epoch seconds to make the time easier to handle in
         # Python
@@ -591,7 +591,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         eid="analysis_workbench~AnalysisWorkbenchComponentProvider",
     )
     def CreateTimeInstantSnippet(self, root, vgtSat):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
         # Change DateFormat dimension to epoch seconds to make the time easier to handle in
         # Python
@@ -617,7 +617,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         eid="analysis_workbench~AnalysisWorkbenchComponentProvider",
     )
     def CreateTimeIntervalSnippet(self, root, vgtSat):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
         # Change DateFormat dimension to epoch seconds to make the time easier to handle in
         # Python

@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: center
     :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.center
-    :type: IStkObject
+    :type: ISTKObject
 
     Center object.
 

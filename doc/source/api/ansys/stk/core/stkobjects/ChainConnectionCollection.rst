@@ -89,16 +89,16 @@ Method detail
         :obj:`~ChainConnection`
 
 
-.. py:method:: item_by_from_to_objects(self, from_object: IStkObject, to_object: IStkObject) -> ChainConnection
+.. py:method:: item_by_from_to_objects(self, from_object: ISTKObject, to_object: ISTKObject) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.item_by_from_to_objects
 
     Given the From and To objects of a connection, returns the element in the collection.
 
     :Parameters:
 
-        **from_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~ISTKObject`
 
-        **to_object** : :obj:`~IStkObject`
+        **to_object** : :obj:`~ISTKObject`
 
 
     :Returns:
@@ -119,32 +119,32 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, from_object: IStkObject, to_object: IStkObject) -> None
+.. py:method:: remove(self, from_object: ISTKObject, to_object: ISTKObject) -> None
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.remove
 
     Remove the connection for the input from-to object pair.
 
     :Parameters:
 
-        **from_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~ISTKObject`
 
-        **to_object** : :obj:`~IStkObject`
+        **to_object** : :obj:`~ISTKObject`
 
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int) -> ChainConnection
+.. py:method:: add(self, from_object: ISTKObject, to_object: ISTKObject, min_num_uses: int, max_num_uses: int) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add
 
     Add and returns a new connection with the corresponding values.
 
     :Parameters:
 
-        **from_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~ISTKObject`
 
-        **to_object** : :obj:`~IStkObject`
+        **to_object** : :obj:`~ISTKObject`
 
         **min_num_uses** : :obj:`~int`
 
@@ -155,16 +155,16 @@ Method detail
 
         :obj:`~ChainConnection`
 
-.. py:method:: add_with_parent_restriction(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int, parent_restriction: ChainParentPlatformRestriction) -> ChainConnection
+.. py:method:: add_with_parent_restriction(self, from_object: ISTKObject, to_object: ISTKObject, min_num_uses: int, max_num_uses: int, parent_restriction: ChainParentPlatformRestriction) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add_with_parent_restriction
 
     Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
 
     :Parameters:
 
-        **from_object** : :obj:`~IStkObject`
+        **from_object** : :obj:`~ISTKObject`
 
-        **to_object** : :obj:`~IStkObject`
+        **to_object** : :obj:`~ISTKObject`
 
         **min_num_uses** : :obj:`~int`
 

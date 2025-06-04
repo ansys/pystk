@@ -288,7 +288,7 @@ Create a new time interval
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -304,7 +304,7 @@ Create a new time instant
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -320,7 +320,7 @@ Get times from a defined time instant and create an cell array
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -593,7 +593,7 @@ Get the center point and inertial system of Earth central body
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 
@@ -605,7 +605,7 @@ Change the camera reference frame
 .. code-block:: python
 
     # Scenario scenario: Scenario object
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     manager = scenario.scene_manager
     manager.scenes.item(0).camera.view_central_body(
         "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")
@@ -1268,7 +1268,7 @@ Change the scenario font
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     scenario.graphics_3d.medium_font.name = "Arial"
     scenario.graphics_3d.medium_font.point_size = 18
@@ -1282,7 +1282,7 @@ Reset the scenario time
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.rewind()
 
 .. _ScenarioAnimationMode:
@@ -1292,7 +1292,7 @@ Change animation mode
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     root.animation_options = AnimationOptionType.STOP
     root.mode = AnimationEndTimeMode.X_REAL_TIME
@@ -1306,7 +1306,7 @@ Set the current scenario's time period
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
 
@@ -1317,7 +1317,7 @@ Set unit preferences for the object model
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.units_preferences.item("DateFormat").set_current_unit("UTCG")
     root.units_preferences.item("Distance").set_current_unit("km")
 
@@ -1328,7 +1328,7 @@ Create a new scenario
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.new_scenario("Example_Scenario")
 
 .. _CloseSTK:
@@ -1380,7 +1380,7 @@ Manage STK Engine events
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
 
@@ -1403,7 +1403,7 @@ Close an open scenario
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.close_scenario()
 
 .. _OpenVdfSTK:
@@ -1413,7 +1413,7 @@ Open a viewer data file
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
 
@@ -1424,7 +1424,7 @@ Get access between objects by path using the existing accesses
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     scenario = root.current_scenario
     accesses = scenario.get_existing_accesses()
 
@@ -1443,7 +1443,7 @@ Configure the access interval to the availability time span of the object where 
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")
@@ -1463,7 +1463,7 @@ Configure the access analysis time period to specified time instants
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")
@@ -1514,7 +1514,7 @@ Compute an access for one point
 
 .. code-block:: python
 
-    # IStkObject facility: Facility object
+    # ISTKObject facility: Facility object
     onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
 
     # Configure properties (if necessary)
@@ -1835,7 +1835,7 @@ Create a new aircraft (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
 
 .. _ListAreaTargetPoints:
@@ -1882,7 +1882,7 @@ Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -1903,7 +1903,7 @@ Set an elliptical area target (using common tasks)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the CommonTasks interface
@@ -1916,7 +1916,7 @@ Set an elliptical area target
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -1936,7 +1936,7 @@ Create an area target (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
@@ -2036,7 +2036,7 @@ Create a chain (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Create the Chain on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
     chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
@@ -2048,7 +2048,7 @@ Define a constellation
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
     constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
     constellation.objects.add_object(satellite)
@@ -2121,7 +2121,7 @@ Get data for specific points and elements
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -2138,7 +2138,7 @@ Get data for a single point in time
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -2153,7 +2153,7 @@ Extract elements from data providers with pre-data
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Facility facility: Facility object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -2178,7 +2178,7 @@ Extract elements from data providers with groups
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -2212,7 +2212,7 @@ Use a time dependent data provider and requesting only specified elements
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -2237,7 +2237,7 @@ Use an interval data provider
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
@@ -2314,7 +2314,7 @@ Create a facility and set its height relative to ground level
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
     facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
@@ -2327,7 +2327,7 @@ Get a valid reference to a facility
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     from ansys.stk.core.utilities.exceptions import STKRuntimeError
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
@@ -2349,7 +2349,7 @@ Create a facility (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
 .. _FOMContoursColorRamp:
@@ -2773,7 +2773,7 @@ Set 2D display times to custom and add intervals
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     graphics = satellite.graphics
@@ -2803,7 +2803,7 @@ Set 2D graphics display properties
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change the line width, style, color and marker
 
@@ -2876,7 +2876,7 @@ Export an ephemeris file to a scenario folder
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
     scenPath = root.execute_command("GetDirectory / Scenario").item(0)
     satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
@@ -2908,7 +2908,7 @@ Set satellite propagator to spice and propagate
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
@@ -3023,7 +3023,7 @@ Create a satellite (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
 .. _SensorPersistence:
@@ -3237,7 +3237,7 @@ Create a new antenna object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
 
 .. _ReceiverAdditionalGain:
@@ -3359,7 +3359,7 @@ Create a new receiver object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
 
 .. _TransmitteradditionalGain:
@@ -3470,7 +3470,7 @@ Create a new transmitter object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
 
 .. _AstrogatorRunMCS:

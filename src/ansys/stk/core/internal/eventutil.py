@@ -22,7 +22,7 @@
 
 from __future__ import annotations
 
-__all__ = [ "IStkObjectRootEventHandler", 
+__all__ = [ "ISTKObjectRootEventHandler", 
             "ISTKXApplicationEventHandler", 
             "IUiAxGraphics2DCntrlEventHandler", 
             "IUiAxGraphics3DCntrlEventHandler",
@@ -39,17 +39,17 @@ from .comevents import (COMEventHandlerImpl, ISTKXApplicationEventCOMHandler,
                         IKmlGraphicsEventCOMHandler,
                         ISceneEventCOMHandler,
                         ITerrainOverlayCollectionEventCOMHandler,
-                        IStkObjectRootEventCOMHandler, IGraphics2DControlEventCOMHandler,
+                        ISTKObjectRootEventCOMHandler, IGraphics2DControlEventCOMHandler,
                         IGraphics3DControlEventCOMHandler)
 from ..utilities.exceptions import STKAttributeError, STKEventsAPIError, STKRuntimeError
 
 try:
     from .grpcutil   import GrpcInterface
     from .grpcevents import (GrpcEventHandlerImpl, ISTKXApplicationEventGrpcHandler,
-                         IStkGraphicsImageCollectionEventGrpcHandler,
-                         IStkGraphicsKmlGraphicsEventGrpcHandler, IStkGraphicsSceneEventGrpcHandler,
-                         IStkGraphicsTerrainCollectionEventGrpcHandler,
-                         IStkObjectRootEventGrpcHandler)
+                         IImageCollectionEventGrpcHandler,
+                         IKmlGraphicsEventGrpcHandler, ISceneEventGrpcHandler,
+                         ITerrainOverlayCollectionEventGrpcHandler,
+                         ISTKObjectRootEventGrpcHandler)
 except:
     class GrpcInterface(object):
         def __init__(self):
@@ -91,7 +91,7 @@ class STKEventSubscriber(object):
         del(self._impl)
     
     def subscribe(self):
-        """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from StkObjectRoot.Subscribe()."""
+        """Use to re-subscribe to events after calling Unsubscribe.  This class is initialized as subscribed when returned from STKObjectRoot.Subscribe()."""
         if self._event_manager_id is None:
             self.__dict__["_event_manager_id"] = EventSubscriptionManager.subscribe(self)
             
@@ -153,7 +153,7 @@ class _STKEvent(object):
 #          IAgStkObjectRootEvents
 ################################################################################
         
-class IStkObjectRootEventHandler(STKEventSubscriber):
+class ISTKObjectRootEventHandler(STKEventSubscriber):
     def __init__(self, interface):
         self.__dict__["_events"] = {}
         self._events["OnScenarioNew"]              = _STKEvent()
@@ -187,21 +187,21 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         self._events["OnStkObjectCopy"]            = _STKEvent()
         self._events["OnStkObjectPaste"]           = _STKEvent()
         if type(interface)==IUnknown:
-            impl = IStkObjectRootEventCOMHandler(interface, self._events)
+            impl = ISTKObjectRootEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            impl = IStkObjectRootEventGrpcHandler(interface, self._events)
+            impl = ISTKObjectRootEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IStkObjectRootEventHandler.")
+            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKObjectRootEventHandler.")
         STKEventSubscriber.__init__(self, impl)
    
     def __del__(self):
         STKEventSubscriber.__del__(self)
         
     def __setattr__(self, attrname, value):
-        if attrname in IStkObjectRootEventHandler.__dict__ and type(IStkObjectRootEventHandler.__dict__[attrname]) == property:
-            IStkObjectRootEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in ISTKObjectRootEventHandler.__dict__ and type(ISTKObjectRootEventHandler.__dict__[attrname]) == property:
+            ISTKObjectRootEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in StkObjectRootEvents.")
+            raise STKAttributeError(attrname + " is not a recognized event in STKObjectRootEvents.")
  
     @property
     def on_scenario_new(self):
@@ -385,7 +385,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_changed(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArguments") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"STKObjectChangedEventArguments") -> None]"""
         return self._events["OnStkObjectChanged"]
         
     @on_stk_object_changed.setter
@@ -403,7 +403,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_delete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArguments") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"STKObjectPreDeleteEventArguments") -> None]"""
         return self._events["OnStkObjectPreDelete"]
         
     @on_stk_object_pre_delete.setter
@@ -448,7 +448,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_cut(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"STKObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPreCut"]
         
     @on_stk_object_pre_cut.setter
@@ -457,7 +457,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_copy(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"STKObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectCopy"]
         
     @on_stk_object_copy.setter
@@ -466,7 +466,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_paste(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"STKObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPaste"]
         
     @on_stk_object_paste.setter
@@ -643,7 +643,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
 #          ActiveX controls
 ################################################################################
 
-class IAgUiAxStockEventHandler(object):
+class IUiAxStockEventHandler(object):
     def __init__(self):
         self._events["KeyDown"]      = _STKEvent()
         self._events["KeyPress"]     = _STKEvent()
@@ -657,8 +657,8 @@ class IAgUiAxStockEventHandler(object):
         self._events["MouseWheel"]   = _STKEvent()
         
     def __setattr__(self, attrname, value):
-        if attrname in IAgUiAxStockEventHandler.__dict__ and type(IAgUiAxStockEventHandler.__dict__[attrname]) == property:
-            IAgUiAxStockEventHandler.__dict__[attrname].__set__(self, value)
+        if attrname in IUiAxStockEventHandler.__dict__ and type(IUiAxStockEventHandler.__dict__[attrname]) == property:
+            IUiAxStockEventHandler.__dict__[attrname].__set__(self, value)
         else:
             raise STKAttributeError(attrname + " is not a recognized event in IAgUiAxStockEvents.")
     
@@ -753,10 +753,10 @@ class IAgUiAxStockEventHandler(object):
         self._events["MouseWheel"]._safe_assign(callback)
 
 
-class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
+class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandler):
     def __init__(self, interface):
         self.__dict__["_events"] = {}
-        IAgUiAxStockEventHandler.__init__(self)
+        IUiAxStockEventHandler.__init__(self)
         if type(interface)==IUnknown:
             impl = IGraphics2DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
@@ -770,7 +770,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         
     def __setattr__(self, attrname, value):
         try:
-            IAgUiAxStockEventHandler.__setattr__(self, attrname, value)
+            IUiAxStockEventHandler.__setattr__(self, attrname, value)
         except:
             if attrname in IUiAxGraphics2DCntrlEventHandler.__dict__ and type(IUiAxGraphics2DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
@@ -778,7 +778,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
                 raise STKAttributeError(attrname + " is not a recognized event in Graphics2DControlBaseEvents.")
 
 
-class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
+class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandler):
     def __init__(self, interface):
         self.__dict__["_events"] = {}
         self._events["_OnObjectEditingStart"]     = _STKEvent()
@@ -798,7 +798,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         
     def __setattr__(self, attrname, value):
         try:
-            IAgUiAxStockEventHandler.__setattr__(self, attrname, value)
+            IUiAxStockEventHandler.__setattr__(self, attrname, value)
         except:
             if attrname in IUiAxGraphics3DCntrlEventHandler.__dict__ and type(IUiAxGraphics3DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics3DCntrlEventHandler.__dict__[attrname].__set__(self, value)
@@ -853,7 +853,7 @@ class ISceneEventHandler(STKEventSubscriber):
         if type(interface)==IUnknown:
             impl = ISceneEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            impl = IStkGraphicsSceneEventGrpcHandler(interface, self._events)
+            impl = ISceneEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISceneEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -888,7 +888,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber):
         if type(interface)==IUnknown:
             impl = IKmlGraphicsEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            impl = IStkGraphicsKmlGraphicsEventGrpcHandler(interface, self._events)
+            impl = IKmlGraphicsEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IKmlGraphicsEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -923,7 +923,7 @@ class IImageCollectionEventHandler(STKEventSubscriber):
         if type(interface)==IUnknown:
             impl = IImageCollectionEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            impl = IStkGraphicsImageCollectionEventGrpcHandler(interface, self._events)
+            impl = IImageCollectionEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IImageCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -958,7 +958,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
         if type(interface)==IUnknown:
             impl = ITerrainOverlayCollectionEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            impl = IStkGraphicsTerrainCollectionEventGrpcHandler(interface, self._events)
+            impl = ITerrainOverlayCollectionEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ITerrainOverlayCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)

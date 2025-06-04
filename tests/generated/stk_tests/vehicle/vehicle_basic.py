@@ -36,10 +36,10 @@ from ansys.stk.core.analysis_workbench import *
 
 # region ExportDataFileHelper
 class ExportDataFileHelper(object):
-    def __init__(self, obj: "IStkObject", root: "StkObjectRoot"):
+    def __init__(self, obj: "ISTKObject", root: "STKObjectRoot"):
         self.m_logger = Logger.Instance
-        self._oObj: "IStkObject" = obj
-        self._root: "StkObjectRoot" = root
+        self._oObj: "ISTKObject" = obj
+        self._root: "STKObjectRoot" = root
 
     # region AttitudeExport
     def AttitudeExportTool(self, attitude: "VehicleAttitudeExportTool"):
@@ -1490,17 +1490,17 @@ class BasicGroundEllipsesHelper(object):
 
 # region BasicPropagatorHelper
 class BasicPropagatorHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oApplication.units_preferences
         self.m_oUnits.reset_units()
 
     # endregion
 
     # region Run method
-    def Run(self, obj: "IStkObject", oPropagator: "IPropagator", eType: "PropagatorType", EarthGravModel):
+    def Run(self, obj: "ISTKObject", oPropagator: "IPropagator", eType: "PropagatorType", EarthGravModel):
         self.m_logger.WriteLine6("----- THE BASIC PROPAGATOR TEST ({0})----- BEGIN -----", eType)
         Assert.assertIsNotNone(oPropagator)
         if eType == PropagatorType.GREAT_ARC:
@@ -1508,7 +1508,7 @@ class BasicPropagatorHelper(object):
             oHelper.Run(PropagatorGreatArc(oPropagator))
         elif eType == PropagatorType.STK_EXTERNAL:
             oHelper = PropagatorStkExternalHelper(self.m_oUnits)
-            oHelper.Run(PropagatorStkExternal(oPropagator))
+            oHelper.Run(PropagatorSTKExternal(oPropagator))
         elif eType == PropagatorType.SIMPLE_ASCENT:
             oHelper = PropagatorSimpleAscentHelper(obj, self.m_oUnits)
             oHelper.Run(PropagatorSimpleAscent(oPropagator))
@@ -1562,9 +1562,9 @@ class BasicPropagatorHelper(object):
 
 # region PropagatorGreatArcHelper
 class PropagatorGreatArcHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "ISTKObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
-        self._owner: "IStkObject" = owner
+        self._owner: "ISTKObject" = owner
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(owner)
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
@@ -1718,7 +1718,7 @@ class PropagatorGreatArcHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_start_time())
 
         oGreatArc.ephemeris_interval.set_implicit_interval(
-            (IStkObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
+            (ISTKObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
         )
         oGreatArc.propagate()
 
@@ -1890,7 +1890,7 @@ class PropagatorStkExternalHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oStkExternal: "PropagatorStkExternal"):
+    def Run(self, oStkExternal: "PropagatorSTKExternal"):
         self.m_logger.WriteLine("----- STK EXTERNAL PROPAGATOR TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oStkExternal)
         # StartTime
@@ -1980,9 +1980,9 @@ class PropagatorStkExternalHelper(object):
 
 # region PropagatorSimpleAscentHelper
 class PropagatorSimpleAscentHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "ISTKObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
-        self._owner: "IStkObject" = owner
+        self._owner: "ISTKObject" = owner
         Assert.assertIsNotNone(oUnits)
         oUnits.reset_units()
 
@@ -2048,7 +2048,7 @@ class PropagatorSimpleAscentHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
 
         oSimple.ephemeris_interval.set_implicit_interval(
-            (IStkObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
+            (ISTKObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
         )
         oSimple.propagate()
 
@@ -2063,10 +2063,10 @@ class PropagatorSimpleAscentHelper(object):
 
 # region PropagatorTwoBodyHelper
 class PropagatorTwoBodyHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -2136,7 +2136,7 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
 
         oTwoBody.ephemeris_interval.set_implicit_interval(
-            (IStkObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
+            (ISTKObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
         )
         oTwoBody.propagate()
 
@@ -2182,10 +2182,10 @@ class PropagatorTwoBodyHelper(object):
 
 # region PropagatorLOPHelper
 class PropagatorLOPHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -2534,10 +2534,10 @@ class PropagatorLOPHelper(object):
 
 # region PropagatorJ2PerturbationHelper
 class PropagatorJ2PerturbationHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -2658,10 +2658,10 @@ class PropagatorJ2PerturbationHelper(object):
 
 # region PropagatorJ4PerturbationHelper
 class PropagatorJ4PerturbationHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -2782,10 +2782,10 @@ class PropagatorJ4PerturbationHelper(object):
 
 # region PropagatorSGP4Helper
 class PropagatorSGP4Helper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -3536,10 +3536,10 @@ class PropagatorSGP4Helper(object):
 
 # region PropagatorSPICEHelper
 class PropagatorSPICEHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -3658,10 +3658,10 @@ class PropagatorSPICEHelper(object):
 
 # region PropagatorUserExternalHelper
 class PropagatorUserExternalHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -3761,12 +3761,12 @@ class PropagatorUserExternalHelper(object):
 
 # region PropagatorHPOPHelper
 class PropagatorHPOPHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot", vehicle: "IStkObject", EarthGravModel):
+    def __init__(self, oApplication: "STKObjectRoot", vehicle: "ISTKObject", EarthGravModel):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         oApplication.units_preferences.reset_units()
-        self._vehicle: "IStkObject" = vehicle
+        self._vehicle: "ISTKObject" = vehicle
         self.m_EarthGravModel = EarthGravModel
 
     # endregion
@@ -5882,13 +5882,13 @@ class PropagatorHPOPHelper(object):
 
 # region PropagatorBallisticHelper
 class PropagatorBallisticHelper(object):
-    def __init__(self, owner: "IStkObject", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, owner: "ISTKObject", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(owner)
         Assert.assertIsNotNone(oUnits)
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
         self.m_oUnits.reset_units()
-        self._owner: "IStkObject" = owner
+        self._owner: "ISTKObject" = owner
 
     # endregion
 
@@ -6221,14 +6221,14 @@ class PropagatorBallisticHelper(object):
         # Assert.AreEqual("2 Jul 2005 12:00:00.000", oBallistic.StopTime);
 
         oBallistic.ephemeris_interval.set_implicit_interval(
-            (IStkObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
+            (ISTKObject(sc)).analysis_workbench_components.time_intervals["AnalysisInterval"]
         )
         oBallistic.ephemeris_interval.set_explicit_interval(
-            (IStkObject(sc))
+            (ISTKObject(sc))
             .analysis_workbench_components.time_intervals["AnalysisInterval"]
             .find_interval()
             .interval.start,
-            (IStkObject(sc))
+            (ISTKObject(sc))
             .analysis_workbench_components.time_intervals["AnalysisInterval"]
             .find_interval()
             .interval.start,
@@ -6299,11 +6299,11 @@ class ConnectRealtimePointBuilderHelper(object):
     def __init__(self, *args, **kwargs):
         self.m_logger = Logger.Instance
 
-    def Run(self, obj: "IStkObject"):
+    def Run(self, obj: "ISTKObject"):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
 
-        root: "StkObjectRoot" = obj.root
+        root: "STKObjectRoot" = obj.root
         Assert.assertIsNotNone(root)
         path: str = obj.path
         row: "List[typing.Any]"
@@ -6336,7 +6336,7 @@ class OMRealtimePointBuilderHelper(object):
     def __init__(self, *args, **kwargs):
         self.m_logger = Logger.Instance
 
-    def Run(self, obj: "IStkObject", pb: "PropagatorRealtimePointBuilder"):
+    def Run(self, obj: "ISTKObject", pb: "PropagatorRealtimePointBuilder"):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
         # Configure the unit preferences
@@ -6364,12 +6364,12 @@ class OMRealtimePointBuilderHelper(object):
 class BoostedOMRealtimePointBuilderHelper(object):
     BATCH_SIZE: int = 10
 
-    def __init__(self, root: "StkObjectRoot", includeVelocities: bool):
+    def __init__(self, root: "STKObjectRoot", includeVelocities: bool):
         self.m_logger = Logger.Instance
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self._includeVelocities: bool = includeVelocities
 
-    def Run(self, obj: "IStkObject", point: "PropagatorRealtimeDeticPoints"):
+    def Run(self, obj: "ISTKObject", point: "PropagatorRealtimeDeticPoints"):
         reader = LLAReportReader()
         data = reader.ReadLines(TestBase.GetScenarioFile("LLAPosition.txt"))
         # Configure the unit preferences
@@ -6443,7 +6443,7 @@ class PropagatorRealtimeHelper(object):
     def __init__(self, *args, **kwargs):
         self.m_logger = Logger.Instance
 
-    def Run(self, obj: "IStkObject", realtime: "PropagatorRealtime"):
+    def Run(self, obj: "ISTKObject", realtime: "PropagatorRealtime"):
         Assert.assertIsNotNone(realtime)
         realtime.interpolation_order = 1
         Assert.assertEqual(1, realtime.interpolation_order)
@@ -6562,7 +6562,7 @@ class PropagatorGPSHelper(object):
         self.m_logger = Logger.Instance
         self._dataDir: str = dataDir
 
-    def Run(self, obj: "IStkObject", gps: "PropagatorGPS"):
+    def Run(self, obj: "ISTKObject", gps: "PropagatorGPS"):
         Assert.assertIsNotNone(gps)
 
         sSEMAlmanacPath: str = TestBase.GetScenarioFile("GPSAlmanac.al3")
@@ -6785,10 +6785,10 @@ class PropagatorGPSHelper(object):
 
 # region BasicAttitudeStandardHelper
 class BasicAttitudeStandardHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oApplication.units_preferences
         self.m_oUnits.reset_units()
 
@@ -7267,7 +7267,7 @@ class BasicAttitudeStandardHelper(object):
         # use a time component
         attStart3: str = "1 Jul 1999 03:33:33.000"
         self.m_logger.WriteLine("\tCreate a time component for use with att override")
-        scen: "IStkObject" = self.m_oApplication.current_scenario
+        scen: "ISTKObject" = self.m_oApplication.current_scenario
         prv: "AnalysisWorkbenchComponentProvider" = scen.analysis_workbench_components
         grp: "TimeToolInstantGroup" = prv.time_instants
         evt: "ITimeToolInstant" = prv.time_instants.factory.create_epoch(
@@ -7890,12 +7890,12 @@ class ScheduleTimesHelper(object):
 
 # region BasicAttitudeRealTimeHelper
 class BasicAttitudeRealTimeHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot", o: "IStkObject"):
+    def __init__(self, oApplication: "STKObjectRoot", o: "ISTKObject"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
         Assert.assertIsNotNone(o)
-        self._application: "StkObjectRoot" = oApplication
-        self._obj: "IStkObject" = o
+        self._application: "STKObjectRoot" = oApplication
+        self._obj: "ISTKObject" = o
         oApplication.units_preferences.reset_units()
 
     # endregion
@@ -8279,16 +8279,16 @@ class BasicAttitudeRealTimeHelper(object):
 
 # region BasicAttitudeDifferenceHelper
 class BasicAttitudeDifferenceHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
         oApplication.units_preferences.reset_units()
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
 
     # endregion
 
     # region Run method
-    def Run(self, oAny: "IStkObject"):
+    def Run(self, oAny: "ISTKObject"):
         self.m_logger.WriteLine("----- DIFFERENCE ATTITUDE TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oAny)
         strObject: str = String.Format("*/{0}/{1}", oAny.class_name, oAny.instance_name)
@@ -8335,7 +8335,7 @@ class BasicAttitudeDifferenceHelper(object):
     # endregion
 
     # region GetAttitude
-    def GetAttitude(self, oAny: "IStkObject"):
+    def GetAttitude(self, oAny: "ISTKObject"):
         oAttitude: "IVehicleAttitude" = None
         if oAny.class_type == STKObjectType.SATELLITE:
             oAttitude = (Satellite(oAny)).attitude
@@ -8595,15 +8595,15 @@ class AccessSamplingHelper(object):
 
 # region Spatial Info Helper
 class SpatialInfoHelper(object):
-    def __init__(self, app: "StkObjectRoot"):
+    def __init__(self, app: "STKObjectRoot"):
         self.m_logger = Logger.Instance
-        self.m_app: "StkObjectRoot" = app
+        self.m_app: "STKObjectRoot" = app
 
     @property
     def Application(self):
         return self.m_app
 
-    def InternalRun(self, oObj: "IStkObject"):
+    def InternalRun(self, oObj: "ISTKObject"):
         Assert.assertIsNotNone(oObj)
         Assert.assertIsNotNone(clr.CastAs(oObj, IProvideSpatialInfo))
         oSpatialInfo: "VehicleSpatialInformation" = (clr.CastAs(oObj, IProvideSpatialInfo)).get_spatial_information(
@@ -8629,7 +8629,7 @@ class SpatialInfoHelper(object):
 
         ga: "PropagatorGreatArc" = None
         wpe: "VehicleWaypointsElement" = None
-        oParentObj: "IStkObject" = oObj
+        oParentObj: "ISTKObject" = oObj
         oParentType: "STKObjectType" = oObj.class_type
         objTypeToPropagate: "STKObjectType" = None
         if oObj.class_type == STKObjectType.SENSOR:
@@ -8751,7 +8751,7 @@ class SpatialInfoHelper(object):
 
             i += 1
 
-    def spatialTimeHelper(self, oObj: "IStkObject", oSpatialInfo: "VehicleSpatialInformation", param0: typing.Any):
+    def spatialTimeHelper(self, oObj: "ISTKObject", oSpatialInfo: "VehicleSpatialInformation", param0: typing.Any):
         spatialState: "SpatialState" = None
 
         oSpatialInfo = (clr.CastAs(oObj, IProvideSpatialInfo)).get_spatial_information(False)
@@ -8821,8 +8821,8 @@ class SpatialInfoHelper(object):
             oCurDate.format(self.Application.units_preferences.get_current_unit_abbrv("DateFormat")),
         )
 
-    def Run(self, oOrigObj: "IStkObject"):
-        oNewObj: "IStkObject" = None
+    def Run(self, oOrigObj: "ISTKObject"):
+        oNewObj: "ISTKObject" = None
         try:
             if oOrigObj.class_type != STKObjectType.SENSOR:
                 oNewObj = self.Application.current_scenario.children.new(
@@ -9289,7 +9289,7 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 # region PlatformRF_Environment_RainCloudFog_RainModelHelper
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
 
@@ -9455,7 +9455,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
         root.units_preferences.set_current_unit("MassUnit", "g")
@@ -9698,8 +9698,8 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
 # region PlatformRF_Environment_AtmosphericAbsorptionHelper
 class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -9902,8 +9902,8 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
 # region PlatformRF_Environment_UrbanAndTerrestrialHelper
 class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -10079,8 +10079,8 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
 # region PlatformRF_Environment_TropoScintillationHelper
 class PlatformRF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -10222,8 +10222,8 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
 # region PlatformRF_Environment_CustomModelsHelper
 class PlatformRF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 

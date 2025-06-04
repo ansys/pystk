@@ -71,7 +71,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_LV.access_constraints, IStkObject(EarlyBoundTests.AG_LV), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_LV.access_constraints, ISTKObject(EarlyBoundTests.AG_LV), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -85,7 +85,7 @@ class EarlyBoundTests(TestBase):
         sa.ephemeris_interval.set_explicit_interval("1 Jul 1999 00:00:00.000", "1 Jul 1999 02:46:24.680")
         sa.propagate()
         oHelper = STKObjectHelper()
-        lvObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_LV, IStkObject)
+        lvObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_LV, ISTKObject)
         oHelper.Run(lvObject)
         oHelper.TestObjectFilesArray(lvObject.object_files)
 
@@ -103,7 +103,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicAttitudeDifference(self):
         oHelper = BasicAttitudeDifferenceHelper(TestBase.Application)
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_LV, IStkObject))
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_LV, ISTKObject))
 
     # endregion
 
@@ -146,7 +146,7 @@ class EarlyBoundTests(TestBase):
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_LV.attitude))
             elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
-                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_LV, IStkObject)
+                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_LV, ISTKObject)
                 )
                 oHelper.Run(VehicleAttitudeRealTime(EarlyBoundTests.AG_LV.attitude))
             else:
@@ -162,7 +162,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_LV)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_LV)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_LV)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -232,7 +232,7 @@ class EarlyBoundTests(TestBase):
     @category("SpatialInfo")
     def test_SpatialInfo(self):
         helper = SpatialInfoHelper(TestBase.Application)
-        helper.Run(clr.CastAs(EarlyBoundTests.AG_LV, IStkObject))
+        helper.Run(clr.CastAs(EarlyBoundTests.AG_LV, ISTKObject))
 
     # endregion
 
@@ -268,7 +268,7 @@ class EarlyBoundTests(TestBase):
             # Trajectory
             oHelper = BasicPropagatorHelper(TestBase.Application)
             oHelper.Run(
-                clr.CastAs(EarlyBoundTests.AG_LV, IStkObject),
+                clr.CastAs(EarlyBoundTests.AG_LV, ISTKObject),
                 EarlyBoundTests.AG_LV.trajectory,
                 eType,
                 self.EarthGravModel,
@@ -561,7 +561,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTrajectoryModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTrajectoryModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_LV.graphics_3d.model, True)
 
     # endregion
@@ -578,7 +578,7 @@ class EarlyBoundTests(TestBase):
     # region VOProximity
     @category("VO Tests")
     def test_VOProximity(self):
-        oHelper = VOTrajectoryProximityHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTrajectoryProximityHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_LV.graphics_3d.proximity)
 
     # endregion
@@ -732,7 +732,7 @@ class EarlyBoundTests(TestBase):
         sa: "PropagatorSimpleAscent" = clr.CastAs(lv.trajectory, PropagatorSimpleAscent)
         sa.propagate()
 
-        exportHelper = ExportDataFileHelper(IStkObject(lv), TestBase.Application)
+        exportHelper = ExportDataFileHelper(ISTKObject(lv), TestBase.Application)
         exportHelper.AttitudeExportTool(lv.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(lv.export_tools.get_ephemeris_stk_export_tool(), False)
         exportHelper.PropDefExportTool(lv.export_tools.get_propagator_definition_export_tool())

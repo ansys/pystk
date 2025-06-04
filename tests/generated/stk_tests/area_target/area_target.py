@@ -192,12 +192,12 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_AT.allow_object_access = bIsAllowed
         Assert.assertEqual(bIsAllowed, EarlyBoundTests.AG_AT.allow_object_access)
 
-        pl: "IStkObject" = TestBase.Application.current_scenario.children["JupiterAnalytic"]
+        pl: "ISTKObject" = TestBase.Application.current_scenario.children["JupiterAnalytic"]
         fa: "Facility" = Facility(TestBase.Application.current_scenario.children["Facility1"])
         Assert.assertIsNotNone(pl)
-        areaTargetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AT, IStkObject)
+        areaTargetObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AT, ISTKObject)
         if areaTargetObject.is_access_supported():
-            areaTargetObject.get_access_to_object(clr.CastAs(fa, IStkObject)).compute_access()
+            areaTargetObject.get_access_to_object(clr.CastAs(fa, ISTKObject)).compute_access()
             areaTargetObject.get_access("*/Planet/Planet1").compute_access()
             areaTargetObject.get_access(pl.path).compute_access()
 
@@ -214,16 +214,16 @@ class EarlyBoundTests(TestBase):
                 cov: "ObjectCoverage" = areaTargetObject.object_coverage
                 TestBase.logger.WriteLine(cov.data_providers[0].name)
 
-            (IStkObject(EarlyBoundTests.AG_AT)).get_access_to_object(clr.CastAs(fa, IStkObject)).remove_access()
-            (IStkObject(EarlyBoundTests.AG_AT)).get_access("*/Planet/Planet1").remove_access()
-            (IStkObject(EarlyBoundTests.AG_AT)).get_access(pl.path).remove_access()
+            (ISTKObject(EarlyBoundTests.AG_AT)).get_access_to_object(clr.CastAs(fa, ISTKObject)).remove_access()
+            (ISTKObject(EarlyBoundTests.AG_AT)).get_access("*/Planet/Planet1").remove_access()
+            (ISTKObject(EarlyBoundTests.AG_AT)).get_access(pl.path).remove_access()
 
-        st: "IStkObject" = TestBase.Application.current_scenario.children["Star1"]
+        st: "ISTKObject" = TestBase.Application.current_scenario.children["Star1"]
         Assert.assertIsNotNone(st)
         areaTargetObject.get_access(st.path)
         areaTargetObject.get_access_to_object(st)
         st.get_access(areaTargetObject.path)
-        st.get_access_to_object(clr.CastAs(EarlyBoundTests.AG_AT, IStkObject))
+        st.get_access_to_object(clr.CastAs(EarlyBoundTests.AG_AT, ISTKObject))
 
         with pytest.raises(Exception):
             areaTargetObject.get_access(TestBase.Application.current_scenario.path)
@@ -400,7 +400,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_AT.access_constraints, IStkObject(EarlyBoundTests.AG_AT), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_AT.access_constraints, ISTKObject(EarlyBoundTests.AG_AT), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -409,7 +409,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        areaTargetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AT, IStkObject)
+        areaTargetObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_AT, ISTKObject)
         oHelper.Run(areaTargetObject)
         oHelper.TestObjectFilesArray(areaTargetObject.object_files)
 
@@ -428,7 +428,7 @@ class EarlyBoundTests(TestBase):
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "Access" = (IStkObject(EarlyBoundTests.AG_AT)).get_access_to_object(clr.CastAs(oSatellite, IStkObject))
+        oAccess: "Access" = (ISTKObject(EarlyBoundTests.AG_AT)).get_access_to_object(clr.CastAs(oSatellite, ISTKObject))
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()
         helper = VODataDisplayHelper(TestBase.Application)

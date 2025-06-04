@@ -78,7 +78,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Satellite",
     )
     def CreateSatelliteSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
     def test_SatelliteInitialStateSnippet(self):
@@ -227,7 +227,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     )
     def SPICESatelliteSnippet(self, root, satellite):
         # Satellite satellite: Satellite object
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         satellite.set_propagator_type(PropagatorType.SPICE)
         propagator = satellite.propagator
         installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
@@ -284,7 +284,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~SatelliteExportTools",
     )
     def ExportEphemerisFileSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # Satellite satellite: Satellite object
         scenPath = root.execute_command("GetDirectory / Scenario").item(0)
         satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
@@ -399,7 +399,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IVehicleGraphics2DAttributesBasic",
     )
     def BasicGraphics2DSnippet(self, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Change the line width, style, color and marker
 
@@ -430,7 +430,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~VehicleGraphics2DAttributesCustom",
     )
     def CustomGraphics2DSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         root.units_preferences.item("DateFormat").set_current_unit("EpSec")
         graphics = satellite.graphics

@@ -159,7 +159,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.SceneContributorCollection`
               - A collection of scene contributor objects.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.STKRFChannelModeler`
               - The main RF Channel Modeler object.
 
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Transceiver`
@@ -274,7 +274,7 @@ Object Model components specifically designed to support STK RF Channel Modeler.
      RangeDopplerResponse<stkrfchannelmodeler/RangeDopplerResponse>
      SceneContributor<stkrfchannelmodeler/SceneContributor>
      SceneContributorCollection<stkrfchannelmodeler/SceneContributorCollection>
-     StkRFChannelModeler<stkrfchannelmodeler/StkRFChannelModeler>
+     STKRFChannelModeler<stkrfchannelmodeler/STKRFChannelModeler>
      Transceiver<stkrfchannelmodeler/Transceiver>
      TransceiverCollection<stkrfchannelmodeler/TransceiverCollection>
      ValidationResponse<stkrfchannelmodeler/ValidationResponse>

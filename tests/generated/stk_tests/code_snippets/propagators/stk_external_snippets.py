@@ -78,14 +78,14 @@ class StkExternalSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("CodeSnippetsTests", "TestEph.e")
         )
 
-    def CreateSatelliteFromExternalEphemerisFile(self, root: "StkObjectRoot", ephemerisFilePath: str):
+    def CreateSatelliteFromExternalEphemerisFile(self, root: "STKObjectRoot", ephemerisFilePath: str):
         satellite: "Satellite" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite"), Satellite
         )
 
         # Configure propagator's external file path
         satellite.set_propagator_type(PropagatorType.STK_EXTERNAL)
-        ext: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
+        ext: "PropagatorSTKExternal" = clr.CastAs(satellite.propagator, PropagatorSTKExternal)
         ext.filename = ephemerisFilePath
 
         # Propagate

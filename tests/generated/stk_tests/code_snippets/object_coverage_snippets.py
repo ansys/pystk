@@ -58,11 +58,11 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
 
     # region SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject
     def test_SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self):
-        scenario: "IStkObject" = TestBase.Application.current_scenario
-        aircraft: "IStkObject" = scenario.children.new(STKObjectType.AIRCRAFT, "UAV")
+        scenario: "ISTKObject" = TestBase.Application.current_scenario
+        aircraft: "ISTKObject" = scenario.children.new(STKObjectType.AIRCRAFT, "UAV")
         aircraft.children.new(STKObjectType.SENSOR, "UAV_Camera")
 
-        areaTarget: "IStkObject" = scenario.children.new(STKObjectType.AREA_TARGET, "Airspace")
+        areaTarget: "ISTKObject" = scenario.children.new(STKObjectType.AREA_TARGET, "Airspace")
 
         try:
             self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(TestBase.Application)
@@ -71,10 +71,10 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
             areaTarget.unload()
             aircraft.unload()
 
-    def SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self, root: "StkObjectRoot"):
+    def SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self, root: "STKObjectRoot"):
         # For this example, set the access times to use the light intervals of the area target.
-        uavAircraft: "IStkObject" = root.get_object_from_path("Aircraft/UAV/Sensor/UAV_Camera")
-        airspaceAreaTarget: "IStkObject" = root.get_object_from_path("AreaTarget/Airspace")
+        uavAircraft: "ISTKObject" = root.get_object_from_path("Aircraft/UAV/Sensor/UAV_Camera")
+        airspaceAreaTarget: "ISTKObject" = root.get_object_from_path("AreaTarget/Airspace")
 
         firstSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.analysis_workbench_components.time_instants[
             "LightingIntervals.Sunlight.First.Start"
