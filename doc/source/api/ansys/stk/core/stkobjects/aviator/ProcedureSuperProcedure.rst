@@ -65,7 +65,8 @@ Method detail
 
     :Parameters:
 
-    **filepath** : :obj:`~str`
+        **filepath** : :obj:`~str`
+
 
     :Returns:
 

@@ -85,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~OrientationType`
+        **type** : :obj:`~OrientationType`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **orientation** : :obj:`~IOrientation`
+        **orientation** : :obj:`~IOrientation`
+
 
     :Returns:
 
@@ -112,9 +114,12 @@ Method detail
 
     :Parameters:
 
-    **azimuth** : :obj:`~typing.Any`
-    **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AzElAboutBoresight`
+        **azimuth** : :obj:`~typing.Any`
+
+        **elevation** : :obj:`~typing.Any`
+
+        **about_boresight** : :obj:`~AzElAboutBoresight`
+
 
     :Returns:
 
@@ -127,10 +132,14 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerOrientationSequenceType`
-    **a** : :obj:`~typing.Any`
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
+        **a** : :obj:`~typing.Any`
+
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -143,10 +152,14 @@ Method detail
 
     :Parameters:
 
-    **qx** : :obj:`~float`
-    **qy** : :obj:`~float`
-    **qz** : :obj:`~float`
-    **qs** : :obj:`~float`
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
+
 
     :Returns:
 
@@ -159,10 +172,14 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~YPRAnglesSequence`
-    **yaw** : :obj:`~typing.Any`
-    **pitch** : :obj:`~typing.Any`
-    **roll** : :obj:`~typing.Any`
+        **sequence** : :obj:`~YPRAnglesSequence`
+
+        **yaw** : :obj:`~typing.Any`
+
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -184,7 +201,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerOrientationSequenceType`
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
 
     :Returns:
 
@@ -206,7 +224,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~YPRAnglesSequence`
+        **sequence** : :obj:`~YPRAnglesSequence`
+
 
     :Returns:
 
@@ -228,7 +247,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerOrientationSequenceType`
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
 
     :Returns:
 
@@ -250,7 +270,8 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~YPRAnglesSequence`
+        **sequence** : :obj:`~YPRAnglesSequence`
+
 
     :Returns:
 

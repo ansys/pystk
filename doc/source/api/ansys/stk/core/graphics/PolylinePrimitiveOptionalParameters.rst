@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **time_intervals** : :obj:`~list`
+        **time_intervals** : :obj:`~list`
+
 
     :Returns:
 

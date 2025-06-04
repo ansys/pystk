@@ -57,9 +57,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **type** : :obj:`~EventIntervalType`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **type** : :obj:`~EventIntervalType`
+
 
     :Returns:
 
@@ -72,8 +75,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -86,8 +91,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -100,8 +107,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -114,8 +123,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -128,8 +139,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -142,8 +155,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -156,8 +171,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -170,7 +187,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~EventIntervalType`
+        **type** : :obj:`~EventIntervalType`
+
 
     :Returns:
 

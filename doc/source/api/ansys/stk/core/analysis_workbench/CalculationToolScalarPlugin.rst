@@ -94,8 +94,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **value** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **value** : :obj:`~str`
+
 
     :Returns:
 
@@ -108,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

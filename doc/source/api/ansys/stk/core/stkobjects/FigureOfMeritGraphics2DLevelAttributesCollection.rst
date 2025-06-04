@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -113,9 +115,12 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
-    **step** : :obj:`~typing.Any`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
+        **step** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -128,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **level** : :obj:`~typing.Any`
+        **level** : :obj:`~typing.Any`
+
 
     :Returns:
 

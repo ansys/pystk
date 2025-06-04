@@ -152,8 +152,10 @@ Method detail
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 

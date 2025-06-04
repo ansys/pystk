@@ -58,7 +58,8 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 
@@ -71,8 +72,10 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
-    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+        **set_hint** : :obj:`~SetHint`
+
+        **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+
 
     :Returns:
 
@@ -85,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+        **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
+
 
     :Returns:
 

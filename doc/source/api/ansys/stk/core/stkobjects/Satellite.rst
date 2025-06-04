@@ -3,7 +3,7 @@ Satellite
 
 .. py:class:: ansys.stk.core.stkobjects.Satellite
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Satellite properties.
 
@@ -126,7 +126,7 @@ Create a satellite (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
 
@@ -291,7 +291,8 @@ Method detail
 
     :Parameters:
 
-    **propagator** : :obj:`~PropagatorType`
+        **propagator** : :obj:`~PropagatorType`
+
 
     :Returns:
 
@@ -306,7 +307,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 
@@ -319,7 +321,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 
@@ -341,7 +344,8 @@ Method detail
 
     :Parameters:
 
-    **propagator** : :obj:`~PropagatorType`
+        **propagator** : :obj:`~PropagatorType`
+
 
     :Returns:
 

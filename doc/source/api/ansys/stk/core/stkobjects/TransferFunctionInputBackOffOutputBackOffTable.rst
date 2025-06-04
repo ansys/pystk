@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -102,8 +104,10 @@ Method detail
 
     :Parameters:
 
-    **input_back_off** : :obj:`~float`
-    **output_back_off** : :obj:`~float`
+        **input_back_off** : :obj:`~float`
+
+        **output_back_off** : :obj:`~float`
+
 
     :Returns:
 
@@ -116,9 +120,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **input_back_off** : :obj:`~float`
-    **output_back_off** : :obj:`~float`
+        **index** : :obj:`~int`
+
+        **input_back_off** : :obj:`~float`
+
+        **output_back_off** : :obj:`~float`
+
 
     :Returns:
 

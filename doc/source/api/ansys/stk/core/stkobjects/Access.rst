@@ -73,7 +73,7 @@ Configure the access analysis time period to specified time instants
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")
@@ -144,7 +144,7 @@ Compute an access between two STK Objects (using object path)
     access.compute_access()
 
 
-Compute an access between two STK Objects (using IStkObject interface)
+Compute an access between two STK Objects (using ISTKObject interface)
 
 .. code-block:: python
 
@@ -225,13 +225,13 @@ Property detail
 
 .. py:property:: base
     :canonical: ansys.stk.core.stkobjects.Access.base
-    :type: IStkObject
+    :type: ISTKObject
 
     Base object used in the access.
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.Access.target
-    :type: IStkObject
+    :type: ISTKObject
 
     Target object used in the access.
 
@@ -273,8 +273,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -290,7 +292,8 @@ Method detail
 
     :Parameters:
 
-    **access_intervals** : :obj:`~list`
+        **access_intervals** : :obj:`~list`
+
 
     :Returns:
 
@@ -305,7 +308,8 @@ Method detail
 
     :Parameters:
 
-    **event_interval_list** : :obj:`~ITimeToolTimeIntervalList`
+        **event_interval_list** : :obj:`~ITimeToolTimeIntervalList`
+
 
     :Returns:
 

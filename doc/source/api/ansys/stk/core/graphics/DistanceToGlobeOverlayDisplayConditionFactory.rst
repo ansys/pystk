@@ -52,9 +52,12 @@ Method detail
 
     :Parameters:
 
-    **globe_overlay** : :obj:`~IGlobeOverlay`
-    **minimum_distance** : :obj:`~float`
-    **maximum_distance** : :obj:`~float`
+        **globe_overlay** : :obj:`~IGlobeOverlay`
+
+        **minimum_distance** : :obj:`~float`
+
+        **maximum_distance** : :obj:`~float`
+
 
     :Returns:
 

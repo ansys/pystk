@@ -105,9 +105,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **type** : :obj:`~CalculationScalarType`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **type** : :obj:`~CalculationScalarType`
+
 
     :Returns:
 
@@ -120,8 +123,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -134,8 +139,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -148,8 +155,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -162,10 +171,14 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **data_provider** : :obj:`~str`
-    **element_name** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **data_provider** : :obj:`~str`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -178,11 +191,16 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **data_provider** : :obj:`~str`
-    **group_name** : :obj:`~str`
-    **element_name** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **data_provider** : :obj:`~str`
+
+        **group_name** : :obj:`~str`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -195,8 +213,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -209,8 +229,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -223,9 +245,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **filepath** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **filepath** : :obj:`~str`
+
 
     :Returns:
 
@@ -238,8 +263,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -252,8 +279,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -266,8 +295,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -280,8 +311,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -294,9 +327,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **display_name** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **display_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -309,7 +345,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~CalculationScalarType`
+        **type** : :obj:`~CalculationScalarType`
+
 
     :Returns:
 
@@ -322,9 +359,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **filepath** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **filepath** : :obj:`~str`
+
 
     :Returns:
 
@@ -337,8 +377,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -351,8 +393,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -365,8 +409,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -379,8 +425,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -393,8 +441,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -407,8 +457,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -421,8 +473,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 

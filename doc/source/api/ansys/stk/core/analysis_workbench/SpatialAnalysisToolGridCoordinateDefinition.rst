@@ -76,11 +76,16 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~float`
-    **max** : :obj:`~float`
-    **include_min_max** : :obj:`~bool`
-    **ref_value** : :obj:`~float`
-    **fixed_step** : :obj:`~float`
+        **min** : :obj:`~float`
+
+        **max** : :obj:`~float`
+
+        **include_min_max** : :obj:`~bool`
+
+        **ref_value** : :obj:`~float`
+
+        **fixed_step** : :obj:`~float`
+
 
     :Returns:
 
@@ -93,9 +98,12 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~float`
-    **max** : :obj:`~float`
-    **num_steps** : :obj:`~int`
+        **min** : :obj:`~float`
+
+        **max** : :obj:`~float`
+
+        **num_steps** : :obj:`~int`
+
 
     :Returns:
 
@@ -108,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **values** : :obj:`~list`
+        **values** : :obj:`~list`
+
 
     :Returns:
 
@@ -121,9 +130,12 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~Quantity`
-    **max** : :obj:`~Quantity`
-    **num_steps** : :obj:`~int`
+        **min** : :obj:`~Quantity`
+
+        **max** : :obj:`~Quantity`
+
+        **num_steps** : :obj:`~int`
+
 
     :Returns:
 

@@ -3,7 +3,7 @@ CoverageDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageDefinition
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The CoverageDefinition class.
 
@@ -213,7 +213,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 

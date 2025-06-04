@@ -2583,7 +2583,7 @@ class GatorHelper(object):
             cp = dc.control_parameters.get_control_by_paths("TMan", "ImpulsiveMnvr.EulerAngles.Angle3")
 
     @staticmethod
-    def TestTargetSequence(ts: "MCSTargetSequence", isFromCM: bool, root: "StkObjectRoot"):
+    def TestTargetSequence(ts: "MCSTargetSequence", isFromCM: bool, root: "STKObjectRoot"):
         segment: "IMCSSegment" = clr.CastAs(ts, IMCSSegment)
         Assert.assertEqual(SegmentType.TARGET_SEQUENCE, segment.type)
 
@@ -4845,7 +4845,7 @@ class GatorHelper(object):
         GatorHelper.TestStoppingConditionCollection(propagate.stopping_conditions)
 
     @staticmethod
-    def TestManeuver_OptimalFinite(maneuver: "MCSManeuver", isFromCM: bool, root: "StkObjectRoot"):
+    def TestManeuver_OptimalFinite(maneuver: "MCSManeuver", isFromCM: bool, root: "STKObjectRoot"):
         # Initialize the optimal finite maneuver from  a default finite maneuver
         maneuver.set_maneuver_type(ManeuverType.FINITE)
         Assert.assertEqual(ManeuverType.FINITE, maneuver.maneuver_type)
@@ -5770,7 +5770,7 @@ class GatorHelper(object):
 
     # TODO check readonly as well.
     @staticmethod
-    def TestInitialState(initState: "MCSInitialState", isFromCM: bool, root: "StkObjectRoot"):
+    def TestInitialState(initState: "MCSInitialState", isFromCM: bool, root: "STKObjectRoot"):
         segment: "IMCSSegment" = clr.CastAs(initState, IMCSSegment)
 
         Assert.assertEqual(SegmentType.INITIAL_STATE, segment.type)
@@ -6757,7 +6757,7 @@ class GatorHelper(object):
         ts.segments.remove("Propagate1")
 
     @staticmethod
-    def TestProfileGoldenSection(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "StkObjectRoot"):
+    def TestProfileGoldenSection(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "STKObjectRoot"):
         if root != None:
             oSat: "Satellite" = clr.CastAs(
                 root.current_scenario.children.import_object(TestBase.GetScenarioFile("ENG116918", "GoldenSection.sa")),
@@ -6888,7 +6888,7 @@ class GatorHelper(object):
             Assert.assertEqual("m/sec", GoldenSectionResult.custom_display_unit)
 
     @staticmethod
-    def TestProfileGridSearch(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "StkObjectRoot"):
+    def TestProfileGridSearch(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "STKObjectRoot"):
         if root != None:
             GatorHelper.Test_IAgVAProfile(ts, iAgVAProfile, ProfileMode.NOT_ACTIVE)
 
@@ -6986,7 +6986,7 @@ class GatorHelper(object):
             man1.disable_control_parameter(ControlManeuver.FINITE_BURN_CENTER_BIAS)
 
     @staticmethod
-    def TestProfileBisection(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "StkObjectRoot"):
+    def TestProfileBisection(iAgVAProfile: "IProfile", ts: "MCSTargetSequence", root: "STKObjectRoot"):
         if root != None:
             profBisection: "ProfileBisection" = clr.CastAs(ts.profiles["Single Parameter Bisection"], ProfileBisection)
             Assert.assertEqual("Single Parameter Bisection", profBisection.name)

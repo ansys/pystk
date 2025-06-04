@@ -80,7 +80,8 @@ Method detail
 
     :Parameters:
 
-    **compute_type** : :obj:`~FigureOfMeritCompute`
+        **compute_type** : :obj:`~FigureOfMeritCompute`
+
 
     :Returns:
 
@@ -93,7 +94,8 @@ Method detail
 
     :Parameters:
 
-    **compute_type** : :obj:`~FigureOfMeritCompute`
+        **compute_type** : :obj:`~FigureOfMeritCompute`
+
 
     :Returns:
 

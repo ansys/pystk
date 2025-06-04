@@ -174,8 +174,10 @@ Method detail
 
     :Parameters:
 
-    **start_offset** : :obj:`~float`
-    **stop_offset** : :obj:`~float`
+        **start_offset** : :obj:`~float`
+
+        **stop_offset** : :obj:`~float`
+
 
     :Returns:
 

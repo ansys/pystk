@@ -119,7 +119,8 @@ Method detail
 
     :Parameters:
 
-    **offset** : :obj:`~VehicleGraphics2DOffset`
+        **offset** : :obj:`~VehicleGraphics2DOffset`
+
 
     :Returns:
 
@@ -132,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **offset** : :obj:`~VehicleGraphics2DOffset`
+        **offset** : :obj:`~VehicleGraphics2DOffset`
+
 
     :Returns:
 

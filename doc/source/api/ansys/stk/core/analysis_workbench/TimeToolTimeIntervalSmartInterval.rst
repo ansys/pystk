@@ -105,7 +105,8 @@ Method detail
 
     :Parameters:
 
-    **event_interval** : :obj:`~ITimeToolTimeInterval`
+        **event_interval** : :obj:`~ITimeToolTimeInterval`
+
 
     :Returns:
 
@@ -145,7 +146,8 @@ Method detail
 
     :Parameters:
 
-    **start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+        **start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+
 
     :Returns:
 
@@ -167,7 +169,8 @@ Method detail
 
     :Parameters:
 
-    **stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+        **stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+
 
     :Returns:
 
@@ -180,8 +183,10 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -194,8 +199,10 @@ Method detail
 
     :Parameters:
 
-    **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
-    **ref_stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+        **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+
+        **ref_stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+
 
     :Returns:
 
@@ -208,8 +215,10 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -222,8 +231,10 @@ Method detail
 
     :Parameters:
 
-    **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
-    **duration_str** : :obj:`~str`
+        **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+
+        **duration_str** : :obj:`~str`
+
 
     :Returns:
 
@@ -236,8 +247,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **duration_str** : :obj:`~str`
+        **epoch** : :obj:`~typing.Any`
+
+        **duration_str** : :obj:`~str`
+
 
     :Returns:
 

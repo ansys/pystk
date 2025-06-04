@@ -264,8 +264,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_path** : :obj:`~str`
-    **window_id** : :obj:`~str`
+        **trunc_path** : :obj:`~str`
+
+        **window_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -278,8 +280,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_object_paths** : :obj:`~list`
-    **window_id_or_title** : :obj:`~str`
+        **trunc_object_paths** : :obj:`~list`
+
+        **window_id_or_title** : :obj:`~str`
+
 
     :Returns:
 
@@ -292,8 +296,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_path** : :obj:`~str`
-    **window_id** : :obj:`~str`
+        **trunc_path** : :obj:`~str`
+
+        **window_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -306,8 +312,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_object_paths** : :obj:`~list`
-    **window_id_or_title** : :obj:`~str`
+        **trunc_object_paths** : :obj:`~list`
+
+        **window_id_or_title** : :obj:`~str`
+
 
     :Returns:
 

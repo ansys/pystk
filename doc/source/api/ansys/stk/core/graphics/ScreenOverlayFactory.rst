@@ -43,10 +43,14 @@ Method detail
 
     :Parameters:
 
-    **x_pixels** : :obj:`~float`
-    **y_pixels** : :obj:`~float`
-    **width_pixels** : :obj:`~float`
-    **height_pixels** : :obj:`~float`
+        **x_pixels** : :obj:`~float`
+
+        **y_pixels** : :obj:`~float`
+
+        **width_pixels** : :obj:`~float`
+
+        **height_pixels** : :obj:`~float`
+
 
     :Returns:
 
@@ -59,8 +63,10 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~list`
-    **size** : :obj:`~list`
+        **position** : :obj:`~list`
+
+        **size** : :obj:`~list`
+
 
     :Returns:
 

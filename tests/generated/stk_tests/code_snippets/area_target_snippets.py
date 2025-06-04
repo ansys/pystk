@@ -68,13 +68,13 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
 
     # region CreateAreaTargetOnCurrentScenarioCentralBody
     def test_CreateAreaTargetOnCurrentScenarioCentralBody(self):
-        (IStkObject(self.m_Object)).unload()
+        (ISTKObject(self.m_Object)).unload()
         self.CreateAreaTargetOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children[AreaTargetSnippets.m_DefaultName], AreaTarget
         )
 
-    def CreateAreaTargetOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateAreaTargetOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the AreaTarget on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "AreaTarget" = clr.CastAs(
@@ -87,7 +87,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     def test_SetAreaTargetBoundaryAndPosition(self):
         self.SetAreaTargetBoundaryAndPosition(CodeSnippetsTestBase.m_Root, self.m_Object)
 
-    def SetAreaTargetBoundaryAndPosition(self, root: "StkObjectRoot", areaTarget: "AreaTarget"):
+    def SetAreaTargetBoundaryAndPosition(self, root: "STKObjectRoot", areaTarget: "AreaTarget"):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
@@ -104,7 +104,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     def test_SetAreaTargetBoundaryAndPositionCommonTask(self):
         self.SetAreaTargetBoundaryAndPositionCommonTask(CodeSnippetsTestBase.m_Root, self.m_Object)
 
-    def SetAreaTargetBoundaryAndPositionCommonTask(self, root: "StkObjectRoot", areaTarget: "AreaTarget"):
+    def SetAreaTargetBoundaryAndPositionCommonTask(self, root: "STKObjectRoot", areaTarget: "AreaTarget"):
         # By using the CommonTasks interface,
         # make an array of latitude and longitude boundary points
         boundary = [[40.04, -76.304], [40.337, -75.922], [40.028, -75.628]]
@@ -118,7 +118,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     def test_SetEllipticalAreaTarget(self):
         self.SetEllipticalAreaTarget(CodeSnippetsTestBase.m_Root, self.m_Object)
 
-    def SetEllipticalAreaTarget(self, root: "StkObjectRoot", areaTarget: "AreaTarget"):
+    def SetEllipticalAreaTarget(self, root: "STKObjectRoot", areaTarget: "AreaTarget"):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
@@ -135,7 +135,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     def test_SetEllipticalAreaTargetCommonTask(self):
         self.SetEllipticalAreaTargetCommonTask(CodeSnippetsTestBase.m_Root, self.m_Object)
 
-    def SetEllipticalAreaTargetCommonTask(self, root: "StkObjectRoot", areaTarget: "AreaTarget"):
+    def SetEllipticalAreaTargetCommonTask(self, root: "STKObjectRoot", areaTarget: "AreaTarget"):
         # By using the CommonTasks interface
         areaTarget.common_tasks.set_area_type_ellipse(85.25, 80.75, 44)
 

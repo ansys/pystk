@@ -65,7 +65,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~DeticPositionType`
+        **type** : :obj:`~DeticPositionType`
+
 
     :Returns:
 
@@ -79,7 +80,8 @@ Method detail
 
     :Parameters:
 
-    **pos** : :obj:`~ILatitudeLongitudeAltitudePosition`
+        **pos** : :obj:`~ILatitudeLongitudeAltitudePosition`
+
 
     :Returns:
 
@@ -92,9 +94,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **rad** : :obj:`~float`
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **rad** : :obj:`~float`
+
 
     :Returns:
 
@@ -107,9 +112,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 

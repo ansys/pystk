@@ -336,7 +336,8 @@ Method detail
 
     :Parameters:
 
-    **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
+        **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
+
 
     :Returns:
 
@@ -349,13 +350,20 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **normals** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **outline_indices** : :obj:`~list`
-    **winding_order** : :obj:`~WindingOrder`
-    **bounding_sphere** : :obj:`~BoundingSphere`
-    **closed** : :obj:`~bool`
+        **positions** : :obj:`~list`
+
+        **normals** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **outline_indices** : :obj:`~list`
+
+        **winding_order** : :obj:`~WindingOrder`
+
+        **bounding_sphere** : :obj:`~BoundingSphere`
+
+        **closed** : :obj:`~bool`
+
 
     :Returns:
 

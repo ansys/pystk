@@ -136,7 +136,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineThrottleTable`
+        **param** : :obj:`~ControlEngineThrottleTable`
+
 
     :Returns:
 
@@ -149,7 +150,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineThrottleTable`
+        **param** : :obj:`~ControlEngineThrottleTable`
+
 
     :Returns:
 
@@ -162,7 +164,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineThrottleTable`
+        **param** : :obj:`~ControlEngineThrottleTable`
+
 
     :Returns:
 

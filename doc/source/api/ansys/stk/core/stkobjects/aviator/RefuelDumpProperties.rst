@@ -102,8 +102,10 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~RefuelDumpMode`
-    **value** : :obj:`~float`
+        **mode** : :obj:`~RefuelDumpMode`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 

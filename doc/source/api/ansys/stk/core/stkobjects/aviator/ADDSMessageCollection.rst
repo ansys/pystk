@@ -73,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -87,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **message** : :obj:`~ADDSMessage`
+        **message** : :obj:`~ADDSMessage`
+
 
     :Returns:
 

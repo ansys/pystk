@@ -133,7 +133,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

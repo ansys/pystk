@@ -69,7 +69,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Distance", "m")
         self.ConfigureMtos(CodeSnippetsTestBase.m_Root, MtoSnippets.m_Object)
 
-    def ConfigureMtos(self, root: "StkObjectRoot", mto: "MTO"):
+    def ConfigureMtos(self, root: "STKObjectRoot", mto: "MTO"):
         scenario: "Scenario" = clr.CastAs(root.current_scenario, Scenario)
         scenario.set_time_period("1 Feb 2008 12:00:00.000", "2 Feb 2008 12:00:00.000")
 
@@ -186,7 +186,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.MTO, MtoSnippets.m_DefaultName)
         self.CreateMtoOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateMtoOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateMtoOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the MTO
         mto: "MTO" = clr.CastAs(root.current_scenario.children.new(STKObjectType.MTO, "mto1"), MTO)
 
@@ -254,7 +254,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "J2Satellite")
 
     def DetermineWhichTracksOfSpecifiedSubsetOfTracksAreVisibleFromOtherStkObject(
-        self, root: "StkObjectRoot", mto: "MTO"
+        self, root: "STKObjectRoot", mto: "MTO"
     ):
         mtoVisibility: "MTOAnalysisVisibility" = mto.analysis.visibility
         mtoVisibility.use_terrain = False  # Set to true to use terrain instead of line of sight.
@@ -301,7 +301,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         self.DetermineIfAllTracksAreVisibleFromOtherStkObject(CodeSnippetsTestBase.m_Root, MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "J2Satellite")
 
-    def DetermineIfAllTracksAreVisibleFromOtherStkObject(self, root: "StkObjectRoot", mto: "MTO"):
+    def DetermineIfAllTracksAreVisibleFromOtherStkObject(self, root: "STKObjectRoot", mto: "MTO"):
         mtoVisibility: "MTOAnalysisVisibility" = mto.analysis.visibility
         mtoVisibility.use_terrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.entirety = MTOEntirety.PARTIAL  # Only applies if MTO is static (i.e. non time dependent).
@@ -333,7 +333,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         self.DetermineIfAnyTrackIsVisibleFromOtherStkObject(CodeSnippetsTestBase.m_Root, MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "J2Satellite")
 
-    def DetermineIfAnyTrackIsVisibleFromOtherStkObject(self, root: "StkObjectRoot", mto: "MTO"):
+    def DetermineIfAnyTrackIsVisibleFromOtherStkObject(self, root: "STKObjectRoot", mto: "MTO"):
         mtoVisibility: "MTOAnalysisVisibility" = mto.analysis.visibility
         mtoVisibility.use_terrain = False  # Set to true to use terrain instead of line of sight.
         mtoVisibility.entirety = MTOEntirety.PARTIAL  # Only applies if MTO is static (i.e. non time dependent).
@@ -359,7 +359,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         self.DetermineIfAllTracksAreVisible(CodeSnippetsTestBase.m_Root, MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "J2Satellite")
 
-    def DetermineIfAllTracksAreVisible(self, root: "StkObjectRoot", mto: "MTO"):
+    def DetermineIfAllTracksAreVisible(self, root: "STKObjectRoot", mto: "MTO"):
         # Are all the tracks visible from the other STK Object at the specified time?
 
         mtoVisibility: "MTOAnalysisVisibility" = mto.analysis.visibility
@@ -502,7 +502,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         MtoSnippets.m_Object.tracks.add(1)
         MtoSnippets.m_Object.tracks.add(4)
 
-        sensor1: "Sensor" = clr.CastAs((IStkObject(satellite)).children.new(STKObjectType.SENSOR, "Sensor1"), Sensor)
+        sensor1: "Sensor" = clr.CastAs((ISTKObject(satellite)).children.new(STKObjectType.SENSOR, "Sensor1"), Sensor)
         self.ComputeMtoFieldOfView(MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "J2Satellite")
 

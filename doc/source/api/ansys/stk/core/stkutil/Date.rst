@@ -100,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **unit** : :obj:`~str`
+        **unit** : :obj:`~str`
+
 
     :Returns:
 
@@ -113,8 +114,10 @@ Method detail
 
     :Parameters:
 
-    **unit** : :obj:`~str`
-    **value** : :obj:`~str`
+        **unit** : :obj:`~str`
+
+        **value** : :obj:`~str`
+
 
     :Returns:
 
@@ -137,8 +140,10 @@ Method detail
 
     :Parameters:
 
-    **unit** : :obj:`~str`
-    **value** : :obj:`~float`
+        **unit** : :obj:`~str`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -151,8 +156,10 @@ Method detail
 
     :Parameters:
 
-    **unit** : :obj:`~str`
-    **value** : :obj:`~float`
+        **unit** : :obj:`~str`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
@@ -165,7 +172,8 @@ Method detail
 
     :Parameters:
 
-    **date** : :obj:`~Date`
+        **date** : :obj:`~Date`
+
 
     :Returns:
 

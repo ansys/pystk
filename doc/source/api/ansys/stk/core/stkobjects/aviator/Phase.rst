@@ -114,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~str`
+        **type** : :obj:`~str`
+
 
     :Returns:
 

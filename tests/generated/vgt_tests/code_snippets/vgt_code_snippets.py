@@ -1871,10 +1871,10 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.Transform
     def test_AxesTransformEarthFixed(self):
-        sat: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        sat: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         self.AxesTransformEarthFixed(sat)
 
-    def AxesTransformEarthFixed(self, sat: "IStkObject"):
+    def AxesTransformEarthFixed(self, sat: "ISTKObject"):
         # Get the satellite's ICRF cartesian position at 180 EpSec using the data provider interface
         numEpSec: int = 180
         dpGroup: "DataProviderGroup" = clr.CastAs(sat.data_providers["Cartesian Position"], DataProviderGroup)
@@ -1903,10 +1903,10 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.TransformWithRate
     def test_AxesTransformWithRateEarthFixed(self):
-        sat: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        sat: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         self.AxesTransformWithRateEarthFixed(sat)
 
-    def AxesTransformWithRateEarthFixed(self, sat: "IStkObject"):
+    def AxesTransformWithRateEarthFixed(self, sat: "ISTKObject"):
         numEpSec: int = 180
 
         # Get the satellite's ICRF cartesian position at 180 EpSec using the data provider interface
@@ -2103,7 +2103,7 @@ class VGT(CodeSnippetsTestBase):
 
     def SystemsCreateAssembled(self, provider: "AnalysisWorkbenchComponentProvider", facility: "Facility"):
         systemAssembled: "VectorGeometryToolSystemAssembled" = provider.systems.common_tasks.create_assembled(
-            (IStkObject(facility)).analysis_workbench_components.points["Center"], provider.axes["Fixed"]
+            (ISTKObject(facility)).analysis_workbench_components.points["Center"], provider.axes["Fixed"]
         )
 
     # endregion

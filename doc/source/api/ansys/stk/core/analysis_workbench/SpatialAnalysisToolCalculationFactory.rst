@@ -59,7 +59,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~SpatialCalculationType`
+        **type** : :obj:`~SpatialCalculationType`
+
 
     :Returns:
 
@@ -72,9 +73,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **type** : :obj:`~SpatialCalculationType`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **type** : :obj:`~SpatialCalculationType`
+
 
     :Returns:
 
@@ -87,8 +91,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -101,8 +107,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -115,8 +123,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -129,8 +139,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -143,8 +155,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -157,8 +171,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -171,8 +187,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 
@@ -185,8 +203,10 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
-    **description** : :obj:`~str`
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
 
     :Returns:
 

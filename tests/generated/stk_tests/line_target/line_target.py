@@ -330,7 +330,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_LT.access_constraints, IStkObject(EarlyBoundTests.AG_LT), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_LT.access_constraints, ISTKObject(EarlyBoundTests.AG_LT), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -339,7 +339,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        lineTargetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_LT, IStkObject)
+        lineTargetObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_LT, ISTKObject)
         oHelper.Run(lineTargetObject)
         oHelper.TestObjectFilesArray(lineTargetObject.object_files)
 
@@ -358,7 +358,7 @@ class EarlyBoundTests(TestBase):
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "Access" = (IStkObject(EarlyBoundTests.AG_LT)).get_access_to_object(clr.CastAs(oSatellite, IStkObject))
+        oAccess: "Access" = (ISTKObject(EarlyBoundTests.AG_LT)).get_access_to_object(clr.CastAs(oSatellite, ISTKObject))
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()
         helper = VODataDisplayHelper(TestBase.Application)

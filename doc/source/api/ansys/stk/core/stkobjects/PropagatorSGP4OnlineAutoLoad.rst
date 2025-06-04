@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **ssc_number** : :obj:`~str`
+        **ssc_number** : :obj:`~str`
+
 
     :Returns:
 

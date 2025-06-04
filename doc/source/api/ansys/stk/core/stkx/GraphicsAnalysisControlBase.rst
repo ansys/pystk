@@ -127,7 +127,8 @@ Method detail
 
     :Parameters:
 
-    **picture** : :obj:`~IPictureDisp`
+        **picture** : :obj:`~IPictureDisp`
+
 
     :Returns:
 

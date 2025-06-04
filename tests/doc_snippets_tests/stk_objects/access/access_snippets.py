@@ -361,7 +361,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ComputeAccess",
-        description="Compute an access between two STK Objects (using IStkObject interface)",
+        description="Compute an access between two STK Objects (using ISTKObject interface)",
         category="STK Objects | Access",
         eid="stkobjects~Access",
     )
@@ -450,7 +450,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="stkobjects~OnePointAccess",
     )
     def ComputeAccessPointSnippet(self, root, facility):
-        # IStkObject facility: Facility object
+        # ISTKObject facility: Facility object
         onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
 
         # Configure properties (if necessary)
@@ -521,7 +521,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Access",
     )
     def ConfigureAccessIntervalSnippet(self, root):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
 
         satellite = root.get_object_from_path("Satellite/MySatellite")
         facility = root.get_object_from_path("Facility/MyFacility")
@@ -568,7 +568,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IAccessConstraint",
     )
     def ConfigureAccessIntervalAvailabilitySnippet(self, root):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
 
         satellite = root.get_object_from_path("Satellite/MySatellite")
         facility = root.get_object_from_path("Facility/MyFacility")
@@ -602,7 +602,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IAccessConstraint",
     )
     def GetAccessesSnippet(self, root):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         scenario = root.current_scenario
         accesses = scenario.get_existing_accesses()
 

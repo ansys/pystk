@@ -92,9 +92,12 @@ Method detail
 
     :Parameters:
 
-    **level_of_detail** : :obj:`~int`
-    **articulation** : :obj:`~str`
-    **trans** : :obj:`~str`
+        **level_of_detail** : :obj:`~int`
+
+        **articulation** : :obj:`~str`
+
+        **trans** : :obj:`~str`
+
 
     :Returns:
 
@@ -107,10 +110,14 @@ Method detail
 
     :Parameters:
 
-    **level_of_detail** : :obj:`~int`
-    **articulation** : :obj:`~str`
-    **trans** : :obj:`~str`
-    **transformation_value** : :obj:`~float`
+        **level_of_detail** : :obj:`~int`
+
+        **articulation** : :obj:`~str`
+
+        **trans** : :obj:`~str`
+
+        **transformation_value** : :obj:`~float`
+
 
     :Returns:
 
@@ -123,7 +130,8 @@ Method detail
 
     :Parameters:
 
-    **level_of_detail** : :obj:`~int`
+        **level_of_detail** : :obj:`~int`
+
 
     :Returns:
 
@@ -136,8 +144,10 @@ Method detail
 
     :Parameters:
 
-    **level_of_detail** : :obj:`~int`
-    **artic_name** : :obj:`~str`
+        **level_of_detail** : :obj:`~int`
+
+        **artic_name** : :obj:`~str`
+
 
     :Returns:
 

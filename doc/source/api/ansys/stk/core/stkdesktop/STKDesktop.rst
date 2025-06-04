@@ -80,13 +80,20 @@ Method detail
 
     :Parameters:
 
-    **visible** : :obj:`~bool`
-    **user_control** : :obj:`~bool`
-    **grpc_server** : :obj:`~bool`
-    **grpc_host** : :obj:`~str`
-    **grpc_port** : :obj:`~int`
-    **grpc_timeout_sec** : :obj:`~int`
-    **grpc_max_message_size** : :obj:`~int`
+        **visible** : :obj:`~bool`
+
+        **user_control** : :obj:`~bool`
+
+        **grpc_server** : :obj:`~bool`
+
+        **grpc_host** : :obj:`~str`
+
+        **grpc_port** : :obj:`~int`
+
+        **grpc_timeout_sec** : :obj:`~int`
+
+        **grpc_max_message_size** : :obj:`~int`
+
 
     :Returns:
 
@@ -107,12 +114,18 @@ Method detail
 
     :Parameters:
 
-    **pid** : :obj:`~int`
-    **grpc_server** : :obj:`~bool`
-    **grpc_host** : :obj:`~str`
-    **grpc_port** : :obj:`~int`
-    **grpc_timeout_sec** : :obj:`~int`
-    **grpc_max_message_size** : :obj:`~int`
+        **pid** : :obj:`~int`
+
+        **grpc_server** : :obj:`~bool`
+
+        **grpc_host** : :obj:`~str`
+
+        **grpc_port** : :obj:`~int`
+
+        **grpc_timeout_sec** : :obj:`~int`
+
+        **grpc_max_message_size** : :obj:`~int`
+
 
     :Returns:
 

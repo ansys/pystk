@@ -214,7 +214,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlLaunch`
+        **param** : :obj:`~ControlLaunch`
+
 
     :Returns:
 
@@ -227,7 +228,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlLaunch`
+        **param** : :obj:`~ControlLaunch`
+
 
     :Returns:
 
@@ -240,7 +242,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlLaunch`
+        **param** : :obj:`~ControlLaunch`
+
 
     :Returns:
 
@@ -259,7 +262,8 @@ Method detail
 
     :Parameters:
 
-    **display_system_type** : :obj:`~LaunchDisplaySystem`
+        **display_system_type** : :obj:`~LaunchDisplaySystem`
+
 
     :Returns:
 
@@ -278,7 +282,8 @@ Method detail
 
     :Parameters:
 
-    **burnout_type** : :obj:`~BurnoutType`
+        **burnout_type** : :obj:`~BurnoutType`
+
 
     :Returns:
 

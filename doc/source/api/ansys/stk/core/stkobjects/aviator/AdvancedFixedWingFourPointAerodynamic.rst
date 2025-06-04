@@ -224,14 +224,22 @@ Method detail
 
     :Parameters:
 
-    **d_mach_1** : :obj:`~float`
-    **d_aoa_1** : :obj:`~typing.Any`
-    **d_mach_2** : :obj:`~float`
-    **d_aoa_2** : :obj:`~typing.Any`
-    **d_mach_3** : :obj:`~float`
-    **d_aoa_3** : :obj:`~typing.Any`
-    **d_mach_4** : :obj:`~float`
-    **d_aoa_4** : :obj:`~typing.Any`
+        **d_mach_1** : :obj:`~float`
+
+        **d_aoa_1** : :obj:`~typing.Any`
+
+        **d_mach_2** : :obj:`~float`
+
+        **d_aoa_2** : :obj:`~typing.Any`
+
+        **d_mach_3** : :obj:`~float`
+
+        **d_aoa_3** : :obj:`~typing.Any`
+
+        **d_mach_4** : :obj:`~float`
+
+        **d_aoa_4** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -244,14 +252,22 @@ Method detail
 
     :Parameters:
 
-    **d_mach_1** : :obj:`~float`
-    **d_c_l_1** : :obj:`~float`
-    **d_mach_2** : :obj:`~float`
-    **d_c_l_2** : :obj:`~float`
-    **d_mach_3** : :obj:`~float`
-    **d_c_l_3** : :obj:`~float`
-    **d_mach_4** : :obj:`~float`
-    **d_c_l_4** : :obj:`~float`
+        **d_mach_1** : :obj:`~float`
+
+        **d_c_l_1** : :obj:`~float`
+
+        **d_mach_2** : :obj:`~float`
+
+        **d_c_l_2** : :obj:`~float`
+
+        **d_mach_3** : :obj:`~float`
+
+        **d_c_l_3** : :obj:`~float`
+
+        **d_mach_4** : :obj:`~float`
+
+        **d_c_l_4** : :obj:`~float`
+
 
     :Returns:
 

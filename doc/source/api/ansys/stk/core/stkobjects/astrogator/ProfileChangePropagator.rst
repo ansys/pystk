@@ -72,7 +72,8 @@ Method detail
 
     :Parameters:
 
-    **mcs_segment** : :obj:`~IMCSSegment`
+        **mcs_segment** : :obj:`~IMCSSegment`
+
 
     :Returns:
 

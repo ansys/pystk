@@ -195,8 +195,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **time** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **time** : :obj:`~float`
+
 
     :Returns:
 
@@ -211,8 +213,10 @@ Method detail
 
     :Parameters:
 
-    **enable** : :obj:`~bool`
-    **range** : :obj:`~float`
+        **enable** : :obj:`~bool`
+
+        **range** : :obj:`~float`
+
 
     :Returns:
 

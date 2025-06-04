@@ -60,8 +60,10 @@ Method detail
 
     :Parameters:
 
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 

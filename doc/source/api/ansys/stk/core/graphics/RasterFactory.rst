@@ -45,7 +45,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -58,11 +59,16 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **x** : :obj:`~int`
-    **y** : :obj:`~int`
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
+        **uri** : :obj:`~str`
+
+        **x** : :obj:`~int`
+
+        **y** : :obj:`~int`
+
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
 
     :Returns:
 
@@ -75,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
+        **raster** : :obj:`~IRaster`
+
 
     :Returns:
 

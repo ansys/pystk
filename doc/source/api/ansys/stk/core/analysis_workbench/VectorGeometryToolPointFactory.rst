@@ -66,9 +66,12 @@ Method detail
 
     :Parameters:
 
-    **point_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **point_type** : :obj:`~PointType`
+        **point_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **point_type** : :obj:`~PointType`
+
 
     :Returns:
 
@@ -81,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~PointType`
+        **type** : :obj:`~PointType`
+
 
     :Returns:
 
@@ -95,9 +99,12 @@ Method detail
 
     :Parameters:
 
-    **point_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **display_name** : :obj:`~str`
+        **point_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **display_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -110,12 +117,18 @@ Method detail
 
     :Parameters:
 
-    **point_name** : :obj:`~str`
-    **description** : :obj:`~str`
-    **longitude** : :obj:`~typing.Any`
-    **latitude** : :obj:`~typing.Any`
-    **altitude** : :obj:`~float`
-    **reference_shape** : :obj:`~SurfaceReferenceShapeType`
+        **point_name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+        **longitude** : :obj:`~typing.Any`
+
+        **latitude** : :obj:`~typing.Any`
+
+        **altitude** : :obj:`~float`
+
+        **reference_shape** : :obj:`~SurfaceReferenceShapeType`
+
 
     :Returns:
 

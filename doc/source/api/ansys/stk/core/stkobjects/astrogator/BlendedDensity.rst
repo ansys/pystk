@@ -96,7 +96,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~IComponentInfo`
+        **value** : :obj:`~IComponentInfo`
+
 
     :Returns:
 
@@ -109,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~IComponentInfo`
+        **value** : :obj:`~IComponentInfo`
+
 
     :Returns:
 

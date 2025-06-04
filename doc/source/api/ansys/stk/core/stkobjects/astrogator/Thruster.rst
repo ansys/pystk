@@ -134,7 +134,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlThrusters`
+        **param** : :obj:`~ControlThrusters`
+
 
     :Returns:
 
@@ -147,7 +148,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlThrusters`
+        **param** : :obj:`~ControlThrusters`
+
 
     :Returns:
 
@@ -160,7 +162,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlThrusters`
+        **param** : :obj:`~ControlThrusters`
+
 
     :Returns:
 

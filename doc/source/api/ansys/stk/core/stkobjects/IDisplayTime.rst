@@ -78,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **display_status** : :obj:`~DisplayTimesType`
+        **display_status** : :obj:`~DisplayTimesType`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **display_status** : :obj:`~DisplayTimesType`
+        **display_status** : :obj:`~DisplayTimesType`
+
 
     :Returns:
 

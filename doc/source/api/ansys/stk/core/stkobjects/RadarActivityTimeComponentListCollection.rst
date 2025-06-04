@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -91,7 +92,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -104,8 +106,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **component_identifier** : :obj:`~str`
+        **index** : :obj:`~int`
+
+        **component_identifier** : :obj:`~str`
+
 
     :Returns:
 
@@ -118,7 +122,8 @@ Method detail
 
     :Parameters:
 
-    **component_identifier** : :obj:`~str`
+        **component_identifier** : :obj:`~str`
+
 
     :Returns:
 

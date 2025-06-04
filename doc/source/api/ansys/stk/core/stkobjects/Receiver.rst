@@ -3,7 +3,7 @@ Receiver
 
 .. py:class:: ansys.stk.core.stkobjects.Receiver
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the receiver object.
 
@@ -159,7 +159,7 @@ Create a New Receiver Object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
 
 
@@ -252,7 +252,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -268,7 +269,8 @@ Method detail
 
     :Parameters:
 
-    **model** : :obj:`~SensorRefractionType`
+        **model** : :obj:`~SensorRefractionType`
+
 
     :Returns:
 

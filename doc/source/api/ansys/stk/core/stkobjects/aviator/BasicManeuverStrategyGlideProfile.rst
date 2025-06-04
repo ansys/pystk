@@ -162,8 +162,10 @@ Method detail
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AirspeedType`
-    **airspeed** : :obj:`~float`
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
 
     :Returns:
 
@@ -185,8 +187,10 @@ Method detail
 
     :Parameters:
 
-    **glide_speed_mode** : :obj:`~BasicManeuverGlideSpeedControlMode`
-    **control_altitude** : :obj:`~float`
+        **glide_speed_mode** : :obj:`~BasicManeuverGlideSpeedControlMode`
+
+        **control_altitude** : :obj:`~float`
+
 
     :Returns:
 

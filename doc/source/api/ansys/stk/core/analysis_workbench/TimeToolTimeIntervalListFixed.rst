@@ -54,7 +54,8 @@ Method detail
 
     :Parameters:
 
-    **intervals** : :obj:`~list`
+        **intervals** : :obj:`~list`
+
 
     :Returns:
 

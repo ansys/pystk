@@ -67,9 +67,12 @@ Method detail
 
     :Parameters:
 
-    **wmv_filename** : :obj:`~str`
-    **video_bit_rate** : :obj:`~int`
-    **video_frame_rate** : :obj:`~int`
+        **wmv_filename** : :obj:`~str`
+
+        **video_bit_rate** : :obj:`~int`
+
+        **video_frame_rate** : :obj:`~int`
+
 
     :Returns:
 
@@ -82,11 +85,16 @@ Method detail
 
     :Parameters:
 
-    **file_directory** : :obj:`~str`
-    **file_prefix** : :obj:`~str`
-    **camera_snapshot_file_format** : :obj:`~SnapshotFileFormat`
-    **starting_frame_number** : :obj:`~int`
-    **number_of_frame_digits** : :obj:`~int`
+        **file_directory** : :obj:`~str`
+
+        **file_prefix** : :obj:`~str`
+
+        **camera_snapshot_file_format** : :obj:`~SnapshotFileFormat`
+
+        **starting_frame_number** : :obj:`~int`
+
+        **number_of_frame_digits** : :obj:`~int`
+
 
     :Returns:
 
@@ -108,11 +116,16 @@ Method detail
 
     :Parameters:
 
-    **file_directory** : :obj:`~str`
-    **file_prefix** : :obj:`~str`
-    **video_format** : :obj:`~VideoFormat`
-    **video_bit_rate** : :obj:`~int`
-    **video_frame_rate** : :obj:`~int`
+        **file_directory** : :obj:`~str`
+
+        **file_prefix** : :obj:`~str`
+
+        **video_format** : :obj:`~VideoFormat`
+
+        **video_bit_rate** : :obj:`~int`
+
+        **video_frame_rate** : :obj:`~int`
+
 
     :Returns:
 

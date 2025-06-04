@@ -82,8 +82,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -96,8 +98,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -110,9 +114,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **hole_positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **hole_positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -125,11 +132,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **hole_positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **hole_positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 
@@ -142,11 +154,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **granularity** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 
@@ -159,11 +176,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **altitude** : :obj:`~float`
-    **granularity** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WindingOrder`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **altitude** : :obj:`~float`
+
+        **granularity** : :obj:`~float`
+
+        **positions_winding_order** : :obj:`~WindingOrder`
+
 
     :Returns:
 

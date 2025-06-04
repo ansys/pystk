@@ -157,8 +157,10 @@ Method detail
 
     :Parameters:
 
-    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
-    **control_limit_value** : :obj:`~float`
+        **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
+
+        **control_limit_value** : :obj:`~float`
+
 
     :Returns:
 

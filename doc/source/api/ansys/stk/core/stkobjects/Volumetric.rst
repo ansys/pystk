@@ -3,7 +3,7 @@ Volumetric
 
 .. py:class:: ansys.stk.core.stkobjects.Volumetric
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The Volumetric class.
 
@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **vm_grid_calc_type** : :obj:`~VolumetricDefinitionType`
+        **vm_grid_calc_type** : :obj:`~VolumetricDefinitionType`
+
 
     :Returns:
 

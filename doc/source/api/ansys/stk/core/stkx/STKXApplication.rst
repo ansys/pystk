@@ -166,7 +166,8 @@ Method detail
 
     :Parameters:
 
-    **command** : :obj:`~str`
+        **command** : :obj:`~str`
+
 
     :Returns:
 
@@ -197,12 +198,18 @@ Method detail
 
     :Parameters:
 
-    **use_proxy** : :obj:`~bool`
-    **server_name** : :obj:`~str`
-    **port_num** : :obj:`~int`
-    **user_name** : :obj:`~str`
-    **password** : :obj:`~str`
-    **save_password** : :obj:`~bool`
+        **use_proxy** : :obj:`~bool`
+
+        **server_name** : :obj:`~str`
+
+        **port_num** : :obj:`~int`
+
+        **user_name** : :obj:`~str`
+
+        **password** : :obj:`~str`
+
+        **save_password** : :obj:`~bool`
+
 
     :Returns:
 
@@ -224,8 +231,10 @@ Method detail
 
     :Parameters:
 
-    **command_id** : :obj:`~str`
-    **prog_id** : :obj:`~str`
+        **command_id** : :obj:`~str`
+
+        **prog_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -243,8 +252,10 @@ Method detail
 
     :Parameters:
 
-    **connect_commands** : :obj:`~list`
-    **action** : :obj:`~ExecuteMultipleCommandsMode`
+        **connect_commands** : :obj:`~list`
+
+        **action** : :obj:`~ExecuteMultipleCommandsMode`
+
 
     :Returns:
 
@@ -257,7 +268,8 @@ Method detail
 
     :Parameters:
 
-    **feature_code** : :obj:`~FeatureCodes`
+        **feature_code** : :obj:`~FeatureCodes`
+
 
     :Returns:
 

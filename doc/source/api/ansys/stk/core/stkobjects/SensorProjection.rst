@@ -197,7 +197,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~str`
+        **constraint_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -210,7 +211,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~str`
+        **constraint_name** : :obj:`~str`
+
 
     :Returns:
 

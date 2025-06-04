@@ -79,8 +79,10 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -93,7 +95,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -115,8 +118,10 @@ Method detail
 
     :Parameters:
 
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -138,7 +143,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -151,9 +157,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **start** : :obj:`~typing.Any`
-    **stop** : :obj:`~typing.Any`
+        **index** : :obj:`~int`
+
+        **start** : :obj:`~typing.Any`
+
+        **stop** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -166,7 +175,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -179,8 +189,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **length** : :obj:`~int`
+        **index** : :obj:`~int`
+
+        **length** : :obj:`~int`
+
 
     :Returns:
 

@@ -144,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **heading_change** : :obj:`~typing.Any`
+        **heading_change** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -157,8 +158,10 @@ Method detail
 
     :Parameters:
 
-    **course** : :obj:`~typing.Any`
-    **is_magnetic** : :obj:`~bool`
+        **course** : :obj:`~typing.Any`
+
+        **is_magnetic** : :obj:`~bool`
+
 
     :Returns:
 

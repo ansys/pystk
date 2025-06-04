@@ -3,7 +3,7 @@ Transmitter
 
 .. py:class:: ansys.stk.core.stkobjects.Transmitter
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the transmitter object.
 
@@ -150,7 +150,7 @@ Create a New Transmitter Object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
 
 
@@ -243,7 +243,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -259,7 +260,8 @@ Method detail
 
     :Parameters:
 
-    **model** : :obj:`~SensorRefractionType`
+        **model** : :obj:`~SensorRefractionType`
+
 
     :Returns:
 

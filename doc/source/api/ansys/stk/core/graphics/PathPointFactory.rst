@@ -58,7 +58,8 @@ Method detail
 
     :Parameters:
 
-    **path_point_date** : :obj:`~Date`
+        **path_point_date** : :obj:`~Date`
+
 
     :Returns:
 
@@ -71,8 +72,10 @@ Method detail
 
     :Parameters:
 
-    **path_point_date** : :obj:`~Date`
-    **position** : :obj:`~list`
+        **path_point_date** : :obj:`~Date`
+
+        **position** : :obj:`~list`
+
 
     :Returns:
 
@@ -85,9 +88,12 @@ Method detail
 
     :Parameters:
 
-    **path_point_date** : :obj:`~Date`
-    **position** : :obj:`~list`
-    **color** : :obj:`~agcolor.Color`
+        **path_point_date** : :obj:`~Date`
+
+        **position** : :obj:`~list`
+
+        **color** : :obj:`~agcolor.Color`
+
 
     :Returns:
 
@@ -100,10 +106,14 @@ Method detail
 
     :Parameters:
 
-    **path_point_date** : :obj:`~Date`
-    **position** : :obj:`~list`
-    **color** : :obj:`~agcolor.Color`
-    **translucency** : :obj:`~float`
+        **path_point_date** : :obj:`~Date`
+
+        **position** : :obj:`~list`
+
+        **color** : :obj:`~agcolor.Color`
+
+        **translucency** : :obj:`~float`
+
 
     :Returns:
 

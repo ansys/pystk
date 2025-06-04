@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **gamma** : :obj:`~float`
+        **gamma** : :obj:`~float`
+
 
     :Returns:
 

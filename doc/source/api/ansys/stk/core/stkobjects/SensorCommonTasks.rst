@@ -156,8 +156,10 @@ Method detail
 
     :Parameters:
 
-    **cone_angle** : :obj:`~typing.Any`
-    **angular_resolution** : :obj:`~typing.Any`
+        **cone_angle** : :obj:`~typing.Any`
+
+        **angular_resolution** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -170,10 +172,14 @@ Method detail
 
     :Parameters:
 
-    **inner_cone_half_angle** : :obj:`~typing.Any`
-    **outer_cone_half_angle** : :obj:`~typing.Any`
-    **minimum_clock_angle** : :obj:`~typing.Any`
-    **maximum_clock_angle** : :obj:`~typing.Any`
+        **inner_cone_half_angle** : :obj:`~typing.Any`
+
+        **outer_cone_half_angle** : :obj:`~typing.Any`
+
+        **minimum_clock_angle** : :obj:`~typing.Any`
+
+        **maximum_clock_angle** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -186,8 +192,10 @@ Method detail
 
     :Parameters:
 
-    **line_of_site_jitter** : :obj:`~float`
-    **processing_level** : :obj:`~SensorEOIRProcessingLevelType`
+        **line_of_site_jitter** : :obj:`~float`
+
+        **processing_level** : :obj:`~SensorEOIRProcessingLevelType`
+
 
     :Returns:
 
@@ -200,9 +208,12 @@ Method detail
 
     :Parameters:
 
-    **frequency** : :obj:`~float`
-    **antenna_diameter** : :obj:`~float`
-    **angular_resolution** : :obj:`~typing.Any`
+        **frequency** : :obj:`~float`
+
+        **antenna_diameter** : :obj:`~float`
+
+        **angular_resolution** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -215,8 +226,10 @@ Method detail
 
     :Parameters:
 
-    **vertical_half_angle** : :obj:`~typing.Any`
-    **horizontal_half_angle** : :obj:`~typing.Any`
+        **vertical_half_angle** : :obj:`~typing.Any`
+
+        **horizontal_half_angle** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -229,7 +242,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 
@@ -242,11 +256,16 @@ Method detail
 
     :Parameters:
 
-    **min_elevation_angle** : :obj:`~typing.Any`
-    **max_elevation_angle** : :obj:`~typing.Any`
-    **fore_exclusion_angle** : :obj:`~typing.Any`
-    **aft_exclusion_angle** : :obj:`~typing.Any`
-    **parent_altitude** : :obj:`~float`
+        **min_elevation_angle** : :obj:`~typing.Any`
+
+        **max_elevation_angle** : :obj:`~typing.Any`
+
+        **fore_exclusion_angle** : :obj:`~typing.Any`
+
+        **aft_exclusion_angle** : :obj:`~typing.Any`
+
+        **parent_altitude** : :obj:`~float`
+
 
     :Returns:
 
@@ -259,9 +278,12 @@ Method detail
 
     :Parameters:
 
-    **azimuth** : :obj:`~typing.Any`
-    **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AzElAboutBoresight`
+        **azimuth** : :obj:`~typing.Any`
+
+        **elevation** : :obj:`~typing.Any`
+
+        **about_boresight** : :obj:`~AzElAboutBoresight`
+
 
     :Returns:
 
@@ -286,10 +308,14 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerOrientationSequenceType`
-    **a** : :obj:`~typing.Any`
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
+        **a** : :obj:`~typing.Any`
+
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -314,10 +340,14 @@ Method detail
 
     :Parameters:
 
-    **qx** : :obj:`~float`
-    **qy** : :obj:`~float`
-    **qz** : :obj:`~float`
-    **qs** : :obj:`~float`
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
+
 
     :Returns:
 
@@ -342,10 +372,14 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~YPRAnglesSequence`
-    **yaw** : :obj:`~typing.Any`
-    **pitch** : :obj:`~typing.Any`
-    **roll** : :obj:`~typing.Any`
+        **sequence** : :obj:`~YPRAnglesSequence`
+
+        **yaw** : :obj:`~typing.Any`
+
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -370,10 +404,14 @@ Method detail
 
     :Parameters:
 
-    **reference_axes** : :obj:`~str`
-    **azimuth** : :obj:`~typing.Any`
-    **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AzElAboutBoresight`
+        **reference_axes** : :obj:`~str`
+
+        **azimuth** : :obj:`~typing.Any`
+
+        **elevation** : :obj:`~typing.Any`
+
+        **about_boresight** : :obj:`~AzElAboutBoresight`
+
 
     :Returns:
 
@@ -398,11 +436,16 @@ Method detail
 
     :Parameters:
 
-    **reference_axes** : :obj:`~str`
-    **sequence** : :obj:`~EulerOrientationSequenceType`
-    **a** : :obj:`~typing.Any`
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
+        **reference_axes** : :obj:`~str`
+
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
+        **a** : :obj:`~typing.Any`
+
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -429,11 +472,16 @@ Method detail
 
     :Parameters:
 
-    **reference_axes** : :obj:`~str`
-    **qx** : :obj:`~float`
-    **qy** : :obj:`~float`
-    **qz** : :obj:`~float`
-    **qs** : :obj:`~float`
+        **reference_axes** : :obj:`~str`
+
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
+
 
     :Returns:
 
@@ -458,11 +506,16 @@ Method detail
 
     :Parameters:
 
-    **reference_axes** : :obj:`~str`
-    **sequence** : :obj:`~YPRAnglesSequence`
-    **yaw** : :obj:`~typing.Any`
-    **pitch** : :obj:`~typing.Any`
-    **roll** : :obj:`~typing.Any`
+        **reference_axes** : :obj:`~str`
+
+        **sequence** : :obj:`~YPRAnglesSequence`
+
+        **yaw** : :obj:`~typing.Any`
+
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -487,7 +540,8 @@ Method detail
 
     :Parameters:
 
-    **attach_name** : :obj:`~str`
+        **attach_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -500,8 +554,10 @@ Method detail
 
     :Parameters:
 
-    **azimuth_offset** : :obj:`~typing.Any`
-    **grazing_alt** : :obj:`~float`
+        **azimuth_offset** : :obj:`~typing.Any`
+
+        **grazing_alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -514,14 +570,22 @@ Method detail
 
     :Parameters:
 
-    **spin_axis_azimuth** : :obj:`~typing.Any`
-    **spin_axis_elevation** : :obj:`~typing.Any`
-    **spin_axis_cone_angle** : :obj:`~typing.Any`
-    **scan_mode** : :obj:`~SensorScanMode`
-    **spin_rate** : :obj:`~float`
-    **offset_angle** : :obj:`~typing.Any`
-    **clock_angle_start** : :obj:`~typing.Any`
-    **clock_angle_stop** : :obj:`~typing.Any`
+        **spin_axis_azimuth** : :obj:`~typing.Any`
+
+        **spin_axis_elevation** : :obj:`~typing.Any`
+
+        **spin_axis_cone_angle** : :obj:`~typing.Any`
+
+        **scan_mode** : :obj:`~SensorScanMode`
+
+        **spin_rate** : :obj:`~float`
+
+        **offset_angle** : :obj:`~typing.Any`
+
+        **clock_angle_start** : :obj:`~typing.Any`
+
+        **clock_angle_stop** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -534,9 +598,12 @@ Method detail
 
     :Parameters:
 
-    **track_mode_type** : :obj:`~TrackMode`
-    **about_boresight_type** : :obj:`~BoresightType`
-    **target_path** : :obj:`~str`
+        **track_mode_type** : :obj:`~TrackMode`
+
+        **about_boresight_type** : :obj:`~BoresightType`
+
+        **target_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -549,9 +616,12 @@ Method detail
 
     :Parameters:
 
-    **alignment_vector** : :obj:`~str`
-    **constraint_vector** : :obj:`~str`
-    **clock_angle_offset** : :obj:`~typing.Any`
+        **alignment_vector** : :obj:`~str`
+
+        **constraint_vector** : :obj:`~str`
+
+        **clock_angle_offset** : :obj:`~typing.Any`
+
 
     :Returns:
 

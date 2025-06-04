@@ -195,7 +195,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlPowerSolarArray`
+        **param** : :obj:`~ControlPowerSolarArray`
+
 
     :Returns:
 
@@ -208,7 +209,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlPowerSolarArray`
+        **param** : :obj:`~ControlPowerSolarArray`
+
 
     :Returns:
 
@@ -221,7 +223,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlPowerSolarArray`
+        **param** : :obj:`~ControlPowerSolarArray`
+
 
     :Returns:
 

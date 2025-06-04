@@ -56,7 +56,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~ICatalogVTOLPoint`
+        **value** : :obj:`~ICatalogVTOLPoint`
+
 
     :Returns:
 

@@ -60,10 +60,10 @@ jupyter = [
     "sidecar>=0.7.0",
 ]
 tests = [
-    "libcst==1.7.0",
+    "libcst==1.8.0",
     "matplotlib==3.10.3",
     "numpy==2.2.6",
-    "pytest==8.3.5",
+    "pytest==8.4.0",
     "pytest-cov==6.1.1",
     "pytz==2025.2",
     "parameterized==0.9.0",
@@ -71,12 +71,12 @@ tests = [
     "scipy==1.15.3",
 ]
 doc = [
-    "ansys-sphinx-theme==1.4.4",
+    "ansys-sphinx-theme==1.5.2",
     "build==1.2.2.post1",
-    "jupyterlab==4.4.2",
-    "jupytext==1.17.1",
+    "jupyterlab==4.4.3",
+    "jupytext==1.17.2",
     "jupyter-server==2.16.0",
-    "libcst==1.7.0",
+    "libcst==1.8.0",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",

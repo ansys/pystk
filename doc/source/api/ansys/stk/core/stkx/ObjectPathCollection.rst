@@ -71,7 +71,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -85,8 +86,10 @@ Method detail
 
     :Parameters:
 
-    **start_index** : :obj:`~int`
-    **stop_index** : :obj:`~int`
+        **start_index** : :obj:`~int`
+
+        **stop_index** : :obj:`~int`
+
 
     :Returns:
 

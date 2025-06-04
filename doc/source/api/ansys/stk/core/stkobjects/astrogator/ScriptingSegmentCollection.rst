@@ -94,7 +94,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -107,7 +108,8 @@ Method detail
 
     :Parameters:
 
-    **component_name** : :obj:`~str`
+        **component_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -120,7 +122,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -145,7 +148,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -167,7 +171,8 @@ Method detail
 
     :Parameters:
 
-    **obj_property** : :obj:`~ScriptingSegment`
+        **obj_property** : :obj:`~ScriptingSegment`
+
 
     :Returns:
 
@@ -180,7 +185,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -193,7 +199,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

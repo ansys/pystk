@@ -41,7 +41,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
         EarlyBoundTests.AG_MSL = Missile(TestBase.Application.current_scenario.children["Missile1"])
         EarlyBoundTests.AG_SENSOR = Sensor(
-            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STKObjectType.SENSOR, "Sensor1")
+            (ISTKObject(EarlyBoundTests.AG_MSL)).children.new(STKObjectType.SENSOR, "Sensor1")
         )
 
     @staticmethod

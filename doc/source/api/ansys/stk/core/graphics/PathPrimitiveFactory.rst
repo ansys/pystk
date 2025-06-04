@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **capacity** : :obj:`~int`
+        **capacity** : :obj:`~int`
+
 
     :Returns:
 

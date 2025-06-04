@@ -32,10 +32,10 @@ from ansys.stk.core.stkutil import *
 
 
 class FOMHelper(object):
-    def __init__(self, oRoot: "StkObjectRoot"):
+    def __init__(self, oRoot: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oRoot)
-        self.m_oRoot: "StkObjectRoot" = oRoot
+        self.m_oRoot: "STKObjectRoot" = oRoot
 
     # region Definition
     def Definition(

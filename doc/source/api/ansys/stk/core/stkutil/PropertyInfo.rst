@@ -113,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **property_info** : :obj:`~typing.Any`
+        **property_info** : :obj:`~typing.Any`
+
 
     :Returns:
 

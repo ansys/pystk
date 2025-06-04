@@ -81,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
+        **central_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -94,7 +95,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

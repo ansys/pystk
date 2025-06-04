@@ -220,7 +220,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 

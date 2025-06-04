@@ -207,8 +207,10 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~int`
-    **y** : :obj:`~int`
+        **x** : :obj:`~int`
+
+        **y** : :obj:`~int`
+
 
     :Returns:
 
@@ -221,10 +223,14 @@ Method detail
 
     :Parameters:
 
-    **left** : :obj:`~int`
-    **bottom** : :obj:`~int`
-    **right** : :obj:`~int`
-    **top** : :obj:`~int`
+        **left** : :obj:`~int`
+
+        **bottom** : :obj:`~int`
+
+        **right** : :obj:`~int`
+
+        **top** : :obj:`~int`
+
 
     :Returns:
 
@@ -237,8 +243,10 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~int`
-    **y** : :obj:`~int`
+        **x** : :obj:`~int`
+
+        **y** : :obj:`~int`
+
 
     :Returns:
 

@@ -125,7 +125,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~str`
+        **value** : :obj:`~str`
+
 
     :Returns:
 

@@ -3,7 +3,7 @@ Chain
 
 .. py:class:: ansys.stk.core.stkobjects.Chain
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Chain Class is used to access the methods and properties of the STK Chain Object.
 
@@ -176,7 +176,7 @@ Create a chain (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Create the Chain on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
     chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
@@ -309,13 +309,13 @@ Property detail
 
 .. py:property:: start_object
     :canonical: ansys.stk.core.stkobjects.Chain.start_object
-    :type: IStkObject
+    :type: ISTKObject
 
     Start object for the Chain.
 
 .. py:property:: end_object
     :canonical: ansys.stk.core.stkobjects.Chain.end_object
-    :type: IStkObject
+    :type: ISTKObject
 
     End object for the Chain.
 
@@ -352,7 +352,8 @@ Method detail
 
     :Parameters:
 
-    **time_period_type** : :obj:`~ChainTimePeriodType`
+        **time_period_type** : :obj:`~ChainTimePeriodType`
+
 
     :Returns:
 
@@ -368,7 +369,8 @@ Method detail
 
     :Parameters:
 
-    **filename** : :obj:`~str`
+        **filename** : :obj:`~str`
+
 
     :Returns:
 

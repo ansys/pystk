@@ -73,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **msg** : :obj:`~str`
+        **msg** : :obj:`~str`
+
 
     :Returns:
 
@@ -86,7 +87,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -99,7 +101,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

@@ -1,11 +1,11 @@
-StkObjectChangedEventArguments
+STKObjectChangedEventArguments
 ==============================
 
-.. py:class:: ansys.stk.core.stkobjects.StkObjectChangedEventArguments
+.. py:class:: ansys.stk.core.stkobjects.STKObjectChangedEventArguments
 
    Contains information about the changes in the object's state.
 
-.. py:currentmodule:: StkObjectChangedEventArguments
+.. py:currentmodule:: STKObjectChangedEventArguments
 
 Overview
 --------
@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectChangedEventArguments.path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectChangedEventArguments.path`
               - Object file path.
 
 
@@ -28,14 +28,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import StkObjectChangedEventArguments
+    from ansys.stk.core.stkobjects import STKObjectChangedEventArguments
 
 
 Property detail
 ---------------
 
 .. py:property:: path
-    :canonical: ansys.stk.core.stkobjects.StkObjectChangedEventArguments.path
+    :canonical: ansys.stk.core.stkobjects.STKObjectChangedEventArguments.path
     :type: str
 
     Object file path.

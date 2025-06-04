@@ -91,7 +91,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~OrbitStateType`
+        **type** : :obj:`~OrbitStateType`
+
 
     :Returns:
 
@@ -105,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **orbit_state** : :obj:`~IOrbitState`
+        **orbit_state** : :obj:`~IOrbitState`
+
 
     :Returns:
 
@@ -118,13 +120,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **eccentricity** : :obj:`~float`
-    **inclination** : :obj:`~float`
-    **arg_of_perigee** : :obj:`~float`
-    **raan** : :obj:`~float`
-    **mean_anomaly** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **eccentricity** : :obj:`~float`
+
+        **inclination** : :obj:`~float`
+
+        **arg_of_perigee** : :obj:`~float`
+
+        **raan** : :obj:`~float`
+
+        **mean_anomaly** : :obj:`~float`
+
 
     :Returns:
 
@@ -137,13 +146,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **x_position** : :obj:`~float`
-    **y_position** : :obj:`~float`
-    **z_position** : :obj:`~float`
-    **x_velocity** : :obj:`~float`
-    **y_velocity** : :obj:`~float`
-    **z_velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **x_position** : :obj:`~float`
+
+        **y_position** : :obj:`~float`
+
+        **z_position** : :obj:`~float`
+
+        **x_velocity** : :obj:`~float`
+
+        **y_velocity** : :obj:`~float`
+
+        **z_velocity** : :obj:`~float`
+
 
     :Returns:
 
@@ -156,13 +172,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
-    **latitude_rate** : :obj:`~float`
-    **longitude_rate** : :obj:`~float`
-    **altitude_rate** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
+        **latitude_rate** : :obj:`~float`
+
+        **longitude_rate** : :obj:`~float`
+
+        **altitude_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -175,13 +198,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **h** : :obj:`~float`
-    **k** : :obj:`~float`
-    **p** : :obj:`~float`
-    **q** : :obj:`~float`
-    **mean_lon** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **h** : :obj:`~float`
+
+        **k** : :obj:`~float`
+
+        **p** : :obj:`~float`
+
+        **q** : :obj:`~float`
+
+        **mean_lon** : :obj:`~float`
+
 
     :Returns:
 
@@ -194,13 +224,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **h** : :obj:`~float`
-    **k** : :obj:`~float`
-    **p** : :obj:`~float`
-    **q** : :obj:`~float`
-    **mean_lon** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **h** : :obj:`~float`
+
+        **k** : :obj:`~float`
+
+        **p** : :obj:`~float`
+
+        **q** : :obj:`~float`
+
+        **mean_lon** : :obj:`~float`
+
 
     :Returns:
 
@@ -213,13 +250,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
-    **horizontal_flight_path_angle** : :obj:`~float`
-    **flight_path_azimuth** : :obj:`~float`
-    **velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
+        **horizontal_flight_path_angle** : :obj:`~float`
+
+        **flight_path_azimuth** : :obj:`~float`
+
+        **velocity** : :obj:`~float`
+
 
     :Returns:
 
@@ -232,13 +276,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **right_ascension** : :obj:`~float`
-    **declination** : :obj:`~float`
-    **radius** : :obj:`~float`
-    **horizontal_flight_path_angle** : :obj:`~float`
-    **flight_path_azimuth** : :obj:`~float`
-    **velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **right_ascension** : :obj:`~float`
+
+        **declination** : :obj:`~float`
+
+        **radius** : :obj:`~float`
+
+        **horizontal_flight_path_angle** : :obj:`~float`
+
+        **flight_path_azimuth** : :obj:`~float`
+
+        **velocity** : :obj:`~float`
+
 
     :Returns:
 

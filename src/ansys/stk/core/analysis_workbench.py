@@ -27043,7 +27043,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> timeColl.location = centerPtSat
 
     Create a new Time Interval:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     >>> # Python
@@ -27053,7 +27053,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> timeInterval.set_interval(60, 120)
 
     Create a new Time Instant:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     >>> # Python
@@ -27063,7 +27063,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> timeEpoch.epoch = 3600
 
     Get Times From a Defined Time Instant and create an cell array:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     >>> # Python
@@ -27228,7 +27228,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> icrfAxes = vgtSat.axes.item("ICRF")
 
     Get the Center point and Inertial System of Earth central body:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     >>> icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
     """
