@@ -70,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **class_name** : :obj:`~str`
+        **class_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -83,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **inst_path** : :obj:`~str`
+        **inst_path** : :obj:`~str`
+
 
     :Returns:
 

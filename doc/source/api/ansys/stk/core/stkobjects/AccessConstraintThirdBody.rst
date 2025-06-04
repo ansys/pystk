@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **obstruction** : :obj:`~str`
+        **obstruction** : :obj:`~str`
+
 
     :Returns:
 
@@ -88,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **obstruction** : :obj:`~str`
+        **obstruction** : :obj:`~str`
+
 
     :Returns:
 
@@ -101,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **obstruction** : :obj:`~str`
+        **obstruction** : :obj:`~str`
+
 
     :Returns:
 

@@ -192,8 +192,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **clear_ephemeris_direction** : :obj:`~ClearEphemerisDirection`
+        **epoch** : :obj:`~typing.Any`
+
+        **clear_ephemeris_direction** : :obj:`~ClearEphemerisDirection`
+
 
     :Returns:
 
@@ -206,8 +208,10 @@ Method detail
 
     :Parameters:
 
-    **append_state** : :obj:`~State`
-    **clear_ephemeris_direction** : :obj:`~ClearEphemerisDirection`
+        **append_state** : :obj:`~State`
+
+        **clear_ephemeris_direction** : :obj:`~ClearEphemerisDirection`
+
 
     :Returns:
 

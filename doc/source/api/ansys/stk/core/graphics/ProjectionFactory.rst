@@ -54,12 +54,18 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~list`
-    **orientation** : :obj:`~IOrientation`
-    **field_of_view_horizontal** : :obj:`~float`
-    **field_of_view_vertical** : :obj:`~float`
-    **near_plane** : :obj:`~float`
-    **far_plane** : :obj:`~float`
+        **position** : :obj:`~list`
+
+        **orientation** : :obj:`~IOrientation`
+
+        **field_of_view_horizontal** : :obj:`~float`
+
+        **field_of_view_vertical** : :obj:`~float`
+
+        **near_plane** : :obj:`~float`
+
+        **far_plane** : :obj:`~float`
+
 
     :Returns:
 
@@ -72,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **projection** : :obj:`~IProjection`
+        **projection** : :obj:`~IProjection`
+
 
     :Returns:
 

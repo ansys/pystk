@@ -85,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -121,7 +123,8 @@ Method detail
 
     :Parameters:
 
-    **target_name** : :obj:`~str`
+        **target_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -134,7 +137,8 @@ Method detail
 
     :Parameters:
 
-    **target_name** : :obj:`~str`
+        **target_name** : :obj:`~str`
+
 
     :Returns:
 

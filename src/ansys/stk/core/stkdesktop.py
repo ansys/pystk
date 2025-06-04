@@ -50,7 +50,7 @@ from .internal.comutil import (
     Succeeded,
 )
 from .internal.eventutil import EventSubscriptionManager
-from .stkobjects import StkObjectModelContext, StkObjectRoot
+from .stkobjects import STKObjectModelContext, STKObjectRoot
 from .uiapplication import UiApplication
 from .utilities.exceptions import STKInitializationError, STKRuntimeError
 from .utilities.grpcutilities import GrpcCallBatcher
@@ -129,7 +129,7 @@ class STKDesktopApplication(UiApplication):
             CoInitializeManager.uninitialize()
 
     @property
-    def root(self) -> StkObjectRoot:
+    def root(self) -> STKObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
         if not self._intf:
             raise STKRuntimeError("STKDesktopApplication has not been properly initialized.  Use STKDesktop to obtain the STKDesktopApplication object.")
@@ -139,7 +139,7 @@ class STKDesktopApplication(UiApplication):
             self.__dict__["_root"] = self.personality2
             return self.__dict__["_root"]
             
-    def new_object_model_context(self) -> StkObjectModelContext:
+    def new_object_model_context(self) -> STKObjectModelContext:
         """Create a new object model context for the STK Desktop application."""
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
 
@@ -176,7 +176,7 @@ class STKDesktopApplication(UiApplication):
     def shutdown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self._root is not None:
-            root : StkObjectRoot = self._root
+            root : STKObjectRoot = self._root
             root.close_scenario()
             self.__dict__["_root"] = None
         if hasattr(self._intf, "client"):

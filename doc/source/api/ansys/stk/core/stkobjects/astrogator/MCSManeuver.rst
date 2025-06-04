@@ -85,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **maneuver_type** : :obj:`~ManeuverType`
+        **maneuver_type** : :obj:`~ManeuverType`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlManeuver`
+        **param** : :obj:`~ControlManeuver`
+
 
     :Returns:
 
@@ -112,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlManeuver`
+        **param** : :obj:`~ControlManeuver`
+
 
     :Returns:
 
@@ -125,7 +128,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlManeuver`
+        **param** : :obj:`~ControlManeuver`
+
 
     :Returns:
 

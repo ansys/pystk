@@ -120,8 +120,10 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~typing.Any`
-    **max** : :obj:`~typing.Any`
+        **min** : :obj:`~typing.Any`
+
+        **max** : :obj:`~typing.Any`
+
 
     :Returns:
 

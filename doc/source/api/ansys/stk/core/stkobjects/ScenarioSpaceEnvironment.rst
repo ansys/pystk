@@ -70,10 +70,14 @@ Method detail
 
     :Parameters:
 
-    **channel** : :obj:`~SpaceEnvironmentSAAChannel`
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
+        **channel** : :obj:`~SpaceEnvironmentSAAChannel`
+
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 

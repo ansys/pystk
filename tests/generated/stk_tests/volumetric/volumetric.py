@@ -893,7 +893,7 @@ class EarlyBoundTests(TestBase):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.STKObject - START")
 
         oHelper = STKObjectHelper()
-        volObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_VOL, IStkObject)
+        volObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_VOL, ISTKObject)
         oHelper.Run(volObject)
         oHelper.TestObjectFilesArray(volObject.object_files)
 
@@ -917,7 +917,7 @@ class EarlyBoundTests(TestBase):
             volumetric.compute()
 
             dp: "IDataProvider" = clr.CastAs(
-                (clr.CastAs(volumetric, IStkObject)).data_providers["Active Grid Points at Time"], IDataProvider
+                (clr.CastAs(volumetric, ISTKObject)).data_providers["Active Grid Points at Time"], IDataProvider
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
@@ -935,7 +935,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp = clr.CastAs(
-                (clr.CastAs(volumetric, IStkObject)).data_providers["Volumetric Values at Time"], IDataProvider
+                (clr.CastAs(volumetric, ISTKObject)).data_providers["Volumetric Values at Time"], IDataProvider
             )
             dpFixed = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"

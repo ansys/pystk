@@ -3,7 +3,7 @@ LaunchVehicle
 
 .. py:class:: ansys.stk.core.stkobjects.LaunchVehicle
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Launch vehicle object.
 
@@ -237,7 +237,8 @@ Method detail
 
     :Parameters:
 
-    **trajectory** : :obj:`~PropagatorType`
+        **trajectory** : :obj:`~PropagatorType`
+
 
     :Returns:
 
@@ -250,7 +251,8 @@ Method detail
 
     :Parameters:
 
-    **trajectory** : :obj:`~PropagatorType`
+        **trajectory** : :obj:`~PropagatorType`
+
 
     :Returns:
 
@@ -266,7 +268,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 
@@ -279,7 +282,8 @@ Method detail
 
     :Parameters:
 
-    **attitude** : :obj:`~VehicleAttitude`
+        **attitude** : :obj:`~VehicleAttitude`
+
 
     :Returns:
 

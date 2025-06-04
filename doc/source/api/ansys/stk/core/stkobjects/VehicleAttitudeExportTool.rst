@@ -119,7 +119,8 @@ Method detail
 
     :Parameters:
 
-    **coordinate_axes** : :obj:`~AttitudeCoordinateAxes`
+        **coordinate_axes** : :obj:`~AttitudeCoordinateAxes`
+
 
     :Returns:
 
@@ -141,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **file_name** : :obj:`~str`
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 

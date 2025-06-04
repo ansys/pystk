@@ -51,9 +51,12 @@ Method detail
 
     :Parameters:
 
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
-    **raster_format** : :obj:`~RasterFormat`
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+        **raster_format** : :obj:`~RasterFormat`
+
 
     :Returns:
 
@@ -66,10 +69,14 @@ Method detail
 
     :Parameters:
 
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
-    **raster_format** : :obj:`~RasterFormat`
-    **raster_type** : :obj:`~RasterType`
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+        **raster_format** : :obj:`~RasterFormat`
+
+        **raster_type** : :obj:`~RasterType`
+
 
     :Returns:
 
@@ -82,11 +89,16 @@ Method detail
 
     :Parameters:
 
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
-    **raster_format** : :obj:`~RasterFormat`
-    **raster_type** : :obj:`~RasterType`
-    **raster_orientation** : :obj:`~RasterOrientation`
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+        **raster_format** : :obj:`~RasterFormat`
+
+        **raster_type** : :obj:`~RasterType`
+
+        **raster_orientation** : :obj:`~RasterOrientation`
+
 
     :Returns:
 
@@ -99,12 +111,18 @@ Method detail
 
     :Parameters:
 
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
-    **raster_format** : :obj:`~RasterFormat`
-    **raster_type** : :obj:`~RasterType`
-    **raster_orientation** : :obj:`~RasterOrientation`
-    **row_alignment** : :obj:`~int`
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+        **raster_format** : :obj:`~RasterFormat`
+
+        **raster_type** : :obj:`~RasterType`
+
+        **raster_orientation** : :obj:`~RasterOrientation`
+
+        **row_alignment** : :obj:`~int`
+
 
     :Returns:
 
@@ -117,13 +135,20 @@ Method detail
 
     :Parameters:
 
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
-    **raster_format** : :obj:`~RasterFormat`
-    **raster_type** : :obj:`~RasterType`
-    **raster_orientation** : :obj:`~RasterOrientation`
-    **row_alignment** : :obj:`~int`
-    **pixel_aspect_ratio** : :obj:`~float`
+        **width** : :obj:`~int`
+
+        **height** : :obj:`~int`
+
+        **raster_format** : :obj:`~RasterFormat`
+
+        **raster_type** : :obj:`~RasterType`
+
+        **raster_orientation** : :obj:`~RasterOrientation`
+
+        **row_alignment** : :obj:`~int`
+
+        **pixel_aspect_ratio** : :obj:`~float`
+
 
     :Returns:
 
@@ -136,7 +161,8 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
+        **raster** : :obj:`~IRaster`
+
 
     :Returns:
 

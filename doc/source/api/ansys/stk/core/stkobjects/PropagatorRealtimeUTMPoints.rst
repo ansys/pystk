@@ -43,11 +43,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **zone_str** : :obj:`~str`
-    **easting** : :obj:`~float`
-    **northing** : :obj:`~float`
-    **alt** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **zone_str** : :obj:`~str`
+
+        **easting** : :obj:`~float`
+
+        **northing** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
 
     :Returns:
 
@@ -60,14 +65,22 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **zone_str** : :obj:`~str`
-    **easting** : :obj:`~float`
-    **northing** : :obj:`~float`
-    **alt** : :obj:`~float`
-    **lon_rate** : :obj:`~float`
-    **lat_rate** : :obj:`~float`
-    **alt_rate** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **zone_str** : :obj:`~str`
+
+        **easting** : :obj:`~float`
+
+        **northing** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
+        **lon_rate** : :obj:`~float`
+
+        **lat_rate** : :obj:`~float`
+
+        **alt_rate** : :obj:`~float`
+
 
     :Returns:
 

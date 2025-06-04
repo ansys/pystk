@@ -367,8 +367,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_MTO, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_MTO)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_MTO, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_MTO)).object_files)
 
     # endregion
 
@@ -3132,7 +3132,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", initialDateUnit)
 
         # Delete MTO object that was added for the test
-        (IStkObject(mto)).unload()
+        (ISTKObject(mto)).unload()
 
         TestBase.logger.WriteLine("----- CreateTracksUsingDifferentDateFormats ----- END -----")
 

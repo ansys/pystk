@@ -81,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -103,8 +104,10 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~AnalysisWorkbenchAccessConstraintType`
-    **reference** : :obj:`~str`
+        **type** : :obj:`~AnalysisWorkbenchAccessConstraintType`
+
+        **reference** : :obj:`~str`
+
 
     :Returns:
 
@@ -117,8 +120,10 @@ Method detail
 
     :Parameters:
 
-    **constraint** : :obj:`~AnalysisWorkbenchAccessConstraintType`
-    **reference** : :obj:`~str`
+        **constraint** : :obj:`~AnalysisWorkbenchAccessConstraintType`
+
+        **reference** : :obj:`~str`
+
 
     :Returns:
 
@@ -131,7 +136,8 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~AnalysisWorkbenchAccessConstraintType`
+        **type** : :obj:`~AnalysisWorkbenchAccessConstraintType`
+
 
     :Returns:
 
@@ -144,7 +150,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

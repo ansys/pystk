@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~GradientDetectMethod`
+        **method** : :obj:`~GradientDetectMethod`
+
 
     :Returns:
 

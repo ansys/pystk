@@ -109,7 +109,8 @@ Method detail
 
     :Parameters:
 
-    **stall_speed_ratio** : :obj:`~float`
+        **stall_speed_ratio** : :obj:`~float`
+
 
     :Returns:
 
@@ -123,7 +124,8 @@ Method detail
 
     :Parameters:
 
-    **angle_of_attack** : :obj:`~typing.Any`
+        **angle_of_attack** : :obj:`~typing.Any`
+
 
     :Returns:
 

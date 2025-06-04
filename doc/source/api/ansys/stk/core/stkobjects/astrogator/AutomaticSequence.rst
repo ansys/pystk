@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **unique_name** : :obj:`~str`
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 

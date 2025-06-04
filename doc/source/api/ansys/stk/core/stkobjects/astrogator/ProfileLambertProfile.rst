@@ -281,7 +281,8 @@ Method detail
 
     :Parameters:
 
-    **element_type** : :obj:`~LambertTargetCoordinateType`
+        **element_type** : :obj:`~LambertTargetCoordinateType`
+
 
     :Returns:
 

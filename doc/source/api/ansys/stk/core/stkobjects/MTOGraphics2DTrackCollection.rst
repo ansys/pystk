@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -93,7 +94,8 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
+        **track_id** : :obj:`~int`
+
 
     :Returns:
 

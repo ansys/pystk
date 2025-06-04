@@ -131,7 +131,8 @@ Method detail
 
     :Parameters:
 
-    **integrator** : :obj:`~NumericalIntegrator`
+        **integrator** : :obj:`~NumericalIntegrator`
+
 
     :Returns:
 

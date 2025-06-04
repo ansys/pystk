@@ -49,11 +49,16 @@ Method detail
 
     :Parameters:
 
-    **image_uri** : :obj:`~str`
-    **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
-    **compression_rate** : :obj:`~int`
-    **jpeg2000_uri** : :obj:`~str`
-    **overwrite_existing_file** : :obj:`~bool`
+        **image_uri** : :obj:`~str`
+
+        **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
+
+        **compression_rate** : :obj:`~int`
+
+        **jpeg2000_uri** : :obj:`~str`
+
+        **overwrite_existing_file** : :obj:`~bool`
+
 
     :Returns:
 
@@ -66,12 +71,18 @@ Method detail
 
     :Parameters:
 
-    **image_uri** : :obj:`~str`
-    **extent** : :obj:`~list`
-    **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
-    **compression_rate** : :obj:`~int`
-    **jpeg2000_uri** : :obj:`~str`
-    **overwrite_existing_file** : :obj:`~bool`
+        **image_uri** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
+        **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
+
+        **compression_rate** : :obj:`~int`
+
+        **jpeg2000_uri** : :obj:`~str`
+
+        **overwrite_existing_file** : :obj:`~bool`
+
 
     :Returns:
 
@@ -84,13 +95,20 @@ Method detail
 
     :Parameters:
 
-    **image_uri** : :obj:`~str`
-    **extent** : :obj:`~list`
-    **sub_extent** : :obj:`~list`
-    **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
-    **compression_rate** : :obj:`~int`
-    **jpeg2000_uri** : :obj:`~str`
-    **overwrite_existing_file** : :obj:`~bool`
+        **image_uri** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
+        **sub_extent** : :obj:`~list`
+
+        **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
+
+        **compression_rate** : :obj:`~int`
+
+        **jpeg2000_uri** : :obj:`~str`
+
+        **overwrite_existing_file** : :obj:`~bool`
+
 
     :Returns:
 
@@ -103,14 +121,22 @@ Method detail
 
     :Parameters:
 
-    **image_uri** : :obj:`~str`
-    **extent** : :obj:`~list`
-    **sub_extent** : :obj:`~list`
-    **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
-    **compression_rate** : :obj:`~int`
-    **jpeg2000_uri** : :obj:`~str`
-    **overwrite_existing_file** : :obj:`~bool`
-    **transparent_color** : :obj:`~agcolor.Color`
+        **image_uri** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
+        **sub_extent** : :obj:`~list`
+
+        **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
+
+        **compression_rate** : :obj:`~int`
+
+        **jpeg2000_uri** : :obj:`~str`
+
+        **overwrite_existing_file** : :obj:`~bool`
+
+        **transparent_color** : :obj:`~agcolor.Color`
+
 
     :Returns:
 
@@ -123,15 +149,24 @@ Method detail
 
     :Parameters:
 
-    **image_uri** : :obj:`~str`
-    **extent** : :obj:`~list`
-    **sub_extent** : :obj:`~list`
-    **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
-    **compression_rate** : :obj:`~int`
-    **jpeg2000_uri** : :obj:`~str`
-    **overwrite_existing_file** : :obj:`~bool`
-    **transparent_color** : :obj:`~agcolor.Color`
-    **central_body_name** : :obj:`~str`
+        **image_uri** : :obj:`~str`
+
+        **extent** : :obj:`~list`
+
+        **sub_extent** : :obj:`~list`
+
+        **compression_profile** : :obj:`~Jpeg2000CompressionProfile`
+
+        **compression_rate** : :obj:`~int`
+
+        **jpeg2000_uri** : :obj:`~str`
+
+        **overwrite_existing_file** : :obj:`~bool`
+
+        **transparent_color** : :obj:`~agcolor.Color`
+
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 

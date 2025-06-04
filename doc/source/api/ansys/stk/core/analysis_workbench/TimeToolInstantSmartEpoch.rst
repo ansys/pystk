@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -97,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **event_epoch** : :obj:`~ITimeToolInstant`
+        **event_epoch** : :obj:`~ITimeToolInstant`
+
 
     :Returns:
 

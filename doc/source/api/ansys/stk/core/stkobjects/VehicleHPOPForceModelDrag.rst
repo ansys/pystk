@@ -141,7 +141,8 @@ Method detail
 
     :Parameters:
 
-    **solar_flux_geo_mag** : :obj:`~VehicleSolarFluxGeomagneticType`
+        **solar_flux_geo_mag** : :obj:`~VehicleSolarFluxGeomagneticType`
+
 
     :Returns:
 
@@ -156,7 +157,8 @@ Method detail
 
     :Parameters:
 
-    **drag_model** : :obj:`~DragModel`
+        **drag_model** : :obj:`~DragModel`
+
 
     :Returns:
 
@@ -169,7 +171,8 @@ Method detail
 
     :Parameters:
 
-    **drag_model** : :obj:`~DragModel`
+        **drag_model** : :obj:`~DragModel`
+
 
     :Returns:
 

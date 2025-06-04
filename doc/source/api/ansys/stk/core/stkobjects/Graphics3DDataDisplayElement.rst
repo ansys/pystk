@@ -288,7 +288,8 @@ Method detail
 
     :Parameters:
 
-    **title** : :obj:`~str`
+        **title** : :obj:`~str`
+
 
     :Returns:
 
@@ -330,7 +331,8 @@ Method detail
 
     :Parameters:
 
-    **title** : :obj:`~str`
+        **title** : :obj:`~str`
+
 
     :Returns:
 
@@ -343,7 +345,8 @@ Method detail
 
     :Parameters:
 
-    **title** : :obj:`~str`
+        **title** : :obj:`~str`
+
 
     :Returns:
 

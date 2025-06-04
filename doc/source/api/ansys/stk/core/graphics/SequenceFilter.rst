@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 
@@ -114,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 

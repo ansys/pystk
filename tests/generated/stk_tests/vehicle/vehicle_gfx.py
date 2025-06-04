@@ -374,7 +374,7 @@ class GfxAttributesAccessHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oAccess: "VehicleGraphics2DAttributesAccess", eType, oRoot: "StkObjectRoot"):
+    def Run(self, oAccess: "VehicleGraphics2DAttributesAccess", eType, oRoot: "STKObjectRoot"):
         Assert.assertIsNotNone(oAccess)
 
         # AccessObjects
@@ -484,7 +484,7 @@ class GfxAttributesTimeComponentsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oTimeComponents: "VehicleGraphics2DAttributesTimeComponents", eType, oRoot: "StkObjectRoot"):
+    def Run(self, oTimeComponents: "VehicleGraphics2DAttributesTimeComponents", eType, oRoot: "STKObjectRoot"):
         Assert.assertIsNotNone(oTimeComponents)
 
         tcColl: "VehicleGraphics2DTimeComponentsCollection" = oTimeComponents.time_components
@@ -2191,7 +2191,7 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("25 Jul 2005 12:00:00.000", oLine.event_interval.find_stop_time())
 
                 oLine.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
+                    (ISTKObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oLine.event_interval.find_start_time())
                 Assert.assertEqual("2 Jul 1999 00:00:00.000", oLine.event_interval.find_stop_time())
@@ -2270,7 +2270,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oMarker.StopTime);
 
                 oMarker.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
+                    (ISTKObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oMarker.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oMarker.StopTime);
@@ -2314,7 +2314,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oText.StopTime);
 
                 oText.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
+                    (ISTKObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oText.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oText.StopTime);

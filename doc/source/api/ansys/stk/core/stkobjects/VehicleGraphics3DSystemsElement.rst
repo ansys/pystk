@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **window_ids** : :obj:`~list`
+        **window_ids** : :obj:`~list`
+
 
     :Returns:
 

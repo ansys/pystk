@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
+        **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
+
 
     :Returns:
 
@@ -102,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
+        **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
+
 
     :Returns:
 

@@ -131,7 +131,8 @@ Method detail
 
     :Parameters:
 
-    **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
+        **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
+
 
     :Returns:
 
@@ -144,7 +145,8 @@ Method detail
 
     :Parameters:
 
-    **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
+        **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
+
 
     :Returns:
 
@@ -160,7 +162,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+
 
     :Returns:
 
@@ -173,7 +176,8 @@ Method detail
 
     :Parameters:
 
-    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+        **attributes** : :obj:`~VehicleGraphics3DAttributeType`
+
 
     :Returns:
 

@@ -63,7 +63,8 @@ Method detail
 
     :Parameters:
 
-    **times** : :obj:`~list`
+        **times** : :obj:`~list`
+
 
     :Returns:
 

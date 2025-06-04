@@ -112,7 +112,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -126,7 +127,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -139,7 +141,8 @@ Method detail
 
     :Parameters:
 
-    **string_uri** : :obj:`~str`
+        **string_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -152,7 +155,8 @@ Method detail
 
     :Parameters:
 
-    **globe_overlay** : :obj:`~IGlobeImageOverlay`
+        **globe_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -174,7 +178,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -187,7 +192,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -200,7 +206,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -213,7 +220,8 @@ Method detail
 
     :Parameters:
 
-    **string_uri** : :obj:`~str`
+        **string_uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -226,7 +234,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -239,7 +248,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -252,8 +262,10 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay1** : :obj:`~IGlobeImageOverlay`
-    **imagery_overlay2** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay1** : :obj:`~IGlobeImageOverlay`
+
+        **imagery_overlay2** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -266,8 +278,10 @@ Method detail
 
     :Parameters:
 
-    **index1** : :obj:`~int`
-    **index2** : :obj:`~int`
+        **index1** : :obj:`~int`
+
+        **index2** : :obj:`~int`
+
 
     :Returns:
 
@@ -280,8 +294,10 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
-    **new_position** : :obj:`~int`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
+        **new_position** : :obj:`~int`
+
 
     :Returns:
 
@@ -294,8 +310,10 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **new_position** : :obj:`~int`
+        **index** : :obj:`~int`
+
+        **new_position** : :obj:`~int`
+
 
     :Returns:
 
@@ -308,7 +326,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 
@@ -321,7 +340,8 @@ Method detail
 
     :Parameters:
 
-    **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+        **imagery_overlay** : :obj:`~IGlobeImageOverlay`
+
 
     :Returns:
 

@@ -118,8 +118,10 @@ Method detail
 
     :Parameters:
 
-    **heading** : :obj:`~typing.Any`
-    **is_magnetic** : :obj:`~bool`
+        **heading** : :obj:`~typing.Any`
+
+        **is_magnetic** : :obj:`~bool`
+
 
     :Returns:
 

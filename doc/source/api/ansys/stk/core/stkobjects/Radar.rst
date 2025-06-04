@@ -3,7 +3,7 @@ Radar
 
 .. py:class:: ansys.stk.core.stkobjects.Radar
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the radar object.
 
@@ -137,7 +137,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -153,7 +154,8 @@ Method detail
 
     :Parameters:
 
-    **model** : :obj:`~SensorRefractionType`
+        **model** : :obj:`~SensorRefractionType`
+
 
     :Returns:
 

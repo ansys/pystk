@@ -72,8 +72,10 @@ Method detail
 
     :Parameters:
 
-    **symbol_id** : :obj:`~str`
-    **save_image_file_path** : :obj:`~str`
+        **symbol_id** : :obj:`~str`
+
+        **save_image_file_path** : :obj:`~str`
+
 
     :Returns:
 

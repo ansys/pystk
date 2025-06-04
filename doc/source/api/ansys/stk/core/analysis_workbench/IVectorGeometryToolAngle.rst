@@ -66,7 +66,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -79,7 +80,8 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
+        **epoch** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -92,8 +94,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
+        **epoch** : :obj:`~typing.Any`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 
@@ -106,8 +110,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
+        **epoch** : :obj:`~typing.Any`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 

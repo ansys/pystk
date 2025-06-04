@@ -31,7 +31,7 @@ class CodeSnippetsTestBase(TestBase):
     def __init__(self, *args, **kwargs):
         super(CodeSnippetsTestBase, self).__init__(*args, **kwargs)
 
-    m_Root: "StkObjectRoot" = None
+    m_Root: "STKObjectRoot" = None
 
     @staticmethod
     def Initialize():

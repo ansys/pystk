@@ -128,7 +128,8 @@ Method detail
 
     :Parameters:
 
-    **offset_type** : :obj:`~AxisOffset`
+        **offset_type** : :obj:`~AxisOffset`
+
 
     :Returns:
 
@@ -141,8 +142,10 @@ Method detail
 
     :Parameters:
 
-    **offset_type** : :obj:`~AxisOffset`
-    **axis_offset_value** : :obj:`~float`
+        **offset_type** : :obj:`~AxisOffset`
+
+        **axis_offset_value** : :obj:`~float`
+
 
     :Returns:
 

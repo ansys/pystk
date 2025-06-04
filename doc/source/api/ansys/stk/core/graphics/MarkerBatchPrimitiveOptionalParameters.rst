@@ -59,7 +59,8 @@ Method detail
 
     :Parameters:
 
-    **textures** : :obj:`~list`
+        **textures** : :obj:`~list`
+
 
     :Returns:
 
@@ -72,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **sizes** : :obj:`~list`
+        **sizes** : :obj:`~list`
+
 
     :Returns:
 
@@ -85,7 +87,8 @@ Method detail
 
     :Parameters:
 
-    **colors** : :obj:`~list`
+        **colors** : :obj:`~list`
+
 
     :Returns:
 
@@ -98,7 +101,8 @@ Method detail
 
     :Parameters:
 
-    **origins** : :obj:`~list`
+        **origins** : :obj:`~list`
+
 
     :Returns:
 
@@ -111,7 +115,8 @@ Method detail
 
     :Parameters:
 
-    **pixel_offsets** : :obj:`~list`
+        **pixel_offsets** : :obj:`~list`
+
 
     :Returns:
 
@@ -124,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **eye_offsets** : :obj:`~list`
+        **eye_offsets** : :obj:`~list`
+
 
     :Returns:
 
@@ -137,7 +143,8 @@ Method detail
 
     :Parameters:
 
-    **rotation_angles** : :obj:`~list`
+        **rotation_angles** : :obj:`~list`
+
 
     :Returns:
 
@@ -150,7 +157,8 @@ Method detail
 
     :Parameters:
 
-    **texture_coordinates** : :obj:`~list`
+        **texture_coordinates** : :obj:`~list`
+
 
     :Returns:
 
@@ -163,7 +171,8 @@ Method detail
 
     :Parameters:
 
-    **time_intervals** : :obj:`~list`
+        **time_intervals** : :obj:`~list`
+
 
     :Returns:
 
@@ -176,7 +185,8 @@ Method detail
 
     :Parameters:
 
-    **displays** : :obj:`~list`
+        **displays** : :obj:`~list`
+
 
     :Returns:
 

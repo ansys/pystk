@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **adjustment** : :obj:`~float`
+        **adjustment** : :obj:`~float`
+
 
     :Returns:
 

@@ -62,7 +62,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AtmosphericTurbulenceModelType`
+        **value** : :obj:`~AtmosphericTurbulenceModelType`
+
 
     :Returns:
 

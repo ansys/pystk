@@ -60,7 +60,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommand",
         description="Execute a Connect command",
         category="Connect",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def ConnectCommandSnippet(self, root):
         root.execute_command("New / */Target MyTarget")
@@ -75,7 +75,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommandMultiple",
         description="Execute multiple Connect commands",
         category="Connect",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def ConnectCommandMultipleSnippet(self, root):
         commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
@@ -88,7 +88,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommandArrays",
         description="Use arrays to send and retrieve data with Connect",
         category="Connect",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def ConnectCommandArraysSnippet(self, root):
         from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
@@ -115,7 +115,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ResultsConnectCommand",
         description="Extract data from Connect results",
         category="Connect",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def ResultsConnectCommandSnippet(self, root):
         result = root.execute_command('Report_RM */Place/MyPlace Style "Cartesian Position"')

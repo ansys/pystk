@@ -102,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **elevation** : :obj:`~VehicleGraphics2DElevation`
+        **elevation** : :obj:`~VehicleGraphics2DElevation`
+
 
     :Returns:
 
@@ -115,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **elevation** : :obj:`~VehicleGraphics2DElevation`
+        **elevation** : :obj:`~VehicleGraphics2DElevation`
+
 
     :Returns:
 

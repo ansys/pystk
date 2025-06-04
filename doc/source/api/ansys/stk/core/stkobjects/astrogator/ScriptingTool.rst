@@ -113,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **script** : :obj:`~str`
+        **script** : :obj:`~str`
+
 
     :Returns:
 

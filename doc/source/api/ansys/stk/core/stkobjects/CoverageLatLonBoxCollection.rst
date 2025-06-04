@@ -75,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -89,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **center_object_name** : :obj:`~str`
+        **center_object_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -102,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

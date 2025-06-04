@@ -88,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **unit_abbrv** : :obj:`~str`
+        **unit_abbrv** : :obj:`~str`
+
 
     :Returns:
 

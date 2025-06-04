@@ -73,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -87,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -100,8 +102,10 @@ Method detail
 
     :Parameters:
 
-    **min_frequency** : :obj:`~float`
-    **max_frequency** : :obj:`~float`
+        **min_frequency** : :obj:`~float`
+
+        **max_frequency** : :obj:`~float`
+
 
     :Returns:
 

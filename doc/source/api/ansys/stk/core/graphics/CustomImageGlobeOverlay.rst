@@ -89,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **scene** : :obj:`~Scene`
+        **scene** : :obj:`~Scene`
+
 
     :Returns:
 
@@ -102,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **scene** : :obj:`~Scene`
+        **scene** : :obj:`~Scene`
+
 
     :Returns:
 
@@ -133,9 +135,12 @@ Method detail
 
     :Parameters:
 
-    **extent** : :obj:`~list`
-    **user_tile_data** : :obj:`~typing.Any`
-    **image** : :obj:`~IPictureDisp`
+        **extent** : :obj:`~list`
+
+        **user_tile_data** : :obj:`~typing.Any`
+
+        **image** : :obj:`~IPictureDisp`
+
 
     :Returns:
 

@@ -74,8 +74,8 @@ Overview
             * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.create_future`
               - Create an object of type future_type that supports batching operations.
                 
-                source_obj is an STK Object Model type, e.g. StkObjectRoot.
-                future_provider is a member method or property of source_obj, e.g. StkObjectRoot.CurrentScenario.
+                source_obj is an STK Object Model type, e.g. STKObjectRoot.
+                future_provider is a member method or property of source_obj, e.g. STKObjectRoot.CurrentScenario.
                 future_type is the STK Object Model type that is returned from future_provider, e.g. Scenario.
                 args are the arguments passed to future_provider if applicable.
 
@@ -122,8 +122,8 @@ Method detail
 
     Create an object of type future_type that supports batching operations.
     
-    source_obj is an STK Object Model type, e.g. StkObjectRoot.
-    future_provider is a member method or property of source_obj, e.g. StkObjectRoot.CurrentScenario.
+    source_obj is an STK Object Model type, e.g. STKObjectRoot.
+    future_provider is a member method or property of source_obj, e.g. STKObjectRoot.CurrentScenario.
     future_type is the STK Object Model type that is returned from future_provider, e.g. Scenario.
     args are the arguments passed to future_provider if applicable.
 

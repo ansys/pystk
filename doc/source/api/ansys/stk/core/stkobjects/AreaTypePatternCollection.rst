@@ -53,7 +53,7 @@ Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -104,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -117,8 +118,10 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -131,7 +134,8 @@ Method detail
 
     :Parameters:
 
-    **item_index** : :obj:`~int`
+        **item_index** : :obj:`~int`
+
 
     :Returns:
 
@@ -153,9 +157,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **index** : :obj:`~int`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **index** : :obj:`~int`
+
 
     :Returns:
 

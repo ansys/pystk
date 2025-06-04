@@ -98,8 +98,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
+        **epoch** : :obj:`~typing.Any`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 
@@ -112,8 +114,10 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
+        **epoch** : :obj:`~typing.Any`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
 
     :Returns:
 
@@ -130,9 +134,12 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **output_axes** : :obj:`~IVectorGeometryToolAxes`
-    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
+        **epoch** : :obj:`~typing.Any`
+
+        **output_axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **vector_in_my_axes** : :obj:`~ICartesian3Vector`
+
 
     :Returns:
 
@@ -145,10 +152,14 @@ Method detail
 
     :Parameters:
 
-    **epoch** : :obj:`~typing.Any`
-    **output_axes** : :obj:`~IVectorGeometryToolAxes`
-    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
-    **rate_in_my_axes** : :obj:`~ICartesian3Vector`
+        **epoch** : :obj:`~typing.Any`
+
+        **output_axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **vector_in_my_axes** : :obj:`~ICartesian3Vector`
+
+        **rate_in_my_axes** : :obj:`~ICartesian3Vector`
+
 
     :Returns:
 

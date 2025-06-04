@@ -54,8 +54,10 @@ Method detail
 
     :Parameters:
 
-    **minimum_time** : :obj:`~Date`
-    **maximum_time** : :obj:`~Date`
+        **minimum_time** : :obj:`~Date`
+
+        **maximum_time** : :obj:`~Date`
+
 
     :Returns:
 
@@ -68,7 +70,8 @@ Method detail
 
     :Parameters:
 
-    **time_interval** : :obj:`~list`
+        **time_interval** : :obj:`~list`
+
 
     :Returns:
 

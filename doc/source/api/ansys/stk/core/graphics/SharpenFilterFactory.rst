@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **method** : :obj:`~RasterSharpenMethod`
+        **method** : :obj:`~RasterSharpenMethod`
+
 
     :Returns:
 

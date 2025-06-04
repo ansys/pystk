@@ -41,13 +41,20 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **lat** : :obj:`~float`
-    **lon** : :obj:`~float`
-    **alt** : :obj:`~float`
-    **heading** : :obj:`~float`
-    **pitch** : :obj:`~float`
-    **speed** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **lat** : :obj:`~float`
+
+        **lon** : :obj:`~float`
+
+        **alt** : :obj:`~float`
+
+        **heading** : :obj:`~float`
+
+        **pitch** : :obj:`~float`
+
+        **speed** : :obj:`~float`
+
 
     :Returns:
 

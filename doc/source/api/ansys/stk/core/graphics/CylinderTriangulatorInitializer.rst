@@ -43,8 +43,10 @@ Method detail
 
     :Parameters:
 
-    **length** : :obj:`~float`
-    **radius** : :obj:`~float`
+        **length** : :obj:`~float`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 
@@ -57,11 +59,16 @@ Method detail
 
     :Parameters:
 
-    **length** : :obj:`~float`
-    **bottom_radius** : :obj:`~float`
-    **top_radius** : :obj:`~float`
-    **slices** : :obj:`~int`
-    **cylinder_fill** : :obj:`~CylinderFillOptions`
+        **length** : :obj:`~float`
+
+        **bottom_radius** : :obj:`~float`
+
+        **top_radius** : :obj:`~float`
+
+        **slices** : :obj:`~int`
+
+        **cylinder_fill** : :obj:`~CylinderFillOptions`
+
 
     :Returns:
 

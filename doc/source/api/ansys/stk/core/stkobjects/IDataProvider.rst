@@ -108,8 +108,10 @@ Method detail
 
     :Parameters:
 
-    **statistic** : :obj:`~StatisticType`
-    **element_name** : :obj:`~str`
+        **statistic** : :obj:`~StatisticType`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -122,8 +124,10 @@ Method detail
 
     :Parameters:
 
-    **time_var_extremum** : :obj:`~TimeVaryingExtremum`
-    **element_name** : :obj:`~str`
+        **time_var_extremum** : :obj:`~TimeVaryingExtremum`
+
+        **element_name** : :obj:`~str`
+
 
     :Returns:
 

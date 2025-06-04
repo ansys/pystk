@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~AttitudeProfile`
+        **profile** : :obj:`~AttitudeProfile`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **profile** : :obj:`~AttitudeProfile`
+        **profile** : :obj:`~AttitudeProfile`
+
 
     :Returns:
 

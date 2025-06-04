@@ -240,7 +240,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -254,8 +255,10 @@ Method detail
 
     :Parameters:
 
-    **site_type** : :obj:`~SiteType`
-    **procedure_type** : :obj:`~ProcedureType`
+        **site_type** : :obj:`~SiteType`
+
+        **procedure_type** : :obj:`~ProcedureType`
+
 
     :Returns:
 
@@ -268,9 +271,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **site_type** : :obj:`~SiteType`
-    **procedure_type** : :obj:`~ProcedureType`
+        **index** : :obj:`~int`
+
+        **site_type** : :obj:`~SiteType`
+
+        **procedure_type** : :obj:`~ProcedureType`
+
 
     :Returns:
 
@@ -283,7 +289,8 @@ Method detail
 
     :Parameters:
 
-    **procedure** : :obj:`~IProcedure`
+        **procedure** : :obj:`~IProcedure`
+
 
     :Returns:
 
@@ -296,7 +303,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

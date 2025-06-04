@@ -33,7 +33,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         super(SensorSnippets, self).__init__(*args, **kwargs)
 
     m_Object: "Sensor" = None
-    m_Satellite: "IStkObject" = None
+    m_Satellite: "ISTKObject" = None
     m_DefaultName: str = "sensor1"
     m_SatelliteName: str = "satellite1"
 
@@ -228,7 +228,7 @@ class SensorSnippets(CodeSnippetsTestBase):
     def test_DefineSpinningSensorPointing(self):
         self.DefineSpinningSensorPointing(CodeSnippetsTestBase.m_Root, SensorSnippets.m_Object)
 
-    def DefineSpinningSensorPointing(self, root: "StkObjectRoot", sensor: "Sensor"):
+    def DefineSpinningSensorPointing(self, root: "STKObjectRoot", sensor: "Sensor"):
         # Set pattern type to Spinning
         sensor.set_pointing_type(SensorPointing.SPINNING)
         spinning: "SensorPointingSpinning" = clr.CastAs(sensor.pointing, SensorPointingSpinning)

@@ -74,7 +74,8 @@ Method detail
 
     :Parameters:
 
-    **plane_name** : :obj:`~str`
+        **plane_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -87,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **plane_name** : :obj:`~str`
+        **plane_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -109,7 +111,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

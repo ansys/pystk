@@ -170,8 +170,10 @@ Method detail
 
     :Parameters:
 
-    **use_scaling** : :obj:`~bool`
-    **exponent** : :obj:`~float`
+        **use_scaling** : :obj:`~bool`
+
+        **exponent** : :obj:`~float`
+
 
     :Returns:
 

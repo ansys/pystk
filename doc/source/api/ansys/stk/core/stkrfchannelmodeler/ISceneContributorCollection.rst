@@ -78,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -105,7 +107,8 @@ Method detail
 
     :Parameters:
 
-    **stk_object_path** : :obj:`~str`
+        **stk_object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -118,7 +121,8 @@ Method detail
 
     :Parameters:
 
-    **stk_object_path** : :obj:`~str`
+        **stk_object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -140,7 +144,8 @@ Method detail
 
     :Parameters:
 
-    **stk_object_path** : :obj:`~str`
+        **stk_object_path** : :obj:`~str`
+
 
     :Returns:
 

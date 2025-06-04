@@ -136,12 +136,18 @@ Method detail
 
     :Parameters:
 
-    **azimuth_start** : :obj:`~float`
-    **azimuth_stop** : :obj:`~float`
-    **azimuth_resolution** : :obj:`~float`
-    **elevation_start** : :obj:`~float`
-    **elevation_stop** : :obj:`~float`
-    **elevation_resolution** : :obj:`~float`
+        **azimuth_start** : :obj:`~float`
+
+        **azimuth_stop** : :obj:`~float`
+
+        **azimuth_resolution** : :obj:`~float`
+
+        **elevation_start** : :obj:`~float`
+
+        **elevation_stop** : :obj:`~float`
+
+        **elevation_resolution** : :obj:`~float`
+
 
     :Returns:
 
@@ -154,12 +160,18 @@ Method detail
 
     :Parameters:
 
-    **azimuth_start** : :obj:`~float`
-    **azimuth_stop** : :obj:`~float`
-    **azimuth_num_points** : :obj:`~int`
-    **elevation_start** : :obj:`~float`
-    **elevation_stop** : :obj:`~float`
-    **elevation_num_points** : :obj:`~int`
+        **azimuth_start** : :obj:`~float`
+
+        **azimuth_stop** : :obj:`~float`
+
+        **azimuth_num_points** : :obj:`~int`
+
+        **elevation_start** : :obj:`~float`
+
+        **elevation_stop** : :obj:`~float`
+
+        **elevation_num_points** : :obj:`~int`
+
 
     :Returns:
 

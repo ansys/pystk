@@ -140,7 +140,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~PointingStrategyType`
+        **value** : :obj:`~PointingStrategyType`
+
 
     :Returns:
 

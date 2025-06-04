@@ -98,7 +98,8 @@ Method detail
 
     :Parameters:
 
-    **compute_strategy_name** : :obj:`~str`
+        **compute_strategy_name** : :obj:`~str`
+
 
     :Returns:
 

@@ -54,7 +54,8 @@ Method detail
 
     :Parameters:
 
-    **raster_band** : :obj:`~RasterBand`
+        **raster_band** : :obj:`~RasterBand`
+
 
     :Returns:
 
@@ -67,7 +68,8 @@ Method detail
 
     :Parameters:
 
-    **raster_format** : :obj:`~RasterFormat`
+        **raster_format** : :obj:`~RasterFormat`
+
 
     :Returns:
 

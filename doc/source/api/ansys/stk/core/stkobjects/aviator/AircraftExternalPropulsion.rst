@@ -113,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **filepath** : :obj:`~str`
+        **filepath** : :obj:`~str`
+
 
     :Returns:
 
@@ -143,8 +144,10 @@ Method detail
 
     :Parameters:
 
-    **use_scaling** : :obj:`~bool`
-    **exponent** : :obj:`~float`
+        **use_scaling** : :obj:`~bool`
+
+        **exponent** : :obj:`~float`
+
 
     :Returns:
 

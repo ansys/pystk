@@ -76,7 +76,7 @@ class BugFixes(TestBase):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         scene.set_time_period("17 Feb 2010 05:00:00.000", "18 Feb 2010 05:00:00.000")
 
-        myAccess: "Access" = (IStkObject(BugFixes.satellite)).get_access_to_object(IStkObject(BugFixes.facility))
+        myAccess: "Access" = (ISTKObject(BugFixes.satellite)).get_access_to_object(ISTKObject(BugFixes.facility))
         myAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
 
         # these intervals were chosen to be in the inerior of the first access interval if computed using object times
@@ -106,8 +106,8 @@ class BugFixes(TestBase):
         sat.set_propagator_type(PropagatorType.TWO_BODY)
         twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
-        satObj: "IStkObject" = clr.CastAs(sat, IStkObject)
-        access: "Access" = satObj.get_access_to_object(clr.CastAs(fac, IStkObject))
+        satObj: "ISTKObject" = clr.CastAs(sat, ISTKObject)
+        access: "Access" = satObj.get_access_to_object(clr.CastAs(fac, ISTKObject))
 
         sat.graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
         custom: "VehicleGraphics2DAttributesCustom" = clr.CastAs(
@@ -150,8 +150,8 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Axes_AvailableAxes(self):
-        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
-            (clr.CastAs(BugFixes.facility, IStkObject))
+        access: "Access" = (clr.CastAs(BugFixes.satellite, ISTKObject)).get_access_to_object(
+            (clr.CastAs(BugFixes.facility, ISTKObject))
         )
         access.compute_access()
 
@@ -183,8 +183,8 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Vector_AvailableAxes(self):
-        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
-            (clr.CastAs(BugFixes.facility, IStkObject))
+        access: "Access" = (clr.CastAs(BugFixes.satellite, ISTKObject)).get_access_to_object(
+            (clr.CastAs(BugFixes.facility, ISTKObject))
         )
         access.compute_access()
 
@@ -212,8 +212,8 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Vector_AvailablePoints(self):
-        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
-            (clr.CastAs(BugFixes.facility, IStkObject))
+        access: "Access" = (clr.CastAs(BugFixes.satellite, ISTKObject)).get_access_to_object(
+            (clr.CastAs(BugFixes.facility, ISTKObject))
         )
         access.compute_access()
 
@@ -242,8 +242,8 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Point_AvailableSystems(self):
-        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
-            (clr.CastAs(BugFixes.facility, IStkObject))
+        access: "Access" = (clr.CastAs(BugFixes.satellite, ISTKObject)).get_access_to_object(
+            (clr.CastAs(BugFixes.facility, ISTKObject))
         )
         access.compute_access()
 
@@ -271,8 +271,8 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_OrbitSystems_SupportedSystems(self):
-        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
-            (clr.CastAs(BugFixes.facility, IStkObject))
+        access: "Access" = (clr.CastAs(BugFixes.satellite, ISTKObject)).get_access_to_object(
+            (clr.CastAs(BugFixes.facility, ISTKObject))
         )
         access.compute_access()
 
@@ -355,8 +355,8 @@ class BugFixes(TestBase):
         TestBase.logger.WriteLine("----- BUG110XXX_HonoExistingrAccessClockAndSense ACCESS TEST ----- BEGIN -----")
 
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
         # /////////////////////////////////////////////////////////////////////////////////////////////////////
         # /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -410,16 +410,16 @@ class BugFixes(TestBase):
         TestBase.logger.WriteLine("----- UserSpecifiedIntervals ACCESS TEST ----- BEGIN -----")
 
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oPlanet: "IStkObject" = TestBase.Application.current_scenario.children["MarsJPL"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oPlanet: "ISTKObject" = TestBase.Application.current_scenario.children["MarsJPL"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
-        oMarsSat: "IStkObject" = None
-        oFacNoCon: "IStkObject" = None
+        oMarsSat: "ISTKObject" = None
+        oFacNoCon: "ISTKObject" = None
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
-            oTransmitter: "IStkObject" = oSatellite.children.new(STKObjectType.TRANSMITTER, "TestTransmitter")
+            oReceiver: "ISTKObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
+            oTransmitter: "ISTKObject" = oSatellite.children.new(STKObjectType.TRANSMITTER, "TestTransmitter")
 
             accStart: typing.Any = None
             accStop: typing.Any = None
@@ -797,14 +797,14 @@ class BugFixes(TestBase):
     def test_BUG108448_SpecifyFixedStepSize(self):
         TestBase.logger.WriteLine("----- BUG108448_SpecifyFixedStepSize ACCESS TEST ----- BEGIN -----")
 
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
         accStart: typing.Any = None
         accStop: typing.Any = None
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
+            oReceiver: "ISTKObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
             # Specify a 1-minute time step to see that it is used (interval times will be forced to land on the minute)
             oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
@@ -830,13 +830,13 @@ class BugFixes(TestBase):
             "----- BUG108187_ExceptionThrownWhenAccessHasBeenDeleted ACCESS TEST ----- BEGIN -----"
         )
 
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
         bDeleteReceiver: bool = True
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
+            oReceiver: "ISTKObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
             oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
 
@@ -917,11 +917,11 @@ class BugFixes(TestBase):
     def test_BUG108228_SaveComputedDataParameter(self):
         TestBase.logger.WriteLine("----- BUG108228_SaveComputedDataParameter ACCESS TEST ----- BEGIN -----")
 
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
+            oReceiver: "ISTKObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
             oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
             bSaveData: bool = oAccess.save_computed_data
@@ -948,8 +948,8 @@ class BugFixes(TestBase):
         TestBase.logger.WriteLine("----- BUG108049_AlwaysAvailableObjects ACCESS TEST ----- BEGIN -----")
 
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
-        oMarsPlanet: "IStkObject" = TestBase.Application.current_scenario.children["MarsJPL"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
+        oMarsPlanet: "ISTKObject" = TestBase.Application.current_scenario.children["MarsJPL"]
 
         oAccess: "Access" = None
 
@@ -981,9 +981,9 @@ class BugFixes(TestBase):
         TestBase.logger.WriteLine("----- BUG108055_IntervalAtAssignedTimeNotUsed ACCESS TEST ----- BEGIN -----")
 
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "sat108055"
         )
 
@@ -1087,8 +1087,8 @@ class BugFixes(TestBase):
     def test_BUG108208_UseOfDeletedTimeComponent(self):
         TestBase.logger.WriteLine("----- BUG108208_UseOfDeletedTimeComponent ACCESS TEST ----- BEGIN -----")
 
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesSat"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["AccessBugFixesSat"]
 
         compName: str = "bug108208FixedIntrvl"
         group: "TimeToolTimeIntervalListGroup" = None

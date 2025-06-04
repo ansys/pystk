@@ -56,7 +56,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_DetermineTimeOfEvent(self):
         self.DetermineTimeOfEvent(TestBase.Application)
 
-    def DetermineTimeOfEvent(self, stkRoot: "StkObjectRoot"):
+    def DetermineTimeOfEvent(self, stkRoot: "STKObjectRoot"):
         provider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components
@@ -70,7 +70,7 @@ class Event(TimelineCodeSnippetsTestBase):
             Console.WriteLine("The first pass interval never occurred")
 
         # create a satellite with no ephem and find that there's no ocurrence of PassIntervals.First.Start
-        noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
+        noEphemObj: "ISTKObject" = stkRoot.current_scenario.children.new(
             STKObjectType.SATELLITE, "NoEphem_FindOccurenceTest"
         )
         provider2: "AnalysisWorkbenchComponentProvider" = noEphemObj.analysis_workbench_components
@@ -133,7 +133,7 @@ class Event(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEvent(self):
         self.CreateSignaledEvent(TestBase.Application)
 
-    def CreateSignaledEvent(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEvent(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components

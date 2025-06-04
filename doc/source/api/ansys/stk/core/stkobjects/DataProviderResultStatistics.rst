@@ -47,7 +47,8 @@ Method detail
 
     :Parameters:
 
-    **statistic** : :obj:`~StatisticType`
+        **statistic** : :obj:`~StatisticType`
+
 
     :Returns:
 
@@ -60,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **time_var_extremum** : :obj:`~TimeVaryingExtremum`
+        **time_var_extremum** : :obj:`~TimeVaryingExtremum`
+
 
     :Returns:
 
@@ -73,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **statistic** : :obj:`~StatisticType`
+        **statistic** : :obj:`~StatisticType`
+
 
     :Returns:
 
@@ -86,7 +89,8 @@ Method detail
 
     :Parameters:
 
-    **time_var_extremum** : :obj:`~TimeVaryingExtremum`
+        **time_var_extremum** : :obj:`~TimeVaryingExtremum`
+
 
     :Returns:
 

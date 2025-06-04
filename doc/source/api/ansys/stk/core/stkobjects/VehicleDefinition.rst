@@ -77,7 +77,8 @@ Method detail
 
     :Parameters:
 
-    **break_angle_type** : :obj:`~VehicleBreakAngleType`
+        **break_angle_type** : :obj:`~VehicleBreakAngleType`
+
 
     :Returns:
 

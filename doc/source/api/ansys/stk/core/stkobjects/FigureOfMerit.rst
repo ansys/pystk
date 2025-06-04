@@ -3,7 +3,7 @@ FigureOfMerit
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMerit
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Figure of Merit properties.
 
@@ -147,7 +147,8 @@ Method detail
 
     :Parameters:
 
-    **defn** : :obj:`~FigureOfMeritDefinitionType`
+        **defn** : :obj:`~FigureOfMeritDefinitionType`
+
 
     :Returns:
 
@@ -160,7 +161,8 @@ Method detail
 
     :Parameters:
 
-    **defn** : :obj:`~FigureOfMeritDefinitionType`
+        **defn** : :obj:`~FigureOfMeritDefinitionType`
+
 
     :Returns:
 
@@ -175,7 +177,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~FigureOfMeritConstraintName`
+        **constraint_name** : :obj:`~FigureOfMeritConstraintName`
+
 
     :Returns:
 
@@ -191,7 +194,8 @@ Method detail
 
     :Parameters:
 
-    **constraint_name** : :obj:`~str`
+        **constraint_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -204,7 +208,8 @@ Method detail
 
     :Parameters:
 
-    **calc_scalar** : :obj:`~str`
+        **calc_scalar** : :obj:`~str`
+
 
     :Returns:
 

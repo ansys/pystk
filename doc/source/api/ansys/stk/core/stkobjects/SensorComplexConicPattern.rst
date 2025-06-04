@@ -104,8 +104,10 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~typing.Any`
-    **max** : :obj:`~typing.Any`
+        **min** : :obj:`~typing.Any`
+
+        **max** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -120,8 +122,10 @@ Method detail
 
     :Parameters:
 
-    **inner** : :obj:`~typing.Any`
-    **outer** : :obj:`~typing.Any`
+        **inner** : :obj:`~typing.Any`
+
+        **outer** : :obj:`~typing.Any`
+
 
     :Returns:
 

@@ -67,7 +67,7 @@ Change the scenario font
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     scenario.graphics_3d.medium_font.name = "Arial"
     scenario.graphics_3d.medium_font.point_size = 18
@@ -191,8 +191,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_path** : :obj:`~str`
-    **window_id** : :obj:`~str`
+        **trunc_path** : :obj:`~str`
+
+        **window_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -205,8 +207,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_object_paths** : :obj:`~list`
-    **window_id_or_title** : :obj:`~str`
+        **trunc_object_paths** : :obj:`~list`
+
+        **window_id_or_title** : :obj:`~str`
+
 
     :Returns:
 
@@ -219,8 +223,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_path** : :obj:`~str`
-    **window_id** : :obj:`~str`
+        **trunc_path** : :obj:`~str`
+
+        **window_id** : :obj:`~str`
+
 
     :Returns:
 
@@ -233,8 +239,10 @@ Method detail
 
     :Parameters:
 
-    **trunc_object_paths** : :obj:`~list`
-    **window_id_or_title** : :obj:`~str`
+        **trunc_object_paths** : :obj:`~list`
+
+        **window_id_or_title** : :obj:`~str`
+
 
     :Returns:
 

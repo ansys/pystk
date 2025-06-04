@@ -60,7 +60,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
             ),
             CoverageDefinition,
         )
-        covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
+        covdefObject: "ISTKObject" = clr.CastAs(self.m_CovDefObject, ISTKObject)
         FigureOfMeritSnipets.m_Object = clr.CastAs(
             covdefObject.children.new(STKObjectType.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName), FigureOfMerit
         )
@@ -69,7 +69,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
+        covdefObject: "ISTKObject" = clr.CastAs(self.m_CovDefObject, ISTKObject)
         covdefObject.children.unload(STKObjectType.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
             STKObjectType.COVERAGE_DEFINITION, FigureOfMeritSnipets.m_CovDefDefaultName
@@ -86,8 +86,8 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         self.CreateFigureOfMeritOnCoverageDefinition(self.m_CovDefObject)
 
     def CreateFigureOfMeritOnCoverageDefinition(self, covdef: "CoverageDefinition"):
-        # Get the coverage definition as a IStkObject interface
-        covdefObject: "IStkObject" = clr.CastAs(covdef, IStkObject)
+        # Get the coverage definition as a ISTKObject interface
+        covdefObject: "ISTKObject" = clr.CastAs(covdef, ISTKObject)
 
         # Create the figure of merit
         fom: "FigureOfMerit" = clr.CastAs(
@@ -265,7 +265,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
     def test_FigureOfMeritDefinitionScalarCalculationFromVGT(self):
         self.FigureOfMeritDefinitionScalarCalculationFromVGT(FigureOfMeritSnipets.m_Object, TestBase.Application)
 
-    def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "FigureOfMerit", stkRoot: "StkObjectRoot"):
+    def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "FigureOfMerit", stkRoot: "STKObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.
         provider: "AnalysisWorkbenchComponentProvider" = stkRoot.analysis_workbench_components_root.get_provider(
             "CentralBody/Sun"

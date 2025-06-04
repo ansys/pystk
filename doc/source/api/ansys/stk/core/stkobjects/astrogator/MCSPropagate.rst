@@ -149,7 +149,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlAdvanced`
+        **param** : :obj:`~ControlAdvanced`
+
 
     :Returns:
 
@@ -162,7 +163,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlAdvanced`
+        **param** : :obj:`~ControlAdvanced`
+
 
     :Returns:
 
@@ -175,7 +177,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlAdvanced`
+        **param** : :obj:`~ControlAdvanced`
+
 
     :Returns:
 

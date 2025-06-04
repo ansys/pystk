@@ -102,8 +102,10 @@ Method detail
 
     :Parameters:
 
-    **thresholds** : :obj:`~list`
-    **threshold_labels** : :obj:`~list`
+        **thresholds** : :obj:`~list`
+
+        **threshold_labels** : :obj:`~list`
+
 
     :Returns:
 

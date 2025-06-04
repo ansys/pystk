@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **rotate_angle** : :obj:`~float`
+        **rotate_angle** : :obj:`~float`
+
 
     :Returns:
 

@@ -81,8 +81,10 @@ Method detail
 
     :Parameters:
 
-    **elem_name** : :obj:`~str`
-    **threshold** : :obj:`~typing.Any`
+        **elem_name** : :obj:`~str`
+
+        **threshold** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -95,8 +97,10 @@ Method detail
 
     :Parameters:
 
-    **elem_name** : :obj:`~str`
-    **thresholds** : :obj:`~list`
+        **elem_name** : :obj:`~str`
+
+        **thresholds** : :obj:`~list`
+
 
     :Returns:
 

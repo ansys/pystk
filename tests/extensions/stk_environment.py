@@ -30,16 +30,16 @@ from typing import Optional
 if os.name == "nt":
     from ansys.stk.core.stkdesktop import STKDesktopApplication, STKDesktop
 from ansys.stk.core.stkengine import STKEngineApplication, STKEngine
-from ansys.stk.core.stkobjects import StkObjectRoot
+from ansys.stk.core.stkobjects import STKObjectRoot
 
 
 class StkEnvironment:
     root_provider: Optional["IRootProvider"] = None
-    root: Optional["StkObjectRoot"] = None
+    root: Optional["STKObjectRoot"] = None
     stkx_form: Optional["StkEnvironment.StkXForm"] = None
 
     class IRootProvider:
-        def get_root(self) -> "StkObjectRoot":
+        def get_root(self) -> "STKObjectRoot":
             raise RuntimeError("get_root must be overriden")
 
         def shutdown(self):
@@ -61,7 +61,7 @@ class StkEnvironment:
         def shutdown(self):
             self.stk.shutdown()
 
-        def get_root(self) -> "StkObjectRoot":
+        def get_root(self) -> "STKObjectRoot":
             return self.stk.root
 
     class StkRuntimeEngineProvider(IRootProvider):
@@ -82,7 +82,7 @@ class StkEnvironment:
         def shutdown(self):
             self.stk.shutdown()
 
-        def get_root(self) -> "StkObjectRoot":
+        def get_root(self) -> "STKObjectRoot":
             return self.stk.new_object_root()
 
     class StkXEngineProvider(IRootProvider):
@@ -93,7 +93,7 @@ class StkEnvironment:
         def shutdown(self):
             self.stk.shutdown()
 
-        def get_root(self) -> "StkObjectRoot":
+        def get_root(self) -> "STKObjectRoot":
             return self.stk.new_object_root()
 
     class StkXNoGfxEngineProvider(IRootProvider):
@@ -104,7 +104,7 @@ class StkEnvironment:
         def shutdown(self):
             self.stk.shutdown()
 
-        def get_root(self) -> "StkObjectRoot":
+        def get_root(self) -> "STKObjectRoot":
             return self.stk.new_object_root()
 
     class StkXForm:
@@ -164,7 +164,7 @@ class StkEnvironment:
             StkEnvironment.root_provider = None
 
     @staticmethod
-    def get_root() -> "StkObjectRoot":
+    def get_root() -> "STKObjectRoot":
         if StkEnvironment.root is not None:
             return StkEnvironment.root
         else:

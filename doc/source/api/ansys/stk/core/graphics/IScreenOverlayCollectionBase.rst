@@ -85,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -99,7 +100,8 @@ Method detail
 
     :Parameters:
 
-    **item** : :obj:`~IScreenOverlay`
+        **item** : :obj:`~IScreenOverlay`
+
 
     :Returns:
 
@@ -112,7 +114,8 @@ Method detail
 
     :Parameters:
 
-    **item** : :obj:`~IScreenOverlay`
+        **item** : :obj:`~IScreenOverlay`
+
 
     :Returns:
 
@@ -134,7 +137,8 @@ Method detail
 
     :Parameters:
 
-    **item** : :obj:`~IScreenOverlay`
+        **item** : :obj:`~IScreenOverlay`
+
 
     :Returns:
 

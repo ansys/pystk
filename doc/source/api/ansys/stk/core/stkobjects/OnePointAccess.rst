@@ -53,7 +53,7 @@ Compute an access for one point
 
 .. code-block:: python
 
-    # IStkObject facility: Facility object
+    # ISTKObject facility: Facility object
     onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
 
     # Configure properties (if necessary)
@@ -166,10 +166,14 @@ Method detail
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
-    **max_num_accesses_to_find** : :obj:`~int`
-    **min_duration** : :obj:`~float`
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+        **max_num_accesses_to_find** : :obj:`~int`
+
+        **min_duration** : :obj:`~float`
+
 
     :Returns:
 

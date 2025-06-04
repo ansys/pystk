@@ -3,7 +3,7 @@ Aircraft
 
 .. py:class:: ansys.stk.core.stkobjects.Aircraft
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IGreatArcVehicle`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IGreatArcVehicle`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Aircraft object.
 
@@ -98,7 +98,7 @@ Create a New Aircraft (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
 
 

@@ -81,7 +81,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -95,7 +96,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -108,7 +110,8 @@ Method detail
 
     :Parameters:
 
-    **transceiver** : :obj:`~Transceiver`
+        **transceiver** : :obj:`~Transceiver`
+
 
     :Returns:
 
@@ -121,9 +124,12 @@ Method detail
 
     :Parameters:
 
-    **type** : :obj:`~TransceiverModelType`
-    **name** : :obj:`~str`
-    **parent_object_path** : :obj:`~str`
+        **type** : :obj:`~TransceiverModelType`
+
+        **name** : :obj:`~str`
+
+        **parent_object_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -136,7 +142,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~Transceiver`
+        **value** : :obj:`~Transceiver`
+
 
     :Returns:
 
@@ -158,7 +165,8 @@ Method detail
 
     :Parameters:
 
-    **identifier** : :obj:`~str`
+        **identifier** : :obj:`~str`
+
 
     :Returns:
 

@@ -129,7 +129,8 @@ Method detail
 
     :Parameters:
 
-    **image_file** : :obj:`~str`
+        **image_file** : :obj:`~str`
+
 
     :Returns:
 

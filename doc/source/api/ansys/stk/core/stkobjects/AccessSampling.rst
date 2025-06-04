@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **sampling_method** : :obj:`~SamplingMethod`
+        **sampling_method** : :obj:`~SamplingMethod`
+
 
     :Returns:
 
@@ -92,7 +93,8 @@ Method detail
 
     :Parameters:
 
-    **sampling_method** : :obj:`~SamplingMethod`
+        **sampling_method** : :obj:`~SamplingMethod`
+
 
     :Returns:
 

@@ -73,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -87,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **central_body_name** : :obj:`~str`
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -100,7 +102,8 @@ Method detail
 
     :Parameters:
 
-    **central_body_name** : :obj:`~str`
+        **central_body_name** : :obj:`~str`
+
 
     :Returns:
 

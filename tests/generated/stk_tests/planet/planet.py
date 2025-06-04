@@ -131,7 +131,7 @@ class EarlyBoundTests(TestBase):
         oBody = PlanetPositionCentralBody(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(oBody)
         oBody.rename_automatically = False
-        (IStkObject(EarlyBoundTests.AG_PL)).instance_name = "Planet1"
+        (ISTKObject(EarlyBoundTests.AG_PL)).instance_name = "Planet1"
         oBody.central_body = "Sun"
         TestBase.logger.WriteLine5("JPLDEVersion: {0}", oBody.jplde_version)
         oBody.ephemeris_source = EphemSourceType.ANALYTIC
@@ -177,8 +177,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_PL, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_PL)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_PL, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_PL)).object_files)
 
     # endregion
 
@@ -439,7 +439,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_PL.access_constraints, IStkObject(EarlyBoundTests.AG_PL), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_PL.access_constraints, ISTKObject(EarlyBoundTests.AG_PL), TestBase.TemporaryDirectory
         )
 
     # endregion

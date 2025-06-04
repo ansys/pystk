@@ -55,7 +55,7 @@ Get Data for Specific Points and Elements
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -70,7 +70,7 @@ Get Data for a Single Point in Time
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -83,7 +83,7 @@ Extract Elements from Data Providers with pre-data
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Facility facility: Facility object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -106,7 +106,7 @@ Extract Elements from Data Providers with Groups
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -138,7 +138,7 @@ Use a Time Dependent Data Provider and requesting only specified elements
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -161,7 +161,7 @@ Use an interval Data Provider
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
@@ -223,7 +223,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -238,7 +239,8 @@ Method detail
 
     :Parameters:
 
-    **data_provider_path** : :obj:`~str`
+        **data_provider_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -251,7 +253,8 @@ Method detail
 
     :Parameters:
 
-    **data_provider_path** : :obj:`~str`
+        **data_provider_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -264,7 +267,8 @@ Method detail
 
     :Parameters:
 
-    **data_provider_path** : :obj:`~str`
+        **data_provider_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -277,7 +281,8 @@ Method detail
 
     :Parameters:
 
-    **data_provider_path** : :obj:`~str`
+        **data_provider_path** : :obj:`~str`
+
 
     :Returns:
 
@@ -290,7 +295,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -303,7 +309,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 

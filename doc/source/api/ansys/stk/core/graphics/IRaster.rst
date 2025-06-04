@@ -90,7 +90,8 @@ Method detail
 
     :Parameters:
 
-    **axis** : :obj:`~RasterFlipAxis`
+        **axis** : :obj:`~RasterFlipAxis`
+
 
     :Returns:
 
@@ -103,7 +104,8 @@ Method detail
 
     :Parameters:
 
-    **angle** : :obj:`~float`
+        **angle** : :obj:`~float`
+
 
     :Returns:
 
@@ -116,7 +118,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 
@@ -129,7 +132,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 
@@ -142,7 +146,8 @@ Method detail
 
     :Parameters:
 
-    **band** : :obj:`~RasterBand`
+        **band** : :obj:`~RasterBand`
+
 
     :Returns:
 
@@ -155,7 +160,8 @@ Method detail
 
     :Parameters:
 
-    **format** : :obj:`~RasterFormat`
+        **format** : :obj:`~RasterFormat`
+
 
     :Returns:
 
@@ -168,7 +174,8 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
+        **raster** : :obj:`~IRaster`
+
 
     :Returns:
 

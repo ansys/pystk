@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **raster** : :obj:`~IRaster`
+        **raster** : :obj:`~IRaster`
+
 
     :Returns:
 

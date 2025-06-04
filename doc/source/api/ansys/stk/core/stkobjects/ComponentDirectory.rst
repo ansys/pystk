@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **component** : :obj:`~Component`
+        **component** : :obj:`~Component`
+
 
     :Returns:
 

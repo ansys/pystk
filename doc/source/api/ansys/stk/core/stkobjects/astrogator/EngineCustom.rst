@@ -126,7 +126,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineCustom`
+        **param** : :obj:`~ControlEngineCustom`
+
 
     :Returns:
 
@@ -139,7 +140,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineCustom`
+        **param** : :obj:`~ControlEngineCustom`
+
 
     :Returns:
 
@@ -152,7 +154,8 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlEngineCustom`
+        **param** : :obj:`~ControlEngineCustom`
+
 
     :Returns:
 

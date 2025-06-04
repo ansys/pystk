@@ -3,7 +3,7 @@ Antenna
 
 .. py:class:: ansys.stk.core.stkobjects.Antenna
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the antenna object.
 
@@ -117,7 +117,7 @@ Create a New Antenna Object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
 
 
@@ -216,7 +216,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -234,7 +235,8 @@ Method detail
 
     :Parameters:
 
-    **model** : :obj:`~SensorRefractionType`
+        **model** : :obj:`~SensorRefractionType`
+
 
     :Returns:
 

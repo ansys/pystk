@@ -103,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **pass_type** : :obj:`~VehicleGraphics2DPass`
+        **pass_type** : :obj:`~VehicleGraphics2DPass`
+
 
     :Returns:
 
@@ -116,7 +117,8 @@ Method detail
 
     :Parameters:
 
-    **pass_type** : :obj:`~VehicleGraphics2DPass`
+        **pass_type** : :obj:`~VehicleGraphics2DPass`
+
 
     :Returns:
 

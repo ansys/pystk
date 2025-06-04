@@ -211,7 +211,8 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -224,8 +225,10 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
 
     :Returns:
 
@@ -238,9 +241,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -253,7 +259,8 @@ Method detail
 
     :Parameters:
 
-    **surface_shapes_result** : :obj:`~SurfaceShapesResult`
+        **surface_shapes_result** : :obj:`~SurfaceShapesResult`
+
 
     :Returns:
 
@@ -266,7 +273,8 @@ Method detail
 
     :Parameters:
 
-    **surface_triangulator_result** : :obj:`~SurfaceTriangulatorResult`
+        **surface_triangulator_result** : :obj:`~SurfaceTriangulatorResult`
+
 
     :Returns:
 
@@ -279,7 +287,8 @@ Method detail
 
     :Parameters:
 
-    **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
+        **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
+
 
     :Returns:
 
@@ -292,8 +301,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
@@ -306,9 +317,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
 
     :Returns:
 
@@ -321,10 +335,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -337,9 +355,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **index** : :obj:`~int`
-    **count** : :obj:`~int`
+        **positions** : :obj:`~list`
+
+        **index** : :obj:`~int`
+
+        **count** : :obj:`~int`
+
 
     :Returns:
 
@@ -352,10 +373,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **index** : :obj:`~int`
-    **count** : :obj:`~int`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **index** : :obj:`~int`
+
+        **count** : :obj:`~int`
+
 
     :Returns:
 
@@ -368,8 +393,10 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -382,9 +409,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
 
     :Returns:
 
@@ -397,9 +427,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -412,11 +445,16 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -429,9 +467,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -444,10 +485,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
 
     :Returns:
 
@@ -460,10 +505,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -476,12 +525,18 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
-    **render_pass_hint** : :obj:`~RenderPassHint`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+
+        **render_pass_hint** : :obj:`~RenderPassHint`
+
 
     :Returns:
 
@@ -496,9 +551,12 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+
 
     :Returns:
 
@@ -511,10 +569,14 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+
 
     :Returns:
 
@@ -527,10 +589,14 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 
@@ -543,11 +609,16 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **positions** : :obj:`~list`
-    **colors** : :obj:`~list`
-    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
-    **indices** : :obj:`~list`
+        **central_body** : :obj:`~str`
+
+        **positions** : :obj:`~list`
+
+        **colors** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+
+        **indices** : :obj:`~list`
+
 
     :Returns:
 

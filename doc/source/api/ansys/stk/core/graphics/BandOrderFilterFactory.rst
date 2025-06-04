@@ -54,7 +54,8 @@ Method detail
 
     :Parameters:
 
-    **band_order** : :obj:`~RasterFormat`
+        **band_order** : :obj:`~RasterFormat`
+
 
     :Returns:
 
@@ -67,8 +68,10 @@ Method detail
 
     :Parameters:
 
-    **band_order** : :obj:`~RasterFormat`
-    **maintain_image_format** : :obj:`~bool`
+        **band_order** : :obj:`~RasterFormat`
+
+        **maintain_image_format** : :obj:`~bool`
+
 
     :Returns:
 

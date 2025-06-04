@@ -57,7 +57,8 @@ Method detail
 
     :Parameters:
 
-    **field_name** : :obj:`~str`
+        **field_name** : :obj:`~str`
+
 
     :Returns:
 

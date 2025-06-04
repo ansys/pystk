@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 

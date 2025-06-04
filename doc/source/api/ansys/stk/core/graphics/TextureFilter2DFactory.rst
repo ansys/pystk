@@ -92,10 +92,14 @@ Method detail
 
     :Parameters:
 
-    **minification_filter** : :obj:`~MinificationFilter`
-    **magnification_filter** : :obj:`~MagnificationFilter`
-    **wrap_s** : :obj:`~TextureWrap`
-    **wrap_t** : :obj:`~TextureWrap`
+        **minification_filter** : :obj:`~MinificationFilter`
+
+        **magnification_filter** : :obj:`~MagnificationFilter`
+
+        **wrap_s** : :obj:`~TextureWrap`
+
+        **wrap_t** : :obj:`~TextureWrap`
+
 
     :Returns:
 
@@ -108,8 +112,10 @@ Method detail
 
     :Parameters:
 
-    **wrap_s** : :obj:`~TextureWrap`
-    **wrap_t** : :obj:`~TextureWrap`
+        **wrap_s** : :obj:`~TextureWrap`
+
+        **wrap_t** : :obj:`~TextureWrap`
+
 
     :Returns:
 
@@ -122,8 +128,10 @@ Method detail
 
     :Parameters:
 
-    **minification_filter** : :obj:`~MinificationFilter`
-    **magnification_filter** : :obj:`~MagnificationFilter`
+        **minification_filter** : :obj:`~MinificationFilter`
+
+        **magnification_filter** : :obj:`~MagnificationFilter`
+
 
     :Returns:
 

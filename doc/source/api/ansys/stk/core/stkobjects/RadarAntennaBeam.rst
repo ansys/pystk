@@ -106,7 +106,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~PointingStrategyType`
+        **value** : :obj:`~PointingStrategyType`
+
 
     :Returns:
 
@@ -124,7 +125,8 @@ Method detail
 
     :Parameters:
 
-    **activity_type** : :obj:`~RadarActivityType`
+        **activity_type** : :obj:`~RadarActivityType`
+
 
     :Returns:
 
@@ -138,7 +140,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~WaveformSelectionStrategyType`
+        **value** : :obj:`~WaveformSelectionStrategyType`
+
 
     :Returns:
 

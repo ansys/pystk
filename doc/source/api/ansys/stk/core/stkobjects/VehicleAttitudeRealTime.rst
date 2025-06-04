@@ -99,11 +99,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **q1** : :obj:`~float`
-    **q2** : :obj:`~float`
-    **q3** : :obj:`~float`
-    **q4** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **q1** : :obj:`~float`
+
+        **q2** : :obj:`~float`
+
+        **q3** : :obj:`~float`
+
+        **q4** : :obj:`~float`
+
 
     :Returns:
 
@@ -116,11 +121,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **q1** : :obj:`~float`
-    **q2** : :obj:`~float`
-    **q3** : :obj:`~float`
-    **q4** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **q1** : :obj:`~float`
+
+        **q2** : :obj:`~float`
+
+        **q3** : :obj:`~float`
+
+        **q4** : :obj:`~float`
+
 
     :Returns:
 
@@ -133,11 +143,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **sequence** : :obj:`~str`
-    **yaw** : :obj:`~float`
-    **pitch** : :obj:`~float`
-    **roll** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **sequence** : :obj:`~str`
+
+        **yaw** : :obj:`~float`
+
+        **pitch** : :obj:`~float`
+
+        **roll** : :obj:`~float`
+
 
     :Returns:
 
@@ -150,11 +165,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **sequence** : :obj:`~str`
-    **yaw** : :obj:`~float`
-    **pitch** : :obj:`~float`
-    **roll** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **sequence** : :obj:`~str`
+
+        **yaw** : :obj:`~float`
+
+        **pitch** : :obj:`~float`
+
+        **roll** : :obj:`~float`
+
 
     :Returns:
 
@@ -167,11 +187,16 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
-    **sequence** : :obj:`~str`
-    **angle1** : :obj:`~float`
-    **angle2** : :obj:`~float`
-    **angle3** : :obj:`~float`
+        **time** : :obj:`~typing.Any`
+
+        **sequence** : :obj:`~str`
+
+        **angle1** : :obj:`~float`
+
+        **angle2** : :obj:`~float`
+
+        **angle3** : :obj:`~float`
+
 
     :Returns:
 
