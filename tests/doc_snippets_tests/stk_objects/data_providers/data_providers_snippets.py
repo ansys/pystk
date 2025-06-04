@@ -67,7 +67,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def IntervalDataProviderSnippet(self, root, satellite, facility):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Facility facility: Facility object
 
@@ -102,7 +102,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def TimeDependentDataProviderElementsSnippet(self, root, scenario, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Scenario scenario: Scenario object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -137,7 +137,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def GroupsDataProviderSnippet(self, root, scenario, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Scenario scenario: Scenario object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -180,7 +180,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def DataProviderPreDataSnippet(self, root, scenario, facility):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Facility facility: Facility object
         # Scenario scenario: Scenario object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -214,7 +214,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def SingleTimeDataProviderSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python
@@ -238,7 +238,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         eid="stkobjects~DataProviderCollection",
     )
     def SingleTimesDataProviderSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python

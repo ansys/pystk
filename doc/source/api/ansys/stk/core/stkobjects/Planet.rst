@@ -3,7 +3,7 @@ Planet
 
 .. py:class:: ansys.stk.core.stkobjects.Planet
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Planet object.
 

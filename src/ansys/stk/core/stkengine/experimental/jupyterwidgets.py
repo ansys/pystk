@@ -52,7 +52,7 @@ from ...internal.comutil import (
     Succeeded,
 )
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...stkobjects import StkObjectRoot
+from ...stkobjects import STKObjectRoot
 from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
@@ -240,7 +240,7 @@ class WidgetBase(RemoteFrameBuffer):
     _mouse3 = 0x0400
 
     def __init__(self,
-                 root: StkObjectRoot,
+                 root: STKObjectRoot,
                  w: int = 800,
                  h: int = 600,
                  title: str = None,
@@ -436,7 +436,7 @@ class GlobeWidget(Graphics3DControlBase, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = Graphics3DControlBase
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GlobeWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 
@@ -450,7 +450,7 @@ class MapWidget(Graphics2DControlBase, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = Graphics2DControlBase
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type MapWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 
@@ -464,7 +464,7 @@ class GfxAnalysisWidget(GraphicsAnalysisControlBase, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = GraphicsAnalysisControlBase
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GfxAnalysisWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 

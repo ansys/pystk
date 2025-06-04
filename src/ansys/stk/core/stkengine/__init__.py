@@ -48,7 +48,7 @@ from ..internal.comutil import (
 )
 from ..internal.eventutil import EventSubscriptionManager
 from ..internal.stkxinitialization import STKXInitialize
-from ..stkobjects import StkObjectModelContext, StkObjectRoot
+from ..stkobjects import STKObjectModelContext, STKObjectRoot
 from ..stkx import STKXApplication
 from ..utilities.exceptions import GrpcUtilitiesError, STKInitializationError, STKRuntimeError
 from ..utilities.grpcutilities import GrpcCallBatcher
@@ -153,7 +153,7 @@ class STKEngineApplication(STKXApplication):
             else:
                 self.__dict__["_timer_impl"] = TclTimer()
         
-    def new_object_root(self) -> StkObjectRoot:
+    def new_object_root(self) -> STKObjectRoot:
         """Create a new object model root for the STK Engine application."""
         if not self.__dict__["_initialized"]:
             raise STKRuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
@@ -163,11 +163,11 @@ class STKEngineApplication(STKXApplication):
             root_unk = IUnknown()
             OLE32Lib.CoCreateInstance(byref(clsid_agstkobjectroot), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(root_unk.p))
             root_unk.take_ownership()
-            root = StkObjectRoot()
+            root = STKObjectRoot()
             root._private_init(root_unk)
             return root
 
-    def new_object_model_context(self) -> StkObjectModelContext:
+    def new_object_model_context(self) -> STKObjectModelContext:
         """Create a new object model context for the STK Engine application."""
         if not self.__dict__['_initialized']:
             raise STKRuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
@@ -177,7 +177,7 @@ class STKEngineApplication(STKXApplication):
             context_unk = IUnknown()
             OLE32Lib.CoCreateInstance(byref(clsid_agstkobjectmodelcontext), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(context_unk.p))
             context_unk.take_ownership()
-            context = StkObjectModelContext()
+            context = STKObjectModelContext()
             context._private_init(context_unk)
             return context
 

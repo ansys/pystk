@@ -7955,7 +7955,7 @@ class Camera(SupportsDeleteCallback):
     --------
     Change the camera reference frame:
     >>> # Scenario scenario: Scenario object
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> manager = scenario.scene_manager
     >>> manager.scenes.item(0).camera.view_central_body(
     >>>     "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")

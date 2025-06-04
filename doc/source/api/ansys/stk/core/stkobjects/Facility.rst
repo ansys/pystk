@@ -3,7 +3,7 @@ Facility
 
 .. py:class:: ansys.stk.core.stkobjects.Facility
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the Facility object.
 
@@ -115,7 +115,7 @@ Create a facility and set its height relative to ground level
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
     facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
@@ -126,7 +126,7 @@ Create a facility (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
 

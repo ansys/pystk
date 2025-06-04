@@ -180,7 +180,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_CreateMergedEventIntervalList(self):
         self.CreateMergedEventIntervalList(TestBase.Application)
 
-    def CreateMergedEventIntervalList(self, stkRoot: "StkObjectRoot"):
+    def CreateMergedEventIntervalList(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components
@@ -262,7 +262,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEventIntervalList(self):
         self.CreateSignaledEventIntervalList(TestBase.Application)
 
-    def CreateSignaledEventIntervalList(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEventIntervalList(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components
@@ -299,7 +299,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self):
         self.DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(TestBase.Application)
 
-    def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "StkObjectRoot"):
+    def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "STKObjectRoot"):
         aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Aircraft/UAV"
         ).analysis_workbench_components
@@ -338,10 +338,10 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     def test_DetermineIntervalsWithoutAccess(self):
         self.DetermineIntervalsWithoutAccess(TestBase.Application)
 
-    def DetermineIntervalsWithoutAccess(self, stkRoot: "StkObjectRoot"):
+    def DetermineIntervalsWithoutAccess(self, stkRoot: "STKObjectRoot"):
         # Compute UAV's access to the satellite
-        satellite: "IStkObject" = stkRoot.get_object_from_path("Satellite/LEO")
-        aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
+        satellite: "ISTKObject" = stkRoot.get_object_from_path("Satellite/LEO")
+        aircraft: "ISTKObject" = stkRoot.get_object_from_path("Aircraft/UAV")
         satelliteAccess: "Access" = aircraft.get_access_to_object(satellite)
         satelliteAccess.compute_access()
 

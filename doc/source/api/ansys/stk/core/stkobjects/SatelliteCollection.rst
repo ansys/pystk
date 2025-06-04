@@ -3,7 +3,7 @@ SatelliteCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SatelliteCollection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The SatelliteCollection class.
 

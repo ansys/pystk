@@ -168,7 +168,7 @@ class Propagation(TestBase):
         elements = ["x", "y", "z"]
 
         oGroup1: "DataProviderGroup" = DataProviderGroup(
-            (clr.CastAs(sat1, IStkObject)).data_providers["Cartesian Position"]
+            (clr.CastAs(sat1, ISTKObject)).data_providers["Cartesian Position"]
         )
         oProvider1: "IDataProvider" = IDataProvider(oGroup1.group["Fixed"])
         result1: "DataProviderResult" = (DataProviderTimeVarying(oProvider1)).execute_elements(
@@ -176,7 +176,7 @@ class Propagation(TestBase):
         )
 
         oGroup2: "DataProviderGroup" = DataProviderGroup(
-            (clr.CastAs(sat2, IStkObject)).data_providers["Cartesian Position"]
+            (clr.CastAs(sat2, ISTKObject)).data_providers["Cartesian Position"]
         )
         oProvider2: "IDataProvider" = IDataProvider(oGroup2.group["Fixed"])
         result2: "DataProviderResult" = (DataProviderTimeVarying(oProvider2)).execute_elements(
@@ -272,14 +272,14 @@ class Propagation(TestBase):
     def test_STKExternal(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.STK_EXTERNAL)
-        ext: "PropagatorStkExternal" = PropagatorStkExternal(Propagation.AG_SAT.propagator)
+        ext: "PropagatorSTKExternal" = PropagatorSTKExternal(Propagation.AG_SAT.propagator)
         strPath: str = TestBase.GetScenarioFile("TestEph.e")
         ext.filename = strPath
         ext.propagate()
@@ -302,12 +302,12 @@ class Propagation(TestBase):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
         ComparisionUtility.AddReport2(
-            clr.CastAs(Propagation.AG_MS, IStkObject),
+            clr.CastAs(Propagation.AG_MS, ISTKObject),
             '"Euler Angles" "1 Oct 1999 00:00:00" "1 Oct 1999 01:00:00" 600.0',
             0.01,
         )
         ComparisionUtility.AddReport2(
-            clr.CastAs(Propagation.AG_MS, IStkObject),
+            clr.CastAs(Propagation.AG_MS, ISTKObject),
             '"LLA Position" "1 oct 1999 00:00:00" "1 oct 1999 01:00:00" 600.0',
             0.01,
         )
@@ -722,10 +722,10 @@ class Propagation(TestBase):
         )
         Assert.assertIsNotNone(oLV)
         ComparisionUtility.AddReport2(
-            clr.CastAs(oLV, IStkObject), '"Euler Angles" "1 Oct 1999 00:00:00" "2 Oct 1999 01:00:00" 60.0', 0.01
+            clr.CastAs(oLV, ISTKObject), '"Euler Angles" "1 Oct 1999 00:00:00" "2 Oct 1999 01:00:00" 60.0', 0.01
         )
         ComparisionUtility.AddReport2(
-            clr.CastAs(oLV, IStkObject), '"LLA Position" "1 Oct 1999 00:00:00" "2 Oct 1999 01:00:00" 60.0', 0.01
+            clr.CastAs(oLV, ISTKObject), '"LLA Position" "1 Oct 1999 00:00:00" "2 Oct 1999 01:00:00" 60.0', 0.01
         )
 
         TestBase.Application.execute_command(
@@ -790,9 +790,9 @@ class Propagation(TestBase):
     def test_GreatArc(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, IStkObject), '"Waypoints"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, IStkObject), '"ECF Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, ISTKObject), '"Waypoints"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_AC, ISTKObject), '"ECF Position Velocity"')
 
         # Units
         self.Units.set_current_unit("DateFormat", "EpSec")
@@ -847,10 +847,10 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.LOP)
@@ -924,9 +924,9 @@ class Propagation(TestBase):
     def test_SGP4(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.SGP4)
@@ -961,9 +961,9 @@ class Propagation(TestBase):
 
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.SGP4)
@@ -994,8 +994,8 @@ class Propagation(TestBase):
     def test_GPS(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.GPS)
@@ -1024,8 +1024,8 @@ class Propagation(TestBase):
 
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.GPS)
@@ -1059,9 +1059,9 @@ class Propagation(TestBase):
     def test_Astrogator(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Inertial Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Inertial Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
@@ -1207,10 +1207,10 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -1271,10 +1271,10 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.J4_PERTURBATION)
@@ -1336,10 +1336,10 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
@@ -1390,7 +1390,7 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
@@ -1474,19 +1474,19 @@ class Propagation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport2(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
         ComparisionUtility.AddReport2(
-            clr.CastAs(Propagation.AG_SAT, IStkObject),
+            clr.CastAs(Propagation.AG_SAT, ISTKObject),
             '"LLA Position" "1 Nov 2000 00:00:00.00" "1 Nov 2000 12:00:00.00" 120',
             1e-05,
         )
         ComparisionUtility.AddReport2(
-            clr.CastAs(Propagation.AG_SAT, IStkObject),
+            clr.CastAs(Propagation.AG_SAT, ISTKObject),
             '"Cartesian Position Velocity" "1 Nov 2000 00:00:00.00" "1 Nov 2000 12:00:00.00" 120',
             1e-05,
         )
         ComparisionUtility.AddReport2(
-            clr.CastAs(Propagation.AG_SAT, IStkObject),
+            clr.CastAs(Propagation.AG_SAT, ISTKObject),
             '"Euler Angles" "1 Nov 2000 00:00:00.00" "1 Nov 2000 12:00:00.00" 120',
             1e-05,
         )
@@ -1702,32 +1702,32 @@ class Propagation(TestBase):
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopSun"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator1 = ReportComparison(self.Units)
-        oComparator1.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), 'PreData "RIC" "Satellite/AstgSun" ')
+        oComparator1.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), 'PreData "RIC" "Satellite/AstgSun" ')
 
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopMoon"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator2 = ReportComparison(self.Units)
-        oComparator2.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), 'PreData "RIC" "Satellite/AstgMoon" ')
+        oComparator2.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), 'PreData "RIC" "Satellite/AstgMoon" ')
 
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopMars"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator3 = ReportComparison(self.Units)
-        oComparator3.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), 'PreData "RIC" "Satellite/AstgMars" ')
+        oComparator3.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), 'PreData "RIC" "Satellite/AstgMars" ')
 
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopEuropa"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator4 = ReportComparison(self.Units)
-        oComparator4.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), 'PreData "RIC" "Satellite/AstgEuropa" ')
+        oComparator4.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), 'PreData "RIC" "Satellite/AstgEuropa" ')
 
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopJupiterVOP"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator5 = ReportComparison(self.Units)
         oComparator5.AddReport(
-            clr.CastAs(Propagation.AG_SAT, IStkObject),
+            clr.CastAs(Propagation.AG_SAT, ISTKObject),
             'PreData "RIC" "Satellite/AstgJupiterVOP" "2 Jul 2007 11:59:59.99" "2 Jul 2007 12:00:00.00" 0.01',
         )
 
@@ -1736,7 +1736,7 @@ class Propagation(TestBase):
         Assert.assertIsNotNone(Propagation.AG_SAT)
         oComparator6 = ReportComparison(self.Units)
         oComparator6.AddReport2(
-            clr.CastAs(Propagation.AG_SAT, IStkObject),
+            clr.CastAs(Propagation.AG_SAT, ISTKObject),
             '"LLA Position" "1 Jul 2007 12:00:00.00" "10 Jul 2007 12:00:00.00" 86400',
             1e-05,
         )
@@ -2019,10 +2019,10 @@ class Coordinate(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -2066,10 +2066,10 @@ class Coordinate(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -2113,10 +2113,10 @@ class Coordinate(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -2159,10 +2159,10 @@ class Coordinate(TestBase):
     def test_Date(self):
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Euler Angles"')
         ComparisionUtility.ResetUnits()
 
         Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -2293,10 +2293,10 @@ class Coordinate(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -2462,10 +2462,10 @@ class Representation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Propagator Inputs"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Propagator Inputs"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
@@ -2514,10 +2514,10 @@ class Representation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport2(clr.CastAs(Representation.AG_SAT, IStkObject), '"Propagator Inputs"', 0.001)
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport2(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Propagator Inputs"', 0.001)
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
@@ -2571,10 +2571,10 @@ class Representation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Propagator Inputs"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Propagator Inputs"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
@@ -2622,10 +2622,10 @@ class Representation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Propagator Inputs"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Propagator Inputs"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
@@ -2672,10 +2672,10 @@ class Representation(TestBase):
         # Report initialization
         self.Units.set_current_unit("DistanceUnit", "m")
         ComparisionUtility = ReportComparison(self.Units)
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Propagator Inputs"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"LLA Position"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
-        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Propagator Inputs"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"LLA Position"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Cartesian Position Velocity"')
+        ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, ISTKObject), '"Euler Angles"')
 
         # OM Setup
         Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
@@ -2752,25 +2752,25 @@ class Attitude(TestBase):
     def test_InertFix(self):
         YPRCompare = ReportComparison(self.Units)
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Yaw Pitch Roll" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         EulerCompare = ReportComparison(self.Units)
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Euler Angles" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         QuatCompare = ReportComparison(self.Units)
         QuatCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
 
@@ -3146,20 +3146,20 @@ class Attitude(TestBase):
     def test_Yaw(self):
         YPRCompare = ReportComparison(self.Units)
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Yaw Pitch Roll" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         EulerCompare = ReportComparison(self.Units)
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Euler Angles" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
 
@@ -3292,17 +3292,17 @@ class Attitude(TestBase):
     def test_Spin(self):
         YPRCompare = ReportComparison(self.Units)
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Yaw Pitch Roll" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         # YPRCompare.AddReport(AG_SAT, "\"Attitude Quaternions\" \"1 Nov 2000 00:00:00.00\" \"1 Nov 2000 00:02:00.00\" 60");
         EulerCompare = ReportComparison(self.Units)
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Euler Angles" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         EulerCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
 
@@ -3534,11 +3534,11 @@ class Attitude(TestBase):
     def test_Sun(self):
         YPRCompare = ReportComparison(self.Units)
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Yaw Pitch Roll" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
 
@@ -3625,11 +3625,11 @@ class Attitude(TestBase):
         # Report initialization
         YPRCompare = ReportComparison(self.Units)
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Yaw Pitch Roll" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
         YPRCompare.AddReport(
-            clr.CastAs(Attitude.AG_SAT, IStkObject),
+            clr.CastAs(Attitude.AG_SAT, ISTKObject),
             '"Attitude Quaternions" "1 Nov 2000 00:00:00.00" "1 Nov 2000 00:02:00.00" 60',
         )
 
@@ -3754,9 +3754,9 @@ class Attitude(TestBase):
         trajAttStandard.pointing.target_slew.set_slew_mode_type(VehicleSlewMode.FIXED_RATE)
 
         realtimeCompare = ReportComparison(self.Units)
-        # realtimeCompare.AddReport(miss as IStkObject, "\"Attitude Quaternions\" \"1 Jul 1999 00:00:00.00\" \"2 Jul 1999 00:00:00.00\" 60.0");
+        # realtimeCompare.AddReport(miss as ISTKObject, "\"Attitude Quaternions\" \"1 Jul 1999 00:00:00.00\" \"2 Jul 1999 00:00:00.00\" 60.0");
         realtimeCompare.AddReport(
-            clr.CastAs(miss, IStkObject),
+            clr.CastAs(miss, ISTKObject),
             '"Attitude Schedule"    "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 60.0',
         )
         realtimeCompare.TakeOMSnapshot(TestBase.Application)
@@ -3810,7 +3810,7 @@ class Attitude(TestBase):
 
         realtimeCompare = ReportComparison(self.Units)
         realtimeCompare.AddReport(
-            clr.CastAs(testSat, IStkObject),
+            clr.CastAs(testSat, ISTKObject),
             '"Attitude Quaternions" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 60',
         )
         realtimeCompare.TakeOMSnapshot(TestBase.Application)
@@ -3894,19 +3894,19 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 00:50:00.00" "1 Jul 1999 00:50:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:05:00.00" "1 Jul 1999 01:05:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:03:00.00" "1 Jul 1999 01:03:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Boresight AzEl" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
 
@@ -4068,15 +4068,15 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 12:00:00.00" "1 Jul 1999 12:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
 
@@ -4123,19 +4123,19 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 12:00:00.00" "1 Jul 1999 12:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Boresight AzEl" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
 
@@ -4231,15 +4231,15 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 12:00:00.00" "1 Jul 1999 12:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
 
@@ -4604,15 +4604,15 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 12:00:00.00" "1 Jul 1999 12:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
 
@@ -4641,11 +4641,11 @@ class Pointing(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 12:00:00.00" "1 Jul 1999 12:00:00.00" 60.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Pointing.AG_SN2, IStkObject),
+            clr.CastAs(Pointing.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
 
@@ -4728,11 +4728,11 @@ class Definition(TestBase):
 
     # region CopyObject
     def test_CopyObject(self):
-        (IStkObject(Definition.AG_SAT)).children.new(STKObjectType.SENSOR, "SensorIntegrity")
+        (ISTKObject(Definition.AG_SAT)).children.new(STKObjectType.SENSOR, "SensorIntegrity")
 
         # Copy Satellite1 with sensor via OM
-        satCopy: "IStkObject" = TestBase.Application.current_scenario.children.copy_object(
-            clr.CastAs(Definition.AG_SAT, IStkObject), "SatCopyOM"
+        satCopy: "ISTKObject" = TestBase.Application.current_scenario.children.copy_object(
+            clr.CastAs(Definition.AG_SAT, ISTKObject), "SatCopyOM"
         )
 
         # Copy Satellite1 with sensor via Connect
@@ -4745,10 +4745,10 @@ class Definition(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_SAT, IStkObject),
+            clr.CastAs(Definition.AG_SAT, ISTKObject),
             '"Pass Data" "1 Nov 2000 00:00:00.00" "2 Nov 2000 00:00:00.00" 60.0',
         )
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_SAT, IStkObject), '"Mass"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_SAT, ISTKObject), '"Mass"')
 
         # Propagator Initialization
         Definition.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
@@ -4860,18 +4860,18 @@ class Definition(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_FA, IStkObject),
+            clr.CastAs(Definition.AG_FA, ISTKObject),
             '"Cartesian Position" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_FA, IStkObject),
+            clr.CastAs(Definition.AG_FA, ISTKObject),
             '"LLA Position" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_FA, IStkObject),
+            clr.CastAs(Definition.AG_FA, ISTKObject),
             '"Eclipse Times" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
-        CompareUtility.AddReport3(("Position " + (IStkObject(Definition.AG_FA)).path))
+        CompareUtility.AddReport3(("Position " + (ISTKObject(Definition.AG_FA)).path))
 
         # Position
         pos: "IPosition" = Definition.AG_FA.position
@@ -5030,13 +5030,13 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        (IStkObject(Definition.AG_SC)).children.new(STKObjectType.FACILITY, "TestFacility")
-        (IStkObject(Definition.AG_SC)).children.new(STKObjectType.SHIP, "TestShip")
+        (ISTKObject(Definition.AG_SC)).children.new(STKObjectType.FACILITY, "TestFacility")
+        (ISTKObject(Definition.AG_SC)).children.new(STKObjectType.SHIP, "TestShip")
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        (IStkObject(Definition.AG_SC)).children.unload(STKObjectType.FACILITY, "TestFacility")
-        (IStkObject(Definition.AG_SC)).children.unload(STKObjectType.SHIP, "TestShip")
+        (ISTKObject(Definition.AG_SC)).children.unload(STKObjectType.FACILITY, "TestFacility")
+        (ISTKObject(Definition.AG_SC)).children.unload(STKObjectType.SHIP, "TestShip")
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -5047,8 +5047,8 @@ class Definition(TestBase):
     def test_AreaTarget(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport2(clr.CastAs(Definition.AG_AT, IStkObject), '"Boundary Points"', 1e-05)
-        CompareUtility.AddReport3(("Position " + (IStkObject(Definition.AG_AT)).path))
+        CompareUtility.AddReport2(clr.CastAs(Definition.AG_AT, ISTKObject), '"Boundary Points"', 1e-05)
+        CompareUtility.AddReport3(("Position " + (ISTKObject(Definition.AG_AT)).path))
 
         # Boundary
         TestBase.Application.execute_command("SetBoundary */AreaTarget/AreaTarget1 Ellipse 100.0 50.0 45.0")
@@ -5203,18 +5203,18 @@ class Definition(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_TA, IStkObject),
+            clr.CastAs(Definition.AG_TA, ISTKObject),
             '"Cartesian Position" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_TA, IStkObject),
+            clr.CastAs(Definition.AG_TA, ISTKObject),
             '"LLA Position" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_TA, IStkObject),
+            clr.CastAs(Definition.AG_TA, ISTKObject),
             '"Eclipse Times" "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 43200.0',
         )
-        CompareUtility.AddReport3(("Position " + (IStkObject(Definition.AG_TA)).path))
+        CompareUtility.AddReport3(("Position " + (ISTKObject(Definition.AG_TA)).path))
 
         # Position
         pos: "IPosition" = Definition.AG_TA.position
@@ -5350,7 +5350,7 @@ class Definition(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_PL, IStkObject),
+            clr.CastAs(Definition.AG_PL, ISTKObject),
             '"Helio Position Velocity" "1 Nov 2000 00:00:00.00" "10 Nov 2000 00:00:00.00" 43200.0',
         )
 
@@ -5536,8 +5536,8 @@ class Definition(TestBase):
     def test_Star(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_ST, IStkObject), '"J2000 Position"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_ST, IStkObject), '"J2000 Cartesian Position"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_ST, ISTKObject), '"J2000 Position"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_ST, ISTKObject), '"J2000 Cartesian Position"')
 
         # Definition
         Definition.AG_ST.location_right_ascension = 120.0
@@ -5566,7 +5566,7 @@ class Definition(TestBase):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_SN2, IStkObject),
+            clr.CastAs(Definition.AG_SN2, ISTKObject),
             '"Pattern Intersection" "1 Jul 1999 00:00:00.00" "1 Jul 1999 00:00:00.00" 60.0',
         )
 
@@ -5698,7 +5698,7 @@ class Definition(TestBase):
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainTest", "ChainTest.sc"))
         angBetween: "Chain" = Chain(TestBase.Application.current_scenario.children["AngBtwn"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(angBetween, IStkObject), '"Angle Between"')
+        CompareUtility.AddReport(clr.CastAs(angBetween, ISTKObject), '"Angle Between"')
 
         # Connect
         TestBase.Application.execute_command("New / Scenario/ChainTest/Chain MolnyaChain")
@@ -5834,11 +5834,11 @@ class Definition(TestBase):
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         fac1sat1fac2: "Chain" = Chain(TestBase.Application.current_scenario.children["Fac1Sat1Fac2"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, IStkObject), '"Angle Between"')
-        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, IStkObject), '"Complete Chain Access"')
-        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, IStkObject), '"Individual Object Access"')
-        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, IStkObject), '"Individual Strand Access"')
-        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, IStkObject), '"Time Ordered Access"')
+        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, ISTKObject), '"Angle Between"')
+        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, ISTKObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, ISTKObject), '"Individual Object Access"')
+        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, ISTKObject), '"Individual Strand Access"')
+        CompareUtility.AddReport(clr.CastAs(fac1sat1fac2, ISTKObject), '"Time Ordered Access"')
 
         # Connect
         TestBase.Application.execute_command(
@@ -5852,8 +5852,8 @@ class Definition(TestBase):
         # OM
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
-        oChainAircraft1: "IStkObject" = TestBase.Application.current_scenario.children["ChainAircraft1"]
-        oTDRS_6: "IStkObject" = TestBase.Application.current_scenario.children["TDRS_6"]
+        oChainAircraft1: "ISTKObject" = TestBase.Application.current_scenario.children["ChainAircraft1"]
+        oTDRS_6: "ISTKObject" = TestBase.Application.current_scenario.children["TDRS_6"]
         Assert.assertIsNotNone(oChainAircraft1)
         Assert.assertIsNotNone(oTDRS_6)
         oAccess: "Access" = oChainAircraft1.get_access_to_object(oTDRS_6)
@@ -5874,7 +5874,7 @@ class Definition(TestBase):
             TestBase.Application.current_scenario.children["CanadaConstSatGreenland"]
         )
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, IStkObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, ISTKObject), '"Complete Chain Access"')
 
         # Connect
         TestBase.Application.execute_command("SetOperator Scenario/ChainV2Scenario/Constellation/ConstSat Any")
@@ -5899,7 +5899,7 @@ class Definition(TestBase):
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
         canadaConstSatGreenland = Chain(TestBase.Application.current_scenario.children["CanadaConstSatGreenland"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, IStkObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, ISTKObject), '"Complete Chain Access"')
 
         # Connect
         TestBase.Application.execute_command("SetOperator Scenario/ChainV2Scenario/Constellation/ConstSat All")
@@ -5924,7 +5924,7 @@ class Definition(TestBase):
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
         canadaConstSatGreenland = Chain(TestBase.Application.current_scenario.children["CanadaConstSatGreenland"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, IStkObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, ISTKObject), '"Complete Chain Access"')
 
         # Connect
         TestBase.Application.execute_command("SetOperator Scenario/ChainV2Scenario/Constellation/ConstSat AtLeast 2")
@@ -5951,7 +5951,7 @@ class Definition(TestBase):
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
         canadaConstSatGreenland = Chain(TestBase.Application.current_scenario.children["CanadaConstSatGreenland"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, IStkObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, ISTKObject), '"Complete Chain Access"')
 
         # Connect
         TestBase.Application.execute_command("SetOperator Scenario/ChainV2Scenario/Constellation/ConstSat Exactly 2")
@@ -5978,7 +5978,7 @@ class Definition(TestBase):
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
         canadaConstSatGreenland = Chain(TestBase.Application.current_scenario.children["CanadaConstSatGreenland"])
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, IStkObject), '"Complete Chain Access"')
+        CompareUtility.AddReport(clr.CastAs(canadaConstSatGreenland, ISTKObject), '"Complete Chain Access"')
 
         # Connect
         TestBase.Application.execute_command("SetOperator Scenario/ChainV2Scenario/Constellation/ConstSat NoneOf")
@@ -6020,19 +6020,19 @@ class Definition(TestBase):
         )
 
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Percent Coverage"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Access Duration"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Coverage By Asset"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Percent Coverage"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Access Duration"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Coverage By Asset"')
 
         oComparator1 = ReportComparison(self.Units)
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Access Duration"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Coverage By Asset"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Coverage By Latitude"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Gap Duration"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Gaps in Global Coverage"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Global Coverage"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Percent Coverage"')
-        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Time To Cover By Region"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Access Duration"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Coverage By Asset"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Coverage By Latitude"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Gap Duration"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Gaps in Global Coverage"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Global Coverage"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Percent Coverage"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Time To Cover By Region"')
 
         oAccLoadedCovDef: "CoverageDefinition" = clr.CastAs(
             TestBase.Application.current_scenario.children["AccLoadedCovDef"], CoverageDefinition
@@ -6040,14 +6040,14 @@ class Definition(TestBase):
         Assert.assertIsNotNone(oAccLoadedCovDef)
 
         oComparator2 = ReportComparison(self.Units)
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Access Duration"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Coverage By Asset"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Coverage By Latitude"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Gap Duration"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Gaps in Global Coverage"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Global Coverage"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Percent Coverage"')
-        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"Time To Cover By Region"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Access Duration"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Coverage By Asset"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Coverage By Latitude"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Gap Duration"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Gaps in Global Coverage"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Global Coverage"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Percent Coverage"')
+        oComparator2.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"Time To Cover By Region"')
 
         oAccCompCovDef: "CoverageDefinition" = clr.CastAs(
             TestBase.Application.current_scenario.children["AccCompCovDef"], CoverageDefinition
@@ -6055,11 +6055,11 @@ class Definition(TestBase):
         Assert.assertIsNotNone(oAccCompCovDef)
 
         oComparator3 = ReportComparison(self.Units)
-        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, IStkObject), '"Access Duration"')
-        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, IStkObject), '"Gap Duration"')
-        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, IStkObject), '"Gaps in Global Coverage"')
-        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, IStkObject), '"Global Coverage"')
-        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, IStkObject), '"Time To Cover By Region"')
+        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, ISTKObject), '"Access Duration"')
+        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, ISTKObject), '"Gap Duration"')
+        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, ISTKObject), '"Gaps in Global Coverage"')
+        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, ISTKObject), '"Global Coverage"')
+        oComparator3.AddReport(clr.CastAs(oAccCompCovDef, ISTKObject), '"Time To Cover By Region"')
 
         oCompOnLoadCovDef: "CoverageDefinition" = clr.CastAs(
             TestBase.Application.current_scenario.children["CompOnLoadCovDef"], CoverageDefinition
@@ -6067,20 +6067,20 @@ class Definition(TestBase):
         Assert.assertIsNotNone(oCompOnLoadCovDef)
 
         oComparator4 = ReportComparison(self.Units)
-        oComparator4.AddReport(clr.CastAs(oCompOnLoadCovDef, IStkObject), '"Access Duration"')
-        oComparator4.AddReport(clr.CastAs(oCompOnLoadCovDef, IStkObject), '"Gap Duration"')
+        oComparator4.AddReport(clr.CastAs(oCompOnLoadCovDef, ISTKObject), '"Access Duration"')
+        oComparator4.AddReport(clr.CastAs(oCompOnLoadCovDef, ISTKObject), '"Gap Duration"')
 
         oComparator5 = ReportComparison(self.Units)
-        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Region Coverage"')
-        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Region Full Coverage"')
-        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Region Partial Coverage"')
-        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Region Pass Coverage"')
-        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Region Time To Cover"')
+        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Region Coverage"')
+        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Region Full Coverage"')
+        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Region Partial Coverage"')
+        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Region Pass Coverage"')
+        oComparator5.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Region Time To Cover"')
 
         oComparator6 = ReportComparison(self.Units)
-        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Point Coverage"')
-        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Point Daily Coverage"')
-        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, IStkObject), '"GI Point Prob Of Coverage"')
+        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Point Coverage"')
+        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Point Daily Coverage"')
+        oComparator6.AddReport(clr.CastAs(oAccLoadedCovDef, ISTKObject), '"GI Point Prob Of Coverage"')
 
         # Connect
         # 1 - Define the grid resolution
@@ -6583,7 +6583,7 @@ class Definition(TestBase):
 
         # 24
         Definition.AG_COV.advanced.save_mode = DataSaveMode.SAVE_ACCESSES
-        (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
+        (ISTKObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
         TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
@@ -6593,7 +6593,7 @@ class Definition(TestBase):
         # 25
         Definition.AG_COV = CoverageDefinition(TestBase.Application.current_scenario.children["TestCovDef"])
         Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
-        (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
+        (ISTKObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
         TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
@@ -6603,7 +6603,7 @@ class Definition(TestBase):
         # 26
         Definition.AG_COV = CoverageDefinition(TestBase.Application.current_scenario.children["TestCovDef"])
         Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_COMPUTE_ON_LOAD
-        (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
+        (ISTKObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
         TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
@@ -6756,7 +6756,7 @@ class Definition(TestBase):
 
         # Report initialization
         oComparator1 = ReportComparison(self.Units)
-        oComparator1.AddReport(clr.CastAs(Definition.AG_FA, IStkObject), '"LLA Position"')
+        oComparator1.AddReport(clr.CastAs(Definition.AG_FA, ISTKObject), '"LLA Position"')
         oComparator1.TakeConnectSnapshot(TestBase.Application)
 
         # 2 - CoverageDefinition (MidNorth) Grid Point Information
@@ -6775,7 +6775,7 @@ class Definition(TestBase):
 
         # Report initialization
         oComparator2 = ReportComparison(self.Units)
-        oComparator2.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Grid Point Information"')
+        oComparator2.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Grid Point Information"')
         oComparator2.TakeConnectSnapshot(TestBase.Application)
 
         # 3 - CoverageDefinition (MidNorthExercise) Grid Point Information
@@ -6796,7 +6796,7 @@ class Definition(TestBase):
 
         # Report initialization
         oComparator3 = ReportComparison(self.Units)
-        oComparator3.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Grid Point Information"')
+        oComparator3.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Grid Point Information"')
         oComparator3.TakeConnectSnapshot(TestBase.Application)
 
         # 4 - CoverageDefinition (MidNorth-Meos) Grid Point Information
@@ -6815,7 +6815,7 @@ class Definition(TestBase):
 
         # Report initialization
         oComparator4 = ReportComparison(self.Units)
-        oComparator4.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Grid Point Information"')
+        oComparator4.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Grid Point Information"')
         oComparator4.TakeConnectSnapshot(TestBase.Application)
 
         # 5 - CoverageDefinition (MidNorthUK) Grid Point Information
@@ -6834,7 +6834,7 @@ class Definition(TestBase):
 
         # Report initialization
         oComparator5 = ReportComparison(self.Units)
-        oComparator5.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Grid Point Information"')
+        oComparator5.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Grid Point Information"')
         oComparator5.TakeConnectSnapshot(TestBase.Application)
 
         # 6 - Chains
@@ -6899,7 +6899,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_COV)
 
         oComparator6 = ReportComparison(self.Units)
-        oComparator6.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Global Coverage Times"')
+        oComparator6.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Global Coverage Times"')
 
         TestBase.Application.execute_command("Cov */CoverageDefinition/MidNorth Asset */Satellite/Leo_28 Assign")
         TestBase.Application.execute_command("Cov */CoverageDefinition/MidNorth Access Compute")
@@ -6925,7 +6925,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_CHAIN)
 
         oComparator7 = ReportComparison(self.Units)
-        oComparator7.AddReport(clr.CastAs(Definition.AG_CHAIN, IStkObject), '"Complete Chain Access"')
+        oComparator7.AddReport(clr.CastAs(Definition.AG_CHAIN, ISTKObject), '"Complete Chain Access"')
 
         TestBase.Application.execute_command("Chains */Chain/MidNorth-to-OnlyLeo28 Compute")
 
@@ -6947,7 +6947,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_CHAIN)
 
         oComparator8 = ReportComparison(self.Units)
-        oComparator8.AddReport(clr.CastAs(Definition.AG_CHAIN, IStkObject), '"Complete Chain Access"')
+        oComparator8.AddReport(clr.CastAs(Definition.AG_CHAIN, ISTKObject), '"Complete Chain Access"')
         oComparator8.TakeConnectSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Chains */Chain/MidNorth-to-Leos ClearAccesses")
@@ -6970,7 +6970,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_CHAIN)
 
         oComparator9 = ReportComparison(self.Units)
-        oComparator9.AddReport(clr.CastAs(Definition.AG_CHAIN, IStkObject), '"Complete Chain Access"')
+        oComparator9.AddReport(clr.CastAs(Definition.AG_CHAIN, ISTKObject), '"Complete Chain Access"')
         oComparator9.TakeConnectSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Chains */Chain/MidNorth-to-Leo28 ClearAccesses")
@@ -7005,7 +7005,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_FOM)
 
         oComparator10 = ReportComparison(self.Units)
-        oComparator10.AddReport(clr.CastAs(Definition.AG_FOM, IStkObject), '"Global Satisfaction Intervals"')
+        oComparator10.AddReport(clr.CastAs(Definition.AG_FOM, ISTKObject), '"Global Satisfaction Intervals"')
 
         oComparator10.TakeConnectSnapshot(TestBase.Application)
 
@@ -7017,7 +7017,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_COV)
 
         oComparator11 = ReportComparison(self.Units)
-        oComparator11.AddReport(clr.CastAs(Definition.AG_COV, IStkObject), '"Global Coverage Times"')
+        oComparator11.AddReport(clr.CastAs(Definition.AG_COV, ISTKObject), '"Global Coverage Times"')
 
         oComparator11.TakeConnectSnapshot(TestBase.Application)
 
@@ -7032,7 +7032,7 @@ class Definition(TestBase):
         Assert.assertIsNotNone(Definition.AG_CHAIN)
 
         oComparator12 = ReportComparison(self.Units)
-        oComparator12.AddReport(clr.CastAs(Definition.AG_CHAIN, IStkObject), '"Complete Chain Access"')
+        oComparator12.AddReport(clr.CastAs(Definition.AG_CHAIN, ISTKObject), '"Complete Chain Access"')
 
         TestBase.Application.execute_command("SetConstraint */Constellation/Meos Operator AtLeast 2")
         TestBase.Application.execute_command("Chains */Chain/MidNorth-to-Meos Compute")
@@ -7389,25 +7389,25 @@ class Definition(TestBase):
             TestBase.Application.current_scenario.children.get_elements(STKObjectType.COVERAGE_DEFINITION)["FOMTest"]
         )
         Definition.AG_FOM = FigureOfMerit(
-            (IStkObject(Definition.AG_COV)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOMTest")
+            (ISTKObject(Definition.AG_COV)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOMTest")
         )
         Definition.AG_FOM2 = FigureOfMerit(
             TestBase.Application.current_scenario.children["FOMTestDOP"].children["FOMTestDOP"]
         )
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, IStkObject), '"Grid Stats"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, IStkObject), '"GI Point Static Value"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, IStkObject), '"Value By Grid Point"')
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, IStkObject), '"Percent Satisfied"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, ISTKObject), '"Grid Stats"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, ISTKObject), '"GI Point Static Value"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, ISTKObject), '"Value By Grid Point"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM, ISTKObject), '"Percent Satisfied"')
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_FOM, IStkObject),
+            clr.CastAs(Definition.AG_FOM, ISTKObject),
             '"Grid Stats Over Time" "1 Jan 2001 02:00:00.00" "1 Jan 2001 04:00:00.00" 300.0',
         )
         CompareUtility.AddReport(
-            clr.CastAs(Definition.AG_FOM, IStkObject),
+            clr.CastAs(Definition.AG_FOM, ISTKObject),
             '"Satisfied By Time" "1 Jan 2001 00:00:00.00" "1 Jan 2001 12:00:00.00" 300.0',
         )
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, IStkObject), '"GI Point Static Value"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, ISTKObject), '"GI Point Static Value"')
 
         # Simple
         TestBase.Application.execute_command(
@@ -8278,7 +8278,7 @@ class Definition(TestBase):
             TestBase.Application.current_scenario.children["FOMTestDOP"].children["FOMTestDOP"]
         )
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, IStkObject), '"Grid Stats"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, ISTKObject), '"Grid Stats"')
 
         Definition.AG_FOM2.set_definition_type(FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
         dop: "IFigureOfMeritDefinitionDilutionOfPrecision" = IFigureOfMeritDefinitionDilutionOfPrecision(
@@ -8382,7 +8382,7 @@ class Definition(TestBase):
             TestBase.Application.current_scenario.children["FOMTestDOP"].children["FOMTestDOP"]
         )
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, IStkObject), '"Grid Stats"')
+        CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, ISTKObject), '"Grid Stats"')
 
         Definition.AG_FOM2.set_definition_type(FigureOfMeritDefinitionType.NAVIGATION_ACCURACY)
         navAccuracy: "FigureOfMeritDefinitionNavigationAccuracy" = FigureOfMeritDefinitionNavigationAccuracy(
@@ -9604,7 +9604,7 @@ class Constraints(TestBase):
     def test_Advanced(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, IStkObject), '"Active Constraints"')
+        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, ISTKObject), '"Active Constraints"')
 
         # Advanced
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 GrazingAlt Min -50.0")
@@ -9689,7 +9689,7 @@ class Constraints(TestBase):
     def test_Zones(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, IStkObject), '"Active Constraints"')
+        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, ISTKObject), '"Active Constraints"')
 
         # Zones
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 ExclusionZone -20 -30 40 50")
@@ -9755,7 +9755,7 @@ class Constraints(TestBase):
     def test_Sun(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, IStkObject), '"Active Constraints"')
+        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, ISTKObject), '"Active Constraints"')
 
         # Sun
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 SunElevationAngle Min 22.2")
@@ -9894,7 +9894,7 @@ class Constraints(TestBase):
     def test_Temporal(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, IStkObject), '"Active Constraints"')
+        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, ISTKObject), '"Active Constraints"')
         strPath: str = TestBase.GetScenarioFile("times.int")
 
         # Temporal
@@ -9987,7 +9987,7 @@ class Constraints(TestBase):
     def test_Basic(self):
         # Report initialization
         CompareUtility = ReportComparison(self.Units)
-        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, IStkObject), '"Active Constraints"')
+        CompareUtility.AddReport(clr.CastAs(Constraints.AG_SAT, ISTKObject), '"Active Constraints"')
 
         # Basic Constraints
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 AzimuthAngle Min  -11.22 Max  123.4")
@@ -10217,8 +10217,8 @@ class Access(TestBase):
         startTime: str = str((Scenario(TestBase.Application.current_scenario)).start_time)
         stopTime: str = str((Scenario(TestBase.Application.current_scenario)).stop_time)
 
-        obj1: "IStkObject" = TestBase.Application.get_object_from_path(objPath1)
-        obj2: "IStkObject" = TestBase.Application.get_object_from_path(objPath2)
+        obj1: "ISTKObject" = TestBase.Application.get_object_from_path(objPath1)
+        obj2: "ISTKObject" = TestBase.Application.get_object_from_path(objPath2)
         arCols = ["Start Time", "Stop Time"]
 
         #
@@ -10348,7 +10348,7 @@ class Access(TestBase):
         # }
 
         # OM
-        onePtAccess: "OnePointAccess" = (IStkObject(Access.AG_SAT)).create_one_point_access("Facility/Facility1")
+        onePtAccess: "OnePointAccess" = (ISTKObject(Access.AG_SAT)).create_one_point_access("Facility/Facility1")
         onePtAccess.start_time = "1 Jul 1999 00:00:00.000"
         onePtAccess.stop_time = "2 Jul 1999 00:00:00.000"
         onePtAccess.step_size = 2400

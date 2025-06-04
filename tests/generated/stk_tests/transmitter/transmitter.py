@@ -45,10 +45,10 @@ class EarlyBoundTests(TestBase):
     TRANSMITTER_NAME: str = "TransmitterTest"
     ANTENNA1_NAME: str = "Antenna1Test"
     ANTENNA2_NAME: str = "Antenna2Test"
-    oFac: "IStkObject" = None
-    oTransmitter: "IStkObject" = None
-    oAntenna1: "IStkObject" = None
-    oAntenna2: "IStkObject" = None
+    oFac: "ISTKObject" = None
+    oTransmitter: "ISTKObject" = None
+    oAntenna1: "ISTKObject" = None
+    oAntenna2: "ISTKObject" = None
     transmitter: "Transmitter" = None
 
     # 2D
@@ -3146,8 +3146,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oTransmitter: "IStkObject" = oFac.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
+        oFac: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oTransmitter: "ISTKObject" = oFac.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
         Assert.assertIsNotNone(oTransmitter)
         Assert.assertEqual(STKObjectType.TRANSMITTER, oTransmitter.class_type)
 

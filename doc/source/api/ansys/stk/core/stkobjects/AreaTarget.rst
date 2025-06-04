@@ -3,7 +3,7 @@ AreaTarget
 
 .. py:class:: ansys.stk.core.stkobjects.AreaTarget
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the AreaTarget object.
 
@@ -87,7 +87,7 @@ Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -106,7 +106,7 @@ Set an elliptical area target (using common tasks)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the CommonTasks interface
@@ -117,7 +117,7 @@ Set an elliptical area target
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -135,7 +135,7 @@ Create an area target (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)

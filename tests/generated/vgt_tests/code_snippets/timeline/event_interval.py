@@ -228,7 +228,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEventInterval(self):
         self.CreateSignaledEventInterval(TestBase.Application)
 
-    def CreateSignaledEventInterval(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEventInterval(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components
@@ -274,10 +274,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_ConfigureSmartIntervalStateStartStop(self):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
-        startEvent: "ITimeToolInstant" = (IStkObject(scenario)).analysis_workbench_components.time_instants[
+        startEvent: "ITimeToolInstant" = (ISTKObject(scenario)).analysis_workbench_components.time_instants[
             "AnalysisStartTime"
         ]
-        stopEvent: "ITimeToolInstant" = (IStkObject(scenario)).analysis_workbench_components.time_instants[
+        stopEvent: "ITimeToolInstant" = (ISTKObject(scenario)).analysis_workbench_components.time_instants[
             "AnalysisStopTime"
         ]
 

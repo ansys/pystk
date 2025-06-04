@@ -35,7 +35,7 @@ import subprocess  # nosec B404
 
 from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 from .internal.grpcutil import GrpcClient
-from .stkobjects import StkObjectModelContext, StkObjectRoot
+from .stkobjects import STKObjectModelContext, STKObjectRoot
 from .stkx import STKXApplication
 from .utilities.exceptions import STKInitializationError
 from .utilities.grpcutilities import GrpcCallBatcher
@@ -64,22 +64,22 @@ class STKRuntimeApplication(STKXApplication):
             client: GrpcClient = self._intf.client
             client.terminate_connection(False)
         
-    def new_object_root(self) -> StkObjectRoot:
+    def new_object_root(self) -> STKObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
         if self._intf:
             client: GrpcClient = self._intf.client
             root_unk = client.new_object_root()
-            root = StkObjectRoot()
+            root = STKObjectRoot()
             root._private_init(root_unk)
             return root
         raise STKInitializationError("Not connected to the gRPC server.")
             
-    def new_object_model_context(self) -> StkObjectModelContext:
+    def new_object_model_context(self) -> STKObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
         if self._intf:
             client: GrpcClient = self._intf.client
             context_unk = client.new_object_model_context()
-            context = StkObjectModelContext()
+            context = STKObjectModelContext()
             context._private_init(context_unk)
             return context
         raise STKInitializationError("Not connected to the gRPC server.")

@@ -27,7 +27,7 @@ from ansys.stk.core.stkutil import *
 
 
 class OrbitStateHelper(object):
-    def __init__(self, oApplication: "StkObjectRoot"):
+    def __init__(self, oApplication: "STKObjectRoot"):
         self.m_oCartesian: "OrbitStateCartesian" = None
         self.m_oClassical: "OrbitStateClassical" = None
         self.m_oGeodetic: "OrbitStateDetic" = None
@@ -37,7 +37,7 @@ class OrbitStateHelper(object):
         self.m_oSpherical: "OrbitStateSpherical" = None
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
-        self.m_oApplication: "StkObjectRoot" = oApplication
+        self.m_oApplication: "STKObjectRoot" = oApplication
         self.m_oUnits: "UnitPreferencesDimensionCollection" = self.m_oApplication.units_preferences
 
     # region CoordinateSystemTest

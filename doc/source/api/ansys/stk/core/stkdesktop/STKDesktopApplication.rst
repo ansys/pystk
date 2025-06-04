@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.root
-    :type: StkObjectRoot
+    :type: STKObjectRoot
 
     Get the object model root associated with this instance of STK Desktop application.
 
@@ -77,14 +77,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: new_object_model_context(self) -> StkObjectModelContext
+.. py:method:: new_object_model_context(self) -> STKObjectModelContext
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context
 
     Create a new object model context for the STK Desktop application.
 
     :Returns:
 
-        :obj:`~StkObjectModelContext`
+        :obj:`~STKObjectModelContext`
 
 .. py:method:: set_grpc_options(self, options: dict) -> None
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options
