@@ -28,13 +28,13 @@ A set of convenience utilities to facilitate the access and manipulation of STK 
 
 import pandas as pd
 
-from ansys.stk.core.stkobjects import Access, DataProviderType, IStkObject
+from ansys.stk.core.stkobjects import Access, DataProviderType, ISTKObject
 
 
 class DataProviderExtension(object):
     """Encapsulate the data and implementation necessary to simplify the process of accessing and manipulating data provider information."""
 
-    def __init__(self, base_object: IStkObject) -> None:
+    def __init__(self, base_object: ISTKObject) -> None:
         self.base_object = base_object
         pass
 
