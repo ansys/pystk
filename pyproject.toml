@@ -35,6 +35,8 @@ dependencies = [
 [project.scripts]
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
+# NOTE: The `project.optional-dependencies` section is used to define optional
+# dependencies that users can install to enable additional features.
 [project.optional-dependencies]
 all = [
     # Target: grpc
@@ -60,6 +62,9 @@ jupyter = [
     "sidecar>=0.7.0",
 ]
 
+# NOTE: The `dependency-groups` section is used to define groups of dependencies
+# only available when a developer clones the repository and installs the package
+# for local development.
 [dependency-groups]
 tests = [
     "libcst==1.8.0",
@@ -97,8 +102,6 @@ doc = [
 vulnerabilities = [
     "bandit[toml]==1.8.3",
     "safety==3.3.0",
-    # NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
-    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
