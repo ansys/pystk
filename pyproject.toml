@@ -35,18 +35,20 @@ dependencies = [
 [project.scripts]
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
+# NOTE: The `project.optional-dependencies` section is used to define optional
+# dependencies that users can install to enable additional features.
 [project.optional-dependencies]
-# TODO: split between dependency groups and installation targets with the release of pip v25.1
-# https://github.com/pypa/pip/milestone/78
 all = [
+    # Target: grpc
     "grpcio>=1.71.0",
     "protobuf>=6.30.2",
+    # Target: jupyter
     "jupyter-rfb>=0.5.1",
     "numpy>=2.2.5",
     "Pillow>=11.2.1",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
-    "libcst>=1.7.0"
+    "libcst>=1.7.0",
 ]
 grpc = [
     "grpcio>=1.71.0",
@@ -59,6 +61,11 @@ jupyter = [
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
 ]
+
+# NOTE: The `dependency-groups` section is used to define groups of dependencies
+# only available when a developer clones the repository and installs the package
+# for local development.
+[dependency-groups]
 tests = [
     "libcst==1.8.0",
     "matplotlib==3.10.3",
@@ -92,11 +99,9 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
-# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
 vulnerabilities = [
     "bandit[toml]==1.8.3",
     "safety==3.3.0",
-    "marshmallow==3.26.1",
 ]
 
 [tool.flit.module]
