@@ -263,7 +263,7 @@ class ManualRSTGenerator:
                     arg_str += f" = {default.value!r}"
             args.append(arg_str)
         return ", ".join(args)
-    
+
     @staticmethod
     def _parse_nested_type(annotation):
         type_string = ""
