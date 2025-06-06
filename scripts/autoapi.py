@@ -257,6 +257,8 @@ class ManualRSTGenerator:
             arg_str = arg.arg
             if arg.annotation and hasattr(arg.annotation, "id"):
                 arg_str += f": {arg.annotation.id}"
+            elif arg.annotation and hasattr(arg.annotation, "attr") and arg.annotation.attr == "Any":
+                arg_str += ": typing.Any"
             if i >= default_offset and defaults:
                 default = defaults[i - default_offset]
                 if isinstance(default, ast.Constant):
@@ -268,8 +270,11 @@ class ManualRSTGenerator:
     def _parse_return_type(node):
         if isinstance(node, ast.Constant):
             return "None"
+        if isinstance(node, ast.Subscript):
+            elts = node.slice.elts
+            return [elt.id for elt in elts]
         if node and hasattr(node, "id"):
-            return node.id
+            return [node.id]
         return ""
 
     def _generate_rst_for_pyobj(self, obj_definition, containing_namespace, module_name, module_rst_file_path):
@@ -430,7 +435,7 @@ class ManualRSTGenerator:
             f.writelines(
                 [
                     f".. py:function:: {func_def.name}({arg_str})",
-                    f"{' -> ' + ret_type if ret_type else ''}\n",
+                    f"{' -> ' + ', '.join(ret_type) if ret_type else ''}\n",
                     f"    :canonical: {fq_name}\n\n",
                 ]
             )
@@ -455,27 +460,25 @@ class ManualRSTGenerator:
             if args_with_types:
                 f.write("    :Parameters:\n\n")
                 for arg, type_hint in args_with_types:
-                    f.write(f"        **{arg}** : :obj:`~{type_hint}`\n")
                     if docstring and "Parameters" in docstring:
                         param_candidates = [p for p in docstring["Parameters"] if p.name == arg]
                         if len(param_candidates) > 0:
                             param = param_candidates[0]
                             if len(param.desc) > 0:
+                                f.write(f"        **{arg}** : :obj:`~{param.type}`\n")
                                 f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
                     f.write("\n")
                 f.write("\n")
 
             if ret_type:
-                f.writelines(
-                    [
-                        "    :Returns:\n\n",
-                        f"        :obj:`~{ret_type}`\n",
-                    ]
-                )
-                if docstring and "Returns" in docstring and len(docstring["Returns"]) == 1:
-                    ret = docstring["Returns"][0]
-                    f.write(f"{textwrap.indent("\n".join(ret.desc), '        ')}\n")
-                f.write("\n")
+                f.write("    :Returns:\n\n")
+                for i in range(len(ret_type)):
+                    ret = ret_type[i]
+                    if docstring and "Returns" in docstring and len(docstring["Returns"]) >= i:
+                        ret = docstring["Returns"][i]
+                        f.write(f"        :obj:`~{ret.type}`\n")
+                        f.write(f"{textwrap.indent("\n".join(ret.desc), '        ')}\n")
+                    f.write("\n")
 
             if docstring and "Raises" in docstring and len(docstring["Raises"]) == 1:
                 ret = docstring["Raises"][0]
@@ -488,7 +491,7 @@ class ManualRSTGenerator:
                 )
             f.write("\n")
 
-            if docstring and "Examples" in docstring:
+            if docstring and "Examples" in docstring and len(docstring["Examples"]) > 0:
                 f.write("    :Examples:\n\n")
                 in_code_block = False
                 for example_line in docstring["Examples"]:
