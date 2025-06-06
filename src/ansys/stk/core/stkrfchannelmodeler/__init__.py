@@ -31,8 +31,8 @@ __all__ = ["Analysis", "AnalysisConfiguration", "AnalysisConfigurationCollection
 "ITransceiverModel", "ImageWindowType", "Material", "ParametricBeamAntenna", "PolarizationType", "RadarISarAnalysisConfigurationModel", 
 "RadarISarAnalysisLink", "RadarImagingDataProduct", "RadarImagingDataProductCollection", "RadarSarAnalysisConfigurationModel", 
 "RadarSarAnalysisLink", "RadarSarImageLocation", "RadarSarImageLocationCollection", "RadarTargetCollection", "RadarTransceiverConfiguration", 
-"RadarTransceiverConfigurationCollection", "RadarTransceiverModel", "RadarWaveform", "RangeDopplerResponse", "SceneContributor", 
-"SceneContributorCollection", "StkRFChannelModeler", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType", 
+"RadarTransceiverConfigurationCollection", "RadarTransceiverModel", "RadarWaveform", "RangeDopplerResponse", "STKRFChannelModeler", 
+"SceneContributor", "SceneContributorCollection", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType", 
 "ValidationResponse"]
 
 
@@ -3779,7 +3779,7 @@ class ComputeOptions(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5519048876673409941, 3923537089545973176), ComputeOptions)
 agcls.AgTypeNameMap["ComputeOptions"] = ComputeOptions
 
-class StkRFChannelModeler(SupportsDeleteCallback):
+class STKRFChannelModeler(SupportsDeleteCallback):
     """Properties of the main RF Channel Modeler object."""
 
     _num_methods = 11
@@ -3801,7 +3801,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkRFChannelModeler)
+        return get_interface_property(attrname, STKRFChannelModeler)
     
     _get_transceiver_collection_metadata = { "offset" : _get_transceiver_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3809,7 +3809,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def transceiver_collection(self) -> "TransceiverCollection":
         """Get the collection of transceiver objects."""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_transceiver_collection_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_transceiver_collection_metadata)
 
     _get_analysis_configuration_collection_metadata = { "offset" : _get_analysis_configuration_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3817,21 +3817,21 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def analysis_configuration_collection(self) -> "AnalysisConfigurationCollection":
         """Get the collection of analysis configurations."""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_analysis_configuration_collection_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_analysis_configuration_collection_metadata)
 
     _duplicate_transceiver_metadata = { "offset" : _duplicate_transceiver_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Transceiver"), agmarshall.InterfaceOutArg,) }
     def duplicate_transceiver(self, transceiver:"Transceiver") -> "Transceiver":
         """Duplicates a transceiver instance."""
-        return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._duplicate_transceiver_metadata, transceiver, OutArg())
+        return self._intf.invoke(STKRFChannelModeler._metadata, STKRFChannelModeler._duplicate_transceiver_metadata, transceiver, OutArg())
 
     _duplicate_analysis_configuration_metadata = { "offset" : _duplicate_analysis_configuration_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("AnalysisConfiguration"), agmarshall.InterfaceOutArg,) }
     def duplicate_analysis_configuration(self, analysis_configuration:"AnalysisConfiguration") -> "AnalysisConfiguration":
         """Duplicates an analysis configuration instance."""
-        return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._duplicate_analysis_configuration_metadata, analysis_configuration, OutArg())
+        return self._intf.invoke(STKRFChannelModeler._metadata, STKRFChannelModeler._duplicate_analysis_configuration_metadata, analysis_configuration, OutArg())
 
     _get_supported_materials_metadata = { "offset" : _get_supported_materials_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -3839,7 +3839,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def supported_materials(self) -> list:
         """Get the supported tileset materials"""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_supported_materials_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_supported_materials_metadata)
 
     _get_default_materials_metadata = { "offset" : _get_default_materials_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -3847,7 +3847,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def default_materials(self) -> list:
         """Get the default tileset materials"""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_default_materials_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_default_materials_metadata)
 
     _get_compute_options_metadata = { "offset" : _get_compute_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3855,7 +3855,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def compute_options(self) -> "ComputeOptions":
         """Get the compute options."""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_compute_options_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_compute_options_metadata)
 
     _get_supported_gpu_properties_list_metadata = { "offset" : _get_supported_gpu_properties_list_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -3863,28 +3863,28 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     @property
     def supported_gpu_properties_list(self) -> list:
         """Get the GPU properties list."""
-        return self._intf.get_property(StkRFChannelModeler._metadata, StkRFChannelModeler._get_supported_gpu_properties_list_metadata)
+        return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_supported_gpu_properties_list_metadata)
 
     _set_gpu_devices_metadata = { "offset" : _set_gpu_devices_method_offset,
             "arg_types" : (agcom.LPSAFEARRAY,),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def set_gpu_devices(self, gpu_device_ids:list) -> None:
         """Set the desired GPU device IDs"""
-        return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._set_gpu_devices_metadata, gpu_device_ids)
+        return self._intf.invoke(STKRFChannelModeler._metadata, STKRFChannelModeler._set_gpu_devices_metadata, gpu_device_ids)
 
     _construct_analysis_metadata = { "offset" : _construct_analysis_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def construct_analysis(self, analysis_configuration_name:str) -> "Analysis":
         """Construct an Analysis for an analysis configuration."""
-        return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._construct_analysis_metadata, analysis_configuration_name, OutArg())
+        return self._intf.invoke(STKRFChannelModeler._metadata, STKRFChannelModeler._construct_analysis_metadata, analysis_configuration_name, OutArg())
 
     _validate_analysis_metadata = { "offset" : _validate_analysis_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def validate_analysis(self, analysis_configuration_name:str) -> "ValidationResponse":
         """Validate an analysis configuration."""
-        return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._validate_analysis_metadata, analysis_configuration_name, OutArg())
+        return self._intf.invoke(STKRFChannelModeler._metadata, STKRFChannelModeler._validate_analysis_metadata, analysis_configuration_name, OutArg())
 
     _property_names[transceiver_collection] = "transceiver_collection"
     _property_names[analysis_configuration_collection] = "analysis_configuration_collection"
@@ -3894,9 +3894,9 @@ class StkRFChannelModeler(SupportsDeleteCallback):
     _property_names[supported_gpu_properties_list] = "supported_gpu_properties_list"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkRFChannelModeler."""
+        """Construct an object of type STKRFChannelModeler."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkRFChannelModeler)
+        initialize_from_source_object(self, source_object, STKRFChannelModeler)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3904,10 +3904,10 @@ class StkRFChannelModeler(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkRFChannelModeler, [StkRFChannelModeler, ])
+        set_class_attribute(self, attrname, value, STKRFChannelModeler, [STKRFChannelModeler, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5711907369548252697, 4711585359054994589), StkRFChannelModeler)
-agcls.AgTypeNameMap["StkRFChannelModeler"] = StkRFChannelModeler
+agcls.AgClassCatalog.add_catalog_entry((5711907369548252697, 4711585359054994589), STKRFChannelModeler)
+agcls.AgTypeNameMap["STKRFChannelModeler"] = STKRFChannelModeler
 
 class CommunicationsTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
     """Properties for configuring a communications transceiver model."""

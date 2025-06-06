@@ -50,7 +50,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: ansys/actions/doc-changelog@v9
+    - uses: ansys/actions/doc-changelog@v10
       with:
         token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
         use-conventional-commits: true
@@ -102,7 +102,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: vulnerabilities
     steps:
-      - uses: ansys/actions/code-style@v9
+      - uses: ansys/actions/code-style@v10
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -137,7 +137,7 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v9
+      - uses: ansys/actions/doc-style@v10
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
@@ -159,7 +159,7 @@ jobs:
         python-version: ['3.11', '3.12', '3.13']
         target: ['all', 'grpc', 'jupyter']
     steps:
-      - uses: ansys/actions/build-wheelhouse@v9
+      - uses: ansys/actions/build-wheelhouse@v10
         with:
           library-name: ${{ env.ANSYS_STK_CORE }}
           operating-system: ${{ matrix.os }}
@@ -180,7 +180,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.12', '3.13']
     steps:
-      - uses: ansys/actions/build-wheelhouse@v9
+      - uses: ansys/actions/build-wheelhouse@v10
         with:
           library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
           operating-system: ${{ matrix.os }}
@@ -284,10 +284,10 @@ jobs:
             docker exec \
               --workdir ${{ env.PYSTK_DIR }} \
               ${{ env.STK_CONTAINER }} /bin/bash -c \
-              "python -m pip install tox && rm -rf .tox"
+              "python -m pip install --upgrade pip tox && rm -rf .tox"
           else
             python --version
-            python -m pip install tox && rm -rf .tox
+            python -m pip install --upgrade pip tox && rm -rf .tox
           fi
 
       # Render the documentation including or excluding different sections
@@ -431,14 +431,14 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install tox && rm -rf .tox"
+            "python -m pip install --upgrade pip tox && rm -rf .tox"
 
       - name: "Install coverage dependencies"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install .[tests]"
+            "python -m pip install --group tests ."
 
       # PySTK Extensions
 
@@ -556,7 +556,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: ansys/actions/build-library@v9
+      - uses: ansys/actions/build-library@v10
         with:
           library-name: ${{ matrix.library.name }}
           working-directory: ${{ matrix.library.directory }}

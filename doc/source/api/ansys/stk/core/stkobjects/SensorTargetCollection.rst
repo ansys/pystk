@@ -140,28 +140,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_object(self, object: IStkObject) -> None
+.. py:method:: add_object(self, object: ISTKObject) -> None
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.add_object
 
     Add a target to the collection.
 
     :Parameters:
 
-        **object** : :obj:`~IStkObject`
+        **object** : :obj:`~ISTKObject`
 
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_object(self, object: IStkObject) -> None
+.. py:method:: remove_object(self, object: ISTKObject) -> None
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.remove_object
 
     Remove a target from the collection.
 
     :Parameters:
 
-        **object** : :obj:`~IStkObject`
+        **object** : :obj:`~ISTKObject`
 
 
     :Returns:

@@ -53,7 +53,7 @@ Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,

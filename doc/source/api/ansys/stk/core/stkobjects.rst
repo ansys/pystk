@@ -392,13 +392,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelBase`
               - A base interface for solar radiation pressure models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IStkObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISTKObject`
               - Represents the instance of STK object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISTKObjectCollection`
               - Represents a collection of STK objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISTKObjectElementCollection`
               - Represents a collection of STK objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ITargetSelectionMethod`
@@ -2500,7 +2500,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorSPICESegmentsCollection`
               - Collection of segments for a vehicle.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PropagatorStkExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.PropagatorSTKExternal`
               - Class defining the STK External propagator.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PropagatorTwoBody`
@@ -3274,22 +3274,22 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.StarInformation`
               - Represents a celestial body information.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObject`
               - Represents a generic STK object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectChangedEventArguments`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectChangedEventArguments`
               - Contains information about the changes in the object's state.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectCutCopyPasteEventArguments`
               - Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectModelContext`
-              - StkObjectModelContext class provides methods to create instance of StkObjectRoot class.
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectModelContext`
+              - STKObjectModelContext class provides methods to create instance of STKObjectRoot class.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectPreDeleteEventArguments`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments`
               - Arguments for the OnStkObjectPreDelete event.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectRoot`
               - Top-level object in the Object Model Hierarchy.
 
             * - :py:class:`~ansys.stk.core.stkobjects.Subset`
@@ -5341,9 +5341,9 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ISensorProjectionDisplayDistance<stkobjects/ISensorProjectionDisplayDistance>
      ISolarActivityConfiguration<stkobjects/ISolarActivityConfiguration>
      ISRPModelBase<stkobjects/ISRPModelBase>
-     IStkObject<stkobjects/IStkObject>
-     IStkObjectCollection<stkobjects/IStkObjectCollection>
-     IStkObjectElementCollection<stkobjects/IStkObjectElementCollection>
+     ISTKObject<stkobjects/ISTKObject>
+     ISTKObjectCollection<stkobjects/ISTKObjectCollection>
+     ISTKObjectElementCollection<stkobjects/ISTKObjectElementCollection>
      ITargetSelectionMethod<stkobjects/ITargetSelectionMethod>
      ITerrainNormData<stkobjects/ITerrainNormData>
      ITimePeriod<stkobjects/ITimePeriod>
@@ -6047,7 +6047,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      PropagatorSPICE<stkobjects/PropagatorSPICE>
      PropagatorSPICESegment<stkobjects/PropagatorSPICESegment>
      PropagatorSPICESegmentsCollection<stkobjects/PropagatorSPICESegmentsCollection>
-     PropagatorStkExternal<stkobjects/PropagatorStkExternal>
+     PropagatorSTKExternal<stkobjects/PropagatorSTKExternal>
      PropagatorTwoBody<stkobjects/PropagatorTwoBody>
      PropagatorUserExternal<stkobjects/PropagatorUserExternal>
      Radar<stkobjects/Radar>
@@ -6305,12 +6305,12 @@ The following is an overview of the classes, interfaces and enumerations of the 
      StarGraphics<stkobjects/StarGraphics>
      StarGraphics3D<stkobjects/StarGraphics3D>
      StarInformation<stkobjects/StarInformation>
-     StkObject<stkobjects/StkObject>
-     StkObjectChangedEventArguments<stkobjects/StkObjectChangedEventArguments>
-     StkObjectCutCopyPasteEventArguments<stkobjects/StkObjectCutCopyPasteEventArguments>
-     StkObjectModelContext<stkobjects/StkObjectModelContext>
-     StkObjectPreDeleteEventArguments<stkobjects/StkObjectPreDeleteEventArguments>
-     StkObjectRoot<stkobjects/StkObjectRoot>
+     STKObject<stkobjects/STKObject>
+     STKObjectChangedEventArguments<stkobjects/STKObjectChangedEventArguments>
+     STKObjectCutCopyPasteEventArguments<stkobjects/STKObjectCutCopyPasteEventArguments>
+     STKObjectModelContext<stkobjects/STKObjectModelContext>
+     STKObjectPreDeleteEventArguments<stkobjects/STKObjectPreDeleteEventArguments>
+     STKObjectRoot<stkobjects/STKObjectRoot>
      Subset<stkobjects/Subset>
      Swath<stkobjects/Swath>
      SystemNoiseTemperature<stkobjects/SystemNoiseTemperature>

@@ -1028,11 +1028,11 @@ class VOElevationContoursHelper(object):
 
 # region VORouteModelHelper
 class VORouteModelHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
@@ -1231,11 +1231,11 @@ class VOMarkerHelper(object):
 
 # region VOModelHelper
 class VOModelHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
@@ -1699,11 +1699,11 @@ class VOModelHelper(object):
 
 # region VOTargetModelHelper
 class VOTargetModelHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
@@ -1770,11 +1770,11 @@ class VOTargetModelHelper(object):
 
 # region VOTrajectoryModelHelper
 class VOTrajectoryModelHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
@@ -1852,12 +1852,12 @@ class VOTrajectoryModelHelper(object):
 
 # region VOSatelliteModelHelper
 class VOSatelliteModelHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         Assert.assertIsNotNone(root)
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -2593,10 +2593,10 @@ class VOOffsetAttachHelper(object):
 
 # region VOProximityHelper
 class VOProximityHelper(object):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
-        self.m_root: "StkObjectRoot" = root
+        self.m_root: "STKObjectRoot" = root
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
 
     # endregion
@@ -3096,7 +3096,7 @@ class VOProximityHelper(object):
 
 # region VOOrbitProximityHelper
 class VOOrbitProximityHelper(VOProximityHelper):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VOOrbitProximityHelper, self).__init__(root, oUnits)
 
@@ -3208,7 +3208,7 @@ class VOOrbitProximityHelper(VOProximityHelper):
 
 # region VORouteProximityHelper
 class VORouteProximityHelper(VOProximityHelper):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VORouteProximityHelper, self).__init__(root, oUnits)
 
@@ -3238,7 +3238,7 @@ class VORouteProximityHelper(VOProximityHelper):
 
 # region VOTrajectoryProximityHelper
 class VOTrajectoryProximityHelper(VOProximityHelper):
-    def __init__(self, root: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, root: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         super(VOTrajectoryProximityHelper, self).__init__(root, oUnits)
 
@@ -3548,11 +3548,11 @@ class VOBorderWallHelper(object):
 
 # region VORouteHelper
 class VORouteHelper(object):
-    def __init__(self, app: "StkObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
+    def __init__(self, app: "STKObjectRoot", oUnits: "UnitPreferencesDimensionCollection"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
-        self._app: "StkObjectRoot" = app
+        self._app: "STKObjectRoot" = app
 
     # endregion
 
@@ -3848,9 +3848,9 @@ class VOLeadTrailDataHelper(object):
 
 # region VOWaypointMarkersHelper
 class VOWaypointMarkersHelper(object):
-    def __init__(self, app: "StkObjectRoot"):
+    def __init__(self, app: "STKObjectRoot"):
         self.m_logger = Logger.Instance
-        self._app: "StkObjectRoot" = app
+        self._app: "STKObjectRoot" = app
 
     # endregion
 
@@ -4524,7 +4524,7 @@ class VOSystemsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oSystems: "VehicleGraphics3DSystemsCollection", root: "StkObjectRoot"):
+    def Run(self, oSystems: "VehicleGraphics3DSystemsCollection", root: "STKObjectRoot"):
         self.m_logger.WriteLine("----- VO SYSTEMS COLLECTION TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oSystems)
         # Count
@@ -4834,11 +4834,11 @@ class VOSystemsHelper(object):
 
 # region VOVectorsHelper
 class VOVectorsHelper(object):
-    def __init__(self, oUnits: "UnitPreferencesDimensionCollection", root: "StkObjectRoot"):
+    def __init__(self, oUnits: "UnitPreferencesDimensionCollection", root: "STKObjectRoot"):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oUnits)
         self.m_oUnits: "UnitPreferencesDimensionCollection" = oUnits
-        self.m_oRoot: "StkObjectRoot" = root
+        self.m_oRoot: "STKObjectRoot" = root
 
     # endregion
 

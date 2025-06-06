@@ -189,7 +189,7 @@ class EarlyBoundTests(TestBase):
 
     def test_SpatialInfoTest(self):
         helper = SpatialInfoHelper(TestBase.Application)
-        o: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
+        o: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite1"]
         if not o.children.contains(STKObjectType.SENSOR, "Sensor1"):
             o.children.new(STKObjectType.SENSOR, "Sensor1")
         helper.Run(TestBase.Application.current_scenario.children["Satellite1"].children["Sensor1"])
@@ -217,7 +217,7 @@ class BugFixes(TestBase):
     # region TestSetUp
     def setUp(self):
         BugFixes._sat = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
-        BugFixes._sensor = Sensor((IStkObject(BugFixes._sat)).children.new(STKObjectType.SENSOR, "Bug66700Sensor"))
+        BugFixes._sensor = Sensor((ISTKObject(BugFixes._sat)).children.new(STKObjectType.SENSOR, "Bug66700Sensor"))
 
     # endregion
 
@@ -244,10 +244,10 @@ class BugFixes(TestBase):
         # Test conditions where ComputationalMethod can be set to Analytical or Numerical
         #
 
-        objFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "SwathFac")
+        objFac: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "SwathFac")
         facSensor: "Sensor" = clr.CastAs(objFac.children.new(STKObjectType.SENSOR, "SwathFacSensor"), Sensor)
 
-        objSat: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SwathSat")
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SwathSat")
         sat: "Satellite" = clr.CastAs(objSat, Satellite)
         sat.set_propagator_type(PropagatorType.TWO_BODY)
         twobody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
@@ -363,7 +363,7 @@ class BugFixes(TestBase):
     def test_BUG66700_2b(self):
         def code3():
             # - ... or to an axes dependent upon the sensor's body axes;
-            objSensor: "IStkObject" = clr.CastAs(BugFixes._sensor, IStkObject)
+            objSensor: "ISTKObject" = clr.CastAs(BugFixes._sensor, ISTKObject)
             depOnSensorsBodyAxes: "IVectorGeometryToolAxes" = (
                 objSensor.analysis_workbench_components.axes.factory.create("DepOnSensorsBodyAxes", "", AxesType.FIXED)
             )
@@ -398,7 +398,7 @@ class BugFixes(TestBase):
     def test_BUG66700_3b(self):
         def code5():
             # ... or to an axes dependent upon the satellite's body axes
-            objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
+            objSat: "ISTKObject" = clr.CastAs(BugFixes._sat, ISTKObject)
             depOnSatsBodyAxes: "IVectorGeometryToolAxes" = objSat.analysis_workbench_components.axes.factory.create(
                 "DepOnSatsBodyAxes3b", "", AxesType.FIXED
             )
@@ -438,7 +438,7 @@ class BugFixes(TestBase):
     def test_BUG66700_4b(self):
         def code7():
             # ... or to an axes dependent upon the satellite's body axes
-            objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
+            objSat: "ISTKObject" = clr.CastAs(BugFixes._sat, ISTKObject)
             depOnSatsBodyAxes: "IVectorGeometryToolAxes" = objSat.analysis_workbench_components.axes.factory.create(
                 "DepOnSatsBodyAxes4b", "", AxesType.FIXED
             )
@@ -464,7 +464,7 @@ class BugFixes(TestBase):
             # - verify that the satellite's aligned and constrained attitude profile does not allow setting
             # the reference vectors to a vector that is dependent upon the satellite's body axes.
             # (AlignedVector)
-            objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
+            objSat: "ISTKObject" = clr.CastAs(BugFixes._sat, ISTKObject)
             depOnSatsBodyAxes: "IVectorGeometryToolVector" = (
                 objSat.analysis_workbench_components.vectors.factory.create(
                     "DepOnSatsBodyAxes5a", "", VectorType.FIXED_IN_AXES
@@ -492,7 +492,7 @@ class BugFixes(TestBase):
             # - verify that the satellite's aligned and constrained attitude profile does not allow setting
             # the reference vectors to a vector that is dependent upon the satellite's body axes.
             # (ConstrainedVector)
-            objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
+            objSat: "ISTKObject" = clr.CastAs(BugFixes._sat, ISTKObject)
             depOnSatsBodyAxes: "IVectorGeometryToolVector" = (
                 objSat.analysis_workbench_components.vectors.factory.create(
                     "DepOnSatsBodyAxes5b", "", VectorType.FIXED_IN_AXES
@@ -519,7 +519,7 @@ class BugFixes(TestBase):
 
     # region BUG73834
     def test_BUG73834(self):
-        shuttleSat: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        shuttleSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "Shuttle1"
         )
         sensor: "Sensor" = Sensor(shuttleSat.children.new(STKObjectType.SENSOR, "Horizon1"))
@@ -600,7 +600,7 @@ class BugFixes(TestBase):
         # pattern = sensor.Pattern;
         # Assert.IsNotNull(pattern);
 
-        (IStkObject(sensor)).unload()
+        (ISTKObject(sensor)).unload()
         shuttleSat.unload()
 
     # endregion
@@ -608,7 +608,7 @@ class BugFixes(TestBase):
     # region BUG73914
 
     def test_BUG73914(self):
-        shuttleSat: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        shuttleSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "Shuttle"
         )
         sensor: "Sensor" = Sensor(shuttleSat.children.new(STKObjectType.SENSOR, "Horizon"))
@@ -630,14 +630,14 @@ class BugFixes(TestBase):
         TestBase.Application.execute_command("Point */Satellite/Shuttle/Sensor/Horizon Schedule Off")
         Assert.assertFalse(pointingMethod.enabled)
 
-        (IStkObject(sensor)).unload()
+        (ISTKObject(sensor)).unload()
         shuttleSat.unload()
 
 
 class SensorHelper(object):
-    def __init__(self, oRoot: "StkObjectRoot"):
+    def __init__(self, oRoot: "STKObjectRoot"):
         self.m_logger = Logger.Instance
-        self.m_oRoot: "StkObjectRoot" = oRoot
+        self.m_oRoot: "STKObjectRoot" = oRoot
         self.m_oSensor: "Sensor" = None
         self.m_strDataDir: str = None
 
@@ -657,7 +657,7 @@ class SensorHelper(object):
         self.m_oSensor = None
         Assert.assertIsNotNone(self.m_oRoot.current_scenario)
         # get parent object
-        oParent: "IStkObject" = self.m_oRoot.current_scenario.children[strParentName]
+        oParent: "ISTKObject" = self.m_oRoot.current_scenario.children[strParentName]
         Assert.assertIsNotNone(oParent)
         # get (create) sensor
         try:
@@ -753,7 +753,7 @@ class SensorHelper(object):
     # region AccessConstraints
     def AccessConstraints(self, temporaryDirectory: str):
         oHelper = AccessConstraintHelper(self.m_oRoot.units_preferences)
-        oHelper.DoTest(self.m_oSensor.access_constraints, IStkObject(self.m_oSensor), temporaryDirectory)
+        oHelper.DoTest(self.m_oSensor.access_constraints, ISTKObject(self.m_oSensor), temporaryDirectory)
 
     # endregion
 
@@ -1027,7 +1027,7 @@ class SensorHelper(object):
     # region STKObject
     def STKObject(self):
         oHelper = STKObjectHelper()
-        oSensor: "IStkObject" = clr.CastAs(self.m_oSensor, IStkObject)
+        oSensor: "ISTKObject" = clr.CastAs(self.m_oSensor, ISTKObject)
         oHelper.Run(oSensor)
         oHelper.TestObjectFilesArray(oSensor.object_files)
 
@@ -1218,7 +1218,7 @@ class SensorHelper(object):
         if Array.Length(arAxes) > 0:
             strAxes: str = str(arAxes[0])
             self.m_logger.WriteLine7("\t\t\tAxes {0}: {1}", 0, strAxes)
-            oSensor: "IStkObject" = clr.CastAs(self.m_oSensor, IStkObject)
+            oSensor: "ISTKObject" = clr.CastAs(self.m_oSensor, ISTKObject)
             if (
                 ((strAxes.find(oSensor.parent.class_name) != -1) and (strAxes.find(oSensor.parent.instance_name) != -1))
                 and (strAxes.find(oSensor.class_name) != -1)
@@ -1599,7 +1599,7 @@ class SensorHelper(object):
             )
             Assert.assertEqual(0, oTargetCollection.count)
             # AddObject
-            oObject: "IStkObject" = self.m_oRoot.current_scenario.children["NeptuneFile"]
+            oObject: "ISTKObject" = self.m_oRoot.current_scenario.children["NeptuneFile"]
             Assert.assertIsNotNone(oObject)
             oTargetCollection.add_object(oObject)
             self.m_logger.WriteLine3(
@@ -2551,7 +2551,7 @@ class SensorHelper(object):
         with pytest.raises(Exception):
             oVO.inherit_from_2d = SensorGraphics3DInheritFrom2D.UNKNOWN
         # System.Windows.Forms.MessageBox.Show("A");
-        senObj: "IStkObject" = IStkObject(self.m_oSensor)
+        senObj: "ISTKObject" = ISTKObject(self.m_oSensor)
         if not (clr.Is(senObj.parent, Missile)):
             # SpaceProjection
             oVO.projection_time_dependency = SensorGraphics3DProjectionTimeDependencyType.CONSTANT
@@ -3909,8 +3909,8 @@ class SensorHelper(object):
                     "BogusAttachName"
                 )
 
-        if ((IStkObject(self.m_oSensor)).parent.class_name != "Facility") and (
-            (IStkObject(self.m_oSensor)).parent.class_name != "Target"
+        if ((ISTKObject(self.m_oSensor)).parent.class_name != "Facility") and (
+            (ISTKObject(self.m_oSensor)).parent.class_name != "Target"
         ):
             oGrazingAlt: "SensorPointingGrazingAltitude" = self.m_oSensor.common_tasks.set_pointing_grazing_altitude(
                 9.9, 100
@@ -4089,11 +4089,11 @@ class SensorHelper(object):
             self.m_logger.WriteLine7("\t\t\tAxes {0}: {1}", 0, strAxes)
             if (
                 (
-                    (strAxes.find((IStkObject(self.m_oSensor)).parent.class_name) != -1)
-                    and (strAxes.find((IStkObject(self.m_oSensor)).parent.instance_name) != -1)
+                    (strAxes.find((ISTKObject(self.m_oSensor)).parent.class_name) != -1)
+                    and (strAxes.find((ISTKObject(self.m_oSensor)).parent.instance_name) != -1)
                 )
-                and (strAxes.find((IStkObject(self.m_oSensor)).class_name) != -1)
-            ) and (strAxes.find((IStkObject(self.m_oSensor)).instance_name) != -1):
+                and (strAxes.find((ISTKObject(self.m_oSensor)).class_name) != -1)
+            ) and (strAxes.find((ISTKObject(self.m_oSensor)).instance_name) != -1):
                 self.m_logger.WriteLine("\t\t\t\tCannot set reference to itself.")
 
             oFixedAxes.reference_axes = strAxes
@@ -4412,7 +4412,7 @@ class SensorHelper(object):
             )
             Assert.assertEqual(0, oTargetCollection.count)
             # AddObject
-            oObject: "IStkObject" = self.m_oRoot.current_scenario.children["NeptuneFile"]
+            oObject: "ISTKObject" = self.m_oRoot.current_scenario.children["NeptuneFile"]
             Assert.assertIsNotNone(oObject)
             oTargetCollection.add_object(oObject)
             self.m_logger.WriteLine3(
@@ -4813,12 +4813,12 @@ class SensorHelper(object):
 
     def SpatialInfo(self):
         helper = SpatialInfoHelper(self.m_oRoot)
-        helper.Run(clr.CastAs(self.m_oSensor, IStkObject))
+        helper.Run(clr.CastAs(self.m_oSensor, ISTKObject))
 
 
 class EOIRHelper(object):
-    def __init__(self, oRoot: "StkObjectRoot", testTarget):
-        self.m_oRoot: "StkObjectRoot" = oRoot
+    def __init__(self, oRoot: "STKObjectRoot", testTarget):
+        self.m_oRoot: "STKObjectRoot" = oRoot
         self.m_testTarget = testTarget
 
     # region Run method
@@ -4826,8 +4826,8 @@ class EOIRHelper(object):
         if self.m_oRoot.current_scenario.children.contains(STKObjectType.SATELLITE, "EOIR_SAT"):
             self.m_oRoot.current_scenario.children.unload(STKObjectType.SATELLITE, "EOIR_SAT")
 
-        objSat: "IStkObject" = self.m_oRoot.current_scenario.children.new(STKObjectType.SATELLITE, "EOIR_SAT")
-        objSen: "IStkObject" = objSat.children.new(STKObjectType.SENSOR, "EOIR_SEN")
+        objSat: "ISTKObject" = self.m_oRoot.current_scenario.children.new(STKObjectType.SATELLITE, "EOIR_SAT")
+        objSen: "ISTKObject" = objSat.children.new(STKObjectType.SENSOR, "EOIR_SEN")
 
         sensor: "Sensor" = clr.CastAs(objSen, Sensor)
 
@@ -4840,8 +4840,8 @@ class EOIRHelper(object):
         self.Test_IAgSnEOIRPattern(eoirPattern)
 
         # SetPatternEOIR
-        objSat2: "IStkObject" = self.m_oRoot.current_scenario.children.new(STKObjectType.SATELLITE, "EOIR_SAT2")
-        objSen2: "IStkObject" = objSat.children.new(STKObjectType.SENSOR, "EOIR_SEN2")
+        objSat2: "ISTKObject" = self.m_oRoot.current_scenario.children.new(STKObjectType.SATELLITE, "EOIR_SAT2")
+        objSen2: "ISTKObject" = objSat.children.new(STKObjectType.SENSOR, "EOIR_SEN2")
         sensor2: "Sensor" = clr.CastAs(objSen2, Sensor)
 
         sensor2.common_tasks.set_pattern_eoir(5, SensorEOIRProcessingLevelType.RADIOMETRIC_INPUT)

@@ -3,7 +3,7 @@ MTO
 
 .. py:class:: ansys.stk.core.stkobjects.MTO
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Multi-Track Object (MTO).
 

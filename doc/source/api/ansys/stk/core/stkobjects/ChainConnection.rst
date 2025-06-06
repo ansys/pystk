@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: from_object
     :canonical: ansys.stk.core.stkobjects.ChainConnection.from_object
-    :type: IStkObject
+    :type: ISTKObject
 
     From object for a connection.
 
 .. py:property:: to_object
     :canonical: ansys.stk.core.stkobjects.ChainConnection.to_object
-    :type: IStkObject
+    :type: ISTKObject
 
     To object for a connection.
 

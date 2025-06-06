@@ -177,7 +177,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_CreateSignaledEventArray(self):
         self.CreateSignaledEventArray(TestBase.Application)
 
-    def CreateSignaledEventArray(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEventArray(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components
@@ -339,9 +339,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
     def test_DetermineAltitudeOfAircraftAtOneCertainSample(self):
         self.DetermineAltitudeOfAircraftAtOneCertainSample(TestBase.Application)
 
-    def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "StkObjectRoot"):
+    def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "STKObjectRoot"):
         # Get the aircraft
-        aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
+        aircraft: "ISTKObject" = stkRoot.get_object_from_path("Aircraft/UAV")
 
         # Configure a fixed step array that samples every 20 seconds.
         twentySecondSample: "ITimeToolTimeArray" = (

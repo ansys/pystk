@@ -70,7 +70,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.close_scenario()
         self.CreateANewScenario(CodeSnippetsTestBase.m_Root)
 
-    def CreateANewScenario(self, root: "StkObjectRoot"):
+    def CreateANewScenario(self, root: "STKObjectRoot"):
         if root.current_scenario != None:
             root.close_scenario()
 
@@ -89,7 +89,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         if self.Target == TestTarget.eStkX:
             self.SaveAScenario(CodeSnippetsTestBase.m_Root)
 
-    def SaveAScenario(self, root: "StkObjectRoot"):
+    def SaveAScenario(self, root: "STKObjectRoot"):
         root.save_scenario()
 
     # endregion
@@ -99,7 +99,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         fileName: str = Path.Combine(TestBase.TemporaryDirectory, "Scenario1.sc")
         self.SaveAScenarioToNewLocation(CodeSnippetsTestBase.m_Root, fileName)
 
-    def SaveAScenarioToNewLocation(self, root: "StkObjectRoot", fileName: str):
+    def SaveAScenarioToNewLocation(self, root: "STKObjectRoot", fileName: str):
         root.save_scenario_as(fileName)
 
     # endregion
@@ -108,7 +108,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_CloseAScenario(self):
         self.CloseAScenario(CodeSnippetsTestBase.m_Root)
 
-    def CloseAScenario(self, root: "StkObjectRoot"):
+    def CloseAScenario(self, root: "STKObjectRoot"):
         root.close_scenario()
 
     # endregion
@@ -117,7 +117,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_AddStkObjectToScenario(self):
         self.AddStkObjectToScenario(CodeSnippetsTestBase.m_Root)
 
-    def AddStkObjectToScenario(self, root: "StkObjectRoot"):
+    def AddStkObjectToScenario(self, root: "STKObjectRoot"):
         root.current_scenario.children.new(STKObjectType.SHIP, "Ship1")
 
     # endregion
@@ -131,10 +131,10 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.TARGET, "target1")
         self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, STKObjectType.SHIP)
 
-    def ListAllChildrenOfAGivenType(self, root: "StkObjectRoot", type: "STKObjectType"):
-        allChildrenOfType: "IStkObjectElementCollection" = root.current_scenario.children.get_elements(type)
+    def ListAllChildrenOfAGivenType(self, root: "STKObjectRoot", type: "STKObjectType"):
+        allChildrenOfType: "ISTKObjectElementCollection" = root.current_scenario.children.get_elements(type)
 
-        o: "IStkObject"
+        o: "ISTKObject"
 
         for o in allChildrenOfType:
             Console.WriteLine(o.instance_name)
@@ -147,7 +147,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root, TestBase.GetScenarioFile("CodeSnippetsTests", "ny512.dte")
         )
 
-    def AddAnalyticalTerrainToEarthCentralBody(self, root: "StkObjectRoot", terrainFile: str):
+    def AddAnalyticalTerrainToEarthCentralBody(self, root: "STKObjectRoot", terrainFile: str):
         # Retrieve the Scenario interface
         scenario: "Scenario" = clr.CastAs(root.current_scenario, Scenario)
 
@@ -207,7 +207,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_ComputeSurfaceDistanceOfCentralBody(self):
         self.ComputeSurfaceDistanceOfCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def ComputeSurfaceDistanceOfCentralBody(self, root: "StkObjectRoot"):
+    def ComputeSurfaceDistanceOfCentralBody(self, root: "STKObjectRoot"):
         centralBodyEllipsoid: "CentralBodyEllipsoid" = root.central_bodies["Earth"].ellipsoid
 
         # Compute the distance between Philadelphia and London.
@@ -219,7 +219,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
     # region SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes
     def test_SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self):
-        scenario: "IStkObject" = TestBase.Application.current_scenario
+        scenario: "ISTKObject" = TestBase.Application.current_scenario
 
         satellite: "Satellite" = Satellite(scenario.children.new(STKObjectType.SATELLITE, "GeoEye"))
         satellite.set_propagator_type(PropagatorType.TWO_BODY)
@@ -229,9 +229,9 @@ class ScenarioSnippets(CodeSnippetsTestBase):
             self.SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(TestBase.Application, Scenario(scenario))
 
         finally:
-            (IStkObject(satellite)).unload()
+            (ISTKObject(satellite)).unload()
 
-    def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
+    def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "STKObjectRoot", scenario: "Scenario"):
         satellite: "Satellite" = clr.CastAs(stkRoot.get_object_from_path("/Satellite/GeoEye"), Satellite)
 
         vgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.analysis_workbench_components_root.get_provider(
@@ -247,11 +247,11 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
     # region SetTimePeriodToTodayWithDurationOfOneDay
     def test_SetTimePeriodToTodayWithDurationOfOneDay(self):
-        scenario: "IStkObject" = TestBase.Application.current_scenario
+        scenario: "ISTKObject" = TestBase.Application.current_scenario
 
         self.SetTimePeriodToTodayWithDurationOfOneDay(TestBase.Application, Scenario(scenario))
 
-    def SetTimePeriodToTodayWithDurationOfOneDay(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
+    def SetTimePeriodToTodayWithDurationOfOneDay(self, stkRoot: "STKObjectRoot", scenario: "Scenario"):
         scenario.analysis_interval.set_start_time_and_duration("Today", "+1 Day")
 
     # endregion

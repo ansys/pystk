@@ -53,7 +53,7 @@ Compute an access for one point
 
 .. code-block:: python
 
-    # IStkObject facility: Facility object
+    # ISTKObject facility: Facility object
     onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
 
     # Configure properties (if necessary)

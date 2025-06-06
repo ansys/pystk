@@ -69,7 +69,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_MSL.access_constraints, IStkObject(EarlyBoundTests.AG_MSL), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_MSL.access_constraints, ISTKObject(EarlyBoundTests.AG_MSL), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -91,7 +91,7 @@ class EarlyBoundTests(TestBase):
         tof.time_of_flight = 9024.46
         ballistic.propagate()
         oHelper = STKObjectHelper()
-        mslObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject)
+        mslObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_MSL, ISTKObject)
         oHelper.Run(mslObject)
         oHelper.TestObjectFilesArray(mslObject.object_files)
 
@@ -101,7 +101,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_MSL)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_MSL)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_MSL)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -129,7 +129,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicAttitudeDifference(self):
         oHelper = BasicAttitudeDifferenceHelper(TestBase.Application)
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject))
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_MSL, ISTKObject))
 
     # endregion
 
@@ -162,7 +162,7 @@ class EarlyBoundTests(TestBase):
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_MSL.attitude))
             elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
-                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject)
+                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_MSL, ISTKObject)
                 )
                 oHelper.Run(VehicleAttitudeRealTime(EarlyBoundTests.AG_MSL.attitude))
             else:
@@ -228,7 +228,7 @@ class EarlyBoundTests(TestBase):
     @category("SpatialInfo")
     def test_SpatialInfo(self):
         helper = SpatialInfoHelper(TestBase.Application)
-        helper.Run(clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject))
+        helper.Run(clr.CastAs(EarlyBoundTests.AG_MSL, ISTKObject))
 
     # endregion
 
@@ -264,7 +264,7 @@ class EarlyBoundTests(TestBase):
             # Trajectory
             oHelper = BasicPropagatorHelper(TestBase.Application)
             oHelper.Run(
-                clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject),
+                clr.CastAs(EarlyBoundTests.AG_MSL, ISTKObject),
                 EarlyBoundTests.AG_MSL.trajectory,
                 eType,
                 self.EarthGravModel,
@@ -539,7 +539,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTrajectoryModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTrajectoryModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.model, False)
 
     # endregion
@@ -556,7 +556,7 @@ class EarlyBoundTests(TestBase):
     # region VOProximity
     @category("VO Tests")
     def test_VOProximity(self):
-        oHelper = VOTrajectoryProximityHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTrajectoryProximityHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.proximity)
 
     # endregion
@@ -715,7 +715,7 @@ class EarlyBoundTests(TestBase):
         ball.step = 56
         ball.propagate()
 
-        exportHelper = ExportDataFileHelper(IStkObject(ms), TestBase.Application)
+        exportHelper = ExportDataFileHelper(ISTKObject(ms), TestBase.Application)
         exportHelper.AttitudeExportTool(ms.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(ms.export_tools.get_ephemeris_stk_export_tool(), False)
         exportHelper.PropDefExportTool(ms.export_tools.get_propagator_definition_export_tool())

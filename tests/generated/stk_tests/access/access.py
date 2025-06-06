@@ -70,7 +70,7 @@ class EarlyBoundTests(TestBase):
     def test_BasicTest(self):
         TestBase.logger.WriteLine("----- THE BASIC ACCESS TEST ----- BEGIN -----")
 
-        access: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
 
         Assert.assertEqual(r"Satellite-Spy-To-Facility-Facility1", access.name)
         Assert.assertEqual(r"/Application/STK/Scenario/AccessTests/Satellite/Spy", access.base.path)
@@ -280,7 +280,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        access: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         oGraphics: "AccessGraphics" = access.graphics
         Assert.assertIsNotNone(oGraphics)
         # Inherit (true)
@@ -331,9 +331,9 @@ class EarlyBoundTests(TestBase):
     # region DataDisplays
     @category("VO Tests")
     def test_DataDisplays(self):
-        access: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.compute_access()
-        oDDHelper = VODataDisplayHelper(clr.CastAs(TestBase.Application, StkObjectRoot))
+        oDDHelper = VODataDisplayHelper(clr.CastAs(TestBase.Application, STKObjectRoot))
         oDDHelper.Run(access.data_displays, True, False)
         access.remove_access()
 
@@ -344,10 +344,10 @@ class EarlyBoundTests(TestBase):
     def test_BasicComputingAccess(self):
         TestBase.logger.WriteLine("----- THE (early bound) BASIC COMPUTE ACCESS TEST ----- BEGIN -----")
 
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oFacility)
         # compute access
-        oAccess: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access_to_object(oFacility)
+        oAccess: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access_to_object(oFacility)
         Assert.assertIsNotNone(oAccess)
         oAccess.advanced.enable_light_time_delay = False
         oAccess.advanced.use_fixed_time_step = True  # change to test config persistence
@@ -400,7 +400,7 @@ class EarlyBoundTests(TestBase):
         oResult1: "DataProviderResult" = oDPInterval.execute_elements(dtStart, dtStop, arFields)
         Assert.assertIsNotNone(oResult1)
 
-        oNewAccess: "Access" = oFacility.get_access_to_object(clr.CastAs(EarlyBoundTests._satellite, IStkObject))
+        oNewAccess: "Access" = oFacility.get_access_to_object(clr.CastAs(EarlyBoundTests._satellite, ISTKObject))
         Assert.assertIsNotNone(oNewAccess)
         oNewAccess.advanced.enable_light_time_delay = False
         dtStart = "1 Jul 1999 15:20:00.000"
@@ -502,7 +502,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
-        access: "Access" = (IStkObject(oSatellite)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(oSatellite)).get_access("Facility/Facility1")
         access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
@@ -614,7 +614,7 @@ class EarlyBoundTests(TestBase):
 
     # region ComputeWithIntervals
     def test_ComputeWithIntervals(self):
-        access: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.compute_access()
@@ -634,7 +634,7 @@ class EarlyBoundTests(TestBase):
         access.remove_access()
 
         accessTimes[0][0] = "1 Jul 1999 13:48:00.000"
-        access = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.specify_access_intervals(accessTimes)
@@ -653,7 +653,7 @@ class EarlyBoundTests(TestBase):
         access.remove_access()
 
         accessTimes[0][0] = "1 Jul 1999 13:49:00.000"
-        access = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+        access = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.specify_access_intervals(accessTimes)
@@ -712,7 +712,7 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
 
-        myAccess: "Access" = (IStkObject(oFacility)).get_access_to_object(IStkObject(oSatellite))
+        myAccess: "Access" = (ISTKObject(oFacility)).get_access_to_object(ISTKObject(oSatellite))
         myAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD  # 2
         myAccess.specify_access_time_period("17 Feb 2010 05:34:09.161", "17 Feb 2010 05:41:01.680")
         myAccess.compute_access()
@@ -734,7 +734,7 @@ class EarlyBoundTests(TestBase):
 
     def test_SignalSenseOfClockHostThrowsExceptionWhenReadOnly(self):
         def code1():
-            access: "Access" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
+            access: "Access" = (ISTKObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
             advanced: "AccessAdvancedSettings" = access.advanced
 
             advanced.use_default_clock_host_and_signal_sense = True
@@ -746,7 +746,7 @@ class EarlyBoundTests(TestBase):
 
     # region BUG107492
     def test_Bug107492Test(self):
-        root: "StkObjectRoot" = clr.CastAs(TestBase.Application, StkObjectRoot)
+        root: "STKObjectRoot" = clr.CastAs(TestBase.Application, STKObjectRoot)
         try:
             # Create a place and a satellite
             place: "Place" = clr.CastAs(
@@ -762,12 +762,12 @@ class EarlyBoundTests(TestBase):
 
             # Create an object model access that duplicates the access request but before the fix
             # pointed to the same step control data
-            access1: "Access" = (IStkObject(place)).get_access_to_object(IStkObject(satellite))
+            access1: "Access" = (ISTKObject(place)).get_access_to_object(ISTKObject(satellite))
             del access1  # the common step control data is deleted here
 
             # Create a second object model access that duplicates the access request and
             # before the fix pointed to the deleted step control data
-            access2: "Access" = (IStkObject(place)).get_access_to_object(IStkObject(satellite))
+            access2: "Access" = (ISTKObject(place)).get_access_to_object(ISTKObject(satellite))
 
             # Before the fix assertion on the next line in debug when running in the debugger
             # [HEAP[nunit3-console.exe]: Invalid address specified to RtlValidateHeap]
@@ -785,7 +785,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(TestBase.GetScenarioFile("SuperAccess", "AllSensors.sc"))
 
-        objSat: "IStkObject" = TestBase.Application.current_scenario.children["AllSenSat"]
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children["AllSenSat"]
         onePtAccess: "OnePointAccess" = objSat.create_one_point_access("Satellite/GEO/Sensor/SpinRect")
 
         # OnePointAccess */Satellite/AllSenSat */Satellite/GEO/Sensor/SpinRect FirstSatisfaction "01 Jan 1997 00:00:00" "01 Jan 1997 04:00:00" 1 3.0
@@ -828,12 +828,12 @@ class EarlyBoundTests(TestBase):
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
         holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
-        placeObj: "IStkObject" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "PlacePreDataTest"), IStkObject
+        placeObj: "ISTKObject" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "PlacePreDataTest"), ISTKObject
         )
-        satelliteObj: "IStkObject" = clr.CastAs(
+        satelliteObj: "ISTKObject" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
-            IStkObject,
+            ISTKObject,
         )
 
         try:
@@ -849,8 +849,8 @@ class EarlyBoundTests(TestBase):
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             satelliteProp.propagate()
 
-            radarObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STKObjectType.RADAR, "RadarPreDataTest"), IStkObject
+            radarObj: "ISTKObject" = clr.CastAs(
+                satelliteObj.children.new(STKObjectType.RADAR, "RadarPreDataTest"), ISTKObject
             )
             accessObj: "Access" = clr.CastAs(radarObj.get_access(placeObj.path), Access)
 
@@ -864,11 +864,11 @@ class EarlyBoundTests(TestBase):
             result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
-            transmitterObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STKObjectType.TRANSMITTER, "TransmitterPreDataTest"), IStkObject
+            transmitterObj: "ISTKObject" = clr.CastAs(
+                satelliteObj.children.new(STKObjectType.TRANSMITTER, "TransmitterPreDataTest"), ISTKObject
             )
-            receiverObj: "IStkObject" = clr.CastAs(
-                placeObj.children.new(STKObjectType.RECEIVER, "ReceiverPreDataTest"), IStkObject
+            receiverObj: "ISTKObject" = clr.CastAs(
+                placeObj.children.new(STKObjectType.RECEIVER, "ReceiverPreDataTest"), ISTKObject
             )
             accessObj: "Access" = clr.CastAs(transmitterObj.get_access(receiverObj.path), Access)
 

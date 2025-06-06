@@ -28,10 +28,10 @@ A set of convenience utilities to facilitate the construction of scenarios.
 
 from typing import Dict
 
-from ansys.stk.core.stkobjects import IStkObject, Scenario, StkObjectRoot, STKObjectType
+from ansys.stk.core.stkobjects import ISTKObject, Scenario, STKObjectRoot, STKObjectType
 
 
-def construct_scenario_from_dict(root: StkObjectRoot, dict: Dict) -> Scenario:
+def construct_scenario_from_dict(root: STKObjectRoot, dict: Dict) -> Scenario:
     """Create a scenario with sub-objects from a dictionary describing its structure.
 
     The dictionary represents a hierarchy of nodes, where each node has a type, a name, and children. The type
@@ -62,7 +62,7 @@ def construct_scenario_from_dict(root: StkObjectRoot, dict: Dict) -> Scenario:
 
     Parameters
     ----------
-    root : ansys.stk.core.StkObjectRoot
+    root : ansys.stk.core.STKObjectRoot
         The STK object root.
     dict : Dict
         A dictionary describing the scenario to construct.
@@ -91,7 +91,7 @@ def construct_scenario_from_dict(root: StkObjectRoot, dict: Dict) -> Scenario:
         if len(node) != 3:
             raise RuntimeError("Unexpected dictionary structure, expected 3 entries")
 
-    def _create_object(parent: IStkObject, node: Dict):
+    def _create_object(parent: ISTKObject, node: Dict):
         for child in node["children"]:
             _validate_node(child)
             new_object_type_name: str = child["type"].upper()
@@ -109,7 +109,7 @@ def construct_scenario_from_dict(root: StkObjectRoot, dict: Dict) -> Scenario:
     _validate_node(dict)
 
     root.new_scenario(dict["name"])
-    scenario: IStkObject = root.current_scenario
+    scenario: ISTKObject = root.current_scenario
     _create_object(parent=scenario, node=dict)
 
     return Scenario(root.current_scenario)

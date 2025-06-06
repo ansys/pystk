@@ -46,8 +46,8 @@ class EarlyBoundTests(TestBase):
 
     # region DataMembers
     ANTENNA_NAME: str = "AntennaTest"
-    oSat: "IStkObject" = None
-    oAntenna: "IStkObject" = None
+    oSat: "ISTKObject" = None
+    oAntenna: "ISTKObject" = None
     antenna: "Antenna" = None
     antennaVO: "AntennaGraphics3D" = None
     VOVector: "Graphics3DVector" = None
@@ -128,8 +128,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oAntenna: "IStkObject" = oFac.children.new(STKObjectType.ANTENNA, "Antenna1")
+        oFac: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oAntenna: "ISTKObject" = oFac.children.new(STKObjectType.ANTENNA, "Antenna1")
         Assert.assertIsNotNone(oAntenna)
         Assert.assertEqual(STKObjectType.ANTENNA, oAntenna.class_type)
 
@@ -1652,9 +1652,9 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Application.units_preferences.set_current_unit("Angle", "DMS")
 
-            satelliteObj: "IStkObject" = clr.CastAs(
+            satelliteObj: "ISTKObject" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
-                IStkObject,
+                ISTKObject,
             )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(PropagatorType.TWO_BODY)
@@ -1669,14 +1669,14 @@ class EarlyBoundTests(TestBase):
             )
 
             dp: "IDataProvider" = clr.CastAs(
-                (clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain"], IDataProvider
+                (clr.CastAs(antenna, ISTKObject)).data_providers["Antenna Gain"], IDataProvider
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "GainCutType Elevation MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationValue '01:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
             result: "DataProviderResult" = dpFixed.execute()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
-            dp = clr.CastAs((clr.CastAs(antenna, IStkObject)).data_providers["Antenna Gain Matrix"], IDataProvider)
+            dp = clr.CastAs((clr.CastAs(antenna, ISTKObject)).data_providers["Antenna Gain Matrix"], IDataProvider)
             dpFixed = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "MinAzimuth '-90:00:00.0000' MaxAzimuth '90:00:00.0000' AzimuthStep '01:00:00.0000' ElevationStep '01:00:00.0000' MinElevation '-90:00:00.0000' MaxElevation '90:00:00.0000' Time '1 Jan 2022 10:00:00.000'"
             result = dpFixed.execute()

@@ -57,23 +57,23 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: new_object_root(self) -> StkObjectRoot
+.. py:method:: new_object_root(self) -> STKObjectRoot
     :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root
 
     May be used to obtain an Object Model Root from a running STK Engine application.
 
     :Returns:
 
-        :obj:`~StkObjectRoot`
+        :obj:`~STKObjectRoot`
 
-.. py:method:: new_object_model_context(self) -> StkObjectModelContext
+.. py:method:: new_object_model_context(self) -> STKObjectModelContext
     :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_model_context
 
     May be used to obtain an Object Model Context from a running STK Engine application.
 
     :Returns:
 
-        :obj:`~StkObjectModelContext`
+        :obj:`~STKObjectModelContext`
 
 .. py:method:: set_grpc_options(self, options: dict) -> None
     :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.set_grpc_options

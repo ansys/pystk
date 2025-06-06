@@ -65,7 +65,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_CH)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_CH)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_CH)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -85,8 +85,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_CH, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_CH)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_CH, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_CH)).object_files)
 
     # endregion
 
@@ -275,23 +275,23 @@ class EarlyBoundTests(TestBase):
 
         self.Test_IAgChOptimalStrandOpts(newChain.optimal_strand_opts)
 
-        place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
-        place1Xmtr1: "IStkObject" = place1.children["Transmitter1"]
+        place1: "ISTKObject" = TestBase.Application.current_scenario.children["Place1"]
+        place1Xmtr1: "ISTKObject" = place1.children["Transmitter1"]
 
-        place2: "IStkObject" = TestBase.Application.current_scenario.children["Place2"]
-        place2Rcvr2: "IStkObject" = place2.children["Receiver1"]
+        place2: "ISTKObject" = TestBase.Application.current_scenario.children["Place2"]
+        place2Rcvr2: "ISTKObject" = place2.children["Receiver1"]
 
-        satellite2: "IStkObject" = TestBase.Application.current_scenario.children["Satellite2"]
-        satellite2Xmtr2: "IStkObject" = satellite2.children["Transmitter2"]
-        satellite2Receiver2: "IStkObject" = satellite2.children["Receiver2"]
+        satellite2: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite2"]
+        satellite2Xmtr2: "ISTKObject" = satellite2.children["Transmitter2"]
+        satellite2Receiver2: "ISTKObject" = satellite2.children["Receiver2"]
 
-        satellite3: "IStkObject" = TestBase.Application.current_scenario.children["Satellite3"]
-        satellite3Xmtr3: "IStkObject" = satellite3.children["Transmitter3"]
-        satellite3Receiver3: "IStkObject" = satellite3.children["Receiver3"]
+        satellite3: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite3"]
+        satellite3Xmtr3: "ISTKObject" = satellite3.children["Transmitter3"]
+        satellite3Receiver3: "ISTKObject" = satellite3.children["Receiver3"]
 
-        satellite4: "IStkObject" = TestBase.Application.current_scenario.children["Satellite4"]
-        satellite4Xmtr4: "IStkObject" = satellite4.children["Transmitter4"]
-        satellite4Receiver4: "IStkObject" = satellite4.children["Receiver4"]
+        satellite4: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite4"]
+        satellite4Xmtr4: "ISTKObject" = satellite4.children["Transmitter4"]
+        satellite4Receiver4: "ISTKObject" = satellite4.children["Receiver4"]
 
         newChain.start_object = place1Xmtr1
         Assert.assertEqual("Transmitter1", newChain.start_object.instance_name)
@@ -317,7 +317,7 @@ class EarlyBoundTests(TestBase):
         newChain.compute_access()
 
         # Make sure number of strands should be 3
-        newChainObj: "IStkObject" = clr.CastAs(newChain, IStkObject)
+        newChainObj: "ISTKObject" = clr.CastAs(newChain, ISTKObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
         resInfo: "DataProviderResult" = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
@@ -472,15 +472,15 @@ class EarlyBoundTests(TestBase):
         newChain.recompute_automatically = False
 
         # Get objects to set up connections
-        place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
-        place1Xmtr1: "IStkObject" = place1.children["Transmitter1"]
+        place1: "ISTKObject" = TestBase.Application.current_scenario.children["Place1"]
+        place1Xmtr1: "ISTKObject" = place1.children["Transmitter1"]
 
-        place2: "IStkObject" = TestBase.Application.current_scenario.children["Place2"]
-        place2Rcvr2: "IStkObject" = place2.children["Receiver1"]
+        place2: "ISTKObject" = TestBase.Application.current_scenario.children["Place2"]
+        place2Rcvr2: "ISTKObject" = place2.children["Receiver1"]
 
-        satelliteCollection1: "IStkObject" = TestBase.Application.current_scenario.children["SatelliteCollection1"]
-        allRcvrsSubset: "IStkObject" = satelliteCollection1.children["AllReceivers"]
-        allXmtrsSubset: "IStkObject" = satelliteCollection1.children["AllTransmitters"]
+        satelliteCollection1: "ISTKObject" = TestBase.Application.current_scenario.children["SatelliteCollection1"]
+        allRcvrsSubset: "ISTKObject" = satelliteCollection1.children["AllReceivers"]
+        allXmtrsSubset: "ISTKObject" = satelliteCollection1.children["AllTransmitters"]
 
         newChain.connections.clear()
 
@@ -504,7 +504,7 @@ class EarlyBoundTests(TestBase):
 
         # Computed strands allowing for receivers on sat collection to talk to transmitters
         # on a different platform, not reality.
-        newChainObj: "IStkObject" = clr.CastAs(newChain, IStkObject)
+        newChainObj: "ISTKObject" = clr.CastAs(newChain, ISTKObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
         resInfo: "DataProviderResult" = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
@@ -638,23 +638,23 @@ class EarlyBoundTests(TestBase):
     def Test_IAgChConnectionCollection(self, connColl: "ChainConnectionCollection"):
         Assert.assertEqual(0, connColl.count)
 
-        place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
-        place1Xmtr1: "IStkObject" = place1.children["Transmitter1"]
+        place1: "ISTKObject" = TestBase.Application.current_scenario.children["Place1"]
+        place1Xmtr1: "ISTKObject" = place1.children["Transmitter1"]
 
-        place2: "IStkObject" = TestBase.Application.current_scenario.children["Place2"]
-        place2Rcvr2: "IStkObject" = place2.children["Receiver1"]
+        place2: "ISTKObject" = TestBase.Application.current_scenario.children["Place2"]
+        place2Rcvr2: "ISTKObject" = place2.children["Receiver1"]
 
-        satellite2: "IStkObject" = TestBase.Application.current_scenario.children["Satellite2"]
-        satellite2Xmtr2: "IStkObject" = satellite2.children["Transmitter2"]
-        satellite2Receiver2: "IStkObject" = satellite2.children["Receiver2"]
+        satellite2: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite2"]
+        satellite2Xmtr2: "ISTKObject" = satellite2.children["Transmitter2"]
+        satellite2Receiver2: "ISTKObject" = satellite2.children["Receiver2"]
 
-        satellite3: "IStkObject" = TestBase.Application.current_scenario.children["Satellite3"]
-        satellite3Xmtr3: "IStkObject" = satellite3.children["Transmitter3"]
-        satellite3Receiver3: "IStkObject" = satellite3.children["Receiver3"]
+        satellite3: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite3"]
+        satellite3Xmtr3: "ISTKObject" = satellite3.children["Transmitter3"]
+        satellite3Receiver3: "ISTKObject" = satellite3.children["Receiver3"]
 
-        satellite4: "IStkObject" = TestBase.Application.current_scenario.children["Satellite4"]
-        satellite4Xmtr4: "IStkObject" = satellite4.children["Transmitter4"]
-        satellite4Receiver4: "IStkObject" = satellite4.children["Receiver4"]
+        satellite4: "ISTKObject" = TestBase.Application.current_scenario.children["Satellite4"]
+        satellite4Xmtr4: "ISTKObject" = satellite4.children["Transmitter4"]
+        satellite4Receiver4: "ISTKObject" = satellite4.children["Receiver4"]
 
         chConn: "ChainConnection" = connColl.add(place1Xmtr1, satellite2Receiver2, 0, 1)
         self.Test_IAgChConnection(chConn)

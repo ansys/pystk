@@ -21,12 +21,12 @@
 # SOFTWARE.
 
 __all__ = [ "GrpcEventHandlerImpl",
-            "IStkObjectRootEventGrpcHandler", 
+            "ISTKObjectRootEventGrpcHandler", 
             "ISTKXApplicationEventGrpcHandler", 
-            "IStkGraphicsSceneEventGrpcHandler",
-            "IStkGraphicsKmlGraphicsEventGrpcHandler",
-            "IStkGraphicsImageCollectionEventGrpcHandler",
-            "IStkGraphicsTerrainCollectionEventGrpcHandler"]
+            "ISceneEventGrpcHandler",
+            "IKmlGraphicsEventGrpcHandler",
+            "IImageCollectionEventGrpcHandler",
+            "ITerrainOverlayCollectionEventGrpcHandler"]
 
 import typing
 
@@ -80,7 +80,7 @@ class GrpcEventHandlerImpl(object):
 #          IStkObjectRootEvents
 ################################################################################
 
-class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
+class ISTKObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkObjectRootEvents, events)
@@ -195,7 +195,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
         for callback in self._events["OnPercentCompleteBegin"]._callbacks:
             callback()
             
-    def _on_stk_object_changed(self, pArgs:"StkObjectChangedEventArguments") -> None:
+    def _on_stk_object_changed(self, pArgs:"STKObjectChangedEventArguments") -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
             callback(pArgs)
                 
@@ -203,7 +203,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
         for callback in self._events["OnScenarioBeforeClose"]._callbacks:
             callback()
             
-    def _on_stk_object_pre_delete(self, pArgs:"StkObjectPreDeleteEventArguments") -> None:
+    def _on_stk_object_pre_delete(self, pArgs:"STKObjectPreDeleteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
             callback(pArgs)
                 
@@ -223,15 +223,15 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
         for callback in self._events["OnStkObjectCancel3dEditing"]._callbacks:
             callback(path)
             
-    def _on_stk_object_pre_cut(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
+    def _on_stk_object_pre_cut(self, pArgs:"STKObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
             callback(pArgs)
             
-    def _on_stk_object_copy(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
+    def _on_stk_object_copy(self, pArgs:"STKObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
             callback(pArgs)
             
-    def _on_stk_object_paste(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
+    def _on_stk_object_paste(self, pArgs:"STKObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
             callback(pArgs)
       
@@ -320,7 +320,7 @@ class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
 #          IStkGraphicsSceneEvents
 ################################################################################
 
-class IStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
+class ISceneEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsSceneEvents, events)
@@ -335,7 +335,7 @@ class IStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
 #          IStkGraphicsKmlGraphicsEvents
 ################################################################################
 
-class IStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
+class IKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsKmlGraphicsEvents, events)
@@ -350,7 +350,7 @@ class IStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 #          IStkGraphicsImageCollectionEvents
 ################################################################################
 
-class IStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
+class IImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsImageCollectionEvents, events)
@@ -365,7 +365,7 @@ class IStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 #          IStkGraphicsTerrainCollectionEvents
 ################################################################################
 
-class IStkGraphicsTerrainCollectionEventGrpcHandler(GrpcEventHandlerImpl):
+class ITerrainOverlayCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsTerrainCollectionEvents, events)

@@ -32,11 +32,11 @@ class UnitPreferenceState(IDisposable):
     def __exit__(self, exception_type, exception_value, exception_traceback):
         self.Dispose()
 
-    def __init__(self, application: "StkObjectRoot"):
+    def __init__(self, application: "STKObjectRoot"):
         self._disposed: bool = False
         self._state = {}
 
-        self._application: "StkObjectRoot" = application
+        self._application: "STKObjectRoot" = application
         self.SaveState(application.units_preferences)
 
     def RestoreState(self, dimensions: "UnitPreferencesDimensionCollection"):

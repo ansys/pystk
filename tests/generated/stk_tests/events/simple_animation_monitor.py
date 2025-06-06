@@ -33,14 +33,14 @@ class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):
     def __exit__(self, exception_type, exception_value, exception_traceback):
         self.Dispose2()
 
-    def __init__(self, root: "StkObjectRoot"):
+    def __init__(self, root: "STKObjectRoot"):
         self._cycleCount: int = -1
         self._isEndOfTime: bool = False
         self._stopTime: float = 0
         self._startTime: float = 0
         self.m_logger = Logger.Instance
         self.disposed: bool = False
-        self._root: "StkObjectRoot" = root
+        self._root: "STKObjectRoot" = root
         self.HookupEvents()
 
     def Reset(self):

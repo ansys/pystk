@@ -62,7 +62,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("ScenarioTests", "ScenarioTests.sc"))
             EarlyBoundTests.AG_SC = Scenario(TestBase.Application.current_scenario)
-            scenarioObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)
+            scenarioObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_SC, ISTKObject)
 
             EarlyBoundTests.today = str(
                 TestBase.Application.current_scenario.analysis_workbench_components.time_instants["Today"]
@@ -127,11 +127,11 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        scObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)
+        scObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_SC, ISTKObject)
         oHelper.Run(scObject)
         oHelper.TestObjectFilesArray(scObject.object_files)
         # NewOnCentralBody
-        oSatOnMars: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
+        oSatOnMars: "ISTKObject" = TestBase.Application.current_scenario.children.new_on_central_body(
             STKObjectType.SATELLITE, "SatelliteOnMars", "Mars"
         )
         Assert.assertIsNotNone(oSatOnMars)
@@ -267,8 +267,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new AcWGS84Warning flag is: {0}", EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
         Assert.assertEqual(AircraftWGS84WarningType.ONLY_ONCE, EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
 
-        sc2: "IStkObject" = TestBase.Application.current_scenario
-        if sc2.parent == (IStkObject(EarlyBoundTests.AG_SC)).parent:
+        sc2: "ISTKObject" = TestBase.Application.current_scenario
+        if sc2.parent == (ISTKObject(EarlyBoundTests.AG_SC)).parent:
             TestBase.logger.WriteLine("Scenarios equal")
 
         else:
@@ -518,9 +518,9 @@ class EarlyBoundTests(TestBase):
     # region GetAccessBetweenObjectsByPath
     def test_GetAccessBetweenObjectsByPath(self):
         try:
-            objFac1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1")
+            objFac1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1")
 
-            objSat1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat1")
+            objSat1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat1")
             sat1: "Satellite" = clr.CastAs(objSat1, Satellite)
             sat1.set_propagator_type(PropagatorType.TWO_BODY)
             (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
@@ -585,16 +585,16 @@ class EarlyBoundTests(TestBase):
     def test_GetExistingAccesses(self):
         try:
             # Create some objects
-            objFac1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1")
+            objFac1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1")
 
-            objFac2: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac2")
+            objFac2: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac2")
 
-            objSat1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat1")
+            objSat1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat1")
             sat1: "Satellite" = clr.CastAs(objSat1, Satellite)
             sat1.set_propagator_type(PropagatorType.TWO_BODY)
             (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
-            objSat2: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat2")
+            objSat2: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat2")
             sat2: "Satellite" = clr.CastAs(objSat2, Satellite)
             sat2.set_propagator_type(PropagatorType.TWO_BODY)
             (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
@@ -691,12 +691,12 @@ class EarlyBoundTests(TestBase):
     # region TerrainCollection
     def test_ScenarioTerrainChangeUpdatesVGTComponents(self):
         tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
-            (IStkObject(EarlyBoundTests.AG_SC)).central_body_name
+            (ISTKObject(EarlyBoundTests.AG_SC)).central_body_name
         ].terrain_collection
         oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TerrainFileType.PDTT)
         oTerrain.use_terrain = True
 
-        aircraft: "IStkObject" = (IStkObject(EarlyBoundTests.AG_SC)).children.new(STKObjectType.AIRCRAFT, "MyAircraft")
+        aircraft: "ISTKObject" = (ISTKObject(EarlyBoundTests.AG_SC)).children.new(STKObjectType.AIRCRAFT, "MyAircraft")
         ac: "Aircraft" = clr.CastAs(aircraft, Aircraft)
         ac.set_route_type(PropagatorType.GREAT_ARC)
         ga: "PropagatorGreatArc" = clr.CastAs(ac.route, PropagatorGreatArc)
@@ -768,7 +768,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.logger.WriteLine("----- TERRAIN COLLECTION TEST ----- BEGIN -----")
         tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
-            (IStkObject(EarlyBoundTests.AG_SC)).central_body_name
+            (ISTKObject(EarlyBoundTests.AG_SC)).central_body_name
         ].terrain_collection
         Assert.assertIsNotNone(tc)
         # Count
@@ -1035,7 +1035,7 @@ class EarlyBoundTests(TestBase):
 
         # Remove the instance of the facility
         TestBase.Application.current_scenario.children.unload(
-            (IStkObject(fac)).class_type, (IStkObject(fac)).instance_name
+            (ISTKObject(fac)).class_type, (ISTKObject(fac)).instance_name
         )
         del fac
 
@@ -1452,7 +1452,7 @@ class EarlyBoundTests(TestBase):
 
         # Remove the instance of the facility
         TestBase.Application.current_scenario.children.unload(
-            (IStkObject(earthFac)).class_type, (IStkObject(earthFac)).instance_name
+            (ISTKObject(earthFac)).class_type, (ISTKObject(earthFac)).instance_name
         )
         del earthFac
         del earthTerrainElement
@@ -1461,7 +1461,7 @@ class EarlyBoundTests(TestBase):
 
         # Should throw exception if non earth facilities are used.
         marsFacility: "Facility" = Facility(
-            (IStkObject(EarlyBoundTests.AG_SC)).children.new_on_central_body(
+            (ISTKObject(EarlyBoundTests.AG_SC)).children.new_on_central_body(
                 STKObjectType.FACILITY, "MarsFacilityOnTerrain", "Mars"
             )
         )
@@ -1511,7 +1511,7 @@ class EarlyBoundTests(TestBase):
             )
 
         TestBase.Application.current_scenario.children.unload(
-            (IStkObject(marsFacility)).class_type, (IStkObject(marsFacility)).instance_name
+            (ISTKObject(marsFacility)).class_type, (ISTKObject(marsFacility)).instance_name
         )
         del marsFacility
         del marsTerrainElement
@@ -4423,7 +4423,7 @@ class EarlyBoundTests(TestBase):
 
             scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
             dp: "IDataProvider" = clr.CastAs(
-                (clr.CastAs(scenario, IStkObject)).data_providers["Out Of Date TLE"], IDataProvider
+                (clr.CastAs(scenario, ISTKObject)).data_providers["Out Of Date TLE"], IDataProvider
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             tcePath: str = TestBase.GetScenarioFile("stkAllTLE.tce")

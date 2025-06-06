@@ -85,7 +85,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             "Aircraft/Boing737", ((link.linked_object.class_name + "/") + link.linked_object.instance_name)
         )
-        (IStkObject(sat1)).unload()
+        (ISTKObject(sat1)).unload()
 
     # region X47133
 
@@ -128,7 +128,7 @@ class EarlyBoundTests(TestBase):
             m = rx.Match(str(line))
             Assert.assertEqual(str(m.Groups[1]), sgp4.segments.ssc_number)
 
-        (IStkObject(satellite)).unload()
+        (ISTKObject(satellite)).unload()
 
     # endregion
 
@@ -191,7 +191,7 @@ class EarlyBoundTests(TestBase):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.TestConstraintCollection(EarlyBoundTests.AG_SAT.access_constraints)
         oHelper.DoTest(
-            EarlyBoundTests.AG_SAT.access_constraints, IStkObject(EarlyBoundTests.AG_SAT), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_SAT.access_constraints, ISTKObject(EarlyBoundTests.AG_SAT), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -200,7 +200,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicAttitudeDifference(self):
         oHelper = BasicAttitudeDifferenceHelper(TestBase.Application)
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_SAT, IStkObject))
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_SAT, ISTKObject))
 
     # endregion
 
@@ -241,7 +241,7 @@ class EarlyBoundTests(TestBase):
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_SAT.attitude))
             elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
-                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_SAT, IStkObject)
+                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_SAT, ISTKObject)
                 )
                 oHelper.Run(VehicleAttitudeRealTime(EarlyBoundTests.AG_SAT.attitude))
             else:
@@ -266,11 +266,11 @@ class EarlyBoundTests(TestBase):
         oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Target1"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Target1"]
         Assert.assertIsNotNone(oFacility)
 
         # compute access
-        oAccess: "Access" = (IStkObject(oSatellite)).get_access_to_object(oFacility)
+        oAccess: "Access" = (ISTKObject(oSatellite)).get_access_to_object(oFacility)
         Assert.assertIsNotNone(oAccess)
         oAccess.compute_access()
 
@@ -288,7 +288,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_SAT)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_SAT)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_SAT)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -547,7 +547,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        satObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SAT, IStkObject)
+        satObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_SAT, ISTKObject)
         oHelper.Run(satObject)
         oHelper.TestObjectFilesArray(satObject.object_files)
 
@@ -557,7 +557,7 @@ class EarlyBoundTests(TestBase):
     @category("SpatialInfo")
     def test_SpatialInfo(self):
         helper = SpatialInfoHelper(TestBase.Application)
-        helper.Run(clr.CastAs(EarlyBoundTests.AG_SAT, IStkObject))
+        helper.Run(clr.CastAs(EarlyBoundTests.AG_SAT, ISTKObject))
 
     # endregion
 
@@ -573,7 +573,7 @@ class EarlyBoundTests(TestBase):
         oSat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, sInstanceName), Satellite
         )
-        o: "IStkObject" = clr.CastAs(oSat, IStkObject)
+        o: "ISTKObject" = clr.CastAs(oSat, ISTKObject)
         oSat.set_propagator_type(PropagatorType.SGP4)
 
         with ObjectChangedMonitor(TestBase.Application) as monitor:
@@ -835,7 +835,7 @@ class EarlyBoundTests(TestBase):
         self.MoonOrbitSphericalPosition(hpop)
 
         # Delete the temp satellite
-        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, (IStkObject(sat)).instance_name)
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, (ISTKObject(sat)).instance_name)
         TestBase.logger.WriteLine("----- THE BASIC MOON ORBIT TEST ----- END -----")
 
     # endregion
@@ -843,10 +843,10 @@ class EarlyBoundTests(TestBase):
     # region X42637
     def test_CentralBodyCoordinateSystems(self):
         cart: "OrbitStateCartesian" = None
-        oMoonSat: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
+        oMoonSat: "ISTKObject" = TestBase.Application.current_scenario.children.new_on_central_body(
             STKObjectType.SATELLITE, "SatelliteOnMoon", "Moon"
         )
-        oEarthSat: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        oEarthSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "SatelliteOnEarth"
         )
 
@@ -1171,7 +1171,7 @@ class EarlyBoundTests(TestBase):
     def test_CoordinateSystemThruConnect(self):
         command: str = String.Format(
             'SetState */Satellite/{0} Cartesian J2Perturbation "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 60 MeanOfEpoch "1 Jul 1999 00:00:00.00" -5465000.513055 4630000.194365 0.0 712.713627 841.292034 7377.687805 "3 Jul 1999 00:00:00.00"',
-            (IStkObject(EarlyBoundTests.AG_SAT)).instance_name,
+            (ISTKObject(EarlyBoundTests.AG_SAT)).instance_name,
         )
         res: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         del res
@@ -1782,7 +1782,7 @@ class EarlyBoundTests(TestBase):
     # region VOProximity
     @category("VO Tests")
     def test_VOProximity(self):
-        oHelper = VOOrbitProximityHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOOrbitProximityHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.proximity)
 
     # endregion
@@ -1811,7 +1811,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOSatelliteModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOSatelliteModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.model)
 
     # endregion
@@ -3253,7 +3253,7 @@ class EarlyBoundTests(TestBase):
         twoBody: "PropagatorTwoBody" = clr.CastAs(sat2.propagator, PropagatorTwoBody)
         twoBody.propagate()
 
-        exportHelper = ExportDataFileHelper(IStkObject(sat2), TestBase.Application)
+        exportHelper = ExportDataFileHelper(ISTKObject(sat2), TestBase.Application)
         exportHelper.AttitudeExportTool(sat2.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisCCSDSExportTool(sat2.export_tools.get_ephemeris_ccsds_export_tool())
         exportHelper.EphemerisCCSDSv2ExportTool(sat2.export_tools.get_ephemeris_ccsds_v2_export_tool())
@@ -3302,7 +3302,7 @@ class EarlyBoundTests(TestBase):
         hpop.propagate()
 
         # *** AzEl
-        ers1Obj: "IStkObject" = clr.CastAs(ers1, IStkObject)
+        ers1Obj: "ISTKObject" = clr.CastAs(ers1, ISTKObject)
         sensor = Sensor(ers1Obj.children.new(STKObjectType.SENSOR, "Sensor_AzEl"))
         sensor.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         fixed = SensorPointingFixed(sensor.pointing)
@@ -3474,7 +3474,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("Realtime_Scenario")
         TestBase.logger.WriteLine("********** USING OM ********************")
-        newsat: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        newsat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "RealtimeSatellite1"
         )
         (Satellite(newsat)).set_propagator_type(PropagatorType.REAL_TIME)
@@ -3621,11 +3621,11 @@ class EarlyBoundTests(TestBase):
 
     # region RealtimePointBuilders
     class RealtimeBuilderTemplate(object):
-        def __init__(self, o: "IStkObject", llaPoints: "List[List[float]]", bPositionOnly: bool):
+        def __init__(self, o: "ISTKObject", llaPoints: "List[List[float]]", bPositionOnly: bool):
             self._pb: "PropagatorRealtimePointBuilder" = None
             self._increment: float = 0
             self._llaPoints: "List[List[float]]" = llaPoints
-            self._o: "IStkObject" = o
+            self._o: "ISTKObject" = o
             self._bPositionOnly: bool = bPositionOnly
 
         @property
@@ -3910,8 +3910,8 @@ class EarlyBoundTests(TestBase):
         sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         sc.set_time_period("1 Jul 2007 12:00", "1 Jul 2007 18:00")
-        fac: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
-        newsat: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        fac: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
+        newsat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.SATELLITE, "RealtimeSatellite1"
         )
         sat: "Satellite" = clr.CastAs(newsat, Satellite)
@@ -4061,7 +4061,7 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time
         stopTime: typing.Any = (clr.CastAs(TestBase.Application.current_scenario, Scenario)).stop_time
-        SEETHelper.TestComputations(clr.CastAs(seetSat, IStkObject), seetSat.space_environment, startTime, stopTime)
+        SEETHelper.TestComputations(clr.CastAs(seetSat, ISTKObject), seetSat.space_environment, startTime, stopTime)
 
     # endregion
 
