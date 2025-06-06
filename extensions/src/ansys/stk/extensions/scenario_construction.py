@@ -26,12 +26,10 @@ PySTK Scenario Construction Extensions.
 A set of convenience utilities to facilitate the construction of scenarios.
 """
 
-from typing import Dict
-
 from ansys.stk.core.stkobjects import ISTKObject, Scenario, STKObjectRoot, STKObjectType
 
 
-def construct_scenario_from_dict(root: STKObjectRoot, dict: Dict) -> Scenario:
+def construct_scenario_from_dict(root: STKObjectRoot, dictionary: dict) -> Scenario:
     """Create a scenario with sub-objects from a dictionary describing its structure.
 
     The dictionary represents a hierarchy of nodes, where each node has a type, a name, and children. The type
@@ -62,19 +60,19 @@ def construct_scenario_from_dict(root: STKObjectRoot, dict: Dict) -> Scenario:
 
     Parameters
     ----------
-    root : ansys.stk.core.STKObjectRoot
+    root : ansys.stk.core.stkobjects.STKObjectRoot
         The STK object root.
-    dict : Dict
+    dict : dict
         A dictionary describing the scenario to construct.
 
     Returns
     -------
-    ansys.stk.core.Scenario
+    ansys.stk.core.stkobjects.Scenario
         The newly created scenario.
 
     Raises
     ------
-    RuntimeException
+    RuntimeError
         If the dictionary does not have the proper structure.
     """
 
@@ -91,7 +89,7 @@ def construct_scenario_from_dict(root: STKObjectRoot, dict: Dict) -> Scenario:
         if len(node) != 3:
             raise RuntimeError("Unexpected dictionary structure, expected 3 entries")
 
-    def _create_object(parent: ISTKObject, node: Dict):
+    def _create_object(parent: ISTKObject, node: dict):
         for child in node["children"]:
             _validate_node(child)
             new_object_type_name: str = child["type"].upper()
@@ -106,10 +104,10 @@ def construct_scenario_from_dict(root: STKObjectRoot, dict: Dict) -> Scenario:
     if root.current_scenario is not None:
         root.close_scenario()
 
-    _validate_node(dict)
+    _validate_node(dictionary)
 
-    root.new_scenario(dict["name"])
+    root.new_scenario(dictionary["name"])
     scenario: ISTKObject = root.current_scenario
-    _create_object(parent=scenario, node=dict)
+    _create_object(parent=scenario, node=dictionary)
 
     return Scenario(root.current_scenario)
