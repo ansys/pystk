@@ -255,16 +255,27 @@ class ManualRSTGenerator:
 
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
-            if arg.annotation and hasattr(arg.annotation, "id"):
-                arg_str += f": {arg.annotation.id}"
-            elif arg.annotation and hasattr(arg.annotation, "attr") and arg.annotation.attr == "Any":
-                arg_str += ": typing.Any"
+            if arg.annotation:
+                arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
             if i >= default_offset and defaults:
                 default = defaults[i - default_offset]
                 if isinstance(default, ast.Constant):
                     arg_str += f" = {default.value!r}"
             args.append(arg_str)
         return ", ".join(args)
+    
+    @staticmethod
+    def _parse_nested_type(annotation):
+        type_string = ""
+        while hasattr(annotation, "attr"):
+            type_string = f"{annotation.attr}.{type_string}"
+            if hasattr(annotation, "value"):
+                annotation = annotation.value
+            else:
+                break
+        if hasattr(annotation, "id"):
+            type_string = f"{annotation.id}.{type_string}"
+        return "~" + type_string.strip(".")
 
     @staticmethod
     def _parse_return_type(node):
@@ -272,9 +283,9 @@ class ManualRSTGenerator:
             return "None"
         if isinstance(node, ast.Subscript):
             elts = node.slice.elts
-            return [elt.id for elt in elts]
-        if node and hasattr(node, "id"):
-            return [node.id]
+            return [ManualRSTGenerator._parse_nested_type(elt) for elt in elts]
+        if node:
+            return [ManualRSTGenerator._parse_nested_type(node)]
         return ""
 
     def _generate_rst_for_pyobj(self, obj_definition, containing_namespace, module_name, module_rst_file_path):
@@ -452,21 +463,14 @@ class ManualRSTGenerator:
                 if "Extended Summary" in docstring:
                     f.write(f"{textwrap.indent("\n".join(docstring['Extended Summary']), '    ')}\n\n")
 
-            args_with_types = [
-                (a.arg, a.annotation.id)
-                for a in func_def.args.args
-                if a.annotation and hasattr(a.annotation, "id") and a.arg != "self"
-            ]
-            if args_with_types:
+            if func_def.args.args:
                 f.write("    :Parameters:\n\n")
-                for arg, type_hint in args_with_types:
-                    if docstring and "Parameters" in docstring:
-                        param_candidates = [p for p in docstring["Parameters"] if p.name == arg]
-                        if len(param_candidates) > 0:
-                            param = param_candidates[0]
-                            if len(param.desc) > 0:
-                                f.write(f"        **{arg}** : :obj:`~{param.type}`\n")
-                                f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
+                if docstring and "Parameters" in docstring:
+                    for param in docstring["Parameters"]:
+                        if len(param.desc) > 0:
+                            f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
+                            f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
+                            f.write("\n")
                     f.write("\n")
                 f.write("\n")
 
