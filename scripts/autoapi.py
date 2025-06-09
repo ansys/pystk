@@ -420,7 +420,7 @@ class ManualRSTGenerator:
         func_def : ast.FunctionDef
             Function definition in the AST.
         namespace : str
-            Namespace containing the enum.
+            Namespace containing the function.
         module_name : str
             Name of the module.
         module_rst_path : str
@@ -439,6 +439,17 @@ class ManualRSTGenerator:
                     f"{'=' * len(func_def.name)}\n\n",
                 ]
             )
+
+            # For graphs, insert test image
+            graph_module_list = ["access_graphs"]
+            if module_name in graph_module_list:
+                f.writelines(
+                    [
+                        f".. image:: /graph_images_temp/test_{func_def.name}.png\n",
+                        "    :width: 600\n",
+                        f"    :alt: image of output from {func_def.name}\n\n",
+                    ]
+                )
 
             arg_str = ManualRSTGenerator._parse_args(func_def)
             ret_type = ManualRSTGenerator._parse_return_type(func_def.returns)
