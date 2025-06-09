@@ -21,10 +21,7 @@
 # SOFTWARE.
 
 """
-PySTK Extensions.
+PySTK extensions package.
 
-A set of high-level workflows for automating common tasks with PySTK.
+A set of high-level workflows for automating common tasks with STK.
 """
-
-__version__ = "0.1.dev0"
-"""Current version of PySTK Extensions."""
