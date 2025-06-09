@@ -102,6 +102,8 @@ extensions = [
 # Intersphinx mapping
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
+    "pandas": ("http://pandas.pydata.org/pandas-docs/stable/", None),
+    "matplotlib": ('https://matplotlib.org/stable/', None),
 }
 
 # numpydoc configuration
