@@ -279,8 +279,10 @@ Method detail
 
     :Parameters:
 
-    **index_element_name** : :obj:`~str`
-    **data_provider_elements** : :obj:`~DataProviderElements`
+        **index_element_name** : :obj:`~str`
+
+        **data_provider_elements** : :obj:`~DataProviderElements`
+        
 
     :Returns:
 
