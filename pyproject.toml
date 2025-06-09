@@ -39,7 +39,6 @@ pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_mi
 # NOTE: The `project.optional-dependencies` section is used to define optional
 # dependencies that users can install to enable additional features.
 [project.optional-dependencies]
-<<<<<<< HEAD
 all = [
     # Target: grpc
     "grpcio>=1.71.0",
@@ -51,6 +50,7 @@ all = [
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
     "libcst>=1.7.0",
+]
 core = [
     # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
