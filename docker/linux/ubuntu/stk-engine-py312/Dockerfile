@@ -10,9 +10,11 @@ FROM ${basePythonImage} as builder
 # Install Python 3.12 and create a symbolic link named "python".
 USER root
 WORKDIR /tmp
-RUN wget --no-check-certificate https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tar.xz && \
-    tar xf Python-3.12.4.tar.xz
-WORKDIR /tmp/Python-3.12.4
+
+ENV PYTHON_VERSION="3.12.11"
+RUN wget --no-check-certificate https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz && \
+    tar xf Python-${version}.tar.xz
+WORKDIR /tmp/Python-${PYTHON_VERSION}
 RUN ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
     make altinstall
 
