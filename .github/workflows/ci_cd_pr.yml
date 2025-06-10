@@ -402,7 +402,7 @@ jobs:
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.11']
+        python: ['3.13']
       fail-fast: false
     steps:
 
