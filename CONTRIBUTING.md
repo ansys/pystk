@@ -71,12 +71,12 @@ Use the following commands to build the images for your target distribution:
     ```bash
     ~$ docker images
 
-    REPOSITORY   TAG                             IMAGE ID       CREATED          SIZE
-    ansys/stk    dev-ubuntu22.04-python3.12      a4a386f2963f   3 minutes ago    3.93GB
-    ansys/stk    dev-ubuntu22.04-python3.11      fcee62752a53   5 minutes ago    3.92GB
-    ansys/stk    dev-ubuntu22.04-python3.10      959f1cc2c56e   13 minutes ago   3.81GB
-    ansys/stk    dev-ubuntu22.04-pybase          7933c752272c   17 minutes ago   4.10GB
-    ansys/stk    dev-ubuntu22.04                 61025e53bdc9   21 minutes ago   3.31GB
+    REPOSITORY        TAG                          IMAGE ID       CREATED        SIZE
+    ansys/stk-12.10   dev-ubuntu22.04-python3.13   5a6ca2ffecae   4 hours ago    4.04GB
+    ansys/stk-12.10   dev-ubuntu22.04-python3.12   94bafab28a80   4 hours ago    4.03GB
+    ansys/stk-12.10   dev-ubuntu22.04-python3.11   97bdccd1c2a6   4 hours ago    4.03GB
+    ansys/stk-12.10   dev-ubuntu22.04-pybase       c9fb6e9502df   5 hours ago    4.21GB
+    ansys/stk-12.10   dev-ubuntu22.04              1e26759936b1   5 hours ago    3.42GB
     ```
 
 - **Windows**
@@ -123,7 +123,7 @@ use, for instance:
 After building the images and running a container, you can execute a command inside the container using:
 
 ```console
-tox -f docker-exec-{ubuntu,windows}_container-py311,py312,py313} -- {command}
+tox -f docker-exec-{ubuntu,windows}_container-{py311,py312,py313} -- {command}
 ```
 
 For instance, to run `ls -la` inside a previously started Ubuntu 22.04 Python 3.10 container, use:
