@@ -19,6 +19,21 @@ repos:
     - id: ruff-format
       exclude: "^src|^tests|^examples/.*_.*"
 
+# NOTE: Ruff does not check for python code in some part of the documentation,
+# e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
+- repo: https://github.com/adamchainz/blacken-docs
+  rev: 1.19.1
+  hooks:
+    - id: blacken-docs
+      additional_dependencies: [black==25.1.0]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: ^mon_projet/tests/
+
+
 - repo: https://github.com/codespell-project/codespell
   rev: v2.3.0
   hooks:
