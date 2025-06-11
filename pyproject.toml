@@ -8,7 +8,8 @@ dynamic = ["version"]
 description = "The next generation Python API for STK."
 readme = "README.rst"
 requires-python = ">=3.11"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
