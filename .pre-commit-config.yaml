@@ -31,7 +31,7 @@ repos:
   rev: v5.0.0
   hooks:
     - id: trailing-whitespace
-      exclude: ^mon_projet/tests/
+      exclude: "^tests/generated/data"
 
 
 - repo: https://github.com/codespell-project/codespell
