@@ -21,10 +21,14 @@
 # SOFTWARE.
 
 """
-PySTK Extensions.
+PySTK.
 
-A set of high-level workflows for automating common tasks with PySTK.
+The next generation Python API for Systems Tool Kit (STK).
 """
+ 
 
 __version__ = "0.1.dev0"
-"""Current version of PySTK Extensions."""
+"""Current version of PySTK."""
+
+__all__ = ["__version__"]
+"""Available modules when using wildcard import."""

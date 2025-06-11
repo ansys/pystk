@@ -21,10 +21,10 @@ from ansys_sphinx_theme import (
     get_version_match,
 )
 
-from ansys.stk.core import __version__
+from ansys.stk import __version__
 
 # Project information
-project = "ansys-stk-core"
+project = "ansys-stk"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
