@@ -227,10 +227,3 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
-
-[tool.bandit]
-skips = [
-    "B405", # Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks.
-    "B406", # Using escape to parse untrusted XML data is known to be vulnerable to XML attacks.
-    "B314", # Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks.
-]
