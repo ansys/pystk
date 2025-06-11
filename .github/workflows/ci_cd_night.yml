@@ -155,18 +155,14 @@ jobs:
     if: inputs.run-tests || github.event_name == 'schedule'
     strategy:
       matrix:
-        # TODO: restore support for Python 3.13
-        # https://github.com/ansys-internal/pystk/issues/557
-        python: ["3.11", "3.12"]
+        python: ["3.11", "3.12", "3.13"]
         is-weekly-run:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
           - is-weekly-run: true
             python: "3.11"
-          # TODO: restore support for Python 3.13
-          # https://github.com/ansys-internal/pystk/issues/557
-          #- is-weekly-run: true
-          #  python: "3.12"
+          - is-weekly-run: true
+            python: "3.12"
       fail-fast: false
     steps:
 
