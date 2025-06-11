@@ -1,7 +1,7 @@
 construct_scenario_from_dict
 ============================
 
-.. py:function:: construct_scenario_from_dict(root: STKObjectRoot, dict: dict) -> Scenario
+.. py:function:: construct_scenario_from_dict(root: ~STKObjectRoot, dictionary: ~dict) -> ~Scenario
     :canonical: ansys.stk.extensions.scenario_construction.construct_scenario_from_dict
 
     Create a scenario with sub-objects from a dictionary describing its structure.
@@ -16,6 +16,7 @@ construct_scenario_from_dict
 
         **dict** : :obj:`~dict`
         A dictionary describing the scenario to construct.
+
 
 
     :Returns:
