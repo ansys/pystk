@@ -2,7 +2,7 @@ services:
   stk-python3.13:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-python3.13
     container_name: stk-python3.13
-    build: 
+    build:
       context: .
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019
