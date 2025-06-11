@@ -102,6 +102,7 @@ doc = [
 vulnerabilities = [
     "bandit[toml]==1.8.3",
     "safety==3.3.0",
+    "defusedxml",
 ]
 
 [tool.flit.module]
