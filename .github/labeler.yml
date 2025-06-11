@@ -4,7 +4,7 @@
 # -- Labels based on PR title ------------------------------------------------
 'fix':
   - head-branch: ['fix']
-  
+
 'enhancement':
   - head-branch: ['feat']
 
