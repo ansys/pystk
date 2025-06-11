@@ -110,13 +110,13 @@ def test_rename_property_via_setattr():
                 found_prop.__set__(this, value)
             else:
                 raise RuntimeError(f"{attrname} is not a recognized attribute in {classType.__name__}.")
-            
+
         def set_class_attribute1(this, attrname, value, classType):
             set_class_attribute2(this, attrname, value, classType)
-            
+
         def set_class_attribute(this, attrname, value, classType):
             set_class_attribute1(this, attrname, value, classType)
-            
+
         class MyClass:
             def __init(self):
                 self.my_property = 0
