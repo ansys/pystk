@@ -187,10 +187,6 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.11 to ensure backwards compatibility with
-        # the lowest supported Python version. Testing against a single version
-        # minimizes the time for CI/CD runs.
-        #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
         python: ['3.11', '3.12']
