@@ -54,10 +54,8 @@ def access_duration_pie_graph(
         The newly created axes.
     """
     root = stk_obj.base.root
-    if start_time is None:
-        start_time = root.current_scenario.start_time
-    if stop_time is None:
-        stop_time = root.current_scenario.stop_time
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
     df = stk_obj.data_providers.item("Access Data").execute(start_time, stop_time).data_sets.to_pandas_dataframe()
     return pie_chart(root, df, ["duration"], [], "duration", "Access Duration", "Time", "access number")
 
@@ -86,10 +84,8 @@ def cumulative_dwell_cumulative_pie_graph(
         The newly created axes.
     """
     root = stk_obj.base.root
-    if start_time is None:
-        start_time = root.current_scenario.start_time
-    if stop_time is None:
-        stop_time = root.current_scenario.stop_time
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
     df = stk_obj.data_providers.item("Access Data").execute(start_time, stop_time).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
@@ -130,10 +126,8 @@ def revisit_diagram_interval_pie_graph(
         The newly created axes.
     """
     root = stk_obj.base.root
-    if start_time is None:
-        start_time = root.current_scenario.start_time
-    if stop_time is None:
-        stop_time = root.current_scenario.stop_time
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
     df = stk_obj.data_providers.item("Access Data").execute(start_time, stop_time).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
