@@ -152,16 +152,21 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: ${{ inputs.run-tests == 'true' }}
+    if: inputs.run-tests || github.event_name == 'schedule'
     strategy:
       matrix:
-        # Tests run against Python 3.11 to ensure backwards compatibility with
-        # the lowest supported Python version. Testing against a single version
-        # minimizes the time for CI/CD runs.
-        #
-        # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
-        # does not support ENV variable substitution in matrix definition
-        python: ['3.11']
+        # TODO: restore support for Python 3.13
+        # https://github.com/ansys-internal/pystk/issues/557
+        python: ["3.11", "3.12"]
+        is-weekly-run:
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
+        exclude:
+          - is-weekly-run: true
+            python: "3.11"
+          # TODO: restore support for Python 3.13
+          # https://github.com/ansys-internal/pystk/issues/557
+          #- is-weekly-run: true
+          #  python: "3.12"
       fail-fast: false
     steps:
 
