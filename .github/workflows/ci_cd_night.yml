@@ -42,7 +42,7 @@ jobs:
   build-wheelhouse:
     name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
     runs-on: ${{ matrix.os }}
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == 'true') || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name == 'schedule'
     permissions:
       attestations: write
       contents: read
@@ -152,7 +152,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == 'true') || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
     strategy:
       matrix:
         # TODO: restore support for Python 3.13
