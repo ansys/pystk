@@ -30,7 +30,7 @@ import os
 import pathlib
 import socket
 
-# The subprocess module is needed to start the backend. 
+# The subprocess module is needed to start the backend.
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
 import subprocess  # nosec B404
 import typing
@@ -71,12 +71,12 @@ class ThreadMarshaller(object):
         self._pStream = PVOID()
         if not Succeeded(OLE32Lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_iunknown), obj._intf.p, byref(self._pStream))):
             raise STKRuntimeError("ThreadMarshaller failed to initialize.")
-           
+
     def __del__(self):
         if self._pStream is not None:
             OLE32Lib.CoReleaseMarshalData(self._pStream)
         del(self._obj)
-       
+
     def get_marshalled_to_current_thread(self) -> typing.Any:
         """Return an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
@@ -95,11 +95,11 @@ class ThreadMarshaller(object):
         marshalled_obj._private_init(unknown)
         del(unknown)
         return marshalled_obj
-        
+
     def initialize_thread(self) -> None:
         """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
         OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
-        
+
     def release_thread(self) -> None:
         """Call in the destination thread after all calls to STK are finished."""
         OLE32Lib.CoUninitialize()
@@ -108,10 +108,10 @@ class STKDesktopApplication(UiApplication):
     """
     Interact with an STK Desktop application.
 
-    Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
+    Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication()
     to obtain an initialized STKDesktopApplication object.
     """
-    
+
     def __init__(self):
         """Construct an object of type STKDesktopApplication."""
         if os.name != "nt":
@@ -119,10 +119,10 @@ class STKDesktopApplication(UiApplication):
         self.__dict__["_intf"] = InterfaceProxy()
         UiApplication.__init__(self)
         self.__dict__["_root"] = None
-        
+
     def _private_init(self, intf: InterfaceProxy):
         UiApplication._private_init(self, intf)
-        
+
     def __del__(self):
         """Destruct the STKDesktopApplication object after all references to the object are deleted."""
         if self._intf and type(self._intf) is IUnknown:
@@ -138,7 +138,7 @@ class STKDesktopApplication(UiApplication):
         if self._intf:
             self.__dict__["_root"] = self.personality2
             return self.__dict__["_root"]
-            
+
     def new_object_model_context(self) -> STKObjectModelContext:
         """Create a new object model context for the STK Desktop application."""
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
@@ -151,16 +151,16 @@ class STKDesktopApplication(UiApplication):
         { "collection iteration batch size" : int }. Number of items to preload while iterating
         through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
         { "disable batching" : bool }. Disable all batching operations.
-        { "release batch size" : int }. Number of interfaces to be garbage collected before 
+        { "release batch size" : int }. Number of interfaces to be garbage collected before
         sending the entire batch to STK to be released. Default value is 12.
         """
         if hasattr(self._intf, "client"):
             self._intf.client.set_grpc_options(options)
-            
+
     def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-        
+
         If gRPC is not active, the batcher will be disabled.
         max_batch is the maximum number of calls to batch together.
         Set disable_batching=True to disable batching operations for this batcher.
@@ -172,7 +172,7 @@ class STKDesktopApplication(UiApplication):
         else:
             batcher = GrpcCallBatcher(disable_batching=True)
         return batcher
-    
+
     def shutdown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self._root is not None:
@@ -185,7 +185,7 @@ class STKDesktopApplication(UiApplication):
         else:
             self.quit()
             self.__dict__["_intf"] = InterfaceProxy()
-            
+
     def _disconnect_grpc(self) -> None:
         """Safely disconnect from STK."""
         if self._intf:
@@ -207,7 +207,7 @@ class STKDesktop(object):
                          grpc_timeout_sec:int=60,
                          grpc_max_message_size:int=0) -> STKDesktopApplication:
         """
-        Create a new STK Desktop application instance.  
+        Create a new STK Desktop application instance.
 
         Specify visible = True to show the application window.
         Specify user_control = True to return the application to the user's control.
@@ -251,7 +251,7 @@ class STKDesktop(object):
             if STKDesktop._disable_pop_ups:
                 cmd_line.append("/Automation")
 
-            # Calling subprocess.Popen (without shell equals true) to start the backend. 
+            # Calling subprocess.Popen (without shell equals true) to start the backend.
             # Excluding low severity bandit check as the validity of the inputs has been ensured.
             subprocess.Popen(cmd_line) # nosec B603
             host = grpc_host
@@ -276,7 +276,7 @@ class STKDesktop(object):
                     app.user_control = user_control
                     return app
             raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
-        
+
     @staticmethod
     def attach_to_application(pid:int=None, \
                             grpc_server:bool=False, \
@@ -285,7 +285,7 @@ class STKDesktop(object):
                             grpc_timeout_sec:int=60,
                             grpc_max_message_size:int=0) -> STKDesktopApplication:
         """
-        Attach to an existing STK Desktop instance. 
+        Attach to an existing STK Desktop instance.
 
         Specify the Process ID (PID) in case multiple processes are open.
         Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
@@ -328,7 +328,7 @@ class STKDesktop(object):
                     raise STKInitializationError("Failed to attach to an active STK 12 Application instance.")
         else:
             unknown = attach_to_stk_by_pid(pid)
-            if unknown is not None: 
+            if unknown is not None:
                 app = STKDesktopApplication()
                 app._private_init(unknown)
                 return app
@@ -346,7 +346,7 @@ class STKDesktop(object):
             raise STKRuntimeError("STKDesktop is only available on Windows.")
         EventSubscriptionManager.unsubscribe_all()
         ObjectLifetimeManager.release_all()
-        
+
     @staticmethod
     def create_thread_marshaller(stk_object:typing.Any) -> ThreadMarshaller:
         """

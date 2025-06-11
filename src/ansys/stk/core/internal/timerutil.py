@@ -55,15 +55,15 @@ class _ClockTimer(object):
         self.callback = TIMERPROC
         self.callback_data = callbackData
         self._reset()
-        
+
     def _reset(self):
         self.next_proc = time.clock_gettime(time.CLOCK_REALTIME) + self.interval
-        
+
     def fire(self):
         if time.clock_gettime(time.CLOCK_REALTIME) >= self.next_proc:
             self.callback(self.id)
             self._reset()
-            
+
     @staticmethod
     def next_time_proc(timers:dict):
         """Return time in sec until next timer proc"""
@@ -78,7 +78,7 @@ class _ClockTimer(object):
                 return delta_s
             else:
                 return 0
-    
+
 class NullTimer(object):
     def __init__(self):
         if os.name != "nt":
@@ -88,16 +88,16 @@ class NullTimer(object):
             UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
         else:
             pass
-        
+
     def terminate(self):
         pass
-        
+
     def __install_timer(self, milliseconds, TIMERPROC, callbackData):
         return 0
 
     def __delete_timer(self, timerID, callbackData):
         return 0
-    
+
 if os.name != "nt":
     try:
         from tkinter import Tcl
@@ -105,7 +105,7 @@ if os.name != "nt":
         class Tcl(object):
             def __init__(self):
                 raise STKInvalidTimerError("Cannot use STKEngineTimerType.TKINTER_MAIN_LOOP nor STKEngineTimerType.INTERACTIVE_PYTHON because tkinter installation is not found.")
-            
+
     class TclTimer(object):
         def __init__(self):
             self._next_id = 1
@@ -116,10 +116,10 @@ if os.name != "nt":
             UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self._tcl = Tcl()
             self._tcl.after(self._next_timer_proc(), self._loop_timers)
-            
+
         def terminate(self):
             del(self._tcl)
-            
+
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
             self._next_id = id + 1
@@ -130,20 +130,20 @@ if os.name != "nt":
             if timerID in self._timers:
                 del(self._timers[timerID])
             return 0
-            
+
         def _fire_timers(self):
             timers = self._timers.copy()
             for timerid in timers:
                 timers[timerid].fire()
-            
+
         def _next_timer_proc(self):
             """Return time in ms until next timer proc"""
             return int(_ClockTimer.next_time_proc(self._timers.copy())*1000)
-                    
+
         def _loop_timers(self):
             self._fire_timers()
             self._tcl.after(self._next_timer_proc(), self._loop_timers)
-        
+
     class SigAlarmTimer(object):
         def __init__(self):
             self._next_id = 1
@@ -153,11 +153,11 @@ if os.name != "nt":
             UtilLib.initialize()
             UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self.previous_sighandler = signal.signal(signal.SIGALRM, self._fire_timers)
-        
+
         def terminate(self):
             signal.setitimer(signal.ITIMER_REAL, 0, 0)
             signal.signal(signal.SIGALRM, self.previous_sighandler)
-                
+
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
             self._next_id = id + 1
@@ -169,13 +169,13 @@ if os.name != "nt":
             if timerID in self._timers:
                 del(self._timers[timerID])
             return 0
-            
+
         def _fire_timers(self, signo, frame):
             timers = self._timers.copy()
             for timerid in timers:
                 timers[timerid].fire()
             self._set_alarm_for_next_timer_proc()
-                    
+
         def _set_alarm_for_next_timer_proc(self):
             next_proc = _ClockTimer.next_time_proc(self._timers.copy())
             if next_proc > 0:
@@ -183,8 +183,8 @@ if os.name != "nt":
             else:
                 self._fire_timers(signal.SIGALRM, None)
                 self._set_alarm_for_next_timer_proc()
-            
-            
+
+
     class SigRtTimer(object):
         def __init__(self, signo):
             self._next_id = 1
@@ -193,12 +193,11 @@ if os.name != "nt":
             self.previous_sighandler = signal.signal(self._signo, self._fire_timers)
             UtilLib.initialize()
             UtilLib.initialize_librt_timers(self._signo)
-            
+
         def terminate(self):
             UtilLib.uninitialize_librt_timers()
             signal.signal(self._signo, self.previous_sighandler)
-            
+
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()
 
-    

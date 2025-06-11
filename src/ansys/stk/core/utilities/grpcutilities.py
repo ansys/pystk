@@ -42,35 +42,35 @@ except ImportError:
 class GrpcCallBatcher(object):
     """
     A class used to batch together API calls to optimize performance.
-    
-    Activating batching will cause the normal API exception behavior to be 
+
+    Activating batching will cause the normal API exception behavior to be
     altered. Exceptions from one command may appear asynchronously. Therefore
     it is not recommended to use call batching while building and debugging,
     but rather as a performance optimization.
-    
-    Only calls that do not return a value may be batched together, 
+
+    Only calls that do not return a value may be batched together,
     such as set-property requests and methods without a return value.
-    Any method that has a return value (including get-property requests) 
-    will automatically execute any previously batched commands before the 
+    Any method that has a return value (including get-property requests)
+    will automatically execute any previously batched commands before the
     method with a return value is executed.
 
-    Therefore, to reduce the number of remote API requests and improve 
+    Therefore, to reduce the number of remote API requests and improve
     performance, code must be organized to group together commands that
     do not have a return value. Call chaining will interrupt a batch request
     because of the get-property command within the chain. E.g.:
 
         root.CurrentScenario.ShortDescription = short_description
         root.CurrentScenario.LongDescription = long_description
-    
+
     will not be batched together because the call to `CurrentScenario` will
-    get the scenario via an API call. These commands may be batched by 
+    get the scenario via an API call. These commands may be batched by
     factoring out the call chaining:
 
         scen = root.CurrentScenario
         scen.ShortDescription = short_description
         scen.LongDescription = long_description
 
-    This class may be used via the explicit commands or by using the "with" 
+    This class may be used via the explicit commands or by using the "with"
     statement to batch together the commands within the statement block.
     e.g.
 
@@ -95,7 +95,7 @@ class GrpcCallBatcher(object):
     def _reset(self):
         self._next_future_id = 1
         self._unbound_futures = {}
-    
+
     def _private_init(self, client:"GrpcClient", max_batch:int=None) -> None:
         self._initialized = True
         self._client = client
@@ -105,13 +105,13 @@ class GrpcCallBatcher(object):
             if max_batch > GrpcCallBatcher._default_max_batch_size:
                 raise GrpcUtilitiesError(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
             self._max_batch = max_batch
-        
+
     def __enter__(self):
         """Use GrpcCallBatcher with the "with" statement to activate batching."""
         if not self._disable_batching:
             self.start_batching()
         return self
-    
+
     def __exit__(self, type, value, tb):
         """Use GrpcCallBatcher with the "with" statement to deactivate batching."""
         if not self._disable_batching:
@@ -184,7 +184,7 @@ class GrpcCallBatcher(object):
     def create_future(self, source_obj:typing.Any, future_provider:typing.Union[typing.Callable, property], future_type:typing.Any, *args) -> typing.Any:
         """
         Create an object of type future_type that supports batching operations.
-        
+
         source_obj is an STK Object Model type, e.g. STKObjectRoot.
         future_provider is a member method or property of source_obj, e.g. STKObjectRoot.CurrentScenario.
         future_type is the STK Object Model type that is returned from future_provider, e.g. Scenario.
@@ -206,4 +206,3 @@ class GrpcCallBatcher(object):
         self._unbound_futures[self._next_future_id] = intf_pimpl
         self._next_future_id += 1
         return future
-        

@@ -22,112 +22,112 @@
 
 """Object Model components specifically designed to support STK Astrogator."""
 
-__all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "AscentType", "AtmosphereDataSource", "AttitudeControl", 
-"AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", "AttitudeControlFiniteFile", "AttitudeControlFinitePlugin", 
-"AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", "AttitudeControlFiniteVelocityVector", "AttitudeControlImpulsiveAntiVelocityVector", 
-"AttitudeControlImpulsiveAttitude", "AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", "AttitudeControlImpulsiveVelocityVector", 
-"AttitudeControlOptimalFiniteLagrange", "AttitudeUpdate", "AutomaticSequence", "AutomaticSequenceCollection", "BDotRCalc", 
-"BDotTCalc", "BMagnitudeCalc", "BPlaneCollection", "BThetaCalc", "BaseSelection", "BisectionControl", "BisectionControlCollection", 
-"BisectionResult", "BisectionResultCollection", "BlendedDensity", "BodyAxis", "BulirschStoerIntegrator", "BurnoutCBFCartesian", 
-"BurnoutGeocentric", "BurnoutGeodetic", "BurnoutLaunchAzAltitude", "BurnoutLaunchAzRadius", "BurnoutOptions", "BurnoutType", 
-"BurnoutVelocity", "CR3BPFunction", "CalculationGraphCollection", "CalculationObjectAngleSign", "CalculationObjectCentralBodyReference", 
-"CalculationObjectCollection", "CalculationObjectDirection", "CalculationObjectElement", "CalculationObjectLinkEmbedControlCollection", 
-"CalculationObjectLocationSource", "CalculationObjectOrbitPlaneSource", "CalculationObjectReference", "CalculationObjectReferenceDirection", 
-"CalculationObjectReferenceEllipse", "CalculationObjectRelativePosition", "CalculationObjectSunPosition", "CentralBodyAttitude", 
-"CentralBodyComponent", "CentralBodyComponentAttitudeIAU1994", "CentralBodyComponentAttitudeRotationCoefficientsFile", "CentralBodyComponentCollection", 
-"CentralBodyComponentEphemerisAnalyticOrbit", "CentralBodyComponentEphemerisFile", "CentralBodyComponentEphemerisJPLDesignExplorerOptimizer", 
-"CentralBodyComponentEphemerisJPLSpice", "CentralBodyComponentEphemerisPlanetary", "CentralBodyComponentGravityModel", "CentralBodyComponentShapeOblateSpheroid", 
-"CentralBodyComponentShapeSphere", "CentralBodyComponentShapeTriaxialEllipsoid", "CentralBodyEphemeris", "CentralBodyGravityModel", 
-"CentralBodyShape", "Cira72Function", "ClearEphemerisDirection", "CoeffRungeKuttaV8th9th", "ComplexNumber", "ConstraintCollection", 
-"ConstraintSign", "ControlAdvanced", "ControlEngineConstant", "ControlEngineConstantAcceleration", "ControlEngineCustom", 
-"ControlEngineIon", "ControlEngineModelPolynomial", "ControlEngineThrottleTable", "ControlFollow", "ControlInitState", "ControlLaunch", 
-"ControlManeuver", "ControlOrbitStateValue", "ControlPowerInternal", "ControlPowerProcessed", "ControlPowerSolarArray", 
-"ControlRepeatingGroundTrackErr", "ControlStoppingCondition", "ControlThrusters", "ControlUpdate", "ConvergenceCriteria", 
-"Criteria", "Criterion", "CustomFunction", "CustomFunctionScriptEngine", "DTM2012", "DTM2020", "DensityModelPlugin", "DerivativeCalculationMethod", 
-"DesignCR3BPObject", "DesignCR3BPObjectCollection", "DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection", 
-"DesignER3BPSetup", "DifferenceOrder", "DifferentialCorrectorControl", "DifferentialCorrectorControlCollection", "DifferentialCorrectorResult", 
-"DifferentialCorrectorResultCollection", "DifferentialCorrectorScalingMethod", "DisplaySystemGeocentric", "DisplaySystemGeodetic", 
-"DragModelPlugin", "DragModelType", "DrawPerturbation", "EOMFuncPluginFunction", "ER3BPFunc", "EclipsingBodiesSource", "ElementBPlane", 
-"ElementCartesian", "ElementDelaunay", "ElementEquinoctial", "ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical", 
-"ElementSetType", "ElementSpherical", "ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", "ElementTargetVectorOutgoingAsymptote", 
-"ElementType", "EngineConstant", "EngineConstantAcceleration", "EngineCustom", "EngineDefinition", "EngineIon", "EngineModelFunction", 
-"EngineModelIspCoefficients", "EngineModelPolynomial", "EngineModelThrustCoefficients", "EnginePlugin", "EngineThrottleTable", 
-"EphemerisSource", "ErrorControl", "Exponential", "FollowJoin", "FollowSeparation", "FollowSpacecraftAndFuelTank", "Formulation", 
-"FuelTank", "GaussJacksonIntegrator", "GeneralRelativityFunction", "GeoMagneticFluxSource", "GeoMagneticFluxUpdateRate", 
-"GeoStationaryDriftRateModel", "GeoStationaryInclinationMagnitude", "GoldenSectionControl", "GoldenSectionControlCollection", 
-"GoldenSectionDesiredOperation", "GoldenSectionResult", "GoldenSectionResultCollection", "GraphOption", "GravParamSource", 
-"GravitationalParameterSource", "GravityCoefficientNormalizationType", "GravityCoefficientType", "GravityFieldFunction", 
-"GridSearchControl", "GridSearchControlCollection", "GridSearchDesiredOperation", "GridSearchResult", "GridSearchResultCollection", 
-"HPOPPluginFunction", "HarrisPriester", "IAttitudeControl", "IAttitudeControlFinite", "IAttitudeControlImpulsive", "IAttitudeControlOptimalFinite", 
-"IBurnout", "ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris", "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides", 
-"ICentralBodyComponentShape", "IDisplaySystem", "IElement", "IMCSSegment", "IMCSSequence", "IManeuver", "INumericalIntegrator", 
-"IPOPTControl", "IPOPTControlCollection", "IPOPTGoal", "IPOPTResult", "IPOPTResultCollection", "IProfile", "IStoppingConditionComponent", 
-"IdealOrbitRadius", "ImpulsiveDeltaVRepresentation", "Jacchia1960", "Jacchia1970", "Jacchia1971", "JacchiaBowman2008", "JacchiaRoberts", 
-"LambertDirectionOfMotionType", "LambertOrbitalEnergyType", "LambertSolutionOptionType", "LambertTargetCoordinateType", 
-"Language", "LaunchDisplaySystem", "LightingCondition", "LightingStoppingCondition", "MCSBackwardSequence", "MCSDriver", 
-"MCSEnd", "MCSFollow", "MCSHold", "MCSInitialState", "MCSLaunch", "MCSManeuver", "MCSOptions", "MCSPropagate", "MCSReturn", 
-"MCSSegmentCollection", "MCSSegmentProperties", "MCSSequence", "MCSStop", "MCSTargetSequence", "MCSUpdate", "MSIS1986", 
-"MSISE1990", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", 
-"ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions", 
-"ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", "ManeuverOptimalFiniteSteeringNodeElement", 
-"ManeuverType", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NRLMSISE2000", 
-"NumericalIntegrator", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OptimalFiniteDiscretizationStrategy", 
-"OptimalFiniteExportNodesFormat", "OptimalFiniteGuessMethod", "OptimalFiniteRunMode", "OptimalFiniteSNOPTObjective", "OptimalFiniteSNOPTScaling", 
-"OptimalFiniteScalingOptions", "OptimalFiniteSeedMethod", "OptimalFiniteWorkingVariables", "PluginProperties", "PointMassFunction", 
-"PowerInternal", "PowerProcessed", "PowerSolarArray", "PredictorCorrector", "PressureMode", "Profile", "ProfileBisection", 
-"ProfileChangeManeuverType", "ProfileChangePropagator", "ProfileChangeReturnSegment", "ProfileChangeStopSegment", "ProfileChangeStoppingConditionState", 
-"ProfileCollection", "ProfileDifferentialCorrector", "ProfileGoldenSection", "ProfileGridSearch", "ProfileIPOPTOptimizer", 
-"ProfileInsertDirection", "ProfileLambertProfile", "ProfileLambertSearchProfile", "ProfileMode", "ProfileRunOnce", "ProfileSNOPTOptimizer", 
-"ProfileScriptingTool", "ProfileSearchPlugin", "ProfileSeedFiniteManeuver", "ProfilesFinish", "PropagatorFunctionCollection", 
-"PropulsionMethod", "RadiationPressureFunction", "ReferenceRadiusSource", "ReturnControl", "RootFindingAlgorithm", "RotatingCoordinateSystem", 
-"RunCode", "RungeKutta2nd3rd", "RungeKutta4th", "RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", "RungeKuttaV8th9th", 
-"SNOPTControl", "SNOPTControlCollection", "SNOPTGoal", "SNOPTResult", "SNOPTResultCollection", "SRPAerospaceT20", "SRPAerospaceT30", 
-"SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR", "SRPNPlate", "SRPReflectionPlugin", "SRPSpherical", 
-"SRPTabulatedAreaVector", "SRPVariableArea", "STMEigenNumber", "STMPerturbationVariables", "ScriptingCalculationObject", 
-"ScriptingCalculationObjectCollection", "ScriptingParameter", "ScriptingParameterCollection", "ScriptingParameterEnumerationChoice", 
-"ScriptingParameterEnumerationChoiceCollection", "ScriptingParameterType", "ScriptingSegment", "ScriptingSegmentCollection", 
-"ScriptingTool", "SearchPluginControl", "SearchPluginControlCollection", "SearchPluginResult", "SearchPluginResultCollection", 
-"SegmentDifferenceOrder", "SegmentState", "SegmentType", "SequenceStateToPass", "ShadowModel", "SmartRunMode", "SolarForceMethod", 
-"SpacecraftParameters", "SquaredType", "State", "StateCalcAbsoluteValue", "StateCalcAltitudeOfApoapsis", "StateCalcAltitudeOfPeriapsis", 
-"StateCalcAngle", "StateCalcApparentSolarTime", "StateCalcArgumentOfLatitude", "StateCalcArgumentOfPeriapsis", "StateCalcBetaAngle", 
-"StateCalcC3Energy", "StateCalcCartSTMElem", "StateCalcCartesianElem", "StateCalcCd", "StateCalcCloseApproachBearing", "StateCalcCloseApproachCosBearing", 
-"StateCalcCloseApproachMagnitude", "StateCalcCloseApproachTheta", "StateCalcCloseApproachX", "StateCalcCloseApproachY", 
-"StateCalcCosOfVerticalFlightPathAngle", "StateCalcCr", "StateCalcCurvilinearRelativeMotion", "StateCalcCustomFunction", 
-"StateCalcDamageFlux", "StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", "StateCalcDeltaFromMaster", 
-"StateCalcDeltaRA", "StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", "StateCalcDifferenceAcrossSegmentsOtherSatellite", 
-"StateCalcDifferenceOtherSegment", "StateCalcDotProduct", "StateCalcDragArea", "StateCalcDriftRateFactor", "StateCalcDuration", 
-"StateCalcEarthMeanLocalTimeOfAscendingNode", "StateCalcEarthMeanSolarTime", "StateCalcEccentricity", "StateCalcEccentricityAnomaly", 
-"StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment", "StateCalcEpoch", "StateCalcEquinoctialElem", 
-"StateCalcFlightPathAngle", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGeodeticMeanRightAscension", "StateCalcGeodeticTrueLongitude", 
-"StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", "StateCalcHeightAboveTerrain", 
-"StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", "StateCalcInVelocityAzAtPeriapsis", 
-"StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", "StateCalcInertialDeltaVx", 
-"StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", "StateCalcLocalApparentSolarLon", 
-"StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMCSDeltaV", "StateCalcMCSDeltaVSquared", 
-"StateCalcMagneticFieldDipoleL", "StateCalcManeuverSpecificImpulse", "StateCalcManeuverTotalMassFlowRate", "StateCalcMass", 
-"StateCalcMaxValue", "StateCalcMeanAnomaly", "StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension", 
-"StateCalcMeanValue", "StateCalcMedianValue", "StateCalcMinValue", "StateCalcNegative", "StateCalcNumRevs", "StateCalcOnePointAccess", 
-"StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod", "StateCalcOrbitSemilatusRectum", 
-"StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelocityAzAtPeriapsis", "StateCalcPi", 
-"StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", 
-"StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis", 
-"StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", "StateCalcRectifiedLon", 
-"StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster", "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination", 
-"StateCalcRelativeMotion", "StateCalcRelativePositionDecAngle", "StateCalcRelativePositionInPlaneAngle", "StateCalcRepeatingGroundTrackErr", 
-"StateCalcSEETMagneticFieldLineSeparationAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea", "StateCalcSTMEigenval", 
-"StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemimajorAxis", "StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", 
-"StateCalcSignedEccentricity", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation", 
-"StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon", 
-"StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY", 
-"StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", 
-"StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX", 
-"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz", "StateCalcVelocityDifferenceOtherSegment", "StateTransformationFunction", 
-"StateType", "StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "StoppingConditionType", "SunPosition", 
-"TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", 
-"TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode", 
-"ThrottleTableOperationMode", "ThrustType", "Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", 
-"USStandardAtmosphere", "UpdateAction", "UpdateParam", "UserVariable", "UserVariableCollection", "UserVariableDefinition", 
-"UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType", 
+__all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "AscentType", "AtmosphereDataSource", "AttitudeControl",
+"AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", "AttitudeControlFiniteFile", "AttitudeControlFinitePlugin",
+"AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", "AttitudeControlFiniteVelocityVector", "AttitudeControlImpulsiveAntiVelocityVector",
+"AttitudeControlImpulsiveAttitude", "AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", "AttitudeControlImpulsiveVelocityVector",
+"AttitudeControlOptimalFiniteLagrange", "AttitudeUpdate", "AutomaticSequence", "AutomaticSequenceCollection", "BDotRCalc",
+"BDotTCalc", "BMagnitudeCalc", "BPlaneCollection", "BThetaCalc", "BaseSelection", "BisectionControl", "BisectionControlCollection",
+"BisectionResult", "BisectionResultCollection", "BlendedDensity", "BodyAxis", "BulirschStoerIntegrator", "BurnoutCBFCartesian",
+"BurnoutGeocentric", "BurnoutGeodetic", "BurnoutLaunchAzAltitude", "BurnoutLaunchAzRadius", "BurnoutOptions", "BurnoutType",
+"BurnoutVelocity", "CR3BPFunction", "CalculationGraphCollection", "CalculationObjectAngleSign", "CalculationObjectCentralBodyReference",
+"CalculationObjectCollection", "CalculationObjectDirection", "CalculationObjectElement", "CalculationObjectLinkEmbedControlCollection",
+"CalculationObjectLocationSource", "CalculationObjectOrbitPlaneSource", "CalculationObjectReference", "CalculationObjectReferenceDirection",
+"CalculationObjectReferenceEllipse", "CalculationObjectRelativePosition", "CalculationObjectSunPosition", "CentralBodyAttitude",
+"CentralBodyComponent", "CentralBodyComponentAttitudeIAU1994", "CentralBodyComponentAttitudeRotationCoefficientsFile", "CentralBodyComponentCollection",
+"CentralBodyComponentEphemerisAnalyticOrbit", "CentralBodyComponentEphemerisFile", "CentralBodyComponentEphemerisJPLDesignExplorerOptimizer",
+"CentralBodyComponentEphemerisJPLSpice", "CentralBodyComponentEphemerisPlanetary", "CentralBodyComponentGravityModel", "CentralBodyComponentShapeOblateSpheroid",
+"CentralBodyComponentShapeSphere", "CentralBodyComponentShapeTriaxialEllipsoid", "CentralBodyEphemeris", "CentralBodyGravityModel",
+"CentralBodyShape", "Cira72Function", "ClearEphemerisDirection", "CoeffRungeKuttaV8th9th", "ComplexNumber", "ConstraintCollection",
+"ConstraintSign", "ControlAdvanced", "ControlEngineConstant", "ControlEngineConstantAcceleration", "ControlEngineCustom",
+"ControlEngineIon", "ControlEngineModelPolynomial", "ControlEngineThrottleTable", "ControlFollow", "ControlInitState", "ControlLaunch",
+"ControlManeuver", "ControlOrbitStateValue", "ControlPowerInternal", "ControlPowerProcessed", "ControlPowerSolarArray",
+"ControlRepeatingGroundTrackErr", "ControlStoppingCondition", "ControlThrusters", "ControlUpdate", "ConvergenceCriteria",
+"Criteria", "Criterion", "CustomFunction", "CustomFunctionScriptEngine", "DTM2012", "DTM2020", "DensityModelPlugin", "DerivativeCalculationMethod",
+"DesignCR3BPObject", "DesignCR3BPObjectCollection", "DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection",
+"DesignER3BPSetup", "DifferenceOrder", "DifferentialCorrectorControl", "DifferentialCorrectorControlCollection", "DifferentialCorrectorResult",
+"DifferentialCorrectorResultCollection", "DifferentialCorrectorScalingMethod", "DisplaySystemGeocentric", "DisplaySystemGeodetic",
+"DragModelPlugin", "DragModelType", "DrawPerturbation", "EOMFuncPluginFunction", "ER3BPFunc", "EclipsingBodiesSource", "ElementBPlane",
+"ElementCartesian", "ElementDelaunay", "ElementEquinoctial", "ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical",
+"ElementSetType", "ElementSpherical", "ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", "ElementTargetVectorOutgoingAsymptote",
+"ElementType", "EngineConstant", "EngineConstantAcceleration", "EngineCustom", "EngineDefinition", "EngineIon", "EngineModelFunction",
+"EngineModelIspCoefficients", "EngineModelPolynomial", "EngineModelThrustCoefficients", "EnginePlugin", "EngineThrottleTable",
+"EphemerisSource", "ErrorControl", "Exponential", "FollowJoin", "FollowSeparation", "FollowSpacecraftAndFuelTank", "Formulation",
+"FuelTank", "GaussJacksonIntegrator", "GeneralRelativityFunction", "GeoMagneticFluxSource", "GeoMagneticFluxUpdateRate",
+"GeoStationaryDriftRateModel", "GeoStationaryInclinationMagnitude", "GoldenSectionControl", "GoldenSectionControlCollection",
+"GoldenSectionDesiredOperation", "GoldenSectionResult", "GoldenSectionResultCollection", "GraphOption", "GravParamSource",
+"GravitationalParameterSource", "GravityCoefficientNormalizationType", "GravityCoefficientType", "GravityFieldFunction",
+"GridSearchControl", "GridSearchControlCollection", "GridSearchDesiredOperation", "GridSearchResult", "GridSearchResultCollection",
+"HPOPPluginFunction", "HarrisPriester", "IAttitudeControl", "IAttitudeControlFinite", "IAttitudeControlImpulsive", "IAttitudeControlOptimalFinite",
+"IBurnout", "ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris", "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides",
+"ICentralBodyComponentShape", "IDisplaySystem", "IElement", "IMCSSegment", "IMCSSequence", "IManeuver", "INumericalIntegrator",
+"IPOPTControl", "IPOPTControlCollection", "IPOPTGoal", "IPOPTResult", "IPOPTResultCollection", "IProfile", "IStoppingConditionComponent",
+"IdealOrbitRadius", "ImpulsiveDeltaVRepresentation", "Jacchia1960", "Jacchia1970", "Jacchia1971", "JacchiaBowman2008", "JacchiaRoberts",
+"LambertDirectionOfMotionType", "LambertOrbitalEnergyType", "LambertSolutionOptionType", "LambertTargetCoordinateType",
+"Language", "LaunchDisplaySystem", "LightingCondition", "LightingStoppingCondition", "MCSBackwardSequence", "MCSDriver",
+"MCSEnd", "MCSFollow", "MCSHold", "MCSInitialState", "MCSLaunch", "MCSManeuver", "MCSOptions", "MCSPropagate", "MCSReturn",
+"MCSSegmentCollection", "MCSSegmentProperties", "MCSSequence", "MCSStop", "MCSTargetSequence", "MCSUpdate", "MSIS1986",
+"MSISE1990", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds",
+"ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions",
+"ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", "ManeuverOptimalFiniteSteeringNodeElement",
+"ManeuverType", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NRLMSISE2000",
+"NumericalIntegrator", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OptimalFiniteDiscretizationStrategy",
+"OptimalFiniteExportNodesFormat", "OptimalFiniteGuessMethod", "OptimalFiniteRunMode", "OptimalFiniteSNOPTObjective", "OptimalFiniteSNOPTScaling",
+"OptimalFiniteScalingOptions", "OptimalFiniteSeedMethod", "OptimalFiniteWorkingVariables", "PluginProperties", "PointMassFunction",
+"PowerInternal", "PowerProcessed", "PowerSolarArray", "PredictorCorrector", "PressureMode", "Profile", "ProfileBisection",
+"ProfileChangeManeuverType", "ProfileChangePropagator", "ProfileChangeReturnSegment", "ProfileChangeStopSegment", "ProfileChangeStoppingConditionState",
+"ProfileCollection", "ProfileDifferentialCorrector", "ProfileGoldenSection", "ProfileGridSearch", "ProfileIPOPTOptimizer",
+"ProfileInsertDirection", "ProfileLambertProfile", "ProfileLambertSearchProfile", "ProfileMode", "ProfileRunOnce", "ProfileSNOPTOptimizer",
+"ProfileScriptingTool", "ProfileSearchPlugin", "ProfileSeedFiniteManeuver", "ProfilesFinish", "PropagatorFunctionCollection",
+"PropulsionMethod", "RadiationPressureFunction", "ReferenceRadiusSource", "ReturnControl", "RootFindingAlgorithm", "RotatingCoordinateSystem",
+"RunCode", "RungeKutta2nd3rd", "RungeKutta4th", "RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", "RungeKuttaV8th9th",
+"SNOPTControl", "SNOPTControlCollection", "SNOPTGoal", "SNOPTResult", "SNOPTResultCollection", "SRPAerospaceT20", "SRPAerospaceT30",
+"SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR", "SRPNPlate", "SRPReflectionPlugin", "SRPSpherical",
+"SRPTabulatedAreaVector", "SRPVariableArea", "STMEigenNumber", "STMPerturbationVariables", "ScriptingCalculationObject",
+"ScriptingCalculationObjectCollection", "ScriptingParameter", "ScriptingParameterCollection", "ScriptingParameterEnumerationChoice",
+"ScriptingParameterEnumerationChoiceCollection", "ScriptingParameterType", "ScriptingSegment", "ScriptingSegmentCollection",
+"ScriptingTool", "SearchPluginControl", "SearchPluginControlCollection", "SearchPluginResult", "SearchPluginResultCollection",
+"SegmentDifferenceOrder", "SegmentState", "SegmentType", "SequenceStateToPass", "ShadowModel", "SmartRunMode", "SolarForceMethod",
+"SpacecraftParameters", "SquaredType", "State", "StateCalcAbsoluteValue", "StateCalcAltitudeOfApoapsis", "StateCalcAltitudeOfPeriapsis",
+"StateCalcAngle", "StateCalcApparentSolarTime", "StateCalcArgumentOfLatitude", "StateCalcArgumentOfPeriapsis", "StateCalcBetaAngle",
+"StateCalcC3Energy", "StateCalcCartSTMElem", "StateCalcCartesianElem", "StateCalcCd", "StateCalcCloseApproachBearing", "StateCalcCloseApproachCosBearing",
+"StateCalcCloseApproachMagnitude", "StateCalcCloseApproachTheta", "StateCalcCloseApproachX", "StateCalcCloseApproachY",
+"StateCalcCosOfVerticalFlightPathAngle", "StateCalcCr", "StateCalcCurvilinearRelativeMotion", "StateCalcCustomFunction",
+"StateCalcDamageFlux", "StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", "StateCalcDeltaFromMaster",
+"StateCalcDeltaRA", "StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", "StateCalcDifferenceAcrossSegmentsOtherSatellite",
+"StateCalcDifferenceOtherSegment", "StateCalcDotProduct", "StateCalcDragArea", "StateCalcDriftRateFactor", "StateCalcDuration",
+"StateCalcEarthMeanLocalTimeOfAscendingNode", "StateCalcEarthMeanSolarTime", "StateCalcEccentricity", "StateCalcEccentricityAnomaly",
+"StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment", "StateCalcEpoch", "StateCalcEquinoctialElem",
+"StateCalcFlightPathAngle", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGeodeticMeanRightAscension", "StateCalcGeodeticTrueLongitude",
+"StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", "StateCalcHeightAboveTerrain",
+"StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", "StateCalcInVelocityAzAtPeriapsis",
+"StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", "StateCalcInertialDeltaVx",
+"StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", "StateCalcLocalApparentSolarLon",
+"StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMCSDeltaV", "StateCalcMCSDeltaVSquared",
+"StateCalcMagneticFieldDipoleL", "StateCalcManeuverSpecificImpulse", "StateCalcManeuverTotalMassFlowRate", "StateCalcMass",
+"StateCalcMaxValue", "StateCalcMeanAnomaly", "StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension",
+"StateCalcMeanValue", "StateCalcMedianValue", "StateCalcMinValue", "StateCalcNegative", "StateCalcNumRevs", "StateCalcOnePointAccess",
+"StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod", "StateCalcOrbitSemilatusRectum",
+"StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelocityAzAtPeriapsis", "StateCalcPi",
+"StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure",
+"StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis",
+"StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", "StateCalcRectifiedLon",
+"StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster", "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination",
+"StateCalcRelativeMotion", "StateCalcRelativePositionDecAngle", "StateCalcRelativePositionInPlaneAngle", "StateCalcRepeatingGroundTrackErr",
+"StateCalcSEETMagneticFieldLineSeparationAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea", "StateCalcSTMEigenval",
+"StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemimajorAxis", "StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared",
+"StateCalcSignedEccentricity", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation",
+"StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon",
+"StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY",
+"StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat",
+"StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX",
+"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz", "StateCalcVelocityDifferenceOtherSegment", "StateTransformationFunction",
+"StateType", "StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "StoppingConditionType", "SunPosition",
+"TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection",
+"TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode",
+"ThrottleTableOperationMode", "ThrustType", "Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction",
+"USStandardAtmosphere", "UpdateAction", "UpdateParam", "UserVariable", "UserVariableCollection", "UserVariableDefinition",
+"UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType",
 "YarkovskyFunc"]
 
 from ctypes import POINTER
@@ -167,7 +167,7 @@ def _raise_uninitialized_error(*args):
 
 class GraphOption(IntEnum):
     """Mode that the mcs will run in."""
-   
+
     NO_GRAPH = 0
     """Don't graph."""
     GRAPH_DIFFERENCE = 1
@@ -183,7 +183,7 @@ agcls.AgTypeNameMap["GraphOption"] = GraphOption
 
 class SmartRunMode(IntEnum):
     """Mode that the mcs will run in."""
-   
+
     ENTIRE_MCS = 0
     """Run Entire Mission Control Sequence."""
     ONLY_CHANGED = 1
@@ -196,7 +196,7 @@ agcls.AgTypeNameMap["SmartRunMode"] = SmartRunMode
 
 class Formulation(IntEnum):
     """Equinoctial Formulation."""
-   
+
     POSIGRADE = 0
     """Posigrade."""
     RETROGRADE = 1
@@ -209,7 +209,7 @@ agcls.AgTypeNameMap["Formulation"] = Formulation
 
 class LightingCondition(IntEnum):
     """The criteria of a Lighting stopping condition."""
-   
+
     CRITERION_ENTER_DIRECT_SUN = 0
     """The Enter Direct Sun criterion."""
     CRITERION_EXIT_DIRECT_SUN = 1
@@ -228,7 +228,7 @@ agcls.AgTypeNameMap["LightingCondition"] = LightingCondition
 
 class Profile(IntEnum):
     """Type of profile."""
-   
+
     SEARCH_PLUGIN = 0
     """Plugin search profile."""
     DIFFERENTIAL_CORRECTOR = 2
@@ -286,7 +286,7 @@ agcls.AgTypeNameMap["Profile"] = Profile
 
 class AccessCriterion(IntEnum):
     """The criteria of an Access stopping condition."""
-   
+
     GAIN = 0
     """The Gain Access criterion."""
     LOSE = 1
@@ -302,7 +302,7 @@ agcls.AgTypeNameMap["AccessCriterion"] = AccessCriterion
 
 class EclipsingBodiesSource(IntEnum):
     """The source types of the eclipsing bodies list."""
-   
+
     PROPAGATOR_CENTRAL_BODY = 0
     """The eclipsing bodies list of the propagator's central body."""
     USER_DEFINED = 1
@@ -321,7 +321,7 @@ agcls.AgTypeNameMap["EclipsingBodiesSource"] = EclipsingBodiesSource
 
 class Criterion(IntEnum):
     """The stopping condition criterion types."""
-   
+
     CROSS_DECREASING = 0
     """The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."""
     CROSS_EITHER = 1
@@ -337,7 +337,7 @@ agcls.AgTypeNameMap["Criterion"] = Criterion
 
 class CalculationObjectReference(IntEnum):
     """The calculation object Reference Selection types."""
-   
+
     BASIC = 0
     """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     SPECIFIED = 1
@@ -350,7 +350,7 @@ agcls.AgTypeNameMap["CalculationObjectReference"] = CalculationObjectReference
 
 class CalculationObjectCentralBodyReference(IntEnum):
     """The calculation object Central Body Reference Selection types."""
-   
+
     SPECIFIED = 0
     """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     PARENT = 1
@@ -363,7 +363,7 @@ agcls.AgTypeNameMap["CalculationObjectCentralBodyReference"] = CalculationObject
 
 class CalculationObjectElement(IntEnum):
     """The calculation object Element Types."""
-   
+
     BROUWER_LYDDANE_MEAN_LONG = 0
     """Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."""
     BROUWER_LYDDANE_MEAN_SHORT = 1
@@ -382,7 +382,7 @@ agcls.AgTypeNameMap["CalculationObjectElement"] = CalculationObjectElement
 
 class ProfileMode(IntEnum):
     """The Target Sequence profile modes."""
-   
+
     ITERATE = 0
     """Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."""
     NOT_ACTIVE = 1
@@ -401,7 +401,7 @@ agcls.AgTypeNameMap["ProfileMode"] = ProfileMode
 
 class ControlStoppingCondition(IntEnum):
     """The stopping condition control types."""
-   
+
     TRIP_VALUE = 0
     """Trip - the value at which the stopping condition will be satisfied."""
 
@@ -411,7 +411,7 @@ agcls.AgTypeNameMap["ControlStoppingCondition"] = ControlStoppingCondition
 
 class StateType(IntEnum):
     """The Stop segment state types."""
-   
+
     ENABLED = 0
     """Enabled - the segment stops the run of the MCS."""
     DISABLED = 1
@@ -424,7 +424,7 @@ agcls.AgTypeNameMap["StateType"] = StateType
 
 class ReturnControl(IntEnum):
     """The Return segment control types."""
-   
+
     ENABLE = 0
     """Enable - returns control of the MCS run to the parent segment."""
     DISABLE = 1
@@ -440,7 +440,7 @@ agcls.AgTypeNameMap["ReturnControl"] = ReturnControl
 
 class DrawPerturbation(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
-   
+
     SEGMENT_COLOR = 0
     """Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."""
     DONT_DRAW = 1
@@ -456,7 +456,7 @@ agcls.AgTypeNameMap["DrawPerturbation"] = DrawPerturbation
 
 class DerivativeCalculationMethod(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
-   
+
     FORWARD = 0
     """Forward Difference - ((f(x + delta) - f(x))/ delta)."""
     CENTRAL = 1
@@ -472,7 +472,7 @@ agcls.AgTypeNameMap["DerivativeCalculationMethod"] = DerivativeCalculationMethod
 
 class ConvergenceCriteria(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
-   
+
     EQUALITY_CONSTRAINT_WITHIN_TOLERANCE = 0
     """Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."""
     CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS = 1
@@ -485,7 +485,7 @@ agcls.AgTypeNameMap["ConvergenceCriteria"] = ConvergenceCriteria
 
 class DifferentialCorrectorScalingMethod(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
-   
+
     INITIAL_VALUE = 0
     """By initial value."""
     ONE_NO_SCALING = 1
@@ -504,7 +504,7 @@ agcls.AgTypeNameMap["DifferentialCorrectorScalingMethod"] = DifferentialCorrecto
 
 class ControlUpdate(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     CD = 100
     """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CR = 101
@@ -544,7 +544,7 @@ agcls.AgTypeNameMap["ControlUpdate"] = ControlUpdate
 
 class ControlFollow(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     FUEL_MASS = 200
     """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CD = 201
@@ -605,7 +605,7 @@ agcls.AgTypeNameMap["ControlFollow"] = ControlFollow
 
 class ControlInitState(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     FUEL_MASS = 300
     """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CARTESIAN_VX = 301
@@ -888,7 +888,7 @@ agcls.AgTypeNameMap["ControlInitState"] = ControlInitState
 
 class ControlManeuver(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     FINITE_CARTESIAN_X = 400
     """The Cartesian X component of the thrust vector."""
     FINITE_CARTESIAN_Y = 401
@@ -1000,7 +1000,7 @@ agcls.AgTypeNameMap["ControlManeuver"] = ControlManeuver
 
 class ControlLaunch(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     EPOCH = 500
     """The date and time of the launch."""
     GEODETIC_LATITUDE = 501
@@ -1124,7 +1124,7 @@ agcls.AgTypeNameMap["ControlLaunch"] = ControlLaunch
 
 class ControlAdvanced(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
-   
+
     PROPAGATE_MAX_PROPATION_TIME = 600
     """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."""
     PROPAGATE_MIN_PROPAGATION_TIME = 601
@@ -1137,7 +1137,7 @@ agcls.AgTypeNameMap["ControlAdvanced"] = ControlAdvanced
 
 class TargetSequenceAction(IntEnum):
     """Action options for Target Sequence profiles."""
-   
+
     RUN_NOMINAL_SEQUENCE = 0
     """Run Nominal Sequence - runs the mission control sequence."""
     RUN_ACTIVE_PROFILES = 1
@@ -1153,7 +1153,7 @@ agcls.AgTypeNameMap["TargetSequenceAction"] = TargetSequenceAction
 
 class ProfilesFinish(IntEnum):
     """Action options for Target Sequence profiles convergence."""
-   
+
     RUN_TO_RETURN_AND_CONTINUE = 0
     """Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."""
     RUN_TO_RETURN_AND_STOP = 1
@@ -1169,7 +1169,7 @@ agcls.AgTypeNameMap["ProfilesFinish"] = ProfilesFinish
 
 class UpdateParam(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
-   
+
     DRAG_AREA = 0
     """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."""
     SRP_AREA = 1
@@ -1209,7 +1209,7 @@ agcls.AgTypeNameMap["UpdateParam"] = UpdateParam
 
 class UpdateAction(IntEnum):
     """Actions for the Update segment."""
-   
+
     NO_CHANGE = 0
     """No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."""
     ADD_VALUE = 1
@@ -1228,7 +1228,7 @@ agcls.AgTypeNameMap["UpdateAction"] = UpdateAction
 
 class PressureMode(IntEnum):
     """Pressure Mode options."""
-   
+
     BLOW_DOWN = 0
     """Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."""
     PRESSURE_REGULATED = 1
@@ -1241,7 +1241,7 @@ agcls.AgTypeNameMap["PressureMode"] = PressureMode
 
 class ThrustType(IntEnum):
     """Thrust options."""
-   
+
     AFFECTS_ACCELERATION_AND_MASS_FLOW = 0
     """Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."""
     AFFECTS_ACCELERATION_ONLY = 1
@@ -1254,7 +1254,7 @@ agcls.AgTypeNameMap["ThrustType"] = ThrustType
 
 class AttitudeUpdate(IntEnum):
     """Attitude Update."""
-   
+
     DURING_BURN = 0
     """Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."""
     INERTIAL_AT_IGNITION = 1
@@ -1270,7 +1270,7 @@ agcls.AgTypeNameMap["AttitudeUpdate"] = AttitudeUpdate
 
 class PropulsionMethod(IntEnum):
     """Propulsion method options."""
-   
+
     ENGINE_MODEL = 0
     """Engine Model - can be used to quickly model the firing of a single engine."""
     THRUSTER_SET = 1
@@ -1283,7 +1283,7 @@ agcls.AgTypeNameMap["PropulsionMethod"] = PropulsionMethod
 
 class CustomFunction(IntEnum):
     """Attitude definition options for other STK functions."""
-   
+
     ENABLE_PAGE_DEFINITION = 0
     """Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."""
     ENABLE_MANEUVER_ATTITUDE = 1
@@ -1296,7 +1296,7 @@ agcls.AgTypeNameMap["CustomFunction"] = CustomFunction
 
 class BodyAxis(IntEnum):
     """Attitude body axis options."""
-   
+
     PLUS_X = 0
     """The positive X engine acceleration direction."""
     PLUS_Y = 1
@@ -1321,7 +1321,7 @@ agcls.AgTypeNameMap["BodyAxis"] = BodyAxis
 
 class ConstraintSign(IntEnum):
     """Constraint vector sign options."""
-   
+
     PLUS = 0
     """Positive."""
     MINUS = 1
@@ -1334,7 +1334,7 @@ agcls.AgTypeNameMap["ConstraintSign"] = ConstraintSign
 
 class AttitudeControl(IntEnum):
     """Attitude Control options."""
-   
+
     VELOCITY_VECTOR = 0
     """Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."""
     ANTI_VELOCITY_VECTOR = 1
@@ -1365,7 +1365,7 @@ agcls.AgTypeNameMap["AttitudeControl"] = AttitudeControl
 
 class FollowJoin(IntEnum):
     """Joining options for the Follow segment."""
-   
+
     SPECIFY = 0
     """Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."""
     AT_BEGINNING = 1
@@ -1384,7 +1384,7 @@ agcls.AgTypeNameMap["FollowJoin"] = FollowJoin
 
 class FollowSeparation(IntEnum):
     """Separation options for the Follow segment."""
-   
+
     SPECIFY = 0
     """Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."""
     AT_END_OF_LEADERS_EPHEMERIS = 1
@@ -1397,7 +1397,7 @@ agcls.AgTypeNameMap["FollowSeparation"] = FollowSeparation
 
 class FollowSpacecraftAndFuelTank(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
-   
+
     SPECIFY = 0
     """Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."""
     INHERIT = 1
@@ -1413,7 +1413,7 @@ agcls.AgTypeNameMap["FollowSpacecraftAndFuelTank"] = FollowSpacecraftAndFuelTank
 
 class BurnoutOptions(IntEnum):
     """Burnout options for the Launch segment."""
-   
+
     FIXED_VELOCITY = 0
     """Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."""
     INERTIAL_VELOCITY = 1
@@ -1426,7 +1426,7 @@ agcls.AgTypeNameMap["BurnoutOptions"] = BurnoutOptions
 
 class BurnoutType(IntEnum):
     """Burnout point definition types for the Launch segment."""
-   
+
     GEOCENTRIC = 0
     """Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."""
     GEODETIC = 1
@@ -1448,7 +1448,7 @@ agcls.AgTypeNameMap["BurnoutType"] = BurnoutType
 
 class AscentType(IntEnum):
     """Ascent types for the Launch segment."""
-   
+
     ELLIPSE_CUBIC_MOTION = 0
     """Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."""
     ELLIPSE_QUARTIC_MOTION = 1
@@ -1461,7 +1461,7 @@ agcls.AgTypeNameMap["AscentType"] = AscentType
 
 class LaunchDisplaySystem(IntEnum):
     """Launch location coordinate types for the Launch segment."""
-   
+
     DISPLAY_SYSTEM_GEODETIC = 0
     """Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."""
     DISPLAY_SYSTEM_GEOCENTRIC = 1
@@ -1474,7 +1474,7 @@ agcls.AgTypeNameMap["LaunchDisplaySystem"] = LaunchDisplaySystem
 
 class RunCode(IntEnum):
     """The run code returned after the MCS is run."""
-   
+
     MARCHING = 0
     """Marching - a segment has run successfully."""
     PROFILE_FAILURE = 1
@@ -1502,7 +1502,7 @@ agcls.AgTypeNameMap["RunCode"] = RunCode
 
 class SequenceStateToPass(IntEnum):
     """State To Pass options for the Sequence segment."""
-   
+
     INITIAL = 0
     """The initial state of the sequence."""
     FINAL = 1
@@ -1515,7 +1515,7 @@ agcls.AgTypeNameMap["SequenceStateToPass"] = SequenceStateToPass
 
 class ManeuverType(IntEnum):
     """Maneuver types for the maneuver segment."""
-   
+
     IMPULSIVE = 0
     """Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."""
     FINITE = 1
@@ -1531,7 +1531,7 @@ agcls.AgTypeNameMap["ManeuverType"] = ManeuverType
 
 class SegmentType(IntEnum):
     """Segment types."""
-   
+
     INITIAL_STATE = 0
     """Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."""
     LAUNCH = 1
@@ -1577,7 +1577,7 @@ agcls.AgTypeNameMap["SegmentType"] = SegmentType
 
 class ElementSetType(IntEnum):
     """Types of orbit element sets."""
-   
+
     CARTESIAN = 0
     """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
@@ -1617,7 +1617,7 @@ agcls.AgTypeNameMap["ElementSetType"] = ElementSetType
 
 class Language(IntEnum):
     """Scripting language types for the Scripting Tool."""
-   
+
     VB_SCRIPT = 0
     """VBScript."""
     J_SCRIPT = 1
@@ -1633,7 +1633,7 @@ agcls.AgTypeNameMap["Language"] = Language
 
 class StoppingConditionType(IntEnum):
     """Type of stopping condition."""
-   
+
     BASIC = 0
     """Basic Stopping Condition."""
     BEFORE = 1
@@ -1652,7 +1652,7 @@ agcls.AgTypeNameMap["StoppingConditionType"] = StoppingConditionType
 
 class ClearEphemerisDirection(IntEnum):
     """Direction in which to clear ephemeris."""
-   
+
     BEFORE = -1
     """Clear ephemeris before selected time or state."""
     NO_CLEAR = 0
@@ -1668,7 +1668,7 @@ agcls.AgTypeNameMap["ClearEphemerisDirection"] = ClearEphemerisDirection
 
 class ProfileInsertDirection(IntEnum):
     """Direction to insert profile."""
-   
+
     BEFORE = 0
     """Insert profile before reference profile."""
     AFTER = 1
@@ -1681,7 +1681,7 @@ agcls.AgTypeNameMap["ProfileInsertDirection"] = ProfileInsertDirection
 
 class RootFindingAlgorithm(IntEnum):
     """Root-finding algorithms."""
-   
+
     SECANT_METHOD = 0
     """Secant method."""
     NEWTON_RAPHSON_METHOD = 1
@@ -1694,7 +1694,7 @@ agcls.AgTypeNameMap["RootFindingAlgorithm"] = RootFindingAlgorithm
 
 class ScriptingParameterType(IntEnum):
     """Scripting Tool parameter type."""
-   
+
     DOUBLE = 0
     """Double."""
     QUANTITY = 1
@@ -1722,7 +1722,7 @@ agcls.AgTypeNameMap["ScriptingParameterType"] = ScriptingParameterType
 
 class SNOPTGoal(IntEnum):
     """The Goal types for a SNOPT profile."""
-   
+
     MINIMIZE = 0
     """Minimize."""
     BOUND = 1
@@ -1735,7 +1735,7 @@ agcls.AgTypeNameMap["SNOPTGoal"] = SNOPTGoal
 
 class IPOPTGoal(IntEnum):
     """The Goal types for a IPOPT profile."""
-   
+
     MINIMIZE = 0
     """Minimize."""
     BOUND = 1
@@ -1748,7 +1748,7 @@ agcls.AgTypeNameMap["IPOPTGoal"] = IPOPTGoal
 
 class OptimalFiniteSeedMethod(IntEnum):
     """Seed methods."""
-   
+
     INITIAL_GUESS_FILE = 0
     """Seed initial guess from file."""
     FINITE_MANEUVER = 1
@@ -1761,7 +1761,7 @@ agcls.AgTypeNameMap["OptimalFiniteSeedMethod"] = OptimalFiniteSeedMethod
 
 class OptimalFiniteRunMode(IntEnum):
     """Run modes."""
-   
+
     RUN_CURRENT_NODES = 0
     """Run current nodes."""
     OPTIMIZE_VIA_DIRECT_TRANSCRIPTION = 1
@@ -1774,7 +1774,7 @@ agcls.AgTypeNameMap["OptimalFiniteRunMode"] = OptimalFiniteRunMode
 
 class OptimalFiniteDiscretizationStrategy(IntEnum):
     """Discretization Strategy."""
-   
+
     LEGENDRE_GAUSS_LOBATTO = 0
     """The Legendre-Gauss-Lobatto quadrature rule."""
     LEGENDRE_GAUSS_RADAU = 1
@@ -1787,7 +1787,7 @@ agcls.AgTypeNameMap["OptimalFiniteDiscretizationStrategy"] = OptimalFiniteDiscre
 
 class OptimalFiniteWorkingVariables(IntEnum):
     """Working Variables."""
-   
+
     EQUINOCTIAL = 0
     """Standard inertial equinoctial coordinates."""
     MODIFIED_EQUINOCTIAL = 1
@@ -1800,7 +1800,7 @@ agcls.AgTypeNameMap["OptimalFiniteWorkingVariables"] = OptimalFiniteWorkingVaria
 
 class OptimalFiniteScalingOptions(IntEnum):
     """Scaling Options."""
-   
+
     NO_SCALING = 0
     """No scaling."""
     CANONICAL_UNITS = 1
@@ -1816,7 +1816,7 @@ agcls.AgTypeNameMap["OptimalFiniteScalingOptions"] = OptimalFiniteScalingOptions
 
 class OptimalFiniteSNOPTObjective(IntEnum):
     """Optimal Finite SNOPT objective."""
-   
+
     MINIMIZE_TIME_OF_FLIGHT = 0
     """Minimize the total TOF along the collocation arc."""
     MAXIMIZE_FINAL_RAD = 1
@@ -1832,7 +1832,7 @@ agcls.AgTypeNameMap["OptimalFiniteSNOPTObjective"] = OptimalFiniteSNOPTObjective
 
 class OptimalFiniteSNOPTScaling(IntEnum):
     """Optimal Finite SNOPT scaling option."""
-   
+
     NONE = 0
     """No scaling."""
     LINEAR = 1
@@ -1848,7 +1848,7 @@ agcls.AgTypeNameMap["OptimalFiniteSNOPTScaling"] = OptimalFiniteSNOPTScaling
 
 class OptimalFiniteExportNodesFormat(IntEnum):
     """Steering nodes export format."""
-   
+
     AZIMUTH_ELEVATION = 0
     """Export controls as Az/El = Ra/Dec angles."""
     UNIT_VECTOR = 1
@@ -1861,7 +1861,7 @@ agcls.AgTypeNameMap["OptimalFiniteExportNodesFormat"] = OptimalFiniteExportNodes
 
 class OptimalFiniteGuessMethod(IntEnum):
     """Guess interpolation method."""
-   
+
     LAGRANGE_POLYNOMIAL = 0
     """Lagrange polynomial method."""
     PIECEWISE_LINEAR = 1
@@ -1874,7 +1874,7 @@ agcls.AgTypeNameMap["OptimalFiniteGuessMethod"] = OptimalFiniteGuessMethod
 
 class ImpulsiveDeltaVRepresentation(IntEnum):
     """Vector representations for impulsive DeltaV specification."""
-   
+
     CARTESIAN_IMPULSIVE_DELTA_V = 0
     """Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."""
     SPHERICAL_IMPULSIVE_DELTA_V = 1
@@ -1887,7 +1887,7 @@ agcls.AgTypeNameMap["ImpulsiveDeltaVRepresentation"] = ImpulsiveDeltaVRepresenta
 
 class LambertTargetCoordinateType(IntEnum):
     """Lambert Target CoordType."""
-   
+
     CARTESIAN = 0
     """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
@@ -1900,7 +1900,7 @@ agcls.AgTypeNameMap["LambertTargetCoordinateType"] = LambertTargetCoordinateType
 
 class LambertSolutionOptionType(IntEnum):
     """Lambert Solution Option Type."""
-   
+
     FIXED_TIME = 0
     """Fixed time - The type of Lambert solution to calculate."""
     MIN_ECCENTRICITY = 1
@@ -1916,7 +1916,7 @@ agcls.AgTypeNameMap["LambertSolutionOptionType"] = LambertSolutionOptionType
 
 class LambertOrbitalEnergyType(IntEnum):
     """Lambert Orbital Energy Type."""
-   
+
     LOW = 0
     """Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."""
     HIGH = 1
@@ -1929,7 +1929,7 @@ agcls.AgTypeNameMap["LambertOrbitalEnergyType"] = LambertOrbitalEnergyType
 
 class LambertDirectionOfMotionType(IntEnum):
     """Lambert Direction Of Motion Type."""
-   
+
     SHORT = 0
     """The short direction of motion for the Lambert solution."""
     LONG = 1
@@ -1942,7 +1942,7 @@ agcls.AgTypeNameMap["LambertDirectionOfMotionType"] = LambertDirectionOfMotionTy
 
 class GoldenSectionDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
-   
+
     MINIMIZE_VALUE = 0
     """Minimize value."""
     MAXIMIZE_VALUE = 1
@@ -1955,7 +1955,7 @@ agcls.AgTypeNameMap["GoldenSectionDesiredOperation"] = GoldenSectionDesiredOpera
 
 class GridSearchDesiredOperation(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
-   
+
     MINIMIZE_VALUE = 0
     """Minimize value."""
     MAXIMIZE_VALUE = 1
@@ -1968,7 +1968,7 @@ agcls.AgTypeNameMap["GridSearchDesiredOperation"] = GridSearchDesiredOperation
 
 class ElementType(IntEnum):
     """Which type of elements (osculating or mean)."""
-   
+
     OSCULATING = 0
     """Osculating."""
     KOZAI_IZSAK_MEAN = 1
@@ -1987,7 +1987,7 @@ agcls.AgTypeNameMap["ElementType"] = ElementType
 
 class BaseSelection(IntEnum):
     """Access base object selections types."""
-   
+
     SPECIFY = 0
     """An object in the current scenario."""
     CURRENT_SATELLITE = 1
@@ -2000,7 +2000,7 @@ agcls.AgTypeNameMap["BaseSelection"] = BaseSelection
 
 class ControlOrbitStateValue(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
-   
+
     VX = 0
     """The Vx velocity component of the orbit state."""
     VY = 1
@@ -2025,7 +2025,7 @@ agcls.AgTypeNameMap["ControlOrbitStateValue"] = ControlOrbitStateValue
 
 class SegmentState(IntEnum):
     """Segment state to use types."""
-   
+
     INITIAL = 0
     """The segment initial state."""
     FINAL = 1
@@ -2038,7 +2038,7 @@ agcls.AgTypeNameMap["SegmentState"] = SegmentState
 
 class DifferenceOrder(IntEnum):
     """The Difference order types."""
-   
+
     INITIAL_MINUS_CURRENT = 0
     """The initial minus current difference."""
     CURRENT_MINUS_INITIAL = 1
@@ -2051,7 +2051,7 @@ agcls.AgTypeNameMap["DifferenceOrder"] = DifferenceOrder
 
 class SegmentDifferenceOrder(IntEnum):
     """The Difference Across Segments order types."""
-   
+
     CURRENT_MINUS_SEGMENT = 0
     """The current minus segment difference."""
     SEGMENT_MINUS_CURRENT = 1
@@ -2064,7 +2064,7 @@ agcls.AgTypeNameMap["SegmentDifferenceOrder"] = SegmentDifferenceOrder
 
 class ControlRepeatingGroundTrackErr(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
-   
+
     REFERENCE_LONGITUDE = 0
     """The reference longitude."""
     REPEAT_COUNT = 1
@@ -2077,7 +2077,7 @@ agcls.AgTypeNameMap["ControlRepeatingGroundTrackErr"] = ControlRepeatingGroundTr
 
 class CalculationObjectDirection(IntEnum):
     """The direction to search for a desired value."""
-   
+
     NEXT = 0
     """Search in the direction of the next calculation object."""
     PREVIOUS = 1
@@ -2090,7 +2090,7 @@ agcls.AgTypeNameMap["CalculationObjectDirection"] = CalculationObjectDirection
 
 class CalculationObjectOrbitPlaneSource(IntEnum):
     """The calculation object orbit plane source Types."""
-   
+
     REFERENCE_SATELLITE = 0
     """Use the reference satellite to generate the orbit plane."""
     SATELLITE = 1
@@ -2103,7 +2103,7 @@ agcls.AgTypeNameMap["CalculationObjectOrbitPlaneSource"] = CalculationObjectOrbi
 
 class CalculationObjectSunPosition(IntEnum):
     """The calculation object sun location Types."""
-   
+
     APPARENT_FROM_SATELLITE = 0
     """Use the sun location apparent from satellite."""
     APPARENT_FROM_REFERENCE_SATELLITE = 1
@@ -2122,7 +2122,7 @@ agcls.AgTypeNameMap["CalculationObjectSunPosition"] = CalculationObjectSunPositi
 
 class CalculationObjectAngleSign(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
-   
+
     POSITIVE = 0
     """Use the positive sign for the angle when the relative position has a positive component along the orbit normal."""
     NEGATIVE = 1
@@ -2135,7 +2135,7 @@ agcls.AgTypeNameMap["CalculationObjectAngleSign"] = CalculationObjectAngleSign
 
 class CalculationObjectReferenceDirection(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
-   
+
     REFERENCE_SATELLITE_POSITION = 0
     """Use the reference satellite position when projected into the orbit plane."""
     SATELLITE_POSITION = 1
@@ -2154,7 +2154,7 @@ agcls.AgTypeNameMap["CalculationObjectReferenceDirection"] = CalculationObjectRe
 
 class CalculationObjectRelativePosition(IntEnum):
     """The calculation object relative position Types."""
-   
+
     SATELLITE_TO_REFERENCE_SATELLITE = 0
     """Use the relative position satellite to reference satellite."""
     REFERENCE_SATELLITE_TO_SATELLITE = 1
@@ -2167,7 +2167,7 @@ agcls.AgTypeNameMap["CalculationObjectRelativePosition"] = CalculationObjectRela
 
 class CalculationObjectReferenceEllipse(IntEnum):
     """The calculation object reference ellipse Types."""
-   
+
     REFERENCE_SATELLITE_ORBIT = 0
     """Use the reference satellite orbit."""
     SATELLITE_ORBIT = 1
@@ -2180,7 +2180,7 @@ agcls.AgTypeNameMap["CalculationObjectReferenceEllipse"] = CalculationObjectRefe
 
 class CalculationObjectLocationSource(IntEnum):
     """The calculation object location source Types."""
-   
+
     REFERENCE_SATELLITE = 0
     """Use the reference satellite."""
     SATELLITE = 1
@@ -2193,7 +2193,7 @@ agcls.AgTypeNameMap["CalculationObjectLocationSource"] = CalculationObjectLocati
 
 class GravitationalParameterSource(IntEnum):
     """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
-   
+
     CENTRAL_BODY_FILE = 0
     """Cb File."""
     CENTRAL_BODY_FILE_SYSTEM = 1
@@ -2212,7 +2212,7 @@ agcls.AgTypeNameMap["GravitationalParameterSource"] = GravitationalParameterSour
 
 class ReferenceRadiusSource(IntEnum):
     """The source of the reference radius for a CStateCalcReferenceRadius calculation object."""
-   
+
     CENTRAL_BODY_FILE = 0
     """Cb File."""
     GRAVITY_FILE = 1
@@ -2225,7 +2225,7 @@ agcls.AgTypeNameMap["ReferenceRadiusSource"] = ReferenceRadiusSource
 
 class GravityCoefficientNormalizationType(IntEnum):
     """The normalization type for the CStateCalcGravCoeff calculation object."""
-   
+
     NORMALIZED = 0
     """Normalized."""
     UNNORMALIZED = 1
@@ -2238,7 +2238,7 @@ agcls.AgTypeNameMap["GravityCoefficientNormalizationType"] = GravityCoefficientN
 
 class GravityCoefficientType(IntEnum):
     """The coefficient type for the CStateCalcGravCoeff calculation object."""
-   
+
     ZONAL = 0
     """Zonal."""
     COSINE = 1
@@ -2254,7 +2254,7 @@ agcls.AgTypeNameMap["GravityCoefficientType"] = GravityCoefficientType
 
 class STMPerturbationVariables(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
-   
+
     POSITION_X = 0
     """Designates the initial or final variation in the 'x' component of position."""
     POSITION_Y = 1
@@ -2279,7 +2279,7 @@ agcls.AgTypeNameMap["STMPerturbationVariables"] = STMPerturbationVariables
 
 class STMEigenNumber(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
-   
+
     NUMBER1 = 0
     """Designates the first Eigenvalue or Eigenvector."""
     NUMBER2 = 1
@@ -2304,7 +2304,7 @@ agcls.AgTypeNameMap["STMEigenNumber"] = STMEigenNumber
 
 class ComplexNumber(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
-   
+
     REAL = 0
     """Designates the value as the real part."""
     IMAGINARY = 1
@@ -2317,7 +2317,7 @@ agcls.AgTypeNameMap["ComplexNumber"] = ComplexNumber
 
 class SquaredType(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
-   
+
     SUM_OF_SQUARES = 0
     """Designates the calculation to be the sum of the squares."""
     SQUARE_OF_SUM = 1
@@ -2330,7 +2330,7 @@ agcls.AgTypeNameMap["SquaredType"] = SquaredType
 
 class GeoStationaryDriftRateModel(IntEnum):
     """Gravity models used to compute geostationary drift rate."""
-   
+
     POINT_MASS = 0
     """Compute drift rate using two-body point mass gravity model."""
     POINT_MASS_PLUS_J2 = 1
@@ -2343,7 +2343,7 @@ agcls.AgTypeNameMap["GeoStationaryDriftRateModel"] = GeoStationaryDriftRateModel
 
 class GeoStationaryInclinationMagnitude(IntEnum):
     """Magnitude to use when computing the inclination vector."""
-   
+
     INCLINATION_ANGLE = 0
     """Compute inclination vector magnitude as the inclination angle itself (in radins)."""
     SIN_INCLINATION = 1
@@ -2368,7 +2368,7 @@ agcls.AgTypeNameMap["GeoStationaryInclinationMagnitude"] = GeoStationaryInclinat
 
 class CentralBodyGravityModel(IntEnum):
     """The gravity model."""
-   
+
     ZONALS_TO_J4 = 0
     """ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."""
     EARTH_SIMPLE = 1
@@ -2465,7 +2465,7 @@ agcls.AgTypeNameMap["CentralBodyGravityModel"] = CentralBodyGravityModel
 
 class CentralBodyShape(IntEnum):
     """The central body shape types."""
-   
+
     TRIAXIAL_ELLIPSOID = 0
     """A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."""
     OBLATE_SPHEROID = 1
@@ -2481,7 +2481,7 @@ agcls.AgTypeNameMap["CentralBodyShape"] = CentralBodyShape
 
 class CentralBodyAttitude(IntEnum):
     """The central body attitude types."""
-   
+
     IAU1994 = 0
     """An IAU 1994 attitude definition."""
     ROTATION_COEFFICIENTS_FILE = 1
@@ -2494,7 +2494,7 @@ agcls.AgTypeNameMap["CentralBodyAttitude"] = CentralBodyAttitude
 
 class CentralBodyEphemeris(IntEnum):
     """The central body ephemeris types."""
-   
+
     ANALYTIC_ORBIT = 0
     """Specified values and rates of change for the classical orbital elements."""
     FILE = 1
@@ -2516,7 +2516,7 @@ agcls.AgTypeNameMap["CentralBodyEphemeris"] = CentralBodyEphemeris
 
 class ControlPowerInternal(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
-   
+
     GENERATED_POWER = 0
     """The power generated by the spacecraft from internal sources."""
     PERCENT_DEGRADATION = 1
@@ -2532,7 +2532,7 @@ agcls.AgTypeNameMap["ControlPowerInternal"] = ControlPowerInternal
 
 class ControlPowerProcessed(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
-   
+
     EFFICIENCY = 0
     """The efficiency of the power processing unit(PPU)."""
     LOAD = 1
@@ -2545,7 +2545,7 @@ agcls.AgTypeNameMap["ControlPowerProcessed"] = ControlPowerProcessed
 
 class ControlPowerSolarArray(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
-   
+
     C0 = 0
     """The ThermalModel.C0 coefficient."""
     C1 = 1
@@ -2588,7 +2588,7 @@ agcls.AgTypeNameMap["ControlPowerSolarArray"] = ControlPowerSolarArray
 
 class ThirdBodyMode(IntEnum):
     """The third body gravity mode."""
-   
+
     GRAVITY_FIELD = 0
     """Define the gravitational effect as a full Gravitational Force model."""
     POINT_MASS = 1
@@ -2601,7 +2601,7 @@ agcls.AgTypeNameMap["ThirdBodyMode"] = ThirdBodyMode
 
 class GravParamSource(IntEnum):
     """The gravity parameter source."""
-   
+
     CENTRAL_BODY_FILE = 0
     """The Cb file provided with STK; uses the default, body centered gravity source for the central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
@@ -2620,7 +2620,7 @@ agcls.AgTypeNameMap["GravParamSource"] = GravParamSource
 
 class EphemerisSource(IntEnum):
     """The ephemeris source type."""
-   
+
     CENTRAL_BODY_FILE = 0
     """The Cb file provided with STK; uses the default ephemeris source for that central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
@@ -2639,7 +2639,7 @@ agcls.AgTypeNameMap["EphemerisSource"] = EphemerisSource
 
 class SolarForceMethod(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
-   
+
     LUMINOSITY = 0
     """Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."""
     MEAN_FLUX = 1
@@ -2652,7 +2652,7 @@ agcls.AgTypeNameMap["SolarForceMethod"] = SolarForceMethod
 
 class ShadowModel(IntEnum):
     """The shadow model type."""
-   
+
     CYLINDRICAL = 0
     """Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."""
     DUAL_CONE = 1
@@ -2668,7 +2668,7 @@ agcls.AgTypeNameMap["ShadowModel"] = ShadowModel
 
 class SunPosition(IntEnum):
     """The sun position type."""
-   
+
     APPARENT = 0
     """Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."""
     APPARENT_TO_TRUE_CENTRAL_BODY = 1
@@ -2684,7 +2684,7 @@ agcls.AgTypeNameMap["SunPosition"] = SunPosition
 
 class AtmosphereDataSource(IntEnum):
     """The Atmospheric data source type."""
-   
+
     CONSTANT = 0
     """Constant Atmospheric data source."""
     FILE = 1
@@ -2697,7 +2697,7 @@ agcls.AgTypeNameMap["AtmosphereDataSource"] = AtmosphereDataSource
 
 class GeoMagneticFluxSource(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
-   
+
     AP = 0
     """Read Ap from file."""
     KP = 1
@@ -2710,7 +2710,7 @@ agcls.AgTypeNameMap["GeoMagneticFluxSource"] = GeoMagneticFluxSource
 
 class GeoMagneticFluxUpdateRate(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
-   
+
     RATE3_HOURLY = 0
     """Three hourly."""
     RATE3_HOURLY_CUBIC_SPLINE = 1
@@ -2729,7 +2729,7 @@ agcls.AgTypeNameMap["GeoMagneticFluxUpdateRate"] = GeoMagneticFluxUpdateRate
 
 class DragModelType(IntEnum):
     """Type of Drag Model."""
-   
+
     SPHERICAL = 0
     """Spherical."""
     PLUGIN = 1
@@ -2748,7 +2748,7 @@ agcls.AgTypeNameMap["DragModelType"] = DragModelType
 
 class MarsGRAMDensityType(IntEnum):
     """Density Type for MarsGRAM Density Models."""
-   
+
     LOW = 0
     """Low density."""
     MEAN = 1
@@ -2767,7 +2767,7 @@ agcls.AgTypeNameMap["MarsGRAMDensityType"] = MarsGRAMDensityType
 
 class VenusGRAMDensityType(IntEnum):
     """Density Type for VenusGRAM Density Models."""
-   
+
     LOW = 0
     """Low density."""
     MEAN = 1
@@ -2786,7 +2786,7 @@ agcls.AgTypeNameMap["VenusGRAMDensityType"] = VenusGRAMDensityType
 
 class TabVecInterpolationMethod(IntEnum):
     """The interpolation method for tabulated area vector file."""
-   
+
     CARTESIAN_INTERPOLATION = 0
     """Bilinear interpolation on the Cartesian grid."""
     MAGNITUDE_AND_DIRECTION_INTERPOLATION = 1
@@ -2799,7 +2799,7 @@ agcls.AgTypeNameMap["TabVecInterpolationMethod"] = TabVecInterpolationMethod
 
 class ControlEngineConstantAcceleration(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     GRAV = 0
     """The gravitational acceleration constant at sea level on the Earth."""
     ACCELERATION = 1
@@ -2815,7 +2815,7 @@ agcls.AgTypeNameMap["ControlEngineConstantAcceleration"] = ControlEngineConstant
 
 class ControlEngineConstant(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     GRAV = 0
     """The gravitational acceleration constant at sea level on the Earth."""
     THRUST = 1
@@ -2831,7 +2831,7 @@ agcls.AgTypeNameMap["ControlEngineConstant"] = ControlEngineConstant
 
 class ControlEngineCustom(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     GRAV = 0
     """Earth surface gravity acceleration for Isp conversions."""
 
@@ -2841,7 +2841,7 @@ agcls.AgTypeNameMap["ControlEngineCustom"] = ControlEngineCustom
 
 class ControlEngineThrottleTable(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     GRAV = 0
     """Gravitational acceleration constant at sea level on the Earth."""
     PERCENT_DEGRADATION_PER_YEAR = 1
@@ -2857,7 +2857,7 @@ agcls.AgTypeNameMap["ControlEngineThrottleTable"] = ControlEngineThrottleTable
 
 class ControlEngineIon(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     FLOW_RATE_CONSTANT_TERM = 0
     """FlowRateModel.C0 - the constant coefficient."""
     FLOW_RATE_LINEAR_TERM = 1
@@ -2930,7 +2930,7 @@ agcls.AgTypeNameMap["ControlEngineIon"] = ControlEngineIon
 
 class ControlEngineModelPolynomial(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
-   
+
     THRUST_C0 = 0
     """The thrust C0 coefficient."""
     THRUST_C1 = 1
@@ -3036,7 +3036,7 @@ agcls.AgTypeNameMap["ControlEngineModelPolynomial"] = ControlEngineModelPolynomi
 
 class EngineModelFunction(IntEnum):
     """The engine model function types."""
-   
+
     ISP = 0
     """Isp as an independent variable of an equation."""
     POWER = 1
@@ -3052,7 +3052,7 @@ agcls.AgTypeNameMap["EngineModelFunction"] = EngineModelFunction
 
 class ThrottleTableOperationMode(IntEnum):
     """Engine operation mode."""
-   
+
     ENGINE_OPERATION_REG_POLY = 0
     """Interpolation of engine performance data based on a regression polynomial model."""
     ENGINE_OPERATION_PIECEWISE_LINEAR = 1
@@ -3068,7 +3068,7 @@ agcls.AgTypeNameMap["ThrottleTableOperationMode"] = ThrottleTableOperationMode
 
 class IdealOrbitRadius(IntEnum):
     """Ideal Orbit Radius."""
-   
+
     EPOCH_CENTERED_AVG_SOURCE_RADIUS = 0
     """Epoch centered average source radius."""
     INSTANTANEOUS_CHARACTERISTIC_DISTANCE = 1
@@ -3081,7 +3081,7 @@ agcls.AgTypeNameMap["IdealOrbitRadius"] = IdealOrbitRadius
 
 class RotatingCoordinateSystem(IntEnum):
     """Barycenter centered rotating system."""
-   
+
     BARYCENTER_CENTERED = 0
     """Barycenter centered rotating system."""
     PRIMARY_CENTERED = 1
@@ -3112,7 +3112,7 @@ agcls.AgTypeNameMap["RotatingCoordinateSystem"] = RotatingCoordinateSystem
 
 class ControlThrusters(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
-   
+
     EQUIVALENT_ON_TIME_PERCENT = 0
     """The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."""
     THRUST_EFFICIENCY = 1
@@ -3140,7 +3140,7 @@ agcls.AgTypeNameMap["ControlThrusters"] = ControlThrusters
 
 class ThrusterDirection(IntEnum):
     """The thruster direction type."""
-   
+
     ACCELERATION = 0
     """The direction that is opposite the direction of the exhaust."""
     EXHAUST = 1
@@ -3153,7 +3153,7 @@ agcls.AgTypeNameMap["ThrusterDirection"] = ThrusterDirection
 
 class Criteria(IntEnum):
     """The criteria type."""
-   
+
     EQUALS = 0
     """The test parameter must be equal (within the specified tolerance) to the specified value."""
     GREATER_THAN = 1
@@ -3178,7 +3178,7 @@ agcls.AgTypeNameMap["Criteria"] = Criteria
 
 class ErrorControl(IntEnum):
     """Error Control for the numerical integrator."""
-   
+
     ABSOLUTE = 0
     """The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."""
     RELATIVE_BY_COMPONENT = 1
@@ -3197,7 +3197,7 @@ agcls.AgTypeNameMap["ErrorControl"] = ErrorControl
 
 class PredictorCorrector(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
-   
+
     FULL = 0
     """All force models are re-evaluated at each corrector step."""
     PSEUDO = 1
@@ -3210,7 +3210,7 @@ agcls.AgTypeNameMap["PredictorCorrector"] = PredictorCorrector
 
 class NumericalIntegrator(IntEnum):
     """Numerical integrator type."""
-   
+
     RUNGE_KUTTA_4TH_ADAPT = 0
     """A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."""
     RUNGE_KUTTA_FEHLBERG_7TH_8TH = 1
@@ -3241,7 +3241,7 @@ agcls.AgTypeNameMap["NumericalIntegrator"] = NumericalIntegrator
 
 class CoeffRungeKuttaV8th9th(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
-   
+
     COEFFICIENT_1978 = 0
     """SIAM 1978."""
     EFFICIENT = 1
@@ -3277,7 +3277,7 @@ class IStoppingConditionComponent(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStoppingConditionComponent, None)
-    
+
     _get_stopping_condition_type_metadata = { "offset" : _get_stopping_condition_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(StoppingConditionType),) }
@@ -3327,7 +3327,7 @@ class IAttitudeControl(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAttitudeControl, None)
-    
+
     _get_lead_duration_metadata = { "offset" : _get_lead_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -3453,7 +3453,7 @@ class IAttitudeControlFinite(IAttitudeControl):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAttitudeControlFinite, IAttitudeControl)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5056364145348131654, 13409090031304170403), IAttitudeControlFinite)
@@ -3483,7 +3483,7 @@ class IAttitudeControlImpulsive(IAttitudeControl):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAttitudeControlImpulsive, IAttitudeControl)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4710479165606193296, 7418419355563075998), IAttitudeControlImpulsive)
@@ -3513,7 +3513,7 @@ class IAttitudeControlOptimalFinite(IAttitudeControl):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAttitudeControlOptimalFinite, IAttitudeControl)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5442963331835446219, 1789868880099233963), IAttitudeControlOptimalFinite)
@@ -3548,7 +3548,7 @@ class IManeuver(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IManeuver, None)
-    
+
     _get_attitude_control_type_metadata = { "offset" : _get_attitude_control_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeControl),) }
@@ -3627,7 +3627,7 @@ class IDisplaySystem(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplaySystem, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4713357538953774204, 7691016069329601429), IDisplaySystem)
@@ -3656,7 +3656,7 @@ class IBurnout(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBurnout, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4768490459946272698, 6896606911126661053), IBurnout)
@@ -3685,7 +3685,7 @@ class IElement(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IElement, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5488204777371386664, 9539562261869440956), IElement)
@@ -3722,7 +3722,7 @@ class IMCSSegment(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMCSSegment, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SegmentType),) }
@@ -3828,7 +3828,7 @@ class IMCSSequence(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMCSSequence, None)
-    
+
     _get_repeat_count_metadata = { "offset" : _get_repeat_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -3939,7 +3939,7 @@ class IProfile(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProfile, None)
-    
+
     _copy_metadata = { "offset" : _copy_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4041,7 +4041,7 @@ class ICentralBodyComponentEphemeris(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyComponentEphemeris, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5592778241070953614, 10499311837320329628), ICentralBodyComponentEphemeris)
@@ -4070,7 +4070,7 @@ class ICentralBodyComponentShape(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyComponentShape, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4933547587540680255, 5573209392764395165), ICentralBodyComponentShape)
@@ -4099,7 +4099,7 @@ class ICentralBodyComponentAttitude(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyComponentAttitude, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5344723028474245754, 5582255056768029873), ICentralBodyComponentAttitude)
@@ -4131,7 +4131,7 @@ class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComp
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris)
-    
+
     _get_jplde_filename_metadata = { "offset" : _get_jplde_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4176,7 +4176,7 @@ class INumericalIntegrator(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, INumericalIntegrator, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4724514531705891614, 6171053309445421234), INumericalIntegrator)
@@ -4225,7 +4225,7 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSDriver)
-    
+
     _get_main_sequence_metadata = { "offset" : _get_main_sequence_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4389,7 +4389,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -4521,7 +4521,7 @@ class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSEnd)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSEnd."""
@@ -4571,7 +4571,7 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSInitialState)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4741,7 +4741,7 @@ class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpacecraftParameters)
-    
+
     _get_dry_mass_metadata = { "offset" : _get_dry_mass_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -4929,7 +4929,7 @@ class FuelTank(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FuelTank)
-    
+
     _get_tank_pressure_metadata = { "offset" : _get_tank_pressure_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -5069,7 +5069,7 @@ class ElementCartesian(IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementCartesian)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -5245,7 +5245,7 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementKeplerian)
-    
+
     _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -5661,7 +5661,7 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementEquinoctial)
-    
+
     _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -5839,7 +5839,7 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementDelaunay)
-    
+
     _get_mean_anomaly_metadata = { "offset" : _get_mean_anomaly_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -6029,7 +6029,7 @@ class ElementMixedSpherical(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementMixedSpherical)
-    
+
     _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -6187,7 +6187,7 @@ class ElementSpherical(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementSpherical)
-    
+
     _get_right_ascension_metadata = { "offset" : _get_right_ascension_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -6343,7 +6343,7 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementTargetVectorIncomingAsymptote)
-    
+
     _get_radius_of_periapsis_metadata = { "offset" : _get_radius_of_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -6483,7 +6483,7 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementTargetVectorOutgoingAsymptote)
-    
+
     _get_radius_of_periapsis_metadata = { "offset" : _get_radius_of_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -6627,7 +6627,7 @@ class ElementGeodetic(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementGeodetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -6813,7 +6813,7 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementBPlane)
-    
+
     _get_right_ascension_of_b_plane_metadata = { "offset" : _get_right_ascension_of_b_plane_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -7065,7 +7065,7 @@ class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementSphericalRangeRate)
-    
+
     _get_right_ascension_metadata = { "offset" : _get_right_ascension_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -7214,7 +7214,7 @@ class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProv
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSPropagate)
-    
+
     _get_propagator_name_metadata = { "offset" : _get_propagator_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -7452,7 +7452,7 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, State)
-    
+
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ElementSetType),) }
@@ -7772,7 +7772,7 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -7909,7 +7909,7 @@ class AccessStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessStoppingCondition)
-    
+
     _get_time_convergence_metadata = { "offset" : _get_time_convergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -8193,7 +8193,7 @@ class LightingStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LightingStoppingCondition)
-    
+
     _get_max_trip_times_metadata = { "offset" : _get_max_trip_times_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -8407,7 +8407,7 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StoppingCondition)
-    
+
     _get_trip_metadata = { "offset" : _get_trip_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -8695,7 +8695,7 @@ class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StoppingConditionElement)
-    
+
     _get_active_metadata = { "offset" : _get_active_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -8811,7 +8811,7 @@ class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSBackwardSequence)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSBackwardSequence."""
@@ -8883,7 +8883,7 @@ class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSLaunch)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -9187,7 +9187,7 @@ class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DisplaySystemGeodetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9273,7 +9273,7 @@ class DisplaySystemGeocentric(IDisplaySystem, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DisplaySystemGeocentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9359,7 +9359,7 @@ class BurnoutGeodetic(IBurnout, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutGeodetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9451,7 +9451,7 @@ class BurnoutCBFCartesian(IBurnout, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutCBFCartesian)
-    
+
     _get_cartesian_burnout_x_metadata = { "offset" : _get_cartesian_burnout_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9585,7 +9585,7 @@ class BurnoutGeocentric(IBurnout, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutGeocentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9671,7 +9671,7 @@ class BurnoutLaunchAzAltitude(IBurnout, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutLaunchAzAltitude)
-    
+
     _get_azimuth_metadata = { "offset" : _get_azimuth_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9757,7 +9757,7 @@ class BurnoutLaunchAzRadius(IBurnout, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutLaunchAzRadius)
-    
+
     _get_azimuth_metadata = { "offset" : _get_azimuth_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -9847,7 +9847,7 @@ class BurnoutVelocity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BurnoutVelocity)
-    
+
     _get_burnout_option_metadata = { "offset" : _get_burnout_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(BurnoutOptions),) }
@@ -9979,7 +9979,7 @@ class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSFollow)
-    
+
     _get_leader_metadata = { "offset" : _get_leader_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10204,7 +10204,7 @@ class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, IClonea
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSManeuver)
-    
+
     _get_maneuver_type_metadata = { "offset" : _get_maneuver_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ManeuverType),) }
@@ -10304,7 +10304,7 @@ class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverFinite)
-    
+
     _get_pressure_mode_metadata = { "offset" : _get_pressure_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PressureMode),) }
@@ -10397,7 +10397,7 @@ class ManeuverImpulsive(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverImpulsive)
-    
+
     _get_update_mass_metadata = { "offset" : _get_update_mass_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -10450,7 +10450,7 @@ class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive, IAttitud
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlImpulsiveVelocityVector)
-    
+
     _get_delta_v_magnitude_metadata = { "offset" : _get_delta_v_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10514,7 +10514,7 @@ class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive, IAtt
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlImpulsiveAntiVelocityVector)
-    
+
     _get_delta_v_magnitude_metadata = { "offset" : _get_delta_v_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10580,7 +10580,7 @@ class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive, IAttitudeContr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlImpulsiveAttitude)
-    
+
     _get_delta_v_magnitude_metadata = { "offset" : _get_delta_v_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10664,7 +10664,7 @@ class AttitudeControlImpulsiveFile(IAttitudeControlImpulsive, IAttitudeControl, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlImpulsiveFile)
-    
+
     _get_delta_v_magnitude_metadata = { "offset" : _get_delta_v_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10780,7 +10780,7 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlImpulsiveThrustVector)
-    
+
     _get_thrust_axes_name_metadata = { "offset" : _get_thrust_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11000,7 +11000,7 @@ class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite, IAttitudeC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteAntiVelocityVector)
-    
+
     _get_attitude_update_metadata = { "offset" : _get_attitude_update_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeUpdate),) }
@@ -11066,7 +11066,7 @@ class AttitudeControlFiniteAttitude(IAttitudeControlFinite, IAttitudeControl, IR
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteAttitude)
-    
+
     _get_attitude_update_metadata = { "offset" : _get_attitude_update_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeUpdate),) }
@@ -11148,7 +11148,7 @@ class AttitudeControlFiniteFile(IAttitudeControlFinite, IAttitudeControl, IRunti
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11231,7 +11231,7 @@ class AttitudeControlFiniteThrustVector(IAttitudeControlFinite, IAttitudeControl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteThrustVector)
-    
+
     _get_attitude_update_metadata = { "offset" : _get_attitude_update_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeUpdate),) }
@@ -11352,7 +11352,7 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteTimeVarying)
-    
+
     _get_thrust_axes_name_metadata = { "offset" : _get_thrust_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11672,7 +11672,7 @@ class AttitudeControlFiniteVelocityVector(IAttitudeControlFinite, IAttitudeContr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFiniteVelocityVector)
-    
+
     _get_attitude_update_metadata = { "offset" : _get_attitude_update_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeUpdate),) }
@@ -11736,7 +11736,7 @@ class AttitudeControlFinitePlugin(IAttitudeControlFinite, IAttitudeControl, IRun
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlFinitePlugin)
-    
+
     _select_plugin_by_name_metadata = { "offset" : _select_plugin_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11798,7 +11798,7 @@ class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite, IAttit
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeControlOptimalFiniteLagrange)
-    
+
     _get_body_constraint_vector_metadata = { "offset" : _get_body_constraint_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11864,7 +11864,7 @@ class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverFinitePropagator)
-    
+
     _get_propagator_name_metadata = { "offset" : _get_propagator_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -12088,7 +12088,7 @@ class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSHold)
-    
+
     _get_step_size_metadata = { "offset" : _get_step_size_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -12319,7 +12319,7 @@ class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSUpdate)
-    
+
     _set_action_and_value_metadata = { "offset" : _set_action_and_value_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(UpdateParam), agmarshall.EnumArg(UpdateAction), agmarshall.DoubleArg,) }
@@ -12433,7 +12433,7 @@ class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSReturn)
-    
+
     _get_return_control_to_parent_sequence_metadata = { "offset" : _get_return_control_to_parent_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ReturnControl),) }
@@ -12489,7 +12489,7 @@ class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSStop)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -12559,7 +12559,7 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSTargetSequence)
-    
+
     _get_action_metadata = { "offset" : _get_action_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TargetSequenceAction),) }
@@ -12748,7 +12748,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -12926,7 +12926,7 @@ class MCSOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSOptions)
-    
+
     _get_draw_trajectory_in_2d_metadata = { "offset" : _get_draw_trajectory_in_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -13277,7 +13277,7 @@ class CalculationObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -13407,7 +13407,7 @@ class ConstraintCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -13517,7 +13517,7 @@ class PluginProperties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PluginProperties)
-    
+
     _get_property_metadata = { "offset" : _get_property_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
@@ -13579,7 +13579,7 @@ class ProfileSearchPlugin(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileSearchPlugin)
-    
+
     _get_controls_metadata = { "offset" : _get_controls_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13708,7 +13708,7 @@ class TargeterGraph(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargeterGraph)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13901,7 +13901,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -14036,7 +14036,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -14122,7 +14122,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -14201,7 +14201,7 @@ class TargeterGraphActiveControl(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargeterGraphActiveControl)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14333,7 +14333,7 @@ class TargeterGraphResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargeterGraphResult)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14524,7 +14524,7 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileDifferentialCorrector)
-    
+
     _get_control_parameters_metadata = { "offset" : _get_control_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14885,7 +14885,7 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileScriptingTool)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -15024,7 +15024,7 @@ class DifferentialCorrectorControl(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DifferentialCorrectorControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -15285,7 +15285,7 @@ class DifferentialCorrectorResult(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DifferentialCorrectorResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -15517,7 +15517,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -15611,7 +15611,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -15700,7 +15700,7 @@ class SearchPluginControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SearchPluginControl)
-    
+
     _get_control_name_metadata = { "offset" : _get_control_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15858,7 +15858,7 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -15934,7 +15934,7 @@ class SearchPluginResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SearchPluginResult)
-    
+
     _get_result_name_metadata = { "offset" : _get_result_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16076,7 +16076,7 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -16145,7 +16145,7 @@ class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileChangeManeuverType)
-    
+
     _get_segment_metadata = { "offset" : _get_segment_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -16216,7 +16216,7 @@ class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileChangeReturnSegment)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16294,7 +16294,7 @@ class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileChangePropagator)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16372,7 +16372,7 @@ class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileChangeStopSegment)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16453,7 +16453,7 @@ class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileChangeStoppingConditionState)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16554,7 +16554,7 @@ class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileSeedFiniteManeuver)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16627,7 +16627,7 @@ class ProfileRunOnce(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileRunOnce)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type ProfileRunOnce."""
@@ -16680,7 +16680,7 @@ class BPlaneCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16759,7 +16759,7 @@ class StateCalcDamageFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDamageFlux)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDamageFlux."""
@@ -16793,7 +16793,7 @@ class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDamageMassFlux)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDamageMassFlux."""
@@ -16827,7 +16827,7 @@ class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMagneticFieldDipoleL)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcMagneticFieldDipoleL."""
@@ -16862,7 +16862,7 @@ class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSEETMagneticFieldLineSeparationAngle)
-    
+
     _get_target_object_metadata = { "offset" : _get_target_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -16905,7 +16905,7 @@ class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcImpactFlux)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcImpactFlux."""
@@ -16939,7 +16939,7 @@ class StateCalcImpactMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcImpactMassFlux)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcImpactMassFlux."""
@@ -16973,7 +16973,7 @@ class StateCalcSEETSAAFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSEETSAAFlux)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcSEETSAAFlux."""
@@ -17007,7 +17007,7 @@ class StateCalcSEETVehTemp(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSEETVehTemp)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcSEETVehTemp."""
@@ -17041,7 +17041,7 @@ class StateCalcEpoch(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEpoch)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcEpoch."""
@@ -17075,7 +17075,7 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcJacobiConstant)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcJacobiConstant."""
@@ -17113,7 +17113,7 @@ class StateCalcJacobiOsculating(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcJacobiOsculating)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17181,7 +17181,7 @@ class StateCalcCartesianElem(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCartesianElem)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17237,7 +17237,7 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCartSTMElem)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17325,7 +17325,7 @@ class StateCalcSTMEigenval(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSTMEigenval)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17415,7 +17415,7 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSTMEigenvecElem)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17517,7 +17517,7 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEnvironment)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17587,7 +17587,7 @@ class StateCalcOrbitDelaunayG(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitDelaunayG)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17659,7 +17659,7 @@ class StateCalcOrbitDelaunayH(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitDelaunayH)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17731,7 +17731,7 @@ class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitDelaunayL)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17803,7 +17803,7 @@ class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitSemilatusRectum)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17875,7 +17875,7 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEquinoctialElem)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17946,7 +17946,7 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachBearing)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18026,7 +18026,7 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachMagnitude)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18106,7 +18106,7 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachTheta)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18186,7 +18186,7 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachX)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18266,7 +18266,7 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachY)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18346,7 +18346,7 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCloseApproachCosBearing)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18430,7 +18430,7 @@ class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativeGroundTrackError)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18546,7 +18546,7 @@ class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativeAtAOLMaster)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18658,7 +18658,7 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaFromMaster)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18737,7 +18737,7 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcLonDriftRate)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18805,7 +18805,7 @@ class StateCalcMeanEarthLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanEarthLon)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18857,7 +18857,7 @@ class StateCalcRectifiedLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRectifiedLon)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18909,7 +18909,7 @@ class StateCalcTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTrueLongitude)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18961,7 +18961,7 @@ class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGeodeticTrueLongitude)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19013,7 +19013,7 @@ class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19065,7 +19065,7 @@ class StateCalcMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanRightAscension)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19117,7 +19117,7 @@ class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGeodeticMeanRightAscension)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19169,7 +19169,7 @@ class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTwoBodyDriftRate)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19223,7 +19223,7 @@ class StateCalcDriftRateFactor(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDriftRateFactor)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19291,7 +19291,7 @@ class StateCalcEccentricityX(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEccentricityX)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19343,7 +19343,7 @@ class StateCalcEccentricityY(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEccentricityY)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19397,7 +19397,7 @@ class StateCalcInclinationX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInclinationX)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19467,7 +19467,7 @@ class StateCalcInclinationY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInclinationY)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19535,7 +19535,7 @@ class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcUnitAngularMomentumX)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19587,7 +19587,7 @@ class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcUnitAngularMomentumY)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19639,7 +19639,7 @@ class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcUnitAngularMomentumZ)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19691,7 +19691,7 @@ class StateCalcHeightAboveTerrain(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcHeightAboveTerrain)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19744,7 +19744,7 @@ class StateCalcGeodeticElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGeodeticElem)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19804,7 +19804,7 @@ class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRepeatingGroundTrackErr)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19920,7 +19920,7 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcAltitudeOfApoapsis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19990,7 +19990,7 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcAltitudeOfPeriapsis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20060,7 +20060,7 @@ class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcArgumentOfLatitude)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20130,7 +20130,7 @@ class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcArgumentOfPeriapsis)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20200,7 +20200,7 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEccentricityAnomaly)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20270,7 +20270,7 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcLonOfAscNode)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20340,7 +20340,7 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanMotion)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20410,7 +20410,7 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitPeriod)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20480,7 +20480,7 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcNumRevs)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20550,7 +20550,7 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRadOfApoapsis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20620,7 +20620,7 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRadOfPeriapsis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20690,7 +20690,7 @@ class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSemimajorAxis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20760,7 +20760,7 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTimePastAscNode)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20830,7 +20830,7 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTimePastPeriapsis)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20900,7 +20900,7 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTrueAnomaly)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20966,7 +20966,7 @@ class StateCalcDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaV)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaV."""
@@ -21000,7 +21000,7 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaVSquared)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaVSquared."""
@@ -21034,7 +21034,7 @@ class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMCSDeltaV)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcMCSDeltaV."""
@@ -21070,7 +21070,7 @@ class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMCSDeltaVSquared)
-    
+
     _get_squared_type_metadata = { "offset" : _get_squared_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SquaredType),) }
@@ -21123,7 +21123,7 @@ class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSequenceDeltaV)
-    
+
     _get_sequence_name_metadata = { "offset" : _get_sequence_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21177,7 +21177,7 @@ class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSequenceDeltaVSquared)
-    
+
     _get_sequence_name_metadata = { "offset" : _get_sequence_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21244,7 +21244,7 @@ class StateCalcFuelMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcFuelMass)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcFuelMass."""
@@ -21278,7 +21278,7 @@ class StateCalcDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDensity)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDensity."""
@@ -21312,7 +21312,7 @@ class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInertialDeltaVMagnitude)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcInertialDeltaVMagnitude."""
@@ -21348,7 +21348,7 @@ class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInertialDeltaVx)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21400,7 +21400,7 @@ class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInertialDeltaVy)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21452,7 +21452,7 @@ class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInertialDeltaVz)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21502,7 +21502,7 @@ class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcManeuverSpecificImpulse)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcManeuverSpecificImpulse."""
@@ -21536,7 +21536,7 @@ class StateCalcPressure(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcPressure)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcPressure."""
@@ -21570,7 +21570,7 @@ class StateCalcTemperature(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTemperature)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcTemperature."""
@@ -21612,7 +21612,7 @@ class StateCalcVectorY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorY)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21718,7 +21718,7 @@ class StateCalcVectorZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorZ)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21816,7 +21816,7 @@ class StateCalcMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMass)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcMass."""
@@ -21850,7 +21850,7 @@ class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcManeuverTotalMassFlowRate)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcManeuverTotalMassFlowRate."""
@@ -21886,7 +21886,7 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcAbsoluteValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21940,7 +21940,7 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDifference)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22014,7 +22014,7 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDifferenceOtherSegment)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22116,7 +22116,7 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcPositionDifferenceOtherSegment)
-    
+
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22186,7 +22186,7 @@ class StateCalcVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVelocityDifferenceOtherSegment)
-    
+
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22256,7 +22256,7 @@ class StateCalcPositionVelocityDifferenceOtherSegment(IComponentInfo, ICloneable
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcPositionVelocityDifferenceOtherSegment)
-    
+
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22328,7 +22328,7 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcValueAtSegment)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22412,7 +22412,7 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMaxValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22464,7 +22464,7 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMinValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22516,7 +22516,7 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22568,7 +22568,7 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMedianValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22620,7 +22620,7 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcStandardDeviation)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22672,7 +22672,7 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcNegative)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22726,7 +22726,7 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEccentricity)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22796,7 +22796,7 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanAnomaly)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22866,7 +22866,7 @@ class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRAAN)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22936,7 +22936,7 @@ class BDotRCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BDotRCalc)
-    
+
     _get_target_body_name_metadata = { "offset" : _get_target_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23006,7 +23006,7 @@ class BDotTCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BDotTCalc)
-    
+
     _get_target_body_name_metadata = { "offset" : _get_target_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23074,7 +23074,7 @@ class BMagnitudeCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BMagnitudeCalc)
-    
+
     _get_target_body_name_metadata = { "offset" : _get_target_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23128,7 +23128,7 @@ class BThetaCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BThetaCalc)
-    
+
     _get_target_body_name_metadata = { "offset" : _get_target_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23200,7 +23200,7 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaDec)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23288,7 +23288,7 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaRA)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23372,7 +23372,7 @@ class StateCalcBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcBetaAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23424,7 +23424,7 @@ class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcLocalApparentSolarLon)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23478,7 +23478,7 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcLonOfPeriapsis)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23564,7 +23564,7 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitStateValue)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23760,7 +23760,7 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSignedEccentricity)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23830,7 +23830,7 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInclination)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23900,7 +23900,7 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcTrueLon)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23968,7 +23968,7 @@ class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcPower)
-    
+
     _get_power_source_name_metadata = { "offset" : _get_power_source_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24025,7 +24025,7 @@ class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativeMotion)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24129,7 +24129,7 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSolarBetaAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24283,7 +24283,7 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSolarInPlaneAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24451,7 +24451,7 @@ class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativePositionDecAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24605,7 +24605,7 @@ class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativePositionInPlaneAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24769,7 +24769,7 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRelativeInclination)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24889,7 +24889,7 @@ class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCurvilinearRelativeMotion)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25034,7 +25034,7 @@ class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCustomFunction)
-    
+
     _get_reset_function_name_metadata = { "offset" : _get_reset_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25122,7 +25122,7 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcScript)
-    
+
     _get_calculation_object_arguments_metadata = { "offset" : _get_calculation_object_arguments_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25206,7 +25206,7 @@ class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCd)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcCd."""
@@ -25240,7 +25240,7 @@ class StateCalcCr(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCr)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcCr."""
@@ -25274,7 +25274,7 @@ class StateCalcDragArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDragArea)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDragArea."""
@@ -25308,7 +25308,7 @@ class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRadiationPressureArea)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadiationPressureArea."""
@@ -25342,7 +25342,7 @@ class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRadiationPressureCoefficient)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadiationPressureCoefficient."""
@@ -25376,7 +25376,7 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSRPArea)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcSRPArea."""
@@ -25412,7 +25412,7 @@ class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcCosOfVerticalFlightPathAngle)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25464,7 +25464,7 @@ class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDec)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25516,7 +25516,7 @@ class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcFlightPathAngle)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25568,7 +25568,7 @@ class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRMagnitude)
-    
+
     _get_reference_point_name_metadata = { "offset" : _get_reference_point_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25621,7 +25621,7 @@ class StateCalcRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRA)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25673,7 +25673,7 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVMagnitude)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25725,7 +25725,7 @@ class StateCalcVelocityAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVelocityAz)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25779,7 +25779,7 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcC3Energy)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25847,7 +25847,7 @@ class StateCalcInAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInAsympDec)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25899,7 +25899,7 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInAsympRA)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25951,7 +25951,7 @@ class StateCalcInVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcInVelocityAzAtPeriapsis)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26003,7 +26003,7 @@ class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOutAsympDec)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26055,7 +26055,7 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOutAsympRA)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26107,7 +26107,7 @@ class StateCalcOutVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOutVelocityAzAtPeriapsis)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26157,7 +26157,7 @@ class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDuration)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcDuration."""
@@ -26193,7 +26193,7 @@ class StateCalcUserValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcUserValue)
-    
+
     _get_variable_name_metadata = { "offset" : _get_variable_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26246,7 +26246,7 @@ class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorGeometryToolAngle)
-    
+
     _get_angle_name_metadata = { "offset" : _get_angle_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26300,7 +26300,7 @@ class StateCalcAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcAngle)
-    
+
     _get_vector1_name_metadata = { "offset" : _get_vector1_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26370,7 +26370,7 @@ class StateCalcDotProduct(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDotProduct)
-    
+
     _get_vector1_name_metadata = { "offset" : _get_vector1_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26440,7 +26440,7 @@ class StateCalcVectorDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorDec)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26510,7 +26510,7 @@ class StateCalcVectorMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorMagnitude)
-    
+
     _get_vector_name_metadata = { "offset" : _get_vector_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26580,7 +26580,7 @@ class StateCalcVectorRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorRA)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26654,7 +26654,7 @@ class StateCalcVectorX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcVectorX)
-    
+
     _get_coord_axes_name_metadata = { "offset" : _get_coord_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26766,7 +26766,7 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOnePointAccess)
-    
+
     _get_aberration_type_metadata = { "offset" : _get_aberration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AberrationType),) }
@@ -26923,7 +26923,7 @@ class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDifferenceAcrossSegmentsOtherSatellite)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27037,7 +27037,7 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcValueAtSegmentOtherSat)
-    
+
     _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27130,7 +27130,7 @@ class StateCalcRARate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRARate)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27182,7 +27182,7 @@ class StateCalcDecRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDecRate)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27234,7 +27234,7 @@ class StateCalcRangeRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcRangeRate)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27290,7 +27290,7 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGravitationalParameter)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27378,7 +27378,7 @@ class StateCalcReferenceRadius(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcReferenceRadius)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27472,7 +27472,7 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcGravCoeff)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27602,7 +27602,7 @@ class StateCalcSpeedOfLight(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcSpeedOfLight)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcSpeedOfLight."""
@@ -27636,7 +27636,7 @@ class StateCalcPi(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcPi)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcPi."""
@@ -27674,7 +27674,7 @@ class StateCalcScalar(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcScalar)
-    
+
     _get_scalar_name_metadata = { "offset" : _get_scalar_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27742,7 +27742,7 @@ class StateCalcApparentSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcApparentSolarTime)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27794,7 +27794,7 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEarthMeanSolarTime)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27846,7 +27846,7 @@ class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcEarthMeanLocalTimeOfAscendingNode)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27916,7 +27916,7 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -28008,7 +28008,7 @@ class AutomaticSequence(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AutomaticSequence)
-    
+
     _make_copy_metadata = { "offset" : _make_copy_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -28107,7 +28107,7 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -28241,7 +28241,7 @@ class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponent)
-    
+
     _get_gravitational_parameter_metadata = { "offset" : _get_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28594,7 +28594,7 @@ class CentralBodyComponentGravityModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentGravityModel)
-    
+
     _get_gravitational_parameter_metadata = { "offset" : _get_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28706,7 +28706,7 @@ class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentShapeSphere)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28759,7 +28759,7 @@ class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentShapeOblateSpheroid)
-    
+
     _get_min_radius_metadata = { "offset" : _get_min_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28838,7 +28838,7 @@ class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentShapeTriaxialEllipsoid)
-    
+
     _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28920,7 +28920,7 @@ class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponent
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentAttitudeRotationCoefficientsFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -28980,7 +28980,7 @@ class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentAttitudeIAU1994)
-    
+
     _get_right_ascension_metadata = { "offset" : _get_right_ascension_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -29134,7 +29134,7 @@ class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentEphemerisAnalyticOrbit)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -29376,7 +29376,7 @@ class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentEphemerisJPLSpice)
-    
+
     _get_jpl_spice_id_metadata = { "offset" : _get_jpl_spice_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29426,7 +29426,7 @@ class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentEphemerisFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29497,7 +29497,7 @@ class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyComponentEphemerisPlanetary)
-    
+
     _get_planetary_filename_metadata = { "offset" : _get_planetary_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29554,7 +29554,7 @@ class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MCSSegmentProperties)
-    
+
     _get_display_coordinate_system_metadata = { "offset" : _get_display_coordinate_system_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29669,7 +29669,7 @@ class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PowerInternal)
-    
+
     _get_generated_power_metadata = { "offset" : _get_generated_power_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -29791,7 +29791,7 @@ class PowerProcessed(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PowerProcessed)
-    
+
     _get_load_metadata = { "offset" : _get_load_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -29932,7 +29932,7 @@ class PowerSolarArray(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PowerSolarArray)
-    
+
     _get_area_metadata = { "offset" : _get_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -30197,7 +30197,7 @@ class GeneralRelativityFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GeneralRelativityFunction)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type GeneralRelativityFunction."""
@@ -30231,7 +30231,7 @@ class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateTransformationFunction)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type StateTransformationFunction."""
@@ -30274,7 +30274,7 @@ class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CR3BPFunction)
-    
+
     _get_secondary_name_metadata = { "offset" : _get_secondary_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -30397,7 +30397,7 @@ class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ER3BPFunc)
-    
+
     _get_secondary_name_metadata = { "offset" : _get_secondary_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -30532,7 +30532,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadiationPressureFunction)
-    
+
     _get_include_albedo_metadata = { "offset" : _get_include_albedo_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -30687,7 +30687,7 @@ class YarkovskyFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, YarkovskyFunc)
-    
+
     _get_alpha_metadata = { "offset" : _get_alpha_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -30858,7 +30858,7 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BlendedDensity)
-    
+
     _atmos_density_model_metadata = { "offset" : _atmos_density_model_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
@@ -30995,7 +30995,7 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Cira72Function)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -31281,7 +31281,7 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Exponential)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -31473,7 +31473,7 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, HarrisPriester)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -31729,7 +31729,7 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DensityModelPlugin)
-    
+
     _get_plugin_identifier_metadata = { "offset" : _get_plugin_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -32205,7 +32205,7 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, JacchiaRoberts)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32511,7 +32511,7 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, JacchiaBowman2008)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32857,7 +32857,7 @@ class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Jacchia1960)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -33043,7 +33043,7 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Jacchia1970)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -33341,7 +33341,7 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Jacchia1971)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -33639,7 +33639,7 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MSISE1990)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -33937,7 +33937,7 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MSIS1986)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34235,7 +34235,7 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, NRLMSISE2000)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34517,7 +34517,7 @@ class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, USStandardAtmosphere)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34685,7 +34685,7 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarsGRAM37)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34965,7 +34965,7 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarsGRAM2000)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -35245,7 +35245,7 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarsGRAM2001)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -35525,7 +35525,7 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarsGRAM2005)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -35805,7 +35805,7 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarsGRAM2010)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -36077,7 +36077,7 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VenusGRAM2005)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -36295,7 +36295,7 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DTM2012)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -36593,7 +36593,7 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DTM2020)
-    
+
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -36897,7 +36897,7 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GravityFieldFunction)
-    
+
     _get_gravity_filename_metadata = { "offset" : _get_gravity_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -37220,7 +37220,7 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointMassFunction)
-    
+
     _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
@@ -37292,7 +37292,7 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TwoBodyFunction)
-    
+
     _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GravParamSource),) }
@@ -37377,7 +37377,7 @@ class HPOPPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, HPOPPluginFunction)
-    
+
     _get_plugin_identifier_metadata = { "offset" : _get_plugin_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -37439,7 +37439,7 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOMFuncPluginFunction)
-    
+
     _get_plugin_identifier_metadata = { "offset" : _get_plugin_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -37511,7 +37511,7 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPAerospaceT20)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -37663,7 +37663,7 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPAerospaceT30)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -37815,7 +37815,7 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aIIA)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -37967,7 +37967,7 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aIIR)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -38119,7 +38119,7 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aeIIA)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -38271,7 +38271,7 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aeIIR)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -38429,7 +38429,7 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPSpherical)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -38637,7 +38637,7 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPNPlate)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -38863,7 +38863,7 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPTabulatedAreaVector)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -39103,7 +39103,7 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPVariableArea)
-    
+
     _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -39314,7 +39314,7 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ThirdBodyFunction)
-    
+
     _get_third_body_name_metadata = { "offset" : _get_third_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -39417,7 +39417,7 @@ class DragModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DragModelPlugin)
-    
+
     _get_plugin_identifier_metadata = { "offset" : _get_plugin_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -39492,7 +39492,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPReflectionPlugin)
-    
+
     _get_plugin_identifier_metadata = { "offset" : _get_plugin_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -39666,7 +39666,7 @@ class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineConstantAcceleration)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -39788,7 +39788,7 @@ class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineConstant)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -39919,7 +39919,7 @@ class EngineIon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineIon)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -40122,7 +40122,7 @@ class EngineThrottleTable(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineThrottleTable)
-    
+
     _get_throttle_table_filename_metadata = { "offset" : _get_throttle_table_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -40314,7 +40314,7 @@ class EngineCustom(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineCustom)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -40479,7 +40479,7 @@ class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EnginePlugin)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -40562,7 +40562,7 @@ class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineModelPolynomial)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -40692,7 +40692,7 @@ class EngineModelThrustCoefficients(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineModelThrustCoefficients)
-    
+
     _get_c0_metadata = { "offset" : _get_c0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -41010,7 +41010,7 @@ class EngineModelIspCoefficients(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineModelIspCoefficients)
-    
+
     _get_c0_metadata = { "offset" : _get_c0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -41338,7 +41338,7 @@ class EngineDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EngineDefinition)
-    
+
     _get_isp_c0_metadata = { "offset" : _get_isp_c0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -41737,7 +41737,7 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DesignCR3BPSetup)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42003,7 +42003,7 @@ class DesignCR3BPObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DesignCR3BPObject)
-    
+
     _get_object_name_metadata = { "offset" : _get_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42078,7 +42078,7 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -42180,7 +42180,7 @@ class DesignER3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DesignER3BPSetup)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42455,7 +42455,7 @@ class DesignER3BPObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DesignER3BPObject)
-    
+
     _get_object_name_metadata = { "offset" : _get_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42530,7 +42530,7 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -42618,7 +42618,7 @@ class Thruster(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Thruster)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42798,7 +42798,7 @@ class ThrusterSetCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -42915,7 +42915,7 @@ class ThrusterSet(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ThrusterSet)
-    
+
     _get_direction_definition_metadata = { "offset" : _get_direction_definition_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ThrusterDirection),) }
@@ -42988,7 +42988,7 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AsTriggerCondition)
-    
+
     _get_criteria_metadata = { "offset" : _get_criteria_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(Criteria),) }
@@ -43136,7 +43136,7 @@ class CustomFunctionScriptEngine(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomFunctionScriptEngine)
-    
+
     _get_script_filename_metadata = { "offset" : _get_script_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -43216,7 +43216,7 @@ class NumericalPropagatorWrapper(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, NumericalPropagatorWrapper)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -43370,7 +43370,7 @@ class NumericalPropagatorWrapperCR3BP(IComponentInfo, ICloneable, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, NumericalPropagatorWrapperCR3BP)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -43478,7 +43478,7 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -43616,7 +43616,7 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BulirschStoerIntegrator)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -43851,7 +43851,7 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GaussJacksonIntegrator)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -43996,7 +43996,7 @@ class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKutta2nd3rd)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -44222,7 +44222,7 @@ class RungeKutta4th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKutta4th)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -44294,7 +44294,7 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKutta4th5th)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -44542,7 +44542,7 @@ class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKutta4thAdapt)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -44790,7 +44790,7 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKuttaF7th8th)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -45040,7 +45040,7 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RungeKuttaV8th9th)
-    
+
     _get_initial_step_metadata = { "offset" : _get_initial_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -45292,7 +45292,7 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScriptingTool)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -45445,7 +45445,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -45582,7 +45582,7 @@ class ScriptingSegment(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScriptingSegment)
-    
+
     _get_component_name_metadata = { "offset" : _get_component_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -45737,7 +45737,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -45885,7 +45885,7 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScriptingParameter)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -46112,7 +46112,7 @@ class ScriptingCalculationObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScriptingCalculationObject)
-    
+
     _get_component_name_metadata = { "offset" : _get_component_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -46244,7 +46244,7 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -46362,7 +46362,7 @@ class UserVariableDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UserVariableDefinition)
-    
+
     _get_unit_dimension_metadata = { "offset" : _get_unit_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -46434,7 +46434,7 @@ class UserVariable(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UserVariable)
-    
+
     _get_unit_dimension_metadata = { "offset" : _get_unit_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -46539,7 +46539,7 @@ class UserVariableUpdate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UserVariableUpdate)
-    
+
     _get_unit_dimension_metadata = { "offset" : _get_unit_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -46670,7 +46670,7 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -46781,7 +46781,7 @@ class UserVariableCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -46871,7 +46871,7 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -46962,7 +46962,7 @@ class CalculationGraphCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
@@ -47045,7 +47045,7 @@ class ScriptingParameterEnumerationChoice(IRuntimeTypeInfoProvider, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScriptingParameterEnumerationChoice)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -47133,7 +47133,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -47273,7 +47273,7 @@ class ProfileSNOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileSNOPTOptimizer)
-    
+
     _get_control_parameters_metadata = { "offset" : _get_control_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -47504,7 +47504,7 @@ class SNOPTControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SNOPTControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -47692,7 +47692,7 @@ class SNOPTResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SNOPTResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -47894,7 +47894,7 @@ class SNOPTControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -47976,7 +47976,7 @@ class SNOPTResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -48059,7 +48059,7 @@ class ProfileIPOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileIPOPTOptimizer)
-    
+
     _get_control_parameters_metadata = { "offset" : _get_control_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -48258,7 +48258,7 @@ class IPOPTControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPOPTControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -48446,7 +48446,7 @@ class IPOPTResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPOPTResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -48648,7 +48648,7 @@ class IPOPTControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -48730,7 +48730,7 @@ class IPOPTResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -48835,7 +48835,7 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFinite)
-    
+
     _get_pressure_mode_metadata = { "offset" : _get_pressure_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PressureMode),) }
@@ -49217,7 +49217,7 @@ class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFiniteSNOPTOptimizer)
-    
+
     _get_objective_metadata = { "offset" : _get_objective_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(OptimalFiniteSNOPTObjective),) }
@@ -49425,7 +49425,7 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFiniteInitialBoundaryConditions)
-    
+
     _get_set_from_initial_guess_metadata = { "offset" : _get_set_from_initial_guess_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -49548,7 +49548,7 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFiniteFinalBoundaryConditions)
-    
+
     _get_set_from_final_guess_metadata = { "offset" : _get_set_from_final_guess_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -49706,7 +49706,7 @@ class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFinitePathBoundaryConditions)
-    
+
     _get_compute_from_initial_guess_metadata = { "offset" : _get_compute_from_initial_guess_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -49893,7 +49893,7 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFiniteSteeringNodeElement)
-    
+
     _get_node_index_metadata = { "offset" : _get_node_index_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -50065,7 +50065,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -50127,7 +50127,7 @@ class ManeuverOptimalFiniteBounds(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ManeuverOptimalFiniteBounds)
-    
+
     _get_lower_bound_metadata = { "offset" : _get_lower_bound_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -50245,7 +50245,7 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileLambertProfile)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -50791,7 +50791,7 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileLambertSearchProfile)
-    
+
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -51346,7 +51346,7 @@ class ProfileGoldenSection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileGoldenSection)
-    
+
     _get_targeter_graphs_metadata = { "offset" : _get_targeter_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -51474,7 +51474,7 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -51554,7 +51554,7 @@ class GoldenSectionControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GoldenSectionControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -51724,7 +51724,7 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -51800,7 +51800,7 @@ class GoldenSectionResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GoldenSectionResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -51930,7 +51930,7 @@ class ProfileGridSearch(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileGridSearch)
-    
+
     _get_targeter_graphs_metadata = { "offset" : _get_targeter_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52058,7 +52058,7 @@ class GridSearchControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -52138,7 +52138,7 @@ class GridSearchControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GridSearchControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -52308,7 +52308,7 @@ class GridSearchResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -52384,7 +52384,7 @@ class GridSearchResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GridSearchResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -52528,7 +52528,7 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ComponentLinkEmbedControlReferenceType), agmarshall.InterfaceOutArg,) }
@@ -52643,7 +52643,7 @@ class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProfileBisection)
-    
+
     _get_control_parameters_metadata = { "offset" : _get_control_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52758,7 +52758,7 @@ class BisectionControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BisectionControl)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -52912,7 +52912,7 @@ class BisectionControlCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -52990,7 +52990,7 @@ class BisectionResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BisectionResult)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -53144,7 +53144,7 @@ class BisectionResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }

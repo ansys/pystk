@@ -29,7 +29,7 @@ import os
 import pathlib
 import socket
 
-# The subprocess module is needed to start the backend. 
+# The subprocess module is needed to start the backend.
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
 import subprocess  # nosec B404
 
@@ -45,7 +45,7 @@ class STKRuntimeApplication(STKXApplication):
     """
     Interact with STK Runtime.
 
-    Use STKRuntime.StartApplication() or STKRuntime.AttachToApplication() 
+    Use STKRuntime.StartApplication() or STKRuntime.AttachToApplication()
     to obtain an initialized STKRuntimeApplication object.
     """
 
@@ -54,16 +54,16 @@ class STKRuntimeApplication(STKXApplication):
         self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
-        
+
     def _private_init(self, intf: InterfaceProxy):
         STKXApplication._private_init(self, intf)
-        
+
     def __del__(self):
         """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
             client: GrpcClient = self._intf.client
             client.terminate_connection(False)
-        
+
     def new_object_root(self) -> STKObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
         if self._intf:
@@ -73,7 +73,7 @@ class STKRuntimeApplication(STKXApplication):
             root._private_init(root_unk)
             return root
         raise STKInitializationError("Not connected to the gRPC server.")
-            
+
     def new_object_model_context(self) -> STKObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
         if self._intf:
@@ -92,17 +92,17 @@ class STKRuntimeApplication(STKXApplication):
         { "collection iteration batch size" : int }. Number of items to preload while iterating
         through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
         { "disable batching" : bool }. Disable all batching operations.
-        { "release batch size" : int }. Number of interfaces to be garbage collected before 
+        { "release batch size" : int }. Number of interfaces to be garbage collected before
         sending the entire batch to STK to be released. Default value is 12.
         """
         if self._intf:
             client: GrpcClient = self._intf.client
             client.set_grpc_options(options)
-            
+
     def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-        
+
         max_batch is the maximum number of calls to batch together.
         Set disable_batching=True to disable batching operations for this batcher.
         See grpcutilities module for more information.
@@ -136,13 +136,13 @@ class STKRuntime(object):
                          user_control:bool=False, \
                          no_graphics:bool=True) -> STKRuntimeApplication:
         """
-        Create a new STK Runtime instance and attach to the remote host.  
+        Create a new STK Runtime instance and attach to the remote host.
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-        Specify user_control = True to return the application to the user's control 
+        Specify user_control = True to return the application to the user's control
         (the application remains open) after terminating the Python API connection.
         """
         if grpc_port < 0 or grpc_port > 65535:
@@ -181,7 +181,7 @@ class STKRuntime(object):
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
-        # Calling subprocess.Popen (without shell equals true) to start the backend. 
+        # Calling subprocess.Popen (without shell equals true) to start the backend.
         # Excluding low severity bandit check as the validity of the inputs has been ensured.
         subprocess.Popen(cmd_line) # nosec B603
         host = grpc_host
@@ -193,7 +193,7 @@ class STKRuntime(object):
         app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
-        
+
     @staticmethod
     def attach_to_application(grpc_host:str="localhost", \
                             grpc_port:int=40704, \
@@ -215,5 +215,4 @@ class STKRuntime(object):
             atexit.register(app._disconnect)
             return app
         raise STKInitializationError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")
-        
-       
+

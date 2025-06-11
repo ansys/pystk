@@ -28,16 +28,16 @@ types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 """
 
-__all__ = ["AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "CommRadOrientationAzEl", "CommRadOrientationEulerAngles", 
-"CommRadOrientationOffsetCart", "CommRadOrientationQuaternion", "CommRadOrientationYPRAngles", "ConversionUtility", "CoordinateSystem", 
-"Cylindrical", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", "DirectionXYZ", 
-"DoublesCollection", "EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode", 
-"ExecuteMultipleCommandsResult", "FillStyle", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
-"IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
-"IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LineStyle", "LogMessageDisplayID", "LogMessageType", 
-"OrbitStateType", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationType", 
-"OrientationYPRAngles", "PRSequence", "Planetocentric", "Planetodetic", "Position", "PositionType", "PropertyInfo", "PropertyInfoCollection", 
-"PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
+__all__ = ["AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "CommRadOrientationAzEl", "CommRadOrientationEulerAngles",
+"CommRadOrientationOffsetCart", "CommRadOrientationQuaternion", "CommRadOrientationYPRAngles", "ConversionUtility", "CoordinateSystem",
+"Cylindrical", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", "DirectionXYZ",
+"DoublesCollection", "EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode",
+"ExecuteMultipleCommandsResult", "FillStyle", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData",
+"IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion",
+"IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LineStyle", "LogMessageDisplayID", "LogMessageType",
+"OrbitStateType", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationType",
+"OrientationYPRAngles", "PRSequence", "Planetocentric", "Planetodetic", "Position", "PositionType", "PropertyInfo", "PropertyInfoCollection",
+"PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection",
 "UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPRAnglesSequence"]
 
 from ctypes import POINTER
@@ -65,7 +65,7 @@ def _raise_uninitialized_error(*args):
 
 class PositionType(IntEnum):
     """Facility/place/target position types."""
-   
+
     CARTESIAN = 0x0
     """Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."""
     CYLINDRICAL = 0x1
@@ -93,7 +93,7 @@ agcls.AgTypeNameMap["PositionType"] = PositionType
 
 class EulerDirectionSequence(IntEnum):
     """Euler direction sequences."""
-   
+
     SEQUENCE_12 = 0
     """12 sequence."""
     SEQUENCE_21 = 1
@@ -112,7 +112,7 @@ agcls.AgTypeNameMap["EulerDirectionSequence"] = EulerDirectionSequence
 
 class DirectionType(IntEnum):
     """Direction options for aligned and constrained vectors."""
-   
+
     EULER = 0
     """Euler B and C angles."""
     PR = 1
@@ -131,7 +131,7 @@ agcls.AgTypeNameMap["DirectionType"] = DirectionType
 
 class PRSequence(IntEnum):
     """Pitch-Roll (PR) direction sequences."""
-   
+
     PR = 0
     """PR sequence."""
 
@@ -141,7 +141,7 @@ agcls.AgTypeNameMap["PRSequence"] = PRSequence
 
 class OrientationType(IntEnum):
     """Orientation methods."""
-   
+
     AZ_EL = 0
     """AzEl (azimuth-elevation) method."""
     EULER_ANGLES = 1
@@ -160,7 +160,7 @@ agcls.AgTypeNameMap["OrientationType"] = OrientationType
 
 class AzElAboutBoresight(IntEnum):
     """About Boresight options for AzEl orientation method."""
-   
+
     HOLD = 0
     """Hold: rotation about the Y axis followed by rotation about the new X-axis."""
     ROTATE = 1
@@ -173,7 +173,7 @@ agcls.AgTypeNameMap["AzElAboutBoresight"] = AzElAboutBoresight
 
 class EulerOrientationSequenceType(IntEnum):
     """Euler rotation sequence options:."""
-   
+
     SEQUENCE_121 = 0
     """121 rotation."""
     SEQUENCE_123 = 1
@@ -216,7 +216,7 @@ agcls.AgTypeNameMap["EulerOrientationSequenceType"] = EulerOrientationSequenceTy
 
 class YPRAnglesSequence(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
-   
+
     PRY = 0
     """PRY sequence."""
     PYR = 1
@@ -241,7 +241,7 @@ agcls.AgTypeNameMap["YPRAnglesSequence"] = YPRAnglesSequence
 
 class OrbitStateType(IntEnum):
     """Coordinate types used in specifying orbit state."""
-   
+
     CARTESIAN = 0
     """Cartesian coordinate type."""
     CLASSICAL = 1
@@ -269,7 +269,7 @@ agcls.AgTypeNameMap["OrbitStateType"] = OrbitStateType
 
 class CoordinateSystem(IntEnum):
     """Earth-centered coordinate systems for defining certain propagators."""
-   
+
     UNKNOWN = -1
     """Represents coordinate system not supported by the Object Model."""
     ALIGNMENT_AT_EPOCH = 0
@@ -348,7 +348,7 @@ agcls.AgTypeNameMap["CoordinateSystem"] = CoordinateSystem
 
 class LogMessageType(IntEnum):
     """Log message types."""
-   
+
     DEBUG = 0
     """Debugging message."""
     INFO = 1
@@ -370,7 +370,7 @@ agcls.AgTypeNameMap["LogMessageType"] = LogMessageType
 
 class LogMessageDisplayID(IntEnum):
     """Log message destination options."""
-   
+
     ALL = -1
     """STK displays the message in all the log destination."""
     DEFAULT = 0
@@ -389,7 +389,7 @@ agcls.AgTypeNameMap["LogMessageDisplayID"] = LogMessageDisplayID
 
 class LineStyle(IntEnum):
     """Line Style."""
-   
+
     SOLID = 0
     """Specify a solid line."""
     DASHED = 1
@@ -450,7 +450,7 @@ agcls.AgTypeNameMap["LineStyle"] = LineStyle
 
 class ExecuteMultipleCommandsMode(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
-   
+
     CONTINUE_ON_ERROR = 0
     """Continue executing the remaining commands in the command batch."""
     STOP_ON_ERROR = 1
@@ -469,7 +469,7 @@ agcls.AgTypeNameMap["ExecuteMultipleCommandsMode"] = ExecuteMultipleCommandsMode
 
 class FillStyle(IntEnum):
     """Fill Style."""
-   
+
     SOLID = 0
     """Specify a solid fill style."""
     HORIZONTAL_STRIPE = 1
@@ -500,7 +500,7 @@ agcls.AgTypeNameMap["FillStyle"] = FillStyle
 
 class PropertyInfoValueType(IntEnum):
     """The enumeration used to determine what type of property is being used."""
-   
+
     INT = 0
     """Property is of type int."""
     REAL = 1
@@ -550,7 +550,7 @@ class ILocationData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILocationData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5292229181779320538, 5946016819874812079), ILocationData)
@@ -600,7 +600,7 @@ class IPosition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPosition, None)
-    
+
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(PositionType), agmarshall.InterfaceOutArg,) }
@@ -795,7 +795,7 @@ class IDirection(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirection, None)
-    
+
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(DirectionType), agmarshall.InterfaceOutArg,) }
@@ -940,7 +940,7 @@ class ICartesian3Vector(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian3Vector, None)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -1053,7 +1053,7 @@ class IOrientation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientation, None)
-    
+
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(OrientationType), agmarshall.InterfaceOutArg,) }
@@ -1196,7 +1196,7 @@ class IOrientationAzEl(IOrientation):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationAzEl, IOrientation)
-    
+
     _get_azimuth_metadata = { "offset" : _get_azimuth_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -1282,7 +1282,7 @@ class IOrientationEulerAngles(IOrientation):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationEulerAngles, IOrientation)
-    
+
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType),) }
@@ -1384,7 +1384,7 @@ class IOrientationQuaternion(IOrientation):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationQuaternion, IOrientation)
-    
+
     _get_qx_metadata = { "offset" : _get_qx_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -1486,7 +1486,7 @@ class IOrientationYPRAngles(IOrientation):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationYPRAngles, IOrientation)
-    
+
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence),) }
@@ -1580,7 +1580,7 @@ class IOrientationPositionOffset(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationPositionOffset, None)
-    
+
     _get_position_offset_metadata = { "offset" : _get_position_offset_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -1631,7 +1631,7 @@ class IOrbitState(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrbitState, None)
-    
+
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(OrbitStateType), agmarshall.InterfaceOutArg,) }
@@ -1758,7 +1758,7 @@ class IRuntimeTypeInfoProvider(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRuntimeTypeInfoProvider, None)
-    
+
     _get_provide_runtime_type_info_metadata = { "offset" : _get_provide_runtime_type_info_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -1805,7 +1805,7 @@ class ExecuteCommandResult(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -1898,7 +1898,7 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -1963,7 +1963,7 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UnitPreferencesUnit)
-    
+
     _get_full_name_metadata = { "offset" : _get_full_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2047,7 +2047,7 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -2124,7 +2124,7 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UnitPreferencesDimension)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -2222,7 +2222,7 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -2365,7 +2365,7 @@ class ConversionUtility(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConversionUtility)
-    
+
     _convert_quantity_metadata = { "offset" : _convert_quantity_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
@@ -2530,7 +2530,7 @@ class Quantity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Quantity)
-    
+
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2644,7 +2644,7 @@ class Date(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Date)
-    
+
     _format_metadata = { "offset" : _format_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
@@ -2816,7 +2816,7 @@ class Cartesian(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Cartesian)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -2902,7 +2902,7 @@ class Geodetic(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Geodetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -2988,7 +2988,7 @@ class Geocentric(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Geocentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3074,7 +3074,7 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Planetodetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3160,7 +3160,7 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Planetocentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3246,7 +3246,7 @@ class Spherical(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Spherical)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3332,7 +3332,7 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Cylindrical)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -3437,7 +3437,7 @@ class DirectionEuler(IDirection, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionEuler)
-    
+
     _get_b_metadata = { "offset" : _get_b_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3523,7 +3523,7 @@ class DirectionPR(IDirection, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionPR)
-    
+
     _get_pitch_metadata = { "offset" : _get_pitch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3609,7 +3609,7 @@ class DirectionRADec(IDirection, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionRADec)
-    
+
     _get_dec_metadata = { "offset" : _get_dec_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -3695,7 +3695,7 @@ class DirectionXYZ(IDirection, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionXYZ)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -3899,7 +3899,7 @@ class DoublesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.LongArg, agmarshall.DoubleArg,) }
@@ -4018,7 +4018,7 @@ class Cartesian2Vector(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Cartesian2Vector)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -4109,7 +4109,7 @@ class PropertyInfo(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropertyInfo)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4225,7 +4225,7 @@ class PropertyInfoCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -4301,7 +4301,7 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RuntimeTypeInfo)
-    
+
     _get_properties_metadata = { "offset" : _get_properties_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }

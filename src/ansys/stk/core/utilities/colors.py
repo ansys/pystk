@@ -39,55 +39,55 @@ class Color(object):
     --------
     Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
-    >>> 
+    >>>
     >>> manager = root.current_scenario.scene_manager
     >>> point = manager.initializers.point_batch_primitive.initialize()
-    >>> 
+    >>>
     >>> lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
-    >>> 
+    >>>
     >>> colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
-    >>> 
+    >>>
     >>> point.set_cartographic_with_colors("Earth", lla_pts, colors)
 
     Get and set a three-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.stkobjects import STKObjectType
     >>> from ansys.stk.core.utilities.colors import Color, Colors
-    >>> 
+    >>>
     >>> facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
-    >>> 
+    >>>
     >>> facility.graphics.color = Colors.Blue
     >>> facility.graphics.color = Color.from_rgb(127, 255, 212)
     >>> (r, g, b) = facility.graphics.color.get_rgb()
     """
-    
+
     def __init__(self):
         """Construct an object of type Color."""
         self._r = 0
         self._g = 0
         self._b = 0
-        
+
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return self._r == other._r and self._g == other._g and self._b == other._b
-        
+
     def _to_ole_color(self) -> int:
         return self._r + self._g*256 + self._b*256*256
-        
+
     def _from_ole_color(self, ole:int):
         self._r = ole % 256
         self._g = (ole // 256) % 256
         self._b = (ole // (256*256)) % 256
-        
+
     @staticmethod
     def _validate_rgb(val):
         if val > 255 or val < 0:
             raise STKColorError("RGB values should be between 0 and 255, inclusive.")
         return val
-        
+
     def _to_argb(self) -> int:
         alpha = 255 #fully opaque
         return self._b + self._g*256 + self._r*256*256 + alpha*256*256*256
-        
+
     @classmethod
     def from_rgb(cls, r:int, g:int, b:int) -> "Color":
         """Create a new Color from R, G, B values."""
@@ -96,11 +96,11 @@ class Color(object):
         c._g = Color._validate_rgb(g)
         c._b = Color._validate_rgb(b)
         return c
-        
+
     def get_rgb(self) -> typing.Tuple[int, int, int]:
         """Return the R, G, B representation of this color."""
         return (self._r, self._g, self._b)
-            
+
 class ColorRGBA(object):
     """
     A variably translucent color representation that can be used with certain methods in the STK Object Model.
@@ -109,26 +109,26 @@ class ColorRGBA(object):
     --------
     Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
-    >>> 
+    >>>
     >>> manager = root.current_scenario.scene_manager
     >>> point = manager.initializers.point_batch_primitive.initialize()
-    >>> 
+    >>>
     >>> lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
-    >>> 
+    >>>
     >>> colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
-    >>> 
+    >>>
     >>> point.set_cartographic_with_colors("Earth", lla_pts, colors)
     """
-    
+
     def __init__(self, c:Color, alpha=255):
         """Construct an object of type ColorRGBA."""
         self._color = c
         self._alpha = alpha
-        
+
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return self._color == other._color and self._alpha == other._alpha
-        
+
     def _to_argb(self) -> int:
         return self._color._b + self._color._g*256 + self._color._r*256*256 + self._alpha*256*256*256
 
@@ -136,14 +136,14 @@ class ColorRGBA(object):
     def alpha(self) -> float:
         """Gets or sets the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque)."""
         return self._alpha
-        
+
     @alpha.setter
     def alpha(self, value:int) -> None:
         if value >= 0 and value <= 255:
             self._alpha = value
         else:
             raise STKColorError("Alpha value should be between 0 (fully translucent) and 255 (fully opaque), inclusive.")
-            
+
     @property
     def color(self) -> Color:
         """The Color value that contains R, G, B values."""
@@ -153,7 +153,7 @@ class _ColorsImpl(object):
     @staticmethod
     def from_rgb(r:int, g:int, b:int) -> Color:
         return Color.from_rgb(r, g, b)
-    
+
 class Colors(object):
     """
     A factory for creating Color objects that may be used with the STK object model.
@@ -164,32 +164,32 @@ class Colors(object):
     --------
     Get and set a four-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.utilities.colors import Colors, ColorRGBA
-    >>> 
+    >>>
     >>> manager = root.current_scenario.scene_manager
     >>> point = manager.initializers.point_batch_primitive.initialize()
-    >>> 
+    >>>
     >>> lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
-    >>> 
+    >>>
     >>> colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
-    >>> 
+    >>>
     >>> point.set_cartographic_with_colors("Earth", lla_pts, colors)
 
     Get and set a three-channel color for the graphics of an STK graphics primitive:
     >>> from ansys.stk.core.stkobjects import STKObjectType
     >>> from ansys.stk.core.utilities.colors import Color, Colors
-    >>> 
+    >>>
     >>> facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
-    >>> 
+    >>>
     >>> facility.graphics.color = Colors.Blue
     >>> facility.graphics.color = Color.from_rgb(127, 255, 212)
     >>> (r, g, b) = facility.graphics.color.get_rgb()
     """
-    
+
     @staticmethod
     def from_rgb(r:int, g:int, b:int) -> Color:
         """Create a new Color from R, G, B values in the range [0, 255]."""
         return _ColorsImpl.from_rgb(r, g, b)
-        
+
     @staticmethod
     def from_rgba(r:int, g:int, b:int, a:int) -> ColorRGBA:
         """Create a new Color from R, G, B, A values in the range [0, 255]."""
@@ -207,7 +207,7 @@ class Colors(object):
             return _ColorsImpl.from_rgb(args[1], args[2], args[3])
         else:
             raise STKColorError('unsupported color conversion')
-        
+
     AliceBlue            = _ColorsImpl.from_rgb(240,  248,  255)
     AntiqueWhite         = _ColorsImpl.from_rgb(250,  235,  215)
     Aqua                 = _ColorsImpl.from_rgb(0,    255,  255)
