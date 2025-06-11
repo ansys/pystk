@@ -36,7 +36,7 @@ else:
 from ..internal.comutil import BOOL, CHAR, DWORD, INT, LONG, LPCWSTR, LPVOID, WINFUNCTYPE, IUnknown
 from ..stkengine import STKEngine
 from ..stkx import Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase
-from ..utilities.exceptions import STKAttributeError
+from ..utilities.exceptions import STKAttributeError, STKRuntimeError
 
 if os.name != "nt":
     from ctypes.util import find_library
