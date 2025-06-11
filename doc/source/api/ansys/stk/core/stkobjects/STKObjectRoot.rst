@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -70,7 +70,7 @@ Overview
               - """Return an ISTKObjectRootEventHandler that is subscribed to handle events associated with this instance of STKObjectRoot."""
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -136,8 +136,13 @@ Execute multiple Connect commands
 
 .. code-block:: python
 
-    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
-    root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
+    commandList = [
+        ["New / */Place MyPlace"],
+        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
+    ]
+    root.execute_multiple_commands(
+        commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR
+    )
 
 
 Execute a Connect command
@@ -254,8 +259,10 @@ Manage STK Desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
+
     def on_stk_object_added_custom_callback(path: str):
         print(f"{path} has been added.")
+
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
@@ -285,6 +292,7 @@ Manage STK Engine events
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
 
+
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
@@ -311,8 +319,15 @@ Open a Viewer Data File
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    root.load_vdf(
+        os.path.join(
+            installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+        ),
+        "",
+    )
 
 
 Import detail
@@ -614,8 +629,15 @@ Method detail
     .. code-block:: python
 
         # STKObjectRoot root: STK Object Model Root
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+        installPath = (
+            r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        )
+        root.load_vdf(
+            os.path.join(
+                installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+            ),
+            "",
+        )
 
 
 .. py:method:: object_exists(self, object_path: str) -> bool

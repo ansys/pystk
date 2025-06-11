@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -61,7 +61,9 @@ Set satellite propagator to HPOP and set force model properties
     )
 
     forceModel = satellite.propagator.force_model
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     forceModel.central_body_gravity.file = os.path.join(
         installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
     )

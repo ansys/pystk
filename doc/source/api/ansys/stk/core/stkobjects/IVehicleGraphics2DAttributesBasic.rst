@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,8 +52,12 @@ Set 2D Graphics display properties
     attributes.line.width = LineWidth.WIDTH4
     attributes.line.style = LineStyle.LONG_DASH
     attributes.color = Colors.Lime
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    attributes.marker_style = os.path.join(
+        installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp"
+    )
 
 
 Import detail

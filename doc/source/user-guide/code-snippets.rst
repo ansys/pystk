@@ -277,7 +277,9 @@ Create a new collection of interval list
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # IVectorGeometryPoint centerPtSat: point component
     timeCollListFactory = vgtSat.time_interval_collections.factory
-    timeColl = timeCollListFactory.create_lighting("LightingList", "Collection of lighting intervals")
+    timeColl = timeCollListFactory.create_lighting(
+        "LightingList", "Collection of lighting intervals"
+    )
     timeColl.use_object_eclipsing_bodies = True
     timeColl.location = centerPtSat
 
@@ -413,7 +415,9 @@ Create a new assembled system
     # IVectorGeometryPointFixedInSystem fixedPt: point component
     # IVectorGeometryToolAxes bodyAxes: axes component
     SysFactory = vgtSat.systems.factory
-    assemSys = SysFactory.create("FixedPtSystem", "System with origin at the new point", SystemType.ASSEMBLED)
+    assemSys = SysFactory.create(
+        "FixedPtSystem", "System with origin at the new point", SystemType.ASSEMBLED
+    )
     assemSys.origin_point.set_point(fixedPt)
     assemSys.reference_axes.set_axes(bodyAxes)
 
@@ -449,7 +453,9 @@ Create a new between vectors angle
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
     AngFactory = vgtSat.angles.factory
-    betwVect = AngFactory.create("SatEarth2Y", "Displacement Vector to Sat Body Y", AngleType.BETWEEN_VECTORS)
+    betwVect = AngFactory.create(
+        "SatEarth2Y", "Displacement Vector to Sat Body Y", AngleType.BETWEEN_VECTORS
+    )
     betwVect.from_vector.set_vector(Sat2EarthCenter)
     betwVect.to_vector.set_vector(bodyYSat)
 
@@ -463,10 +469,14 @@ Create a new fixed at time instant point
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolSystemAssembled icrf: system component
     PtFactory = vgtSat.points.factory
-    timeInstantPt = PtFactory.create("AtTimePt", "Point at time instant", PointType.AT_TIME_INSTANT)
+    timeInstantPt = PtFactory.create(
+        "AtTimePt", "Point at time instant", PointType.AT_TIME_INSTANT
+    )
     timeInstantPt.source_point = vgtSat.points.item("Center")
     timeInstantPt.reference_system = icrf
-    timeInstantPt.reference_time_instant = vgtSat.time_instants.item("AvailabilityStartTime")
+    timeInstantPt.reference_time_instant = vgtSat.time_instants.item(
+        "AvailabilityStartTime"
+    )
 
 .. _CreateModelAttachmentPoint:
 
@@ -477,7 +487,9 @@ Create a new model attachment point
 
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     PtFactory = vgtSat.points.factory
-    modelPt = PtFactory.create("ModelPt", "Attach point defined in model", PointType.MODEL_ATTACHMENT)
+    modelPt = PtFactory.create(
+        "ModelPt", "Attach point defined in model", PointType.MODEL_ATTACHMENT
+    )
     modelPt.pointable_element_name = "MainSensor-000000"
 
 .. _CreateFixedPoint:
@@ -489,7 +501,9 @@ Create a new fixed in system point
 
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     PtFactory = vgtSat.points.factory
-    fixedPt = PtFactory.create("FixedPt", "Point offset from Center", PointType.FIXED_IN_SYSTEM)
+    fixedPt = PtFactory.create(
+        "FixedPt", "Point offset from Center", PointType.FIXED_IN_SYSTEM
+    )
     fixedPt.fixed_point.assign_cartesian(0.005, 0, 0.005)
 
 .. _CreateProjectionVector:
@@ -540,7 +554,9 @@ Create a new cross product vector
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorDisplacement fixedAxesVector: vector component
     VectFactory = vgtSat.vectors.factory
-    lineOfNodesVector = VectFactory.create_cross_product("CrossProduct", Sat2EarthCenter, fixedAxesVector)
+    lineOfNodesVector = VectFactory.create_cross_product(
+        "CrossProduct", Sat2EarthCenter, fixedAxesVector
+    )
 
 .. _CreateFixedAxesVector:
 
@@ -567,7 +583,9 @@ Create a new displacement vector
     # IVectorGeometryPoint centerPtSat: point component
     # IVectorGeometryPoint centerPtEarth: point component
     VectFactory = vgtSat.vectors.factory
-    Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
+    Sat2EarthCenter = VectFactory.create_displacement_vector(
+        "Sat2EarthCenter", centerPtSat, centerPtEarth
+    )
 
 .. _GetVGTCompVehicle:
 
@@ -594,7 +612,9 @@ Get the center point and inertial system of Earth central body
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model root
-    centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
+    centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item(
+        "Center"
+    )
     icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 
 .. _CameraReferenceFrame:
@@ -701,8 +721,13 @@ Execute multiple connect commands
 
 .. code-block:: python
 
-    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
-    root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
+    commandList = [
+        ["New / */Place MyPlace"],
+        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
+    ]
+    root.execute_multiple_commands(
+        commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR
+    )
 
 .. _ConnectCommand:
 
@@ -735,7 +760,9 @@ Create a heat map of coverage definition results graphing duration by asset usin
     )
 
     # reshape the DataFrame based on column values
-    pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
+    pivot = all_regions_coverage_df.pivot_table(
+        index="region name", columns="asset name", values="duration"
+    )
 
     # plot heat map that shows duration by asset name by region
     plt.xlabel("Duration by Asset", fontsize=20)
@@ -765,7 +792,9 @@ Compute descriptive statistics for access measurements using a pandas dataframe
     all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
     # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
+    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(
+        pd.to_numeric
+    ).describe()
 
 .. _AccessResultsToPandasDataFrame:
 
@@ -778,13 +807,17 @@ Convert access data provider results to a pandas dataframe
     # compute data provider results for basic Access
     field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
 
-    access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
+    access_data = facility_sensor_satellite_access.data_providers[
+        "Access Data"
+    ].execute_elements(
         self.get_scenario().start_time, self.get_scenario().stop_time, field_names
     )
 
     # convert dataset collection in a row format as a Pandas DataFrame
     index_column = "Access Number"
-    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+    access_data_df = access_data.data_sets.to_pandas_dataframe(
+        index_element_name=index_column
+    )
 
 .. _CoverageDefinitionResultsToPandasDataFrame:
 
@@ -818,7 +851,10 @@ Load a numpy array with flight profile data
 
     flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
     flight_profile_data = flight_profile_data_provider.execute_elements(
-        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+        self.get_scenario().start_time,
+        self.get_scenario().stop_time,
+        time_step_sec,
+        field_names,
     )
 
     # convert dataset collection in a row format as a Numpy array
@@ -829,7 +865,11 @@ Load a numpy array with flight profile data
 
     plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
-        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+        plt.plot(
+            flight_profile_data_arr[simplex, 1],
+            flight_profile_data_arr[simplex, 0],
+            color="darkblue",
+        )
 
     plt.title("Estimated Flight Envelope", fontsize=15)
     plt.xlabel("Mach Number", fontsize=15)
@@ -853,7 +893,11 @@ Display a primitive during an interval
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     start = root.conversion_utility.new_date("EpSec", str(scenario.start_time))
     stop = root.conversion_utility.new_date("EpSec", str(scenario.start_time + 600))
-    timeInterval = manager.initializers.time_interval_display_condition.initialize_with_times(start, stop)
+    timeInterval = (
+        manager.initializers.time_interval_display_condition.initialize_with_times(
+            start, stop
+        )
+    )
     composite.add(timeInterval)
     model.display_condition = composite
 
@@ -874,7 +918,9 @@ Draw a solid cylinder primitive and set properties
 
     cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
     solidCylinder = manager.initializers.solid_primitive.initialize()
-    solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidCylinder.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    )
     solidCylinder.position = originCylinder.query_cartesian_array()
     solidCylinder.set_with_result(cylinder)
     solidCylinder.color = Colors.Lime
@@ -903,8 +949,8 @@ Draw a solid ellipsoid primitive and set properties
     radii = [[200], [100], [100]]
     ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
     solidEllipsoid = manager.initializers.solid_primitive.initialize()
-    solidEllipsoid.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item(
-        "Fixed"
+    solidEllipsoid.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
     )  # vgtSat.Systems.item('Body')
     solidEllipsoid.position = originEllipsoid.query_cartesian_array()
     solidEllipsoid.set_with_result(ellipsoid)
@@ -933,7 +979,9 @@ Draw a solid box primitive and set properties
     size = [[100], [100], [200]]
     result = manager.initializers.box_triangulator.compute(size)
     solidBox = manager.initializers.solid_primitive.initialize()
-    solidBox.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidBox.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    )
     solidBox.position = originBox.query_cartesian_array()
     solidBox.set_with_result(result)
     solidBox.color = Colors.Red
@@ -975,7 +1023,9 @@ Create a bounding sphere
 
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
-    sphere = manager.initializers.bounding_sphere.initialize([[-1061.22], [-5773.98], [4456.04]], 100)
+    sphere = manager.initializers.bounding_sphere.initialize(
+        [[-1061.22], [-5773.98], [4456.04]], 100
+    )
 
 .. _DrawNewTextureScreenOverlay:
 
@@ -987,8 +1037,14 @@ Draw a new texture screen overlay
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
     overlays = manager.screen_overlays.overlays
-    textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    textureOverlay = (
+        manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(
+            0, 0, 128, 128
+        )
+    )
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     textureOverlay.texture = manager.textures.load_from_string_uri(
         os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
     )
@@ -1016,7 +1072,9 @@ Draw a new text primitive
     font = manager.initializers.graphics_font.initialize_with_name_size_font_style_outline(
         "MS Sans Serif", 24, FontStyle.BOLD, True
     )
-    textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(font)
+    textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(
+        font
+    )
     textBatch.set_cartographic("Earth", [[0], [0], [0]], ["Example Text"])  # Lat, Lon, Alt
     manager.primitives.add(textBatch)
 
@@ -1029,15 +1087,21 @@ Draw a new surface extent triangulator
 
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    texture_path = os.path.join(
+        installPath, "STKData", "VO", "Textures", "AGI_logo_small.png"
+    )
     texture = manager.textures.load_from_string_uri(texture_path)
     mesh = manager.initializers.surface_mesh_primitive.initialize()
     mesh.texture = texture
     mesh.translucency = 0
     cartographicExtent = [[-55], [10], [-24], [30]]
 
-    triangles = manager.initializers.surface_extent_triangulator.compute_simple("Earth", cartographicExtent)
+    triangles = manager.initializers.surface_extent_triangulator.compute_simple(
+        "Earth", cartographicExtent
+    )
     mesh.set(triangles)
     mesh.translucency = 0.25
     c0 = [[10], [-55]]
@@ -1045,7 +1109,9 @@ Draw a new surface extent triangulator
     c2 = [[30], [-24]]
     c3 = [[10], [-24]]
 
-    mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(c0, c1, c2, c3)
+    mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(
+        c0, c1, c2, c3
+    )
     mesh.transparent_texture_border = True
     manager.primitives.add(mesh)
     manager.render()
@@ -1071,7 +1137,9 @@ Draw a new surface mesh
         [-1480.882721],
     ]  # X, Y, Z (km)
 
-    triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
+    triangles = manager.initializers.surface_polygon_triangulator.compute(
+        "Earth", cartesianPts
+    )
     surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
     surfaceMesh.color = Colors.Red
     surfaceMesh.set(triangles)
@@ -1088,10 +1156,22 @@ Compute interpolated positions along a great arc
     # Scenario scenario: Scenario object
     # Create a array of LLA values and interoplate them over the specified
     # central body
-    positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
+    positionArray = [
+        [35.017],
+        [-118.540],
+        [0],
+        [44.570],
+        [-96.474],
+        [0],
+        [31.101],
+        [-82.619],
+        [0],
+    ]
     manager = scenario.scene_manager
     # Interpolate points over great arc
-    interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
+    interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body(
+        "Earth"
+    )
     interpolator.granularity = 0.1
     result = interpolator.interpolate(positionArray)
 
@@ -1242,23 +1322,44 @@ Add imagery and terrain to the scene
     # Retrieve the boundaries of the imported files
     manager = scenario.scene_manager
     # Add Terrain
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
+        os.path.join(
+            installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt"
+        )
     )
     extentTerrain = terrainTile.extent
     print(
         "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
+        % (
+            str(extentTerrain[0]),
+            str(extentTerrain[2]),
+            str(extentTerrain[1]),
+            str(extentTerrain[3]),
+        )
     )
     # Add Imagery
     imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "imagery",
+            "NPS_OrganPipeCactus_Map.pdttx",
+        )
     )
     extentImagery = imageryTile.extent
     print(
         "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
+        % (
+            str(extentImagery[0]),
+            str(extentImagery[2]),
+            str(extentImagery[1]),
+            str(extentImagery[3]),
+        )
     )
 
 .. _ScenarioFont:
@@ -1308,7 +1409,9 @@ Set the current scenario's time period
 
     # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
-    scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000"
+    )
 
 .. _SetUnitPreferences:
 
@@ -1351,8 +1454,10 @@ Manage STK desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
+
     def on_stk_object_added_custom_callback(path: str):
         print(f"{path} has been added.")
+
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
@@ -1384,6 +1489,7 @@ Manage STK Engine events
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
 
+
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
@@ -1414,8 +1520,15 @@ Open a viewer data file
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    root.load_vdf(
+        os.path.join(
+            installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+        ),
+        "",
+    )
 
 .. _GetAccesses:
 
@@ -1452,8 +1565,12 @@ Configure the access interval to the availability time span of the object where 
     access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
     accessTimePeriod = access.access_time_period_data
 
-    if satellite.analysis_workbench_components.time_intervals.contains("AvailabilityTimeSpan"):
-        availabilityTimeSpan = satellite.analysis_workbench_components.time_intervals.item("AvailabilityTimeSpan")
+    if satellite.analysis_workbench_components.time_intervals.contains(
+        "AvailabilityTimeSpan"
+    ):
+        availabilityTimeSpan = satellite.analysis_workbench_components.time_intervals.item(
+            "AvailabilityTimeSpan"
+        )
         accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
 
 .. _ConfigureAccessInterval:
@@ -1535,7 +1652,12 @@ Compute an access for one point
             constraint = result.constraints.item(j)
             print(
                 "Constraint: %s Object: %s Status: %s Value:%s"
-                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
+                % (
+                    constraint.constraint,
+                    constraint.object_path,
+                    constraint.status,
+                    str(constraint.value),
+                )
             )
 
 .. _ComputeAccessAdvancedSettings:
@@ -1599,7 +1721,9 @@ Remove all access constraints except for line of sight
 
         if (constraint == "LineOfSight") is False:
             if constraint == "ThirdBodyObstruction":
-                thirdBodyConstraint = accessConstraints.GetActiveNamedConstraint("ThirdBodyObstruction")
+                thirdBodyConstraint = accessConstraints.GetActiveNamedConstraint(
+                    "ThirdBodyObstruction"
+                )
                 assignedArray = thirdBodyConstraint.AssignedObstructions
 
                 for j in range(0, len(assignedArray)):
@@ -1665,7 +1789,9 @@ Add and configure a central body obstruction access constraint
 
     # AccessConstraintCollection accessConstraints: Access Constraint collection
     # Get IAgAccessCnstrCbObstruction interface
-    cbObstrConstraint = accessConstraints.add_constraint(AccessConstraintType.CENTRAL_BODY_OBSTRUCTION)
+    cbObstrConstraint = accessConstraints.add_constraint(
+        AccessConstraintType.CENTRAL_BODY_OBSTRUCTION
+    )
 
     # AvailableObstructions returns a one dimensional array of obstruction paths
     availableArray = cbObstrConstraint.available_obstructions
@@ -1726,7 +1852,9 @@ Add and configure a line of sight sun exclusion access constraint
     # AccessConstraintCollection accessConstraints: Access Constraint collection
 
     # Angle constraint
-    cnstrAngle = accessConstraints.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
+    cnstrAngle = accessConstraints.add_constraint(
+        AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE
+    )
     cnstrAngle.angle = 176.0
 
 .. _AddLightingConstraint:
@@ -1795,7 +1923,10 @@ Add array of waypoints to aircraft
 
     # Aircraft aircraft: Aircraft object
     route = aircraft.route
-    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
+    ptsArray = [
+        [37.5378, 14.2207, 3.0480, 0.0772, 2],
+        [47.2602, 30.5517, 3.0480, 0.0772, 2],
+    ]
     route.set_points_smooth_rate_and_propagate(ptsArray)
     # Propagate the route
     route.propagate()
@@ -1811,7 +1942,9 @@ Set the great arc propagator and add individual waypoints to an aircraft
     # Set route to great arc, method and altitude reference
     aircraft.set_route_type(PropagatorType.GREAT_ARC)
     route = aircraft.route
-    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.method = (
+        VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    )
     route.set_altitude_reference_type(VehicleAltitudeReference.MEAN_SEA_LEVEL)
     # Add first point
     waypoint = route.waypoints.add()
@@ -1855,7 +1988,10 @@ List all points in an area target
 
         print("All points in Area Target")
         for i in range(0, len(areaTargetPoints)):
-            print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
+            print(
+                "Latitude: %s Longitude: %s"
+                % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1]))
+            )
 
 .. _CreateBoundaryAreaTargetList:
 
@@ -1940,7 +2076,9 @@ Create an area target (on the current scenario central body)
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
-    areaTarget = root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget")
+    areaTarget = root.current_scenario.children.new(
+        STKObjectType.AREA_TARGET, "MyAreaTarget"
+    )
 
 .. _ChainStrandIntervals:
 
@@ -1956,15 +2094,21 @@ Print the strand intervals of chain object
     # Considered Start and Stop time
     print(
         "Chain considered start time: %s"
-        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime").find_occurrence().epoch
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime")
+        .find_occurrence()
+        .epoch
     )
     print(
         "Chain considered stop time: %s"
-        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime").find_occurrence().epoch
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime")
+        .find_occurrence()
+        .epoch
     )
 
-    objectParticipationIntervals = chain.analysis_workbench_components.time_interval_collections.item(
-        "StrandAccessIntervals"
+    objectParticipationIntervals = (
+        chain.analysis_workbench_components.time_interval_collections.item(
+            "StrandAccessIntervals"
+        )
     )
     intervalListResult = objectParticipationIntervals.find_interval_collection()
 
@@ -2050,7 +2194,9 @@ Define a constellation
 
     # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
-    constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
+    constellation = root.current_scenario.children.new(
+        STKObjectType.CONSTELLATION, "MyConstellation"
+    )
     constellation.objects.add_object(satellite)
     constellation.objects.add("*/Facility/MyFacility")
 
@@ -2089,7 +2235,9 @@ Set the coverage interval to an object's availability analysis interval
     satVGT = satellite.analysis_workbench_components
     AvailTimeSpan = satVGT.time_intervals.item("AvailabilityTimeSpan")
     IntResult = AvailTimeSpan.find_interval()
-    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
+    coverage.interval.analysis_interval.set_start_and_stop_times(
+        IntResult.interval.start, IntResult.interval.stop
+    )
 
 .. _CreateCoverage:
 
@@ -2128,7 +2276,9 @@ Get data for specific points and elements
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     times = [[0], [15000], [20000], [55000]]
     elems = [["Time"], ["Precision Pass Number"]]
-    satPassesDP = satellite.data_providers.item("Precision Passes").execute_single_elements_array(times, elems)
+    satPassesDP = satellite.data_providers.item(
+        "Precision Passes"
+    ).execute_single_elements_array(times, elems)
     passes = satPassesDP.get_array(1)
 
 .. _SingleTimeDataProvider:
@@ -2164,7 +2314,9 @@ Extract elements from data providers with pre-data
     # Choose the reference system you want to report the Center point in
     dataProvCenter.pre_data = "CentralBody/Earth TOD"
     rptElems = [["Time"], ["x"], ["y"], ["z"]]
-    results = dataProvCenter.execute_elements(scenario.start_time, scenario.stop_time, 60, rptElems)
+    results = dataProvCenter.execute_elements(
+        scenario.start_time, scenario.stop_time, 60, rptElems
+    )
     datasets = results.data_sets
     Time = datasets.get_data_set_by_name("Time").get_values()
     facTODx = datasets.get_data_set_by_name("x").get_values()
@@ -2193,9 +2345,9 @@ Extract elements from data providers with groups
     saty = satPosDP.data_sets.get_data_set_by_name("y").get_values()
     satz = satPosDP.data_sets.get_data_set_by_name("z").get_values()
 
-    satVelDP = satellite.data_providers.get_data_provider_time_varying_from_path("Cartesian Velocity/ICRF").execute(
-        scenario.start_time, scenario.stop_time, 60
-    )
+    satVelDP = satellite.data_providers.get_data_provider_time_varying_from_path(
+        "Cartesian Velocity/ICRF"
+    ).execute(scenario.start_time, scenario.stop_time, 60)
     # There are 4 Methods to get DP From a Path depending on the kind of DP:
     #   GetDataPrvTimeVarFromPath
     #   GetDataPrvIntervalFromPath
@@ -2250,7 +2402,9 @@ Use an interval data provider
     access = satellite.get_access_to_object(facility)
     access.compute_access()
     # Get the Access AER Data Provider
-    accessDP = access.data_providers.item("Access Data").execute(scenario.start_time, scenario.stop_time)
+    accessDP = access.data_providers.item("Access Data").execute(
+        scenario.start_time, scenario.stop_time
+    )
 
     accessStartTimes = accessDP.data_sets.get_data_set_by_name("Start Time").get_values()
     accessStopTimes = accessDP.data_sets.get_data_set_by_name("Stop Time").get_values()
@@ -2317,7 +2471,9 @@ Create a facility and set its height relative to ground level
     # STKObjectRoot root: STK Object Model Root
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
-    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility = Facility(
+        root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+    )
     facility.height_above_ground = 123.4
 
 .. _GetValidFacility:
@@ -2339,7 +2495,9 @@ Get a valid reference to a facility
         print(e)
 
     # this facility represents a valid STK object
-    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility = Facility(
+        root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+    )
     facility.height_above_ground = 123.4
 
 .. _CreateFacility:
@@ -2406,7 +2564,9 @@ Add array of waypoints to a ground vehicle and interpolate over terrain
     route.set_points_smooth_rate_and_propagate(ptsArray)
     route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
     route.altitude_reference.granularity = 0.001
-    route.altitude_reference.interpolation_method = VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
+    route.altitude_reference.interpolation_method = (
+        VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
+    )
     # Propagate the route
     route.propagate()
 
@@ -2421,7 +2581,9 @@ Set the great arc propagator and add individual waypoints to a ground vehicle
     # Set route to great arc, method and altitude reference
     groundVehicle.set_route_type(PropagatorType.GREAT_ARC)
     route = groundVehicle.route
-    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.method = (
+        VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    )
     route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
     # Add first point
     waypoint = route.waypoints.add()
@@ -2473,12 +2635,16 @@ Create a new missile (on the current scenario central body)
     missile.set_trajectory_type(PropagatorType.BALLISTIC)
     trajectory = missile.trajectory
     root.units_preferences.set_current_unit("DateFormat", "EpSec")
-    trajectory.ephemeris_interval.set_explicit_interval(0, 0)  # stop time later computed based on propagation
+    trajectory.ephemeris_interval.set_explicit_interval(
+        0, 0
+    )  # stop time later computed based on propagation
     trajectory.launch.latitude = 29
     trajectory.launch.longitude = -81
     trajectory.impact_location.impact.latitude = 27
     trajectory.impact_location.impact.longitude = -43
-    trajectory.impact_location.set_launch_control_type(VehicleLaunchControl.FIXED_APOGEE_ALTITUDE)
+    trajectory.impact_location.set_launch_control_type(
+        VehicleLaunchControl.FIXED_APOGEE_ALTITUDE
+    )
     trajectory.impact_location.launch_control.apogee_altitude = 1200  # km
     trajectory.propagate()
 
@@ -2492,9 +2658,18 @@ Load multi-track object (MTO) track points from a file
     # load_points expects the path an Ephemeris file path
     # MTO mto: MTO Object
     track2 = mto.tracks.add(2)
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     track2.points.load_points(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "EphemerisLLATimePosVel_Example.e",
+        )
     )
     track2.interpolate = True
 
@@ -2562,7 +2737,9 @@ Create a new planet
 
     # Scenario scenario: Scenario object
     planet = scenario.children.new(STKObjectType.PLANET, "Mars")
-    planet.common_tasks.set_position_source_central_body("Mars", EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS)
+    planet.common_tasks.set_position_source_central_body(
+        "Mars", EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS
+    )
 
 .. _AddGraphicsVector:
 
@@ -2573,7 +2750,9 @@ Add a vector to display in 3D
 
     # Satellite satellite: Satellite object
     vector = satellite.graphics_3d.vector
-    angVel = vector.vector_geometry_tool_components.add(0, "Satellite/MySatellite AngVelocity")
+    angVel = vector.vector_geometry_tool_components.add(
+        0, "Satellite/MySatellite AngVelocity"
+    )
     angVel.show_label = True
 
 .. _GraphicsOrbitSystem:
@@ -2616,8 +2795,12 @@ Change the 3D model and marker properties
     model = satellite.graphics_3d.model
     model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     orbitmarker = model.orbit_marker
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    orbitmarker.set_marker_image_filename(
+        os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm")
+    )
     orbitmarker.marker_data.is_transparent = True
     orbitmarker.pixel_size = 18
     orbitmarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
@@ -2814,8 +2997,12 @@ Set 2D graphics display properties
     attributes.line.width = LineWidth.WIDTH4
     attributes.line.style = LineStyle.LONG_DASH
     attributes.color = Colors.Lime
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
+    attributes.marker_style = os.path.join(
+        installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp"
+    )
 
 .. _SatelliteGraphicsResolution:
 
@@ -2836,9 +3023,18 @@ Set satellite attitude external
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     satellite.attitude.external.load(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "AttitudeTimeEulerAngles_Example.a",
+        )
     )
 
 .. _SatelliteAttitudeTarget:
@@ -2894,9 +3090,13 @@ Set satellite propagator to sgp4 and propagate
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
     propagator.ephemeris_interval.set_implicit_interval(
-        root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+        root.current_scenario.analysis_workbench_components.time_intervals.item(
+            "AnalysisInterval"
+        )
     )  # Link to scenario period
-    propagator.common_tasks.add_segments_from_online_source("25544")  # International Space Station
+    propagator.common_tasks.add_segments_from_online_source(
+        "25544"
+    )  # International Space Station
     propagator.automatic_update_enabled = True
     propagator.propagate()
 
@@ -2911,14 +3111,18 @@ Set satellite propagator to spice and propagate
     # STKObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     propagator.spice = os.path.join(
         installPath, "STKData", "Spice", "planets.bsp"
     )  # Make sure this is a valid path
     propagator.body_name = "MARS"
 
     propagator.ephemeris_interval.set_implicit_interval(
-        root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+        root.current_scenario.analysis_workbench_components.time_intervals.item(
+            "AnalysisInterval"
+        )
     )  # Link to scenario period
     propagator.step = 60.0
     propagator.propagate()
@@ -2951,7 +3155,9 @@ Set satellite propagator to HPOP and set force model properties
     )
 
     forceModel = satellite.propagator.force_model
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     forceModel.central_body_gravity.file = os.path.join(
         installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
     )
@@ -2997,7 +3203,9 @@ Set the initial state of a satellite and propagate
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    keplerian = satellite.propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
+    keplerian = satellite.propagator.initial_state.representation.convert_to(
+        OrbitStateType.CLASSICAL
+    )
     keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
     keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
     keplerian.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
@@ -3049,9 +3257,13 @@ Sensor body mask
 .. code-block:: python
 
     # Sensor sensor: Sensor object
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     sensor.set_az_el_mask_file(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
+        os.path.join(
+            installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"
+        )
     )
 
 .. _DefineSensorPointingFixedAxesYPR:
@@ -3063,7 +3275,9 @@ Define sensor pointing fixed axes YPR
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
+    sensor.common_tasks.set_pointing_fixed_axes_ypr(
+        "CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33
+    )
 
 .. _DefineSensorPointingFixedYPR:
 
@@ -3085,7 +3299,9 @@ Define sensor pointing fixed axes quaternion
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+    sensor.common_tasks.set_pointing_fixed_axes_quaternion(
+        "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
+    )
 
 .. _DefineSensorPointingFixedQuaternion:
 
@@ -3120,7 +3336,9 @@ Define sensor pointing fixed Euler
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+    sensor.common_tasks.set_pointing_fixed_euler(
+        EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+    )
 
 .. _DefineSensorPointingFixedAxesAzEl:
 
@@ -3131,7 +3349,9 @@ Define sensor pointing fixed axes AzEl
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
+    sensor.common_tasks.set_pointing_fixed_axes_az_el(
+        "CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD
+    )
 
 .. _DefineSensorPointingFixedAzEl:
 
@@ -3509,11 +3729,15 @@ Configure the advanced fixed wing tool and set the aircraft to use the resulting
     advFixedWingTool.max_temperature = 900
 
     # Use a subsonic aerodynamic strategy
-    advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    advFixedWingTool.aerodynamic_strategy = (
+        AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    )
     # Cache the aerodynamic data to improve calculation speed
     advFixedWingTool.cache_aerodynamic_data = True
     # Use a high bypass turbofan
-    advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    advFixedWingTool.powerplant_strategy = (
+        AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    )
     # Cache the fuel flow data to improve calculation speed
     advFixedWingTool.cache_fuel_flow = True
 
@@ -3599,7 +3823,9 @@ Create a new performance model for an aircraft
     # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
     modelTypes = acceleration.child_types
     # Create a new performance model of type "Advanced Acceleration Model"
-    newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    newPerformanceModel = acceleration.add_child_of_type(
+        "Advanced Acceleration Model", "Model Name"
+    )
     # Save the changes to the catalog
     aviatorAircraft.save()
 
@@ -3964,7 +4190,9 @@ Add and configure an en-route procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add an enroute procedure with a site type of End of Previous Procedure
-    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    enroute = procedures.add_at_index(
+        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
+    )
     # Get the altitude options
     altitudeOptions = enroute.altitude_msl_options
     # To specify an altitude, turn off the option to use the default cruise altitude
@@ -3999,7 +4227,9 @@ Add and configure a basic maneuver procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add a basic maneuver procedure
-    basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    basicManeuver = procedures.add(
+        SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
+    )
 
     # Set the navigation to use a Straight Ahead strategy
     basicManeuver.navigation_strategy_type = "Straight Ahead"
@@ -4023,7 +4253,9 @@ Add and configure a basic maneuver procedure
     # Configure the options on the Attitude / Performance / Fuel page
     basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
     # Override the fuel flow
-    basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    basicManeuver.fuel_flow_type = (
+        BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    )
     basicManeuver.override_fuel_flow_value = 1000
 
     # Set the basic stopping conditions
@@ -4044,7 +4276,9 @@ Add and remove procedures
     # Add a takeoff procedure with a runway as a site. This will add the procedure
     takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
     # Add a procedure at a given index (starting from 0)
-    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    enroute = procedures.add_at_index(
+        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
+    )
 
     # Make sure to propagate the mission to calculate the route
     propagator.propagate()

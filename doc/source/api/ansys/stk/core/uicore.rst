@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.uicore.Toolbar`
               - Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
@@ -43,7 +43,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.uicore.ApplicationWindowState`
               - Window states.

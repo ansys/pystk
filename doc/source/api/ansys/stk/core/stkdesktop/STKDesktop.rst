@@ -22,8 +22,8 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.start_application`
-              - Create a new STK Desktop application instance.  
-                
+              - Create a new STK Desktop application instance.
+
                 Specify visible = True to show the application window.
                 Specify user_control = True to return the application to the user's control.
                 (the application remains open) after terminating the Python API connection.
@@ -34,8 +34,8 @@ Overview
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
-              - Attach to an existing STK Desktop instance. 
-                
+              - Attach to an existing STK Desktop instance.
+
                 Specify the Process ID (PID) in case multiple processes are open.
                 Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
                 grpc_host is the IP address or DNS name of the gRPC server.
@@ -45,11 +45,11 @@ Overview
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all`
               - Release all handles from Python to STK Desktop applications.
-                
+
                 Not applicable to gRPC connections.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
               - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
-                
+
                 Not applicable to gRPC connections.
 
 Import detail
@@ -66,8 +66,8 @@ Method detail
 .. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
-    Create a new STK Desktop application instance.  
-    
+    Create a new STK Desktop application instance.
+
     Specify visible = True to show the application window.
     Specify user_control = True to return the application to the user's control.
     (the application remains open) after terminating the Python API connection.
@@ -102,8 +102,8 @@ Method detail
 .. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
 
-    Attach to an existing STK Desktop instance. 
-    
+    Attach to an existing STK Desktop instance.
+
     Specify the Process ID (PID) in case multiple processes are open.
     Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
     grpc_host is the IP address or DNS name of the gRPC server.
@@ -135,7 +135,7 @@ Method detail
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.release_all
 
     Release all handles from Python to STK Desktop applications.
-    
+
     Not applicable to gRPC connections.
 
     :Returns:
@@ -146,7 +146,7 @@ Method detail
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller
 
     Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
-    
+
     Not applicable to gRPC connections.
 
     :Returns:

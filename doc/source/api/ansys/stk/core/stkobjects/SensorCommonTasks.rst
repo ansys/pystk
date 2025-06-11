@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -69,7 +69,9 @@ Define sensor pointing fixed axes YPR
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
+    sensor.common_tasks.set_pointing_fixed_axes_ypr(
+        "CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33
+    )
 
 
 Define sensor pointing fixed YPR
@@ -87,7 +89,9 @@ Define sensor pointing fixed axes Quaternion
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+    sensor.common_tasks.set_pointing_fixed_axes_quaternion(
+        "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
+    )
 
 
 Define sensor pointing fixed Quaternion
@@ -116,7 +120,9 @@ Define sensor pointing fixed Euler
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+    sensor.common_tasks.set_pointing_fixed_euler(
+        EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+    )
 
 
 Define sensor pointing fixed axes AzEl
@@ -125,7 +131,9 @@ Define sensor pointing fixed axes AzEl
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
+    sensor.common_tasks.set_pointing_fixed_axes_az_el(
+        "CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD
+    )
 
 
 Define sensor pointing fixed AzEl
@@ -330,7 +338,9 @@ Method detail
 
         # Sensor sensor: Sensor object
         # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+        sensor.common_tasks.set_pointing_fixed_euler(
+            EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+        )
 
 
 .. py:method:: set_pointing_fixed_quaternion(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
@@ -426,7 +436,9 @@ Method detail
 
         # Sensor sensor: Sensor object
         # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
+        sensor.common_tasks.set_pointing_fixed_axes_az_el(
+            "CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD
+        )
 
 
 .. py:method:: set_pointing_fixed_axes_euler(self, reference_axes: str, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedInAxes
@@ -496,7 +508,9 @@ Method detail
 
         # Sensor sensor: Sensor object
         # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+        sensor.common_tasks.set_pointing_fixed_axes_quaternion(
+            "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
+        )
 
 
 .. py:method:: set_pointing_fixed_axes_ypr(self, reference_axes: str, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedInAxes
@@ -530,7 +544,9 @@ Method detail
 
         # Sensor sensor: Sensor object
         # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
+        sensor.common_tasks.set_pointing_fixed_axes_ypr(
+            "CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33
+        )
 
 
 .. py:method:: set_pointing_3d_model(self, attach_name: str) -> SensorPointing3DModel

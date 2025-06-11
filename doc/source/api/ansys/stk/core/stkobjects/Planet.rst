@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -57,7 +57,9 @@ Create a New Planet
 
     # Scenario scenario: Scenario object
     planet = scenario.children.new(STKObjectType.PLANET, "Mars")
-    planet.common_tasks.set_position_source_central_body("Mars", EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS)
+    planet.common_tasks.set_position_source_central_body(
+        "Mars", EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS
+    )
 
 
 Import detail

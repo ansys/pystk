@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -48,7 +48,7 @@ Overview
               - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -78,7 +78,11 @@ Display a Primitive During an Interval
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     start = root.conversion_utility.new_date("EpSec", str(scenario.start_time))
     stop = root.conversion_utility.new_date("EpSec", str(scenario.start_time + 600))
-    timeInterval = manager.initializers.time_interval_display_condition.initialize_with_times(start, stop)
+    timeInterval = (
+        manager.initializers.time_interval_display_condition.initialize_with_times(
+            start, stop
+        )
+    )
     composite.add(timeInterval)
     model.display_condition = composite
 

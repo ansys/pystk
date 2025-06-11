@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -39,9 +39,18 @@ Set satellite attitude external
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     satellite.attitude.external.load(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "AttitudeTimeEulerAngles_Example.a",
+        )
     )
 
 

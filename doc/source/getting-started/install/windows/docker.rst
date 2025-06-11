@@ -80,7 +80,7 @@ directory.
 .. jinja:: artifacts
 
     .. code-block:: dosbatch
-    
+
         working-directory/
         └── {{ wheels }}
 
@@ -93,7 +93,7 @@ Open a terminal in your working directory. Make sure you have set the
 .. tab-set-code::
 
     .. code-block:: dosbatch
-    
+
         set ANSYSLMD_LICENSE_FILE=<PORT>@<LICENSE_SERVER_IP>
 
     .. code-block:: PowerShell

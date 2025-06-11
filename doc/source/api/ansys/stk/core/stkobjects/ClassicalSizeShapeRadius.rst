@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set both the Apogee Radius and the Perigee Radius. Displays an error message if the value for PerigeeRadius exceeds that for ApogeeRadius. ApogeeRadius/PerigeeRadius use Distance Dimension.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

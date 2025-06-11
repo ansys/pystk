@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -40,7 +40,9 @@ Define a constellation
 
     # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
-    constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
+    constellation = root.current_scenario.children.new(
+        STKObjectType.CONSTELLATION, "MyConstellation"
+    )
     constellation.objects.add_object(satellite)
     constellation.objects.add("*/Facility/MyFacility")
 

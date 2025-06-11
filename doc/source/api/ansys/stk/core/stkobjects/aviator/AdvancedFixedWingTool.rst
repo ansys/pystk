@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Create a set of advanced performance models for the aircraft with the given name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -110,11 +110,15 @@ Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting
     advFixedWingTool.max_temperature = 900
 
     # Use a subsonic aerodynamic strategy
-    advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    advFixedWingTool.aerodynamic_strategy = (
+        AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    )
     # Cache the aerodynamic data to improve calculation speed
     advFixedWingTool.cache_aerodynamic_data = True
     # Use a high bypass turbofan
-    advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    advFixedWingTool.powerplant_strategy = (
+        AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    )
     # Cache the fuel flow data to improve calculation speed
     advFixedWingTool.cache_fuel_flow = True
 

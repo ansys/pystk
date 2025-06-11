@@ -43,7 +43,7 @@
 .. _Docker images: https://docs.docker.com/engine/reference/commandline/images/
 .. _Docker image: https://docs.docker.com/engine/reference/commandline/images/
 .. _docker-compose.yml: https://docs.docker.com/compose/compose-file/
-.. _Docker Engine: https://docs.docker.com/engine/ 
+.. _Docker Engine: https://docs.docker.com/engine/
 .. _Docker Compose: https://docs.docker.com/compose/
 
 .. GitHub documentation

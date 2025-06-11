@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import AttitudeControlImpulsiveAntiVelocityVector
+    from ansys.stk.core.stkobjects.astrogator import (
+        AttitudeControlImpulsiveAntiVelocityVector,
+    )
 
 
 Property detail

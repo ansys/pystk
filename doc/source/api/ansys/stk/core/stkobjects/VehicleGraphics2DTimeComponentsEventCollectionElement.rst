@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Return an instance of a time component which provides the time intervals to control the appearance and visibility of the graphics path. The method may throw an exception if the component is invalid.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -49,7 +49,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import VehicleGraphics2DTimeComponentsEventCollectionElement
+    from ansys.stk.core.stkobjects import (
+        VehicleGraphics2DTimeComponentsEventCollectionElement,
+    )
 
 
 Property detail

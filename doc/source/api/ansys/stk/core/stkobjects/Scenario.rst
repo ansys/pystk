@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -99,7 +99,9 @@ Set the current scenario's time period
 
     # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
-    scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000"
+    )
 
 
 Import detail
@@ -323,7 +325,9 @@ Method detail
 
         # STKObjectRoot root: STK Object Model Root
         scenario = root.current_scenario
-        scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
+        scenario.set_time_period(
+            start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000"
+        )
 
 
 .. py:method:: set_dirty(self) -> None

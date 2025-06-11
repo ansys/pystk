@@ -14,7 +14,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
             * - :py:obj:`~ansys.stk.core.stkengine`
             * - :py:obj:`~ansys.stk.core.stkobjects`
             * - :py:obj:`~ansys.stk.core.stkrfchannelmodeler`
@@ -25,7 +25,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
             * - :py:mod:`~ansys.stk.core.analysis_workbench`
             * - :py:mod:`~ansys.stk.core.graphics`
             * - :py:mod:`~ansys.stk.core.stkdesktop`

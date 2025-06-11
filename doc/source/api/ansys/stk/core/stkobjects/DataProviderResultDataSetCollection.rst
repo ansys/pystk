@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,7 @@ Overview
               - Return a row formatted dataset collection as a pandas DataFrame. This function requires ``pandas``.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -70,7 +70,9 @@ Create a heat map of coverage definition results graphing duration by asset usin
     )
 
     # reshape the DataFrame based on column values
-    pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
+    pivot = all_regions_coverage_df.pivot_table(
+        index="region name", columns="asset name", values="duration"
+    )
 
     # plot heat map that shows duration by asset name by region
     plt.xlabel("Duration by Asset", fontsize=20)
@@ -98,7 +100,9 @@ Compute descriptive statistics for access measurements using a Pandas DataFrame
     all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
     # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
+    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(
+        pd.to_numeric
+    ).describe()
 
 
 Convert access data provider results to a Pandas DataFrame
@@ -109,13 +113,17 @@ Convert access data provider results to a Pandas DataFrame
     # compute data provider results for basic Access
     field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
 
-    access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
+    access_data = facility_sensor_satellite_access.data_providers[
+        "Access Data"
+    ].execute_elements(
         self.get_scenario().start_time, self.get_scenario().stop_time, field_names
     )
 
     # convert dataset collection in a row format as a Pandas DataFrame
     index_column = "Access Number"
-    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+    access_data_df = access_data.data_sets.to_pandas_dataframe(
+        index_element_name=index_column
+    )
 
 
 Convert coverage definition data provider results to a Pandas DataFrame
@@ -145,7 +153,10 @@ Load a Numpy array with flight profile data
 
     flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
     flight_profile_data = flight_profile_data_provider.execute_elements(
-        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+        self.get_scenario().start_time,
+        self.get_scenario().stop_time,
+        time_step_sec,
+        field_names,
     )
 
     # convert dataset collection in a row format as a Numpy array
@@ -156,7 +167,11 @@ Load a Numpy array with flight profile data
 
     plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
-        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+        plt.plot(
+            flight_profile_data_arr[simplex, 1],
+            flight_profile_data_arr[simplex, 0],
+            color="darkblue",
+        )
 
     plt.title("Estimated Flight Envelope", fontsize=15)
     plt.xlabel("Mach Number", fontsize=15)
@@ -282,7 +297,7 @@ Method detail
         **index_element_name** : :obj:`~str`
 
         **data_provider_elements** : :obj:`~DataProviderElements`
-        
+
 
     :Returns:
 

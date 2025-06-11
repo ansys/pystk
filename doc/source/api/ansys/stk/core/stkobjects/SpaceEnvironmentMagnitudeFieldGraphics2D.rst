@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Compute B/Beq (i.e., the ratio of the magnetic field at the specified Earth location to the minimum field intensity along the field line thru the location). Uses Date, Angle, Longitude, and Distance Dimensions.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

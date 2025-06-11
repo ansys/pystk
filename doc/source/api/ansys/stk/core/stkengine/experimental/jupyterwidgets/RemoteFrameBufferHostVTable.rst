@@ -15,6 +15,8 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkengine.experimental.jupyterwidgets import RemoteFrameBufferHostVTable
+    from ansys.stk.core.stkengine.experimental.jupyterwidgets import (
+        RemoteFrameBufferHostVTable,
+    )
 
 

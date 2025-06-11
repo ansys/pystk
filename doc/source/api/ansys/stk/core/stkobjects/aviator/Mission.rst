@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Get the first invalid procedure in the mission. Calling this method will propagate the mission.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -140,7 +140,9 @@ Add and remove procedures
     # Add a takeoff procedure with a runway as a site. This will add the procedure
     takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
     # Add a procedure at a given index (starting from 0)
-    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    enroute = procedures.add_at_index(
+        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
+    )
 
     # Make sure to propagate the mission to calculate the route
     propagator.propagate()

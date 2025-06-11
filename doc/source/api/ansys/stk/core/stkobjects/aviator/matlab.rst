@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.BasicManeuverMATLABFactory`
               - Class defining the factory to create the basic maneuver PropNav strategies.

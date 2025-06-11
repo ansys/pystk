@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -39,8 +39,14 @@ Draw a new Texture Screen Overlay
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
     overlays = manager.screen_overlays.overlays
-    textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    textureOverlay = (
+        manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(
+            0, 0, 128, 128
+        )
+    )
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     textureOverlay.texture = manager.textures.load_from_string_uri(
         os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
     )

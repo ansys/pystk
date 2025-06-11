@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -64,7 +64,10 @@ List all points in an area target
 
         print("All points in Area Target")
         for i in range(0, len(areaTargetPoints)):
-            print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
+            print(
+                "Latitude: %s Longitude: %s"
+                % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1]))
+            )
 
 
 Define an area target boundary and position from a list of lat/lon/alt (using common tasks)
@@ -139,7 +142,9 @@ Create an area target (on the current scenario central body)
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
-    areaTarget = root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget")
+    areaTarget = root.current_scenario.children.new(
+        STKObjectType.AREA_TARGET, "MyAreaTarget"
+    )
 
 
 Import detail

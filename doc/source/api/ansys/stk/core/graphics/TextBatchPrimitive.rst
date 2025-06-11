@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -50,7 +50,7 @@ Overview
               - For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -90,7 +90,9 @@ Draw a new Text Primitive
     font = manager.initializers.graphics_font.initialize_with_name_size_font_style_outline(
         "MS Sans Serif", 24, FontStyle.BOLD, True
     )
-    textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(font)
+    textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(
+        font
+    )
     textBatch.set_cartographic("Earth", [[0], [0], [0]], ["Example Text"])  # Lat, Lon, Alt
     manager.primitives.add(textBatch)
 

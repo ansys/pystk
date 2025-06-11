@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -34,7 +34,7 @@ Overview
               - Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -109,7 +109,9 @@ Add and configure an en-route procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add an enroute procedure with a site type of End of Previous Procedure
-    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    enroute = procedures.add_at_index(
+        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
+    )
     # Get the altitude options
     altitudeOptions = enroute.altitude_msl_options
     # To specify an altitude, turn off the option to use the default cruise altitude
@@ -142,7 +144,9 @@ Add and configure a basic maneuver procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add a basic maneuver procedure
-    basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    basicManeuver = procedures.add(
+        SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
+    )
 
     # Set the navigation to use a Straight Ahead strategy
     basicManeuver.navigation_strategy_type = "Straight Ahead"
@@ -166,7 +170,9 @@ Add and configure a basic maneuver procedure
     # Configure the options on the Attitude / Performance / Fuel page
     basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
     # Override the fuel flow
-    basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    basicManeuver.fuel_flow_type = (
+        BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    )
     basicManeuver.override_fuel_flow_value = 1000
 
     # Set the basic stopping conditions
@@ -185,7 +191,9 @@ Add and remove procedures
     # Add a takeoff procedure with a runway as a site. This will add the procedure
     takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
     # Add a procedure at a given index (starting from 0)
-    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    enroute = procedures.add_at_index(
+        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
+    )
 
     # Make sure to propagate the mission to calculate the route
     propagator.propagate()

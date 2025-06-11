@@ -1,21 +1,21 @@
 Prerequisites
 #############
 
-You can use PySTK locally on Windows and Linux operating systems, or by using Windows-based or Linux-based Docker containers.  
+You can use PySTK locally on Windows and Linux operating systems, or by using Windows-based or Linux-based Docker containers.
 
 Local prerequisites
 ===================
 
 To get started using PySTK locally, the following is required:
 
-- Python 
+- Python
 - A licensed version of the Ansys STK® desktop application or STK Engine
 
 Install Python
 ^^^^^^^^^^^^^^
 
 .. jinja::
-    
+
     A working Python environment using Python version {{ SUPPORTED_PYTHON_VERSIONS[0] }} or greater is required. You can download and install Python from https://www.python.org/downloads.
 
 Additionally, you can install Jupyter Notebooks by downloading an install from
@@ -42,11 +42,11 @@ STK desktop software is available on Windows platforms. It provides a physics-ba
 Install STK Engine
 ^^^^^^^^^^^^^^^^^^
 
-STK Engine is available on Windows and Linux platforms. It enables you to build an app that harnesses the analytical power and visual capabilities of the STK application. 
+STK Engine is available on Windows and Linux platforms. It enables you to build an app that harnesses the analytical power and visual capabilities of the STK application.
 
-- For Windows installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.htm>`_ for details on installing STK Engine. 
+- For Windows installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.htm>`_ for details on installing STK Engine.
 
-- For Linux installations, refer to the `STK Engine on Linux installation instructions <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/Getting_Started_with_EngineOnLinux.htm>`_ for details on installing STK Engine on Linux. 
+- For Linux installations, refer to the `STK Engine on Linux installation instructions <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/Getting_Started_with_EngineOnLinux.htm>`_ for details on installing STK Engine on Linux.
 
 .. note::
 
@@ -56,8 +56,8 @@ Docker prerequisites
 ====================
 You can use PySTK inside a Windows-based Docker container or inside a Linux-based Docker container. To get started, you must have Docker installed. Refer to the links below to install Docker on your desired operating system:
 
-- `Install Docker Desktop on Windows <https://docs.docker.com/desktop/install/windows-install/>`_  
-- `Install Docker Desktop on Linux <https://docs.docker.com/desktop/install/linux/>`_   
+- `Install Docker Desktop on Windows <https://docs.docker.com/desktop/install/windows-install/>`_
+- `Install Docker Desktop on Linux <https://docs.docker.com/desktop/install/linux/>`_
 
 
 

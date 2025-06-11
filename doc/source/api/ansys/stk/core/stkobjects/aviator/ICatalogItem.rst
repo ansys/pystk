@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -34,7 +34,7 @@ Overview
               - Get whether the catalog item is contains the given child item.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -68,7 +68,9 @@ Create a new performance model for an aircraft
     # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
     modelTypes = acceleration.child_types
     # Create a new performance model of type "Advanced Acceleration Model"
-    newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    newPerformanceModel = acceleration.add_child_of_type(
+        "Advanced Acceleration Model", "Model Name"
+    )
     # Save the changes to the catalog
     aviatorAircraft.save()
 

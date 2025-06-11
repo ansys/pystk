@@ -29,7 +29,7 @@ Overview
               - Create a new object model context for the STK Engine application.
             * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.set_grpc_options`
               - Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
-                
+
                 Available options include:
                 { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
                 using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.
@@ -71,7 +71,7 @@ Method detail
     :canonical: ansys.stk.core.stkengine.STKEngineApplication.set_grpc_options
 
     Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
-    
+
     Available options include:
     { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
     using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.

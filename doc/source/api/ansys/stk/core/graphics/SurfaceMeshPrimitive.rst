@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -75,7 +75,9 @@ Draw a new Surface Mesh
         [-1480.882721],
     ]  # X, Y, Z (km)
 
-    triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
+    triangles = manager.initializers.surface_polygon_triangulator.compute(
+        "Earth", cartesianPts
+    )
     surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
     surfaceMesh.color = Colors.Red
     surfaceMesh.set(triangles)

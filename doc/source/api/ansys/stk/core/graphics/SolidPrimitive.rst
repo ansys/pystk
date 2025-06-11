@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -91,7 +91,9 @@ Draw a Solid Cylinder Primitive and set properties
 
     cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
     solidCylinder = manager.initializers.solid_primitive.initialize()
-    solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidCylinder.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    )
     solidCylinder.position = originCylinder.query_cartesian_array()
     solidCylinder.set_with_result(cylinder)
     solidCylinder.color = Colors.Lime
@@ -118,8 +120,8 @@ Draw a Solid Ellipsoid Primitive and set properties
     radii = [[200], [100], [100]]
     ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
     solidEllipsoid = manager.initializers.solid_primitive.initialize()
-    solidEllipsoid.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item(
-        "Fixed"
+    solidEllipsoid.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
     )  # vgtSat.Systems.item('Body')
     solidEllipsoid.position = originEllipsoid.query_cartesian_array()
     solidEllipsoid.set_with_result(ellipsoid)
@@ -146,7 +148,9 @@ Draw a Solid Box Primitive and set properties
     size = [[100], [100], [200]]
     result = manager.initializers.box_triangulator.compute(size)
     solidBox = manager.initializers.solid_primitive.initialize()
-    solidBox.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidBox.reference_frame = (
+        root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    )
     solidBox.position = originBox.query_cartesian_array()
     solidBox.set_with_result(result)
     solidBox.color = Colors.Red

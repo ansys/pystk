@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -96,12 +96,16 @@ Create a New Missile (on the current scenario central body)
     missile.set_trajectory_type(PropagatorType.BALLISTIC)
     trajectory = missile.trajectory
     root.units_preferences.set_current_unit("DateFormat", "EpSec")
-    trajectory.ephemeris_interval.set_explicit_interval(0, 0)  # stop time later computed based on propagation
+    trajectory.ephemeris_interval.set_explicit_interval(
+        0, 0
+    )  # stop time later computed based on propagation
     trajectory.launch.latitude = 29
     trajectory.launch.longitude = -81
     trajectory.impact_location.impact.latitude = 27
     trajectory.impact_location.impact.longitude = -43
-    trajectory.impact_location.set_launch_control_type(VehicleLaunchControl.FIXED_APOGEE_ALTITUDE)
+    trajectory.impact_location.set_launch_control_type(
+        VehicleLaunchControl.FIXED_APOGEE_ALTITUDE
+    )
     trajectory.impact_location.launch_control.apogee_altitude = 1200  # km
     trajectory.propagate()
 

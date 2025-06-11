@@ -40,7 +40,7 @@ Start by downloading PySTK wheel or source artifacts for Linux:
 
             .. list-table::
                 :widths: auto
-        
+
                 * - **Artifact**
                   - `{{ source }} <../../../_static/artifacts/{{ source }}>`_
                 * - **Size**
@@ -62,21 +62,21 @@ Install Linux artifacts by using the `pip`_ command:
             :sync: pypi
 
             .. code-block:: text
-            
+
                 python -m pip install "ansys-stk-core=={{ PYSTK_VERSION }}"
 
         .. tab-item:: **Wheels install**
             :sync: wheels
 
             .. code-block:: text
-            
+
                 python -m pip install {{ wheels }}
 
         .. tab-item:: **Source install**
             :sync: source
 
             .. code-block:: text
-            
+
                 python -m pip install {{ source }}
 
 Install extra artifacts
@@ -102,11 +102,11 @@ select the type of installation.
         .. tab-item:: {{ target }}
 
             .. tab-set::
-                
+
                 .. tab-item:: PyPI install
 
                     Install the extra dependencies by running:
-                    
+
                     .. code-block:: bash
 
                         python -m pip install ansys-stk-core[{{ target }}]
@@ -117,7 +117,7 @@ select the type of installation.
                     extra artifacts>`. Then, decompress it by running:
 
                     .. code-block:: bash
-                       
+
                         unzip <wheelhouse.zip> -d wheelhouse
 
                     Finally, install the extra dependencies by running:
@@ -165,10 +165,9 @@ Verify a successful installation of PySTK by running:
 .. jinja::
 
     .. code-block:: python
-        
+
         from ansys.stk.core.stkengine import STKEngine
-        
-    
+
         stk = STKEngine.start_application(no_graphics=True)
         print(f"STK version is {stk.version}")
 
@@ -178,4 +177,4 @@ Verify a successful installation of PySTK by running:
 
         STK version is {{ STK_VERSION }}
 
-        
+

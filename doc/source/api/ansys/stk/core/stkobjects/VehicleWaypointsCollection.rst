@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -34,7 +34,7 @@ Overview
               - Return a two-dimensional array that contains the way points. Each sub-array represents a waypoint. The order of the elements is Time, Latitude, Longitude, Altitude,Speed,Acceleration,TurnRadius.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

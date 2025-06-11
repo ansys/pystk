@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -36,7 +36,7 @@ Overview
               - Retrieve a link/embed calc object found by the name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -53,7 +53,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import CalculationObjectLinkEmbedControlCollection
+    from ansys.stk.core.stkobjects.astrogator import (
+        CalculationObjectLinkEmbedControlCollection,
+    )
 
 
 Property detail

@@ -87,7 +87,7 @@ installation instructions for your desired environment.
     * - Linux Docker container
       - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK in a Linux container>`
-     
+
 
 Once your environment is setup, you can review the :ref:`user guide <User
 guide>` to get acquainted with the API, or browse :ref:`examples <Examples>`.
@@ -102,7 +102,7 @@ The PySTK API currently has the following limitations:
 - UI plugins are not currently supported.
 
 - Enabling socket connection by setting :py:attr:`STKXApplication.enable_connect`
-  to :obj:`True` is not currently supported. Connect commands may be used 
+  to :obj:`True` is not currently supported. Connect commands may be used
   through the :py:meth:`StkObjectRoot.execute_command` method.
 
 - When using gRPC, the following methods and properties

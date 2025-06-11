@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,7 @@ Overview
               - Check to see if a given configuration exists in the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -49,7 +49,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkrfchannelmodeler import CommunicationsTransceiverConfigurationCollection
+    from ansys.stk.core.stkrfchannelmodeler import (
+        CommunicationsTransceiverConfigurationCollection,
+    )
 
 
 Property detail

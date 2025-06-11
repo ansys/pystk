@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,7 +52,9 @@ Define sensor pointing fixed Euler
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+    sensor.common_tasks.set_pointing_fixed_euler(
+        EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+    )
 
 
 Define sensor pointing fixed AzEl

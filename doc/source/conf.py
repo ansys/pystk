@@ -207,16 +207,16 @@ else:
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
-.. grid:: 3 
+.. grid:: 3
     :gutter: 1
 
     .. grid-item::
         :child-align: center
-    
+
         .. button-link:: {cname_pref}/{python_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as Python script :fab:`python`
 
     .. grid-item::
@@ -225,7 +225,7 @@ else:
         .. button-link:: {cname_pref}/{ipynb_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as Jupyter notebook :fas:`book`
 
     .. grid-item::
@@ -234,11 +234,11 @@ else:
         .. button-link:: {cname_pref}/{pdf_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as PDF document :fas:`file-pdf`
 
 ----
-    
+
     """.format(
         cname_pref=f"https://{cname}/version/{get_version_match(version)}",
         python_file_loc="{{ env.docname }}.py",

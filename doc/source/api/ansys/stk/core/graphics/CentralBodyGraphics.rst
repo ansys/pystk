@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -58,23 +58,44 @@ Add Imagery and Terrain to the Scene
     # Retrieve the boundaries of the imported files
     manager = scenario.scene_manager
     # Add Terrain
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    installPath = (
+        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    )
     terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
+        os.path.join(
+            installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt"
+        )
     )
     extentTerrain = terrainTile.extent
     print(
         "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
+        % (
+            str(extentTerrain[0]),
+            str(extentTerrain[2]),
+            str(extentTerrain[1]),
+            str(extentTerrain[3]),
+        )
     )
     # Add Imagery
     imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "imagery",
+            "NPS_OrganPipeCactus_Map.pdttx",
+        )
     )
     extentImagery = imageryTile.extent
     print(
         "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
+        % (
+            str(extentImagery[0]),
+            str(extentImagery[2]),
+            str(extentImagery[1]),
+            str(extentImagery[3]),
+        )
     )
 
 

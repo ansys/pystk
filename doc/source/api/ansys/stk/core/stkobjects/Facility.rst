@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Get az-el mask data.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -118,7 +118,9 @@ Create a facility and set its height relative to ground level
     # STKObjectRoot root: STK Object Model Root
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
-    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility = Facility(
+        root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+    )
     facility.height_above_ground = 123.4
 
 
