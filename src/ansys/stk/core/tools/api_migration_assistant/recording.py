@@ -25,8 +25,7 @@
 import logging
 from pathlib import Path
 import sys
-
-from defusedxml import ElementTree
+import xml.etree.ElementTree as ElementTree
 
 from .call_record import CallRecord
 
@@ -72,8 +71,7 @@ class Recording:
 
     def save_to_xml(self, xml_file_name, description=None):
         """Save this recording to an XML file."""
-        # Disable bandit B406, see https://github.com/PyCQA/bandit/issues/452
-        from xml.sax.saxutils import escape  # nosec
+        from xml.sax.saxutils import escape
 
         sorted_call_records = sorted(self.call_records)
         with Path.open(xml_file_name, mode="wt") as f:

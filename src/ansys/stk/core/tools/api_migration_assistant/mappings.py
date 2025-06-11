@@ -24,8 +24,7 @@
 
 import logging
 from pathlib import Path
-
-from defusedxml import ElementTree
+import xml.etree.ElementTree as ElementTree
 
 
 class Mappings:
