@@ -789,12 +789,11 @@ def setup(app: sphinx.application.Sphinx):
 
     if BUILD_API:
         app.connect("builder-inited", run_autoapi)
+        app.connect("builder-inited", copy_graph_images_to_source_dir)
+        app.connect("build-finished", remove_graph_images_from_source_dir)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
-
-    app.connect("builder-inited", copy_graph_images_to_source_dir)
-    app.connect("build-finished", remove_graph_images_from_source_dir)

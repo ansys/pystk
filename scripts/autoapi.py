@@ -446,8 +446,8 @@ class ManualRSTGenerator:
                 f.writelines(
                     [
                         f".. image:: /graph_images_temp/test_{func_def.name}.png\n",
-                        "    :width: 600\n",
-                        f"    :alt: image of output from {func_def.name}\n\n",
+                        "  :width: 600\n",
+                        f"  :alt: image of output from {func_def.name}\n\n",
                     ]
                 )
 
