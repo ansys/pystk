@@ -21,14 +21,14 @@
 # SOFTWARE.
 
 """
-PySTK core package.
+PySTK.
 
-Dependency-free package for interfacing with the core utilities of STK.
+The next generation Python API for Systems Tool Kit (STK).
 """
  
 
-from . import analysis_workbench, graphics, stkobjects, stkrfchannelmodeler, stkutil
-from .stkobjects import astrogator, aviator
+__version__ = "0.1.dev0"
+"""Current version of PySTK."""
 
-__all__ = ["analysis_workbench", "graphics", "stkobjects", "stkutil", "stkrfchannelmodeler", "astrogator", "aviator"]
+__all__ = ["__version__"]
 """Available modules when using wildcard import."""

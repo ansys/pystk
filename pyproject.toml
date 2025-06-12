@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "ansys-stk-core"
+name = "ansys-stk"
 dynamic = ["version"]
 description = "The next generation Python API for STK."
 readme = "README.rst"
@@ -31,6 +31,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation by default
 ]
 
 [project.scripts]
@@ -51,6 +52,11 @@ all = [
     "sidecar>=0.7.0",
     "libcst>=1.7.0",
 ]
+core = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
+]
+extensions = [
+]
 grpc = [
     "grpcio>=1.71.0",
     "protobuf>=6.30.2",
@@ -67,6 +73,10 @@ jupyter = [
 # only available when a developer clones the repository and installs the package
 # for local development.
 [dependency-groups]
+vulnerabilities = [
+    "bandit[toml]==1.8.3",
+    "safety==3.3.0",
+]
 tests = [
     "libcst==1.8.0",
     "matplotlib==3.10.3",
@@ -100,13 +110,9 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
-vulnerabilities = [
-    "bandit[toml]==1.8.3",
-    "safety==3.3.0",
-]
 
 [tool.flit.module]
-name = "ansys.stk.core"
+name = "ansys.stk"
 
 [project.urls]
 discussions = "https://github.com/ansys/pystk/discussions"
@@ -178,7 +184,7 @@ source = [
 
 [tool.coverage.run]
 branch = true
-source = ["src/ansys/stk/core"]
+source = ["src/ansys/stk"]
 relative_files = true
 
 [tool.coverage.report]
@@ -227,10 +233,3 @@ showcontent = true
 directory = "test"
 name = "Test"
 showcontent = true
-
-[tool.bandit]
-skips = [
-    "B405", # Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks.
-    "B406", # Using escape to parse untrusted XML data is known to be vulnerable to XML attacks.
-    "B314", # Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks.
-]

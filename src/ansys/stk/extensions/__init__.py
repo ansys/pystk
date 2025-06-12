@@ -21,14 +21,7 @@
 # SOFTWARE.
 
 """
-PySTK core package.
+PySTK extensions package.
 
-Dependency-free package for interfacing with the core utilities of STK.
+A set of high-level workflows for automating common tasks with STK.
 """
- 
-
-from . import analysis_workbench, graphics, stkobjects, stkrfchannelmodeler, stkutil
-from .stkobjects import astrogator, aviator
-
-__all__ = ["analysis_workbench", "graphics", "stkobjects", "stkutil", "stkrfchannelmodeler", "astrogator", "aviator"]
-"""Available modules when using wildcard import."""
