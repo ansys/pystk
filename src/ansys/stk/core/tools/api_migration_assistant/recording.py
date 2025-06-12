@@ -22,10 +22,11 @@
 
 """Recording of API calls."""
 
+import json
 import logging
 from pathlib import Path
 import sys
-import xml.etree.ElementTree as ElementTree
+from typing import Any
 
 from .call_record import CallRecord
 
@@ -69,62 +70,70 @@ class Recording:
         """Sort the call recorded previously added."""
         self.call_records = sorted(list(set(self.call_records)))
 
-    def save_to_xml(self, xml_file_name, description=None):
-        """Save this recording to an XML file."""
-        from xml.sax.saxutils import escape
-
+    def save(self, file_name, description=None):
+        """Save this recording to the specified file."""
         sorted_call_records = sorted(self.call_records)
-        with Path.open(xml_file_name, mode="wt") as f:
-            if description is not None:
-                cmd = escape(description).replace("--", "\\-\\-")
-                f.write(f"<!-- {cmd} -->\n")
-            f.write(f'<recording root_directory="{self.root_directory_path}">\n')
-            for record in sorted_call_records:
-                call = f'<call filename="{record.filename}"'
-                call += f' lineno="{record.lineno}"'
-                call += f' end_lineno="{record.end_lineno}"'
-                call += f' col_offset="{record.col_offset}"'
-                call += f' end_col_offset="{record.end_col_offset}"'
-                call += f' type_name="{record.type_name}"'
-                call += f' member_name="{record.member_name}"'
-                call += "/>\n"
-                f.write(call)
-            f.write("</recording>\n")
+
+        class CallRecordEncoder(json.JSONEncoder):
+            def default(self, o: Any):
+                if isinstance(o, CallRecord):
+                    return {
+                        "filename": o.filename, 
+                        "lineno": o.lineno, 
+                        "end_lineno": o.end_lineno, 
+                        "col_offset": o.col_offset,
+                        "end_col_offset": o.end_col_offset,
+                        "type_name": o.type_name,
+                        "member_name": o.member_name,
+                        }
+                return super(CallRecordEncoder, self).default(o)
+
+        recording = {
+            "root_directory": str(self.root_directory_path.resolve()),
+            "calls": sorted_call_records,
+        }
+        if description is not None:
+            recording["command"] = description
+
+        with Path(file_name).open(mode="w") as f:
+            json.dump(recording, f, cls=CallRecordEncoder, indent=4)
 
     @staticmethod
-    def load_from_xml_recordings_in_directory(recordings_directory):
-        """Load a new recording from the XML files in the specified directory."""
-        xml_files = Path(recordings_directory).glob("*.xml")
+    def load_from_recordings_in_directory(recordings_directory):
+        """Load a new recording from the files in the specified directory."""
+        recording_files = Path(recordings_directory).glob("*.json")
 
         recording = Recording("")
         root_directory = None
 
-        for xml_file in xml_files:
-            tree = ElementTree.parse(xml_file)
-            root = tree.getroot()
+        for recording_file in recording_files:
+            logging.debug(f"Processing {recording_file}")
 
-            logging.debug(f"Processing {xml_file}")
+            print(recording_file)
 
-            current_file_root_directory = root.attrib["root_directory"]
-            if root_directory is None:
-                root_directory = current_file_root_directory
-            elif root_directory != current_file_root_directory:
-                logging.error("Inconsistent XML files based on different root directories!")
-                sys.exit(-3)
+            with Path(recording_file).open(mode="r") as f:
+                single_recording = json.load(f)
 
-            records = root.findall("./call")
-            for record in records:
-                recording.add(
-                    record.get("filename"),
-                    record.get("type_name"),
-                    record.get("member_name"),
-                    int(record.get("lineno")),
-                    int(record.get("end_lineno")),
-                    int(record.get("col_offset")),
-                    int(record.get("end_col_offset")),
-                )
+                current_file_root_directory = single_recording["root_directory"]
+                if root_directory is None:
+                    root_directory = current_file_root_directory
+                elif root_directory != current_file_root_directory:
+                    logging.error("Inconsistent recording files based on different root directories!")
+                    sys.exit(-3)
 
-        recording.root_directory_path = Path(root_directory).resolve()
+                for call in single_recording["calls"]:
+                    recording.add(
+                        call.get("filename"),
+                        call.get("type_name"),
+                        call.get("member_name"),
+                        int(call.get("lineno")),
+                        int(call.get("end_lineno")),
+                        int(call.get("col_offset")),
+                        int(call.get("end_col_offset")),
+                    )
+
+        if root_directory is not None:
+            recording.root_directory_path = Path(root_directory).resolve()
         recording.sort_call_records()
         return recording
 
