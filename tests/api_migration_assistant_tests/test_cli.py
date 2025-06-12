@@ -36,13 +36,19 @@ def test_out_of_process_through_cli():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value1" NewName="VALUE1" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value2" NewName="VALUE2" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value3" NewName="VALUE3" Category="enum_value" />
-            <Mapping OldName="XyMyEnum" NewName="MyEnum" Category="enum_type" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumValueMappings": [
+                { "ParentScope": "XyMyEnum", "OldName": "Value1", "NewName": "VALUE1" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value2", "NewName": "VALUE2" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value3", "NewName": "VALUE3" }
+            ],
+            "EnumTypeMappings": [
+                { "OldName": "XyMyEnum", "NewName": "MyEnum" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -71,9 +77,11 @@ def test_running_pytest_as_module():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -106,13 +114,19 @@ def test_forwarding_arguments_to_recordee_in_process():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value1" NewName="VALUE1" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value2" NewName="VALUE2" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value3" NewName="VALUE3" Category="enum_value" />
-            <Mapping OldName="XyMyEnum" NewName="MyEnum" Category="enum_type" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumValueMappings": [
+                { "ParentScope": "XyMyEnum", "OldName": "Value1", "NewName": "VALUE1" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value2", "NewName": "VALUE2" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value3", "NewName": "VALUE3" }
+            ],
+            "EnumTypeMappings": [
+                { "OldName": "XyMyEnum", "NewName": "MyEnum" }
+            ]
+        }
         """,
         """
         import sys
@@ -157,13 +171,19 @@ def test_forwarding_arguments_to_recordee_out_of_process():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value1" NewName="VALUE1" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value2" NewName="VALUE2" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value3" NewName="VALUE3" Category="enum_value" />
-            <Mapping OldName="XyMyEnum" NewName="MyEnum" Category="enum_type" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumValueMappings": [
+                { "ParentScope": "XyMyEnum", "OldName": "Value1", "NewName": "VALUE1" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value2", "NewName": "VALUE2" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value3", "NewName": "VALUE3" }
+            ],
+            "EnumTypeMappings": [
+                { "OldName": "XyMyEnum", "NewName": "MyEnum" }
+            ]
+        }
         """,
         """
         import sys

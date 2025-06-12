@@ -68,10 +68,10 @@ class Runner:
         api_mapping_dir.mkdir(parents=True, exist_ok=True)
         if isinstance(self.api_mappings, list):
             for index, api_mappings_entry in enumerate(self.api_mappings):
-                api_mappings_file = api_mapping_dir / f"api_mappings{index}.xml"
+                api_mappings_file = api_mapping_dir / f"api_mappings{index}.json"
                 api_mappings_file.write_text(api_mappings_entry, encoding="utf-8")
         else:
-            api_mappings_file = api_mapping_dir / "api_mappings.xml"
+            api_mappings_file = api_mapping_dir / "api_mappings.json"
             api_mappings_file.write_text(self.api_mappings, encoding="utf-8")
 
     def _setup_input(self):

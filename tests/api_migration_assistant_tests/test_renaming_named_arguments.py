@@ -31,9 +31,11 @@ def test_rename_single_method_with_one_named_argument():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArg" NewName="new_test_arg" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArg", "NewName": "new_test_arg" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -60,11 +62,13 @@ def test_rename_single_method_with_multiple_named_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgOne" NewName="new_test_arg1" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgTwo" NewName="new_test_arg2" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgThree" NewName="new_test_arg3" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgOne", "NewName": "new_test_arg1" },
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgTwo", "NewName": "new_test_arg2" },
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgThree", "NewName": "new_test_arg3" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -91,11 +95,13 @@ def test_rename_single_method_with_mixed_positional_and_named_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgOne" NewName="new_test_arg1" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgTwo" NewName="new_test_arg2" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethod" OldName="TestArgThree" NewName="new_test_arg3" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgOne", "NewName": "new_test_arg1" },
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgTwo", "NewName": "new_test_arg2" },
+                { "ParentScope": "MyClass.MyMethod", "OldName": "TestArgThree", "NewName": "new_test_arg3" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -124,12 +130,14 @@ def test_rename_chained_methods_with_mixed_positional_and_named_arguments():
                 return self
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgOne" NewName="my_method_one_arg_one" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgTwo" NewName="my_method_one_arg_two" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgThree" NewName="my_method_one_arg_three" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodTwo" OldName="MyMethodTwoArgOne" NewName="my_method_two_arg_one" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgOne", "NewName": "my_method_one_arg_one" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgTwo", "NewName": "my_method_one_arg_two" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgThree", "NewName": "my_method_one_arg_three" },
+                { "ParentScope": "MyClass.MyMethodTwo", "OldName": "MyMethodTwoArgOne", "NewName": "my_method_two_arg_one" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -158,13 +166,15 @@ def test_rename_nested_methods_with_mixed_positional_and_named_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgOne" NewName="my_method_one_arg_one" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgTwo" NewName="my_method_one_arg_two" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgThree" NewName="my_method_one_arg_three" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodTwo" OldName="MyMethodTwoArgOne" NewName="my_method_two_arg_one" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodTwo" OldName="MyMethodTwoArgTwo" NewName="my_method_two_arg_two" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgOne", "NewName": "my_method_one_arg_one" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgTwo", "NewName": "my_method_one_arg_two" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgThree", "NewName": "my_method_one_arg_three" },
+                { "ParentScope": "MyClass.MyMethodTwo", "OldName": "MyMethodTwoArgOne", "NewName": "my_method_two_arg_one" },
+                { "ParentScope": "MyClass.MyMethodTwo", "OldName": "MyMethodTwoArgTwo", "NewName": "my_method_two_arg_two" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -193,13 +203,15 @@ def test_rename_nested_methods_with_mixed_positional_and_named_arguments_and_ext
                 return 2
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgOne" NewName="my_method_one_arg_one" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgTwo" NewName="my_method_one_arg_two" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodOne" OldName="MyMethodOneArgThree" NewName="my_method_one_arg_three" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodTwo" OldName="MyMethodTwoArgOne" NewName="my_method_two_arg_one" Category="argument" />
-            <Mapping ParentScope="MyClass.MyMethodTwo" OldName="MyMethodTwoArgTwo" NewName="my_method_two_arg_two" Category="argument" />
-        </Mappings>
+        {
+            "NamedArgumentMappings": [
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgOne", "NewName": "my_method_one_arg_one" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgTwo", "NewName": "my_method_one_arg_two" },
+                { "ParentScope": "MyClass.MyMethodOne", "OldName": "MyMethodOneArgThree", "NewName": "my_method_one_arg_three" },
+                { "ParentScope": "MyClass.MyMethodTwo", "OldName": "MyMethodTwoArgOne", "NewName": "my_method_two_arg_one" },
+                { "ParentScope": "MyClass.MyMethodTwo", "OldName": "MyMethodTwoArgTwo", "NewName": "my_method_two_arg_two" }
+            ]
+        }
         """,
         """
         from api import MyClass
