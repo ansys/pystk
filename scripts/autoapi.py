@@ -255,7 +255,9 @@ class ManualRSTGenerator:
 
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
-            if arg.annotation:
+            if isinstance(arg.annotation, ast.Subscript):
+                arg_str += f": {(arg.annotation.value.id).lower()}[{arg.annotation.slice.id}]"
+            else:
                 arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
             if i >= default_offset and defaults:
                 default = defaults[i - default_offset]
@@ -479,7 +481,11 @@ class ManualRSTGenerator:
                 if docstring and "Parameters" in docstring:
                     for param in docstring["Parameters"]:
                         if len(param.desc) > 0:
-                            f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
+                            if "of" in param.type:
+                                param_types = param.type.split()
+                                f.write(f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n")
+                            else:
+                                f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
                             f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
                             f.write("\n")
                     f.write("\n")

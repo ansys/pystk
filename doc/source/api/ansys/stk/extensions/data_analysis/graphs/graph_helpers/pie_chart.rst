@@ -1,7 +1,7 @@
 pie_chart
 =========
 
-.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: ~list, time_columns: ~list, column: ~str, title: ~str, unit_pref: ~str, label_col: ~str = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], column: ~str, title: ~str, unit_pref: ~str, label_col: ~str = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.pie_chart
 
     Create a pie chart from the provided dataframe and information.

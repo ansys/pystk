@@ -25,6 +25,7 @@
 A set of helper functions for graphing basic STK desktop graph types.
 """
 
+from typing import List
 import matplotlib
 import matplotlib.pyplot
 import numpy as np
@@ -36,8 +37,8 @@ from ansys.stk.core.stkobjects import STKObjectRoot
 def pie_chart(
     root: STKObjectRoot,
     df: pandas.DataFrame,
-    numerical_columns: list,
-    time_columns: list,
+    numerical_columns: List[str],
+    time_columns: List[str],
     column: str,
     title: str,
     unit_pref: str,
@@ -91,7 +92,7 @@ def pie_chart(
     labels = []
     if label_col:
         for i in range(len(df[label_col])):
-            labels.append(f"{label_col} {df[label_col][i]}: {df[column][i]:.3f}({unit_pref})")
+            labels.append(f"{label_col} {df[label_col][i]:.0f}: {df[column][i]:.3f}({unit_pref})")
 
     # create pie chart
     ax.pie(df[column], autopct="%1.1f%%", labels=labels, colors=colors, textprops={"fontsize": 8}, counterclock=False)
@@ -106,8 +107,8 @@ def pie_chart(
 def interval_pie_chart(
     root: STKObjectRoot,
     df: pandas.DataFrame,
-    numerical_columns: list,
-    time_columns: list,
+    numerical_columns: List[str],
+    time_columns: List[str],
     start_col: str,
     stop_col: str,
     start_time: str,
@@ -242,7 +243,7 @@ def interval_pie_chart(
 
 
 def convert_columns(
-    dataframe: pandas.DataFrame, numerical_column_list: list, date_column_list: list
+    dataframe: pandas.DataFrame, numerical_column_list: List[str], date_column_list: List[str]
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
 
@@ -250,9 +251,9 @@ def convert_columns(
     ----------
     dataframe : pandas.DataFrame
         The dataframe containing the data.
-    numerical_column_list : list
+    numerical_column_list : list of str
         The list of dataframe columns with numerical values.
-    date_column_list : list
+    date_column_list : list of str
         The list of dataframe columns with time values.
 
     Returns
@@ -260,8 +261,6 @@ def convert_columns(
     pandas.DataFrame
         The dataframe with converted columns.
     """
-    for column in numerical_column_list:
-        dataframe[column] = pandas.to_numeric(dataframe[column])
-    for column in date_column_list:
-        dataframe[column] = pandas.to_datetime(dataframe[column])
+    dataframe[numerical_column_list] = dataframe[numerical_column_list].astype(float)
+    dataframe[date_column_list] = dataframe[date_column_list].astype("datetime64[ns]")
     return dataframe

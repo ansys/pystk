@@ -1,7 +1,7 @@
 convert_columns
 ===============
 
-.. py:function:: convert_columns(dataframe: ~pandas.DataFrame, numerical_column_list: ~list, date_column_list: ~list) -> ~pandas.DataFrame
+.. py:function:: convert_columns(dataframe: ~pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str]) -> ~pandas.DataFrame
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.convert_columns
 
     Convert numerical and time columns in a pandas dataframe.
@@ -13,10 +13,10 @@ convert_columns
         **dataframe** : :obj:`~pandas.DataFrame`
         The dataframe containing the data.
 
-        **numerical_column_list** : :obj:`~list`
+        **numerical_column_list** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with numerical values.
 
-        **date_column_list** : :obj:`~list`
+        **date_column_list** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with time values.
 
 
