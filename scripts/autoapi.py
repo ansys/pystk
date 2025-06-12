@@ -483,7 +483,9 @@ class ManualRSTGenerator:
                         if len(param.desc) > 0:
                             if "of" in param.type:
                                 param_types = param.type.split()
-                                f.write(f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n")
+                                f.write(
+                                    f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n"
+                                )
                             else:
                                 f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
                             f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")

@@ -26,6 +26,7 @@ A set of helper functions for graphing basic STK desktop graph types.
 """
 
 from typing import List
+
 import matplotlib
 import matplotlib.pyplot
 import numpy as np
