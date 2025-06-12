@@ -120,7 +120,7 @@ def test_forwarding_arguments_to_recordee_in_process():
 
         def main():
             assert len(sys.argv) == 3
-            assert sys.argv[0] == "input"
+            assert sys.argv[0] == "unmigrated"
             assert sys.argv[1] == "abc"
             assert sys.argv[2] == "5"
             m = MyClass()
@@ -132,7 +132,7 @@ def test_forwarding_arguments_to_recordee_in_process():
 
         def main():
             assert len(sys.argv) == 3
-            assert sys.argv[0] == "input"
+            assert sys.argv[0] == "unmigrated"
             assert sys.argv[1] == "abc"
             assert sys.argv[2] == "5"
             m = MyClass()
@@ -171,7 +171,7 @@ def test_forwarding_arguments_to_recordee_out_of_process():
 
         def main():
             assert len(sys.argv) == 3
-            assert sys.argv[0] == "input"
+            assert sys.argv[0] == "unmigrated"
             assert sys.argv[1] == "abc"
             assert sys.argv[2] == "5"
             m = MyClass()
@@ -183,7 +183,7 @@ def test_forwarding_arguments_to_recordee_out_of_process():
 
         def main():
             assert len(sys.argv) == 3
-            assert sys.argv[0] == "input"
+            assert sys.argv[0] == "unmigrated"
             assert sys.argv[1] == "abc"
             assert sys.argv[2] == "5"
             m = MyClass()
