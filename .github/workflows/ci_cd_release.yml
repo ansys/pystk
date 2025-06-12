@@ -236,13 +236,6 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
-      - name: "Run the data_analysis.graphs extension tests"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "tox -e tests-extensions-graphs"
-
       - name: "Run the API migration assistant tests"
         run: |
           docker exec \
