@@ -84,7 +84,7 @@ class Runner:
                 self.input_files.append(str(input_file.resolve()))
                 self.entry_points.append(input_entry.get("entry_point", None))
         else:
-            input_file = test_directory / "input.py"
+            input_file = test_directory / "unmigrated.py"
             input_file.write_text(textwrap.dedent(self.input), encoding="utf-8")
             self.input_files.append(str(input_file.resolve()))
             self.entry_points.append("main")

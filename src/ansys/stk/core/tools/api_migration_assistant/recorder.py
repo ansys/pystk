@@ -72,11 +72,15 @@ class Recorder:
             new_sys_argv += self.program_args
         sys.argv = new_sys_argv
 
+        exec_entry_point = "\n".join([
+            f"import {module_to_import} as this_module",
+            f"this_module.{self.entry_point}()"
+        ])
+
         bootstrap = [
             "exec('import sys')",
             f'exec("{sys_path_append_cmd}")',
-            f"exec('import {module_to_import}')",
-            f"exec('{module_to_import}.{self.entry_point}()')",
+            f'exec("""{exec_entry_point}""")',
             f"exec('del sys.modules[\"{module_to_import}\"]')",
         ]
 
