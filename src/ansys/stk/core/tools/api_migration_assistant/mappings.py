@@ -22,9 +22,9 @@
 
 """Specify API mappings from old names to new names."""
 
+import json
 import logging
 from pathlib import Path
-import xml.etree.ElementTree as ElementTree
 
 
 class Mappings:
@@ -62,7 +62,7 @@ class Mappings:
     @staticmethod
     def load_from(mappings_directory):
         """Load mappings from the specified directory."""
-        xml_files = Path(mappings_directory).glob("*.xml")
+        json_files = Path(mappings_directory).glob("*.json")
 
         member_mappings = []
         interface_mappings = []
@@ -72,21 +72,21 @@ class Mappings:
         namespace_mappings = {}
         named_argument_mappings = []
 
-        for xml_file in xml_files:
-            tree = ElementTree.parse(xml_file)
-            root = tree.getroot()
+        for json_file in json_files:
+            with Path(json_file).open(mode="r") as f:
+                mappings = json.load(f)
+                
+            logging.debug(f"Processing {json_file}")
 
-            logging.debug(f"Processing {xml_file}")
-
-            if "OldRootScope" in root.attrib and "NewRootScope" in root.attrib:
-                old_root = root.attrib["OldRootScope"]
-                new_root = root.attrib["NewRootScope"]
+            if "RootMapping" in mappings and "OldRootScope" in mappings["RootMapping"] and "NewRootScope" in mappings["RootMapping"]:
+                old_root = mappings["RootMapping"]["OldRootScope"]
+                new_root = mappings["RootMapping"]["NewRootScope"]
                 namespace_mappings[old_root] = new_root
             else:
                 old_root = ""
                 new_root = ""
 
-            method_entries = root.findall('./Mapping[@Category="method"]')
+            method_entries = mappings.get("MemberMappings", [])
 
             for method_entry in method_entries:
                 old_type_name = method_entry.get("ParentScope")
@@ -102,7 +102,7 @@ class Mappings:
                     }
                 )
 
-            named_argument_entries = root.findall('./Mapping[@Category="argument"]')
+            named_argument_entries = mappings.get("NamedArgumentMappings", [])
 
             for named_argument_entry in named_argument_entries:
                 old_argument_name = named_argument_entry.get("OldName")
@@ -118,8 +118,8 @@ class Mappings:
                     }
                 )
 
-            enum_type_entries = root.findall('./Mapping[@Category="enum_type"]')
-
+            enum_type_entries = mappings.get("EnumTypeMappings", [])
+            
             for enum_type_entry in enum_type_entries:
                 old_enum_type_name = enum_type_entry.get("OldName")
                 new_enum_type_name = enum_type_entry.get("NewName")
@@ -132,7 +132,7 @@ class Mappings:
                     }
                 )
 
-            enum_value_entries = root.findall('./Mapping[@Category="enum_value"]')
+            enum_value_entries = mappings.get("EnumValueMappings", [])
 
             for enum_value_entry in enum_value_entries:
                 old_enum_type_name = enum_value_entry.get("ParentScope")
@@ -148,7 +148,7 @@ class Mappings:
                     }
                 )
 
-            interface_entries = root.findall('./Mapping[@Category="interface"]')
+            interface_entries = mappings.get("InterfaceMappings", [])
 
             for interface_entry in interface_entries:
                 old_interface_name = interface_entry.get("OldName")
@@ -162,7 +162,7 @@ class Mappings:
                     }
                 )
 
-            class_entries = root.findall('./Mapping[@Category="class"]')
+            class_entries = mappings.get("ClassMappings", [])
 
             for class_entry in class_entries:
                 old_class_name = class_entry.get("OldName")

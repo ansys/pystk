@@ -189,7 +189,7 @@ jobs:
       matrix:
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.11', '3.12']
+        python: ['3.11', '3.12', '3.13']
       fail-fast: false
     steps:
 
@@ -241,7 +241,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-graphics-cov-linux"
+            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-cov"
 
       - name: "Run the aviator tests"
         run: |
