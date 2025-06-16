@@ -40,6 +40,9 @@ pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_mi
 # dependencies that users can install to enable additional features.
 [project.optional-dependencies]
 all = [
+    # Target: extensions
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
     # Target: grpc
     "grpcio>=1.71.0",
     "protobuf>=6.30.2",
@@ -49,12 +52,15 @@ all = [
     "Pillow>=11.2.1",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
+    # Target: migration
     "libcst>=1.7.0",
 ]
 core = [
     # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 extensions = [
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
 ]
 grpc = [
     "grpcio>=1.71.0",
@@ -67,6 +73,9 @@ jupyter = [
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
 ]
+migration = [
+    "libcst>=1.7.0",
+]
 
 # NOTE: The `dependency-groups` section is used to define groups of dependencies
 # only available when a developer clones the repository and installs the package
@@ -77,14 +86,12 @@ vulnerabilities = [
     "safety==3.3.0",
 ]
 tests = [
-    "libcst==1.8.0",
-    "matplotlib==3.10.3",
     "numpy==2.2.6",
     "pytest==8.4.0",
     "pytest-cov==6.1.1",
+    "pytest-mpl==0.17.0",
     "pytz==2025.2",
     "parameterized==0.9.0",
-    "pandas==2.2.3",
     "scipy==1.15.3",
 ]
 doc = [
