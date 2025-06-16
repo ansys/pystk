@@ -25,7 +25,7 @@ export enum CommandLineStatus {
 export class CommandLineOptions {
   rootDirectory?: string | undefined;
   skipDirectories: string[] = [];
-  xmlMappingsDirectory?: string | undefined;
+  jsonMappingsDirectory?: string | undefined;
   fileFilter: string | undefined;
   numberOfJobs: number = 0;
   numberOfChunksPerWorker: number = 0;
@@ -51,7 +51,7 @@ export class Args {
 export function processArgs(): Args {
   const optionDefinitions: OptionDefinition[] = [
     { name: "root-dir", type: String },
-    { name: "xml-mappings-dir", type: String },
+    { name: "json-mappings-dir", type: String },
     { name: "skip-dir", type: String, multiple: true },
     { name: "file-filter", type: String },
     { name: "jobs", alias: "j", type: Number },
@@ -113,10 +113,10 @@ export function processArgs(): Args {
     return new Args(CommandLineStatus.ParameterError);
   }
 
-  if (args["xml-mappings-dir"] !== undefined) {
-    options.xmlMappingsDirectory = args["xml-mappings-dir"];
+  if (args["json-mappings-dir"] !== undefined) {
+    options.jsonMappingsDirectory = args["json-mappings-dir"];
   } else {
-    console.error("--xml-mappings-dir command line option is required");
+    console.error("--json-mappings-dir command line option is required");
     return new Args(CommandLineStatus.ParameterError);
   }
 
@@ -232,7 +232,7 @@ function printUsage() {
       "  Options:\n" +
       "  -h,--help                          Show this help message\n" +
       "  --root-dir <DIRECTORY>             Required: directory containing the files to migrate\n" +
-      "  --xml-mappings-dir <DIRECTORY>     Required: directory containing the XML mapping files to apply\n" +
+      "  --json-mappings-dir <DIRECTORY>     Required: directory containing the JSON mapping files to apply\n" +
       "  --skip-dir <DIRECTORY>             Directory containing files that should not be migrated\n" +
       "  --file-filter <REGEX>              Only process the file names that match the regular expression\n" +
       "  -j,--jobs [NUMBER]                 Number of parallel processes to spawn\n" +

@@ -3,7 +3,6 @@ import { ConsoleInterface } from "pyright-internal/common/console";
 import { FileSystem } from "pyright-internal/common/fileSystem";
 import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 import { Uri } from "pyright-internal/common/uri/uri";
-import xml2js from "xml2js";
 
 export function findFiles(
   fs: FileSystem,
@@ -42,52 +41,69 @@ class Mapping {
 }
 
 export function readMappingFileDirectory(
-  xmlMappingsDir: Uri,
+  jsonMappingsDir: Uri,
   fs: FileSystem,
   rootDirectory: Uri,
   output: ConsoleInterface,
   serviceProvider: ServiceProvider,
   callback: (pythonFilePath: string, mappings: any) => void
 ) {
-  const xmlMappingFileList: Uri[] = findFiles(
+  const jsonMappingFileList: Uri[] = findFiles(
     fs,
-    xmlMappingsDir,
-    ".xml",
+    jsonMappingsDir,
+    ".json",
     output,
     serviceProvider
   );
 
-  for (const xmlMappingFile of xmlMappingFileList) {
-    output.info(`Processing ${xmlMappingFile.fileName}`);
-    const xml = fs.readFileSync(xmlMappingFile);
-    xml2js.parseString(xml.toString(), (err, result) => {
-      const xmlMappings = result["Mappings"]["Mapping"];
+  for (const jsonMappingFile of jsonMappingFileList) {
+    output.info(`Processing ${jsonMappingFile.fileName}`);
+    let json = JSON.parse(fs.readFileSync(jsonMappingFile).toString());
+    json = categorizeMappings(json);
+    const jsonMappings = json.MemberMappings.concat(json.InterfaceMappings, json.ClassMappings, json.EnumTypeMappings, json.EnumValueMappings);
+    if (jsonMappings) {
+      const pythonFilePath =
+        Path.join(
+          rootDirectory.getFilePath(),
+          Path.basename(jsonMappingFile.getFilePath(), ".json")
+            .split(".")
+            .join(Path.sep)
+        ) + ".py";
 
-      if (xmlMappings) {
-        const pythonFilePath =
-          Path.join(
-            rootDirectory.getFilePath(),
-            Path.basename(xmlMappingFile.getFilePath(), ".xml")
-              .split(".")
-              .join(Path.sep)
-          ) + ".py";
+      let mappings: Mapping[] = [];
+      for (const jsonMapping of jsonMappings) {
+        const newName = jsonMapping.NewName;
+        const oldName = jsonMapping.OldName;
+        const parentScope = jsonMapping.ParentScope;
+        const category = jsonMapping.Category;
 
-        let mappings: Mapping[] = [];
-        for (const xmlMapping of xmlMappings) {
-          const newName = xmlMapping["$"]["NewName"];
-          const oldName = xmlMapping["$"]["OldName"];
-          const parentScope = xmlMapping["$"]["ParentScope"];
-          const category = xmlMapping["$"]["Category"];
-
-          mappings.push(new Mapping(newName, oldName, parentScope, category));
-        }
-
-        if (mappings) {
-          callback(pythonFilePath, mappings);
-        }
+        mappings.push(new Mapping(newName, oldName, parentScope, category));
       }
-    });
+
+      if (mappings) {
+        callback(pythonFilePath, mappings);
+      }
+    }
   }
+}
+
+function categorizeMappings(json: any) {
+  for (let i = 0; i < json.MemberMappings.length; i++) {
+      json.MemberMappings[i].Category = "method";
+  }
+  for (let i = 0; i < json.InterfaceMappings.length; i++) {
+      json.InterfaceMappings[i].Category = "interface";
+  }
+  for (let i = 0; i < json.ClassMappings.length; i++) {
+      json.ClassMappings[i].Category = "class";
+  }
+  for (let i = 0; i < json.EnumTypeMappings.length; i++) {
+      json.EnumTypeMappings[i].Category = "enum_type";
+  }
+  for (let i = 0; i < json.EnumValueMappings.length; i++) {
+      json.EnumValueMappings[i].Category = "enum_value";
+  }
+  return json;
 }
 
 let rootDirectory: Uri;

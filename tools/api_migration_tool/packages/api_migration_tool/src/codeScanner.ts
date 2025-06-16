@@ -122,23 +122,23 @@ export class CodeScanner {
   }
 
   public prepareScan() {
-    const xmlMappingsDir = Uri.file(
-      this.options.xmlMappingsDirectory!,
+    const jsonMappingsDir = Uri.file(
+      this.options.jsonMappingsDirectory!,
       this.serviceProvider
     );
 
-    const xmlMappingFileList: Uri[] = findFiles(
+    const jsonMappingFileList: Uri[] = findFiles(
       this.fs,
-      xmlMappingsDir,
-      ".xml",
+      jsonMappingsDir,
+      ".json",
       this.output,
       this.serviceProvider
     );
 
     if (!this.silent) {
       this.output.info(
-        `Found ${xmlMappingFileList.length} ` +
-          `mapping ${xmlMappingFileList.length === 1 ? "file" : "files"}`
+        `Found ${jsonMappingFileList.length} ` +
+          `mapping ${jsonMappingFileList.length === 1 ? "file" : "files"}`
       );
     }
 
@@ -174,12 +174,12 @@ export class CodeScanner {
 
     if (!this.silent) {
       this.output.info(
-        "Processing XML input files and finding declarations..."
+        "Processing JSON input files and finding declarations..."
       );
     }
 
     readMappingFileDirectory(
-      xmlMappingsDir,
+      jsonMappingsDir,
       this.fs,
       this.rootDirectory,
       this.output,
