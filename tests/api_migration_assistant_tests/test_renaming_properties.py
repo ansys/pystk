@@ -37,9 +37,11 @@ def test_rename_single_property():
                 self.my_property = value
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyProperty" NewName="MyPropertyRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyProperty", "NewName": "MyPropertyRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -78,10 +80,12 @@ def test_rename_chained_properties():
                 return self.my_property2
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClassA" OldName="MyProperty1" NewName="MyPropertyRenamed1" Category="method" />
-            <Mapping ParentScope="MyClassB" OldName="MyProperty2" NewName="MyPropertyRenamed2" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClassA", "OldName": "MyProperty1", "NewName": "MyPropertyRenamed1" },
+                { "ParentScope": "MyClassB", "OldName": "MyProperty2", "NewName": "MyPropertyRenamed2" }
+            ]
+        }
         """,
         """
         from api import MyClassB
@@ -133,9 +137,11 @@ def test_rename_property_via_setattr():
                     return MyClass.MyProperty
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyProperty" NewName="MyPropertyRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyProperty", "NewName": "MyPropertyRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
