@@ -6,13 +6,14 @@
 
 ## Individual Contributors
 
-* [Austin Barrow](https://github.com/austinjbarrow2000)
+* [Jorge Martínez](https://github.com/jorgepiloto)
+* [Justin Winkler](https://github.com/jwinkle8)
+* [Nikita Popel](https://github.com/nikitadpopel)
 * [Louise Dupont](https://github.com/ldups)
 * [Dave Gouger](https://github.com/davegouger)
-* [Jorge Martínez](https://github.com/jorgepiloto)
-* [Zahid Moghal](https://github.com/zmoghal)
-* [Sébastien Morais](https://github.com/SMoraisAnsys)
-* [Kathy Pippert](https://github.com/PipKat)
-* [Nikita Popel](https://github.com/nikitadpopel)
+* [Austin Barrow](https://github.com/austinjbarrow2000)
 * [Maxime Rey](https://github.com/MaxJPRey)
-* [Justin Winkler](https://github.com/jwinkle8)
+* [Sébastien Morais](https://github.com/SMoraisAnsys)
+* [Roberto Pastor Muela](https://github.com/RobPasMue)
+* [Kathy Pippert](https://github.com/PipKat)
+* [Zahid Moghal](https://github.com/zmoghal)
