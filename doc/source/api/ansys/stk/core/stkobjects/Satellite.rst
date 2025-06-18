@@ -92,9 +92,7 @@ Set satellite attitude external
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    installPath = (
-        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    )
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
         os.path.join(
             installPath,

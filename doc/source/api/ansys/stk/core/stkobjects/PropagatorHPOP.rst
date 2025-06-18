@@ -61,12 +61,8 @@ Set satellite propagator to HPOP and set force model properties
     )
 
     forceModel = satellite.propagator.force_model
-    installPath = (
-        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    )
-    forceModel.central_body_gravity.file = os.path.join(
-        installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
-    )
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    forceModel.central_body_gravity.file = os.path.join(installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv")
     forceModel.central_body_gravity.maximum_degree = 21
     forceModel.central_body_gravity.maximum_order = 21
     forceModel.drag.use = True

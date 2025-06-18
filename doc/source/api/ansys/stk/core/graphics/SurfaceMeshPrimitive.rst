@@ -75,9 +75,7 @@ Draw a new Surface Mesh
         [-1480.882721],
     ]  # X, Y, Z (km)
 
-    triangles = manager.initializers.surface_polygon_triangulator.compute(
-        "Earth", cartesianPts
-    )
+    triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
     surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
     surfaceMesh.color = Colors.Red
     surfaceMesh.set(triangles)

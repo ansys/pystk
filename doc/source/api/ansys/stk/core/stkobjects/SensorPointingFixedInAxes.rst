@@ -40,9 +40,7 @@ Define sensor pointing fixed axes YPR
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_ypr(
-        "CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33
-    )
+    sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
 
 
 Define sensor pointing fixed axes Quaternion
@@ -51,9 +49,7 @@ Define sensor pointing fixed axes Quaternion
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_quaternion(
-        "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
-    )
+    sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
 
 
 Define sensor pointing fixed axes Euler
@@ -73,9 +69,7 @@ Define sensor pointing fixed axes AzEl
 
     # Sensor sensor: Sensor object
     # Change pointing and set
-    sensor.common_tasks.set_pointing_fixed_axes_az_el(
-        "CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD
-    )
+    sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
 
 
 Import detail

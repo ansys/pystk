@@ -49,9 +49,7 @@ Compute interpolated positions along a great arc
     ]
     manager = scenario.scene_manager
     # Interpolate points over great arc
-    interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body(
-        "Earth"
-    )
+    interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
     interpolator.granularity = 0.1
     result = interpolator.interpolate(positionArray)
 

@@ -59,13 +59,9 @@ Set satellite propagator to SGP4 and propagate
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
     propagator.ephemeris_interval.set_implicit_interval(
-        root.current_scenario.analysis_workbench_components.time_intervals.item(
-            "AnalysisInterval"
-        )
+        root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
     )  # Link to scenario period
-    propagator.common_tasks.add_segments_from_online_source(
-        "25544"
-    )  # International Space Station
+    propagator.common_tasks.add_segments_from_online_source("25544")  # International Space Station
     propagator.automatic_update_enabled = True
     propagator.propagate()
 

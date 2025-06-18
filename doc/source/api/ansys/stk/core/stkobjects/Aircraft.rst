@@ -79,9 +79,7 @@ Set the Great Arc Propagator and Add Individual Waypoints to an Aircraft
     # Set route to great arc, method and altitude reference
     aircraft.set_route_type(PropagatorType.GREAT_ARC)
     route = aircraft.route
-    route.method = (
-        VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
-    )
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
     route.set_altitude_reference_type(VehicleAltitudeReference.MEAN_SEA_LEVEL)
     # Add first point
     waypoint = route.waypoints.add()

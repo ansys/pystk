@@ -121,9 +121,7 @@ Use arrays to send and retrieve data with Connect
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
     connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
-    command_results = root.execute_multiple_commands(
-        connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
-    )
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
 
     first_message = command_results.item(0)
     also_first_message = command_results[0]
@@ -140,9 +138,7 @@ Execute multiple Connect commands
         ["New / */Place MyPlace"],
         ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
     ]
-    root.execute_multiple_commands(
-        commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR
-    )
+    root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 
 Execute a Connect command
@@ -319,13 +315,9 @@ Open a Viewer Data File
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    installPath = (
-        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    )
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     root.load_vdf(
-        os.path.join(
-            installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
-        ),
+        os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
         "",
     )
 
@@ -629,13 +621,9 @@ Method detail
     .. code-block:: python
 
         # STKObjectRoot root: STK Object Model Root
-        installPath = (
-            r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        )
+        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
         root.load_vdf(
-            os.path.join(
-                installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
-            ),
+            os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
             "",
         )
 

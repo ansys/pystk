@@ -110,15 +110,11 @@ Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting
     advFixedWingTool.max_temperature = 900
 
     # Use a subsonic aerodynamic strategy
-    advFixedWingTool.aerodynamic_strategy = (
-        AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
-    )
+    advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
     # Cache the aerodynamic data to improve calculation speed
     advFixedWingTool.cache_aerodynamic_data = True
     # Use a high bypass turbofan
-    advFixedWingTool.powerplant_strategy = (
-        AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
-    )
+    advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
     # Cache the fuel flow data to improve calculation speed
     advFixedWingTool.cache_fuel_flow = True
 

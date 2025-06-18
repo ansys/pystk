@@ -62,9 +62,7 @@ Add Array of Waypoints to a Ground Vehicle and Interpolate over Terrain
     route.set_points_smooth_rate_and_propagate(ptsArray)
     route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
     route.altitude_reference.granularity = 0.001
-    route.altitude_reference.interpolation_method = (
-        VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
-    )
+    route.altitude_reference.interpolation_method = VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
     # Propagate the route
     route.propagate()
 
@@ -77,9 +75,7 @@ Set the Great Arc Propagator and Add Individual Waypoints to a Ground Vehicle
     # Set route to great arc, method and altitude reference
     groundVehicle.set_route_type(PropagatorType.GREAT_ARC)
     route = groundVehicle.route
-    route.method = (
-        VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
-    )
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
     route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
     # Add first point
     waypoint = route.waypoints.add()

@@ -41,21 +41,15 @@ Draw a new Surface Extent Triangulator
 
     # Scenario scenario: Scenario object
     manager = scenario.scene_manager
-    installPath = (
-        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    )
-    texture_path = os.path.join(
-        installPath, "STKData", "VO", "Textures", "AGI_logo_small.png"
-    )
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
     texture = manager.textures.load_from_string_uri(texture_path)
     mesh = manager.initializers.surface_mesh_primitive.initialize()
     mesh.texture = texture
     mesh.translucency = 0
     cartographicExtent = [[-55], [10], [-24], [30]]
 
-    triangles = manager.initializers.surface_extent_triangulator.compute_simple(
-        "Earth", cartographicExtent
-    )
+    triangles = manager.initializers.surface_extent_triangulator.compute_simple("Earth", cartographicExtent)
     mesh.set(triangles)
     mesh.translucency = 0.25
     c0 = [[10], [-55]]
@@ -63,9 +57,7 @@ Draw a new Surface Extent Triangulator
     c2 = [[30], [-24]]
     c3 = [[10], [-24]]
 
-    mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(
-        c0, c1, c2, c3
-    )
+    mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(c0, c1, c2, c3)
     mesh.transparent_texture_border = True
     manager.primitives.add(mesh)
     manager.render()

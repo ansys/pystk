@@ -70,9 +70,7 @@ Create a heat map of coverage definition results graphing duration by asset usin
     )
 
     # reshape the DataFrame based on column values
-    pivot = all_regions_coverage_df.pivot_table(
-        index="region name", columns="asset name", values="duration"
-    )
+    pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
 
     # plot heat map that shows duration by asset name by region
     plt.xlabel("Duration by Asset", fontsize=20)
@@ -100,9 +98,7 @@ Compute descriptive statistics for access measurements using a Pandas DataFrame
     all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
     # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(
-        pd.to_numeric
-    ).describe()
+    all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
 
 
 Convert access data provider results to a Pandas DataFrame
@@ -113,17 +109,13 @@ Convert access data provider results to a Pandas DataFrame
     # compute data provider results for basic Access
     field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
 
-    access_data = facility_sensor_satellite_access.data_providers[
-        "Access Data"
-    ].execute_elements(
+    access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
         self.get_scenario().start_time, self.get_scenario().stop_time, field_names
     )
 
     # convert dataset collection in a row format as a Pandas DataFrame
     index_column = "Access Number"
-    access_data_df = access_data.data_sets.to_pandas_dataframe(
-        index_element_name=index_column
-    )
+    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
 
 
 Convert coverage definition data provider results to a Pandas DataFrame

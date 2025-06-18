@@ -58,13 +58,9 @@ Add Imagery and Terrain to the Scene
     # Retrieve the boundaries of the imported files
     manager = scenario.scene_manager
     # Add Terrain
-    installPath = (
-        r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    )
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
-        os.path.join(
-            installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt"
-        )
+        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
     )
     extentTerrain = terrainTile.extent
     print(

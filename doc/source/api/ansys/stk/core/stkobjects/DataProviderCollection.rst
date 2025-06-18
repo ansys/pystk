@@ -62,9 +62,7 @@ Get Data for Specific Points and Elements
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     times = [[0], [15000], [20000], [55000]]
     elems = [["Time"], ["Precision Pass Number"]]
-    satPassesDP = satellite.data_providers.item(
-        "Precision Passes"
-    ).execute_single_elements_array(times, elems)
+    satPassesDP = satellite.data_providers.item("Precision Passes").execute_single_elements_array(times, elems)
     passes = satPassesDP.get_array(1)
 
 
@@ -96,9 +94,7 @@ Extract Elements from Data Providers with pre-data
     # Choose the reference system you want to report the Center point in
     dataProvCenter.pre_data = "CentralBody/Earth TOD"
     rptElems = [["Time"], ["x"], ["y"], ["z"]]
-    results = dataProvCenter.execute_elements(
-        scenario.start_time, scenario.stop_time, 60, rptElems
-    )
+    results = dataProvCenter.execute_elements(scenario.start_time, scenario.stop_time, 60, rptElems)
     datasets = results.data_sets
     Time = datasets.get_data_set_by_name("Time").get_values()
     facTODx = datasets.get_data_set_by_name("x").get_values()
@@ -125,9 +121,9 @@ Extract Elements from Data Providers with Groups
     saty = satPosDP.data_sets.get_data_set_by_name("y").get_values()
     satz = satPosDP.data_sets.get_data_set_by_name("z").get_values()
 
-    satVelDP = satellite.data_providers.get_data_provider_time_varying_from_path(
-        "Cartesian Velocity/ICRF"
-    ).execute(scenario.start_time, scenario.stop_time, 60)
+    satVelDP = satellite.data_providers.get_data_provider_time_varying_from_path("Cartesian Velocity/ICRF").execute(
+        scenario.start_time, scenario.stop_time, 60
+    )
     # There are 4 Methods to get DP From a Path depending on the kind of DP:
     #   GetDataPrvTimeVarFromPath
     #   GetDataPrvIntervalFromPath
@@ -178,9 +174,7 @@ Use an interval Data Provider
     access = satellite.get_access_to_object(facility)
     access.compute_access()
     # Get the Access AER Data Provider
-    accessDP = access.data_providers.item("Access Data").execute(
-        scenario.start_time, scenario.stop_time
-    )
+    accessDP = access.data_providers.item("Access Data").execute(scenario.start_time, scenario.stop_time)
 
     accessStartTimes = accessDP.data_sets.get_data_set_by_name("Start Time").get_values()
     accessStopTimes = accessDP.data_sets.get_data_set_by_name("Stop Time").get_values()

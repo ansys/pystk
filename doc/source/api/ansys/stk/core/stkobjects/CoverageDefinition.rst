@@ -85,9 +85,7 @@ Set the Coverage Interval to an object's availability Analysis interval
     satVGT = satellite.analysis_workbench_components
     AvailTimeSpan = satVGT.time_intervals.item("AvailabilityTimeSpan")
     IntResult = AvailTimeSpan.find_interval()
-    coverage.interval.analysis_interval.set_start_and_stop_times(
-        IntResult.interval.start, IntResult.interval.stop
-    )
+    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
 
 
 Create a New Coverage Definition (on the current scenario central body)

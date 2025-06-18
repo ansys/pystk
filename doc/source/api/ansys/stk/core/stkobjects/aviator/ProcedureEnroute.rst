@@ -49,9 +49,7 @@ Add and configure an en-route procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add an enroute procedure with a site type of End of Previous Procedure
-    enroute = procedures.add_at_index(
-        1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE
-    )
+    enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
     # Get the altitude options
     altitudeOptions = enroute.altitude_msl_options
     # To specify an altitude, turn off the option to use the default cruise altitude

@@ -82,9 +82,7 @@ Create a new Collection of Interval List
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # IVectorGeometryPoint centerPtSat: point component
     timeCollListFactory = vgtSat.time_interval_collections.factory
-    timeColl = timeCollListFactory.create_lighting(
-        "LightingList", "Collection of lighting intervals"
-    )
+    timeColl = timeCollListFactory.create_lighting("LightingList", "Collection of lighting intervals")
     timeColl.use_object_eclipsing_bodies = True
     timeColl.location = centerPtSat
 
@@ -188,9 +186,7 @@ Create a new Vector Magnitude Scalar
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     calcFactory = vgtSat.calculation_scalars.factory
-    displScalar = calcFactory.create_vector_magnitude(
-        "VectorDisplacement", "Vector Magnitude of Displacement Vector"
-    )
+    displScalar = calcFactory.create_vector_magnitude("VectorDisplacement", "Vector Magnitude of Displacement Vector")
     displScalar.input_vector = Sat2EarthCenter
 
 
@@ -202,9 +198,7 @@ Create a new Assembled System
     # IVectorGeometryPointFixedInSystem fixedPt: point component
     # IVectorGeometryToolAxes bodyAxes: axes component
     SysFactory = vgtSat.systems.factory
-    assemSys = SysFactory.create(
-        "FixedPtSystem", "System with origin at the new point", SystemType.ASSEMBLED
-    )
+    assemSys = SysFactory.create("FixedPtSystem", "System with origin at the new point", SystemType.ASSEMBLED)
     assemSys.origin_point.set_point(fixedPt)
     assemSys.reference_axes.set_axes(bodyAxes)
 
@@ -236,9 +230,7 @@ Create a new Between Vectors Angle
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
     AngFactory = vgtSat.angles.factory
-    betwVect = AngFactory.create(
-        "SatEarth2Y", "Displacement Vector to Sat Body Y", AngleType.BETWEEN_VECTORS
-    )
+    betwVect = AngFactory.create("SatEarth2Y", "Displacement Vector to Sat Body Y", AngleType.BETWEEN_VECTORS)
     betwVect.from_vector.set_vector(Sat2EarthCenter)
     betwVect.to_vector.set_vector(bodyYSat)
 
@@ -250,14 +242,10 @@ Create a new Fixed at Time Instant Point
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolSystemAssembled icrf: system component
     PtFactory = vgtSat.points.factory
-    timeInstantPt = PtFactory.create(
-        "AtTimePt", "Point at time instant", PointType.AT_TIME_INSTANT
-    )
+    timeInstantPt = PtFactory.create("AtTimePt", "Point at time instant", PointType.AT_TIME_INSTANT)
     timeInstantPt.source_point = vgtSat.points.item("Center")
     timeInstantPt.reference_system = icrf
-    timeInstantPt.reference_time_instant = vgtSat.time_instants.item(
-        "AvailabilityStartTime"
-    )
+    timeInstantPt.reference_time_instant = vgtSat.time_instants.item("AvailabilityStartTime")
 
 
 Create a new Model Attachment Point
@@ -266,9 +254,7 @@ Create a new Model Attachment Point
 
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     PtFactory = vgtSat.points.factory
-    modelPt = PtFactory.create(
-        "ModelPt", "Attach point defined in model", PointType.MODEL_ATTACHMENT
-    )
+    modelPt = PtFactory.create("ModelPt", "Attach point defined in model", PointType.MODEL_ATTACHMENT)
     modelPt.pointable_element_name = "MainSensor-000000"
 
 
@@ -278,9 +264,7 @@ Create a new Fixed in System Point
 
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     PtFactory = vgtSat.points.factory
-    fixedPt = PtFactory.create(
-        "FixedPt", "Point offset from Center", PointType.FIXED_IN_SYSTEM
-    )
+    fixedPt = PtFactory.create("FixedPt", "Point offset from Center", PointType.FIXED_IN_SYSTEM)
     fixedPt.fixed_point.assign_cartesian(0.005, 0, 0.005)
 
 
@@ -306,7 +290,9 @@ Create a new Custom Script Vector
     customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     # Initialization script if needed
     # customScript.InitializationScriptFile = ''
-    customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    customScript.script_file = (
+        r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    )
     if customScript.is_valid is False:
         print("Script component not valid!")
         from os import getenv
@@ -325,9 +311,7 @@ Create a new Cross Product Vector
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     # VectorGeometryToolVectorDisplacement fixedAxesVector: vector component
     VectFactory = vgtSat.vectors.factory
-    lineOfNodesVector = VectFactory.create_cross_product(
-        "CrossProduct", Sat2EarthCenter, fixedAxesVector
-    )
+    lineOfNodesVector = VectFactory.create_cross_product("CrossProduct", Sat2EarthCenter, fixedAxesVector)
 
 
 Create a new Fixed in Axes Vector
@@ -350,9 +334,7 @@ Create a new Displacement Vector
     # IVectorGeometryPoint centerPtSat: point component
     # IVectorGeometryPoint centerPtEarth: point component
     VectFactory = vgtSat.vectors.factory
-    Sat2EarthCenter = VectFactory.create_displacement_vector(
-        "Sat2EarthCenter", centerPtSat, centerPtEarth
-    )
+    Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
 
 
 Get a default VGT component on vehicle
@@ -375,9 +357,7 @@ Get the Center point and Inertial System of Earth central body
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model root
-    centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item(
-        "Center"
-    )
+    centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 
 

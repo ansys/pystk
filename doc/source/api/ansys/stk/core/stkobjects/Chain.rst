@@ -102,21 +102,15 @@ Print the strand intervals of chain object
     # Considered Start and Stop time
     print(
         "Chain considered start time: %s"
-        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime")
-        .find_occurrence()
-        .epoch
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime").find_occurrence().epoch
     )
     print(
         "Chain considered stop time: %s"
-        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime")
-        .find_occurrence()
-        .epoch
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime").find_occurrence().epoch
     )
 
-    objectParticipationIntervals = (
-        chain.analysis_workbench_components.time_interval_collections.item(
-            "StrandAccessIntervals"
-        )
+    objectParticipationIntervals = chain.analysis_workbench_components.time_interval_collections.item(
+        "StrandAccessIntervals"
     )
     intervalListResult = objectParticipationIntervals.find_interval_collection()
 

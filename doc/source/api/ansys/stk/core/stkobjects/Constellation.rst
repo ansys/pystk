@@ -40,9 +40,7 @@ Define a constellation
 
     # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
-    constellation = root.current_scenario.children.new(
-        STKObjectType.CONSTELLATION, "MyConstellation"
-    )
+    constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
     constellation.objects.add_object(satellite)
     constellation.objects.add("*/Facility/MyFacility")
 

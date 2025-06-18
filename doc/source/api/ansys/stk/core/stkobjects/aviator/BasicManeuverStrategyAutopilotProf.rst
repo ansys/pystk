@@ -62,9 +62,7 @@ Add and configure a basic maneuver procedure
 
     # IProcedureCollection procedures: Procedure Collection object
     # Add a basic maneuver procedure
-    basicManeuver = procedures.add(
-        SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
-    )
+    basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
 
     # Set the navigation to use a Straight Ahead strategy
     basicManeuver.navigation_strategy_type = "Straight Ahead"
@@ -88,9 +86,7 @@ Add and configure a basic maneuver procedure
     # Configure the options on the Attitude / Performance / Fuel page
     basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
     # Override the fuel flow
-    basicManeuver.fuel_flow_type = (
-        BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
-    )
+    basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
     basicManeuver.override_fuel_flow_value = 1000
 
     # Set the basic stopping conditions

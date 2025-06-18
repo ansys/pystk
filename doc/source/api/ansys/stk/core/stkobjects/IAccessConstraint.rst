@@ -65,12 +65,8 @@ Configure the access interval to the availability time span of the object where 
     access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
     accessTimePeriod = access.access_time_period_data
 
-    if satellite.analysis_workbench_components.time_intervals.contains(
-        "AvailabilityTimeSpan"
-    ):
-        availabilityTimeSpan = satellite.analysis_workbench_components.time_intervals.item(
-            "AvailabilityTimeSpan"
-        )
+    if satellite.analysis_workbench_components.time_intervals.contains("AvailabilityTimeSpan"):
+        availabilityTimeSpan = satellite.analysis_workbench_components.time_intervals.item("AvailabilityTimeSpan")
         accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
 
 
@@ -84,9 +80,7 @@ Remove all access constraints except for Line Of Sight
 
         if (constraint == "LineOfSight") is False:
             if constraint == "ThirdBodyObstruction":
-                thirdBodyConstraint = accessConstraints.GetActiveNamedConstraint(
-                    "ThirdBodyObstruction"
-                )
+                thirdBodyConstraint = accessConstraints.GetActiveNamedConstraint("ThirdBodyObstruction")
                 assignedArray = thirdBodyConstraint.AssignedObstructions
 
                 for j in range(0, len(assignedArray)):
@@ -144,9 +138,7 @@ Add and configure a central body obstruction access constraint
 
     # AccessConstraintCollection accessConstraints: Access Constraint collection
     # Get IAgAccessCnstrCbObstruction interface
-    cbObstrConstraint = accessConstraints.add_constraint(
-        AccessConstraintType.CENTRAL_BODY_OBSTRUCTION
-    )
+    cbObstrConstraint = accessConstraints.add_constraint(AccessConstraintType.CENTRAL_BODY_OBSTRUCTION)
 
     # AvailableObstructions returns a one dimensional array of obstruction paths
     availableArray = cbObstrConstraint.available_obstructions
@@ -201,9 +193,7 @@ Add and configure a Line Of Sight sun exclusion access constraint
     # AccessConstraintCollection accessConstraints: Access Constraint collection
 
     # Angle constraint
-    cnstrAngle = accessConstraints.add_constraint(
-        AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE
-    )
+    cnstrAngle = accessConstraints.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
     cnstrAngle.angle = 176.0
 
 

@@ -38,9 +38,7 @@ Add a Vector to display in 3D
 
     # Satellite satellite: Satellite object
     vector = satellite.graphics_3d.vector
-    angVel = vector.vector_geometry_tool_components.add(
-        0, "Satellite/MySatellite AngVelocity"
-    )
+    angVel = vector.vector_geometry_tool_components.add(0, "Satellite/MySatellite AngVelocity")
     angVel.show_label = True
 
 
