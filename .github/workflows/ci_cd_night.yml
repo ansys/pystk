@@ -214,7 +214,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-graphics-cov-linux"
+            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-cov"
 
       - name: "Run the aviator tests"
         run: |
