@@ -3,13 +3,13 @@
 from datetime import datetime
 import fnmatch
 import hashlib
+import json
 import os
 import pathlib
 import shutil
 import subprocess
 import sys
 import toml
-import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
@@ -21,10 +21,10 @@ from ansys_sphinx_theme import (
     get_version_match,
 )
 
-from ansys.stk.core import __version__
+from ansys.stk import __version__
 
 # Project information
-project = "ansys-stk-core"
+project = "ansys-stk"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -659,10 +659,10 @@ def read_migration_tables(app: sphinx.application.Sphinx):
     API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
     if not API_MAPPINGS.exists():
         raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
-    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.json") if "internal" not in file.name]
 
     mappings = {}
-    for xml_file in status_iterator(
+    for json_file in status_iterator(
         TABLE_FILES,
         "Rendering migration table",
         "green",
@@ -670,20 +670,20 @@ def read_migration_tables(app: sphinx.application.Sphinx):
         verbosity=1,
         stringify_func=(lambda x: x.name),
     ):
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
+        with pathlib.Path(json_file).open(mode="r") as f:
+            json_mappings = json.load(f)
 
-        type_categories = ["enum_type", "class", "interface"]
+        type_categories = ["EnumTypeMappings", "ClassMappings", "InterfaceMappings"]
         for type_category in type_categories:
-            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            type_mappings = json_mappings.get(type_category, [])
             for type_mapping in type_mappings:
                 type_old_name = type_mapping.get("OldName")
                 type_new_name = type_mapping.get("NewName")
                 mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
 
-        member_categories = ["enum_value", "method"]
+        member_categories = ["EnumValueMappings", "MemberMappings"]
         for member_category in member_categories:
-            method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
+            method_mappings = json_mappings.get(member_category, [])
             for method_mapping in method_mappings:
                 member_old_name = method_mapping.get("OldName")
                 if member_old_name[0] != "_": # Filter out private methods

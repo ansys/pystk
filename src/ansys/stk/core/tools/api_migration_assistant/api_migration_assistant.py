@@ -64,8 +64,8 @@ def record(
     recordings_directory_path = Path(recordings_directory)
     date_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S-%f")[:-3]
     recordings_directory_path.mkdir(parents=True, exist_ok=True)
-    recordings_file = recordings_directory_path / f"recording_{date_time}.xml"
-    recording.save_to_xml(str(recordings_file.resolve()), f"{Path.cwd()}> {' '.join(sys.argv)}")
+    recordings_file = recordings_directory_path / f"recording_{date_time}.json"
+    recording.save(str(recordings_file.resolve()), f"{Path.cwd()}> {' '.join(sys.argv)}")
 
 
 def _invoke_record(parser, args):
@@ -90,7 +90,7 @@ def apply(mappings_directory, recordings_directory):
         logging.error("The libcst library is required. Please install it and re-run.")
     else:
         mappings = Mappings.load_from(mappings_directory)
-        recording = Recording.load_from_xml_recordings_in_directory(recordings_directory)
+        recording = Recording.load_from_recordings_in_directory(recordings_directory)
         editor = CodeEditor(recording, mappings)
         editor.apply_changes()
 

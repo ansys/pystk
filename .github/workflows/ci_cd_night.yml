@@ -26,8 +26,7 @@ on:
 env:
   MINIMUM_PYTHON_VERSION: '3.11'
   MAIN_PYTHON_VERSION: '3.12'
-  ANSYS_STK_CORE: 'ansys-stk-core'
-  ANSYS_STK_EXTENSIONS: 'ansys-stk-extensions'
+  ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
@@ -40,9 +39,10 @@ concurrency:
 
 jobs:
 
-  build-wheelhouse-core:
-    name: "Wheelhouse ansys-stk-core / ${{ matrix.os }} / ${{ matrix.python-version }} / ${{ matrix.target }}"
+  build-wheelhouse:
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
     runs-on: ${{ matrix.os }}
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name == 'schedule'
     permissions:
       attestations: write
       contents: read
@@ -51,41 +51,21 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.11', '3.12', '3.13']
-        target: ['all', 'grpc', 'jupyter']
+        target: ['core', 'extensions', 'grpc', 'jupyter', 'all']
     steps:
       - uses: ansys/actions/build-wheelhouse@v10
         with:
-          library-name: ${{ env.ANSYS_STK_CORE }}
+          library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
           attest-provenance: true
 
-  build-wheelhouse-extensions:
-    name: "Wheelhouse ansys-stk-extensions / ${{ matrix.os }} / ${{ matrix.python-version }}"
-    runs-on: ${{ matrix.os }}
-    permissions:
-      attestations: write
-      contents: read
-      id-token: write
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ['3.11', '3.12', '3.13']
-    steps:
-      - uses: ansys/actions/build-wheelhouse@v10
-        with:
-          library-name: ${{ env.ANSYS_STK_EXTENSIONS }}
-          operating-system: ${{ matrix.os }}
-          python-version: ${{ matrix.python-version }}
-          attest-provenance: true
-          working-directory: ./extensions
-
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     timeout-minutes: 90
-    needs: [build-wheelhouse-core, build-wheelhouse-extensions]
+    needs: build-wheelhouse
     steps:
 
       - name: "Checkout the project"
@@ -172,21 +152,17 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: inputs.run-tests || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
     strategy:
       matrix:
-        # TODO: restore support for Python 3.13
-        # https://github.com/ansys-internal/pystk/issues/557
-        python: ["3.11", "3.12"]
+        python: ["3.11", "3.12", "3.13"]
         is-weekly-run:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
           - is-weekly-run: true
             python: "3.11"
-          # TODO: restore support for Python 3.13
-          # https://github.com/ansys-internal/pystk/issues/557
-          #- is-weekly-run: true
-          #  python: "3.12"
+          - is-weekly-run: true
+            python: "3.12"
       fail-fast: false
     steps:
 
@@ -224,41 +200,21 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # PySTK Extensions
+      # -- Tests
 
-      - name: "Run the extension tests"
+      - name: "Run the extensions tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
-      - name: "Generate coverage report for ${{ env.ANSYS_STK_EXTENSIONS }}"
-        run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile ./extensions/pyproject.toml --data-file=.cov/extensions --directory=.cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage --fail-under=90"
-
-      - name: "Upload ${{ env.ANSYS_STK_EXTENSIONS }} coverage results"
-        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v4
-        with:
-          path: .cov/${{ env.ANSYS_STK_EXTENSIONS }}-coverage
-          name: ${{ env.ANSYS_STK_EXTENSIONS }}-coverage
-
-      - name: "Clean coverage results"
-        run: |
-          rm -rf .cov && mkdir .cov
-
-      # -- PySTK Core
-
       - name: "Run the API migration assistant tests"
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-graphics-cov-linux"
+            "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-cov"
 
       - name: "Run the aviator tests"
         run: |
@@ -295,28 +251,30 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
+      # -- Coverage
+
       - name: "Combine all coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }}/.cov \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=core && coverage combine aviator stknogfx stkgfx vgt snippets migration"
+            "export COVERAGE_FILE=core && coverage combine aviator stknogfx stkgfx vgt snippets migration extensions"
 
-      - name: "Generate coverage report for ${{ env.ANSYS_STK_CORE }}"
+      - name: "Generate coverage report"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK_CORE }}-coverage --fail-under=89"
+            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK }}-coverage --fail-under=89"
 
-      - name: "Upload ${{ env.ANSYS_STK_CORE }} coverage results"
+      - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         uses: actions/upload-artifact@v4
         with:
-          path: .cov/${{ env.ANSYS_STK_CORE }}-coverage
-          name: ${{ env.ANSYS_STK_CORE }}-coverage
+          path: .cov/${{ env.ANSYS_STK }}-coverage
+          name: ${{ env.ANSYS_STK }}-coverage
 
       - name: "Stop the container"
         if: always()
