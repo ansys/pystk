@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Import Analysis Workbench components from a file.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -186,9 +186,7 @@ Create a new Vector Magnitude Scalar
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     calcFactory = vgtSat.calculation_scalars.factory
-    displScalar = calcFactory.create_vector_magnitude(
-        "VectorDisplacement", "Vector Magnitude of Displacement Vector"
-    )
+    displScalar = calcFactory.create_vector_magnitude("VectorDisplacement", "Vector Magnitude of Displacement Vector")
     displScalar.input_vector = Sat2EarthCenter
 
 
@@ -292,7 +290,9 @@ Create a new Custom Script Vector
     customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     # Initialization script if needed
     # customScript.InitializationScriptFile = ''
-    customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    customScript.script_file = (
+        r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    )
     if customScript.is_valid is False:
         print("Script component not valid!")
         from os import getenv

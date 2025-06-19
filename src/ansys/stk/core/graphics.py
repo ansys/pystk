@@ -30,61 +30,61 @@ projection streaming. STK Graphics is available in STK, using UI plugins, as
 well as in STK Engine custom applications.
 """
 
-__all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
-"AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
-"AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", "AlphaFromRasterFilter", 
-"AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", "AntiAliasingMethod", "AxesPrimitive", 
-"AxesPrimitiveFactory", "BandExtractFilter", "BandExtractFilterFactory", "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", 
-"BinaryLogicOperation", "BlurFilter", "BlurFilterFactory", "BlurMethod", "BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer", 
-"BrightnessFilter", "BrightnessFilterFactory", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics", 
-"CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition", 
-"CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory", 
-"ConstrainedUpAxis", "ContrastFilter", "ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay", 
-"CustomImageGlobeOverlayPluginActivator", "CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", 
-"CylinderFillOptions", "CylinderTriangulatorInitializer", "DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory", 
-"DistanceToGlobeOverlayDisplayCondition", "DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition", 
-"DistanceToPositionDisplayConditionFactory", "DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory", 
-"DurationPathPrimitiveUpdatePolicy", "DurationPathPrimitiveUpdatePolicyFactory", "EdgeDetectFilter", "EdgeDetectFilterFactory", 
-"EdgeDetectMethod", "EllipsoidTriangulatorInitializer", "ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", 
-"FaceCullingMode", "FactoryAndInitializers", "FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory", 
-"FontStyle", "FrameRate", "GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory", 
-"GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", 
-"GlobeImageOverlayInitializer", "GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", 
-"GradientDetectMethod", "GraphicsFont", "GraphicsFontFactory", "GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", 
-"IDisplayCondition", "IGlobeImageOverlay", "IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy", 
-"IPositionInterpolator", "IPrimitive", "IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase", 
-"IScreenOverlayContainer", "ITerrainOverlay", "ITriangulatorResult", "ImageCollection", "Jpeg2000CompressionProfile", "Jpeg2000WriterInitializer", 
-"KmlContainer", "KmlDocument", "KmlDocumentCollection", "KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", 
-"KmlFolder", "KmlGraphics", "KmlNetworkLink", "KmlNetworkLinkRefreshMode", "KmlNetworkLinkViewRefreshMode", "LevelsFilter", 
-"LevelsFilterFactory", "Lighting", "MagnificationFilter", "MapProjection", "MarkerBatchPrimitive", "MarkerBatchPrimitiveFactory", 
-"MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", "MarkerBatchRenderPass", "MarkerBatchRenderingMethod", 
-"MarkerBatchSizeSource", "MarkerBatchSizeUnit", "MarkerBatchSortOrder", "MaximumCountPathPrimitiveUpdatePolicy", "MaximumCountPathPrimitiveUpdatePolicyFactory", 
-"MinificationFilter", "ModelArticulation", "ModelArticulationCollection", "ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation", 
-"ModelTransformationType", "ModelUpAxis", "ObjectCollection", "Origin", "OutlineAppearance", "Overlay", "OverlayAspectRatioMode", 
-"OverlayRole", "PathPoint", "PathPointCollection", "PathPointFactory", "PathPrimitive", "PathPrimitiveFactory", "PathPrimitiveRemoveLocation", 
-"PathPrimitiveUpdatePolicy", "PickResult", "PickResultCollection", "PixelSizeDisplayCondition", "PixelSizeDisplayConditionFactory", 
-"PointBatchPrimitive", "PointBatchPrimitiveFactory", "PointBatchPrimitiveOptionalParameters", "PointBatchPrimitiveOptionalParametersFactory", 
-"PolylinePrimitive", "PolylinePrimitiveFactory", "PolylinePrimitiveOptionalParameters", "PolylinePrimitiveOptionalParametersFactory", 
-"PolylineType", "PositionInterpolator", "Primitive", "PrimitiveIndicesOrderHint", "PrimitiveManager", "PrimitivesSortOrder", 
-"ProjectedRasterOverlay", "ProjectedRasterOverlayFactory", "Projection", "ProjectionFactory", "ProjectionRasterStreamPluginActivator", 
-"ProjectionRasterStreamPluginActivatorFactory", "ProjectionRasterStreamPluginProxy", "ProjectionStream", "Raster", "RasterAttributes", 
-"RasterAttributesFactory", "RasterBand", "RasterFactory", "RasterFilter", "RasterFlipAxis", "RasterFormat", "RasterImageGlobeOverlay", 
-"RasterImageGlobeOverlayFactory", "RasterOrientation", "RasterSharpenMethod", "RasterStream", "RasterType", "RefreshRate", 
-"RenderPass", "RenderPassHint", "RendererShadingModel", "RendererTexture2D", "RendererTextureTemplate2D", "RenderingEventArgs", 
-"RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", "RotateFilterFactory", "Scene", "SceneCollection", 
-"SceneDisplayCondition", "SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", "SceneManagerInitializer", 
-"ScreenOverlay", "ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", "ScreenOverlayManager", 
-"ScreenOverlayOrigin", "ScreenOverlayPickResult", "ScreenOverlayPickResultCollection", "ScreenOverlayPinningOrigin", "ScreenOverlayUnit", 
-"SequenceFilter", "SequenceFilterFactory", "SetHint", "SharpenFilter", "SharpenFilterFactory", "SnapshotFileFormat", "SolidPrimitive", 
-"SolidPrimitiveFactory", "SolidTriangulatorResult", "StereoProjectionMode", "Stereoscopic", "StereoscopicDisplayMode", "SurfaceExtentTriangulatorInitializer", 
-"SurfaceMeshPrimitive", "SurfaceMeshPrimitiveFactory", "SurfaceMeshRenderingMethod", "SurfacePolygonTriangulatorInitializer", 
-"SurfaceShapesInitializer", "SurfaceShapesResult", "SurfaceTriangulatorResult", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs", 
-"TerrainOverlayCollection", "TerrainOverlayInitializer", "TextBatchPrimitive", "TextBatchPrimitiveFactory", "TextBatchPrimitiveOptionalParameters", 
-"TextBatchPrimitiveOptionalParametersFactory", "TextOverlay", "TextOverlayFactory", "Texture2DFactory", "TextureFilter2D", 
-"TextureFilter2DFactory", "TextureFormat", "TextureMatrix", "TextureMatrixFactory", "TextureScreenOverlay", "TextureScreenOverlayFactory", 
-"TextureWrap", "TimeIntervalDisplayCondition", "TimeIntervalDisplayConditionFactory", "TriangleMeshPrimitive", "TriangleMeshPrimitiveFactory", 
-"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VectorPrimitive", 
-"VectorPrimitiveFactory", "VideoFormat", "VideoPlayback", "VideoStream", "VideoStreamFactory", "Visibility", "VisualEffects", 
+__all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory",
+"AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory",
+"AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", "AlphaFromRasterFilter",
+"AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", "AntiAliasingMethod", "AxesPrimitive",
+"AxesPrimitiveFactory", "BandExtractFilter", "BandExtractFilterFactory", "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex",
+"BinaryLogicOperation", "BlurFilter", "BlurFilterFactory", "BlurMethod", "BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer",
+"BrightnessFilter", "BrightnessFilterFactory", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics",
+"CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition",
+"CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory",
+"ConstrainedUpAxis", "ContrastFilter", "ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay",
+"CustomImageGlobeOverlayPluginActivator", "CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy",
+"CylinderFillOptions", "CylinderTriangulatorInitializer", "DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory",
+"DistanceToGlobeOverlayDisplayCondition", "DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition",
+"DistanceToPositionDisplayConditionFactory", "DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory",
+"DurationPathPrimitiveUpdatePolicy", "DurationPathPrimitiveUpdatePolicyFactory", "EdgeDetectFilter", "EdgeDetectFilterFactory",
+"EdgeDetectMethod", "EllipsoidTriangulatorInitializer", "ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult",
+"FaceCullingMode", "FactoryAndInitializers", "FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory",
+"FontStyle", "FrameRate", "GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory",
+"GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs",
+"GlobeImageOverlayInitializer", "GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory",
+"GradientDetectMethod", "GraphicsFont", "GraphicsFontFactory", "GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter",
+"IDisplayCondition", "IGlobeImageOverlay", "IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy",
+"IPositionInterpolator", "IPrimitive", "IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase",
+"IScreenOverlayContainer", "ITerrainOverlay", "ITriangulatorResult", "ImageCollection", "Jpeg2000CompressionProfile", "Jpeg2000WriterInitializer",
+"KmlContainer", "KmlDocument", "KmlDocumentCollection", "KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection",
+"KmlFolder", "KmlGraphics", "KmlNetworkLink", "KmlNetworkLinkRefreshMode", "KmlNetworkLinkViewRefreshMode", "LevelsFilter",
+"LevelsFilterFactory", "Lighting", "MagnificationFilter", "MapProjection", "MarkerBatchPrimitive", "MarkerBatchPrimitiveFactory",
+"MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", "MarkerBatchRenderPass", "MarkerBatchRenderingMethod",
+"MarkerBatchSizeSource", "MarkerBatchSizeUnit", "MarkerBatchSortOrder", "MaximumCountPathPrimitiveUpdatePolicy", "MaximumCountPathPrimitiveUpdatePolicyFactory",
+"MinificationFilter", "ModelArticulation", "ModelArticulationCollection", "ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation",
+"ModelTransformationType", "ModelUpAxis", "ObjectCollection", "Origin", "OutlineAppearance", "Overlay", "OverlayAspectRatioMode",
+"OverlayRole", "PathPoint", "PathPointCollection", "PathPointFactory", "PathPrimitive", "PathPrimitiveFactory", "PathPrimitiveRemoveLocation",
+"PathPrimitiveUpdatePolicy", "PickResult", "PickResultCollection", "PixelSizeDisplayCondition", "PixelSizeDisplayConditionFactory",
+"PointBatchPrimitive", "PointBatchPrimitiveFactory", "PointBatchPrimitiveOptionalParameters", "PointBatchPrimitiveOptionalParametersFactory",
+"PolylinePrimitive", "PolylinePrimitiveFactory", "PolylinePrimitiveOptionalParameters", "PolylinePrimitiveOptionalParametersFactory",
+"PolylineType", "PositionInterpolator", "Primitive", "PrimitiveIndicesOrderHint", "PrimitiveManager", "PrimitivesSortOrder",
+"ProjectedRasterOverlay", "ProjectedRasterOverlayFactory", "Projection", "ProjectionFactory", "ProjectionRasterStreamPluginActivator",
+"ProjectionRasterStreamPluginActivatorFactory", "ProjectionRasterStreamPluginProxy", "ProjectionStream", "Raster", "RasterAttributes",
+"RasterAttributesFactory", "RasterBand", "RasterFactory", "RasterFilter", "RasterFlipAxis", "RasterFormat", "RasterImageGlobeOverlay",
+"RasterImageGlobeOverlayFactory", "RasterOrientation", "RasterSharpenMethod", "RasterStream", "RasterType", "RefreshRate",
+"RenderPass", "RenderPassHint", "RendererShadingModel", "RendererTexture2D", "RendererTextureTemplate2D", "RenderingEventArgs",
+"RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", "RotateFilterFactory", "Scene", "SceneCollection",
+"SceneDisplayCondition", "SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", "SceneManagerInitializer",
+"ScreenOverlay", "ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", "ScreenOverlayManager",
+"ScreenOverlayOrigin", "ScreenOverlayPickResult", "ScreenOverlayPickResultCollection", "ScreenOverlayPinningOrigin", "ScreenOverlayUnit",
+"SequenceFilter", "SequenceFilterFactory", "SetHint", "SharpenFilter", "SharpenFilterFactory", "SnapshotFileFormat", "SolidPrimitive",
+"SolidPrimitiveFactory", "SolidTriangulatorResult", "StereoProjectionMode", "Stereoscopic", "StereoscopicDisplayMode", "SurfaceExtentTriangulatorInitializer",
+"SurfaceMeshPrimitive", "SurfaceMeshPrimitiveFactory", "SurfaceMeshRenderingMethod", "SurfacePolygonTriangulatorInitializer",
+"SurfaceShapesInitializer", "SurfaceShapesResult", "SurfaceTriangulatorResult", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs",
+"TerrainOverlayCollection", "TerrainOverlayInitializer", "TextBatchPrimitive", "TextBatchPrimitiveFactory", "TextBatchPrimitiveOptionalParameters",
+"TextBatchPrimitiveOptionalParametersFactory", "TextOverlay", "TextOverlayFactory", "Texture2DFactory", "TextureFilter2D",
+"TextureFilter2DFactory", "TextureFormat", "TextureMatrix", "TextureMatrixFactory", "TextureScreenOverlay", "TextureScreenOverlayFactory",
+"TextureWrap", "TimeIntervalDisplayCondition", "TimeIntervalDisplayConditionFactory", "TriangleMeshPrimitive", "TriangleMeshPrimitiveFactory",
+"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VectorPrimitive",
+"VectorPrimitiveFactory", "VideoFormat", "VideoPlayback", "VideoStream", "VideoStreamFactory", "Visibility", "VisualEffects",
 "WindingOrder"]
 
 from ctypes import POINTER
@@ -131,12 +131,12 @@ class CylinderFillOptions(IntFlag):
     --------
     Combine enumerations with the logical OR operator:
     >>> from ansys.stk.core.graphics import CylinderFillOptions
-    >>> 
+    >>>
     >>> # CylinderFillOptions inherits from enum.IntFlag and may be combined
     >>> # using the `|` operator
     >>> cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
     """
-   
+
     WALL = 1
     """Fill the cylinder's wall."""
     BOTTOM_CAP = 2
@@ -155,7 +155,7 @@ agcls.AgTypeNameMap["CylinderFillOptions"] = CylinderFillOptions
 
 class WindingOrder(IntEnum):
     """Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
-   
+
     COUNTER_CLOCKWISE = 0
     """Positions or triangles are defined in counter-clockwise order."""
     CLOCKWISE = 1
@@ -171,7 +171,7 @@ agcls.AgTypeNameMap["WindingOrder"] = WindingOrder
 
 class SnapshotFileFormat(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
-   
+
     BMP = 0
     """BMP file format."""
     TIFF = 2
@@ -190,7 +190,7 @@ agcls.AgTypeNameMap["SnapshotFileFormat"] = SnapshotFileFormat
 
 class VideoFormat(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
-   
+
     H264 = 0
     """H.264 file format."""
     WMV = 1
@@ -203,7 +203,7 @@ agcls.AgTypeNameMap["VideoFormat"] = VideoFormat
 
 class ConstrainedUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
-   
+
     X = 0
     """The X axis is constrained."""
     Y = 1
@@ -231,7 +231,7 @@ agcls.AgTypeNameMap["ConstrainedUpAxis"] = ConstrainedUpAxis
 
 class OverlayRole(IntEnum):
     """The role of a globe overlay."""
-   
+
     BASE = 0
     """The globe overlay is a base image."""
     NIGHT = 1
@@ -253,7 +253,7 @@ agcls.AgTypeNameMap["OverlayRole"] = OverlayRole
 
 class PrimitiveIndicesOrderHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
-   
+
     NOT_SORTED = 0
     """The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."""
     SORTED_ASCENDING = 1
@@ -266,7 +266,7 @@ agcls.AgTypeNameMap["PrimitiveIndicesOrderHint"] = PrimitiveIndicesOrderHint
 
 class OverlayAspectRatioMode(IntEnum):
     """Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
-   
+
     NONE = 0
     """The aspect ratio of the texture is not maintained during sizing of the screen overlay."""
     WIDTH = 1
@@ -282,7 +282,7 @@ agcls.AgTypeNameMap["OverlayAspectRatioMode"] = OverlayAspectRatioMode
 
 class MapProjection(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
-   
+
     MERCATOR = 0
     """Mercator projection."""
     EQUIDISTANT_CYLINDRICAL = 1
@@ -295,7 +295,7 @@ agcls.AgTypeNameMap["MapProjection"] = MapProjection
 
 class MarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-   
+
     GEOMETRY_SHADER = 0
     """Render the marker batch using a geometry shader."""
     VERTEX_SHADER = 1
@@ -314,7 +314,7 @@ agcls.AgTypeNameMap["MarkerBatchRenderingMethod"] = MarkerBatchRenderingMethod
 
 class MarkerBatchRenderPass(IntEnum):
     """The pass during which the marker batch is rendered."""
-   
+
     OPAQUE = 0
     """The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."""
     TRANSLUCENT = 1
@@ -330,7 +330,7 @@ agcls.AgTypeNameMap["MarkerBatchRenderPass"] = MarkerBatchRenderPass
 
 class MarkerBatchSizeSource(IntEnum):
     """Determine which marker batch property is used to size each marker in a marker batch."""
-   
+
     FROM_TEXTURE = 0
     """The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."""
     USER_DEFINED = 1
@@ -343,7 +343,7 @@ agcls.AgTypeNameMap["MarkerBatchSizeSource"] = MarkerBatchSizeSource
 
 class MarkerBatchSortOrder(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
-   
+
     BACK_TO_FRONT = 0
     """The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."""
     FRONT_TO_BACK = 1
@@ -359,7 +359,7 @@ agcls.AgTypeNameMap["MarkerBatchSortOrder"] = MarkerBatchSortOrder
 
 class MarkerBatchSizeUnit(IntEnum):
     """The unit for marker sizes in a marker batch."""
-   
+
     PIXELS = 0
     """The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."""
     METERS = 1
@@ -372,7 +372,7 @@ agcls.AgTypeNameMap["MarkerBatchSizeUnit"] = MarkerBatchSizeUnit
 
 class ModelTransformationType(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
-   
+
     TRANSLATE_X = 0
     """Translate the geometry along the X axis."""
     TRANSLATE_Y = 1
@@ -448,7 +448,7 @@ agcls.AgTypeNameMap["ModelTransformationType"] = ModelTransformationType
 
 class Origin(IntEnum):
     """Vertical and horizontal origin."""
-   
+
     BOTTOM_LEFT = 0
     """The object's origin is its bottom, left corner."""
     BOTTOM_CENTER = 1
@@ -482,7 +482,7 @@ agcls.AgTypeNameMap["Origin"] = Origin
 
 class PathPrimitiveRemoveLocation(IntEnum):
     """Represents the location of a point to be removed."""
-   
+
     FRONT = 0
     """Remove from the front of the line."""
     BACK = 1
@@ -495,7 +495,7 @@ agcls.AgTypeNameMap["PathPrimitiveRemoveLocation"] = PathPrimitiveRemoveLocation
 
 class PrimitivesSortOrder(IntEnum):
     """The order in which primitives are sorted before rendering."""
-   
+
     BY_STATE = 0
     """Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."""
     BACK_TO_FRONT = 1
@@ -508,7 +508,7 @@ agcls.AgTypeNameMap["PrimitivesSortOrder"] = PrimitivesSortOrder
 
 class RefreshRate(IntEnum):
     """The rate at which animation frames will occur."""
-   
+
     FASTEST = 0
     """The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."""
     TARGETED_FRAMES_PER_SECOND = 1
@@ -521,7 +521,7 @@ agcls.AgTypeNameMap["RefreshRate"] = RefreshRate
 
 class RenderPass(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
-   
+
     OPAQUE = 1
     """Render during the opaque rendering pass."""
     TRANSLUCENT = 2
@@ -546,7 +546,7 @@ agcls.AgTypeNameMap["RenderPass"] = RenderPass
 
 class RenderPassHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
-   
+
     OPAQUE = 0
     """The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."""
     TRANSLUCENT = 1
@@ -562,7 +562,7 @@ agcls.AgTypeNameMap["RenderPassHint"] = RenderPassHint
 
 class ScreenOverlayOrigin(IntEnum):
     """Specify the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
-   
+
     BOTTOM_LEFT = 0
     """When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
@@ -596,7 +596,7 @@ agcls.AgTypeNameMap["ScreenOverlayOrigin"] = ScreenOverlayOrigin
 
 class ScreenOverlayPinningOrigin(IntEnum):
     """Specify the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
-   
+
     BOTTOM_LEFT = 0
     """When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
@@ -633,7 +633,7 @@ agcls.AgTypeNameMap["ScreenOverlayPinningOrigin"] = ScreenOverlayPinningOrigin
 
 class ScreenOverlayUnit(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
-   
+
     PIXEL = 0
     """The value is specified in pixels."""
     PERCENT = 1
@@ -646,7 +646,7 @@ agcls.AgTypeNameMap["ScreenOverlayUnit"] = ScreenOverlayUnit
 
 class SurfaceMeshRenderingMethod(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
-   
+
     GEOMETRY_SHADER = 0
     """Render the surface mesh using a geometry shader."""
     VERTEX_SHADER = 1
@@ -662,7 +662,7 @@ agcls.AgTypeNameMap["SurfaceMeshRenderingMethod"] = SurfaceMeshRenderingMethod
 
 class Visibility(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
-   
+
     NONE = 0
     """The object is not visible."""
     PARTIAL = 1
@@ -678,7 +678,7 @@ agcls.AgTypeNameMap["Visibility"] = Visibility
 
 class AntiAliasingMethod(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
-   
+
     OFF = 0
     """No anti-aliasing."""
     FXAA = 1
@@ -709,7 +709,7 @@ agcls.AgTypeNameMap["AntiAliasingMethod"] = AntiAliasingMethod
 
 class BinaryLogicOperation(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
-   
+
     AND = 0
     """Logically and together display conditions in the composite."""
     OR = 1
@@ -722,7 +722,7 @@ agcls.AgTypeNameMap["BinaryLogicOperation"] = BinaryLogicOperation
 
 class BlurMethod(IntEnum):
     """The method used to blur or smooth a raster."""
-   
+
     MEAN = 0
     """Provide smoothing and noise reduction through mean filtering."""
     BASIC = 1
@@ -735,7 +735,7 @@ agcls.AgTypeNameMap["BlurMethod"] = BlurMethod
 
 class EdgeDetectMethod(IntEnum):
     """The method used to detect edges in a raster."""
-   
+
     VERTICAL = 0
     """Detects vertical edges."""
     HORIZONTAL = 1
@@ -766,7 +766,7 @@ agcls.AgTypeNameMap["EdgeDetectMethod"] = EdgeDetectMethod
 
 class RasterFlipAxis(IntEnum):
     """The axis on which a raster will be flipped."""
-   
+
     HORIZONTAL = 0
     """The horizontal axis."""
     VERTICAL = 1
@@ -779,7 +779,7 @@ agcls.AgTypeNameMap["RasterFlipAxis"] = RasterFlipAxis
 
 class GradientDetectMethod(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
-   
+
     EAST = 0
     """Detects east gradients."""
     NORTH = 1
@@ -810,7 +810,7 @@ agcls.AgTypeNameMap["GradientDetectMethod"] = GradientDetectMethod
 
 class Jpeg2000CompressionProfile(IntEnum):
     """Define the profile used when encoding a JPEG 2000 file."""
-   
+
     DEFAULT = 0
     """This is the default profile, which is recommended for those unfamiliar with the others."""
     NITF_BIIF_NPJE = 1
@@ -826,7 +826,7 @@ agcls.AgTypeNameMap["Jpeg2000CompressionProfile"] = Jpeg2000CompressionProfile
 
 class RasterBand(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
-   
+
     RED = 0
     """A band containing red values."""
     GREEN = 1
@@ -848,7 +848,7 @@ agcls.AgTypeNameMap["RasterBand"] = RasterBand
 
 class RasterFormat(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
-   
+
     RED = 0
     """The format of the raster is a single band consisting of red values."""
     GREEN = 1
@@ -885,7 +885,7 @@ agcls.AgTypeNameMap["RasterFormat"] = RasterFormat
 
 class RasterOrientation(IntEnum):
     """The vertical orientation of the raster."""
-   
+
     TOP_TO_BOTTOM = 0
     """The raster has a top to bottom orientation."""
     BOTTOM_TO_TOP = 1
@@ -898,7 +898,7 @@ agcls.AgTypeNameMap["RasterOrientation"] = RasterOrientation
 
 class RasterType(IntEnum):
     """The type of data contained within each band of a raster dataset."""
-   
+
     UNSIGNED_BYTE = 0
     """Each value contained within a band can be represented with an unsigned byte."""
     BYTE = 1
@@ -929,7 +929,7 @@ agcls.AgTypeNameMap["RasterType"] = RasterType
 
 class RasterSharpenMethod(IntEnum):
     """The method used to sharpen a raster."""
-   
+
     MEAN_REMOVAL = 0
     """Provide sharpening through mean removal."""
     BASIC = 1
@@ -942,7 +942,7 @@ agcls.AgTypeNameMap["RasterSharpenMethod"] = RasterSharpenMethod
 
 class VideoPlayback(IntEnum):
     """Specify how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
-   
+
     REAL_TIME = 0
     """The video will playback in realtime."""
     MAPPED = 1
@@ -955,7 +955,7 @@ agcls.AgTypeNameMap["VideoPlayback"] = VideoPlayback
 
 class KmlNetworkLinkRefreshMode(IntEnum):
     """Define the options available for a KmlNetworkLink's RefreshMode property."""
-   
+
     ON_CHANGE = 0
     """Refresh when the document is loaded and whenever the Link parameters change (the default)."""
     ON_INTERVAL = 1
@@ -971,7 +971,7 @@ agcls.AgTypeNameMap["KmlNetworkLinkRefreshMode"] = KmlNetworkLinkRefreshMode
 
 class KmlNetworkLinkViewRefreshMode(IntEnum):
     """Define the options available for a KmlNetworkLink's ViewRefreshMode property."""
-   
+
     NEVER = 0
     """Do not refresh the network link when the camera's view changes."""
     ON_REQUEST = 1
@@ -990,7 +990,7 @@ agcls.AgTypeNameMap["KmlNetworkLinkViewRefreshMode"] = KmlNetworkLinkViewRefresh
 
 class ModelUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
-   
+
     X = 0
     """The positive X axis."""
     Y = 1
@@ -1015,7 +1015,7 @@ agcls.AgTypeNameMap["ModelUpAxis"] = ModelUpAxis
 
 class OutlineAppearance(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
-   
+
     FRONT_AND_BACK_LINES = 0
     """Both the front and back lines are displayed."""
     FRONT_LINES_ONLY = 1
@@ -1031,7 +1031,7 @@ agcls.AgTypeNameMap["OutlineAppearance"] = OutlineAppearance
 
 class PolylineType(IntEnum):
     """Describes how to interpret positions defining a polyline."""
-   
+
     LINES = 0
     """Every two positions define a line segment. Line segments are not required to be connected to each other."""
     LINE_STRIP = 1
@@ -1047,7 +1047,7 @@ agcls.AgTypeNameMap["PolylineType"] = PolylineType
 
 class FaceCullingMode(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
-   
+
     CULL_FACE_FRONT = 0
     """Front-facing triangles are culled."""
     CULL_FACE_BACK = 1
@@ -1066,7 +1066,7 @@ agcls.AgTypeNameMap["FaceCullingMode"] = FaceCullingMode
 
 class TextureFormat(IntEnum):
     """The format of individual texels in a texture."""
-   
+
     ALPHA4 = 0
     """Each texel is an 4-bit alpha component."""
     ALPHA8 = 1
@@ -1181,7 +1181,7 @@ agcls.AgTypeNameMap["TextureFormat"] = TextureFormat
 
 class MagnificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
-   
+
     NEAREST = 0
     """Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."""
     LINEAR = 1
@@ -1194,7 +1194,7 @@ agcls.AgTypeNameMap["MagnificationFilter"] = MagnificationFilter
 
 class MinificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
-   
+
     NEAREST = 0
     """Use the texel that is closest to the center of the pixel being textured."""
     LINEAR = 1
@@ -1219,7 +1219,7 @@ agcls.AgTypeNameMap["MinificationFilter"] = MinificationFilter
 
 class RendererShadingModel(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
-   
+
     FLAT = 0
     """Flat shading renders the primitive with one color across all of the vertices."""
     GOURAUD = 1
@@ -1232,7 +1232,7 @@ agcls.AgTypeNameMap["RendererShadingModel"] = RendererShadingModel
 
 class TextureWrap(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
-   
+
     CLAMP = 0
     """Clamp the texture coordinate to the range [0, 1]."""
     CLAMP_TO_BORDER = 1
@@ -1254,7 +1254,7 @@ agcls.AgTypeNameMap["TextureWrap"] = TextureWrap
 
 class SetHint(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
-   
+
     INFREQUENT = 0
     """Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."""
     PARTIAL = 1
@@ -1270,7 +1270,7 @@ agcls.AgTypeNameMap["SetHint"] = SetHint
 
 class StereoProjectionMode(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
-   
+
     PARALLEL = 0
     """Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."""
     FIXED_DISTANCE = 1
@@ -1286,7 +1286,7 @@ agcls.AgTypeNameMap["StereoProjectionMode"] = StereoProjectionMode
 
 class StereoscopicDisplayMode(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
-   
+
     OFF = 0
     """No stereoscopic."""
     QUAD_BUFFER = 1
@@ -1311,7 +1311,7 @@ agcls.AgTypeNameMap["StereoscopicDisplayMode"] = StereoscopicDisplayMode
 
 class FontStyle(IntEnum):
     """Font styles."""
-   
+
     REGULAR = 0x0
     """Regular font."""
     BOLD = 0x1
@@ -1360,7 +1360,7 @@ class IScreenOverlayContainer(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayContainer, None)
-    
+
     _get_overlays_metadata = { "offset" : _get_overlays_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -1435,7 +1435,7 @@ class ITriangulatorResult(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangulatorResult, None)
-    
+
     _get_positions_metadata = { "offset" : _get_positions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -1516,7 +1516,7 @@ class IGlobeOverlay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeOverlay, None)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -1607,7 +1607,7 @@ class IPathPrimitiveUpdatePolicy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPrimitiveUpdatePolicy, None)
-    
+
     _update_metadata = { "offset" : _update_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("PathPrimitive"), agmarshall.InterfaceInArg("Date"),) }
@@ -1655,7 +1655,7 @@ class IProjection(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjection, None)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -1802,7 +1802,7 @@ class IScreenOverlayCollectionBase(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -1896,7 +1896,7 @@ class IDisplayCondition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplayCondition, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5532500929025461904, 13284471583527689404), IDisplayCondition)
@@ -1938,7 +1938,7 @@ class IGlobeImageOverlay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeImageOverlay, None)
-    
+
     _get_translucency_metadata = { "offset" : _get_translucency_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
             "marshallers" : (agmarshall.FloatArg,) }
@@ -2078,7 +2078,7 @@ class IConvolutionFilter(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConvolutionFilter, None)
-    
+
     _get_divisor_metadata = { "offset" : _get_divisor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -2165,7 +2165,7 @@ class IRaster(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRaster, None)
-    
+
     _get_attributes_metadata = { "offset" : _get_attributes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2270,7 +2270,7 @@ class IRasterFilter(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterFilter, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5173582657377882717, 9127510129600190340), IRasterFilter)
@@ -2302,7 +2302,7 @@ class IRasterStream(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterStream, None)
-    
+
     _get_update_delta_metadata = { "offset" : _get_update_delta_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -2355,7 +2355,7 @@ class IKmlContainer(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlContainer, None)
-    
+
     _get_children_metadata = { "offset" : _get_children_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2402,7 +2402,7 @@ class IKmlFeature(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlFeature, None)
-    
+
     _get_is_loaded_metadata = { "offset" : _get_is_loaded_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -2584,7 +2584,7 @@ class IOverlay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOverlay, None)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -3225,7 +3225,7 @@ class IPositionInterpolator(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPositionInterpolator, None)
-    
+
     _get_polyline_type_metadata = { "offset" : _get_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolylineType),) }
@@ -3286,7 +3286,7 @@ class IPrimitive(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPrimitive, None)
-    
+
     _get_reference_frame_metadata = { "offset" : _get_reference_frame_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -3443,7 +3443,7 @@ class IScreenOverlay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlay, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5414131607122331821, 17536076725021774741), IScreenOverlay)
@@ -3477,7 +3477,7 @@ class ITerrainOverlay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainOverlay, None)
-    
+
     _get_altitude_offset_metadata = { "offset" : _get_altitude_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -3550,7 +3550,7 @@ class PathPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PathPoint)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -3683,7 +3683,7 @@ class PathPointFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PathPointFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -3759,7 +3759,7 @@ class BoundingSphere(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BoundingSphere)
-    
+
     _get_center_metadata = { "offset" : _get_center_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -3809,7 +3809,7 @@ class BoundingSphereFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BoundingSphereFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -3863,7 +3863,7 @@ class TextureFilter2D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureFilter2D)
-    
+
     _get_minification_filter_metadata = { "offset" : _get_minification_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(MinificationFilter),) }
@@ -3972,7 +3972,7 @@ class TextureFilter2DFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureFilter2DFactory)
-    
+
     _get_nearest_clamp_to_edge_metadata = { "offset" : _get_nearest_clamp_to_edge_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4060,7 +4060,7 @@ class RendererTexture2D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RendererTexture2D)
-    
+
     _get_template_metadata = { "offset" : _get_template_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4102,7 +4102,7 @@ class RendererTextureTemplate2D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RendererTextureTemplate2D)
-    
+
     _get_internal_format_metadata = { "offset" : _get_internal_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TextureFormat),) }
@@ -4175,7 +4175,7 @@ class PathPointCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4249,7 +4249,7 @@ class ObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4323,7 +4323,7 @@ class SceneCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4397,7 +4397,7 @@ class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4456,7 +4456,7 @@ class GlobeImageOverlayAddCompleteEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GlobeImageOverlayAddCompleteEventArgs)
-    
+
     _get_overlay_metadata = { "offset" : _get_overlay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4496,7 +4496,7 @@ class TerrainOverlayAddCompleteEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TerrainOverlayAddCompleteEventArgs)
-    
+
     _get_overlay_metadata = { "offset" : _get_overlay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4551,7 +4551,7 @@ class PickResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4611,7 +4611,7 @@ class RenderingEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RenderingEventArgs)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4661,7 +4661,7 @@ class BatchPrimitiveIndex(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BatchPrimitiveIndex)
-    
+
     _get_index_metadata = { "offset" : _get_index_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4725,7 +4725,7 @@ class KmlDocumentCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4799,7 +4799,7 @@ class KmlFeatureCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4859,7 +4859,7 @@ class KmlDocumentLoadedEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, KmlDocumentLoadedEventArgs)
-    
+
     _get_document_metadata = { "offset" : _get_document_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4990,7 +4990,7 @@ class FactoryAndInitializers(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FactoryAndInitializers)
-    
+
     _get_box_triangulator_metadata = { "offset" : _get_box_triangulator_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -5770,7 +5770,7 @@ class ExtrudedPolylineTriangulatorResult(ITriangulatorResult, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ExtrudedPolylineTriangulatorResult)
-    
+
     _get_top_boundary_positions_metadata = { "offset" : _get_top_boundary_positions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -5833,7 +5833,7 @@ class SolidTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolidTriangulatorResult)
-    
+
     _get_outline_indices_metadata = { "offset" : _get_outline_indices_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -5904,7 +5904,7 @@ class SurfaceShapesResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceShapesResult)
-    
+
     _get_positions_metadata = { "offset" : _get_positions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -5966,7 +5966,7 @@ class SurfaceTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceTriangulatorResult)
-    
+
     _get_granularity_metadata = { "offset" : _get_granularity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -6062,7 +6062,7 @@ class AGICustomTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGICustomTerrainOverlay)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AGICustomTerrainOverlay."""
@@ -6096,7 +6096,7 @@ class AGIProcessedImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIProcessedImageGlobeOverlay)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedImageGlobeOverlay."""
@@ -6130,7 +6130,7 @@ class AGIProcessedTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIProcessedTerrainOverlay)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedTerrainOverlay."""
@@ -6164,7 +6164,7 @@ class AGIRoamImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIRoamImageGlobeOverlay)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AGIRoamImageGlobeOverlay."""
@@ -6203,7 +6203,7 @@ class CameraSnapshot(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CameraSnapshot)
-    
+
     _save_to_file_metadata = { "offset" : _save_to_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SnapshotFileFormat),) }
@@ -6273,7 +6273,7 @@ class CameraVideoRecording(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CameraVideoRecording)
-    
+
     _get_is_recording_metadata = { "offset" : _get_is_recording_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -6345,7 +6345,7 @@ class CentralBodyGraphicsIndexer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyGraphicsIndexer)
-    
+
     _get_earth_metadata = { "offset" : _get_earth_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6427,7 +6427,7 @@ class CustomImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomImageGlobeOverlay)
-    
+
     _get_is_translucent_metadata = { "offset" : _get_is_translucent_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -6525,7 +6525,7 @@ class CustomImageGlobeOverlayPluginActivator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomImageGlobeOverlayPluginActivator)
-    
+
     _create_from_display_name_metadata = { "offset" : _create_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -6572,7 +6572,7 @@ class CustomImageGlobeOverlayPluginProxy(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomImageGlobeOverlayPluginProxy)
-    
+
     _get_custom_image_globe_overlay_metadata = { "offset" : _get_custom_image_globe_overlay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6633,7 +6633,7 @@ class GeospatialImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GeospatialImageGlobeOverlay)
-    
+
     _get_use_transparent_color_metadata = { "offset" : _get_use_transparent_color_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -6724,7 +6724,7 @@ class GlobeOverlaySettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GlobeOverlaySettings)
-    
+
     _get_terrain_cache_size_metadata = { "offset" : _get_terrain_cache_size_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -6842,7 +6842,7 @@ class Lighting(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Lighting)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -6991,7 +6991,7 @@ class ProjectedRasterOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectedRasterOverlay)
-    
+
     _get_raster_metadata = { "offset" : _get_raster_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -7337,7 +7337,7 @@ class ProjectionStream(IProjection, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectionStream)
-    
+
     _get_update_delta_metadata = { "offset" : _get_update_delta_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -7400,7 +7400,7 @@ class SceneGlobeOverlaySettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneGlobeOverlaySettings)
-    
+
     _get_anti_alias_imagery_metadata = { "offset" : _get_anti_alias_imagery_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -7515,7 +7515,7 @@ class Texture2DFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Texture2DFactory)
-    
+
     _load_from_string_uri_metadata = { "offset" : _load_from_string_uri_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -7565,7 +7565,7 @@ class VisualEffects(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VisualEffects)
-    
+
     _get_lens_flare_enabled_metadata = { "offset" : _get_lens_flare_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -7649,7 +7649,7 @@ class AltitudeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AltitudeDisplayCondition)
-    
+
     _get_minimum_altitude_metadata = { "offset" : _get_minimum_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -7751,7 +7751,7 @@ class AxesPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AxesPrimitive)
-    
+
     _get_lighting_metadata = { "offset" : _get_lighting_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -8031,7 +8031,7 @@ class Camera(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Camera)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -8504,7 +8504,7 @@ class CentralBodyGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyGraphics)
-    
+
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -8730,7 +8730,7 @@ class Clouds(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Clouds)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -8880,7 +8880,7 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -9070,7 +9070,7 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -9166,7 +9166,7 @@ class ConstantDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstantDisplayCondition)
-    
+
     _get_display_metadata = { "offset" : _get_display_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -9239,7 +9239,7 @@ class DistanceDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceDisplayCondition)
-    
+
     _get_minimum_distance_metadata = { "offset" : _get_minimum_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9329,7 +9329,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDisplayCondition, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToGlobeOverlayDisplayCondition)
-    
+
     _get_globe_overlay_metadata = { "offset" : _get_globe_overlay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9437,7 +9437,7 @@ class DistanceToPositionDisplayCondition(IDisplayCondition, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToPositionDisplayCondition)
-    
+
     _get_minimum_distance_metadata = { "offset" : _get_minimum_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9559,7 +9559,7 @@ class DistanceToPrimitiveDisplayCondition(IDisplayCondition, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToPrimitiveDisplayCondition)
-    
+
     _get_primitive_metadata = { "offset" : _get_primitive_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9661,7 +9661,7 @@ class DurationPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DurationPathPrimitiveUpdatePolicy)
-    
+
     _get_duration_metadata = { "offset" : _get_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9729,7 +9729,7 @@ class FrameRate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FrameRate)
-    
+
     _get_frames_per_second_metadata = { "offset" : _get_frames_per_second_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9821,7 +9821,7 @@ class GraphicsFont(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GraphicsFont)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -9936,7 +9936,7 @@ class GreatArcInterpolator(IPositionInterpolator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GreatArcInterpolator)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -10036,7 +10036,7 @@ class ImageCollection(SupportsDeleteCallback):
     def subscribe(self) -> IImageCollectionEventHandler:
         """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of ImageCollection."""
         return IImageCollectionEventHandler(self._intf)
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -10215,7 +10215,7 @@ class AlphaFromLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromLuminanceFilter)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AlphaFromLuminanceFilter."""
@@ -10247,7 +10247,7 @@ class AlphaFromPixelFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromPixelFilter)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type AlphaFromPixelFilter."""
@@ -10281,7 +10281,7 @@ class AlphaFromRasterFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromRasterFilter)
-    
+
     _get_raster_metadata = { "offset" : _get_raster_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10331,7 +10331,7 @@ class BandExtractFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BandExtractFilter)
-    
+
     _get_extract_format_metadata = { "offset" : _get_extract_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
@@ -10383,7 +10383,7 @@ class BandOrderFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BandOrderFilter)
-    
+
     _get_band_order_metadata = { "offset" : _get_band_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
@@ -10449,7 +10449,7 @@ class BlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BlurFilter)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(BlurMethod),) }
@@ -10501,7 +10501,7 @@ class BrightnessFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BrightnessFilter)
-    
+
     _get_adjustment_metadata = { "offset" : _get_adjustment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10549,7 +10549,7 @@ class ColorToLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ColorToLuminanceFilter)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type ColorToLuminanceFilter."""
@@ -10583,7 +10583,7 @@ class ContrastFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ContrastFilter)
-    
+
     _get_adjustment_metadata = { "offset" : _get_adjustment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10654,7 +10654,7 @@ class EdgeDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EdgeDetectFilter)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EdgeDetectMethod),) }
@@ -10706,7 +10706,7 @@ class FilteringRasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FilteringRasterStream)
-    
+
     _get_filter_metadata = { "offset" : _get_filter_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10760,7 +10760,7 @@ class FlipFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FlipFilter)
-    
+
     _get_flip_axis_metadata = { "offset" : _get_flip_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RasterFlipAxis),) }
@@ -10810,7 +10810,7 @@ class GammaCorrectionFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GammaCorrectionFilter)
-    
+
     _get_gamma_metadata = { "offset" : _get_gamma_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10858,7 +10858,7 @@ class GaussianBlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GaussianBlurFilter)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type GaussianBlurFilter."""
@@ -10894,7 +10894,7 @@ class GradientDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GradientDetectFilter)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GradientDetectMethod),) }
@@ -10946,7 +10946,7 @@ class LevelsFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LevelsFilter)
-    
+
     _set_level_adjustment_metadata = { "offset" : _set_level_adjustment_method_offset,
             "arg_types" : (agcom.LONG, agcom.INT,),
             "marshallers" : (agmarshall.EnumArg(RasterBand), agmarshall.IntArg,) }
@@ -10994,7 +10994,7 @@ class ProjectionRasterStreamPluginActivator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectionRasterStreamPluginActivator)
-    
+
     _create_from_display_name_metadata = { "offset" : _create_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -11043,7 +11043,7 @@ class ProjectionRasterStreamPluginProxy(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectionRasterStreamPluginProxy)
-    
+
     _get_raster_stream_metadata = { "offset" : _get_raster_stream_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11148,7 +11148,7 @@ class RasterAttributes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RasterAttributes)
-    
+
     _get_format_metadata = { "offset" : _get_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
@@ -11317,7 +11317,7 @@ class RotateFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RotateFilter)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -11372,7 +11372,7 @@ class SequenceFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SequenceFilter)
-    
+
     _get_continue_on_failure_metadata = { "offset" : _get_continue_on_failure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -11459,7 +11459,7 @@ class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SharpenFilter)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RasterSharpenMethod),) }
@@ -11544,7 +11544,7 @@ class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VideoStream)
-    
+
     _get_uri_metadata = { "offset" : _get_uri_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11877,7 +11877,7 @@ class KmlDocument(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, KmlDocument)
-    
+
     _get_uri_metadata = { "offset" : _get_uri_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11939,7 +11939,7 @@ class KmlFolder(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, KmlFolder)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type KmlFolder."""
@@ -11985,7 +11985,7 @@ class KmlGraphics(SupportsDeleteCallback):
     def subscribe(self) -> IKmlGraphicsEventHandler:
         """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of KmlGraphics."""
         return IKmlGraphicsEventHandler(self._intf)
-    
+
     _get_documents_metadata = { "offset" : _get_documents_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12097,7 +12097,7 @@ class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, KmlNetworkLink)
-    
+
     _get_uri_metadata = { "offset" : _get_uri_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -12324,7 +12324,7 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarkerBatchPrimitive)
-    
+
     _get_size_source_metadata = { "offset" : _get_size_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource),) }
@@ -12784,7 +12784,7 @@ class MarkerBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarkerBatchPrimitiveOptionalParameters)
-    
+
     _set_textures_metadata = { "offset" : _set_textures_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -12888,7 +12888,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MaximumCountPathPrimitiveUpdatePolicy)
-    
+
     _get_maximum_count_metadata = { "offset" : _get_maximum_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -12972,7 +12972,7 @@ class ModelArticulation(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13079,7 +13079,7 @@ class ModelArticulationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -13169,7 +13169,7 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModelPrimitive)
-    
+
     _get_uri_as_string_metadata = { "offset" : _get_uri_as_string_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13296,7 +13296,7 @@ class ModelTransformation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModelTransformation)
-    
+
     _get_current_value_metadata = { "offset" : _get_current_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -13461,7 +13461,7 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -13740,7 +13740,7 @@ class PickResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PickResult)
-    
+
     _get_objects_metadata = { "offset" : _get_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13801,7 +13801,7 @@ class PixelSizeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PixelSizeDisplayCondition)
-    
+
     _get_minimum_pixel_size_metadata = { "offset" : _get_minimum_pixel_size_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -13864,14 +13864,14 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     >>> manager = scenario.scene_manager
     >>> point = manager.initializers.point_batch_primitive.initialize()
     >>> ptPosition = [[0], [-1], [0]]  # Lat, Lon, Alt
-    >>> 
+    >>>
     >>> point.set_cartographic("Earth", ptPosition)
     >>> point.pixel_size = 15
     >>> point.color = Colors.Lime
     >>> point.display_outline = True
     >>> point.outline_width = 5
     >>> point.outline_color = Colors.Red
-    >>> 
+    >>>
     >>> manager.primitives.add(point)
     >>> # Render the Scene
     >>> manager.render()
@@ -13920,7 +13920,7 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointBatchPrimitive)
-    
+
     _get_display_outline_metadata = { "offset" : _get_display_outline_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -14213,7 +14213,7 @@ class PointBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointBatchPrimitiveOptionalParameters)
-    
+
     _set_pixel_sizes_metadata = { "offset" : _set_pixel_sizes_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -14292,7 +14292,7 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PolylinePrimitive)
-    
+
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
             "marshallers" : (agmarshall.FloatArg,) }
@@ -14643,7 +14643,7 @@ class PolylinePrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PolylinePrimitiveOptionalParameters)
-    
+
     _set_time_intervals_metadata = { "offset" : _set_time_intervals_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -14741,7 +14741,7 @@ class PrimitiveManager(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -14853,7 +14853,7 @@ class RasterImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RasterImageGlobeOverlay)
-    
+
     _get_use_transparent_color_metadata = { "offset" : _get_use_transparent_color_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -14923,7 +14923,7 @@ class RhumbLineInterpolator(IPositionInterpolator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RhumbLineInterpolator)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15026,7 +15026,7 @@ class Scene(SupportsDeleteCallback):
     def subscribe(self) -> ISceneEventHandler:
         """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of Scene."""
         return ISceneEventHandler(self._intf)
-    
+
     _get_camera_metadata = { "offset" : _get_camera_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -15262,7 +15262,7 @@ class SceneDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneDisplayCondition)
-    
+
     _set_display_in_scene_metadata = { "offset" : _set_display_in_scene_method_offset,
             "arg_types" : (agcom.PVOID, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.InterfaceInArg("Scene"), agmarshall.VariantBoolArg,) }
@@ -15323,7 +15323,7 @@ class SceneManager(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneManager)
-    
+
     _get_primitives_metadata = { "offset" : _get_primitives_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -15446,7 +15446,7 @@ class ScreenOverlayCollection(IScreenOverlayCollectionBase, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScreenOverlayCollection)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayCollection."""
@@ -15484,7 +15484,7 @@ class ScreenOverlayManager(IScreenOverlayCollectionBase, IScreenOverlayContainer
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScreenOverlayManager)
-    
+
     _get_bounds_metadata = { "offset" : _get_bounds_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -15571,7 +15571,7 @@ class ScreenOverlayPickResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScreenOverlayPickResult)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -15627,10 +15627,10 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
     >>> manager = scenario.scene_manager
     >>> originCylinder = root.conversion_utility.new_position_on_earth()
     >>> originCylinder.assign_geodetic(0, 7, 100)
-    >>> 
+    >>>
     >>> orientCylinder = root.conversion_utility.new_orientation()
     >>> orientCylinder.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
-    >>> 
+    >>>
     >>> cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
     >>> solidCylinder = manager.initializers.solid_primitive.initialize()
     >>> solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
@@ -15649,10 +15649,10 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
     >>> manager = scenario.scene_manager
     >>> originEllipsoid = root.conversion_utility.new_position_on_earth()
     >>> originEllipsoid.assign_geodetic(0, 5, 100)
-    >>> 
+    >>>
     >>> orientEllipsoid = root.conversion_utility.new_orientation()
     >>> orientEllipsoid.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
-    >>> 
+    >>>
     >>> radii = [[200], [100], [100]]
     >>> ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
     >>> solidEllipsoid = manager.initializers.solid_primitive.initialize()
@@ -15673,10 +15673,10 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
     >>> manager = scenario.scene_manager
     >>> originBox = root.conversion_utility.new_position_on_earth()
     >>> originBox.assign_geodetic(0, 3, 100)
-    >>> 
+    >>>
     >>> orientBox = root.conversion_utility.new_orientation()
     >>> orientBox.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
-    >>> 
+    >>>
     >>> size = [[100], [100], [200]]
     >>> result = manager.initializers.box_triangulator.compute(size)
     >>> solidBox = manager.initializers.solid_primitive.initialize()
@@ -15739,7 +15739,7 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolidPrimitive)
-    
+
     _get_affected_by_lighting_metadata = { "offset" : _get_affected_by_lighting_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -16092,7 +16092,7 @@ class Stereoscopic(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Stereoscopic)
-    
+
     _get_display_mode_metadata = { "offset" : _get_display_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(StereoscopicDisplayMode),) }
@@ -16194,7 +16194,7 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
     >>>     [2490.379622],
     >>>     [-1480.882721],
     >>> ]  # X, Y, Z (km)
-    >>> 
+    >>>
     >>> triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
     >>> surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
     >>> surfaceMesh.color = Colors.Red
@@ -16229,7 +16229,7 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceMeshPrimitive)
-    
+
     _get_texture_metadata = { "offset" : _get_texture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -16432,7 +16432,7 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
     def subscribe(self) -> ITerrainOverlayCollectionEventHandler:
         """Return an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of TerrainOverlayCollection."""
         return ITerrainOverlayCollectionEventHandler(self._intf)
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -16678,7 +16678,7 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextBatchPrimitive)
-    
+
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SetHint),) }
@@ -16968,7 +16968,7 @@ class TextBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextBatchPrimitiveOptionalParameters)
-    
+
     _get_origin_metadata = { "offset" : _get_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(Origin),) }
@@ -17112,7 +17112,7 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextOverlay)
-    
+
     _get_text_metadata = { "offset" : _get_text_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17212,7 +17212,7 @@ class TextureMatrix(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureMatrix)
-    
+
     _get_m11_metadata = { "offset" : _get_m11_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
             "marshallers" : (agmarshall.FloatArg,) }
@@ -17417,7 +17417,7 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureScreenOverlay)
-    
+
     _get_texture_metadata = { "offset" : _get_texture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17505,7 +17505,7 @@ class TimeIntervalDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeIntervalDisplayCondition)
-    
+
     _get_minimum_time_metadata = { "offset" : _get_minimum_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17593,7 +17593,7 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TriangleMeshPrimitive)
-    
+
     _get_wireframe_metadata = { "offset" : _get_wireframe_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -17817,7 +17817,7 @@ class TriangleMeshPrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TriangleMeshPrimitiveOptionalParameters)
-    
+
     _set_texture_coordinates_metadata = { "offset" : _set_texture_coordinates_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -17889,7 +17889,7 @@ class VectorPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorPrimitive)
-    
+
     _get_lighting_metadata = { "offset" : _get_lighting_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -18146,7 +18146,7 @@ class BoxTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BoxTriangulatorInitializer)
-    
+
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -18185,7 +18185,7 @@ class CylinderTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CylinderTriangulatorInitializer)
-    
+
     _create_simple_metadata = { "offset" : _create_simple_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -18231,7 +18231,7 @@ class EllipsoidTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EllipsoidTriangulatorInitializer)
-    
+
     _compute_simple_metadata = { "offset" : _compute_simple_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -18287,7 +18287,7 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ExtrudedPolylineTriangulatorInitializer)
-    
+
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -18403,7 +18403,7 @@ class SurfaceExtentTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceExtentTriangulatorInitializer)
-    
+
     _compute_simple_metadata = { "offset" : _compute_simple_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -18451,7 +18451,7 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
     >>> mesh.texture = texture
     >>> mesh.translucency = 0
     >>> cartographicExtent = [[-55], [10], [-24], [30]]
-    >>> 
+    >>>
     >>> triangles = manager.initializers.surface_extent_triangulator.compute_simple("Earth", cartographicExtent)
     >>> mesh.set(triangles)
     >>> mesh.translucency = 0.25
@@ -18459,7 +18459,7 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
     >>> c1 = [[30], [-55]]
     >>> c2 = [[30], [-24]]
     >>> c3 = [[10], [-24]]
-    >>> 
+    >>>
     >>> mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(c0, c1, c2, c3)
     >>> mesh.transparent_texture_border = True
     >>> manager.primitives.add(mesh)
@@ -18481,7 +18481,7 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfacePolygonTriangulatorInitializer)
-    
+
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -18565,7 +18565,7 @@ class SurfaceShapesInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceShapesInitializer)
-    
+
     _compute_circle_with_granularity_metadata = { "offset" : _compute_circle_with_granularity_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -18680,7 +18680,7 @@ class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGICustomTerrainOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -18718,7 +18718,7 @@ class AGIProcessedImageGlobeOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIProcessedImageGlobeOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -18756,7 +18756,7 @@ class AGIProcessedTerrainOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIProcessedTerrainOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -18794,7 +18794,7 @@ class AGIRoamImageGlobeOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AGIRoamImageGlobeOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -18832,7 +18832,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomImageGlobeOverlayPluginActivatorFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -18870,7 +18870,7 @@ class GeospatialImageGlobeOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GeospatialImageGlobeOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -18909,7 +18909,7 @@ class ProjectedRasterOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectedRasterOverlayFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IRaster"), agmarshall.InterfaceInArg("IProjection"), agmarshall.InterfaceOutArg,) }
@@ -18958,7 +18958,7 @@ class ProjectionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19012,7 +19012,7 @@ class AltitudeDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AltitudeDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19064,7 +19064,7 @@ class AxesPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AxesPrimitiveFactory)
-    
+
     _initialize_with_direction_metadata = { "offset" : _initialize_with_direction_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.InterfaceOutArg,) }
@@ -19102,7 +19102,7 @@ class CompositeDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CompositeDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19140,7 +19140,7 @@ class CompositePrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CompositePrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19179,7 +19179,7 @@ class ConstantDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstantDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19225,7 +19225,7 @@ class DistanceDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19271,7 +19271,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToGlobeOverlayDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19318,7 +19318,7 @@ class DistanceToPositionDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToPositionDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19371,7 +19371,7 @@ class DistanceToPrimitiveDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DistanceToPrimitiveDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19417,7 +19417,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DurationPathPrimitiveUpdatePolicyFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19462,7 +19462,7 @@ class GlobeImageOverlayInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GlobeImageOverlayInitializer)
-    
+
     _get_more_than_one_image_globe_overlay_supported_metadata = { "offset" : _get_more_than_one_image_globe_overlay_supported_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -19503,7 +19503,7 @@ class GraphicsFontFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GraphicsFontFactory)
-    
+
     _initialize_with_name_size_font_style_outline_metadata = { "offset" : _initialize_with_name_size_font_style_outline_method_offset,
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.EnumArg(FontStyle), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
@@ -19565,7 +19565,7 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GreatArcInterpolatorFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19617,7 +19617,7 @@ class AlphaFromLuminanceFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromLuminanceFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19655,7 +19655,7 @@ class AlphaFromPixelFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromPixelFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19694,7 +19694,7 @@ class AlphaFromRasterFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AlphaFromRasterFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19741,7 +19741,7 @@ class BandExtractFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BandExtractFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19795,7 +19795,7 @@ class BandOrderFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BandOrderFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19848,7 +19848,7 @@ class BlurFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BlurFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19894,7 +19894,7 @@ class BrightnessFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BrightnessFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19939,7 +19939,7 @@ class ColorToLuminanceFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ColorToLuminanceFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19978,7 +19978,7 @@ class ContrastFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ContrastFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20026,7 +20026,7 @@ class ConvolutionFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConvolutionFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20086,7 +20086,7 @@ class EdgeDetectFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EdgeDetectFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20131,7 +20131,7 @@ class FilteringRasterStreamFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FilteringRasterStreamFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IRasterStream"), agmarshall.InterfaceInArg("IRasterFilter"), agmarshall.InterfaceOutArg,) }
@@ -20170,7 +20170,7 @@ class FlipFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FlipFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20216,7 +20216,7 @@ class GammaCorrectionFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GammaCorrectionFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20261,7 +20261,7 @@ class GaussianBlurFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GaussianBlurFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20300,7 +20300,7 @@ class GradientDetectFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GradientDetectFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20349,7 +20349,7 @@ class Jpeg2000WriterInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Jpeg2000WriterInitializer)
-    
+
     _write_string_metadata = { "offset" : _write_string_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
@@ -20415,7 +20415,7 @@ class LevelsFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LevelsFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20453,7 +20453,7 @@ class ProjectionRasterStreamPluginActivatorFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProjectionRasterStreamPluginActivatorFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20493,7 +20493,7 @@ class RasterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RasterFactory)
-    
+
     _initialize_with_string_uri_metadata = { "offset" : _initialize_with_string_uri_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -20550,7 +20550,7 @@ class RasterAttributesFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RasterAttributesFactory)
-    
+
     _initialize_with_format_metadata = { "offset" : _initialize_with_format_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.InterfaceOutArg,) }
@@ -20624,7 +20624,7 @@ class RotateFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RotateFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20669,7 +20669,7 @@ class SequenceFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SequenceFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20708,7 +20708,7 @@ class SharpenFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SharpenFilterFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20755,7 +20755,7 @@ class VideoStreamFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VideoStreamFactory)
-    
+
     _initialize_with_string_uri_metadata = { "offset" : _initialize_with_string_uri_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -20813,7 +20813,7 @@ class MarkerBatchPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarkerBatchPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20893,7 +20893,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MarkerBatchPrimitiveOptionalParametersFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20932,7 +20932,7 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MaximumCountPathPrimitiveUpdatePolicyFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20979,7 +20979,7 @@ class ModelPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModelPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21034,7 +21034,7 @@ class PathPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PathPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21098,7 +21098,7 @@ class PixelSizeDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PixelSizeDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21146,7 +21146,7 @@ class PointBatchPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointBatchPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21209,7 +21209,7 @@ class PointBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointBatchPrimitiveOptionalParametersFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21254,7 +21254,7 @@ class PolylinePrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PolylinePrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21345,7 +21345,7 @@ class PolylinePrimitiveOptionalParametersFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PolylinePrimitiveOptionalParametersFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21385,7 +21385,7 @@ class RasterImageGlobeOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RasterImageGlobeOverlayFactory)
-    
+
     _initialize_with_string_metadata = { "offset" : _initialize_with_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
@@ -21439,7 +21439,7 @@ class RhumbLineInterpolatorFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RhumbLineInterpolatorFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21491,7 +21491,7 @@ class SceneDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21535,7 +21535,7 @@ class SceneManagerInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneManagerInitializer)
-    
+
     _get_primitives_metadata = { "offset" : _get_primitives_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21628,7 +21628,7 @@ class ScreenOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScreenOverlayFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -21676,7 +21676,7 @@ class SolidPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolidPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21743,7 +21743,7 @@ class SurfaceMeshPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SurfaceMeshPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21809,7 +21809,7 @@ class TerrainOverlayInitializer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TerrainOverlayInitializer)
-    
+
     _get_supported_metadata = { "offset" : _get_supported_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21851,7 +21851,7 @@ class TextBatchPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextBatchPrimitiveFactory)
-    
+
     _initialize_with_graphics_font_metadata = { "offset" : _initialize_with_graphics_font_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.InterfaceOutArg,) }
@@ -21903,7 +21903,7 @@ class TextBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextBatchPrimitiveOptionalParametersFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21944,7 +21944,7 @@ class TextOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextOverlayFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.InterfaceOutArg,) }
@@ -22006,7 +22006,7 @@ class TextureMatrixFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureMatrixFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22069,7 +22069,7 @@ class TextureScreenOverlayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TextureScreenOverlayFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22137,7 +22137,7 @@ class TimeIntervalDisplayConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeIntervalDisplayConditionFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22190,7 +22190,7 @@ class TriangleMeshPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TriangleMeshPrimitiveFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22235,7 +22235,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TriangleMeshPrimitiveOptionalParametersFactory)
-    
+
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22273,7 +22273,7 @@ class VectorPrimitiveFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorPrimitiveFactory)
-    
+
     _initialize_with_direction_metadata = { "offset" : _initialize_with_direction_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("IVectorGeometryToolVector"), agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.InterfaceOutArg,) }

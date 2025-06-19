@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -70,7 +70,7 @@ Overview
               - """Return an ISTKObjectRootEventHandler that is subscribed to handle events associated with this instance of STKObjectRoot."""
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -121,9 +121,7 @@ Use arrays to send and retrieve data with Connect
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
     connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
-    command_results = root.execute_multiple_commands(
-        connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
-    )
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
 
     first_message = command_results.item(0)
     also_first_message = command_results[0]
@@ -136,7 +134,10 @@ Execute multiple Connect commands
 
 .. code-block:: python
 
-    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
+    commandList = [
+        ["New / */Place MyPlace"],
+        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
+    ]
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 
@@ -254,8 +255,10 @@ Manage STK Desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
+
     def on_stk_object_added_custom_callback(path: str):
         print(f"{path} has been added.")
+
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
@@ -285,6 +288,7 @@ Manage STK Engine events
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
 
+
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
@@ -312,7 +316,10 @@ Open a Viewer Data File
 
     # STKObjectRoot root: STK Object Model Root
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+    root.load_vdf(
+        os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
+        "",
+    )
 
 
 Import detail
@@ -615,7 +622,10 @@ Method detail
 
         # STKObjectRoot root: STK Object Model Root
         installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+        root.load_vdf(
+            os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
+            "",
+        )
 
 
 .. py:method:: object_exists(self, object_path: str) -> bool

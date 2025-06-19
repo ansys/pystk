@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -48,7 +48,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolCalculationConditionSatisfactionMetric
+    from ansys.stk.core.analysis_workbench import (
+        SpatialAnalysisToolCalculationConditionSatisfactionMetric,
+    )
 
 
 Property detail

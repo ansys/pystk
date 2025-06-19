@@ -22,7 +22,7 @@
 
 """The STK UI Core library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["ApplicationWindowState", "Toolbar", "ToolbarCollection", "Window", "WindowArrangeState", "WindowArrangeStyle", 
+__all__ = ["ApplicationWindowState", "Toolbar", "ToolbarCollection", "Window", "WindowArrangeState", "WindowArrangeStyle",
 "WindowDockStyle", "WindowGlobeObject", "WindowMapObject", "WindowServiceType", "WindowsCollection"]
 
 from ctypes import POINTER
@@ -48,7 +48,7 @@ def _raise_uninitialized_error(*args):
 
 class WindowServiceType(IntEnum):
     """Well-known types of services."""
-   
+
     WINDOW_2D = 1
     """A 2D window."""
     WINDOW_3D = 2
@@ -61,7 +61,7 @@ agcls.AgTypeNameMap["WindowServiceType"] = WindowServiceType
 
 class ApplicationWindowState(IntEnum):
     """Window states."""
-   
+
     MAXIMIZED = 1
     """Window is maximized."""
     MINIMIZED = 2
@@ -77,7 +77,7 @@ agcls.AgTypeNameMap["ApplicationWindowState"] = ApplicationWindowState
 
 class WindowArrangeStyle(IntEnum):
     """Window layout styles."""
-   
+
     CASCADE = 1
     """Child windows are cascaded within the main window."""
     TILED_HORIZONTAL = 2
@@ -93,7 +93,7 @@ agcls.AgTypeNameMap["WindowArrangeStyle"] = WindowArrangeStyle
 
 class WindowDockStyle(IntEnum):
     """Window docking styles."""
-   
+
     INTEGRATED = 1
     """Child window is integrated into the main window."""
     DOCKED_LEFT = 2
@@ -118,7 +118,7 @@ agcls.AgTypeNameMap["WindowDockStyle"] = WindowDockStyle
 
 class WindowArrangeState(IntEnum):
     """Floating state."""
-   
+
     FLOATED = 1
     """The UI element is floated."""
     DOCKED = 2
@@ -163,7 +163,7 @@ class WindowsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -273,7 +273,7 @@ class Window(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Window)
-    
+
     _get_caption_metadata = { "offset" : _get_caption_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -500,7 +500,7 @@ class Toolbar(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Toolbar)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -599,7 +599,7 @@ class ToolbarCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -679,7 +679,7 @@ class WindowMapObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WindowMapObject)
-    
+
     _get_map_id_metadata = { "offset" : _get_map_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -719,7 +719,7 @@ class WindowGlobeObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WindowGlobeObject)
-    
+
     _get_scene_id_metadata = { "offset" : _get_scene_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }

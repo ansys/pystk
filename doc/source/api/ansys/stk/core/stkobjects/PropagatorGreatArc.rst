@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -36,7 +36,7 @@ Overview
               - Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Latitude, Longitude, Altitude, Velocity and Turn Radius.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

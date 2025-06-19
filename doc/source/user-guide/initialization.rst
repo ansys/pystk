@@ -25,7 +25,7 @@ To get started, determine the configuration that you want to use:
 Initialize with the STK desktop application
 ===========================================
 
-This section describes how to use PySTK with the STK desktop application. 
+This section describes how to use PySTK with the STK desktop application.
 
 The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` and :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` methods are available to obtain the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` class and begin interacting with STK through the :py:mod:`~ansys.stk.core.UiApplication` API. From the application interface, the most common way to begin working with STK software is to use the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` class, which is accessible as the :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root` property of the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` object.
 
@@ -108,7 +108,7 @@ Create a Tkinter window with a map control and a globe control
   :language: py
   :tab-width: 4
   :start-at: from tkinter import Tk, BOTH, YES, LEFT
-  :end-at: self.window.update() 
+  :end-at: self.window.update()
   :dedent:
 
 

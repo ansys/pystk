@@ -27,7 +27,7 @@ MATLAB strategies allow the users to utilize MATLAB
 Aerospace Toolbox functions to define the force modeling of the aircraft.
 """
 
-__all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation", 
+__all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation",
 "StrategyMATLABProfile"]
 
 from ctypes import POINTER
@@ -70,7 +70,7 @@ class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StrategyMATLABNavigation)
-    
+
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -167,7 +167,7 @@ class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StrategyMATLABProfile)
-    
+
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -264,7 +264,7 @@ class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StrategyMATLABFull3D)
-    
+
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -383,7 +383,7 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StrategyMATLAB3DGuidance)
-    
+
     _get_target_name_metadata = { "offset" : _get_target_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }

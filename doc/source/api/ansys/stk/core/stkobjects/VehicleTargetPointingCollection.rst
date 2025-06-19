@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -34,7 +34,7 @@ Overview
               - Add the specified LLA position to the collection of targets. Latitude param uses Latitude Dimension, Longitude param uses Longitude Dimension. Alt param uses Distance Dimension.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

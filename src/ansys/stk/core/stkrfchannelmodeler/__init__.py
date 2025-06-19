@@ -22,17 +22,17 @@
 
 """Object Model components specifically designed to support STK RF Channel Modeler."""
 
-__all__ = ["Analysis", "AnalysisConfiguration", "AnalysisConfigurationCollection", "AnalysisConfigurationComputeStepMode", 
-"AnalysisConfigurationModelType", "AnalysisLink", "AnalysisLinkCollection", "AnalysisResultsFileMode", "AnalysisSolverBoundingBoxMode", 
-"ChannelResponseType", "CommunicationsAnalysisConfigurationModel", "CommunicationsTransceiverConfiguration", "CommunicationsTransceiverConfigurationCollection", 
-"CommunicationsTransceiverModel", "CommunicationsWaveform", "ComputeOptions", "ElementExportPatternAntenna", "Extent", "FacetTileset", 
-"FacetTilesetCollection", "FarFieldDataPatternAntenna", "FrequencyPulseResponse", "GpuProperties", "IAnalysisConfigurationModel", 
-"IAnalysisLink", "IAntenna", "IProgressTrackCancel", "IRadarAnalysisConfigurationModel", "IResponse", "ISceneContributorCollection", 
-"ITransceiverModel", "ImageWindowType", "Material", "ParametricBeamAntenna", "PolarizationType", "RadarISarAnalysisConfigurationModel", 
-"RadarISarAnalysisLink", "RadarImagingDataProduct", "RadarImagingDataProductCollection", "RadarSarAnalysisConfigurationModel", 
-"RadarSarAnalysisLink", "RadarSarImageLocation", "RadarSarImageLocationCollection", "RadarTargetCollection", "RadarTransceiverConfiguration", 
-"RadarTransceiverConfigurationCollection", "RadarTransceiverModel", "RadarWaveform", "RangeDopplerResponse", "STKRFChannelModeler", 
-"SceneContributor", "SceneContributorCollection", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType", 
+__all__ = ["Analysis", "AnalysisConfiguration", "AnalysisConfigurationCollection", "AnalysisConfigurationComputeStepMode",
+"AnalysisConfigurationModelType", "AnalysisLink", "AnalysisLinkCollection", "AnalysisResultsFileMode", "AnalysisSolverBoundingBoxMode",
+"ChannelResponseType", "CommunicationsAnalysisConfigurationModel", "CommunicationsTransceiverConfiguration", "CommunicationsTransceiverConfigurationCollection",
+"CommunicationsTransceiverModel", "CommunicationsWaveform", "ComputeOptions", "ElementExportPatternAntenna", "Extent", "FacetTileset",
+"FacetTilesetCollection", "FarFieldDataPatternAntenna", "FrequencyPulseResponse", "GpuProperties", "IAnalysisConfigurationModel",
+"IAnalysisLink", "IAntenna", "IProgressTrackCancel", "IRadarAnalysisConfigurationModel", "IResponse", "ISceneContributorCollection",
+"ITransceiverModel", "ImageWindowType", "Material", "ParametricBeamAntenna", "PolarizationType", "RadarISarAnalysisConfigurationModel",
+"RadarISarAnalysisLink", "RadarImagingDataProduct", "RadarImagingDataProductCollection", "RadarSarAnalysisConfigurationModel",
+"RadarSarAnalysisLink", "RadarSarImageLocation", "RadarSarImageLocationCollection", "RadarTargetCollection", "RadarTransceiverConfiguration",
+"RadarTransceiverConfigurationCollection", "RadarTransceiverModel", "RadarWaveform", "RangeDopplerResponse", "STKRFChannelModeler",
+"SceneContributor", "SceneContributorCollection", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType",
 "ValidationResponse"]
 
 
@@ -59,7 +59,7 @@ def _raise_uninitialized_error(*args):
 
 class ChannelResponseType(IntEnum):
     """Channel Response Type"""
-   
+
     FREQUENCY_PULSE = 0
     """Frequency-Pulse"""
     RANGE_DOPPLER = 1
@@ -72,7 +72,7 @@ agcls.AgTypeNameMap["ChannelResponseType"] = ChannelResponseType
 
 class AnalysisConfigurationModelType(IntEnum):
     """Analysis Configuration Model Type"""
-   
+
     COMMUNICATIONS = 0
     """Communications"""
     RADAR_I_SAR = 1
@@ -88,7 +88,7 @@ agcls.AgTypeNameMap["AnalysisConfigurationModelType"] = AnalysisConfigurationMod
 
 class TransceiverMode(IntEnum):
     """Transceiver Mode"""
-   
+
     TRANSCEIVE = 0
     """Transceive"""
     TRANSMIT_ONLY = 1
@@ -104,7 +104,7 @@ agcls.AgTypeNameMap["TransceiverMode"] = TransceiverMode
 
 class AnalysisConfigurationComputeStepMode(IntEnum):
     """Analysis configuration compute step mode."""
-   
+
     FIXED_STEP_SIZE = 0
     """Fixed Step size"""
     FIXED_STEP_COUNT = 1
@@ -120,7 +120,7 @@ agcls.AgTypeNameMap["AnalysisConfigurationComputeStepMode"] = AnalysisConfigurat
 
 class AnalysisResultsFileMode(IntEnum):
     """Analysis results file mode."""
-   
+
     SINGLE_FILE = 0
     """Single file"""
     ONE_FILE_PER_LINK = 1
@@ -133,7 +133,7 @@ agcls.AgTypeNameMap["AnalysisResultsFileMode"] = AnalysisResultsFileMode
 
 class AnalysisSolverBoundingBoxMode(IntEnum):
     """Analysis solver bounding box mode."""
-   
+
     DEFAULT = 0
     """Default"""
     FULL_SCENE = 1
@@ -149,7 +149,7 @@ agcls.AgTypeNameMap["AnalysisSolverBoundingBoxMode"] = AnalysisSolverBoundingBox
 
 class TransceiverModelType(IntEnum):
     """Transceiver Model Type"""
-   
+
     COMMUNICATIONS = 0
     """Communications"""
     RADAR = 1
@@ -162,7 +162,7 @@ agcls.AgTypeNameMap["TransceiverModelType"] = TransceiverModelType
 
 class PolarizationType(IntEnum):
     """Polarization Type"""
-   
+
     VERTICAL = 0
     """Vertical"""
     HORIZONTAL = 1
@@ -181,7 +181,7 @@ agcls.AgTypeNameMap["PolarizationType"] = PolarizationType
 
 class ImageWindowType(IntEnum):
     """Polarization Type"""
-   
+
     FLAT = 0
     """Flat"""
     HANN = 1
@@ -224,7 +224,7 @@ class IProgressTrackCancel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProgressTrackCancel, None)
-    
+
     _get_cancel_requested_metadata = { "offset" : _get_cancel_requested_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -270,7 +270,7 @@ class IAntenna(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntenna, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -312,7 +312,7 @@ class ITransceiverModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITransceiverModel, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TransceiverModelType),) }
@@ -397,7 +397,7 @@ class ISceneContributorCollection(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -493,7 +493,7 @@ class IResponse(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IResponse, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ChannelResponseType),) }
@@ -567,7 +567,7 @@ class IAnalysisLink(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisLink, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -699,7 +699,7 @@ class IAnalysisConfigurationModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisConfigurationModel, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AnalysisConfigurationModelType),) }
@@ -938,7 +938,7 @@ class IRadarAnalysisConfigurationModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarAnalysisConfigurationModel, None)
-    
+
     _get_transceiver_configuration_collection_metadata = { "offset" : _get_transceiver_configuration_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -1012,7 +1012,7 @@ class RadarImagingDataProduct(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarImagingDataProduct)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -1356,7 +1356,7 @@ class Material(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Material)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -1426,7 +1426,7 @@ class FacetTileset(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FacetTileset)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -1511,7 +1511,7 @@ class ValidationResponse(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ValidationResponse)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -1567,7 +1567,7 @@ class Extent(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Extent)
-    
+
     _get_north_latitude_metadata = { "offset" : _get_north_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -1678,7 +1678,7 @@ class CommunicationsWaveform(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommunicationsWaveform)
-    
+
     _get_frequency_samples_per_sounding_metadata = { "offset" : _get_frequency_samples_per_sounding_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -1826,7 +1826,7 @@ class RadarWaveform(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveform)
-    
+
     _get_rf_channel_frequency_metadata = { "offset" : _get_rf_channel_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -1913,7 +1913,7 @@ class ParametricBeamAntenna(IAntenna, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ParametricBeamAntenna)
-    
+
     _get_polarization_type_metadata = { "offset" : _get_polarization_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationType),) }
@@ -1998,7 +1998,7 @@ class ElementExportPatternAntenna(IAntenna, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementExportPatternAntenna)
-    
+
     _get_hfss_element_export_pattern_file_metadata = { "offset" : _get_hfss_element_export_pattern_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2049,7 +2049,7 @@ class FarFieldDataPatternAntenna(IAntenna, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FarFieldDataPatternAntenna)
-    
+
     _get_hfss_far_field_data_pattern_file_metadata = { "offset" : _get_hfss_far_field_data_pattern_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2105,7 +2105,7 @@ class Transceiver(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Transceiver)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2203,7 +2203,7 @@ class CommunicationsTransceiverConfiguration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommunicationsTransceiverConfiguration)
-    
+
     _get_supported_transceivers_metadata = { "offset" : _get_supported_transceivers_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -2298,7 +2298,7 @@ class RadarTransceiverConfiguration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarTransceiverConfiguration)
-    
+
     _get_supported_transceivers_metadata = { "offset" : _get_supported_transceivers_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -2389,7 +2389,7 @@ class RadarImagingDataProductCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -2482,7 +2482,7 @@ class RadarTransceiverConfigurationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -2583,7 +2583,7 @@ class AnalysisConfiguration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisConfiguration)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -2683,7 +2683,7 @@ class CommunicationsAnalysisConfigurationModel(IAnalysisConfigurationModel, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommunicationsAnalysisConfigurationModel)
-    
+
     _get_transceiver_configuration_collection_metadata = { "offset" : _get_transceiver_configuration_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2725,7 +2725,7 @@ class RadarISarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAna
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarISarAnalysisConfigurationModel)
-    
+
     _get_radar_target_collection_metadata = { "offset" : _get_radar_target_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2769,7 +2769,7 @@ class RadarSarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAnal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSarAnalysisConfigurationModel)
-    
+
     _get_image_location_collection_metadata = { "offset" : _get_image_location_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2834,7 +2834,7 @@ class TransceiverCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -2954,7 +2954,7 @@ class FacetTilesetCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -3047,7 +3047,7 @@ class SceneContributor(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SceneContributor)
-    
+
     _get_stk_object_path_metadata = { "offset" : _get_stk_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -3181,7 +3181,7 @@ class RadarSarImageLocation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSarImageLocation)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -3284,7 +3284,7 @@ class RadarSarImageLocationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -3405,7 +3405,7 @@ class CommunicationsTransceiverConfigurationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -3521,7 +3521,7 @@ class AnalysisConfigurationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -3642,7 +3642,7 @@ class ComputeOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ComputeOptions)
-    
+
     _get_ray_density_metadata = { "offset" : _get_ray_density_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -3802,7 +3802,7 @@ class STKRFChannelModeler(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKRFChannelModeler)
-    
+
     _get_transceiver_collection_metadata = { "offset" : _get_transceiver_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -3922,7 +3922,7 @@ class CommunicationsTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommunicationsTransceiverModel)
-    
+
     _get_waveform_metadata = { "offset" : _get_waveform_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -3964,7 +3964,7 @@ class RadarTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarTransceiverModel)
-    
+
     _get_waveform_metadata = { "offset" : _get_waveform_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4011,7 +4011,7 @@ class RangeDopplerResponse(IResponse, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RangeDopplerResponse)
-    
+
     _get_range_values_metadata = { "offset" : _get_range_values_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -4099,7 +4099,7 @@ class FrequencyPulseResponse(IResponse, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FrequencyPulseResponse)
-    
+
     _get_pulse_count_metadata = { "offset" : _get_pulse_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -4169,7 +4169,7 @@ class RadarSarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSarAnalysisLink)
-    
+
     _get_image_location_name_metadata = { "offset" : _get_image_location_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4211,7 +4211,7 @@ class RadarISarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarISarAnalysisLink)
-    
+
     _get_target_object_path_metadata = { "offset" : _get_target_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4268,7 +4268,7 @@ class AnalysisLinkCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4327,7 +4327,7 @@ class Analysis(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Analysis)
-    
+
     _get_analysis_link_collection_metadata = { "offset" : _get_analysis_link_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -4372,7 +4372,7 @@ class GpuProperties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GpuProperties)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }

@@ -7,7 +7,7 @@ STKDesktopApplication
 
    Interact with an STK Desktop application.
 
-   Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
+   Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication()
    to obtain an initialized STKDesktopApplication object.
 
 .. py:currentmodule:: STKDesktopApplication
@@ -28,16 +28,16 @@ Overview
               - Create a new object model context for the STK Desktop application.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options`
               - Set advanced-usage options for the gRPC client.
-                
+
                 Available options include:
                 { "collection iteration batch size" : int }. Number of items to preload while iterating
                 through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
                 { "disable batching" : bool }. Disable all batching operations.
-                { "release batch size" : int }. Number of interfaces to be garbage collected before 
+                { "release batch size" : int }. Number of interfaces to be garbage collected before
                 sending the entire batch to STK to be released. Default value is 12.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher`
               - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-                
+
                 If gRPC is not active, the batcher will be disabled.
                 max_batch is the maximum number of calls to batch together.
                 Set disable_batching=True to disable batching operations for this batcher.
@@ -90,12 +90,12 @@ Method detail
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options
 
     Set advanced-usage options for the gRPC client.
-    
+
     Available options include:
     { "collection iteration batch size" : int }. Number of items to preload while iterating
     through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
     { "disable batching" : bool }. Disable all batching operations.
-    { "release batch size" : int }. Number of interfaces to be garbage collected before 
+    { "release batch size" : int }. Number of interfaces to be garbage collected before
     sending the entire batch to STK to be released. Default value is 12.
 
     :Parameters:
@@ -111,7 +111,7 @@ Method detail
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher
 
     Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-    
+
     If gRPC is not active, the batcher will be disabled.
     max_batch is the maximum number of calls to batch together.
     Set disable_batching=True to disable batching operations for this batcher.

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Compute and reports the first N satisfaction intervals (where N <= MaxNumAccessesToFind) over the specified interval whose spans meet the specified minimum duration. Does not use output file.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -74,7 +74,12 @@ Compute an access for one point
             constraint = result.constraints.item(j)
             print(
                 "Constraint: %s Object: %s Status: %s Value:%s"
-                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
+                % (
+                    constraint.constraint,
+                    constraint.object_path,
+                    constraint.status,
+                    str(constraint.value),
+                )
             )
 
 

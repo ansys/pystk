@@ -25,7 +25,7 @@ PySTK core package.
 
 Dependency-free package for interfacing with the core utilities of STK.
 """
- 
+
 
 from . import analysis_workbench, graphics, stkobjects, stkrfchannelmodeler, stkutil
 from .stkobjects import astrogator, aviator

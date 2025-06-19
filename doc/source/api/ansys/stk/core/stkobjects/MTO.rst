@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -47,7 +47,14 @@ Load multi-track object (MTO) track points from a file
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     track2.points.load_points(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "EphemerisLLATimePosVel_Example.e",
+        )
     )
     track2.interpolate = True
 

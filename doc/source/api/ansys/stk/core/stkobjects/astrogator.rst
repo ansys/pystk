@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`
               - Properties for attitude options for a maneuver segment.
@@ -70,13 +70,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent`
               - Properties for a stopping condition.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition`
               - The Access stopping condition.
@@ -1296,7 +1296,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AccessCriterion`
               - The criteria of an Access stopping condition.

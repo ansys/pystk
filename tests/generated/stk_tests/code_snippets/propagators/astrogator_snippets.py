@@ -320,7 +320,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
             REM  Initial guess tool:
             REM  Assume transfer orbit is something like a circular orbit linking apoapse of initial orbit to apoapse of final orbit
-            REM  Constants: 
+            REM  Constants:
             mu = 398600
             pi = 3.14159265358979
 
@@ -343,7 +343,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
             REM  Step 5:  propagate along transfer orbit the desired change in argument of periapse
             If DeltaArg >= 0 Then
              TransferDur = PeriodCirc*(DeltaArg/360)
-            Else 
+            Else
              TransferDur = PeriodCirc*(360+DeltaArg)/360
             End If
 

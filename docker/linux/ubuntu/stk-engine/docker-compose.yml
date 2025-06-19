@@ -2,7 +2,7 @@ services:
   stk:
     image: ansys/stk-12.10:dev-ubuntu22.04
     container_name: stk
-    build: 
+    build:
       context: .
       args:
         baseImage: ubuntu:22.04

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -40,7 +40,7 @@ Overview
               - """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

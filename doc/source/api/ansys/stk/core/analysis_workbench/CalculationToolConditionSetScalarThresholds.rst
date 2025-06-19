@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set thresholds and threshold labels.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -47,7 +47,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import CalculationToolConditionSetScalarThresholds
+    from ansys.stk.core.analysis_workbench import (
+        CalculationToolConditionSetScalarThresholds,
+    )
 
 
 Property detail

@@ -85,7 +85,7 @@ jobs:
 
       # TODO: "Security Advisories" are only available in public repositories
       # https://github.com/ansys-internal/pystk/issues/607
-      # 
+      #
       # - uses: ansys/actions/check-vulnerabilities@v8
       #   with:
       #     python-version: ${{ env.MAIN_PYTHON_VERSION }}
@@ -102,7 +102,7 @@ jobs:
     needs: vulnerabilities
     steps:
       - uses: ansys/actions/code-style@v10
-        with: 
+        with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   doc-style:

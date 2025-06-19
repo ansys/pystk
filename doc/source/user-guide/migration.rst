@@ -63,6 +63,7 @@ To illustrate this process, the examples below use a script in a file named `sni
 
         stk.ShutDown()
 
+
     if __name__ == "__main__":
         sys.exit(main())
 
@@ -181,7 +182,7 @@ Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Review the suggested code changes. Once you are satisfied with the results, rename the ``.py-migrated`` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
-            
+
 
 Migration table
 ===============
@@ -198,7 +199,7 @@ The table below lists the interface, classes, enumerations, and method names tha
                 $('#migration-datatable').DataTable();
             });
         </script>
-    
+
         <table id="migration-datatable" class="display" style="width: 100%" >
           <thead>
             <tr class="row-odd" role="row">

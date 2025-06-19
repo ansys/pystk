@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Add a new level to the collection. When adding a level with duplicate 'Value', it will update 'Color' and 'Translucency' values of the existing level.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -45,7 +45,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import VolumetricGraphics3DSpatialCalculationLevelCollection
+    from ansys.stk.core.stkobjects import (
+        VolumetricGraphics3DSpatialCalculationLevelCollection,
+    )
 
 
 Property detail

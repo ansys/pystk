@@ -62,7 +62,7 @@ class NativeContainerMethods:
     def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
             raise STKRuntimeError("STKEngine.StartApplication() must be called before using the STK Engine controls")
-            
+
         if os.name != "nt":
             return "libagjnicore.so"
         else:
@@ -117,10 +117,10 @@ class NativeContainerMethods:
             self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         def key_released(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
-        
+
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
-    
+
     _shift = 0x0001
     _control = 0x0004
     _lalt = 0x0008
@@ -138,15 +138,15 @@ class ControlBase(Frame):
         if os.name!="nt":
             self._x11lib = cdll.LoadLibrary(find_library("X11"))
             self._XOpenDisplay = WINFUNCTYPE(POINTER(CHAR))(("XOpenDisplay", self._x11lib))
-        
+
         self._container = self._nativeContainerMethods.create_container(self._progid)
         self._unk = self._nativeContainerMethods.get_unknown(self._container)
-        
+
         _cntrlinit_unk = IUnknown()
         _cntrlinit_unk.p = LPVOID(self._unk)
-        
+
         self._interface._private_init(self, _cntrlinit_unk)
-        
+
         self.bind("<Configure>", self._configure)
         if os.name!="nt":
             self.bind("<Expose>", self._expose)
@@ -155,13 +155,13 @@ class ControlBase(Frame):
             self.bind("<Motion>", self._motion)
             self.bind_all("<Any-KeyPress>", self._key_press)
             self.bind_all("<Any-KeyRelease>", self._key_release)
-        
+
     def __setattr__(self, attrname, value):
         try:
             self._interface.__setattr__(self, attrname, value)
         except STKAttributeError:
             Frame.__setattr__(self, attrname, value)
-        
+
     def _configure(self, event):
         """Occurs when the frame is resized."""
         if not self._is_container_attached:
@@ -169,7 +169,7 @@ class ControlBase(Frame):
             self._nativeContainerMethods.attach_container(self._container, self.winfo_id(), self._xDisplay)
             self._is_container_attached = True
         self._nativeContainerMethods.resize_container(self._container, 0, 0, event.width, event.height)
-            
+
     def destroy(self):
         """Occurs before the frame is destroyed."""
         self._nativeContainerMethods.detach_container(self._container)
@@ -181,7 +181,7 @@ class ControlBase(Frame):
             """Occurs when at least some part of the frame becomes visible after having been covered up by another window."""
             if self._is_container_attached:
                 self._nativeContainerMethods.paint(self._container)
-            
+
         def _button_press(self, event):
             """Occurs when a mouse button is pressed."""
             if event.num == 4:
@@ -212,7 +212,7 @@ class ControlBase(Frame):
 
 class GlobeControl(Graphics3DControlBase, ControlBase):
     """The 3D Globe control for Tkinter."""
-    
+
     _progid = "STKX12.VOControl.1"
     _interface = Graphics3DControlBase
 
@@ -220,14 +220,14 @@ class GlobeControl(Graphics3DControlBase, ControlBase):
         """Construct an object of type GlobeControl."""
         Graphics3DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
-        
+
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
 class MapControl(Graphics2DControlBase, ControlBase):
     """The 2D Map control for Tkinter."""
-    
+
     _progid = "STKX12.2DControl.1"
     _interface = Graphics2DControlBase
 
@@ -235,14 +235,14 @@ class MapControl(Graphics2DControlBase, ControlBase):
         """Construct an object of type MapControl."""
         Graphics2DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
-        
+
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
 class GfxAnalysisControl(GraphicsAnalysisControlBase, ControlBase):
     """The Graphics Analysis control for Tkinter."""
-    
+
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = GraphicsAnalysisControlBase
 
@@ -250,7 +250,7 @@ class GfxAnalysisControl(GraphicsAnalysisControlBase, ControlBase):
         """Construct an object of type GfxAnalysisControl."""
         GraphicsAnalysisControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
-        
+
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)

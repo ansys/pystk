@@ -201,20 +201,20 @@ def ctype_val_from_VARIANT(var:agcom.Variant) -> typing.Any:
         return agcom.PVOID(union_val.pdispVal)
     elif var.vt == agcom.VT_DISPATCH|agcom.VT_BYREF:
         return union_val.ppdispVal
-        
+
 def vartype_is_integral_type(vt:int) -> bool:
-    return vt in [agcom.VT_I1, 
-                  agcom.VT_I2, 
-                  agcom.VT_I4, 
-                  agcom.VT_I8, 
-                  agcom.VT_UI1, 
-                  agcom.VT_UI2, 
-                  agcom.VT_UI4, 
-                  agcom.VT_UI8, 
-                  agcom.VT_INT, 
-                  agcom.VT_UINT, 
+    return vt in [agcom.VT_I1,
+                  agcom.VT_I2,
+                  agcom.VT_I4,
+                  agcom.VT_I8,
+                  agcom.VT_UI1,
+                  agcom.VT_UI2,
+                  agcom.VT_UI4,
+                  agcom.VT_UI8,
+                  agcom.VT_INT,
+                  agcom.VT_UINT,
                   agcom.VT_ERROR]
-        
+
 def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
     if vt == agcom.VT_BOOL or vt == agcom.VT_BOOL|agcom.VT_BYREF:
         if vt & agcom.VT_BYREF:
@@ -260,13 +260,13 @@ def python_val_from_ctypes_val(ctypes_val:typing.Any, vt:int):
     elif vt in [agcom.VT_EMPTY, agcom.VT_NULL]:
         return None
     raise RuntimeError("Unrecognized variant type: " + str(vt))
-    
+
 def python_val_from_VARIANT(var:agcom.Variant, clear_variant:bool=False) -> typing.Any:
     retval = python_val_from_ctypes_val(ctype_val_from_VARIANT(var), var.vt)
     if clear_variant:
         agcom.OLEAut32Lib.VariantClear(var)
     return retval
-    
+
 ###############################################################################
 #   Marshalling SAFEARRAY
 ###############################################################################
@@ -496,14 +496,14 @@ def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
         return _five_dimension_list_from_SAFEARRAY(sa)
     else:
         raise RuntimeError("Unexpected dimension of SafeArray.  Expected 1 or 2, got " + str(dim) + ".")
-        
-        
+
+
 ###############################################################################
 #   Classes for marshalling arguments to COM interfaces
 ###############################################################################
 class LongArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.LONG = agcom.LONG()
         else:
             self.LONG = agcom.LONG(val)
@@ -520,7 +520,7 @@ class LongArg(object):
 
 class ULongArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.ULONG = agcom.ULONG()
         else:
             self.ULONG = agcom.ULONG(val)
@@ -537,7 +537,7 @@ class ULongArg(object):
 
 class LongLongArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.LONGLONG = agcom.LONGLONG()
         else:
             self.LONGLONG = agcom.LONGLONG(val)
@@ -554,7 +554,7 @@ class LongLongArg(object):
 
 class ULongLongArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.ULONGLONG = agcom.ULONGLONG()
         else:
             self.ULONGLONG = agcom.ULONGLONG(val)
@@ -571,7 +571,7 @@ class ULongLongArg(object):
 
 class IntArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.INT = agcom.INT()
         else:
             self.INT = agcom.INT(val)
@@ -588,7 +588,7 @@ class IntArg(object):
 
 class UIntArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.UINT = agcom.UINT()
         else:
             self.UINT = agcom.UINT(val)
@@ -605,7 +605,7 @@ class UIntArg(object):
 
 class ShortArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.SHORT = agcom.SHORT()
         else:
             self.SHORT = agcom.SHORT(val)
@@ -622,7 +622,7 @@ class ShortArg(object):
 
 class UShortArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.USHORT = agcom.USHORT()
         else:
             self.USHORT = agcom.USHORT(val)
@@ -639,7 +639,7 @@ class UShortArg(object):
 
 class HResultArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.HRESULT = agcom.HRESULT()
         else:
             self.HRESULT = agcom.HRESULT(val)
@@ -656,7 +656,7 @@ class HResultArg(object):
 
 class OLEColorArg(object):
     def __init__(self, val: agcolor.Color = None):
-        if val is None: 
+        if val is None:
             self.OLE_COLOR = agcom.OLE_COLOR()
         else:
             if type(val) == agcolor.ColorRGBA:
@@ -866,7 +866,7 @@ class InterfaceInArg(object):
     @property
     def python_val(self) -> typing.Any:
         return self.val
-            
+
 class InterfaceOutArg(object):
     def __init__(self):
         self.ptr = agcom.IUnknown()
@@ -889,7 +889,7 @@ class InterfaceOutArg(object):
             return agcoclass.get_concrete_class(self.ptr)
         else:
             return None
-            
+
 class PVoidArg(object):
     def __init__(self, val: agcom.PVOID = None):
         if val is None:
@@ -906,7 +906,7 @@ class PVoidArg(object):
     @property
     def python_val(self) -> agcom.PVOID:
         return self.p
-            
+
 class InterfaceEventCallbackArg(object):
     def __init__(self, pUnk:agcom.PVOID, as_interface):
         """
@@ -931,7 +931,7 @@ class InterfaceEventCallbackArg(object):
     @property
     def python_val(self) -> typing.Any:
         return self.intf
-            
+
 class IEnumVariantArg(object):
     def __init__(self):
         self.ptr = agcom.IUnknown()
@@ -957,7 +957,7 @@ class IEnumVariantArg(object):
 
 class EnumArg(object):
     def __init__(self, enum_type: IntEnum):
-        self.enum_type = enum_type  
+        self.enum_type = enum_type
     def __call__(self, val: typing.Any = None):
         if val is None:
             self.val = agcom.LONG()
@@ -998,7 +998,7 @@ class LPSafearrayArg(object):
     @property
     def python_val(self) -> list:
         return list_from_SAFEARRAY(self.sa)
-        
+
 class IPictureDispArg(object):
     def __init__(self, val: agcom.IPictureDisp = None):
         raise STKPluginMethodNotImplementedError(f"Methods with the argument type \"IPictureDisp\" are not available using Python")
@@ -1036,7 +1036,7 @@ class DateArg(object):
 
 class OLEHandleArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.OLE_HANDLE = agcom.OLE_HANDLE()
         else:
             self.OLE_HANDLE = agcom.OLE_HANDLE(val)
@@ -1053,7 +1053,7 @@ class OLEHandleArg(object):
 
 class OLEXPosPixelsArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.OLE_XPOS_PIXELS = agcom.OLE_XPOS_PIXELS()
         else:
             self.OLE_XPOS_PIXELS = agcom.OLE_XPOS_PIXELS(val)
@@ -1070,7 +1070,7 @@ class OLEXPosPixelsArg(object):
 
 class OLEYPosPixelsArg(object):
     def __init__(self, val: int = None):
-        if val is None: 
+        if val is None:
             self.OLE_YPOS_PIXELS = agcom.OLE_YPOS_PIXELS()
         else:
             self.OLE_YPOS_PIXELS = agcom.OLE_YPOS_PIXELS(val)

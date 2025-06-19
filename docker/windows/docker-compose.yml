@@ -3,7 +3,7 @@ services:
   stk:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019
     container_name: stk
-    build: 
+    build:
       context: ./stk-engine
       args:
         baseImage: mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019
@@ -15,7 +15,7 @@ services:
     depends_on:
       - stk
     container_name: stk-pybase
-    build: 
+    build:
       context: ./stk-engine-pybase
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019
@@ -24,10 +24,10 @@ services:
 
   stk-python3.11:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-python3.11
-    depends_on: 
-      - stk-pybase 
+    depends_on:
+      - stk-pybase
     container_name: stk-python3.11
-    build: 
+    build:
       context: ./stk-engine-py311
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019
@@ -38,9 +38,9 @@ services:
   stk-python3.12:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-python3.12
     depends_on:
-      - stk-pybase 
+      - stk-pybase
     container_name: stk-python3.12
-    build: 
+    build:
       context: ./stk-engine-py12
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019
@@ -50,10 +50,10 @@ services:
 
   stk-python3.13:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-python3.13
-    depends_on: 
-      - stk-pybase 
+    depends_on:
+      - stk-pybase
     container_name: stk-python3.13
-    build: 
+    build:
       context: ./stk-engine-py313
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019

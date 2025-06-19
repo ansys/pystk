@@ -22,7 +22,7 @@
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode", "IUiApplicationPartnerAccess", 
+__all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode", "IUiApplicationPartnerAccess",
 "MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
 
 from ctypes import POINTER
@@ -50,7 +50,7 @@ def _raise_uninitialized_error(*args):
 
 class ApplicationOpenLogFileMode(IntEnum):
     """Log file open modes."""
-   
+
     FOR_WRITING = 2
     """Open log file in write file mode."""
     FOR_APPENDING = 8
@@ -63,7 +63,7 @@ agcls.AgTypeNameMap["ApplicationOpenLogFileMode"] = ApplicationOpenLogFileMode
 
 class ApplicationLogMessageType(IntEnum):
     """Log message types."""
-   
+
     DEBUG = 0
     """Log messages that provide Debug text."""
     INFO = 1
@@ -85,7 +85,7 @@ agcls.AgTypeNameMap["ApplicationLogMessageType"] = ApplicationLogMessageType
 
 class ApplicationConstants(IntEnum):
     """ApplicationConstants contains base IDs for various structures."""
-   
+
     APPLICATION_ERROR_BASE = 0x200
     """Error base."""
 
@@ -95,7 +95,7 @@ agcls.AgTypeNameMap["ApplicationConstants"] = ApplicationConstants
 
 class ApplicationErrorCodes(IntEnum):
     """App error codes."""
-   
+
     PERSONALITY_LOAD_FAILED = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 1))
     """Failed to load personality."""
     PERSONALITY_ALREADY_LOADED = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 2))
@@ -140,7 +140,7 @@ class IUiApplicationPartnerAccess(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiApplicationPartnerAccess, None)
-    
+
     _grant_partner_access_metadata = { "offset" : _grant_partner_access_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -212,7 +212,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UiApplication)
-    
+
     _load_personality_metadata = { "offset" : _load_personality_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -562,7 +562,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
@@ -636,7 +636,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -700,7 +700,7 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UiFileOpenDialogExtension)
-    
+
     _get_file_name_metadata = { "offset" : _get_file_name_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }

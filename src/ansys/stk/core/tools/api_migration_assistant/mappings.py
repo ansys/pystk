@@ -75,7 +75,7 @@ class Mappings:
         for json_file in json_files:
             with Path(json_file).open(mode="r") as f:
                 mappings = json.load(f)
-                
+
             logging.debug(f"Processing {json_file}")
 
             if "RootMapping" in mappings and "OldRootScope" in mappings["RootMapping"] and "NewRootScope" in mappings["RootMapping"]:
@@ -119,7 +119,7 @@ class Mappings:
                 )
 
             enum_type_entries = mappings.get("EnumTypeMappings", [])
-            
+
             for enum_type_entry in enum_type_entries:
                 old_enum_type_name = enum_type_entry.get("OldName")
                 new_enum_type_name = enum_type_entry.get("NewName")

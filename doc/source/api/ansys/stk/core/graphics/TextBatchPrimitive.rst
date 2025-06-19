@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -50,7 +50,7 @@ Overview
               - For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

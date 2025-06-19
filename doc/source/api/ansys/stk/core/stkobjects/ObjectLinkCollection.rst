@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -38,7 +38,7 @@ Overview
               - Search the collection for the specified object and returns a zero-based index of the first occurrence within the collection, if found; otherwise, -1.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

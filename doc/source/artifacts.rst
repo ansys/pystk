@@ -44,7 +44,7 @@ features:
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}
@@ -68,7 +68,7 @@ These extra artifacts include all the dependencies for using gRPC connections.
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}
@@ -93,7 +93,7 @@ visualization widgets within IPython environments, such as Jupyter Lab.
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}

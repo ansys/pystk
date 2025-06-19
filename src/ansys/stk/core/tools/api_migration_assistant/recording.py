@@ -78,9 +78,9 @@ class Recording:
             def default(self, o: Any):
                 if isinstance(o, CallRecord):
                     return {
-                        "filename": o.filename, 
-                        "lineno": o.lineno, 
-                        "end_lineno": o.end_lineno, 
+                        "filename": o.filename,
+                        "lineno": o.lineno,
+                        "end_lineno": o.end_lineno,
                         "col_offset": o.col_offset,
                         "end_col_offset": o.end_col_offset,
                         "type_name": o.type_name,

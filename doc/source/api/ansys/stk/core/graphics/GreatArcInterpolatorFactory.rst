@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -36,7 +36,17 @@ Compute interpolated positions along a great arc
     # Scenario scenario: Scenario object
     # Create a array of LLA values and interoplate them over the specified
     # central body
-    positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
+    positionArray = [
+        [35.017],
+        [-118.540],
+        [0],
+        [44.570],
+        [-96.474],
+        [0],
+        [31.101],
+        [-82.619],
+        [0],
+    ]
     manager = scenario.scene_manager
     # Interpolate points over great arc
     interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")

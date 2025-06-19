@@ -57,7 +57,7 @@ from ..utilities.grpcutilities import GrpcCallBatcher
 class STKEngineTimerType(IntEnum):
     """
     Specify the timer implementation to use.
-    
+
     Timers are needed for events on Linux applications.
     May be overridden by specifying environment variable STK_PYTHONAPI_TIMERTYPE.
     """
@@ -79,7 +79,7 @@ class STKEngineApplication(STKXApplication):
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
-    
+
     def __init__(self):
         """Construct an object of type STKEngineApplication."""
         STKXApplication.__init__(self)
@@ -92,11 +92,11 @@ class STKEngineApplication(STKXApplication):
             self._stkx_intialize()
         self._stkx_intialize_timer(no_graphics)
         self.__dict__["_initialized"] = True
-        
+
     def __del__(self):
         """Destruct the STKEngineApplication object after all references to the object are deleted."""
         self.shutdown()
-        
+
     def _stkx_intialize(self):
         clsid_agstkxinitialize = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", clsid_agstkxinitialize)):
@@ -113,7 +113,7 @@ class STKEngineApplication(STKXApplication):
                 if config_dir is None:
                     raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
                 stkxinit.initialize_data(install_dir, config_dir)
-                
+
     @staticmethod
     def _get_signo(sigrtmin_offset):
         if os.name=="nt":
@@ -121,7 +121,7 @@ class STKEngineApplication(STKXApplication):
         libc = cdll.LoadLibrary(find_library("c"))
         __libc_current_sigrtmin = CFUNCTYPE(c_int)(("__libc_current_sigrtmin", libc))
         return __libc_current_sigrtmin() + sigrtmin_offset
-        
+
     def _set_timer_type_from_env(self):
         timer_type = int(os.getenv("STK_PYTHONAPI_TIMERTYPE", "4"))
         if os.name=="nt" or timer_type == STKEngineTimerType.DISABLE_TIMERS:
@@ -135,10 +135,10 @@ class STKEngineApplication(STKXApplication):
                 sigrtmin_offset = int(os.getenv("STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET", "0"))
                 signo = STKEngineApplication._get_signo(sigrtmin_offset)
                 self.__dict__["_timer_impl"] = SigRtTimer(signo)
-            
+
     def _user_override_timer_type(self) -> bool:
         return ("STK_PYTHONAPI_TIMERTYPE" in os.environ)
-                
+
     def _stkx_intialize_timer(self, no_graphics):
         if os.name=="nt":
             #Timers are not implemented on Windows, use a placeholder.
@@ -152,7 +152,7 @@ class STKEngineApplication(STKXApplication):
                 self._set_timer_type_from_env()
             else:
                 self.__dict__["_timer_impl"] = TclTimer()
-        
+
     def new_object_root(self) -> STKObjectRoot:
         """Create a new object model root for the STK Engine application."""
         if not self.__dict__["_initialized"]:
@@ -184,7 +184,7 @@ class STKEngineApplication(STKXApplication):
     def set_grpc_options(self, options:dict) -> None:
         """
         Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
-        
+
         Available options include:
         { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
         using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.
@@ -193,7 +193,7 @@ class STKEngineApplication(STKXApplication):
             self.__dict__["_grpc_exceptions"] = options["raise exceptions with STK Engine"]
         if self._grpc_exceptions:
             raise GrpcUtilitiesError("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
-            
+
     def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=True) -> GrpcCallBatcher:
         """Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop."""
         if self._grpc_exceptions:
@@ -214,9 +214,9 @@ class STKEngineApplication(STKXApplication):
 
 class STKEngine(object):
     """Initialize and manage the STK Engine application."""
-    
+
     _is_engine_running = False
-            
+
     @staticmethod
     def _init_x11(no_graphics):
         if no_graphics or os.name=="nt":
@@ -227,7 +227,7 @@ class STKEngine(object):
             xinit_threads()
         except OSError:
             raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
-            
+
     @staticmethod
     def start_application(no_graphics:bool=True) -> STKEngineApplication:
         """
@@ -252,4 +252,3 @@ class STKEngine(object):
                 atexit.register(engine.shutdown)
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
-       

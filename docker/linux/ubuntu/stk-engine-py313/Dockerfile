@@ -36,9 +36,9 @@ RUN apt-get update -y; \
 ENV DISPLAY=:0
 
 # Copy the Python interpreter, the standard library and pip to the final image
-COPY --from=builder /usr/local/bin/python3.13 /usr/local/bin/python3.13 
-COPY --from=builder /usr/local/lib/python3.13 /usr/local/lib/python3.13 
-COPY --from=builder /usr/local/bin/pip3.13 /usr/local/bin/pip3.13 
+COPY --from=builder /usr/local/bin/python3.13 /usr/local/bin/python3.13
+COPY --from=builder /usr/local/lib/python3.13 /usr/local/lib/python3.13
+COPY --from=builder /usr/local/bin/pip3.13 /usr/local/bin/pip3.13
 
 RUN ln -sfn /usr/local/bin/python3.13 /usr/local/bin/python && \
     ln -sfn /usr/local/bin/pip3.13 /usr/local/bin/pip

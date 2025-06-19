@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkutil.ICartesian3Vector`
               - Represents a cartesian 3-D vector.
@@ -55,13 +55,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.IRuntimeTypeInfoProvider`
               - Access point for RuntimeTypeInfo.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkutil.Cartesian`
               - Class used to access a position using Cartesian Coordinates.
@@ -183,7 +183,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkutil.AzElAboutBoresight`
               - About Boresight options for AzEl orientation method.

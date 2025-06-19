@@ -25,43 +25,43 @@ STK X allows developers to add advanced STK 2D, 3D visualization and analytical 
 
 The top of the STK X object model presents the following creatable components:
 
-  * The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.   
+  * The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.
 The main way to communicate with the engine is to send Connect commands.
 Connect is a language for accessing and manipulating STK (see the
-ExecuteCommand method).  
+ExecuteCommand method).
 The Application object also exposes connection points that you can sink to
 receive notification about the state of the STK engine (for instance a
-scenario has been loaded; an animation step is performed, etc.).  
+scenario has been loaded; an animation step is performed, etc.).
 Notice that you can instantiate many application objects, but they all refer
 to the same unique STK engine.
 
-  * The Globe control enables you to insert a 3D view into your application.  
+  * The Globe control enables you to insert a 3D view into your application.
 You can use several Globe controls if you wish to have different views of the
 same scenario. By default the STK keyboard and mouse interaction mechanism are
 used, but various events are available, allowing your application to implement
 specific keyboard and mouse interactions and modes.
 
-  * The Map control can be used to insert a 2D view into your application.  
+  * The Map control can be used to insert a 2D view into your application.
 The Map control gives your application a 2D view of the scenario. You can use
 several Map controls if you wish to have different views of the same scenario.
 By default the STK keyboard and mouse interaction mechanism are used, but
 various events are available, allowing your application to implement specific
 keyboard and mouse interactions and modes.
 
-  * The Graphics Analysis control allows you to insert graphics analysis capability into your application. The Graphics Analysis Control can perform various analyses when set in any of the following four analysis modes. 
-    * Area Tool 
-    * AzElMask Tool 
-    * Obscuration Tool 
+  * The Graphics Analysis control allows you to insert graphics analysis capability into your application. The Graphics Analysis Control can perform various analyses when set in any of the following four analysis modes.
+    * Area Tool
+    * AzElMask Tool
+    * Obscuration Tool
     * Solar Panel Tool
 
 .
 """
 
-__all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElementCollection", 
-"DrawElementLine", "DrawElementRect", "FeatureCodes", "Graphics2DAnalysisMode", "Graphics2DControlBase", "Graphics2DDrawCoordinates", 
-"Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement", "IDrawElementCollection", "IDrawElementRect", "LoggingMode", 
-"MouseMode", "OLEDropMode", "ObjectPathCollection", "PickInfoData", "ProgressImageXOrigin", "ProgressImageYOrigin", "RubberBandPickInfoData", 
-"STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", 
+__all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElementCollection",
+"DrawElementLine", "DrawElementRect", "FeatureCodes", "Graphics2DAnalysisMode", "Graphics2DControlBase", "Graphics2DDrawCoordinates",
+"Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement", "IDrawElementCollection", "IDrawElementRect", "LoggingMode",
+"MouseMode", "OLEDropMode", "ObjectPathCollection", "PickInfoData", "ProgressImageXOrigin", "ProgressImageYOrigin", "RubberBandPickInfoData",
+"STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs",
 "ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
 from ctypes import POINTER
@@ -96,7 +96,7 @@ def _raise_uninitialized_error(*args):
 
 class ShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
-   
+
     PRESSED = 1
     """The Shift key was pressed."""
     CTRL_PRESSED = 2
@@ -112,7 +112,7 @@ agcls.AgTypeNameMap["ShiftValues"] = ShiftValues
 
 class ButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
-   
+
     LEFT_PRESSED = 1
     """The left button is pressed."""
     RIGHT_PRESSED = 2
@@ -128,7 +128,7 @@ agcls.AgTypeNameMap["ButtonValues"] = ButtonValues
 
 class OLEDropMode(IntEnum):
     """Specify how to handle OLE drop operations."""
-   
+
     NONE = 0
     """None. The control does not accept OLE drops and displays the No Drop cursor."""
     MANUAL = 1
@@ -144,7 +144,7 @@ agcls.AgTypeNameMap["OLEDropMode"] = OLEDropMode
 
 class MouseMode(IntEnum):
     """Mouse modes."""
-   
+
     AUTOMATIC = 0
     """Automatic. The control handles the mouse events and then fires the events to the container for additional processing."""
     MANUAL = 1
@@ -157,7 +157,7 @@ agcls.AgTypeNameMap["MouseMode"] = MouseMode
 
 class LoggingMode(IntEnum):
     """Specify the state of the log file."""
-   
+
     INACTIVE = 0
     """The log file is not created."""
     ACTIVE = 1
@@ -173,7 +173,7 @@ agcls.AgTypeNameMap["LoggingMode"] = LoggingMode
 
 class Graphics2DAnalysisMode(IntEnum):
     """Specify the mode of Gfx Analysis Control."""
-   
+
     SOLAR_PANEL_TOOL = 1
     """The Solar Panel Tool mode."""
     AREA_TOOL = 2
@@ -192,7 +192,7 @@ agcls.AgTypeNameMap["Graphics2DAnalysisMode"] = Graphics2DAnalysisMode
 
 class Graphics2DDrawCoordinates(IntEnum):
     """Specify the draw coordinates for Map Control."""
-   
+
     PIXEL_DRAW_COORDINATES = 1
     """The draw coordinates values in pixels."""
     SCREEN_DRAW_COORDINATES = 2
@@ -205,7 +205,7 @@ agcls.AgTypeNameMap["Graphics2DDrawCoordinates"] = Graphics2DDrawCoordinates
 
 class ShowProgressImage(IntEnum):
     """Specify to show progress image."""
-   
+
     NONE = 1
     """Do not show any progress Image."""
     DEFAULT = 2
@@ -221,7 +221,7 @@ agcls.AgTypeNameMap["ShowProgressImage"] = ShowProgressImage
 
 class FeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
-   
+
     ENGINE_RUNTIME = 1
     """The enumeration is used to check whether the engine runtime is available."""
     GLOBE_CONTROL = 2
@@ -234,7 +234,7 @@ agcls.AgTypeNameMap["FeatureCodes"] = FeatureCodes
 
 class ProgressImageXOrigin(IntEnum):
     """Specify to align progress image X origin."""
-   
+
     LEFT = 1
     """Align progress Image from X left."""
     RIGHT = 2
@@ -250,7 +250,7 @@ agcls.AgTypeNameMap["ProgressImageXOrigin"] = ProgressImageXOrigin
 
 class ProgressImageYOrigin(IntEnum):
     """Specify to align progress image Y origin."""
-   
+
     TOP = 1
     """Align progress Image from Y top."""
     BOTTOM = 2
@@ -290,7 +290,7 @@ class IDrawElement(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElement, None)
-    
+
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -347,7 +347,7 @@ class IDrawElementRect(IDrawElement):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElementRect, IDrawElement)
-    
+
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
@@ -489,7 +489,7 @@ class IDrawElementCollection(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -625,7 +625,7 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     def subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
         """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics3DControlBase."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
-    
+
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -1082,7 +1082,7 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     def subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
         """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics2DControlBase."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
-    
+
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -1472,7 +1472,7 @@ class PickInfoData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PickInfoData)
-    
+
     _get_object_path_metadata = { "offset" : _get_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -1587,7 +1587,7 @@ class STKXApplication(SupportsDeleteCallback):
     def subscribe(self) -> ISTKXApplicationEventHandler:
         """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
-    
+
     _execute_command_metadata = { "offset" : _execute_command_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -1847,7 +1847,7 @@ class STKXApplicationPartnerAccess(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXApplicationPartnerAccess)
-    
+
     _grant_partner_access_metadata = { "offset" : _grant_partner_access_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -1885,7 +1885,7 @@ class DataObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataObject)
-    
+
     _get_files_metadata = { "offset" : _get_files_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -1940,7 +1940,7 @@ class DataObjectFiles(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
@@ -1999,7 +1999,7 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RubberBandPickInfoData)
-    
+
     _get_object_paths_metadata = { "offset" : _get_object_paths_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -2055,7 +2055,7 @@ class ObjectPathCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -2213,7 +2213,7 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GraphicsAnalysisControlBase)
-    
+
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -2384,7 +2384,7 @@ class WindowProjectionPosition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WindowProjectionPosition)
-    
+
     _get_x_position_metadata = { "offset" : _get_x_position_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -2452,7 +2452,7 @@ class DrawElementLine(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DrawElementLine)
-    
+
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
@@ -2585,7 +2585,7 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXSSLCertificateErrorEventArgs)
-    
+
     _set_ignore_error_metadata = { "offset" : _set_ignore_error_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -2720,7 +2720,7 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXConControlQuitReceivedEventArgs)
-    
+
     _get_acknowledge_metadata = { "offset" : _get_acknowledge_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }

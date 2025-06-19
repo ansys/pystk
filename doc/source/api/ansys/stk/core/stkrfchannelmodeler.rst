@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel`
               - Base interface for all analysis configuration models.
@@ -43,13 +43,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel`
               - Base interface which defines common properties for a transceiver model.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Analysis`
               - An RF Channel Modeler analysis.
@@ -177,7 +177,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationComputeStepMode`
               - Analysis configuration compute step mode.
