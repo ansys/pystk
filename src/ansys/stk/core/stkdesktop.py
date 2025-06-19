@@ -39,6 +39,7 @@ from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_bina
 from .internal.coclassutil import attach_to_stk_by_pid
 from .internal.comutil import (
     CLSCTX_LOCAL_SERVER,
+    CO_E_NOTINITIALIZED,
     COINIT_APARTMENTTHREADED,
     GUID,
     PVOID,
