@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Embeds a low altitude atmosphere model from the component browser.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

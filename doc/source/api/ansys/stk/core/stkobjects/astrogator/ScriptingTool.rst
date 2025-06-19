@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Replace entire scripting tool with scripting tool in clipboard.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

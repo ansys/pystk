@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Reload the volume calc file.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

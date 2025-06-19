@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Compute SAA flux intensity at the specified Earth location. Uses Angle, Longitude, Distance, and FluxIntensity Dimensions.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

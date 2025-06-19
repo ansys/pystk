@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Get all three spherical components of the DeltaV vector as an array (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

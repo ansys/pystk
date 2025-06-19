@@ -42,12 +42,12 @@ from ..utilities.colors import Color
 IID_IEnumVARIANT = (132100, 5044031582654955712)
 
 _logger = logging.getLogger("stk.internal.grpcutil")
-        
+
 def _is_list_type(arg:typing.Any) -> bool:
     if type(arg) == str or not hasattr(arg, '__iter__'):
         return False
     return True
-        
+
 def _array_num_columns(arg:typing.Any) -> int:
     if not _is_list_type(arg):
         return 0
@@ -57,7 +57,7 @@ def _array_num_columns(arg:typing.Any) -> int:
     if not _is_list_type(arg[0]):
         return 1
     return len(arg)
-    
+
 def _input_arg_to_single_dim_list(arg:typing.Any) -> list:
     if not _is_list_type(arg):
         return [arg]
@@ -168,7 +168,7 @@ class GrpcInterface(object):
         iid_tuple = (intf_metadata['iid_data'][0], intf_metadata['iid_data'][1])
         if AgBackwardsCompatabilityMapping.check_guid_available(iid_tuple):
             old_iid = AgBackwardsCompatabilityMapping.get_old_guid(iid_tuple)
-            old_grpc_guid = _grpc_guid({"iid_data":[old_iid[0], old_iid[1]]}) 
+            old_grpc_guid = _grpc_guid({"iid_data":[old_iid[0], old_iid[1]]})
             return self.client.invoke(self.obj, old_grpc_guid, method_offset, False, *args)
         return None
 
@@ -201,7 +201,7 @@ class GrpcInterface(object):
 
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
         return self.client.unsubscribe(self.obj, event_handler, event, callback)
-        
+
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
         return self.client.unsubscribe(self.obj, event_handler, "", None)
 
@@ -227,7 +227,7 @@ class GrpcInterfacePimpl(object):
     @property
     def client(self):
         return self._impl.client
-    
+
     def deactivate(self):
         self.active = False
 
@@ -265,7 +265,7 @@ class GrpcInterfacePimpl(object):
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
         self._flush_batcher()
         return self._impl.unsubscribe(event_handler, event, callback)
-        
+
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
         self._flush_batcher()
         return self._impl.unsubscribe_all(event_handler)
@@ -316,8 +316,8 @@ class GrpcInterfaceFuture(object):
 
     def _enqueue_promise_in_batcher(self):
         """
-        Enqueue batch request without a method invocation. 
-        
+        Enqueue batch request without a method invocation.
+
         On the STK side this will bind the future which will
         then be available to future request that use the future.
         """
@@ -367,7 +367,7 @@ class GrpcInterfaceFuture(object):
 
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
         raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
-        
+
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
         raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
 
@@ -401,7 +401,7 @@ class GrpcEnumerator(GrpcInterface):
     _iid_data = AgGrpcServices_pb2.InterfaceID()
     _iid_data.data1 = IID_IEnumVARIANT[0]
     _iid_data.data2 = IID_IEnumVARIANT[1]
-    
+
     def __init__(self, client: "GrpcClient", obj):
         GrpcInterface.__init__(self, client=client, obj=obj)
         self._reset()
@@ -424,7 +424,7 @@ class GrpcEnumerator(GrpcInterface):
     def next(self) -> typing.Any:
         self._enqueue_next_batch()
         if self._item_queue.empty():
-            return None 
+            return None
         return self._item_queue.get(block=False)
 
     def reset(self):
@@ -507,7 +507,7 @@ class GrpcClient(object):
                 if len(self._released_objects) >= self._release_batch_size:
                     self.BatchedRelease(self._released_objects)
                     self._released_objects = []
-            
+
     def _initialize_connection(self):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
@@ -580,7 +580,7 @@ class GrpcClient(object):
 
     def set_shutdown_stkruntime(self, shutdown_stkruntime:bool):
         self._shutdown_stkruntime = shutdown_stkruntime
-        
+
     def terminate_connection(self):
         if self.active():
             self._execute_batched_invoke()
@@ -594,17 +594,17 @@ class GrpcClient(object):
             self.stub = None
             if self.channel is not None:
                 self.channel.close()
-        
+
     def active(self) -> bool:
         return self.stub is not None
-        
+
     def add_ref(self, obj:AgGrpcServices_pb2.STKObject) -> int:
         request = AgGrpcServices_pb2.RefCountRequest()
         request.obj.value = obj.value
         response = self.stub.AddRef(request)
         ret = response.count
         return ret
-    
+
     def release(self, obj:AgGrpcServices_pb2.STKObject) -> int:
         if self.active():
             request = AgGrpcServices_pb2.RefCountRequest()
@@ -612,13 +612,13 @@ class GrpcClient(object):
             response = self.stub.Release(request)
             ret = response.count
             return ret
-            
+
     def BatchedRelease(self, objects:typing.List[AgGrpcServices_pb2.STKObject]) -> None:
         if self.active():
             request = AgGrpcServices_pb2.BatchedReleaseRequest()
             request.objects.extend(objects)
             response = self.stub.BatchedRelease(request)
-        
+
     def supports_interface(self, obj:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID) -> bool:
         if self.active():
             request = AgGrpcServices_pb2.SupportsInterfaceRequest()
@@ -627,7 +627,7 @@ class GrpcClient(object):
             response = self.stub.SupportsInterface(request)
             ret = response.result
             return ret
-        
+
     def _marshall_grpc_obj_to_py_class(self, obj:AgGrpcServices_pb2.STKObject, managed:bool=True) -> typing.Any:
         from .coclassutil import AgClassCatalog
         clsid = (obj.guid.data1, obj.guid.data2)
@@ -645,26 +645,26 @@ class GrpcClient(object):
         else:
             self.release(obj)
             return None
-        
+
     def get_stk_application_interface(self) -> GrpcInterface:
         self._execute_batched_invoke()
         grpc_app_request = AgGrpcServices_pb2.EmptyMessage()
         grpc_app_response = self.stub.GetStkApplication(grpc_app_request)
         intf = GrpcApplication(obj=grpc_app_response.obj, client=self)
         return intf
-        
+
     def new_object_root(self) -> GrpcInterface:
         self._execute_batched_invoke()
         grpc_response = self.stub.EngineNewRoot(AgGrpcServices_pb2.EmptyMessage())
         intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
-        
+
     def new_object_model_context(self) -> GrpcInterface:
         self._execute_batched_invoke()
         grpc_response = self.stub.EngineNewRootContext(AgGrpcServices_pb2.EmptyMessage())
         intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
-        
+
     def _marshall_single_grpc_value(self, val:AgGrpcServices_pb2.Variant.VariantValue, manage_ref_counts:bool=True) -> typing.Any:
         which_val = val.WhichOneof("Value")
         if which_val=="obj":
@@ -683,7 +683,7 @@ class GrpcClient(object):
             return None
         elif which_val=="nested_array":
             return self._marshall_return_arg(val.nested_array)
-            
+
     def _marshall_return_arg(self, arg:AgGrpcServices_pb2.Variant, manage_ref_counts:bool=True) -> typing.Any:
         if arg.num_columns_in_repeated_values > 0:
             # This is an array and we need to return a list, even if the array has 0 or 1 element
@@ -703,7 +703,7 @@ class GrpcClient(object):
             return
         elif len(arg.values) == 1:
             return self._marshall_single_grpc_value(arg.values[0], manage_ref_counts)
-  
+
     def invoke(self, p:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID, method_offset:int, disable_batch:bool, *args) -> typing.Any:
         request = AgGrpcServices_pb2.InvokeRequest()
         request.obj.MergeFrom(p)
@@ -746,7 +746,7 @@ class GrpcClient(object):
         except grpc.RpcError as rpc_error:
             self._handle_rpc_error(rpc_error)
         return self._marshall_return_arg(response.variant)
-            
+
     def set_property(self, p:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID, method_offset, arg) -> None:
         use_batching = self._batching_active()
         if use_batching:
@@ -777,7 +777,7 @@ class GrpcClient(object):
             if details.startswith(prelude):
                 msg = details[len(prelude):]
                 raise STKRuntimeError(msg) from None
-        raise # rethrow last exception that occurred, which is rpc_error 
+        raise # rethrow last exception that occurred, which is rpc_error
 
     def acknowledge_event(self, event_id:int) -> None:
         request = AgGrpcServices_pb2.EventLoopData()
@@ -857,7 +857,7 @@ class GrpcClient(object):
             response = self.stub.Unsubscribe(request)
             if event == "":
                 for event_name in self._event_callbacks[event_handler]:
-                    self._event_callbacks[event_handler][event_name][p.value] = None 
+                    self._event_callbacks[event_handler][event_name][p.value] = None
             else:
                 self._event_callbacks[event_handler][event][p.value].remove(callback)
             if not self._has_subscriptions():

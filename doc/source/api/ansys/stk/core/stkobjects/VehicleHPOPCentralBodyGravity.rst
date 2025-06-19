@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Set maximum degree and maximum order of geopotential coefficients to be included for Central Body gravity computations. An exception is raised if MaximumDegree is less than MaximumOrder. Both values are dimensionless.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

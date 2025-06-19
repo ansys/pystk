@@ -167,12 +167,12 @@ class SnippetsRSTGenerator(object):
 
                 snippet_format = """
                 .. _{}:
-                
+
                 {}
                 {}
 
                 .. code-block:: python
-                    
+
                 {}
                 """
                 out_file.write(

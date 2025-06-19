@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set minimum and maximum range. An exception is thrown if Minimum exceeds Maximum. An exception is thrown if UseRangeConstraint is set to true. Applicable only if the range constraint is not used.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -59,7 +59,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import VectorGeometryToolPointCentralBodyIntersect
+    from ansys.stk.core.analysis_workbench import (
+        VectorGeometryToolPointCentralBodyIntersect,
+    )
 
 
 Property detail

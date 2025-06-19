@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -30,7 +30,7 @@ Overview
               - Return an Access object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

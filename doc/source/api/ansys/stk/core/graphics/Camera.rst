@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,7 +52,7 @@ Overview
               - Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

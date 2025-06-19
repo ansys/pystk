@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -34,7 +34,7 @@ Overview
               - Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

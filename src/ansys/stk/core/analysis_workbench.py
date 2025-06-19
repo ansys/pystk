@@ -28,111 +28,111 @@ systems, compute first and second derivatives, or perform other types of
 analysis.
 """
 
-__all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "AnalysisWorkbenchAngleFindAngleWithRateResult", 
-"AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", "AnalysisWorkbenchAxesFindInAxesResult", 
-"AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", "AnalysisWorkbenchAxesTransformWithRateResult", 
-"AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent", 
-"AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", "AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate", 
-"AnalysisWorkbenchComponentTypeInformation", "AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchIntegral", 
-"AnalysisWorkbenchInterpolator", "AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult", 
-"AnalysisWorkbenchPlaneFindInSystemResult", "AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult", 
-"AnalysisWorkbenchPointLocateInSystemWithRateResult", "AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", 
-"AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", "AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult", 
-"AnalysisWorkbenchVectorFindInAxesResult", "AnalysisWorkbenchVectorFindInAxesWithRateResult", "AngleToLocationType", "AngleType", 
-"AsymptoteDirectionType", "AxesType", "CalculationScalarType", "CalculationToolCondition", "CalculationToolConditionCombined", 
-"CalculationToolConditionFactory", "CalculationToolConditionGroup", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet", 
-"CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory", 
-"CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", "CalculationToolConditionTrajectoryWithinVolume", 
-"CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", "CalculationToolEvaluateResult", "CalculationToolEvaluateWithRateResult", 
-"CalculationToolIntegralBasic", "CalculationToolInterpolatorBasic", "CalculationToolParameterSet", "CalculationToolParameterSetAttitude", 
-"CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", "CalculationToolParameterSetGroup", 
-"CalculationToolParameterSetOrbit", "CalculationToolParameterSetTrajectory", "CalculationToolParameterSetVector", "CalculationToolSamplingBasic", 
-"CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep", "CalculationToolSamplingMethod", "CalculationToolSamplingMethodFactory", 
-"CalculationToolSamplingRelativeTolerance", "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", "CalculationToolScalarAngle", 
-"CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom", "CalculationToolScalarCustomInlineScript", 
-"CalculationToolScalarDataElement", "CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime", 
-"CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction", 
-"CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral", "CalculationToolScalarPlugin", 
-"CalculationToolScalarStandardDeviation", "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent", 
-"CalculationToolScalarVectorMagnitude", "ClockHostType", "ConditionCombinedOperationType", "ConditionSetType", "ConditionThresholdType", 
-"ConditionType", "DistanceToLocationType", "EventArrayFilterType", "EventArrayType", "EventIntervalCollectionType", "EventIntervalListType", 
-"EventIntervalType", "EventListMergeOperation", "ExtremumType", "FileInterpolatorType", "GridValuesMethodType", "IAnalysisWorkbenchComponent", 
-"IAnalysisWorkbenchComponentContext", "IAnalysisWorkbenchComponentReference", "IAnalysisWorkbenchComponentTimeProperties", 
-"IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", "IAnalysisWorkbenchIntegral", "IAnalysisWorkbenchInterpolator", 
-"IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", "IAnalysisWorkbenchSignalDelay", "ICalculationToolCondition", 
-"ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", "ICalculationToolScalar", 
-"ISpatialAnalysisToolGridValuesMethod", "ISpatialAnalysisToolSpatialCalculation", "ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid", 
-"ITimeToolInstant", "ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection", 
-"ITimeToolTimeIntervalList", "IVectorGeometryToolAngle", "IVectorGeometryToolAxes", "IVectorGeometryToolPlane", "IVectorGeometryToolPoint", 
-"IVectorGeometryToolSystem", "IVectorGeometryToolVector", "InheritDimensionType", "IntegrationWindowType", "InterpolationMethodType", 
-"IntersectionSurfaceType", "IntervalDurationType", "IntervalFromIntervalListSelectionType", "IntervalPruneFilterType", "LagrangeLibrationPointType", 
-"LightingConditionsType", "MeanElementTheory", "ParameterSetType", "PlaneQuadrantType", "PlaneType", "PointBPlaneType", 
-"PointType", "PrincipalAxisOfRotationType", "QuadratureType", "RangeSpeedType", "ResultVectorRequestType", "RotationSweepModeType", 
-"SampleReferenceTimeType", "SatisfactionCrossing", "SaveDataType", "SignalDirectionType", "SignalPathReferenceSystem", "SignedAngleType", 
-"SmartEpochState", "SmartIntervalState", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", "SpatialAnalysisToolCalculationAltitude", 
-"SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", "SpatialAnalysisToolCalculationDistanceToLocation", 
-"SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", "SpatialAnalysisToolCalculationFromCalculationScalar", 
-"SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", "SpatialAnalysisToolCalculationSolarIntensity", 
-"SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", "SpatialAnalysisToolConditionConditionAtLocation", 
-"SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", "SpatialAnalysisToolConditionGroup", 
-"SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds", 
-"SpatialAnalysisToolConditionValidTimeAtLocation", "SpatialAnalysisToolGridCoordinateDefinition", "SpatialAnalysisToolGridValuesCustom", 
-"SpatialAnalysisToolGridValuesFixedNumberOfSteps", "SpatialAnalysisToolGridValuesFixedStep", "SpatialAnalysisToolGridValuesMethod", 
-"SpatialAnalysisToolSpatialCalculation", "SpatialAnalysisToolVolume", "SpatialAnalysisToolVolumeGrid", "SpatialAnalysisToolVolumeGridCartesian", 
-"SpatialAnalysisToolVolumeGridConstrained", "SpatialAnalysisToolVolumeGridCylindrical", "SpatialAnalysisToolVolumeGridFactory", 
-"SpatialAnalysisToolVolumeGridGroup", "SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude", "SpatialAnalysisToolVolumeGridResult", 
-"SpatialAnalysisToolVolumeGridSpherical", "SpatialCalculationAltitudeReferenceType", "SpatialCalculationType", "SpatialConditionOverTypeDurationType", 
-"SpeedType", "StartStopType", "SurfaceReferenceShapeType", "SurfaceShapeType", "SystemType", "ThresholdConvergenceSenseType", 
-"TimeEventType", "TimeSenseType", "TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolAxesSamplingResult", 
-"TimeToolInstant", "TimeToolInstantEpoch", "TimeToolInstantExtremum", "TimeToolInstantFactory", "TimeToolInstantGroup", 
-"TimeToolInstantOccurrenceResult", "TimeToolInstantSignaled", "TimeToolInstantSmartEpoch", "TimeToolInstantStartStopTime", 
-"TimeToolInstantTimeOffset", "TimeToolInterval", "TimeToolIntervalCollection", "TimeToolIntervalListResult", "TimeToolIntervalVectorCollection", 
-"TimeToolIntervalsFilter", "TimeToolIntervalsVectorResult", "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection", 
-"TimeToolPointSamplingResult", "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolSignalDelayBasic", "TimeToolTimeArray", 
-"TimeToolTimeArrayConditionCrossings", "TimeToolTimeArrayExtrema", "TimeToolTimeArrayFactory", "TimeToolTimeArrayFiltered", 
-"TimeToolTimeArrayFindTimesResult", "TimeToolTimeArrayFixedStep", "TimeToolTimeArrayFixedTimes", "TimeToolTimeArrayGroup", 
-"TimeToolTimeArrayMerged", "TimeToolTimeArraySignaled", "TimeToolTimeArrayStartStopTimes", "TimeToolTimeInterval", "TimeToolTimeIntervalBetweenTimeInstants", 
-"TimeToolTimeIntervalCollection", "TimeToolTimeIntervalCollectionCondition", "TimeToolTimeIntervalCollectionFactory", "TimeToolTimeIntervalCollectionGroup", 
-"TimeToolTimeIntervalCollectionLighting", "TimeToolTimeIntervalCollectionOccurredResult", "TimeToolTimeIntervalCollectionSignaled", 
-"TimeToolTimeIntervalFactory", "TimeToolTimeIntervalFirstIntervalsFilter", "TimeToolTimeIntervalFixed", "TimeToolTimeIntervalFixedDuration", 
-"TimeToolTimeIntervalFromIntervalList", "TimeToolTimeIntervalGapsFilter", "TimeToolTimeIntervalGroup", "TimeToolTimeIntervalLastIntervalsFilter", 
-"TimeToolTimeIntervalList", "TimeToolTimeIntervalListCondition", "TimeToolTimeIntervalListFactory", "TimeToolTimeIntervalListFile", 
-"TimeToolTimeIntervalListFiltered", "TimeToolTimeIntervalListFixed", "TimeToolTimeIntervalListGroup", "TimeToolTimeIntervalListMerged", 
-"TimeToolTimeIntervalListScaled", "TimeToolTimeIntervalListSignaled", "TimeToolTimeIntervalListTimeOffset", "TimeToolTimeIntervalRelativeSatisfactionConditionFilter", 
-"TimeToolTimeIntervalResult", "TimeToolTimeIntervalSatisfactionConditionFilter", "TimeToolTimeIntervalScaled", "TimeToolTimeIntervalSignaled", 
-"TimeToolTimeIntervalSmartInterval", "TimeToolTimeIntervalTimeOffset", "TrajectoryAxesCoordinatesType", "VectorComponentType", 
-"VectorGeometryToolAngle", "VectorGeometryToolAngleBetweenPlanes", "VectorGeometryToolAngleBetweenVectors", "VectorGeometryToolAngleDihedral", 
-"VectorGeometryToolAngleFactory", "VectorGeometryToolAngleGroup", "VectorGeometryToolAngleReference", "VectorGeometryToolAngleRotation", 
-"VectorGeometryToolAngleToPlane", "VectorGeometryToolAxes", "VectorGeometryToolAxesAlignedAndConstrained", "VectorGeometryToolAxesAngularOffset", 
-"VectorGeometryToolAxesAtTimeInstant", "VectorGeometryToolAxesAttitudeFile", "VectorGeometryToolAxesBPlane", "VectorGeometryToolAxesCommonTasks", 
-"VectorGeometryToolAxesCustomScript", "VectorGeometryToolAxesFactory", "VectorGeometryToolAxesFixed", "VectorGeometryToolAxesFixedAtEpoch", 
-"VectorGeometryToolAxesGroup", "VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", "VectorGeometryToolAxesModelAttachment", 
-"VectorGeometryToolAxesOnSurface", "VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesReference", "VectorGeometryToolAxesSpinning", 
-"VectorGeometryToolAxesTrajectory", "VectorGeometryToolComponentType", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", 
-"VectorGeometryToolPlaneGroup", "VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", 
-"VectorGeometryToolPlaneReference", "VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", 
-"VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset", 
-"VectorGeometryToolPointCentralBodyIntersect", "VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing", 
-"VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint", 
-"VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttachment", 
-"VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", 
-"VectorGeometryToolPointPlugin", "VectorGeometryToolPointReference", "VectorGeometryToolPointSatelliteCollectionEntry", 
-"VectorGeometryToolSamplingMethod", "VectorGeometryToolScaledVectorDimensionInheritanceOptionType", "VectorGeometryToolSystem", 
-"VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", "VectorGeometryToolSystemGroup", 
-"VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", 
-"VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross", 
-"VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
-"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFile", 
-"VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", 
-"VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", 
-"VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", 
-"VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector", 
-"VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", 
-"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", 
-"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", 
-"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", 
-"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", 
-"VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", 
+__all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "AnalysisWorkbenchAngleFindAngleWithRateResult",
+"AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", "AnalysisWorkbenchAxesFindInAxesResult",
+"AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", "AnalysisWorkbenchAxesTransformWithRateResult",
+"AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent",
+"AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", "AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate",
+"AnalysisWorkbenchComponentTypeInformation", "AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchIntegral",
+"AnalysisWorkbenchInterpolator", "AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult",
+"AnalysisWorkbenchPlaneFindInSystemResult", "AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult",
+"AnalysisWorkbenchPointLocateInSystemWithRateResult", "AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling",
+"AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", "AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult",
+"AnalysisWorkbenchVectorFindInAxesResult", "AnalysisWorkbenchVectorFindInAxesWithRateResult", "AngleToLocationType", "AngleType",
+"AsymptoteDirectionType", "AxesType", "CalculationScalarType", "CalculationToolCondition", "CalculationToolConditionCombined",
+"CalculationToolConditionFactory", "CalculationToolConditionGroup", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet",
+"CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory",
+"CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", "CalculationToolConditionTrajectoryWithinVolume",
+"CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", "CalculationToolEvaluateResult", "CalculationToolEvaluateWithRateResult",
+"CalculationToolIntegralBasic", "CalculationToolInterpolatorBasic", "CalculationToolParameterSet", "CalculationToolParameterSetAttitude",
+"CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", "CalculationToolParameterSetGroup",
+"CalculationToolParameterSetOrbit", "CalculationToolParameterSetTrajectory", "CalculationToolParameterSetVector", "CalculationToolSamplingBasic",
+"CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep", "CalculationToolSamplingMethod", "CalculationToolSamplingMethodFactory",
+"CalculationToolSamplingRelativeTolerance", "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", "CalculationToolScalarAngle",
+"CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom", "CalculationToolScalarCustomInlineScript",
+"CalculationToolScalarDataElement", "CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime",
+"CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction",
+"CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral", "CalculationToolScalarPlugin",
+"CalculationToolScalarStandardDeviation", "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent",
+"CalculationToolScalarVectorMagnitude", "ClockHostType", "ConditionCombinedOperationType", "ConditionSetType", "ConditionThresholdType",
+"ConditionType", "DistanceToLocationType", "EventArrayFilterType", "EventArrayType", "EventIntervalCollectionType", "EventIntervalListType",
+"EventIntervalType", "EventListMergeOperation", "ExtremumType", "FileInterpolatorType", "GridValuesMethodType", "IAnalysisWorkbenchComponent",
+"IAnalysisWorkbenchComponentContext", "IAnalysisWorkbenchComponentReference", "IAnalysisWorkbenchComponentTimeProperties",
+"IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", "IAnalysisWorkbenchIntegral", "IAnalysisWorkbenchInterpolator",
+"IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", "IAnalysisWorkbenchSignalDelay", "ICalculationToolCondition",
+"ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", "ICalculationToolScalar",
+"ISpatialAnalysisToolGridValuesMethod", "ISpatialAnalysisToolSpatialCalculation", "ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid",
+"ITimeToolInstant", "ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection",
+"ITimeToolTimeIntervalList", "IVectorGeometryToolAngle", "IVectorGeometryToolAxes", "IVectorGeometryToolPlane", "IVectorGeometryToolPoint",
+"IVectorGeometryToolSystem", "IVectorGeometryToolVector", "InheritDimensionType", "IntegrationWindowType", "InterpolationMethodType",
+"IntersectionSurfaceType", "IntervalDurationType", "IntervalFromIntervalListSelectionType", "IntervalPruneFilterType", "LagrangeLibrationPointType",
+"LightingConditionsType", "MeanElementTheory", "ParameterSetType", "PlaneQuadrantType", "PlaneType", "PointBPlaneType",
+"PointType", "PrincipalAxisOfRotationType", "QuadratureType", "RangeSpeedType", "ResultVectorRequestType", "RotationSweepModeType",
+"SampleReferenceTimeType", "SatisfactionCrossing", "SaveDataType", "SignalDirectionType", "SignalPathReferenceSystem", "SignedAngleType",
+"SmartEpochState", "SmartIntervalState", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", "SpatialAnalysisToolCalculationAltitude",
+"SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", "SpatialAnalysisToolCalculationDistanceToLocation",
+"SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", "SpatialAnalysisToolCalculationFromCalculationScalar",
+"SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", "SpatialAnalysisToolCalculationSolarIntensity",
+"SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", "SpatialAnalysisToolConditionConditionAtLocation",
+"SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", "SpatialAnalysisToolConditionGroup",
+"SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds",
+"SpatialAnalysisToolConditionValidTimeAtLocation", "SpatialAnalysisToolGridCoordinateDefinition", "SpatialAnalysisToolGridValuesCustom",
+"SpatialAnalysisToolGridValuesFixedNumberOfSteps", "SpatialAnalysisToolGridValuesFixedStep", "SpatialAnalysisToolGridValuesMethod",
+"SpatialAnalysisToolSpatialCalculation", "SpatialAnalysisToolVolume", "SpatialAnalysisToolVolumeGrid", "SpatialAnalysisToolVolumeGridCartesian",
+"SpatialAnalysisToolVolumeGridConstrained", "SpatialAnalysisToolVolumeGridCylindrical", "SpatialAnalysisToolVolumeGridFactory",
+"SpatialAnalysisToolVolumeGridGroup", "SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude", "SpatialAnalysisToolVolumeGridResult",
+"SpatialAnalysisToolVolumeGridSpherical", "SpatialCalculationAltitudeReferenceType", "SpatialCalculationType", "SpatialConditionOverTypeDurationType",
+"SpeedType", "StartStopType", "SurfaceReferenceShapeType", "SurfaceShapeType", "SystemType", "ThresholdConvergenceSenseType",
+"TimeEventType", "TimeSenseType", "TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolAxesSamplingResult",
+"TimeToolInstant", "TimeToolInstantEpoch", "TimeToolInstantExtremum", "TimeToolInstantFactory", "TimeToolInstantGroup",
+"TimeToolInstantOccurrenceResult", "TimeToolInstantSignaled", "TimeToolInstantSmartEpoch", "TimeToolInstantStartStopTime",
+"TimeToolInstantTimeOffset", "TimeToolInterval", "TimeToolIntervalCollection", "TimeToolIntervalListResult", "TimeToolIntervalVectorCollection",
+"TimeToolIntervalsFilter", "TimeToolIntervalsVectorResult", "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection",
+"TimeToolPointSamplingResult", "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolSignalDelayBasic", "TimeToolTimeArray",
+"TimeToolTimeArrayConditionCrossings", "TimeToolTimeArrayExtrema", "TimeToolTimeArrayFactory", "TimeToolTimeArrayFiltered",
+"TimeToolTimeArrayFindTimesResult", "TimeToolTimeArrayFixedStep", "TimeToolTimeArrayFixedTimes", "TimeToolTimeArrayGroup",
+"TimeToolTimeArrayMerged", "TimeToolTimeArraySignaled", "TimeToolTimeArrayStartStopTimes", "TimeToolTimeInterval", "TimeToolTimeIntervalBetweenTimeInstants",
+"TimeToolTimeIntervalCollection", "TimeToolTimeIntervalCollectionCondition", "TimeToolTimeIntervalCollectionFactory", "TimeToolTimeIntervalCollectionGroup",
+"TimeToolTimeIntervalCollectionLighting", "TimeToolTimeIntervalCollectionOccurredResult", "TimeToolTimeIntervalCollectionSignaled",
+"TimeToolTimeIntervalFactory", "TimeToolTimeIntervalFirstIntervalsFilter", "TimeToolTimeIntervalFixed", "TimeToolTimeIntervalFixedDuration",
+"TimeToolTimeIntervalFromIntervalList", "TimeToolTimeIntervalGapsFilter", "TimeToolTimeIntervalGroup", "TimeToolTimeIntervalLastIntervalsFilter",
+"TimeToolTimeIntervalList", "TimeToolTimeIntervalListCondition", "TimeToolTimeIntervalListFactory", "TimeToolTimeIntervalListFile",
+"TimeToolTimeIntervalListFiltered", "TimeToolTimeIntervalListFixed", "TimeToolTimeIntervalListGroup", "TimeToolTimeIntervalListMerged",
+"TimeToolTimeIntervalListScaled", "TimeToolTimeIntervalListSignaled", "TimeToolTimeIntervalListTimeOffset", "TimeToolTimeIntervalRelativeSatisfactionConditionFilter",
+"TimeToolTimeIntervalResult", "TimeToolTimeIntervalSatisfactionConditionFilter", "TimeToolTimeIntervalScaled", "TimeToolTimeIntervalSignaled",
+"TimeToolTimeIntervalSmartInterval", "TimeToolTimeIntervalTimeOffset", "TrajectoryAxesCoordinatesType", "VectorComponentType",
+"VectorGeometryToolAngle", "VectorGeometryToolAngleBetweenPlanes", "VectorGeometryToolAngleBetweenVectors", "VectorGeometryToolAngleDihedral",
+"VectorGeometryToolAngleFactory", "VectorGeometryToolAngleGroup", "VectorGeometryToolAngleReference", "VectorGeometryToolAngleRotation",
+"VectorGeometryToolAngleToPlane", "VectorGeometryToolAxes", "VectorGeometryToolAxesAlignedAndConstrained", "VectorGeometryToolAxesAngularOffset",
+"VectorGeometryToolAxesAtTimeInstant", "VectorGeometryToolAxesAttitudeFile", "VectorGeometryToolAxesBPlane", "VectorGeometryToolAxesCommonTasks",
+"VectorGeometryToolAxesCustomScript", "VectorGeometryToolAxesFactory", "VectorGeometryToolAxesFixed", "VectorGeometryToolAxesFixedAtEpoch",
+"VectorGeometryToolAxesGroup", "VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", "VectorGeometryToolAxesModelAttachment",
+"VectorGeometryToolAxesOnSurface", "VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesReference", "VectorGeometryToolAxesSpinning",
+"VectorGeometryToolAxesTrajectory", "VectorGeometryToolComponentType", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory",
+"VectorGeometryToolPlaneGroup", "VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant",
+"VectorGeometryToolPlaneReference", "VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector",
+"VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset",
+"VectorGeometryToolPointCentralBodyIntersect", "VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing",
+"VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint",
+"VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttachment",
+"VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection",
+"VectorGeometryToolPointPlugin", "VectorGeometryToolPointReference", "VectorGeometryToolPointSatelliteCollectionEntry",
+"VectorGeometryToolSamplingMethod", "VectorGeometryToolScaledVectorDimensionInheritanceOptionType", "VectorGeometryToolSystem",
+"VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", "VectorGeometryToolSystemGroup",
+"VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate",
+"VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross",
+"VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar",
+"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFile",
+"VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes",
+"VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment",
+"VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis",
+"VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector",
+"VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination",
+"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement",
+"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes",
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes",
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType",
+"VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType",
 "VolumeSatisfactionMetricType", "VolumeType"]
 
 from ctypes import POINTER
@@ -160,7 +160,7 @@ def _raise_uninitialized_error(*args):
 
 class CalculationScalarType(IntEnum):
     """Define available calculation scalar types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported calculation scalar types."""
     ANGLE = 0
@@ -230,7 +230,7 @@ agcls.AgTypeNameMap["CalculationScalarType"] = CalculationScalarType
 
 class ConditionCombinedOperationType(IntEnum):
     """Define scalar condition combined operation types."""
-   
+
     AND = 1
     """Scalar condition combined AND operation."""
     OR = 2
@@ -249,7 +249,7 @@ agcls.AgTypeNameMap["ConditionCombinedOperationType"] = ConditionCombinedOperati
 
 class ConditionSetType(IntEnum):
     """Define available condition set types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported condition set types."""
     SCALAR_THRESHOLDS = 0
@@ -262,7 +262,7 @@ agcls.AgTypeNameMap["ConditionSetType"] = ConditionSetType
 
 class ConditionThresholdType(IntEnum):
     """Operations for Scalar Bounds Condition."""
-   
+
     ABOVE_MINIMUM = 1
     """Bound is above a minimum value."""
     BELOW_MAXIMUM = 2
@@ -281,7 +281,7 @@ agcls.AgTypeNameMap["ConditionThresholdType"] = ConditionThresholdType
 
 class ConditionType(IntEnum):
     """Define available condition types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported condition type."""
     SCALAR_BOUNDS = 0
@@ -300,7 +300,7 @@ agcls.AgTypeNameMap["ConditionType"] = ConditionType
 
 class InheritDimensionType(IntEnum):
     """Define how dimension is inherited."""
-   
+
     NONE = 0
     """Do not inherit dimension."""
     FROM_X = 1
@@ -316,7 +316,7 @@ agcls.AgTypeNameMap["InheritDimensionType"] = InheritDimensionType
 
 class EventArrayFilterType(IntEnum):
     """Event array filter types."""
-   
+
     SKIP_TIME_STEP = 0
     """Skip time step."""
     SKIP_COUNT = 1
@@ -332,7 +332,7 @@ agcls.AgTypeNameMap["EventArrayFilterType"] = EventArrayFilterType
 
 class EventArrayType(IntEnum):
     """Define available time array types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported time array types."""
     EXTREMA = 0
@@ -366,7 +366,7 @@ agcls.AgTypeNameMap["EventArrayType"] = EventArrayType
 
 class EventIntervalCollectionType(IntEnum):
     """Define available interval collection types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported interval collection types."""
     LIGHTING = 0
@@ -385,7 +385,7 @@ agcls.AgTypeNameMap["EventIntervalCollectionType"] = EventIntervalCollectionType
 
 class EventIntervalListType(IntEnum):
     """Define available interval list types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported interval list types."""
     MERGED = 1
@@ -419,7 +419,7 @@ agcls.AgTypeNameMap["EventIntervalListType"] = EventIntervalListType
 
 class EventIntervalType(IntEnum):
     """Define available interval types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported interval types."""
     FIXED = 0
@@ -453,7 +453,7 @@ agcls.AgTypeNameMap["EventIntervalType"] = EventIntervalType
 
 class EventListMergeOperation(IntEnum):
     """Define merge operations for interval lists."""
-   
+
     AND = 0
     """Intervals both in A and B."""
     OR = 1
@@ -472,7 +472,7 @@ agcls.AgTypeNameMap["EventListMergeOperation"] = EventListMergeOperation
 
 class TimeEventType(IntEnum):
     """Define available time instant types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported time instant types."""
     EPOCH = 0
@@ -500,7 +500,7 @@ agcls.AgTypeNameMap["TimeEventType"] = TimeEventType
 
 class ExtremumType(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
-   
+
     MINIMUM = 1
     """Find the minimum value."""
     MAXIMUM = 2
@@ -513,7 +513,7 @@ agcls.AgTypeNameMap["ExtremumType"] = ExtremumType
 
 class FileInterpolatorType(IntEnum):
     """Interpolator types."""
-   
+
     INVALID = -1
     """Unknown or invalid interpolator."""
     LAGRANGE = 1
@@ -538,7 +538,7 @@ agcls.AgTypeNameMap["FileInterpolatorType"] = FileInterpolatorType
 
 class QuadratureType(IntEnum):
     """Integral types."""
-   
+
     FIXED_STEP_SIMPSON = 2
     """Simpson integral method."""
     FIXED_STEP_TRAPEZOID = 1
@@ -554,7 +554,7 @@ agcls.AgTypeNameMap["QuadratureType"] = QuadratureType
 
 class IntegrationWindowType(IntEnum):
     """Define the interval of times during which an integral is evaluated."""
-   
+
     TOTAL = 0
     """Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
     CUMULATIVE_TO_CURRENT = 1
@@ -573,7 +573,7 @@ agcls.AgTypeNameMap["IntegrationWindowType"] = IntegrationWindowType
 
 class InterpolationMethodType(IntEnum):
     """Interpolator types."""
-   
+
     INVALID = -1
     """Unknown or invalid interpolator."""
     LAGRANGE = 1
@@ -589,7 +589,7 @@ agcls.AgTypeNameMap["InterpolationMethodType"] = InterpolationMethodType
 
 class IntervalDurationType(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays."""
-   
+
     AT_LEAST = 0
     """Filter by at least a specified number of seconds."""
     AT_MOST = 1
@@ -602,7 +602,7 @@ agcls.AgTypeNameMap["IntervalDurationType"] = IntervalDurationType
 
 class IntervalFromIntervalListSelectionType(IntEnum):
     """Select the method to choose an interval from an interval list."""
-   
+
     FROM_START = 1
     """Select an interval by counting a specified number from the first interval."""
     FROM_END = 2
@@ -630,7 +630,7 @@ agcls.AgTypeNameMap["IntervalFromIntervalListSelectionType"] = IntervalFromInter
 
 class ParameterSetType(IntEnum):
     """Define parameter set types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported parameter set."""
     ATTITUDE = 0
@@ -655,7 +655,7 @@ agcls.AgTypeNameMap["ParameterSetType"] = ParameterSetType
 
 class IntervalPruneFilterType(IntEnum):
     """Specify the filter for filtering interval lists or time arrays."""
-   
+
     UNKNOWN = 0
     """Unknown or unsupported prune filter."""
     FIRST_INTERVALS = 1
@@ -683,7 +683,7 @@ agcls.AgTypeNameMap["IntervalPruneFilterType"] = IntervalPruneFilterType
 
 class SampleReferenceTimeType(IntEnum):
     """Event array reference type."""
-   
+
     TIME_INSTANT = 0
     """Use a Time Instant as the reference time."""
     START_OF_EACH_INTERVAL = 1
@@ -705,7 +705,7 @@ agcls.AgTypeNameMap["SampleReferenceTimeType"] = SampleReferenceTimeType
 
 class VectorGeometryToolSamplingMethod(IntEnum):
     """Define the Sampling Method."""
-   
+
     UNKNOWN = 0
     """Unknown or unsupported sampling method."""
     FIXED_STEP = 1
@@ -724,7 +724,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSamplingMethod"] = VectorGeometryToolSamp
 
 class SatisfactionCrossing(IntEnum):
     """Direction crossing flags."""
-   
+
     NONE = 0
     """Use either off-to-on or on-to-off condition to determine satisfaction."""
     IN = 1
@@ -740,7 +740,7 @@ agcls.AgTypeNameMap["SatisfactionCrossing"] = SatisfactionCrossing
 
 class SaveDataType(IntEnum):
     """Method for saving computed data."""
-   
+
     APPLICATION_SETTINGS = -1
     """Use the application setting to determine whether computed data should be saved/loaded."""
     YES = 100
@@ -756,7 +756,7 @@ agcls.AgTypeNameMap["SaveDataType"] = SaveDataType
 
 class SignalPathReferenceSystem(IntEnum):
     """Signal path reference system types."""
-   
+
     USE_ACCESS_DEFAULT = -1
     """Use Access default system."""
     CENTRAL_BODY_INERTIAL = 0
@@ -775,7 +775,7 @@ agcls.AgTypeNameMap["SignalPathReferenceSystem"] = SignalPathReferenceSystem
 
 class SmartEpochState(IntEnum):
     """Smart epoch states."""
-   
+
     EXPLICIT = 0
     """Smart epoch is specified explicitly using a time."""
     IMPLICIT = 3
@@ -788,7 +788,7 @@ agcls.AgTypeNameMap["SmartEpochState"] = SmartEpochState
 
 class SmartIntervalState(IntEnum):
     """Smart interval states."""
-   
+
     EXPLICIT = 0
     """Smart interval is specified explicitly using start/stop times."""
     IMPLICIT = 1
@@ -810,7 +810,7 @@ agcls.AgTypeNameMap["SmartIntervalState"] = SmartIntervalState
 
 class SpeedType(IntEnum):
     """Define various speed options."""
-   
+
     LIGHT_TRANSMISSION_SPEED = 1
     """Light transmission speed."""
     CUSTOM_TRANSMISSION_SPEED = 2
@@ -823,7 +823,7 @@ agcls.AgTypeNameMap["SpeedType"] = SpeedType
 
 class StartStopType(IntEnum):
     """Start/stop options."""
-   
+
     COUNT_START_ONLY = 1
     """Use the start time of the interval."""
     COUNT_STOP_ONLY = 2
@@ -839,7 +839,7 @@ agcls.AgTypeNameMap["StartStopType"] = StartStopType
 
 class ThresholdConvergenceSenseType(IntEnum):
     """Specify the desired sense of the results from threshold crossing computations."""
-   
+
     SIMPLE = 0
     """Just converge within tolerance."""
     ABOVE = 1
@@ -855,7 +855,7 @@ agcls.AgTypeNameMap["ThresholdConvergenceSenseType"] = ThresholdConvergenceSense
 
 class VectorComponentType(IntEnum):
     """Define component directions for a vector."""
-   
+
     X = 0
     """X component."""
     Y = 1
@@ -880,7 +880,7 @@ agcls.AgTypeNameMap["VectorComponentType"] = VectorComponentType
 
 class SpatialCalculationAltitudeReferenceType(IntEnum):
     """Define volume calc altitude reference types."""
-   
+
     ELLIPSOID = 0
     """Volume calc altitude above reference ellipsoid."""
     TERRAIN = 1
@@ -896,7 +896,7 @@ agcls.AgTypeNameMap["SpatialCalculationAltitudeReferenceType"] = SpatialCalculat
 
 class AngleToLocationType(IntEnum):
     """Define volume calc angle off vector reference types."""
-   
+
     FROM_PLANE_SIGNED = 1
     """Volume calc angle off plane signed."""
     FROM_PLANE_UNSIGNED = 2
@@ -918,7 +918,7 @@ agcls.AgTypeNameMap["AngleToLocationType"] = AngleToLocationType
 
 class DistanceToLocationType(IntEnum):
     """Define volume calc range distance types."""
-   
+
     FROM_POINT = 0
     """Volume calc range distance type from point."""
     ALONG_VECTOR_SIGNED = 1
@@ -940,7 +940,7 @@ agcls.AgTypeNameMap["DistanceToLocationType"] = DistanceToLocationType
 
 class RangeSpeedType(IntEnum):
     """Define volume calc range distance types."""
-   
+
     LIGHT_SPEED = 1
     """Volume calc range distance type from point."""
     CUSTOM = 2
@@ -953,7 +953,7 @@ agcls.AgTypeNameMap["RangeSpeedType"] = RangeSpeedType
 
 class SpatialCalculationType(IntEnum):
     """Define volume calc types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported volume calc."""
     ALTITUDE_AT_LOCATION = 0
@@ -987,7 +987,7 @@ agcls.AgTypeNameMap["SpatialCalculationType"] = SpatialCalculationType
 
 class VolumeSatisfactionAccumulationType(IntEnum):
     """Define volume calc spatial condition accumulation types."""
-   
+
     UP_TO_CURRENT_TIME = -1
     """Volume calc spatial condition satisfaction accumulation type up to current time."""
     CURRENT_TIME = 0
@@ -1006,7 +1006,7 @@ agcls.AgTypeNameMap["VolumeSatisfactionAccumulationType"] = VolumeSatisfactionAc
 
 class VolumeSatisfactionDurationType(IntEnum):
     """Define volume calc spatial condition duration types."""
-   
+
     MINIMUM = -1
     """Volume calc spatial condition satisfaction duration type minimum."""
     SUM = 0
@@ -1022,7 +1022,7 @@ agcls.AgTypeNameMap["VolumeSatisfactionDurationType"] = VolumeSatisfactionDurati
 
 class VolumeSatisfactionFilterType(IntEnum):
     """Define volume calc spatial condition filter types."""
-   
+
     FIRST_INTERVALS = -10
     """Volume calc spatial condition satisfaction filter type first intervals."""
     LAST_INTERVALS = -20
@@ -1044,7 +1044,7 @@ agcls.AgTypeNameMap["VolumeSatisfactionFilterType"] = VolumeSatisfactionFilterTy
 
 class VolumeSatisfactionMetricType(IntEnum):
     """Define volume calc spatial condition satisfaction metric types."""
-   
+
     NUMBER_OF_GAPS = -2
     """Volume calc spatial condition satisfaction metric type number of gaps."""
     NUMBER_OF_INTERVALS = -1
@@ -1069,7 +1069,7 @@ agcls.AgTypeNameMap["VolumeSatisfactionMetricType"] = VolumeSatisfactionMetricTy
 
 class VolumeGridType(IntEnum):
     """Define volume grid types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported volume grid."""
     CARTESIAN = 0
@@ -1097,7 +1097,7 @@ agcls.AgTypeNameMap["VolumeGridType"] = VolumeGridType
 
 class ResultVectorRequestType(IntEnum):
     """Define volume result vector request types."""
-   
+
     POSITION = 1
     """volume result vector request pos type."""
     NATIVE_POSITION = 2
@@ -1119,7 +1119,7 @@ agcls.AgTypeNameMap["ResultVectorRequestType"] = ResultVectorRequestType
 
 class VolumeType(IntEnum):
     """Define volume grid types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported volume."""
     COMBINED = 0
@@ -1153,7 +1153,7 @@ agcls.AgTypeNameMap["VolumeType"] = VolumeType
 
 class AberrationModelType(IntEnum):
     """Define the model of aberration to use."""
-   
+
     UNKNOWN = -1
     """Aberration type unknown."""
     TOTAL = 0
@@ -1172,7 +1172,7 @@ agcls.AgTypeNameMap["AberrationModelType"] = AberrationModelType
 
 class ClockHostType(IntEnum):
     """Define whether base or target of an Access instance holds the clock for Access times."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BASE = 0
@@ -1188,7 +1188,7 @@ agcls.AgTypeNameMap["ClockHostType"] = ClockHostType
 
 class VolumeCombinedOperationType(IntEnum):
     """Define spatial condition combined operation types."""
-   
+
     AND = 1
     """Spatial condition combined AND operation."""
     OR = 2
@@ -1207,7 +1207,7 @@ agcls.AgTypeNameMap["VolumeCombinedOperationType"] = VolumeCombinedOperationType
 
 class VolumeFromGridEdgeType(IntEnum):
     """Define spatial condition from grid edge type."""
-   
+
     MASK_POINTS = 16
     """Spatial condition over time from grid edge type mask points."""
     MASK_VOXELS = 32
@@ -1220,7 +1220,7 @@ agcls.AgTypeNameMap["VolumeFromGridEdgeType"] = VolumeFromGridEdgeType
 
 class LightingConditionsType(IntFlag):
     """Define spatial condition lighting conditions types."""
-   
+
     UNDEFINED = 0
     """Spatial condition lighting undefined."""
     SUNLIGHT = 1
@@ -1239,7 +1239,7 @@ agcls.AgTypeNameMap["LightingConditionsType"] = LightingConditionsType
 
 class SpatialConditionOverTypeDurationType(IntEnum):
     """Define spatial condition over time duration type."""
-   
+
     STATIC = 0
     """Spatial condition over time duration type Static."""
     CUMULATIVE_TO_CURRENT_TIME = 1
@@ -1258,7 +1258,7 @@ agcls.AgTypeNameMap["SpatialConditionOverTypeDurationType"] = SpatialConditionOv
 
 class TimeSenseType(IntEnum):
     """Define whether object1 or object2 of an Access instance holds the clock for Access times."""
-   
+
     UNKNOWN = -1
     """Unklnown."""
     TRANSMIT = 0
@@ -1274,7 +1274,7 @@ agcls.AgTypeNameMap["TimeSenseType"] = TimeSenseType
 
 class GridValuesMethodType(IntEnum):
     """Define volumetric grid values method types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupportedgrid values method."""
     FIXED_NUMBER_OF_STEPS = 0
@@ -1293,7 +1293,7 @@ agcls.AgTypeNameMap["GridValuesMethodType"] = GridValuesMethodType
 
 class VectorGeometryToolComponentType(IntEnum):
     """Represents kinds of vectory geometry components."""
-   
+
     UNKNOWN = -1
     """Unsupported component kind."""
     INVALID = 0
@@ -1360,7 +1360,7 @@ agcls.AgTypeNameMap["VectorGeometryToolComponentType"] = VectorGeometryToolCompo
 
 class AngleType(IntEnum):
     """Represents angle types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported type."""
     BETWEEN_VECTORS = 0
@@ -1388,7 +1388,7 @@ agcls.AgTypeNameMap["AngleType"] = AngleType
 
 class AxesType(IntEnum):
     """Represents vector types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported type."""
     LAGRANGE_LIBRATION = 0
@@ -1443,7 +1443,7 @@ agcls.AgTypeNameMap["AxesType"] = AxesType
 
 class PlaneType(IntEnum):
     """Represents plane types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported type."""
     NORMAL = 0
@@ -1471,7 +1471,7 @@ agcls.AgTypeNameMap["PlaneType"] = PlaneType
 
 class PointType(IntEnum):
     """Represents point types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported type."""
     B_PLANE = 0
@@ -1532,7 +1532,7 @@ agcls.AgTypeNameMap["PointType"] = PointType
 
 class SystemType(IntEnum):
     """Represents system types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported system type."""
     ASSEMBLED = 0
@@ -1551,7 +1551,7 @@ agcls.AgTypeNameMap["SystemType"] = SystemType
 
 class VectorType(IntEnum):
     """Represents vector types."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported vector type."""
     DISPLACEMENT = 0
@@ -1657,7 +1657,7 @@ agcls.AgTypeNameMap["VectorType"] = VectorType
 
 class MeanElementTheory(IntEnum):
     """Mean element theory types for approximating motion."""
-   
+
     OSCULATING_ELEMENTS = 1
     """Osculating elements (six standard Keplerian orbital elements)."""
     KOZAI = 2
@@ -1676,7 +1676,7 @@ agcls.AgTypeNameMap["MeanElementTheory"] = MeanElementTheory
 
 class AsymptoteDirectionType(IntEnum):
     """Direction options."""
-   
+
     INCOMING = 1
     """Incoming direction."""
     OUTGOING = 2
@@ -1689,7 +1689,7 @@ agcls.AgTypeNameMap["AsymptoteDirectionType"] = AsymptoteDirectionType
 
 class LagrangeLibrationPointType(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
-   
+
     L1 = 1
     """A point between the Sun and Earth."""
     L2 = 2
@@ -1711,7 +1711,7 @@ agcls.AgTypeNameMap["LagrangeLibrationPointType"] = LagrangeLibrationPointType
 
 class PlaneQuadrantType(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY)."""
-   
+
     XY = 1
     """XY quadrant."""
     YX = 2
@@ -1736,7 +1736,7 @@ agcls.AgTypeNameMap["PlaneQuadrantType"] = PlaneQuadrantType
 
 class TrajectoryAxesCoordinatesType(IntEnum):
     """Trajectory axes coordinate types."""
-   
+
     ICR = 0
     """Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."""
     VNC = 1
@@ -1767,7 +1767,7 @@ agcls.AgTypeNameMap["TrajectoryAxesCoordinatesType"] = TrajectoryAxesCoordinates
 
 class PrincipalAxisOfRotationType(IntEnum):
     """Rotation directions."""
-   
+
     X = 0
     """Rotate about Axis X."""
     Y = 1
@@ -1783,7 +1783,7 @@ agcls.AgTypeNameMap["PrincipalAxisOfRotationType"] = PrincipalAxisOfRotationType
 
 class SignedAngleType(IntEnum):
     """Define options for computing an angle."""
-   
+
     NONE = 0
     """Choose the option to use unsigned angle."""
     POSITIVE = 1
@@ -1799,7 +1799,7 @@ agcls.AgTypeNameMap["SignedAngleType"] = SignedAngleType
 
 class PointBPlaneType(IntEnum):
     """B-Plane point types."""
-   
+
     ASYMPTOTE = 1
     """Asymptote."""
     TWO_BODY = 2
@@ -1812,7 +1812,7 @@ agcls.AgTypeNameMap["PointBPlaneType"] = PointBPlaneType
 
 class SurfaceReferenceShapeType(IntEnum):
     """Surface shape types."""
-   
+
     ELLIPSOID = 1
     """An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."""
     TERRAIN = 2
@@ -1828,7 +1828,7 @@ agcls.AgTypeNameMap["SurfaceReferenceShapeType"] = SurfaceReferenceShapeType
 
 class SurfaceShapeType(IntEnum):
     """Surface types."""
-   
+
     DETIC = 1
     """Detic surface model."""
     CENTRIC = 2
@@ -1841,7 +1841,7 @@ agcls.AgTypeNameMap["SurfaceShapeType"] = SurfaceShapeType
 
 class RotationSweepModeType(IntEnum):
     """The rotation sweeping modes."""
-   
+
     BIDIRECTIONAL = 1
     """Bidirectional sweeping mode."""
     UNIDIRECTIONAL = 2
@@ -1854,7 +1854,7 @@ agcls.AgTypeNameMap["RotationSweepModeType"] = RotationSweepModeType
 
 class SignalDirectionType(IntEnum):
     """Signal sense transmission options."""
-   
+
     RECEIVE = 1
     """Signal receive."""
     TRANSMIT = 2
@@ -1867,7 +1867,7 @@ agcls.AgTypeNameMap["SignalDirectionType"] = SignalDirectionType
 
 class IntersectionSurfaceType(IntEnum):
     """Intersection surface flags."""
-   
+
     ON_CENTRAL_BODY_ELLIPSOID = 0
     """Intersection with central body ellipsoid."""
     AT_ALTITUDE_ABOVE_ELLIPSOID = 1
@@ -1883,7 +1883,7 @@ agcls.AgTypeNameMap["IntersectionSurfaceType"] = IntersectionSurfaceType
 
 class VectorGeometryToolScaledVectorDimensionInheritanceOptionType(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
-   
+
     NONE = 0
     """Do not inherit dimension."""
     FROM_CALCULATION_SCALAR = 1
@@ -1924,7 +1924,7 @@ class IVectorGeometryToolPoint(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPoint, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PointType),) }
@@ -1979,7 +1979,7 @@ class IVectorGeometryToolVector(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVector, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VectorType),) }
@@ -2035,7 +2035,7 @@ class IVectorGeometryToolSystem(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystem, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SystemType),) }
@@ -2103,7 +2103,7 @@ class IVectorGeometryToolAxes(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxes, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AxesType),) }
@@ -2210,7 +2210,7 @@ class IVectorGeometryToolAngle(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngle, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AngleType),) }
@@ -2282,7 +2282,7 @@ class IVectorGeometryToolPlane(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlane, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PlaneType),) }
@@ -2358,7 +2358,7 @@ class IAnalysisWorkbenchComponentContext(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentContext, None)
-    
+
     _get_is_template_metadata = { "offset" : _get_is_template_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -2415,7 +2415,7 @@ class IAnalysisWorkbenchComponent(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponent, None)
-    
+
     _get_component_type_metadata = { "offset" : _get_component_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VectorGeometryToolComponentType),) }
@@ -2614,7 +2614,7 @@ class ICalculationToolScalar(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalar, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CalculationScalarType),) }
@@ -2727,7 +2727,7 @@ class ICalculationToolCondition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolCondition, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConditionType),) }
@@ -2782,7 +2782,7 @@ class ICalculationToolConditionSet(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSet, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConditionSetType),) }
@@ -2834,7 +2834,7 @@ class IAnalysisWorkbenchConvergence(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchConvergence, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4915568931125686564, 3473459645036490151), IAnalysisWorkbenchConvergence)
@@ -2863,7 +2863,7 @@ class IAnalysisWorkbenchDerivative(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchDerivative, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5545857981522920125, 18254938137483007413), IAnalysisWorkbenchDerivative)
@@ -2899,7 +2899,7 @@ class ITimeToolInstant(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolInstant, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TimeEventType),) }
@@ -2989,7 +2989,7 @@ class ITimeToolTimeArray(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolTimeArray, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EventArrayType),) }
@@ -3041,7 +3041,7 @@ class ITimeToolTimeInterval(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolTimeInterval, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EventIntervalType),) }
@@ -3133,7 +3133,7 @@ class ITimeToolTimeIntervalCollection(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolTimeIntervalCollection, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EventIntervalCollectionType),) }
@@ -3199,7 +3199,7 @@ class ITimeToolTimeIntervalList(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolTimeIntervalList, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EventIntervalListType),) }
@@ -3269,7 +3269,7 @@ class IAnalysisWorkbenchIntegral(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchIntegral, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4882407970628127095, 17356507896756110225), IAnalysisWorkbenchIntegral)
@@ -3298,7 +3298,7 @@ class IAnalysisWorkbenchInterpolator(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchInterpolator, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5176727654361637888, 17197923576813057165), IAnalysisWorkbenchInterpolator)
@@ -3333,7 +3333,7 @@ class ICalculationToolParameterSet(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSet, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ParameterSetType),) }
@@ -3413,7 +3413,7 @@ class ITimeToolPruneFilter(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPruneFilter, None)
-    
+
     _get_filter_type_metadata = { "offset" : _get_filter_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(IntervalPruneFilterType),) }
@@ -3451,7 +3451,7 @@ class IAnalysisWorkbenchSampling(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSampling, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5454263766504862323, 6397342263310433470), IAnalysisWorkbenchSampling)
@@ -3481,7 +3481,7 @@ class ICalculationToolSamplingMethod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingMethod, None)
-    
+
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VectorGeometryToolSamplingMethod),) }
@@ -3519,7 +3519,7 @@ class IAnalysisWorkbenchSignalDelay(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSignalDelay, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4836052727854610771, 2658301614566846344), IAnalysisWorkbenchSignalDelay)
@@ -3549,7 +3549,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesMethod, None)
-    
+
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GridValuesMethodType),) }
@@ -3587,7 +3587,7 @@ class ISpatialAnalysisToolVolume(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolume, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4841356890486692076, 2175121878908514689), ISpatialAnalysisToolVolume)
@@ -3616,7 +3616,7 @@ class ISpatialAnalysisToolSpatialCalculation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolSpatialCalculation, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4788088731026599523, 14975002087762860939), ISpatialAnalysisToolSpatialCalculation)
@@ -3645,7 +3645,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGrid, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4872197438153942913, 17020680151074665636), ISpatialAnalysisToolVolumeGrid)
@@ -3675,7 +3675,7 @@ class IAnalysisWorkbenchComponentTimeProperties(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentTimeProperties, None)
-    
+
     _get_availability_metadata = { "offset" : _get_availability_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -3712,7 +3712,7 @@ class IAnalysisWorkbenchComponentReference(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentReference, None)
-    
+
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -3751,7 +3751,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchMethodCallResult, None)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -3782,7 +3782,7 @@ class CalculationToolEvaluateResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolEvaluateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -3833,7 +3833,7 @@ class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolEvaluateWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -3892,7 +3892,7 @@ class TimeToolTimeIntervalResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -3942,7 +3942,7 @@ class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantOccurrenceResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -3995,7 +3995,7 @@ class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayFindTimesResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -4072,7 +4072,7 @@ class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolIntervalsVectorResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -4122,7 +4122,7 @@ class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionOccurredResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -4172,7 +4172,7 @@ class TimeToolIntervalListResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolIntervalListResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -4236,7 +4236,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -4316,7 +4316,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4442,7 +4442,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4568,7 +4568,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4694,7 +4694,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4820,7 +4820,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -4946,7 +4946,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5072,7 +5072,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5198,7 +5198,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5324,7 +5324,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5430,7 +5430,7 @@ class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionSetEvaluateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -5481,7 +5481,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionSetEvaluateWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -5560,7 +5560,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5686,7 +5686,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5812,7 +5812,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -5939,7 +5939,7 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchCompo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarAngle)
-    
+
     _get_input_angle_metadata = { "offset" : _get_input_angle_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6014,7 +6014,7 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarAverage)
-    
+
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6251,7 +6251,7 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarConstant)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -6322,7 +6322,7 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarCustom)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -6405,7 +6405,7 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarCustomInlineScript)
-    
+
     _get_script_type_metadata = { "offset" : _get_script_type_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -6532,7 +6532,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarDataElement)
-    
+
     _get_data_provider_metadata = { "offset" : _get_data_provider_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -6693,7 +6693,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarDerivative)
-    
+
     _get_scalar_metadata = { "offset" : _get_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6785,7 +6785,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarDotProduct)
-    
+
     _get_vector_a_metadata = { "offset" : _get_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6901,7 +6901,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarElapsedTime)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -6975,7 +6975,7 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarFactory)
-    
+
     _get_available_plugin_display_names_metadata = { "offset" : _get_available_plugin_display_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -7185,7 +7185,7 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -7301,7 +7301,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarFixedAtTimeInstant)
-    
+
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -7398,7 +7398,7 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarFunction)
-    
+
     _get_use_calculation_scalar_metadata = { "offset" : _get_use_calculation_scalar_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -7704,7 +7704,7 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarFunctionOf2Variables)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -7948,7 +7948,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarIntegral)
-    
+
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8187,7 +8187,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarPlugin)
-    
+
     _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -8273,7 +8273,7 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarAlongTrajectory)
-    
+
     _get_trajectory_point_metadata = { "offset" : _get_trajectory_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8364,7 +8364,7 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarStandardDeviation)
-    
+
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8605,7 +8605,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarSurfaceDistanceBetweenPoints)
-    
+
     _get_point_1_metadata = { "offset" : _get_point_1_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8709,7 +8709,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarVectorComponent)
-    
+
     _get_input_vector_metadata = { "offset" : _get_input_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8793,7 +8793,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarVectorMagnitude)
-    
+
     _get_input_vector_metadata = { "offset" : _get_input_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -8873,7 +8873,7 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionCombined)
-    
+
     _get_boolean_operation_metadata = { "offset" : _get_boolean_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConditionCombinedOperationType),) }
@@ -8979,7 +8979,7 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ConditionType), agmarshall.InterfaceOutArg,) }
@@ -9048,7 +9048,7 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionTrajectoryWithinVolume)
-    
+
     _get_point_metadata = { "offset" : _get_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9128,7 +9128,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionScalarBounds)
-    
+
     _get_scalar_metadata = { "offset" : _get_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9288,7 +9288,7 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionSetFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ConditionSetType), agmarshall.InterfaceOutArg,) }
@@ -9348,7 +9348,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConditionSetScalarThresholds)
-    
+
     _get_scalar_metadata = { "offset" : _get_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9484,7 +9484,7 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolConvergeBasic)
-    
+
     _get_sense_metadata = { "offset" : _get_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ThresholdConvergenceSenseType),) }
@@ -9605,7 +9605,7 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolDerivativeBasic)
-    
+
     _get_time_step_metadata = { "offset" : _get_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -9711,7 +9711,7 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayConditionCrossings)
-    
+
     _get_satisfaction_crossing_metadata = { "offset" : _get_satisfaction_crossing_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SatisfactionCrossing),) }
@@ -9873,7 +9873,7 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayExtrema)
-    
+
     _get_extremum_type_metadata = { "offset" : _get_extremum_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
@@ -10045,7 +10045,7 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventArrayType), agmarshall.InterfaceOutArg,) }
@@ -10157,7 +10157,7 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayFiltered)
-    
+
     _get_original_time_array_metadata = { "offset" : _get_original_time_array_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10297,7 +10297,7 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayFixedStep)
-    
+
     _get_bounding_interval_list_metadata = { "offset" : _get_bounding_interval_list_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10413,7 +10413,7 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayFixedTimes)
-    
+
     _get_array_times_metadata = { "offset" : _get_array_times_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -10467,7 +10467,7 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayMerged)
-    
+
     _get_time_array_a_metadata = { "offset" : _get_time_array_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10543,7 +10543,7 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArraySignaled)
-    
+
     _get_original_time_array_metadata = { "offset" : _get_original_time_array_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10661,7 +10661,7 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeArrayStartStopTimes)
-    
+
     _get_start_stop_option_metadata = { "offset" : _get_start_stop_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(StartStopType),) }
@@ -10729,7 +10729,7 @@ class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantEpoch)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -10793,7 +10793,7 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantExtremum)
-    
+
     _get_extremum_type_metadata = { "offset" : _get_extremum_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
@@ -10950,7 +10950,7 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantFactory)
-    
+
     _get_today_metadata = { "offset" : _get_today_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11086,7 +11086,7 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalBetweenTimeInstants)
-    
+
     _get_start_time_instant_metadata = { "offset" : _get_start_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11185,7 +11185,7 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionCondition)
-    
+
     _get_condition_set_metadata = { "offset" : _get_condition_set_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11320,7 +11320,7 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalCollectionType), agmarshall.InterfaceOutArg,) }
@@ -11391,7 +11391,7 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionLighting)
-    
+
     _get_location_metadata = { "offset" : _get_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11483,7 +11483,7 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionSignaled)
-    
+
     _get_original_collection_metadata = { "offset" : _get_original_collection_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11606,7 +11606,7 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalType), agmarshall.InterfaceOutArg,) }
@@ -11702,7 +11702,7 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchCompone
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalFixed)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -11767,7 +11767,7 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalFixedDuration)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11855,7 +11855,7 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalFromIntervalList)
-    
+
     _get_reference_intervals_metadata = { "offset" : _get_reference_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11970,7 +11970,7 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListCondition)
-    
+
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12110,7 +12110,7 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalListType), agmarshall.InterfaceOutArg,) }
@@ -12214,7 +12214,7 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -12283,7 +12283,7 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListFiltered)
-    
+
     _get_original_intervals_metadata = { "offset" : _get_original_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12360,7 +12360,7 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListFixed)
-    
+
     _get_intervals_metadata = { "offset" : _get_intervals_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -12423,7 +12423,7 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListMerged)
-    
+
     _get_interval_list_or_interval_a_metadata = { "offset" : _get_interval_list_or_interval_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12576,7 +12576,7 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListScaled)
-    
+
     _get_original_intervals_metadata = { "offset" : _get_original_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12684,7 +12684,7 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListSignaled)
-    
+
     _get_original_intervals_metadata = { "offset" : _get_original_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12802,7 +12802,7 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalListTimeOffset)
-    
+
     _get_reference_intervals_metadata = { "offset" : _get_reference_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12876,7 +12876,7 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalScaled)
-    
+
     _get_original_interval_metadata = { "offset" : _get_original_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -12984,7 +12984,7 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalSignaled)
-    
+
     _get_original_interval_metadata = { "offset" : _get_original_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13115,7 +13115,7 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalSmartInterval)
-    
+
     _get_reference_interval_metadata = { "offset" : _get_reference_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13278,7 +13278,7 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalTimeOffset)
-    
+
     _get_reference_interval_metadata = { "offset" : _get_reference_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13354,7 +13354,7 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantSignaled)
-    
+
     _get_original_time_instant_metadata = { "offset" : _get_original_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13474,7 +13474,7 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantSmartEpoch)
-    
+
     _get_time_instant_metadata = { "offset" : _get_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -13560,7 +13560,7 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantStartStopTime)
-    
+
     _get_use_start_metadata = { "offset" : _get_use_start_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -13630,7 +13630,7 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInstantTimeOffset)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -13698,7 +13698,7 @@ class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalFirstIntervalsFilter)
-    
+
     _get_maximum_number_of_intervals_metadata = { "offset" : _get_maximum_number_of_intervals_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -13750,7 +13750,7 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalGapsFilter)
-    
+
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
@@ -13841,7 +13841,7 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolIntegralBasic)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(QuadratureType),) }
@@ -13948,7 +13948,7 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolInterpolatorBasic)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(InterpolationMethodType),) }
@@ -14018,7 +14018,7 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolIntervalsFilter)
-    
+
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
@@ -14084,7 +14084,7 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalLastIntervalsFilter)
-    
+
     _get_maximum_number_of_intervals_metadata = { "offset" : _get_maximum_number_of_intervals_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -14157,7 +14157,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetAttitude)
-    
+
     _get_axes_metadata = { "offset" : _get_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14230,7 +14230,7 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ParameterSetType), agmarshall.InterfaceOutArg,) }
@@ -14313,7 +14313,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetGroundTrajectory)
-    
+
     _get_location_metadata = { "offset" : _get_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14391,7 +14391,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetOrbit)
-    
+
     _get_orbiting_point_metadata = { "offset" : _get_orbiting_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14525,7 +14525,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnaly
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetTrajectory)
-    
+
     _get_point_metadata = { "offset" : _get_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14595,7 +14595,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolParameterSetVector)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14681,7 +14681,7 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolPruneFilterFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(IntervalPruneFilterType), agmarshall.InterfaceOutArg,) }
@@ -14724,7 +14724,7 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
-    
+
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14828,7 +14828,7 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolSamplingBasic)
-    
+
     _get_sampling_method_metadata = { "offset" : _get_sampling_method_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14899,7 +14899,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolSamplingCurvatureTolerance)
-    
+
     _get_minimum_time_step_metadata = { "offset" : _get_minimum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -15029,7 +15029,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolSamplingFixedStep)
-    
+
     _get_time_step_metadata = { "offset" : _get_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -15099,7 +15099,7 @@ class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolSamplingMethodFactory)
-    
+
     _create_fixed_step_metadata = { "offset" : _create_fixed_step_method_offset,
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -15160,7 +15160,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolSamplingRelativeTolerance)
-    
+
     _get_minimum_time_step_metadata = { "offset" : _get_minimum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -15278,7 +15278,7 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolTimeIntervalSatisfactionConditionFilter)
-    
+
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -15389,7 +15389,7 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolSignalDelayBasic)
-    
+
     _get_signal_path_reference_system_metadata = { "offset" : _get_signal_path_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SignalPathReferenceSystem),) }
@@ -15513,7 +15513,7 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationFactory)
-    
+
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(SpatialCalculationType), agmarshall.VariantBoolArg,) }
@@ -15623,7 +15623,7 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VolumeType), agmarshall.InterfaceOutArg,) }
@@ -15731,7 +15731,7 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VolumeGridType), agmarshall.InterfaceOutArg,) }
@@ -15823,7 +15823,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolGridCoordinateDefinition)
-    
+
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GridValuesMethodType),) }
@@ -15901,7 +15901,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolGridValuesCustom)
-    
+
     _get_values_metadata = { "offset" : _get_values_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -15959,7 +15959,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
-    
+
     _get_min_metadata = { "offset" : _get_min_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -16081,7 +16081,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolGridValuesFixedStep)
-    
+
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -16222,7 +16222,7 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolLightTimeDelay)
-    
+
     _get_use_light_time_delay_metadata = { "offset" : _get_use_light_time_delay_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -16382,7 +16382,7 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationAltitude)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16490,7 +16490,7 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationAngleToLocation)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AngleToLocationType),) }
@@ -16624,7 +16624,7 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
-    
+
     _get_spatial_condition_metadata = { "offset" : _get_spatial_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -16830,7 +16830,7 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationPropagationDelayToLocation)
-    
+
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
@@ -16963,7 +16963,7 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17022,7 +17022,7 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationFromCalculationScalar)
-    
+
     _get_scalar_metadata = { "offset" : _get_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17080,7 +17080,7 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationDistanceToLocation)
-    
+
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
@@ -17182,7 +17182,7 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationSolarIntensity)
-    
+
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -17256,7 +17256,7 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionCombined)
-    
+
     _get_boolean_operation_metadata = { "offset" : _get_boolean_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VolumeCombinedOperationType),) }
@@ -17359,7 +17359,7 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionSpatialCalculationBounds)
-    
+
     _get_operation_metadata = { "offset" : _get_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConditionThresholdType),) }
@@ -17470,7 +17470,7 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionConditionAtLocation)
-    
+
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17588,7 +17588,7 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionGridBoundingVolume)
-    
+
     _get_edge_type_metadata = { "offset" : _get_edge_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VolumeFromGridEdgeType),) }
@@ -17656,7 +17656,7 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionValidTimeAtLocation)
-    
+
     _get_time_satisfaction_metadata = { "offset" : _get_time_satisfaction_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17738,7 +17738,7 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
-    
+
     _get_reference_central_body_metadata = { "offset" : _get_reference_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17868,7 +17868,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridCartesian)
-    
+
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17949,7 +17949,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridConstrained)
-    
+
     _get_reference_grid_metadata = { "offset" : _get_reference_grid_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -18020,7 +18020,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridCylindrical)
-    
+
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -18104,7 +18104,7 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
-    
+
     _get_reference_central_body_metadata = { "offset" : _get_reference_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18205,7 +18205,7 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridResult)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -18312,7 +18312,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridSpherical)
-    
+
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -18392,7 +18392,7 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionAccessToLocation)
-    
+
     _get_constraint_object_metadata = { "offset" : _get_constraint_object_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -18457,7 +18457,7 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionLighting)
-    
+
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -18549,7 +18549,7 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialAnalysisToolConditionOverTime)
-    
+
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SpatialConditionOverTypeDurationType),) }
@@ -18685,7 +18685,7 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchComponentTypeInformation)
-    
+
     _get_type_description_metadata = { "offset" : _get_type_description_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18744,7 +18744,7 @@ class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchComponentInstance)
-    
+
     _get_instance_path_metadata = { "offset" : _get_instance_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18795,7 +18795,7 @@ class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchComponentTemplate)
-    
+
     _get_class_name_metadata = { "offset" : _get_class_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18840,7 +18840,7 @@ class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18904,7 +18904,7 @@ class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -18968,7 +18968,7 @@ class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19032,7 +19032,7 @@ class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19096,7 +19096,7 @@ class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolSystemReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19160,7 +19160,7 @@ class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19249,7 +19249,7 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesLabels)
-    
+
     _get_label_x_metadata = { "offset" : _get_label_x_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19423,7 +19423,7 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneLabels)
-    
+
     _get_x_axis_label_metadata = { "offset" : _get_x_axis_label_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19512,7 +19512,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesAlignedAndConstrained)
-    
+
     _get_alignment_reference_vector_metadata = { "offset" : _get_alignment_reference_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19589,7 +19589,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesAngularOffset)
-    
+
     _get_spin_vector_metadata = { "offset" : _get_spin_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19672,7 +19672,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesFixedAtEpoch)
-    
+
     _get_source_axes_metadata = { "offset" : _get_source_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19747,7 +19747,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesBPlane)
-    
+
     _get_trajectory_metadata = { "offset" : _get_trajectory_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19829,7 +19829,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesCustomScript)
-    
+
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -19892,7 +19892,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesAttitudeFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -19946,7 +19946,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchCom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesFixed)
-    
+
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20002,7 +20002,7 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesModelAttachment)
-    
+
     _get_pointable_element_name_metadata = { "offset" : _get_pointable_element_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20062,7 +20062,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesSpinning)
-    
+
     _get_spin_vector_metadata = { "offset" : _get_spin_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20168,7 +20168,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesOnSurface)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20242,7 +20242,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesTrajectory)
-    
+
     _get_trajectory_point_metadata = { "offset" : _get_trajectory_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20316,7 +20316,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesLagrangeLibration)
-    
+
     _get_primary_central_body_metadata = { "offset" : _get_primary_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20390,7 +20390,7 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesCommonTasks)
-    
+
     _create_topocentric_axes_quaternion_metadata = { "offset" : _create_topocentric_axes_quaternion_method_offset,
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -20454,7 +20454,7 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesAtTimeInstant)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20544,7 +20544,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesPlugin)
-    
+
     _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -20630,7 +20630,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleBetweenVectors)
-    
+
     _get_from_vector_metadata = { "offset" : _get_from_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20686,7 +20686,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleBetweenPlanes)
-    
+
     _get_from_plane_metadata = { "offset" : _get_from_plane_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20747,7 +20747,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleDihedral)
-    
+
     _get_from_vector_metadata = { "offset" : _get_from_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20846,7 +20846,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleRotation)
-    
+
     _get_from_axes_metadata = { "offset" : _get_from_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20920,7 +20920,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleToPlane)
-    
+
     _get_reference_vector_metadata = { "offset" : _get_reference_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -20993,7 +20993,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneNormal)
-    
+
     _get_normal_vector_metadata = { "offset" : _get_normal_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21059,7 +21059,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneQuadrant)
-    
+
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21124,7 +21124,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneTrajectory)
-    
+
     _get_point_metadata = { "offset" : _get_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21199,7 +21199,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneTriad)
-    
+
     _get_point_a_metadata = { "offset" : _get_point_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21281,7 +21281,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneTwoVector)
-    
+
     _get_reference_vector_metadata = { "offset" : _get_reference_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21350,7 +21350,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointBPlane)
-    
+
     _get_target_body_metadata = { "offset" : _get_target_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21438,7 +21438,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchCo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -21492,7 +21492,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointFixedInSystem)
-    
+
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21551,7 +21551,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointGrazing)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21633,7 +21633,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointGlint)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21708,7 +21708,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointCovarianceGrazing)
-    
+
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21845,7 +21845,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointPlaneIntersection)
-    
+
     _get_direction_vector_metadata = { "offset" : _get_direction_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -21914,7 +21914,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointOnSurface)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22004,7 +22004,7 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointModelAttachment)
-    
+
     _get_pointable_element_name_metadata = { "offset" : _get_pointable_element_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22074,7 +22074,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointSatelliteCollectionEntry)
-    
+
     _get_entry_name_metadata = { "offset" : _get_entry_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22128,7 +22128,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysis
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointPlaneProjection)
-    
+
     _get_source_point_metadata = { "offset" : _get_source_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22186,7 +22186,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointLagrangeLibration)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22259,7 +22259,7 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointCommonTasks)
-    
+
     _create_fixed_in_system_cartographic_metadata = { "offset" : _create_fixed_in_system_cartographic_method_offset,
             "arg_types" : (agcom.PVOID, agcom.Variant, agcom.Variant, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -22333,7 +22333,7 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointCentralBodyIntersect)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22558,7 +22558,7 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointAtTimeInstant)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22648,7 +22648,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointPlugin)
-    
+
     _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22737,7 +22737,7 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointCentralBodyFixedOffset)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22816,7 +22816,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolSystemAssembled)
-    
+
     _get_origin_point_metadata = { "offset" : _get_origin_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22876,7 +22876,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolSystemOnSurface)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22968,7 +22968,7 @@ class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPositionLLA)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -23048,7 +23048,7 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolSystemCommonTasks)
-    
+
     _create_east_north_up_cartographic_metadata = { "offset" : _create_east_north_up_cartographic_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -23095,7 +23095,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorAngleRate)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23160,7 +23160,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorApoapsis)
-    
+
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23234,7 +23234,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorFixedAtEpoch)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -23308,7 +23308,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorAngularVelocity)
-    
+
     _get_axes_metadata = { "offset" : _get_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23390,7 +23390,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorConing)
-    
+
     _get_about_vector_metadata = { "offset" : _get_about_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23530,7 +23530,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorCross)
-    
+
     _get_from_vector_metadata = { "offset" : _get_from_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23621,7 +23621,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorCustomScript)
-    
+
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23704,7 +23704,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorDerivative)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23799,7 +23799,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorDisplacement)
-    
+
     _get_origin_metadata = { "offset" : _get_origin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23912,7 +23912,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorTwoPlanesIntersection)
-    
+
     _get_plane_a_metadata = { "offset" : _get_plane_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23968,7 +23968,7 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorModelAttachment)
-    
+
     _get_pointable_element_name_metadata = { "offset" : _get_pointable_element_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24022,7 +24022,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorProjection)
-    
+
     _get_source_metadata = { "offset" : _get_source_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24081,7 +24081,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkben
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorScaled)
-    
+
     _get_reference_vector_metadata = { "offset" : _get_reference_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24162,7 +24162,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorEccentricity)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24234,7 +24234,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorFixedInAxes)
-    
+
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24290,7 +24290,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorLineOfNodes)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24348,7 +24348,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorOrbitAngularMomentum)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24422,7 +24422,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorOrbitNormal)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24496,7 +24496,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorPeriapsis)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24574,7 +24574,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorReflection)
-    
+
     _get_incoming_vector_metadata = { "offset" : _get_incoming_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24680,7 +24680,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorRotationVector)
-    
+
     _get_axes_metadata = { "offset" : _get_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24752,7 +24752,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalys
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorDirectionToStar)
-    
+
     _get_selected_star_metadata = { "offset" : _get_selected_star_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -24810,7 +24810,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorFixedAtTimeInstant)
-    
+
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -24910,7 +24910,7 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorLinearCombination)
-    
+
     _get_vector_a_metadata = { "offset" : _get_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25078,7 +25078,7 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorProjectionAlongVector)
-    
+
     _get_source_vector_metadata = { "offset" : _get_source_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25170,7 +25170,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorScalarLinearCombination)
-    
+
     _get_vector_a_metadata = { "offset" : _get_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25410,7 +25410,7 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorScalarScaled)
-    
+
     _get_input_vector_metadata = { "offset" : _get_input_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25548,7 +25548,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorVelocityAcceleration)
-    
+
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25638,7 +25638,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorPlugin)
-    
+
     _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25730,7 +25730,7 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorSurfaceDisplacement)
-    
+
     _get_origin_point_metadata = { "offset" : _get_origin_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -25833,7 +25833,7 @@ class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbench
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25899,7 +25899,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VectorType), agmarshall.InterfaceOutArg,) }
@@ -25984,7 +25984,7 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AxesType), agmarshall.InterfaceOutArg,) }
@@ -26046,7 +26046,7 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolSystemFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SystemType), agmarshall.InterfaceOutArg,) }
@@ -26095,7 +26095,7 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PointType), agmarshall.InterfaceOutArg,) }
@@ -26164,7 +26164,7 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPlaneFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PlaneType), agmarshall.InterfaceOutArg,) }
@@ -26210,7 +26210,7 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAngleFactory)
-    
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AngleType), agmarshall.InterfaceOutArg,) }
@@ -26276,7 +26276,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26403,7 +26403,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26538,7 +26538,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26665,7 +26665,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26800,7 +26800,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26927,7 +26927,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27070,7 +27070,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     >>> satStart = vgtSat.time_instants.item("AvailabilityStartTime")
     >>> start = satStart.find_occurrence().epoch
-    >>> 
+    >>>
     >>> satStop = vgtSat.time_instants.item("AvailabilityStopTime")
     >>> stop = satStop.find_occurrence().epoch
     >>> interval = [[start], [540], [600], [stop]]  # EpSec
@@ -27188,7 +27188,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> if customScript.is_valid is False:
     >>>     print("Script component not valid!")
     >>>     from os import getenv
-    >>> 
+    >>>
     >>>     print(
     >>>         r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
     >>>         % getenv("USERNAME")
@@ -27264,7 +27264,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchComponentProvider)
-    
+
     _get_vectors_metadata = { "offset" : _get_vectors_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27492,7 +27492,7 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchRoot)
-    
+
     _get_template_provider_metadata = { "offset" : _get_template_provider_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -27557,7 +27557,7 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownEarthSystems)
-    
+
     _get_fixed_metadata = { "offset" : _get_fixed_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27618,7 +27618,7 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownEarthAxes)
-    
+
     _get_fixed_metadata = { "offset" : _get_fixed_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27689,7 +27689,7 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownSunSystems)
-    
+
     _get_fixed_metadata = { "offset" : _get_fixed_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27768,7 +27768,7 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownSunAxes)
-    
+
     _get_fixed_metadata = { "offset" : _get_fixed_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27836,7 +27836,7 @@ class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownSystems)
-    
+
     _get_earth_metadata = { "offset" : _get_earth_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27886,7 +27886,7 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolWellKnownAxes)
-    
+
     _get_earth_metadata = { "offset" : _get_earth_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -27939,7 +27939,7 @@ class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAngleFindResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28022,7 +28022,7 @@ class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResul
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAngleFindWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28110,7 +28110,7 @@ class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAxesTransformResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28163,7 +28163,7 @@ class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallR
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAxesTransformWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28224,7 +28224,7 @@ class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAxesFindInAxesResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28277,7 +28277,7 @@ class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAxesFindInAxesWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28339,7 +28339,7 @@ class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInAxesResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28403,7 +28403,7 @@ class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28484,7 +28484,7 @@ class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResul
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInSystemResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28559,7 +28559,7 @@ class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28656,7 +28656,7 @@ class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallRes
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPointLocateInSystemResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28709,7 +28709,7 @@ class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMetho
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchPointLocateInSystemWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28770,7 +28770,7 @@ class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchSystemTransformResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28823,7 +28823,7 @@ class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchSystemTransformWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28887,7 +28887,7 @@ class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResu
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchSystemFindInSystemResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -28966,7 +28966,7 @@ class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchVectorFindInAxesResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29019,7 +29019,7 @@ class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchVectorFindInAxesWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29081,7 +29081,7 @@ class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAngleFindAngleWithRateResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29142,7 +29142,7 @@ class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchAngleFindAngleResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29194,7 +29194,7 @@ class TimeToolInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolInterval)
-    
+
     _get_start_metadata = { "offset" : _get_start_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -29258,7 +29258,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -29317,7 +29317,7 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchCentralBody)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29359,7 +29359,7 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AnalysisWorkbenchCentralBodyReference)
-    
+
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29430,7 +29430,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -29521,7 +29521,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
@@ -29602,7 +29602,7 @@ class TimeToolPointSamplingResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolPointSamplingResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29655,7 +29655,7 @@ class TimeToolPointSamplingInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolPointSamplingInterval)
-    
+
     _get_times_metadata = { "offset" : _get_times_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -29746,7 +29746,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -29806,7 +29806,7 @@ class TimeToolAxesSamplingResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolAxesSamplingResult)
-    
+
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -29859,7 +29859,7 @@ class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeToolAxesSamplingInterval)
-    
+
     _get_times_metadata = { "offset" : _get_times_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -29950,7 +29950,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }

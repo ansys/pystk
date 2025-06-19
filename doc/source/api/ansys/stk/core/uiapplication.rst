@@ -11,24 +11,24 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
               - Access to the application object model for business partners.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection`
               - Provide information about most recently used (MRU) list.
@@ -48,7 +48,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.uiapplication.ApplicationConstants`
               - ApplicationConstants contains base IDs for various structures.

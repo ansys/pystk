@@ -44,16 +44,11 @@ construct_scenario_from_dict
                     {
                         "type": "Place",
                         "name": "MyPlace",
-                        "children": [
-                            {
-                                "type": "Sensor",
-                                "name": "MySensor",
-                                "children": []
-                            }
-                         ]
+                        "children": [{"type": "Sensor", "name": "MySensor", "children": []}],
                     }
-                ]
-            })
+                ],
+            },
+        )
 
 .. py:currentmodule:: construct_scenario_from_dict
 

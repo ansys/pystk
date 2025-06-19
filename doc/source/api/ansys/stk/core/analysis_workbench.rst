@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.IAnalysisWorkbenchComponent`
               - A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component.
@@ -115,13 +115,13 @@ Summary
             * - :py:class:`~ansys.stk.core.analysis_workbench.IVectorGeometryToolVector`
               - The interface defines methods and properties common to all vectors.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult`
               - Contains the results returned with IVectorGeometryToolAngle.FindAngle method.
@@ -1056,7 +1056,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.analysis_workbench.AberrationModelType`
               - Define the model of aberration to use.

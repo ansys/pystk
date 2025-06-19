@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Do not use this method, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Sets the current radar mode by name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

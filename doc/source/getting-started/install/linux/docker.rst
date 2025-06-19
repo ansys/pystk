@@ -80,7 +80,7 @@ directory.
 .. jinja:: artifacts
 
     .. code-block:: dosbatch
-    
+
         working-directory/
         └── {{ wheels }}
 

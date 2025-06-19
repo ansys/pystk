@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -56,7 +56,7 @@ Overview
               - """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of ImageCollection."""
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

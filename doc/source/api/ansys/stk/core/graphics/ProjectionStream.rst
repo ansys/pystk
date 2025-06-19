@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - When overridden in a derived class, updates the projection data associated with the projection stream at the specified time. When the Update method is called, the projection stream contains the current projection data...
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

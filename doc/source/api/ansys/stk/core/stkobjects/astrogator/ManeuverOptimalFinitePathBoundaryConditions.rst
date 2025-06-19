@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -50,7 +50,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import ManeuverOptimalFinitePathBoundaryConditions
+    from ansys.stk.core.stkobjects.astrogator import (
+        ManeuverOptimalFinitePathBoundaryConditions,
+    )
 
 
 Property detail

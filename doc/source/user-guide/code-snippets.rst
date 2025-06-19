@@ -397,9 +397,7 @@ Create a new vector magnitude scalar
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     calcFactory = vgtSat.calculation_scalars.factory
-    displScalar = calcFactory.create_vector_magnitude(
-        "VectorDisplacement", "Vector Magnitude of Displacement Vector"
-    )
+    displScalar = calcFactory.create_vector_magnitude("VectorDisplacement", "Vector Magnitude of Displacement Vector")
     displScalar.input_vector = Sat2EarthCenter
 
 .. _CreateAssembledSystem:
@@ -519,7 +517,9 @@ Create a new custom script vector
     customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     # Initialization script if needed
     # customScript.InitializationScriptFile = ''
-    customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    customScript.script_file = (
+        r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    )
     if customScript.is_valid is False:
         print("Script component not valid!")
         from os import getenv
@@ -684,9 +684,7 @@ Use arrays to send and retrieve data with connect
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
     connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
-    command_results = root.execute_multiple_commands(
-        connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
-    )
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
 
     first_message = command_results.item(0)
     also_first_message = command_results[0]
@@ -701,7 +699,10 @@ Execute multiple connect commands
 
 .. code-block:: python
 
-    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
+    commandList = [
+        ["New / */Place MyPlace"],
+        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
+    ]
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 .. _ConnectCommand:
@@ -818,7 +819,10 @@ Load a numpy array with flight profile data
 
     flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
     flight_profile_data = flight_profile_data_provider.execute_elements(
-        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+        self.get_scenario().start_time,
+        self.get_scenario().stop_time,
+        time_step_sec,
+        field_names,
     )
 
     # convert dataset collection in a row format as a Numpy array
@@ -829,7 +833,11 @@ Load a numpy array with flight profile data
 
     plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
-        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+        plt.plot(
+            flight_profile_data_arr[simplex, 1],
+            flight_profile_data_arr[simplex, 0],
+            color="darkblue",
+        )
 
     plt.title("Estimated Flight Envelope", fontsize=15)
     plt.xlabel("Mach Number", fontsize=15)
@@ -1088,7 +1096,17 @@ Compute interpolated positions along a great arc
     # Scenario scenario: Scenario object
     # Create a array of LLA values and interoplate them over the specified
     # central body
-    positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
+    positionArray = [
+        [35.017],
+        [-118.540],
+        [0],
+        [44.570],
+        [-96.474],
+        [0],
+        [31.101],
+        [-82.619],
+        [0],
+    ]
     manager = scenario.scene_manager
     # Interpolate points over great arc
     interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
@@ -1249,16 +1267,33 @@ Add imagery and terrain to the scene
     extentTerrain = terrainTile.extent
     print(
         "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
+        % (
+            str(extentTerrain[0]),
+            str(extentTerrain[2]),
+            str(extentTerrain[1]),
+            str(extentTerrain[3]),
+        )
     )
     # Add Imagery
     imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "imagery",
+            "NPS_OrganPipeCactus_Map.pdttx",
+        )
     )
     extentImagery = imageryTile.extent
     print(
         "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
+        % (
+            str(extentImagery[0]),
+            str(extentImagery[2]),
+            str(extentImagery[1]),
+            str(extentImagery[3]),
+        )
     )
 
 .. _ScenarioFont:
@@ -1351,8 +1386,10 @@ Manage STK desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
+
     def on_stk_object_added_custom_callback(path: str):
         print(f"{path} has been added.")
+
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
@@ -1383,6 +1420,7 @@ Manage STK Engine events
     # STKObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
+
 
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
@@ -1415,7 +1453,10 @@ Open a viewer data file
 
     # STKObjectRoot root: STK Object Model Root
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+    root.load_vdf(
+        os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
+        "",
+    )
 
 .. _GetAccesses:
 
@@ -1535,7 +1576,12 @@ Compute an access for one point
             constraint = result.constraints.item(j)
             print(
                 "Constraint: %s Object: %s Status: %s Value:%s"
-                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
+                % (
+                    constraint.constraint,
+                    constraint.object_path,
+                    constraint.status,
+                    str(constraint.value),
+                )
             )
 
 .. _ComputeAccessAdvancedSettings:
@@ -1795,7 +1841,10 @@ Add array of waypoints to aircraft
 
     # Aircraft aircraft: Aircraft object
     route = aircraft.route
-    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
+    ptsArray = [
+        [37.5378, 14.2207, 3.0480, 0.0772, 2],
+        [47.2602, 30.5517, 3.0480, 0.0772, 2],
+    ]
     route.set_points_smooth_rate_and_propagate(ptsArray)
     # Propagate the route
     route.propagate()
@@ -2494,7 +2543,14 @@ Load multi-track object (MTO) track points from a file
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     track2.points.load_points(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "EphemerisLLATimePosVel_Example.e",
+        )
     )
     track2.interpolate = True
 
@@ -2838,7 +2894,14 @@ Set satellite attitude external
     # Satellite satellite: Satellite object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+        os.path.join(
+            installPath,
+            "Data",
+            "Resources",
+            "stktraining",
+            "text",
+            "AttitudeTimeEulerAngles_Example.a",
+        )
     )
 
 .. _SatelliteAttitudeTarget:
@@ -2912,9 +2975,7 @@ Set satellite propagator to spice and propagate
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    propagator.spice = os.path.join(
-        installPath, "STKData", "Spice", "planets.bsp"
-    )  # Make sure this is a valid path
+    propagator.spice = os.path.join(installPath, "STKData", "Spice", "planets.bsp")  # Make sure this is a valid path
     propagator.body_name = "MARS"
 
     propagator.ephemeris_interval.set_implicit_interval(
@@ -2952,9 +3013,7 @@ Set satellite propagator to HPOP and set force model properties
 
     forceModel = satellite.propagator.force_model
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    forceModel.central_body_gravity.file = os.path.join(
-        installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
-    )
+    forceModel.central_body_gravity.file = os.path.join(installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv")
     forceModel.central_body_gravity.maximum_degree = 21
     forceModel.central_body_gravity.maximum_order = 21
     forceModel.drag.use = True
@@ -2984,9 +3043,7 @@ Set satellite propagator to j4 and assign Cartesian position
     # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     propagator = satellite.propagator
-    propagator.initial_state.representation.assign_cartesian(
-        CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641
-    )
+    propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641)
     propagator.propagate()
 
 .. _SatelliteInitialState:
@@ -3050,9 +3107,7 @@ Sensor body mask
 
     # Sensor sensor: Sensor object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    sensor.set_az_el_mask_file(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
-    )
+    sensor.set_az_el_mask_file(os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"))
 
 .. _DefineSensorPointingFixedAxesYPR:
 

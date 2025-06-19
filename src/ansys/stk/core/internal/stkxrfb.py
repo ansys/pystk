@@ -28,7 +28,7 @@ from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IUnknown
-from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
+from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property,
     set_interface_attribute)
 from ..utilities.exceptions import STKRuntimeError
 
@@ -60,7 +60,7 @@ class IRemoteFrameBufferHost(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBufferHost, None)
-    
+
     _refresh_metadata = { "offset" : _refresh_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -111,7 +111,7 @@ class IRemoteFrameBuffer(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBuffer, None)
-    
+
     _snap_to_rbg_raster_metadata = { "offset" : _snap_to_rbg_raster_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.PVoidArg,) }

@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,7 @@ Overview
               - Set the min/max bounds. Throws an exception if the minimum is greater than maximum.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -49,7 +49,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolConditionSpatialCalculationBounds
+    from ansys.stk.core.analysis_workbench import (
+        SpatialAnalysisToolConditionSpatialCalculationBounds,
+    )
 
 
 Property detail

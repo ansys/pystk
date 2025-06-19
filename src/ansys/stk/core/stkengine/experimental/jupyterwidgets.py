@@ -168,7 +168,7 @@ class RemoteFrameBufferHostVTable(Structure):
 class RemoteFrameBufferHost(object):
     """
     Implements IRemoteFrameBufferHost.
-    
+
     Assemble a vtable following the layout of that interface
     """
     _iid_unknown = GUID(IUnknown._guid)
@@ -386,8 +386,8 @@ class WidgetBase(RemoteFrameBuffer):
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
-    
-    def animate(self, time_step):        
+
+    def animate(self, time_step):
         self.root.current_scenario.animation_settings.animation_step_value = time_step
         self.root.execute_command("Animate * Start Loop")
         self.show()

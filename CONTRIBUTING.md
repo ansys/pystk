@@ -47,7 +47,7 @@ tox --version
 
 ### Listing Tox environments
 
-The configuration for Tox is stored in [the tox.ini file](https://github.com/ansys/pystk/blob/main/tox.ini). 
+The configuration for Tox is stored in [the tox.ini file](https://github.com/ansys/pystk/blob/main/tox.ini).
 This file contains various environments. Environments are a collection of
 commands executed depending on the platform and the environment.
 
@@ -158,7 +158,7 @@ Here are a few additional examples:
     ```console
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```
-    tox -f docker-exec-ubuntu_container-py311 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    tox -f docker-exec-ubuntu_container-py311 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the STK tests with graphics:
     ```console
@@ -189,7 +189,7 @@ Here are a few additional examples:
     ```
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```console
-    tox -f docker-exec-windows_container-py311 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    tox -f docker-exec-windows_container-py311 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the STK tests with graphics:
     ```console
@@ -209,7 +209,7 @@ use, for instance `tox -f docker-lab-ubuntu_container-py311` will start a Ubuntu
 
 Once Jupyter Lab is running, use your browser to navigate to http://127.0.0.1:8888/lab?token=pystk.
 
-### Troubleshooting an STK container in UI mode with Tox 
+### Troubleshooting an STK container in UI mode with Tox
 
 After building the images and running a container, you can also start a desktop manager inside the container. This provides access to the X graphical user interface. This is particularly useful to troubleshoot any issue arising inside the container. A use case is debugging the graphics tests, as STK's 2D and 3D graphics are rendered inside the container using `xvfb` which is not visible by default.
 

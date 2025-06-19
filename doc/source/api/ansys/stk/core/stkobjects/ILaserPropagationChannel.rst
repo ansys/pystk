@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Do not use this method, as it is deprecated. Use TroposphericScintillationLossModelComponentLinking on ILaserPropagationChannel instead. Sets the current tropospheric scintillation loss model by name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

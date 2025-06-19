@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,7 @@ Overview
               - Return an element with the specified name and type. The method throws an exception if the element with the specified name does not exist.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -51,7 +51,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import Graphics3DReferenceVectorGeometryToolComponentCollection
+    from ansys.stk.core.stkobjects import (
+        Graphics3DReferenceVectorGeometryToolComponentCollection,
+    )
 
 
 Property detail

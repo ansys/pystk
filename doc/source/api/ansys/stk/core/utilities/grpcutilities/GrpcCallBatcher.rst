@@ -7,18 +7,18 @@ GrpcCallBatcher
 
    A class used to batch together API calls to optimize performance.
 
-   Activating batching will cause the normal API exception behavior to be 
+   Activating batching will cause the normal API exception behavior to be
    altered. Exceptions from one command may appear asynchronously. Therefore
    it is not recommended to use call batching while building and debugging,
    but rather as a performance optimization.
 
-   Only calls that do not return a value may be batched together, 
+   Only calls that do not return a value may be batched together,
    such as set-property requests and methods without a return value.
-   Any method that has a return value (including get-property requests) 
-   will automatically execute any previously batched commands before the 
+   Any method that has a return value (including get-property requests)
+   will automatically execute any previously batched commands before the
    method with a return value is executed.
 
-   Therefore, to reduce the number of remote API requests and improve 
+   Therefore, to reduce the number of remote API requests and improve
    performance, code must be organized to group together commands that
    do not have a return value. Call chaining will interrupt a batch request
    because of the get-property command within the chain. E.g.:
@@ -29,7 +29,7 @@ GrpcCallBatcher
        root.CurrentScenario.LongDescription = long_description
 
    will not be batched together because the call to `CurrentScenario` will
-   get the scenario via an API call. These commands may be batched by 
+   get the scenario via an API call. These commands may be batched by
    factoring out the call chaining:
 
    .. code-block:: python
@@ -38,7 +38,7 @@ GrpcCallBatcher
        scen.ShortDescription = short_description
        scen.LongDescription = long_description
 
-   This class may be used via the explicit commands or by using the "with" 
+   This class may be used via the explicit commands or by using the "with"
    statement to batch together the commands within the statement block.
    e.g.
 
@@ -73,7 +73,7 @@ Overview
               - Explicitly stop batching.
             * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.create_future`
               - Create an object of type future_type that supports batching operations.
-                
+
                 source_obj is an STK Object Model type, e.g. STKObjectRoot.
                 future_provider is a member method or property of source_obj, e.g. STKObjectRoot.CurrentScenario.
                 future_type is the STK Object Model type that is returned from future_provider, e.g. Scenario.
@@ -121,7 +121,7 @@ Method detail
     :canonical: ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.create_future
 
     Create an object of type future_type that supports batching operations.
-    
+
     source_obj is an STK Object Model type, e.g. STKObjectRoot.
     future_provider is a member method or property of source_obj, e.g. STKObjectRoot.CurrentScenario.
     future_type is the STK Object Model type that is returned from future_provider, e.g. Scenario.

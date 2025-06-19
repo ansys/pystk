@@ -28,7 +28,7 @@ import typing
 import copy
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
-from ctypes import POINTER, Structure, Union, byref, cast, pointer 
+from ctypes import POINTER, Structure, Union, byref, cast, pointer
 
 from .apiutil import OutArg, GcDisabler
 
@@ -231,7 +231,7 @@ class _guid_union(Union):
 
 IID = GUID
 REFIID = POINTER(IID)
-            
+
 class varUnion(Union):
     # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the Variant class
     # only has a raw buffer that is equivalent in size to the varUnion.
@@ -275,30 +275,30 @@ class varUnion(Union):
                 ("pdispVal", PVOID), #VT_DISPATCH
                 ("ppdispVal", POINTER(PVOID)) #VT_DISPATCH|VT_BYREF
                ]
-                
+
 class Variant(Structure):
     # Copy a varUnion into the buffer to get the correct data.
     _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
     def __init__(self):
         # To initialize Variant from python data, use marshall.VARIANT_from_python_data
         pass
-    
+
 class SafearrayBound(Structure):
     _fields_ = [("cElements", ULONG), ("lLbound", LONG)]
-    
+
 class DispParams(Structure):
     _fields_ = [("rgvarg", POINTER(Variant)), ("rgdispidNamedArgs", POINTER(DISPID)), ("cArgs", UINT), ("cNamedArgs", UINT)]
-    
+
 class ExcepInfo(Structure):
     _fields_ = [
-                ("wCode", WORD), 
-                ("wReserved", WORD), 
-                ("bstrSource", BSTR), 
-                ("bstrDescription", BSTR), 
-                ("bstrHelpFile", BSTR), 
-                ("dwHelpContext", DWORD), 
-                ("pvReserved", POINTER(ULONG)), 
-                ("pfnDeferredFillIn", POINTER(ULONG)), 
+                ("wCode", WORD),
+                ("wReserved", WORD),
+                ("bstrSource", BSTR),
+                ("bstrDescription", BSTR),
+                ("bstrHelpFile", BSTR),
+                ("dwHelpContext", DWORD),
+                ("pvReserved", POINTER(ULONG)),
+                ("pfnDeferredFillIn", POINTER(ULONG)),
                 ("scode", HRESULT)
             ]
 
@@ -438,17 +438,17 @@ class _CreateAgObjectLifetimeManager(object):
     def __init__(self):
         self._ref_counts = dict()
         self._applications = list()
-        
+
     @staticmethod
     def _release_impl(pUnk:"IUnknown"):
         """Call Release in STK."""
         _CreateAgObjectLifetimeManager._Release(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
-        
+
     @staticmethod
     def _add_ref_impl(pUnk:"IUnknown"):
         """Call AddRef in STK."""
         _CreateAgObjectLifetimeManager._AddRef(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
-                
+
     def create_ownership(self, pUnk:"IUnknown"):
         """
         Add pUnk to the reference manager and call AddRef in STK.
@@ -459,7 +459,7 @@ class _CreateAgObjectLifetimeManager(object):
         if ptraddress is not None:
             _CreateAgObjectLifetimeManager._add_ref_impl(pUnk)
             self.take_ownership(pUnk, False)
-                
+
     def take_ownership(self, pUnk:"IUnknown", isApplication=False):
         """
         Add pUnk to the reference manager; does not call AddRef in STK.
@@ -476,7 +476,7 @@ class _CreateAgObjectLifetimeManager(object):
                     self.internal_add_ref(pUnk)
                 else:
                     self._ref_counts[ptraddress] = 1
-                
+
     def internal_add_ref(self, pUnk:"IUnknown"):
         """Increment the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
@@ -487,7 +487,7 @@ class _CreateAgObjectLifetimeManager(object):
     def release(self, pUnk:"IUnknown"):
         """
         Decrements the internal reference count of pUnk.
-        
+
         If the internal reference count reaches zero, calls Release in STK.
         """
         ptraddress = pUnk.p.value
@@ -499,7 +499,7 @@ class _CreateAgObjectLifetimeManager(object):
                         del(self._ref_counts[ptraddress])
                     else:
                         self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
-                
+
     def release_all(self, releaseApplication=True):
         with GcDisabler():
             preserved_app_ref_counts = dict()
@@ -521,19 +521,19 @@ ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
 class _CreateCoInitializeManager(object):
     def __init__(self):
         self.init_count = 0
-        
+
     def initialize(self):
         if self.init_count == 0:
             OLE32Lib._initialize()
             OLEAut32Lib._initialize()
             OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         self.init_count = self.init_count + 1
-        
+
     def uninitialize(self):
         self.init_count = self.init_count - 1
         if self.init_count == 0:
             OLE32Lib.CoUninitialize()
-            
+
 CoInitializeManager = _CreateCoInitializeManager()
 
 def _initialize_embedded():
@@ -595,22 +595,22 @@ class IUnknown(object):
         return pIntf
     def create_ownership(self):
         """Call AddRef on the pointer, and register the pointer to be Released when the ref count goes to zero."""
-        ObjectLifetimeManager.create_ownership(self) 
+        ObjectLifetimeManager.create_ownership(self)
     def take_ownership(self, isApplication=False):
         """Register the pointer to be Released when the ref count goes to zero but does not call AddRef."""
-        ObjectLifetimeManager.take_ownership(self, isApplication) 
+        ObjectLifetimeManager.take_ownership(self, isApplication)
     def add_ref(self):
         """Increment the ref count if the pointer was registered.
-        
+
         Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.internal_add_ref(self)  
+        ObjectLifetimeManager.internal_add_ref(self)
     def release(self):
         """Decrement the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
-        
+
         Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.release(self)   
+        ObjectLifetimeManager.release(self)
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         return self._invoke_impl(intf_metadata, method_metadata, *args)
@@ -647,14 +647,14 @@ class IUnknown(object):
         return_vals = []
         for arg, marshaller in zip(args, marshallers):
             if type(arg) is OutArg:
-                return_vals.append(marshaller.python_val)  
+                return_vals.append(marshaller.python_val)
         del(marshallers)
         if len(return_vals) == 0:
             return
         elif len(return_vals) == 1:
             return return_vals[0]
         else:
-            return tuple(return_vals)      
+            return tuple(return_vals)
 
 class IDispatch(IUnknown):
     _guid = "{00020400-0000-0000-C000-000000000046}"
@@ -662,11 +662,11 @@ class IDispatch(IUnknown):
     _num_methods = 4
     def __init__(self, pUnk: IUnknown):
         IUnknown.__init__(self, pUnk)
-          
+
 class IPictureDisp(IUnknown):
     def __init__(self):
         raise STKRuntimeError("IPictureDisp not supported.")
-        
+
 class IEnumVariant(object):
     guid = "{00020404-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -689,7 +689,7 @@ class IEnumVariant(object):
             return None
     def reset(self) -> None:
         self._Reset()
-          
+
 class IFuncType(object):
     """Wrapper for calling methods into COM interface vtables."""
     def __init__(self, pUnk, iid, method_index, *argtypes):

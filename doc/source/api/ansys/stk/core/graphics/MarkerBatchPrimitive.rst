@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -58,7 +58,7 @@ Overview
               - Set the up vector of the markers to point towards the axis of centralBody. It will be aligned with the tangent vector of the surface that points towards the axis...
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

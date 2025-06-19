@@ -16,7 +16,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
             * - :py:obj:`~ansys.stk.core.stkobjects.aviator`
 
     .. tab-item:: Submodules
@@ -24,16 +24,16 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
             * - :py:mod:`~ansys.stk.core.stkobjects.astrogator`
 
-             
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.IAccessAdvanced`
               - Interface for configuring advanced targeting access computation properties.
@@ -530,13 +530,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
               - Provide the base interface for a waveform selection strategy.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.Access`
               - Class defining Access.
@@ -4105,7 +4105,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.AberrationType`
               - The model of aberration to be used in access computations.

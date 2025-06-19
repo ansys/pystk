@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -38,7 +38,7 @@ Overview
               - Compute debris damage impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

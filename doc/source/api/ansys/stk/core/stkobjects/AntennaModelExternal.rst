@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

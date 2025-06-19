@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto

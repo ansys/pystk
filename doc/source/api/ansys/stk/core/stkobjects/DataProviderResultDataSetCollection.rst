@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -32,7 +32,7 @@ Overview
               - Return a row formatted dataset collection as a pandas DataFrame. This function requires ``pandas``.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -145,7 +145,10 @@ Load a Numpy array with flight profile data
 
     flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
     flight_profile_data = flight_profile_data_provider.execute_elements(
-        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+        self.get_scenario().start_time,
+        self.get_scenario().stop_time,
+        time_step_sec,
+        field_names,
     )
 
     # convert dataset collection in a row format as a Numpy array
@@ -156,7 +159,11 @@ Load a Numpy array with flight profile data
 
     plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
-        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+        plt.plot(
+            flight_profile_data_arr[simplex, 1],
+            flight_profile_data_arr[simplex, 0],
+            color="darkblue",
+        )
 
     plt.title("Estimated Flight Envelope", fontsize=15)
     plt.xlabel("Mach Number", fontsize=15)
@@ -282,7 +289,7 @@ Method detail
         **index_element_name** : :obj:`~str`
 
         **data_provider_elements** : :obj:`~DataProviderElements`
-        
+
 
     :Returns:
 

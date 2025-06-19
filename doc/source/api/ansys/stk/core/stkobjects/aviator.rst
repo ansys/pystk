@@ -16,16 +16,16 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
             * - :py:mod:`~ansys.stk.core.stkobjects.aviator.matlab`
 
-             
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometry`
               - Interface used to access the options for the wing geometry in the advanced fixed wing tool.
@@ -102,13 +102,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneOptions`
               - Interface used to access the Vertical Plane options for an Aviator procedure.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessage`
               - Class defining a message from the NOAA ADDS service.
@@ -839,7 +839,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationAdvancedAccelerationMode`
               - Acceleration mode for aircraft advanced acceleration models.

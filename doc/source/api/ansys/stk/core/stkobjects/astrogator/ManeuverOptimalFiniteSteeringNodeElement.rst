@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -54,7 +54,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import ManeuverOptimalFiniteSteeringNodeElement
+    from ansys.stk.core.stkobjects.astrogator import (
+        ManeuverOptimalFiniteSteeringNodeElement,
+    )
 
 
 Property detail

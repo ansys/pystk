@@ -3,7 +3,7 @@ NativeContainerMethods
 
 .. py:class:: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods
 
-   
+
 
    Provide support for STK Engine controls (map, globe, graphics analysis).
 

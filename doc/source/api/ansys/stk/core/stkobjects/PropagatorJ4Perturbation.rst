@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -54,9 +54,7 @@ Set satellite propagator to J4 and assign cartesian position
     # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     propagator = satellite.propagator
-    propagator.initial_state.representation.assign_cartesian(
-        CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641
-    )
+    propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641)
     propagator.propagate()
 
 

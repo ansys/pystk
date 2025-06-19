@@ -6,8 +6,8 @@
 
 .. figure:: _static/logo.png
     :align: center
-    :width: 640px 
-   
+    :width: 640px
+
 PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
 The STK application provides a physics-based modeling environment for analyzing platforms
 and payloads in a realistic mission context. You are viewing version |version|.

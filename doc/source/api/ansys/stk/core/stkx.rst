@@ -11,13 +11,13 @@ Summary
 
 .. tab-set::
 
- 
+
     .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkx.IDrawElement`
               - Draw element.
@@ -28,13 +28,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.IDrawElementRect`
               - Define a rectangle in control coordinates.
 
-    
+
     .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkx.DataObject`
               - Data Object for OLE drag & drop operations.
@@ -96,7 +96,7 @@ Summary
         .. list-table::
             :header-rows: 0
             :widths: auto
-        
+
 
             * - :py:class:`~ansys.stk.core.stkx.ButtonValues`
               - Numeric value of the mouse button pressed.
@@ -139,21 +139,21 @@ Description
 STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
 
 The top of the STK X object model presents the following creatable components:
-The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.   
+The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.
 The main way to communicate with the engine is to send Connect commands.
 Connect is a language for accessing and manipulating STK (see the
-ExecuteCommand method).  
+ExecuteCommand method).
 The Application object also exposes connection points that you can sink to
 receive notification about the state of the STK engine (for instance a
-scenario has been loaded; an animation step is performed, etc.).  
+scenario has been loaded; an animation step is performed, etc.).
 Notice that you can instantiate many application objects, but they all refer
 to the same unique STK engine.
-The Globe control enables you to insert a 3D view into your application.  
+The Globe control enables you to insert a 3D view into your application.
 You can use several Globe controls if you wish to have different views of the
 same scenario. By default the STK keyboard and mouse interaction mechanism are
 used, but various events are available, allowing your application to implement
 specific keyboard and mouse interactions and modes.
-The Map control can be used to insert a 2D view into your application.  
+The Map control can be used to insert a 2D view into your application.
 The Map control gives your application a 2D view of the scenario. You can use
 several Map controls if you wish to have different views of the same scenario.
 By default the STK keyboard and mouse interaction mechanism are used, but

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Set the BaseDynStateLinkName.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -49,7 +49,9 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.aviator import BasicManeuverTargetPositionVelocityNoisySurfTarget
+    from ansys.stk.core.stkobjects.aviator import (
+        BasicManeuverTargetPositionVelocityNoisySurfTarget,
+    )
 
 
 Property detail
