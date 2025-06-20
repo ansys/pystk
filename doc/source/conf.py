@@ -654,7 +654,7 @@ def copy_graph_images_to_source_dir(app: sphinx.application.Sphinx):
     images = list(GRAPH_IMAGES_DIRECTORY.glob("*.png"))
     for file in status_iterator(
         images,
-        f"Copying image to doc/source/graph_images_temp",
+        "Copying image to doc/source/graph_images_temp",
         "green",
         len(images),
         verbosity=1,

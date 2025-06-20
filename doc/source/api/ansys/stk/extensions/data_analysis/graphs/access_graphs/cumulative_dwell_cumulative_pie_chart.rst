@@ -1,12 +1,12 @@
-cumulative_dwell_cumulative_pie_graph
+cumulative_dwell_cumulative_pie_chart
 =====================================
 
-.. image:: /graph_images_temp/test_cumulative_dwell_cumulative_pie_graph.png
+.. image:: /graph_images_temp/test_cumulative_dwell_cumulative_pie_chart.png
   :width: 600
-  :alt: image of output from cumulative_dwell_cumulative_pie_graph
+  :alt: image of output from cumulative_dwell_cumulative_pie_chart
 
-.. py:function:: cumulative_dwell_cumulative_pie_graph(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
-    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.cumulative_dwell_cumulative_pie_graph
+.. py:function:: cumulative_dwell_cumulative_pie_chart(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.cumulative_dwell_cumulative_pie_chart
 
     Create graph showing access interval durations as a cumulative pie chart.
 
@@ -34,7 +34,7 @@ cumulative_dwell_cumulative_pie_graph
         The newly created axes.
 
 
-.. py:currentmodule:: cumulative_dwell_cumulative_pie_graph
+.. py:currentmodule:: cumulative_dwell_cumulative_pie_chart
 
 
 Import detail
@@ -42,6 +42,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.extensions.data_analysis.graphs.access_graphs import cumulative_dwell_cumulative_pie_graph
+    from ansys.stk.extensions.data_analysis.graphs.access_graphs import cumulative_dwell_cumulative_pie_chart
 
 

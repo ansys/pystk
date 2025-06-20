@@ -1,12 +1,12 @@
-access_duration_pie_graph
+access_duration_pie_chart
 =========================
 
-.. image:: /graph_images_temp/test_access_duration_pie_graph.png
+.. image:: /graph_images_temp/test_access_duration_pie_chart.png
   :width: 600
-  :alt: image of output from access_duration_pie_graph
+  :alt: image of output from access_duration_pie_chart
 
-.. py:function:: access_duration_pie_graph(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
-    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.access_duration_pie_graph
+.. py:function:: access_duration_pie_chart(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.access_duration_pie_chart
 
     Create pie chart of the durations of the access intervals.
 
@@ -34,7 +34,7 @@ access_duration_pie_graph
         The newly created axes.
 
 
-.. py:currentmodule:: access_duration_pie_graph
+.. py:currentmodule:: access_duration_pie_chart
 
 
 Import detail
@@ -42,6 +42,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_graph
+    from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart
 
 

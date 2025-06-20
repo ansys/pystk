@@ -1,12 +1,12 @@
-revisit_diagram_interval_pie_graph
+revisit_diagram_interval_pie_chart
 ==================================
 
-.. image:: /graph_images_temp/test_revisit_diagram_interval_pie_graph.png
+.. image:: /graph_images_temp/test_revisit_diagram_interval_pie_chart.png
   :width: 600
-  :alt: image of output from revisit_diagram_interval_pie_graph
+  :alt: image of output from revisit_diagram_interval_pie_chart
 
-.. py:function:: revisit_diagram_interval_pie_graph(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
-    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.revisit_diagram_interval_pie_graph
+.. py:function:: revisit_diagram_interval_pie_chart(stk_obj: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+    :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.revisit_diagram_interval_pie_chart
 
     Create pie chart showing the durations of access intervals and access gap intervals.
 
@@ -34,7 +34,7 @@ revisit_diagram_interval_pie_graph
         The newly created axes.
 
 
-.. py:currentmodule:: revisit_diagram_interval_pie_graph
+.. py:currentmodule:: revisit_diagram_interval_pie_chart
 
 
 Import detail
@@ -42,6 +42,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.extensions.data_analysis.graphs.access_graphs import revisit_diagram_interval_pie_graph
+    from ansys.stk.extensions.data_analysis.graphs.access_graphs import revisit_diagram_interval_pie_chart
 
 

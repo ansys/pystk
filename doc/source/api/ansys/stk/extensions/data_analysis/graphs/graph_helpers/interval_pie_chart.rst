@@ -1,7 +1,7 @@
 interval_pie_chart
 ==================
 
-.. py:function:: interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], start_col: ~str, stop_col: ~str, start_time: ~str, stop_time: ~str, title: ~str, unit_pref: ~str, cumulative: ~bool = False) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], start_column: ~str, stop_column: ~str, start_time: ~str, stop_time: ~str, title: ~str, dimension: ~str, cumulative: ~bool = False) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.interval_pie_chart
 
     Create an interval pie chart from the provided dataframe.
@@ -16,16 +16,16 @@ interval_pie_chart
         **df** : :obj:`~pandas.DataFrame`
         The dataframe containing the data.
 
-        **numerical_columns** : :obj:`~list`
+        **numerical_columns** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with numerical values.
 
-        **time_columns** : :obj:`~list`
+        **time_columns** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with time values.
 
-        **start_col** : :obj:`~str`
+        **start_column** : :obj:`~str`
         The column containing the start times of the intervals.
 
-        **stop_col** : :obj:`~str`
+        **stop_column** : :obj:`~str`
         The column containing the stop times of the intervals.
 
         **start_time** : :obj:`~str`
@@ -37,11 +37,11 @@ interval_pie_chart
         **title** : :obj:`~str`
         The title of the chart.
 
-        **unit_pref** : :obj:`~str`
-        The unit type of the chart data.
+        **dimension** : :obj:`~str`
+        The dimension of the chart data.
 
         **cumulative** : :obj:`~bool`
-        Whether the intervals should be summed into durations and gaps.
+        Whether the intervals should be summed into durations and gaps (the default is False).
 
 
 

@@ -30,7 +30,7 @@ from ansys.stk.core.stkobjects import Access
 from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, pie_chart
 
 
-def access_duration_pie_graph(
+def access_duration_pie_chart(
     stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart of the durations of the access intervals.
@@ -60,7 +60,7 @@ def access_duration_pie_graph(
     return pie_chart(root, df, ["duration"], [], "duration", "Access Duration", "Time", "access number")
 
 
-def cumulative_dwell_cumulative_pie_graph(
+def cumulative_dwell_cumulative_pie_chart(
     stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create graph showing access interval durations as a cumulative pie chart.
@@ -102,7 +102,7 @@ def cumulative_dwell_cumulative_pie_graph(
     )
 
 
-def revisit_diagram_interval_pie_graph(
+def revisit_diagram_interval_pie_chart(
     stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart showing the durations of access intervals and access gap intervals.

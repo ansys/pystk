@@ -428,6 +428,10 @@ class ManualRSTGenerator:
         module_rst_path : str
             Path to the module RST file.
 
+        Raises
+        ------
+        RuntimeError
+            If a type hint does not have the proper structure.
         """
         output_dir = Path(module_rst_path).parent.resolve() / module_name
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -483,9 +487,14 @@ class ManualRSTGenerator:
                         if len(param.desc) > 0:
                             if "of" in param.type:
                                 param_types = param.type.split()
-                                f.write(
-                                    f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n"
-                                )
+                                if len(param_types) == 3:
+                                    f.write(
+                                        f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n"
+                                    )
+                                else:
+                                    raise RuntimeError(
+                                        "Improper format for parameter containing 'of'- expecting `type` 'of' `type`."
+                                    )
                             else:
                                 f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
                             f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")

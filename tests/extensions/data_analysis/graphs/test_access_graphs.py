@@ -25,7 +25,7 @@
 
 import pytest
 
-from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_graph, cumulative_dwell_cumulative_pie_graph, revisit_diagram_interval_pie_graph
+from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart
 
 from stk_environment import stk_root
 
@@ -58,37 +58,37 @@ def set_up_basic_access_scenario(stk_root):
     yield access
 
 @pytest.mark.mpl_image_compare
-def test_access_duration_pie_graph(set_up_basic_access_scenario):
+def test_access_duration_pie_chart(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = access_duration_pie_graph(access)
+    fig, _ = access_duration_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_access_duration_pie_graph_non_default_start_stop(set_up_basic_access_scenario):
+def test_access_duration_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = access_duration_pie_graph(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
+    fig, _ = access_duration_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_cumulative_dwell_cumulative_pie_graph(set_up_basic_access_scenario):
+def test_cumulative_dwell_cumulative_pie_chart(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = cumulative_dwell_cumulative_pie_graph(access)
+    fig, _ = cumulative_dwell_cumulative_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_cumulative_dwell_cumulative_pie_graph_non_default_start_stop(set_up_basic_access_scenario):
+def test_cumulative_dwell_cumulative_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = cumulative_dwell_cumulative_pie_graph(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
+    fig, _ = cumulative_dwell_cumulative_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_revisit_diagram_interval_pie_graph(set_up_basic_access_scenario):
+def test_revisit_diagram_interval_pie_chart(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = revisit_diagram_interval_pie_graph(access)
+    fig, _ = revisit_diagram_interval_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_revisit_diagram_interval_pie_graph_non_default_start_stop(set_up_basic_access_scenario):
+def test_revisit_diagram_interval_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
     access = set_up_basic_access_scenario
-    fig, _ = revisit_diagram_interval_pie_graph(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
+    fig, _ = revisit_diagram_interval_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig

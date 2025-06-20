@@ -1,7 +1,7 @@
 pie_chart
 =========
 
-.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], column: ~str, title: ~str, unit_pref: ~str, label_col: ~str = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], column: ~str, title: ~str, dimension: ~str, label_column: ~str = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.pie_chart
 
     Create a pie chart from the provided dataframe and information.
@@ -16,10 +16,10 @@ pie_chart
         **df** : :obj:`~pandas.DataFrame`
         The dataframe containing the data.
 
-        **numerical_columns** : :obj:`~list`
+        **numerical_columns** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with numerical values.
 
-        **time_columns** : :obj:`~list`
+        **time_columns** : :obj:`~list` of :obj:`~str`
         The list of dataframe columns with time values.
 
         **column** : :obj:`~str`
@@ -28,10 +28,10 @@ pie_chart
         **title** : :obj:`~str`
         The title of the chart.
 
-        **unit_pref** : :obj:`~str`
-        The unit type of the chart data.
+        **dimension** : :obj:`~str`
+        The dimension of the chart data.
 
-        **label_col** : :obj:`~str`
+        **label_column** : :obj:`~str`
         The dataframe column corresponding to the chart labels (the default is None).
 
 

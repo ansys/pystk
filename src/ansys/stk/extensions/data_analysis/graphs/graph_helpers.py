@@ -42,8 +42,8 @@ def pie_chart(
     time_columns: List[str],
     column: str,
     title: str,
-    unit_pref: str,
-    label_col: str = None,
+    dimension: str,
+    label_column: str = None,
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create a pie chart from the provided dataframe and information.
 
@@ -53,17 +53,17 @@ def pie_chart(
         The STK object root.
     df : pandas.DataFrame
         The dataframe containing the data.
-    numerical_columns : list
+    numerical_columns : list of str
         The list of dataframe columns with numerical values.
-    time_columns : list
+    time_columns : list of str
         The list of dataframe columns with time values.
     column : str
         The dataframe column to plot in the pie chart.
     title : str
         The title of the chart.
-    unit_pref : str
-        The unit type of the chart data.
-    label_col : str
+    dimension : str
+        The dimension of the chart data.
+    label_column : str
         The dataframe column corresponding to the chart labels (the default is None).
 
     Returns
@@ -79,10 +79,10 @@ def pie_chart(
 
     # get units
     units_preferences = root.units_preferences
-    unit_pref = units_preferences.get_current_unit_abbrv(unit_pref)
+    dimension = units_preferences.get_current_unit_abbrv(dimension)
 
     # data conversions
-    df = convert_columns(df, numerical_columns, time_columns)
+    df = _convert_columns(df, numerical_columns, time_columns)
     df.dropna(axis=0, inplace=True)
 
     # create colormap with one color for each slice of pie
@@ -91,9 +91,9 @@ def pie_chart(
 
     # if plot is labeled with a different column, get and configure labels
     labels = []
-    if label_col:
-        for i in range(len(df[label_col])):
-            labels.append(f"{label_col} {df[label_col][i]:.0f}: {df[column][i]:.3f}({unit_pref})")
+    if label_column:
+        for i in range(len(df[label_column])):
+            labels.append(f"{label_column} {df[label_column][i]:.0f}: {df[column][i]:.3f}({dimension})")
 
     # create pie chart
     ax.pie(df[column], autopct="%1.1f%%", labels=labels, colors=colors, textprops={"fontsize": 8}, counterclock=False)
@@ -110,12 +110,12 @@ def interval_pie_chart(
     df: pandas.DataFrame,
     numerical_columns: List[str],
     time_columns: List[str],
-    start_col: str,
-    stop_col: str,
+    start_column: str,
+    stop_column: str,
     start_time: str,
     stop_time: str,
     title: str,
-    unit_pref: str,
+    dimension: str,
     cumulative: bool = False,
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create an interval pie chart from the provided dataframe.
@@ -126,13 +126,13 @@ def interval_pie_chart(
         The STK object root.
     df : pandas.DataFrame
         The dataframe containing the data.
-    numerical_columns : list
+    numerical_columns : list of str
         The list of dataframe columns with numerical values.
-    time_columns : list
+    time_columns : list of str
         The list of dataframe columns with time values.
-    start_col : str
+    start_column : str
         The column containing the start times of the intervals.
-    stop_col : str
+    stop_column : str
         The column containing the stop times of the intervals.
     start_time : str
         The start time of the calculation.
@@ -140,10 +140,10 @@ def interval_pie_chart(
         The stop time of the calculation.
     title : str
         The title of the chart.
-    unit_pref : str
-        The unit type of the chart data.
+    dimension : str
+        The dimension of the chart data.
     cumulative : bool
-        Whether the intervals should be summed into durations and gaps.
+        Whether the intervals should be summed into durations and gaps (the default is False).
 
     Returns
     -------
@@ -153,13 +153,13 @@ def interval_pie_chart(
         The newly created axes.
     """
     # data conversions
-    df = convert_columns(df, numerical_columns, time_columns)
+    df = _convert_columns(df, numerical_columns, time_columns)
 
     # create duration column using stop and start columns
-    df["graph duration"] = df[stop_col] - df[start_col]
+    df["graph duration"] = df[stop_column] - df[start_column]
 
     # create gap column with times in between durations
-    df["graph gap"] = df[start_col].shift(-1) - df[stop_col]
+    df["graph gap"] = df[start_column].shift(-1) - df[stop_column]
 
     # last gap is from end of last duration to stop time
     df.at[df.index[-1], "graph gap"] = pandas.to_datetime(stop_time) - df.iloc[-1]["stop time"]
@@ -170,7 +170,7 @@ def interval_pie_chart(
 
     # get unit preferences
     units_preferences = root.units_preferences
-    unit_pref = units_preferences.get_current_unit_abbrv(unit_pref)
+    dimension = units_preferences.get_current_unit_abbrv(dimension)
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
@@ -185,8 +185,8 @@ def interval_pie_chart(
         matplotlib.pyplot.pie(
             [duration_sum, gap_sum],
             labels=[
-                f"Cumulative Duration: {duration_sum:.2f} ({unit_pref})",
-                f"Cumulative Gap: {gap_sum:.2f} ({unit_pref})",
+                f"Cumulative Duration: {duration_sum:.2f} ({dimension})",
+                f"Cumulative Gap: {gap_sum:.2f} ({dimension})",
             ],
             colors=["deepskyblue", "slategray"],
             autopct="%1.3f%%",
@@ -205,17 +205,17 @@ def interval_pie_chart(
         for item in zip_list:
             flat_list.append(item[0])
             if not np.isnan(item[0]):
-                label_list.append(f"duration {count -1}: {item[0]:.2f}({unit_pref})")
+                label_list.append(f"duration {count -1}: {item[0]:.2f}({dimension})")
             flat_list.append(item[1])
             if not np.isnan(item[1]):
-                label_list.append(f"gap {count}: {item[1]:.2f}({unit_pref})")
+                label_list.append(f"gap {count}: {item[1]:.2f}({dimension})")
             count += 1
         # remove any nan values
         cleaned_list = [x for x in flat_list if not np.isnan(x)]
         # get gap before start of first interval, add to data and label lists
         first_gap = (pandas.to_datetime(df["start time"][0]) - pandas.to_datetime(start_time)) / np.timedelta64(1, "s")
         cleaned_list.insert(0, first_gap)
-        label_list.insert(0, f"gap 1: {first_gap:.2f}({unit_pref})")
+        label_list.insert(0, f"gap 1: {first_gap:.2f}({dimension})")
         # plot intervals
         matplotlib.pyplot.pie(
             cleaned_list,
@@ -243,7 +243,7 @@ def interval_pie_chart(
     return fig, ax
 
 
-def convert_columns(
+def _convert_columns(
     dataframe: pandas.DataFrame, numerical_column_list: List[str], date_column_list: List[str]
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
