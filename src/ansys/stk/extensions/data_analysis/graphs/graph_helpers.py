@@ -79,7 +79,7 @@ def pie_chart(
 
     # get units
     units_preferences = root.units_preferences
-    dimension = units_preferences.get_current_unit_abbrv(dimension)
+    unit = units_preferences.get_current_unit_abbrv(dimension)
 
     # data conversions
     df = _convert_columns(df, numerical_columns, time_columns)
@@ -93,7 +93,7 @@ def pie_chart(
     labels = []
     if label_column:
         for i in range(len(df[label_column])):
-            labels.append(f"{label_column} {df[label_column][i]:.0f}: {df[column][i]:.3f}({dimension})")
+            labels.append(f"{label_column} {df[label_column][i]:.0f}: {df[column][i]:.3f}({unit})")
 
     # create pie chart
     ax.pie(df[column], autopct="%1.1f%%", labels=labels, colors=colors, textprops={"fontsize": 8}, counterclock=False)
@@ -170,7 +170,7 @@ def interval_pie_chart(
 
     # get unit preferences
     units_preferences = root.units_preferences
-    dimension = units_preferences.get_current_unit_abbrv(dimension)
+    unit = units_preferences.get_current_unit_abbrv(dimension)
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
@@ -185,8 +185,8 @@ def interval_pie_chart(
         matplotlib.pyplot.pie(
             [duration_sum, gap_sum],
             labels=[
-                f"Cumulative Duration: {duration_sum:.2f} ({dimension})",
-                f"Cumulative Gap: {gap_sum:.2f} ({dimension})",
+                f"Cumulative Duration: {duration_sum:.2f} ({unit})",
+                f"Cumulative Gap: {gap_sum:.2f} ({unit})",
             ],
             colors=["deepskyblue", "slategray"],
             autopct="%1.3f%%",
@@ -205,17 +205,17 @@ def interval_pie_chart(
         for item in zip_list:
             flat_list.append(item[0])
             if not np.isnan(item[0]):
-                label_list.append(f"duration {count -1}: {item[0]:.2f}({dimension})")
+                label_list.append(f"duration {count -1}: {item[0]:.2f}({unit})")
             flat_list.append(item[1])
             if not np.isnan(item[1]):
-                label_list.append(f"gap {count}: {item[1]:.2f}({dimension})")
+                label_list.append(f"gap {count}: {item[1]:.2f}({unit})")
             count += 1
         # remove any nan values
         cleaned_list = [x for x in flat_list if not np.isnan(x)]
         # get gap before start of first interval, add to data and label lists
         first_gap = (pandas.to_datetime(df["start time"][0]) - pandas.to_datetime(start_time)) / np.timedelta64(1, "s")
         cleaned_list.insert(0, first_gap)
-        label_list.insert(0, f"gap 1: {first_gap:.2f}({dimension})")
+        label_list.insert(0, f"gap 1: {first_gap:.2f}({unit})")
         # plot intervals
         matplotlib.pyplot.pie(
             cleaned_list,
