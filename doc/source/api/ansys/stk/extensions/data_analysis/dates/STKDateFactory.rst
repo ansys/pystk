@@ -3,7 +3,7 @@ STKDateFactory
 
 .. py:class:: ansys.stk.extensions.data_analysis.dates.STKDateFactory
 
-   
+
 
    Factory class to create STKDate objects.
 

@@ -45,31 +45,31 @@ class STKDate:
         if span.unit != "sec":
             span.convert_to_unit("sec")
         return span.value
-    
+
     def __lt__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
         if isinstance(other, STKDate):
             return self - other < 0
-        
+
     def __gt__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
         if isinstance(other, STKDate):
             return self - other > 0
-        
+
     def __ge__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
         if isinstance(other, STKDate):
             return self > other or self == other
-        
+
     def __eq__(self: typing.Self, other: typing.Self):
         """Compare equality of STKDates."""
         if isinstance(other, STKDate):
             return self.get_utcg() == other.get_utcg()
-    
+
     def __add__(self: typing.Self, seconds: float) -> Date:
         """Add seconds to the date."""
         return STKDate(self.stk_date.add("sec", seconds))
-    
+
     def get_epsec(self: typing.Self) -> float:
         """Return the date in Epoch Seconds.
 
@@ -107,7 +107,7 @@ class STKDate:
 
         """
         return self.stk_date.format(unit)
-    
+
 
 class STKDateFactory:
     """Factory class to create STKDate objects."""

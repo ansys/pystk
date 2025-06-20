@@ -3,7 +3,7 @@ STKDate
 
 .. py:class:: ansys.stk.extensions.data_analysis.dates.STKDate
 
-   
+
 
    Wrapper class associated with STK Date object.
 

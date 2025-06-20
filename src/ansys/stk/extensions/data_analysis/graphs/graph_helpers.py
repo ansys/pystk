@@ -36,6 +36,7 @@ from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
 from ansys.stk.extensions.data_analysis.dates import STKDateFactory
 
+
 def pie_chart(
     root: STKObjectRoot,
     df: pandas.DataFrame,
