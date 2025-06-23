@@ -36,9 +36,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        CalculationToolScalarSurfaceDistanceBetweenPoints,
-    )
+    from ansys.stk.core.analysis_workbench import CalculationToolScalarSurfaceDistanceBetweenPoints
 
 
 Property detail

@@ -52,7 +52,10 @@ Set 2D Graphics display properties
     attributes.line.width = LineWidth.WIDTH4
     attributes.line.style = LineStyle.LONG_DASH
     attributes.color = Colors.Lime
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
     attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
 
 

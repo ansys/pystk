@@ -50,9 +50,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        AntennaModelApertureRectangularCosineSquaredPedestal,
-    )
+    from ansys.stk.core.stkobjects import AntennaModelApertureRectangularCosineSquaredPedestal
 
 
 Property detail

@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        AttitudeControlImpulsiveAntiVelocityVector,
-    )
+    from ansys.stk.core.stkobjects.astrogator import AttitudeControlImpulsiveAntiVelocityVector
 
 
 Property detail

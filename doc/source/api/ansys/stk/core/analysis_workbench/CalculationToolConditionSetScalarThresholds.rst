@@ -47,9 +47,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        CalculationToolConditionSetScalarThresholds,
-    )
+    from ansys.stk.core.analysis_workbench import CalculationToolConditionSetScalarThresholds
 
 
 Property detail

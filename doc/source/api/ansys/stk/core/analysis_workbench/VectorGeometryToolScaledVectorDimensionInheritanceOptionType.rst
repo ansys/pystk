@@ -34,8 +34,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolScaledVectorDimensionInheritanceOptionType,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolScaledVectorDimensionInheritanceOptionType
 
 

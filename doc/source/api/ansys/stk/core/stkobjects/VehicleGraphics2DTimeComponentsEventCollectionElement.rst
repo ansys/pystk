@@ -49,9 +49,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        VehicleGraphics2DTimeComponentsEventCollectionElement,
-    )
+    from ansys.stk.core.stkobjects import VehicleGraphics2DTimeComponentsEventCollectionElement
 
 
 Property detail

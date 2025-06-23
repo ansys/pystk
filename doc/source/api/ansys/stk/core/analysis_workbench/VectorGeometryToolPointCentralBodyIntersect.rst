@@ -59,9 +59,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolPointCentralBodyIntersect,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolPointCentralBodyIntersect
 
 
 Property detail

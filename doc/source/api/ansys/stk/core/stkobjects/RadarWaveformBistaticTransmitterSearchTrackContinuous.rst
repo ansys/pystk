@@ -30,9 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        RadarWaveformBistaticTransmitterSearchTrackContinuous,
-    )
+    from ansys.stk.core.stkobjects import RadarWaveformBistaticTransmitterSearchTrackContinuous
 
 
 Property detail

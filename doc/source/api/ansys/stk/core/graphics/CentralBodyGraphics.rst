@@ -65,33 +65,16 @@ Add Imagery and Terrain to the Scene
     extentTerrain = terrainTile.extent
     print(
         "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (
-            str(extentTerrain[0]),
-            str(extentTerrain[2]),
-            str(extentTerrain[1]),
-            str(extentTerrain[3]),
-        )
+        % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
     )
     # Add Imagery
     imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(
-            installPath,
-            "Data",
-            "Resources",
-            "stktraining",
-            "imagery",
-            "NPS_OrganPipeCactus_Map.pdttx",
-        )
+        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
     )
     extentImagery = imageryTile.extent
     print(
         "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (
-            str(extentImagery[0]),
-            str(extentImagery[2]),
-            str(extentImagery[1]),
-            str(extentImagery[3]),
-        )
+        % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
     )
 
 

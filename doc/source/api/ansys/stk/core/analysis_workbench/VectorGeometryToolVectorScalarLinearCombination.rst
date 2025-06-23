@@ -52,9 +52,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolVectorScalarLinearCombination,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolVectorScalarLinearCombination
 
 
 Property detail
