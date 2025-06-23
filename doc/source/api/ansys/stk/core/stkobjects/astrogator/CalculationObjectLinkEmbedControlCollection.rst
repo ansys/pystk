@@ -53,9 +53,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        CalculationObjectLinkEmbedControlCollection,
-    )
+    from ansys.stk.core.stkobjects.astrogator import CalculationObjectLinkEmbedControlCollection
 
 
 Property detail

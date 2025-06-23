@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        StateCalcPositionVelocityDifferenceOtherSegment,
-    )
+    from ansys.stk.core.stkobjects.astrogator import StateCalcPositionVelocityDifferenceOtherSegment
 
 
 Property detail

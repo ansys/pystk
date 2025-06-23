@@ -45,9 +45,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        VolumetricGraphics3DSpatialCalculationLevelCollection,
-    )
+    from ansys.stk.core.stkobjects import VolumetricGraphics3DSpatialCalculationLevelCollection
 
 
 Property detail

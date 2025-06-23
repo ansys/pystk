@@ -40,9 +40,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolCalculationPropagationDelayToLocation,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolCalculationPropagationDelayToLocation
 
 
 Property detail

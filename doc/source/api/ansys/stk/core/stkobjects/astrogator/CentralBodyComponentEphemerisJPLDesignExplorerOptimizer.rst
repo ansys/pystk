@@ -15,9 +15,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        CentralBodyComponentEphemerisJPLDesignExplorerOptimizer,
-    )
+    from ansys.stk.core.stkobjects.astrogator import CentralBodyComponentEphemerisJPLDesignExplorerOptimizer
 
 
 

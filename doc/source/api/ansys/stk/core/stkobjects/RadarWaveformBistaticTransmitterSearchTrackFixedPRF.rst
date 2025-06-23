@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        RadarWaveformBistaticTransmitterSearchTrackFixedPRF,
-    )
+    from ansys.stk.core.stkobjects import RadarWaveformBistaticTransmitterSearchTrackFixedPRF
 
 
 Property detail

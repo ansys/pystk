@@ -49,9 +49,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolConditionSpatialCalculationBounds,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolConditionSpatialCalculationBounds
 
 
 Property detail

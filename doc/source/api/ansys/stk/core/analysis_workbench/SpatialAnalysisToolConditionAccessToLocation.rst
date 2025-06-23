@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolConditionAccessToLocation,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolConditionAccessToLocation
 
 
 Property detail

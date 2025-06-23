@@ -54,9 +54,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        ManeuverOptimalFiniteSteeringNodeElement,
-    )
+    from ansys.stk.core.stkobjects.astrogator import ManeuverOptimalFiniteSteeringNodeElement
 
 
 Property detail

@@ -30,9 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        VehicleGraphics3DBPlaneTargetPointPositionCartesian,
-    )
+    from ansys.stk.core.stkobjects import VehicleGraphics3DBPlaneTargetPointPositionCartesian
 
 
 Property detail
