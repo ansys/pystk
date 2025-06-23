@@ -30,9 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        StateCalcSEETMagneticFieldLineSeparationAngle,
-    )
+    from ansys.stk.core.stkobjects.astrogator import StateCalcSEETMagneticFieldLineSeparationAngle
 
 
 Property detail

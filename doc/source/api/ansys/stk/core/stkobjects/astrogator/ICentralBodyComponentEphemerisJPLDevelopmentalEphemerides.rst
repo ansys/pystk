@@ -29,9 +29,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides,
-    )
+    from ansys.stk.core.stkobjects.astrogator import ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides
 
 
 Property detail

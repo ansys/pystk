@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        FigureOfMeritNavigationAccuracyMethodElevationAngle,
-    )
+    from ansys.stk.core.stkobjects import FigureOfMeritNavigationAccuracyMethodElevationAngle
 
 
 Property detail

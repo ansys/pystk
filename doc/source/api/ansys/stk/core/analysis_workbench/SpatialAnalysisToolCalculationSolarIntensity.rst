@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolCalculationSolarIntensity,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolCalculationSolarIntensity
 
 
 Property detail

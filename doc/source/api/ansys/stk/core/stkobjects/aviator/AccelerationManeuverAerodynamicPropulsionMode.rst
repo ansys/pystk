@@ -31,8 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.aviator import (
-        AccelerationManeuverAerodynamicPropulsionMode,
-    )
+    from ansys.stk.core.stkobjects.aviator import AccelerationManeuverAerodynamicPropulsionMode
 
 

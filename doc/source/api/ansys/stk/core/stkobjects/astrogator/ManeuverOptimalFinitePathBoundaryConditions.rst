@@ -50,9 +50,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        ManeuverOptimalFinitePathBoundaryConditions,
-    )
+    from ansys.stk.core.stkobjects.astrogator import ManeuverOptimalFinitePathBoundaryConditions
 
 
 Property detail

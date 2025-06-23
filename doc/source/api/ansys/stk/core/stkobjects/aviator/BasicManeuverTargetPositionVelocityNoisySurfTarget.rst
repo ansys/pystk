@@ -49,9 +49,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.aviator import (
-        BasicManeuverTargetPositionVelocityNoisySurfTarget,
-    )
+    from ansys.stk.core.stkobjects.aviator import BasicManeuverTargetPositionVelocityNoisySurfTarget
 
 
 Property detail
