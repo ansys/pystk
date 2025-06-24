@@ -30,9 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolConditionValidTimeAtLocation,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolConditionValidTimeAtLocation
 
 
 Property detail

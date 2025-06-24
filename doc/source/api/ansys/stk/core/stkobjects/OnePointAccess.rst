@@ -74,12 +74,7 @@ Compute an access for one point
             constraint = result.constraints.item(j)
             print(
                 "Constraint: %s Object: %s Status: %s Value:%s"
-                % (
-                    constraint.constraint,
-                    constraint.object_path,
-                    constraint.status,
-                    str(constraint.value),
-                )
+                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
             )
 
 

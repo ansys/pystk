@@ -255,7 +255,7 @@ no longer needed. Refer to the following example for using
   :language: py
   :tab-width: 4
   :start-after: def STKEngineEventsSnippet
-  :end-at: skt_object_root_events.unsubscribe()
+  :end-at: stk_object_root_events.unsubscribe()
   :dedent:
 
 The STK desktop application user interface might become unresponsive to user

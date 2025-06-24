@@ -34,9 +34,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        AnalysisWorkbenchPointLocateInSystemWithRateResult,
-    )
+    from ansys.stk.core.analysis_workbench import AnalysisWorkbenchPointLocateInSystemWithRateResult
 
 
 Property detail

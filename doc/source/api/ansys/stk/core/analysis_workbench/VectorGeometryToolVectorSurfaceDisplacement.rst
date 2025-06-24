@@ -36,9 +36,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolVectorSurfaceDisplacement,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolVectorSurfaceDisplacement
 
 
 Property detail

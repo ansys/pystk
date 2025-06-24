@@ -30,9 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolPointSatelliteCollectionEntry,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolPointSatelliteCollectionEntry
 
 
 Property detail
