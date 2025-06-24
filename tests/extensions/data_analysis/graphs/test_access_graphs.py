@@ -38,6 +38,7 @@ def set_up_basic_access_scenario(stk_root):
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     facility = scenario.children.new(STKObjectType.FACILITY, "Facility")
+    facility.use_terrain = False
     facility.position.assign_planetodetic(39.95, -75.16, 0)
 
 
