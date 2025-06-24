@@ -31,7 +31,7 @@ from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie
 
 
 def access_duration_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart of the durations of the access intervals.
 
@@ -39,7 +39,7 @@ def access_duration_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation (the default is None, which implies using the scenario start time).
@@ -53,15 +53,15 @@ def access_duration_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Duration"]).data_sets.to_pandas_dataframe()
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Duration"]).data_sets.to_pandas_dataframe()
     return pie_chart(root, df, ["duration"], [], "duration", "Access Duration", "Time", "access number")
 
 
 def cumulative_dwell_cumulative_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create graph showing access interval durations as a cumulative pie chart.
 
@@ -69,7 +69,7 @@ def cumulative_dwell_cumulative_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation.
@@ -83,10 +83,10 @@ def cumulative_dwell_cumulative_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
         df,
@@ -103,7 +103,7 @@ def cumulative_dwell_cumulative_pie_chart(
 
 
 def revisit_diagram_interval_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart showing the durations of access intervals and access gap intervals.
 
@@ -111,7 +111,7 @@ def revisit_diagram_interval_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation.
@@ -125,10 +125,10 @@ def revisit_diagram_interval_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
         df,
