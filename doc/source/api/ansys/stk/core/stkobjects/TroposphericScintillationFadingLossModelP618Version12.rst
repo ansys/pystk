@@ -40,9 +40,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        TroposphericScintillationFadingLossModelP618Version12,
-    )
+    from ansys.stk.core.stkobjects import TroposphericScintillationFadingLossModelP618Version12
 
 
 Property detail

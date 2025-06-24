@@ -37,8 +37,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.aviator import (
-        BasicManeuverStrategyNavigationControlLimit,
-    )
+    from ansys.stk.core.stkobjects.aviator import BasicManeuverStrategyNavigationControlLimit
 
 

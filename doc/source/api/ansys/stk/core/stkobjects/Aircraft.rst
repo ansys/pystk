@@ -62,10 +62,7 @@ Add Array of Waypoints to Aircraft
 
     # Aircraft aircraft: Aircraft object
     route = aircraft.route
-    ptsArray = [
-        [37.5378, 14.2207, 3.0480, 0.0772, 2],
-        [47.2602, 30.5517, 3.0480, 0.0772, 2],
-    ]
+    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
     route.set_points_smooth_rate_and_propagate(ptsArray)
     # Propagate the route
     route.propagate()

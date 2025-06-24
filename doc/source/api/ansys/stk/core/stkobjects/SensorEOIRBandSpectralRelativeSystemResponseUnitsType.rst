@@ -31,8 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        SensorEOIRBandSpectralRelativeSystemResponseUnitsType,
-    )
+    from ansys.stk.core.stkobjects import SensorEOIRBandSpectralRelativeSystemResponseUnitsType
 
 

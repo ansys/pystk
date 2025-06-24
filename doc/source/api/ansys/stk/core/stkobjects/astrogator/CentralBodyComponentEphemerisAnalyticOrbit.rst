@@ -54,9 +54,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        CentralBodyComponentEphemerisAnalyticOrbit,
-    )
+    from ansys.stk.core.stkobjects.astrogator import CentralBodyComponentEphemerisAnalyticOrbit
 
 
 Property detail

@@ -36,9 +36,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolAxesAlignedAndConstrained,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolAxesAlignedAndConstrained
 
 
 Property detail

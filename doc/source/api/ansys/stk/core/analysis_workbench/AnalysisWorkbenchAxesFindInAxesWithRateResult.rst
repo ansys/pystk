@@ -34,9 +34,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        AnalysisWorkbenchAxesFindInAxesWithRateResult,
-    )
+    from ansys.stk.core.analysis_workbench import AnalysisWorkbenchAxesFindInAxesWithRateResult
 
 
 Property detail

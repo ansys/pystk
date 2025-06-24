@@ -120,13 +120,13 @@ Use arrays to send and retrieve data with Connect
 
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
-    connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
-    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+    connect_cmds = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+    results = root.execute_multiple_commands(connect_cmds, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
 
-    first_message = command_results.item(0)
-    also_first_message = command_results[0]
+    first_message = results.item(0)
+    also_first_message = results[0]
 
-    for message in command_results:
+    for message in results:
         print(message.count)
 
 
@@ -134,10 +134,7 @@ Execute multiple Connect commands
 
 .. code-block:: python
 
-    commandList = [
-        ["New / */Place MyPlace"],
-        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
-    ]
+    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 
@@ -263,8 +260,8 @@ Manage STK Desktop application events
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
     root.new_scenario("ExampleScenario")
-    skt_object_root_events = root.subscribe()
-    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    stk_object_root_events = root.subscribe()
+    stk_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
@@ -289,17 +286,17 @@ Manage STK Engine events
         print(f"Scenario {path} has been created.")
 
 
-    skt_object_root_events = root.subscribe()
-    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+    stk_object_root_events = root.subscribe()
+    stk_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
     root.new_scenario("ExampleScenario")
     # callback should be executed now
 
     # remove the callback from the handler
-    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+    stk_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
 
     # all finished with events, unsubscribe
-    skt_object_root_events.unsubscribe()
+    stk_object_root_events.unsubscribe()
 
 
 Close an open Scenario
@@ -315,11 +312,12 @@ Open a Viewer Data File
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(
-        os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
-        "",
-    )
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+    root.load_vdf(os.path.join(installPath, *vdfPath), "")
 
 
 Import detail
@@ -621,11 +619,12 @@ Method detail
     .. code-block:: python
 
         # STKObjectRoot root: STK Object Model Root
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        root.load_vdf(
-            os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
-            "",
-        )
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
+        vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+        root.load_vdf(os.path.join(installPath, *vdfPath), "")
 
 
 .. py:method:: object_exists(self, object_path: str) -> bool
