@@ -22,17 +22,17 @@
 
 """Object Model components specifically designed to support STK RF Channel Modeler."""
 
-__all__ = ["Analysis", "AnalysisConfiguration", "AnalysisConfigurationCollection", "AnalysisConfigurationComputeStepMode",
-"AnalysisConfigurationModelType", "AnalysisLink", "AnalysisLinkCollection", "AnalysisResultsFileMode", "AnalysisSolverBoundingBoxMode",
-"ChannelResponseType", "CommunicationsAnalysisConfigurationModel", "CommunicationsTransceiverConfiguration", "CommunicationsTransceiverConfigurationCollection",
-"CommunicationsTransceiverModel", "CommunicationsWaveform", "ComputeOptions", "ElementExportPatternAntenna", "Extent", "FacetTileset",
-"FacetTilesetCollection", "FarFieldDataPatternAntenna", "FrequencyPulseResponse", "GpuProperties", "IAnalysisConfigurationModel",
-"IAnalysisLink", "IAntenna", "IProgressTrackCancel", "IRadarAnalysisConfigurationModel", "IResponse", "ISceneContributorCollection",
-"ITransceiverModel", "ImageWindowType", "Material", "ParametricBeamAntenna", "PolarizationType", "RadarISarAnalysisConfigurationModel",
-"RadarISarAnalysisLink", "RadarImagingDataProduct", "RadarImagingDataProductCollection", "RadarSarAnalysisConfigurationModel",
-"RadarSarAnalysisLink", "RadarSarImageLocation", "RadarSarImageLocationCollection", "RadarTargetCollection", "RadarTransceiverConfiguration",
-"RadarTransceiverConfigurationCollection", "RadarTransceiverModel", "RadarWaveform", "RangeDopplerResponse", "STKRFChannelModeler",
-"SceneContributor", "SceneContributorCollection", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType",
+__all__ = ["Analysis","AnalysisConfiguration","AnalysisConfigurationCollection","AnalysisConfigurationComputeStepMode","AnalysisConfigurationModelType",
+"AnalysisLink","AnalysisLinkCollection","AnalysisResultsFileMode","AnalysisSolverBoundingBoxMode","ChannelResponseType",
+"CommunicationsAnalysisConfigurationModel","CommunicationsTransceiverConfiguration","CommunicationsTransceiverConfigurationCollection",
+"CommunicationsTransceiverModel","CommunicationsWaveform","ComputeOptions","ElementExportPatternAntenna","Extent","FacetTileset",
+"FacetTilesetCollection","FarFieldDataPatternAntenna","FrequencyPulseResponse","GpuProperties","IAnalysisConfigurationModel",
+"IAnalysisLink","IAntenna","IProgressTrackCancel","IRadarAnalysisConfigurationModel","IResponse","ISceneContributorCollection",
+"ITransceiverModel","ImageWindowType","Material","ParametricBeamAntenna","PolarizationType","RadarISarAnalysisConfigurationModel",
+"RadarISarAnalysisLink","RadarImagingDataProduct","RadarImagingDataProductCollection","RadarSarAnalysisConfigurationModel",
+"RadarSarAnalysisLink","RadarSarImageLocation","RadarSarImageLocationCollection","RadarTargetCollection","RadarTransceiverConfiguration",
+"RadarTransceiverConfigurationCollection","RadarTransceiverModel","RadarWaveform","RangeDopplerResponse","STKRFChannelModeler",
+"SceneContributor","SceneContributorCollection","Transceiver","TransceiverCollection","TransceiverMode","TransceiverModelType",
 "ValidationResponse"]
 
 

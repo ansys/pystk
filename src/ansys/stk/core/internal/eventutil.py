@@ -980,4 +980,3 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
     @add_complete.setter
     def add_complete(self, callback):
         self._events["AddComplete"]._safe_assign(callback)
-

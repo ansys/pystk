@@ -27,8 +27,7 @@ MATLAB strategies allow the users to utilize MATLAB
 Aerospace Toolbox functions to define the force modeling of the aircraft.
 """
 
-__all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation",
-"StrategyMATLABProfile"]
+__all__ = ["BasicManeuverMATLABFactory","StrategyMATLAB3DGuidance","StrategyMATLABFull3D","StrategyMATLABNavigation","StrategyMATLABProfile"]
 
 from ctypes import POINTER
 import typing

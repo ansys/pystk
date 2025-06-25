@@ -22,8 +22,8 @@
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode", "IUiApplicationPartnerAccess",
-"MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
+__all__ = ["ApplicationConstants","ApplicationErrorCodes","ApplicationLogMessageType","ApplicationOpenLogFileMode","IUiApplicationPartnerAccess",
+"MostRecentlyUsedCollection","UiApplication","UiFileOpenDialogExtension","UiFileOpenDialogExtensionCollection"]
 
 from ctypes import POINTER
 from enum import IntEnum

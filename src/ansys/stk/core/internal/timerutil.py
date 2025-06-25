@@ -200,4 +200,3 @@ if os.name != "nt":
 
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()
-
