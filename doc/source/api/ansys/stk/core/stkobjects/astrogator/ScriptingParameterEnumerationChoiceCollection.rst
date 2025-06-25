@@ -57,9 +57,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        ScriptingParameterEnumerationChoiceCollection,
-    )
+    from ansys.stk.core.stkobjects.astrogator import ScriptingParameterEnumerationChoiceCollection
 
 
 Property detail

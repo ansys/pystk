@@ -124,6 +124,32 @@ STK Objects
     - :ref:`Define and compute a chain (advanced) <CreateChainAdvanced>`
     - :ref:`Define and compute a chain (basic) <ComputeChain>`
     - :ref:`Create a chain (on the current scenario central body) <CreateChain>`
+  Communications
+    Antenna
+      - :ref:`Modify antenna graphics <ModifyAntennaGraphics>`
+      - :ref:`Modify antenna orientation and position <ModifyAntennaOrientation>`
+      - :ref:`Modify antenna refraction <ModifyAntennaRefraction>`
+      - :ref:`Modify antenna model type <ModifyAntenna>`
+      - :ref:`Create a new antenna object <CreateAntenna>`
+    Receiver
+      - :ref:`Receiver additional gain <ReceiverAdditionalGain>`
+      - :ref:`Modify receiver filter properties <ModifyReceiverFilter>`
+      - :ref:`Modify receiver demodulator properties <ModifyReceiverDemodulator>`
+      - :ref:`Modify receiver system noise temperature <ModifyReceiverSysNoiseTemp>`
+      - :ref:`Modify orientation of the receiver antenna <ModifyReceiverOrientation>`
+      - :ref:`Modify receiver polarization properties <ModifyReceiverPolarization>`
+      - :ref:`Modify receiver embedded antenna <ModifyReceiverAntenna>`
+      - :ref:`Modify receiver model type <ModifyReceiverModel>`
+      - :ref:`Create a new receiver object <CreateReceiver>`
+    Transmitter
+      - :ref:`Transmitter additional gain <TransmitteradditionalGain>`
+      - :ref:`Modify a transmitter filter <ModifyTransmitterFilter>`
+      - :ref:`Modify a transmitter's modulator properties <ModifyTransmitterModulator>`
+      - :ref:`Modify a transmitter's orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
+      - :ref:`Modify a transmitter's polarization properties <ModifyTransmitterPolarizationProperties>`
+      - :ref:`Modify a transmitter's embedded antenna <ModifyTransmitterAntenna>`
+      - :ref:`Modify a transmitter's model type <ModifyTransmitter>`
+      - :ref:`Create a new transmitter object <CreateTransmitter>`
   Constellation
     - :ref:`Define a constellation <CreateConstellation>`
   Coverage Definition
@@ -215,32 +241,6 @@ STK Objects
     - :ref:`Define sensor pointing fixed AzEl <DefineSensorPointingFixedAzEl>`
     - :ref:`Set sensor properties <SensorProperties>`
     - :ref:`Attach a sensor object to a vehicle <CreateSensor>`
-  Communications
-    Antenna
-      - :ref:`Modify antenna graphics <ModifyAntennaGraphics>`
-      - :ref:`Modify antenna orientation and position <ModifyAntennaOrientation>`
-      - :ref:`Modify antenna refraction <ModifyAntennaRefraction>`
-      - :ref:`Modify antenna model type <ModifyAntenna>`
-      - :ref:`Create a new antenna object <CreateAntenna>`
-    Receiver
-      - :ref:`Receiver additional gain <ReceiverAdditionalGain>`
-      - :ref:`Modify receiver filter properties <ModifyReceiverFilter>`
-      - :ref:`Modify receiver demodulator properties <ModifyReceiverDemodulator>`
-      - :ref:`Modify receiver system noise temperature <ModifyReceiverSysNoiseTemp>`
-      - :ref:`Modify orientation of the receiver antenna <ModifyReceiverOrientation>`
-      - :ref:`Modify receiver polarization properties <ModifyReceiverPolarization>`
-      - :ref:`Modify receiver embedded antenna <ModifyReceiverAntenna>`
-      - :ref:`Modify receiver model type <ModifyReceiverModel>`
-      - :ref:`Create a new receiver object <CreateReceiver>`
-    Transmitter
-      - :ref:`Transmitter additional gain <TransmitteradditionalGain>`
-      - :ref:`Modify a transmitter filter <ModifyTransmitterFilter>`
-      - :ref:`Modify a transmitter's modulator properties <ModifyTransmitterModulator>`
-      - :ref:`Modify a transmitter's orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
-      - :ref:`Modify a transmitter's polarization properties <ModifyTransmitterPolarizationProperties>`
-      - :ref:`Modify a transmitter's embedded antenna <ModifyTransmitterAntenna>`
-      - :ref:`Modify a transmitter's model type <ModifyTransmitter>`
-      - :ref:`Create a new transmitter object <CreateTransmitter>`
   Vehicles
     Common
       Propagators
@@ -397,7 +397,8 @@ Create a new vector magnitude scalar
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     calcFactory = vgtSat.calculation_scalars.factory
-    displScalar = calcFactory.create_vector_magnitude("VectorDisplacement", "Vector Magnitude of Displacement Vector")
+    vectorMagnitudeSettings = ["VectorDisplacement", "Vector Magnitude of Displacement Vector"]
+    displScalar = calcFactory.create_vector_magnitude(*vectorMagnitudeSettings)
     displScalar.input_vector = Sat2EarthCenter
 
 .. _CreateAssembledSystem:
@@ -517,17 +518,15 @@ Create a new custom script vector
     customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     # Initialization script if needed
     # customScript.InitializationScriptFile = ''
-    customScript.script_file = (
-        r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
-    )
+    trainingSamplesDir = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples"
+    scriptFilePath = r"\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    customScript.script_file = trainingSamplesDir + scriptFilePath
     if customScript.is_valid is False:
         print("Script component not valid!")
         from os import getenv
 
-        print(
-            r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
-            % getenv("USERNAME")
-        )
+        customScriptingDir = r"C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool" % getenv("USERNAME")
+        print(r"Copy vbs file from " + trainingSamplesDir + scriptFilePath + r" to " + customScriptingDir)
 
 .. _CreateCrossProductVector:
 
@@ -683,13 +682,13 @@ Use arrays to send and retrieve data with connect
 
     from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
 
-    connect_commands = ["GetStkVersion /", "New / Scenario ExampleScenario"]
-    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+    connect_cmds = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+    results = root.execute_multiple_commands(connect_cmds, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
 
-    first_message = command_results.item(0)
-    also_first_message = command_results[0]
+    first_message = results.item(0)
+    also_first_message = results[0]
 
-    for message in command_results:
+    for message in results:
         print(message.count)
 
 .. _ConnectCommandMultiple:
@@ -699,10 +698,7 @@ Execute multiple connect commands
 
 .. code-block:: python
 
-    commandList = [
-        ["New / */Place MyPlace"],
-        ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"],
-    ]
+    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 .. _ConnectCommand:
@@ -819,10 +815,7 @@ Load a numpy array with flight profile data
 
     flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
     flight_profile_data = flight_profile_data_provider.execute_elements(
-        self.get_scenario().start_time,
-        self.get_scenario().stop_time,
-        time_step_sec,
-        field_names,
+        self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
     )
 
     # convert dataset collection in a row format as a Numpy array
@@ -833,11 +826,7 @@ Load a numpy array with flight profile data
 
     plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
-        plt.plot(
-            flight_profile_data_arr[simplex, 1],
-            flight_profile_data_arr[simplex, 0],
-            color="darkblue",
-        )
+        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
 
     plt.title("Estimated Flight Envelope", fontsize=15)
     plt.xlabel("Mach Number", fontsize=15)
@@ -1096,17 +1085,7 @@ Compute interpolated positions along a great arc
     # Scenario scenario: Scenario object
     # Create a array of LLA values and interoplate them over the specified
     # central body
-    positionArray = [
-        [35.017],
-        [-118.540],
-        [0],
-        [44.570],
-        [-96.474],
-        [0],
-        [31.101],
-        [-82.619],
-        [0],
-    ]
+    positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
     manager = scenario.scene_manager
     # Interpolate points over great arc
     interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
@@ -1125,6 +1104,64 @@ Combine enumerations with the logical or operator
     # CylinderFillOptions inherits from enum.IntFlag and may be combined
     # using the `|` operator
     cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+
+.. _SceneLighting:
+
+Control the lighting of the 3D scene
+====================================
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Modify the lighting levels
+    manager = scenario.scene_manager
+    lighting = manager.scenes.item(0).lighting
+    lighting.ambient_intensity = 0.20  # Percent
+    lighting.diffuse_intensity = 4  # Percent
+    lighting.night_lights_intensity = 5  # Percent
+
+.. _DisplayStarsWater:
+
+Control the display of stars and water texture
+==============================================
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Turn off the stars and water texture
+    manager = scenario.scene_manager
+    manager.scenes.item(0).show_stars = False
+    manager.scenes.item(0).show_water_surface = False
+
+.. _AddTerrainImagery:
+
+Add imagery and terrain to the scene
+====================================
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Retrieve the boundaries of the imported files
+    manager = scenario.scene_manager
+    # Add Terrain
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
+    )
+    extentTerrain = terrainTile.extent
+    print(
+        "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
+        % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
+    )
+    # Add Imagery
+    imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+    )
+    extentImagery = imageryTile.extent
+    print(
+        "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
+        % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
+    )
 
 .. _AttachSTKRuntimeSnippet:
 
@@ -1220,81 +1257,6 @@ Initialize STK Engine with graphics and get a reference to the STK object root
 
     # Get the STK Object Root interface
     root = stk.new_object_root()
-
-.. _SceneLighting:
-
-Control the lighting of the 3D scene
-====================================
-
-.. code-block:: python
-
-    # Scenario scenario: Scenario object
-    # Modify the lighting levels
-    manager = scenario.scene_manager
-    lighting = manager.scenes.item(0).lighting
-    lighting.ambient_intensity = 0.20  # Percent
-    lighting.diffuse_intensity = 4  # Percent
-    lighting.night_lights_intensity = 5  # Percent
-
-.. _DisplayStarsWater:
-
-Control the display of stars and water texture
-==============================================
-
-.. code-block:: python
-
-    # Scenario scenario: Scenario object
-    # Turn off the stars and water texture
-    manager = scenario.scene_manager
-    manager.scenes.item(0).show_stars = False
-    manager.scenes.item(0).show_water_surface = False
-
-.. _AddTerrainImagery:
-
-Add imagery and terrain to the scene
-====================================
-
-.. code-block:: python
-
-    # Scenario scenario: Scenario object
-    # Retrieve the boundaries of the imported files
-    manager = scenario.scene_manager
-    # Add Terrain
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
-    )
-    extentTerrain = terrainTile.extent
-    print(
-        "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (
-            str(extentTerrain[0]),
-            str(extentTerrain[2]),
-            str(extentTerrain[1]),
-            str(extentTerrain[3]),
-        )
-    )
-    # Add Imagery
-    imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(
-            installPath,
-            "Data",
-            "Resources",
-            "stktraining",
-            "imagery",
-            "NPS_OrganPipeCactus_Map.pdttx",
-        )
-    )
-    extentImagery = imageryTile.extent
-    print(
-        "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
-        % (
-            str(extentImagery[0]),
-            str(extentImagery[2]),
-            str(extentImagery[1]),
-            str(extentImagery[3]),
-        )
-    )
 
 .. _ScenarioFont:
 
@@ -1394,8 +1356,8 @@ Manage STK desktop application events
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
     root.new_scenario("ExampleScenario")
-    skt_object_root_events = root.subscribe()
-    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    stk_object_root_events = root.subscribe()
+    stk_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
@@ -1422,17 +1384,17 @@ Manage STK Engine events
         print(f"Scenario {path} has been created.")
 
 
-    skt_object_root_events = root.subscribe()
-    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+    stk_object_root_events = root.subscribe()
+    stk_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
     root.new_scenario("ExampleScenario")
     # callback should be executed now
 
     # remove the callback from the handler
-    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+    stk_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
 
     # all finished with events, unsubscribe
-    skt_object_root_events.unsubscribe()
+    stk_object_root_events.unsubscribe()
 
 .. _CloseScenario:
 
@@ -1452,11 +1414,12 @@ Open a viewer data file
 .. code-block:: python
 
     # STKObjectRoot root: STK Object Model Root
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    root.load_vdf(
-        os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"),
-        "",
-    )
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+    root.load_vdf(os.path.join(installPath, *vdfPath), "")
 
 .. _GetAccesses:
 
@@ -1576,12 +1539,7 @@ Compute an access for one point
             constraint = result.constraints.item(j)
             print(
                 "Constraint: %s Object: %s Status: %s Value:%s"
-                % (
-                    constraint.constraint,
-                    constraint.object_path,
-                    constraint.status,
-                    str(constraint.value),
-                )
+                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
             )
 
 .. _ComputeAccessAdvancedSettings:
@@ -1841,10 +1799,7 @@ Add array of waypoints to aircraft
 
     # Aircraft aircraft: Aircraft object
     route = aircraft.route
-    ptsArray = [
-        [37.5378, 14.2207, 3.0480, 0.0772, 2],
-        [47.2602, 30.5517, 3.0480, 0.0772, 2],
-    ]
+    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
     route.set_points_smooth_rate_and_propagate(ptsArray)
     # Propagate the route
     route.propagate()
@@ -2089,6 +2044,309 @@ Create a chain (on the current scenario central body)
     # Create the Chain on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
     chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
+
+.. _ModifyAntennaGraphics:
+
+Modify antenna graphics
+=======================
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    contours = antenna.graphics.contour_graphics
+    contours.set_contour_type(AntennaContourType.GAIN)
+    contours.show = True
+    for i in range(-30, 30, 5):
+        contours.contour.levels.add(i)
+    antenna.graphics_3d.show_contours = True
+    antenna.graphics_3d.volume_graphics.show = True
+
+.. _ModifyAntennaOrientation:
+
+Modify antenna orientation and position
+=======================================
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antOrientation = antenna.orientation
+    antOrientation.assign_az_el(0, -90, AzElAboutBoresight.ROTATE)
+    antOrientation.position_offset.x = 0.0  # m
+    antOrientation.position_offset.y = 1  # m
+    antOrientation.position_offset.z = 0.25  # m
+
+.. _ModifyAntennaRefraction:
+
+Modify antenna refraction
+=========================
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antenna.use_refraction_in_access = True
+    antenna.refraction = SensorRefractionType.ITU_R_P834_4
+    refraction = antenna.refraction_model
+    refraction.ceiling = 5000  # m
+    refraction.atmosphere_altitude = 10000  # m
+    refraction.knee_bend_factor = 0.2
+
+.. _ModifyAntenna:
+
+Modify antenna model type
+=========================
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antenna.set_model("Dipole")
+    antennaModel = antenna.model
+    antennaModel.design_frequency = 15  # GHz
+    antennaModel.length = 1.5  # m
+    antennaModel.length_to_wavelength_ratio = 45
+    antennaModel.efficiency = 85  # Percent
+
+.. _CreateAntenna:
+
+Create a new antenna object
+===========================
+
+.. code-block:: python
+
+    # ISTKObject satellite: STK object
+    antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
+
+.. _ReceiverAdditionalGain:
+
+Receiver additional gain
+========================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    gain = recModel.pre_receive_gains_losses.add(5)  # dB
+    gain.identifier = "Example Gain"
+
+.. _ModifyReceiverFilter:
+
+Modify receiver filter properties
+=================================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.enable_filter = True
+    recModel.set_filter("Bessel")
+    recFilter = recModel.filter
+    recFilter.lower_bandwidth_limit = -20
+    recFilter.upper_bandwidth_limit = 20
+    recFilter.cut_off_frequency = 10
+
+.. _ModifyReceiverDemodulator:
+
+Modify receiver demodulator properties
+======================================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.select_demodulator_automatically = False
+    recModel.set_demodulator("16PSK")
+
+.. _ModifyReceiverSysNoiseTemp:
+
+Modify receiver system noise temperature
+========================================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    recModel.system_noise_temperature.constant_noise_temperature = 280  # K
+
+.. _ModifyReceiverOrientation:
+
+Modify orientation of the receiver antenna
+==========================================
+
+.. code-block:: python
+
+    # Complex receivers Only
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    antennaControl = recModel.antenna_control
+    antOrientation = antennaControl.embedded_model_orientation
+    antOrientation.assign_az_el(45, 85, AzElAboutBoresight.ROTATE)
+    antOrientation.position_offset.x = 0.5  # m
+    antOrientation.position_offset.y = 0.75  # m
+    antOrientation.position_offset.z = 1  # m
+
+.. _ModifyReceiverPolarization:
+
+Modify receiver polarization properties
+=======================================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.enable_polarization = True
+    recModel.set_polarization_type(PolarizationType.LINEAR)
+    polarization = recModel.polarization
+    polarization.reference_axis = PolarizationReferenceAxis.Z
+    polarization.cross_polarization_leakage = -60  # dB
+
+.. _ModifyReceiverAntenna:
+
+Modify receiver embedded antenna
+================================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    antennaControl = recModel.antenna_control
+    antennaControl.set_embedded_model("Hemispherical")
+    antennaControl.embedded_model.efficiency = 85  # Percent
+
+.. _ModifyReceiverModel:
+
+Modify receiver model type
+==========================
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    recModel.track_frequency_automatically = False
+    recModel.frequency = 11.81
+
+.. _CreateReceiver:
+
+Create a new receiver object
+============================
+
+.. code-block:: python
+
+    # ISTKObject satellite: STK object
+    receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
+
+.. _TransmitteradditionalGain:
+
+Transmitter additional gain
+===========================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    gain = txModel.post_transmit_gains_losses.add(-5)  # dB
+    gain.identifier = "Example Loss"
+
+.. _ModifyTransmitterFilter:
+
+Modify a transmitter filter
+===========================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    txModel.enable_filter = True
+    txModel.set_filter("Butterworth")
+    recFilter = txModel.filter
+    recFilter.lower_bandwidth_limit = -20
+    recFilter.upper_bandwidth_limit = 20
+    recFilter.cut_off_frequency = 10
+
+.. _ModifyTransmitterModulator:
+
+Modify a transmitter's modulator properties
+===========================================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    txModel.set_modulator("BPSK")
+    txModel.modulator.scale_bandwidth_automatically = True
+
+.. _ModifyTransmitterPolarizationOrientationAndPosition:
+
+Modify a transmitter's orientation and position
+===============================================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    antennaControl = txModel.antenna_control
+    antOrientation = antennaControl.embedded_model_orientation
+    antOrientation.assign_az_el(0, 90, 1)  # 1 represents Rotate About Boresight
+    antOrientation.position_offset.x = 0.0  # m
+    antOrientation.position_offset.y = 1  # m
+    antOrientation.position_offset.z = 0.25  # m
+
+.. _ModifyTransmitterPolarizationProperties:
+
+Modify a transmitter's polarization properties
+==============================================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    txModel.enable_polarization = True
+    txModel.set_polarization_type(PolarizationType.LINEAR)
+    polarization = txModel.polarization
+    polarization.reference_axis = PolarizationReferenceAxis.Y
+    polarization.tilt_angle = 15  # deg
+
+.. _ModifyTransmitterAntenna:
+
+Modify a transmitter's embedded antenna
+=======================================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    antennaControl = txModel.antenna_control
+    antennaControl.set_embedded_model("Isotropic")
+    antennaControl.embedded_model.efficiency = 85  # Percent
+
+.. _ModifyTransmitter:
+
+Modify a transmitter's model type
+=================================
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    txModel.frequency = 14  # GHz
+    txModel.power = 25  # dBW
+    txModel.data_rate = 15  # Mb/sec
+
+.. _CreateTransmitter:
+
+Create a new transmitter object
+===============================
+
+.. code-block:: python
+
+    # ISTKObject satellite: STK object
+    transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
 
 .. _CreateConstellation:
 
@@ -2543,14 +2801,7 @@ Load multi-track object (MTO) track points from a file
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     track2.points.load_points(
-        os.path.join(
-            installPath,
-            "Data",
-            "Resources",
-            "stktraining",
-            "text",
-            "EphemerisLLATimePosVel_Example.e",
-        )
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
     )
     track2.interpolate = True
 
@@ -2672,7 +2923,10 @@ Change the 3D model and marker properties
     model = satellite.graphics_3d.model
     model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     orbitmarker = model.orbit_marker
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
     orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
     orbitmarker.marker_data.is_transparent = True
     orbitmarker.pixel_size = 18
@@ -2870,7 +3124,10 @@ Set 2D graphics display properties
     attributes.line.width = LineWidth.WIDTH4
     attributes.line.style = LineStyle.LONG_DASH
     attributes.color = Colors.Lime
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
     attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
 
 .. _SatelliteGraphicsResolution:
@@ -2892,16 +3149,12 @@ Set satellite attitude external
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
-        os.path.join(
-            installPath,
-            "Data",
-            "Resources",
-            "stktraining",
-            "text",
-            "AttitudeTimeEulerAngles_Example.a",
-        )
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
     )
 
 .. _SatelliteAttitudeTarget:
@@ -2974,13 +3227,16 @@ Set satellite propagator to spice and propagate
     # STKObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    propagator.spice = os.path.join(installPath, "STKData", "Spice", "planets.bsp")  # Make sure this is a valid path
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    bspPath = ["STKData", "Spice", "planets.bsp"]
+    propagator.spice = os.path.join(installPath, *bspPath)  # Make sure this is a valid path
     propagator.body_name = "MARS"
 
-    propagator.ephemeris_interval.set_implicit_interval(
-        root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
-    )  # Link to scenario period
+    intvl = root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+    propagator.ephemeris_interval.set_implicit_interval(intvl)  # Link to scenario period
     propagator.step = 60.0
     propagator.propagate()
 
@@ -3012,8 +3268,12 @@ Set satellite propagator to HPOP and set force model properties
     )
 
     forceModel = satellite.propagator.force_model
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    forceModel.central_body_gravity.file = os.path.join(installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv")
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
+    forceModel.central_body_gravity.file = os.path.join(installPath, *grv_path)
     forceModel.central_body_gravity.maximum_degree = 21
     forceModel.central_body_gravity.maximum_order = 21
     forceModel.drag.use = True
@@ -3043,7 +3303,8 @@ Set satellite propagator to j4 and assign Cartesian position
     # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     propagator = satellite.propagator
-    propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641)
+    icrfCoordinates = [6678.14, 0, 0, 0, 6.78953, 3.68641]
+    propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, *icrfCoordinates)
     propagator.propagate()
 
 .. _SatelliteInitialState:
@@ -3083,6 +3344,16 @@ Create a satellite (on the current scenario central body)
     # STKObjectRoot root: STK Object Model Root
     satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
+.. _AstrogatorRunMCS:
+
+Run the Astrogator® mission control sequence (MCS)
+==================================================
+
+.. code-block:: python
+
+    # MCSDriver driver: MCS driver interface
+    driver.run_mcs()
+
 .. _SensorPersistence:
 
 Sensor persistence
@@ -3106,8 +3377,12 @@ Sensor body mask
 .. code-block:: python
 
     # Sensor sensor: Sensor object
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    sensor.set_az_el_mask_file(os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"))
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    bmskPath = ["Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"]
+    sensor.set_az_el_mask_file(os.path.join(installPath, *bmskPath))
 
 .. _DefineSensorPointingFixedAxesYPR:
 
@@ -3224,319 +3499,6 @@ Attach a sensor object to a vehicle
 
     # Satellite satellite: Satellite object
     sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
-
-.. _ModifyAntennaGraphics:
-
-Modify antenna graphics
-=======================
-
-.. code-block:: python
-
-    # Antenna antenna: Antenna object
-    contours = antenna.graphics.contour_graphics
-    contours.set_contour_type(AntennaContourType.GAIN)
-    contours.show = True
-    for i in range(-30, 30, 5):
-        contours.contour.levels.add(i)
-    antenna.graphics_3d.show_contours = True
-    antenna.graphics_3d.volume_graphics.show = True
-
-.. _ModifyAntennaOrientation:
-
-Modify antenna orientation and position
-=======================================
-
-.. code-block:: python
-
-    # Antenna antenna: Antenna object
-    antOrientation = antenna.orientation
-    antOrientation.assign_az_el(0, -90, AzElAboutBoresight.ROTATE)
-    antOrientation.position_offset.x = 0.0  # m
-    antOrientation.position_offset.y = 1  # m
-    antOrientation.position_offset.z = 0.25  # m
-
-.. _ModifyAntennaRefraction:
-
-Modify antenna refraction
-=========================
-
-.. code-block:: python
-
-    # Antenna antenna: Antenna object
-    antenna.use_refraction_in_access = True
-    antenna.refraction = SensorRefractionType.ITU_R_P834_4
-    refraction = antenna.refraction_model
-    refraction.ceiling = 5000  # m
-    refraction.atmosphere_altitude = 10000  # m
-    refraction.knee_bend_factor = 0.2
-
-.. _ModifyAntenna:
-
-Modify antenna model type
-=========================
-
-.. code-block:: python
-
-    # Antenna antenna: Antenna object
-    antenna.set_model("Dipole")
-    antennaModel = antenna.model
-    antennaModel.design_frequency = 15  # GHz
-    antennaModel.length = 1.5  # m
-    antennaModel.length_to_wavelength_ratio = 45
-    antennaModel.efficiency = 85  # Percent
-
-.. _CreateAntenna:
-
-Create a new antenna object
-===========================
-
-.. code-block:: python
-
-    # ISTKObject satellite: STK object
-    antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
-
-.. _ReceiverAdditionalGain:
-
-Receiver additional gain
-========================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    recModel = receiver.model
-    gain = recModel.pre_receive_gains_losses.add(5)  # dB
-    gain.identifier = "Example Gain"
-
-.. _ModifyReceiverFilter:
-
-Modify receiver filter properties
-=================================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    recModel = receiver.model
-    recModel.enable_filter = True
-    recModel.set_filter("Bessel")
-    recFilter = recModel.filter
-    recFilter.lower_bandwidth_limit = -20
-    recFilter.upper_bandwidth_limit = 20
-    recFilter.cut_off_frequency = 10
-
-.. _ModifyReceiverDemodulator:
-
-Modify receiver demodulator properties
-======================================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    recModel = receiver.model
-    recModel.select_demodulator_automatically = False
-    recModel.set_demodulator("16PSK")
-
-.. _ModifyReceiverSysNoiseTemp:
-
-Modify receiver system noise temperature
-========================================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
-    recModel.system_noise_temperature.constant_noise_temperature = 280  # K
-
-.. _ModifyReceiverOrientation:
-
-Modify orientation of the receiver antenna
-==========================================
-
-.. code-block:: python
-
-    # Complex receivers Only
-    # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
-    antennaControl = recModel.antenna_control
-    antOrientation = antennaControl.embedded_model_orientation
-    antOrientation.assign_az_el(45, 85, AzElAboutBoresight.ROTATE)
-    antOrientation.position_offset.x = 0.5  # m
-    antOrientation.position_offset.y = 0.75  # m
-    antOrientation.position_offset.z = 1  # m
-
-.. _ModifyReceiverPolarization:
-
-Modify receiver polarization properties
-=======================================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    recModel = receiver.model
-    recModel.enable_polarization = True
-    recModel.set_polarization_type(PolarizationType.LINEAR)
-    polarization = recModel.polarization
-    polarization.reference_axis = PolarizationReferenceAxis.Z
-    polarization.cross_polarization_leakage = -60  # dB
-
-.. _ModifyReceiverAntenna:
-
-Modify receiver embedded antenna
-================================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
-    antennaControl = recModel.antenna_control
-    antennaControl.set_embedded_model("Hemispherical")
-    antennaControl.embedded_model.efficiency = 85  # Percent
-
-.. _ModifyReceiverModel:
-
-Modify receiver model type
-==========================
-
-.. code-block:: python
-
-    # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
-    recModel.track_frequency_automatically = False
-    recModel.frequency = 11.81
-
-.. _CreateReceiver:
-
-Create a new receiver object
-============================
-
-.. code-block:: python
-
-    # ISTKObject satellite: STK object
-    receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
-
-.. _TransmitteradditionalGain:
-
-Transmitter additional gain
-===========================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
-    gain = txModel.post_transmit_gains_losses.add(-5)  # dB
-    gain.identifier = "Example Loss"
-
-.. _ModifyTransmitterFilter:
-
-Modify a transmitter filter
-===========================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
-    txModel.enable_filter = True
-    txModel.set_filter("Butterworth")
-    recFilter = txModel.filter
-    recFilter.lower_bandwidth_limit = -20
-    recFilter.upper_bandwidth_limit = 20
-    recFilter.cut_off_frequency = 10
-
-.. _ModifyTransmitterModulator:
-
-Modify a transmitter's modulator properties
-===========================================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
-    txModel.set_modulator("BPSK")
-    txModel.modulator.scale_bandwidth_automatically = True
-
-.. _ModifyTransmitterPolarizationOrientationAndPosition:
-
-Modify a transmitter's orientation and position
-===============================================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
-    antennaControl = txModel.antenna_control
-    antOrientation = antennaControl.embedded_model_orientation
-    antOrientation.assign_az_el(0, 90, 1)  # 1 represents Rotate About Boresight
-    antOrientation.position_offset.x = 0.0  # m
-    antOrientation.position_offset.y = 1  # m
-    antOrientation.position_offset.z = 0.25  # m
-
-.. _ModifyTransmitterPolarizationProperties:
-
-Modify a transmitter's polarization properties
-==============================================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
-    txModel.enable_polarization = True
-    txModel.set_polarization_type(PolarizationType.LINEAR)
-    polarization = txModel.polarization
-    polarization.reference_axis = PolarizationReferenceAxis.Y
-    polarization.tilt_angle = 15  # deg
-
-.. _ModifyTransmitterAntenna:
-
-Modify a transmitter's embedded antenna
-=======================================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
-    antennaControl = txModel.antenna_control
-    antennaControl.set_embedded_model("Isotropic")
-    antennaControl.embedded_model.efficiency = 85  # Percent
-
-.. _ModifyTransmitter:
-
-Modify a transmitter's model type
-=================================
-
-.. code-block:: python
-
-    # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
-    txModel.frequency = 14  # GHz
-    txModel.power = 25  # dBW
-    txModel.data_rate = 15  # Mb/sec
-
-.. _CreateTransmitter:
-
-Create a new transmitter object
-===============================
-
-.. code-block:: python
-
-    # ISTKObject satellite: STK object
-    transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
-
-.. _AstrogatorRunMCS:
-
-Run the Astrogator® mission control sequence (MCS)
-==================================================
-
-.. code-block:: python
-
-    # MCSDriver driver: MCS driver interface
-    driver.run_mcs()
 
 .. _SetupAdvancedFixedWingTool:
 

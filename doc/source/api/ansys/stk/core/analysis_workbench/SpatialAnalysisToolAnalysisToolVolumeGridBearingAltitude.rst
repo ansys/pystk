@@ -42,9 +42,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude
 
 
 Property detail

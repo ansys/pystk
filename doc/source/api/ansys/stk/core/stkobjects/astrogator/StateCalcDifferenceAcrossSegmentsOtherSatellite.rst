@@ -38,9 +38,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import (
-        StateCalcDifferenceAcrossSegmentsOtherSatellite,
-    )
+    from ansys.stk.core.stkobjects.astrogator import StateCalcDifferenceAcrossSegmentsOtherSatellite
 
 
 Property detail

@@ -32,9 +32,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        VectorGeometryToolVectorProjectionAlongVector,
-    )
+    from ansys.stk.core.analysis_workbench import VectorGeometryToolVectorProjectionAlongVector
 
 
 Property detail

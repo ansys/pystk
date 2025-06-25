@@ -75,8 +75,12 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
     )
     def OpenVdfSTKSnippet(self, root):
         # STKObjectRoot root: STK Object Model Root
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
+        vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+        root.load_vdf(os.path.join(installPath, *vdfPath), "")
 
     def test_CloseScenarioSnippet(self):
         try:
@@ -115,17 +119,17 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         def on_scenario_new_custom_callback(path: str):
             print(f"Scenario {path} has been created.")
 
-        skt_object_root_events = root.subscribe()
-        skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+        stk_object_root_events = root.subscribe()
+        stk_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
         root.new_scenario("ExampleScenario")
         # callback should be executed now
 
         # remove the callback from the handler
-        skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+        stk_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
 
         # all finished with events, unsubscribe
-        skt_object_root_events.unsubscribe()
+        stk_object_root_events.unsubscribe()
 
     @pytest.mark.skip(reason="User interface interaction required to prevent application from hanging")
     @category("ExcludeOnLinux")
@@ -148,8 +152,8 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         stk = STKDesktop.start_application(visible=True)
         root = stk.root
         root.new_scenario("ExampleScenario")
-        skt_object_root_events = root.subscribe()
-        skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+        stk_object_root_events = root.subscribe()
+        stk_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
         scenario = root.current_scenario
 
         # on_stk_object_added_custom_callback is successfully called when the next line is executed

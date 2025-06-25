@@ -42,9 +42,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        AnalysisWorkbenchPlaneFindInSystemWithRateResult,
-    )
+    from ansys.stk.core.analysis_workbench import AnalysisWorkbenchPlaneFindInSystemWithRateResult
 
 
 Property detail

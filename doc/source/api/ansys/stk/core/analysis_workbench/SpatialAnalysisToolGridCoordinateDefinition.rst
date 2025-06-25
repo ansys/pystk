@@ -45,9 +45,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.analysis_workbench import (
-        SpatialAnalysisToolGridCoordinateDefinition,
-    )
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolGridCoordinateDefinition
 
 
 Property detail

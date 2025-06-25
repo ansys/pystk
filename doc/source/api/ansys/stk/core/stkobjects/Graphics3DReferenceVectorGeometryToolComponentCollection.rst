@@ -51,9 +51,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import (
-        Graphics3DReferenceVectorGeometryToolComponentCollection,
-    )
+    from ansys.stk.core.stkobjects import Graphics3DReferenceVectorGeometryToolComponentCollection
 
 
 Property detail

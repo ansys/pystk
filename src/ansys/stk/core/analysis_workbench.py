@@ -27110,9 +27110,8 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
     >>> calcFactory = vgtSat.calculation_scalars.factory
-    >>> displScalar = calcFactory.create_vector_magnitude(
-    >>>     "VectorDisplacement", "Vector Magnitude of Displacement Vector"
-    >>> )
+    >>> vectorMagnitudeSettings = ["VectorDisplacement", "Vector Magnitude of Displacement Vector"]
+    >>> displScalar = calcFactory.create_vector_magnitude(*vectorMagnitudeSettings)
     >>> displScalar.input_vector = Sat2EarthCenter
 
     Create a new Assembled System:
@@ -27184,15 +27183,15 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     >>> # Initialization script if needed
     >>> # customScript.InitializationScriptFile = ''
-    >>> customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    >>> trainingSamplesDir = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples"
+    >>> scriptFilePath = r"\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    >>> customScript.script_file = trainingSamplesDir + scriptFilePath
     >>> if customScript.is_valid is False:
     >>>     print("Script component not valid!")
     >>>     from os import getenv
     >>>
-    >>>     print(
-    >>>         r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
-    >>>         % getenv("USERNAME")
-    >>>     )
+    >>>     customScriptingDir = r"C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool" % getenv("USERNAME")
+    >>>     print(r"Copy vbs file from " + trainingSamplesDir + scriptFilePath + r" to " + customScriptingDir)
 
     Create a new Cross Product Vector:
     >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
