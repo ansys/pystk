@@ -22,8 +22,8 @@
 
 """The STK UI Core library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["ApplicationWindowState","Toolbar","ToolbarCollection","Window","WindowArrangeState","WindowArrangeStyle","WindowDockStyle",
-"WindowGlobeObject","WindowMapObject","WindowServiceType","WindowsCollection"]
+__all__ = ["ApplicationWindowState", "Toolbar", "ToolbarCollection", "Window", "WindowArrangeState", "WindowArrangeStyle",
+"WindowDockStyle", "WindowGlobeObject", "WindowMapObject", "WindowServiceType", "WindowsCollection"]
 
 from ctypes import POINTER
 from enum import IntEnum

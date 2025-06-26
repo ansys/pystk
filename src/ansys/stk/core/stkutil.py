@@ -28,16 +28,19 @@ types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 """
 
-__all__ = ["AzElAboutBoresight","Cartesian","Cartesian2Vector","Cartesian3Vector","CommRadOrientationAzEl","CommRadOrientationEulerAngles",
-"CommRadOrientationOffsetCart","CommRadOrientationQuaternion","CommRadOrientationYPRAngles","ConversionUtility","CoordinateSystem",
-"Cylindrical","Date","Direction","DirectionEuler","DirectionPR","DirectionRADec","DirectionType","DirectionXYZ","DoublesCollection",
-"EulerDirectionSequence","EulerOrientationSequenceType","ExecuteCommandResult","ExecuteMultipleCommandsMode","ExecuteMultipleCommandsResult",
-"FillStyle","Geocentric","Geodetic","ICartesian3Vector","IDirection","ILocationData","IOrbitState","IOrientation","IOrientationAzEl",
-"IOrientationEulerAngles","IOrientationPositionOffset","IOrientationQuaternion","IOrientationYPRAngles","IPosition","IRuntimeTypeInfoProvider",
-"LineStyle","LogMessageDisplayID","LogMessageType","OrbitStateType","Orientation","OrientationAzEl","OrientationEulerAngles",
-"OrientationQuaternion","OrientationType","OrientationYPRAngles","PRSequence","Planetocentric","Planetodetic","Position",
-"PositionType","PropertyInfo","PropertyInfoCollection","PropertyInfoValueType","Quantity","RuntimeTypeInfo","Spherical",
-"UnitPreferencesDimension","UnitPreferencesDimensionCollection","UnitPreferencesUnit","UnitPreferencesUnitCollection","YPRAnglesSequence"]
+__all__ = ["AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "CommRadOrientationAzEl",
+"CommRadOrientationEulerAngles", "CommRadOrientationOffsetCart", "CommRadOrientationQuaternion",
+"CommRadOrientationYPRAngles", "ConversionUtility", "CoordinateSystem", "Cylindrical", "Date", "Direction",
+"DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", "DirectionXYZ", "DoublesCollection",
+"EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode",
+"ExecuteMultipleCommandsResult", "FillStyle", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection",
+"ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles",
+"IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", "IPosition",
+"IRuntimeTypeInfoProvider", "LineStyle", "LogMessageDisplayID", "LogMessageType", "OrbitStateType", "Orientation",
+"OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationType", "OrientationYPRAngles",
+"PRSequence", "Planetocentric", "Planetodetic", "Position", "PositionType", "PropertyInfo", "PropertyInfoCollection",
+"PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension",
+"UnitPreferencesDimensionCollection", "UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPRAnglesSequence"]
 
 from ctypes import POINTER
 from datetime import datetime
