@@ -256,7 +256,7 @@ class ManualRSTGenerator:
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
             if isinstance(arg.annotation, ast.Subscript):
-                arg_str += f": {(arg.annotation.value.id).lower()}[{arg.annotation.slice.id}]"
+                arg_str += f": {(arg.annotation.value.id).lower()}[{ManualRSTGenerator._parse_nested_type(arg.annotation.slice)}]"
             else:
                 arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
             if i >= default_offset and defaults:

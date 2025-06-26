@@ -25,6 +25,8 @@
 
 import pytest
 
+import matplotlib
+
 from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart
 
 from stk_environment import stk_root
@@ -65,6 +67,12 @@ def test_access_duration_pie_chart(basic_access):
     return fig
 
 @pytest.mark.mpl_image_compare
+def test_access_duration_pie_chart_pass_colormap(basic_access):
+    access = basic_access
+    fig, _ = access_duration_pie_chart(access, colormap=matplotlib.cm.plasma)
+    return fig
+
+@pytest.mark.mpl_image_compare
 def test_access_duration_pie_chart_non_default_start_stop(basic_access):
     access = basic_access
     fig, _ = access_duration_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
@@ -74,6 +82,12 @@ def test_access_duration_pie_chart_non_default_start_stop(basic_access):
 def test_cumulative_dwell_cumulative_pie_chart(basic_access):
     access = basic_access
     fig, _ = cumulative_dwell_cumulative_pie_chart(access)
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_cumulative_dwell_cumulative_pie_chart_pass_colors(basic_access):
+    access = basic_access
+    fig, _ = cumulative_dwell_cumulative_pie_chart(access, color_list=["cornflowerblue", "orchid"])
     return fig
 
 @pytest.mark.mpl_image_compare
@@ -87,6 +101,12 @@ def test_revisit_diagram_interval_pie_chart(basic_access):
     access = basic_access
     fig, _ = revisit_diagram_interval_pie_chart(access)
     return fig
+
+def test_revisit_diagram_interval_pie_chart_raises_error_with_wrong_colors_length(basic_access):
+    access = basic_access
+    with pytest.raises(ValueError) as excinfo:
+        revisit_diagram_interval_pie_chart(access, color_list=["cornflowerblue"])
+    assert "If provided, 'color_list' argument must contain at least 2 colors." in str(excinfo.value)
 
 @pytest.mark.mpl_image_compare
 def test_revisit_diagram_interval_pie_chart_non_default_start_stop(basic_access):

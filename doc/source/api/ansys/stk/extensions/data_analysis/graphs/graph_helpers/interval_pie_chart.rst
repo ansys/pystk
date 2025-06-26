@@ -1,7 +1,7 @@
 interval_pie_chart
 ==================
 
-.. py:function:: interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], start_column: ~str, stop_column: ~str, start_time: ~str, stop_time: ~str, title: ~str, dimension: ~str, cumulative: ~bool = False) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[~str], time_columns: list[~str], start_column: ~str, stop_column: ~str, start_time: ~str, stop_time: ~str, title: ~str, dimension: ~str, cumulative: ~bool = False, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.interval_pie_chart
 
     Create an interval pie chart from the provided dataframe.
@@ -42,6 +42,9 @@ interval_pie_chart
 
         **cumulative** : :obj:`~bool`
         Whether the intervals should be summed into durations and gaps (the default is False).
+
+        **color_list** : :obj:`~list` of :obj:`~typing.Any`
+        The colors with which to color the pie chart slices (the default is None). Must have length >= 2.
 
 
 
