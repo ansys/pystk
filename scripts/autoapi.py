@@ -255,7 +255,9 @@ class ManualRSTGenerator:
 
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
-            if arg.annotation:
+            if isinstance(arg.annotation, ast.Subscript):
+                arg_str += f": {(arg.annotation.value.id).lower()}[{ManualRSTGenerator._parse_nested_type(arg.annotation.slice)}]"
+            else:
                 arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
             if i >= default_offset and defaults:
                 default = defaults[i - default_offset]
@@ -420,12 +422,16 @@ class ManualRSTGenerator:
         func_def : ast.FunctionDef
             Function definition in the AST.
         namespace : str
-            Namespace containing the enum.
+            Namespace containing the function.
         module_name : str
             Name of the module.
         module_rst_path : str
             Path to the module RST file.
 
+        Raises
+        ------
+        RuntimeError
+            If a type hint does not have the proper structure.
         """
         output_dir = Path(module_rst_path).parent.resolve() / module_name
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -439,6 +445,17 @@ class ManualRSTGenerator:
                     f"{'=' * len(func_def.name)}\n\n",
                 ]
             )
+
+            # For graphs, insert test image
+            graph_module_list = ["access_graphs"]
+            if module_name in graph_module_list:
+                f.writelines(
+                    [
+                        f".. image:: /graph_images_temp/test_{func_def.name}.png\n",
+                        "  :width: 600\n",
+                        f"  :alt: image of output from {func_def.name}\n\n",
+                    ]
+                )
 
             arg_str = ManualRSTGenerator._parse_args(func_def)
             ret_type = ManualRSTGenerator._parse_return_type(func_def.returns)
@@ -468,7 +485,18 @@ class ManualRSTGenerator:
                 if docstring and "Parameters" in docstring:
                     for param in docstring["Parameters"]:
                         if len(param.desc) > 0:
-                            f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
+                            if "of" in param.type:
+                                param_types = param.type.split()
+                                if len(param_types) == 3:
+                                    f.write(
+                                        f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n"
+                                    )
+                                else:
+                                    raise RuntimeError(
+                                        "Improper format for parameter containing 'of'- expecting `type` 'of' `type`."
+                                    )
+                            else:
+                                f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
                             f.write(textwrap.indent("\n".join(param.desc), "        ") + "\n")
                             f.write("\n")
                     f.write("\n")

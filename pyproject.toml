@@ -93,6 +93,7 @@ tests = [
     "pytz==2025.2",
     "parameterized==0.9.0",
     "scipy==1.15.3",
+    "pytest-mpl==0.17.0",
 ]
 doc = [
     "ansys-sphinx-theme==1.5.2",
