@@ -256,7 +256,7 @@ class ManualRSTGenerator:
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
             if isinstance(arg.annotation, ast.Subscript):
-                arg_str += f": {(arg.annotation.value.id).lower()}[{arg.annotation.slice.id}]"
+                arg_str += f": {(arg.annotation.value.id).lower()}[{ManualRSTGenerator._parse_nested_type(arg.annotation.slice)}]"
             else:
                 arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
             if i >= default_offset and defaults:
@@ -403,9 +403,9 @@ class ManualRSTGenerator:
 
                     if docstring:
                         if "Summary" in docstring:
-                            f.write(f"{textwrap.indent("\n".join(docstring['Summary']), '    ')}\n\n")
+                            f.write(f"{textwrap.indent('\n'.join(docstring['Summary']), '    ')}\n\n")
                         if "Extended Summary" in docstring:
-                            f.write(f"{textwrap.indent("\n".join(docstring['Extended Summary']), '    ')}\n\n")
+                            f.write(f"{textwrap.indent('\n'.join(docstring['Extended Summary']), '    ')}\n\n")
 
                     if m.args.args:
                         f.write("    :Parameters:\n\n")
@@ -424,7 +424,7 @@ class ManualRSTGenerator:
                                             )
                                     else:
                                         f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
-                                    f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
+                                    f.write(f"{textwrap.indent('\n'.join(param.desc), '        ')}\n")
                                     f.write("\n")
                             f.write("\n")
                         f.write("\n")
@@ -435,7 +435,7 @@ class ManualRSTGenerator:
                             if docstring and "Returns" in docstring and len(docstring["Returns"]) >= i:
                                 ret = docstring["Returns"][i]
                                 f.write(f"        :obj:`~{ret.type}`\n")
-                                f.write(f"{textwrap.indent("\n".join(ret.desc), '        ')}\n")
+                                f.write(f"{textwrap.indent('\n'.join(ret.desc), '        ')}\n")
                                 f.write("\n")
 
             f.write("\n")
@@ -502,9 +502,9 @@ class ManualRSTGenerator:
 
             if docstring:
                 if "Summary" in docstring:
-                    f.write(f"{textwrap.indent("\n".join(docstring['Summary']), '    ')}\n\n")
+                    f.write(textwrap.indent("\n".join(docstring["Summary"]), "    ") + "\n\n")
                 if "Extended Summary" in docstring:
-                    f.write(f"{textwrap.indent("\n".join(docstring['Extended Summary']), '    ')}\n\n")
+                    f.write(textwrap.indent("\n".join(docstring["Extended Summary"]), "    ") + "\n\n")
 
             if func_def.args.args:
                 f.write("    :Parameters:\n\n")
@@ -523,7 +523,7 @@ class ManualRSTGenerator:
                                     )
                             else:
                                 f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
-                            f.write(f"{textwrap.indent("\n".join(param.desc), '        ')}\n")
+                            f.write(textwrap.indent("\n".join(param.desc), "        ") + "\n")
                             f.write("\n")
                     f.write("\n")
                 f.write("\n")
@@ -535,7 +535,7 @@ class ManualRSTGenerator:
                     if docstring and "Returns" in docstring and len(docstring["Returns"]) >= i:
                         ret = docstring["Returns"][i]
                         f.write(f"        :obj:`~{ret.type}`\n")
-                        f.write(f"{textwrap.indent("\n".join(ret.desc), '        ')}\n")
+                        f.write(textwrap.indent("\n".join(ret.desc), "        ") + "\n")
                     f.write("\n")
 
             if docstring and "Raises" in docstring and len(docstring["Raises"]) == 1:
@@ -544,7 +544,7 @@ class ManualRSTGenerator:
                     [
                         "    :Raises:\n\n",
                         f"        :obj:`~{ret.type}`\n",
-                        f"{textwrap.indent("\n".join(ret.desc), '        ')}\n",
+                        textwrap.indent("\n".join(ret.desc), "        ") + "\n",
                     ]
                 )
             f.write("\n")
@@ -560,7 +560,7 @@ class ManualRSTGenerator:
                         in_code_block = True
                         f.write("\n      .. code-block:: python\n\n")
                     if in_code_block:
-                        f.write(f"{textwrap.indent(example_line[len(">>> "):], '        ')}\n")
+                        f.write(f"{textwrap.indent(example_line[len('>>> ') :], '        ')}\n")
                     else:
                         f.write(f"{textwrap.indent(example_line, '      ')}\n")
                 f.write("\n")

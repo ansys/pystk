@@ -116,8 +116,10 @@ if os.name != "nt":
             UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self._tcl = Tcl()
             self._tcl.after(self._next_timer_proc(), self._loop_timers)
+            self._terminated = False
 
         def terminate(self):
+            self._terminated = True
             del(self._tcl)
 
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
@@ -142,7 +144,8 @@ if os.name != "nt":
 
         def _loop_timers(self):
             self._fire_timers()
-            self._tcl.after(self._next_timer_proc(), self._loop_timers)
+            if not self._terminated:
+                self._tcl.after(self._next_timer_proc(), self._loop_timers)
 
     class SigAlarmTimer(object):
         def __init__(self):
@@ -200,4 +203,3 @@ if os.name != "nt":
 
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()
-

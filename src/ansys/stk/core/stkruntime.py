@@ -215,4 +215,3 @@ class STKRuntime(object):
             atexit.register(app._disconnect)
             return app
         raise STKInitializationError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")
-

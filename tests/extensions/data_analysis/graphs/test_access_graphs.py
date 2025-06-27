@@ -25,12 +25,14 @@
 
 import pytest
 
+import matplotlib
+
 from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart
 
 from stk_environment import stk_root
 
 @pytest.fixture()
-def set_up_basic_access_scenario(stk_root):
+def basic_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
 
     stk_root.new_scenario("GraphTest")
@@ -38,6 +40,7 @@ def set_up_basic_access_scenario(stk_root):
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     facility = scenario.children.new(STKObjectType.FACILITY, "Facility")
+    facility.use_terrain = False
     facility.position.assign_planetodetic(39.95, -75.16, 0)
 
 
@@ -58,7 +61,7 @@ def set_up_basic_access_scenario(stk_root):
     yield access
 
 @pytest.fixture()
-def set_up_leap_second_during_access_scenario(stk_root):
+def leap_second_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
@@ -80,58 +83,76 @@ def set_up_leap_second_during_access_scenario(stk_root):
     yield access
 
 @pytest.mark.mpl_image_compare
-def test_access_duration_pie_chart(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_access_duration_pie_chart(basic_access):
+    access = basic_access
     fig, _ = access_duration_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_access_duration_pie_chart_during_leap_second(set_up_leap_second_during_access_scenario):
-    access = set_up_leap_second_during_access_scenario
+def test_access_duration_pie_chart_during_leap_second(leap_second_access):
+    access = leap_second_access
     fig, _ = access_duration_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_access_duration_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_access_duration_pie_chart_pass_colormap(basic_access):
+    access = basic_access
+    fig, _ = access_duration_pie_chart(access, colormap=matplotlib.cm.plasma)
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_access_duration_pie_chart_non_default_start_stop(basic_access):
+    access = basic_access
     fig, _ = access_duration_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_cumulative_dwell_cumulative_pie_chart(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_cumulative_dwell_cumulative_pie_chart(basic_access):
+    access = basic_access
     fig, _ = cumulative_dwell_cumulative_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_cumulative_dwell_cumulative_pie_chart_during_leap_second(set_up_leap_second_during_access_scenario):
-    access = set_up_leap_second_during_access_scenario
+def test_cumulative_dwell_cumulative_pie_chart_during_leap_second(leap_second_access):
+    access = leap_second_access
     fig, _ = cumulative_dwell_cumulative_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_cumulative_dwell_cumulative_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_cumulative_dwell_cumulative_pie_chart_pass_colors(basic_access):
+    access = basic_access
+    fig, _ = cumulative_dwell_cumulative_pie_chart(access, color_list=["cornflowerblue", "orchid"])
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_cumulative_dwell_cumulative_pie_chart_non_default_start_stop(basic_access):
+    access = basic_access
     fig, _ = cumulative_dwell_cumulative_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_revisit_diagram_interval_pie_chart(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_revisit_diagram_interval_pie_chart(basic_access):
+    access = basic_access
     fig, _ = revisit_diagram_interval_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_revisit_diagram_interval_pie_chart_during_leap_second(set_up_leap_second_during_access_scenario):
-    access = set_up_leap_second_during_access_scenario
+def test_revisit_diagram_interval_pie_chart_during_leap_second(leap_second_access):
+    access = leap_second_access
     fig, _ = revisit_diagram_interval_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
-def test_revisit_diagram_interval_pie_chart_non_default_start_stop(set_up_basic_access_scenario):
-    access = set_up_basic_access_scenario
+def test_revisit_diagram_interval_pie_chart_non_default_start_stop(basic_access):
+    access = basic_access
     fig, _ = revisit_diagram_interval_pie_chart(access, start_time="5 Jun 2022 00:00:00.000", stop_time="5 Jun 2022 12:00:00.000")
     return fig
+
+def test_revisit_diagram_interval_pie_chart_raises_error_with_wrong_colors_length(basic_access):
+    access = basic_access
+    with pytest.raises(ValueError) as excinfo:
+        revisit_diagram_interval_pie_chart(access, color_list=["cornflowerblue"])
+    assert "If provided, 'color_list' argument must contain at least 2 colors." in str(excinfo.value)
 
 @pytest.mark.mpl_image_compare
 def test_access_duration_pie_chart_gmt(stk_root):

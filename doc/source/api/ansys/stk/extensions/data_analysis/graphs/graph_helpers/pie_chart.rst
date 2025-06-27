@@ -1,7 +1,7 @@
 pie_chart
 =========
 
-.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[str], time_columns: list[str], column: ~str, title: ~str, dimension: ~str, label_column: ~str = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[~str], time_columns: list[~str], column: ~str, title: ~str, dimension: ~str, label_column: ~str = None, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.pie_chart
 
     Create a pie chart from the provided dataframe and information.
@@ -33,6 +33,9 @@ pie_chart
 
         **label_column** : :obj:`~str`
         The dataframe column corresponding to the chart labels (the default is None).
+
+        **colormap** : :obj:`~matplotlib.color.Colormap`
+        The colormap with which to color the pie chart slices (the default is None).
 
 
 

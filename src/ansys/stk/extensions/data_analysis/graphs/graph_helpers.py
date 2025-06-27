@@ -25,7 +25,7 @@
 A set of helper functions for graphing basic STK desktop graph types.
 """
 
-from typing import List
+import typing
 
 import matplotlib
 import matplotlib.pyplot
@@ -40,12 +40,13 @@ from ansys.stk.extensions.data_analysis.dates import STKDateFactory
 def pie_chart(
     root: STKObjectRoot,
     df: pandas.DataFrame,
-    numerical_columns: List[str],
-    time_columns: List[str],
+    numerical_columns: list[str],
+    time_columns: list[str],
     column: str,
     title: str,
     dimension: str,
     label_column: str = None,
+    colormap: matplotlib.colors.Colormap = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create a pie chart from the provided dataframe and information.
 
@@ -67,6 +68,8 @@ def pie_chart(
         The dimension of the chart data.
     label_column : str
         The dataframe column corresponding to the chart labels (the default is None).
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the pie chart slices (the default is None).
 
     Returns
     -------
@@ -89,7 +92,7 @@ def pie_chart(
 
     # create colormap with one color for each slice of pie
     num_colors_needed = len(df[column].value_counts())
-    colors = matplotlib.pyplot.cm.rainbow(np.linspace(0, 1, num_colors_needed))
+    colors = colormap(np.linspace(0, 1, num_colors_needed)) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0, 1, num_colors_needed))
 
     # if plot is labeled with a different column, get and configure labels
     labels = []
@@ -110,8 +113,8 @@ def pie_chart(
 def interval_pie_chart(
     root: STKObjectRoot,
     df: pandas.DataFrame,
-    numerical_columns: List[str],
-    time_columns: List[str],
+    numerical_columns: list[str],
+    time_columns: list[str],
     start_column: str,
     stop_column: str,
     start_time: str,
@@ -119,6 +122,7 @@ def interval_pie_chart(
     title: str,
     dimension: str,
     cumulative: bool = False,
+    color_list: list[typing.Any] = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create an interval pie chart from the provided dataframe.
 
@@ -146,6 +150,8 @@ def interval_pie_chart(
         The dimension of the chart data.
     cumulative : bool
         Whether the intervals should be summed into durations and gaps (the default is False).
+    color_list : list of typing.Any
+        The colors with which to color the pie chart slices (the default is None). Must have length >= 2.
 
     Returns
     -------
@@ -153,6 +159,10 @@ def interval_pie_chart(
         The newly created figure.
     matplotlib.axes.Axes
         The newly created axes.
+
+    Raises
+    ------
+        ValueError: If the length of color_list is less than 2.
     """
     # get unit preferences
     units_preferences = root.units_preferences
@@ -176,11 +186,17 @@ def interval_pie_chart(
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
+    if color_list and len(color_list) < 2:
+        raise ValueError("If provided, 'color_list' argument must contain at least 2 colors.")
+
     if cumulative:
         # if plot is cumulative, sum durations
         duration_sum = df["graph duration"].sum()
         # then gap is equivalent to sum of gaps + first gap
         gap_sum = df["graph gap"].sum() + first_gap
+
+        colors = color_list if color_list else ["deepskyblue", "slategray"]
+
         # plot duration and gap sums
         matplotlib.pyplot.pie(
             [duration_sum, gap_sum],
@@ -188,7 +204,7 @@ def interval_pie_chart(
                 f"Cumulative Duration: {duration_sum:.2f} ({unit})",
                 f"Cumulative Gap: {gap_sum:.2f} ({unit})",
             ],
-            colors=["deepskyblue", "slategray"],
+            colors=colors,
             autopct="%1.3f%%",
             labeldistance=None,
             pctdistance=1.2,
@@ -196,29 +212,34 @@ def interval_pie_chart(
         # create legend
         ax.legend(shadow=True, loc="lower center")
     else:
+        colors = color_list if color_list else ["slategray", "deepskyblue"]
+
         # create zipped list with each duration and gap paired
         zip_list = list(zip(df["graph duration"], df["graph gap"]))
         flat_list = []
         label_list = []
         count = 2
+
         # flatten list while maintaining order and create list of labels
-        for item in zip_list:
-            flat_list.append(item[0])
-            if not np.isnan(item[0]):
-                label_list.append(f"duration {count -1}: {item[0]:.2f}({unit})")
-            flat_list.append(item[1])
-            if not np.isnan(item[1]):
-                label_list.append(f"gap {count}: {item[1]:.2f}({unit})")
+        for duration, gap in zip_list:
+            flat_list.extend([duration, gap])
+
+            if not np.isnan(duration):
+                label_list.append(f"duration {count -1}: {duration:.2f}({unit})")
+
+            if not np.isnan(gap):
+                label_list.append(f"gap {count}: {gap:.2f}({unit})")
             count += 1
+
         # remove any nan values
         cleaned_list = [x for x in flat_list if not np.isnan(x)]
-        # add gap before start of first interval to data and label lists
+        # get gap before start of first interval, add to data and label lists
         cleaned_list.insert(0, first_gap)
         label_list.insert(0, f"gap 1: {first_gap:.2f}({unit})")
         # plot intervals
         matplotlib.pyplot.pie(
             cleaned_list,
-            colors=["slategray", "deepskyblue"],
+            colors=colors,
             autopct="%1.3f%%",
             pctdistance=1.15,
             wedgeprops={"edgecolor": "black", "linewidth": 1, "antialiased": True},
@@ -242,7 +263,7 @@ def interval_pie_chart(
     return fig, ax
 
 def _convert_columns(
-    df: pandas.DataFrame, numerical_column_list: List[str], date_column_list: List[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: STKDateFactory = None, root: STKObjectRoot = None
+    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: STKDateFactory = None, root: STKObjectRoot = None
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
 

@@ -31,7 +31,7 @@ from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie
 
 
 def access_duration_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None, colormap: matplotlib.colors.Colormap = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart of the durations of the access intervals.
 
@@ -39,12 +39,14 @@ def access_duration_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation (the default is None, which implies using the scenario start time).
     stop_time : typing.Any
         The stop time of the calculation (the default is None, which implies using the scenario stop time).
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the data (the default is None).
 
     Returns
     -------
@@ -53,15 +55,15 @@ def access_duration_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Duration"]).data_sets.to_pandas_dataframe()
-    return pie_chart(root, df, ["duration"], [], "duration", "Access Duration", "Time", "access number")
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Duration"]).data_sets.to_pandas_dataframe()
+    return pie_chart(root, df, ["duration"], [], "duration", "Access Duration", "Time", "access number", colormap = colormap)
 
 
 def cumulative_dwell_cumulative_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None, color_list: list[typing.Any] = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create graph showing access interval durations as a cumulative pie chart.
 
@@ -69,12 +71,14 @@ def cumulative_dwell_cumulative_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation.
     stop_time : typing.Any
         The stop time of the calculation.
+    color_list : list of typing.Any
+        The colors with which to color the pie chart slices (the default is None). Must have length >= 2.
 
     Returns
     -------
@@ -83,10 +87,10 @@ def cumulative_dwell_cumulative_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
         df,
@@ -99,11 +103,12 @@ def cumulative_dwell_cumulative_pie_chart(
         "Cumulative Dwell",
         "Time",
         True,
+        color_list = color_list
     )
 
 
 def revisit_diagram_interval_pie_chart(
-    stk_obj: Access, start_time: typing.Any = None, stop_time: typing.Any = None
+    stk_object: Access, start_time: typing.Any = None, stop_time: typing.Any = None, color_list: list[typing.Any] = None
 ) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create pie chart showing the durations of access intervals and access gap intervals.
 
@@ -111,12 +116,14 @@ def revisit_diagram_interval_pie_chart(
 
     Parameters
     ----------
-    stk_obj : ansys.stk.core.stkobjects.Access
+    stk_object : ansys.stk.core.stkobjects.Access
         The STK Access object.
     start_time : typing.Any
         The start time of the calculation.
     stop_time : typing.Any
         The stop time of the calculation.
+    color_list : list of typing.Any
+        The colors with which to color the pie chart slices (the default is None). Must have length >= 2.
 
     Returns
     -------
@@ -125,10 +132,10 @@ def revisit_diagram_interval_pie_chart(
     matplotlib.axes.Axes
         The newly created axes.
     """
-    root = stk_obj.base.root
+    root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    df = stk_obj.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Access Number", "Start Time", "Stop Time", "Duration"]).data_sets.to_pandas_dataframe()
     return interval_pie_chart(
         root,
         df,
@@ -140,4 +147,5 @@ def revisit_diagram_interval_pie_chart(
         stop_time,
         "Revisit Diagram",
         "Time",
+        color_list = color_list
     )
