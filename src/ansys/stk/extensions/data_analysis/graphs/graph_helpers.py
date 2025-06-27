@@ -33,6 +33,8 @@ import numpy as np
 import pandas
 
 from ansys.stk.core.stkobjects import STKObjectRoot
+from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
+from ansys.stk.extensions.data_analysis.dates import _STKDateFactory
 
 
 def pie_chart(
@@ -85,7 +87,7 @@ def pie_chart(
     unit = units_preferences.get_current_unit_abbrv(dimension)
 
     # data conversions
-    df = _convert_columns(df, numerical_columns, time_columns)
+    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root= root)
     df.dropna(axis=0, inplace=True)
 
     # create colormap with one color for each slice of pie
@@ -160,10 +162,17 @@ def interval_pie_chart(
 
     Raises
     ------
-        ValueError: If the length of color_list is less than 2.
+    ValueError
+        If the length of color_list is less than 2.
     """
+    # get unit preferences
+    units_preferences = root.units_preferences
+    unit = units_preferences.get_current_unit_abbrv(dimension)
+    date_unit = units_preferences.item("Date").current_unit.abbrv
+
     # data conversions
-    df = _convert_columns(df, numerical_columns, time_columns)
+    date_factory = _STKDateFactory(root)
+    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
 
     # create duration column using stop and start columns
     df["graph duration"] = df[stop_column] - df[start_column]
@@ -172,28 +181,23 @@ def interval_pie_chart(
     df["graph gap"] = df[start_column].shift(-1) - df[stop_column]
 
     # last gap is from end of last duration to stop time
-    df.at[df.index[-1], "graph gap"] = pandas.to_datetime(stop_time) - df.iloc[-1]["stop time"]
-
-    # convert duration and graph columns to time delta objects in seconds
-    df["graph duration"] = df["graph duration"] / np.timedelta64(1, "s")
-    df["graph gap"] = df["graph gap"] / np.timedelta64(1, "s")
-
-    # get unit preferences
-    units_preferences = root.units_preferences
-    unit = units_preferences.get_current_unit_abbrv(dimension)
+    df.at[df.index[-1], "graph gap"] = date_factory.new_date(stop_time, unit=date_unit) - df.iloc[-1][stop_column]
+    # first gap is from analysis start time to start of first duration
+    first_gap = df[start_column][0] - date_factory.new_date(start_time, unit=date_unit)
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
     if color_list and len(color_list) < 2:
         raise ValueError("If provided, 'color_list' argument must contain at least 2 colors.")
+
     if cumulative:
-        colors = color_list if color_list else ["deepskyblue", "slategray"]
         # if plot is cumulative, sum durations
         duration_sum = df["graph duration"].sum()
-        # then gap is equivalent to whole length of time - sum of durations
-        gap_sum = (
-            (pandas.to_datetime(stop_time) - pandas.to_datetime(start_time)) / np.timedelta64(1, "s")
-        ) - duration_sum
+        # then gap is equivalent to sum of gaps + first gap
+        gap_sum = df["graph gap"].sum() + first_gap
+
+        colors = color_list if color_list else ["deepskyblue", "slategray"]
+
         # plot duration and gap sums
         matplotlib.pyplot.pie(
             [duration_sum, gap_sum],
@@ -231,7 +235,6 @@ def interval_pie_chart(
         # remove any nan values
         cleaned_list = [x for x in flat_list if not np.isnan(x)]
         # get gap before start of first interval, add to data and label lists
-        first_gap = (pandas.to_datetime(df["start time"][0]) - pandas.to_datetime(start_time)) / np.timedelta64(1, "s")
         cleaned_list.insert(0, first_gap)
         label_list.insert(0, f"gap 1: {first_gap:.2f}({unit})")
         # plot intervals
@@ -260,9 +263,8 @@ def interval_pie_chart(
     # return figure and axis
     return fig, ax
 
-
 def _convert_columns(
-    dataframe: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str]
+    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: _STKDateFactory = None, root: STKObjectRoot = None
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
 
@@ -280,6 +282,10 @@ def _convert_columns(
     pandas.DataFrame
         The dataframe with converted columns.
     """
-    dataframe[numerical_column_list] = dataframe[numerical_column_list].astype(float)
-    dataframe[date_column_list] = dataframe[date_column_list].astype("datetime64[ns]")
-    return dataframe
+    df[numerical_column_list] = df[numerical_column_list].astype(float)
+    if date_column_list:
+        if date_factory is None:
+            date_factory = _STKDateFactory(root)
+        for col in date_column_list:
+            df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.item("Date").current_unit.abbrv))
+    return df
