@@ -32,7 +32,7 @@ from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
 
 
-class STKDate:
+class _STKDate:
     """Wrapper class associated with STK Date object."""
 
     def __init__(self: typing.Self, date: Date):
@@ -48,27 +48,27 @@ class STKDate:
 
     def __lt__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
-        if isinstance(other, STKDate):
+        if isinstance(other, _STKDate):
             return self - other < 0
 
     def __gt__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
-        if isinstance(other, STKDate):
+        if isinstance(other, _STKDate):
             return self - other > 0
 
     def __ge__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
-        if isinstance(other, STKDate):
+        if isinstance(other, _STKDate):
             return self > other or self == other
 
     def __eq__(self: typing.Self, other: typing.Self):
         """Compare equality of STKDates."""
-        if isinstance(other, STKDate):
+        if isinstance(other, _STKDate):
             return self.get_utcg() == other.get_utcg()
 
     def __add__(self: typing.Self, seconds: float) -> Date:
         """Add seconds to the date."""
-        return STKDate(self.stk_date.add("sec", seconds))
+        return _STKDate(self.stk_date.add("sec", seconds))
 
     def get_epsec(self: typing.Self) -> float:
         """Return the date in Epoch Seconds.
@@ -109,13 +109,13 @@ class STKDate:
         return self.stk_date.format(unit)
 
 
-class STKDateFactory:
+class _STKDateFactory:
     """Factory class to create STKDate objects."""
     def __init__(self: typing.Self, root: STKObjectRoot) -> typing.Self:
         """Create STKDateFactory."""
         self.conversion_utility : ConversionUtility = root.conversion_utility
 
-    def new_date(self: typing.Self, value: str, unit: str = "UTCG") -> STKDate:
+    def new_date(self: typing.Self, value: str, unit: str = "UTCG") -> _STKDate:
         """Create a new STKDate object.
 
         Parameters
@@ -131,4 +131,4 @@ class STKDateFactory:
             The `STKDate` object.
 
         """
-        return STKDate(self.conversion_utility.new_date(unit, value))
+        return _STKDate(self.conversion_utility.new_date(unit, value))

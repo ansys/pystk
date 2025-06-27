@@ -25,12 +25,12 @@
 
 import pytest
 
-from ansys.stk.extensions.data_analysis.dates import STKDateFactory
+from ansys.stk.extensions.data_analysis.dates import _STKDateFactory
 from stk_environment import stk_root
 
 @pytest.fixture()
 def stk_date_factory(stk_root):
-    yield STKDateFactory(stk_root)
+    yield _STKDateFactory(stk_root)
 
 def test_date_spans_over_leap_second(stk_date_factory):
     date1 = stk_date_factory.new_date('30 Jun 2015 23:59:59')

@@ -34,7 +34,7 @@ import pandas
 
 from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
-from ansys.stk.extensions.data_analysis.dates import STKDateFactory
+from ansys.stk.extensions.data_analysis.dates import _STKDateFactory
 
 
 def pie_chart(
@@ -162,7 +162,8 @@ def interval_pie_chart(
 
     Raises
     ------
-        ValueError: If the length of color_list is less than 2.
+    ValueError
+        If the length of color_list is less than 2.
     """
     # get unit preferences
     units_preferences = root.units_preferences
@@ -170,7 +171,7 @@ def interval_pie_chart(
     date_unit = units_preferences.item("Date").current_unit.abbrv
 
     # data conversions
-    date_factory = STKDateFactory(root)
+    date_factory = _STKDateFactory(root)
     df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
 
     # create duration column using stop and start columns
@@ -263,7 +264,7 @@ def interval_pie_chart(
     return fig, ax
 
 def _convert_columns(
-    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: STKDateFactory = None, root: STKObjectRoot = None
+    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: _STKDateFactory = None, root: STKObjectRoot = None
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
 
@@ -284,7 +285,7 @@ def _convert_columns(
     df[numerical_column_list] = df[numerical_column_list].astype(float)
     if date_column_list:
         if date_factory is None:
-            date_factory = STKDateFactory(root)
+            date_factory = _STKDateFactory(root)
         for col in date_column_list:
             df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.item("Date").current_unit.abbrv))
     return df

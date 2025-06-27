@@ -34,7 +34,7 @@ pie_chart
         **label_column** : :obj:`~str`
         The dataframe column corresponding to the chart labels (the default is None).
 
-        **colormap** : :obj:`~matplotlib.color.Colormap`
+        **colormap** : :obj:`~matplotlib.colors.Colormap`
         The colormap with which to color the pie chart slices (the default is None).
 
 
