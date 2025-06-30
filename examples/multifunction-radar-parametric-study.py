@@ -121,7 +121,7 @@ access_df[:5]
 # Then, determine during how many timesteps the aircraft can be tracked with certainty:
 
 access_df["s/t integrated pdet"] = access_df["s/t integrated pdet"].astype(float)
-f"The aircraft can be tracked with certainty during {len(access_df[access_df["s/t integrated pdet"] >= 0.8])} time steps, out of {len(access_df)} total."
+f"The aircraft can be tracked with certainty during {len(access_df[access_df['s/t integrated pdet'] >= 0.8])} time steps, out of {len(access_df)} total."
 
 # Determine the first time at which the aircraft can be tracked with certainty:
 
