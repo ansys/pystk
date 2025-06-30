@@ -271,7 +271,7 @@ for snr in range(10, 23):
     mean_pdets.append(pdet_df.loc[:, "s/t integrated pdet"].mean())
 # -
 
-# Visualize the data as a line chart to determine how varying gain values affect PDet:
+# Visualize the data as a line chart to determine how varying goal SNR values affect PDet:
 
 gains = list(range(10, 23))
 plt.plot(gains, mean_pdets, color="dodgerblue")
@@ -307,6 +307,8 @@ for max_pulses in range(1, 210, 10):
     )
     mean_pdets.append(pdet_df.loc[:, "s/t integrated pdet"].mean())
 # -
+
+# Visualize the data as a line chart to determine how varying maximum pulse number values affect PDet:
 
 max_pulses = list(range(1, 210, 10))
 plt.plot(max_pulses, mean_pdets, color="dodgerblue")
