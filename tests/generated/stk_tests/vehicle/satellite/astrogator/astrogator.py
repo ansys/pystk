@@ -3023,7 +3023,7 @@ longitude = 121;"""
         (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
-        # append from state using the intial state of the maneuever, orbit should
+        # append from state using the intial state of the maneuver, orbit should
         # be the pre maneuver one
 
         spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
