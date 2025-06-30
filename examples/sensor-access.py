@@ -4,7 +4,7 @@
 
 # ## What are sensors?
 
-# Sensor objects model the field-of-view and other properties of sensing devices attached to other STK objects. There are a large variety of sensor types that can be modeled in STK, including electro-optical and infrared sensors, parabolic antennas, push broom sensors, star trackers, and radars. Sensors can be customized in many ways, including by designating the properties of a sensor's field-of-view. Additionally, sensors can behave in different ways. Sensors can be fixed to point in the same direction as their parent object's reference frame, targeted to track other objects, or spinning to model instruments that spin, scan or sweep over time. STK also allows the application of an azimuth-elevation mask to a sensor, and the consideration of this mask during calculations. A refraction model to constrain an atmosphere-based sensor's line of sight and elevation angles can be modeled. It is also possible to customize the resolution of the sensor in terms of focus and image quality. Finally, many access constraints can be declared, including elevation, line of sight, sun, and temporal, on sensors to describe in what ways they can see other objects.
+# Sensor objects model the field-of-view and other properties of sensing devices attached to other STK objects. There are a large variety of sensor types that can be modeled in STK, including electro-optical and infrared sensors, parabolic antennas, push broom sensors, star trackers, and radars. Sensors can be customized in many ways, including by designating the properties of a sensor's field-of-view. Additionally, sensors can behave in different ways. Sensors can be fixed to point in the same direction as their parent object's reference frame, targeted to track other objects, or spinning to model instruments that spin, scan, or sweep over time. STK also allows the application of an azimuth-elevation mask to a sensor, and the consideration of this mask during calculations. A refraction model to constrain an atmosphere-based sensor's line of sight and elevation angles can be modeled. It is also possible to customize the resolution of the sensor in terms of focus and image quality. Finally, many access constraints can be declared, including elevation, line of sight, sun, and temporal, on sensors to describe in what ways they can see other objects.
 
 # ## Problem statement
 
@@ -80,7 +80,7 @@ radar_site.position.assign_geodetic(38.8006, -104.6784, 0.01524)
 
 # ## Add relevant locations
 
-# Two places of interest in the vicinity of the radar site are Cheyenne, Wyoming and Raton, New Mexico.
+# Two places of interest in the vicinity of the radar site are Cheyenne, Wyoming, and Raton, New Mexico.
 
 # First, add a place object to represent Cheyenne:
 
@@ -324,7 +324,7 @@ moving_sat_access.data_providers.item("Access Data").execute(
 
 # ## Add a fixed sensor on the radar site
 
-# Now, determine if the radar site can see an aircraft flying between Cheyenne and Raton. The site has two sensors, one of which is a a fixed sensor. Sensors can be used to model instruments attached to stationary objects, such as Facility, Place and Target objects. Fixed sensors attached to stationary objects also point with respect to the parent object’s reference frame. Since stationary objects never change position or direction, a fixed sensor on a fixed object always points in a fixed direction. The radar site has one fixed sensor representing the site's entire possible field of view.
+# Now, determine if the radar site can see an aircraft flying between Cheyenne and Raton. The site has two sensors, one of which is a fixed sensor. Sensors can be used to model instruments attached to stationary objects, such as Facility, Place, and Target objects. Fixed sensors attached to stationary objects also point with respect to the parent object’s reference frame. Since stationary objects never change position or direction, a fixed sensor on a fixed object always points in a fixed direction. The radar site has one fixed sensor representing the site's entire possible field of view.
 
 # First, add a sensor to the radar site. The sensor is inserted as a fixed sensor by default.
 
@@ -483,7 +483,7 @@ radar_sweep_sensor.common_tasks.set_pattern_rectangular(5, 35)
 
 # This sensor configuration creates a wedge type field-of-view. Right now, that “wedge” is just pointing straight up. The radar afixed to the radar site sweeps or scans in a repeating cycle. Since the radar “scans”, the full range of the radar is not always covered. Configure the sensor’s field-of-view to provide a visual representation of the area that the radar does cover at any given point in time. Set the properties of the sensor to rotate and point at $35^\circ$ elevation. Set the spin axis elevation to $90^\circ$ for horizontal rotation with a cone angle of $55^\circ$ for a $35^\circ$ elevation from the horizon.
 
-# First, set the radar's pointing type to spinning. This type of sensor is used to model radars, push broom sensors and other instruments that spin, scan or sweep over time.
+# First, set the radar's pointing type to spinning. This type of sensor is used to model radars, push broom sensors, and other instruments that spin, scan, or sweep over time.
 
 radar_sweep_sensor.set_pointing_type(SensorPointing.SPINNING)
 
