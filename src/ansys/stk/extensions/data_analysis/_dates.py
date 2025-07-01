@@ -40,7 +40,7 @@ class _STKDate:
         self.stk_date: Date = date
 
     def __sub__(self: typing.Self, date: Date) -> float:
-        """Subtract an STKDate"""
+        """Subtract an STKDate, returning the time difference in seconds."""
         span : Quantity =  self.stk_date.span(date.stk_date)
         if span.unit != "sec":
             span.convert_to_unit("sec")
@@ -50,21 +50,25 @@ class _STKDate:
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self - other < 0
+        return NotImplemented
 
     def __gt__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self - other > 0
+        return NotImplemented
 
     def __ge__(self: typing.Self, other: typing.Self):
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self > other or self == other
+        return NotImplemented
 
     def __eq__(self: typing.Self, other: typing.Self):
         """Compare equality of STKDates."""
         if isinstance(other, _STKDate):
             return self.get_utcg() == other.get_utcg()
+        return NotImplemented
 
     def __add__(self: typing.Self, seconds: float) -> Date:
         """Add seconds to the date."""
@@ -79,7 +83,7 @@ class _STKDate:
             The date in Epoch Seconds.
 
         """
-        return self.stk_date.format('EpSec')
+        return float(self.stk_date.format('EpSec'))
 
     def get_utcg(self: typing.Self) -> str:
         """Return the date formatted in UTCG.
@@ -92,7 +96,7 @@ class _STKDate:
         """
         return self.stk_date.format('UTCG')
 
-    def format(self: typing.Self, unit: str) -> typing.Any:
+    def format(self: typing.Self, unit: str) -> str:
         """Return the date formatted as any unit.
 
         Parameters

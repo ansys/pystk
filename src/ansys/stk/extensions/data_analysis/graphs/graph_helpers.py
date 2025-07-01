@@ -34,7 +34,7 @@ import pandas
 
 from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
-from ansys.stk.extensions.data_analysis.dates import _STKDateFactory
+from ansys.stk.extensions.data_analysis._dates import _STKDateFactory
 
 
 def pie_chart(
@@ -168,7 +168,7 @@ def interval_pie_chart(
     # get unit preferences
     units_preferences = root.units_preferences
     unit = units_preferences.get_current_unit_abbrv(dimension)
-    date_unit = units_preferences.item("Date").current_unit.abbrv
+    date_unit = units_preferences.get_current_unit_abbrv("Date")
 
     # data conversions
     date_factory = _STKDateFactory(root)
@@ -287,5 +287,5 @@ def _convert_columns(
         if date_factory is None:
             date_factory = _STKDateFactory(root)
         for col in date_column_list:
-            df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.item("Date").current_unit.abbrv))
+            df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
     return df

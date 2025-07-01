@@ -44,9 +44,9 @@ class ManualRSTGenerator:
             is_autofile = any(
                 auto_path in path_resolved.parents or auto_path == path_resolved for auto_path in auto_file_paths
             )
+            is_private = path.name.startswith("_")
             is_internal_file = "internal" in path.parts
-
-            if not is_autofile and not is_internal_file:
+            if not is_autofile and not is_internal_file and not is_private:
                 self._generate_rst_for_pymodule(str(path))
 
     def _wrap_python_code_snippets(self, unformatted_docstring: str):
