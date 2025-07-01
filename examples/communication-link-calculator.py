@@ -123,19 +123,25 @@ transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "DownloadTransmi
 
 # The transmitter's `model` property now contains a `TransmitterModelSimple` object. Set the model's frequency to $1.7045$ GHz:
 
-transmitter.model.frequency = 1.7045
+from ansys.stk.core.stkobjects import TransmitterModelSimple
+
+
+transmitter_model = TransmitterModelSimple(
+    transmitter.model_component_linking.component
+)
+transmitter_model.frequency = 1.7045
 
 # Then, set the model's EIRP, which is the effective isotropic radiated power at the output of the transmit antenna. Set the EIRP to $10$ dBW:
 
-transmitter.model.eirp = 10
+transmitter_model.eirp = 10
 
 # Next, set the model's data rate to $4.2$ Mb/sec:
 
-transmitter.model.data_rate = 4.2
+transmitter_model.data_rate = 4.2
 
 # Then, enable polarization on the model:
 
-transmitter.model.enable_polarization = True
+transmitter_model.enable_polarization = True
 
 # Finally, set the model's polarization type to right-hand circular:
 
@@ -143,7 +149,7 @@ transmitter.model.enable_polarization = True
 from ansys.stk.core.stkobjects import PolarizationType
 
 
-transmitter.model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
+transmitter_model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
 # -
 
 # ## Add a steerable sensor
@@ -216,38 +222,45 @@ receiver = sensor.children.new(STKObjectType.RECEIVER, "DownloadReceiver")
 
 # Then, set the receiver's model type to the complex receiver model:
 
-receiver.set_model("Complex Receiver Model")
+receiver.model_component_linking.set_component("Complex Receiver Model")
 
 # Next, use the model's `antenna_control` property to set the receiver's embedded model to a parabolic antenna:
 
-receiver.model.antenna_control.set_embedded_model("Parabolic")
+from ansys.stk.core.stkobjects import ReceiverModelComplex
+
+
+receiver_model = ReceiverModelComplex(receiver.model_component_linking.component)
+receiver_model.antenna_control.embedded_model_component_linking.set_component(
+    "Parabolic"
+)
 
 # The receiver model's antenna control's `embedded_model` property now holds an `AntennaModelParabolic` object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type:
 
 # +
-from ansys.stk.core.stkobjects import AntennaModelInputType
+from ansys.stk.core.stkobjects import AntennaModelInputType, AntennaModelParabolic
 
 
-receiver.model.antenna_control.embedded_model.input_type = (
-    AntennaModelInputType.DIAMETER
+antenna_control = AntennaModelParabolic(
+    receiver_model.antenna_control.embedded_model_component_linking.component
 )
+antenna_control.input_type = AntennaModelInputType.DIAMETER
 # -
 
 # Then, set the diameter to $1.6$ m:
 
-receiver.model.antenna_control.embedded_model.diameter = 1.6
+antenna_control.diameter = 1.6
 
 # Set the design frequency to $1.7$ GHz:
 
-receiver.model.antenna_control.embedded_model.design_frequency = 1.7
+antenna_control.design_frequency = 1.7
 
 # Next, enable the use of polarization on the receiver model:
 
-receiver.model.enable_polarization = True
+receiver_model.enable_polarization = True
 
 # The receiver's polarization type is the same as the transmitter's polarization, so set the model's polarization type to right-hand circular:
 
-receiver.model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
+receiver_model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
 
 # ## Calculate access
 
@@ -357,23 +370,23 @@ receiver_environmental_link_df.head(10)[link_budget_columns]
 from ansys.stk.core.stkobjects import NoiseTemperatureComputeType
 
 
-receiver.model.system_noise_temperature.compute_type = (
+receiver_model.system_noise_temperature.compute_type = (
     NoiseTemperatureComputeType.CALCULATE
 )
 # -
 
 # Do the same for the model's antenna noise temperature:
 
-receiver.model.system_noise_temperature.antenna_noise_temperature.compute_type = (
+receiver_model.system_noise_temperature.antenna_noise_temperature.compute_type = (
     NoiseTemperatureComputeType.CALCULATE
 )
 
 # Then, enable the use of sun, atmosphere, rain, and cosmic background in computations:
 
-receiver.model.system_noise_temperature.antenna_noise_temperature.use_sun = True
-receiver.model.system_noise_temperature.antenna_noise_temperature.use_atmosphere = True
-receiver.model.system_noise_temperature.antenna_noise_temperature.use_rain = True
-receiver.model.system_noise_temperature.antenna_noise_temperature.use_cosmic_background = True
+receiver_model.system_noise_temperature.antenna_noise_temperature.use_sun = True
+receiver_model.system_noise_temperature.antenna_noise_temperature.use_atmosphere = True
+receiver_model.system_noise_temperature.antenna_noise_temperature.use_rain = True
+receiver_model.system_noise_temperature.antenna_noise_temperature.use_cosmic_background = True
 
 # Finally, recompute the access and get the updated link information:
 
