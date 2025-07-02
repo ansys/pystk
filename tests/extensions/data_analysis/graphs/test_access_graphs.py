@@ -27,7 +27,7 @@ import pytest
 
 import matplotlib
 
-from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart
+from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart, aer_line_chart
 
 from stk_environment import stk_root
 
@@ -170,4 +170,9 @@ def test_cumulative_dwell_cumulative_pie_chart_gps(basic_access):
 def test_revisit_diagram_interval_pie_chart_taig(basic_access):
     basic_access.base.root.units_preferences.set_current_unit("Date", "TAIG")
     fig, _ = revisit_diagram_interval_pie_chart(basic_access, start_time= "5 Jun 2022 00:00:37.000", stop_time = "5 Jun 2022 12:00:37.000")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_aer_line_chart(basic_access):
+    fig, _ = aer_line_chart(basic_access)
     return fig

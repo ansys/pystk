@@ -32,7 +32,7 @@ import matplotlib.pyplot
 import numpy as np
 import pandas
 
-from ansys.stk.core.stkobjects import STKObjectRoot
+from ansys.stk.core.stkobjects import STKObjectRoot, Access
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
 from ansys.stk.extensions.data_analysis._dates import _STKDate, _STKDateConverter, _STKDateFactory
 
@@ -78,19 +78,26 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
+    # add matplotlib axis to list
+    axes_list = [ax]
 
+    # data conversions
+    date_factory = _STKDateFactory(root)
     for df in data:
-        # data conversions
         if time_columns:
-            date_factory = _STKDateFactory(root)
             df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
-            if x_column in time_columns:
-                time_difference = df[x_column].iloc[-1] - df[x_column].iloc[0]
-                matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
-        else:
-            df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
+        elif numerical_columns:
+            for df in data:
+                df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
         df.dropna(axis=0, inplace=True)
         df.sort_values(x_column, inplace=True)
+    if x_column in time_columns:
+        all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
+        time_difference = all_times.iloc[-1] - all_times.iloc[0]
+        matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+
+    for i in range(len(data)):
+        df = data[i]
 
         # line collection for legend
         mpl_lines = []
@@ -104,16 +111,14 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
         # get x data from dataframe
         x_data = df[x_column]
 
-        # add matplotlib axis to list
-        axes_list = [ax]
-
         # iterate through axes information parameter
-        for i in range(len(axes)):
-            axis = axes[i]
+        for j in range(len(axes)):
+            axis = axes[j]
             # if additional axes needed, duplicated matplotlib axis
-            if i != 0:
+            if j != 0 and i==0:
                 ax = ax.twinx()
                 axes_list.append(ax)
+            ax = axes_list[j]
             # iterate through lines under axis
             for j in range(len(axis['lines'])):
                 line = axis['lines'][j]
@@ -132,42 +137,44 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
                 mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count]))
                 line_count += 1
-            # if axis uses unit, set unit in label
-            if axis['use_unit']:
+
+            if i == 0:
+                # if axis uses unit, set unit in label
+                if axis['use_unit']:
                     if axis['unit_squared']:
                         ax.set_ylabel(axis['label'] + f" ({unit}^2)")
                     else:
                         ax.set_ylabel(axis['label'] + f" ({unit})")
-            else:
-                ax.set_ylabel(axis['label'])
+                else:
+                    ax.set_ylabel(axis['label'])
 
-            # set x-label
-            ax.set_xlabel(x_label)
+                # set x-label
+                ax.set_xlabel(x_label)
 
-            # set styling (must be done for each axis)
-            ax.set_facecolor('whitesmoke')
+                # set styling (must be done for each axis)
+                ax.set_facecolor('whitesmoke')
 
-            if len(axes) == 1:
-                ax.grid(visible=True, axis='both', which='both', linestyle='--')
-            # if multiple axes, only plot x gridlines
-            else:
-                ax.grid(visible=True, axis='x', which='both', linestyle='--')
+                if len(axes) == 1:
+                    ax.grid(visible=True, axis='both', which='both', linestyle='--')
+                # if multiple axes, only plot x gridlines
+                else:
+                    ax.grid(visible=True, axis='x', which='both', linestyle='--')
 
-            # set axis scales
-            if axis['ylog10']:
-                ax.set_yscale('log')
-            elif axis['y2log10']:
-                ax.set_yscale('log', base=2)
+                # set axis scales
+                if axis['ylog10']:
+                    ax.set_yscale('log')
+                elif axis['y2log10']:
+                    ax.set_yscale('log', base=2)
 
-        # if multiple lines, create legend
-        if num_lines > 1:
-            ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], shadow=True,  loc='upper center')
+    # if multiple lines, create legend
+    if num_lines > 1:
+        ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], shadow=True,  loc='upper center')
 
-        # set title and size
-        ax.set_title(title)
-        fig.set_size_inches(12, 6)
-        # return figure and axis
-        return fig, ax
+    # set title and size
+    ax.set_title(title)
+    fig.set_size_inches(12, 6)
+    # return figure and axis
+    return fig, ax
 
 def pie_chart(
     root: STKObjectRoot,
@@ -421,3 +428,57 @@ def _convert_columns(
         for col in date_column_list:
             df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
     return df
+
+def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
+    """Get list of data for access object, grouping by access interval while respecting start and stop times.
+
+    Parameters
+    ----------
+    access : ansys.stk.core.stkobjects.Access
+        The STK Access object.
+    item : str
+        The data provider.
+    group : bool
+        If the data provider is grouped.
+    group_name : str
+        The group.
+    elements : list of str
+        The list of data provider elements to execute.
+    start_time : typing.Any
+        The start time of the calculation.
+    stop_time : typing.Any
+        The stop time of the calculation.
+    step_time : float
+        The step time for the calculation.
+
+    Returns
+    -------
+    list of pandas.DataFrame
+        The list of data.
+    """
+    data=[]
+    access_intervals = access.computed_access_interval_times
+    for i in range(0, access_intervals.count):
+        times = access_intervals.get_interval(i)
+        interval_start = times[0]
+        interval_end = times[1]
+        computation_start = None
+        computation_stop = None
+        # interval fully contained within desired calculation period, so include entire interval
+        if interval_start >= start_time and interval_end <= stop_time:
+            computation_start = interval_start
+            computation_stop = stop_time
+        # interval fully outside of desired calculation period, so skip
+        elif (interval_start < start_time and interval_end < start_time) or (interval_start > stop_time and interval_end > stop_time):
+            continue
+        # starts before desired calculation period, so start calculation at desired start time
+        elif interval_start < start_time:
+            computation_start = start_time
+        # ends after desired calculation period, so end calculation at desired end time
+        elif interval_end > stop_time:
+            computation_stop = stop_time
+        if group:
+            data.append(access.data_providers.item(item).group.item(group_name).execute_elements(computation_start, computation_stop, step, elements).data_sets.to_pandas_dataframe())
+        else:
+            data.append(access.data_providers.item(item).execute_elements(computation_start, computation_stop, step, elements).data_sets.to_pandas_dataframe())
+    return data

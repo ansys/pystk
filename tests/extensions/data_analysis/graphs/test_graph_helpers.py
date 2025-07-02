@@ -25,6 +25,7 @@
 
 import pytest
 import pandas as pd
+import matplotlib
 from stk_environment import stk_root
 from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, line_chart
 
@@ -169,4 +170,18 @@ def test_line_chart_with_unit_squared(stk_root):
             {'use_unit' : True, 'unit_squared': False, 'ylog10': False, 'y2log10': False, 'label': 'Axis2', 'lines': [
             {'y_name':'Y2', 'label':'Value2', 'use_unit':True, 'unit_squared': False, 'dimension': None}]}]
     fig, _ = line_chart([df], stk_root, ["X", "Y1", "Y2"], [], axes_info, "X", "", "")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_line_chart_pass_colormap(stk_root):
+    x_values = [1, 2, 3, 4]
+    y_values1 = [1, 2, 3, 4]
+    y_values2 = [10, 11, 12, 13]
+    y_values3 = [5, 6, 7, 13]
+    df = pd.DataFrame({'X': x_values, 'Y1': y_values1, 'Y2': y_values2, 'Y3': y_values3})
+    axes_info = [{'use_unit' : None, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': '', 'lines': [
+            {'y_name':'Y1', 'label':'Value1', 'use_unit':None, 'unit_squared': None, 'dimension': None},
+            {'y_name':'Y2', 'label':'Value2', 'use_unit':None, 'unit_squared': None, 'dimension': None},
+            {'y_name':'Y3', 'label':'Value3', 'use_unit':None, 'unit_squared': None, 'dimension': None}]}]
+    fig, _ = line_chart([df], stk_root, ["X", "Y1", "Y2"], [], axes_info, "X", "", "", colormap=matplotlib.cm.plasma)
     return fig

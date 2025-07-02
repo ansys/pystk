@@ -27,7 +27,7 @@ import typing
 import matplotlib
 
 from ansys.stk.core.stkobjects import Access
-from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, pie_chart
+from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, pie_chart, line_chart, _get_access_data
 
 
 def access_duration_pie_chart(
@@ -149,3 +149,39 @@ def revisit_diagram_interval_pie_chart(
         "Time",
         color_list = color_list
     )
+
+def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    r"""Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool, as described below. 
+
+    This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\AER.rsg.
+
+    Parameters
+    ----------
+    stk_object : ansys.stk.core.stkobjects.Access
+        The STK Access object.
+    start_time : typing.Any
+        The start time of the calculation.
+    stop_time : typing.Any
+        The stop time of the calculation.
+    step_time : float
+        The step time for the calculation.
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the data (the default is None).
+
+    Returns
+    -------
+    matplotlib.pyplot.Figure
+        The newly created figure.
+    matplotlib.pyplot.Axes
+        The newly created axes."""
+    root = stk_object.base.root
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
+    data = _get_access_data(stk_object, "AER", True, "Default", ["Azimuth", "Elevation", "Range", "Time"], start_time, stop_time, step)
+    
+    axes = [{'use_unit' : None, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': 'Longitude/Angle', 'lines': [
+            {'y_name':'azimuth', 'label':'Azimuth', 'use_unit':None, 'unit_squared': None, 'unit_pref': 'Longitude'},
+            {'y_name':'elevation', 'label':'Elevation', 'use_unit':None, 'unit_squared': None, 'unit_pref': 'Angle'}]},
+            {'use_unit' : None, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': 'Distance', 'lines': [
+            {'y_name':'range', 'label':'Range', 'use_unit':None, 'unit_squared': None, 'unit_pref': 'Distance'}]}]
+    return line_chart(data, root, ['azimuth','elevation','range'], ['time'], axes, "time", "Time", 'AER', colormap=colormap)
