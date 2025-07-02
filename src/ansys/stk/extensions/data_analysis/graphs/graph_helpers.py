@@ -87,7 +87,7 @@ def pie_chart(
     unit = units_preferences.get_current_unit_abbrv(dimension)
 
     # data conversions
-    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root= root)
+    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root=root)
     df.dropna(axis=0, inplace=True)
 
     # create colormap with one color for each slice of pie
