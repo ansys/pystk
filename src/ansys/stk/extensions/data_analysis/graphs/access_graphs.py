@@ -177,7 +177,7 @@ def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time:
     root = stk_object.base.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time
-    data = _get_access_data(stk_object, "AER", True, "Default", ["Azimuth", "Elevation", "Range", "Time"], start_time, stop_time, step)
+    data = _get_access_data(stk_object, "AER Data", True, "Default", ["Azimuth", "Elevation", "Range", "Time"], start_time, stop_time, step)
     
     axes = [{'use_unit' : None, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': 'Longitude/Angle', 'lines': [
             {'y_name':'azimuth', 'label':'Azimuth', 'use_unit':None, 'unit_squared': None, 'unit_pref': 'Longitude'},

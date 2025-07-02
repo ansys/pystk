@@ -176,3 +176,13 @@ def test_revisit_diagram_interval_pie_chart_taig(basic_access):
 def test_aer_line_chart(basic_access):
     fig, _ = aer_line_chart(basic_access)
     return fig
+
+def test_aer_line_chart_invalid_interval(basic_access):
+    with pytest.raises(ValueError) as excinfo:
+        _, _ = aer_line_chart(basic_access, start_time="4 Jun 2022 09:00:00.000", stop_time="4 Jun 2022 12:00:00.000")
+    assert "No access data to plot- check provided start and stop times." in str(excinfo.value)
+
+@pytest.mark.mpl_image_compare
+def test_aer_line_chart_start_stop_contained_within_interval(basic_access):
+    fig, _ = aer_line_chart(basic_access, start_time="5 Jun 2022 00:26:00.000", stop_time="5 Jun 2022 00:34:00.000")
+    return fig

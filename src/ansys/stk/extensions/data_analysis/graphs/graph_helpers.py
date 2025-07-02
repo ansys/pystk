@@ -28,6 +28,8 @@ A set of helper functions for graphing basic STK desktop graph types.
 import typing
 
 import matplotlib
+import matplotlib.axes
+import matplotlib.figure
 import matplotlib.pyplot
 import numpy as np
 import pandas
@@ -87,14 +89,15 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
         if time_columns:
             df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
         elif numerical_columns:
-            for df in data:
-                df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
+            df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
         df.dropna(axis=0, inplace=True)
         df.sort_values(x_column, inplace=True)
     if x_column in time_columns:
+        # format time x-axis
         all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
         time_difference = all_times.iloc[-1] - all_times.iloc[0]
         matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
 
     for i in range(len(data)):
         df = data[i]
@@ -135,7 +138,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
                     else:
                         label = label + f"({unit})"
 
-                mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count]))
+                mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count], linewidth=1.5))
                 line_count += 1
 
             if i == 0:
@@ -168,7 +171,9 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
     # if multiple lines, create legend
     if num_lines > 1:
-        ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], shadow=True,  loc='upper center')
+        legend = ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], loc='upper center', fontsize=10)
+        for legend_object in legend.legend_handles:
+            legend_object.set_linewidth(2.0)
 
     # set title and size
     ax.set_title(title)
@@ -429,7 +434,45 @@ def _convert_columns(
             df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
     return df
 
-def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
+def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, date_factory : _STKDateFactory):
+    """Convert numerical and time columns in a pandas dataframe.
+
+    Parameters
+    ----------
+    matplotlib.figure.Figure
+        The figure.
+    matplotlib.axes.Axes
+        The axes.
+    first_time : _STKDate
+        The earliest time in the data.
+    last_time : _STKDate
+        The latest time in the data.
+    date_factory : _STKDateFactory
+        The _STKDateFactory.
+    """
+
+    def get_d_m_y(date : _STKDate):
+        return date.get_utcg().rsplit(' ', maxsplit=1)[0]
+    
+    if last_time - first_time < 604800:
+        fig.text(0.05, 0.01, get_d_m_y(first_time), 
+            horizontalalignment='left', verticalalignment='bottom', 
+            fontsize=10)
+        if get_d_m_y(first_time) != get_d_m_y(last_time):
+            fig.text(0.95, 0.01, get_d_m_y(last_time), 
+            horizontalalignment='right', verticalalignment='bottom', 
+            fontsize=10)
+    
+    # add vertical lines showing day changes
+    if last_time - first_time < 2592000:
+        start_date = date_factory.new_date(get_d_m_y(first_time) + " 00:00:00.000").add_by_unit("day", 1)
+        while start_date < last_time:
+            ax.axvline(x=start_date.get_epsec(), color='black', linestyle='-', linewidth=1.5)
+            ax.annotate(start_date.get_utcg(), xy =(start_date.get_epsec(),1.05), rotation = 270, fontsize=9)
+            start_date = start_date.add_by_unit("day", 1)
+
+
+def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time: typing.Any, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
     """Get list of data for access object, grouping by access interval while respecting start and stop times.
 
     Parameters
@@ -455,6 +498,11 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
     -------
     list of pandas.DataFrame
         The list of data.
+
+    Raises
+    ------
+    ValueError
+        If none of the access intervals are contained within the provided start and stop times.
     """
     data=[]
     access_intervals = access.computed_access_interval_times
@@ -464,21 +512,24 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
         interval_end = times[1]
         computation_start = None
         computation_stop = None
+        # interval fully outside of desired calculation period, so skip
+        if (interval_start < start_time and interval_end < start_time) or (interval_start > stop_time and interval_end > stop_time):
+            continue
         # interval fully contained within desired calculation period, so include entire interval
         if interval_start >= start_time and interval_end <= stop_time:
             computation_start = interval_start
-            computation_stop = stop_time
-        # interval fully outside of desired calculation period, so skip
-        elif (interval_start < start_time and interval_end < start_time) or (interval_start > stop_time and interval_end > stop_time):
-            continue
-        # starts before desired calculation period, so start calculation at desired start time
-        elif interval_start < start_time:
-            computation_start = start_time
-        # ends after desired calculation period, so end calculation at desired end time
-        elif interval_end > stop_time:
-            computation_stop = stop_time
+            computation_stop = interval_end
+        else:
+            # starts before desired calculation period, so start calculation at desired start time
+            if interval_start < start_time:
+                computation_start = start_time
+            # ends after desired calculation period, so end calculation at desired end time
+            if interval_end > stop_time:
+                computation_stop = stop_time
         if group:
             data.append(access.data_providers.item(item).group.item(group_name).execute_elements(computation_start, computation_stop, step, elements).data_sets.to_pandas_dataframe())
         else:
             data.append(access.data_providers.item(item).execute_elements(computation_start, computation_stop, step, elements).data_sets.to_pandas_dataframe())
+    if len(data) == 0:
+        raise ValueError("No access data to plot- check provided start and stop times.")
     return data
