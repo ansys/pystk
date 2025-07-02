@@ -34,8 +34,140 @@ import pandas
 
 from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
-from ansys.stk.extensions.data_analysis._dates import _STKDateFactory
+from ansys.stk.extensions.data_analysis._dates import _STKDate, _STKDateConverter, _STKDateFactory
 
+
+def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    """Create a line chart from the provided dataframe and axes information.
+
+    Parameters
+    ----------
+    data : list of pandas.DataFrame
+        The list of DataFrames containing the data.
+    root : ansys.stk.core.stkobjects.STKObjectRoot
+        The STK object root.
+    numerical_columns : list of str
+        The list of dataframe columns with numerical values.
+    time_columns : list of str
+        The list of dataframe columns with time values.
+    axes : list of dict
+        The dictionary containing information about the data to plot.
+    x_column : str
+        The column corresponding to the x-axis data.
+    x_label : str
+        The label for the x-axis.
+    title : str
+        The title of the chart.
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the lines (the default is None).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    # count number of lines
+    num_lines = 0
+    for axis in axes:
+        num_lines += len(axis['lines'])
+
+    # get unit preferences from root
+    units_preferences = root.units_preferences
+
+    # create plot
+    fig, ax = matplotlib.pyplot.subplots()
+
+    for df in data:
+        # data conversions
+        if time_columns:
+            date_factory = _STKDateFactory(root)
+            df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
+            if x_column in time_columns:
+                time_difference = df[x_column].iloc[-1] - df[x_column].iloc[0]
+                matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+        else:
+            df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
+        df.dropna(axis=0, inplace=True)
+        df.sort_values(x_column, inplace=True)
+
+        # line collection for legend
+        mpl_lines = []
+
+        # create color map with correct length
+        colors = colormap(np.linspace(0, 1, num_lines)) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0, 1, num_lines))
+
+        # used to count line number to subset color map
+        line_count = 0
+
+        # get x data from dataframe
+        x_data = df[x_column]
+
+        # add matplotlib axis to list
+        axes_list = [ax]
+
+        # iterate through axes information parameter
+        for i in range(len(axes)):
+            axis = axes[i]
+            # if additional axes needed, duplicated matplotlib axis
+            if i != 0:
+                ax = ax.twinx()
+                axes_list.append(ax)
+            # iterate through lines under axis
+            for j in range(len(axis['lines'])):
+                line = axis['lines'][j]
+                # get y data
+                y_data = df[line['y_name']]
+                # get line label
+                label = line['label']
+                # if line uses unit, get current unit
+                if line['use_unit']:
+                    unit = units_preferences.get_current_unit_abbrv(line['dimension'])
+                    # check if unit should be squared in label
+                    if line['unit_squared']:
+                        label = label + f"({unit}^2)"
+                    else:
+                        label = label + f"({unit})"
+
+                mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count]))
+                line_count += 1
+            # if axis uses unit, set unit in label
+            if axis['use_unit']:
+                    if axis['unit_squared']:
+                        ax.set_ylabel(axis['label'] + f" ({unit}^2)")
+                    else:
+                        ax.set_ylabel(axis['label'] + f" ({unit})")
+            else:
+                ax.set_ylabel(axis['label'])
+
+            # set x-label
+            ax.set_xlabel(x_label)
+
+            # set styling (must be done for each axis)
+            ax.set_facecolor('whitesmoke')
+
+            if len(axes) == 1:
+                ax.grid(visible=True, axis='both', which='both', linestyle='--')
+            # if multiple axes, only plot x gridlines
+            else:
+                ax.grid(visible=True, axis='x', which='both', linestyle='--')
+
+            # set axis scales
+            if axis['ylog10']:
+                ax.set_yscale('log')
+            elif axis['y2log10']:
+                ax.set_yscale('log', base=2)
+
+        # if multiple lines, create legend
+        if num_lines > 1:
+            ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], shadow=True,  loc='upper center')
+
+        # set title and size
+        ax.set_title(title)
+        fig.set_size_inches(12, 6)
+        # return figure and axis
+        return fig, ax
 
 def pie_chart(
     root: STKObjectRoot,
