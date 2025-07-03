@@ -1,5 +1,5 @@
 services:
-  stk-python3.111:
+  stk-python3.11:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-python3.11
     container_name: stk-python3.11
     build:
