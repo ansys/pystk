@@ -44,9 +44,9 @@ class ManualRSTGenerator:
             is_autofile = any(
                 auto_path in path_resolved.parents or auto_path == path_resolved for auto_path in auto_file_paths
             )
+            is_private_file = path.name.startswith("_")
             is_internal_file = "internal" in path.parts
-
-            if not is_autofile and not is_internal_file:
+            if not is_autofile and not is_internal_file and not is_private_file:
                 self._generate_rst_for_pymodule(str(path))
 
     def _wrap_python_code_snippets(self, unformatted_docstring: str):
@@ -304,9 +304,14 @@ class ManualRSTGenerator:
         module_rst_file_path : str
             Path to the module RST file.
 
+        Raises
+        ------
+        RuntimeError
+            If a type hint does not have the proper structure.
+
         """
-        out_dir = module_rst_file_path.parent.resolve() / module_name
-        out_dir = out_dir / f"{obj_definition.name}.rst"
+        out_dir = Path(module_rst_file_path).parent.resolve() / module_name
+        out_path = out_dir / f"{obj_definition.name}.rst"
         out_dir.mkdir(parents=True, exist_ok=True)
 
         fq_name = f"{containing_namespace}.{module_name}.{obj_definition.name}"
@@ -330,13 +335,13 @@ class ManualRSTGenerator:
                 ]
             )
             for item in items:
-                f.write(f"            * - :py:{ref_type}:~{fq_name}.{item.name}\n")
+                f.write(f"            * - :py:{ref_type}:`~{fq_name}.{item.name}`\n")
                 doc = ast.get_docstring(item)
                 if doc:
                     f.write(f"              - {doc.splitlines()[0]}\n")
             f.write("\n")
 
-        with out_dir.open("w", encoding="utf-8") as f:
+        with out_path.open("w", encoding="utf-8") as f:
             f.writelines(
                 [
                     f"{obj_definition.name}\n",
@@ -387,30 +392,51 @@ class ManualRSTGenerator:
                     f.writelines(
                         [
                             f".. py:method:: {m.name}({arg_str})",
-                            f"{' -> ' + ret_type if ret_type else ''}\n",
+                            f"{' -> ' + ', '.join(ret_type) if ret_type else ''}\n",
                             f"    :canonical: {fq_name}.{m.name}\n\n",
                         ]
                     )
-                    write_docstring(f, ast.get_docstring(m), "    ")
+                    rawdocstring = ast.get_docstring(m)
+                    docstring = None
+                    if rawdocstring:
+                        docstring = NumpyDocString(rawdocstring)
 
-                    args_with_types = [
-                        (a.arg, a.annotation.id)
-                        for a in m.args.args
-                        if a.annotation and hasattr(a.annotation, "id") and a.arg != "self"
-                    ]
-                    if args_with_types:
+                    if docstring:
+                        if "Summary" in docstring:
+                            f.write(textwrap.indent("\n".join(docstring["Summary"]), "    ") + "\n\n")
+                        if "Extended Summary" in docstring:
+                            f.write(textwrap.indent("\n".join(docstring["Extended Summary"]), "    ") + "\n\n")
+
+                    if m.args.args:
                         f.write("    :Parameters:\n\n")
-                        for arg, type_hint in args_with_types:
-                            f.write(f"    **{arg}** : :obj:~{type_hint}\n")
+                        if docstring and "Parameters" in docstring:
+                            for param in docstring["Parameters"]:
+                                if len(param.desc) > 0:
+                                    if "of" in param.type:
+                                        param_types = param.type.split()
+                                        if len(param_types) == 3:
+                                            f.write(
+                                                f"        **{param.name}** : :obj:`~{param_types[0]}` of :obj:`~{param_types[2]}`\n"
+                                            )
+                                        else:
+                                            raise RuntimeError(
+                                                "Improper format for parameter containing 'of'- expecting `type` 'of' `type`."
+                                            )
+                                    else:
+                                        f.write(f"        **{param.name}** : :obj:`~{param.type}`\n")
+                                    f.write(textwrap.indent("\n".join(param.desc), "        ") + "\n")
+                                    f.write("\n")
+                            f.write("\n")
                         f.write("\n")
 
                     if ret_type:
-                        f.writelines(
-                            [
-                                "    :Returns:\n\n",
-                                f"        :obj:~{ret_type}\n\n",
-                            ]
-                        )
+                        f.write("    :Returns:\n\n")
+                        for i in range(len(ret_type)):
+                            if docstring and "Returns" in docstring and len(docstring["Returns"]) >= i:
+                                ret = docstring["Returns"][i]
+                                f.write(f"        :obj:`~{ret.type}`\n")
+                                f.write(textwrap.indent("\n".join(ret.desc), "        ") + "\n")
+                                f.write("\n")
 
             f.write("\n")
 
