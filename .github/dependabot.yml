@@ -8,30 +8,29 @@ updates:
       default-days: 7
       include:
         - "*"  # Include all dependencies in cooldown
-      exclude:
-        - "ansys-sphinx-theme"
     labels:
       - "dependencies:pyproject"
     commit-message:
       prefix: "build"
     groups:
-      tests:
+      extensions:
         patterns:
-          - "pytest*"
-          - "pytz"
-          - "parametrized"
-      doc:
+          - "matplotlib"
+          - "pandas"
+      grpc:
         patterns:
-          - "jupyter*"
-          - "jupytext"
-          - "myst*"
-          - "nbsphinx"
-          - "numpy*"
-          - "nbconvert"
-          - "*sphinx*"
+          - "grpcio"
+          - "protobuf"
+      jupyter:
+        patterns:
+          - "jupyter-rfb"
+          - "numpy"
           - "Pillow"
           - "simplejpeg"
           - "sidecar"
+      migration:
+        patterns:
+          - "libcst"
 
   - package-ecosystem: "github-actions"
     directory: "/"
