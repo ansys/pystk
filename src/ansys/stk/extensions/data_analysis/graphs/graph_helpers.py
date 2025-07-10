@@ -100,9 +100,6 @@ def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_c
         if convert_negative_r:
             _eliminate_negative_r_polar_vals(df, y_var, x_column)
 
-        # get unit preferences from root
-        units_preferences = root.units_preferences
-
         # if line uses unit, get current unit
         label = ""
         if line["use_unit"]:

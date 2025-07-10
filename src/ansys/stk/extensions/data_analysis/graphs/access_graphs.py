@@ -188,10 +188,10 @@ def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time:
     data = _get_access_data(stk_object, "AER Data", True, "Default", ["Azimuth", "Elevation", "Range", "Time"], start_time, stop_time, step)
 
     axes = [{"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "Longitude/Angle", "lines": [
-            {"y_name":"azimuth", "label":"Azimuth", "use_unit":None, "unit_squared": None, "unit_pref": "Longitude"},
-            {"y_name":"elevation", "label":"Elevation", "use_unit":None, "unit_squared": None, "unit_pref": "Angle"}]},
+            {"y_name":"azimuth", "label":"Azimuth", "use_unit":None, "unit_squared": None, "dimension": "Longitude"},
+            {"y_name":"elevation", "label":"Elevation", "use_unit":None, "unit_squared": None, "dimension": "Angle"}]},
             {"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "Distance", "lines": [
-            {"y_name":"range", "label":"Range", "use_unit":None, "unit_squared": None, "unit_pref": "Distance"}]}]
+            {"y_name":"range", "label":"Range", "use_unit":None, "unit_squared": None, "dimension": "Distance"}]}]
     return line_chart(data, root, ["azimuth","elevation","range"], ["time"], axes, "time", "Time", "AER", colormap=colormap)
 
 def access_interval_graph(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
