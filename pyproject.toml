@@ -118,6 +118,10 @@ doc = [
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
+docstyle = [
+    "rst2html==2020.7.4",
+    "vale==3.4.1",
+]
 
 [tool.flit.module]
 name = "ansys.stk"

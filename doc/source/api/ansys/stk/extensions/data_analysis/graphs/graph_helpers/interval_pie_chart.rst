@@ -56,6 +56,10 @@ interval_pie_chart
         :obj:`~matplotlib.axes.Axes`
         The newly created axes.
 
+    :Raises:
+
+        :obj:`~ValueError`
+        If the length of color_list is less than 2.
 
 .. py:currentmodule:: interval_pie_chart
 
