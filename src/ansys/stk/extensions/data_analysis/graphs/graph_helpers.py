@@ -531,7 +531,7 @@ def interval_pie_chart(
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
     if color_list and len(color_list) < 2:
-        raise ValueError('If provided, "color_list" argument must contain at least 2 colors.')
+        raise ValueError("If provided, 'color_list' argument must contain at least 2 colors.")
 
     if cumulative:
         # if plot is cumulative, sum durations
