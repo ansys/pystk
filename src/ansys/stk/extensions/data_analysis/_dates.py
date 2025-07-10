@@ -76,9 +76,9 @@ class _STKDate:
     def __add__(self: typing.Self, seconds: float) -> typing.Self:
         """Add seconds to the date."""
         return _STKDate(self.stk_date.add("sec", seconds))
-    
+
     def add_by_unit(self, unit: str, value:float)-> typing.Self:
-        "Add the value in the given unit."
+        """Add the value in the given unit."""
         return _STKDate(self.stk_date.add(unit, value))
 
     def get_epsec(self: typing.Self) -> float:

@@ -25,6 +25,7 @@
 A set of helper functions for graphing basic STK desktop graph types.
 """
 
+from math import radians
 import typing
 
 import matplotlib
@@ -34,10 +35,206 @@ import matplotlib.pyplot
 import numpy as np
 import pandas
 
-from ansys.stk.core.stkobjects import STKObjectRoot, Access
+from ansys.stk.core.stkobjects import Access, STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
 from ansys.stk.extensions.data_analysis._dates import _STKDate, _STKDateConverter, _STKDateFactory
 
+
+def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], axis : dict, title : str, origin_0 : bool = False, convert_negative_r : bool = False, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    """Create a polar chart from the provided dataframe and axis information.
+
+    Parameters
+    ----------
+    data : list of pandas.DataFrame
+        The list of DataFrames containing the data.
+    root : ansys.stk.core.stkobjects.STKObjectRoot
+        The STK object root.
+    numerical_columns : list of str
+        The list of dataframe columns with numerical values.
+    axis : dict
+        The dictionary containing information about the data to plot.
+    title : str
+        The title of the chart.
+    origin_0 : bool
+        Whether to set the theta 0 point to the top of the graph.
+    convert_negative_r : bool
+        Whether to convert negative radius values by using opposite angle values.
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the lines (the default is None).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    # create plot
+    fig, ax = matplotlib.pyplot.subplots(subplot_kw={"projection": "polar"})
+
+    # get unit preferences from root
+    units_preferences = root.units_preferences
+    unit = None
+
+    # use one color per line
+    colors = colormap(np.linspace(0, 1, len(data))) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0,1,len(data)))
+
+    for i in range(len(data)):
+        df = data[i]
+
+        # data conversions
+        df = _convert_columns(df, numerical_columns, [], units_preferences)
+        df.dropna(axis=0, inplace=True)
+
+        # matplotlib works in radians, so get x (theta) column and convert
+        x_column = axis["lines"][0]["x_name"]
+        df[x_column] = df[x_column].apply(lambda x : radians(x))
+
+        # get line information
+        line = axis["lines"][0]
+        # get y (r) variable
+        y_var = line["y_name"]
+
+        # matplotlib doesn"t support negative r values in polar graphs, so convert for stk graphs
+        # that show negative r values with negative angle
+        if convert_negative_r:
+            _eliminate_negative_r_polar_vals(df, y_var, x_column)
+
+        # get unit preferences from root
+        units_preferences = root.units_preferences
+
+        # if line uses unit, get current unit
+        label = ""
+        if line["use_unit"]:
+            unit = units_preferences.get_current_unit_abbrv(line["dimension"])
+            label = line["label"] + f"({unit})"
+
+        # plot x and y data
+        x_data = df[x_column]
+        y_data = df[y_var]
+        ax.plot(x_data, y_data, label=label, color=colors[i])
+
+    # set x label
+    ax.set_xlabel(f"{axis["label"]} ({unit})") if unit else ax.set_xlabel(f"{axis["label"]}")
+    # set styling
+    ax.set_facecolor("whitesmoke")
+    ax.grid(visible=True, axis="both", which="both", linestyle="--")
+    # set title
+    ax.set_title(title, y=1.05)
+    # set theta direction to match stk
+    ax.set_theta_direction(-1)
+
+    # styling for y axis with negative values to match stk styling
+    if not convert_negative_r:
+        ax.invert_yaxis()
+
+    # configure origin location to match stk
+    if origin_0:
+        ax.set_theta_zero_location("N")
+
+    # return figure and axis
+    return fig, ax
+
+def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_pairs : list, numerical_columns : list[str], time_columns : list[str], x_label : str, title : str, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    """Create an interval plot from the provided list of dataframes.
+
+    Parameters
+    ----------
+    data : list of pandas.DataFrame
+        The list of DataFrames containing the data.
+    root : ansys.stk.core.stkobjects.STKObjectRoot
+        The STK object root.
+    numerical_columns : list of str
+        The list of dataframe columns with numerical values.
+    time_columns : list of str
+        The list of dataframe columns with time values.
+    x_label : str
+        The label for the x-axis.
+    title : str
+        The title of the chart.
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the lines (the default is None).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    # create plot
+    fig, ax = matplotlib.pyplot.subplots()
+
+    # count number of bars
+    bar_num = 0
+
+    # create color map with one color for each bar
+    colors = colormap(np.linspace(0, 1, len(element_pairs))) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0, 1, len(element_pairs)))
+
+    # collect bars
+    bars = []
+
+    # collect y tick locations
+    tick_locs = []
+
+    # get unit preferences from root
+    units_preferences = root.units_preferences
+
+     # data conversions
+    date_factory = _STKDateFactory(root)
+    for df in data:
+        df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
+        df.dropna(axis=0, inplace=True)
+
+    # format time axis
+    all_times = (pandas.concat([df[time_columns] for df in data])).stack().reset_index(drop=True).sort_values()
+    time_difference = all_times.iloc[-1] - all_times.iloc[0]
+    matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+
+    # iterate through pairs of elements
+    for i in range(len(element_pairs)):
+        element_pair = element_pairs[i]
+        first_elem = element_pair[0]
+        second_elem = element_pair[1]
+        # get corresponding dataframe
+        df = data[i]
+        # add column to dataframe with difference between end and start times
+        df["graph duration"] = df[second_elem[0]] - df[first_elem[0]]
+        # create bar starting at start times with length corresponding to duration
+        # label if label provided, otherwise leave blank
+        bars.append(ax.broken_barh(list(zip(df[first_elem[0]], df["graph duration"])), (bar_num*10 + 10, 9), zorder=1, facecolors=colors[bar_num], label=first_elem[1] if first_elem[1] else ""))
+        # append tick location
+        tick_locs.append(bar_num*10 + 14.5)
+        bar_num += 1
+
+    # set x label
+    ax.set_xlabel(f"{x_label}")
+
+    # create legend if more than one bar
+    if len(element_pairs) > 1:
+        ax.legend(bars, [b.get_label() for b in bars])
+
+    # set title
+    ax.set_title(title)
+
+    # set styling
+    ax.set_facecolor("whitesmoke")
+    ax.grid(visible=True, axis="both", which="both", linestyle="--")
+    ax.set_axisbelow(True)
+
+    # label y-axis using tick locations
+    ax.set_yticks(tick_locs, labels = [b.get_label() for b in bars])
+
+    # hide y-axis
+    ax.get_yaxis().set_visible(False)
+
+    # set size
+    fig.set_size_inches(18.5, 7)
+
+    _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
+
+    # return figure and axis
+    return fig, ax
 
 def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create a line chart from the provided dataframe and axes information.
@@ -53,7 +250,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     time_columns : list of str
         The list of dataframe columns with time values.
     axes : list of dict
-        The dictionary containing information about the data to plot.
+        The list of dictionaries containing information about the data to plot.
     x_column : str
         The column corresponding to the x-axis data.
     x_label : str
@@ -73,7 +270,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     # count number of lines
     num_lines = 0
     for axis in axes:
-        num_lines += len(axis['lines'])
+        num_lines += len(axis["lines"])
 
     # get unit preferences from root
     units_preferences = root.units_preferences
@@ -93,11 +290,9 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
         df.dropna(axis=0, inplace=True)
         df.sort_values(x_column, inplace=True)
     if x_column in time_columns:
-        # format time x-axis
         all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
         time_difference = all_times.iloc[-1] - all_times.iloc[0]
         matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
-        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
 
     for i in range(len(data)):
         df = data[i]
@@ -123,17 +318,17 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
                 axes_list.append(ax)
             ax = axes_list[j]
             # iterate through lines under axis
-            for j in range(len(axis['lines'])):
-                line = axis['lines'][j]
+            for j in range(len(axis["lines"])):
+                line = axis["lines"][j]
                 # get y data
-                y_data = df[line['y_name']]
+                y_data = df[line["y_name"]]
                 # get line label
-                label = line['label']
+                label = line["label"]
                 # if line uses unit, get current unit
-                if line['use_unit']:
-                    unit = units_preferences.get_current_unit_abbrv(line['dimension'])
+                if line["use_unit"]:
+                    unit = units_preferences.get_current_unit_abbrv(line["dimension"])
                     # check if unit should be squared in label
-                    if line['unit_squared']:
+                    if line["unit_squared"]:
                         label = label + f"({unit}^2)"
                     else:
                         label = label + f"({unit})"
@@ -143,35 +338,39 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
             if i == 0:
                 # if axis uses unit, set unit in label
-                if axis['use_unit']:
-                    if axis['unit_squared']:
-                        ax.set_ylabel(axis['label'] + f" ({unit}^2)")
+                if axis["use_unit"]:
+                    if axis["unit_squared"]:
+                        ax.set_ylabel(axis["label"] + f" ({unit}^2)")
                     else:
-                        ax.set_ylabel(axis['label'] + f" ({unit})")
+                        ax.set_ylabel(axis["label"] + f" ({unit})")
                 else:
-                    ax.set_ylabel(axis['label'])
+                    ax.set_ylabel(axis["label"])
 
                 # set x-label
                 ax.set_xlabel(x_label)
 
                 # set styling (must be done for each axis)
-                ax.set_facecolor('whitesmoke')
+                ax.set_facecolor("whitesmoke")
 
                 if len(axes) == 1:
-                    ax.grid(visible=True, axis='both', which='both', linestyle='--')
+                    ax.grid(visible=True, axis="both", which="both", linestyle="--")
                 # if multiple axes, only plot x gridlines
                 else:
-                    ax.grid(visible=True, axis='x', which='both', linestyle='--')
+                    ax.grid(visible=True, axis="x", which="both", linestyle="--")
 
                 # set axis scales
-                if axis['ylog10']:
-                    ax.set_yscale('log')
-                elif axis['y2log10']:
-                    ax.set_yscale('log', base=2)
+                if axis["ylog10"]:
+                    ax.set_yscale("log")
+                elif axis["y2log10"]:
+                    ax.set_yscale("log", base=2)
+
+    # format time x-axis if needed
+    if x_column in time_columns:
+        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
 
     # if multiple lines, create legend
     if num_lines > 1:
-        legend = ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], loc='upper center', fontsize=10)
+        legend = ax.legend(mpl_lines, [line.get_label() for line in mpl_lines], loc="upper center", fontsize=10)
         for legend_object in legend.legend_handles:
             legend_object.set_linewidth(2.0)
 
@@ -332,7 +531,7 @@ def interval_pie_chart(
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
     if color_list and len(color_list) < 2:
-        raise ValueError("If provided, 'color_list' argument must contain at least 2 colors.")
+        raise ValueError('If provided, "color_list" argument must contain at least 2 colors.')
 
     if cumulative:
         # if plot is cumulative, sum durations
@@ -431,7 +630,8 @@ def _convert_columns(
         if date_factory is None:
             date_factory = _STKDateFactory(root)
         for col in date_column_list:
-            df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
+            if col in df:
+                df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
     return df
 
 def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, date_factory : _STKDateFactory):
@@ -452,25 +652,24 @@ def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axe
     """
 
     def get_d_m_y(date : _STKDate):
-        return date.get_utcg().rsplit(' ', maxsplit=1)[0]
-    
+        return date.get_utcg().rsplit(" ", maxsplit=1)[0]
+
     if last_time - first_time < 604800:
-        fig.text(0.05, 0.01, get_d_m_y(first_time), 
-            horizontalalignment='left', verticalalignment='bottom', 
+        fig.text(0.05, 0.01, get_d_m_y(first_time),
+            horizontalalignment="left", verticalalignment="bottom",
             fontsize=10)
         if get_d_m_y(first_time) != get_d_m_y(last_time):
-            fig.text(0.95, 0.01, get_d_m_y(last_time), 
-            horizontalalignment='right', verticalalignment='bottom', 
+            fig.text(0.95, 0.01, get_d_m_y(last_time),
+            horizontalalignment="right", verticalalignment="bottom",
             fontsize=10)
-    
+
     # add vertical lines showing day changes
     if last_time - first_time < 2592000:
         start_date = date_factory.new_date(get_d_m_y(first_time) + " 00:00:00.000").add_by_unit("day", 1)
         while start_date < last_time:
-            ax.axvline(x=start_date.get_epsec(), color='black', linestyle='-', linewidth=1.5)
-            ax.annotate(start_date.get_utcg(), xy =(start_date.get_epsec(),1.05), rotation = 270, fontsize=9)
+            ax.axvline(x=start_date.get_epsec(), color="black", linestyle="-", linewidth=1.5)
+            ax.annotate(start_date.get_utcg(), xy =(start_date.get_epsec(),ax.get_ylim()[0]), xytext=(0, 7), rotation = 270, fontsize=9, textcoords="offset points")
             start_date = start_date.add_by_unit("day", 1)
-
 
 def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time: typing.Any, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
     """Get list of data for access object, grouping by access interval while respecting start and stop times.
@@ -505,11 +704,15 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
         If none of the access intervals are contained within the provided start and stop times.
     """
     data=[]
+    root = access.base.root
+    date_factory = _STKDateFactory(root)
+    start_time = date_factory.new_date(start_time)
+    stop_time = date_factory.new_date(stop_time)
     access_intervals = access.computed_access_interval_times
     for i in range(0, access_intervals.count):
         times = access_intervals.get_interval(i)
-        interval_start = times[0]
-        interval_end = times[1]
+        interval_start = date_factory.new_date(times[0])
+        interval_end = date_factory.new_date(times[1])
         computation_start = None
         computation_stop = None
         # interval fully outside of desired calculation period, so skip
@@ -517,15 +720,15 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
             continue
         # interval fully contained within desired calculation period, so include entire interval
         if interval_start >= start_time and interval_end <= stop_time:
-            computation_start = interval_start
-            computation_stop = interval_end
+            computation_start = interval_start.get_utcg()
+            computation_stop = interval_end.get_utcg()
         else:
             # starts before desired calculation period, so start calculation at desired start time
             if interval_start < start_time:
-                computation_start = start_time
+                computation_start = start_time.get_utcg()
             # ends after desired calculation period, so end calculation at desired end time
             if interval_end > stop_time:
-                computation_stop = stop_time
+                computation_stop = stop_time.get_utcg()
         if group:
             data.append(access.data_providers.item(item).group.item(group_name).execute_elements(computation_start, computation_stop, step, elements).data_sets.to_pandas_dataframe())
         else:
@@ -533,3 +736,8 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
     if len(data) == 0:
         raise ValueError("No access data to plot- check provided start and stop times.")
     return data
+
+def _eliminate_negative_r_polar_vals(df : pandas.DataFrame, r_var : str, theta_var : str):
+    """Converts negative r values in a dataframe that has r and theta values."""
+    df[theta_var]= np.where(df[r_var] >= 0, df[theta_var], df[theta_var] + np.pi)
+    df[r_var] = df[r_var].apply(lambda x: abs(x))
