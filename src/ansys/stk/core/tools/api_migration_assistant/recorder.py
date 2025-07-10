@@ -72,7 +72,7 @@ class Recorder:
             new_sys_argv += self.program_args
         sys.argv = new_sys_argv
 
-        if sys.version_info >= (3, 13):
+        if sys.version_info >= (3, 11):
             exec_entry_point = "\n".join([
                 f"import {module_to_import} as this_module",
                 f"this_module.{self.entry_point}()"
