@@ -177,3 +177,4 @@ def stk_root():
     yield root
     if root.current_scenario is not None:
         root.close_scenario()
+    root.units_preferences.reset_units()

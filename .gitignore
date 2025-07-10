@@ -172,6 +172,7 @@ doc/source/examples/
 doc/source/_static/docker/
 doc/source/_static/artifacts/
 doc/source/_static/migration-tables/*.json
+doc/source/graph_images_temp/
 
 # Ignore scenario/data files from examples
 examples/scenario
