@@ -72,10 +72,16 @@ class Recorder:
             new_sys_argv += self.program_args
         sys.argv = new_sys_argv
 
-        exec_entry_point = "\n".join([
-            f"import {module_to_import} as this_module",
-            f"this_module.{self.entry_point}()"
-        ])
+        if sys.version_info >= (3, 13):
+            exec_entry_point = "\n".join([
+                f"import {module_to_import} as this_module",
+                f"this_module.{self.entry_point}()"
+            ])
+        else:
+            exec_entry_point = "\n".join([
+                f"import {module_to_import}",
+                f"{module_to_import}.{self.entry_point}()"
+            ])
 
         bootstrap = [
             "exec('import sys')",
