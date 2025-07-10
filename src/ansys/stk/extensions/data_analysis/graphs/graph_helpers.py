@@ -115,7 +115,7 @@ def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_c
         ax.plot(x_data, y_data, label=label, color=colors[i])
 
     # set x label
-    ax.set_xlabel(f"{axis["label"]} ({unit})") if unit else ax.set_xlabel(f"{axis["label"]}")
+    ax.set_xlabel(f"{axis['label']} ({unit})") if unit else ax.set_xlabel(f"{axis['label']}")
     # set styling
     ax.set_facecolor("whitesmoke")
     ax.grid(visible=True, axis="both", which="both", linestyle="--")
@@ -738,6 +738,16 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
     return data
 
 def _eliminate_negative_r_polar_vals(df : pandas.DataFrame, r_var : str, theta_var : str):
-    """Converts negative r values in a dataframe that has r and theta values."""
+    """Convert negative r values in a dataframe that has r and theta values.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        The dataframe containing the data.
+    r_var : str
+        The column corresponding to the radius variable.
+    theta_var : str
+        The column corresponding to the angle variable.
+    """
     df[theta_var]= np.where(df[r_var] >= 0, df[theta_var], df[theta_var] + np.pi)
     df[r_var] = df[r_var].apply(lambda x: abs(x))
