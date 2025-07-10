@@ -27,7 +27,14 @@ import typing
 import matplotlib
 
 from ansys.stk.core.stkobjects import Access
-from ansys.stk.extensions.data_analysis.graphs.graph_helpers import interval_pie_chart, pie_chart
+from ansys.stk.extensions.data_analysis.graphs.graph_helpers import (
+    _get_access_data,
+    interval_pie_chart,
+    interval_plot,
+    line_chart,
+    pie_chart,
+    polar_chart,
+)
 
 
 def access_duration_pie_chart(
@@ -149,3 +156,102 @@ def revisit_diagram_interval_pie_chart(
         "Time",
         color_list = color_list
     )
+
+def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    r"""Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+
+    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\AER.rsg.
+
+    Parameters
+    ----------
+    stk_object : ansys.stk.core.stkobjects.Access
+        The STK Access object.
+    start_time : typing.Any
+        The start time of the calculation.
+    stop_time : typing.Any
+        The stop time of the calculation.
+    step_time : float
+        The step time for the calculation (the default is 60 seconds).
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the data (the default is None).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    root = stk_object.base.root
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
+    data = _get_access_data(stk_object, "AER Data", True, "Default", ["Azimuth", "Elevation", "Range", "Time"], start_time, stop_time, step)
+
+    axes = [{"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "Longitude/Angle", "lines": [
+            {"y_name":"azimuth", "label":"Azimuth", "use_unit":None, "unit_squared": None, "dimension": "Longitude"},
+            {"y_name":"elevation", "label":"Elevation", "use_unit":None, "unit_squared": None, "dimension": "Angle"}]},
+            {"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "Distance", "lines": [
+            {"y_name":"range", "label":"Range", "use_unit":None, "unit_squared": None, "dimension": "Distance"}]}]
+    return line_chart(data, root, ["azimuth","elevation","range"], ["time"], axes, "time", "Time", "AER", colormap=colormap)
+
+def access_interval_graph(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    r"""Create an interval graph of the access intervals.
+
+    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\Access.rsg.
+
+    Parameters
+    ----------
+    stk_object : ansys.stk.core.stkobjects.Access
+        The STK Access object.
+    start_time : typing.Any
+        The start time of the calculation.
+    stop_time : typing.Any
+        The stop time of the calculation.
+    colormap : matplotlib.colors.Colormap
+        The colormap with which to color the data (the default is None).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    root = stk_object.base.root
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
+    df = stk_object.data_providers.item("Access Data").execute_elements(start_time, stop_time, ["Start Time", "Stop Time"]).data_sets.to_pandas_dataframe()
+    elements=[(("start time", "None"),("stop time", "None"))]
+    return interval_plot([df], root, elements, [], ["start time","stop time"], "Time", "Access Times", colormap)
+
+def az_el_polar_center_90_graph(stk_object :Access, start_time : typing.Any = None, stop_time : typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+    r"""Create a polar plot with elevation as radius and azimuth as angle theta over time, during access intervals. The azimuth and elevation describe the relative position vector between the base object and the target object. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+
+    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\Az El Polar.rsg.
+
+    Parameters
+    ----------
+    stk_object : ansys.stk.core.stkobjects.Access
+        The STK Access object.
+    start_time : typing.Any
+        The start time of the calculation.
+    stop_time : typing.Any
+        The stop time of the calculation.
+    step_time : float
+        The step time for the calculation (the default is 60 seconds).
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        The newly created figure.
+    matplotlib.axes.Axes
+        The newly created axes.
+    """
+    root = stk_object.base.root
+    start_time = start_time or root.current_scenario.start_time
+    stop_time = stop_time or root.current_scenario.stop_time
+    data = _get_access_data(stk_object, "AER Data", True, "Default", ["Azimuth", "Elevation"], start_time, stop_time, step)
+    axis={"use_unit" : True, "unit_squared": False, "label": "Angle", "lines": [
+        {"y_name":"elevation","x_name":"azimuth", "label":"Azimuth", "use_unit":True, "unit_squared": False, "dimension": "Angle"}
+        ]}
+    return polar_chart(data, root, ["elevation","azimuth"], axis, "Az El Polar", convert_negative_r = False, origin_0 = True, colormap=colormap)

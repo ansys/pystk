@@ -28,6 +28,9 @@ A set of utilities to facilitate the manipulation of dates and times in PySTK.
 
 import typing
 
+from matplotlib import units
+import numpy as np
+
 from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
 
@@ -70,9 +73,13 @@ class _STKDate:
             return self.get_utcg() == other.get_utcg()
         return NotImplemented
 
-    def __add__(self: typing.Self, seconds: float) -> Date:
+    def __add__(self: typing.Self, seconds: float) -> typing.Self:
         """Add seconds to the date."""
         return _STKDate(self.stk_date.add("sec", seconds))
+
+    def add_by_unit(self, unit: str, value:float)-> typing.Self:
+        """Add the value in the given unit."""
+        return _STKDate(self.stk_date.add(unit, value))
 
     def get_epsec(self: typing.Self) -> float:
         """Return the date in Epoch Seconds.
@@ -136,3 +143,65 @@ class _STKDateFactory:
 
         """
         return _STKDate(self.conversion_utility.new_date(unit, value))
+
+class _STKDateConverter(units.ConversionInterface):
+        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float):
+            self.stk_date_factory = stk_date_factory
+            self.time_difference = time_difference
+            super().__init__()
+
+        def default_units(self, x, axis):
+            if isinstance(x, _STKDate):
+                return "Date"
+            else:
+                return None
+
+        def convert(self, value, unit, axis):
+            """Convert an _STKDate object to a scalar."""
+            if isinstance(value, _STKDate):
+                return value.get_epsec()
+            elif isinstance(value, (list, tuple, np.ndarray)) and all(isinstance(v, _STKDate) for v in value):
+                 return [v.get_epsec() for v in value]
+            else:
+                return value
+
+        def axisinfo(self, unit, axis):
+            """Return major and minor tick locators and formatters."""
+            def get_utcg_from_epsec(epsec : float):
+                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).get_utcg()
+
+            def h_m_s_ms_formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                return utcg.rsplit(' ', maxsplit=1)[-1]
+
+            def h_m_s_1ms_formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                return utcg.rsplit(' ', maxsplit=1)[-1][:-2]
+
+            def h_m_formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                return utcg.rsplit(' ', maxsplit=1)[-1].rsplit(':', maxsplit=1)[0]
+
+            def d_m_formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                return utcg.rsplit(' ', maxsplit=2)[0]
+
+            def m_y_formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
+
+            if  self.time_difference < 1:
+                formatter = h_m_s_ms_formatter
+            elif self.time_difference < 60:
+                formatter = h_m_s_1ms_formatter
+            elif self.time_difference < 172800:
+                formatter = h_m_formatter
+            elif self.time_difference < 5184000:
+                formatter = d_m_formatter
+            else:
+                formatter = m_y_formatter
+
+            from matplotlib.ticker import FuncFormatter
+            return units.AxisInfo(
+                majfmt=FuncFormatter(formatter)
+            )

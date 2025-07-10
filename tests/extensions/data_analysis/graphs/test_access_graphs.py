@@ -27,7 +27,7 @@ import pytest
 
 import matplotlib
 
-from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart
+from ansys.stk.extensions.data_analysis.graphs.access_graphs import access_duration_pie_chart, cumulative_dwell_cumulative_pie_chart, revisit_diagram_interval_pie_chart, aer_line_chart, access_interval_graph, az_el_polar_center_90_graph
 
 from stk_environment import stk_root
 
@@ -93,6 +93,12 @@ def test_access_duration_pie_chart_during_leap_second(leap_second_access):
     return fig
 
 @pytest.mark.mpl_image_compare
+def test_access_duration_pie_chart_during_leap_second(leap_second_access):
+    access = leap_second_access
+    fig, _ = access_duration_pie_chart(access)
+    return fig
+
+@pytest.mark.mpl_image_compare
 def test_access_duration_pie_chart_pass_colormap(basic_access):
     fig, _ = access_duration_pie_chart(basic_access, colormap=matplotlib.cm.plasma)
     return fig
@@ -110,6 +116,12 @@ def test_cumulative_dwell_cumulative_pie_chart(basic_access):
 @pytest.mark.mpl_image_compare
 def test_cumulative_dwell_cumulative_pie_chart_during_leap_second(leap_second_access):
     fig, _ = cumulative_dwell_cumulative_pie_chart(leap_second_access)
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_cumulative_dwell_cumulative_pie_chart_during_leap_second(leap_second_access):
+    access = leap_second_access
+    fig, _ = cumulative_dwell_cumulative_pie_chart(access)
     return fig
 
 @pytest.mark.mpl_image_compare
@@ -158,4 +170,34 @@ def test_cumulative_dwell_cumulative_pie_chart_gps(basic_access):
 def test_revisit_diagram_interval_pie_chart_taig(basic_access):
     basic_access.base.root.units_preferences.set_current_unit("Date", "TAIG")
     fig, _ = revisit_diagram_interval_pie_chart(basic_access, start_time= "5 Jun 2022 00:00:37.000", stop_time = "5 Jun 2022 12:00:37.000")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_aer_line_chart(basic_access):
+    fig, _ = aer_line_chart(basic_access)
+    return fig
+
+def test_aer_line_chart_invalid_interval(basic_access):
+    with pytest.raises(ValueError) as excinfo:
+        _, _ = aer_line_chart(basic_access, start_time="4 Jun 2022 09:00:00.000", stop_time="4 Jun 2022 12:00:00.000")
+    assert "No access data to plot- check provided start and stop times." in str(excinfo.value)
+
+@pytest.mark.mpl_image_compare
+def test_aer_line_chart_start_stop_contained_within_interval(basic_access):
+    fig, _ = aer_line_chart(basic_access, start_time="5 Jun 2022 00:26:00.000", stop_time="5 Jun 2022 00:34:00.000")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_aer_line_chart_during_leap_second(leap_second_access):
+    fig, _ = aer_line_chart(leap_second_access, start_time="30 Jun 2015 23:59:30.000", stop_time="1 Jul 2015 00:00:15.000")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_access_interval_graph(basic_access):
+    fig, _ = access_interval_graph(basic_access)
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_az_el_polar_center_90_graph(basic_access):
+    fig, _ = az_el_polar_center_90_graph(basic_access)
     return fig
