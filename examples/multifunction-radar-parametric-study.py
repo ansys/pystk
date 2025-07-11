@@ -8,7 +8,7 @@
 #
 # Beam gain measures how the antenna for a beam concentrates power in a certain direction. It is related to both efficiency and directivity. The optimal gain value depends on how an antenna is being used. The best choice for hitting a receiver far away is a high-gain value, as the signal has to travel over a large distance, so it needs to be intensified and pointed directly at the target. If the signal must be received evenly over a broad area, however, lower gain is more appropriate.
 #
-# Signal to noise ratio is a measure that compares the level of a desired signal to the level of noise. To increase SNR, radar systems often use multiple pulse integration which is the process of summing multiple transmit pulses to improve detection. When a target is located within the radar beam during a single scan, it may reflect several pulses. By adding the returns from all pulses returned by a given target during a single scan, the radar sensitivity SNR can be increased. With STK's Goal SNR setting, STK integrates up to the maximum pulse number in order to achieve the desired signal-to-noise ratio.
+# Signal to noise ratio is a measure that compares the level of a desired signal to the level of noise. To increase SNR, radar systems often use multiple pulse integration which is the process of summing multiple transmit pulses to improve detection. When a target is located within the radar beam during a single scan, it may reflect several pulses. By adding the returns from all pulses returned by a given target during a single scan, the radar sensitivity SNR can be increased. With STK's Goal SNR setting, STK integrates up to the maximum pulse number to achieve the desired signal-to-noise ratio.
 #
 # The effectiveness of a certain radar configuration can be measured by the probability of detection for a designated target, which is always between 0 and 1. The probability of detection is a function of the per pulse signal to noise ratio (SNR), the number of pulses integrated, the probability of false alarm and the radar cross section (RCS) fluctuation type. STK reports the probability of detection based off of a single pulse (S/T Pdet1), and over all integrated pulses (S/T Integrated PDet).
 
@@ -18,14 +18,14 @@
 #
 # Conduct parametric studies varying:
 #
-# - gain from $20$ dB to $40$ dB in $2$ dB increments.
-# - goal SNR from $10$ dB to $22$ dB in $1$ dB increments.
-# - maximum number of pulses from $1$ to $200$ in increments of $10$.
-# - gain from $20$ to $40$ dB in increments of $5$ dB, and goal SNR from $10$ to $20$ dB in increments of $2$ dB at the same time.
+# - Gain from $20$ dB to $40$ dB in $2$ dB increments.
+# - Goal SNR from $10$ dB to $22$ dB in $1$ dB increments.
+# - Maximum number of pulses from $1$ to $200$ in increments of $10$.
+# - Gain from $20$ to $40$ dB in increments of $5$ dB, and goal SNR from $10$ to $20$ dB in increments of $2$ dB at the same time.
 
 # ## Launch a new STK instance
 
-# Start by launching a new STK instance. In this example, STKEngine is used.
+# Start by launching a new STK instance. In this example, `STKEngine` is used.
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -40,15 +40,15 @@ stk = STKEngine.start_application(no_graphics=False)
 
 root = stk.new_object_root()
 
-# Then, load the VDF from the file path:
+# Then, load the VDF from the path:
 
 # +
 import pathlib
 
 
-install_dir = root.execute_command("GetDirectory / STKHome")[0]
+install_dir = pathlib.Path(root.execute_command("GetDirectory / STKHome")[0])
 scenario_filepath = str(
-    pathlib.Path(install_dir)
+    install_dir
     / "Data"
     / "Resources"
     / "stktraining"
@@ -116,9 +116,9 @@ access_df = target_transport_provider.execute_elements(
 
 # Display the first five rows of the data:
 
-access_df[:5]
+access_df.head(5)
 
-# Then, determine during how many timesteps the aircraft can be tracked with certainty:
+# Then, determine during how many time steps the aircraft can be tracked with at least 80% confidence:
 
 access_df["s/t integrated pdet"] = access_df["s/t integrated pdet"].astype(float)
 f"The aircraft can be tracked with certainty during {len(access_df[access_df['s/t integrated pdet'] >= 0.8])} time steps, out of {len(access_df)} total."
@@ -158,7 +158,7 @@ access_df["s/t pulses integrated"] = access_df["s/t pulses integrated"].astype(f
 # create plot with shared x-axis
 fig, axes = plt.subplots(3, 1, sharex=True)
 
-# plot integrated pdet, integrated snr, and pulses integrated against time on 3 different plots
+# plot integrated PDet, integrated SNR, and pulses integrated against time on 3 different plots
 axes[0].plot(
     access_df["time"],
     access_df["s/t integrated pdet"],
@@ -328,14 +328,14 @@ pulse_integration.maximum_pulses = 512
 
 # Finally, determine how varying gain and goal SNR at the same time impact the probability of detection. Vary the gain from $20$ to $40$ dB in increments of $5$ dB, and vary the goal SNR from $10$ to $20$ dB in increments of $2$ dB. For each combination of gain and goal SNR values, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
-# +
+snr_values = range(10, 22, 2)
+gain_values = range(20, 45, 5)
 mean_pdets = []
-
-for i in range(0, 6):
-    snr = range(10, 22, 2)[i]
+for i in range(len(snr_values)):
+    snr = snr_values[i]
     mean_pdets.append([])
     pulse_integration.snr = snr
-    for gain in range(20, 45, 5):
+    for gain in gain_values:
         target_transport.gain = gain
         access.compute_access()
         pdet_df = (
@@ -345,9 +345,8 @@ for i in range(0, 6):
             .data_sets.to_pandas_dataframe()
         )
         mean_pdets[i].append(pdet_df.loc[:, "s/t integrated pdet"].mean())
-# -
 
-# Then, visualize the data using a carpet plot, which is a means of displaying data dependent on two variables in a format that makes interpretation easier than normal multiple curve plots. A carpet plot can be used to help with interpreting a multi-dimensional Parametric Study.
+# Then, visualize the data using a carpet plot, which is a means of displaying data dependent on two variables in a format that makes interpretation easier than normal multiple curve plots. A carpet plot can be used to help with interpreting a multi-dimensional parametric study.
 
 # +
 import plotly.graph_objects as go
@@ -356,8 +355,8 @@ from plotly.offline import init_notebook_mode
 
 init_notebook_mode(connected=True)
 
-snrs = list(range(10, 22, 2))
-gains = list(range(20, 45, 5))
+snrs = list(snr_values)
+gains = list(gain_values)
 
 # create figure
 fig = go.Figure()
@@ -412,13 +411,21 @@ fig.add_trace(
 fig.show()
 # -
 
-# Finally, use the plot to determine what the average PDet value would be for a gain of $36$ dB and a goal SNR of $16$ dB. To do so, add lines to the plot showing where these values intersect:
+# Then, use the plot to determine what the predicted average PDet value would be for a gain of $36$ dB and a goal SNR of $16$ dB. To do so, add lines to the plot showing where these values intersect. The intersection of these lines represents an interpolation of the outcome for these parameters.
 
 # +
+import numpy as np
+
+
+constant_gain = 36
+constant_snr = 16
+num_gain_points = len(gains)
+num_snr_points = len(snrs)
+
 # add line at constant value of 36 dB gain
 fig.add_trace(
     go.Scattercarpet(
-        a=[36, 36, 36, 36, 36, 36],
+        a=np.full(num_snr_points, constant_gain),
         b=snrs,
         mode="lines",
         line=dict(shape="spline", smoothing=1, color="black", width=3),
@@ -426,18 +433,18 @@ fig.add_trace(
     )
 )
 
-# add line at constant value of 16 dB snr
+# add line at constant value of 16 dB SNR
 fig.add_trace(
     go.Scattercarpet(
         a=gains,
-        b=[16, 16, 16, 16, 16],
+        b=np.full(num_gain_points, constant_snr),
         mode="lines",
         line=dict(shape="spline", smoothing=1, color="black", width=3),
         showlegend=False,
     )
 )
 
-# add point corresponding to 36 dB gain and 16 dB snr
+# add point corresponding to 36 dB gain and 16 dB SNR
 fig.add_trace(
     go.Scattercarpet(
         a=[36],
@@ -457,4 +464,20 @@ fig.add_trace(
 fig.show()
 # -
 
-# A gain of $36$ dB and goal SNR of $16$ dB are predicted to give an integrated PDet of approximately 0.4.
+# A gain of $36$ dB and goal SNR of $16$ dB are predicted to give an integrated PDet of approximately 0.41.
+
+# Then, use STK to calculate the actual PDet produced by a gain of $36$ dB and goal SNR of $16$ dB:
+
+pulse_integration.snr = 16
+target_transport.gain = 36
+access.compute_access()
+pdet_df = (
+    access.data_providers.item("Radar Multifunction")
+    .group.item("TargetTransport")
+    .execute_elements(access_start, access_stop, 10, ["S/T Integrated PDet"])
+    .data_sets.to_pandas_dataframe()
+)
+pdet = pdet_df.loc[:, "s/t integrated pdet"].mean().item()
+f"The PDet is {pdet:.2f}."
+
+# So, the PDet predicted using the carpet plot is approximately 0.05 less than the actual PDet.
