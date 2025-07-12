@@ -196,12 +196,25 @@ class Recorder:
 
                 frameinfo = inspect.getframeinfo(client_frame)
 
+                if sys.version_info >= (3, 11):
+                    lineno = frameinfo.positions.lineno
+                    end_lineno = frameinfo.positions.end_lineno
+                    col_offset = frameinfo.positions.col_offset
+                    end_col_offset = frameinfo.positions.end_col_offset
+                else:
+                    # Traceback in Python < 3.11 does not provide
+                    # end line nor column information
+                    lineno = frameinfo.lineno
+                    end_lineno = lineno
+                    col_offset = 0
+                    end_col_offset = sys.maxsize
+
                 self.recording.add(
                     client_frame.f_code.co_filename,
                     type_name,
                     member,
-                    frameinfo.positions.lineno,
-                    frameinfo.positions.end_lineno,
-                    frameinfo.positions.col_offset,
-                    frameinfo.positions.end_col_offset,
+                    lineno,
+                    end_lineno,
+                    col_offset,
+                    end_col_offset,
                 )

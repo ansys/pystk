@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import sys
+import pytest
 from runner import run
 
 
@@ -181,6 +183,7 @@ def test_rename_multiple_methods_with_arguments():
     )
 
 
+@pytest.mark.skipif(sys.version_info < (3, 11), reason="Requires Python 3.11 or higher for Traceback.positions")
 def test_rename_correct_method_when_two_methods_with_same_name():
     run(
         """
