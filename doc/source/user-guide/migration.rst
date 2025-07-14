@@ -72,6 +72,9 @@ To illustrate this process, the examples below use a script in a file named `sni
 Record traces
 ~~~~~~~~~~~~~~~~
 
+.. warning::
+    Using Python version 3.11 or greater is strongly recommended for best results.
+
 The first phase of the migration process is to record one or multiple traces of the execution of your Python application using the old STK API. Start the recording by invoking the API migration assistant with the following options:
 
 .. code-block:: console
