@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.TextOverlay.outline_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the text's outline color.
 

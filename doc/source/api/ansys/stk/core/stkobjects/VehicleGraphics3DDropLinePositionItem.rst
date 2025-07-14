@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the drop line (if the 2D graphics color is not used).
 

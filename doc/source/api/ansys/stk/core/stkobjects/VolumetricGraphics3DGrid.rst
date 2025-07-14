@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: point_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DGrid.point_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the grid points.
 
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: line_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DGrid.line_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the grid line.
 

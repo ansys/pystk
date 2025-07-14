@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: radar_to_target_color
     :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_target_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the Radar to Target access color.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: bistatic_radar_to_target_color
     :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the Bistatic Radar to Target color.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: bistatic_transmitter_to_bistatic_receiver_color
     :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the Bistatic Radar Transmitter to Bistatic Radar Receiver color.
 
@@ -140,7 +140,7 @@ Property detail
 
 .. py:property:: clutter_color
     :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.clutter_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the clutter color.
 

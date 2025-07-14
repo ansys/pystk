@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DStatic.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color in which chain graphics are displayed.
 

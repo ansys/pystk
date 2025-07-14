@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeMarker.color
-    :type: agcolor.Color
+    :type: Color
 
     Marker color.
 

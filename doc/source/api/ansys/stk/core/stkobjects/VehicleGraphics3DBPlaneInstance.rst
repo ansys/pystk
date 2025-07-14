@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: connect_points_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_points_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the lines connecting the additional points.
 

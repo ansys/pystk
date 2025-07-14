@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DMarker.color
-    :type: agcolor.Color
+    :type: Color
 
     Select the color in which the track marker will be displayed.
 

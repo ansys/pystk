@@ -188,7 +188,7 @@ Property detail
 
 .. py:property:: silhouette_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.silhouette_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the silhouette's color.
 
@@ -224,7 +224,7 @@ Property detail
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the outline's color.
 
@@ -248,7 +248,7 @@ Property detail
 
 .. py:property:: back_line_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.back_line_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the back line's color.
 

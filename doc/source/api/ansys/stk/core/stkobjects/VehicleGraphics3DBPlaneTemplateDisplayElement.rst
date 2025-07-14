@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Specify the element color.
 

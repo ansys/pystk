@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the line color used when UseCustomColor is true.
 

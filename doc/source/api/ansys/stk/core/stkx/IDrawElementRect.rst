@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkx.IDrawElementRect.color
-    :type: agcolor.Color
+    :type: Color
 
     Color of the rectangle.
 

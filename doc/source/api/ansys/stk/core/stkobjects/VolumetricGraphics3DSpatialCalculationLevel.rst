@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of a Spatial Calculation Boundary/Fill Level.
 
