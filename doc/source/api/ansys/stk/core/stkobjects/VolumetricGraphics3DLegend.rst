@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: background_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.background_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the legend background.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: text_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.text_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the legend text.
 

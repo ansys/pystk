@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.AntennaContourLevel.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the contour level color.
 

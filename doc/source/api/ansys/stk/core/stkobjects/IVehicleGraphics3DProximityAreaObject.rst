@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color
-    :type: agcolor.Color
+    :type: Color
 
     Specify a line color.
 

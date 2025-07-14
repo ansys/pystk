@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the line color.
 

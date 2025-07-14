@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.MTODefaultGraphics2DTrack.color
-    :type: agcolor.Color
+    :type: Color
 
     Select the color in which the track will be displayed.
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: label_color
     :canonical: ansys.stk.core.stkobjects.MTODefaultGraphics2DTrack.label_color
-    :type: agcolor.Color
+    :type: Color
 
     Select the color in which the track label will be displayed.
 

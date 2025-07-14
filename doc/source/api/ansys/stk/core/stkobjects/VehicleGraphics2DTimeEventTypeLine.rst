@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.color
-    :type: agcolor.Color
+    :type: Color
 
     Line color.
 

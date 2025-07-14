@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: boresight_color
     :canonical: ansys.stk.core.stkobjects.ReceiverGraphics.boresight_color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which boresight graphics display.
 

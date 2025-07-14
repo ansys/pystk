@@ -104,31 +104,31 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the projected raster.
 
 .. py:property:: frustum_color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.frustum_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the projection's frustum.
 
 .. py:property:: far_plane_color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.far_plane_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the projection's far plane.
 
 .. py:property:: shadow_color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.shadow_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the projection's shadow.
 
 .. py:property:: border_color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.border_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the projection's border.
 
@@ -170,7 +170,7 @@ Property detail
 
 .. py:property:: transparent_color
     :canonical: ansys.stk.core.graphics.ProjectedRasterOverlay.transparent_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color that will become transparent.
 

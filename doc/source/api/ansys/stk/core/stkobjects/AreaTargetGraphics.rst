@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which the area target's boundary, centroid and label are displayed in the 2D Graphics window.
 
@@ -156,19 +156,19 @@ Property detail
 
 .. py:property:: boundary_color
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.boundary_color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which the area target boundary is displayed.
 
 .. py:property:: label_color
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.label_color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which the area target label is displayed.
 
 .. py:property:: centroid_color
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.centroid_color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which the area target centroid is displayed.
 

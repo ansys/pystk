@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: point_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.point_color
-    :type: agcolor.Color
+    :type: Color
 
     Whether to display the first point in the same color as the other points.
 
 .. py:property:: first_point_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.first_point_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the specified color of the first point, if different from the others.
 

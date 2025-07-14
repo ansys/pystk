@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeLevel.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the volume level color.
 

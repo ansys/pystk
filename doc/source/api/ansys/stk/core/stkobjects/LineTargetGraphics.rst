@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: label_color
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.label_color
-    :type: agcolor.Color
+    :type: Color
 
     Label color.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     Line Color.
 

@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLightingElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the line that will mark the region representing the selected lighting condition.
 

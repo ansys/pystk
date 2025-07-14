@@ -97,13 +97,13 @@ Property detail
 
 .. py:property:: start_color
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.start_color
-    :type: agcolor.Color
+    :type: Color
 
     The color ramp start color.
 
 .. py:property:: stop_color
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.stop_color
-    :type: agcolor.Color
+    :type: Color
 
     The color ramp stop color.
 

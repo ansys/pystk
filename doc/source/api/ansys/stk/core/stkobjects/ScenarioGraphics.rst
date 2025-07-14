@@ -199,7 +199,7 @@ Property detail
 
 .. py:property:: text_outline_color
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics.text_outline_color
-    :type: agcolor.Color
+    :type: Color
 
     Default text outline color.
 

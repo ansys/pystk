@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: altitude_color
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.altitude_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the altitude color.
 
@@ -141,7 +141,7 @@ Property detail
 
 .. py:property:: range_color
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.range_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the range color.
 

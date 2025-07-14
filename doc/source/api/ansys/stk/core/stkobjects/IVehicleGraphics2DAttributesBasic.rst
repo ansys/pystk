@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which vehicle marker, label and tracks are displayed.
 

@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: start_color
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.start_color
-    :type: agcolor.Color
+    :type: Color
 
     Start color for color ramp method.
 
 .. py:property:: end_color
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.end_color
-    :type: agcolor.Color
+    :type: Color
 
     End color for color ramp method.
 

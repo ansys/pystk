@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: background_color
     :canonical: ansys.stk.core.graphics.Scene.background_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the background color of the scene.
 

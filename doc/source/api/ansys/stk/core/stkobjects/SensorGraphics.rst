@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which sensor graphics display.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: boresight_color
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.boresight_color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which boresight graphics display.
 

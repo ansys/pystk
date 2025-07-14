@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color in which regions and points display in the 2D Graphics window.
 

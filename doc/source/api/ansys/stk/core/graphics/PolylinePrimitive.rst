@@ -155,7 +155,7 @@ Property detail
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.outline_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the outline's color.
 
