@@ -98,8 +98,7 @@ target_transport_provider = access.data_providers.item(
 
 # Determine the start and end times of the access:
 
-access_start = access.computed_access_interval_times.get_interval(0)[0]
-access_stop = access.computed_access_interval_times.get_interval(0)[1]
+access_start, access_stop = access.computed_access_interval_times.get_interval(0)
 f"The access starts at {access_start} and ends at {access_stop}."
 
 # Get the S/T integrated SNR, S/T Integrated PDet, and S/T Pulses Integrated over time during the access, using a 10 second time step, and convert the data to a `pandas` dataframe:
@@ -207,9 +206,10 @@ target_transport = mfr.model_component_linking.component.antenna_beams.item(0)
 # The current gain is $30$ dB. Vary the gain from $20$ dB to $40$ dB in $2$ dB increments by setting the beam's `gain` property. For each gain value, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 # +
+gain_values = list(range(20, 42, 2))
 mean_pdets = []
 
-for gain in range(20, 42, 2):
+for gain in gain_values:
     target_transport.gain = gain
     access.compute_access()
     pdet_df = (
@@ -223,8 +223,7 @@ for gain in range(20, 42, 2):
 
 # Visualize the data as a line chart to determine how varying gain values affect PDet:
 
-gains = list(range(20, 42, 2))
-plt.plot(gains, mean_pdets, color="dodgerblue")
+plt.plot(gain_values, mean_pdets, color="dodgerblue")
 plt.grid(True, color="gray", linestyle="--", linewidth=0.5)
 plt.xlabel("Gain (dB)")
 plt.ylabel("S/T Integrated PDet")
@@ -258,8 +257,9 @@ pulse_integration = RadarPulseIntegrationGoalSNR(detection_processing.pulse_inte
 
 # +
 mean_pdets = []
+snr_values = list(range(10, 23))
 
-for snr in range(10, 23):
+for snr in snr_values:
     pulse_integration.snr = snr
     access.compute_access()
     pdet_df = (
@@ -273,8 +273,7 @@ for snr in range(10, 23):
 
 # Visualize the data as a line chart to determine how varying goal SNR values affect PDet:
 
-gains = list(range(10, 23))
-plt.plot(gains, mean_pdets, color="dodgerblue")
+plt.plot(snr_values, mean_pdets, color="dodgerblue")
 plt.grid(True, color="gray", linestyle="--", linewidth=0.5)
 plt.xlabel("Goal SNR (dB)")
 plt.ylabel("S/T Integrated PDet")
@@ -294,10 +293,11 @@ pulse_integration.snr = 16
 # The maximum number of pulses is $512$. Vary the maximum number from $1$ to $200$ in increments of $10$ by setting the `maximum_pulses` property on the pulse integration settings object. For each value, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
 # +
+max_pulse_values = list(range(1, 210, 10))
 mean_pdets = []
 
-for max_pulses in range(1, 210, 10):
-    pulse_integration.maximum_pulses = max_pulses
+for max_pulse_number in max_pulse_values:
+    pulse_integration.maximum_pulses = max_pulse_number
     access.compute_access()
     pdet_df = (
         access.data_providers.item("Radar Multifunction")
@@ -310,8 +310,7 @@ for max_pulses in range(1, 210, 10):
 
 # Visualize the data as a line chart to determine how varying maximum pulse number values affect PDet:
 
-max_pulses = list(range(1, 210, 10))
-plt.plot(max_pulses, mean_pdets, color="dodgerblue")
+plt.plot(max_pulse_values, mean_pdets, color="dodgerblue")
 plt.grid(True, color="gray", linestyle="--", linewidth=0.5)
 plt.xlabel("Maximum Number of Pulses")
 plt.ylabel("S/T Integrated PDet")
@@ -350,10 +349,7 @@ for i in range(len(snr_values)):
 
 # +
 import plotly.graph_objects as go
-from plotly.offline import init_notebook_mode
 
-
-init_notebook_mode(connected=True)
 
 snrs = list(snr_values)
 gains = list(gain_values)
@@ -408,7 +404,7 @@ fig.add_trace(
         colorbar=dict(len=0.4, y=0.25, title=dict(text="S/T Integrated PDet")),
     )
 )
-fig.show()
+fig.show(renderer="notebook")
 # -
 
 # Then, use the plot to determine what the predicted average PDet value would be for a gain of $36$ dB and a goal SNR of $16$ dB. To do so, add lines to the plot showing where these values intersect. The intersection of these lines represents an interpolation of the outcome for these parameters.
@@ -461,7 +457,7 @@ fig.add_trace(
     )
 )
 
-fig.show()
+fig.show(renderer="notebook")
 # -
 
 # A gain of $36$ dB and goal SNR of $16$ dB are predicted to give an integrated PDet of approximately 0.41.
