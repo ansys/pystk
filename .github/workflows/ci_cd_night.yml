@@ -160,11 +160,11 @@ jobs:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
           - is-weekly-run: true
-            python: "3.10"
+            python-version: "3.10"
           - is-weekly-run: true
-            python: "3.11"
+            python-version: "3.11"
           - is-weekly-run: true
-            python: "3.12"
+            python-version: "3.12"
       fail-fast: false
     steps:
 
