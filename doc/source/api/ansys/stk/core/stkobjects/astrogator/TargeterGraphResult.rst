@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: line_color
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.line_color
-    :type: agcolor.Color
+    :type: Color
 
     Line Color.
 

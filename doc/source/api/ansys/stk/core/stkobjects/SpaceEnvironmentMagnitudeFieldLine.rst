@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.color
-    :type: agcolor.Color
+    :type: Color
 
     Magnetic field line color.
 

@@ -210,7 +210,7 @@ Property detail
 
 .. py:property:: border_color
     :canonical: ansys.stk.core.graphics.IOverlay.border_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the overlay's border color. By default, the border color is white. However, also by default, the overlay has a border size of 0.0 so the border is not displayed.
 
@@ -294,7 +294,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.graphics.IOverlay.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the overlay's color. By default, the overlay is white.
 

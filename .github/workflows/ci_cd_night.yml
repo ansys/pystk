@@ -24,7 +24,7 @@ on:
     - cron: '0 0 * * 6,0'
 
 env:
-  MINIMUM_PYTHON_VERSION: '3.11'
+  MINIMUM_PYTHON_VERSION: '3.10'
   MAIN_PYTHON_VERSION: '3.12'
   ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -50,7 +50,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ['3.11', '3.12', '3.13']
+        python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['core', 'extensions', 'grpc', 'jupyter', 'all']
     steps:
       - uses: ansys/actions/build-wheelhouse@v10
@@ -155,14 +155,16 @@ jobs:
     if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
     strategy:
       matrix:
-        python: ["3.11", "3.12", "3.13"]
+        python-version: ['3.10', '3.11', '3.12', '3.13']
         is-weekly-run:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
           - is-weekly-run: true
-            python: "3.11"
+            python-version: "3.10"
           - is-weekly-run: true
-            python: "3.12"
+            python-version: "3.11"
+          - is-weekly-run: true
+            python-version: "3.12"
       fail-fast: false
     steps:
 

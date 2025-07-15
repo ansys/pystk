@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.color
-    :type: agcolor.Color
+    :type: Color
 
     Color of the animation graphics display.
 

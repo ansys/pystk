@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Color of the waypoint marker.
 

@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.color
-    :type: agcolor.Color
+    :type: Color
 
     Color of the lines defining the plane.
 

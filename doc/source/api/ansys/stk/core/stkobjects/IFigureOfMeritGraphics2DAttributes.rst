@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which points display on the 2D map.
 

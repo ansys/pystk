@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Color of the ellipse set name and ellipse graphics for all ellipses in the set.
 

@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.color
-    :type: agcolor.Color
+    :type: Color
 
     Text color.
 

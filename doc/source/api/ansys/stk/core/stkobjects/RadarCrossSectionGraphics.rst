@@ -147,13 +147,13 @@ Property detail
 
 .. py:property:: start_color
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.start_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color ramp start color.
 
 .. py:property:: stop_color
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.stop_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color ramp stop color.
 

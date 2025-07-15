@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: error_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.error_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the bearing error lines. Dimensionless.
 

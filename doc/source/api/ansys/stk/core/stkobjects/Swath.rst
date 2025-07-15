@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.Swath.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color in which swath graphics are displayed in the 2D Graphics window.
 

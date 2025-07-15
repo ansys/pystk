@@ -174,7 +174,7 @@ Property detail
 
 .. py:property:: font_color
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.font_color
-    :type: agcolor.Color
+    :type: Color
 
     Font color of the data display.
 
@@ -210,7 +210,7 @@ Property detail
 
 .. py:property:: background_color
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the data display background.
 
@@ -252,7 +252,7 @@ Property detail
 
 .. py:property:: background_border_color
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_border_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the border surrounding the data display background.
 

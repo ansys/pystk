@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which the planet's marker, label and orbit path (if any) are displayed.
 

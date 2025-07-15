@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: transparent_color
     :canonical: ansys.stk.core.graphics.GeospatialImageGlobeOverlay.transparent_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color that will become transparent.
 

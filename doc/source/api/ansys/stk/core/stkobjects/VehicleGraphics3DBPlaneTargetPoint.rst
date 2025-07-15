@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the Target Point.
 

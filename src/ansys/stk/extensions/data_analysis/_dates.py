@@ -26,8 +26,6 @@ PySTK Date Extension.
 A set of utilities to facilitate the manipulation of dates and times in PySTK.
 """
 
-import typing
-
 from matplotlib import units
 import numpy as np
 
@@ -38,50 +36,50 @@ from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
 class _STKDate:
     """Wrapper class associated with STK Date object."""
 
-    def __init__(self: typing.Self, date: Date):
+    def __init__(self, date: Date):
         """Create an STKDate object from Date."""
         self.stk_date: Date = date
 
-    def __sub__(self: typing.Self, date: Date) -> float:
+    def __sub__(self, date: "_STKDate") -> float:
         """Subtract an STKDate, returning the time difference in seconds."""
         span : Quantity =  self.stk_date.span(date.stk_date)
         if span.unit != "sec":
             span.convert_to_unit("sec")
         return span.value
 
-    def __lt__(self: typing.Self, other: typing.Self):
+    def __lt__(self, other: "_STKDate"):
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self - other < 0
         return NotImplemented
 
-    def __gt__(self: typing.Self, other: typing.Self):
+    def __gt__(self, other: "_STKDate"):
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self - other > 0
         return NotImplemented
 
-    def __ge__(self: typing.Self, other: typing.Self):
+    def __ge__(self, other: "_STKDate"):
         """Compare STKDate to STKDate."""
         if isinstance(other, _STKDate):
             return self > other or self == other
         return NotImplemented
 
-    def __eq__(self: typing.Self, other: typing.Self):
+    def __eq__(self, other: "_STKDate"):
         """Compare equality of STKDates."""
         if isinstance(other, _STKDate):
             return self.get_utcg() == other.get_utcg()
         return NotImplemented
 
-    def __add__(self: typing.Self, seconds: float) -> typing.Self:
+    def __add__(self, seconds: float) -> Date:
         """Add seconds to the date."""
         return _STKDate(self.stk_date.add("sec", seconds))
 
-    def add_by_unit(self, unit: str, value:float)-> typing.Self:
+    def add_by_unit(self, unit: str, value:float)-> "_STKDate":
         """Add the value in the given unit."""
         return _STKDate(self.stk_date.add(unit, value))
 
-    def get_epsec(self: typing.Self) -> float:
+    def get_epsec(self) -> float:
         """Return the date in Epoch Seconds.
 
         Returns
@@ -92,7 +90,7 @@ class _STKDate:
         """
         return float(self.stk_date.format('EpSec'))
 
-    def get_utcg(self: typing.Self) -> str:
+    def get_utcg(self) -> str:
         """Return the date formatted in UTCG.
 
         Returns
@@ -103,7 +101,7 @@ class _STKDate:
         """
         return self.stk_date.format('UTCG')
 
-    def format(self: typing.Self, unit: str) -> str:
+    def format(self, unit: str) -> str:
         """Return the date formatted as any unit.
 
         Parameters
@@ -122,11 +120,11 @@ class _STKDate:
 
 class _STKDateFactory:
     """Factory class to create STKDate objects."""
-    def __init__(self: typing.Self, root: STKObjectRoot) -> typing.Self:
+    def __init__(self, root: STKObjectRoot):
         """Create STKDateFactory."""
         self.conversion_utility : ConversionUtility = root.conversion_utility
 
-    def new_date(self: typing.Self, value: str, unit: str = "UTCG") -> _STKDate:
+    def new_date(self, value: str, unit: str = "UTCG") -> _STKDate:
         """Create a new STKDate object.
 
         Parameters

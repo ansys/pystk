@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.color
-    :type: agcolor.Color
+    :type: Color
 
     Select the color in which the track line will be displayed.
 

@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: active_inactive_boundary_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the Active/Inactive Boundary.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: inactive_fill_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the Inactive Fill.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: active_fill_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of the Active Fill.
 

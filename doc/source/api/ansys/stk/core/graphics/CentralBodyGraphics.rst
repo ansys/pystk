@@ -91,13 +91,13 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.graphics.CentralBodyGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color of the central body in the scene.
 
 .. py:property:: specular_color
     :canonical: ansys.stk.core.graphics.CentralBodyGraphics.specular_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the specular color of the central body in the scene. The specular color is associated with the specular overlay.
 

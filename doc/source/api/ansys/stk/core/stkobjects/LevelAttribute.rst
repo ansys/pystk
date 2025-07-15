@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.LevelAttribute.color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which contours at the given level are displayed.
 

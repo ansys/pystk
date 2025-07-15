@@ -111,13 +111,13 @@ Property detail
 
 .. py:property:: color_ramp_start
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start
-    :type: agcolor.Color
+    :type: Color
 
     Do not use this property, as it is deprecated. Magnetic field start color.
 
 .. py:property:: color_ramp_stop
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop
-    :type: agcolor.Color
+    :type: Color
 
     Do not use this property, as it is deprecated. Magnetic field stop color.
 
@@ -189,13 +189,13 @@ Property detail
 
 .. py:property:: color_ramp_start_color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start_color
-    :type: agcolor.Color
+    :type: Color
 
     Magnetic field start color.
 
 .. py:property:: color_ramp_stop_color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop_color
-    :type: agcolor.Color
+    :type: Color
 
     Magnetic field stop color.
 

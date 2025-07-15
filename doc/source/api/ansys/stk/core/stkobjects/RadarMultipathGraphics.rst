@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: transmitter_to_target_ground_reflection_point_color
     :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.transmitter_to_target_ground_reflection_point_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the transmit radar to target ground reflection point color.
 
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: receiver_to_target_ground_reflection_point_color
     :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.receiver_to_target_ground_reflection_point_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the receive radar to target ground reflection point color.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: transmitter_to_receiver_ground_reflection_point_color
     :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.transmitter_to_receiver_ground_reflection_point_color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the transmit radar to receive radar ground reflection point color.
 

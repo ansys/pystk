@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: back_color
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.back_color
-    :type: agcolor.Color
+    :type: Color
 
     The background color of the control.
 
