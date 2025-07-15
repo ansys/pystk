@@ -158,9 +158,11 @@ def revisit_diagram_interval_pie_chart(
     )
 
 def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
-    r"""Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+    r"""Create a plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals.
 
-    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\AER.rsg.
+    The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+
+    This graph wrapper was generated from `AGI\\STK12\\STKData\\Styles\\Access\\AER.rsg`.
 
     Parameters
     ----------
@@ -197,7 +199,7 @@ def aer_line_chart(stk_object :Access, start_time: typing.Any = None, stop_time:
 def access_interval_graph(stk_object :Access, start_time: typing.Any = None, stop_time: typing.Any = None, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Create an interval graph of the access intervals.
 
-    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\Access.rsg.
+    This graph wrapper was generated from `AGI\\STK12\\STKData\\Styles\\Access\\Access.rsg`.
 
     Parameters
     ----------
@@ -225,9 +227,11 @@ def access_interval_graph(stk_object :Access, start_time: typing.Any = None, sto
     return interval_plot([df], root, elements, [], ["start time","stop time"], "Time", "Access Times", colormap)
 
 def az_el_polar_center_90_graph(stk_object :Access, start_time : typing.Any = None, stop_time : typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
-    r"""Create a polar plot with elevation as radius and azimuth as angle theta over time, during access intervals. The azimuth and elevation describe the relative position vector between the base object and the target object. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+    r"""Create a polar plot with elevation as radius and azimuth as angle theta over time, during access intervals.
 
-    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\Az El Polar.rsg.
+    The azimuth and elevation describe the relative position vector between the base object and the target object. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+
+    This graph wrapper was generated from `AGI\\STK12\\STKData\\Styles\\Access\\Az El Polar.rsg`.
 
     Parameters
     ----------

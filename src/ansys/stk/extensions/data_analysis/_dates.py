@@ -170,36 +170,18 @@ class _STKDateConverter(units.ConversionInterface):
             def get_utcg_from_epsec(epsec : float):
                 return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).get_utcg()
 
-            def h_m_s_ms_formatter(x : float, pos : float):
+            def formatter(x : float, pos : float):
                 utcg = get_utcg_from_epsec(x)
-                return utcg.rsplit(' ', maxsplit=1)[-1]
-
-            def h_m_s_1ms_formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
-                return utcg.rsplit(' ', maxsplit=1)[-1][:-2]
-
-            def h_m_formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
-                return utcg.rsplit(' ', maxsplit=1)[-1].rsplit(':', maxsplit=1)[0]
-
-            def d_m_formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
-                return utcg.rsplit(' ', maxsplit=2)[0]
-
-            def m_y_formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
-                return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
-
-            if  self.time_difference < 1:
-                formatter = h_m_s_ms_formatter
-            elif self.time_difference < 60:
-                formatter = h_m_s_1ms_formatter
-            elif self.time_difference < 172800:
-                formatter = h_m_formatter
-            elif self.time_difference < 5184000:
-                formatter = d_m_formatter
-            else:
-                formatter = m_y_formatter
+                if  self.time_difference < 1:
+                    return utcg.rsplit(' ', maxsplit=1)[-1]
+                elif self.time_difference < 60:
+                    return utcg.rsplit(' ', maxsplit=1)[-1][:-2]
+                elif self.time_difference < 172800:
+                    return utcg.rsplit(' ', maxsplit=1)[-1].rsplit(':', maxsplit=1)[0]
+                elif self.time_difference < 5184000:
+                    return utcg.rsplit(' ', maxsplit=2)[0]
+                else:
+                    return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
 
             from matplotlib.ticker import FuncFormatter
             return units.AxisInfo(
