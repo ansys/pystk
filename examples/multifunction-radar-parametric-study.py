@@ -327,14 +327,14 @@ pulse_integration.maximum_pulses = 512
 
 # Finally, determine how varying gain and goal SNR at the same time impact the probability of detection. Vary the gain from $20$ to $40$ dB in increments of $5$ dB, and vary the goal SNR from $10$ to $20$ dB in increments of $2$ dB. For each combination of gain and goal SNR values, recompute the access between the radar and the aircraft, get the S/T Integrated PDet over the access interval, and then compute the mean PDet:
 
-snr_values = range(10, 22, 2)
-gain_values = range(20, 45, 5)
+snrs = list(range(10, 22, 2))
+gains = list(range(20, 45, 5))
 mean_pdets = []
-for i in range(len(snr_values)):
-    snr = snr_values[i]
+for i in range(len(snrs)):
+    snr = snrs[i]
     mean_pdets.append([])
     pulse_integration.snr = snr
-    for gain in gain_values:
+    for gain in gains:
         target_transport.gain = gain
         access.compute_access()
         pdet_df = (
@@ -350,9 +350,6 @@ for i in range(len(snr_values)):
 # +
 import plotly.graph_objects as go
 
-
-snrs = list(snr_values)
-gains = list(gain_values)
 
 # create figure
 fig = go.Figure()
@@ -477,3 +474,20 @@ pdet = pdet_df.loc[:, "s/t integrated pdet"].mean().item()
 f"The PDet is {pdet:.2f}."
 
 # So, the PDet predicted using the carpet plot is approximately 0.05 less than the actual PDet.
+
+# Finally, determine the gain and SNR values that produce the highest and lowest PDets:
+
+min_linear_index = np.argmin(mean_pdets)
+min_coords = np.unravel_index(min_linear_index, np.shape(mean_pdets))
+min_snr_index = min_coords[0]
+min_gain_index = min_coords[1]
+print(
+    f"An SNR of {snrs[min_snr_index]} dB and a gain of {gains[min_gain_index]} dB produce the minimum PDet of {mean_pdets[min_snr_index][min_gain_index]:.2f}."
+)
+max_linear_index = np.argmax(mean_pdets)
+max_coords = np.unravel_index(max_linear_index, np.shape(mean_pdets))
+max_snr_index = max_coords[0]
+max_gain_index = max_coords[1]
+print(
+    f"An SNR of {snrs[max_snr_index]} dB and a gain of {gains[max_gain_index]} dB produce the maximum PDet of {mean_pdets[max_snr_index][max_gain_index]:.2f}."
+)
