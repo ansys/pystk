@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the display color of the segment.
 

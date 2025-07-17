@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the color in which valid strand lines are to be displayed during animation.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: optimal_path_color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color
-    :type: agcolor.Color
+    :type: Color
 
     Do not use this property, as it is deprecated. Use OptimalPathColorRampStartColor. Gets or sets the color in which the optimal strands lines are to be displayed during animation.
 
@@ -126,13 +126,13 @@ Property detail
 
 .. py:property:: optimal_path_color_ramp_start_color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_start_color
-    :type: agcolor.Color
+    :type: Color
 
     The start color for the color ramp in which the optimal strands lines are to be displayed during animation.
 
 .. py:property:: optimal_path_color_ramp_end_color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_end_color
-    :type: agcolor.Color
+    :type: Color
 
     The end color for the color ramp in which the optimal strands lines are to be displayed during animation.
 

@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
 
@@ -114,13 +114,13 @@ Property detail
 
 .. py:property:: marker_color
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.marker_color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which the marker for the object is displayed.
 
 .. py:property:: label_color
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.label_color
-    :type: agcolor.Color
+    :type: Color
 
     The color in which the label for the object is displayed.
 

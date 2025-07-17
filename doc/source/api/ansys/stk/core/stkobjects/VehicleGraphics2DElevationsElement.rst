@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.color
-    :type: agcolor.Color
+    :type: Color
 
     Contour color.
 

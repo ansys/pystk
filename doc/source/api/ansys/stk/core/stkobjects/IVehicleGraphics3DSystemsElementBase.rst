@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.color
-    :type: agcolor.Color
+    :type: Color
 
     Specify a custom color.
 

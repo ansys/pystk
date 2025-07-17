@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: desired_links_color
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.desired_links_color
-    :type: agcolor.Color
+    :type: Color
 
     The desired links line color.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: interference_links_color
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.interference_links_color
-    :type: agcolor.Color
+    :type: Color
 
     The interference links line color.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: primary_interferer_link_color
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.primary_interferer_link_color
-    :type: agcolor.Color
+    :type: Color
 
     The primary interferer link line color.
 

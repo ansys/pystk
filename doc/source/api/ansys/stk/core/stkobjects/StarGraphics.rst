@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.StarGraphics.color
-    :type: agcolor.Color
+    :type: Color
 
     Color in which the star's marker and label are displayed in the 2D Graphics window.
 

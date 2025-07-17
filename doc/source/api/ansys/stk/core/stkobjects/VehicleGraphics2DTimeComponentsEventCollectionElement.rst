@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: color_ramp_start_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color
-    :type: agcolor.Color
+    :type: Color
 
     The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
 
 .. py:property:: color_ramp_end_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_end_color
-    :type: agcolor.Color
+    :type: Color
 
     The end color of the color ramp. Setting this property has no effect if the color ramp is not supported.
 

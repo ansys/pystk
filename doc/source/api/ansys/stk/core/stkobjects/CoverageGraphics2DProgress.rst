@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DProgress.color
-    :type: agcolor.Color
+    :type: Color
 
     Progress graphics color.
 

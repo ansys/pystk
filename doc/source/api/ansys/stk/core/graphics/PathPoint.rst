@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: color
     :canonical: ansys.stk.core.graphics.PathPoint.color
-    :type: agcolor.Color
+    :type: Color
 
     The path point color.
 
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.PathPoint.outline_color
-    :type: agcolor.Color
+    :type: Color
 
     The path point outline color.
 
