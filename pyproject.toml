@@ -42,39 +42,39 @@ pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_mi
 all = [
     # Target: extensions
     "matplotlib>=3.10.3",
-    "pandas>=2.3.0",
+    "pandas>=2.3.1",
     # Target: grpc
-    "grpcio>=1.71.0",
-    "protobuf>=6.30.2",
+    "grpcio>=1.73.1",
+    "protobuf>=6.31.1",
     # Target: jupyter
-    "jupyter-rfb>=0.5.1",
-    "numpy>=2.2.5",
-    "Pillow>=11.2.1",
+    "jupyter-rfb>=0.5.3",
+    "numpy>=2.2.6",
+    "Pillow>=11.3.0",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
     # Target: migration
-    "libcst>=1.7.0",
+    "libcst>=1.8.2",
 ]
 core = [
     # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 extensions = [
     "matplotlib>=3.10.3",
-    "pandas>=2.3.0",
+    "pandas>=2.3.1",
 ]
 grpc = [
-    "grpcio>=1.71.0",
-    "protobuf>=6.30.2",
+    "grpcio>=1.73.1",
+    "protobuf>=6.31.1",
 ]
 jupyter = [
-    "jupyter-rfb>=0.5.1",
-    "numpy>=2.2.4",
-    "Pillow>=11.1.0",
+    "jupyter-rfb>=0.5.3",
+    "numpy>=2.2.6",
+    "Pillow>=11.3.0",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
 ]
 migration = [
-    "libcst>=1.7.0",
+    "libcst>=1.8.2",
 ]
 
 # NOTE: The `dependency-groups` section is used to define groups of dependencies
@@ -82,13 +82,13 @@ migration = [
 # for local development.
 [dependency-groups]
 vulnerabilities = [
-    "bandit[toml]==1.8.3",
-    "safety==3.3.0",
+    "bandit[toml]==1.8.6",
+    "safety==3.6.0",
 ]
 tests = [
     "numpy==2.2.6",
-    "pytest==8.4.0",
-    "pytest-cov==6.1.1",
+    "pytest==8.4.1",
+    "pytest-cov==6.2.1",
     "pytest-mpl==0.17.0",
     "pytz==2025.2",
     "parameterized==0.9.0",
@@ -96,22 +96,22 @@ tests = [
     "pytest-mpl==0.17.0",
 ]
 doc = [
-    "ansys-sphinx-theme==1.5.2",
+    "ansys-sphinx-theme==1.5.3",
     "build==1.2.2.post1",
-    "jupyterlab==4.4.3",
+    "jupyterlab==4.4.4",
     "jupytext==1.17.2",
     "jupyter-server==2.16.0",
-    "libcst==1.8.0",
+    "libcst==1.8.2",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
-    "numpydoc==1.8.0",
+    "numpydoc==1.9.0",
     "nbconvert==7.16.6",
     "scipy==1.15.3",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "pandas==2.2.3",
+    "pandas==2.3.1",
     "matplotlib==3.10.3",
     "plotly==6.2.0",
     "sphinxcontrib-jquery==4.1",
