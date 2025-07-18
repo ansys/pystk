@@ -79,9 +79,7 @@ def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_c
     # use one color per line
     colors = colormap(np.linspace(0, 1, len(data))) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0,1,len(data)))
 
-    for i in range(len(data)):
-        df = data[i]
-
+    for i, df in enumerate(data):
         # data conversions
         df = _convert_columns(df, numerical_columns, [], units_preferences)
         df.dropna(axis=0, inplace=True)
@@ -662,11 +660,11 @@ def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axe
 
     # add vertical lines showing day changes
     if last_time - first_time < 2592000:
-        start_date = date_factory.new_date(get_d_m_y(first_time) + " 00:00:00.000").add_by_unit("day", 1)
+        start_date = date_factory.new_date(get_d_m_y(first_time) + " 00:00:00.000").add_duration(1, "day")
         while start_date < last_time:
             ax.axvline(x=start_date.get_epsec(), color="black", linestyle="-", linewidth=1.5)
             ax.annotate(start_date.get_utcg(), xy =(start_date.get_epsec(),ax.get_ylim()[0]), xytext=(0, 7), rotation = 270, fontsize=9, textcoords="offset points")
-            start_date = start_date.add_by_unit("day", 1)
+            start_date = start_date.add_duration(1, "day")
 
 def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time: typing.Any, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
     """Get list of data for access object, grouping by access interval while respecting start and stop times.

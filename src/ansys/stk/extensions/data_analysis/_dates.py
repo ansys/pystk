@@ -27,6 +27,7 @@ A set of utilities to facilitate the manipulation of dates and times in PySTK.
 """
 
 from matplotlib import units
+from matplotlib.ticker import FuncFormatter
 import numpy as np
 
 from ansys.stk.core.stkobjects import STKObjectRoot
@@ -75,8 +76,8 @@ class _STKDate:
         """Add seconds to the date."""
         return _STKDate(self.stk_date.add("sec", seconds))
 
-    def add_by_unit(self, unit: str, value:float)-> "_STKDate":
-        """Add the value in the given unit."""
+    def add_duration(self, value: float, unit: str)-> "_STKDate":
+        """Add the time duration in the given unit."""
         return _STKDate(self.stk_date.add(unit, value))
 
     def get_epsec(self) -> float:
@@ -170,18 +171,21 @@ class _STKDateConverter(units.ConversionInterface):
 
             def formatter(x : float, pos : float):
                 utcg = get_utcg_from_epsec(x)
+                # One second
                 if  self.time_difference < 1:
                     return utcg.rsplit(' ', maxsplit=1)[-1]
+                # One minute
                 elif self.time_difference < 60:
                     return utcg.rsplit(' ', maxsplit=1)[-1][:-2]
+                # Two days
                 elif self.time_difference < 172800:
                     return utcg.rsplit(' ', maxsplit=1)[-1].rsplit(':', maxsplit=1)[0]
+                # Two months
                 elif self.time_difference < 5184000:
                     return utcg.rsplit(' ', maxsplit=2)[0]
                 else:
                     return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
 
-            from matplotlib.ticker import FuncFormatter
             return units.AxisInfo(
                 majfmt=FuncFormatter(formatter)
             )
