@@ -67,6 +67,7 @@ Examples
 
         examples/radar-cross-section-detection
         examples/communication-link-calculator
+        examples/multifunction-radar-parametric-study
 
     Aviator mission planning
     ========================

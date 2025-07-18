@@ -5,6 +5,8 @@ apoapsis
 application
 (?i)Ansys
 Astrogator
+directivity
+dBsm
 Dockerfiles
 [Dd]ata[Ff]rame[s]?
 documentarians
@@ -26,6 +28,7 @@ namespace
 Nemo
 [Nn]um[Pp]y
 Pandas
+PDet
 PySTK
 periapsis
 prograde
