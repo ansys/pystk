@@ -10,7 +10,7 @@ access_interval_graph
 
     Create an interval graph of the access intervals.
 
-    This graph wrapper was generated from AGI\\STK12\\STKData\\Styles\\Access\\Access.rsg.
+    This graph wrapper was generated from `AGI\\STK12\\STKData\\Styles\\Access\\Access.rsg`.
 
     :Parameters:
 

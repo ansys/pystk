@@ -21,10 +21,10 @@ Summary
               - Create an interval graph of the access intervals.
 
             * - :py:func:`~ansys.stk.extensions.data_analysis.graphs.access_graphs.aer_line_chart`
-              - Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+              - Create a plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals.
 
             * - :py:func:`~ansys.stk.extensions.data_analysis.graphs.access_graphs.az_el_polar_center_90_graph`
-              - Create a polar plot with elevation as radius and azimuth as angle theta over time, during access intervals. The azimuth and elevation describe the relative position vector between the base object and the target object. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool.
+              - Create a polar plot with elevation as radius and azimuth as angle theta over time, during access intervals.
 
             * - :py:func:`~ansys.stk.extensions.data_analysis.graphs.access_graphs.cumulative_dwell_cumulative_pie_chart`
               - Create graph showing access interval durations as a cumulative pie chart.
