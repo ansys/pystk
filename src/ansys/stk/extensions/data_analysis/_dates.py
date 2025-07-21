@@ -26,6 +26,10 @@ PySTK Date Extension.
 A set of utilities to facilitate the manipulation of dates and times in PySTK.
 """
 
+from matplotlib import units
+from matplotlib.ticker import FuncFormatter
+import numpy as np
+
 from ansys.stk.core.stkobjects import STKObjectRoot
 from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
 
@@ -37,7 +41,7 @@ class _STKDate:
         """Create an STKDate object from Date."""
         self.stk_date: Date = date
 
-    def __sub__(self, date: Date) -> float:
+    def __sub__(self, date: "_STKDate") -> float:
         """Subtract an STKDate, returning the time difference in seconds."""
         span : Quantity =  self.stk_date.span(date.stk_date)
         if span.unit != "sec":
@@ -71,6 +75,10 @@ class _STKDate:
     def __add__(self, seconds: float) -> Date:
         """Add seconds to the date."""
         return _STKDate(self.stk_date.add("sec", seconds))
+
+    def add_duration(self, value: float, unit: str)-> "_STKDate":
+        """Add the time duration in the given unit."""
+        return _STKDate(self.stk_date.add(unit, value))
 
     def get_epsec(self) -> float:
         """Return the date in Epoch Seconds.
@@ -134,3 +142,50 @@ class _STKDateFactory:
 
         """
         return _STKDate(self.conversion_utility.new_date(unit, value))
+
+class _STKDateConverter(units.ConversionInterface):
+        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float):
+            self.stk_date_factory = stk_date_factory
+            self.time_difference = time_difference
+            super().__init__()
+
+        def default_units(self, x, axis):
+            if isinstance(x, _STKDate):
+                return "Date"
+            else:
+                return None
+
+        def convert(self, value, unit, axis):
+            """Convert an _STKDate object to a scalar."""
+            if isinstance(value, _STKDate):
+                return value.get_epsec()
+            elif isinstance(value, (list, tuple, np.ndarray)) and all(isinstance(v, _STKDate) for v in value):
+                 return [v.get_epsec() for v in value]
+            else:
+                return value
+
+        def axisinfo(self, unit, axis):
+            """Return major and minor tick locators and formatters."""
+            def get_utcg_from_epsec(epsec : float):
+                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).get_utcg()
+
+            def formatter(x : float, pos : float):
+                utcg = get_utcg_from_epsec(x)
+                # One second
+                if  self.time_difference < 1:
+                    return utcg.rsplit(' ', maxsplit=1)[-1]
+                # One minute
+                elif self.time_difference < 60:
+                    return utcg.rsplit(' ', maxsplit=1)[-1][:-2]
+                # Two days
+                elif self.time_difference < 172800:
+                    return utcg.rsplit(' ', maxsplit=1)[-1].rsplit(':', maxsplit=1)[0]
+                # Two months
+                elif self.time_difference < 5184000:
+                    return utcg.rsplit(' ', maxsplit=2)[0]
+                else:
+                    return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
+
+            return units.AxisInfo(
+                majfmt=FuncFormatter(formatter)
+            )
