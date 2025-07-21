@@ -26,6 +26,8 @@ PySTK Date Extension.
 A set of utilities to facilitate the manipulation of dates and times in PySTK.
 """
 
+from collections.abc import Callable
+
 from matplotlib import units
 from matplotlib.ticker import FuncFormatter
 import numpy as np
@@ -144,9 +146,11 @@ class _STKDateFactory:
         return _STKDate(self.conversion_utility.new_date(unit, value))
 
 class _STKDateConverter(units.ConversionInterface):
-        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float):
+        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float, unit_abbreviation: str, formatter: Callable[[float, float], str]):
             self.stk_date_factory = stk_date_factory
             self.time_difference = time_difference
+            self.unit_abbreviation = unit_abbreviation
+            self.formatter = formatter
             super().__init__()
 
         def default_units(self, x, axis):
@@ -166,11 +170,11 @@ class _STKDateConverter(units.ConversionInterface):
 
         def axisinfo(self, unit, axis):
             """Return major and minor tick locators and formatters."""
-            def get_utcg_from_epsec(epsec : float):
-                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).get_utcg()
+            def get_formatted_date_from_epsec(epsec : float):
+                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).format(self.unit_abbreviation)
 
-            def formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
+            def utcg_formatter(x : float, pos : float):
+                utcg = get_formatted_date_from_epsec(x)
                 # One second
                 if  self.time_difference < 1:
                     return utcg.rsplit(' ', maxsplit=1)[-1]
@@ -185,6 +189,16 @@ class _STKDateConverter(units.ConversionInterface):
                     return utcg.rsplit(' ', maxsplit=2)[0]
                 else:
                     return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
+
+            def default_formatter(x : float, pos : float):
+                return get_formatted_date_from_epsec(x)
+
+            if self.formatter:
+                formatter = self.formatter
+            elif self.unit_abbreviation == "UTCG":
+                formatter = utcg_formatter
+            else:
+                formatter = default_formatter
 
             return units.AxisInfo(
                 majfmt=FuncFormatter(formatter)

@@ -25,6 +25,7 @@
 A set of helper functions for graphing basic STK desktop graph types.
 """
 
+import collections.abc
 from math import radians
 import typing
 
@@ -130,7 +131,7 @@ def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_c
     # return figure and axis
     return fig, ax
 
-def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_pairs : list, numerical_columns : list[str], time_columns : list[str], x_label : str, title : str, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_pairs : list, numerical_columns : list[str], time_columns : list[str], x_label : str, title : str, colormap: matplotlib.colors.Colormap = None, time_unit_abbreviation: str = "UTCG", formatter: collections.abc.Callable[[float, float], str] = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create an interval plot from the provided list of dataframes.
 
     Parameters
@@ -149,6 +150,10 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
         The title of the chart.
     colormap : matplotlib.colors.Colormap
         The colormap with which to color the lines (the default is None).
+    time_unit_abbreviation : str
+        The time unit for formatting (the default is "UTCG").
+    formatter : collections.abc.Callable[[float, float], str]
+        The formatter for time axes (the default is None).
 
     Returns
     -------
@@ -184,7 +189,7 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
     # format time axis
     all_times = (pandas.concat([df[time_columns] for df in data])).stack().reset_index(drop=True).sort_values()
     time_difference = all_times.iloc[-1] - all_times.iloc[0]
-    matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+    matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference, time_unit_abbreviation, formatter)
 
     # iterate through pairs of elements
     for i in range(len(element_pairs)):
@@ -226,12 +231,12 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
     # set size
     fig.set_size_inches(18.5, 7)
 
-    _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
+    _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory, time_unit_abbreviation)
 
     # return figure and axis
     return fig, ax
 
-def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None, time_unit_abbreviation: str = "UTCG", formatter: collections.abc.Callable[[float, float], str] = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create a line chart from the provided dataframe and axes information.
 
     Parameters
@@ -254,6 +259,10 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
         The title of the chart.
     colormap : matplotlib.colors.Colormap
         The colormap with which to color the lines (the default is None).
+    time_unit_abbreviation : str
+        The time unit for formatting (the default is "UTCG").
+    formatter : collections.abc.Callable[[float, float], str]
+        The formatter for time axes (the default is None).
 
     Returns
     -------
@@ -287,7 +296,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     if x_column in time_columns:
         all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
         time_difference = all_times.iloc[-1] - all_times.iloc[0]
-        matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference)
+        matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference, time_unit_abbreviation, formatter)
 
     for i in range(len(data)):
         df = data[i]
@@ -361,7 +370,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
     # format time x-axis if needed
     if x_column in time_columns:
-        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory)
+        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory, time_unit_abbreviation)
 
     # if multiple lines, create legend
     if num_lines > 1:
@@ -629,7 +638,7 @@ def _convert_columns(
                 df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
     return df
 
-def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, date_factory : _STKDateFactory):
+def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, date_factory : _STKDateFactory, time_unit_abbreviation : str):
     """Convert numerical and time columns in a pandas dataframe.
 
     Parameters
@@ -646,24 +655,25 @@ def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axe
         The _STKDateFactory.
     """
 
-    def get_d_m_y(date : _STKDate):
+    def get_d_m_y_utcg(date : _STKDate):
         return date.get_utcg().rsplit(" ", maxsplit=1)[0]
 
-    if last_time - first_time < 604800:
-        fig.text(0.05, 0.01, get_d_m_y(first_time),
-            horizontalalignment="left", verticalalignment="bottom",
-            fontsize=10)
-        if get_d_m_y(first_time) != get_d_m_y(last_time):
-            fig.text(0.95, 0.01, get_d_m_y(last_time),
-            horizontalalignment="right", verticalalignment="bottom",
-            fontsize=10)
+    if time_unit_abbreviation == "UTCG":
+        if last_time - first_time < 604800:
+            fig.text(0.05, 0.01, get_d_m_y_utcg(first_time),
+                horizontalalignment="left", verticalalignment="bottom",
+                fontsize=10)
+            if get_d_m_y_utcg(first_time) != get_d_m_y_utcg(last_time):
+                fig.text(0.95, 0.01, get_d_m_y_utcg(last_time),
+                horizontalalignment="right", verticalalignment="bottom",
+                fontsize=10)
 
     # add vertical lines showing day changes
     if last_time - first_time < 2592000:
-        start_date = date_factory.new_date(get_d_m_y(first_time) + " 00:00:00.000").add_duration(1, "day")
+        start_date = date_factory.new_date(get_d_m_y_utcg(first_time) + " 00:00:00.000").add_duration(1, "day")
         while start_date < last_time:
             ax.axvline(x=start_date.get_epsec(), color="black", linestyle="-", linewidth=1.5)
-            ax.annotate(start_date.get_utcg(), xy =(start_date.get_epsec(),ax.get_ylim()[0]), xytext=(0, 7), rotation = 270, fontsize=9, textcoords="offset points")
+            ax.annotate(start_date.format(time_unit_abbreviation), xy =(start_date.get_epsec(),ax.get_ylim()[0]), xytext=(0, 7), rotation = 270, fontsize=9, textcoords="offset points")
             start_date = start_date.add_duration(1, "day")
 
 def _get_access_data(access :Access, item : str, group : bool, group_name : str, elements: list[str], start_time: typing.Any, stop_time: typing.Any, step : float) -> list[pandas.DataFrame]:
