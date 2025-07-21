@@ -1,8 +1,8 @@
 API reference
 =============
 
-This page contains the API reference for the ``ansys-stk-core`` and
-``ansys-stk-extensions`` libraries.
+This page contains the API reference of ``ansys-stk`` package. The API is
+split into two main sections, the core and the extensions.
 
 .. jinja:: main_toctree
 

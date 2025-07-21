@@ -18,7 +18,7 @@
    :target: https://pypi.org/project/ansys-stk/
    :alt: PyPI
 
-.. |codecov| image:: https://codecov.io/gh/pyansys/ansys-stk-core/branch/main/graph/badge.svg
+.. |codecov| image:: https://codecov.io/gh/pyansys/ansys-stk/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/pyansys/pystk
    :alt: Codecov
 
