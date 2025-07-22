@@ -326,7 +326,7 @@ lambert.set_target_coord_type(LambertTargetCoordinateType.CARTESIAN)
 lambert.enable_second_maneuver = True
 
 # TODO: the Lambert Profile does not respect user defined units.
-# https://github.com/ansys-internal/pystk/issues/439
+# https://github.com/ansys/pystk/issues/439
 lambert.target_position_x = final_position[0] * 1000
 lambert.target_position_y = final_position[1] * 1000
 lambert.target_position_z = final_position[2] * 1000
@@ -363,7 +363,7 @@ lambert.revolutions = 0
 lambert.direction_of_motion = LambertDirectionOfMotionType.SHORT
 
 # TODO: the Lambert Profile does not respect user defined units.
-# https://github.com/ansys-internal/pystk/issues/439
+# https://github.com/ansys/pystk/issues/439
 lambert.central_body_collision_altitude_padding = 0
 # -
 
@@ -413,7 +413,7 @@ satellite.propagator.apply_all_profile_changes()
 
 # +
 # TODO: the Lambert Profile does not respect user defined units.
-# https://github.com/ansys-internal/pystk/issues/439
+# https://github.com/ansys/pystk/issues/439
 delta_v1 = first_impulse.maneuver.attitude_control.magnitude / 1000
 c3_launch = delta_v1**2
 
@@ -422,7 +422,7 @@ print(f"C3 at launch: {c3_launch:.2f} km2/s2")
 
 # +
 # TODO: the Lambert Profile does not respect user defined units.
-# https://github.com/ansys-internal/pystk/issues/439
+# https://github.com/ansys/pystk/issues/439
 delta_v2 = last_impulse.maneuver.attitude_control.magnitude / 1000
 c3_arrival = delta_v2**2
 

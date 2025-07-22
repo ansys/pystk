@@ -35,12 +35,12 @@ html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_context = {
-    "github_user": "ansys-internal",
+    "github_user": "ansys",
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
     "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
-    "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
+    "base_url": f"https://github.com/ansys/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
     "page_assets": {
@@ -57,7 +57,7 @@ html_context = {
 }
 html_theme_options = {
     "header_links_before_dropdown": 7,
-    "github_url": "https://github.com/ansys-internal/pystk",
+    "github_url": "https://github.com/ansys/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
     "use_edit_page_button": True,
@@ -140,7 +140,7 @@ exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/gene
 # Ignore warnings
 suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
-    # https://github.com/ansys-internal/pystk/issues/414
+    # https://github.com/ansys/pystk/issues/414
     "ref.python",
     # Sphinx-design downloads some font-awesome icons that conflict with the
     # ones in pydata-sphinx-theme.
@@ -184,10 +184,10 @@ linkcheck_ignore = [
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
     # TODO: Determine a way to link to examples without breaking the linkcheck
-    # https://github.com/ansys-internal/pystk/issues/657
+    # https://github.com/ansys/pystk/issues/657
     r"../examples/",
     # TODO: changelog links
-    # https://github.com/ansys-internal/pystk/issues/706
+    # https://github.com/ansys/pystk/issues/706
     f"https://github.com/ansys/{html_context['github_repo']}/*",
 ]
 
@@ -478,7 +478,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
 
     """
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
-    # https://github.com/ansys-internal/pystk/issues/415
+    # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
     for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
