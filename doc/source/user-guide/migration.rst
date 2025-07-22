@@ -88,22 +88,97 @@ By default, the API migration assistant executes the provided script and invokes
 
 If the ``--recordings-directory=`` option is not specified, a sub-directory named ``recordings`` is created in the current directory.
 
-This creates an XML file in the recordings directory. That file contains the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
+This creates a JSON file in the recordings directory. That file contains the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
 
-.. code-block:: XML
+.. code-block:: json
 
-    <!-- ... -->
-    <recording root_directory="D:\Dev\api_migration_interceptor">
-    <call filename="snippet.py" lineno="8" end_lineno="8" col_offset="10" end_col_offset="53" type_name="STKEngine" member_name="StartApplication"/>
-    <call filename="snippet.py" lineno="10" end_lineno="10" col_offset="14" end_col_offset="33" type_name="STKEngineApplication" member_name="NewObjectRoot"/>
-    <call filename="snippet.py" lineno="11" end_lineno="11" col_offset="4" end_col_offset="31" type_name="IAgStkObjectRoot" member_name="NewScenario"/>
-    <call filename="snippet.py" lineno="12" end_lineno="12" col_offset="15" end_col_offset="38" type_name="IAgStkObjectRoot" member_name="CurrentScenario"/>
-    <call filename="snippet.py" lineno="14" end_lineno="14" col_offset="15" end_col_offset="32" type_name="IAgStkObject" member_name="Children"/>
-    <call filename="snippet.py" lineno="14" end_lineno="14" col_offset="15" end_col_offset="78" type_name="IAgStkObjectCollection" member_name="New"/>
-    <call filename="snippet.py" lineno="15" end_lineno="15" col_offset="4" end_col_offset="21" type_name="IAgFacility" member_name="Position"/>
-    <call filename="snippet.py" lineno="15" end_lineno="15" col_offset="4" end_col_offset="57" type_name="IAgPosition" member_name="AssignGeodetic"/>
-    <call filename="snippet.py" lineno="17" end_lineno="17" col_offset="4" end_col_offset="18" type_name="STKEngineApplication" member_name="ShutDown"/>
-    </recording>
+    {
+        "root_directory": "D:\\Dev\\api_migration_interceptor",
+        "calls": [
+            {
+                "filename": "snippet.py",
+                "lineno": 8,
+                "end_lineno": 8,
+                "col_offset": 10,
+                "end_col_offset": 53,
+                "type_name": "STKEngine",
+                "member_name": "StartApplication"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 10,
+                "end_lineno": 10,
+                "col_offset": 14,
+                "end_col_offset": 33,
+                "type_name": "STKEngineApplication",
+                "member_name": "NewObjectRoot"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 11,
+                "end_lineno": 11,
+                "col_offset": 4,
+                "end_col_offset": 31,
+                "type_name": "IAgStkObjectRoot",
+                "member_name": "NewScenario"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 12,
+                "end_lineno": 12,
+                "col_offset": 15,
+                "end_col_offset": 38,
+                "type_name": "IAgStkObjectRoot",
+                "member_name": "CurrentScenario"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 14,
+                "end_lineno": 14,
+                "col_offset": 15,
+                "end_col_offset": 32,
+                "type_name": "IAgStkObject",
+                "member_name": "Children"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 14,
+                "end_lineno": 14,
+                "col_offset": 15,
+                "end_col_offset": 78,
+                "type_name": "IAgStkObjectCollection",
+                "member_name": "New"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 15,
+                "end_lineno": 15,
+                "col_offset": 4,
+                "end_col_offset": 21,
+                "type_name": "IAgFacility",
+                "member_name": "Position"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 15,
+                "end_lineno": 15,
+                "col_offset": 4,
+                "end_col_offset": 57,
+                "type_name": "IAgPosition",
+                "member_name": "AssignGeodetic"
+            },
+            {
+                "filename": "snippet.py",
+                "lineno": 17,
+                "end_lineno": 17,
+                "col_offset": 4,
+                "end_col_offset": 18,
+                "type_name": "STKEngineApplication",
+                "member_name": "ShutDown"
+            }
+        ],
+        "command": "D:\\Dev\\api_migration_interceptor> D:\\Dev\\api_migration_interceptor\\.venv\\Scripts\\pystk-migration-assistant record --recordings-directory=... snippet.py"
+    }
 
 There are also other options available to tweak recording. Use the ``--help`` command line argument to display them.
 
@@ -127,10 +202,10 @@ There are also other options available to tweak recording. Use the ``--help`` co
     --root-directory <directory>
                             only migrate files under this directory (default: program directory)
     --mappings-directory <directory>
-                            directory containing the XML API mappings (default: D:\Dev\github_root\pyst
+                            directory containing the JSON API mappings (default: D:\Dev\github_root\pyst
                             k\src\ansys\stk\core\tools\api_migration_assistant\api-mappings)
     --recordings-directory <directory>
-                            directory receiving the XML recordings (default:
+                            directory receiving the JSON recordings (default:
                             D:\Dev\github_root\pystk\recordings)
     -m                    invoke the specified program as a module
 
@@ -177,9 +252,9 @@ There are additional options available to control how the changes are applied. U
     options:
     -h, --help            show this help message and exit
     --mappings-directory <directory>
-                            directory containing the XML API mappings (default: ...)
+                            directory containing the JSON API mappings (default: ...)
     --recordings-directory <directory>
-                            directory receiving the XML recordings (default:...)
+                            directory receiving the JSON recordings (default:...)
 
 Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
