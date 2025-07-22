@@ -250,7 +250,12 @@ else:
 
 
 # -- Jinja context configuration ---------------------------------------------
+PYPROJECT_FILE = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
+if not PYPROJECT_FILE.exists():
+    raise ValueError(f"The file {PYPROJECT_FILE} does not exist.")
 
+PYPROJECT_CONTENT = toml.loads(PYPROJECT_FILE.read_text(encoding="utf-8"))
+OPTIONAL_DEPENDENCIES = PYPROJECT_CONTENT["project"]["optional-dependencies"]
 
 def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
     """Compress a directory using ZIP.
@@ -336,17 +341,12 @@ def get_file_size_in_mb(file_path):
 
 def read_optional_dependencies_from_pyproject():
     """Read the extra dependencies declared in the project file."""
-    pyproject = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
-    if not pyproject.exists():
-        raise ValueError(f"The file {pyproject} does not exist.")
-
-    pyproject_content = toml.loads(pyproject.read_text(encoding="utf-8"))
     optional_dependencies = {
         target: {
             (pkg.split("==")[0] if "==" in pkg else pkg): (pkg.split("==")[1] if "==" in pkg else "latest")
             for pkg in deps
         }
-        for target, deps in pyproject_content["project"]["optional-dependencies"].items()
+        for target, deps in OPTIONAL_DEPENDENCIES.items()
     }
 
     return optional_dependencies
@@ -390,7 +390,7 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
-                    for target in ["all", "grpc", "jupyter"]
+                    for target in OPTIONAL_DEPENDENCIES
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
