@@ -38,7 +38,7 @@ import pandas
 
 from ansys.stk.core.stkobjects import Access, STKObjectRoot
 from ansys.stk.core.stkutil import UnitPreferencesDimensionCollection
-from ansys.stk.extensions.data_analysis._dates import _STKDate, _STKDateConverter, _STKDateFactory
+from ansys.stk.extensions.data_analysis._dates import _STKDate, _STKDateConverter
 
 
 def polar_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], axis : dict, title : str, origin_0 : bool = False, convert_negative_r : bool = False, colormap: matplotlib.colors.Colormap = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
@@ -181,15 +181,14 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
     units_preferences = root.units_preferences
 
      # data conversions
-    date_factory = _STKDateFactory(root)
     for df in data:
-        df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
+        df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root=root)
         df.dropna(axis=0, inplace=True)
 
     # format time axis
     all_times = (pandas.concat([df[time_columns] for df in data])).stack().reset_index(drop=True).sort_values()
     time_difference = all_times.iloc[-1] - all_times.iloc[0]
-    matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference, time_unit_abbreviation, formatter)
+    matplotlib.units.registry[_STKDate] = _STKDateConverter(root, time_difference, time_unit_abbreviation, formatter)
 
     # iterate through pairs of elements
     for i in range(len(element_pairs)):
@@ -231,7 +230,7 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
     # set size
     fig.set_size_inches(18.5, 7)
 
-    _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory, time_unit_abbreviation)
+    _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], root, time_unit_abbreviation)
 
     # return figure and axis
     return fig, ax
@@ -285,10 +284,9 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     axes_list = [ax]
 
     # data conversions
-    date_factory = _STKDateFactory(root)
     for df in data:
         if time_columns:
-            df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
+            df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root=root)
         elif numerical_columns:
             df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
         df.dropna(axis=0, inplace=True)
@@ -296,7 +294,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     if x_column in time_columns:
         all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
         time_difference = all_times.iloc[-1] - all_times.iloc[0]
-        matplotlib.units.registry[_STKDate] = _STKDateConverter(date_factory, time_difference, time_unit_abbreviation, formatter)
+        matplotlib.units.registry[_STKDate] = _STKDateConverter(root, time_difference, time_unit_abbreviation, formatter)
 
     for i in range(len(data)):
         df = data[i]
@@ -370,7 +368,7 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
 
     # format time x-axis if needed
     if x_column in time_columns:
-        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], date_factory, time_unit_abbreviation)
+        _format_time_x_axis(fig, ax, all_times.iloc[0], all_times.iloc[-1], root, time_unit_abbreviation)
 
     # if multiple lines, create legend
     if num_lines > 1:
@@ -518,8 +516,7 @@ def interval_pie_chart(
     date_unit = units_preferences.get_current_unit_abbrv("Date")
 
     # data conversions
-    date_factory = _STKDateFactory(root)
-    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, date_factory=date_factory)
+    df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root=root)
 
     # create duration column using stop and start columns
     df["graph duration"] = df[stop_column] - df[start_column]
@@ -528,9 +525,9 @@ def interval_pie_chart(
     df["graph gap"] = df[start_column].shift(-1) - df[stop_column]
 
     # last gap is from end of last duration to stop time
-    df.at[df.index[-1], "graph gap"] = date_factory.new_date(stop_time, unit=date_unit) - df.iloc[-1][stop_column]
+    df.at[df.index[-1], "graph gap"] = _STKDate.from_value_and_format(root, stop_time, unit=date_unit) - df.iloc[-1][stop_column]
     # first gap is from analysis start time to start of first duration
-    first_gap = df[start_column][0] - date_factory.new_date(start_time, unit=date_unit)
+    first_gap = df[start_column][0] - _STKDate.from_value_and_format(root, start_time, unit=date_unit)
 
     # create plot
     fig, ax = matplotlib.pyplot.subplots()
@@ -611,7 +608,7 @@ def interval_pie_chart(
     return fig, ax
 
 def _convert_columns(
-    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], units_preferences: UnitPreferencesDimensionCollection, date_factory: _STKDateFactory = None, root: STKObjectRoot = None
+    df: pandas.DataFrame, numerical_column_list: list[str], date_column_list: list[str], unit_preferences: UnitPreferencesDimensionCollection, root: STKObjectRoot = None
 ) -> pandas.DataFrame:
     """Convert numerical and time columns in a pandas dataframe.
 
@@ -623,6 +620,10 @@ def _convert_columns(
         The list of dataframe columns with numerical values.
     date_column_list : list of str
         The list of dataframe columns with time values.
+    unit_preferences : UnitPreferencesDimensionCollection
+        The collection of scenario-wide unit preferences.
+    root : STKObjectRoot
+        The STK object root.
 
     Returns
     -------
@@ -631,14 +632,12 @@ def _convert_columns(
     """
     df[numerical_column_list] = df[numerical_column_list].astype(float)
     if date_column_list:
-        if date_factory is None:
-            date_factory = _STKDateFactory(root)
         for col in date_column_list:
             if col in df:
-                df[col] = df[col].apply(lambda x: date_factory.new_date(x, units_preferences.get_current_unit_abbrv("Date")))
+                df[col] = df[col].apply(lambda x: _STKDate.from_value_and_format(root, x, unit_preferences.get_current_unit_abbrv("Date")))
     return df
 
-def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, date_factory : _STKDateFactory, time_unit_abbreviation : str):
+def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axes, first_time : _STKDate, last_time : _STKDate, root : STKObjectRoot, time_unit_abbreviation : str):
     """Convert numerical and time columns in a pandas dataframe.
 
     Parameters
@@ -651,8 +650,8 @@ def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axe
         The earliest time in the data.
     last_time : _STKDate
         The latest time in the data.
-    date_factory : _STKDateFactory
-        The _STKDateFactory.
+    root : STKObjectRoot
+        The STK object root.
     """
 
     def get_d_m_y_utcg(date : _STKDate):
@@ -670,7 +669,7 @@ def _format_time_x_axis(fig : matplotlib.figure.Figure, ax : matplotlib.axes.Axe
 
     # add vertical lines showing day changes
     if last_time - first_time < 2592000:
-        start_date = date_factory.new_date(get_d_m_y_utcg(first_time) + " 00:00:00.000").add_duration(1, "day")
+        start_date = _STKDate.from_value_and_format(root, get_d_m_y_utcg(first_time) + " 00:00:00.000").add_duration(1, "day")
         while start_date < last_time:
             ax.axvline(x=start_date.get_epsec(), color="black", linestyle="-", linewidth=1.5)
             ax.annotate(start_date.format(time_unit_abbreviation), xy =(start_date.get_epsec(),ax.get_ylim()[0]), xytext=(0, 7), rotation = 270, fontsize=9, textcoords="offset points")
@@ -710,14 +709,13 @@ def _get_access_data(access :Access, item : str, group : bool, group_name : str,
     """
     data=[]
     root = access.base.root
-    date_factory = _STKDateFactory(root)
-    start_time = date_factory.new_date(start_time)
-    stop_time = date_factory.new_date(stop_time)
+    start_time = _STKDate.from_value_and_format(root, start_time)
+    stop_time = _STKDate.from_value_and_format(root, stop_time)
     access_intervals = access.computed_access_interval_times
     for i in range(0, access_intervals.count):
         times = access_intervals.get_interval(i)
-        interval_start = date_factory.new_date(times[0])
-        interval_end = date_factory.new_date(times[1])
+        interval_start = _STKDate.from_value_and_format(root, times[0])
+        interval_end = _STKDate.from_value_and_format(root, times[1])
         computation_start = None
         computation_stop = None
         # interval fully outside of desired calculation period, so skip

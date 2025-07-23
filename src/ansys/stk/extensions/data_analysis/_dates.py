@@ -33,7 +33,7 @@ from matplotlib.ticker import FuncFormatter
 import numpy as np
 
 from ansys.stk.core.stkobjects import STKObjectRoot
-from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
+from ansys.stk.core.stkutil import Date, Quantity
 
 
 class _STKDate:
@@ -42,6 +42,27 @@ class _STKDate:
     def __init__(self, date: Date):
         """Create an STKDate object from Date."""
         self.stk_date: Date = date
+
+    @classmethod
+    def from_value_and_format(cls, root: STKObjectRoot, value: str, unit: str = "UTCG") -> "_STKDate":
+        """Create a new STKDate object.
+
+        Parameters
+        ----------
+        root : STKObjectRoot
+            The STK object root.
+        value : str
+            String containing date to be parsed.
+        unit : str
+            String representing the unit the date is in (the default is UTCG).
+
+        Returns
+        -------
+        ansys.stk.extensions.data_analysis.dates.STKDate
+            The `STKDate` object.
+
+        """
+        return cls(root.conversion_utility.new_date(unit, value))
 
     def __sub__(self, date: "_STKDate") -> float:
         """Subtract an STKDate, returning the time difference in seconds."""
@@ -120,34 +141,9 @@ class _STKDate:
         """
         return self.stk_date.format(unit)
 
-
-class _STKDateFactory:
-    """Factory class to create STKDate objects."""
-    def __init__(self, root: STKObjectRoot):
-        """Create STKDateFactory."""
-        self.conversion_utility : ConversionUtility = root.conversion_utility
-
-    def new_date(self, value: str, unit: str = "UTCG") -> _STKDate:
-        """Create a new STKDate object.
-
-        Parameters
-        ----------
-        value : str
-            String containing date to be parsed.
-        unit : str
-            String representing the unit the date is in (the default is UTCG).
-
-        Returns
-        -------
-        ansys.stk.extensions.data_analysis.dates.STKDate
-            The `STKDate` object.
-
-        """
-        return _STKDate(self.conversion_utility.new_date(unit, value))
-
 class _STKDateConverter(units.ConversionInterface):
-        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float, unit_abbreviation: str, formatter: Callable[[float, float], str]):
-            self.stk_date_factory = stk_date_factory
+        def __init__(self, root: STKObjectRoot, time_difference: float, unit_abbreviation: str, formatter: Callable[[float, float], str]):
+            self.root = root
             self.time_difference = time_difference
             self.unit_abbreviation = unit_abbreviation
             self.formatter = formatter
@@ -171,7 +167,7 @@ class _STKDateConverter(units.ConversionInterface):
         def axisinfo(self, unit, axis):
             """Return major and minor tick locators and formatters."""
             def get_formatted_date_from_epsec(epsec : float):
-                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).format(self.unit_abbreviation)
+                return (_STKDate.from_value_and_format(self.root, str(epsec), 'EpSec')).format(self.unit_abbreviation)
 
             def utcg_formatter(x : float, pos : float):
                 utcg = get_formatted_date_from_epsec(x)
