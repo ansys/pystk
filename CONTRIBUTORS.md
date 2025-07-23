@@ -17,3 +17,4 @@
 * [Roberto Pastor Muela](https://github.com/RobPasMue)
 * [Kathy Pippert](https://github.com/PipKat)
 * [Zahid Moghal](https://github.com/zmoghal)
+* [John Michael Thornton](https://github.com/jthornton232)
