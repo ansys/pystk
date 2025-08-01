@@ -5,7 +5,7 @@ aer_line_chart
   :width: 600
   :alt: image of output from aer_line_chart
 
-.. py:function:: aer_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: aer_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.aer_line_chart
 
     Create a plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals.
@@ -30,6 +30,12 @@ aer_line_chart
 
         **colormap** : :obj:`~matplotlib.colors.Colormap`
         The colormap with which to color the data (the default is None).
+
+        **time_unit_abbreviation** : :obj:`~str`
+        The time unit for formatting (the default is "UTCG").
+
+        **formatter** : :obj:`~collections.abc.Callable` [[:obj:`~float`, :obj:`~float`], :obj:`~str`]
+        The formatter for time axes (the default is None).
 
 
 
