@@ -120,7 +120,7 @@ doc = [
 ]
 docstyle = [
     "rst2html==2020.7.4",
-    "vale==3.4.1",
+    "vale==3.12.0.0",
 ]
 
 [tool.flit.module]
