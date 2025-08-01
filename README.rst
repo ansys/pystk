@@ -1,5 +1,5 @@
-.. image:: https://github.com/ansys-internal/pystk/blob/main/doc/source/_static/logo.png
-   :target: https://github.com/ansys-internal/pystk/
+.. image:: https://github.com/ansys/pystk/blob/main/doc/source/_static/logo.png
+   :target: https://github.com/ansys/pystk/
    :alt: PySTK
 
 |
@@ -18,7 +18,7 @@
    :target: https://pypi.org/project/ansys-stk/
    :alt: PyPI
 
-.. |codecov| image:: https://codecov.io/gh/pyansys/ansys-stk-core/branch/main/graph/badge.svg
+.. |codecov| image:: https://codecov.io/gh/pyansys/ansys-stk/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/pyansys/pystk
    :alt: Codecov
 

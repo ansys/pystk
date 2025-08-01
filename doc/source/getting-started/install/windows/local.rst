@@ -63,7 +63,7 @@ Install Windows artifacts by using the `pip`_ command:
 
             .. code-block:: text
 
-                python -m pip install "ansys-stk-core=={{ PYSTK_VERSION }}"
+                python -m pip install "ansys-stk=={{ PYSTK_VERSION }}"
 
         .. tab-item:: **Wheels install**
             :sync: wheels
@@ -109,7 +109,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install ansys-stk-core[{{ target }}]
+                        python -m pip install ansys-stk[{{ target }}]
 
                 .. tab-item:: Wheelhouse install
 
@@ -124,7 +124,7 @@ select the type of installation.
 
                     .. code-block:: bash
 
-                        python -m pip install --find-links wheelhouse ansys-stk-core[{{ target }}]
+                        python -m pip install --find-links wheelhouse ansys-stk[{{ target }}]
 
             Dependencies included with the ``{{ target }}`` target are:
 

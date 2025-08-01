@@ -35,12 +35,12 @@ html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_context = {
-    "github_user": "ansys-internal",
+    "github_user": "ansys",
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
     "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
-    "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
+    "base_url": f"https://github.com/ansys/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
     "page_assets": {
@@ -57,7 +57,7 @@ html_context = {
 }
 html_theme_options = {
     "header_links_before_dropdown": 7,
-    "github_url": "https://github.com/ansys-internal/pystk",
+    "github_url": "https://github.com/ansys/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
     "use_edit_page_button": True,
@@ -140,7 +140,7 @@ exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/gene
 # Ignore warnings
 suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
-    # https://github.com/ansys-internal/pystk/issues/414
+    # https://github.com/ansys/pystk/issues/414
     "ref.python",
     # Sphinx-design downloads some font-awesome icons that conflict with the
     # ones in pydata-sphinx-theme.
@@ -184,10 +184,10 @@ linkcheck_ignore = [
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
     # TODO: Determine a way to link to examples without breaking the linkcheck
-    # https://github.com/ansys-internal/pystk/issues/657
+    # https://github.com/ansys/pystk/issues/657
     r"../examples/",
     # TODO: changelog links
-    # https://github.com/ansys-internal/pystk/issues/706
+    # https://github.com/ansys/pystk/issues/706
     f"https://github.com/ansys/{html_context['github_repo']}/*",
 ]
 
@@ -250,7 +250,12 @@ else:
 
 
 # -- Jinja context configuration ---------------------------------------------
+PYPROJECT_FILE = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
+if not PYPROJECT_FILE.exists():
+    raise ValueError(f"The file {PYPROJECT_FILE} does not exist.")
 
+PYPROJECT_CONTENT = toml.loads(PYPROJECT_FILE.read_text(encoding="utf-8"))
+OPTIONAL_DEPENDENCIES = PYPROJECT_CONTENT["project"]["optional-dependencies"]
 
 def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
     """Compress a directory using ZIP.
@@ -336,17 +341,12 @@ def get_file_size_in_mb(file_path):
 
 def read_optional_dependencies_from_pyproject():
     """Read the extra dependencies declared in the project file."""
-    pyproject = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
-    if not pyproject.exists():
-        raise ValueError(f"The file {pyproject} does not exist.")
-
-    pyproject_content = toml.loads(pyproject.read_text(encoding="utf-8"))
     optional_dependencies = {
         target: {
             (pkg.split("==")[0] if "==" in pkg else pkg): (pkg.split("==")[1] if "==" in pkg else "latest")
             for pkg in deps
         }
-        for target, deps in pyproject_content["project"]["optional-dependencies"].items()
+        for target, deps in OPTIONAL_DEPENDENCIES.items()
     }
 
     return optional_dependencies
@@ -390,7 +390,7 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
-                    for target in ["all", "grpc", "jupyter"]
+                    for target in OPTIONAL_DEPENDENCIES
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
@@ -478,7 +478,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
 
     """
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
-    # https://github.com/ansys-internal/pystk/issues/415
+    # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
     for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
