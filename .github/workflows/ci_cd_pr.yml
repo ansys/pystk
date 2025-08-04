@@ -84,7 +84,7 @@ jobs:
           tox -e vulnerabilities-deps
 
       # TODO: "Security Advisories" are only available in public repositories
-      # https://github.com/ansys-internal/pystk/issues/607
+      # https://github.com/ansys/pystk/issues/607
       #
       # - uses: ansys/actions/check-vulnerabilities@v8
       #   with:
@@ -156,7 +156,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'all']
+        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
       - uses: ansys/actions/build-wheelhouse@v10
         with:

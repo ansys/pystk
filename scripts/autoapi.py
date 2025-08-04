@@ -255,7 +255,15 @@ class ManualRSTGenerator:
 
         for i, arg in enumerate(method.args.args):
             arg_str = arg.arg
-            if isinstance(arg.annotation, ast.Subscript):
+            if (
+                isinstance(arg.annotation, ast.Subscript)
+                and hasattr(arg.annotation.value, "attr")
+                and arg.annotation.value.attr == "Callable"
+            ):
+                formatted_callable_arg_types = (", ").join([elt.id for elt in arg.annotation.slice.dims[0].elts])
+                callable_return_type = arg.annotation.slice.dims[1].id
+                arg_str += f": collections.abc.Callable[[{formatted_callable_arg_types}], {callable_return_type}]"
+            elif isinstance(arg.annotation, ast.Subscript):
                 arg_str += f": {(arg.annotation.value.id).lower()}[{ManualRSTGenerator._parse_nested_type(arg.annotation.slice)}]"
             else:
                 arg_str += f": {ManualRSTGenerator._parse_nested_type(arg.annotation)}"
@@ -511,7 +519,16 @@ class ManualRSTGenerator:
                 if docstring and "Parameters" in docstring:
                     for param in docstring["Parameters"]:
                         if len(param.desc) > 0:
-                            if "of" in param.type:
+                            if "Callable" in param.type:
+                                callable_return_type = param.type.rsplit(", ")[-1].strip("]")
+                                callable_parameter_types = param.type.split("[[")[-1].split("]")[0].split(", ")
+                                formatted_callable_parameter_types = ", ".join(
+                                    [f":obj:`~{type}`" for type in callable_parameter_types]
+                                )
+                                f.write(
+                                    f"        **{param.name}** : :obj:`~collections.abc.Callable` [[{formatted_callable_parameter_types}], :obj:`~{callable_return_type}`]\n"
+                                )
+                            elif "of" in param.type:
                                 param_types = param.type.split()
                                 if len(param_types) == 3:
                                     f.write(

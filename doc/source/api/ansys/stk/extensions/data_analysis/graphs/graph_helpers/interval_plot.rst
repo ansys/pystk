@@ -1,7 +1,7 @@
 interval_plot
 =============
 
-.. py:function:: interval_plot(data: list[~pandas.DataFrame], root: ~STKObjectRoot, element_pairs: ~list, numerical_columns: list[~str], time_columns: list[~str], x_label: ~str, title: ~str, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: interval_plot(data: list[~pandas.DataFrame], root: ~STKObjectRoot, element_pairs: ~list, numerical_columns: list[~str], time_columns: list[~str], x_label: ~str, title: ~str, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.interval_plot
 
     Create an interval plot from the provided list of dataframes.
@@ -30,6 +30,12 @@ interval_plot
 
         **colormap** : :obj:`~matplotlib.colors.Colormap`
         The colormap with which to color the lines (the default is None).
+
+        **time_unit_abbreviation** : :obj:`~str`
+        The time unit for formatting (the default is "UTCG").
+
+        **formatter** : :obj:`~collections.abc.Callable` [[:obj:`~float`, :obj:`~float`], :obj:`~str`]
+        The formatter for time axes (the default is None).
 
 
 

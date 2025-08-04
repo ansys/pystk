@@ -93,7 +93,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'all']
+        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
       - uses: ansys/actions/build-wheelhouse@v10
         with:
@@ -324,8 +324,8 @@ jobs:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
 
-  release-private-pypi:
-    name: "Release ${{ env.ANSYS_STK }} to private PyPI"
+  release-pypi:
+    name: "Release ${{ env.ANSYS_STK }} to the public PyPI"
     needs: build-libraries
     runs-on: ubuntu-latest
     environment: release
@@ -333,14 +333,24 @@ jobs:
       id-token: write
       contents: write
     steps:
-      - uses: ansys/actions/release-pypi-private@v10
+
+      - name: "Download the library artifacts from build-library step"
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
-          library-name: ${{ env.ANSYS_STK }}
-          twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
+          name: ${{ env.ANSYS_STK }}-artifacts
+          path: ${{ env.ANSYS_STK }}-artifacts
+
+      - name: "Upload artifacts to PyPI using trusted publisher"
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        with:
+          repository-url: "https://upload.pypi.org/legacy/"
+          print-hash: true
+          packages-dir: ${{ env.PACKAGE_NAME }}-artifacts
+          skip-existing: false
 
   release-github:
     name: "Release to GitHub"
-    needs: release-private-pypi
+    needs: release-pypi
     runs-on: ubuntu-latest
     environment: release
     permissions:

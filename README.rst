@@ -1,5 +1,5 @@
-.. image:: https://github.com/ansys-internal/pystk/blob/main/doc/source/_static/logo.png
-   :target: https://github.com/ansys-internal/pystk/
+.. image:: https://github.com/ansys/pystk/blob/main/doc/source/_static/logo.png
+   :target: https://github.com/ansys/pystk/
    :alt: PySTK
 
 |

@@ -49,7 +49,7 @@ adoption occurs.
 Contribute to PySTK
 ===================
 
-Contributions to the `PySTK GitHub repository <https://github.com/ansys-internal/pystk>`_ are welcome and encouraged. This
+Contributions to the `PySTK GitHub repository <https://github.com/ansys/pystk>`_ are welcome and encouraged. This
 includes updates to the documentation, examples, and the addition of high-level
 APIs/helper functions that facilitate specific workflows.
 

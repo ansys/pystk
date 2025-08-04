@@ -262,3 +262,34 @@ def test_polar_chart_pass_colormap(stk_root):
         ]}
     fig, _ = polar_chart([df1, df2], stk_root, ["Angle","Radius"], axis, "", convert_negative_r = False, origin_0 = False, colormap=matplotlib.cm.plasma)
     return fig
+
+@pytest.mark.mpl_image_compare
+def test_line_chart_EarthEpTU_unit(stk_root):
+    times = ["1 Jan 2025 00:00:00.000", "1 Jan 2025 12:00:00.000", "2 Jan 2025 00:00:00.000", "2 Jan 2025 12:00:00.000"]
+    values = [1, 2, 3, 4]
+    df = pd.DataFrame({"Time": times, "Value": values})
+    axes_info = [{"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "", "lines": [
+            {"y_name":"Value", "label":"Value", "use_unit":None, "unit_squared": None, "dimension": None}]}]
+    fig, _ = line_chart([df], stk_root, ["Value"], ["Time"], axes_info, "Time", "", "", time_unit_abbreviation="EarthEpTU")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_interval_chart_SunEpTU_unit(stk_root):
+    start_times = ["1 Jan 2025 00:00:00.000", "2 Jan 2025 12:00:00.000", "3 Jan 2025 12:00:00.000"]
+    stop_times = ["2 Jan 2025 00:00:00.000", "3 Jan 2025 00:00:00.000", "4 Jan 2025 00:00:00.000"]
+    df = pd.DataFrame({"start time": start_times, "stop time": stop_times})
+    elements=[(("start time", "None"),("stop time", "None"))]
+    fig, _ = interval_plot([df], stk_root, elements, [], ["start time","stop time"], "Time", "", time_unit_abbreviation="SunEpTU")
+    return fig
+
+@pytest.mark.mpl_image_compare
+def test_line_chart_custom_formatter(stk_root):
+    times = ["1 Jan 2025 00:00:00.000", "1 Jan 2025 12:00:00.000", "2 Jan 2025 00:00:00.000", "2 Jan 2025 12:00:00.000"]
+    values = [1, 2, 3, 4]
+    df = pd.DataFrame({"Time": times, "Value": values})
+    axes_info = [{"use_unit" : None, "unit_squared": None, "ylog10": False, "y2log10": False, "label": "", "lines": [
+            {"y_name":"Value", "label":"Value", "use_unit":None, "unit_squared": None, "dimension": None}]}]
+    def custom_formatter(x : float, pos: float):
+        return "Const. Format"
+    fig, _ = line_chart([df], stk_root, ["Value"], ["Time"], axes_info, "Time", "", "", formatter=custom_formatter)
+    return fig
