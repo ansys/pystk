@@ -52,7 +52,7 @@ from ...internal.comutil import (
     Succeeded,
 )
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...stkobjects import STKObjectRoot
+from ...stkobjects import IAnimation, Scenario, STKObjectRoot
 from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
@@ -275,8 +275,6 @@ class WidgetBase(RemoteFrameBuffer):
 
         self._rfb.set_host(self._rfbHost)
 
-        self._building_examples = os.getenv("BUILD_EXAMPLES", "false") == "true"
-
         self.mouse_callbacks = [
             [
                 self._rfb.notify_left_button_down,
@@ -295,8 +293,11 @@ class WidgetBase(RemoteFrameBuffer):
             asyncio_timer_manager = AsyncioTimerManager()
 
         self.root = root
-        self.title = title or self.root.current_scenario.instance_name
-        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
+        if self.root.current_scenario is not None:
+            self.title = title or self.root.current_scenario.instance_name
+            scenario: Scenario = Scenario(self.root.current_scenario)
+            if scenario.scene_manager.scenes.count > 0:
+                self.camera = scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
         del self._rfb
@@ -304,6 +305,7 @@ class WidgetBase(RemoteFrameBuffer):
         del self._rfbHost
         del self._unk
         self.root = None
+        self.camera = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -390,11 +392,13 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
 
     def animate(self, time_step):
-        self.root.current_scenario.animation_settings.animation_step_value = time_step
-        self.root.execute_command("Animate * Start Loop")
+        scenario: Scenario = Scenario(self.root.current_scenario)
+        scenario.animation_settings.animation_step_value = time_step
+        animation_control: IAnimation = IAnimation(self.root)
+        animation_control.play_forward()
         self.show()
 
-    def _repr_mimebundle_(self, **kwargs):
+    def _repr_mimebundle_(self, include=None, exclude=None):
         """Return the desired MIME type representation.
 
         The MIME type representation is a dictionary relating MIME types to
@@ -405,8 +409,9 @@ class WidgetBase(RemoteFrameBuffer):
         PDF files.
 
         """
-        if not self._building_examples:
-            data = super()._repr_mimebundle_(**kwargs)
+        needs_snapshot = os.getenv("BUILD_EXAMPLES", "false") == "true"
+        if not needs_snapshot:
+            data = super()._repr_mimebundle_(include=include, exclude=exclude)
         else:
             data = {
                 "image/png": array2png(self.snapshot().data)
@@ -420,19 +425,6 @@ class WidgetBase(RemoteFrameBuffer):
                 display(self)
         else:
             return self
-
-    def snapshot(self, pixel_ratio=None, _initial=False):
-        if self._building_examples:
-            # There is currently no good way to detect when terrain and
-            # imagery fetched in background threads are finished loading,
-            # so when building the documentation to capture snapshots,
-            # just use an arbitrary delay for now and fetch a few frames
-            # before taking the snapshot
-            for _ in range(0, 4):
-                _ = self.get_frame()
-                time.sleep(0.5)
-        return super().snapshot(pixel_ratio, _initial)
-
 
 class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
