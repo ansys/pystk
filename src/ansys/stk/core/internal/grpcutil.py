@@ -378,7 +378,7 @@ class GrpcApplication(GrpcInterface):
         self.client._register_app(self.obj)
 
     def __del__(self):
-        # The application reference is released by the server when calling TerminateConnection()
+        # The application reference is released by the server when terminating the connection
         pass
 
 class UnmanagedGrpcInterface(GrpcInterface):
@@ -558,13 +558,22 @@ class GrpcClient(object):
         future.reset_impl(bound_intf)
 
     @staticmethod
-    def new_client(host, port, timeout_sec:int=60, max_receive_message_size:int=0) -> "GrpcClient":
+    def new_client(host,
+                   port,
+                   timeout_sec:int=60,
+                   max_receive_message_size:int=0,
+                   grpc_channel_credentials:grpc.ChannelCredentials|None=None) -> "GrpcClient":
         addr = f"{host}:{port}"
         new_grpc_client = GrpcClient()
         channel_args = []
         if max_receive_message_size > 0:
             channel_args.append(("grpc.max_receive_message_length", max_receive_message_size))
-        new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
+
+        if grpc_channel_credentials == None:
+            new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
+        else:
+            new_grpc_client.channel = grpc.secure_channel(addr, credentials=grpc_channel_credentials, options=channel_args)
+
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
 
