@@ -35,6 +35,9 @@ import socket
 import subprocess  # nosec B404
 import typing
 
+if typing.TYPE_CHECKING:
+    import grpc
+
 from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 from .internal.coclassutil import attach_to_stk_by_pid
 from .internal.comutil import (
@@ -190,7 +193,10 @@ class STKDesktopApplication(UiApplication):
     def _disconnect_grpc(self) -> None:
         """Safely disconnect from STK."""
         if self._intf:
-            self._intf.client.TerminateConnection()
+            if typing.TYPE_CHECKING:
+                from .internal.grpcutil import GrpcClient
+            client: GrpcClient = self._intf.client
+            client.terminate_connection()
             self.__dict__["_intf"] = InterfaceProxy()
 
 
@@ -200,13 +206,14 @@ class STKDesktop(object):
     _disable_pop_ups = False
 
     @staticmethod
-    def start_application(visible:bool=False, \
-                         user_control:bool=False, \
-                         grpc_server:bool=False, \
-                         grpc_host:str="localhost", \
-                         grpc_port:int=40704, \
+    def start_application(visible:bool=False,
+                         user_control:bool=False,
+                         grpc_server:bool=False,
+                         grpc_host:str="localhost",
+                         grpc_port:int=40704,
                          grpc_timeout_sec:int=60,
-                         grpc_max_message_size:int=0) -> STKDesktopApplication:
+                         grpc_max_message_size:int=0,
+                         grpc_channel_credentials:"grpc.ChannelCredentials|None"=None) -> STKDesktopApplication:
         """
         Create a new STK Desktop application instance.
 
@@ -218,6 +225,8 @@ class STKDesktop(object):
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+        grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+        see https://grpc.io/docs/guides/auth/ for more information).
         Only available on Windows.
         """
         if os.name != "nt":
@@ -260,7 +269,7 @@ class STKDesktop(object):
             # to ensure that it is not used.
             if grpc_host=="0.0.0.0": # nosec B104
                 host = "localhost"
-            app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
+            app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec, grpc_max_message_size, grpc_channel_credentials)
             app.visible = visible
             app.user_control = user_control
             return app
@@ -279,12 +288,13 @@ class STKDesktop(object):
             raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
 
     @staticmethod
-    def attach_to_application(pid:int=None, \
-                            grpc_server:bool=False, \
-                            grpc_host:str="localhost", \
-                            grpc_port:int=40704, \
+    def attach_to_application(pid:int=None,
+                            grpc_server:bool=False,
+                            grpc_host:str="localhost",
+                            grpc_port:int=40704,
                             grpc_timeout_sec:int=60,
-                            grpc_max_message_size:int=0) -> STKDesktopApplication:
+                            grpc_max_message_size:int=0,
+                            grpc_channel_credentials:"grpc.ChannelCredentials|None"=None) -> STKDesktopApplication:
         """
         Attach to an existing STK Desktop instance.
 
@@ -294,6 +304,8 @@ class STKDesktop(object):
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+        grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+        see https://grpc.io/docs/guides/auth/ for more information).
         Only available on Windows.
         """
         if os.name != "nt":
@@ -307,7 +319,7 @@ class STKDesktop(object):
                 from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
                 raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
-            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
+            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size, grpc_channel_credentials)
             if client is not None:
                 app_impl = client.get_stk_application_interface()
                 app = STKDesktopApplication()
