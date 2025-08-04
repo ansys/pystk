@@ -11,6 +11,7 @@
 # A radar site is located near a regional airport at latitude $34.7422^\circ$ and longitude $	-118.225^\circ$. The radar antenna is located $50$ ft above the ground. A small private aircraft with a radar cross section of $10$ dBsm flies through the zone from east to west.
 #
 # A multifunction radar with three beams tracks the aircraft. The three beams are:
+#
 # - A horizon search beam that is fixed and scans in one direction.
 # - A targeted beam that tracks the private plane once it is detected by the horizon search beam.
 # - A volume search beam that spins and scans the horizon.
@@ -151,7 +152,7 @@ waypoint2.speed = 205.333
 
 small_aircraft.route.propagate()
 
-# Next, specify the aircraft's RCS. Set the airliner's radar cross section's `inherit` property to false:
+# Next, specify the aircraft's RCS. Set the airliner's radar cross section's `inherit` property to false in order to override the default RCS value inherited from the scenario:
 
 small_aircraft_rcs = small_aircraft.radar_cross_section
 small_aircraft_rcs.inherit = False
@@ -218,17 +219,22 @@ multifunction_model.transmitter.maximum_power_limit = 40
 
 multifunction_model.transmitter.enable_polarization = True
 
-# Verify that the transmitter's polarization type is set to linear:
+# Set the transmitter's polarization type to linear:
 
-multifunction_model.transmitter.polarization.type
+# +
+from ansys.stk.core.stkobjects import PolarizationType
+
+
+multifunction_model.transmitter.set_polarization_type(PolarizationType.LINEAR)
+# -
 
 # Next, specify the receiver polarization. Enable polarization on the receiver:
 
 multifunction_model.receiver.enable_polarization = True
 
-# Verify that the polarization is set to linear:
+# Then, set the receiver polarization to linear as well:
 
-multifunction_model.receiver.polarization.type
+multifunction_model.receiver.set_polarization_type(PolarizationType.LINEAR)
 
 # Finally, add additional gain to the radar. In this scenario, it is necessary to model gains and losses that affect performance but are not defined using built-in analytical models. When the transmitted signal returns to the receiver, the system adds a separate gain to the signal.
 
