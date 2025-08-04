@@ -275,6 +275,8 @@ class WidgetBase(RemoteFrameBuffer):
 
         self._rfb.set_host(self._rfbHost)
 
+        self._building_examples = os.getenv("BUILD_EXAMPLES", "false") == "true"
+
         self.mouse_callbacks = [
             [
                 self._rfb.notify_left_button_down,
@@ -398,7 +400,7 @@ class WidgetBase(RemoteFrameBuffer):
         animation_control.play_forward()
         self.show()
 
-    def _repr_mimebundle_(self, include=None, exclude=None):
+    def _repr_mimebundle_(self, **kwargs):
         """Return the desired MIME type representation.
 
         The MIME type representation is a dictionary relating MIME types to
@@ -409,9 +411,8 @@ class WidgetBase(RemoteFrameBuffer):
         PDF files.
 
         """
-        needs_snapshot = os.getenv("BUILD_EXAMPLES", "false") == "true"
-        if not needs_snapshot:
-            data = super()._repr_mimebundle_(include=include, exclude=exclude)
+        if not self._building_examples:
+            data = super()._repr_mimebundle_(**kwargs)
         else:
             data = {
                 "image/png": array2png(self.snapshot().data)
@@ -425,6 +426,18 @@ class WidgetBase(RemoteFrameBuffer):
                 display(self)
         else:
             return self
+
+    def snapshot(self, pixel_ratio=None, _initial=False):
+        if self._building_examples:
+            # There is currently no good way to detect when terrain and
+            # imagery fetched in background threads are finished loading,
+            # so when building the documentation to capture snapshots,
+            # just use an arbitrary delay for now and fetch a few frames
+            # before taking the snapshot
+            for _ in range(0, 4):
+                _ = self.get_frame()
+                time.sleep(0.5)
+        return super().snapshot(pixel_ratio, _initial)
 
 class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""

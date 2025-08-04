@@ -26,6 +26,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.get_frame`
             * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.animate`
             * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.show`
+            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.snapshot`
 
 Import detail
 -------------
@@ -52,5 +53,8 @@ Method detail
 
 .. py:method:: show(self, in_sidecar)
     :canonical: ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.show
+
+.. py:method:: snapshot(self, pixel_ratio, _initial)
+    :canonical: ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.snapshot
 
 
