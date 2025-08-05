@@ -5,6 +5,7 @@ apoapsis
 application
 (?i)Ansys
 Astrogator
+boresight
 directivity
 dBsm
 Dockerfiles
@@ -36,6 +37,7 @@ Precessing
 precessing
 PySTK
 Python
+sidelobe
 STK
 STK Desktop
 STKEngine
