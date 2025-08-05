@@ -325,7 +325,7 @@ jobs:
           attest-provenance: true
 
   release-pypi:
-    name: "Release ${{ env.ANSYS_STK }} to the public PyPI"
+    name: "Release project to the public PyPI"
     needs: build-libraries
     runs-on: ubuntu-latest
     environment: release
