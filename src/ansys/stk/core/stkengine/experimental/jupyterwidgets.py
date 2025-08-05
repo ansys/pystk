@@ -52,7 +52,7 @@ from ...internal.comutil import (
     Succeeded,
 )
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...stkobjects import STKObjectRoot
+from ...stkobjects import IAnimation, Scenario, STKObjectRoot
 from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
@@ -295,8 +295,11 @@ class WidgetBase(RemoteFrameBuffer):
             asyncio_timer_manager = AsyncioTimerManager()
 
         self.root = root
-        self.title = title or self.root.current_scenario.instance_name
-        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
+        if self.root.current_scenario is not None:
+            self.title = title or self.root.current_scenario.instance_name
+            scenario: Scenario = Scenario(self.root.current_scenario)
+            if scenario.scene_manager.scenes.count > 0:
+                self.camera = scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
         del self._rfb
@@ -304,6 +307,7 @@ class WidgetBase(RemoteFrameBuffer):
         del self._rfbHost
         del self._unk
         self.root = None
+        self.camera = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -390,8 +394,10 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
 
     def animate(self, time_step):
-        self.root.current_scenario.animation_settings.animation_step_value = time_step
-        self.root.execute_command("Animate * Start Loop")
+        scenario: Scenario = Scenario(self.root.current_scenario)
+        scenario.animation_settings.animation_step_value = time_step
+        animation_control: IAnimation = IAnimation(self.root)
+        animation_control.play_forward()
         self.show()
 
     def _repr_mimebundle_(self, **kwargs):
@@ -432,7 +438,6 @@ class WidgetBase(RemoteFrameBuffer):
                 _ = self.get_frame()
                 time.sleep(0.5)
         return super().snapshot(pixel_ratio, _initial)
-
 
 class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
