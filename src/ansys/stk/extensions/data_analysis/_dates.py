@@ -26,12 +26,14 @@ PySTK Date Extension.
 A set of utilities to facilitate the manipulation of dates and times in PySTK.
 """
 
+from collections.abc import Callable
+
 from matplotlib import units
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 
 from ansys.stk.core.stkobjects import STKObjectRoot
-from ansys.stk.core.stkutil import ConversionUtility, Date, Quantity
+from ansys.stk.core.stkutil import Date, Quantity
 
 
 class _STKDate:
@@ -40,6 +42,27 @@ class _STKDate:
     def __init__(self, date: Date):
         """Create an STKDate object from Date."""
         self.stk_date: Date = date
+
+    @classmethod
+    def from_value_and_format(cls, root: STKObjectRoot, value: str, unit: str = "UTCG") -> "_STKDate":
+        """Create a new STKDate object.
+
+        Parameters
+        ----------
+        root : STKObjectRoot
+            The STK object root.
+        value : str
+            String containing date to be parsed.
+        unit : str
+            String representing the unit the date is in (the default is UTCG).
+
+        Returns
+        -------
+        ansys.stk.extensions.data_analysis.dates.STKDate
+            The `STKDate` object.
+
+        """
+        return cls(root.conversion_utility.new_date(unit, value))
 
     def __sub__(self, date: "_STKDate") -> float:
         """Subtract an STKDate, returning the time difference in seconds."""
@@ -118,35 +141,12 @@ class _STKDate:
         """
         return self.stk_date.format(unit)
 
-
-class _STKDateFactory:
-    """Factory class to create STKDate objects."""
-    def __init__(self, root: STKObjectRoot):
-        """Create STKDateFactory."""
-        self.conversion_utility : ConversionUtility = root.conversion_utility
-
-    def new_date(self, value: str, unit: str = "UTCG") -> _STKDate:
-        """Create a new STKDate object.
-
-        Parameters
-        ----------
-        value : str
-            String containing date to be parsed.
-        unit : str
-            String representing the unit the date is in (the default is UTCG).
-
-        Returns
-        -------
-        ansys.stk.extensions.data_analysis.dates.STKDate
-            The `STKDate` object.
-
-        """
-        return _STKDate(self.conversion_utility.new_date(unit, value))
-
 class _STKDateConverter(units.ConversionInterface):
-        def __init__(self, stk_date_factory: _STKDateFactory, time_difference: float):
-            self.stk_date_factory = stk_date_factory
+        def __init__(self, root: STKObjectRoot, time_difference: float, unit_abbreviation: str, formatter: Callable[[float, float], str]):
+            self.root = root
             self.time_difference = time_difference
+            self.unit_abbreviation = unit_abbreviation
+            self.formatter = formatter
             super().__init__()
 
         def default_units(self, x, axis):
@@ -166,11 +166,11 @@ class _STKDateConverter(units.ConversionInterface):
 
         def axisinfo(self, unit, axis):
             """Return major and minor tick locators and formatters."""
-            def get_utcg_from_epsec(epsec : float):
-                return (self.stk_date_factory.new_date(str(epsec), 'EpSec')).get_utcg()
+            def get_formatted_date_from_epsec(epsec : float):
+                return (_STKDate.from_value_and_format(self.root, str(epsec), 'EpSec')).format(self.unit_abbreviation)
 
-            def formatter(x : float, pos : float):
-                utcg = get_utcg_from_epsec(x)
+            def utcg_formatter(x : float, pos : float):
+                utcg = get_formatted_date_from_epsec(x)
                 # One second
                 if  self.time_difference < 1:
                     return utcg.rsplit(' ', maxsplit=1)[-1]
@@ -185,6 +185,16 @@ class _STKDateConverter(units.ConversionInterface):
                     return utcg.rsplit(' ', maxsplit=2)[0]
                 else:
                     return utcg.split(' ', maxsplit=1)[-1].rsplit(' ', maxsplit=1)[0]
+
+            def default_formatter(x : float, pos : float):
+                return get_formatted_date_from_epsec(x)
+
+            if self.formatter:
+                formatter = self.formatter
+            elif self.unit_abbreviation == "UTCG":
+                formatter = utcg_formatter
+            else:
+                formatter = default_formatter
 
             return units.AxisInfo(
                 majfmt=FuncFormatter(formatter)
