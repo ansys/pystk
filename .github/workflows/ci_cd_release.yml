@@ -326,7 +326,7 @@ jobs:
 
   release-pypi:
     name: "Release project to the public PyPI"
-    needs: build-libraries
+    needs: build-library
     runs-on: ubuntu-latest
     environment: release
     permissions:
