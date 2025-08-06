@@ -345,7 +345,7 @@ jobs:
         with:
           repository-url: "https://upload.pypi.org/legacy/"
           print-hash: true
-          packages-dir: ${{ env.PACKAGE_NAME }}-artifacts
+          packages-dir: ${{ env.ANSYS_STK }}-artifacts
           skip-existing: false
 
   release-github:
