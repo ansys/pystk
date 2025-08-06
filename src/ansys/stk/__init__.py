@@ -27,7 +27,7 @@ The next generation Python API for Systems Tool Kit (STK).
 """
 
 
-__version__ = "0.1.dev0"
+__version__ = "0.1.1"
 """Current version of PySTK."""
 
 __all__ = ["__version__"]
