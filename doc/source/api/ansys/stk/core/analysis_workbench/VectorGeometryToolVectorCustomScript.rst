@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.initialization_script_file`
+              - Specify an initialization script file (optional). The initialization script is run once, at the beginning of the calculation.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.reference_axes`
               - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.script_file`
               - Specify a script file.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.initialization_script_file`
-              - Specify an initialization script file (optional). The initialization script is run once, at the beginning of the calculation.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: initialization_script_file
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.initialization_script_file
+    :type: str
+
+    Specify an initialization script file (optional). The initialization script is run once, at the beginning of the calculation.
+
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.reference_axes
     :type: VectorGeometryToolAxesReference
@@ -51,11 +57,5 @@ Property detail
     :type: str
 
     Specify a script file.
-
-.. py:property:: initialization_script_file
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCustomScript.initialization_script_file
-    :type: str
-
-    Specify an initialization script file (optional). The initialization script is run once, at the beginning of the calculation.
 
 

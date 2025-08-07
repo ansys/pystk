@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.TextOverlayFactory.initialize`
               - Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels.
-            * - :py:attr:`~ansys.stk.core.graphics.TextOverlayFactory.initialize_with_xy_width_height`
-              - Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.TextOverlayFactory.initialize_with_position_size`
               - Initialize the overlay with the specified position and size.
             * - :py:attr:`~ansys.stk.core.graphics.TextOverlayFactory.initialize_with_width_height_units`
               - Initialize the overlay with the specified position and size.
+            * - :py:attr:`~ansys.stk.core.graphics.TextOverlayFactory.initialize_with_xy_width_height`
+              - Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
 
 Import detail
@@ -48,28 +48,6 @@ Method detail
     :Parameters:
 
         **font** : :obj:`~GraphicsFont`
-
-
-    :Returns:
-
-        :obj:`~TextOverlay`
-
-.. py:method:: initialize_with_xy_width_height(self, font: GraphicsFont, x_pixels: float, y_pixels: float, width_pixels: float, height_pixels: float) -> TextOverlay
-    :canonical: ansys.stk.core.graphics.TextOverlayFactory.initialize_with_xy_width_height
-
-    Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
-
-    :Parameters:
-
-        **font** : :obj:`~GraphicsFont`
-
-        **x_pixels** : :obj:`~float`
-
-        **y_pixels** : :obj:`~float`
-
-        **width_pixels** : :obj:`~float`
-
-        **height_pixels** : :obj:`~float`
 
 
     :Returns:
@@ -110,6 +88,28 @@ Method detail
         **height** : :obj:`~float`
 
         **height_unit** : :obj:`~ScreenOverlayUnit`
+
+
+    :Returns:
+
+        :obj:`~TextOverlay`
+
+.. py:method:: initialize_with_xy_width_height(self, font: GraphicsFont, x_pixels: float, y_pixels: float, width_pixels: float, height_pixels: float) -> TextOverlay
+    :canonical: ansys.stk.core.graphics.TextOverlayFactory.initialize_with_xy_width_height
+
+    Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
+
+    :Parameters:
+
+        **font** : :obj:`~GraphicsFont`
+
+        **x_pixels** : :obj:`~float`
+
+        **y_pixels** : :obj:`~float`
+
+        **width_pixels** : :obj:`~float`
+
+        **height_pixels** : :obj:`~float`
 
 
     :Returns:

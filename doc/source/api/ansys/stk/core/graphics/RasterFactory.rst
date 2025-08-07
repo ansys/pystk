@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_raster`
+              - Initialize a raster from another raster.
             * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri`
               - Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
             * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri_xy_width_and_height`
               - Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
-            * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_raster`
-              - Initialize a raster from another raster.
 
 
 Import detail
@@ -37,6 +37,20 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
+    :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_raster
+
+    Initialize a raster from another raster.
+
+    :Parameters:
+
+        **raster** : :obj:`~IRaster`
+
+
+    :Returns:
+
+        :obj:`~IRaster`
 
 .. py:method:: initialize_with_string_uri(self, uri: str) -> IRaster
     :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri
@@ -68,20 +82,6 @@ Method detail
         **width** : :obj:`~int`
 
         **height** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~IRaster`
-
-.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
-    :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_raster
-
-    Initialize a raster from another raster.
-
-    :Parameters:
-
-        **raster** : :obj:`~IRaster`
 
 
     :Returns:

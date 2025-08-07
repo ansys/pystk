@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.type`
-              - Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.tolerance`
-              - Get the tolerance which determines how accurate integral is computed by finding relative difference between refined and unrefined integral evaluations. Only available if Adaptive Lobatto is selected as the integral type.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.maximum_iterations`
               - Get the number of iteration which determines how many refinement iterations are allowed. Only available if Adaptive Lobatto is selected as the integral type.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.tolerance`
+              - Get the tolerance which determines how accurate integral is computed by finding relative difference between refined and unrefined integral evaluations. Only available if Adaptive Lobatto is selected as the integral type.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.type`
+              - Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.type
-    :type: QuadratureType
+.. py:property:: maximum_iterations
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.maximum_iterations
+    :type: int
 
-    Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
+    Get the number of iteration which determines how many refinement iterations are allowed. Only available if Adaptive Lobatto is selected as the integral type.
 
 .. py:property:: tolerance
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.tolerance
@@ -52,10 +52,10 @@ Property detail
 
     Get the tolerance which determines how accurate integral is computed by finding relative difference between refined and unrefined integral evaluations. Only available if Adaptive Lobatto is selected as the integral type.
 
-.. py:property:: maximum_iterations
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.maximum_iterations
-    :type: int
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolIntegralBasic.type
+    :type: QuadratureType
 
-    Get the number of iteration which determines how many refinement iterations are allowed. Only available if Adaptive Lobatto is selected as the integral type.
+    Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
 
 

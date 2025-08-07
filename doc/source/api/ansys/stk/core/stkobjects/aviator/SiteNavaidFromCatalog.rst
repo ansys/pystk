@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_as_site`
+              - Get the site interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_catalog_navaid`
               - Get the catalog navaid.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.set_catalog_navaid`
               - Set the catalog navaid.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_as_site`
-              - Get the site interface.
 
 
 Import detail
@@ -39,6 +39,15 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_as_site
+
+    Get the site interface.
+
+    :Returns:
+
+        :obj:`~ISite`
 
 .. py:method:: get_catalog_navaid(self) -> ICatalogNavaid
     :canonical: ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_catalog_navaid
@@ -62,13 +71,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_as_site(self) -> ISite
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.get_as_site
-
-    Get the site interface.
-
-    :Returns:
-
-        :obj:`~ISite`
 

@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.IProjection.position`
-              - Get or set the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
-            * - :py:attr:`~ansys.stk.core.graphics.IProjection.orientation`
-              - Get or set the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.far_plane`
+              - Get or set the far plane associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_horizontal`
               - Get or set the horizontal field of view associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_vertical`
               - Get or set the vertical field of view associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.near_plane`
               - Get or set the near plane associated with the projection.
-            * - :py:attr:`~ansys.stk.core.graphics.IProjection.far_plane`
-              - Get or set the far plane associated with the projection.
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.orientation`
+              - Get or set the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.position`
+              - Get or set the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
 
 
 Import detail
@@ -43,17 +43,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: position
-    :canonical: ansys.stk.core.graphics.IProjection.position
-    :type: list
+.. py:property:: far_plane
+    :canonical: ansys.stk.core.graphics.IProjection.far_plane
+    :type: float
 
-    Get or set the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
-
-.. py:property:: orientation
-    :canonical: ansys.stk.core.graphics.IProjection.orientation
-    :type: IOrientation
-
-    Get or set the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
+    Get or set the far plane associated with the projection.
 
 .. py:property:: field_of_view_horizontal
     :canonical: ansys.stk.core.graphics.IProjection.field_of_view_horizontal
@@ -73,10 +67,16 @@ Property detail
 
     Get or set the near plane associated with the projection.
 
-.. py:property:: far_plane
-    :canonical: ansys.stk.core.graphics.IProjection.far_plane
-    :type: float
+.. py:property:: orientation
+    :canonical: ansys.stk.core.graphics.IProjection.orientation
+    :type: IOrientation
 
-    Get or set the far plane associated with the projection.
+    Get or set the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.graphics.IProjection.position
+    :type: list
+
+    Get or set the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
 
 

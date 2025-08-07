@@ -29,30 +29,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.input_scalar`
-              - The input scalar calculation.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.compute_as_average`
               - Specify whether the resulting integral value is divided by its time span to generate average value instead of integral.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.custom_time_limits`
+              - The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.input_scalar`
+              - The input scalar calculation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integral`
+              - The numerical integration method.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integration_window_type`
               - The integration window, or accumulation, type.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.interpolation`
+              - Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.keep_constant_outside_time_limits`
+              - If true, the integral's integrand value is replaced by a constant 0 so that the integral remains constant over the gaps in integration.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.sampling`
+              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.save_data_option`
+              - Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.start_offset`
               - Set the offset with respect to current time to define the start of the sliding window, used when IntegrationWindowType is set to Sliding Window.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.stop_offset`
               - Set the offset with respect to current time to define the stop of the sliding window, used when IntegrationWindowType is set to Sliding Window.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.use_custom_time_limits`
               - Specify whether to use custom interval list (CustomTimeLimits).
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.custom_time_limits`
-              - The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.save_data_option`
-              - Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.interpolation`
-              - Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.sampling`
-              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integral`
-              - The numerical integration method.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.keep_constant_outside_time_limits`
-              - If true, the integral's integrand value is replaced by a constant 0 so that the integral remains constant over the gaps in integration.
 
 
 
@@ -67,23 +67,59 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: input_scalar
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.input_scalar
-    :type: ICalculationToolScalar
-
-    The input scalar calculation.
-
 .. py:property:: compute_as_average
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.compute_as_average
     :type: bool
 
     Specify whether the resulting integral value is divided by its time span to generate average value instead of integral.
 
+.. py:property:: custom_time_limits
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.custom_time_limits
+    :type: ITimeToolTimeIntervalList
+
+    The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
+
+.. py:property:: input_scalar
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.input_scalar
+    :type: ICalculationToolScalar
+
+    The input scalar calculation.
+
+.. py:property:: integral
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integral
+    :type: IAnalysisWorkbenchIntegral
+
+    The numerical integration method.
+
 .. py:property:: integration_window_type
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integration_window_type
     :type: IntegrationWindowType
 
     The integration window, or accumulation, type.
+
+.. py:property:: interpolation
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.interpolation
+    :type: IAnalysisWorkbenchInterpolator
+
+    Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
+
+.. py:property:: keep_constant_outside_time_limits
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.keep_constant_outside_time_limits
+    :type: bool
+
+    If true, the integral's integrand value is replaced by a constant 0 so that the integral remains constant over the gaps in integration.
+
+.. py:property:: sampling
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.sampling
+    :type: IAnalysisWorkbenchSampling
+
+    The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
+
+.. py:property:: save_data_option
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.save_data_option
+    :type: SaveDataType
+
+    Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
 
 .. py:property:: start_offset
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.start_offset
@@ -103,51 +139,9 @@ Property detail
 
     Specify whether to use custom interval list (CustomTimeLimits).
 
-.. py:property:: custom_time_limits
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.custom_time_limits
-    :type: ITimeToolTimeIntervalList
-
-    The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
-
-.. py:property:: save_data_option
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.save_data_option
-    :type: SaveDataType
-
-    Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
-
-.. py:property:: interpolation
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.interpolation
-    :type: IAnalysisWorkbenchInterpolator
-
-    Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
-
-.. py:property:: sampling
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.sampling
-    :type: IAnalysisWorkbenchSampling
-
-    The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
-
-.. py:property:: integral
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.integral
-    :type: IAnalysisWorkbenchIntegral
-
-    The numerical integration method.
-
-.. py:property:: keep_constant_outside_time_limits
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarIntegral.keep_constant_outside_time_limits
-    :type: bool
-
-    If true, the integral's integrand value is replaced by a constant 0 so that the integral remains constant over the gaps in integration.
-
 
 Method detail
 -------------
-
-
-
-
-
-
 
 
 
@@ -182,4 +176,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 

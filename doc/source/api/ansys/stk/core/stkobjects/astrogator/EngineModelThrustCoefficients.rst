@@ -18,6 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.b7`
+              - B7 base. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.c0`
               - C0 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.c1`
@@ -42,8 +44,6 @@ Overview
               - E6 exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.e7`
               - E7 exponent. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.b7`
-              - B7 base. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.k0`
               - K0 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.k1`
@@ -63,6 +63,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: b7
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.b7
+    :type: float
+
+    B7 base. Dimensionless.
 
 .. py:property:: c0
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.c0
@@ -135,12 +141,6 @@ Property detail
     :type: float
 
     E7 exponent. Dimensionless.
-
-.. py:property:: b7
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.b7
-    :type: float
-
-    B7 base. Dimensionless.
 
 .. py:property:: k0
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients.k0

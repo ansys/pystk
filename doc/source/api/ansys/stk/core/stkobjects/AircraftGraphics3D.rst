@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.proximity`
-              - Get the aircraft's 3D proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours`
-              - Get the aircraft's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.covariance_pointing_contour`
               - Get the aircraft's 3D covariance pointing properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.drop_lines`
               - Return an interface allowing to configure vehicle's drop lines.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.vapor_trail`
-              - Vapor trail attributes.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours`
+              - Get the aircraft's 3D elevation contour properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.proximity`
+              - Get the aircraft's 3D proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.radar_cross_section`
               - Get the radar cross section graphics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.vapor_trail`
+              - Vapor trail attributes.
 
 
 
@@ -46,18 +46,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: proximity
-    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.proximity
-    :type: VehicleGraphics3DRouteProximity
-
-    Get the aircraft's 3D proximity properties.
-
-.. py:property:: elevation_contours
-    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours
-    :type: VehicleGraphics3DElevationContours
-
-    Get the aircraft's 3D elevation contour properties.
-
 .. py:property:: covariance_pointing_contour
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.covariance_pointing_contour
     :type: VehicleGraphics3DCovariancePointingContour
@@ -70,16 +58,28 @@ Property detail
 
     Return an interface allowing to configure vehicle's drop lines.
 
-.. py:property:: vapor_trail
-    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.vapor_trail
-    :type: Graphics3DVaporTrail
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
-    Vapor trail attributes.
+    Get the aircraft's 3D elevation contour properties.
+
+.. py:property:: proximity
+    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.proximity
+    :type: VehicleGraphics3DRouteProximity
+
+    Get the aircraft's 3D proximity properties.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
     Get the radar cross section graphics interface.
+
+.. py:property:: vapor_trail
+    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.vapor_trail
+    :type: Graphics3DVaporTrail
+
+    Vapor trail attributes.
 
 

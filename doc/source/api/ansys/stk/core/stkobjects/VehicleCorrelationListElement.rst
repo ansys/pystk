@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCorrelationListElement.row`
-              - Consider parameter for row.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCorrelationListElement.column`
               - Consider parameter for column.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCorrelationListElement.row`
+              - Consider parameter for row.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCorrelationListElement.value`
               - Cross correlation value. Dimensionless.
 
@@ -38,17 +38,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: row
-    :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.row
-    :type: VehicleCorrelationListType
-
-    Consider parameter for row.
-
 .. py:property:: column
     :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.column
     :type: VehicleCorrelationListType
 
     Consider parameter for column.
+
+.. py:property:: row
+    :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.row
+    :type: VehicleCorrelationListType
+
+    Consider parameter for row.
 
 .. py:property:: value
     :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.value

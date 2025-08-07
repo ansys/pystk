@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize`
               - Initialize a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time.
-            * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times`
-              - Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
             * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_time_interval`
               - Initialize a time display condition with a time interval.
+            * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times`
+              - Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
 
 
 Import detail
@@ -47,6 +47,20 @@ Method detail
 
         :obj:`~TimeIntervalDisplayCondition`
 
+.. py:method:: initialize_with_time_interval(self, time_interval: list) -> TimeIntervalDisplayCondition
+    :canonical: ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_time_interval
+
+    Initialize a time display condition with a time interval.
+
+    :Parameters:
+
+        **time_interval** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~TimeIntervalDisplayCondition`
+
 .. py:method:: initialize_with_times(self, minimum_time: Date, maximum_time: Date) -> TimeIntervalDisplayCondition
     :canonical: ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times
 
@@ -57,20 +71,6 @@ Method detail
         **minimum_time** : :obj:`~Date`
 
         **maximum_time** : :obj:`~Date`
-
-
-    :Returns:
-
-        :obj:`~TimeIntervalDisplayCondition`
-
-.. py:method:: initialize_with_time_interval(self, time_interval: list) -> TimeIntervalDisplayCondition
-    :canonical: ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_time_interval
-
-    Initialize a time display condition with a time interval.
-
-    :Parameters:
-
-        **time_interval** : :obj:`~list`
 
 
     :Returns:

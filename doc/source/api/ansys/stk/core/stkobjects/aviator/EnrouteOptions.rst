@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.EnrouteOptions.use_max_speed_turns`
-              - Opt whether to use the max speed turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.EnrouteOptions.max_turn_radius_factor`
               - Get or set the maximum turn radius factor.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.EnrouteOptions.use_max_speed_turns`
+              - Opt whether to use the max speed turns.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_max_speed_turns
-    :canonical: ansys.stk.core.stkobjects.aviator.EnrouteOptions.use_max_speed_turns
-    :type: bool
-
-    Opt whether to use the max speed turns.
-
 .. py:property:: max_turn_radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.EnrouteOptions.max_turn_radius_factor
     :type: float
 
     Get or set the maximum turn radius factor.
+
+.. py:property:: use_max_speed_turns
+    :canonical: ansys.stk.core.stkobjects.aviator.EnrouteOptions.use_max_speed_turns
+    :type: bool
+
+    Opt whether to use the max speed turns.
 
 

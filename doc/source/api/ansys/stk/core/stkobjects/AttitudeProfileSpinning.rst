@@ -24,10 +24,10 @@ Overview
               - Get the spin axis in the body frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinning.inertial`
               - Get the spin axis in the inertial frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinning.rate`
-              - Spin rate: specified in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinning.offset`
               - Initial spin offset: an angular measure of the difference between the satellite orientation at the offset epoch from the orientation achieved by orienting the spin axis. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinning.rate`
+              - Spin rate: specified in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinning.smart_epoch`
               - Epoch of the offset.
 
@@ -56,17 +56,17 @@ Property detail
 
     Get the spin axis in the inertial frame.
 
-.. py:property:: rate
-    :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinning.rate
-    :type: float
-
-    Spin rate: specified in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
-
 .. py:property:: offset
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinning.offset
     :type: float
 
     Initial spin offset: an angular measure of the difference between the satellite orientation at the offset epoch from the orientation achieved by orienting the spin axis. Uses Angle Dimension.
+
+.. py:property:: rate
+    :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinning.rate
+    :type: float
+
+    Spin rate: specified in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinning.smart_epoch

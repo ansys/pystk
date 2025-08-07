@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.set_path`
-              - Set a new vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.set_vector`
-              - Set a new vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.get_vector`
               - Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.set_path`
+              - Set a new vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.set_vector`
+              - Set a new vector.
 
 
 Import detail
@@ -41,6 +41,29 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: get_vector(self) -> IVectorGeometryToolVector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.get_vector
+
+    Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolVector`
+
+.. py:method:: has_cyclic_dependency(self, vector: IVectorGeometryToolVector) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.has_cyclic_dependency
+
+    Test whether the input component and the target component form a cyclic dependency.
+
+    :Parameters:
+
+        **vector** : :obj:`~IVectorGeometryToolVector`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 .. py:method:: set_path(self, path: str) -> None
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.set_path
@@ -69,27 +92,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_vector(self) -> IVectorGeometryToolVector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.get_vector
-
-    Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
-
-    :Returns:
-
-        :obj:`~IVectorGeometryToolVector`
-
-.. py:method:: has_cyclic_dependency(self, vector: IVectorGeometryToolVector) -> bool
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorReference.has_cyclic_dependency
-
-    Test whether the input component and the target component form a cyclic dependency.
-
-    :Parameters:
-
-        **vector** : :obj:`~IVectorGeometryToolVector`
-
-
-    :Returns:
-
-        :obj:`~bool`
 

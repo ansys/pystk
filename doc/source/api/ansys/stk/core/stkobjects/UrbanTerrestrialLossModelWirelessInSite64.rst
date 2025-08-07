@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature`
-              - Get or set the surface temperature.
-            * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods`
-              - Get an array of supported calculation methods.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.calculation_method`
               - Get or set the calculation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.enable_ground_reflection`
               - Get or set the option enabling the ground reflection.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.geometry_data`
               - Get the geometry data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods`
+              - Get an array of supported calculation methods.
+            * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature`
+              - Get or set the surface temperature.
 
 
 
@@ -43,18 +43,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: surface_temperature
-    :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature
-    :type: float
-
-    Get or set the surface temperature.
-
-.. py:property:: supported_calculation_methods
-    :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods
-    :type: list
-
-    Get an array of supported calculation methods.
 
 .. py:property:: calculation_method
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.calculation_method
@@ -73,5 +61,17 @@ Property detail
     :type: WirelessInSite64GeometryData
 
     Get the geometry data.
+
+.. py:property:: supported_calculation_methods
+    :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods
+    :type: list
+
+    Get an array of supported calculation methods.
+
+.. py:property:: surface_temperature
+    :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature
+    :type: float
+
+    Get or set the surface temperature.
 
 

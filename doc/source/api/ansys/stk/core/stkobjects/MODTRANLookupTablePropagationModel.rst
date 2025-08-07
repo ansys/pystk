@@ -31,14 +31,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.aerosol_model_type`
               - Get or set the aerosol model type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility`
-              - Get or set the visibility.
             * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.relative_humidity`
               - Get or set the relative humidity.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature`
-              - Get or set the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.supported_aerosol_models`
               - Get an array of supported aerosol model names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature`
+              - Get or set the surface temperature.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility`
+              - Get or set the visibility.
 
 
 
@@ -59,23 +59,11 @@ Property detail
 
     Get or set the aerosol model type.
 
-.. py:property:: visibility
-    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility
-    :type: float
-
-    Get or set the visibility.
-
 .. py:property:: relative_humidity
     :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.relative_humidity
     :type: float
 
     Get or set the relative humidity.
-
-.. py:property:: surface_temperature
-    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature
-    :type: float
-
-    Get or set the surface temperature.
 
 .. py:property:: supported_aerosol_models
     :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.supported_aerosol_models
@@ -83,14 +71,21 @@ Property detail
 
     Get an array of supported aerosol model names.
 
+.. py:property:: surface_temperature
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature
+    :type: float
+
+    Get or set the surface temperature.
+
+.. py:property:: visibility
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility
+    :type: float
+
+    Get or set the visibility.
+
 
 Method detail
 -------------
-
-
-
-
-
 
 
 
@@ -109,4 +104,9 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
 

@@ -52,7 +52,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: find_times(self) -> TimeToolTimeArrayFindTimesResult
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeArray.find_times
 
@@ -61,4 +60,5 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolTimeArrayFindTimesResult`
+
 

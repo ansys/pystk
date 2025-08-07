@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item`
-              - Return the given automatic sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.add`
               - Create a new sequence.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove`
-              - Remove a sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.get_item_by_index`
               - Retrieve the given automatic sequence found by the index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.get_item_by_name`
               - Retrieve the given automatic sequence found by the name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item`
+              - Return the given automatic sequence.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove`
+              - Remove a sequence.
 
     .. tab-item:: Properties
 
@@ -69,20 +69,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> AutomaticSequence
-    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item
-
-    Return the given automatic sequence.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~AutomaticSequence`
-
 .. py:method:: add(self, name: str) -> AutomaticSequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.add
 
@@ -96,21 +82,6 @@ Method detail
     :Returns:
 
         :obj:`~AutomaticSequence`
-
-.. py:method:: remove(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove
-
-    Remove a sequence.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 
 
 .. py:method:: get_item_by_index(self, index: int) -> AutomaticSequence
@@ -140,4 +111,33 @@ Method detail
     :Returns:
 
         :obj:`~AutomaticSequence`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> AutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item
+
+    Return the given automatic sequence.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~AutomaticSequence`
+
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove
+
+    Remove a sequence.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

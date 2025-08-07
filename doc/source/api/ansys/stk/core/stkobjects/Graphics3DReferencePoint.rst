@@ -20,26 +20,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type`
-              - Specify the arrow type used to represent the geometric element.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values`
-              - Displays right-ascension and declination values with the selected point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.right_ascension_declination_units_abbreviation`
-              - Right Ascension Declination Unit Abrv.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_magnitude_value`
-              - If selected, the magnitude value is displayed on the selected geometric element.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.magnitude_units_abbreviation`
-              - The Magnitude Unit abrv.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_cartesian_value`
-              - If selected, the cartesian value is displayed on the selected geometric element.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.cartesian_units_abbreviation`
-              - Cartesian Unit Abrv uses Distance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.system`
-              - The name of the system used to define the coordinate frame associated with the selected RefCrdn.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.size`
-              - Get or set the size of the selected geometric plane or point. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.available_systems`
               - Return an array of available Systems.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.cartesian_units_abbreviation`
+              - Cartesian Unit Abrv uses Distance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.magnitude_units_abbreviation`
+              - The Magnitude Unit abrv.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.right_ascension_declination_units_abbreviation`
+              - Right Ascension Declination Unit Abrv.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_cartesian_value`
+              - If selected, the cartesian value is displayed on the selected geometric element.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_magnitude_value`
+              - If selected, the magnitude value is displayed on the selected geometric element.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values`
+              - Displays right-ascension and declination values with the selected point.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.size`
+              - Get or set the size of the selected geometric plane or point. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.system`
+              - The name of the system used to define the coordinate frame associated with the selected RefCrdn.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type`
+              - Specify the arrow type used to represent the geometric element.
 
 
 
@@ -54,41 +54,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: trajectory_type
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type
-    :type: TrajectoryType
+.. py:property:: available_systems
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.available_systems
+    :type: list
 
-    Specify the arrow type used to represent the geometric element.
-
-.. py:property:: show_right_ascension_declination_values
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values
-    :type: bool
-
-    Displays right-ascension and declination values with the selected point.
-
-.. py:property:: right_ascension_declination_units_abbreviation
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.right_ascension_declination_units_abbreviation
-    :type: str
-
-    Right Ascension Declination Unit Abrv.
-
-.. py:property:: show_magnitude_value
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_magnitude_value
-    :type: bool
-
-    If selected, the magnitude value is displayed on the selected geometric element.
-
-.. py:property:: magnitude_units_abbreviation
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.magnitude_units_abbreviation
-    :type: str
-
-    The Magnitude Unit abrv.
-
-.. py:property:: show_cartesian_value
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_cartesian_value
-    :type: bool
-
-    If selected, the cartesian value is displayed on the selected geometric element.
+    Return an array of available Systems.
 
 .. py:property:: cartesian_units_abbreviation
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.cartesian_units_abbreviation
@@ -96,11 +66,35 @@ Property detail
 
     Cartesian Unit Abrv uses Distance.
 
-.. py:property:: system
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.system
+.. py:property:: magnitude_units_abbreviation
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.magnitude_units_abbreviation
     :type: str
 
-    The name of the system used to define the coordinate frame associated with the selected RefCrdn.
+    The Magnitude Unit abrv.
+
+.. py:property:: right_ascension_declination_units_abbreviation
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.right_ascension_declination_units_abbreviation
+    :type: str
+
+    Right Ascension Declination Unit Abrv.
+
+.. py:property:: show_cartesian_value
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_cartesian_value
+    :type: bool
+
+    If selected, the cartesian value is displayed on the selected geometric element.
+
+.. py:property:: show_magnitude_value
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_magnitude_value
+    :type: bool
+
+    If selected, the magnitude value is displayed on the selected geometric element.
+
+.. py:property:: show_right_ascension_declination_values
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values
+    :type: bool
+
+    Displays right-ascension and declination values with the selected point.
 
 .. py:property:: size
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.size
@@ -108,10 +102,16 @@ Property detail
 
     Get or set the size of the selected geometric plane or point. Dimensionless.
 
-.. py:property:: available_systems
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.available_systems
-    :type: list
+.. py:property:: system
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.system
+    :type: str
 
-    Return an array of available Systems.
+    The name of the system used to define the coordinate frame associated with the selected RefCrdn.
+
+.. py:property:: trajectory_type
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type
+    :type: TrajectoryType
+
+    Specify the arrow type used to represent the geometric element.
 
 

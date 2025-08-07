@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.minimum_latitude`
-              - Minimum latitude used to define the longitude line. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.maximum_latitude`
-              - Maximum latitude used to define the longitude line. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.longitude`
               - Longitude of the meridian defining the longitude line. Uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.maximum_latitude`
+              - Maximum latitude used to define the longitude line. Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.minimum_latitude`
+              - Minimum latitude used to define the longitude line. Uses Latitude Dimension.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_latitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.minimum_latitude
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.longitude
     :type: typing.Any
 
-    Minimum latitude used to define the longitude line. Uses Latitude Dimension.
+    Longitude of the meridian defining the longitude line. Uses Longitude Dimension.
 
 .. py:property:: maximum_latitude
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.maximum_latitude
@@ -52,10 +52,10 @@ Property detail
 
     Maximum latitude used to define the longitude line. Uses Latitude Dimension.
 
-.. py:property:: longitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.longitude
+.. py:property:: minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLongitudeLine.minimum_latitude
     :type: typing.Any
 
-    Longitude of the meridian defining the longitude line. Uses Longitude Dimension.
+    Minimum latitude used to define the longitude line. Uses Latitude Dimension.
 
 

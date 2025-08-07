@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.get_dafif_item`
-              - Get the DAFIF item with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.get_dafif_item`
+              - Get the DAFIF item with the given name.
 
     .. tab-item:: Properties
 
@@ -81,6 +81,19 @@ Property detail
 Method detail
 -------------
 
+
+
+
+
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.DAFIFSource.get_as_catalog_source
+
+    Get the catalog source interface for this object.
+
+    :Returns:
+
+        :obj:`~ICatalogSource`
+
 .. py:method:: get_dafif_item(self, name: str) -> IDAFIFItem
     :canonical: ansys.stk.core.stkobjects.aviator.DAFIFSource.get_dafif_item
 
@@ -95,17 +108,4 @@ Method detail
 
         :obj:`~IDAFIFItem`
 
-
-
-
-
-
-.. py:method:: get_as_catalog_source(self) -> ICatalogSource
-    :canonical: ansys.stk.core.stkobjects.aviator.DAFIFSource.get_as_catalog_source
-
-    Get the catalog source interface for this object.
-
-    :Returns:
-
-        :obj:`~ICatalogSource`
 

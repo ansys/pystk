@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.is_valid`
               - Indicate whether the result object is valid.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.values`
-              - Computed values.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.rates`
               - Computed rates.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.values`
+              - Computed values.
 
 
 
@@ -44,16 +44,16 @@ Property detail
 
     Indicate whether the result object is valid.
 
-.. py:property:: values
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.values
-    :type: list
-
-    Computed values.
-
 .. py:property:: rates
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.rates
     :type: list
 
     Computed rates.
+
+.. py:property:: values
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetEvaluateWithRateResult.values
+    :type: list
+
+    Computed values.
 
 

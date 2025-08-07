@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type`
-              - Get or set the component reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component`
               - Get the component interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type`
+              - Get or set the component reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.supported_components`
               - Get the list of supported component names.
 
@@ -46,17 +46,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_type
-    :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type
-    :type: ComponentLinkEmbedControlReferenceType
-
-    Get or set the component reference type.
-
 .. py:property:: component
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component
     :type: IComponentInfo
 
     Get the component interface.
+
+.. py:property:: reference_type
+    :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type
+    :type: ComponentLinkEmbedControlReferenceType
+
+    Get or set the component reference type.
 
 .. py:property:: supported_components
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.supported_components
@@ -67,7 +67,6 @@ Property detail
 
 Method detail
 -------------
-
 
 
 
@@ -85,4 +84,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

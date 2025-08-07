@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.name`
-              - Get or set the image location name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.latitude`
               - Get or set the location latitude.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.longitude`
               - Get or set the location longitude.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.name`
+              - Get or set the image location name.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.name
-    :type: str
-
-    Get or set the image location name.
-
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.latitude
     :type: float
@@ -55,5 +49,11 @@ Property detail
     :type: float
 
     Get or set the location longitude.
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation.name
+    :type: str
+
+    Get or set the image location name.
 
 

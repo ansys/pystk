@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.short_type_description`
+              - Return the short type description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.type_description`
               - Return the type description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.type_name`
               - Return the type name.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.short_type_description`
-              - Return the short type description.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: short_type_description
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.short_type_description
+    :type: str
+
+    Return the short type description.
+
 .. py:property:: type_description
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.type_description
     :type: str
@@ -49,11 +55,5 @@ Property detail
     :type: str
 
     Return the type name.
-
-.. py:property:: short_type_description
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentTypeInformation.short_type_description
-    :type: str
-
-    Return the short type description.
 
 

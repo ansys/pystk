@@ -22,22 +22,22 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.bearing`
               - Get or set the bearing value, relative to North. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length`
-              - Indicate the length of the box, along the bearing. The value must be greater than 0. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width`
-              - Indicate the width of the box, across the bearing. The value must be greater than 0. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.height`
               - Indicate the Height of the box. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length_offset`
-              - Get or set the distance to offset the box (forward or backward) along the bearing. A positive LengthOffset value moves the box forward. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width_offset`
-              - Get or set the distance to offset the box (left or right) along the bearing. A positive value moves the box to the right. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.height_offset`
               - Get or set the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.use_translucency`
-              - Specify a translucency of the object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length`
+              - Indicate the length of the box, along the bearing. The value must be greater than 0. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length_offset`
+              - Get or set the distance to offset the box (forward or backward) along the bearing. A positive LengthOffset value moves the box forward. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.translucency`
               - Get or set the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.use_translucency`
+              - Specify a translucency of the object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width`
+              - Indicate the width of the box, across the bearing. The value must be greater than 0. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width_offset`
+              - Get or set the distance to offset the box (left or right) along the bearing. A positive value moves the box to the right. Uses Distance Dimension.
 
 
 
@@ -58,35 +58,11 @@ Property detail
 
     Get or set the bearing value, relative to North. Uses Angle Dimension.
 
-.. py:property:: length
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length
-    :type: float
-
-    Indicate the length of the box, along the bearing. The value must be greater than 0. Uses Distance Dimension.
-
-.. py:property:: width
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width
-    :type: float
-
-    Indicate the width of the box, across the bearing. The value must be greater than 0. Uses Distance Dimension.
-
 .. py:property:: height
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.height
     :type: float
 
     Indicate the Height of the box. Uses Distance Dimension.
-
-.. py:property:: length_offset
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length_offset
-    :type: float
-
-    Get or set the distance to offset the box (forward or backward) along the bearing. A positive LengthOffset value moves the box forward. Uses Distance Dimension.
-
-.. py:property:: width_offset
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width_offset
-    :type: float
-
-    Get or set the distance to offset the box (left or right) along the bearing. A positive value moves the box to the right. Uses Distance Dimension.
 
 .. py:property:: height_offset
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.height_offset
@@ -94,16 +70,40 @@ Property detail
 
     Get or set the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
 
-.. py:property:: use_translucency
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.use_translucency
-    :type: bool
+.. py:property:: length
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length
+    :type: float
 
-    Specify a translucency of the object.
+    Indicate the length of the box, along the bearing. The value must be greater than 0. Uses Distance Dimension.
+
+.. py:property:: length_offset
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.length_offset
+    :type: float
+
+    Get or set the distance to offset the box (forward or backward) along the bearing. A positive LengthOffset value moves the box forward. Uses Distance Dimension.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.translucency
     :type: float
 
     Get or set the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
+
+.. py:property:: use_translucency
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.use_translucency
+    :type: bool
+
+    Specify a translucency of the object.
+
+.. py:property:: width
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width
+    :type: float
+
+    Indicate the width of the box, across the bearing. The value must be greater than 0. Uses Distance Dimension.
+
+.. py:property:: width_offset
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox.width_offset
+    :type: float
+
+    Get or set the distance to offset the box (left or right) along the bearing. A positive value moves the box to the right. Uses Distance Dimension.
 
 

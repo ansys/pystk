@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy`
-              - Get or set the propulsion strategy type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple`
-              - Get the interface for a simple propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_external`
               - Get the interface for an external file propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_ramjet`
               - Get the interface for an Ramjet propulsion strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_turbojet`
-              - Get the interface for an Turbojet propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_rocket`
               - Get the interface for an Rocket propulsion strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple`
+              - Get the interface for a simple propulsion strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_turbojet`
+              - Get the interface for an Turbojet propulsion strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy`
+              - Get or set the propulsion strategy type.
 
 
 
@@ -44,18 +44,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: propulsion_strategy
-    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy
-    :type: MissilePropulsionStrategy
-
-    Get or set the propulsion strategy type.
-
-.. py:property:: mode_as_simple
-    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple
-    :type: MissileSimplePropulsion
-
-    Get the interface for a simple propulsion strategy.
-
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_external
     :type: MissileExternalPropulsion
@@ -68,16 +56,28 @@ Property detail
 
     Get the interface for an Ramjet propulsion strategy.
 
+.. py:property:: mode_as_rocket
+    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_rocket
+    :type: MissileRocketPropulsion
+
+    Get the interface for an Rocket propulsion strategy.
+
+.. py:property:: mode_as_simple
+    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple
+    :type: MissileSimplePropulsion
+
+    Get the interface for a simple propulsion strategy.
+
 .. py:property:: mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_turbojet
     :type: MissileTurbojetPropulsion
 
     Get the interface for an Turbojet propulsion strategy.
 
-.. py:property:: mode_as_rocket
-    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_rocket
-    :type: MissileRocketPropulsion
+.. py:property:: propulsion_strategy
+    :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy
+    :type: MissilePropulsionStrategy
 
-    Get the interface for an Rocket propulsion strategy.
+    Get or set the propulsion strategy type.
 
 

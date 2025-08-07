@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_values`
-              - Get the range values.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_count`
-              - Get the range count.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values`
-              - Get the velocity values.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count`
-              - Get the velocity count.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count`
-              - Get the pulse count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity`
               - Get the angular velocity.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count`
+              - Get the pulse count.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_count`
+              - Get the range count.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_values`
+              - Get the range values.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count`
+              - Get the velocity count.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values`
+              - Get the velocity values.
 
 
 
@@ -46,29 +46,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: range_values
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_values
-    :type: list
+.. py:property:: angular_velocity
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity
+    :type: float
 
-    Get the range values.
-
-.. py:property:: range_count
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_count
-    :type: int
-
-    Get the range count.
-
-.. py:property:: velocity_values
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values
-    :type: list
-
-    Get the velocity values.
-
-.. py:property:: velocity_count
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count
-    :type: int
-
-    Get the velocity count.
+    Get the angular velocity.
 
 .. py:property:: pulse_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.pulse_count
@@ -76,10 +58,28 @@ Property detail
 
     Get the pulse count.
 
-.. py:property:: angular_velocity
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.angular_velocity
-    :type: float
+.. py:property:: range_count
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_count
+    :type: int
 
-    Get the angular velocity.
+    Get the range count.
+
+.. py:property:: range_values
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.range_values
+    :type: list
+
+    Get the range values.
+
+.. py:property:: velocity_count
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_count
+    :type: int
+
+    Get the velocity count.
+
+.. py:property:: velocity_values
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse.velocity_values
+    :type: list
+
+    Get the velocity values.
 
 

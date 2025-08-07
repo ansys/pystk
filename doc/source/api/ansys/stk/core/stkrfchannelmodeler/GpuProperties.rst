@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.name`
-              - Get the GPU name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.compute_capability`
               - Get the GPU compute capability.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.device_id`
               - Get the GPU device ID.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.memory_gb`
+              - Get the GPU memory in GB.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.name`
+              - Get the GPU name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.processor_count`
               - Get the GPU processor count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.speed_mhz`
               - Get the GPU speed in MHz.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties.memory_gb`
-              - Get the GPU memory in GB.
 
 
 
@@ -44,12 +44,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.name
-    :type: str
-
-    Get the GPU name.
-
 .. py:property:: compute_capability
     :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.compute_capability
     :type: str
@@ -62,6 +56,18 @@ Property detail
 
     Get the GPU device ID.
 
+.. py:property:: memory_gb
+    :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.memory_gb
+    :type: float
+
+    Get the GPU memory in GB.
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.name
+    :type: str
+
+    Get the GPU name.
+
 .. py:property:: processor_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.processor_count
     :type: int
@@ -73,11 +79,5 @@ Property detail
     :type: float
 
     Get the GPU speed in MHz.
-
-.. py:property:: memory_gb
-    :canonical: ansys.stk.core.stkrfchannelmodeler.GpuProperties.memory_gb
-    :type: float
-
-    Get the GPU memory in GB.
 
 

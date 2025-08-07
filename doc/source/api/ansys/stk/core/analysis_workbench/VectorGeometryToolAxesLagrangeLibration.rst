@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.primary_central_body`
-              - Specify a primary central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.point_type`
               - Specify a lagrange point (L1, L2, etc.).
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.primary_central_body`
+              - Specify a primary central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.secondary_central_bodies`
               - Specify secondary central bodies.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: primary_central_body
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.primary_central_body
-    :type: AnalysisWorkbenchCentralBodyReference
-
-    Specify a primary central body.
-
 .. py:property:: point_type
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.point_type
     :type: LagrangeLibrationPointType
 
     Specify a lagrange point (L1, L2, etc.).
+
+.. py:property:: primary_central_body
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.primary_central_body
+    :type: AnalysisWorkbenchCentralBodyReference
+
+    Specify a primary central body.
 
 .. py:property:: secondary_central_bodies
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesLagrangeLibration.secondary_central_bodies

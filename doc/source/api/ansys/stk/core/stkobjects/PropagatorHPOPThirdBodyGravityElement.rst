@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.source`
-              - Source of 3rd-body gravity data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.gravity_value`
-              - Gravity value (if the source is user-specified. Uses Gravity Parameter Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.central_body`
               - Name of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.gravity_value`
+              - Gravity value (if the source is user-specified. Uses Gravity Parameter Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.source`
+              - Source of 3rd-body gravity data.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: source
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.source
-    :type: ThirdBodyGravitySourceType
+.. py:property:: central_body
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.central_body
+    :type: str
 
-    Source of 3rd-body gravity data.
+    Name of the central body.
 
 .. py:property:: gravity_value
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.gravity_value
@@ -50,10 +50,10 @@ Property detail
 
     Gravity value (if the source is user-specified. Uses Gravity Parameter Dimension.
 
-.. py:property:: central_body
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.central_body
-    :type: str
+.. py:property:: source
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.source
+    :type: ThirdBodyGravitySourceType
 
-    Name of the central body.
+    Source of 3rd-body gravity data.
 
 

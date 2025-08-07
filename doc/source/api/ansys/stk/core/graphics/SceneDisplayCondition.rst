@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.SceneDisplayCondition.set_display_in_scene`
-              - Allow or disallows rendering for in a particular scene for.
-            * - :py:attr:`~ansys.stk.core.graphics.SceneDisplayCondition.get_display_in_scene`
-              - Determine whether the display condition allows rendering rendering in the given scene.
             * - :py:attr:`~ansys.stk.core.graphics.SceneDisplayCondition.display_only_in_scene`
               - Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneDisplayCondition.get_display_in_scene`
+              - Determine whether the display condition allows rendering rendering in the given scene.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneDisplayCondition.set_display_in_scene`
+              - Allow or disallows rendering for in a particular scene for.
 
 
 Import detail
@@ -40,16 +40,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_display_in_scene(self, scene: Scene, on: bool) -> None
-    :canonical: ansys.stk.core.graphics.SceneDisplayCondition.set_display_in_scene
+.. py:method:: display_only_in_scene(self, scene: Scene) -> None
+    :canonical: ansys.stk.core.graphics.SceneDisplayCondition.display_only_in_scene
 
-    Allow or disallows rendering for in a particular scene for.
+    Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
 
     :Parameters:
 
         **scene** : :obj:`~Scene`
-
-        **on** : :obj:`~bool`
 
 
     :Returns:
@@ -70,14 +68,16 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: display_only_in_scene(self, scene: Scene) -> None
-    :canonical: ansys.stk.core.graphics.SceneDisplayCondition.display_only_in_scene
+.. py:method:: set_display_in_scene(self, scene: Scene, on: bool) -> None
+    :canonical: ansys.stk.core.graphics.SceneDisplayCondition.set_display_in_scene
 
-    Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
+    Allow or disallows rendering for in a particular scene for.
 
     :Parameters:
 
         **scene** : :obj:`~Scene`
+
+        **on** : :obj:`~bool`
 
 
     :Returns:

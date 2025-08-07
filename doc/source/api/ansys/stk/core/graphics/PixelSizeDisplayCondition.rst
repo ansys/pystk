@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.PixelSizeDisplayCondition.minimum_pixel_size`
-              - Get or set the minimum pixel size of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.PixelSizeDisplayCondition.maximum_pixel_size`
               - Get or set the maximum pixel size of the inclusive distance interval. Use Int32.MaxValue to ignore checking the maximum distance.
+            * - :py:attr:`~ansys.stk.core.graphics.PixelSizeDisplayCondition.minimum_pixel_size`
+              - Get or set the minimum pixel size of the inclusive distance interval.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_pixel_size
-    :canonical: ansys.stk.core.graphics.PixelSizeDisplayCondition.minimum_pixel_size
-    :type: int
-
-    Get or set the minimum pixel size of the inclusive distance interval.
-
 .. py:property:: maximum_pixel_size
     :canonical: ansys.stk.core.graphics.PixelSizeDisplayCondition.maximum_pixel_size
     :type: int
 
     Get or set the maximum pixel size of the inclusive distance interval. Use Int32.MaxValue to ignore checking the maximum distance.
+
+.. py:property:: minimum_pixel_size
+    :canonical: ansys.stk.core.graphics.PixelSizeDisplayCondition.minimum_pixel_size
+    :type: int
+
+    Get or set the minimum pixel size of the inclusive distance interval.
 
 

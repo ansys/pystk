@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add`
               - Add a calculation graph.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item`
+              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove`
               - Remove a parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove_all`
@@ -67,21 +67,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> str
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~str`
-
-
 .. py:method:: add(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add
 
@@ -95,6 +80,21 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~str`
 
 .. py:method:: remove(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove

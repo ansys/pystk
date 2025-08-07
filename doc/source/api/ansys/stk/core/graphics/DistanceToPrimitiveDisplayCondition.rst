@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.primitive`
-              - Get or set the primitive associated with this instance.
-            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.minimum_distance`
-              - Get or set the minimum distance of the inclusive distance interval.
-            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.minimum_distance_squared`
-              - Get the squared minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance`
               - Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance_squared`
               - Get the squared maximum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.minimum_distance`
+              - Get or set the minimum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.minimum_distance_squared`
+              - Get the squared minimum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.primitive`
+              - Get or set the primitive associated with this instance.
 
 
 
@@ -44,11 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: primitive
-    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.primitive
-    :type: IPrimitive
+.. py:property:: maximum_distance
+    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance
+    :type: float
 
-    Get or set the primitive associated with this instance.
+    Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
+
+.. py:property:: maximum_distance_squared
+    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance_squared
+    :type: float
+
+    Get the squared maximum distance of the inclusive distance interval.
 
 .. py:property:: minimum_distance
     :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.minimum_distance
@@ -62,16 +68,10 @@ Property detail
 
     Get the squared minimum distance of the inclusive distance interval.
 
-.. py:property:: maximum_distance
-    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance
-    :type: float
+.. py:property:: primitive
+    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.primitive
+    :type: IPrimitive
 
-    Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
-
-.. py:property:: maximum_distance_squared
-    :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayCondition.maximum_distance_squared
-    :type: float
-
-    Get the squared maximum distance of the inclusive distance interval.
+    Get or set the primitive associated with this instance.
 
 

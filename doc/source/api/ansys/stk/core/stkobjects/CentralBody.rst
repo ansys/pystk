@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.name`
-              - A name of the central body.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.ellipsoid`
-              - The central body ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.analysis_workbench_components`
               - Return the central body's Vector Geometry Tool provider.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.ellipsoid`
+              - The central body ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.gravitational_parameter`
               - The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.name`
+              - A name of the central body.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkobjects.CentralBody.name
-    :type: str
+.. py:property:: analysis_workbench_components
+    :canonical: ansys.stk.core.stkobjects.CentralBody.analysis_workbench_components
+    :type: IAnalysisWorkbenchComponentProvider
 
-    A name of the central body.
+    Return the central body's Vector Geometry Tool provider.
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.CentralBody.ellipsoid
@@ -52,16 +52,16 @@ Property detail
 
     The central body ellipsoid.
 
-.. py:property:: analysis_workbench_components
-    :canonical: ansys.stk.core.stkobjects.CentralBody.analysis_workbench_components
-    :type: IAnalysisWorkbenchComponentProvider
-
-    Return the central body's Vector Geometry Tool provider.
-
 .. py:property:: gravitational_parameter
     :canonical: ansys.stk.core.stkobjects.CentralBody.gravitational_parameter
     :type: float
 
     The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.CentralBody.name
+    :type: str
+
+    A name of the central body.
 
 

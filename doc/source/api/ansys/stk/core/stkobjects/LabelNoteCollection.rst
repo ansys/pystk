@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.add`
               - Add a label note to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.remove`
-              - Remove an item given an index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.item`
               - Get a LabelNote.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.remove`
+              - Remove an item given an index.
 
     .. tab-item:: Properties
 
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.count`
-              - Number of label notes.
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection._new_enum`
               - Enumerates through the LabelNotes.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.count`
+              - Number of label notes.
 
 
 
@@ -49,22 +49,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection.count
-    :type: int
-
-    Number of label notes.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.LabelNoteCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the LabelNotes.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection.count
+    :type: int
+
+    Number of label notes.
+
 
 Method detail
 -------------
-
 
 .. py:method:: add(self, msg: str) -> LabelNote
     :canonical: ansys.stk.core.stkobjects.LabelNoteCollection.add
@@ -74,6 +73,21 @@ Method detail
     :Parameters:
 
         **msg** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~LabelNote`
+
+
+.. py:method:: item(self, index: int) -> LabelNote
+    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection.item
+
+    Get a LabelNote.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
 
 
     :Returns:
@@ -93,19 +107,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: item(self, index: int) -> LabelNote
-    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection.item
-
-    Get a LabelNote.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~LabelNote`
 
 

@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.powerplant_type`
-              - Get or set the rotorcraft's powerplant type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_power`
-              - Get or set the maximum power at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_fuel_flow`
               - Get or set the maximum fuel flow at sea level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_power`
+              - Get or set the maximum power at sea level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.powerplant_type`
+              - Get or set the rotorcraft's powerplant type.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: powerplant_type
-    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.powerplant_type
-    :type: RotorcraftPowerplantType
+.. py:property:: max_sl_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_fuel_flow
+    :type: float
 
-    Get or set the rotorcraft's powerplant type.
+    Get or set the maximum fuel flow at sea level.
 
 .. py:property:: max_sl_power
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_power
@@ -50,10 +50,10 @@ Property detail
 
     Get or set the maximum power at sea level.
 
-.. py:property:: max_sl_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.max_sl_fuel_flow
-    :type: float
+.. py:property:: powerplant_type
+    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion.powerplant_type
+    :type: RotorcraftPowerplantType
 
-    Get or set the maximum fuel flow at sea level.
+    Get or set the rotorcraft's powerplant type.
 
 

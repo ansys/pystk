@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system_type`
-              - Coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system`
               - Get the coordinate system and coordinate epoch.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.size_shape_type`
-              - Get or set the pair of elements used for specifying orbit size and shape.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.size_shape`
-              - Get the size and shape of the orbit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.orientation`
-              - Get the orbit orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.location_type`
-              - Get or set the element used for specifying spacecraft location in the orbit at epoch.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system_type`
+              - Coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.location`
               - Get the location of the spacecraft in the orbit at epoch.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.supported_coordinate_system_types`
-              - Return an array of supported coordinate system types.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.location_type`
+              - Get or set the element used for specifying spacecraft location in the orbit at epoch.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.orientation`
+              - Get the orbit orientation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.size_shape`
+              - Get the size and shape of the orbit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.size_shape_type`
+              - Get or set the pair of elements used for specifying orbit size and shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateClassical.supported_coordinate_system_types`
+              - Return an array of supported coordinate system types.
 
 
 
@@ -80,41 +80,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: coordinate_system_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system_type
-    :type: CoordinateSystem
-
-    Coordinate system being used.
-
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system
     :type: OrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
-.. py:property:: size_shape_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.size_shape_type
-    :type: ClassicalSizeShape
+.. py:property:: coordinate_system_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system_type
+    :type: CoordinateSystem
 
-    Get or set the pair of elements used for specifying orbit size and shape.
-
-.. py:property:: size_shape
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.size_shape
-    :type: IClassicalSizeShape
-
-    Get the size and shape of the orbit.
-
-.. py:property:: orientation
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.orientation
-    :type: ClassicalOrientation
-
-    Get the orbit orientation.
-
-.. py:property:: location_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.location_type
-    :type: ClassicalLocation
-
-    Get or set the element used for specifying spacecraft location in the orbit at epoch.
+    Coordinate system being used.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.location
@@ -122,16 +98,40 @@ Property detail
 
     Get the location of the spacecraft in the orbit at epoch.
 
-.. py:property:: supported_coordinate_system_types
-    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.supported_coordinate_system_types
-    :type: list
+.. py:property:: location_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.location_type
+    :type: ClassicalLocation
 
-    Return an array of supported coordinate system types.
+    Get or set the element used for specifying spacecraft location in the orbit at epoch.
+
+.. py:property:: orientation
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.orientation
+    :type: ClassicalOrientation
+
+    Get the orbit orientation.
+
+.. py:property:: size_shape
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.size_shape
+    :type: IClassicalSizeShape
+
+    Get the size and shape of the orbit.
+
+.. py:property:: size_shape_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.size_shape_type
+    :type: ClassicalSizeShape
+
+    Get or set the pair of elements used for specifying orbit size and shape.
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.state_epoch
     :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+
+.. py:property:: supported_coordinate_system_types
+    :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.supported_coordinate_system_types
+    :type: list
+
+    Return an array of supported coordinate system types.
 
 

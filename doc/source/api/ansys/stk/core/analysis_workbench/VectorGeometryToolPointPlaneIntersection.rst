@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.direction_vector`
               - Specify a direction vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.reference_plane`
-              - Specify a reference plane.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.origin_point`
               - Specify the origin point.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.reference_plane`
+              - Specify a reference plane.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify a direction vector.
 
-.. py:property:: reference_plane
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.reference_plane
-    :type: VectorGeometryToolPlaneReference
-
-    Specify a reference plane.
-
 .. py:property:: origin_point
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.origin_point
     :type: VectorGeometryToolPointReference
 
     Specify the origin point.
+
+.. py:property:: reference_plane
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointPlaneIntersection.reference_plane
+    :type: VectorGeometryToolPlaneReference
+
+    Specify a reference plane.
 
 

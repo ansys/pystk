@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_east_north_up_cartographic`
-              - Create a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_assembled`
               - Create a non-persistent system component assembled from an origin point and a set of reference axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_east_north_up_cartographic`
+              - Create a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location.
 
 
 Import detail
@@ -36,6 +36,22 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: create_assembled(self, origin_point: IVectorGeometryToolPoint, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolSystemAssembled
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_assembled
+
+    Create a non-persistent system component assembled from an origin point and a set of reference axes.
+
+    :Parameters:
+
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+
+
+    :Returns:
+
+        :obj:`~VectorGeometryToolSystemAssembled`
+
 .. py:method:: create_east_north_up_cartographic(self, latitude: typing.Any, longitude: typing.Any, altitude: float) -> VectorGeometryToolSystemAssembled
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_east_north_up_cartographic
 
@@ -48,22 +64,6 @@ Method detail
         **longitude** : :obj:`~typing.Any`
 
         **altitude** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~VectorGeometryToolSystemAssembled`
-
-.. py:method:: create_assembled(self, origin_point: IVectorGeometryToolPoint, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolSystemAssembled
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemCommonTasks.create_assembled
-
-    Create a non-persistent system component assembled from an origin point and a set of reference axes.
-
-    :Parameters:
-
-        **origin_point** : :obj:`~IVectorGeometryToolPoint`
-
-        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
 
 
     :Returns:

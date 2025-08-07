@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.pick_string`
+              - String displayed after instance name when the vehicle line is picked in 2D or 3D.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route`
               - Opt whether to show the vehicle's route.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route_marker`
               - Opt whether to show the vehicle's route marker.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.pick_string`
-              - String displayed after instance name when the vehicle line is picked in 2D or 3D.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: pick_string
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.pick_string
+    :type: str
+
+    String displayed after instance name when the vehicle line is picked in 2D or 3D.
+
 .. py:property:: show_route
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route
     :type: bool
@@ -51,11 +57,5 @@ Property detail
     :type: bool
 
     Opt whether to show the vehicle's route marker.
-
-.. py:property:: pick_string
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.pick_string
-    :type: str
-
-    String displayed after instance name when the vehicle line is picked in 2D or 3D.
 
 

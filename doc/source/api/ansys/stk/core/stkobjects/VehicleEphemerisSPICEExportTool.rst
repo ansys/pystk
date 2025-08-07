@@ -29,12 +29,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.central_body_name`
               - Get or set the central body of the satellite.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer`
-              - Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type`
-              - Get or set the interpolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation`
               - Get or set the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type`
+              - Get or set the interpolation type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer`
+              - Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.time_period`
@@ -61,11 +61,11 @@ Property detail
 
     Get or set the central body of the satellite.
 
-.. py:property:: satellite_identifer
-    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer
+.. py:property:: interpolation
+    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation
     :type: int
 
-    Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
+    Get or set the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
 
 .. py:property:: interpolation_type
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type
@@ -73,11 +73,11 @@ Property detail
 
     Get or set the interpolation type.
 
-.. py:property:: interpolation
-    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation
+.. py:property:: satellite_identifer
+    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer
     :type: int
 
-    Get or set the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
+    Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.step_size
@@ -103,14 +103,6 @@ Method detail
 
 
 
-
-
-
-
-
-
-
-
 .. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.export
 
@@ -124,6 +116,14 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
+
+
 
 
 

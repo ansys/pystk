@@ -20,12 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_approximate_altitude`
-              - True if using approximate altitude formula.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position`
-              - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file`
+              - Get or set the atmospheric model space weather data file path.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file`
+              - Get or set the atmospheric model DTC file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin`
+              - Drag model plugin properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin_name`
+              - Get or set the name of the drag model plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_type`
+              - Drag model type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.dst_d_tc`
+              - Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.f10`
               - Solar Flux (F10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.f10_avg`
@@ -34,30 +42,22 @@ Overview
               - Solar Flux (M10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.m10_avg`
               - Average solar Flux (M10). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_definition_file`
+              - Drag N-Plate definition file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10`
               - Solar Flux (S10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10_avg`
               - Average solar Flux (S10). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position`
+              - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_approximate_altitude`
+              - True if using approximate altitude formula.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file`
+              - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.y10`
               - Solar Flux (Y10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.y10_avg`
               - Average solar Flux (Y10). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.dst_d_tc`
-              - Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file`
-              - Get or set the atmospheric model space weather data file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file`
-              - Get or set the atmospheric model DTC file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_type`
-              - Drag model type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin_name`
-              - Get or set the name of the drag model plugin.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin`
-              - Drag model plugin properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file`
-              - Drag variable area history file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_definition_file`
-              - Drag N-Plate definition file.
 
 
 
@@ -72,23 +72,47 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_approximate_altitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_approximate_altitude
-    :type: bool
+.. py:property:: atmosphere_aug_data_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file
+    :type: str
 
-    True if using approximate altitude formula.
+    Get or set the atmospheric model space weather data file path.
 
-.. py:property:: sun_position
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position
-    :type: SunPosition
+.. py:property:: atmosphere_aug_dtc_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file
+    :type: str
 
-    Get or set the sun position computation.
+    Get or set the atmospheric model DTC file path.
 
 .. py:property:: atmosphere_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_data_source
     :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
+
+.. py:property:: drag_model_plugin
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin
+    :type: DragModelPlugin
+
+    Drag model plugin properties.
+
+.. py:property:: drag_model_plugin_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin_name
+    :type: str
+
+    Get or set the name of the drag model plugin.
+
+.. py:property:: drag_model_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_type
+    :type: DragModelType
+
+    Drag model type.
+
+.. py:property:: dst_d_tc
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.dst_d_tc
+    :type: float
+
+    Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
 
 .. py:property:: f10
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.f10
@@ -114,6 +138,12 @@ Property detail
 
     Average solar Flux (M10). Dimensionless.
 
+.. py:property:: n_plate_definition_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_definition_file
+    :type: str
+
+    Drag N-Plate definition file.
+
 .. py:property:: s10
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.s10
     :type: float
@@ -126,6 +156,24 @@ Property detail
 
     Average solar Flux (S10). Dimensionless.
 
+.. py:property:: sun_position
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position
+    :type: SunPosition
+
+    Get or set the sun position computation.
+
+.. py:property:: use_approximate_altitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.use_approximate_altitude
+    :type: bool
+
+    True if using approximate altitude formula.
+
+.. py:property:: variable_area_history_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file
+    :type: str
+
+    Drag variable area history file.
+
 .. py:property:: y10
     :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.y10
     :type: float
@@ -137,53 +185,5 @@ Property detail
     :type: float
 
     Average solar Flux (Y10). Dimensionless.
-
-.. py:property:: dst_d_tc
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.dst_d_tc
-    :type: float
-
-    Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
-
-.. py:property:: atmosphere_aug_data_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file
-    :type: str
-
-    Get or set the atmospheric model space weather data file path.
-
-.. py:property:: atmosphere_aug_dtc_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file
-    :type: str
-
-    Get or set the atmospheric model DTC file path.
-
-.. py:property:: drag_model_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_type
-    :type: DragModelType
-
-    Drag model type.
-
-.. py:property:: drag_model_plugin_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin_name
-    :type: str
-
-    Get or set the name of the drag model plugin.
-
-.. py:property:: drag_model_plugin
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_plugin
-    :type: DragModelPlugin
-
-    Drag model plugin properties.
-
-.. py:property:: variable_area_history_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.variable_area_history_file
-    :type: str
-
-    Drag variable area history file.
-
-.. py:property:: n_plate_definition_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.n_plate_definition_file
-    :type: str
-
-    Drag N-Plate definition file.
 
 

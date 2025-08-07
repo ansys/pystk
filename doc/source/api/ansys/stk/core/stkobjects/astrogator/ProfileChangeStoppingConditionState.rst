@@ -89,8 +89,6 @@ Method detail
 
         :obj:`~None`
 
-
-
 .. py:method:: set_trigger(self, stopping_condition: StoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.set_trigger
 
@@ -104,6 +102,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

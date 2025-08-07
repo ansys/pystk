@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.mode`
+              - Get or set the transceiver mode.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.supported_transceivers`
               - Get an array of available transceiver instances.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.transceiver`
               - Get or set the transceiver.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.mode`
-              - Get or set the transceiver mode.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: mode
+    :canonical: ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.mode
+    :type: TransceiverMode
+
+    Get or set the transceiver mode.
+
 .. py:property:: supported_transceivers
     :canonical: ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.supported_transceivers
     :type: list
@@ -49,11 +55,5 @@ Property detail
     :type: Transceiver
 
     Get or set the transceiver.
-
-.. py:property:: mode
-    :canonical: ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration.mode
-    :type: TransceiverMode
-
-    Get or set the transceiver mode.
 
 

@@ -29,28 +29,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.allow_intersection_from_below`
+              - Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.altitude`
+              - An altitude.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.central_body`
               - Central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.reference_point`
-              - A reference point. Can be any point from VGT.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.direction_vector`
               - A direction vector. Can be any vector from VGT.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.intersection_surface`
               - An intersection surface.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.altitude`
-              - An altitude.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_range_constraint`
-              - Whether to use range constraint.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.minimum_range`
-              - A minimum range. An exception is thrown if the value exceeds the MaximumRange. Applicable only if the range constraint is not used.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.maximum_range`
               - A maximum range. An exception is thrown if the value is less than the MinimumRange. Applicable only if the range constraint is not used.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_minimum_range`
-              - Whether the minimum range is used. Applicable only if the range constraint is not used.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.minimum_range`
+              - A minimum range. An exception is thrown if the value exceeds the MaximumRange. Applicable only if the range constraint is not used.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.reference_point`
+              - A reference point. Can be any point from VGT.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_maximum_range`
               - Whether the maximum range is used. Applicable only if the range constraint is not used.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.allow_intersection_from_below`
-              - Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_minimum_range`
+              - Whether the minimum range is used. Applicable only if the range constraint is not used.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_range_constraint`
+              - Whether to use range constraint.
 
 
 
@@ -65,17 +65,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: allow_intersection_from_below
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.allow_intersection_from_below
+    :type: bool
+
+    Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain.
+
+.. py:property:: altitude
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.altitude
+    :type: float
+
+    An altitude.
+
 .. py:property:: central_body
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.central_body
     :type: str
 
     Central body.
-
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.reference_point
-    :type: IVectorGeometryToolPoint
-
-    A reference point. Can be any point from VGT.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.direction_vector
@@ -89,17 +95,11 @@ Property detail
 
     An intersection surface.
 
-.. py:property:: altitude
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.altitude
+.. py:property:: maximum_range
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.maximum_range
     :type: float
 
-    An altitude.
-
-.. py:property:: use_range_constraint
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_range_constraint
-    :type: bool
-
-    Whether to use range constraint.
+    A maximum range. An exception is thrown if the value is less than the MinimumRange. Applicable only if the range constraint is not used.
 
 .. py:property:: minimum_range
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.minimum_range
@@ -107,17 +107,11 @@ Property detail
 
     A minimum range. An exception is thrown if the value exceeds the MaximumRange. Applicable only if the range constraint is not used.
 
-.. py:property:: maximum_range
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.maximum_range
-    :type: float
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.reference_point
+    :type: IVectorGeometryToolPoint
 
-    A maximum range. An exception is thrown if the value is less than the MinimumRange. Applicable only if the range constraint is not used.
-
-.. py:property:: use_minimum_range
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_minimum_range
-    :type: bool
-
-    Whether the minimum range is used. Applicable only if the range constraint is not used.
+    A reference point. Can be any point from VGT.
 
 .. py:property:: use_maximum_range
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_maximum_range
@@ -125,19 +119,21 @@ Property detail
 
     Whether the maximum range is used. Applicable only if the range constraint is not used.
 
-.. py:property:: allow_intersection_from_below
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.allow_intersection_from_below
+.. py:property:: use_minimum_range
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_minimum_range
     :type: bool
 
-    Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain.
+    Whether the minimum range is used. Applicable only if the range constraint is not used.
+
+.. py:property:: use_range_constraint
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyIntersect.use_range_constraint
+    :type: bool
+
+    Whether to use range constraint.
 
 
 Method detail
 -------------
-
-
-
-
 
 
 
@@ -170,6 +166,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 
 
 

@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance`
-              - Get or set the minimum distance of the inclusive distance interval.
-            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance_squared`
-              - Get the squared minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.maximum_distance`
               - Get or set the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.maximum_distance_squared`
               - Get the squared maximum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance`
+              - Get or set the minimum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance_squared`
+              - Get the squared minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.position`
               - Get or set the position used to compute the distance from the camera. The array contains the components of the position arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.DistanceToPositionDisplayCondition.reference_frame`
@@ -46,18 +46,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_distance
-    :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance
-    :type: float
-
-    Get or set the minimum distance of the inclusive distance interval.
-
-.. py:property:: minimum_distance_squared
-    :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance_squared
-    :type: float
-
-    Get the squared minimum distance of the inclusive distance interval.
-
 .. py:property:: maximum_distance
     :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.maximum_distance
     :type: float
@@ -69,6 +57,18 @@ Property detail
     :type: float
 
     Get the squared maximum distance of the inclusive distance interval.
+
+.. py:property:: minimum_distance
+    :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance
+    :type: float
+
+    Get or set the minimum distance of the inclusive distance interval.
+
+.. py:property:: minimum_distance_squared
+    :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.minimum_distance_squared
+    :type: float
+
+    Get the squared minimum distance of the inclusive distance interval.
 
 .. py:property:: position
     :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayCondition.position

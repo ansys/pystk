@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name`
-              - Get or set the name of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object_name`
-              - Get or set the name of the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object`
               - Get or set the calculation object type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object_name`
+              - Get or set the name of the calculation object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name`
+              - Get or set the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.unit`
               - Get or set the unit.
 
@@ -51,11 +51,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: component_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name
-    :type: str
+.. py:property:: calculation_object
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object
+    :type: IComponentInfo
 
-    Get or set the name of the component.
+    Get or set the calculation object type.
 
 .. py:property:: calculation_object_name
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object_name
@@ -63,11 +63,11 @@ Property detail
 
     Get or set the name of the calculation object.
 
-.. py:property:: calculation_object
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object
-    :type: IComponentInfo
+.. py:property:: component_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name
+    :type: str
 
-    Get or set the calculation object type.
+    Get or set the name of the component.
 
 .. py:property:: unit
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.unit
@@ -78,8 +78,6 @@ Property detail
 
 Method detail
 -------------
-
-
 
 
 
@@ -104,4 +102,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

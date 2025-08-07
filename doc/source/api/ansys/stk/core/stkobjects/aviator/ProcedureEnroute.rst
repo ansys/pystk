@@ -31,12 +31,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.altitude_msl_options`
               - Get the altitude MSL options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.navigation_options`
-              - Get the navigation options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_options`
-              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_options`
+              - Get the enroute options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute.navigation_options`
+              - Get the navigation options.
 
 
 
@@ -93,11 +93,11 @@ Property detail
 
     Get the altitude MSL options.
 
-.. py:property:: navigation_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.navigation_options
-    :type: NavigationOptions
+.. py:property:: enroute_cruise_airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_cruise_airspeed_options
+    :type: CruiseAirspeedOptions
 
-    Get the navigation options.
+    Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_options
@@ -105,16 +105,15 @@ Property detail
 
     Get the enroute options.
 
-.. py:property:: enroute_cruise_airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_cruise_airspeed_options
-    :type: CruiseAirspeedOptions
+.. py:property:: navigation_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.navigation_options
+    :type: NavigationOptions
 
-    Get the enroute cruise airspeed options.
+    Get the navigation options.
 
 
 Method detail
 -------------
-
 
 
 
@@ -127,4 +126,5 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
 

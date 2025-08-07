@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_export_tool`
-              - Return the ephemeris export tool.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_propagator_definition_export_tool`
-              - Return the Prop Def export tool.
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_attitude_export_tool`
               - Return the attitude export tool.
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_binary_export_tool`
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_export_tool`
+              - Return the ephemeris export tool.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ShipExportTools.get_propagator_definition_export_tool`
+              - Return the Prop Def export tool.
 
 
 Import detail
@@ -39,24 +39,6 @@ Import detail
 
 Method detail
 -------------
-
-.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisExportTool
-    :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_export_tool
-
-    Return the ephemeris export tool.
-
-    :Returns:
-
-        :obj:`~VehicleEphemerisExportTool`
-
-.. py:method:: get_propagator_definition_export_tool(self) -> PropagatorDefinitionExportTool
-    :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_propagator_definition_export_tool
-
-    Return the Prop Def export tool.
-
-    :Returns:
-
-        :obj:`~PropagatorDefinitionExportTool`
 
 .. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
     :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_attitude_export_tool
@@ -75,4 +57,22 @@ Method detail
     :Returns:
 
         :obj:`~VehicleEphemerisBinaryExportTool`
+
+.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisExportTool
+    :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_export_tool
+
+    Return the ephemeris export tool.
+
+    :Returns:
+
+        :obj:`~VehicleEphemerisExportTool`
+
+.. py:method:: get_propagator_definition_export_tool(self) -> PropagatorDefinitionExportTool
+    :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_propagator_definition_export_tool
+
+    Return the Prop Def export tool.
+
+    :Returns:
+
+        :obj:`~PropagatorDefinitionExportTool`
 

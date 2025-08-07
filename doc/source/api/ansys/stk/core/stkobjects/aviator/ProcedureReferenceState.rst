@@ -29,30 +29,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time`
-              - Get or set the start time of the reference state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow`
+              - Get or set the rate of fuel consumption.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.latitude`
               - Get or set the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.longitude`
               - Get or set the waypoint longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude`
-              - Opt whether to use the default cruise altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight`
+              - Get the forward flight options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_hover`
+              - Get the hover options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing`
+              - Get the takeoff and landing options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_weight_on_wheels`
+              - Get the weight on wheels options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.msl_altitude`
               - Get the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode`
               - Get or set the type of motion the aircraft is engaged in.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.reference_frame`
               - Get or set the reference frame the aircraft will use.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow`
-              - Get or set the rate of fuel consumption.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight`
-              - Get the forward flight options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing`
-              - Get the takeoff and landing options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_hover`
-              - Get the hover options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_weight_on_wheels`
-              - Get the weight on wheels options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time`
+              - Get or set the start time of the reference state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
 
 
 
@@ -67,11 +67,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: start_time
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time
-    :type: typing.Any
+.. py:property:: fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow
+    :type: float
 
-    Get or set the start time of the reference state.
+    Get or set the rate of fuel consumption.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.latitude
@@ -85,11 +85,29 @@ Property detail
 
     Get or set the waypoint longitude.
 
-.. py:property:: use_default_cruise_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude
-    :type: bool
+.. py:property:: mode_as_forward_flight
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight
+    :type: ReferenceStateForwardFlightOptions
 
-    Opt whether to use the default cruise altitude.
+    Get the forward flight options.
+
+.. py:property:: mode_as_hover
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_hover
+    :type: ReferenceStateHoverOptions
+
+    Get the hover options.
+
+.. py:property:: mode_as_takeoff_landing
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing
+    :type: ReferenceStateTakeoffLandingOptions
+
+    Get the takeoff and landing options.
+
+.. py:property:: mode_as_weight_on_wheels
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_weight_on_wheels
+    :type: ReferenceStateWeightOnWheelsOptions
+
+    Get the weight on wheels options.
 
 .. py:property:: msl_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.msl_altitude
@@ -109,35 +127,17 @@ Property detail
 
     Get or set the reference frame the aircraft will use.
 
-.. py:property:: fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow
-    :type: float
+.. py:property:: start_time
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time
+    :type: typing.Any
 
-    Get or set the rate of fuel consumption.
+    Get or set the start time of the reference state.
 
-.. py:property:: mode_as_forward_flight
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight
-    :type: ReferenceStateForwardFlightOptions
+.. py:property:: use_default_cruise_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude
+    :type: bool
 
-    Get the forward flight options.
-
-.. py:property:: mode_as_takeoff_landing
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing
-    :type: ReferenceStateTakeoffLandingOptions
-
-    Get the takeoff and landing options.
-
-.. py:property:: mode_as_hover
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_hover
-    :type: ReferenceStateHoverOptions
-
-    Get the hover options.
-
-.. py:property:: mode_as_weight_on_wheels
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_weight_on_wheels
-    :type: ReferenceStateWeightOnWheelsOptions
-
-    Get the weight on wheels options.
+    Opt whether to use the default cruise altitude.
 
 
 Method detail

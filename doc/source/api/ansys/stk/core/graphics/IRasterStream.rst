@@ -52,8 +52,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: update(self, time: Date, next_time: Date) -> bool
     :canonical: ansys.stk.core.graphics.IRasterStream.update
 
@@ -69,4 +67,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
 

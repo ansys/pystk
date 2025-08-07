@@ -18,8 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.ray_density`
-              - Get or set the ray density.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_mode`
+              - Get or set the bounding box.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_side_length`
+              - Get or set the bounding box side length.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.geometrical_optics_blockage`
               - Get or set the geometrical optics blockage.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.geometrical_optics_blockage_starting_bounce`
@@ -28,10 +30,8 @@ Overview
               - Get or set the maximum number of reflections.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.maximum_transmissions`
               - Get or set the maximum number of transmissions.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_mode`
-              - Get or set the bounding box.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_side_length`
-              - Get or set the bounding box side length.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions.ray_density`
+              - Get or set the ray density.
 
 
 
@@ -46,11 +46,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: ray_density
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.ray_density
+.. py:property:: bounding_box_mode
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_mode
+    :type: AnalysisSolverBoundingBoxMode
+
+    Get or set the bounding box.
+
+.. py:property:: bounding_box_side_length
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_side_length
     :type: float
 
-    Get or set the ray density.
+    Get or set the bounding box side length.
 
 .. py:property:: geometrical_optics_blockage
     :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.geometrical_optics_blockage
@@ -76,16 +82,10 @@ Property detail
 
     Get or set the maximum number of transmissions.
 
-.. py:property:: bounding_box_mode
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_mode
-    :type: AnalysisSolverBoundingBoxMode
-
-    Get or set the bounding box.
-
-.. py:property:: bounding_box_side_length
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.bounding_box_side_length
+.. py:property:: ray_density
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ComputeOptions.ray_density
     :type: float
 
-    Get or set the bounding box side length.
+    Get or set the ray density.
 
 

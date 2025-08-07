@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft`
-              - Get the aircraft with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft`
               - Create a new aircraft with the given name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft`
+              - Get the aircraft with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
@@ -62,10 +62,10 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_aircraft(self, aircraft_name: str) -> AircraftModel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft
+.. py:method:: add_aircraft(self, aircraft_name: str) -> AircraftModel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft
 
-    Get the aircraft with the given name.
+    Create a new aircraft with the given name.
 
     :Parameters:
 
@@ -76,10 +76,10 @@ Method detail
 
         :obj:`~AircraftModel`
 
-.. py:method:: add_aircraft(self, aircraft_name: str) -> AircraftModel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft
+.. py:method:: get_aircraft(self, aircraft_name: str) -> AircraftModel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft
 
-    Create a new aircraft with the given name.
+    Get the aircraft with the given name.
 
     :Parameters:
 

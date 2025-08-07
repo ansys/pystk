@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabaseCollection.count`
-              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabaseCollection._new_enum`
               - Enumerates the elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabaseCollection.count`
+              - Return a number of elements in the collection.
 
 
 
@@ -45,22 +45,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.ScenarioDatabaseCollection.count
-    :type: int
-
-    Return a number of elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.ScenarioDatabaseCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the elements in the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.ScenarioDatabaseCollection.count
+    :type: int
+
+    Return a number of elements in the collection.
+
 
 Method detail
 -------------
-
 
 
 .. py:method:: item(self, index: int) -> ScenarioDatabase
@@ -76,4 +75,5 @@ Method detail
     :Returns:
 
         :obj:`~ScenarioDatabase`
+
 

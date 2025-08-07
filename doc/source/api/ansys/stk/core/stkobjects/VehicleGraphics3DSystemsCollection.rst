@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.add`
               - Add a new element to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.contains`
               - Check whether the given frame is already in the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove`
               - Remove a system by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -37,16 +37,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems`
-              - Return a list of element types that can be added to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window`
-              - Get the Inertial By Window System.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count`
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window`
               - Get the Fixed By Window System.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window`
+              - Get the Inertial By Window System.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems`
+              - Return a list of element types that can be added to the collection.
 
 
 
@@ -75,29 +75,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
-.. py:property:: supported_systems
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems
-    :type: list
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count
+    :type: int
 
-    Return a list of element types that can be added to the collection.
-
-.. py:property:: inertial_by_window
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window
-    :type: VehicleGraphics3DSystemsSpecialElement
-
-    Get the Inertial By Window System.
+    Return the number of elements in a collection.
 
 .. py:property:: fixed_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window
@@ -105,48 +93,21 @@ Property detail
 
     Get the Fixed By Window System.
 
+.. py:property:: inertial_by_window
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window
+    :type: VehicleGraphics3DSystemsSpecialElement
+
+    Get the Inertial By Window System.
+
+.. py:property:: supported_systems
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems
+    :type: list
+
+    Return a list of element types that can be added to the collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> VehicleGraphics3DSystemsElement
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~VehicleGraphics3DSystemsElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add(self, system_name: str) -> VehicleGraphics3DSystemsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.add
@@ -161,7 +122,6 @@ Method detail
     :Returns:
 
         :obj:`~VehicleGraphics3DSystemsElement`
-
 
 .. py:method:: contains(self, system_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.contains
@@ -179,6 +139,21 @@ Method detail
 
 
 
+
+.. py:method:: item(self, index: int) -> VehicleGraphics3DSystemsElement
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~VehicleGraphics3DSystemsElement`
+
 .. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove
 
@@ -192,4 +167,29 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type`
-              - Get the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.coordinate_system_epoch`
               - Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type`
+              - Get the coordinate system being used.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type
-    :type: CoordinateSystem
-
-    Get the coordinate system being used.
-
 .. py:property:: coordinate_system_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.coordinate_system_epoch
     :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
+
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type
+    :type: CoordinateSystem
+
+    Get the coordinate system being used.
 
 

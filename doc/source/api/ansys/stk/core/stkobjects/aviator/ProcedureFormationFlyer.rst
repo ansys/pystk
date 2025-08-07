@@ -29,24 +29,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.min_time_step`
-              - Get Min time Step.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.max_time_step`
-              - Get Max time Step.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.cross_range_close_rate`
               - Get Cross Range close rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.initial_close_max_speed_advantage`
               - Get Initial Close Max Speed Advantage.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.max_time_step`
+              - Get Max time Step.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.min_time_step`
+              - Get Min time Step.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_condition`
               - Get Stop condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_time`
-              - Get stop time.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_down_range`
               - Get stop downrange.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_fuel_state`
               - Get stop fuel state.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_on_hover`
               - Set Stop on hover mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_time`
+              - Get stop time.
 
 
 
@@ -61,18 +61,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min_time_step
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.min_time_step
-    :type: float
-
-    Get Min time Step.
-
-.. py:property:: max_time_step
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.max_time_step
-    :type: float
-
-    Get Max time Step.
-
 .. py:property:: cross_range_close_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.cross_range_close_rate
     :type: float
@@ -85,17 +73,23 @@ Property detail
 
     Get Initial Close Max Speed Advantage.
 
+.. py:property:: max_time_step
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.max_time_step
+    :type: float
+
+    Get Max time Step.
+
+.. py:property:: min_time_step
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.min_time_step
+    :type: float
+
+    Get Min time Step.
+
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_condition
     :type: FormationFlyerStopCondition
 
     Get Stop condition.
-
-.. py:property:: stop_time
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_time
-    :type: float
-
-    Get stop time.
 
 .. py:property:: stop_down_range
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_down_range
@@ -115,23 +109,15 @@ Property detail
 
     Set Stop on hover mode.
 
+.. py:property:: stop_time
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_time
+    :type: float
+
+    Get stop time.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -143,6 +129,20 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

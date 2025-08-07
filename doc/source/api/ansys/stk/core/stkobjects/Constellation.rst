@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Constellation.objects`
-              - Get the collection of objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Constellation.constraints`
               - Get the constellation's constraints.
             * - :py:attr:`~ansys.stk.core.stkobjects.Constellation.graphics`
               - Constellation's 2D graphics settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Constellation.objects`
+              - Get the collection of objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Constellation.routing`
               - Constellation's routing settings.
 
@@ -56,12 +56,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: objects
-    :canonical: ansys.stk.core.stkobjects.Constellation.objects
-    :type: ObjectLinkCollection
-
-    Get the collection of objects in the chain.
-
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Constellation.constraints
     :type: ConstellationConstraints
@@ -73,6 +67,12 @@ Property detail
     :type: ConstellationGraphics
 
     Constellation's 2D graphics settings.
+
+.. py:property:: objects
+    :canonical: ansys.stk.core.stkobjects.Constellation.objects
+    :type: ObjectLinkCollection
+
+    Get the collection of objects in the chain.
 
 .. py:property:: routing
     :canonical: ansys.stk.core.stkobjects.Constellation.routing

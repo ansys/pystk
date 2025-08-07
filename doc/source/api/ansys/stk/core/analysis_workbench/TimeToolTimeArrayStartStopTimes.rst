@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.start_stop_option`
-              - The edge type. At least one of the two edge types must be selected.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.reference_intervals`
               - The reference interval list.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.start_stop_option`
+              - The edge type. At least one of the two edge types must be selected.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: start_stop_option
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.start_stop_option
-    :type: StartStopType
-
-    The edge type. At least one of the two edge types must be selected.
-
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.reference_intervals
     :type: ITimeToolTimeIntervalList
 
     The reference interval list.
+
+.. py:property:: start_stop_option
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayStartStopTimes.start_stop_option
+    :type: StartStopType
+
+    The edge type. At least one of the two edge types must be selected.
 
 

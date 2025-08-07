@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DDropLines.position`
-              - Get a list of droplines from the MTO's current positions.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DDropLines.ephemeris`
               - Get a list of droplines at intervals along the MTO's ephemeris.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DDropLines.position`
+              - Get a list of droplines from the MTO's current positions.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: position
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DDropLines.position
-    :type: VehicleGraphics3DDropLinePositionItemCollection
-
-    Get a list of droplines from the MTO's current positions.
-
 .. py:property:: ephemeris
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DDropLines.ephemeris
     :type: VehicleGraphics3DDropLinePathItemCollection
 
     Get a list of droplines at intervals along the MTO's ephemeris.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DDropLines.position
+    :type: VehicleGraphics3DDropLinePositionItemCollection
+
+    Get a list of droplines from the MTO's current positions.
 
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_dose_rate`
-              - Return electron dose rate if it is valid. Uses RadDoseRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_bremsstrahlung_dose_rate`
               - Return electron bremsstrahlung dose rate if it is valid. Uses RadDoseRate Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_dose_rate`
+              - Return electron dose rate if it is valid. Uses RadDoseRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.proton_dose_rate`
               - Return proton dose rate if it is valid. Uses RadDoseRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.total_dose_rate`
@@ -33,16 +33,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.shielding_thickness`
-              - Shielding thickness at which the dose rate information was computed. Uses RadiationShieldThickness Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_dose_rate_valid`
-              - Flag to indicate that the electron dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_bremsstrahlung_dose_rate_valid`
               - Flag to indicate that the electron bremsstrahlung dose rate value is valid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_dose_rate_valid`
+              - Flag to indicate that the electron dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_proton_dose_rate_valid`
               - Flag to indicate that the proton dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_total_dose_rate_valid`
               - Flag to indicate that the total dose rate value is valid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.shielding_thickness`
+              - Shielding thickness at which the dose rate information was computed. Uses RadiationShieldThickness Dimension.
 
 
 
@@ -57,23 +57,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: shielding_thickness
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.shielding_thickness
-    :type: float
+.. py:property:: is_electron_bremsstrahlung_dose_rate_valid
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_bremsstrahlung_dose_rate_valid
+    :type: bool
 
-    Shielding thickness at which the dose rate information was computed. Uses RadiationShieldThickness Dimension.
+    Flag to indicate that the electron bremsstrahlung dose rate value is valid.
 
 .. py:property:: is_electron_dose_rate_valid
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_dose_rate_valid
     :type: bool
 
     Flag to indicate that the electron dose rate value is valid.
-
-.. py:property:: is_electron_bremsstrahlung_dose_rate_valid
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_electron_bremsstrahlung_dose_rate_valid
-    :type: bool
-
-    Flag to indicate that the electron bremsstrahlung dose rate value is valid.
 
 .. py:property:: is_proton_dose_rate_valid
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.is_proton_dose_rate_valid
@@ -87,11 +81,24 @@ Property detail
 
     Flag to indicate that the total dose rate value is valid.
 
+.. py:property:: shielding_thickness
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.shielding_thickness
+    :type: float
+
+    Shielding thickness at which the dose rate information was computed. Uses RadiationShieldThickness Dimension.
+
 
 Method detail
 -------------
 
+.. py:method:: electron_bremsstrahlung_dose_rate(self) -> float
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_bremsstrahlung_dose_rate
 
+    Return electron bremsstrahlung dose rate if it is valid. Uses RadDoseRate Dimension.
+
+    :Returns:
+
+        :obj:`~float`
 
 .. py:method:: electron_dose_rate(self) -> float
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_dose_rate
@@ -103,14 +110,7 @@ Method detail
         :obj:`~float`
 
 
-.. py:method:: electron_bremsstrahlung_dose_rate(self) -> float
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationDoseRateElement.electron_bremsstrahlung_dose_rate
 
-    Return electron bremsstrahlung dose rate if it is valid. Uses RadDoseRate Dimension.
-
-    :Returns:
-
-        :obj:`~float`
 
 
 .. py:method:: proton_dose_rate(self) -> float

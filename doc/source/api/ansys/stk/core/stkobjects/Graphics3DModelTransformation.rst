@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum`
+              - The Max property. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum`
+              - The Min property. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.name`
               - The Name property.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.value`
               - The Value property. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum`
-              - The Min property. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum`
-              - The Max property. Dimensionless.
 
 
 
@@ -40,6 +40,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: maximum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum
+    :type: float
+
+    The Max property. Dimensionless.
+
+.. py:property:: minimum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum
+    :type: float
+
+    The Min property. Dimensionless.
+
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.name
     :type: str
@@ -51,17 +63,5 @@ Property detail
     :type: float
 
     The Value property. Dimensionless.
-
-.. py:property:: minimum
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum
-    :type: float
-
-    The Min property. Dimensionless.
-
-.. py:property:: maximum
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum
-    :type: float
-
-    The Max property. Dimensionless.
 
 

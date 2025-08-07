@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.mean_motion`
-              - Identifies the number of orbits per day (86400 sec/period), based on assumed two-body motion. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.eccentricity`
               - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.mean_motion`
+              - Identifies the number of orbits per day (86400 sec/period), based on assumed two-body motion. Uses AngleRate Dimension.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: mean_motion
-    :canonical: ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.mean_motion
-    :type: float
-
-    Identifies the number of orbits per day (86400 sec/period), based on assumed two-body motion. Uses AngleRate Dimension.
-
 .. py:property:: eccentricity
     :canonical: ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.eccentricity
     :type: float
 
     Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
+
+.. py:property:: mean_motion
+    :canonical: ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion.mean_motion
+    :type: float
+
+    Identifies the number of orbits per day (86400 sec/period), based on assumed two-body motion. Uses AngleRate Dimension.
 
 

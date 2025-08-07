@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.Texture2DFactory.load_from_string_uri`
-              - Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
             * - :py:attr:`~ansys.stk.core.graphics.Texture2DFactory.from_raster`
               - Create a new texture from a raster.
+            * - :py:attr:`~ansys.stk.core.graphics.Texture2DFactory.load_from_string_uri`
+              - Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
 
 
 Import detail
@@ -36,20 +36,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: load_from_string_uri(self, uri: str) -> RendererTexture2D
-    :canonical: ansys.stk.core.graphics.Texture2DFactory.load_from_string_uri
-
-    Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
-
-    :Parameters:
-
-        **uri** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~RendererTexture2D`
-
 .. py:method:: from_raster(self, raster: IRaster) -> RendererTexture2D
     :canonical: ansys.stk.core.graphics.Texture2DFactory.from_raster
 
@@ -58,6 +44,20 @@ Method detail
     :Parameters:
 
         **raster** : :obj:`~IRaster`
+
+
+    :Returns:
+
+        :obj:`~RendererTexture2D`
+
+.. py:method:: load_from_string_uri(self, uri: str) -> RendererTexture2D
+    :canonical: ansys.stk.core.graphics.Texture2DFactory.load_from_string_uri
+
+    Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
 
 
     :Returns:

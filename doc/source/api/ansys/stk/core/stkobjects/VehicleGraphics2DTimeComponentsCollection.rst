@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add`
               - Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -51,21 +51,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, qualified_path: str) -> IVehicleGraphics2DTimeComponentsElement
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add
+
+    Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
+
+    :Parameters:
+
+        **qualified_path** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~IVehicleGraphics2DTimeComponentsElement`
 
 
 .. py:method:: item(self, index: int) -> IVehicleGraphics2DTimeComponentsElement
@@ -82,6 +96,14 @@ Method detail
 
         :obj:`~IVehicleGraphics2DTimeComponentsElement`
 
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: remove_at(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_at
@@ -97,26 +119,4 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: add(self, qualified_path: str) -> IVehicleGraphics2DTimeComponentsElement
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add
-
-    Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
-
-    :Parameters:
-
-        **qualified_path** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~IVehicleGraphics2DTimeComponentsElement`
 

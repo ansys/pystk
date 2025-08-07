@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode`
-              - Get or set the control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.airspeed_options`
               - Get the airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode`
+              - Get or set the control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_area`
               - Get or set the parachute area used as part of the Parachute control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_cd`
@@ -44,17 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: control_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode
-    :type: Ballistic3DControlMode
-
-    Get or set the control mode for the ballistic 3D strategy.
-
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.airspeed_options
     :type: BasicManeuverAirspeedOptions
 
     Get the airspeed options.
+
+.. py:property:: control_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode
+    :type: Ballistic3DControlMode
+
+    Get or set the control mode for the ballistic 3D strategy.
 
 .. py:property:: parachute_area
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_area

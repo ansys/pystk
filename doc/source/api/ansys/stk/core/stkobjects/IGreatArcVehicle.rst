@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type`
-              - Set the propagator type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported`
+              - Get a value indicating whether the specified type can be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.is_route_type_supported`
               - Get a value indicating whether the specified type can be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.set_attitude_type`
               - Set the type of attitude profile.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported`
-              - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type`
+              - Set the propagator type.
 
     .. tab-item:: Properties
 
@@ -33,28 +33,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
-              - Get the propagator type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
-              - Return an array of valid choices.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
-              - Get the route properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
-              - Get the type of attitude profile.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
-              - Return an array of valid choices.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
-              - Get the  attitude profile.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
-              - Get the  ground ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints`
               - Get the constraints imposed on the vehicle.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
+              - Get the  attitude profile.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
+              - Get the type of attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies`
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
-              - Opt whether to compute lighting using terrain data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
+              - Get the  ground ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step`
               - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
+              - Get the route properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
+              - Get the propagator type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
+              - Opt whether to compute lighting using terrain data.
 
 
 Import detail
@@ -68,35 +68,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: route_type
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_type
-    :type: PropagatorType
+.. py:property:: access_constraints
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints
+    :type: AccessConstraintCollection
 
-    Get the propagator type.
-
-.. py:property:: route_supported_types
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types
-    :type: list
-
-    Return an array of valid choices.
-
-.. py:property:: route
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
-    :type: IPropagator
-
-    Get the route properties.
-
-.. py:property:: attitude_type
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type
-    :type: VehicleAttitude
-
-    Get the type of attitude profile.
-
-.. py:property:: attitude_supported_types
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types
-    :type: list
-
-    Return an array of valid choices.
+    Get the constraints imposed on the vehicle.
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude
@@ -104,17 +80,17 @@ Property detail
 
     Get the  attitude profile.
 
-.. py:property:: ground_ellipses
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses
-    :type: VehicleGroundEllipsesCollection
+.. py:property:: attitude_supported_types
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types
+    :type: list
 
-    Get the  ground ellipses properties.
+    Return an array of valid choices.
 
-.. py:property:: access_constraints
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints
-    :type: AccessConstraintCollection
+.. py:property:: attitude_type
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type
+    :type: VehicleAttitude
 
-    Get the constraints imposed on the vehicle.
+    Get the type of attitude profile.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies
@@ -122,11 +98,11 @@ Property detail
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
-.. py:property:: use_terrain_in_lighting_computations
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations
-    :type: bool
+.. py:property:: ground_ellipses
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses
+    :type: VehicleGroundEllipsesCollection
 
-    Opt whether to compute lighting using terrain data.
+    Get the  ground ellipses properties.
 
 .. py:property:: lighting_maximum_step
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step
@@ -134,24 +110,53 @@ Property detail
 
     Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
+.. py:property:: route
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
+    :type: IPropagator
+
+    Get the route properties.
+
+.. py:property:: route_supported_types
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types
+    :type: list
+
+    Return an array of valid choices.
+
+.. py:property:: route_type
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_type
+    :type: PropagatorType
+
+    Get the propagator type.
+
+.. py:property:: use_terrain_in_lighting_computations
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations
+    :type: bool
+
+    Opt whether to compute lighting using terrain data.
+
 
 Method detail
 -------------
 
 
-.. py:method:: set_route_type(self, route: PropagatorType) -> None
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type
 
-    Set the propagator type.
+
+
+
+
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported
+
+    Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-        **route** : :obj:`~PropagatorType`
+        **attitude** : :obj:`~VehicleAttitude`
 
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~bool`
 
 .. py:method:: is_route_type_supported(self, route: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_route_type_supported
@@ -170,6 +175,8 @@ Method detail
 
 
 
+
+
 .. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_attitude_type
 
@@ -184,26 +191,19 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
-    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported
+.. py:method:: set_route_type(self, route: PropagatorType) -> None
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type
 
-    Get a value indicating whether the specified type can be used.
+    Set the propagator type.
 
     :Parameters:
 
-        **attitude** : :obj:`~VehicleAttitude`
+        **route** : :obj:`~PropagatorType`
 
 
     :Returns:
 
-        :obj:`~bool`
-
-
-
-
-
-
-
+        :obj:`~None`
 
 
 

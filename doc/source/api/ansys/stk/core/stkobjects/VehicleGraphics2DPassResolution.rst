@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.ground_track`
               - Ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.orbit`
-              - Orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.minimum_ground_track`
               - Minimum ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.minimum_orbit`
               - Minimum orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.orbit`
+              - Orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
 
 
@@ -58,12 +58,6 @@ Property detail
 
     Ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
-.. py:property:: orbit
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.orbit
-    :type: float
-
-    Orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
-
 .. py:property:: minimum_ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.minimum_ground_track
     :type: float
@@ -75,5 +69,11 @@ Property detail
     :type: float
 
     Minimum orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
+
+.. py:property:: orbit
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution.orbit
+    :type: float
+
+    Orbit resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
 

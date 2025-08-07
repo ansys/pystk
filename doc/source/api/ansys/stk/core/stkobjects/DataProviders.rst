@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.item`
-              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.contains`
               - Determine whether the collection contains a specific data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.get_item_by_index`
               - Retrieve a data provider from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.get_item_by_name`
               - Retrieve a data provider from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.item`
+              - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.count`
-              - Return an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._new_enum`
               - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.count`
+              - Return an element in the collection.
 
 
 
@@ -51,37 +51,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.DataProviders.count
-    :type: int
-
-    Return an element in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviders._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.DataProviders.count
+    :type: int
+
+    Return an element in the collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index_or_name: typing.Any) -> IDataProviderInfo
-    :canonical: ansys.stk.core.stkobjects.DataProviders.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~IDataProviderInfo`
-
 
 .. py:method:: contains(self, data_provider_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviders.contains
@@ -96,6 +80,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
 .. py:method:: get_item_by_index(self, index: int) -> IDataProviderInfo
     :canonical: ansys.stk.core.stkobjects.DataProviders.get_item_by_index
@@ -124,4 +109,19 @@ Method detail
     :Returns:
 
         :obj:`~IDataProviderInfo`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.DataProviders.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IDataProviderInfo`
+
 

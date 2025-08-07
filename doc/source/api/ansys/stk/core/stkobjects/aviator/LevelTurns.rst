@@ -27,22 +27,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_mode`
-              - Get the turn mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_g`
-              - Get the TurnG.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.bank_angle`
               - Get the bank angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_acceleration`
-              - Get the turn acceleration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_radius`
-              - Get the turn radius.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate`
-              - Get the turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode`
               - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper`
               - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_acceleration`
+              - Get the turn acceleration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_g`
+              - Get the TurnG.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_mode`
+              - Get the turn mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_radius`
+              - Get the turn radius.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate`
+              - Get the turn rate.
 
 
 
@@ -107,41 +107,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: turn_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_mode
-    :type: TurnMode
-
-    Get the turn mode.
-
-.. py:property:: turn_g
-    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_g
-    :type: float
-
-    Get the TurnG.
-
 .. py:property:: bank_angle
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.bank_angle
     :type: typing.Any
 
     Get the bank angle.
-
-.. py:property:: turn_acceleration
-    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_acceleration
-    :type: float
-
-    Get the turn acceleration.
-
-.. py:property:: turn_radius
-    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_radius
-    :type: float
-
-    Get the turn radius.
-
-.. py:property:: turn_rate
-    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate
-    :type: float
-
-    Get the turn rate.
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode
@@ -155,11 +125,39 @@ Property detail
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
+.. py:property:: turn_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_acceleration
+    :type: float
+
+    Get the turn acceleration.
+
+.. py:property:: turn_g
+    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_g
+    :type: float
+
+    Get the TurnG.
+
+.. py:property:: turn_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_mode
+    :type: TurnMode
+
+    Get the turn mode.
+
+.. py:property:: turn_radius
+    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_radius
+    :type: float
+
+    Get the turn radius.
+
+.. py:property:: turn_rate
+    :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate
+    :type: float
+
+    Get the turn rate.
+
 
 Method detail
 -------------
-
-
 
 
 
@@ -180,6 +178,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

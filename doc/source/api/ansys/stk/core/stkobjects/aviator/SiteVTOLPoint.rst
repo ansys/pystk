@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.latitude`
-              - Get or set the VTOL Point latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.longitude`
-              - Get or set the VTOL Point longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.altitude`
               - Get or set the altitude for the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.altitude_reference`
               - Get or set the altitude reference.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.latitude`
+              - Get or set the VTOL Point latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.longitude`
+              - Get or set the VTOL Point longitude.
 
 
 
@@ -51,18 +51,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: latitude
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.latitude
-    :type: typing.Any
-
-    Get or set the VTOL Point latitude.
-
-.. py:property:: longitude
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.longitude
-    :type: typing.Any
-
-    Get or set the VTOL Point longitude.
-
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.altitude
     :type: float
@@ -75,13 +63,21 @@ Property detail
 
     Get or set the altitude reference.
 
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.latitude
+    :type: typing.Any
+
+    Get or set the VTOL Point latitude.
+
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint.longitude
+    :type: typing.Any
+
+    Get or set the VTOL Point longitude.
+
 
 Method detail
 -------------
-
-
-
-
 
 
 
@@ -95,4 +91,8 @@ Method detail
     :Returns:
 
         :obj:`~ISite`
+
+
+
+
 

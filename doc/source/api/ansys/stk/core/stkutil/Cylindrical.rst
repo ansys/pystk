@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.longitude`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.radius`
               - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.z`
               - Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.longitude`
-              - Dimension depends on context.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkutil.Cylindrical.longitude
+    :type: typing.Any
+
+    Dimension depends on context.
+
 .. py:property:: radius
     :canonical: ansys.stk.core.stkutil.Cylindrical.radius
     :type: float
@@ -51,11 +57,5 @@ Property detail
     :type: float
 
     Uses Angle Dimension.
-
-.. py:property:: longitude
-    :canonical: ansys.stk.core.stkutil.Cylindrical.longitude
-    :type: typing.Any
-
-    Dimension depends on context.
 
 

@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_boundary`
-              - Show or hide the Active/Inactive Boundary.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_color`
-              - Set the color of the Active/Inactive Boundary.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_translucency`
-              - Set the percent Translucency for Active/Inactive Boundary.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_fill`
-              - Show or hide the Active/Inactive Fill.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_color`
-              - Set the color of the Inactive Fill.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_translucency`
-              - Set the percent Translucency for Inactive Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_color`
               - Set the color of the Active Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_translucency`
               - Set the percent Translucency for Active Fill.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_color`
+              - Set the color of the Active/Inactive Boundary.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_translucency`
+              - Set the percent Translucency for Active/Inactive Boundary.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_color`
+              - Set the color of the Inactive Fill.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_translucency`
+              - Set the percent Translucency for Inactive Fill.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_boundary`
+              - Show or hide the Active/Inactive Boundary.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_fill`
+              - Show or hide the Active/Inactive Fill.
 
 
 
@@ -48,11 +48,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_active_inactive_boundary
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_boundary
-    :type: bool
+.. py:property:: active_fill_color
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_color
+    :type: Color
 
-    Show or hide the Active/Inactive Boundary.
+    Set the color of the Active Fill.
+
+.. py:property:: active_fill_translucency
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_translucency
+    :type: float
+
+    Set the percent Translucency for Active Fill.
 
 .. py:property:: active_inactive_boundary_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_inactive_boundary_color
@@ -66,12 +72,6 @@ Property detail
 
     Set the percent Translucency for Active/Inactive Boundary.
 
-.. py:property:: show_active_inactive_fill
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_fill
-    :type: bool
-
-    Show or hide the Active/Inactive Fill.
-
 .. py:property:: inactive_fill_color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.inactive_fill_color
     :type: Color
@@ -84,16 +84,16 @@ Property detail
 
     Set the percent Translucency for Inactive Fill.
 
-.. py:property:: active_fill_color
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_color
-    :type: Color
+.. py:property:: show_active_inactive_boundary
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_boundary
+    :type: bool
 
-    Set the color of the Active Fill.
+    Show or hide the Active/Inactive Boundary.
 
-.. py:property:: active_fill_translucency
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.active_fill_translucency
-    :type: float
+.. py:property:: show_active_inactive_fill
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints.show_active_inactive_fill
+    :type: bool
 
-    Set the percent Translucency for Active Fill.
+    Show or hide the Active/Inactive Fill.
 
 

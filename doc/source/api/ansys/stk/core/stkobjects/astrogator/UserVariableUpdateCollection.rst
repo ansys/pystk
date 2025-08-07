@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.get_item_by_index`
               - Retrieve a user variable update in the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.get_item_by_name`
               - Retrieve a user variable update in the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -65,21 +65,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> UserVariableUpdate
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~UserVariableUpdate`
-
-
 
 .. py:method:: get_item_by_index(self, index: int) -> UserVariableUpdate
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.get_item_by_index
@@ -108,4 +93,19 @@ Method detail
     :Returns:
 
         :obj:`~UserVariableUpdate`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> UserVariableUpdate
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~UserVariableUpdate`
+
 

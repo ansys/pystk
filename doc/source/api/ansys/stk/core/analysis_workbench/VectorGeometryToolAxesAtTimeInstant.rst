@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_axes`
+              - A reference axes. Can be any VGT axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_time_instant`
               - A reference time instant. Can be any Time event.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.source_axes`
               - A base axes defining the orientation. Can be any VGT axes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_axes`
-              - A reference axes. Can be any VGT axes.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: reference_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_axes
+    :type: IVectorGeometryToolAxes
+
+    A reference axes. Can be any VGT axes.
+
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_time_instant
     :type: ITimeToolInstant
@@ -51,11 +57,5 @@ Property detail
     :type: IVectorGeometryToolAxes
 
     A base axes defining the orientation. Can be any VGT axes.
-
-.. py:property:: reference_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAtTimeInstant.reference_axes
-    :type: IVectorGeometryToolAxes
-
-    A reference axes. Can be any VGT axes.
 
 

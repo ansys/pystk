@@ -31,18 +31,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria`
-              - Get or set the criteria to be applied to the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object`
               - Get or set the calculation object to perform calculation to evaluate condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object_name`
               - Get or set the name of the calculation object to perform calculation to evaluate condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value`
-              - Get or set the value to satisfy the condition. Dimension depends on CalcObject.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria`
+              - Get or set the criteria to be applied to the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.tolerance`
               - How closely the test parameter must approximate the desired value for the constraint. Dimension depends on CalcObject.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.use_absolute_value`
               - Whether or not to take the absolute value of the calculation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value`
+              - Get or set the value to satisfy the condition. Dimension depends on CalcObject.
 
 
 
@@ -57,12 +57,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: criteria
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria
-    :type: Criteria
-
-    Get or set the criteria to be applied to the desired value.
-
 .. py:property:: calculation_object
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object
     :type: IComponentInfo
@@ -75,11 +69,11 @@ Property detail
 
     Get or set the name of the calculation object to perform calculation to evaluate condition.
 
-.. py:property:: value
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value
-    :type: typing.Any
+.. py:property:: criteria
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria
+    :type: Criteria
 
-    Get or set the value to satisfy the condition. Dimension depends on CalcObject.
+    Get or set the criteria to be applied to the desired value.
 
 .. py:property:: tolerance
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.tolerance
@@ -93,17 +87,15 @@ Property detail
 
     Whether or not to take the absolute value of the calculation.
 
+.. py:property:: value
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value
+    :type: typing.Any
+
+    Get or set the value to satisfy the condition. Dimension depends on CalcObject.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
 
 
 
@@ -118,6 +110,8 @@ Method detail
 
         :obj:`~None`
 
+
+
 .. py:method:: paste_calculation_object_from_clipboard(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.paste_calculation_object_from_clipboard
 
@@ -126,4 +120,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 

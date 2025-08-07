@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSection.title`
-              - Return a title of the sub-section.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSection.intervals`
               - Return a collection of intervals within the sub-section.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSection.title`
+              - Return a title of the sub-section.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: title
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.title
-    :type: str
-
-    Return a title of the sub-section.
-
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.intervals
     :type: DataProviderResultIntervalCollection
 
     Return a collection of intervals within the sub-section.
+
+.. py:property:: title
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.title
+    :type: str
+
+    Return a title of the sub-section.
 
 

@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VTOLPointCategory.user_vtol_points`
-              - Get the User VTOL Points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VTOLPointCategory.arinc424_helipads`
               - Get the ARINC-424 helipads.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VTOLPointCategory.dafif_helipads`
               - Get the DAFIF helipads.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VTOLPointCategory.user_vtol_points`
+              - Get the User VTOL Points.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: user_vtol_points
-    :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.user_vtol_points
-    :type: UserVTOLPointSource
-
-    Get the User VTOL Points.
-
 .. py:property:: arinc424_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.arinc424_helipads
     :type: ARINC424Source
@@ -55,5 +49,11 @@ Property detail
     :type: DAFIFSource
 
     Get the DAFIF helipads.
+
+.. py:property:: user_vtol_points
+    :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.user_vtol_points
+    :type: UserVTOLPointSource
+
+    Get the User VTOL Points.
 
 

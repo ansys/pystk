@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.enable_control_parameter`
-              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.enable_control_parameter`
+              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.g`
-              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients`
-              - Get the thrust Coefficients.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.isp_coefficients`
-              - Get the Isp Coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.control_parameters_available`
               - Return whether or not the control parameters can be set.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.g`
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.isp_coefficients`
+              - Get the Isp Coefficients.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients`
+              - Get the thrust Coefficients.
 
 
 
@@ -55,17 +55,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: control_parameters_available
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.control_parameters_available
+    :type: bool
+
+    Return whether or not the control parameters can be set.
+
 .. py:property:: g
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.g
     :type: float
 
     Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
-
-.. py:property:: thrust_coefficients
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients
-    :type: EngineModelThrustCoefficients
-
-    Get the thrust Coefficients.
 
 .. py:property:: isp_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.isp_coefficients
@@ -73,24 +73,21 @@ Property detail
 
     Get the Isp Coefficients.
 
-.. py:property:: control_parameters_available
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.control_parameters_available
-    :type: bool
+.. py:property:: thrust_coefficients
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients
+    :type: EngineModelThrustCoefficients
 
-    Return whether or not the control parameters can be set.
+    Get the thrust Coefficients.
 
 
 Method detail
 -------------
 
 
+.. py:method:: disable_control_parameter(self, param: ControlEngineModelPolynomial) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.disable_control_parameter
 
-
-
-.. py:method:: enable_control_parameter(self, param: ControlEngineModelPolynomial) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.enable_control_parameter
-
-    Enable the specified control parameter.
+    Disables the specified control parameter.
 
     :Parameters:
 
@@ -101,10 +98,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: ControlEngineModelPolynomial) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.disable_control_parameter
+.. py:method:: enable_control_parameter(self, param: ControlEngineModelPolynomial) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.enable_control_parameter
 
-    Disables the specified control parameter.
+    Enable the specified control parameter.
 
     :Parameters:
 
@@ -128,5 +125,8 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
 
 

@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_path`
-              - Set a new angle.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_angle`
-              - Set a new angle.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.get_angle`
               - Return the actual angle object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_angle`
+              - Set a new angle.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_path`
+              - Set a new angle.
 
 
 Import detail
@@ -41,34 +41,6 @@ Import detail
 
 Method detail
 -------------
-
-.. py:method:: set_path(self, path: str) -> None
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_path
-
-    Set a new angle.
-
-    :Parameters:
-
-        **path** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_angle(self, angle: IVectorGeometryToolAngle) -> None
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_angle
-
-    Set a new angle.
-
-    :Parameters:
-
-        **angle** : :obj:`~IVectorGeometryToolAngle`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: get_angle(self) -> IVectorGeometryToolAngle
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.get_angle
@@ -92,4 +64,32 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+.. py:method:: set_angle(self, angle: IVectorGeometryToolAngle) -> None
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_angle
+
+    Set a new angle.
+
+    :Parameters:
+
+        **angle** : :obj:`~IVectorGeometryToolAngle`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleReference.set_path
+
+    Set a new angle.
+
+    :Parameters:
+
+        **path** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
 

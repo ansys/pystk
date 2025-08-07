@@ -23,12 +23,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_argb`
+              - Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
             * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_rgb`
               - Create a new Color from R, G, B values in the range [0, 255].
             * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_rgba`
               - Create a new Color from R, G, B, A values in the range [0, 255].
-            * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_argb`
-              - Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
 
 Examples
 --------
@@ -74,6 +74,11 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: from_argb()
+    :canonical: ansys.stk.core.utilities.colors.Colors.from_argb
+
+    Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
+
 .. py:method:: from_rgb(r: int, g: int, b: int) -> Color
     :canonical: ansys.stk.core.utilities.colors.Colors.from_rgb
 
@@ -111,10 +116,5 @@ Method detail
     :Returns:
 
         :obj:`~ColorRGBA`
-
-.. py:method:: from_argb()
-    :canonical: ansys.stk.core.utilities.colors.Colors.from_argb
-
-    Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
 
 

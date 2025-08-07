@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.central_body`
               - Get the central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.reference_shape`
-              - Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.position`
               - A position of the point fixed on the central body.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.reference_shape`
+              - Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Get the central body.
 
-.. py:property:: reference_shape
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.reference_shape
-    :type: SurfaceReferenceShapeType
-
-    Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
-
 .. py:property:: position
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.position
     :type: IPosition
 
     A position of the point fixed on the central body.
+
+.. py:property:: reference_shape
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointCentralBodyFixedOffset.reference_shape
+    :type: SurfaceReferenceShapeType
+
+    Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
 
 

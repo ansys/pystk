@@ -29,24 +29,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.mode`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter`
-              - Get the radar transmitter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.receiver`
-              - Get the radar receiver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.clutter_geometry`
-              - Do not use this property, as it is deprecated. Use the Clutter property instead. Gets the radar clutter geometry.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.jamming`
-              - Get the radar jamming.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.antenna_control`
               - Get the radar antenna control.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.clutter`
               - Get the radar clutter settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.clutter_geometry`
+              - Do not use this property, as it is deprecated. Use the Clutter property instead. Gets the radar clutter geometry.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.jamming`
+              - Get the radar jamming.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.mode`
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.mode_component_linking`
               - Get the link/embed controller for managing the radar mode component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.receiver`
+              - Get the radar receiver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes`
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter`
+              - Get the radar transmitter.
 
 
 
@@ -61,29 +61,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_modes
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes
-    :type: list
+.. py:property:: antenna_control
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.antenna_control
+    :type: AntennaControl
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
+    Get the radar antenna control.
 
-.. py:property:: mode
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.mode
-    :type: IRadarModeMonostatic
+.. py:property:: clutter
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.clutter
+    :type: RadarClutter
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
-
-.. py:property:: transmitter
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter
-    :type: RadarTransmitter
-
-    Get the radar transmitter.
-
-.. py:property:: receiver
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.receiver
-    :type: RadarReceiver
-
-    Get the radar receiver.
+    Get the radar clutter settings.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.clutter_geometry
@@ -97,17 +85,11 @@ Property detail
 
     Get the radar jamming.
 
-.. py:property:: antenna_control
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.antenna_control
-    :type: AntennaControl
+.. py:property:: mode
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.mode
+    :type: IRadarModeMonostatic
 
-    Get the radar antenna control.
-
-.. py:property:: clutter
-    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.clutter
-    :type: RadarClutter
-
-    Get the radar clutter settings.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets the current radar mode.
 
 .. py:property:: mode_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.mode_component_linking
@@ -115,9 +97,33 @@ Property detail
 
     Get the link/embed controller for managing the radar mode component.
 
+.. py:property:: receiver
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.receiver
+    :type: RadarReceiver
+
+    Get the radar receiver.
+
+.. py:property:: supported_modes
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.supported_modes
+    :type: list
+
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelMonostatic instead. Gets an array of supported mode names.
+
+.. py:property:: transmitter
+    :canonical: ansys.stk.core.stkobjects.RadarModelMonostatic.transmitter
+    :type: RadarTransmitter
+
+    Get the radar transmitter.
+
 
 Method detail
 -------------
+
+
+
+
+
+
 
 
 .. py:method:: set_mode(self, mode_name: str) -> None
@@ -133,12 +139,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
 
 
 

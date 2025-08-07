@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.item`
-              - Get the articulation at the given index. The index is zero-based.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.get_item_by_string`
-              - Get an articulation by name.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.get_by_name`
-              - Get an articulation by name.
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.contains`
               - Return true if the collection contains the articulation.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.get_by_name`
+              - Get an articulation by name.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.get_item_by_string`
+              - Get an articulation by name.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.item`
+              - Get the articulation at the given index. The index is zero-based.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.count`
-              - Get the number of articulations in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection._new_enum`
               - Return the enumerator for this collection.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.count`
+              - Get the number of articulations in the collection.
 
 
 
@@ -51,31 +51,45 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.count
-    :type: int
-
-    Get the number of articulations in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.ModelArticulationCollection._new_enum
     :type: EnumeratorProxy
 
     Return the enumerator for this collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.count
+    :type: int
+
+    Get the number of articulations in the collection.
+
 
 Method detail
 -------------
 
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.contains
 
-.. py:method:: item(self, index: int) -> ModelArticulation
-    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.item
-
-    Get the articulation at the given index. The index is zero-based.
+    Return true if the collection contains the articulation.
 
     :Parameters:
 
-        **index** : :obj:`~int`
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: get_by_name(self, name: str) -> ModelArticulation
+    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.get_by_name
+
+    Get an articulation by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
 
 
     :Returns:
@@ -96,32 +110,18 @@ Method detail
 
         :obj:`~ModelArticulation`
 
-.. py:method:: get_by_name(self, name: str) -> ModelArticulation
-    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.get_by_name
+.. py:method:: item(self, index: int) -> ModelArticulation
+    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.item
 
-    Get an articulation by name.
+    Get the articulation at the given index. The index is zero-based.
 
     :Parameters:
 
-        **name** : :obj:`~str`
+        **index** : :obj:`~int`
 
 
     :Returns:
 
         :obj:`~ModelArticulation`
-
-.. py:method:: contains(self, name: str) -> bool
-    :canonical: ansys.stk.core.graphics.ModelArticulationCollection.contains
-
-    Return true if the collection contains the articulation.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~bool`
 
 

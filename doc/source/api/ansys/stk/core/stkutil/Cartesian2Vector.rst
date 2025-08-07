@@ -65,10 +65,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: get(self) -> typing.Tuple[float, float]
     :canonical: ansys.stk.core.stkutil.Cartesian2Vector.get
 
@@ -102,4 +98,8 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
+
+
 

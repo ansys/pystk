@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.item`
-              - Get the transformation at the given index. The index is zero-based.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.get_item_by_string`
-              - Get a transformation by name.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.get_by_name`
-              - Get a transformation by name.
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.contains`
               - Return true if the collection contains the transformation.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.get_by_name`
+              - Get a transformation by name.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.get_item_by_string`
+              - Get a transformation by name.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.item`
+              - Get the transformation at the given index. The index is zero-based.
 
     .. tab-item:: Properties
 
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.name`
-              - Get the name of the articulation.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.count`
-              - Get the number of transformations in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation._new_enum`
               - Return the enumerator for this collection.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.count`
+              - Get the number of transformations in the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.name`
+              - Get the name of the articulation.
 
 
 
@@ -53,11 +53,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.graphics.ModelArticulation.name
-    :type: str
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.ModelArticulation._new_enum
+    :type: EnumeratorProxy
 
-    Get the name of the articulation.
+    Return the enumerator for this collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.graphics.ModelArticulation.count
@@ -65,26 +65,39 @@ Property detail
 
     Get the number of transformations in the collection.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.graphics.ModelArticulation._new_enum
-    :type: EnumeratorProxy
+.. py:property:: name
+    :canonical: ansys.stk.core.graphics.ModelArticulation.name
+    :type: str
 
-    Return the enumerator for this collection.
+    Get the name of the articulation.
 
 
 Method detail
 -------------
 
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.graphics.ModelArticulation.contains
 
-
-.. py:method:: item(self, index: int) -> ModelTransformation
-    :canonical: ansys.stk.core.graphics.ModelArticulation.item
-
-    Get the transformation at the given index. The index is zero-based.
+    Return true if the collection contains the transformation.
 
     :Parameters:
 
-        **index** : :obj:`~int`
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: get_by_name(self, name: str) -> ModelTransformation
+    :canonical: ansys.stk.core.graphics.ModelArticulation.get_by_name
+
+    Get a transformation by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
 
 
     :Returns:
@@ -105,32 +118,19 @@ Method detail
 
         :obj:`~ModelTransformation`
 
-.. py:method:: get_by_name(self, name: str) -> ModelTransformation
-    :canonical: ansys.stk.core.graphics.ModelArticulation.get_by_name
+.. py:method:: item(self, index: int) -> ModelTransformation
+    :canonical: ansys.stk.core.graphics.ModelArticulation.item
 
-    Get a transformation by name.
+    Get the transformation at the given index. The index is zero-based.
 
     :Parameters:
 
-        **name** : :obj:`~str`
+        **index** : :obj:`~int`
 
 
     :Returns:
 
         :obj:`~ModelTransformation`
 
-.. py:method:: contains(self, name: str) -> bool
-    :canonical: ansys.stk.core.graphics.ModelArticulation.contains
-
-    Return true if the collection contains the transformation.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~bool`
 
 

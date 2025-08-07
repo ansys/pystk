@@ -18,10 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.elevation`
-              - Elevation level. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.color`
               - Contour color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.elevation`
+              - Elevation level. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle`
+              - Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_style`
               - Contour line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_width`
@@ -32,8 +34,6 @@ Overview
               - Show User Defined Text on Contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.user_text`
               - Opt whether to display user defined text for the contour.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle`
-              - Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 
 
@@ -48,17 +48,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: color
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.color
+    :type: Color
+
+    Contour color.
+
 .. py:property:: elevation
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.elevation
     :type: float
 
     Elevation level. Uses Angle Dimension.
 
-.. py:property:: color
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.color
-    :type: Color
+.. py:property:: label_angle
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle
+    :type: int
 
-    Contour color.
+    Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_style
@@ -89,11 +95,5 @@ Property detail
     :type: str
 
     Opt whether to display user defined text for the contour.
-
-.. py:property:: label_angle
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle
-    :type: int
-
-    Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 

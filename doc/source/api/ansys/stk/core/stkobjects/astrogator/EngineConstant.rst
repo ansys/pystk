@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.enable_control_parameter`
-              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.enable_control_parameter`
+              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.g`
-              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.thrust`
-              - Get or set the thrust for this engine. Uses Force Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.isp`
-              - Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.control_parameters_available`
               - Return whether or not the control parameters can be set.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.g`
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.isp`
+              - Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstant.thrust`
+              - Get or set the thrust for this engine. Uses Force Dimension.
 
 
 
@@ -55,17 +55,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: control_parameters_available
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.control_parameters_available
+    :type: bool
+
+    Return whether or not the control parameters can be set.
+
 .. py:property:: g
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.g
     :type: float
 
     Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
-
-.. py:property:: thrust
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.thrust
-    :type: float
-
-    Get or set the thrust for this engine. Uses Force Dimension.
 
 .. py:property:: isp
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.isp
@@ -73,26 +73,21 @@ Property detail
 
     Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension.
 
-.. py:property:: control_parameters_available
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.control_parameters_available
-    :type: bool
+.. py:property:: thrust
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.thrust
+    :type: float
 
-    Return whether or not the control parameters can be set.
+    Get or set the thrust for this engine. Uses Force Dimension.
 
 
 Method detail
 -------------
 
 
+.. py:method:: disable_control_parameter(self, param: ControlEngineConstant) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.disable_control_parameter
 
-
-
-
-
-.. py:method:: enable_control_parameter(self, param: ControlEngineConstant) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.enable_control_parameter
-
-    Enable the specified control parameter.
+    Disables the specified control parameter.
 
     :Parameters:
 
@@ -103,10 +98,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: ControlEngineConstant) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.disable_control_parameter
+.. py:method:: enable_control_parameter(self, param: ControlEngineConstant) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstant.enable_control_parameter
 
-    Disables the specified control parameter.
+    Enable the specified control parameter.
 
     :Parameters:
 
@@ -130,5 +125,10 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+
 
 

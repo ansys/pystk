@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.set_airspeed`
-              - Set the airspeed type and value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.set_airspeed`
+              - Set the airspeed type and value.
 
     .. tab-item:: Properties
 
@@ -31,24 +31,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.ceiling_altitude`
-              - Get or set the ceiling altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.airspeed`
               - Get the airsepeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.airspeed_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.altitude_rate`
               - Get or set the altitude rate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel`
-              - Get or set whether to use Aero/Propulsion fuel flow.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.scale_fuel_flow_by_non_std_density`
-              - Get or set whether to scale fuel flow by non std density.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.fuel_flow`
-              - Get or set the Sea Level Fuel Flow.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.ceiling_altitude`
+              - Get or set the ceiling altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.enable_relative_airspeed_tolerance`
               - Get or set whether to enable relative airspeed tolerance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.fuel_flow`
+              - Get or set the Sea Level Fuel Flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.relative_airspeed_tolerance`
               - Get or set the relative airspeed tolerance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.scale_fuel_flow_by_non_std_density`
+              - Get or set whether to scale fuel flow by non std density.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel`
+              - Get or set whether to use Aero/Propulsion fuel flow.
 
 
 
@@ -62,12 +62,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: ceiling_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.ceiling_altitude
-    :type: float
-
-    Get or set the ceiling altitude.
 
 .. py:property:: airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.airspeed
@@ -87,23 +81,11 @@ Property detail
 
     Get or set the altitude rate.
 
-.. py:property:: use_aerodynamic_propulsion_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel
-    :type: bool
-
-    Get or set whether to use Aero/Propulsion fuel flow.
-
-.. py:property:: scale_fuel_flow_by_non_std_density
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.scale_fuel_flow_by_non_std_density
-    :type: bool
-
-    Get or set whether to scale fuel flow by non std density.
-
-.. py:property:: fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.fuel_flow
+.. py:property:: ceiling_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.ceiling_altitude
     :type: float
 
-    Get or set the Sea Level Fuel Flow.
+    Get or set the ceiling altitude.
 
 .. py:property:: enable_relative_airspeed_tolerance
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.enable_relative_airspeed_tolerance
@@ -111,15 +93,52 @@ Property detail
 
     Get or set whether to enable relative airspeed tolerance.
 
+.. py:property:: fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.fuel_flow
+    :type: float
+
+    Get or set the Sea Level Fuel Flow.
+
 .. py:property:: relative_airspeed_tolerance
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.relative_airspeed_tolerance
     :type: float
 
     Get or set the relative airspeed tolerance.
 
+.. py:property:: scale_fuel_flow_by_non_std_density
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.scale_fuel_flow_by_non_std_density
+    :type: bool
+
+    Get or set whether to scale fuel flow by non std density.
+
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel
+    :type: bool
+
+    Get or set whether to use Aero/Propulsion fuel flow.
+
 
 Method detail
 -------------
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.get_as_catalog_item
+
+    Get the catalog item interface for this object.
+
+    :Returns:
+
+        :obj:`~ICatalogItem`
 
 
 
@@ -142,23 +161,4 @@ Method detail
         :obj:`~None`
 
 
-
-
-
-
-
-
-
-
-
-
-
-.. py:method:: get_as_catalog_item(self) -> ICatalogItem
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.get_as_catalog_item
-
-    Get the catalog item interface for this object.
-
-    :Returns:
-
-        :obj:`~ICatalogItem`
 

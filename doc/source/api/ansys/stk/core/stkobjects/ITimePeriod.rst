@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.duration`
+              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.start_time`
               - Get a start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.stop_time`
               - Get a stop time. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.duration`
-              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
 
 
 Import detail
@@ -37,6 +37,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: duration
+    :canonical: ansys.stk.core.stkobjects.ITimePeriod.duration
+    :type: typing.Any
+
+    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
+
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ITimePeriod.start_time
     :type: TimePeriodValue
@@ -48,11 +54,5 @@ Property detail
     :type: TimePeriodValue
 
     Get a stop time. Uses DateFormat Dimension.
-
-.. py:property:: duration
-    :canonical: ansys.stk.core.stkobjects.ITimePeriod.duration
-    :type: typing.Any
-
-    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
 
 

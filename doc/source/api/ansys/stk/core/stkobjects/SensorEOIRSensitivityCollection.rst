@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.item`
-              - Given an index, returns an SensorEOIRRadiometricPair interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.add`
               - Add a radiometric pair.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.item`
+              - Given an index, returns an SensorEOIRRadiometricPair interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.remove_at`
               - Remove a radiometric pair given an index.
 
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.count`
-              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection._new_enum`
               - Enumerates through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.count`
+              - The number of items in the collection.
 
 
 
@@ -49,22 +49,30 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.count
-    :type: int
-
-    The number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.count
+    :type: int
+
+    The number of items in the collection.
+
 
 Method detail
 -------------
 
+.. py:method:: add(self) -> SensorEOIRRadiometricPair
+    :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.add
+
+    Add a radiometric pair.
+
+    :Returns:
+
+        :obj:`~SensorEOIRRadiometricPair`
 
 
 .. py:method:: item(self, index: int) -> SensorEOIRRadiometricPair
@@ -76,15 +84,6 @@ Method detail
 
         **index** : :obj:`~int`
 
-
-    :Returns:
-
-        :obj:`~SensorEOIRRadiometricPair`
-
-.. py:method:: add(self) -> SensorEOIRRadiometricPair
-    :canonical: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection.add
-
-    Add a radiometric pair.
 
     :Returns:
 
@@ -103,4 +102,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

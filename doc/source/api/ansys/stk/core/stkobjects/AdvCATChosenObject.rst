@@ -18,24 +18,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.name`
-              - Get the chosen object name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.ellipsoid_class`
-              - Determine Ellipsoid Sizing method class.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.tangential`
-              - Semi-major Axes Size along A.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.cross_track`
               - Semi-major Axes Size along B.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.normal`
-              - Semi-major Axes Size along C.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.type`
-              - Get the File Type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.ellipsoid_class`
+              - Determine Ellipsoid Sizing method class.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.hard_body_radius`
               - Used in prob of collision.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.name`
+              - Get the chosen object name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.normal`
+              - Semi-major Axes Size along C.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.number_identifier`
               - An IRON or other numeric id.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.string_identifier`
               - A VEID, or other character id.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.tangential`
+              - Semi-major Axes Size along A.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.type`
+              - Get the File Type.
 
 
 
@@ -50,11 +50,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.name
-    :type: str
+.. py:property:: cross_track
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.cross_track
+    :type: float
 
-    Get the chosen object name.
+    Semi-major Axes Size along B.
 
 .. py:property:: ellipsoid_class
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.ellipsoid_class
@@ -62,35 +62,23 @@ Property detail
 
     Determine Ellipsoid Sizing method class.
 
-.. py:property:: tangential
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.tangential
+.. py:property:: hard_body_radius
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.hard_body_radius
     :type: float
 
-    Semi-major Axes Size along A.
+    Used in prob of collision.
 
-.. py:property:: cross_track
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.cross_track
-    :type: float
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.name
+    :type: str
 
-    Semi-major Axes Size along B.
+    Get the chosen object name.
 
 .. py:property:: normal
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.normal
     :type: float
 
     Semi-major Axes Size along C.
-
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.type
-    :type: str
-
-    Get the File Type.
-
-.. py:property:: hard_body_radius
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.hard_body_radius
-    :type: float
-
-    Used in prob of collision.
 
 .. py:property:: number_identifier
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.number_identifier
@@ -103,5 +91,17 @@ Property detail
     :type: str
 
     A VEID, or other character id.
+
+.. py:property:: tangential
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.tangential
+    :type: float
+
+    Semi-major Axes Size along A.
+
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.type
+    :type: str
+
+    Get the File Type.
 
 

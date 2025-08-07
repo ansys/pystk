@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.item`
-              - Get the overlay at the specified index.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains`
-              - Determine whether the collection contains a specific overlay.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.remove`
-              - Remove the first occurrence of a specific overlay from the collection.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear`
-              - Remove all overlays from the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.add`
               - Add an overlay to the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear`
+              - Remove all overlays from the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains`
+              - Determine whether the collection contains a specific overlay.
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.item`
+              - Get the overlay at the specified index.
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.remove`
+              - Remove the first occurrence of a specific overlay from the collection.
 
     .. tab-item:: Properties
 
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum`
+              - Return an enumerator that iterates through the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.count`
               - Get the number of screen overlays in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only`
               - Get a value indicating whether the collection is read-only.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum`
-              - Return an enumerator that iterates through the collection.
 
 
 Import detail
@@ -54,6 +54,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum
+    :type: EnumeratorProxy
+
+    Return an enumerator that iterates through the collection.
+
 .. py:property:: count
     :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.count
     :type: int
@@ -66,15 +72,46 @@ Property detail
 
     Get a value indicating whether the collection is read-only.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum
-    :type: EnumeratorProxy
-
-    Return an enumerator that iterates through the collection.
-
 
 Method detail
 -------------
+
+.. py:method:: add(self, item: IScreenOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.add
+
+    Add an overlay to the collection.
+
+    :Parameters:
+
+        **item** : :obj:`~IScreenOverlay`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear
+
+    Remove all overlays from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: contains(self, item: IScreenOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains
+
+    Determine whether the collection contains a specific overlay.
+
+    :Parameters:
+
+        **item** : :obj:`~IScreenOverlay`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 
 
@@ -92,21 +129,6 @@ Method detail
 
         :obj:`~IScreenOverlay`
 
-
-.. py:method:: contains(self, item: IScreenOverlay) -> bool
-    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains
-
-    Determine whether the collection contains a specific overlay.
-
-    :Parameters:
-
-        **item** : :obj:`~IScreenOverlay`
-
-
-    :Returns:
-
-        :obj:`~bool`
-
 .. py:method:: remove(self, item: IScreenOverlay) -> bool
     :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.remove
 
@@ -121,26 +143,4 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: clear(self) -> None
-    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear
-
-    Remove all overlays from the collection.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: add(self, item: IScreenOverlay) -> None
-    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.add
-
-    Add an overlay to the collection.
-
-    :Parameters:
-
-        **item** : :obj:`~IScreenOverlay`
-
-
-    :Returns:
-
-        :obj:`~None`
 

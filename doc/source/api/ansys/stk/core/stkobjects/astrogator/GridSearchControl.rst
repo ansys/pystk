@@ -18,24 +18,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.current_value`
+              - Get the value of the independent variable after the last targeter run.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit`
+              - Get or set the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.enable`
               - If true, the variable is being used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.lower_bound`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.name`
               - Get the name of the parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.parent_name`
               - Get the name of the segment to which the parameter belongs.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.current_value`
-              - Get the value of the independent variable after the last targeter run.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.lower_bound`
-              - Dimension depends on context.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.step`
+              - Specify the step size to use when evaluating the grid search. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.upper_bound`
               - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.use_custom_display_unit`
               - If true, allows display of values in another unit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit`
-              - Get or set the unit in which the value will be displayed in the GUI.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.step`
-              - Specify the step size to use when evaluating the grid search. Dimension depends on context.
 
 
 
@@ -50,11 +50,29 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: current_value
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.current_value
+    :type: typing.Any
+
+    Get the value of the independent variable after the last targeter run.
+
+.. py:property:: custom_display_unit
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit
+    :type: str
+
+    Get or set the unit in which the value will be displayed in the GUI.
+
 .. py:property:: enable
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.enable
     :type: bool
 
     If true, the variable is being used.
+
+.. py:property:: lower_bound
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.lower_bound
+    :type: typing.Any
+
+    Dimension depends on context.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.name
@@ -68,17 +86,11 @@ Property detail
 
     Get the name of the segment to which the parameter belongs.
 
-.. py:property:: current_value
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.current_value
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.step
     :type: typing.Any
 
-    Get the value of the independent variable after the last targeter run.
-
-.. py:property:: lower_bound
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.lower_bound
-    :type: typing.Any
-
-    Dimension depends on context.
+    Specify the step size to use when evaluating the grid search. Dimension depends on context.
 
 .. py:property:: upper_bound
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.upper_bound
@@ -91,17 +103,5 @@ Property detail
     :type: bool
 
     If true, allows display of values in another unit.
-
-.. py:property:: custom_display_unit
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit
-    :type: str
-
-    Get or set the unit in which the value will be displayed in the GUI.
-
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.step
-    :type: typing.Any
-
-    Specify the step size to use when evaluating the grid search. Dimension depends on context.
 
 

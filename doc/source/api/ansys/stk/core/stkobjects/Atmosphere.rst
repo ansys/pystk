@@ -29,14 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.inherit_atmospheric_absorption_model`
-              - Do not use this property, as it is deprecated. Use the PropagationChannel property to enable or disable the atmospheric absorption model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.supported_local_atmospheric_absorption_models`
-              - Do not use this property, as it is deprecated. Use the PropagationChannel property to determine the supported atmospheric absorption models.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.local_atmospheric_absorption_model`
-              - Do not use this property, as it is deprecated. Use the PropagationChannel property to get the atmospheric absorption model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.enable_local_rain_data`
               - Get or set the option for enabling local rain data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.inherit_atmospheric_absorption_model`
+              - Do not use this property, as it is deprecated. Use the PropagationChannel property to enable or disable the atmospheric absorption model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.local_atmospheric_absorption_model`
+              - Do not use this property, as it is deprecated. Use the PropagationChannel property to get the atmospheric absorption model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.local_rain_height`
               - Get or set the local rain iso height.
             * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.local_rain_rate`
@@ -45,6 +43,8 @@ Overview
               - Do not use this property, as it is deprecated. Gets or sets the local surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.propagation_channel`
               - Get the propagation channel.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Atmosphere.supported_local_atmospheric_absorption_models`
+              - Do not use this property, as it is deprecated. Use the PropagationChannel property to determine the supported atmospheric absorption models.
 
 
 
@@ -59,29 +59,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: enable_local_rain_data
+    :canonical: ansys.stk.core.stkobjects.Atmosphere.enable_local_rain_data
+    :type: bool
+
+    Get or set the option for enabling local rain data.
+
 .. py:property:: inherit_atmospheric_absorption_model
     :canonical: ansys.stk.core.stkobjects.Atmosphere.inherit_atmospheric_absorption_model
     :type: bool
 
     Do not use this property, as it is deprecated. Use the PropagationChannel property to enable or disable the atmospheric absorption model.
 
-.. py:property:: supported_local_atmospheric_absorption_models
-    :canonical: ansys.stk.core.stkobjects.Atmosphere.supported_local_atmospheric_absorption_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use the PropagationChannel property to determine the supported atmospheric absorption models.
-
 .. py:property:: local_atmospheric_absorption_model
     :canonical: ansys.stk.core.stkobjects.Atmosphere.local_atmospheric_absorption_model
     :type: IAtmosphericAbsorptionModel
 
     Do not use this property, as it is deprecated. Use the PropagationChannel property to get the atmospheric absorption model.
-
-.. py:property:: enable_local_rain_data
-    :canonical: ansys.stk.core.stkobjects.Atmosphere.enable_local_rain_data
-    :type: bool
-
-    Get or set the option for enabling local rain data.
 
 .. py:property:: local_rain_height
     :canonical: ansys.stk.core.stkobjects.Atmosphere.local_rain_height
@@ -107,9 +101,24 @@ Property detail
 
     Get the propagation channel.
 
+.. py:property:: supported_local_atmospheric_absorption_models
+    :canonical: ansys.stk.core.stkobjects.Atmosphere.supported_local_atmospheric_absorption_models
+    :type: list
+
+    Do not use this property, as it is deprecated. Use the PropagationChannel property to determine the supported atmospheric absorption models.
+
 
 Method detail
 -------------
+
+
+
+
+
+
+
+
+
 
 
 
@@ -127,14 +136,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
-
-
 
 
