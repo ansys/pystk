@@ -261,15 +261,19 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }}/.cov \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export COVERAGE_FILE=core && coverage combine aviator stknogfx stkgfx vgt snippets migration extensions"
+            "export COVERAGE_FILE=coverage && coverage combine aviator stknogfx stkgfx vgt snippets migration extensions"
 
-      - name: "Generate coverage report"
+      - name: "Generate coverage report in XML and HTML"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage html --rcfile pyproject.toml --data-file=.cov/core --directory=.cov/${{ env.ANSYS_STK }}-coverage --fail-under=89"
+            "coverage html --rcfile pyproject.toml --data-file=.cov/coverage --directory=.cov/${{ env.ANSYS_STK }}-coverage --fail-under=89"
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "coverage xml --rcfile pyproject.toml --data-file=.cov/coverage -o .cov/coverage.xml"
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
@@ -277,6 +281,13 @@ jobs:
         with:
           path: .cov/${{ env.ANSYS_STK }}-coverage
           name: ${{ env.ANSYS_STK }}-coverage
+
+      - name: "Upload coverage reports to Codecov"
+        if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
+        uses: codecov/codecov-action@v5
+        with:
+          files: .cov/coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: "Stop the container"
         if: always()
