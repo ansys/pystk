@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.set_landing_speed`
-              - Set the landing speed of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.set_landing_speed`
+              - Set the landing speed of the aircraft.
 
     .. tab-item:: Properties
 
@@ -31,18 +31,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow`
+              - Get or set the Sea Level Fuel Flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.landing_speed`
               - Get the landing speed of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.landing_speed_type`
               - Get the landing speed type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
+              - Get or set whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.sea_level_ground_roll`
               - Get or set the distance the aircraft travels along the ground while decelerating to a stop at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aerodynamic_propulsion_fuel`
               - Get or set whether to use Aero/Propulsion fuel flow.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
-              - Get or set whether to scale fuel flow by non std density.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow`
-              - Get or set the Sea Level Fuel Flow.
 
 
 
@@ -57,6 +57,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow
+    :type: float
+
+    Get or set the Sea Level Fuel Flow.
+
 .. py:property:: landing_speed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.landing_speed
     :type: float
@@ -68,6 +74,12 @@ Property detail
     :type: AirspeedType
 
     Get the landing speed type.
+
+.. py:property:: scale_fuel_flow_by_non_std_density
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density
+    :type: bool
+
+    Get or set whether to scale fuel flow by non std density.
 
 .. py:property:: sea_level_ground_roll
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.sea_level_ground_roll
@@ -81,21 +93,24 @@ Property detail
 
     Get or set whether to use Aero/Propulsion fuel flow.
 
-.. py:property:: scale_fuel_flow_by_non_std_density
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density
-    :type: bool
-
-    Get or set whether to scale fuel flow by non std density.
-
-.. py:property:: fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow
-    :type: float
-
-    Get or set the Sea Level Fuel Flow.
-
 
 Method detail
 -------------
+
+
+
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.get_as_catalog_item
+
+    Get the catalog item interface for this object.
+
+    :Returns:
+
+        :obj:`~ICatalogItem`
+
+
+
+
 
 
 
@@ -116,19 +131,4 @@ Method detail
         :obj:`~None`
 
 
-
-
-
-
-
-
-
-.. py:method:: get_as_catalog_item(self) -> ICatalogItem
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.get_as_catalog_item
-
-    Get the catalog item interface for this object.
-
-    :Returns:
-
-        :obj:`~ICatalogItem`
 

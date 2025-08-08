@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.is_normalized`
+              - Control whether to convert the reference vector to a unit vector before scalling.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.reference_vector`
               - A vector being scaled.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.scale`
               - A scaling multiple.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.is_normalized`
-              - Control whether to convert the reference vector to a unit vector before scalling.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: is_normalized
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.is_normalized
+    :type: bool
+
+    Control whether to convert the reference vector to a unit vector before scalling.
+
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.reference_vector
     :type: VectorGeometryToolVectorReference
@@ -51,11 +57,5 @@ Property detail
     :type: float
 
     A scaling multiple.
-
-.. py:property:: is_normalized
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorScaled.is_normalized
-    :type: bool
-
-    Control whether to convert the reference vector to a unit vector before scalling.
 
 

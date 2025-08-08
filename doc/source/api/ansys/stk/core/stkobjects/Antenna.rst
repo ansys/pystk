@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Antenna instead. Sets the current antenna model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.set_model`
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Antenna instead. Sets the current antenna model by name.
 
     .. tab-item:: Properties
 
@@ -31,30 +31,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets an array of supported model names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.graphics`
+              - Get the 2D Graphics properties for the antenna.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.graphics_3d`
+              - Get the 3D Graphics properties for the antenna.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.laser_environment`
+              - Get the object laser environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.model`
               - Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets the current antenna model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.model_component_linking`
+              - Get the link/embed controller for managing the antenna model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.orientation`
               - Get the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.refraction`
               - Refraction method, a member of the SensorRefractionType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.refraction_supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.refraction_model`
               - Get a refraction model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.use_refraction_in_access`
-              - Flag controls whether refraction is applied when computing relative position in Access.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.graphics_3d`
-              - Get the 3D Graphics properties for the antenna.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.graphics`
-              - Get the 2D Graphics properties for the antenna.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.refraction_supported_types`
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.rf_environment`
               - Get the object RF environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.laser_environment`
-              - Get the object laser environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.model_component_linking`
-              - Get the link/embed controller for managing the antenna model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.supported_models`
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets an array of supported model names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
 
 
 
@@ -132,17 +132,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.Antenna.supported_models
-    :type: list
+.. py:property:: graphics
+    :canonical: ansys.stk.core.stkobjects.Antenna.graphics
+    :type: AntennaGraphics
 
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets an array of supported model names.
+    Get the 2D Graphics properties for the antenna.
+
+.. py:property:: graphics_3d
+    :canonical: ansys.stk.core.stkobjects.Antenna.graphics_3d
+    :type: AntennaGraphics3D
+
+    Get the 3D Graphics properties for the antenna.
+
+.. py:property:: laser_environment
+    :canonical: ansys.stk.core.stkobjects.Antenna.laser_environment
+    :type: ObjectLaserEnvironment
+
+    Get the object laser environment settings.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Antenna.model
     :type: IAntennaModel
 
     Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets the current antenna model.
+
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.Antenna.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the antenna model component.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.Antenna.orientation
@@ -156,35 +174,17 @@ Property detail
 
     Refraction method, a member of the SensorRefractionType enumeration.
 
-.. py:property:: refraction_supported_types
-    :canonical: ansys.stk.core.stkobjects.Antenna.refraction_supported_types
-    :type: list
-
-    Return an array of valid choices.
-
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Antenna.refraction_model
     :type: IRefractionModelBase
 
     Get a refraction model.
 
-.. py:property:: use_refraction_in_access
-    :canonical: ansys.stk.core.stkobjects.Antenna.use_refraction_in_access
-    :type: bool
+.. py:property:: refraction_supported_types
+    :canonical: ansys.stk.core.stkobjects.Antenna.refraction_supported_types
+    :type: list
 
-    Flag controls whether refraction is applied when computing relative position in Access.
-
-.. py:property:: graphics_3d
-    :canonical: ansys.stk.core.stkobjects.Antenna.graphics_3d
-    :type: AntennaGraphics3D
-
-    Get the 3D Graphics properties for the antenna.
-
-.. py:property:: graphics
-    :canonical: ansys.stk.core.stkobjects.Antenna.graphics
-    :type: AntennaGraphics
-
-    Get the 2D Graphics properties for the antenna.
+    Return an array of valid choices.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Antenna.rf_environment
@@ -192,40 +192,21 @@ Property detail
 
     Get the object RF environment settings.
 
-.. py:property:: laser_environment
-    :canonical: ansys.stk.core.stkobjects.Antenna.laser_environment
-    :type: ObjectLaserEnvironment
+.. py:property:: supported_models
+    :canonical: ansys.stk.core.stkobjects.Antenna.supported_models
+    :type: list
 
-    Get the object laser environment settings.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on Antenna instead. Gets an array of supported model names.
 
-.. py:property:: model_component_linking
-    :canonical: ansys.stk.core.stkobjects.Antenna.model_component_linking
-    :type: IComponentLinkEmbedControl
+.. py:property:: use_refraction_in_access
+    :canonical: ansys.stk.core.stkobjects.Antenna.use_refraction_in_access
+    :type: bool
 
-    Get the link/embed controller for managing the antenna model component.
+    Flag controls whether refraction is applied when computing relative position in Access.
 
 
 Method detail
 -------------
-
-
-.. py:method:: set_model(self, model_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Antenna.set_model
-
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on Antenna instead. Sets the current antenna model by name.
-
-    :Parameters:
-
-        **model_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
-
 
 
 .. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
@@ -246,6 +227,25 @@ Method detail
 
 
 
+
+
+
+
+
+
+.. py:method:: set_model(self, model_name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.Antenna.set_model
+
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on Antenna instead. Sets the current antenna model by name.
+
+    :Parameters:
+
+        **model_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 
 

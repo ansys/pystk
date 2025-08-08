@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.item`
-              - Return the latitude-longitude pair with the specified index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.add`
               - Add a latitude-longitude pair. Lat uses Latitude Dimension, Lon Uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.item`
+              - Return the latitude-longitude pair with the specified index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.remove`
               - Remove an item using a given index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.remove_all`
@@ -35,10 +35,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum`
               - Enumerates through the collection of points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.count`
-              - Return the number of latitude-longitude pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point`
               - Specify the anchor point. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.count`
+              - Return the number of latitude-longitude pairs.
 
 
 
@@ -59,37 +59,21 @@ Property detail
 
     Enumerates through the collection of points.
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.count
-    :type: int
-
-    Return the number of latitude-longitude pairs.
-
 .. py:property:: anchor_point
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point
     :type: int
 
     Specify the anchor point. Dimensionless.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.count
+    :type: int
+
+    Return the number of latitude-longitude pairs.
+
 
 Method detail
 -------------
-
-
-
-.. py:method:: item(self, index: int) -> LineTargetPoint
-    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.item
-
-    Return the latitude-longitude pair with the specified index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~LineTargetPoint`
 
 .. py:method:: add(self, lat: typing.Any, lon: typing.Any) -> LineTargetPoint
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.add
@@ -101,6 +85,23 @@ Method detail
         **lat** : :obj:`~typing.Any`
 
         **lon** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~LineTargetPoint`
+
+
+
+
+.. py:method:: item(self, index: int) -> LineTargetPoint
+    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.item
+
+    Return the latitude-longitude pair with the specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
 
 
     :Returns:
@@ -129,6 +130,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 

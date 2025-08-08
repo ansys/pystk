@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypoint.copy_site`
               - Copy the site to the clipboard.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypoint.paste_site`
-              - Paste the site to the clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypoint.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypoint.paste_site`
+              - Paste the site to the clipboard.
 
     .. tab-item:: Properties
 
@@ -67,23 +67,10 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: copy_site(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.UserWaypoint.copy_site
 
     Copy the site to the clipboard.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: paste_site(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.UserWaypoint.paste_site
-
-    Paste the site to the clipboard.
 
     :Returns:
 
@@ -97,4 +84,17 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
+
+
+
+
+.. py:method:: paste_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.UserWaypoint.paste_site
+
+    Paste the site to the clipboard.
+
+    :Returns:
+
+        :obj:`~None`
 

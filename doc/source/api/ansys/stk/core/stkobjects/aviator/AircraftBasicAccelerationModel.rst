@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.level_turns`
-              - Get the level turns interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.aerodynamics`
+              - Get the aerodynamics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.attitude_transitions`
               - Get the attitude transitions interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.climb_and_descent_transitions`
               - Get the climb and descent transitions interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.aerodynamics`
-              - Get the aerodynamics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.level_turns`
+              - Get the level turns interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.propulsion`
               - Get the propulsion interface.
 
@@ -103,11 +103,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: level_turns
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.level_turns
-    :type: LevelTurns
+.. py:property:: aerodynamics
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.aerodynamics
+    :type: AircraftAerodynamic
 
-    Get the level turns interface.
+    Get the aerodynamics interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.attitude_transitions
@@ -121,11 +121,11 @@ Property detail
 
     Get the climb and descent transitions interface.
 
-.. py:property:: aerodynamics
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.aerodynamics
-    :type: AircraftAerodynamic
+.. py:property:: level_turns
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.level_turns
+    :type: LevelTurns
 
-    Get the aerodynamics interface.
+    Get the level turns interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.propulsion
@@ -140,8 +140,6 @@ Method detail
 
 
 
-
-
 .. py:method:: get_as_catalog_item(self) -> ICatalogItem
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel.get_as_catalog_item
 
@@ -150,4 +148,6 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
+
 

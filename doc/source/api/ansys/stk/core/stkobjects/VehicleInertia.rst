@@ -20,16 +20,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.ixx`
               - Moment of Inertia about the X body axis. Uses MomentOfInertia Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.iyy`
-              - Moment of Inertia about the Y body axis. Uses MomentOfInertia Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.izz`
-              - Moment of Inertia about the Z body axis. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.ixy`
               - Product of Inertia between the X and Y body axes. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.ixz`
               - Product of Inertia between the X and Z body axes. Uses MomentOfInertia Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.iyy`
+              - Moment of Inertia about the Y body axis. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.iyz`
               - Product of Inertia between the Y and Z body axes. Uses MomentOfInertia Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInertia.izz`
+              - Moment of Inertia about the Z body axis. Uses MomentOfInertia Dimension.
 
 
 
@@ -50,18 +50,6 @@ Property detail
 
     Moment of Inertia about the X body axis. Uses MomentOfInertia Dimension.
 
-.. py:property:: iyy
-    :canonical: ansys.stk.core.stkobjects.VehicleInertia.iyy
-    :type: float
-
-    Moment of Inertia about the Y body axis. Uses MomentOfInertia Dimension.
-
-.. py:property:: izz
-    :canonical: ansys.stk.core.stkobjects.VehicleInertia.izz
-    :type: float
-
-    Moment of Inertia about the Z body axis. Uses MomentOfInertia Dimension.
-
 .. py:property:: ixy
     :canonical: ansys.stk.core.stkobjects.VehicleInertia.ixy
     :type: float
@@ -74,10 +62,22 @@ Property detail
 
     Product of Inertia between the X and Z body axes. Uses MomentOfInertia Dimension.
 
+.. py:property:: iyy
+    :canonical: ansys.stk.core.stkobjects.VehicleInertia.iyy
+    :type: float
+
+    Moment of Inertia about the Y body axis. Uses MomentOfInertia Dimension.
+
 .. py:property:: iyz
     :canonical: ansys.stk.core.stkobjects.VehicleInertia.iyz
     :type: float
 
     Product of Inertia between the Y and Z body axes. Uses MomentOfInertia Dimension.
+
+.. py:property:: izz
+    :canonical: ansys.stk.core.stkobjects.VehicleInertia.izz
+    :type: float
+
+    Moment of Inertia about the Z body axis. Uses MomentOfInertia Dimension.
 
 

@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_2d`
-              - Flag to show magnetic field line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_3d`
-              - Flag to show magnetic field line.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.color`
               - Magnetic field line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.line_style`
               - Magnetic field line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.line_width`
               - Magnetic field line width.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_2d`
+              - Flag to show magnetic field line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_3d`
+              - Flag to show magnetic field line.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_label`
               - Is the L-shell label visible?
 
@@ -43,18 +43,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: show_graphics_2d
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_2d
-    :type: bool
-
-    Flag to show magnetic field line.
-
-.. py:property:: show_graphics_3d
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_3d
-    :type: bool
-
-    Flag to show magnetic field line.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.color
@@ -73,6 +61,18 @@ Property detail
     :type: LineWidth
 
     Magnetic field line width.
+
+.. py:property:: show_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_2d
+    :type: bool
+
+    Flag to show magnetic field line.
+
+.. py:property:: show_graphics_3d
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_graphics_3d
+    :type: bool
+
+    Flag to show magnetic field line.
 
 .. py:property:: show_label
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.show_label

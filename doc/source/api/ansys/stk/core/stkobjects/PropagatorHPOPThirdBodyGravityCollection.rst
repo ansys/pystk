@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.add_third_body`
               - Add a new element to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_at`
+              - Remove an element from the collection using specified index.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_third_body`
               - Remove an element from the collection.
 
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.available_third_body_names`
               - Get the available third bodies. The return result is a collection of strings representing names of the central bodies that can be used as third body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -55,12 +55,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._new_enum
     :type: EnumeratorProxy
@@ -73,9 +67,30 @@ Property detail
 
     Get the available third bodies. The return result is a collection of strings representing names of the central bodies that can be used as third body.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add_third_body(self, third_body: str) -> PropagatorHPOPThirdBodyGravityElement
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.add_third_body
+
+    Add a new element to the collection.
+
+    :Parameters:
+
+        **third_body** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~PropagatorHPOPThirdBodyGravityElement`
+
 
 
 .. py:method:: item(self, index: int) -> PropagatorHPOPThirdBodyGravityElement
@@ -92,6 +107,14 @@ Method detail
 
         :obj:`~PropagatorHPOPThirdBodyGravityElement`
 
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: remove_at(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_at
@@ -107,30 +130,6 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
-
-
-.. py:method:: add_third_body(self, third_body: str) -> PropagatorHPOPThirdBodyGravityElement
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.add_third_body
-
-    Add a new element to the collection.
-
-    :Parameters:
-
-        **third_body** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~PropagatorHPOPThirdBodyGravityElement`
-
 .. py:method:: remove_third_body(self, third_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_third_body
 
@@ -144,4 +143,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

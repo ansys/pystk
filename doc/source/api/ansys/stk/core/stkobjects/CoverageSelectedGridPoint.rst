@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals`
+              - Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.latitude`
               - Latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.longitude`
               - Longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals`
-              - Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: intervals
+    :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals
+    :type: list
+
+    Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
+
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.latitude
     :type: typing.Any
@@ -49,11 +55,5 @@ Property detail
     :type: typing.Any
 
     Longitude.
-
-.. py:property:: intervals
-    :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals
-    :type: list
-
-    Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
 
 

@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments`
               - Get the arguments to be applied to the function.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed`
+              - Get the arguments to be applied to the function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.inline_func`
               - Get or set the expression to be applied as a function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.unit_dimension`
               - Get or set the unit dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed`
-              - Get the arguments to be applied to the function.
 
 
 
@@ -48,6 +48,12 @@ Property detail
 
     Get the arguments to be applied to the function.
 
+.. py:property:: calculation_object_arguments_link_embed
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed
+    :type: CalculationObjectLinkEmbedControlCollection
+
+    Get the arguments to be applied to the function.
+
 .. py:property:: inline_func
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.inline_func
     :type: str
@@ -59,11 +65,5 @@ Property detail
     :type: str
 
     Get or set the unit dimension.
-
-.. py:property:: calculation_object_arguments_link_embed
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed
-    :type: CalculationObjectLinkEmbedControlCollection
-
-    Get the arguments to be applied to the function.
 
 

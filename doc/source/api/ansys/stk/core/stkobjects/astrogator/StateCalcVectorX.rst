@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.coord_axes_name`
               - Get or set the coordinate axes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.vector_name`
-              - Get or set the vector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.unit_dimension`
-              - Get or set the unit dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.normalize`
               - If true, return the normalized magnitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.unit_dimension`
+              - Get or set the unit dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.vector_name`
+              - Get or set the vector.
 
 
 
@@ -48,11 +48,11 @@ Property detail
 
     Get or set the coordinate axes.
 
-.. py:property:: vector_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.vector_name
-    :type: str
+.. py:property:: normalize
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.normalize
+    :type: bool
 
-    Get or set the vector.
+    If true, return the normalized magnitude.
 
 .. py:property:: unit_dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.unit_dimension
@@ -60,10 +60,10 @@ Property detail
 
     Get or set the unit dimension.
 
-.. py:property:: normalize
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.normalize
-    :type: bool
+.. py:property:: vector_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX.vector_name
+    :type: str
 
-    If true, return the normalized magnitude.
+    Get or set the vector.
 
 

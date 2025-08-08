@@ -65,6 +65,7 @@ Method detail
 
 
 
+
 .. py:method:: is_best_4_metric_supported(self, best_4_metric: FigureOfMeritMethod) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best_4_metric_supported
 
@@ -78,5 +79,4 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
 

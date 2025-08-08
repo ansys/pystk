@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction`
-              - Direction and level order for layout of color squares.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row`
-              - Maximum number of color squares per row.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column`
-              - Maximum number of color squares per column.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_width`
-              - Color square width in pixels.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_height`
               - Color square height in pixels.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_width`
+              - Color square width in pixels.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction`
+              - Direction and level order for layout of color squares.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column`
+              - Maximum number of color squares per column.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row`
+              - Maximum number of color squares per row.
 
 
 
@@ -42,23 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: direction
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction
-    :type: FigureOfMeritGraphics2DDirection
-
-    Direction and level order for layout of color squares.
-
-.. py:property:: maximum_squares_per_row
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row
+.. py:property:: color_square_height
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_height
     :type: int
 
-    Maximum number of color squares per row.
-
-.. py:property:: maximum_squares_per_column
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column
-    :type: int
-
-    Maximum number of color squares per column.
+    Color square height in pixels.
 
 .. py:property:: color_square_width
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_width
@@ -66,10 +54,22 @@ Property detail
 
     Color square width in pixels.
 
-.. py:property:: color_square_height
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.color_square_height
+.. py:property:: direction
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction
+    :type: FigureOfMeritGraphics2DDirection
+
+    Direction and level order for layout of color squares.
+
+.. py:property:: maximum_squares_per_column
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_column
     :type: int
 
-    Color square height in pixels.
+    Maximum number of color squares per column.
+
+.. py:property:: maximum_squares_per_row
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.maximum_squares_per_row
+    :type: int
+
+    Maximum number of color squares per row.
 
 

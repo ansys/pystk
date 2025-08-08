@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.set_resolution`
-              - Set the azimuth/elevation ranges and resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.set_number_of_points`
               - Set the azimuth/elevation ranges and number of points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.set_resolution`
+              - Set the azimuth/elevation ranges and resolution.
 
     .. tab-item:: Properties
 
@@ -31,24 +31,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_number_of_points`
+              - Get the number of azimuth points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_resolution`
+              - Get the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_start`
               - Get the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_stop`
               - Get the azimuth stop value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_resolution`
-              - Get the azimuth resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.azimuth_number_of_points`
-              - Get the number of azimuth points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.coordinate_system`
+              - Get or set the coordinate system for defining the resolution of the antenna graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_number_of_points`
+              - Get the number of elevation points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_resolution`
+              - Get the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_start`
               - Get the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_stop`
               - Get the elevation stop value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_resolution`
-              - Get the elevation resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.elevation_number_of_points`
-              - Get the number of elevation points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGain.coordinate_system`
-              - Get or set the coordinate system for defining the resolution of the antenna graphics.
 
 
 
@@ -63,6 +63,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: azimuth_number_of_points
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.azimuth_number_of_points
+    :type: int
+
+    Get the number of azimuth points.
+
+.. py:property:: azimuth_resolution
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.azimuth_resolution
+    :type: float
+
+    Get the azimuth resolution.
+
 .. py:property:: azimuth_start
     :canonical: ansys.stk.core.stkobjects.AntennaContourGain.azimuth_start
     :type: float
@@ -75,17 +87,23 @@ Property detail
 
     Get the azimuth stop value.
 
-.. py:property:: azimuth_resolution
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.azimuth_resolution
-    :type: float
+.. py:property:: coordinate_system
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.coordinate_system
+    :type: AntennaGraphicsCoordinateSystem
 
-    Get the azimuth resolution.
+    Get or set the coordinate system for defining the resolution of the antenna graphics.
 
-.. py:property:: azimuth_number_of_points
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.azimuth_number_of_points
+.. py:property:: elevation_number_of_points
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.elevation_number_of_points
     :type: int
 
-    Get the number of azimuth points.
+    Get the number of elevation points.
+
+.. py:property:: elevation_resolution
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.elevation_resolution
+    :type: float
+
+    Get the elevation resolution.
 
 .. py:property:: elevation_start
     :canonical: ansys.stk.core.stkobjects.AntennaContourGain.elevation_start
@@ -99,24 +117,6 @@ Property detail
 
     Get the elevation stop value.
 
-.. py:property:: elevation_resolution
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.elevation_resolution
-    :type: float
-
-    Get the elevation resolution.
-
-.. py:property:: elevation_number_of_points
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.elevation_number_of_points
-    :type: int
-
-    Get the number of elevation points.
-
-.. py:property:: coordinate_system
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.coordinate_system
-    :type: AntennaGraphicsCoordinateSystem
-
-    Get or set the coordinate system for defining the resolution of the antenna graphics.
-
 
 Method detail
 -------------
@@ -129,29 +129,7 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuth_start: float, azimuth_stop: float, azimuth_resolution: float, elevation_start: float, elevation_stop: float, elevation_resolution: float) -> None
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.set_resolution
 
-    Set the azimuth/elevation ranges and resolution.
-
-    :Parameters:
-
-        **azimuth_start** : :obj:`~float`
-
-        **azimuth_stop** : :obj:`~float`
-
-        **azimuth_resolution** : :obj:`~float`
-
-        **elevation_start** : :obj:`~float`
-
-        **elevation_stop** : :obj:`~float`
-
-        **elevation_resolution** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: set_number_of_points(self, azimuth_start: float, azimuth_stop: float, azimuth_num_points: int, elevation_start: float, elevation_stop: float, elevation_num_points: int) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourGain.set_number_of_points
@@ -177,5 +155,27 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: set_resolution(self, azimuth_start: float, azimuth_stop: float, azimuth_resolution: float, elevation_start: float, elevation_stop: float, elevation_resolution: float) -> None
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGain.set_resolution
 
+    Set the azimuth/elevation ranges and resolution.
+
+    :Parameters:
+
+        **azimuth_start** : :obj:`~float`
+
+        **azimuth_stop** : :obj:`~float`
+
+        **azimuth_resolution** : :obj:`~float`
+
+        **elevation_start** : :obj:`~float`
+
+        **elevation_stop** : :obj:`~float`
+
+        **elevation_resolution** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
 

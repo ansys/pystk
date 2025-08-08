@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.original_intervals`
-              - The original interval list.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter_factory`
-              - Get the prune filter factory.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter`
               - The pruning filter.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter_factory`
+              - Get the prune filter factory.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.original_intervals`
+              - The original interval list.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: original_intervals
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.original_intervals
-    :type: ITimeToolTimeIntervalList
+.. py:property:: filter
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter
+    :type: ITimeToolPruneFilter
 
-    The original interval list.
+    The pruning filter.
 
 .. py:property:: filter_factory
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter_factory
@@ -52,10 +52,10 @@ Property detail
 
     Get the prune filter factory.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.filter
-    :type: ITimeToolPruneFilter
+.. py:property:: original_intervals
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFiltered.original_intervals
+    :type: ITimeToolTimeIntervalList
 
-    The pruning filter.
+    The original interval list.
 
 

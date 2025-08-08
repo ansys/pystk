@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_calculation_objects`
+              - Create the calculation objects for the selected coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_ideal_secondary_cb`
               - Construct the idealized secondary for the three-body system.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_propagator`
+              - Create the propagator for the primary-secondary ER3BP formulation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_rotating_coordinate_system`
+              - Create the coordinate system for the RotatingSystemChoice selection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_calculation_objects`
+              - Delete the calculation objects for the selected coordinate system.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_propagator`
+              - Delete the propagator for the primary-secondary ER3BP formulation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_rotating_coordinate_system`
+              - Delete the coordinate system for the RotatingSystemChoice selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.reset_ideal_secondary_cb`
               - Reset the idealized secondary for the three-body system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.update_ideal_secondary_cb`
               - Update the idealized secondary for the three-body system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_rotating_coordinate_system`
-              - Create the coordinate system for the RotatingSystemChoice selection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_rotating_coordinate_system`
-              - Delete the coordinate system for the RotatingSystemChoice selection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_calculation_objects`
-              - Create the calculation objects for the selected coordinate system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_calculation_objects`
-              - Delete the calculation objects for the selected coordinate system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_propagator`
-              - Create the propagator for the primary-secondary ER3BP formulation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_propagator`
-              - Delete the propagator for the primary-secondary ER3BP formulation.
 
     .. tab-item:: Properties
 
@@ -45,34 +45,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.associated_objects`
+              - Get the list of associated objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.central_body_name`
               - Primary central body for the three-body system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.secondary_body_name`
-              - Secondary Body.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.initial_epoch`
-              - Date and time for system construction.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.true_anomaly`
-              - True anomaly for initializing ideal secondary.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.ideal_secondary_name`
-              - Name to be used for the idealized secondary.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.mass_parameter`
-              - Get the mass parameter computed from the primary and secondary bodies.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.eccentricity`
-              - Get the eccentricity at epoch to be used for constructing the orbit of the secondary body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_acceleration`
+              - Get the characteristic acceleration computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_distance`
               - Get the characteristic distance computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_time`
               - Get the characteristic time computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_velocity`
               - Get the characteristic velocity computed from the primary and secondary bodies.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_acceleration`
-              - Get the characteristic acceleration computed from the primary and secondary bodies.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.rotating_system_choice`
-              - Get the rotating coordinate system and associated calculation objects to interact with.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.associated_objects`
-              - Get the list of associated objects.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.eccentricity`
+              - Get the eccentricity at epoch to be used for constructing the orbit of the secondary body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.ideal_secondary_name`
+              - Name to be used for the idealized secondary.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.include_stm`
               - Get whether or not the STM propagator function is included on the propagator.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.initial_epoch`
+              - Date and time for system construction.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.mass_parameter`
+              - Get the mass parameter computed from the primary and secondary bodies.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.rotating_system_choice`
+              - Get the rotating coordinate system and associated calculation objects to interact with.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.secondary_body_name`
+              - Secondary Body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.true_anomaly`
+              - True anomaly for initializing ideal secondary.
 
 
 
@@ -87,47 +87,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: associated_objects
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.associated_objects
+    :type: DesignER3BPObjectCollection
+
+    Get the list of associated objects.
+
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.central_body_name
     :type: str
 
     Primary central body for the three-body system.
 
-.. py:property:: secondary_body_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.secondary_body_name
-    :type: str
-
-    Secondary Body.
-
-.. py:property:: initial_epoch
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.initial_epoch
-    :type: typing.Any
-
-    Date and time for system construction.
-
-.. py:property:: true_anomaly
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.true_anomaly
-    :type: typing.Any
-
-    True anomaly for initializing ideal secondary.
-
-.. py:property:: ideal_secondary_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.ideal_secondary_name
-    :type: str
-
-    Name to be used for the idealized secondary.
-
-.. py:property:: mass_parameter
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.mass_parameter
+.. py:property:: characteristic_acceleration
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_acceleration
     :type: float
 
-    Get the mass parameter computed from the primary and secondary bodies.
-
-.. py:property:: eccentricity
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.eccentricity
-    :type: float
-
-    Get the eccentricity at epoch to be used for constructing the orbit of the secondary body.
+    Get the characteristic acceleration computed from the primary and secondary bodies.
 
 .. py:property:: characteristic_distance
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_distance
@@ -147,11 +123,35 @@ Property detail
 
     Get the characteristic velocity computed from the primary and secondary bodies.
 
-.. py:property:: characteristic_acceleration
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.characteristic_acceleration
+.. py:property:: eccentricity
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.eccentricity
     :type: float
 
-    Get the characteristic acceleration computed from the primary and secondary bodies.
+    Get the eccentricity at epoch to be used for constructing the orbit of the secondary body.
+
+.. py:property:: ideal_secondary_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.ideal_secondary_name
+    :type: str
+
+    Name to be used for the idealized secondary.
+
+.. py:property:: include_stm
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.include_stm
+    :type: bool
+
+    Get whether or not the STM propagator function is included on the propagator.
+
+.. py:property:: initial_epoch
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.initial_epoch
+    :type: typing.Any
+
+    Date and time for system construction.
+
+.. py:property:: mass_parameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.mass_parameter
+    :type: float
+
+    Get the mass parameter computed from the primary and secondary bodies.
 
 .. py:property:: rotating_system_choice
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.rotating_system_choice
@@ -159,17 +159,17 @@ Property detail
 
     Get the rotating coordinate system and associated calculation objects to interact with.
 
-.. py:property:: associated_objects
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.associated_objects
-    :type: DesignER3BPObjectCollection
+.. py:property:: secondary_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.secondary_body_name
+    :type: str
 
-    Get the list of associated objects.
+    Secondary Body.
 
-.. py:property:: include_stm
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.include_stm
-    :type: bool
+.. py:property:: true_anomaly
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.true_anomaly
+    :type: typing.Any
 
-    Get whether or not the STM propagator function is included on the propagator.
+    True anomaly for initializing ideal secondary.
 
 
 Method detail
@@ -182,16 +182,14 @@ Method detail
 
 
 
+.. py:method:: create_calculation_objects(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_calculation_objects
 
+    Create the calculation objects for the selected coordinate system.
 
+    :Returns:
 
-
-
-
-
-
-
-
+        :obj:`~None`
 
 .. py:method:: create_ideal_secondary_cb(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_ideal_secondary_cb
@@ -202,19 +200,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: reset_ideal_secondary_cb(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.reset_ideal_secondary_cb
+.. py:method:: create_propagator(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_propagator
 
-    Reset the idealized secondary for the three-body system.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: update_ideal_secondary_cb(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.update_ideal_secondary_cb
-
-    Update the idealized secondary for the three-body system.
+    Create the propagator for the primary-secondary ER3BP formulation.
 
     :Returns:
 
@@ -229,24 +218,6 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: delete_rotating_coordinate_system(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_rotating_coordinate_system
-
-    Delete the coordinate system for the RotatingSystemChoice selection.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: create_calculation_objects(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_calculation_objects
-
-    Create the calculation objects for the selected coordinate system.
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: delete_calculation_objects(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_calculation_objects
 
@@ -256,22 +227,51 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: delete_propagator(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_propagator
 
-
-
-.. py:method:: create_propagator(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.create_propagator
-
-    Create the propagator for the primary-secondary ER3BP formulation.
+    Delete the propagator for the primary-secondary ER3BP formulation.
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: delete_propagator(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_propagator
+.. py:method:: delete_rotating_coordinate_system(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.delete_rotating_coordinate_system
 
-    Delete the propagator for the primary-secondary ER3BP formulation.
+    Delete the coordinate system for the RotatingSystemChoice selection.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+
+
+.. py:method:: reset_ideal_secondary_cb(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.reset_ideal_secondary_cb
+
+    Reset the idealized secondary for the three-body system.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+.. py:method:: update_ideal_secondary_cb(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.update_ideal_secondary_cb
+
+    Update the idealized secondary for the three-body system.
 
     :Returns:
 

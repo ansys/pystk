@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -73,21 +73,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> DifferentialCorrectorResult
-    :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~DifferentialCorrectorResult`
-
-
 
 .. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> DifferentialCorrectorResult
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.get_result_by_paths
@@ -104,5 +89,20 @@ Method detail
     :Returns:
 
         :obj:`~DifferentialCorrectorResult`
+
+.. py:method:: item(self, index: int) -> DifferentialCorrectorResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~DifferentialCorrectorResult`
+
 
 

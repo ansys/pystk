@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.horizontal_beamwidth`
+              - Get or set the horizontal beamwidth
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.polarization_type`
               - Get or set the polarization type
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.vertical_beamwidth`
               - Get or set the vertical beamwidth
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.horizontal_beamwidth`
-              - Get or set the horizontal beamwidth
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: horizontal_beamwidth
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.horizontal_beamwidth
+    :type: float
+
+    Get or set the horizontal beamwidth
+
 .. py:property:: polarization_type
     :canonical: ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.polarization_type
     :type: PolarizationType
@@ -51,11 +57,5 @@ Property detail
     :type: float
 
     Get or set the vertical beamwidth
-
-.. py:property:: horizontal_beamwidth
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna.horizontal_beamwidth
-    :type: float
-
-    Get or set the horizontal beamwidth
 
 

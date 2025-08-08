@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.display`
+              - Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.overlays`
               - Get the collection of overlays that are contained within this overlay.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.padding`
               - Get or set the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.display`
-              - Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered.
 
 
 Import detail
@@ -37,6 +37,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: display
+    :canonical: ansys.stk.core.graphics.IScreenOverlayContainer.display
+    :type: bool
+
+    Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered.
+
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IScreenOverlayContainer.overlays
     :type: ScreenOverlayCollection
@@ -48,11 +54,5 @@ Property detail
     :type: list
 
     Get or set the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom.
-
-.. py:property:: display
-    :canonical: ansys.stk.core.graphics.IScreenOverlayContainer.display
-    :type: bool
-
-    Get or set if this overlay and the collection of overlays that are contained within this overlay should be rendered.
 
 

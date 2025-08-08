@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.remove`
-              - Remove a specified vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.item`
-              - Return a vector by name or at a specified position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.get_item_by_index`
               - Retrieve a vector from the collection by index.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.get_item_by_name`
               - Retrieve a vector from the collection by name.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.item`
+              - Return a vector by name or at a specified position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.remove`
+              - Remove a specified vector.
 
     .. tab-item:: Properties
 
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup._new_enum`
+              - Return a COM enumerator.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.context`
               - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.count`
               - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.factory`
               - Return a Factory object used to create custom vectors.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup._new_enum`
-              - Return a COM enumerator.
 
 
 
@@ -56,6 +56,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup._new_enum
+    :type: EnumeratorProxy
+
+    Return a COM enumerator.
 
 .. py:property:: context
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.context
@@ -75,30 +81,9 @@ Property detail
 
     Return a Factory object used to create custom vectors.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup._new_enum
-    :type: EnumeratorProxy
-
-    Return a COM enumerator.
-
 
 Method detail
 -------------
-
-.. py:method:: remove(self, vector_name: str) -> None
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.remove
-
-    Remove a specified vector.
-
-    :Parameters:
-
-        **vector_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 
 .. py:method:: contains(self, name: str) -> bool
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.contains
@@ -115,20 +100,6 @@ Method detail
         :obj:`~bool`
 
 
-
-.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolVector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.item
-
-    Return a vector by name or at a specified position.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~IVectorGeometryToolVector`
 
 
 .. py:method:: get_item_by_index(self, index: int) -> IVectorGeometryToolVector
@@ -158,4 +129,33 @@ Method detail
     :Returns:
 
         :obj:`~IVectorGeometryToolVector`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolVector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.item
+
+    Return a vector by name or at a specified position.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolVector`
+
+.. py:method:: remove(self, vector_name: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorGroup.remove
+
+    Remove a specified vector.
+
+    :Parameters:
+
+        **vector_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

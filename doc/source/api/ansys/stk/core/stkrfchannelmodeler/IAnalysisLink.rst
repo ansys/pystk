@@ -27,22 +27,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.analysis_intervals`
+              - Get the analysis intervals array.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.name`
               - Get the analysis link name.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_identifier`
-              - Get the transmit transceiver identifier.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_name`
-              - Get the transmit transceiver name.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_antenna_count`
+              - Get the receive antenna count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_transceiver_identifier`
               - Get the receive transceiver identifier.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_transceiver_name`
               - Get the receive transceiver name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_antenna_count`
               - Get the transmit antenna count.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_antenna_count`
-              - Get the receive antenna count.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.analysis_intervals`
-              - Get the analysis intervals array.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_identifier`
+              - Get the transmit transceiver identifier.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_name`
+              - Get the transmit transceiver name.
 
 
 Import detail
@@ -56,23 +56,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: analysis_intervals
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.analysis_intervals
+    :type: list
+
+    Get the analysis intervals array.
+
 .. py:property:: name
     :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.name
     :type: str
 
     Get the analysis link name.
 
-.. py:property:: transmit_transceiver_identifier
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_identifier
-    :type: str
+.. py:property:: receive_antenna_count
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_antenna_count
+    :type: int
 
-    Get the transmit transceiver identifier.
-
-.. py:property:: transmit_transceiver_name
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_name
-    :type: str
-
-    Get the transmit transceiver name.
+    Get the receive antenna count.
 
 .. py:property:: receive_transceiver_identifier
     :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_transceiver_identifier
@@ -92,28 +92,21 @@ Property detail
 
     Get the transmit antenna count.
 
-.. py:property:: receive_antenna_count
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.receive_antenna_count
-    :type: int
+.. py:property:: transmit_transceiver_identifier
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_identifier
+    :type: str
 
-    Get the receive antenna count.
+    Get the transmit transceiver identifier.
 
-.. py:property:: analysis_intervals
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.analysis_intervals
-    :type: list
+.. py:property:: transmit_transceiver_name
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisLink.transmit_transceiver_name
+    :type: str
 
-    Get the analysis intervals array.
+    Get the transmit transceiver name.
 
 
 Method detail
 -------------
-
-
-
-
-
-
-
 
 
 .. py:method:: compute(self, time: float) -> IResponse
@@ -129,4 +122,11 @@ Method detail
     :Returns:
 
         :obj:`~IResponse`
+
+
+
+
+
+
+
 

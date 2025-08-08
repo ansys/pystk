@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.use_default_cruise_altitude`
-              - Opt whether to use the default cruise altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode`
+              - Get or set the level off mode. This is only used when the must level off option is on.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.msl_altitude`
               - Get the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.must_level_off`
               - Opt whether the procedure must level off.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode`
-              - Get or set the level off mode. This is only used when the must level off option is on.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
 
 
 
@@ -76,11 +76,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_default_cruise_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.use_default_cruise_altitude
-    :type: bool
+.. py:property:: level_off_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode
+    :type: AltitudeConstraintManeuverMode
 
-    Opt whether to use the default cruise altitude.
+    Get or set the level off mode. This is only used when the must level off option is on.
 
 .. py:property:: msl_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.msl_altitude
@@ -94,10 +94,10 @@ Property detail
 
     Opt whether the procedure must level off.
 
-.. py:property:: level_off_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode
-    :type: AltitudeConstraintManeuverMode
+.. py:property:: use_default_cruise_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.use_default_cruise_altitude
+    :type: bool
 
-    Get or set the level off mode. This is only used when the must level off option is on.
+    Opt whether to use the default cruise altitude.
 
 

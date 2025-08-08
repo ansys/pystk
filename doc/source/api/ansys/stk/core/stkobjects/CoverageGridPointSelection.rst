@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection.to_array`
-              - Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection.item`
               - Given an index, returns a point in the selection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection.to_array`
+              - Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
 
     .. tab-item:: Properties
 
@@ -64,16 +64,6 @@ Method detail
 -------------
 
 
-.. py:method:: to_array(self) -> list
-    :canonical: ansys.stk.core.stkobjects.CoverageGridPointSelection.to_array
-
-    Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
-
-    :Returns:
-
-        :obj:`~list`
-
-
 .. py:method:: item(self, index: int) -> CoverageSelectedGridPoint
     :canonical: ansys.stk.core.stkobjects.CoverageGridPointSelection.item
 
@@ -87,4 +77,14 @@ Method detail
     :Returns:
 
         :obj:`~CoverageSelectedGridPoint`
+
+.. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.CoverageGridPointSelection.to_array
+
+    Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
+
+    :Returns:
+
+        :obj:`~list`
+
 

@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.altitude`
+              - Geodetic launch altitude. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.latitude`
               - Geodetic launch latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.longitude`
               - Geodetic launch longitude. Uses Longitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.altitude`
-              - Geodetic launch altitude. Uses Distance Dimension.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: altitude
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.altitude
+    :type: float
+
+    Geodetic launch altitude. Uses Distance Dimension.
+
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.latitude
     :type: float
@@ -51,11 +57,5 @@ Property detail
     :type: float
 
     Geodetic launch longitude. Uses Longitude Dimension.
-
-.. py:property:: altitude
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleLocationDetic.altitude
-    :type: float
-
-    Geodetic launch altitude. Uses Distance Dimension.
 
 

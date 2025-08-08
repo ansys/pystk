@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.reload`
-              - Reload the interval list file.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.get_file_span`
               - Compute the interval list file span.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.reload`
+              - Reload the interval list file.
 
     .. tab-item:: Properties
 
@@ -59,15 +59,6 @@ Method detail
 
 
 
-.. py:method:: reload(self) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.reload
-
-    Reload the interval list file.
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: get_file_span(self) -> TimeToolTimeIntervalResult
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.get_file_span
 
@@ -76,4 +67,13 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolTimeIntervalResult`
+
+.. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListFile.reload
+
+    Reload the interval list file.
+
+    :Returns:
+
+        :obj:`~None`
 

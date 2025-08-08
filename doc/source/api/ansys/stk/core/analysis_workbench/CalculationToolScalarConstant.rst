@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.value`
-              - A value which can be in any STK supported unit available for selected dimension.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.dimension`
               - The dimension of the constant value, this can be any of the STK supported dimensions.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.value`
+              - A value which can be in any STK supported unit available for selected dimension.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: value
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.value
-    :type: float
-
-    A value which can be in any STK supported unit available for selected dimension.
-
 .. py:property:: dimension
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.dimension
     :type: str
 
     The dimension of the constant value, this can be any of the STK supported dimensions.
+
+.. py:property:: value
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarConstant.value
+    :type: float
+
+    A value which can be in any STK supported unit available for selected dimension.
 
 

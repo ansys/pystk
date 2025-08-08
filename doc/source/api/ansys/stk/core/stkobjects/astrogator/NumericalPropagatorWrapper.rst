@@ -31,20 +31,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.central_body_name`
               - Get or set the central body for Propagation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_variation_of_parameters`
-              - Whether or not to use a variation of parameters(VOP) in universal variables formulation of the equations of motion; related to numerical integrator.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_regularized_time`
-              - Whether or not to use regularized time; related to numerical integrator.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.regularized_time_exponent`
-              - Get or set the exponent to use in regularized time; related to numerical integrator. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.regularized_time_steps_per_orbit`
-              - Get or set the steps per orbit used in regularized time; related to numerical integrator. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.propagator_functions`
-              - Get the list of propagator functions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator`
               - Get the numerical integrator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator_type`
               - Get the single step integrator type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.propagator_functions`
+              - Get the list of propagator functions.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.regularized_time_exponent`
+              - Get or set the exponent to use in regularized time; related to numerical integrator. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.regularized_time_steps_per_orbit`
+              - Get or set the steps per orbit used in regularized time; related to numerical integrator. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_regularized_time`
+              - Whether or not to use regularized time; related to numerical integrator.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_variation_of_parameters`
+              - Whether or not to use a variation of parameters(VOP) in universal variables formulation of the equations of motion; related to numerical integrator.
 
 
 
@@ -65,17 +65,23 @@ Property detail
 
     Get or set the central body for Propagation.
 
-.. py:property:: use_variation_of_parameters
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_variation_of_parameters
-    :type: bool
+.. py:property:: numerical_integrator
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator
+    :type: INumericalIntegrator
 
-    Whether or not to use a variation of parameters(VOP) in universal variables formulation of the equations of motion; related to numerical integrator.
+    Get the numerical integrator.
 
-.. py:property:: use_regularized_time
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_regularized_time
-    :type: bool
+.. py:property:: numerical_integrator_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator_type
+    :type: NumericalIntegrator
 
-    Whether or not to use regularized time; related to numerical integrator.
+    Get the single step integrator type.
+
+.. py:property:: propagator_functions
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.propagator_functions
+    :type: PropagatorFunctionCollection
+
+    Get the list of propagator functions.
 
 .. py:property:: regularized_time_exponent
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.regularized_time_exponent
@@ -89,31 +95,21 @@ Property detail
 
     Get or set the steps per orbit used in regularized time; related to numerical integrator. Dimensionless.
 
-.. py:property:: propagator_functions
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.propagator_functions
-    :type: PropagatorFunctionCollection
+.. py:property:: use_regularized_time
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_regularized_time
+    :type: bool
 
-    Get the list of propagator functions.
+    Whether or not to use regularized time; related to numerical integrator.
 
-.. py:property:: numerical_integrator
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator
-    :type: INumericalIntegrator
+.. py:property:: use_variation_of_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.use_variation_of_parameters
+    :type: bool
 
-    Get the numerical integrator.
-
-.. py:property:: numerical_integrator_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator_type
-    :type: NumericalIntegrator
-
-    Get the single step integrator type.
+    Whether or not to use a variation of parameters(VOP) in universal variables formulation of the equations of motion; related to numerical integrator.
 
 
 Method detail
 -------------
-
-
-
-
 
 
 
@@ -137,4 +133,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 

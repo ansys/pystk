@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.set_relative_course`
-              - Set the relative heading change.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.get_as_procedure`
+              - Get the procedure interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.set_absolute_course`
               - Set the absolute heading and reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.set_final_translation_course`
               - Set the option to have the final heading to match the translation bearing.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.get_as_procedure`
-              - Get the procedure interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.set_relative_course`
+              - Set the relative heading change.
 
     .. tab-item:: Properties
 
@@ -35,38 +35,38 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.absolute_course`
+              - Get the absolute course for the heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.altitude_options`
               - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.hover_mode`
-              - Get or set the option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.bearing`
+              - Get or set the bearing of the translation during the hover.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_course_mode`
+              - Get or set the mode to specify the final course at the end of the hover.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_mode`
+              - Get the mode to define the heading at the end of the hover.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_rate`
+              - Get or set the options to define the heading rate of the aircraft at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.fixed_time`
               - Get or set the time to hover in place.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.heading_mode`
               - Get or set the heading mode for the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_mode`
-              - Get the mode to define the heading at the end of the hover.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.absolute_course`
-              - Get the absolute course for the heading.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.relative_course`
-              - Get the relative heading change.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_heading`
-              - Get the option to use a magnetic heading for the heading course.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_rate`
-              - Get or set the options to define the heading rate of the aircraft at the end of the procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.translation_mode`
-              - Define how the aircraft will translate during the hover.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.bearing`
-              - Get or set the bearing of the translation during the hover.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_bearing`
-              - Get or set the option to use a magnetic heading for the translation bearing.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.range`
-              - Get or set the range to translate during the hover.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.final_course_mode`
-              - Get or set the mode to specify the final course at the end of the hover.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.smooth_translation_mode`
-              - Get or set the translation mode of the aircraft at the end of the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.hover_mode`
+              - Get or set the option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.radius_factor`
               - Get or set the turn radius factor.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.range`
+              - Get or set the range to translate during the hover.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.relative_course`
+              - Get the relative heading change.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.smooth_translation_mode`
+              - Get or set the translation mode of the aircraft at the end of the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.translation_mode`
+              - Define how the aircraft will translate during the hover.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_bearing`
+              - Get or set the option to use a magnetic heading for the translation bearing.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_heading`
+              - Get the option to use a magnetic heading for the heading course.
 
 
 
@@ -81,17 +81,41 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: absolute_course
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.absolute_course
+    :type: typing.Any
+
+    Get the absolute course for the heading.
+
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.altitude_options
     :type: HoverAltitudeOptions
 
     Get the altitude options.
 
-.. py:property:: hover_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.hover_mode
-    :type: HoverMode
+.. py:property:: bearing
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.bearing
+    :type: typing.Any
 
-    Get or set the option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver.
+    Get or set the bearing of the translation during the hover.
+
+.. py:property:: final_course_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_course_mode
+    :type: VTOLTranslationFinalCourseMode
+
+    Get or set the mode to specify the final course at the end of the hover.
+
+.. py:property:: final_heading_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_mode
+    :type: VTOLFinalHeadingMode
+
+    Get the mode to define the heading at the end of the hover.
+
+.. py:property:: final_heading_rate
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_rate
+    :type: VTOLRateMode
+
+    Get or set the options to define the heading rate of the aircraft at the end of the procedure.
 
 .. py:property:: fixed_time
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.fixed_time
@@ -105,53 +129,17 @@ Property detail
 
     Get or set the heading mode for the aircraft.
 
-.. py:property:: final_heading_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_mode
-    :type: VTOLFinalHeadingMode
+.. py:property:: hover_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.hover_mode
+    :type: HoverMode
 
-    Get the mode to define the heading at the end of the hover.
+    Get or set the option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver.
 
-.. py:property:: absolute_course
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.absolute_course
-    :type: typing.Any
+.. py:property:: radius_factor
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.radius_factor
+    :type: float
 
-    Get the absolute course for the heading.
-
-.. py:property:: relative_course
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.relative_course
-    :type: typing.Any
-
-    Get the relative heading change.
-
-.. py:property:: use_magnetic_heading
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_heading
-    :type: bool
-
-    Get the option to use a magnetic heading for the heading course.
-
-.. py:property:: final_heading_rate
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_rate
-    :type: VTOLRateMode
-
-    Get or set the options to define the heading rate of the aircraft at the end of the procedure.
-
-.. py:property:: translation_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.translation_mode
-    :type: VTOLTranslationMode
-
-    Define how the aircraft will translate during the hover.
-
-.. py:property:: bearing
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.bearing
-    :type: typing.Any
-
-    Get or set the bearing of the translation during the hover.
-
-.. py:property:: use_magnetic_bearing
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_bearing
-    :type: bool
-
-    Get or set the option to use a magnetic heading for the translation bearing.
+    Get or set the turn radius factor.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.range
@@ -159,11 +147,11 @@ Property detail
 
     Get or set the range to translate during the hover.
 
-.. py:property:: final_course_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_course_mode
-    :type: VTOLTranslationFinalCourseMode
+.. py:property:: relative_course
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.relative_course
+    :type: typing.Any
 
-    Get or set the mode to specify the final course at the end of the hover.
+    Get the relative heading change.
 
 .. py:property:: smooth_translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.smooth_translation_mode
@@ -171,11 +159,23 @@ Property detail
 
     Get or set the translation mode of the aircraft at the end of the procedure.
 
-.. py:property:: radius_factor
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.radius_factor
-    :type: float
+.. py:property:: translation_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.translation_mode
+    :type: VTOLTranslationMode
 
-    Get or set the turn radius factor.
+    Define how the aircraft will translate during the hover.
+
+.. py:property:: use_magnetic_bearing
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_bearing
+    :type: bool
+
+    Get or set the option to use a magnetic heading for the translation bearing.
+
+.. py:property:: use_magnetic_heading
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.use_magnetic_heading
+    :type: bool
+
+    Get the option to use a magnetic heading for the heading course.
 
 
 Method detail
@@ -189,19 +189,26 @@ Method detail
 
 
 
-.. py:method:: set_relative_course(self, heading_change: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.set_relative_course
 
-    Set the relative heading change.
 
-    :Parameters:
 
-        **heading_change** : :obj:`~typing.Any`
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.get_as_procedure
 
+    Get the procedure interface.
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~IProcedure`
+
+
+
+
+
+
+
+
+
 
 .. py:method:: set_absolute_course(self, course: typing.Any, is_magnetic: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.set_absolute_course
@@ -228,31 +235,24 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: set_relative_course(self, heading_change: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.set_relative_course
 
+    Set the relative heading change.
 
+    :Parameters:
 
+        **heading_change** : :obj:`~typing.Any`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.. py:method:: get_as_procedure(self) -> IProcedure
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.get_as_procedure
-
-    Get the procedure interface.
 
     :Returns:
 
-        :obj:`~IProcedure`
+        :obj:`~None`
+
+
+
+
+
+
+
 

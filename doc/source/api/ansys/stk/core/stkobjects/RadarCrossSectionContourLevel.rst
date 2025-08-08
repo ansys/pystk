@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.value`
-              - Get the contour level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.color`
               - Get or set the contour level color.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.line_style`
               - Select the line style, displayed for the contour level, from the LineStyle enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.value`
+              - Get the contour level value.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: value
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.value
-    :type: float
-
-    Get the contour level value.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.color
     :type: Color
@@ -55,5 +49,11 @@ Property detail
     :type: LineStyle
 
     Select the line style, displayed for the contour level, from the LineStyle enumeration.
+
+.. py:property:: value
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionContourLevel.value
+    :type: float
+
+    Get the contour level value.
 
 

@@ -18,24 +18,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.atmosphere_model`
+              - Get the mission atmosphere model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.calculation_options`
+              - Get the calculation options for the current procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.fast_time_options`
+              - Get the fast time options (without validation or constraints) for the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.name`
               - Get or set the name of the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_is_supported`
+              - Refuel/dump is supported for the current procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_properties`
+              - Get the refuel/dump properties for the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.site`
               - Get the site of the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.time_options`
               - Get the time options for the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.wind_model`
               - Get the wind model for the current procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.atmosphere_model`
-              - Get the mission atmosphere model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.calculation_options`
-              - Get the calculation options for the current procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_is_supported`
-              - Refuel/dump is supported for the current procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_properties`
-              - Get the refuel/dump properties for the current procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.fast_time_options`
-              - Get the fast time options (without validation or constraints) for the current procedure.
 
 
 Examples
@@ -108,11 +108,41 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: atmosphere_model
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.atmosphere_model
+    :type: AtmosphereModel
+
+    Get the mission atmosphere model.
+
+.. py:property:: calculation_options
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.calculation_options
+    :type: CalculationOptions
+
+    Get the calculation options for the current procedure.
+
+.. py:property:: fast_time_options
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.fast_time_options
+    :type: ProcedureFastTimeOptions
+
+    Get the fast time options (without validation or constraints) for the current procedure.
+
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.name
     :type: str
 
     Get or set the name of the procedure.
+
+.. py:property:: refuel_dump_is_supported
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_is_supported
+    :type: bool
+
+    Refuel/dump is supported for the current procedure.
+
+.. py:property:: refuel_dump_properties
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_properties
+    :type: RefuelDumpProperties
+
+    Get the refuel/dump properties for the current procedure.
 
 .. py:property:: site
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.site
@@ -131,35 +161,5 @@ Property detail
     :type: WindModel
 
     Get the wind model for the current procedure.
-
-.. py:property:: atmosphere_model
-    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.atmosphere_model
-    :type: AtmosphereModel
-
-    Get the mission atmosphere model.
-
-.. py:property:: calculation_options
-    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.calculation_options
-    :type: CalculationOptions
-
-    Get the calculation options for the current procedure.
-
-.. py:property:: refuel_dump_is_supported
-    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_is_supported
-    :type: bool
-
-    Refuel/dump is supported for the current procedure.
-
-.. py:property:: refuel_dump_properties
-    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_properties
-    :type: RefuelDumpProperties
-
-    Get the refuel/dump properties for the current procedure.
-
-.. py:property:: fast_time_options
-    :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.fast_time_options
-    :type: ProcedureFastTimeOptions
-
-    Get the fast time options (without validation or constraints) for the current procedure.
 
 

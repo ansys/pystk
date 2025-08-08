@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.new_random_engine_seed`
-              - Generate a new random engine seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.apply_position_velocity`
               - Apply the current position velocity strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.cancel_position_velocity`
               - Cancel the current position velocity strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.new_random_engine_seed`
+              - Generate a new random engine seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.set_base_dynamic_state_link_name`
               - Set the BaseDynStateLinkName.
 
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.course_error`
+              - Get or set the course error property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.measurement_time_step`
               - Get or set the measurement time step property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.position_cep`
               - Get or set the position CEP property.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.course_error`
-              - Get or set the course error property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.speed_error`
               - Get or set the speed error property.
 
@@ -55,6 +55,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: course_error
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.course_error
+    :type: float
+
+    Get or set the course error property.
+
 .. py:property:: measurement_time_step
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.measurement_time_step
     :type: float
@@ -67,12 +73,6 @@ Property detail
 
     Get or set the position CEP property.
 
-.. py:property:: course_error
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.course_error
-    :type: float
-
-    Get or set the course error property.
-
 .. py:property:: speed_error
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.speed_error
     :type: float
@@ -82,23 +82,6 @@ Property detail
 
 Method detail
 -------------
-
-.. py:method:: new_random_engine_seed(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.new_random_engine_seed
-
-    Generate a new random engine seed.
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
-
-
-
-
-
 
 .. py:method:: apply_position_velocity(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.apply_position_velocity
@@ -118,6 +101,21 @@ Method detail
 
         :obj:`~None`
 
+
+
+
+
+.. py:method:: new_random_engine_seed(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.new_random_engine_seed
+
+    Generate a new random engine seed.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
 .. py:method:: set_base_dynamic_state_link_name(self, value: str) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocityNoisySurfTarget.set_base_dynamic_state_link_name
 
@@ -131,4 +129,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

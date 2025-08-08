@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics`
-              - Display the contour cone's projection on the surface of the central body.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.translucent_lines`
-              - Make the contour cone translucent at the specified percentage.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.percent_translucency`
-              - Get or set the translucency of the contour cone's projection on the surface of the central body, where 100% = invisible. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.border_wall`
               - Retrieve the border wall properties of the range contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.label_swap_distance`
               - Interface to control the level of detail in labels and other screen objects at specified distances.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.percent_translucency`
+              - Get or set the translucency of the contour cone's projection on the surface of the central body, where 100% = invisible. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics`
+              - Display the contour cone's projection on the surface of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.translucent_lines`
+              - Make the contour cone translucent at the specified percentage.
 
 
 
@@ -42,24 +42,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics
-    :type: bool
-
-    Display the contour cone's projection on the surface of the central body.
-
-.. py:property:: translucent_lines
-    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.translucent_lines
-    :type: bool
-
-    Make the contour cone translucent at the specified percentage.
-
-.. py:property:: percent_translucency
-    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.percent_translucency
-    :type: float
-
-    Get or set the translucency of the contour cone's projection on the surface of the central body, where 100% = invisible. Dimensionless.
-
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.border_wall
     :type: Graphics3DBorderWall
@@ -71,5 +53,23 @@ Property detail
     :type: Graphics3DLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
+
+.. py:property:: percent_translucency
+    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.percent_translucency
+    :type: float
+
+    Get or set the translucency of the contour cone's projection on the surface of the central body, where 100% = invisible. Dimensionless.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics
+    :type: bool
+
+    Display the contour cone's projection on the surface of the central body.
+
+.. py:property:: translucent_lines
+    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.translucent_lines
+    :type: bool
+
+    Make the contour cone translucent at the specified percentage.
 
 

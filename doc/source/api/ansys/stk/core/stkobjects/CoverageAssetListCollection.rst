@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.add`
               - Add a new element to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove`
-              - Remove an element from the collection given a ObjectPath.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.can_assign_asset`
+              - Return true is you can assign an asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.get_asset_from_path`
               - Retrieve an element, given an object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.is_asset_assigned`
               - Return true if an asset is already assigned.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.can_assign_asset`
-              - Return true is you can assign an asset.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove`
+              - Remove an element from the collection given a ObjectPath.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -41,12 +41,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.available_assets`
               - Available objects to assign as coverage assets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -61,12 +61,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum
     :type: EnumeratorProxy
@@ -79,48 +73,15 @@ Property detail
 
     Available objects to assign as coverage assets.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> CoverageAssetListElement
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~CoverageAssetListElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add(self, object_path: str) -> CoverageAssetListElement
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.add
@@ -137,10 +98,10 @@ Method detail
         :obj:`~CoverageAssetListElement`
 
 
-.. py:method:: remove(self, object_path: str) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove
+.. py:method:: can_assign_asset(self, object_path: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.can_assign_asset
 
-    Remove an element from the collection given a ObjectPath.
+    Return true is you can assign an asset.
 
     :Parameters:
 
@@ -149,7 +110,8 @@ Method detail
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~bool`
+
 
 .. py:method:: get_asset_from_path(self, object_path: str) -> CoverageAssetListElement
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.get_asset_from_path
@@ -179,10 +141,24 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: can_assign_asset(self, object_path: str) -> bool
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.can_assign_asset
+.. py:method:: item(self, index: int) -> CoverageAssetListElement
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.item
 
-    Return true is you can assign an asset.
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~CoverageAssetListElement`
+
+.. py:method:: remove(self, object_path: str) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove
+
+    Remove an element from the collection given a ObjectPath.
 
     :Parameters:
 
@@ -191,5 +167,29 @@ Method detail
 
     :Returns:
 
-        :obj:`~bool`
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

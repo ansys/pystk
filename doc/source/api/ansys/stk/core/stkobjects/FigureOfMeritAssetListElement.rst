@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method_type`
-              - Type of method used to specify range uncertainty.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method`
-              - Range uncertainty method.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.asset`
               - Asset used in specifying range uncertainty.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method`
+              - Range uncertainty method.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method_type`
+              - Type of method used to specify range uncertainty.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: method_type
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method_type
-    :type: FigureOfMeritNavigationAccuracyMethod
+.. py:property:: asset
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.asset
+    :type: str
 
-    Type of method used to specify range uncertainty.
+    Asset used in specifying range uncertainty.
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method
@@ -50,10 +50,10 @@ Property detail
 
     Range uncertainty method.
 
-.. py:property:: asset
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.asset
-    :type: str
+.. py:property:: method_type
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method_type
+    :type: FigureOfMeritNavigationAccuracyMethod
 
-    Asset used in specifying range uncertainty.
+    Type of method used to specify range uncertainty.
 
 

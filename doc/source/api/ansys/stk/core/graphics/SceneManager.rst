@@ -27,20 +27,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.frame_rate`
+              - Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.globe_overlay_settings`
+              - Get the globe overlay settings, which are used to set global settings for all globe overlays.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.initializers`
+              - Allow the user to create or initialize primitives, display conditions, tringulators and other types of objects.
             * - :py:attr:`~ansys.stk.core.graphics.SceneManager.primitives`
               - Get the primitive manager, which is used to add primitives to your scenes.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.scenes`
+              - Get a read-only collection of scenes that are associated with the scene manager.
             * - :py:attr:`~ansys.stk.core.graphics.SceneManager.screen_overlays`
               - Get the screen overlay manager, which is used to add screen overlays to your scenes.
             * - :py:attr:`~ansys.stk.core.graphics.SceneManager.textures`
               - Get the texture 2d factory, which can be used to create textures from various sources.
-            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.globe_overlay_settings`
-              - Get the globe overlay settings, which are used to set global settings for all globe overlays.
-            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.scenes`
-              - Get a read-only collection of scenes that are associated with the scene manager.
-            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.initializers`
-              - Allow the user to create or initialize primitives, display conditions, tringulators and other types of objects.
-            * - :py:attr:`~ansys.stk.core.graphics.SceneManager.frame_rate`
-              - Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
 
 
 
@@ -55,11 +55,35 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: frame_rate
+    :canonical: ansys.stk.core.graphics.SceneManager.frame_rate
+    :type: FrameRate
+
+    Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
+
+.. py:property:: globe_overlay_settings
+    :canonical: ansys.stk.core.graphics.SceneManager.globe_overlay_settings
+    :type: GlobeOverlaySettings
+
+    Get the globe overlay settings, which are used to set global settings for all globe overlays.
+
+.. py:property:: initializers
+    :canonical: ansys.stk.core.graphics.SceneManager.initializers
+    :type: FactoryAndInitializers
+
+    Allow the user to create or initialize primitives, display conditions, tringulators and other types of objects.
+
 .. py:property:: primitives
     :canonical: ansys.stk.core.graphics.SceneManager.primitives
     :type: PrimitiveManager
 
     Get the primitive manager, which is used to add primitives to your scenes.
+
+.. py:property:: scenes
+    :canonical: ansys.stk.core.graphics.SceneManager.scenes
+    :type: SceneCollection
+
+    Get a read-only collection of scenes that are associated with the scene manager.
 
 .. py:property:: screen_overlays
     :canonical: ansys.stk.core.graphics.SceneManager.screen_overlays
@@ -73,34 +97,9 @@ Property detail
 
     Get the texture 2d factory, which can be used to create textures from various sources.
 
-.. py:property:: globe_overlay_settings
-    :canonical: ansys.stk.core.graphics.SceneManager.globe_overlay_settings
-    :type: GlobeOverlaySettings
-
-    Get the globe overlay settings, which are used to set global settings for all globe overlays.
-
-.. py:property:: scenes
-    :canonical: ansys.stk.core.graphics.SceneManager.scenes
-    :type: SceneCollection
-
-    Get a read-only collection of scenes that are associated with the scene manager.
-
-.. py:property:: initializers
-    :canonical: ansys.stk.core.graphics.SceneManager.initializers
-    :type: FactoryAndInitializers
-
-    Allow the user to create or initialize primitives, display conditions, tringulators and other types of objects.
-
-.. py:property:: frame_rate
-    :canonical: ansys.stk.core.graphics.SceneManager.frame_rate
-    :type: FrameRate
-
-    Get the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
-
 
 Method detail
 -------------
-
 
 
 
@@ -114,6 +113,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

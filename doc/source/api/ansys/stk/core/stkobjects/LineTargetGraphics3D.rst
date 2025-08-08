@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.border_wall`
+              - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.enable_label_max_viewing_dist`
               - Use the maximum viewing distance for displaying the line target label.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.label_maximum_viewing_dist`
               - Specify the maximum distance at which the line target label is displayed. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.border_wall`
-              - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.vector`
               - Get the vector.
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: border_wall
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.border_wall
+    :type: Graphics3DBorderWall
+
+    Retrieve the border wall properties.
+
 .. py:property:: enable_label_max_viewing_dist
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.enable_label_max_viewing_dist
     :type: bool
@@ -51,12 +57,6 @@ Property detail
     :type: float
 
     Specify the maximum distance at which the line target label is displayed. Uses Distance Dimension.
-
-.. py:property:: border_wall
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.border_wall
-    :type: Graphics3DBorderWall
-
-    Retrieve the border wall properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.vector

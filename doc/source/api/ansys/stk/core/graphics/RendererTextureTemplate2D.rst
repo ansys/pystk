@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.RendererTextureTemplate2D.height`
+              - Get a height of the texture in texels.
             * - :py:attr:`~ansys.stk.core.graphics.RendererTextureTemplate2D.internal_format`
               - Get an internal format of the texture.
             * - :py:attr:`~ansys.stk.core.graphics.RendererTextureTemplate2D.width`
               - Get a width of the texture in texels.
-            * - :py:attr:`~ansys.stk.core.graphics.RendererTextureTemplate2D.height`
-              - Get a height of the texture in texels.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: height
+    :canonical: ansys.stk.core.graphics.RendererTextureTemplate2D.height
+    :type: int
+
+    Get a height of the texture in texels.
+
 .. py:property:: internal_format
     :canonical: ansys.stk.core.graphics.RendererTextureTemplate2D.internal_format
     :type: TextureFormat
@@ -49,11 +55,5 @@ Property detail
     :type: int
 
     Get a width of the texture in texels.
-
-.. py:property:: height
-    :canonical: ansys.stk.core.graphics.RendererTextureTemplate2D.height
-    :type: int
-
-    Get a height of the texture in texels.
 
 

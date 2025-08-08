@@ -18,26 +18,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.is_type_supported`
-              - Return whether the specified type is supported.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create`
               - Create and registers a volume calc using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_altitude`
               - Create and registers a altitude to location volume calc type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_angle_to_location`
               - Create and registers a angle to location volume calc type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_propagation_delay_to_location`
+              - Create and registers a distance to location volume calc type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_from_file`
               - Create and registers a file volume calc type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_from_calculation_scalar`
               - Create and registers a scalar to location volume calc type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_distance_to_location`
+              - Create and registers a distance to location volume calc type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_solar_intensity`
               - Create and registers a solar intensity volume calc type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_spatial_condition_satisfaction_metrics`
               - Create and registers a spatial condition satisfaction metric volume calc type using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_distance_to_location`
-              - Create and registers a distance to location volume calc type using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_propagation_delay_to_location`
-              - Create and registers a distance to location volume calc type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.is_type_supported`
+              - Return whether the specified type is supported.
 
 
 Import detail
@@ -51,20 +51,6 @@ Import detail
 
 Method detail
 -------------
-
-.. py:method:: is_type_supported(self, type: SpatialCalculationType) -> bool
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.is_type_supported
-
-    Return whether the specified type is supported.
-
-    :Parameters:
-
-        **type** : :obj:`~SpatialCalculationType`
-
-
-    :Returns:
-
-        :obj:`~bool`
 
 .. py:method:: create(self, name: str, description: str, type: SpatialCalculationType) -> ISpatialAnalysisToolSpatialCalculation
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create
@@ -116,6 +102,22 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolSpatialCalculation`
 
+.. py:method:: create_propagation_delay_to_location(self, name: str, description: str) -> ISpatialAnalysisToolSpatialCalculation
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_propagation_delay_to_location
+
+    Create and registers a distance to location volume calc type using specified name and description.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolSpatialCalculation`
+
 .. py:method:: create_from_file(self, name: str, description: str) -> ISpatialAnalysisToolSpatialCalculation
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_from_file
 
@@ -136,6 +138,22 @@ Method detail
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_from_calculation_scalar
 
     Create and registers a scalar to location volume calc type using specified name and description.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolSpatialCalculation`
+
+.. py:method:: create_distance_to_location(self, name: str, description: str) -> ISpatialAnalysisToolSpatialCalculation
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_distance_to_location
+
+    Create and registers a distance to location volume calc type using specified name and description.
 
     :Parameters:
 
@@ -180,35 +198,17 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolSpatialCalculation`
 
-.. py:method:: create_distance_to_location(self, name: str, description: str) -> ISpatialAnalysisToolSpatialCalculation
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_distance_to_location
+.. py:method:: is_type_supported(self, type: SpatialCalculationType) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.is_type_supported
 
-    Create and registers a distance to location volume calc type using specified name and description.
+    Return whether the specified type is supported.
 
     :Parameters:
 
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
+        **type** : :obj:`~SpatialCalculationType`
 
 
     :Returns:
 
-        :obj:`~ISpatialAnalysisToolSpatialCalculation`
-
-.. py:method:: create_propagation_delay_to_location(self, name: str, description: str) -> ISpatialAnalysisToolSpatialCalculation
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationFactory.create_propagation_delay_to_location
-
-    Create and registers a distance to location volume calc type using specified name and description.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ISpatialAnalysisToolSpatialCalculation`
+        :obj:`~bool`
 

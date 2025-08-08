@@ -18,34 +18,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.filename`
-              - Get or set the geometry data filename.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.projection_horizontal_datum`
-              - Get or set the projection / horizontal datum.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.supported_building_height_data_attributes`
-              - Get an array of supported building height data attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_data_attribute`
               - Get or sets the building height data attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_reference_method`
               - Get or set the building height reference method.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_units`
               - Get or set the building height unit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.override_geometry_tile_origin`
-              - Get or set the option for overriding the geometry tile origin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.filename`
+              - Get or set the geometry data filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.geometry_tile_origin_latitude`
               - Get or set the geometry tile origin latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.geometry_tile_origin_longitude`
               - Get or set the geometry tile origin longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.use_terrain_data`
-              - Get or set the option for using terrain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude`
-              - Get the terrain extent min latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.override_geometry_tile_origin`
+              - Get or set the option for overriding the geometry tile origin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.projection_horizontal_datum`
+              - Get or set the projection / horizontal datum.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.supported_building_height_data_attributes`
+              - Get an array of supported building height data attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_latitude`
               - Get the terrain extent max latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_longitude`
-              - Get the terrain extent min longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_longitude`
               - Get the terrain extent max longitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude`
+              - Get the terrain extent min latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_longitude`
+              - Get the terrain extent min longitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.use_terrain_data`
+              - Get or set the option for using terrain data.
 
 
 
@@ -59,24 +59,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.filename
-    :type: str
-
-    Get or set the geometry data filename.
-
-.. py:property:: projection_horizontal_datum
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.projection_horizontal_datum
-    :type: ProjectionHorizontalDatumType
-
-    Get or set the projection / horizontal datum.
-
-.. py:property:: supported_building_height_data_attributes
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.supported_building_height_data_attributes
-    :type: list
-
-    Get an array of supported building height data attributes.
 
 .. py:property:: building_height_data_attribute
     :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_data_attribute
@@ -96,11 +78,11 @@ Property detail
 
     Get or set the building height unit.
 
-.. py:property:: override_geometry_tile_origin
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.override_geometry_tile_origin
-    :type: bool
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.filename
+    :type: str
 
-    Get or set the option for overriding the geometry tile origin.
+    Get or set the geometry data filename.
 
 .. py:property:: geometry_tile_origin_latitude
     :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.geometry_tile_origin_latitude
@@ -114,17 +96,23 @@ Property detail
 
     Get or set the geometry tile origin longitude.
 
-.. py:property:: use_terrain_data
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.use_terrain_data
+.. py:property:: override_geometry_tile_origin
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.override_geometry_tile_origin
     :type: bool
 
-    Get or set the option for using terrain data.
+    Get or set the option for overriding the geometry tile origin.
 
-.. py:property:: terrain_extent_minimum_latitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude
-    :type: typing.Any
+.. py:property:: projection_horizontal_datum
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.projection_horizontal_datum
+    :type: ProjectionHorizontalDatumType
 
-    Get the terrain extent min latitude.
+    Get or set the projection / horizontal datum.
+
+.. py:property:: supported_building_height_data_attributes
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.supported_building_height_data_attributes
+    :type: list
+
+    Get an array of supported building height data attributes.
 
 .. py:property:: terrain_extent_maximum_latitude
     :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_latitude
@@ -132,16 +120,28 @@ Property detail
 
     Get the terrain extent max latitude.
 
+.. py:property:: terrain_extent_maximum_longitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_longitude
+    :type: typing.Any
+
+    Get the terrain extent max longitude.
+
+.. py:property:: terrain_extent_minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude
+    :type: typing.Any
+
+    Get the terrain extent min latitude.
+
 .. py:property:: terrain_extent_minimum_longitude
     :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_longitude
     :type: typing.Any
 
     Get the terrain extent min longitude.
 
-.. py:property:: terrain_extent_maximum_longitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_longitude
-    :type: typing.Any
+.. py:property:: use_terrain_data
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.use_terrain_data
+    :type: bool
 
-    Get the terrain extent max longitude.
+    Get or set the option for using terrain data.
 
 

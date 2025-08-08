@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics.tracks`
-              - Get the collection of MTO 2D graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics.default_track`
               - Get the default track 2D graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics.global_track_options`
               - Get the 2D graphics global settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics.show_graphics`
               - Specify whether graphics attributes of the MTO are visible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics.tracks`
+              - Get the collection of MTO 2D graphics properties.
 
 
 
@@ -39,12 +39,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: tracks
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics.tracks
-    :type: MTOGraphics2DTrackCollection
-
-    Get the collection of MTO 2D graphics properties.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.MTOGraphics.default_track
@@ -63,5 +57,11 @@ Property detail
     :type: bool
 
     Specify whether graphics attributes of the MTO are visible.
+
+.. py:property:: tracks
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics.tracks
+    :type: MTOGraphics2DTrackCollection
+
+    Get the collection of MTO 2D graphics properties.
 
 

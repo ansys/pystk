@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.is_valid`
               - True indicates the method call was successful.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.vector`
-              - The vector in a specified axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.rate`
               - The vector rate in a specified axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.vector`
+              - The vector in a specified axes.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     True indicates the method call was successful.
 
-.. py:property:: vector
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.vector
-    :type: ICartesian3Vector
-
-    The vector in a specified axes.
-
 .. py:property:: rate
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.rate
     :type: ICartesian3Vector
 
     The vector rate in a specified axes.
+
+.. py:property:: vector
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchVectorFindInAxesWithRateResult.vector
+    :type: ICartesian3Vector
+
+    The vector in a specified axes.
 
 

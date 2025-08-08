@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.central_body`
               - Specify a central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.source_point`
-              - Specify a source point.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.observer_point`
               - Specify an observer point.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.source_point`
+              - Specify a source point.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify a central body.
 
-.. py:property:: source_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.source_point
-    :type: VectorGeometryToolPointReference
-
-    Specify a source point.
-
 .. py:property:: observer_point
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.observer_point
     :type: VectorGeometryToolPointReference
 
     Specify an observer point.
+
+.. py:property:: source_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGlint.source_point
+    :type: VectorGeometryToolPointReference
+
+    Specify a source point.
 
 

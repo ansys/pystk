@@ -72,12 +72,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
-
-
 .. py:method:: get(self) -> typing.Tuple[float, float, float]
     :canonical: ansys.stk.core.stkutil.ICartesian3Vector.get
 
@@ -113,4 +107,10 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
+
+
+
+
 

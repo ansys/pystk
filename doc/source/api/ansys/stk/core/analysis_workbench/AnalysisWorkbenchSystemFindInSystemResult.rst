@@ -22,14 +22,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.is_valid`
               - True indicates the method call was successful.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.position`
-              - A position vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.velocity`
-              - A velocity vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.rate`
-              - Rate of change.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.orientation`
               - Orientation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.position`
+              - A position vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.rate`
+              - Rate of change.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.velocity`
+              - A velocity vector.
 
 
 
@@ -50,17 +50,17 @@ Property detail
 
     True indicates the method call was successful.
 
+.. py:property:: orientation
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.orientation
+    :type: IOrientation
+
+    Orientation.
+
 .. py:property:: position
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.position
     :type: ICartesian3Vector
 
     A position vector.
-
-.. py:property:: velocity
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.velocity
-    :type: ICartesian3Vector
-
-    A velocity vector.
 
 .. py:property:: rate
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.rate
@@ -68,10 +68,10 @@ Property detail
 
     Rate of change.
 
-.. py:property:: orientation
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.orientation
-    :type: IOrientation
+.. py:property:: velocity
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchSystemFindInSystemResult.velocity
+    :type: ICartesian3Vector
 
-    Orientation.
+    A velocity vector.
 
 

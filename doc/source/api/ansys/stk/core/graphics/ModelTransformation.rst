@@ -20,16 +20,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.current_value`
               - Get or set the current value of the transformation. The current value of the transformation will be reflected in the geometry of the model primitive that it is associated with.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.minimum_value`
-              - Get the minimum value of the transformation.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.maximum_value`
-              - Get the maximum value of the transformation.
             * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.default_value`
               - Get the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.range`
-              - Get the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.maximum_value`
+              - Get the maximum value of the transformation.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.minimum_value`
+              - Get the minimum value of the transformation.
             * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.name`
               - Get the name of the transformation.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.range`
+              - Get the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties.
             * - :py:attr:`~ansys.stk.core.graphics.ModelTransformation.type`
               - Get the model transformation type associated with the transformation.
 
@@ -52,11 +52,11 @@ Property detail
 
     Get or set the current value of the transformation. The current value of the transformation will be reflected in the geometry of the model primitive that it is associated with.
 
-.. py:property:: minimum_value
-    :canonical: ansys.stk.core.graphics.ModelTransformation.minimum_value
+.. py:property:: default_value
+    :canonical: ansys.stk.core.graphics.ModelTransformation.default_value
     :type: float
 
-    Get the minimum value of the transformation.
+    Get the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized.
 
 .. py:property:: maximum_value
     :canonical: ansys.stk.core.graphics.ModelTransformation.maximum_value
@@ -64,23 +64,23 @@ Property detail
 
     Get the maximum value of the transformation.
 
-.. py:property:: default_value
-    :canonical: ansys.stk.core.graphics.ModelTransformation.default_value
+.. py:property:: minimum_value
+    :canonical: ansys.stk.core.graphics.ModelTransformation.minimum_value
     :type: float
 
-    Get the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized.
-
-.. py:property:: range
-    :canonical: ansys.stk.core.graphics.ModelTransformation.range
-    :type: float
-
-    Get the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties.
+    Get the minimum value of the transformation.
 
 .. py:property:: name
     :canonical: ansys.stk.core.graphics.ModelTransformation.name
     :type: str
 
     Get the name of the transformation.
+
+.. py:property:: range
+    :canonical: ansys.stk.core.graphics.ModelTransformation.range
+    :type: float
+
+    Get the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties.
 
 .. py:property:: type
     :canonical: ansys.stk.core.graphics.ModelTransformation.type

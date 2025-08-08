@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.type`
-              - Return the type of segment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties`
-              - Return the properties of the segment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.initial_state`
-              - Get the initial state of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.final_state`
               - Get the final state of the segment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.initial_state`
+              - Get the initial state of the segment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties`
+              - Return the properties of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.results`
               - Get the results of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.segment_summary`
               - Get the segment summary report.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.type`
+              - Return the type of segment.
 
 
 Import detail
@@ -54,17 +54,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.type
-    :type: SegmentType
+.. py:property:: final_state
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.final_state
+    :type: State
 
-    Return the type of segment.
-
-.. py:property:: properties
-    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties
-    :type: MCSSegmentProperties
-
-    Return the properties of the segment.
+    Get the final state of the segment.
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.initial_state
@@ -72,11 +66,11 @@ Property detail
 
     Get the initial state of the segment.
 
-.. py:property:: final_state
-    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.final_state
-    :type: State
+.. py:property:: properties
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties
+    :type: MCSSegmentProperties
 
-    Get the final state of the segment.
+    Return the properties of the segment.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.results
@@ -90,11 +84,15 @@ Property detail
 
     Get the segment summary report.
 
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.type
+    :type: SegmentType
+
+    Return the type of segment.
+
 
 Method detail
 -------------
-
-
 
 
 
@@ -112,6 +110,9 @@ Method detail
 
         :obj:`~typing.Any`
 
+
+
+
 .. py:method:: run(self) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.run
 
@@ -120,6 +121,5 @@ Method detail
     :Returns:
 
         :obj:`~State`
-
 
 

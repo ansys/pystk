@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.type`
-              - Return the type of collection of interval lists.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.labels`
               - Get the labels associated with the interval lists in the collection.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.type`
+              - Return the type of collection of interval lists.
 
 
 Import detail
@@ -46,23 +46,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.type
-    :type: EventIntervalCollectionType
-
-    Return the type of collection of interval lists.
-
 .. py:property:: labels
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.labels
     :type: list
 
     Get the labels associated with the interval lists in the collection.
 
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.type
+    :type: EventIntervalCollectionType
+
+    Return the type of collection of interval lists.
+
 
 Method detail
 -------------
-
-
 
 .. py:method:: find_interval_collection(self) -> TimeToolIntervalsVectorResult
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.find_interval_collection
@@ -72,6 +70,7 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolIntervalsVectorResult`
+
 
 .. py:method:: occurred(self, epoch: typing.Any) -> TimeToolTimeIntervalCollectionOccurredResult
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalCollection.occurred
@@ -86,4 +85,5 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolTimeIntervalCollectionOccurredResult`
+
 

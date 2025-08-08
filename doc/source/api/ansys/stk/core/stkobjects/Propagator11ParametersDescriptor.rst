@@ -22,10 +22,14 @@ Overview
               - Epoch time on which the ephemeris is based.
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.filename`
               - 11-Parameter file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.satellite_identifier`
-              - Satellite identification.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.nominal_longitude`
-              - GEO satellite's reference longitude. Uses LongitudeUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc`
+              - Latitude oscillation: amplitude (cosine term). Uses AngleUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc1`
+              - Latitude oscillation: rate of change (cosine term). Uses AngleUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats`
+              - Latitude oscillation: amplitude (sine term). Uses AngleUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats1`
+              - Latitude oscillation: rate of change (sine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lm0`
               - Mean longitude (East of Greenwich).
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lm1`
@@ -40,14 +44,10 @@ Overview
               - Longitude oscillation: amplitude (sine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lons1`
               - Longitude oscilation: rate of change (sine term). Uses AngleUnit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc`
-              - Latitude oscillation: amplitude (cosine term). Uses AngleUnit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc1`
-              - Latitude oscillation: rate of change (cosine term). Uses AngleUnit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats`
-              - Latitude oscillation: amplitude (sine term). Uses AngleUnit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats1`
-              - Latitude oscillation: rate of change (sine term). Uses AngleUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.nominal_longitude`
+              - GEO satellite's reference longitude. Uses LongitudeUnit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.satellite_identifier`
+              - Satellite identification.
 
 
 
@@ -74,17 +74,29 @@ Property detail
 
     11-Parameter file path.
 
-.. py:property:: satellite_identifier
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.satellite_identifier
-    :type: str
-
-    Satellite identification.
-
-.. py:property:: nominal_longitude
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.nominal_longitude
+.. py:property:: latc
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc
     :type: float
 
-    GEO satellite's reference longitude. Uses LongitudeUnit.
+    Latitude oscillation: amplitude (cosine term). Uses AngleUnit.
+
+.. py:property:: latc1
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc1
+    :type: float
+
+    Latitude oscillation: rate of change (cosine term). Uses AngleUnit.
+
+.. py:property:: lats
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats
+    :type: float
+
+    Latitude oscillation: amplitude (sine term). Uses AngleUnit.
+
+.. py:property:: lats1
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats1
+    :type: float
+
+    Latitude oscillation: rate of change (sine term). Uses AngleUnit.
 
 .. py:property:: lm0
     :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lm0
@@ -128,28 +140,16 @@ Property detail
 
     Longitude oscilation: rate of change (sine term). Uses AngleUnit.
 
-.. py:property:: latc
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc
+.. py:property:: nominal_longitude
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.nominal_longitude
     :type: float
 
-    Latitude oscillation: amplitude (cosine term). Uses AngleUnit.
+    GEO satellite's reference longitude. Uses LongitudeUnit.
 
-.. py:property:: latc1
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.latc1
-    :type: float
+.. py:property:: satellite_identifier
+    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.satellite_identifier
+    :type: str
 
-    Latitude oscillation: rate of change (cosine term). Uses AngleUnit.
-
-.. py:property:: lats
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats
-    :type: float
-
-    Latitude oscillation: amplitude (sine term). Uses AngleUnit.
-
-.. py:property:: lats1
-    :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptor.lats1
-    :type: float
-
-    Latitude oscillation: rate of change (sine term). Uses AngleUnit.
+    Satellite identification.
 
 

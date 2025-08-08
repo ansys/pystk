@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.spin_vector`
-              - Specify a spin vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.rotation_angle`
-              - Specify a rotational angle.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.reference_axes`
-              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.fixed_offset_angle`
               - Specify an additional rotational offset.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.reference_axes`
+              - Specify a reference axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.rotation_angle`
+              - Specify a rotational angle.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.spin_vector`
+              - Specify a spin vector.
 
 
 
@@ -42,17 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: spin_vector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.spin_vector
-    :type: VectorGeometryToolVectorReference
+.. py:property:: fixed_offset_angle
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.fixed_offset_angle
+    :type: float
 
-    Specify a spin vector.
-
-.. py:property:: rotation_angle
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.rotation_angle
-    :type: VectorGeometryToolAngleReference
-
-    Specify a rotational angle.
+    Specify an additional rotational offset.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.reference_axes
@@ -60,10 +54,16 @@ Property detail
 
     Specify a reference axes.
 
-.. py:property:: fixed_offset_angle
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.fixed_offset_angle
-    :type: float
+.. py:property:: rotation_angle
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.rotation_angle
+    :type: VectorGeometryToolAngleReference
 
-    Specify an additional rotational offset.
+    Specify a rotational angle.
+
+.. py:property:: spin_vector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesAngularOffset.spin_vector
+    :type: VectorGeometryToolVectorReference
+
+    Specify a spin vector.
 
 

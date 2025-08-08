@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.distance`
-              - The Volume Calc range distance types.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_point`
-              - The Volume Calc Range reference point.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_plane`
-              - The Volume Calc Range reference plane.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.along_vector`
               - The Volume Calc Range Along Vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.distance`
+              - The Volume Calc range distance types.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_plane`
+              - The Volume Calc Range reference plane.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_point`
+              - The Volume Calc Range reference point.
 
 
 
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: along_vector
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.along_vector
+    :type: IVectorGeometryToolVector
+
+    The Volume Calc Range Along Vector.
+
 .. py:property:: distance
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.distance
     :type: DistanceToLocationType
 
     The Volume Calc range distance types.
-
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_point
-    :type: IVectorGeometryToolPoint
-
-    The Volume Calc Range reference point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_plane
@@ -60,10 +60,10 @@ Property detail
 
     The Volume Calc Range reference plane.
 
-.. py:property:: along_vector
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.along_vector
-    :type: IVectorGeometryToolVector
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationDistanceToLocation.reference_point
+    :type: IVectorGeometryToolPoint
 
-    The Volume Calc Range Along Vector.
+    The Volume Calc Range reference point.
 
 

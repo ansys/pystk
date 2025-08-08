@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.central_body`
-              - Specify a central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.reference_point`
-              - Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.direction_vector`
-              - Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.altitude`
               - The point of closest approach to the central body surface occurs at the specified altitude.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.central_body`
+              - Specify a central body.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.direction_vector`
+              - Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.reference_point`
+              - Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 
 
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: altitude
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.altitude
+    :type: float
+
+    The point of closest approach to the central body surface occurs at the specified altitude.
+
 .. py:property:: central_body
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.central_body
     :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
-
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.reference_point
-    :type: VectorGeometryToolPointReference
-
-    Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.direction_vector
@@ -60,10 +60,10 @@ Property detail
 
     Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
 
-.. py:property:: altitude
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.altitude
-    :type: float
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGrazing.reference_point
+    :type: VectorGeometryToolPointReference
 
-    The point of closest approach to the central body surface occurs at the specified altitude.
+    Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 

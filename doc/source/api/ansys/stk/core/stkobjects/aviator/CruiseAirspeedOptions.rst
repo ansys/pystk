@@ -29,10 +29,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.cruise_speed_type`
               - Get or set the method for determining the aircraft's airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed_type`
-              - Get the airspeed type for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed`
               - Get the airspeed for the other airspeed option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed_type`
+              - Get the airspeed type for the other airspeed option.
 
 
 
@@ -89,17 +89,17 @@ Property detail
 
     Get or set the method for determining the aircraft's airspeed.
 
-.. py:property:: other_airspeed_type
-    :canonical: ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed_type
-    :type: AirspeedType
-
-    Get the airspeed type for the other airspeed option.
-
 .. py:property:: other_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed
     :type: float
 
     Get the airspeed for the other airspeed option.
+
+.. py:property:: other_airspeed_type
+    :canonical: ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions.other_airspeed_type
+    :type: AirspeedType
+
+    Get the airspeed type for the other airspeed option.
 
 
 Method detail

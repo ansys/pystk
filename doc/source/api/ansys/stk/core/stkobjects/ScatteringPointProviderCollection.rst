@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.item`
-              - Given an index, returns the scattering point provider element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.remove_at`
-              - Remove the scattering point provider element with the specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.insert_at`
-              - Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.add`
               - Add a new default scattering point provider element to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.clear`
               - Clear all scattering point provider elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.insert_at`
+              - Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.item`
+              - Given an index, returns the scattering point provider element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.remove_at`
+              - Remove the scattering point provider element with the specified index.
 
     .. tab-item:: Properties
 
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.count`
-              - Return the number of scattering point provider elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection._new_enum`
               - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection.count`
+              - Return the number of scattering point provider elements in the collection.
 
 
 
@@ -53,65 +53,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.count
-    :type: int
-
-    Return the number of scattering point provider elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.count
+    :type: int
+
+    Return the number of scattering point provider elements in the collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> ScatteringPointProviderCollectionElement
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.item
-
-    Given an index, returns the scattering point provider element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~ScatteringPointProviderCollectionElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.remove_at
-
-    Remove the scattering point provider element with the specified index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: insert_at(self, index: int) -> ScatteringPointProviderCollectionElement
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.insert_at
-
-    Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~ScatteringPointProviderCollectionElement`
 
 .. py:method:: add(self) -> ScatteringPointProviderCollectionElement
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.add
@@ -130,4 +86,48 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: insert_at(self, index: int) -> ScatteringPointProviderCollectionElement
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.insert_at
+
+    Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ScatteringPointProviderCollectionElement`
+
+.. py:method:: item(self, index: int) -> ScatteringPointProviderCollectionElement
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.item
+
+    Given an index, returns the scattering point provider element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ScatteringPointProviderCollectionElement`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderCollection.remove_at
+
+    Remove the scattering point provider element with the specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

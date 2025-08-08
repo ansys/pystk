@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkutil.DirectionRADec.dec`
               - Declination: angle above the x-y plane. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.DirectionRADec.ra`
-              - Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.DirectionRADec.magnitude`
               - A unitless value that represents magnitude.
+            * - :py:attr:`~ansys.stk.core.stkutil.DirectionRADec.ra`
+              - Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Declination: angle above the x-y plane. Uses Latitude Dimension.
 
-.. py:property:: ra
-    :canonical: ansys.stk.core.stkutil.DirectionRADec.ra
-    :type: typing.Any
-
-    Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
-
 .. py:property:: magnitude
     :canonical: ansys.stk.core.stkutil.DirectionRADec.magnitude
     :type: float
 
     A unitless value that represents magnitude.
+
+.. py:property:: ra
+    :canonical: ansys.stk.core.stkutil.DirectionRADec.ra
+    :type: typing.Any
+
+    Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
 
 

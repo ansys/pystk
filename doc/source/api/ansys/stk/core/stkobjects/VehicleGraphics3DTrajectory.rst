@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.track_data`
-              - Get the leading/trailing ground track and trajectory data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.tick_marks`
               - Get the tick mark data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.track_data`
+              - Get the leading/trailing ground track and trajectory data.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: track_data
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.track_data
-    :type: VehicleGraphics3DTrajectoryTrackData
-
-    Get the leading/trailing ground track and trajectory data.
-
 .. py:property:: tick_marks
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.tick_marks
     :type: VehicleGraphics3DTrajectoryTickMarks
 
     Get the tick mark data.
+
+.. py:property:: track_data
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.track_data
+    :type: VehicleGraphics3DTrajectoryTrackData
+
+    Get the leading/trailing ground track and trajectory data.
 
 

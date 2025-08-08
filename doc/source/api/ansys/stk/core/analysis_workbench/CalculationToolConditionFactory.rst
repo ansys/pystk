@@ -20,14 +20,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create`
               - Create and registers a condition using specified name, description and type.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_scalar_bounds`
-              - Create a condition placing bounds on specified scalar.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.is_type_supported`
-              - Return whether the specified type is supported.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_combined`
               - Create a condition which combines multiple conditions.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_trajectory_within_volume`
               - Create a condition for point in volume.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_scalar_bounds`
+              - Create a condition placing bounds on specified scalar.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.is_type_supported`
+              - Return whether the specified type is supported.
 
 
 Import detail
@@ -54,6 +54,38 @@ Method detail
         **description** : :obj:`~str`
 
         **type** : :obj:`~ConditionType`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolCondition`
+
+.. py:method:: create_combined(self, name: str, description: str) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_combined
+
+    Create a condition which combines multiple conditions.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolCondition`
+
+.. py:method:: create_trajectory_within_volume(self, name: str, description: str) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_trajectory_within_volume
+
+    Create a condition for point in volume.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
 
 
     :Returns:
@@ -89,36 +121,4 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-.. py:method:: create_combined(self, name: str, description: str) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_combined
-
-    Create a condition which combines multiple conditions.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ICalculationToolCondition`
-
-.. py:method:: create_trajectory_within_volume(self, name: str, description: str) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionFactory.create_trajectory_within_volume
-
-    Create a condition for point in volume.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ICalculationToolCondition`
 

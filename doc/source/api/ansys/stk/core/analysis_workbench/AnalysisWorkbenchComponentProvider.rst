@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.supports`
-              - Test whether the specified VGT feature is supported.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.import_components`
               - Import Analysis Workbench components from a file.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.supports`
+              - Test whether the specified VGT feature is supported.
 
     .. tab-item:: Properties
 
@@ -29,46 +29,46 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.vectors`
-              - Return a group of vectors.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.points`
-              - Return a group of points.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.angles`
               - Return a group of angles.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.axes`
               - Return a group of axes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.planes`
-              - Return a group of planes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.systems`
-              - Return a group of systems.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_systems`
-              - Return well-known systems.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_axes`
-              - Return well-known axes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_instants`
-              - Return a group of events.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_intervals`
-              - Return a group of event intervals.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.calculation_scalars`
               - Return a group of calc scalars.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_arrays`
-              - Return a group of event arrays.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_lists`
-              - Return a group of event interval lists.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_collections`
-              - Return a group of event interval collections.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.parameter_sets`
-              - Access, add new or remove existing parameter set components.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.conditions`
-              - Return a group of condition objects.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.condition_sets`
               - Return a group of condition set objects.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.conditions`
+              - Return a group of condition objects.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.parameter_sets`
+              - Access, add new or remove existing parameter set components.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.planes`
+              - Return a group of planes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.points`
+              - Return a group of points.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.spatial_calculations`
+              - Return a group of volume calc objects.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.systems`
+              - Return a group of systems.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_arrays`
+              - Return a group of event arrays.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_instants`
+              - Return a group of events.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_collections`
+              - Return a group of event interval collections.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_lists`
+              - Return a group of event interval lists.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_intervals`
+              - Return a group of event intervals.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.vectors`
+              - Return a group of vectors.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.volume_grids`
               - Return a group of volume grid objects.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.volumes`
               - Return a group of volume objects.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.spatial_calculations`
-              - Return a group of volume calc objects.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_axes`
+              - Return well-known axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_systems`
+              - Return well-known systems.
 
 
 
@@ -371,18 +371,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: vectors
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.vectors
-    :type: VectorGeometryToolVectorGroup
-
-    Return a group of vectors.
-
-.. py:property:: points
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.points
-    :type: VectorGeometryToolPointGroup
-
-    Return a group of points.
-
 .. py:property:: angles
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.angles
     :type: VectorGeometryToolAngleGroup
@@ -395,71 +383,17 @@ Property detail
 
     Return a group of axes.
 
-.. py:property:: planes
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.planes
-    :type: VectorGeometryToolPlaneGroup
-
-    Return a group of planes.
-
-.. py:property:: systems
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.systems
-    :type: VectorGeometryToolSystemGroup
-
-    Return a group of systems.
-
-.. py:property:: well_known_systems
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_systems
-    :type: VectorGeometryToolWellKnownSystems
-
-    Return well-known systems.
-
-.. py:property:: well_known_axes
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_axes
-    :type: VectorGeometryToolWellKnownAxes
-
-    Return well-known axes.
-
-.. py:property:: time_instants
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_instants
-    :type: TimeToolInstantGroup
-
-    Return a group of events.
-
-.. py:property:: time_intervals
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_intervals
-    :type: TimeToolTimeIntervalGroup
-
-    Return a group of event intervals.
-
 .. py:property:: calculation_scalars
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.calculation_scalars
     :type: CalculationToolScalarGroup
 
     Return a group of calc scalars.
 
-.. py:property:: time_arrays
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_arrays
-    :type: TimeToolTimeArrayGroup
+.. py:property:: condition_sets
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.condition_sets
+    :type: CalculationToolConditionSetGroup
 
-    Return a group of event arrays.
-
-.. py:property:: time_interval_lists
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_lists
-    :type: TimeToolTimeIntervalListGroup
-
-    Return a group of event interval lists.
-
-.. py:property:: time_interval_collections
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_collections
-    :type: TimeToolTimeIntervalCollectionGroup
-
-    Return a group of event interval collections.
-
-.. py:property:: parameter_sets
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.parameter_sets
-    :type: CalculationToolParameterSetGroup
-
-    Access, add new or remove existing parameter set components.
+    Return a group of condition set objects.
 
 .. py:property:: conditions
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.conditions
@@ -467,11 +401,71 @@ Property detail
 
     Return a group of condition objects.
 
-.. py:property:: condition_sets
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.condition_sets
-    :type: CalculationToolConditionSetGroup
+.. py:property:: parameter_sets
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.parameter_sets
+    :type: CalculationToolParameterSetGroup
 
-    Return a group of condition set objects.
+    Access, add new or remove existing parameter set components.
+
+.. py:property:: planes
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.planes
+    :type: VectorGeometryToolPlaneGroup
+
+    Return a group of planes.
+
+.. py:property:: points
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.points
+    :type: VectorGeometryToolPointGroup
+
+    Return a group of points.
+
+.. py:property:: spatial_calculations
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.spatial_calculations
+    :type: SpatialAnalysisToolCalculationGroup
+
+    Return a group of volume calc objects.
+
+.. py:property:: systems
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.systems
+    :type: VectorGeometryToolSystemGroup
+
+    Return a group of systems.
+
+.. py:property:: time_arrays
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_arrays
+    :type: TimeToolTimeArrayGroup
+
+    Return a group of event arrays.
+
+.. py:property:: time_instants
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_instants
+    :type: TimeToolInstantGroup
+
+    Return a group of events.
+
+.. py:property:: time_interval_collections
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_collections
+    :type: TimeToolTimeIntervalCollectionGroup
+
+    Return a group of event interval collections.
+
+.. py:property:: time_interval_lists
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_interval_lists
+    :type: TimeToolTimeIntervalListGroup
+
+    Return a group of event interval lists.
+
+.. py:property:: time_intervals
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.time_intervals
+    :type: TimeToolTimeIntervalGroup
+
+    Return a group of event intervals.
+
+.. py:property:: vectors
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.vectors
+    :type: VectorGeometryToolVectorGroup
+
+    Return a group of vectors.
 
 .. py:property:: volume_grids
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.volume_grids
@@ -485,11 +479,17 @@ Property detail
 
     Return a group of volume objects.
 
-.. py:property:: spatial_calculations
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.spatial_calculations
-    :type: SpatialAnalysisToolCalculationGroup
+.. py:property:: well_known_axes
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_axes
+    :type: VectorGeometryToolWellKnownAxes
 
-    Return a group of volume calc objects.
+    Return well-known axes.
+
+.. py:property:: well_known_systems
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.well_known_systems
+    :type: VectorGeometryToolWellKnownSystems
+
+    Return well-known systems.
 
 
 Method detail
@@ -505,8 +505,19 @@ Method detail
 
 
 
+.. py:method:: import_components(self, filename: str) -> AnalysisWorkbenchComponentCollection
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.import_components
+
+    Import Analysis Workbench components from a file.
+
+    :Parameters:
+
+        **filename** : :obj:`~str`
 
 
+    :Returns:
+
+        :obj:`~AnalysisWorkbenchComponentCollection`
 
 
 
@@ -526,19 +537,8 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: import_components(self, filename: str) -> AnalysisWorkbenchComponentCollection
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchComponentProvider.import_components
-
-    Import Analysis Workbench components from a file.
-
-    :Parameters:
-
-        **filename** : :obj:`~str`
 
 
-    :Returns:
-
-        :obj:`~AnalysisWorkbenchComponentCollection`
 
 
 

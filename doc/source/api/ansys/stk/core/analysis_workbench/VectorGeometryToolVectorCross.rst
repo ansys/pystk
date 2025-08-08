@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.from_vector`
-              - Specify one of the two vectors which define the vector cross product.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.to_vector`
-              - Specify the second of the two vectors which define the vector cross product.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.is_normalized`
-              - Whether to convert the cross product of two vectors to a unit vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.dimension`
               - Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.from_vector`
+              - Specify one of the two vectors which define the vector cross product.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.is_normalized`
+              - Whether to convert the cross product of two vectors to a unit vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.to_vector`
+              - Specify the second of the two vectors which define the vector cross product.
 
 
 
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: dimension
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.dimension
+    :type: str
+
+    Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+
 .. py:property:: from_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.from_vector
     :type: VectorGeometryToolVectorReference
 
     Specify one of the two vectors which define the vector cross product.
-
-.. py:property:: to_vector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.to_vector
-    :type: VectorGeometryToolVectorReference
-
-    Specify the second of the two vectors which define the vector cross product.
 
 .. py:property:: is_normalized
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.is_normalized
@@ -60,10 +60,10 @@ Property detail
 
     Whether to convert the cross product of two vectors to a unit vector.
 
-.. py:property:: dimension
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.dimension
-    :type: str
+.. py:property:: to_vector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorCross.to_vector
+    :type: VectorGeometryToolVectorReference
 
-    Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+    Specify the second of the two vectors which define the vector cross product.
 
 

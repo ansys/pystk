@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeBox.width`
-              - Property used to access the width dimension of a box shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeBox.depth`
               - Property used to access the depth dimension of a box shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeBox.height`
               - Property used to access the height dimension of a box shape.
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeBox.width`
+              - Property used to access the width dimension of a box shape.
 
 
 
@@ -40,12 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: width
-    :canonical: ansys.stk.core.stkobjects.EOIRShapeBox.width
-    :type: float
-
-    Property used to access the width dimension of a box shape.
-
 .. py:property:: depth
     :canonical: ansys.stk.core.stkobjects.EOIRShapeBox.depth
     :type: float
@@ -57,5 +51,11 @@ Property detail
     :type: float
 
     Property used to access the height dimension of a box shape.
+
+.. py:property:: width
+    :canonical: ansys.stk.core.stkobjects.EOIRShapeBox.width
+    :type: float
+
+    Property used to access the width dimension of a box shape.
 
 

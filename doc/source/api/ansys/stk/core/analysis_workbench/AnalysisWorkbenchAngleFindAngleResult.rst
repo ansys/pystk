@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.is_valid`
-              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.angle`
               - The computed angle. The value of the angle is in ``AngleUnit`` dimension.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.is_valid`
+              - Indicate whether the result object is valid.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.is_valid
-    :type: bool
-
-    Indicate whether the result object is valid.
-
 .. py:property:: angle
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.angle
     :type: typing.Any
 
     The computed angle. The value of the angle is in ``AngleUnit`` dimension.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAngleFindAngleResult.is_valid
+    :type: bool
+
+    Indicate whether the result object is valid.
 
 

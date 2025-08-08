@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypointSource.get_user_waypoint`
-              - Get the user waypoint with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypointSource.add_user_waypoint`
               - Create a new user waypoint with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypointSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserWaypointSource.get_user_waypoint`
+              - Get the user waypoint with the given name.
 
 
 Import detail
@@ -39,20 +39,6 @@ Import detail
 
 Method detail
 -------------
-
-.. py:method:: get_user_waypoint(self, name: str) -> UserWaypoint
-    :canonical: ansys.stk.core.stkobjects.aviator.UserWaypointSource.get_user_waypoint
-
-    Get the user waypoint with the given name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~UserWaypoint`
 
 .. py:method:: add_user_waypoint(self, name: str) -> UserWaypoint
     :canonical: ansys.stk.core.stkobjects.aviator.UserWaypointSource.add_user_waypoint
@@ -76,4 +62,18 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogSource`
+
+.. py:method:: get_user_waypoint(self, name: str) -> UserWaypoint
+    :canonical: ansys.stk.core.stkobjects.aviator.UserWaypointSource.get_user_waypoint
+
+    Get the user waypoint with the given name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~UserWaypoint`
 

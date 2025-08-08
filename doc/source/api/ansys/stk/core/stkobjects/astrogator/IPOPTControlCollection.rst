@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.get_control_by_paths`
               - Return the control specified by the object/control path.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -63,21 +63,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> IPOPTControl
-    :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~IPOPTControl`
-
-
 
 .. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> IPOPTControl
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.get_control_by_paths
@@ -94,4 +79,19 @@ Method detail
     :Returns:
 
         :obj:`~IPOPTControl`
+
+.. py:method:: item(self, index: int) -> IPOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~IPOPTControl`
+
 

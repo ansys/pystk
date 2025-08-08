@@ -26,10 +26,10 @@ Overview
               - Get or set the angle from the horizontal on which the aircraft descends to touchdown.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.runway_altitude_offset`
               - Get or set the altitude offset above the ground level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.use_runway_terrain`
-              - Opt whether to use terrain data to define the runway's ground level attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.touch_and_go`
               - Opt whether to perform a Touch and Go landing. The procedure will stop at wheels down and can be immediately followed by a takeoff procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.use_runway_terrain`
+              - Opt whether to use terrain data to define the runway's ground level attitude.
 
 
 
@@ -68,16 +68,16 @@ Property detail
 
     Get or set the altitude offset above the ground level.
 
-.. py:property:: use_runway_terrain
-    :canonical: ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.use_runway_terrain
-    :type: bool
-
-    Opt whether to use terrain data to define the runway's ground level attitude.
-
 .. py:property:: touch_and_go
     :canonical: ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.touch_and_go
     :type: bool
 
     Opt whether to perform a Touch and Go landing. The procedure will stop at wheels down and can be immediately followed by a takeoff procedure.
+
+.. py:property:: use_runway_terrain
+    :canonical: ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope.use_runway_terrain
+    :type: bool
+
+    Opt whether to use terrain data to define the runway's ground level attitude.
 
 

@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.get_all_conditions`
-              - Get all conditions that are being combined.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_all_conditions`
-              - Set all conditions to be combined.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.get_condition`
-              - Get the condition at the position specified.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_condition`
-              - Set the condition at the position specified.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.remove_condition`
-              - Remove the condition at the position specified.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.add_condition`
               - Add a condition at the end of the list.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.get_all_conditions`
+              - Get all conditions that are being combined.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.get_condition`
+              - Get the condition at the position specified.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.remove_condition`
+              - Remove the condition at the position specified.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_all_conditions`
+              - Set all conditions to be combined.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_condition`
+              - Set the condition at the position specified.
 
     .. tab-item:: Properties
 
@@ -73,6 +73,20 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: add_condition(self, ref: ICalculationToolCondition) -> None
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.add_condition
+
+    Add a condition at the end of the list.
+
+    :Parameters:
+
+        **ref** : :obj:`~ICalculationToolCondition`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 
@@ -84,20 +98,6 @@ Method detail
     :Returns:
 
         :obj:`~list`
-
-.. py:method:: set_all_conditions(self, conditions: list) -> None
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_all_conditions
-
-    Set all conditions to be combined.
-
-    :Parameters:
-
-        **conditions** : :obj:`~list`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: get_condition(self, pos: int) -> ICalculationToolCondition
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.get_condition
@@ -113,22 +113,6 @@ Method detail
 
         :obj:`~ICalculationToolCondition`
 
-.. py:method:: set_condition(self, ref: ICalculationToolCondition, pos: int) -> None
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_condition
-
-    Set the condition at the position specified.
-
-    :Parameters:
-
-        **ref** : :obj:`~ICalculationToolCondition`
-
-        **pos** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: remove_condition(self, pos: int) -> None
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.remove_condition
 
@@ -143,14 +127,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_condition(self, ref: ICalculationToolCondition) -> None
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.add_condition
+.. py:method:: set_all_conditions(self, conditions: list) -> None
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_all_conditions
 
-    Add a condition at the end of the list.
+    Set all conditions to be combined.
+
+    :Parameters:
+
+        **conditions** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_condition(self, ref: ICalculationToolCondition, pos: int) -> None
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionCombined.set_condition
+
+    Set the condition at the position specified.
 
     :Parameters:
 
         **ref** : :obj:`~ICalculationToolCondition`
+
+        **pos** : :obj:`~int`
 
 
     :Returns:

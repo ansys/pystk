@@ -57,8 +57,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: get_graphics_3d_window_identifiers(self) -> list
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsSpecialElement.get_graphics_3d_window_identifiers
 
@@ -67,6 +65,8 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
 
 .. py:method:: set_graphics_3d_window_identifiers(self, window_ids: list) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsSpecialElement.set_graphics_3d_window_identifiers

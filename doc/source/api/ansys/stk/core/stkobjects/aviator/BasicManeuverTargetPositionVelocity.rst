@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type`
-              - Get or set the target pos vel type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type_string`
-              - Get or set the target pos vel as a string value. Use this for custom models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.mode_as_noisy_bearing_range`
               - Get the options for a noisy bearing range velocity strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.mode_as_noisy_surf_target`
               - Get the options for a noisy surface target position velocity strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type`
+              - Get or set the target pos vel type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type_string`
+              - Get or set the target pos vel as a string value. Use this for custom models.
 
 
 
@@ -51,18 +51,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: target_position_velocity_type
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type
-    :type: TargetPositionVelocityType
-
-    Get or set the target pos vel type.
-
-.. py:property:: target_position_velocity_type_string
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type_string
-    :type: str
-
-    Get or set the target pos vel as a string value. Use this for custom models.
-
 .. py:property:: mode_as_noisy_bearing_range
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.mode_as_noisy_bearing_range
     :type: BasicManeuverTargetPositionVelocityNoisyBearingRange
@@ -75,15 +63,21 @@ Property detail
 
     Get the options for a noisy surface target position velocity strategy.
 
+.. py:property:: target_position_velocity_type
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type
+    :type: TargetPositionVelocityType
+
+    Get or set the target pos vel type.
+
+.. py:property:: target_position_velocity_type_string
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.target_position_velocity_type_string
+    :type: str
+
+    Get or set the target pos vel as a string value. Use this for custom models.
+
 
 Method detail
 -------------
-
-
-
-
-
-
 
 .. py:method:: apply_position_velocity(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelocity.apply_position_velocity
@@ -102,4 +96,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 

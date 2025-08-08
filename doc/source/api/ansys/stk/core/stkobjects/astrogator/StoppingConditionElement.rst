@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter`
-              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter`
+              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -77,10 +77,11 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: ControlStoppingCondition) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter
 
-    Enable or disables the specified control parameter.
+.. py:method:: disable_control_parameter(self, param: ControlStoppingCondition) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter
+
+    Disables the specified control parameter.
 
     :Parameters:
 
@@ -91,10 +92,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: ControlStoppingCondition) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter
+.. py:method:: enable_control_parameter(self, param: ControlStoppingCondition) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter
 
-    Disables the specified control parameter.
+    Enable or disables the specified control parameter.
 
     :Parameters:
 
@@ -118,6 +119,5 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
 
 

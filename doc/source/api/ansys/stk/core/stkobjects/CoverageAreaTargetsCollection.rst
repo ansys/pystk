@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.add`
               - Add a new element to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove`
               - Remove an element from the collection given a Target name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.available_area_targets`
               - Get the available area targets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -55,12 +55,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection._new_enum
     :type: EnumeratorProxy
@@ -73,9 +67,30 @@ Property detail
 
     Get the available area targets.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, target_name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.add
+
+    Add a new element to the collection.
+
+    :Parameters:
+
+        **target_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 .. py:method:: item(self, index: int) -> str
@@ -92,15 +107,14 @@ Method detail
 
         :obj:`~str`
 
+.. py:method:: remove(self, target_name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove
 
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_at
-
-    Remove an element from the collection using specified index.
+    Remove an element from the collection given a Target name.
 
     :Parameters:
 
-        **index** : :obj:`~int`
+        **target_name** : :obj:`~str`
 
 
     :Returns:
@@ -116,28 +130,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, target_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove_at
 
-    Add a new element to the collection.
-
-    :Parameters:
-
-        **target_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove(self, target_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove
-
-    Remove an element from the collection given a Target name.
+    Remove an element from the collection using specified index.
 
     :Parameters:
 
-        **target_name** : :obj:`~str`
+        **index** : :obj:`~int`
 
 
     :Returns:

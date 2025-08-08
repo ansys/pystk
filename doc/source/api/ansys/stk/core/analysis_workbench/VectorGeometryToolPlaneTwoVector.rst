@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_point`
+              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_vector`
               - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.vector_2`
               - Specify a Normal vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_point`
-              - Specify a reference point.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_point
+    :type: VectorGeometryToolPointReference
+
+    Specify a reference point.
+
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_vector
     :type: VectorGeometryToolVectorReference
@@ -51,11 +57,5 @@ Property detail
     :type: VectorGeometryToolVectorReference
 
     Specify a Normal vector.
-
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneTwoVector.reference_point
-    :type: VectorGeometryToolPointReference
-
-    Specify a reference point.
 
 

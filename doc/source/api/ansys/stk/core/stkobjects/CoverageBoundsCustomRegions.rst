@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.region_files`
-              - File containing user-defined points defining a specific grid region.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.area_targets`
               - Area target to be used as part of the coverage area.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.check_for_holes`
-              - Check for holes in custom region.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm`
-              - Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.ellipses`
-              - Ellipses to be used as part of the coverage area.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.boxes`
               - Latitude/longitude boxes to be used as part of the coverage area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.check_for_holes`
+              - Check for holes in custom region.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.ellipses`
+              - Ellipses to be used as part of the coverage area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.region_files`
+              - File containing user-defined points defining a specific grid region.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm`
+              - Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 
 
 
@@ -46,17 +46,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: region_files
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.region_files
-    :type: CoverageRegionFilesCollection
-
-    File containing user-defined points defining a specific grid region.
-
 .. py:property:: area_targets
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.area_targets
     :type: CoverageAreaTargetsCollection
 
     Area target to be used as part of the coverage area.
+
+.. py:property:: boxes
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.boxes
+    :type: CoverageLatLonBoxCollection
+
+    Latitude/longitude boxes to be used as part of the coverage area.
 
 .. py:property:: check_for_holes
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.check_for_holes
@@ -64,22 +64,22 @@ Property detail
 
     Check for holes in custom region.
 
-.. py:property:: small_region_algorithm
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm
-    :type: CoverageCustomRegionAlgorithm
-
-    Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
-
 .. py:property:: ellipses
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.ellipses
     :type: CoverageEllipseCollection
 
     Ellipses to be used as part of the coverage area.
 
-.. py:property:: boxes
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.boxes
-    :type: CoverageLatLonBoxCollection
+.. py:property:: region_files
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.region_files
+    :type: CoverageRegionFilesCollection
 
-    Latitude/longitude boxes to be used as part of the coverage area.
+    File containing user-defined points defining a specific grid region.
+
+.. py:property:: small_region_algorithm
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm
+    :type: CoverageCustomRegionAlgorithm
+
+    Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 
 

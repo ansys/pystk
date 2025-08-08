@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_vector`
-              - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_plane`
               - Specify a reference plane.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_vector`
+              - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.signed`
               - Control whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_vector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_vector
-    :type: VectorGeometryToolVectorReference
-
-    Specify a reference vector.
-
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_plane
     :type: VectorGeometryToolPlaneReference
 
     Specify a reference plane.
+
+.. py:property:: reference_vector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.reference_vector
+    :type: VectorGeometryToolVectorReference
+
+    Specify a reference vector.
 
 .. py:property:: signed
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleToPlane.signed

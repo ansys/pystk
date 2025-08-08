@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.minimum`
-              - Minimum coordinate value.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.maximum`
-              - Maximum coordinate value.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.include_minimum_maximum`
               - Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.maximum`
+              - Maximum coordinate value.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.minimum`
+              - Minimum coordinate value.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.reference_value`
               - Reference coordinate value from which steps are taken.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.step`
@@ -44,11 +44,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.minimum
-    :type: float
+.. py:property:: include_minimum_maximum
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.include_minimum_maximum
+    :type: bool
 
-    Minimum coordinate value.
+    Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
 
 .. py:property:: maximum
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.maximum
@@ -56,11 +56,11 @@ Property detail
 
     Maximum coordinate value.
 
-.. py:property:: include_minimum_maximum
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.include_minimum_maximum
-    :type: bool
+.. py:property:: minimum
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.minimum
+    :type: float
 
-    Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
+    Minimum coordinate value.
 
 .. py:property:: reference_value
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolGridValuesFixedStep.reference_value

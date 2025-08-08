@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.graph_option`
+              - Graph option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.line_color`
+              - Line Color.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.name`
               - Get the name of the result.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.parent_name`
               - Get the segment or component for which this result has been selected.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_desired_value`
-              - Show the desired value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.line_color`
-              - Line Color.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.point_style`
               - Point Style.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.y_axis`
-              - Select whether to display the result's value range on the left or right side of the graph.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.graph_option`
-              - Graph option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_desired_value`
+              - Show the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_tolerance_band`
               - Show the tolerance band.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.y_axis`
+              - Select whether to display the result's value range on the left or right side of the graph.
 
 
 
@@ -50,6 +50,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: graph_option
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.graph_option
+    :type: GraphOption
+
+    Graph option.
+
+.. py:property:: line_color
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.line_color
+    :type: Color
+
+    Line Color.
+
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.name
     :type: str
@@ -62,40 +74,28 @@ Property detail
 
     Get the segment or component for which this result has been selected.
 
-.. py:property:: show_desired_value
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_desired_value
-    :type: bool
-
-    Show the desired value.
-
-.. py:property:: line_color
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.line_color
-    :type: Color
-
-    Line Color.
-
 .. py:property:: point_style
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.point_style
     :type: str
 
     Point Style.
 
-.. py:property:: y_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.y_axis
-    :type: str
+.. py:property:: show_desired_value
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_desired_value
+    :type: bool
 
-    Select whether to display the result's value range on the left or right side of the graph.
-
-.. py:property:: graph_option
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.graph_option
-    :type: GraphOption
-
-    Graph option.
+    Show the desired value.
 
 .. py:property:: show_tolerance_band
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.show_tolerance_band
     :type: bool
 
     Show the tolerance band.
+
+.. py:property:: y_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResult.y_axis
+    :type: str
+
+    Select whether to display the result's value range on the left or right side of the graph.
 
 

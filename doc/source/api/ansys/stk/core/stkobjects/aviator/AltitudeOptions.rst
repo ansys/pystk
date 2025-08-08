@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions.use_default_cruise_altitude`
-              - Opt whether to use the default cruise altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude_reference`
-              - Get or set the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude`
               - Get or set the altitude for the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude_reference`
+              - Get or set the altitude reference.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_default_cruise_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeOptions.use_default_cruise_altitude
-    :type: bool
+.. py:property:: altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude
+    :type: float
 
-    Opt whether to use the default cruise altitude.
+    Get or set the altitude for the procedure.
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude_reference
@@ -50,10 +50,10 @@ Property detail
 
     Get or set the altitude reference.
 
-.. py:property:: altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeOptions.altitude
-    :type: float
+.. py:property:: use_default_cruise_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.AltitudeOptions.use_default_cruise_altitude
+    :type: bool
 
-    Get or set the altitude for the procedure.
+    Opt whether to use the default cruise altitude.
 
 

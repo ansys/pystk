@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.is_valid`
-              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.angular_velocity`
               - Axes' angular velocity.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.orientation`
               - The axes' orientation.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.is_valid
-    :type: bool
-
-    True indicates the method call was successful.
-
 .. py:property:: angular_velocity
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.angular_velocity
     :type: ICartesian3Vector
 
     Axes' angular velocity.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.is_valid
+    :type: bool
+
+    True indicates the method call was successful.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchAxesFindInAxesWithRateResult.orientation

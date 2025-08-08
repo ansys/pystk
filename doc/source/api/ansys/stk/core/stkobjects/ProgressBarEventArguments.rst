@@ -27,14 +27,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled`
-              - Return whether the lengthy operation has been canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.can_cancel`
               - Return whether the lengthy operation can be canceled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed`
-              - Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled`
+              - Return whether the lengthy operation has been canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.message`
               - Get a progress message.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed`
+              - Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
 
 
 
@@ -49,23 +49,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: canceled
-    :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled
-    :type: bool
-
-    Return whether the lengthy operation has been canceled.
-
 .. py:property:: can_cancel
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.can_cancel
     :type: bool
 
     Return whether the lengthy operation can be canceled.
 
-.. py:property:: percent_completed
-    :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed
-    :type: int
+.. py:property:: canceled
+    :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled
+    :type: bool
 
-    Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
+    Return whether the lengthy operation has been canceled.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.message
@@ -73,9 +67,16 @@ Property detail
 
     Get a progress message.
 
+.. py:property:: percent_completed
+    :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed
+    :type: int
+
+    Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
+
 
 Method detail
 -------------
+
 
 .. py:method:: cancel(self) -> None
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.cancel
@@ -85,7 +86,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 
 

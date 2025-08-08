@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.get_property`
+              - Read a value of the specified plugin property. This method throws an exception if the property does not exist.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.reset`
               - Reset the plugin.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.set_property`
               - Set the plugin properties. This method throws an exception if the specified property does not exist, an invalid value was specified or the specified property is read-only.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.get_property`
-              - Read a value of the specified plugin property. This method throws an exception if the property does not exist.
 
     .. tab-item:: Properties
 
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.prog_id`
-              - A programmatic ID associated with the component.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.display_name`
-              - The plugin's Display Name associated with the COM plugin.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.available_properties`
               - An array of names of the properties that can be used to configure the plugin.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.display_name`
+              - The plugin's Display Name associated with the COM plugin.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.prog_id`
+              - A programmatic ID associated with the component.
 
 
 
@@ -53,11 +53,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prog_id
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.prog_id
-    :type: str
+.. py:property:: available_properties
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.available_properties
+    :type: list
 
-    A programmatic ID associated with the component.
+    An array of names of the properties that can be used to configure the plugin.
 
 .. py:property:: display_name
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.display_name
@@ -65,17 +65,31 @@ Property detail
 
     The plugin's Display Name associated with the COM plugin.
 
-.. py:property:: available_properties
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.available_properties
-    :type: list
+.. py:property:: prog_id
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.prog_id
+    :type: str
 
-    An array of names of the properties that can be used to configure the plugin.
+    A programmatic ID associated with the component.
 
 
 Method detail
 -------------
 
 
+
+.. py:method:: get_property(self, name: str) -> str
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.get_property
+
+    Read a value of the specified plugin property. This method throws an exception if the property does not exist.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~str`
 
 
 .. py:method:: reset(self) -> None
@@ -102,18 +116,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_property(self, name: str) -> str
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarPlugin.get_property
-
-    Read a value of the specified plugin property. This method throws an exception if the property does not exist.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~str`
 

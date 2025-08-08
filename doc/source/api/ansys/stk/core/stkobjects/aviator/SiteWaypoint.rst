@@ -63,10 +63,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: get_as_site(self) -> ISite
     :canonical: ansys.stk.core.stkobjects.aviator.SiteWaypoint.get_as_site
 
@@ -75,4 +71,8 @@ Method detail
     :Returns:
 
         :obj:`~ISite`
+
+
+
+
 

@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.item`
-              - Given an index, returns the element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_at`
-              - Remove the analysis configuration at the supplied index.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove`
-              - Remove the supplied analysis configuration.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.add_new`
-              - Add and returns a new analysis configuration.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.add`
               - Add the supplied analysis configuration.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_all`
-              - Clear the collection.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.add_new`
+              - Add and returns a new analysis configuration.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.contains`
               - Determine if the collection contains an analysis configuration with the given name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.find`
               - Find an analysis configuration by name. Returns Null if the configuration name does not exist in the collection.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.item`
+              - Given an index, returns the element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove`
+              - Remove the supplied analysis configuration.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_all`
+              - Clear the collection.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_at`
+              - Remove the analysis configuration at the supplied index.
 
     .. tab-item:: Properties
 
@@ -41,10 +41,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.count`
-              - Return the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection._new_enum`
               - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.count`
+              - Return the number of elements in the collection.
 
 
 
@@ -59,56 +59,26 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.count
-    :type: int
-
-    Return the number of elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.count
+    :type: int
+
+    Return the number of elements in the collection.
+
 
 Method detail
 -------------
 
+.. py:method:: add(self, value: AnalysisConfiguration) -> None
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.add
 
-.. py:method:: item(self, index: int) -> AnalysisConfiguration
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.item
-
-    Given an index, returns the element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~AnalysisConfiguration`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_at
-
-    Remove the analysis configuration at the supplied index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove(self, value: AnalysisConfiguration) -> None
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove
-
-    Remove the supplied analysis configuration.
+    Add the supplied analysis configuration.
 
     :Parameters:
 
@@ -135,10 +105,53 @@ Method detail
 
         :obj:`~AnalysisConfiguration`
 
-.. py:method:: add(self, value: AnalysisConfiguration) -> None
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.add
+.. py:method:: contains(self, configuration_name: str) -> bool
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.contains
 
-    Add the supplied analysis configuration.
+    Determine if the collection contains an analysis configuration with the given name.
+
+    :Parameters:
+
+        **configuration_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: find(self, configuration_name: str) -> AnalysisConfiguration
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.find
+
+    Find an analysis configuration by name. Returns Null if the configuration name does not exist in the collection.
+
+    :Parameters:
+
+        **configuration_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~AnalysisConfiguration`
+
+.. py:method:: item(self, index: int) -> AnalysisConfiguration
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.item
+
+    Given an index, returns the element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~AnalysisConfiguration`
+
+.. py:method:: remove(self, value: AnalysisConfiguration) -> None
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove
+
+    Remove the supplied analysis configuration.
 
     :Parameters:
 
@@ -158,31 +171,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: contains(self, configuration_name: str) -> bool
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.contains
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.remove_at
 
-    Determine if the collection contains an analysis configuration with the given name.
+    Remove the analysis configuration at the supplied index.
 
     :Parameters:
 
-        **configuration_name** : :obj:`~str`
+        **index** : :obj:`~int`
 
 
     :Returns:
 
-        :obj:`~bool`
+        :obj:`~None`
 
-.. py:method:: find(self, configuration_name: str) -> AnalysisConfiguration
-    :canonical: ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection.find
-
-    Find an analysis configuration by name. Returns Null if the configuration name does not exist in the collection.
-
-    :Parameters:
-
-        **configuration_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~AnalysisConfiguration`
 

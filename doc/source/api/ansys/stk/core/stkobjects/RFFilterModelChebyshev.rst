@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelChebyshev.order`
-              - Get or set the filter order.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelChebyshev.cut_off_frequency`
               - Get or set the filter cut off frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelChebyshev.order`
+              - Get or set the filter order.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelChebyshev.ripple`
               - Get or set the ripple.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: order
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelChebyshev.order
-    :type: int
-
-    Get or set the filter order.
-
 .. py:property:: cut_off_frequency
     :canonical: ansys.stk.core.stkobjects.RFFilterModelChebyshev.cut_off_frequency
     :type: float
 
     Get or set the filter cut off frequency.
+
+.. py:property:: order
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelChebyshev.order
+    :type: int
+
+    Get or set the filter order.
 
 .. py:property:: ripple
     :canonical: ansys.stk.core.stkobjects.RFFilterModelChebyshev.ripple

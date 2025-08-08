@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleVector.available_reference_vectors`
+              - Return the available reference vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleVector.body`
               - Get the body-fixed vector that is aligned or constrained with respect to the reference vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleVector.reference_vector`
               - Get or set the reference vector with respect to which the body-fixed vector is aligned or constrained.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleVector.available_reference_vectors`
-              - Return the available reference vectors.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: available_reference_vectors
+    :canonical: ansys.stk.core.stkobjects.VehicleVector.available_reference_vectors
+    :type: list
+
+    Return the available reference vectors.
+
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.VehicleVector.body
     :type: IDirection
@@ -49,11 +55,5 @@ Property detail
     :type: str
 
     Get or set the reference vector with respect to which the body-fixed vector is aligned or constrained.
-
-.. py:property:: available_reference_vectors
-    :canonical: ansys.stk.core.stkobjects.VehicleVector.available_reference_vectors
-    :type: list
-
-    Return the available reference vectors.
 
 

@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.type`
-              - Return the type of interval.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start_description`
-              - The start description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop_description`
-              - The stop description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start`
               - A label associated with the interval start.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start_description`
+              - The start description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop`
               - A label associated with the interval stop.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop_description`
+              - The stop description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.type`
+              - Return the type of interval.
 
 
 Import detail
@@ -52,11 +52,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.type
-    :type: EventIntervalType
+.. py:property:: label_start
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start
+    :type: str
 
-    Return the type of interval.
+    A label associated with the interval start.
 
 .. py:property:: label_start_description
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start_description
@@ -64,32 +64,27 @@ Property detail
 
     The start description.
 
-.. py:property:: label_stop_description
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop_description
-    :type: str
-
-    The stop description.
-
-.. py:property:: label_start
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_start
-    :type: str
-
-    A label associated with the interval start.
-
 .. py:property:: label_stop
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop
     :type: str
 
     A label associated with the interval stop.
 
+.. py:property:: label_stop_description
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.label_stop_description
+    :type: str
+
+    The stop description.
+
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.type
+    :type: EventIntervalType
+
+    Return the type of interval.
+
 
 Method detail
 -------------
-
-
-
-
-
 
 .. py:method:: find_interval(self) -> TimeToolTimeIntervalResult
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.find_interval
@@ -99,6 +94,10 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolTimeIntervalResult`
+
+
+
+
 
 .. py:method:: occurred(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeInterval.occurred
@@ -113,4 +112,5 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
