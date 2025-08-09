@@ -20,32 +20,32 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type`
-              - Get or set the coordinate system being used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system`
-              - Get the coordinate system and coordinate epoch.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type`
-              - Option for Delaunay L (default or L/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l`
-              - Value of L or L/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type`
-              - Option for Delaunay H (default or H/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.h`
-              - Value of H or H/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type`
-              - Option for Delaunay G (default or G/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g`
-              - Value of G or G/SQRT(mu).
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types`
-              - Return an array of supported coordinate system types.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly`
-              - Mean Anomaly (l). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis`
               - Argument of periapsis (g). Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system`
+              - Get the coordinate system and coordinate epoch.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type`
+              - Get or set the coordinate system being used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g`
+              - Value of G or G/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type`
+              - Option for Delaunay G (default or G/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.h`
+              - Value of H or H/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type`
+              - Option for Delaunay H (default or H/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l`
+              - Value of L or L/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type`
+              - Option for Delaunay L (default or L/SQRT(mu).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly`
+              - Mean Anomaly (l). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node`
               - RAAN (h). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types`
+              - Return an array of supported coordinate system types.
 
 
 
@@ -60,11 +60,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: coordinate_system_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type
-    :type: CoordinateSystem
+.. py:property:: argument_of_periapsis
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis
+    :type: float
 
-    Get or set the coordinate system being used.
+    Argument of periapsis (g). Uses Angle Dimension.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system
@@ -72,35 +72,11 @@ Property detail
 
     Get the coordinate system and coordinate epoch.
 
-.. py:property:: l_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type
-    :type: DelaunayLType
+.. py:property:: coordinate_system_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type
+    :type: CoordinateSystem
 
-    Option for Delaunay L (default or L/SQRT(mu).
-
-.. py:property:: l
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l
-    :type: IDelaunayActionVariable
-
-    Value of L or L/SQRT(mu).
-
-.. py:property:: h_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type
-    :type: DelaunayHType
-
-    Option for Delaunay H (default or H/SQRT(mu).
-
-.. py:property:: h
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h
-    :type: IDelaunayActionVariable
-
-    Value of H or H/SQRT(mu).
-
-.. py:property:: g_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type
-    :type: DelaunayGType
-
-    Option for Delaunay G (default or G/SQRT(mu).
+    Get or set the coordinate system being used.
 
 .. py:property:: g
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.g
@@ -108,23 +84,41 @@ Property detail
 
     Value of G or G/SQRT(mu).
 
-.. py:property:: supported_coordinate_system_types
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types
-    :type: list
+.. py:property:: g_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type
+    :type: DelaunayGType
 
-    Return an array of supported coordinate system types.
+    Option for Delaunay G (default or G/SQRT(mu).
+
+.. py:property:: h
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h
+    :type: IDelaunayActionVariable
+
+    Value of H or H/SQRT(mu).
+
+.. py:property:: h_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type
+    :type: DelaunayHType
+
+    Option for Delaunay H (default or H/SQRT(mu).
+
+.. py:property:: l
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l
+    :type: IDelaunayActionVariable
+
+    Value of L or L/SQRT(mu).
+
+.. py:property:: l_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type
+    :type: DelaunayLType
+
+    Option for Delaunay L (default or L/SQRT(mu).
 
 .. py:property:: mean_anomaly
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly
     :type: float
 
     Mean Anomaly (l). Uses Angle Dimension.
-
-.. py:property:: argument_of_periapsis
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis
-    :type: float
-
-    Argument of periapsis (g). Uses Angle Dimension.
 
 .. py:property:: right_ascension_ascending_node
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node
@@ -137,5 +131,11 @@ Property detail
     :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
+
+.. py:property:: supported_coordinate_system_types
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types
+    :type: list
+
+    Return an array of supported coordinate system types.
 
 

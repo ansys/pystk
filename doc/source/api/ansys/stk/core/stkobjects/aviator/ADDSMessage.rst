@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.message_time`
+              - Get the message time for the ADDS message.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.source`
+              - Get the ADDS message source.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.start_time`
               - Valid start time for the ADDS message.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.stop_time`
               - Valid stop time for the ADDS message.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.message_time`
-              - Get the message time for the ADDS message.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.type`
               - Get the ADDS message type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ADDSMessage.source`
-              - Get the ADDS message source.
 
 
 
@@ -42,6 +42,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: message_time
+    :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.message_time
+    :type: typing.Any
+
+    Get the message time for the ADDS message.
+
+.. py:property:: source
+    :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.source
+    :type: str
+
+    Get the ADDS message source.
+
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.start_time
     :type: typing.Any
@@ -54,22 +66,10 @@ Property detail
 
     Valid stop time for the ADDS message.
 
-.. py:property:: message_time
-    :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.message_time
-    :type: typing.Any
-
-    Get the message time for the ADDS message.
-
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.type
     :type: ADDSForecastType
 
     Get the ADDS message type.
-
-.. py:property:: source
-    :canonical: ansys.stk.core.stkobjects.aviator.ADDSMessage.source
-    :type: str
-
-    Get the ADDS message source.
 
 

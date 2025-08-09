@@ -18,38 +18,38 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_reference_area`
-              - Get or set the area of the lifting surface of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_use_compressible_flow`
-              - Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cd0`
+              - Get or set the coefficient of drag of the lifting surface at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cl0`
               - Get or set the coefficient of lift at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cl_alpha`
               - Get or set the slope of the coefficient of lift curve.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_min_aoa`
-              - Get or set the minimum angle of attack possible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_max_aoa`
-              - Get or set the maximum angle of attack possible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cd0`
-              - Get or set the coefficient of drag of the lifting surface at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_k`
               - Get or set the coefficient of induced drag.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_max_aoa`
+              - Get or set the maximum angle of attack possible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_min_aoa`
+              - Get or set the minimum angle of attack possible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_reference_area`
               - Get or set the area of the lifting surface of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_use_compressible_flow`
-              - Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_use_compressible_flow`
+              - Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cd0`
+              - Get or set the coefficient of drag of the lifting surface at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cl0`
               - Get or set the coefficient of lift at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cl_alpha`
               - Get or set the slope of the coefficient of lift curve.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_min_aoa`
-              - Get or set the minimum angle of attack possible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_max_aoa`
-              - Get or set the maximum angle of attack possible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cd0`
-              - Get or set the coefficient of drag of the lifting surface at zero angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_k`
               - Get or set the coefficient of induced drag.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_max_aoa`
+              - Get or set the maximum angle of attack possible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_min_aoa`
+              - Get or set the minimum angle of attack possible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_reference_area`
+              - Get or set the area of the lifting surface of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_use_compressible_flow`
+              - Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions.
 
 
 
@@ -64,17 +64,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: forward_flight_reference_area
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_reference_area
+.. py:property:: forward_flight_cd0
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cd0
     :type: float
 
-    Get or set the area of the lifting surface of the aircraft.
-
-.. py:property:: forward_flight_use_compressible_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_use_compressible_flow
-    :type: bool
-
-    Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions.
+    Get or set the coefficient of drag of the lifting surface at zero angle of attack.
 
 .. py:property:: forward_flight_cl0
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cl0
@@ -88,11 +82,11 @@ Property detail
 
     Get or set the slope of the coefficient of lift curve.
 
-.. py:property:: forward_flight_min_aoa
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_min_aoa
-    :type: typing.Any
+.. py:property:: forward_flight_k
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_k
+    :type: float
 
-    Get or set the minimum angle of attack possible.
+    Get or set the coefficient of induced drag.
 
 .. py:property:: forward_flight_max_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_max_aoa
@@ -100,29 +94,29 @@ Property detail
 
     Get or set the maximum angle of attack possible.
 
-.. py:property:: forward_flight_cd0
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_cd0
-    :type: float
+.. py:property:: forward_flight_min_aoa
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_min_aoa
+    :type: typing.Any
 
-    Get or set the coefficient of drag of the lifting surface at zero angle of attack.
+    Get or set the minimum angle of attack possible.
 
-.. py:property:: forward_flight_k
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_k
-    :type: float
-
-    Get or set the coefficient of induced drag.
-
-.. py:property:: takeoff_landing_reference_area
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_reference_area
+.. py:property:: forward_flight_reference_area
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_reference_area
     :type: float
 
     Get or set the area of the lifting surface of the aircraft.
 
-.. py:property:: takeoff_landing_use_compressible_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_use_compressible_flow
+.. py:property:: forward_flight_use_compressible_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.forward_flight_use_compressible_flow
     :type: bool
 
-    Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions.
+    Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions.
+
+.. py:property:: takeoff_landing_cd0
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cd0
+    :type: float
+
+    Get or set the coefficient of drag of the lifting surface at zero angle of attack.
 
 .. py:property:: takeoff_landing_cl0
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cl0
@@ -136,11 +130,11 @@ Property detail
 
     Get or set the slope of the coefficient of lift curve.
 
-.. py:property:: takeoff_landing_min_aoa
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_min_aoa
-    :type: typing.Any
+.. py:property:: takeoff_landing_k
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_k
+    :type: float
 
-    Get or set the minimum angle of attack possible.
+    Get or set the coefficient of induced drag.
 
 .. py:property:: takeoff_landing_max_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_max_aoa
@@ -148,16 +142,22 @@ Property detail
 
     Get or set the maximum angle of attack possible.
 
-.. py:property:: takeoff_landing_cd0
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_cd0
+.. py:property:: takeoff_landing_min_aoa
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_min_aoa
+    :type: typing.Any
+
+    Get or set the minimum angle of attack possible.
+
+.. py:property:: takeoff_landing_reference_area
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_reference_area
     :type: float
 
-    Get or set the coefficient of drag of the lifting surface at zero angle of attack.
+    Get or set the area of the lifting surface of the aircraft.
 
-.. py:property:: takeoff_landing_k
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_k
-    :type: float
+.. py:property:: takeoff_landing_use_compressible_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAerodynamic.takeoff_landing_use_compressible_flow
+    :type: bool
 
-    Get or set the coefficient of induced drag.
+    Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions.
 
 

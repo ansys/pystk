@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Preferences.vdf_preferences`
-              - Configures STK VDF preferences.
             * - :py:attr:`~ansys.stk.core.stkobjects.Preferences.connect_preferences`
               - Configures STK connect preferences.
             * - :py:attr:`~ansys.stk.core.stkobjects.Preferences.python_plugins_preferences`
               - Configures STK Python plugin preferences.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Preferences.vdf_preferences`
+              - Configures STK VDF preferences.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: vdf_preferences
-    :canonical: ansys.stk.core.stkobjects.Preferences.vdf_preferences
-    :type: PreferencesVDF
-
-    Configures STK VDF preferences.
-
 .. py:property:: connect_preferences
     :canonical: ansys.stk.core.stkobjects.Preferences.connect_preferences
     :type: PreferencesConnect
@@ -55,5 +49,11 @@ Property detail
     :type: PreferencesPythonPlugins
 
     Configures STK Python plugin preferences.
+
+.. py:property:: vdf_preferences
+    :canonical: ansys.stk.core.stkobjects.Preferences.vdf_preferences
+    :type: PreferencesVDF
+
+    Configures STK VDF preferences.
 
 

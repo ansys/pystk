@@ -20,46 +20,46 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.gravity_filename`
-              - Get or set the name of the file containing the gravity field.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.central_body_name`
+              - Get the name of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.degree`
               - Get or set the degree of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.order`
-              - Get or set the order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.gravity_filename`
+              - Get or set the name of the file containing the gravity field.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.include_time_dependent_solid_tides`
+              - True if including time dependent solid tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_degree_text`
               - Displays the maximum degree permissible for the gravity model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_order_text`
               - Displays the maximum order permissible for the gravity model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.include_time_dependent_solid_tides`
-              - True if including time dependent solid tides.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_min_amp`
-              - Get or set the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_ocean_tides`
-              - True if using ocean tides.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude`
-              - Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.min_radius_percent`
-              - Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.central_body_name`
-              - Get the name of the central body.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_max_degree`
-              - Get or set the maximum degree for force contributions from ocean tides that will be included in the computation. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_max_order`
-              - Get or set the maximum order for force contributions from ocean tides that will be included in the computation. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_type`
-              - Get or set the type of solid tide contribution to be modeled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.truncate_solid_tides`
-              - True if solid tide terms (including permanent tide) won't be included beyond the degree and order selected for the gravity model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_secular_variations`
-              - Opt whether to include or ignore secular variations defined by the gravity field model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.partials_degree`
-              - Get or set the degree of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the degree used for state computations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.partials_order`
-              - Get or set the order of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the order used for state computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_degree_text`
               - Displays the maximum degree permissible for the gravity model partials used in the STM.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_order_text`
               - Displays the maximum order permissible for the gravity model partials used in the STM.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.min_radius_percent`
+              - Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_max_degree`
+              - Get or set the maximum degree for force contributions from ocean tides that will be included in the computation. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_max_order`
+              - Get or set the maximum order for force contributions from ocean tides that will be included in the computation. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude`
+              - Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.order`
+              - Get or set the order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.partials_degree`
+              - Get or set the degree of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the degree used for state computations. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.partials_order`
+              - Get or set the order of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the order used for state computations. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_min_amp`
+              - Get or set the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_type`
+              - Get or set the type of solid tide contribution to be modeled.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.truncate_solid_tides`
+              - True if solid tide terms (including permanent tide) won't be included beyond the degree and order selected for the gravity model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_ocean_tides`
+              - True if using ocean tides.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_secular_variations`
+              - Opt whether to include or ignore secular variations defined by the gravity field model.
 
 
 
@@ -74,11 +74,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: gravity_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.gravity_filename
+.. py:property:: central_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.central_body_name
     :type: str
 
-    Get or set the name of the file containing the gravity field.
+    Get the name of the central body.
 
 .. py:property:: degree
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.degree
@@ -86,11 +86,17 @@ Property detail
 
     Get or set the degree of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
 
-.. py:property:: order
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.order
-    :type: int
+.. py:property:: gravity_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.gravity_filename
+    :type: str
 
-    Get or set the order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
+    Get or set the name of the file containing the gravity field.
+
+.. py:property:: include_time_dependent_solid_tides
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.include_time_dependent_solid_tides
+    :type: bool
+
+    True if including time dependent solid tides.
 
 .. py:property:: max_degree_text
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_degree_text
@@ -104,41 +110,23 @@ Property detail
 
     Displays the maximum order permissible for the gravity model.
 
-.. py:property:: include_time_dependent_solid_tides
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.include_time_dependent_solid_tides
-    :type: bool
+.. py:property:: max_partials_degree_text
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_degree_text
+    :type: str
 
-    True if including time dependent solid tides.
+    Displays the maximum degree permissible for the gravity model partials used in the STM.
 
-.. py:property:: solid_tide_min_amp
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_min_amp
-    :type: float
+.. py:property:: max_partials_order_text
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_order_text
+    :type: str
 
-    Get or set the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
-
-.. py:property:: use_ocean_tides
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_ocean_tides
-    :type: bool
-
-    True if using ocean tides.
-
-.. py:property:: ocean_tide_min_amplitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude
-    :type: float
-
-    Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
+    Displays the maximum order permissible for the gravity model partials used in the STM.
 
 .. py:property:: min_radius_percent
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.min_radius_percent
     :type: float
 
     Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
-
-.. py:property:: central_body_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.central_body_name
-    :type: str
-
-    Get the name of the central body.
 
 .. py:property:: ocean_tide_max_degree
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_max_degree
@@ -152,23 +140,17 @@ Property detail
 
     Get or set the maximum order for force contributions from ocean tides that will be included in the computation. Dimensionless.
 
-.. py:property:: solid_tide_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_type
-    :type: SolidTide
+.. py:property:: ocean_tide_min_amplitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude
+    :type: float
 
-    Get or set the type of solid tide contribution to be modeled.
+    Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
 
-.. py:property:: truncate_solid_tides
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.truncate_solid_tides
-    :type: bool
+.. py:property:: order
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.order
+    :type: int
 
-    True if solid tide terms (including permanent tide) won't be included beyond the degree and order selected for the gravity model.
-
-.. py:property:: use_secular_variations
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_secular_variations
-    :type: bool
-
-    Opt whether to include or ignore secular variations defined by the gravity field model.
+    Get or set the order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
 
 .. py:property:: partials_degree
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.partials_degree
@@ -182,16 +164,34 @@ Property detail
 
     Get or set the order of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the order used for state computations. Dimensionless.
 
-.. py:property:: max_partials_degree_text
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_degree_text
-    :type: str
+.. py:property:: solid_tide_min_amp
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_min_amp
+    :type: float
 
-    Displays the maximum degree permissible for the gravity model partials used in the STM.
+    Get or set the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
 
-.. py:property:: max_partials_order_text
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.max_partials_order_text
-    :type: str
+.. py:property:: solid_tide_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_type
+    :type: SolidTide
 
-    Displays the maximum order permissible for the gravity model partials used in the STM.
+    Get or set the type of solid tide contribution to be modeled.
+
+.. py:property:: truncate_solid_tides
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.truncate_solid_tides
+    :type: bool
+
+    True if solid tide terms (including permanent tide) won't be included beyond the degree and order selected for the gravity model.
+
+.. py:property:: use_ocean_tides
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_ocean_tides
+    :type: bool
+
+    True if using ocean tides.
+
+.. py:property:: use_secular_variations
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_secular_variations
+    :type: bool
+
+    Opt whether to include or ignore secular variations defined by the gravity field model.
 
 

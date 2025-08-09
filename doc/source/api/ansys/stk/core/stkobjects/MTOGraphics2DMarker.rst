@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DMarker.show_graphics`
-              - Opt whether to display the track marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DMarker.color`
               - Select the color in which the track marker will be displayed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DMarker.show_graphics`
+              - Opt whether to display the track marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DMarker.style`
               - Select a marker style.
 
@@ -38,17 +38,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DMarker.show_graphics
-    :type: bool
-
-    Opt whether to display the track marker.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DMarker.color
     :type: Color
 
     Select the color in which the track marker will be displayed.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DMarker.show_graphics
+    :type: bool
+
+    Opt whether to display the track marker.
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DMarker.style

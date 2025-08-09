@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.central_body`
+              - Get the central body relative to which orbital parameters are computed.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.gravitational_parameter`
+              - Get the gravitational parameter for the mass relative to which orbital parameters are computed. Only used if the option to specify gravitational parameter is selected.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.orbiting_point`
               - Get the point for which orbital parameters are computed.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.reference_system`
               - Get the reference system in which orbital parameters are computed. Only used if the option to specify reference system is selected.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.gravitational_parameter`
-              - Get the gravitational parameter for the mass relative to which orbital parameters are computed. Only used if the option to specify gravitational parameter is selected.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.central_body`
-              - Get the central body relative to which orbital parameters are computed.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.use_central_body_gravitational_parameter`
               - Get the option that determines whether to specify the gravitational parameter value or to inherit it from the central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.use_central_body_inertial`
@@ -46,6 +46,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: central_body
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.central_body
+    :type: str
+
+    Get the central body relative to which orbital parameters are computed.
+
+.. py:property:: gravitational_parameter
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.gravitational_parameter
+    :type: float
+
+    Get the gravitational parameter for the mass relative to which orbital parameters are computed. Only used if the option to specify gravitational parameter is selected.
+
 .. py:property:: orbiting_point
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.orbiting_point
     :type: IVectorGeometryToolPoint
@@ -57,18 +69,6 @@ Property detail
     :type: IVectorGeometryToolSystem
 
     Get the reference system in which orbital parameters are computed. Only used if the option to specify reference system is selected.
-
-.. py:property:: gravitational_parameter
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.gravitational_parameter
-    :type: float
-
-    Get the gravitational parameter for the mass relative to which orbital parameters are computed. Only used if the option to specify gravitational parameter is selected.
-
-.. py:property:: central_body
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.central_body
-    :type: str
-
-    Get the central body relative to which orbital parameters are computed.
 
 .. py:property:: use_central_body_gravitational_parameter
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetOrbit.use_central_body_gravitational_parameter

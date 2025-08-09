@@ -31,12 +31,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.central_body_name`
               - Get or set the central body for Propagation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions`
-              - Get the list of propagator functions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.numerical_integrator`
               - Get the numerical integrator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.numerical_integrator_type`
               - Get the numerical integrator type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions`
+              - Get the list of propagator functions.
 
 
 
@@ -57,12 +57,6 @@ Property detail
 
     Get or set the central body for Propagation.
 
-.. py:property:: propagator_functions
-    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions
-    :type: PropagatorFunctionCollection
-
-    Get the list of propagator functions.
-
 .. py:property:: numerical_integrator
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.numerical_integrator
     :type: INumericalIntegrator
@@ -74,6 +68,12 @@ Property detail
     :type: NumericalIntegrator
 
     Get the numerical integrator type.
+
+.. py:property:: propagator_functions
+    :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions
+    :type: PropagatorFunctionCollection
+
+    Get the list of propagator functions.
 
 
 Method detail

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_start_time`
-              - Set the start time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_interrupt_time`
               - Set the interrupt time for the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_start_time`
+              - Set the start time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_stop_time`
               - Set the stop time for the procedure.
 
@@ -65,6 +65,19 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: set_interrupt_time(self, time: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_interrupt_time
+
+    Set the interrupt time for the procedure.
+
+    :Parameters:
+
+        **time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: set_start_time(self, time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_start_time
@@ -80,21 +93,6 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_interrupt_time(self, time: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_interrupt_time
-
-    Set the interrupt time for the procedure.
-
-    :Parameters:
-
-        **time** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
 .. py:method:: set_stop_time(self, time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions.set_stop_time
 
@@ -108,4 +106,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

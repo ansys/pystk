@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.fuel_flow`
+              - Get or set the engine's fuel flow at max power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.max_sea_level_static_power`
               - Get or set the maximum static power of the engine at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.propeller_count`
               - Get or set the number of propellers.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.propeller_diameter`
               - Get or set the propeller diameter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.fuel_flow`
-              - Get or set the engine's fuel flow at max power.
 
 
 
@@ -39,6 +39,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.fuel_flow
+    :type: float
+
+    Get or set the engine's fuel flow at max power.
 
 .. py:property:: max_sea_level_static_power
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.max_sea_level_static_power
@@ -57,11 +63,5 @@ Property detail
     :type: float
 
     Get or set the propeller diameter.
-
-.. py:property:: fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant.fuel_flow
-    :type: float
-
-    Get or set the engine's fuel flow at max power.
 
 

@@ -63,8 +63,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: set_interval(self, start_epoch: typing.Any, stop_epoch: typing.Any) -> None
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFixed.set_interval
 
@@ -80,4 +78,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

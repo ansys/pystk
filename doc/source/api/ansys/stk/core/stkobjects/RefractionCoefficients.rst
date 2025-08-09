@@ -22,6 +22,8 @@ Overview
               - Get or set the coefficient C0. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c1`
               - Get or set the coefficient C1. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c10`
+              - Get or set the coefficient C10. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c2`
               - Get or set the coefficient C2. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c3`
@@ -38,8 +40,6 @@ Overview
               - Get or set the coefficient C8. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c9`
               - Get or set the coefficient C9. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionCoefficients.c10`
-              - Get or set the coefficient C10. Dimensionless.
 
 
 
@@ -65,6 +65,12 @@ Property detail
     :type: float
 
     Get or set the coefficient C1. Dimensionless.
+
+.. py:property:: c10
+    :canonical: ansys.stk.core.stkobjects.RefractionCoefficients.c10
+    :type: float
+
+    Get or set the coefficient C10. Dimensionless.
 
 .. py:property:: c2
     :canonical: ansys.stk.core.stkobjects.RefractionCoefficients.c2
@@ -113,11 +119,5 @@ Property detail
     :type: float
 
     Get or set the coefficient C9. Dimensionless.
-
-.. py:property:: c10
-    :canonical: ansys.stk.core.stkobjects.RefractionCoefficients.c10
-    :type: float
-
-    Get or set the coefficient C10. Dimensionless.
 
 

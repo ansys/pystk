@@ -27,16 +27,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.repeat_count`
-              - Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.generate_ephemeris`
               - If true, the sequence generates ephemeris and displays it in the 2D and 3D Graphics windows.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.repeat_count`
+              - Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool`
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.segments`
               - Get the list of segments defined for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.sequence_state_to_pass`
               - State To Pass To Next Segment - the state of the sequence to pass.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool`
-              - Return the Scripting tool for the sequence.
 
 
 Import detail
@@ -50,17 +50,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: generate_ephemeris
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.generate_ephemeris
+    :type: bool
+
+    If true, the sequence generates ephemeris and displays it in the 2D and 3D Graphics windows.
+
 .. py:property:: repeat_count
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.repeat_count
     :type: int
 
     Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
 
-.. py:property:: generate_ephemeris
-    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.generate_ephemeris
-    :type: bool
+.. py:property:: scripting_tool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool
+    :type: ScriptingTool
 
-    If true, the sequence generates ephemeris and displays it in the 2D and 3D Graphics windows.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.segments
@@ -74,23 +80,9 @@ Property detail
 
     State To Pass To Next Segment - the state of the sequence to pass.
 
-.. py:property:: scripting_tool
-    :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool
-    :type: ScriptingTool
-
-    Return the Scripting tool for the sequence.
-
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
 
 .. py:method:: apply_script(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.apply_script
@@ -100,4 +92,12 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
+
+
 

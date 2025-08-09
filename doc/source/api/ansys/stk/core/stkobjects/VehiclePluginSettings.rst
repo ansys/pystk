@@ -55,6 +55,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: get_property(self, path: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.VehiclePluginSettings.get_property
 
@@ -84,5 +85,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 

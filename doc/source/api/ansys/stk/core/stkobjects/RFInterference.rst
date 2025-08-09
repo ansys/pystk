@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFInterference.emitters`
+              - Get the interference emitters collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFInterference.enabled`
               - Get or set whether the interference is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFInterference.include_active_comm_system_interference_emitters`
               - Get or set whether the emitters from the active CommSystem object are included in their interference computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFInterference.emitters`
-              - Get the interference emitters collection.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: emitters
+    :canonical: ansys.stk.core.stkobjects.RFInterference.emitters
+    :type: ObjectLinkCollection
+
+    Get the interference emitters collection.
+
 .. py:property:: enabled
     :canonical: ansys.stk.core.stkobjects.RFInterference.enabled
     :type: bool
@@ -49,11 +55,5 @@ Property detail
     :type: bool
 
     Get or set whether the emitters from the active CommSystem object are included in their interference computation.
-
-.. py:property:: emitters
-    :canonical: ansys.stk.core.stkobjects.RFInterference.emitters
-    :type: ObjectLinkCollection
-
-    Get the interference emitters collection.
 
 

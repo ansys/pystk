@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.remove`
-              - Remove a specified point by name.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.item`
-              - Return a point by name or at a specified position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.get_item_by_index`
               - Retrieve a point from the collection by index.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.get_item_by_name`
               - Retrieve a point from the collection by name.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.item`
+              - Return a point by name or at a specified position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.remove`
+              - Remove a specified point by name.
 
     .. tab-item:: Properties
 
@@ -35,16 +35,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup._new_enum`
+              - Return a COM enumerator.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.common_tasks`
+              - Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.context`
               - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.count`
               - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.factory`
               - Return a Factory object used to create custom points.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup._new_enum`
-              - Return a COM enumerator.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.common_tasks`
-              - Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
 
 
 
@@ -58,6 +58,18 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup._new_enum
+    :type: EnumeratorProxy
+
+    Return a COM enumerator.
+
+.. py:property:: common_tasks
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.common_tasks
+    :type: VectorGeometryToolPointCommonTasks
+
+    Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
 
 .. py:property:: context
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.context
@@ -77,35 +89,9 @@ Property detail
 
     Return a Factory object used to create custom points.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup._new_enum
-    :type: EnumeratorProxy
-
-    Return a COM enumerator.
-
-.. py:property:: common_tasks
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.common_tasks
-    :type: VectorGeometryToolPointCommonTasks
-
-    Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
-
 
 Method detail
 -------------
-
-.. py:method:: remove(self, point_name: str) -> None
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.remove
-
-    Remove a specified point by name.
-
-    :Parameters:
-
-        **point_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 .. py:method:: contains(self, name: str) -> bool
@@ -122,21 +108,6 @@ Method detail
 
         :obj:`~bool`
 
-
-
-.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolPoint
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.item
-
-    Return a point by name or at a specified position.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~IVectorGeometryToolPoint`
 
 
 
@@ -167,4 +138,33 @@ Method detail
     :Returns:
 
         :obj:`~IVectorGeometryToolPoint`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolPoint
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.item
+
+    Return a point by name or at a specified position.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolPoint`
+
+.. py:method:: remove(self, point_name: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointGroup.remove
+
+    Remove a specified point by name.
+
+    :Parameters:
+
+        **point_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

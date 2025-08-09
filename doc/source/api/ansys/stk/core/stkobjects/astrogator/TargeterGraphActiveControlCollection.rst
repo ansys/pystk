@@ -71,6 +71,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: item(self, index: int) -> TargeterGraphActiveControl
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphActiveControlCollection.item
 
@@ -84,7 +85,6 @@ Method detail
     :Returns:
 
         :obj:`~TargeterGraphActiveControl`
-
 
 
 

@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.time_instant`
-              - Represents the time instant if the state is set to explicit.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.reference_epoch`
               - A reference event object used to compute time instant if the state is set to implicit.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.state`
               - State of the event.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.time_instant`
+              - Represents the time instant if the state is set to explicit.
 
 
 
@@ -51,12 +51,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: time_instant
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.time_instant
-    :type: typing.Any
-
-    Represents the time instant if the state is set to explicit.
-
 .. py:property:: reference_epoch
     :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.reference_epoch
     :type: ITimeToolInstant
@@ -69,12 +63,15 @@ Property detail
 
     State of the event.
 
+.. py:property:: time_instant
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantSmartEpoch.time_instant
+    :type: typing.Any
+
+    Represents the time instant if the state is set to explicit.
+
 
 Method detail
 -------------
-
-
-
 
 
 .. py:method:: set_explicit_time(self, epoch: typing.Any) -> None
@@ -104,4 +101,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
 

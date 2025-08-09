@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.sense`
-              - Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.time_tolerance`
-              - Get the time tolerance which determines the time accuracy of the converged value.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.absolute_tolerance`
               - Get the absolute tolerance which determines the distance between the value and the boundaries within which the value is considered converged.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.relative_tolerance`
               - Get the relative tolerance which determines the relative distance between the value and the boundaries within which the value is considered converged.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.sense`
+              - Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.time_tolerance`
+              - Get the time tolerance which determines the time accuracy of the converged value.
 
 
 
@@ -42,18 +42,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sense
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.sense
-    :type: ThresholdConvergenceSenseType
-
-    Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
-
-.. py:property:: time_tolerance
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.time_tolerance
-    :type: float
-
-    Get the time tolerance which determines the time accuracy of the converged value.
-
 .. py:property:: absolute_tolerance
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.absolute_tolerance
     :type: float
@@ -65,5 +53,17 @@ Property detail
     :type: float
 
     Get the relative tolerance which determines the relative distance between the value and the boundaries within which the value is considered converged.
+
+.. py:property:: sense
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.sense
+    :type: ThresholdConvergenceSenseType
+
+    Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
+
+.. py:property:: time_tolerance
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConvergeBasic.time_tolerance
+    :type: float
+
+    Get the time tolerance which determines the time accuracy of the converged value.
 
 

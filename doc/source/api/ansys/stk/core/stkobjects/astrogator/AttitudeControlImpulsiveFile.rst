@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.delta_v_magnitude`
               - Get or set the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename`
-              - Get or set the attitude file to use.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.file_time_offset`
               - Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename`
+              - Get or set the attitude file to use.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.full_filename`
               - Get the full path and name of the attitude file to use.
 
@@ -48,17 +48,17 @@ Property detail
 
     Get or set the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
 
-.. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename
-    :type: str
-
-    Get or set the attitude file to use.
-
 .. py:property:: file_time_offset
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.file_time_offset
     :type: float
 
     Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename
+    :type: str
+
+    Get or set the attitude file to use.
 
 .. py:property:: full_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.full_filename

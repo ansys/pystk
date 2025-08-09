@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.x`
-              - X position component. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.y`
-              - Y position component. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.z`
-              - Z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.vx`
               - Vx velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.vy`
               - Vy velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.vz`
               - Vz velocity component. Uses Rate Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.x`
+              - X position component. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.y`
+              - Y position component. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementCartesian.z`
+              - Z position component. Uses Distance Dimension.
 
 
 
@@ -45,24 +45,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: x
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.x
-    :type: float
-
-    X position component. Uses Distance Dimension.
-
-.. py:property:: y
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.y
-    :type: float
-
-    Y position component. Uses Distance Dimension.
-
-.. py:property:: z
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.z
-    :type: float
-
-    Z position component. Uses Distance Dimension.
 
 .. py:property:: vx
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.vx
@@ -81,5 +63,23 @@ Property detail
     :type: float
 
     Vz velocity component. Uses Rate Dimension.
+
+.. py:property:: x
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.x
+    :type: float
+
+    X position component. Uses Distance Dimension.
+
+.. py:property:: y
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.y
+    :type: float
+
+    Y position component. Uses Distance Dimension.
+
+.. py:property:: z
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementCartesian.z
+    :type: float
+
+    Z position component. Uses Distance Dimension.
 
 

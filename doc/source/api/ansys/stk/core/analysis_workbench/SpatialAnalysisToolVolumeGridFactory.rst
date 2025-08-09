@@ -20,20 +20,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create`
               - Create and registers a volume grid using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cartesian`
-              - Create and registers a cartesian volume grid type using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.is_type_supported`
-              - Return whether the specified type is supported.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cylindrical`
-              - Create and registers a cylindrical volume grid type using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_spherical`
-              - Create and registers a spherical volume grid type using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_constrained`
-              - Create and registers a volume grid of type that can be constrained by conditions using specified name and description.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_latitude_longitude_altitude`
-              - Create and registers cartographic volume grid type using specified name and description.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_bearing_altitude`
               - Create and registers a volume grid of type surface bearing using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cartesian`
+              - Create and registers a cartesian volume grid type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_constrained`
+              - Create and registers a volume grid of type that can be constrained by conditions using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cylindrical`
+              - Create and registers a cylindrical volume grid type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_latitude_longitude_altitude`
+              - Create and registers cartographic volume grid type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_spherical`
+              - Create and registers a spherical volume grid type using specified name and description.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.is_type_supported`
+              - Return whether the specified type is supported.
 
 
 Import detail
@@ -66,56 +66,26 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
 
+.. py:method:: create_bearing_altitude(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_bearing_altitude
+
+    Create and registers a volume grid of type surface bearing using specified name and description.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolumeGrid`
+
 .. py:method:: create_cartesian(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cartesian
 
     Create and registers a cartesian volume grid type using specified name and description.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ISpatialAnalysisToolVolumeGrid`
-
-.. py:method:: is_type_supported(self, type: VolumeGridType) -> bool
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.is_type_supported
-
-    Return whether the specified type is supported.
-
-    :Parameters:
-
-        **type** : :obj:`~VolumeGridType`
-
-
-    :Returns:
-
-        :obj:`~bool`
-
-.. py:method:: create_cylindrical(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cylindrical
-
-    Create and registers a cylindrical volume grid type using specified name and description.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ISpatialAnalysisToolVolumeGrid`
-
-.. py:method:: create_spherical(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_spherical
-
-    Create and registers a spherical volume grid type using specified name and description.
 
     :Parameters:
 
@@ -144,6 +114,22 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
 
+.. py:method:: create_cylindrical(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_cylindrical
+
+    Create and registers a cylindrical volume grid type using specified name and description.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolumeGrid`
+
 .. py:method:: create_latitude_longitude_altitude(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_latitude_longitude_altitude
 
@@ -160,10 +146,10 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
 
-.. py:method:: create_bearing_altitude(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_bearing_altitude
+.. py:method:: create_spherical(self, name: str, description: str) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.create_spherical
 
-    Create and registers a volume grid of type surface bearing using specified name and description.
+    Create and registers a spherical volume grid type using specified name and description.
 
     :Parameters:
 
@@ -175,4 +161,18 @@ Method detail
     :Returns:
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
+
+.. py:method:: is_type_supported(self, type: VolumeGridType) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridFactory.is_type_supported
+
+    Return whether the specified type is supported.
+
+    :Parameters:
+
+        **type** : :obj:`~VolumeGridType`
+
+
+    :Returns:
+
+        :obj:`~bool`
 

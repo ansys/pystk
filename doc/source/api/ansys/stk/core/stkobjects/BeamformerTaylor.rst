@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_level`
-              - Get or set the sidelobe level relative to the maximum gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_count`
               - Get or set the number of desired sidelobes to hold close to the desired sidelobe level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_level`
+              - Get or set the sidelobe level relative to the maximum gain.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sidelobe_level
-    :canonical: ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_level
-    :type: float
-
-    Get or set the sidelobe level relative to the maximum gain.
-
 .. py:property:: sidelobe_count
     :canonical: ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_count
     :type: int
 
     Get or set the number of desired sidelobes to hold close to the desired sidelobe level.
+
+.. py:property:: sidelobe_level
+    :canonical: ansys.stk.core.stkobjects.BeamformerTaylor.sidelobe_level
+    :type: float
+
+    Get or set the sidelobe level relative to the maximum gain.
 
 

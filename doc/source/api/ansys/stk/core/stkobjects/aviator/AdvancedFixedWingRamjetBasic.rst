@@ -24,18 +24,18 @@ Overview
               - Get or set the mach number design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_thrust`
               - Get or set the thrust design point of the engine.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp`
-              - Get or set the maximum temperature at the compressor stage.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp`
-              - Get or set the maximum temperature at the combustion stage.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type`
-              - Get or set the jet engine's fuel type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.efficiencies_and_losses`
+              - Get the jet engine's propulsion efficiencies and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_afprop`
               - Get the interface for a Kerosene - AFPROP fuel mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_cea`
               - Get the interface for a Kerosene - CEA fuel mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.efficiencies_and_losses`
-              - Get the jet engine's propulsion efficiencies and losses.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type`
+              - Get or set the jet engine's fuel type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp`
+              - Get or set the maximum temperature at the combustion stage.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp`
+              - Get or set the maximum temperature at the compressor stage.
 
 
 
@@ -68,23 +68,11 @@ Property detail
 
     Get or set the thrust design point of the engine.
 
-.. py:property:: max_compression_temp
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp
-    :type: float
+.. py:property:: efficiencies_and_losses
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.efficiencies_and_losses
+    :type: PropulsionEfficiencies
 
-    Get or set the maximum temperature at the compressor stage.
-
-.. py:property:: max_burner_temp
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp
-    :type: float
-
-    Get or set the maximum temperature at the combustion stage.
-
-.. py:property:: fuel_type
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type
-    :type: JetFuelType
-
-    Get or set the jet engine's fuel type.
+    Get the jet engine's propulsion efficiencies and losses.
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_afprop
@@ -98,10 +86,22 @@ Property detail
 
     Get the interface for a Kerosene - CEA fuel mode.
 
-.. py:property:: efficiencies_and_losses
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.efficiencies_and_losses
-    :type: PropulsionEfficiencies
+.. py:property:: fuel_type
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type
+    :type: JetFuelType
 
-    Get the jet engine's propulsion efficiencies and losses.
+    Get or set the jet engine's fuel type.
+
+.. py:property:: max_burner_temp
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp
+    :type: float
+
+    Get or set the maximum temperature at the combustion stage.
+
+.. py:property:: max_compression_temp
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp
+    :type: float
+
+    Get or set the maximum temperature at the compressor stage.
 
 

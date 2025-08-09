@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.is_valid`
-              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.intervals`
               - A collection of sampling intervals.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.is_valid`
+              - Indicate whether the result object is valid.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.is_valid
-    :type: bool
-
-    Indicate whether the result object is valid.
-
 .. py:property:: intervals
     :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.intervals
     :type: TimeToolAxesSamplingIntervalCollection
 
     A collection of sampling intervals.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingResult.is_valid
+    :type: bool
+
+    Indicate whether the result object is valid.
 
 

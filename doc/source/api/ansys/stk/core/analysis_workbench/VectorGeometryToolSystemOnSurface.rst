@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body`
-              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.azimuth_angle`
               - An angle by which the topocentric axes is rotated.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level`
-              - Specify whether to use the Mean Sea Level as the reference shape.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.position`
               - Specify the position of the system's origin.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level`
+              - Specify whether to use the Mean Sea Level as the reference shape.
 
 
 
@@ -42,28 +42,28 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: central_body
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body
-    :type: AnalysisWorkbenchCentralBodyReference
-
-    Specify a central body.
-
 .. py:property:: azimuth_angle
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.azimuth_angle
     :type: float
 
     An angle by which the topocentric axes is rotated.
 
-.. py:property:: use_mean_sea_level
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level
-    :type: bool
+.. py:property:: central_body
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.central_body
+    :type: AnalysisWorkbenchCentralBodyReference
 
-    Specify whether to use the Mean Sea Level as the reference shape.
+    Specify a central body.
 
 .. py:property:: position
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.position
     :type: AnalysisWorkbenchPositionLLA
 
     Specify the position of the system's origin.
+
+.. py:property:: use_mean_sea_level
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemOnSurface.use_mean_sea_level
+    :type: bool
+
+    Specify whether to use the Mean Sea Level as the reference shape.
 
 

@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.epoch`
               - Specify an epoch.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.source_vector`
-              - Specify a source vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.reference_axes`
               - Specify a reference axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.source_vector`
+              - Specify a source vector.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify an epoch.
 
-.. py:property:: source_vector
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.source_vector
-    :type: VectorGeometryToolVectorReference
-
-    Specify a source vector.
-
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.reference_axes
     :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
+
+.. py:property:: source_vector
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorFixedAtEpoch.source_vector
+    :type: VectorGeometryToolVectorReference
+
+    Specify a source vector.
 
 

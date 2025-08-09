@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.item`
-              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.get_data_set_by_name`
               - Return the element, given the name.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.get_row`
               - Return the specified row.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array`
               - Return the entire dataset collection in row format.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_numpy_array`
@@ -37,14 +37,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count`
-              - Return a number of elements in collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum`
               - Return an enumerator for the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count`
-              - Return the number of rows in the dataset collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count`
+              - Return a number of elements in collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.element_names`
               - Return the element names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count`
+              - Return the number of rows in the dataset collection.
 
 
 
@@ -178,23 +178,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count
-    :type: int
-
-    Return a number of elements in collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
 
-.. py:property:: row_count
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count
     :type: int
 
-    Return the number of rows in the dataset collection.
+    Return a number of elements in collection.
 
 .. py:property:: element_names
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.element_names
@@ -202,24 +196,16 @@ Property detail
 
     Return the element names.
 
+.. py:property:: row_count
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count
+    :type: int
+
+    Return the number of rows in the dataset collection.
+
 
 Method detail
 -------------
 
-
-.. py:method:: item(self, index: int) -> DataProviderResultDataSet
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~DataProviderResultDataSet`
 
 
 .. py:method:: get_data_set_by_name(self, data_set_name: str) -> DataProviderResultDataSet
@@ -236,7 +222,6 @@ Method detail
 
         :obj:`~DataProviderResultDataSet`
 
-
 .. py:method:: get_row(self, index: int) -> list
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.get_row
 
@@ -250,6 +235,21 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+.. py:method:: item(self, index: int) -> DataProviderResultDataSet
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~DataProviderResultDataSet`
+
 
 .. py:method:: to_array(self) -> list
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array

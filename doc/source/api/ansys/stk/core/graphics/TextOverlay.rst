@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.text`
-              - Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
-            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.outline_color`
-              - Get or set the text's outline color.
             * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.font`
               - Get the graphics font used to style the text.
+            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.outline_color`
+              - Get or set the text's outline color.
+            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.text`
+              - Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: text
-    :canonical: ansys.stk.core.graphics.TextOverlay.text
-    :type: str
+.. py:property:: font
+    :canonical: ansys.stk.core.graphics.TextOverlay.font
+    :type: GraphicsFont
 
-    Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
+    Get the graphics font used to style the text.
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.TextOverlay.outline_color
@@ -52,10 +52,10 @@ Property detail
 
     Get or set the text's outline color.
 
-.. py:property:: font
-    :canonical: ansys.stk.core.graphics.TextOverlay.font
-    :type: GraphicsFont
+.. py:property:: text
+    :canonical: ansys.stk.core.graphics.TextOverlay.text
+    :type: str
 
-    Get the graphics font used to style the text.
+    Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
 
 

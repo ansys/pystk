@@ -27,14 +27,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.mean_radius`
+              - A mean radius of the central body (a+b+c)/3.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.radius_a`
               - An equatorial radius along the x-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.radius_b`
               - An equatorial radius along the y-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.radius_c`
               - The polar radius along z-axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.mean_radius`
-              - A mean radius of the central body (a+b+c)/3.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyEllipsoid.volumetric_radius`
               - A volumetric radius of the central body (a*b*c)^(1/3).
 
@@ -50,6 +50,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: mean_radius
+    :canonical: ansys.stk.core.stkobjects.CentralBodyEllipsoid.mean_radius
+    :type: float
+
+    A mean radius of the central body (a+b+c)/3.
 
 .. py:property:: radius_a
     :canonical: ansys.stk.core.stkobjects.CentralBodyEllipsoid.radius_a
@@ -69,12 +75,6 @@ Property detail
 
     The polar radius along z-axis.
 
-.. py:property:: mean_radius
-    :canonical: ansys.stk.core.stkobjects.CentralBodyEllipsoid.mean_radius
-    :type: float
-
-    A mean radius of the central body (a+b+c)/3.
-
 .. py:property:: volumetric_radius
     :canonical: ansys.stk.core.stkobjects.CentralBodyEllipsoid.volumetric_radius
     :type: float
@@ -84,8 +84,6 @@ Property detail
 
 Method detail
 -------------
-
-
 
 
 
@@ -109,4 +107,6 @@ Method detail
     :Returns:
 
         :obj:`~float`
+
+
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values`
-              - Retrieve an array of values of the elements in the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_units_values`
               - Get the Internal Unit Values of the Data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values`
+              - Retrieve an array of values of the elements in the dataset.
 
     .. tab-item:: Properties
 
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.count`
+              - Return a number of elements in the dataset. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name`
+              - Return the dimension of elements of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.element_name`
               - Return a name of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.element_type`
               - Return a type of elements of the dataset. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name`
-              - Return the dimension of elements of the dataset.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.count`
-              - Return a number of elements in the dataset. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.statistics`
               - Return an interface for computing statistics on the results.
 
@@ -53,6 +53,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.count
+    :type: int
+
+    Return a number of elements in the dataset. Dimensionless.
+
+.. py:property:: dimension_name
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name
+    :type: str
+
+    Return the dimension of elements of the dataset.
+
 .. py:property:: element_name
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.element_name
     :type: str
@@ -64,18 +76,6 @@ Property detail
     :type: int
 
     Return a type of elements of the dataset. Dimensionless.
-
-.. py:property:: dimension_name
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name
-    :type: str
-
-    Return the dimension of elements of the dataset.
-
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.count
-    :type: int
-
-    Return a number of elements in the dataset. Dimensionless.
 
 .. py:property:: statistics
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.statistics
@@ -91,19 +91,19 @@ Method detail
 
 
 
-.. py:method:: get_values(self) -> list
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values
+.. py:method:: get_internal_units_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_units_values
 
-    Retrieve an array of values of the elements in the dataset.
+    Get the Internal Unit Values of the Data.
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: get_internal_units_values(self) -> list
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_units_values
+.. py:method:: get_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values
 
-    Get the Internal Unit Values of the Data.
+    Retrieve an array of values of the elements in the dataset.
 
     :Returns:
 

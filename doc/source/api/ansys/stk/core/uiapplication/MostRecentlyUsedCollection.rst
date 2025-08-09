@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count`
-              - Get the total count of MRUs in the collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection._new_enum`
               - Enumerates through the MRU collection.
+            * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count`
+              - Get the total count of MRUs in the collection.
 
 
 
@@ -45,21 +45,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count
-    :type: int
-
-    Get the total count of MRUs in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the MRU collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count
+    :type: int
+
+    Get the total count of MRUs in the collection.
+
 
 Method detail
 -------------
+
 
 .. py:method:: item(self, index: typing.Any) -> str
     :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection.item
@@ -74,6 +75,5 @@ Method detail
     :Returns:
 
         :obj:`~str`
-
 
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.select_point`
-              - Select point.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.clear_selection`
               - Clear the selected point or region.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.select_point`
+              - Select point.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.select_region`
               - Select a region.
 
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit`
-              - Retrieve the Region FOM data provider.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction`
-              - Retrieve the Region Satisfaction data provider.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message`
+              - Retrieve the message when a point or region is selected.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_figure_of_merit`
               - Retrieve the Point FOM data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_satisfaction`
               - Retrieve the Point Satisfaction data provider.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message`
-              - Retrieve the message when a point or region is selected.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit`
+              - Retrieve the Region FOM data provider.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction`
+              - Retrieve the Region Satisfaction data provider.
 
 
 
@@ -55,17 +55,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: region_figure_of_merit
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit
-    :type: IDataProviderInfo
+.. py:property:: message
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message
+    :type: str
 
-    Retrieve the Region FOM data provider.
-
-.. py:property:: region_satisfaction
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction
-    :type: IDataProviderInfo
-
-    Retrieve the Region Satisfaction data provider.
+    Retrieve the message when a point or region is selected.
 
 .. py:property:: point_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_figure_of_merit
@@ -79,15 +73,35 @@ Property detail
 
     Retrieve the Point Satisfaction data provider.
 
-.. py:property:: message
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message
-    :type: str
+.. py:property:: region_figure_of_merit
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit
+    :type: IDataProviderInfo
 
-    Retrieve the message when a point or region is selected.
+    Retrieve the Region FOM data provider.
+
+.. py:property:: region_satisfaction
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction
+    :type: IDataProviderInfo
+
+    Retrieve the Region Satisfaction data provider.
 
 
 Method detail
 -------------
+
+.. py:method:: clear_selection(self) -> None
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.clear_selection
+
+    Clear the selected point or region.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
 
 .. py:method:: select_point(self, lat: typing.Any, lon: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.select_point
@@ -100,15 +114,6 @@ Method detail
 
         **lon** : :obj:`~typing.Any`
 
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: clear_selection(self) -> None
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.clear_selection
-
-    Clear the selected point or region.
 
     :Returns:
 
@@ -127,9 +132,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
 

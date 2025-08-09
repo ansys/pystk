@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.type`
-              - Get the type of parameter set.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.labels`
-              - Get the labels identifying hierarchy of representations within parameter set.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.dimensions`
               - Get the names identifying types of dimensions of individual scalars within parameter set.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.labels`
+              - Get the labels identifying hierarchy of representations within parameter set.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.scalar_names`
               - Get the names identifying individual scalars within parameter set.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.type`
+              - Get the type of parameter set.
 
 
 Import detail
@@ -50,11 +50,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.type
-    :type: ParameterSetType
+.. py:property:: dimensions
+    :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.dimensions
+    :type: list
 
-    Get the type of parameter set.
+    Get the names identifying types of dimensions of individual scalars within parameter set.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.labels
@@ -62,25 +62,21 @@ Property detail
 
     Get the labels identifying hierarchy of representations within parameter set.
 
-.. py:property:: dimensions
-    :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.dimensions
-    :type: list
-
-    Get the names identifying types of dimensions of individual scalars within parameter set.
-
 .. py:property:: scalar_names
     :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.scalar_names
     :type: list
 
     Get the names identifying individual scalars within parameter set.
 
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.type
+    :type: ParameterSetType
+
+    Get the type of parameter set.
+
 
 Method detail
 -------------
-
-
-
-
 
 .. py:method:: calculate(self, epoch: typing.Any) -> list
     :canonical: ansys.stk.core.analysis_workbench.ICalculationToolParameterSet.calculate
@@ -109,4 +105,8 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
+
+
 

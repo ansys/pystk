@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.right_ascension`
-              - Defined as the angle from the X axis to the projection of the satellite position vector in the equatorial plane measured as positive in the direction of the Y axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.declination`
               - Defined as the angle between the satellite position vector and the inertial equatorial plane measured as positive toward the positive inertial Z axis. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.radius_magnitude`
-              - Get or set the magnitude of the satellite position vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.horizontal_flight_path_angle`
               - Horizontal (Hor FPA) or vertical (Ver FPA) flight path angle. The angle between the velocity vector and the radius vector (vertical) or the complement of this angle (horizontal). Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.radius_magnitude`
+              - Get or set the magnitude of the satellite position vector. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.right_ascension`
+              - Defined as the angle from the X axis to the projection of the satellite position vector in the equatorial plane measured as positive in the direction of the Y axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.velocity_azimuth`
               - Get or set the angle in the satellite local horizontal plane between the projection of the velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementSpherical.velocity_magnitude`
@@ -48,17 +48,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: right_ascension
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.right_ascension
-    :type: typing.Any
-
-    Defined as the angle from the X axis to the projection of the satellite position vector in the equatorial plane measured as positive in the direction of the Y axis. Uses Angle Dimension.
-
 .. py:property:: declination
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.declination
     :type: typing.Any
 
     Defined as the angle between the satellite position vector and the inertial equatorial plane measured as positive toward the positive inertial Z axis. Uses Angle Dimension.
+
+.. py:property:: horizontal_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.horizontal_flight_path_angle
+    :type: typing.Any
+
+    Horizontal (Hor FPA) or vertical (Ver FPA) flight path angle. The angle between the velocity vector and the radius vector (vertical) or the complement of this angle (horizontal). Uses Angle Dimension.
 
 .. py:property:: radius_magnitude
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.radius_magnitude
@@ -66,11 +66,11 @@ Property detail
 
     Get or set the magnitude of the satellite position vector. Uses Distance Dimension.
 
-.. py:property:: horizontal_flight_path_angle
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.horizontal_flight_path_angle
+.. py:property:: right_ascension
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.right_ascension
     :type: typing.Any
 
-    Horizontal (Hor FPA) or vertical (Ver FPA) flight path angle. The angle between the velocity vector and the radius vector (vertical) or the complement of this angle (horizontal). Uses Angle Dimension.
+    Defined as the angle from the X axis to the projection of the satellite position vector in the equatorial plane measured as positive in the direction of the Y axis. Uses Angle Dimension.
 
 .. py:property:: velocity_azimuth
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementSpherical.velocity_azimuth

@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value`
-              - Get the value of the field with the given name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site`
+              - Copy the site to the clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields`
               - Get all the field names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields_and_values`
               - Get all the field names along with the corresponding value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site`
-              - Copy the site to the clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value`
+              - Get the value of the field with the given name.
 
 Import detail
 -------------
@@ -41,19 +41,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_value(self, field_name: str) -> typing.Any
-    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value
+.. py:method:: copy_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site
 
-    Get the value of the field with the given name.
-
-    :Parameters:
-
-        **field_name** : :obj:`~str`
-
+    Copy the site to the clipboard.
 
     :Returns:
 
-        :obj:`~typing.Any`
+        :obj:`~None`
 
 .. py:method:: get_all_fields(self) -> list
     :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields
@@ -73,15 +68,6 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: copy_site(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site
-
-    Copy the site to the clipboard.
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: get_as_catalog_item(self) -> ICatalogItem
     :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item
 
@@ -90,4 +76,18 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
+.. py:method:: get_value(self, field_name: str) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value
+
+    Get the value of the field with the given name.
+
+    :Parameters:
+
+        **field_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~typing.Any`
 

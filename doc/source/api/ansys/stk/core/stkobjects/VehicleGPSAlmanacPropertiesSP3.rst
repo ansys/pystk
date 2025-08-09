@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.almanac_week`
               - Get the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.time_of_almanac`
-              - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.date_of_almanac`
               - Get the almanac reference date for all almanacs in the file per ICD-GPS-200.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.time_of_almanac`
+              - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Get the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
 
-.. py:property:: time_of_almanac
-    :canonical: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.time_of_almanac
-    :type: float
-
-    Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
-
 .. py:property:: date_of_almanac
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.date_of_almanac
     :type: str
 
     Get the almanac reference date for all almanacs in the file per ICD-GPS-200.
+
+.. py:property:: time_of_almanac
+    :canonical: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3.time_of_almanac
+    :type: float
+
+    Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
 
 

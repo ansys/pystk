@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio`
+              - Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
             * - :py:attr:`~ansys.stk.core.graphics.TextureScreenOverlay.texture`
               - Get or set the texture (image) to be drawn on the overlay. Textures can be obtained from textures.
             * - :py:attr:`~ansys.stk.core.graphics.TextureScreenOverlay.texture_filter`
               - Get or set the filter used for the texture associated with this overlay.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio`
-              - Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
 
 
 
@@ -68,6 +68,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: maintain_aspect_ratio
+    :canonical: ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio
+    :type: OverlayAspectRatioMode
+
+    Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
+
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.TextureScreenOverlay.texture
     :type: RendererTexture2D
@@ -79,11 +85,5 @@ Property detail
     :type: TextureFilter2D
 
     Get or set the filter used for the texture associated with this overlay.
-
-.. py:property:: maintain_aspect_ratio
-    :canonical: ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio
-    :type: OverlayAspectRatioMode
-
-    Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
 
 

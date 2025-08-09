@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.reference_axes`
-              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.filename`
               - Can be MATLAB (.m or .dll) or VB Script (.vbs) script file.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.reference_axes`
+              - Specify a reference axes.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.reference_axes
-    :type: VectorGeometryToolAxesReference
-
-    Specify a reference axes.
-
 .. py:property:: filename
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.filename
     :type: str
 
     Can be MATLAB (.m or .dll) or VB Script (.vbs) script file.
+
+.. py:property:: reference_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCustomScript.reference_axes
+    :type: VectorGeometryToolAxesReference
+
+    Specify a reference axes.
 
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.templates`
-              - Return the 3D BPlane templates collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.instances`
               - Return the 3D BPlane Instance collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.templates`
+              - Return the 3D BPlane templates collection.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: templates
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.templates
-    :type: VehicleGraphics3DBPlaneTemplatesCollection
-
-    Return the 3D BPlane templates collection.
-
 .. py:property:: instances
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.instances
     :type: VehicleGraphics3DBPlaneInstancesCollection
 
     Return the 3D BPlane Instance collection.
+
+.. py:property:: templates
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.templates
+    :type: VehicleGraphics3DBPlaneTemplatesCollection
+
+    Return the 3D BPlane templates collection.
 
 

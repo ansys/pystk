@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageInterval.use_scenario_interval`
-              - Use the scenario time period as the coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageInterval.analysis_interval`
               - Get the coverage analysis interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageInterval.use_scenario_interval`
+              - Use the scenario time period as the coverage interval.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_scenario_interval
-    :canonical: ansys.stk.core.stkobjects.CoverageInterval.use_scenario_interval
-    :type: bool
-
-    Use the scenario time period as the coverage interval.
-
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.CoverageInterval.analysis_interval
     :type: ITimeToolTimeIntervalSmartInterval
 
     Get the coverage analysis interval.
+
+.. py:property:: use_scenario_interval
+    :canonical: ansys.stk.core.stkobjects.CoverageInterval.use_scenario_interval
+    :type: bool
+
+    Use the scenario time period as the coverage interval.
 
 

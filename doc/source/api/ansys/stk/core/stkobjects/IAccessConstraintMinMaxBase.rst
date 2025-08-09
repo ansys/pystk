@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_minimum`
-              - Enable the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_maximum`
               - Enable the Max property.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.minimum`
-              - Min value for the access constraint.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_minimum`
+              - Enable the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.maximum`
               - Max value for the access constrain.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.minimum`
+              - Min value for the access constraint.
 
 
 Import detail
@@ -41,28 +41,28 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable_minimum
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_minimum
-    :type: bool
-
-    Enable the Min property.
-
 .. py:property:: enable_maximum
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_maximum
     :type: bool
 
     Enable the Max property.
 
-.. py:property:: minimum
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.minimum
-    :type: typing.Any
+.. py:property:: enable_minimum
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.enable_minimum
+    :type: bool
 
-    Min value for the access constraint.
+    Enable the Min property.
 
 .. py:property:: maximum
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.maximum
     :type: typing.Any
 
     Max value for the access constrain.
+
+.. py:property:: minimum
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintMinMaxBase.minimum
+    :type: typing.Any
+
+    Min value for the access constraint.
 
 

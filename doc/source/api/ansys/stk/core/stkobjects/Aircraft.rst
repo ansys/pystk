@@ -20,28 +20,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.atmosphere`
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.export_tools`
+              - Return the AircraftExportTools interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.get_eoir_settings`
+              - Get the EOIR properties of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.graphics`
               - Get the aircraft's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.graphics_3d`
               - Get the aircraft's 3D Graphics properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.export_tools`
-              - Return the AircraftExportTools interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.atmosphere`
-              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.laser_environment`
+              - Get the laser environment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape`
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain`
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.radar_clutter_map`
               - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.radar_cross_section`
               - Return the radar cross sectoin.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.laser_environment`
-              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.rf_environment`
               - Get the RF environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain`
-              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape`
-              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.get_eoir_settings`
-              - Get the EOIR properties of the aircraft.
 
 
 
@@ -113,6 +113,24 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: atmosphere
+    :canonical: ansys.stk.core.stkobjects.Aircraft.atmosphere
+    :type: Atmosphere
+
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+
+.. py:property:: export_tools
+    :canonical: ansys.stk.core.stkobjects.Aircraft.export_tools
+    :type: AircraftExportTools
+
+    Return the AircraftExportTools interface.
+
+.. py:property:: get_eoir_settings
+    :canonical: ansys.stk.core.stkobjects.Aircraft.get_eoir_settings
+    :type: IEOIR
+
+    Get the EOIR properties of the aircraft.
+
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Aircraft.graphics
     :type: AircraftGraphics
@@ -125,17 +143,23 @@ Property detail
 
     Get the aircraft's 3D Graphics properties.
 
-.. py:property:: export_tools
-    :canonical: ansys.stk.core.stkobjects.Aircraft.export_tools
-    :type: AircraftExportTools
+.. py:property:: laser_environment
+    :canonical: ansys.stk.core.stkobjects.Aircraft.laser_environment
+    :type: PlatformLaserEnvironment
 
-    Return the AircraftExportTools interface.
+    Get the laser environment.
 
-.. py:property:: atmosphere
-    :canonical: ansys.stk.core.stkobjects.Aircraft.atmosphere
-    :type: Atmosphere
+.. py:property:: lighting_maximum_step_central_body_shape
+    :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape
+    :type: float
 
-    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+
+.. py:property:: lighting_maximum_step_terrain
+    :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain
+    :type: float
+
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Aircraft.radar_clutter_map
@@ -149,34 +173,10 @@ Property detail
 
     Return the radar cross sectoin.
 
-.. py:property:: laser_environment
-    :canonical: ansys.stk.core.stkobjects.Aircraft.laser_environment
-    :type: PlatformLaserEnvironment
-
-    Get the laser environment.
-
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Aircraft.rf_environment
     :type: IPlatformRFEnvironment
 
     Get the RF environment.
-
-.. py:property:: lighting_maximum_step_terrain
-    :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain
-    :type: float
-
-    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-
-.. py:property:: lighting_maximum_step_central_body_shape
-    :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape
-    :type: float
-
-    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
-
-.. py:property:: get_eoir_settings
-    :canonical: ansys.stk.core.stkobjects.Aircraft.get_eoir_settings
-    :type: IEOIR
-
-    Get the EOIR properties of the aircraft.
 
 

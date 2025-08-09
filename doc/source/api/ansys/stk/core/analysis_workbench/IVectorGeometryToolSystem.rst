@@ -56,7 +56,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: find_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> AnalysisWorkbenchSystemFindInSystemResult
     :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem.find_in_system
 
@@ -110,4 +109,5 @@ Method detail
     :Returns:
 
         :obj:`~AnalysisWorkbenchSystemTransformWithRateResult`
+
 

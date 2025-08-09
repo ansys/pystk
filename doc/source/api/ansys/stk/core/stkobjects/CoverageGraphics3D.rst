@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.static`
-              - 3D static graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.animation_graphics_3d_settings`
               - 3D animation graphics options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.automatic_computation_of_granularity`
+              - Auto Compute Fill Granularity.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.draw_at_altitude_mode`
+              - Draw at Altitude Polygon Mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.granularity`
               - Fill Granularity: sampling distance between points used when grid points are filled. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.show_at_altitude`
               - Show Graphics at Altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.draw_at_altitude_mode`
-              - Draw at Altitude Polygon Mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.automatic_computation_of_granularity`
-              - Auto Compute Fill Granularity.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3D.static`
+              - 3D static graphics options.
 
 
 
@@ -44,17 +44,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: static
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.static
-    :type: CoverageGraphics3DAttributes
-
-    3D static graphics options.
-
 .. py:property:: animation_graphics_3d_settings
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.animation_graphics_3d_settings
     :type: CoverageGraphics3DAttributes
 
     3D animation graphics options.
+
+.. py:property:: automatic_computation_of_granularity
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.automatic_computation_of_granularity
+    :type: bool
+
+    Auto Compute Fill Granularity.
+
+.. py:property:: draw_at_altitude_mode
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.draw_at_altitude_mode
+    :type: Coverage3dDrawAtAltitudeMode
+
+    Draw at Altitude Polygon Mode.
 
 .. py:property:: granularity
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.granularity
@@ -68,16 +74,10 @@ Property detail
 
     Show Graphics at Altitude.
 
-.. py:property:: draw_at_altitude_mode
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.draw_at_altitude_mode
-    :type: Coverage3dDrawAtAltitudeMode
+.. py:property:: static
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.static
+    :type: CoverageGraphics3DAttributes
 
-    Draw at Altitude Polygon Mode.
-
-.. py:property:: automatic_computation_of_granularity
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.automatic_computation_of_granularity
-    :type: bool
-
-    Auto Compute Fill Granularity.
+    3D static graphics options.
 
 

@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number`
-              - Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance`
-              - Get or set the multipath power tolerance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance`
-              - Get or set the multipath delay tolerance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.compute_alternate_frequencies`
-              - Get or set the indicator to compute alternate frequencies.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type`
               - Get or set the coefficient data type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average`
-              - Get or set the indicator to use day of month average.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type`
-              - Get or set the solar activity configuration enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.compute_alternate_frequencies`
+              - Get or set the indicator to compute alternate frequencies.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance`
+              - Get or set the multipath delay tolerance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance`
+              - Get or set the multipath power tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration`
               - Get or set the solar activity configuration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type`
+              - Get or set the solar activity configuration enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number`
+              - Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average`
+              - Get or set the indicator to use day of month average.
 
 
 
@@ -50,23 +50,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sunspot_number
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number
-    :type: int
+.. py:property:: coefficient_data_type
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type
+    :type: Graphics3DACAPCoefficientDataType
 
-    Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
-
-.. py:property:: multipath_power_tolerance
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance
-    :type: float
-
-    Get or set the multipath power tolerance.
-
-.. py:property:: multipath_delay_tolerance
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance
-    :type: float
-
-    Get or set the multipath delay tolerance.
+    Get or set the coefficient data type.
 
 .. py:property:: compute_alternate_frequencies
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.compute_alternate_frequencies
@@ -74,17 +62,23 @@ Property detail
 
     Get or set the indicator to compute alternate frequencies.
 
-.. py:property:: coefficient_data_type
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type
-    :type: Graphics3DACAPCoefficientDataType
+.. py:property:: multipath_delay_tolerance
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_delay_tolerance
+    :type: float
 
-    Get or set the coefficient data type.
+    Get or set the multipath delay tolerance.
 
-.. py:property:: use_day_of_month_average
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average
-    :type: bool
+.. py:property:: multipath_power_tolerance
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.multipath_power_tolerance
+    :type: float
 
-    Get or set the indicator to use day of month average.
+    Get or set the multipath power tolerance.
+
+.. py:property:: solar_activity_configuration
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration
+    :type: ISolarActivityConfiguration
+
+    Get or set the solar activity configuration.
 
 .. py:property:: solar_activity_configuration_type
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type
@@ -92,10 +86,16 @@ Property detail
 
     Get or set the solar activity configuration enumeration.
 
-.. py:property:: solar_activity_configuration
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration
-    :type: ISolarActivityConfiguration
+.. py:property:: sunspot_number
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number
+    :type: int
 
-    Get or set the solar activity configuration.
+    Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
+
+.. py:property:: use_day_of_month_average
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average
+    :type: bool
+
+    Get or set the indicator to use day of month average.
 
 

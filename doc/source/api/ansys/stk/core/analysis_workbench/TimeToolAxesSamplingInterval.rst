@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.times`
-              - A time array associated with the interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.quaternions`
               - An array of 4-tuples each tuple representing the orientation of the axes as a quaternion (q1,q2,q3,q4).
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.velocities`
-              - An array of angular velocities.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.start`
               - The start time of the interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.stop`
               - The stop time of the interval.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.times`
+              - A time array associated with the interval.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.velocities`
+              - An array of angular velocities.
 
 
 
@@ -42,23 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: times
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.times
-    :type: list
-
-    A time array associated with the interval.
-
 .. py:property:: quaternions
     :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.quaternions
     :type: list
 
     An array of 4-tuples each tuple representing the orientation of the axes as a quaternion (q1,q2,q3,q4).
-
-.. py:property:: velocities
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.velocities
-    :type: list
-
-    An array of angular velocities.
 
 .. py:property:: start
     :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.start
@@ -71,5 +59,17 @@ Property detail
     :type: typing.Any
 
     The stop time of the interval.
+
+.. py:property:: times
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.times
+    :type: list
+
+    A time array associated with the interval.
+
+.. py:property:: velocities
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolAxesSamplingInterval.velocities
+    :type: list
+
+    An array of angular velocities.
 
 

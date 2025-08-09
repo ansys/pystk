@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModulator.use_signal_psd`
-              - Options for enabling signal psd analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModulator.psd_limit_multiplier`
               - Get or set the PSD limit multiplier.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModulator.use_signal_psd`
+              - Options for enabling signal psd analysis.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_signal_psd
-    :canonical: ansys.stk.core.stkobjects.RadarModulator.use_signal_psd
-    :type: bool
-
-    Options for enabling signal psd analysis.
-
 .. py:property:: psd_limit_multiplier
     :canonical: ansys.stk.core.stkobjects.RadarModulator.psd_limit_multiplier
     :type: int
 
     Get or set the PSD limit multiplier.
+
+.. py:property:: use_signal_psd
+    :canonical: ansys.stk.core.stkobjects.RadarModulator.use_signal_psd
+    :type: bool
+
+    Options for enabling signal psd analysis.
 
 

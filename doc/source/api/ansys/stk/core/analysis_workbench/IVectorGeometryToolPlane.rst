@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.type`
-              - Return a type of the plane object.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.labels`
               - Allow configuring the plane's X and Y axes labels.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.type`
+              - Return a type of the plane object.
 
 
 Import detail
@@ -50,22 +50,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.type
-    :type: PlaneType
-
-    Return a type of the plane object.
-
 .. py:property:: labels
     :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.labels
     :type: VectorGeometryToolPlaneLabels
 
     Allow configuring the plane's X and Y axes labels.
 
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.type
+    :type: PlaneType
+
+    Return a type of the plane object.
+
 
 Method detail
 -------------
-
 
 .. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchPlaneFindInAxesResult
     :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolPlane.find_in_axes
@@ -130,5 +129,6 @@ Method detail
     :Returns:
 
         :obj:`~AnalysisWorkbenchPlaneFindInSystemWithRateResult`
+
 
 

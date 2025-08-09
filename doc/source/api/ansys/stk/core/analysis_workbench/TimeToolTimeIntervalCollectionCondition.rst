@@ -22,16 +22,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.condition_set`
               - Get/set the condition set object.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.custom_time_limits`
-              - A custom interval list or a single interval. By default it is set to overall availability of host object. This determines time limits within which global minimum or maximum is sought. The time limits will be used if UseCustomTimeLimits is set to true.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.use_custom_time_limits`
-              - Specify whether to use specified custom interval list (see CustomTimeLimits).
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.save_data_option`
-              - Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.sampling`
-              - A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.convergence`
               - A Convergence definition, which uses time tolerance to determine when time of extremum is found.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.custom_time_limits`
+              - A custom interval list or a single interval. By default it is set to overall availability of host object. This determines time limits within which global minimum or maximum is sought. The time limits will be used if UseCustomTimeLimits is set to true.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.sampling`
+              - A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.save_data_option`
+              - Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.use_custom_time_limits`
+              - Specify whether to use specified custom interval list (see CustomTimeLimits).
 
 
 
@@ -52,23 +52,17 @@ Property detail
 
     Get/set the condition set object.
 
+.. py:property:: convergence
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.convergence
+    :type: IAnalysisWorkbenchConvergence
+
+    A Convergence definition, which uses time tolerance to determine when time of extremum is found.
+
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.custom_time_limits
     :type: ITimeToolTimeIntervalList
 
     A custom interval list or a single interval. By default it is set to overall availability of host object. This determines time limits within which global minimum or maximum is sought. The time limits will be used if UseCustomTimeLimits is set to true.
-
-.. py:property:: use_custom_time_limits
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.use_custom_time_limits
-    :type: bool
-
-    Specify whether to use specified custom interval list (see CustomTimeLimits).
-
-.. py:property:: save_data_option
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.save_data_option
-    :type: SaveDataType
-
-    Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.sampling
@@ -76,10 +70,16 @@ Property detail
 
     A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
-.. py:property:: convergence
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.convergence
-    :type: IAnalysisWorkbenchConvergence
+.. py:property:: save_data_option
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.save_data_option
+    :type: SaveDataType
 
-    A Convergence definition, which uses time tolerance to determine when time of extremum is found.
+    Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
+
+.. py:property:: use_custom_time_limits
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionCondition.use_custom_time_limits
+    :type: bool
+
+    Specify whether to use specified custom interval list (see CustomTimeLimits).
 
 

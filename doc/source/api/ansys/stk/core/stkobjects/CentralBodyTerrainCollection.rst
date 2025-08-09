@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item`
-              - Given an index or a name of a central body, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.get_item_by_index`
               - Retrieve a central body terrain from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.get_item_by_name`
               - Retrieve a central body terrain from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item`
+              - Given an index or a name of a central body, returns an element in the collection.
 
     .. tab-item:: Properties
 
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count`
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.total_cache_size`
               - Total cache size (not individual terrain sources) for the analytical terrain in the scenario. Dimensionless.
 
@@ -51,17 +51,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
 
 .. py:property:: total_cache_size
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.total_cache_size
@@ -72,23 +72,6 @@ Property detail
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: typing.Any) -> CentralBodyTerrainCollectionElement
-    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item
-
-    Given an index or a name of a central body, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~CentralBodyTerrainCollectionElement`
-
-
 
 
 .. py:method:: get_item_by_index(self, index: int) -> CentralBodyTerrainCollectionElement
@@ -118,4 +101,21 @@ Method detail
     :Returns:
 
         :obj:`~CentralBodyTerrainCollectionElement`
+
+.. py:method:: item(self, index: typing.Any) -> CentralBodyTerrainCollectionElement
+    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item
+
+    Given an index or a name of a central body, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~CentralBodyTerrainCollectionElement`
+
+
+
 

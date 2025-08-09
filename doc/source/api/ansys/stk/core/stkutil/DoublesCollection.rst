@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.item`
-              - Return a double at a specified position.
             * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.add`
               - Add a value to the collection of doubles.
-            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.remove_at`
-              - Remove an element from the collection at a specified position.
+            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.item`
+              - Return a double at a specified position.
             * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.remove_all`
               - Clear the collection.
-            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.to_array`
-              - Return an array of the elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.remove_at`
+              - Remove an element from the collection at a specified position.
             * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.set_at`
               - Update an element in the collection at a specified position.
+            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.to_array`
+              - Return an array of the elements in the collection.
 
     .. tab-item:: Properties
 
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.count`
-              - Return the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection._new_enum`
               - Return a collection enumerator.
+            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.count`
+              - Return the number of items in the collection.
 
 
 
@@ -55,21 +55,36 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkutil.DoublesCollection.count
-    :type: int
-
-    Return the number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkutil.DoublesCollection._new_enum
     :type: EnumeratorProxy
 
     Return a collection enumerator.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkutil.DoublesCollection.count
+    :type: int
+
+    Return the number of items in the collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, value: float) -> None
+    :canonical: ansys.stk.core.stkutil.DoublesCollection.add
+
+    Add a value to the collection of doubles.
+
+    :Parameters:
+
+        **value** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 .. py:method:: item(self, index: int) -> float
     :canonical: ansys.stk.core.stkutil.DoublesCollection.item
@@ -85,17 +100,10 @@ Method detail
 
         :obj:`~float`
 
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkutil.DoublesCollection.remove_all
 
-
-.. py:method:: add(self, value: float) -> None
-    :canonical: ansys.stk.core.stkutil.DoublesCollection.add
-
-    Add a value to the collection of doubles.
-
-    :Parameters:
-
-        **value** : :obj:`~float`
-
+    Clear the collection.
 
     :Returns:
 
@@ -115,24 +123,6 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkutil.DoublesCollection.remove_all
-
-    Clear the collection.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: to_array(self) -> list
-    :canonical: ansys.stk.core.stkutil.DoublesCollection.to_array
-
-    Return an array of the elements in the collection.
-
-    :Returns:
-
-        :obj:`~list`
-
 .. py:method:: set_at(self, index: int, value: float) -> None
     :canonical: ansys.stk.core.stkutil.DoublesCollection.set_at
 
@@ -148,4 +138,14 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.DoublesCollection.to_array
+
+    Return an array of the elements in the collection.
+
+    :Returns:
+
+        :obj:`~list`
+
 

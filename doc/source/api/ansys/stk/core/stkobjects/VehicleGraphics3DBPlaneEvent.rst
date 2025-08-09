@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch`
-              - Get or set the event epoch. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event`
-              - Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.after_event`
               - Get or set the duration after the event that the B-Plane will be displayed. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.always_display`
               - Whether the B-Plane will be displayed throughout the scenario's animation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event`
+              - Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch`
+              - Get or set the event epoch. Uses DateFormat Dimension.
 
 
 
@@ -40,18 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: event_epoch
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch
-    :type: typing.Any
-
-    Get or set the event epoch. Uses DateFormat Dimension.
-
-.. py:property:: before_event
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event
-    :type: float
-
-    Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
-
 .. py:property:: after_event
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.after_event
     :type: float
@@ -63,5 +51,17 @@ Property detail
     :type: bool
 
     Whether the B-Plane will be displayed throughout the scenario's animation.
+
+.. py:property:: before_event
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event
+    :type: float
+
+    Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
+
+.. py:property:: event_epoch
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch
+    :type: typing.Any
+
+    Get or set the event epoch. Uses DateFormat Dimension.
 
 

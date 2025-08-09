@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.control_box`
-              - Get the control box parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.bearing_box`
               - Get the bearing box parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.bearing_ellipse`
               - Get the bearing ellipse parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.control_box`
+              - Get the control box parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.ellipsoid`
+              - Define the ellipsoid parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.line_of_bearing`
               - Get the line of bearing parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.ellipsoid`
-              - Define the ellipsoid parameters.
 
 
 
@@ -46,12 +46,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: control_box
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.control_box
-    :type: VehicleGraphics3DControlBox
-
-    Get the control box parameters.
-
 .. py:property:: bearing_box
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.bearing_box
     :type: VehicleGraphics3DBearingBox
@@ -64,6 +58,18 @@ Property detail
 
     Get the bearing ellipse parameters.
 
+.. py:property:: control_box
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.control_box
+    :type: VehicleGraphics3DControlBox
+
+    Get the control box parameters.
+
+.. py:property:: ellipsoid
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.ellipsoid
+    :type: VehicleGraphics3DEllipsoid
+
+    Define the ellipsoid parameters.
+
 .. py:property:: line_of_bearing
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.line_of_bearing
     :type: VehicleGraphics3DLineOfBearing
@@ -75,11 +81,5 @@ Property detail
     :type: Graphics3DLabelSwapDistance
 
     Area of uncertainty label swap distance.
-
-.. py:property:: ellipsoid
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity.ellipsoid
-    :type: VehicleGraphics3DEllipsoid
-
-    Define the ellipsoid parameters.
 
 

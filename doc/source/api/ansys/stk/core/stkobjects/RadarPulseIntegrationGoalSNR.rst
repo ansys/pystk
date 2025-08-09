@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.snr`
-              - Get or set the goal SNR value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.maximum_pulses`
-              - Get or set the maximum number of pulses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integrator_type`
-              - Get or set the integrator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.constant_efficiency`
               - Get or set the constant efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.exponent_on_pulse_number`
               - Get or set the exponent on pulse number value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integration_filename`
               - Get or set the integration file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integrator_type`
+              - Get or set the integrator type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.maximum_pulses`
+              - Get or set the maximum number of pulses.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.non_coherent_integration`
               - Get or set the non-coherent integration flag.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.snr`
+              - Get or set the goal SNR value.
 
 
 
@@ -47,24 +47,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: snr
-    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.snr
-    :type: float
-
-    Get or set the goal SNR value.
-
-.. py:property:: maximum_pulses
-    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.maximum_pulses
-    :type: int
-
-    Get or set the maximum number of pulses.
-
-.. py:property:: integrator_type
-    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integrator_type
-    :type: RadarPulseIntegratorType
-
-    Get or set the integrator type.
 
 .. py:property:: constant_efficiency
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.constant_efficiency
@@ -84,10 +66,28 @@ Property detail
 
     Get or set the integration file.
 
+.. py:property:: integrator_type
+    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integrator_type
+    :type: RadarPulseIntegratorType
+
+    Get or set the integrator type.
+
+.. py:property:: maximum_pulses
+    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.maximum_pulses
+    :type: int
+
+    Get or set the maximum number of pulses.
+
 .. py:property:: non_coherent_integration
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.non_coherent_integration
     :type: bool
 
     Get or set the non-coherent integration flag.
+
+.. py:property:: snr
+    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.snr
+    :type: float
+
+    Get or set the goal SNR value.
 
 

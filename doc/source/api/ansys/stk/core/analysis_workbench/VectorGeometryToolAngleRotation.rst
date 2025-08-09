@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.from_axes`
               - Specify an axes to rotate from.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.to_axes`
-              - Specify an axes to rotate to.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.reference_direction`
               - Specify a rotation direction.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.to_axes`
+              - Specify an axes to rotate to.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify an axes to rotate from.
 
-.. py:property:: to_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.to_axes
-    :type: VectorGeometryToolAxesReference
-
-    Specify an axes to rotate to.
-
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.reference_direction
     :type: PrincipalAxisOfRotationType
 
     Specify a rotation direction.
+
+.. py:property:: to_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAngleRotation.to_axes
+    :type: VectorGeometryToolAxesReference
+
+    Specify an axes to rotate to.
 
 

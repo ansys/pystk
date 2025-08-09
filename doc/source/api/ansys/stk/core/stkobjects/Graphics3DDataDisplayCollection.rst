@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.add`
               - Add a new element to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.is_pre_data_required`
-              - Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.add_data_display_requiring_pre_data`
               - Add a data display using additional data, such as a comparison object for an RIC report or a set of axes for a vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.is_pre_data_required`
+              - Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -37,12 +37,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.available_data`
               - Get the available data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -57,12 +57,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum
     :type: EnumeratorProxy
@@ -75,48 +69,15 @@ Property detail
 
     Get the available data.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> Graphics3DDataDisplayElement
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~Graphics3DDataDisplayElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add(self, name: str) -> Graphics3DDataDisplayElement
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.add
@@ -131,21 +92,6 @@ Method detail
     :Returns:
 
         :obj:`~Graphics3DDataDisplayElement`
-
-
-.. py:method:: is_pre_data_required(self, data_display_name: str) -> bool
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.is_pre_data_required
-
-    Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
-
-    :Parameters:
-
-        **data_display_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~bool`
 
 .. py:method:: add_data_display_requiring_pre_data(self, name: str, pre_data: str) -> Graphics3DDataDisplayElement
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.add_data_display_requiring_pre_data
@@ -162,4 +108,58 @@ Method detail
     :Returns:
 
         :obj:`~Graphics3DDataDisplayElement`
+
+
+
+.. py:method:: is_pre_data_required(self, data_display_name: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.is_pre_data_required
+
+    Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
+
+    :Parameters:
+
+        **data_display_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: item(self, index: int) -> Graphics3DDataDisplayElement
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~Graphics3DDataDisplayElement`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

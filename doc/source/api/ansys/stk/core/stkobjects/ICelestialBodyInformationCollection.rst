@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInformationCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.count`
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.recycle`
               - Control whether to reuse the same celestial info object when accessing the elements of the collection.
 
@@ -46,17 +46,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.ICelestialBodyInformationCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
 
 .. py:property:: recycle
     :canonical: ansys.stk.core.stkobjects.ICelestialBodyInformationCollection.recycle

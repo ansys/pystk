@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name`
-              - Get or set the targeted maneuver segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active`
               - If true, all active stopping conditions on the seeded maneuver will remain active during run.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name`
+              - Get or set the targeted maneuver segment.
 
 
 
@@ -47,21 +47,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: segment_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name
-    :type: str
-
-    Get or set the targeted maneuver segment.
-
 .. py:property:: leave_all_active_stopping_conditions_active
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active
     :type: bool
 
     If true, all active stopping conditions on the seeded maneuver will remain active during run.
 
+.. py:property:: segment_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name
+    :type: str
+
+    Get or set the targeted maneuver segment.
+
 
 Method detail
 -------------
+
+
 
 
 
@@ -78,6 +80,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 

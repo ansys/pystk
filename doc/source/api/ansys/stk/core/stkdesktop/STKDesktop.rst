@@ -21,6 +21,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
+              - Attach to an existing STK Desktop instance.
+
+                Specify the Process ID (PID) in case multiple processes are open.
+                Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
+                grpc_host is the IP address or DNS name of the gRPC server.
+                grpc_port is the integral port number that the gRPC server is using.
+                grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+                grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+                Only available on Windows.
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
+              - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+
+                Not applicable to gRPC connections.
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all`
+              - Release all handles from Python to STK Desktop applications.
+
+                Not applicable to gRPC connections.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.start_application`
               - Create a new STK Desktop application instance.
 
@@ -33,24 +51,6 @@ Overview
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
                 Only available on Windows.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
-              - Attach to an existing STK Desktop instance.
-
-                Specify the Process ID (PID) in case multiple processes are open.
-                Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
-                grpc_host is the IP address or DNS name of the gRPC server.
-                grpc_port is the integral port number that the gRPC server is using.
-                grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-                grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-                Only available on Windows.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all`
-              - Release all handles from Python to STK Desktop applications.
-
-                Not applicable to gRPC connections.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
-              - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
-
-                Not applicable to gRPC connections.
 
 Import detail
 -------------
@@ -62,6 +62,60 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
+    :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
+
+    Attach to an existing STK Desktop instance.
+
+    Specify the Process ID (PID) in case multiple processes are open.
+    Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
+    grpc_host is the IP address or DNS name of the gRPC server.
+    grpc_port is the integral port number that the gRPC server is using.
+    grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+    grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+    Only available on Windows.
+
+    :Parameters:
+
+        **pid** : :obj:`~int`
+
+        **grpc_server** : :obj:`~bool`
+
+        **grpc_host** : :obj:`~str`
+
+        **grpc_port** : :obj:`~int`
+
+        **grpc_timeout_sec** : :obj:`~int`
+
+        **grpc_max_message_size** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~STKDesktopApplication`
+
+.. py:method:: create_thread_marshaller(stk_object) -> ThreadMarshaller
+    :canonical: ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller
+
+    Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+
+    Not applicable to gRPC connections.
+
+    :Returns:
+
+        :obj:`~ThreadMarshaller`
+
+.. py:method:: release_all() -> None
+    :canonical: ansys.stk.core.stkdesktop.STKDesktop.release_all
+
+    Release all handles from Python to STK Desktop applications.
+
+    Not applicable to gRPC connections.
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
@@ -98,59 +152,5 @@ Method detail
     :Returns:
 
         :obj:`~STKDesktopApplication`
-
-.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
-    :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
-
-    Attach to an existing STK Desktop instance.
-
-    Specify the Process ID (PID) in case multiple processes are open.
-    Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
-    grpc_host is the IP address or DNS name of the gRPC server.
-    grpc_port is the integral port number that the gRPC server is using.
-    grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-    grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-    Only available on Windows.
-
-    :Parameters:
-
-        **pid** : :obj:`~int`
-
-        **grpc_server** : :obj:`~bool`
-
-        **grpc_host** : :obj:`~str`
-
-        **grpc_port** : :obj:`~int`
-
-        **grpc_timeout_sec** : :obj:`~int`
-
-        **grpc_max_message_size** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~STKDesktopApplication`
-
-.. py:method:: release_all() -> None
-    :canonical: ansys.stk.core.stkdesktop.STKDesktop.release_all
-
-    Release all handles from Python to STK Desktop applications.
-
-    Not applicable to gRPC connections.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: create_thread_marshaller(stk_object) -> ThreadMarshaller
-    :canonical: ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller
-
-    Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
-
-    Not applicable to gRPC connections.
-
-    :Returns:
-
-        :obj:`~ThreadMarshaller`
 
 

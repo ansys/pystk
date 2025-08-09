@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.vector`
-              - Get the vector for which representations are computed.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.reference_axes`
               - Get the reference axes relative to which representations are computed.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.vector`
+              - Get the vector for which representations are computed.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: vector
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.vector
-    :type: IVectorGeometryToolVector
-
-    Get the vector for which representations are computed.
-
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.reference_axes
     :type: IVectorGeometryToolAxes
 
     Get the reference axes relative to which representations are computed.
+
+.. py:property:: vector
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetVector.vector
+    :type: IVectorGeometryToolVector
+
+    Get the vector for which representations are computed.
 
 

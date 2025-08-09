@@ -27,24 +27,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.target`
-              - Get a reference to the targeted object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.aligned_vector`
               - Get the aligned vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.altitude`
+              - Get the LLA position's altitude. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors`
+              - Return the available constrained vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector`
               - Get the constrained vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector_reference`
               - Get or set the reference for the constrained vector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors`
-              - Return the available constrained vectors.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals`
+              - Return a list of scheduled time intervals for the current target.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.latitude`
               - Get the LLA position's latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.longitude`
               - Get the LLA position's longitude. Uses Longitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.altitude`
-              - Get the LLA position's altitude. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals`
-              - Return a list of scheduled time intervals for the current target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.target`
+              - Get a reference to the targeted object.
 
 
 
@@ -59,17 +59,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: target
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.target
-    :type: LinkToObject
-
-    Get a reference to the targeted object.
-
 .. py:property:: aligned_vector
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.aligned_vector
     :type: IDirection
 
     Get the aligned vector.
+
+.. py:property:: altitude
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.altitude
+    :type: float
+
+    Get the LLA position's altitude. Uses Distance Dimension.
+
+.. py:property:: available_constrained_vectors
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors
+    :type: list
+
+    Return the available constrained vectors.
 
 .. py:property:: constrained_vector
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector
@@ -83,11 +89,11 @@ Property detail
 
     Get or set the reference for the constrained vector.
 
-.. py:property:: available_constrained_vectors
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors
-    :type: list
+.. py:property:: intervals
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals
+    :type: VehicleTargetPointingIntervalCollection
 
-    Return the available constrained vectors.
+    Return a list of scheduled time intervals for the current target.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.latitude
@@ -101,21 +107,19 @@ Property detail
 
     Get the LLA position's longitude. Uses Longitude Dimension.
 
-.. py:property:: altitude
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.altitude
-    :type: float
+.. py:property:: target
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.target
+    :type: LinkToObject
 
-    Get the LLA position's altitude. Uses Distance Dimension.
-
-.. py:property:: intervals
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals
-    :type: VehicleTargetPointingIntervalCollection
-
-    Return a list of scheduled time intervals for the current target.
+    Get a reference to the targeted object.
 
 
 Method detail
 -------------
+
+
+
+
 
 
 
@@ -130,9 +134,5 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-
-
-
 
 

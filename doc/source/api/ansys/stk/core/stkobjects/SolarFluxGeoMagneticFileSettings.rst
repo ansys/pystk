@@ -22,9 +22,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.file`
               - Path and name of flux/Ap file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_update_rate`
-              - Select a  method for updating the geomagnetic flux update rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_source`
+              - Select a  method for updating the geomagnetic flux update rate.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_update_rate`
               - Select a  method for updating the geomagnetic flux update rate.
 
 
@@ -46,15 +46,15 @@ Property detail
 
     Path and name of flux/Ap file.
 
-.. py:property:: geomagnetic_flux_update_rate
-    :canonical: ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_update_rate
-    :type: VehicleGeomagneticFluxUpdateRateType
-
-    Select a  method for updating the geomagnetic flux update rate.
-
 .. py:property:: geomagnetic_flux_source
     :canonical: ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_source
     :type: VehicleGeomagneticFluxSourceType
+
+    Select a  method for updating the geomagnetic flux update rate.
+
+.. py:property:: geomagnetic_flux_update_rate
+    :canonical: ansys.stk.core.stkobjects.SolarFluxGeoMagneticFileSettings.geomagnetic_flux_update_rate
+    :type: VehicleGeomagneticFluxUpdateRateType
 
     Select a  method for updating the geomagnetic flux update rate.
 

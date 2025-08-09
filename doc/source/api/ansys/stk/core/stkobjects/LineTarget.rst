@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.points`
-              - Get the points table, which displays a summary of the latitude and longitude values for each point, and indicates which point is currently defined as the anchor point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics`
-              - Return the 2D graphics properties of the line target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics_3d`
-              - Return the 3D graphics properties of the line target.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.access_constraints`
               - Return the constraints for the line target.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.allow_object_access`
               - Opt to have access to the object constrained to when it applies to the entire object,rather than any part of it.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics`
+              - Return the 2D graphics properties of the line target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics_3d`
+              - Return the 3D graphics properties of the line target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.points`
+              - Get the points table, which displays a summary of the latitude and longitude values for each point, and indicates which point is currently defined as the anchor point.
 
 
 
@@ -57,11 +57,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: points
-    :canonical: ansys.stk.core.stkobjects.LineTarget.points
-    :type: LineTargetPointCollection
+.. py:property:: access_constraints
+    :canonical: ansys.stk.core.stkobjects.LineTarget.access_constraints
+    :type: AccessConstraintCollection
 
-    Get the points table, which displays a summary of the latitude and longitude values for each point, and indicates which point is currently defined as the anchor point.
+    Return the constraints for the line target.
+
+.. py:property:: allow_object_access
+    :canonical: ansys.stk.core.stkobjects.LineTarget.allow_object_access
+    :type: bool
+
+    Opt to have access to the object constrained to when it applies to the entire object,rather than any part of it.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.LineTarget.graphics
@@ -75,16 +81,10 @@ Property detail
 
     Return the 3D graphics properties of the line target.
 
-.. py:property:: access_constraints
-    :canonical: ansys.stk.core.stkobjects.LineTarget.access_constraints
-    :type: AccessConstraintCollection
+.. py:property:: points
+    :canonical: ansys.stk.core.stkobjects.LineTarget.points
+    :type: LineTargetPointCollection
 
-    Return the constraints for the line target.
-
-.. py:property:: allow_object_access
-    :canonical: ansys.stk.core.stkobjects.LineTarget.allow_object_access
-    :type: bool
-
-    Opt to have access to the object constrained to when it applies to the entire object,rather than any part of it.
+    Get the points table, which displays a summary of the latitude and longitude values for each point, and indicates which point is currently defined as the anchor point.
 
 

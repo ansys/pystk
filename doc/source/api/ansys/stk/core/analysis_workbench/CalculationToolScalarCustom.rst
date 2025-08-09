@@ -65,6 +65,8 @@ Method detail
 
 
 
+
+
 .. py:method:: reload(self) -> None
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustom.reload
 
@@ -73,6 +75,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 

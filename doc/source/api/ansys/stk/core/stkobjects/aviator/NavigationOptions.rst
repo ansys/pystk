@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode`
-              - Get or set the navigation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.arrive_on_course`
               - Get or set the aircraft will start or arrive at the procedure site with the specified course. The nav mode must be set to Arrive on Course to set this value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.use_magnetic_heading`
-              - Opt whether to use a magnetic heading to arrive on course. The nav mode must be set to Arrive on Course to set this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.enroute_first_turn`
               - Option for the first turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.enroute_second_turn`
               - Option for the second turn.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode`
+              - Get or set the navigation mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.use_magnetic_heading`
+              - Opt whether to use a magnetic heading to arrive on course. The nav mode must be set to Arrive on Course to set this value.
 
 
 
@@ -78,23 +78,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: navigation_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode
-    :type: PointToPointMode
-
-    Get or set the navigation mode.
-
 .. py:property:: arrive_on_course
     :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.arrive_on_course
     :type: typing.Any
 
     Get or set the aircraft will start or arrive at the procedure site with the specified course. The nav mode must be set to Arrive on Course to set this value.
-
-.. py:property:: use_magnetic_heading
-    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.use_magnetic_heading
-    :type: bool
-
-    Opt whether to use a magnetic heading to arrive on course. The nav mode must be set to Arrive on Course to set this value.
 
 .. py:property:: enroute_first_turn
     :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.enroute_first_turn
@@ -107,5 +95,17 @@ Property detail
     :type: NavigatorTurnDirection
 
     Option for the second turn.
+
+.. py:property:: navigation_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode
+    :type: PointToPointMode
+
+    Get or set the navigation mode.
+
+.. py:property:: use_magnetic_heading
+    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.use_magnetic_heading
+    :type: bool
+
+    Opt whether to use a magnetic heading to arrive on course. The nav mode must be set to Arrive on Course to set this value.
 
 

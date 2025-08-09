@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.set_filepath`
-              - Set the filepath for the external aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reload`
               - Reload the external aero file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.set_filepath`
+              - Set the filepath for the external aero file.
 
     .. tab-item:: Properties
 
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.filepath`
-              - Get the filepath for the external aero file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reference_area`
-              - Get or set the area of the lifting surface of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.can_set_reference_area`
               - Check whether you can set the reference area or whether it is specified in the file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.filepath`
+              - Get the filepath for the external aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.is_valid`
               - Check whether the filepath is valid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reference_area`
+              - Get or set the area of the lifting surface of the missile.
 
 
 
@@ -51,23 +51,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: filepath
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.filepath
-    :type: str
-
-    Get the filepath for the external aero file.
-
-.. py:property:: reference_area
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reference_area
-    :type: float
-
-    Get or set the area of the lifting surface of the missile.
-
 .. py:property:: can_set_reference_area
     :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.can_set_reference_area
     :type: bool
 
     Check whether you can set the reference area or whether it is specified in the file.
+
+.. py:property:: filepath
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.filepath
+    :type: str
+
+    Get the filepath for the external aero file.
 
 .. py:property:: is_valid
     :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.is_valid
@@ -75,10 +69,29 @@ Property detail
 
     Check whether the filepath is valid.
 
+.. py:property:: reference_area
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reference_area
+    :type: float
+
+    Get or set the area of the lifting surface of the missile.
+
 
 Method detail
 -------------
 
+
+
+
+
+
+.. py:method:: reload(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reload
+
+    Reload the external aero file.
+
+    :Returns:
+
+        :obj:`~str`
 
 .. py:method:: set_filepath(self, filepath: str) -> str
     :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.set_filepath
@@ -93,17 +106,4 @@ Method detail
     :Returns:
 
         :obj:`~str`
-
-.. py:method:: reload(self) -> str
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileExternalAerodynamic.reload
-
-    Reload the external aero file.
-
-    :Returns:
-
-        :obj:`~str`
-
-
-
-
 

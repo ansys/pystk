@@ -22,24 +22,24 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.add`
               - Add a profile.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.item`
-              - Allow you to iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove`
-              - Remove an item from the profile collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove_all`
-              - Remove all profiles from the profile collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.cut`
-              - Copy the profile into the clipboard and removes profile from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste`
-              - Pastes the profile from the clipboard and inserts into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy`
-              - Copy the profile and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.add2`
               - Add a profile.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.cut`
+              - Copy the profile into the clipboard and removes profile from the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.get_item_by_index`
               - Retrieve a profile from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.get_item_by_name`
               - Retrieve a profile from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy`
+              - Copy the profile and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste`
+              - Pastes the profile from the clipboard and inserts into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove`
+              - Remove an item from the profile collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove_all`
+              - Remove all profiles from the profile collection.
 
     .. tab-item:: Properties
 
@@ -49,10 +49,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection._new_enum`
               - Allow you to enumerate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.count`
-              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.available_profiles`
               - Return a list of available profiles.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.count`
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.provide_runtime_type_info`
               - Return the RuntimeTypeInfo interface to access properties at runtime.
 
@@ -75,17 +75,17 @@ Property detail
 
     Allow you to enumerate through the collection.
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.count
-    :type: int
-
-    Return the size of the collection.
-
 .. py:property:: available_profiles
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.available_profiles
     :type: list
 
     Return a list of available profiles.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.count
+    :type: int
+
+    Return the size of the collection.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.provide_runtime_type_info
@@ -111,95 +111,6 @@ Method detail
 
         :obj:`~IProfile`
 
-.. py:method:: item(self, index_or_name: typing.Any) -> IProfile
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~IProfile`
-
-
-
-
-.. py:method:: remove(self, index_or_profile_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove
-
-    Remove an item from the profile collection.
-
-    :Parameters:
-
-        **index_or_profile_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove_all
-
-    Remove all profiles from the profile collection.
-
-    :Returns:
-
-        :obj:`~None`
-
-
-.. py:method:: cut(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.cut
-
-    Copy the profile into the clipboard and removes profile from the list.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: paste(self, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste
-
-    Pastes the profile from the clipboard and inserts into the list.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-        **direction** : :obj:`~ProfileInsertDirection`
-
-
-    :Returns:
-
-        :obj:`~IProfile`
-
-.. py:method:: insert_copy(self, profile: IProfile, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy
-
-    Copy the profile and inserts the copy into the list.
-
-    :Parameters:
-
-        **profile** : :obj:`~IProfile`
-
-        **index_or_name** : :obj:`~typing.Any`
-
-        **direction** : :obj:`~ProfileInsertDirection`
-
-
-    :Returns:
-
-        :obj:`~IProfile`
-
 .. py:method:: add2(self, profile_name: str, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.add2
 
@@ -217,6 +128,22 @@ Method detail
     :Returns:
 
         :obj:`~IProfile`
+
+
+
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.cut
+
+    Copy the profile into the clipboard and removes profile from the list.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: get_item_by_index(self, index: int) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.get_item_by_index
@@ -245,4 +172,77 @@ Method detail
     :Returns:
 
         :obj:`~IProfile`
+
+.. py:method:: insert_copy(self, profile: IProfile, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy
+
+    Copy the profile and inserts the copy into the list.
+
+    :Parameters:
+
+        **profile** : :obj:`~IProfile`
+
+        **index_or_name** : :obj:`~typing.Any`
+
+        **direction** : :obj:`~ProfileInsertDirection`
+
+
+    :Returns:
+
+        :obj:`~IProfile`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IProfile`
+
+.. py:method:: paste(self, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste
+
+    Pastes the profile from the clipboard and inserts into the list.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+        **direction** : :obj:`~ProfileInsertDirection`
+
+
+    :Returns:
+
+        :obj:`~IProfile`
+
+
+.. py:method:: remove(self, index_or_profile_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove
+
+    Remove an item from the profile collection.
+
+    :Parameters:
+
+        **index_or_profile_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove_all
+
+    Remove all profiles from the profile collection.
+
+    :Returns:
+
+        :obj:`~None`
+
 

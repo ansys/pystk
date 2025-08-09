@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.object_path`
-              - Path of the STK object picked if any (or empty string).
+            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.altitude`
+              - Altitude of point clicked (if available).
+            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.is_lat_lon_altitude_valid`
+              - Indicate if the Lat/Lon/Alt properties are valid.
+            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.is_object_path_valid`
+              - Indicate if the ObjPath property is valid.
             * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.latitude`
               - Latitude of point clicked (if available).
             * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.longitude`
               - Longitude of point clicked (if available).
-            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.altitude`
-              - Altitude of point clicked (if available).
-            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.is_object_path_valid`
-              - Indicate if the ObjPath property is valid.
-            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.is_lat_lon_altitude_valid`
-              - Indicate if the Lat/Lon/Alt properties are valid.
+            * - :py:attr:`~ansys.stk.core.stkx.PickInfoData.object_path`
+              - Path of the STK object picked if any (or empty string).
 
 
 
@@ -44,11 +44,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: object_path
-    :canonical: ansys.stk.core.stkx.PickInfoData.object_path
-    :type: str
+.. py:property:: altitude
+    :canonical: ansys.stk.core.stkx.PickInfoData.altitude
+    :type: float
 
-    Path of the STK object picked if any (or empty string).
+    Altitude of point clicked (if available).
+
+.. py:property:: is_lat_lon_altitude_valid
+    :canonical: ansys.stk.core.stkx.PickInfoData.is_lat_lon_altitude_valid
+    :type: bool
+
+    Indicate if the Lat/Lon/Alt properties are valid.
+
+.. py:property:: is_object_path_valid
+    :canonical: ansys.stk.core.stkx.PickInfoData.is_object_path_valid
+    :type: bool
+
+    Indicate if the ObjPath property is valid.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkx.PickInfoData.latitude
@@ -62,22 +74,10 @@ Property detail
 
     Longitude of point clicked (if available).
 
-.. py:property:: altitude
-    :canonical: ansys.stk.core.stkx.PickInfoData.altitude
-    :type: float
+.. py:property:: object_path
+    :canonical: ansys.stk.core.stkx.PickInfoData.object_path
+    :type: str
 
-    Altitude of point clicked (if available).
-
-.. py:property:: is_object_path_valid
-    :canonical: ansys.stk.core.stkx.PickInfoData.is_object_path_valid
-    :type: bool
-
-    Indicate if the ObjPath property is valid.
-
-.. py:property:: is_lat_lon_altitude_valid
-    :canonical: ansys.stk.core.stkx.PickInfoData.is_lat_lon_altitude_valid
-    :type: bool
-
-    Indicate if the Lat/Lon/Alt properties are valid.
+    Path of the STK object picked if any (or empty string).
 
 

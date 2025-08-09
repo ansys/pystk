@@ -29,28 +29,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types`
-              - Get the types of performance models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.acceleration`
               - Get the acceleration interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.advanced_fixed_wing_tool`
+              - Get the Advanced Fixed Wing Tool for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.climb`
               - Get the climb interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.cruise`
               - Get the cruise interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.default_configuration`
+              - Get the aircraft's default configuration as saved in the catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.descent`
               - Get the descent interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.landing`
               - Get the landing interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types`
+              - Get the types of performance models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.takeoff`
               - Get the takeoff interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.default_configuration`
-              - Get the aircraft's default configuration as saved in the catalog.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.advanced_fixed_wing_tool`
-              - Get the Advanced Fixed Wing Tool for the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.vtol`
-              - Get the VTOL interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.terrain_follow`
               - Get the TerrainFollow interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.vtol`
+              - Get the VTOL interface.
 
 
 
@@ -231,17 +231,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: performance_model_types
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types
-    :type: list
-
-    Get the types of performance models.
-
 .. py:property:: acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.acceleration
     :type: AircraftAcceleration
 
     Get the acceleration interface.
+
+.. py:property:: advanced_fixed_wing_tool
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.advanced_fixed_wing_tool
+    :type: AdvancedFixedWingTool
+
+    Get the Advanced Fixed Wing Tool for the aircraft.
 
 .. py:property:: climb
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.climb
@@ -255,6 +255,12 @@ Property detail
 
     Get the cruise interface.
 
+.. py:property:: default_configuration
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.default_configuration
+    :type: Configuration
+
+    Get the aircraft's default configuration as saved in the catalog.
+
 .. py:property:: descent
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.descent
     :type: AircraftDescent
@@ -267,29 +273,17 @@ Property detail
 
     Get the landing interface.
 
+.. py:property:: performance_model_types
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types
+    :type: list
+
+    Get the types of performance models.
+
 .. py:property:: takeoff
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.takeoff
     :type: AircraftTakeoff
 
     Get the takeoff interface.
-
-.. py:property:: default_configuration
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.default_configuration
-    :type: Configuration
-
-    Get the aircraft's default configuration as saved in the catalog.
-
-.. py:property:: advanced_fixed_wing_tool
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.advanced_fixed_wing_tool
-    :type: AdvancedFixedWingTool
-
-    Get the Advanced Fixed Wing Tool for the aircraft.
-
-.. py:property:: vtol
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.vtol
-    :type: AircraftVTOL
-
-    Get the VTOL interface.
 
 .. py:property:: terrain_follow
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.terrain_follow
@@ -297,12 +291,15 @@ Property detail
 
     Get the TerrainFollow interface.
 
+.. py:property:: vtol
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.vtol
+    :type: AircraftVTOL
+
+    Get the VTOL interface.
+
 
 Method detail
 -------------
-
-
-
 
 
 
@@ -318,6 +315,9 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
+
+
 
 
 

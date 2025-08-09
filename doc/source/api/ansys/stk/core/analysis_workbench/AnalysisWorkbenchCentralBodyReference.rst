@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_path`
-              - Set a new central body using specified path.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_central_body`
-              - Set a new central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.get_central_body`
               - Return a central body or null if the central body is invalid.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_central_body`
+              - Set a new central body.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_path`
+              - Set a new central body using specified path.
 
 
 Import detail
@@ -40,19 +40,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path: str) -> None
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_path
+.. py:method:: get_central_body(self) -> AnalysisWorkbenchCentralBody
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.get_central_body
 
-    Set a new central body using specified path.
-
-    :Parameters:
-
-        **path** : :obj:`~str`
-
+    Return a central body or null if the central body is invalid.
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~AnalysisWorkbenchCentralBody`
 
 .. py:method:: set_central_body(self, central_body: AnalysisWorkbenchCentralBody) -> None
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_central_body
@@ -68,12 +63,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_central_body(self) -> AnalysisWorkbenchCentralBody
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.get_central_body
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchCentralBodyReference.set_path
 
-    Return a central body or null if the central body is invalid.
+    Set a new central body using specified path.
+
+    :Parameters:
+
+        **path** : :obj:`~str`
+
 
     :Returns:
 
-        :obj:`~AnalysisWorkbenchCentralBody`
+        :obj:`~None`
 

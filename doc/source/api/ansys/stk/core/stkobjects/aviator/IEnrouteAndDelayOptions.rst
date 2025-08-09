@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.delay_enroute_climb_descents`
               - Opt whether to delay the enroute climb or descent.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.use_max_speed_turns`
-              - Opt whether to use the max speed turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.max_turn_radius_factor`
               - Get or set the maximum turn radius factor.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.use_max_speed_turns`
+              - Opt whether to use the max speed turns.
 
 
 Import detail
@@ -43,16 +43,16 @@ Property detail
 
     Opt whether to delay the enroute climb or descent.
 
-.. py:property:: use_max_speed_turns
-    :canonical: ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.use_max_speed_turns
-    :type: bool
-
-    Opt whether to use the max speed turns.
-
 .. py:property:: max_turn_radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.max_turn_radius_factor
     :type: float
 
     Get or set the maximum turn radius factor.
+
+.. py:property:: use_max_speed_turns
+    :canonical: ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.use_max_speed_turns
+    :type: bool
+
+    Opt whether to use the max speed turns.
 
 

@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.enable_control_parameter`
-              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.enable_control_parameter`
+              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -33,10 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.g`
-              - Get or set the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.control_parameters_available`
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.eval_function_name`
               - Get or set the EvalFunction - custom function to call at every thrust evaluation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.g`
+              - Get or set the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.post_function_name`
               - Get or set the PostFunction - custom function to call after all propagation ends.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.pre_function_name`
@@ -45,8 +47,6 @@ Overview
               - Get or set the SegStartFunction - custom function to call at the beginning of each segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.update_function_name`
               - Get or set the UpdateFunction - custom function to call at the beginning of each integration step.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineCustom.control_parameters_available`
-              - Return whether or not the control parameters can be set.
 
 
 
@@ -61,17 +61,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: g
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.g
-    :type: float
+.. py:property:: control_parameters_available
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.control_parameters_available
+    :type: bool
 
-    Get or set the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: eval_function_name
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.eval_function_name
     :type: str
 
     Get or set the EvalFunction - custom function to call at every thrust evaluation.
+
+.. py:property:: g
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.g
+    :type: float
+
+    Get or set the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension.
 
 .. py:property:: post_function_name
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.post_function_name
@@ -97,41 +103,10 @@ Property detail
 
     Get or set the UpdateFunction - custom function to call at the beginning of each integration step.
 
-.. py:property:: control_parameters_available
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.control_parameters_available
-    :type: bool
-
-    Return whether or not the control parameters can be set.
-
 
 Method detail
 -------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-.. py:method:: enable_control_parameter(self, param: ControlEngineCustom) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.enable_control_parameter
-
-    Enable the specified control parameter.
-
-    :Parameters:
-
-        **param** : :obj:`~ControlEngineCustom`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: disable_control_parameter(self, param: ControlEngineCustom) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.disable_control_parameter
@@ -147,6 +122,22 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: enable_control_parameter(self, param: ControlEngineCustom) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.enable_control_parameter
+
+    Enable the specified control parameter.
+
+    :Parameters:
+
+        **param** : :obj:`~ControlEngineCustom`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
 .. py:method:: is_control_parameter_enabled(self, param: ControlEngineCustom) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.is_control_parameter_enabled
 
@@ -160,5 +151,14 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+
+
+
+
+
 
 

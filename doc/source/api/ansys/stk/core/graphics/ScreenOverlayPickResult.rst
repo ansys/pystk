@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.position`
-              - Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.control_position`
               - Get the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.overlay`
               - Get the screen overlay that was picked.
+            * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.position`
+              - Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: position
-    :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.position
-    :type: list
-
-    Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
-
 .. py:property:: control_position
     :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.control_position
     :type: list
@@ -55,5 +49,11 @@ Property detail
     :type: IScreenOverlay
 
     Get the screen overlay that was picked.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.position
+    :type: list
+
+    Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
 
 

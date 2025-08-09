@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.cr`
-              - Solar radiation pressure coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.area_mass_ratio`
               - Get or set the area-to-mass ratio to be used in SRP calculations. Uses AreaPerMass Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.cr`
+              - Solar radiation pressure coefficient. Dimensionless.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: cr
-    :canonical: ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.cr
-    :type: float
-
-    Solar radiation pressure coefficient. Dimensionless.
-
 .. py:property:: area_mass_ratio
     :canonical: ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.area_mass_ratio
     :type: float
 
     Get or set the area-to-mass ratio to be used in SRP calculations. Uses AreaPerMass Dimension.
+
+.. py:property:: cr
+    :canonical: ansys.stk.core.stkobjects.SolarRadiationPressureModelSpherical.cr
+    :type: float
+
+    Solar radiation pressure coefficient. Dimensionless.
 
 

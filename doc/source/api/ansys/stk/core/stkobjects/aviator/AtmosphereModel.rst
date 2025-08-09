@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_type_string`
-              - Get or set the atmosphere model type as a string value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_source`
               - Get or set the atmosphere model source.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_type_string`
+              - Get or set the atmosphere model type as a string value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModel.mode_as_basic`
               - Get the options for a Basic Atmosphere model.
 
@@ -112,17 +112,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: atmosphere_model_type_string
-    :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_type_string
-    :type: str
-
-    Get or set the atmosphere model type as a string value.
-
 .. py:property:: atmosphere_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_source
     :type: WindAtmosphereModelSource
 
     Get or set the atmosphere model source.
+
+.. py:property:: atmosphere_model_type_string
+    :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_type_string
+    :type: str
+
+    Get or set the atmosphere model type as a string value.
 
 .. py:property:: mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.mode_as_basic
@@ -138,7 +138,6 @@ Method detail
 
 
 
-
 .. py:method:: copy(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.copy
 
@@ -147,6 +146,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 .. py:method:: paste(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.paste

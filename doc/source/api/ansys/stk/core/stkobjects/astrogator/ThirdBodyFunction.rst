@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.third_body_name`
-              - Get or set the selected third body model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source`
               - Source for the third body's ephemeris.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source_warning`
+              - Return a warning message if the Ephemeris source and the gravity are not compatible.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.mode`
               - Get the third body gravity mode. The IComponentInfo object returned by this property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.mode_type`
               - Get the third body gravity mode type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source_warning`
-              - Return a warning message if the Ephemeris source and the gravity are not compatible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.third_body_name`
+              - Get or set the selected third body model.
 
 
 
@@ -53,17 +53,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: third_body_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.third_body_name
-    :type: str
-
-    Get or set the selected third body model.
-
 .. py:property:: ephemeris_source
     :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source
     :type: EphemerisSource
 
     Source for the third body's ephemeris.
+
+.. py:property:: ephemeris_source_warning
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source_warning
+    :type: str
+
+    Return a warning message if the Ephemeris source and the gravity are not compatible.
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.mode
@@ -77,11 +77,11 @@ Property detail
 
     Get the third body gravity mode type.
 
-.. py:property:: ephemeris_source_warning
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source_warning
+.. py:property:: third_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.third_body_name
     :type: str
 
-    Return a warning message if the Ephemeris source and the gravity are not compatible.
+    Get or set the selected third body model.
 
 
 Method detail

@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.across_assets`
               - Value of the constraint that is to be selected based on all currently available assets.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step`
-              - Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint_name`
-              - Name of the access constraint as an enumeration. If the constraint is not in FigureOfMeritConstraintName then use Constraint instead.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint`
               - Name of the access constraint.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint_name`
+              - Name of the access constraint as an enumeration. If the constraint is not in FigureOfMeritConstraintName then use Constraint instead.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step`
+              - Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
 
 
 
@@ -48,11 +48,11 @@ Property detail
 
     Value of the constraint that is to be selected based on all currently available assets.
 
-.. py:property:: time_step
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step
-    :type: float
+.. py:property:: constraint
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint
+    :type: str
 
-    Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
+    Name of the access constraint.
 
 .. py:property:: constraint_name
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint_name
@@ -60,10 +60,10 @@ Property detail
 
     Name of the access constraint as an enumeration. If the constraint is not in FigureOfMeritConstraintName then use Constraint instead.
 
-.. py:property:: constraint
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint
-    :type: str
+.. py:property:: time_step
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step
+    :type: float
 
-    Name of the access constraint.
+    Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
 
 

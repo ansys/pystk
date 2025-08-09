@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document`
-              - Load a kml document from a uri.
-            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document_string`
-              - Load a kml document from a Uri.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load`
               - Load a kml document from a string containing the document.
+            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_async`
+              - Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
+            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document`
+              - Load a kml document from a uri.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document_async`
               - Load a kml document asynchronously from a uri. The document loaded event is raised when the document is loaded.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document_async_string`
               - Load a kml document asynchronously from a Uri. The document loaded event is raised when the document is loaded.
-            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_async`
-              - Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
+            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.load_document_string`
+              - Load a kml document from a Uri.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.unload`
               - Unloads a kml document. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.unload_all`
@@ -70,34 +70,6 @@ Method detail
 -------------
 
 
-.. py:method:: load_document(self, kml_uri: str) -> KmlDocument
-    :canonical: ansys.stk.core.graphics.KmlGraphics.load_document
-
-    Load a kml document from a uri.
-
-    :Parameters:
-
-        **kml_uri** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~KmlDocument`
-
-.. py:method:: load_document_string(self, kml_uri: str) -> KmlDocument
-    :canonical: ansys.stk.core.graphics.KmlGraphics.load_document_string
-
-    Load a kml document from a Uri.
-
-    :Parameters:
-
-        **kml_uri** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~KmlDocument`
-
 .. py:method:: load(self, kml_document: str) -> KmlDocument
     :canonical: ansys.stk.core.graphics.KmlGraphics.load
 
@@ -106,6 +78,34 @@ Method detail
     :Parameters:
 
         **kml_document** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~KmlDocument`
+
+.. py:method:: load_async(self, kml_document: str) -> None
+    :canonical: ansys.stk.core.graphics.KmlGraphics.load_async
+
+    Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
+
+    :Parameters:
+
+        **kml_document** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: load_document(self, kml_uri: str) -> KmlDocument
+    :canonical: ansys.stk.core.graphics.KmlGraphics.load_document
+
+    Load a kml document from a uri.
+
+    :Parameters:
+
+        **kml_uri** : :obj:`~str`
 
 
     :Returns:
@@ -140,19 +140,19 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_async(self, kml_document: str) -> None
-    :canonical: ansys.stk.core.graphics.KmlGraphics.load_async
+.. py:method:: load_document_string(self, kml_uri: str) -> KmlDocument
+    :canonical: ansys.stk.core.graphics.KmlGraphics.load_document_string
 
-    Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
+    Load a kml document from a Uri.
 
     :Parameters:
 
-        **kml_document** : :obj:`~str`
+        **kml_uri** : :obj:`~str`
 
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~KmlDocument`
 
 .. py:method:: unload(self, kml_document: KmlDocument) -> None
     :canonical: ansys.stk.core.graphics.KmlGraphics.unload

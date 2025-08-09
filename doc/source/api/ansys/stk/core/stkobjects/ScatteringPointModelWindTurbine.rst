@@ -24,12 +24,12 @@ Overview
               - Get the turbine blade length.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.blade_rotation`
               - Get the turbine blade rotation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.wind_direction`
-              - Get the wind direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.blade_scattering_cross_section`
               - Get the turbine blade scattering cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.structure_scattering_cross_section`
               - Get the turbine structure scattering cross section.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.wind_direction`
+              - Get the wind direction.
 
 
 
@@ -56,12 +56,6 @@ Property detail
 
     Get the turbine blade rotation.
 
-.. py:property:: wind_direction
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.wind_direction
-    :type: float
-
-    Get the wind direction.
-
 .. py:property:: blade_scattering_cross_section
     :canonical: ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.blade_scattering_cross_section
     :type: float
@@ -73,5 +67,11 @@ Property detail
     :type: float
 
     Get the turbine structure scattering cross section.
+
+.. py:property:: wind_direction
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine.wind_direction
+    :type: float
+
+    Get the wind direction.
 
 

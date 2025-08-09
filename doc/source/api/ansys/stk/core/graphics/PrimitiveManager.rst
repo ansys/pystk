@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.add`
               - Add a primitive to the manager. Primitives must be added to the manager to be rendered.
-            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.remove`
-              - Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
-            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.contains`
-              - Determine whether the manager contains a primitive.
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.clear`
               - Remove all primitives from the manager.
+            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.contains`
+              - Determine whether the manager contains a primitive.
+            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.remove`
+              - Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
 
     .. tab-item:: Properties
 
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager._new_enum`
+              - Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.count`
               - Get the number of primitives in the manager.
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.precision_exponent`
               - Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis...
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.translucent_primitives_sort_order`
               - Get or set the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality...
-            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager._new_enum`
-              - Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
 
@@ -54,6 +54,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.PrimitiveManager._new_enum
+    :type: EnumeratorProxy
+
+    Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 .. py:property:: count
     :canonical: ansys.stk.core.graphics.PrimitiveManager.count
@@ -73,20 +79,9 @@ Property detail
 
     Get or set the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality...
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.graphics.PrimitiveManager._new_enum
-    :type: EnumeratorProxy
-
-    Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
-
 
 Method detail
 -------------
-
-
-
-
-
 
 .. py:method:: add(self, primitive: IPrimitive) -> None
     :canonical: ansys.stk.core.graphics.PrimitiveManager.add
@@ -102,15 +97,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, primitive: IPrimitive) -> None
-    :canonical: ansys.stk.core.graphics.PrimitiveManager.remove
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.PrimitiveManager.clear
 
-    Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
-
-    :Parameters:
-
-        **primitive** : :obj:`~IPrimitive`
-
+    Remove all primitives from the manager.
 
     :Returns:
 
@@ -130,13 +120,23 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: clear(self) -> None
-    :canonical: ansys.stk.core.graphics.PrimitiveManager.clear
 
-    Remove all primitives from the manager.
+
+
+.. py:method:: remove(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.PrimitiveManager.remove
+
+    Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
+
+    :Parameters:
+
+        **primitive** : :obj:`~IPrimitive`
+
 
     :Returns:
 
         :obj:`~None`
+
+
 
 

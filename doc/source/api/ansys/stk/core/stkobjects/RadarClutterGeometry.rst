@@ -29,10 +29,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.enabled`
               - Do not use this property, as it is deprecated. Use Enabled on RadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models`
-              - Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.model`
               - Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets the current clutter geometry model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models`
+              - Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets an array of supported model names.
 
 
 
@@ -53,17 +53,17 @@ Property detail
 
     Do not use this property, as it is deprecated. Use Enabled on RadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets an array of supported model names.
-
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.model
     :type: IRadarClutterGeometryModel
 
     Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets the current clutter geometry model.
+
+.. py:property:: supported_models
+    :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models
+    :type: list
+
+    Do not use this property, as it is deprecated. Use ScatteringPointProviderList on RadarClutter instead. Gets an array of supported model names.
 
 
 Method detail

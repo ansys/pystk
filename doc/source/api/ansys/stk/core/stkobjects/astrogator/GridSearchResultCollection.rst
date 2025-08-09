@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -63,21 +63,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> GridSearchResult
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~GridSearchResult`
-
-
 
 .. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> GridSearchResult
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.get_result_by_paths
@@ -94,4 +79,19 @@ Method detail
     :Returns:
 
         :obj:`~GridSearchResult`
+
+.. py:method:: item(self, index: int) -> GridSearchResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~GridSearchResult`
+
 

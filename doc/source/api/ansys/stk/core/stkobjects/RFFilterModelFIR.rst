@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelFIR.sampling_frequency`
-              - Get or set the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelFIR.numerator_complex_polynomial`
               - Get the numerator complex polynomial.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelFIR.sampling_frequency`
+              - Get or set the sampling frequency.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sampling_frequency
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelFIR.sampling_frequency
-    :type: float
-
-    Get or set the sampling frequency.
-
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.RFFilterModelFIR.numerator_complex_polynomial
     :type: CommRadComplexNumberCollection
 
     Get the numerator complex polynomial.
+
+.. py:property:: sampling_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelFIR.sampling_frequency
+    :type: float
+
+    Get or set the sampling frequency.
 
 

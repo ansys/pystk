@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.volume_grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_spatial_calculations`
+              - Get the available Spatial Calculations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_volume_grids`
+              - Get the available Volume Grids.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.spatial_calculation`
               - The volume grid for spatial calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.use_spatial_calculation`
               - Flag controls whether spatial calculation is used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.spatial_calculation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.volume_grid`
               - The volume grid for spatial calculations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_volume_grids`
-              - Get the available Volume Grids.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_spatial_calculations`
-              - Get the available Spatial Calculations.
 
 
 
@@ -44,8 +44,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: volume_grid
-    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.volume_grid
+.. py:property:: available_spatial_calculations
+    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_spatial_calculations
+    :type: list
+
+    Get the available Spatial Calculations.
+
+.. py:property:: available_volume_grids
+    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_volume_grids
+    :type: list
+
+    Get the available Volume Grids.
+
+.. py:property:: spatial_calculation
+    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.spatial_calculation
     :type: str
 
     The volume grid for spatial calculations.
@@ -56,22 +68,10 @@ Property detail
 
     Flag controls whether spatial calculation is used.
 
-.. py:property:: spatial_calculation
-    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.spatial_calculation
+.. py:property:: volume_grid
+    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.volume_grid
     :type: str
 
     The volume grid for spatial calculations.
-
-.. py:property:: available_volume_grids
-    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_volume_grids
-    :type: list
-
-    Get the available Volume Grids.
-
-.. py:property:: available_spatial_calculations
-    :canonical: ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation.available_spatial_calculations
-    :type: list
-
-    Get the available Spatial Calculations.
 
 

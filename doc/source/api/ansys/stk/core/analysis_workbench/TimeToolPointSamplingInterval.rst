@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.times`
-              - A time array associated with the interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.positions`
               - An array of 3-tuples each tuple representing the point's cartesian position (x,y,z).
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.velocities`
-              - An array of velocities.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.start`
               - The start time of the interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.stop`
               - The stop time of the interval.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.times`
+              - A time array associated with the interval.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.velocities`
+              - An array of velocities.
 
 
 
@@ -42,23 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: times
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.times
-    :type: list
-
-    A time array associated with the interval.
-
 .. py:property:: positions
     :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.positions
     :type: list
 
     An array of 3-tuples each tuple representing the point's cartesian position (x,y,z).
-
-.. py:property:: velocities
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.velocities
-    :type: list
-
-    An array of velocities.
 
 .. py:property:: start
     :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.start
@@ -71,5 +59,17 @@ Property detail
     :type: typing.Any
 
     The stop time of the interval.
+
+.. py:property:: times
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.times
+    :type: list
+
+    A time array associated with the interval.
+
+.. py:property:: velocities
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolPointSamplingInterval.velocities
+    :type: list
+
+    An array of velocities.
 
 

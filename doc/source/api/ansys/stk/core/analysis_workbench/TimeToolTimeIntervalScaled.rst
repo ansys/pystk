@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.original_interval`
-              - The original interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.absolute_increment`
               - The absolute increment value which creates a interval by expanding (or shortening if negative) the original interval by shifting its start/stop times equally by half of specified increment value.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.original_interval`
+              - The original interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.relative_increment`
               - The relative increment value from which absolute increment is obtained by multiplying relative value by interval duration...
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.use_absolute_increment`
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: original_interval
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.original_interval
-    :type: ITimeToolTimeInterval
-
-    The original interval.
-
 .. py:property:: absolute_increment
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.absolute_increment
     :type: float
 
     The absolute increment value which creates a interval by expanding (or shortening if negative) the original interval by shifting its start/stop times equally by half of specified increment value.
+
+.. py:property:: original_interval
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.original_interval
+    :type: ITimeToolTimeInterval
+
+    The original interval.
 
 .. py:property:: relative_increment
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalScaled.relative_increment

@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.source_axes`
-              - Specify a source axes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.reference_axes`
-              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.epoch`
               - Specify an epoch.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.reference_axes`
+              - Specify a reference axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.source_axes`
+              - Specify a source axes.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: source_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.source_axes
-    :type: VectorGeometryToolAxesReference
+.. py:property:: epoch
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.epoch
+    :type: typing.Any
 
-    Specify a source axes.
+    Specify an epoch.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.reference_axes
@@ -52,10 +52,10 @@ Property detail
 
     Specify a reference axes.
 
-.. py:property:: epoch
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.epoch
-    :type: typing.Any
+.. py:property:: source_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixedAtEpoch.source_axes
+    :type: VectorGeometryToolAxesReference
 
-    Specify an epoch.
+    Specify a source axes.
 
 

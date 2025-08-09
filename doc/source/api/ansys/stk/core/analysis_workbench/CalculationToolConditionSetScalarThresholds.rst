@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.scalar`
-              - The input scalar calculation.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.thresholds`
-              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.threshold_labels`
-              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.include_above_highest_threshold`
               - The threshold indicates whether to include conditions above the highest threhsold.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.include_below_lowest_threshold`
               - The threshold indicates whether to include conditions below the lowest threhsolds.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.scalar`
+              - The input scalar calculation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.threshold_labels`
+              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.thresholds`
+              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
 
 
 
@@ -53,24 +53,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: scalar
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.scalar
-    :type: ICalculationToolScalar
-
-    The input scalar calculation.
-
-.. py:property:: thresholds
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.thresholds
-    :type: list
-
-    The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
-
-.. py:property:: threshold_labels
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.threshold_labels
-    :type: list
-
-    The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
-
 .. py:property:: include_above_highest_threshold
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.include_above_highest_threshold
     :type: bool
@@ -83,11 +65,27 @@ Property detail
 
     The threshold indicates whether to include conditions below the lowest threhsolds.
 
+.. py:property:: scalar
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.scalar
+    :type: ICalculationToolScalar
+
+    The input scalar calculation.
+
+.. py:property:: threshold_labels
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.threshold_labels
+    :type: list
+
+    The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
+
+.. py:property:: thresholds
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionSetScalarThresholds.thresholds
+    :type: list
+
+    The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
+
 
 Method detail
 -------------
-
-
 
 
 
@@ -110,4 +108,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

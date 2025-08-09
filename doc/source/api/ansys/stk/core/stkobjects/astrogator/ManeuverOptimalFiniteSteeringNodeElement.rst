@@ -18,28 +18,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.node_index`
-              - Get the index of the node in the array of nodes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.time`
-              - Get the time associated with the node.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.mass`
-              - Get the mass at the node.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.azimuth`
               - Get the azimuth of the steering angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.elevation`
-              - Get the elevation of the steering angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.direction_cos_x`
               - Get the first component of the steering unit vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.direction_cos_y`
               - Get the second component of the steering unit vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.direction_cos_z`
               - Get the third component of the steering unit vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.elevation`
+              - Get the elevation of the steering angle.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.mass`
+              - Get the mass at the node.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.node_index`
+              - Get the index of the node in the array of nodes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.position_x`
               - Get the X component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.position_y`
               - Get the Y component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.position_z`
               - Get the Z component of the position vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.time`
+              - Get the time associated with the node.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_x`
               - Get the X component of the velocity vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_y`
@@ -60,35 +60,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: node_index
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.node_index
-    :type: int
-
-    Get the index of the node in the array of nodes.
-
-.. py:property:: time
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.time
-    :type: float
-
-    Get the time associated with the node.
-
-.. py:property:: mass
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.mass
-    :type: float
-
-    Get the mass at the node.
-
 .. py:property:: azimuth
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.azimuth
     :type: float
 
     Get the azimuth of the steering angle.
-
-.. py:property:: elevation
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.elevation
-    :type: float
-
-    Get the elevation of the steering angle.
 
 .. py:property:: direction_cos_x
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.direction_cos_x
@@ -108,6 +84,24 @@ Property detail
 
     Get the third component of the steering unit vector.
 
+.. py:property:: elevation
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.elevation
+    :type: float
+
+    Get the elevation of the steering angle.
+
+.. py:property:: mass
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.mass
+    :type: float
+
+    Get the mass at the node.
+
+.. py:property:: node_index
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.node_index
+    :type: int
+
+    Get the index of the node in the array of nodes.
+
 .. py:property:: position_x
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.position_x
     :type: float
@@ -125,6 +119,12 @@ Property detail
     :type: float
 
     Get the Z component of the position vector.
+
+.. py:property:: time
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.time
+    :type: float
+
+    Get the time associated with the node.
 
 .. py:property:: velocity_x
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement.velocity_x

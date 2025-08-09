@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_mode`
-              - Opt whether to override the acceleration or deceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_g`
               - Get or set the rate of acceleration or deceleration of the aircraft if the accleeration mode is set to override.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_mode`
+              - Opt whether to override the acceleration or deceleration of the aircraft.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: acceleration_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_mode
-    :type: AccelerationAdvancedAccelerationMode
-
-    Opt whether to override the acceleration or deceleration of the aircraft.
-
 .. py:property:: acceleration_g
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_g
     :type: float
 
     Get or set the rate of acceleration or deceleration of the aircraft if the accleeration mode is set to override.
+
+.. py:property:: acceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode.acceleration_mode
+    :type: AccelerationAdvancedAccelerationMode
+
+    Opt whether to override the acceleration or deceleration of the aircraft.
 
 

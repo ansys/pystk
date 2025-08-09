@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.item`
-              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.add`
               - Add a new ellipse centered on a Place, Facility, or Target object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_at`
-              - Remove an element from the collection using specified index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_all`
               - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipseCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -51,21 +51,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, center_object_name: str) -> CoverageEllipse
+    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.add
+
+    Add a new ellipse centered on a Place, Facility, or Target object.
+
+    :Parameters:
+
+        **center_object_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~CoverageEllipse`
 
 
 .. py:method:: item(self, index: int) -> CoverageEllipse
@@ -82,20 +96,14 @@ Method detail
 
         :obj:`~CoverageEllipse`
 
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_all
 
-.. py:method:: add(self, center_object_name: str) -> CoverageEllipse
-    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.add
-
-    Add a new ellipse centered on a Place, Facility, or Target object.
-
-    :Parameters:
-
-        **center_object_name** : :obj:`~str`
-
+    Remove all elements from the collection.
 
     :Returns:
 
-        :obj:`~CoverageEllipse`
+        :obj:`~None`
 
 .. py:method:: remove_at(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_at
@@ -111,12 +119,4 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageEllipseCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
