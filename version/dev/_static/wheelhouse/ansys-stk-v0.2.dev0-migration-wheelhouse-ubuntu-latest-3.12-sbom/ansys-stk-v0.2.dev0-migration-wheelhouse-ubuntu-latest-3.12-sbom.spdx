@@ -1,0 +1,528 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ansys-stk
+DocumentNamespace: https://anchore.com/syft/dir/ansys-stk-e775c737-5cef-44aa-93f7-3b2266ab9528
+LicenseListVersion: 3.25
+Creator: Organization: Anchore, Inc
+Creator: Tool: syft-1.26.0
+Created: 2025-08-09T00:30:27Z
+
+##### Unpackaged files
+
+FileName: lib/python3.12/site-packages/yaml/_yaml.cpython-312-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-yaml.cpython-312-x86-64-linux-gnu.so-05752dd3567aebd4
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...PyYAML-6.0.2.dist-info-METADATA-31b5bab23c9c1b46
+FileType: TEXT
+FileChecksum: SHA1: 019874e22eba3861f59a9ab72f17f58e8b504cf4
+FileChecksum: SHA256: f7ea1d141e6c7aee2918f704bfb13c8b2c4d179d7fb8a9da3468cb021cf696da
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...PyYAML-6.0.2.dist-info-RECORD-84edea32b9bcb040
+FileType: TEXT
+FileChecksum: SHA1: b833e0f768942c5a4d5f1adea6618000a4969f16
+FileChecksum: SHA256: e3e3c01cee8e56b8b63f9a74096e42cd045c343745a033465ae43aa0de9770c6
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...PyYAML-6.0.2.dist-info-top-level.txt-6cbb410707eedeb9
+FileType: TEXT
+FileChecksum: SHA1: 9e8a73cfb8a2d50dd6446e55a4019eea9f6004bc
+FileChecksum: SHA256: ae98f42153138ac02387fd6f1b709c7fdbf98e9090c00cfa703d48554e597614
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/METADATA
+SPDXID: SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-METADATA-19ad352375ed758f
+FileType: TEXT
+FileChecksum: SHA1: d0bf498b012a979b8e16c1aff9f8eeef2b2a43f2
+FileChecksum: SHA256: 2f685b64220f241ec53f6c79f26af05f6eaa408195cd7adecdc9311aa19f34aa
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/RECORD
+SPDXID: SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-RECORD-5eecf891692808d7
+FileType: TEXT
+FileChecksum: SHA1: f42753ca46c3d67c7deb664a2fb5e0405cded299
+FileChecksum: SHA256: cae3eb60a31fb2fe1fff2a6e8304f995a698bdabc32e90e91cdf9291f5c28b36
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/direct_url.json
+SPDXID: SPDXRef-File-...direct-url.json-8d871c3233065b98
+FileType: APPLICATION
+FileChecksum: SHA1: 105ca8bc2e8747ba794f95bac69f020db2db597d
+FileChecksum: SHA256: 6ff4068fa252ec9ddaa0dbe5406ea139549dbb191c26f85111f33680876c09b9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/libcst-1.8.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...libcst-1.8.2.dist-info-METADATA-da83488335f14f6a
+FileType: TEXT
+FileChecksum: SHA1: aaa7f368f9c9c22156020a1bbde990de9723cdb4
+FileChecksum: SHA256: a576e0c3c87feb1260e7e8821c2595906e9f336aff36a2e9faafc09894c375ee
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/libcst-1.8.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...libcst-1.8.2.dist-info-RECORD-8028071b866a1f79
+FileType: TEXT
+FileChecksum: SHA1: 2b98e8e433a32881ead847973f76b1bea92d8c7f
+FileChecksum: SHA256: 4f8348c9b9a906f1f1597b92165e48640820e5ed60c9e015f445f4f26fa68cd2
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/libcst-1.8.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...libcst-1.8.2.dist-info-top-level.txt-383d7329d13d8aea
+FileType: TEXT
+FileChecksum: SHA1: e46a9555558f64f7ce5f4e15b06cc322ec326873
+FileChecksum: SHA256: 4ec67ca0ec38456174fddfb13fcba79e1c1c36e78989e48d21a777086362bb70
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/libcst/native.cpython-312-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...native.cpython-312-x86-64-linux-gnu.so-c83dab05d2f0345a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/t32.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t32.exe-7b19088146cedef4
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: c6f8034e2e8183d35d3f2b035405294ee01fa273
+FileChecksum: SHA256: 6b4195e640a85ac32eb6f9628822a622057df1e459df7c17a12f97aeabc9415b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/t64-arm.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t64-arm.exe-c7eee3777ed4e519
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: c88f99bb82cbbf96992c36b61f6c614a15abc9d6
+FileChecksum: SHA256: ebc4c06b7d95e74e315419ee7e88e1d0f71e9e9477538c00a93a9ff8c66a6cfc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/t64.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t64.exe-371bf7aeb0bd5696
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 0d0c5e3b06f56ad12a77da46ab3fdab81acda628
+FileChecksum: SHA256: 81a618f21cb87db9076134e70388b6e9cb7c2106739011b6a51772d22cae06b7
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/w32.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w32.exe-8025ea30b4097d14
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 3a1e4e67422d9dd54f7e8bba2bb014474d2f6ea0
+FileChecksum: SHA256: 47872cc77f8e18cf642f868f23340a468e537e64521d9a3a416c8b84384d064b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/w64-arm.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w64-arm.exe-b917d2c699c3aae0
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: e0db21e02eea22f0da5b44745d1dd0184ddc6ebe
+FileChecksum: SHA256: c5dc9884a8f458371550e09bd396e5418bf375820a31b9899f6499bf391c7b2e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip/_vendor/distlib/w64.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w64.exe-7ffdd5afae747496
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 34d3e30bcbf87581902409bf5f621f48c5fc2b10
+FileChecksum: SHA256: 7a319ffaba23a017d7b1e18ba726ba6c54c53d6446db55f92af53c279894f8ad
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip-25.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-METADATA-55f15a350e78d413
+FileType: TEXT
+FileChecksum: SHA1: 93027e6485f574b6e60d25a013c82425b49307b7
+FileChecksum: SHA256: 97a3ad14d71fd8914a38f24af5b31a1f9faeb05aea66a4af40d979d6d7ad229f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip-25.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-RECORD-c8e3c77df61bfedd
+FileType: TEXT
+FileChecksum: SHA1: 60e93cdc1d35bfbd5506bfda7293857818646011
+FileChecksum: SHA256: 90c8ec80ce4751c7e860605fd4401f8933f6bb96abf9ecd6cad2ad0d6a40d2ca
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.12/site-packages/pip-25.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-top-level.txt-71195e82f02fb534
+FileType: TEXT
+FileChecksum: SHA1: d7a03141d5d6b1e88b6b59ef08b6681df212c599
+FileChecksum: SHA256: ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+##### Package: ansys-stk
+
+PackageName: ansys-stk
+SPDXID: SPDXRef-DocumentRoot-Directory-ansys-stk
+PackageVersion: 0.2.dev0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: FILE
+FilesAnalyzed: false
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-618a694824ee95ec
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/w32.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-82eb4785a909a2b8
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/w64-arm.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-88fcb3ebf0a50886
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/t64-arm.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-b12a8b2a187a090e
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/t64.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-dbcc36044eed65cd
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/w64.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-f2c66a66f4ebd94a
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.12/site-packages/pip/_vendor/distlib/t32.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: ansys-stk
+
+PackageName: ansys-stk
+SPDXID: SPDXRef-Package-python-ansys-stk-e45854c6b7dba2cf
+PackageVersion: 0.2.dev0
+PackageSupplier: Person: "ANSYS, Inc." (pyansys.core@ansys.com)
+PackageOriginator: Person: "ANSYS, Inc." (pyansys.core@ansys.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/METADATA, /lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/RECORD, /lib/python3.12/site-packages/ansys_stk-0.2.dev0.dist-info/direct_url.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ansys-stk@0.2.dev0
+
+##### Package: libcst
+
+PackageName: libcst
+SPDXID: SPDXRef-Package-python-libcst-412707e06cca9755
+PackageVersion: 1.8.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.12/site-packages/libcst-1.8.2.dist-info/METADATA, /lib/python3.12/site-packages/libcst-1.8.2.dist-info/RECORD, /lib/python3.12/site-packages/libcst-1.8.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-2fd658e5a48badc2999209eb5373c4d2e240b85669c36dace90a797e6becb28d
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-libcst:python-libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-libcst:python_libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_libcst:python-libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_libcst:python_libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:libcst:python-libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:libcst:python_libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-libcst:libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_libcst:libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:libcst:libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:libcst:1.8.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/libcst@1.8.2
+
+##### Package: pip
+
+PackageName: pip
+SPDXID: SPDXRef-Package-python-pip-a7181571a42874aa
+PackageVersion: 25.2
+PackageSupplier: Person: The pip developers (distutils-sig@python.org)
+PackageOriginator: Person: The pip developers (distutils-sig@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.12/site-packages/pip-25.2.dist-info/METADATA, /lib/python3.12/site-packages/pip-25.2.dist-info/RECORD, /lib/python3.12/site-packages/pip-25.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pip@25.2
+
+##### Package: pyyaml
+
+PackageName: pyyaml
+SPDXID: SPDXRef-Package-python-pyyaml-55f7ad6d942df6d9
+PackageVersion: 6.0.2
+PackageSupplier: Person: Kirill Simonov (xi@resolvent.net)
+PackageOriginator: Person: Kirill Simonov (xi@resolvent.net)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/METADATA, /lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/RECORD, /lib/python3.12/site-packages/PyYAML-6.0.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov_project:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov_project:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonovproject:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonovproject:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov_project:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonovproject:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pyyaml:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pyyaml:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pyyaml:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pyyaml:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi_project:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi_project:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xiproject:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xiproject:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:kirill_simonov:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pyyaml:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pyyaml:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pyyaml:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pyyaml:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi_project:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi:python-pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi:python_pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xiproject:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pyyaml:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:xi:pyyaml:6.0.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pyyaml@6.0.2
+
+##### Other Licenses
+
+LicenseID: LicenseRef-2fd658e5a48badc2999209eb5373c4d2e240b85669c36dace90a797e6becb28d
+ExtractedText: NOASSERTION
+LicenseName: sha256:2fd658e5a48badc2999209eb5373c4d2e240b85669c36dace90a797e6becb28d
+
+##### Relationships
+
+Relationship: SPDXRef-Package-python-libcst-412707e06cca9755 OTHER SPDXRef-File-...libcst-1.8.2.dist-info-top-level.txt-383d7329d13d8aea
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-libcst-412707e06cca9755 OTHER SPDXRef-File-...libcst-1.8.2.dist-info-RECORD-8028071b866a1f79
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-libcst-412707e06cca9755 OTHER SPDXRef-File-...libcst-1.8.2.dist-info-METADATA-da83488335f14f6a
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pyyaml-55f7ad6d942df6d9 OTHER SPDXRef-File-...PyYAML-6.0.2.dist-info-METADATA-31b5bab23c9c1b46
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pyyaml-55f7ad6d942df6d9 OTHER SPDXRef-File-...PyYAML-6.0.2.dist-info-top-level.txt-6cbb410707eedeb9
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pyyaml-55f7ad6d942df6d9 OTHER SPDXRef-File-...PyYAML-6.0.2.dist-info-RECORD-84edea32b9bcb040
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-618a694824ee95ec OTHER SPDXRef-File-...pip--vendor-distlib-w32.exe-8025ea30b4097d14
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-82eb4785a909a2b8 OTHER SPDXRef-File-...pip--vendor-distlib-w64-arm.exe-b917d2c699c3aae0
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-88fcb3ebf0a50886 OTHER SPDXRef-File-...pip--vendor-distlib-t64-arm.exe-c7eee3777ed4e519
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-a7181571a42874aa OTHER SPDXRef-File-...pip-25.2.dist-info-METADATA-55f15a350e78d413
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-a7181571a42874aa OTHER SPDXRef-File-...pip-25.2.dist-info-top-level.txt-71195e82f02fb534
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-a7181571a42874aa OTHER SPDXRef-File-...pip-25.2.dist-info-RECORD-c8e3c77df61bfedd
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-b12a8b2a187a090e OTHER SPDXRef-File-...pip--vendor-distlib-t64.exe-371bf7aeb0bd5696
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-dbcc36044eed65cd OTHER SPDXRef-File-...pip--vendor-distlib-w64.exe-7ffdd5afae747496
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-e45854c6b7dba2cf OTHER SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-METADATA-19ad352375ed758f
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-e45854c6b7dba2cf OTHER SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-RECORD-5eecf891692808d7
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-e45854c6b7dba2cf OTHER SPDXRef-File-...direct-url.json-8d871c3233065b98
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-f2c66a66f4ebd94a OTHER SPDXRef-File-...pip--vendor-distlib-t32.exe-7b19088146cedef4
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-f2c66a66f4ebd94a
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-88fcb3ebf0a50886
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-b12a8b2a187a090e
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-618a694824ee95ec
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-82eb4785a909a2b8
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-dbcc36044eed65cd
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ansys-stk-e45854c6b7dba2cf
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-libcst-412707e06cca9755
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pip-a7181571a42874aa
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pyyaml-55f7ad6d942df6d9
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-DocumentRoot-Directory-ansys-stk

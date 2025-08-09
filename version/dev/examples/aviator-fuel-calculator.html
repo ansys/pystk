@@ -1,0 +1,2076 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Commercial aircraft fuel calculator with Aviator &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/aviator-fuel-calculator';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multi-aircraft carrier landing with Aviator" href="aircraft-carrier-landing.html" />
+    <link rel="prev" title="Multifunction radar design" href="multifunction-radar-design.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/aviator-fuel-calculator.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Commercial aircraft fuel calculator with Aviator</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/aviator-fuel-calculator.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/aviator-fuel-calculator.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/aviator-fuel-calculator.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Commercial-aircraft-fuel-calculator-with-Aviator">
+<h1>Commercial aircraft fuel calculator with Aviator<a class="headerlink" href="#Commercial-aircraft-fuel-calculator-with-Aviator" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to use Aviator to model an aircraft’s flight and determine its fuel usage using Python and PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/StartAMM.htm">this training</a>.</p>
+<section id="What-is-an-Aviator-mission?">
+<h2>What is an Aviator mission?<a class="headerlink" href="#What-is-an-Aviator-mission?" title="Link to this heading">#</a></h2>
+<p>Aviator provides an enhanced method for modeling aircraft - more accurate and more flexible than the standard Great Arc propagator. With Aviator, the aircraft’s route is modeled by a sequence of curves parametrized by well-known performance characteristics of aircraft, including cruise airspeed, climb rate, roll rate, and bank angle. The precise state of an aircraft at any given time can be computed analytically - swiftly and without excessive data storage needs. Aviator capability is built upon
+the concept of an aircraft’s mission, as opposed to a mere point-to-point route. An aircraft using Aviator as its propagator can conduct a transit between two points that is more complex than a great arc, and furthermore, can carry out operations that are more complex than a transit between two points (e.g., holding in a pattern). The process of defining a mission in Aviator, therefore, encompasses much more than merely selecting route points. A mission includes the flight procedures and
+performance characteristics of the aircraft and describes not only where the aircraft goes, but how it goes there and what it does along the way. Defining a mission consists of configuring the aircraft model, defining the phases of the mission and selecting performance models for each, and defining the procedures that the aircraft will execute in each phase.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>The Telluride Regional Airport runway sits on a plateau and dips slightly in the center, providing a challenging landing for pilots. Weather conditions in the area also often rapidly change, and pilots must be aware of issues impacting the airfield such as high terrain which exceeds <span class="math notranslate nohighlight">\(14,000\)</span> ft and the runway’s location on a plateau with a thousand-foot drop should the aircraft slide off of the runway.</p>
+<p>A small commuter jet flies from Colorado Springs Municipal Airport to Telluride Regional airport. The jet takes off from Colorado Springs Municipal Airport and flies direct to the radio beacon at Blue Mesa, then flies to the Cones radio beacon, then lands at Telluride. The jet has an empty weight of <span class="math notranslate nohighlight">\(31000\)</span> lb, accounting for the pilot, instructor, and baggage. The flight takes place during constant wind conditions, with wind with a bearing of <span class="math notranslate nohighlight">\(180^\circ\)</span> and a speed of <span class="math notranslate nohighlight">\(20\)</span>
+nm/hr. Model the jet’s flight as a mission consisting of one phase, taking off from a runway at Colorado Springs Municipal Airport, and landing at Telluride Regional. Determine how much fuel is required for the mission, and how much fuel is left unused upon landing.</p>
+<p>The mission parameters are:</p>
+<ul class="simple">
+<li><p>A basic acceleration performance model with level turns and climb and descent transitions scaled by atmosphere density, and a basic fixed wing strategy for modeling aerodynamics and propulsion</p></li>
+<li><p>A basic climb performance model using aero/propulsion fuel flow</p></li>
+<li><p>A basic cruise performance model designating that the aircraft climbs to <span class="math notranslate nohighlight">\(25000\)</span> ft and levels off</p></li>
+<li><p>A basic descent performance model using aero/propulsion fuel flow</p></li>
+<li><p>A basic landing performance model using aero/propulsion fuel flow</p></li>
+<li><p>A basic takeoff performance model using aero/propulsion fuel flow</p></li>
+</ul>
+<p>The mission consists of 1 phase with 5 procedures:</p>
+<ul class="simple">
+<li><p>A takeoff from Colorado Springs, using a low runway heading and a runway altitude offset of <span class="math notranslate nohighlight">\(7\)</span> ft</p></li>
+<li><p>A basic maneuver consisting of a <span class="math notranslate nohighlight">\(20\)</span> nm flight straight ahead, with an altitude increase of <span class="math notranslate nohighlight">\(10000\)</span> ft</p></li>
+<li><p>A basic point to point procedure flying the aircraft directly from the end of the last procedure to the Blue Mesa radio beacon, with a turn factor of <span class="math notranslate nohighlight">\(5\)</span></p></li>
+<li><p>A basic point to point procedure flying the aircraft from Blue Mesa to the Cones radio beacon, with a constant altitude of <span class="math notranslate nohighlight">\(15000\)</span> ft, a turn factor of <span class="math notranslate nohighlight">\(5\)</span>, and a cruise airspeed of <span class="math notranslate nohighlight">\(250\)</span> nm/hr</p></li>
+<li><p>A landing from Cones to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of <span class="math notranslate nohighlight">\(7\)</span> ft</p></li>
+</ul>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create a new scenario in STK by running:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;CommercialFlight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6ffb7dba4aa04e7ba3bcd1df41948b18"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_aviator-fuel-calculator_13_1.png" src="../_images/examples_aviator-fuel-calculator_13_1.png" />
+</div>
+</div>
+<p>Show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_plotter</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "250fa810e6b449a9896c2a039b02e4dc"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_aviator-fuel-calculator_15_1.png" src="../_images/examples_aviator-fuel-calculator_15_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;1 Aug 2020 18:00:00.000&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Aug 2020 19:00:00.000&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-an-aircraft">
+<h2>Add an aircraft<a class="headerlink" href="#Add-an-aircraft" title="Link to this heading">#</a></h2>
+<p>Insert an aircraft object to model the jet that flies between Colorado Springs and Telluride:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">aircraft</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">AIRCRAFT</span><span class="p">,</span> <span class="s2">&quot;CommercialAircraft&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">IAviatorPropagator</span></code> interface allows access to all Aviator functions. Through the propagator, it is possible to access the aircraft’s mission and plan its route, as well as access the Aviator catalogs, which allow loading and saving aircraft, airports, navaids, runways, VTOL points, and waypoints. To start using Aviator capabilities, first set the aircraft’s propagator type to the Aviator propagator:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">aircraft</span><span class="o">.</span><span class="n">set_route_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">AVIATOR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the aircraft’s <code class="docutils literal notranslate"><span class="pre">route</span></code> property to access the <code class="docutils literal notranslate"><span class="pre">aviator_propagator</span></code> property, which holds an <code class="docutils literal notranslate"><span class="pre">IAviatorPropagator</span></code> object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aviator_propagator</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">aviator_propagator</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Insert-a-runway-at-Telluride-Regional-Airport">
+<h2>Insert a runway at Telluride Regional Airport<a class="headerlink" href="#Insert-a-runway-at-Telluride-Regional-Airport" title="Link to this heading">#</a></h2>
+<p>It is now possible to use the Aviator propagator to insert places of interest. Use the Aviator runway catalog to insert a runway at Telluride Regional Airport by loading a file containing information about runways. This file is included with the STK installation.</p>
+<p>First, get the runway catalog:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">runway_catalog</span> <span class="o">=</span> <span class="n">aviator_propagator</span><span class="o">.</span><span class="n">aviator_catalog</span><span class="o">.</span><span class="n">runway_category</span>
+</pre></div>
+</div>
+</div>
+<p>Then, upload the “FAANFD18” file provided with the STK install containing information about runways in ARINC424 format. To do so, use a Connect command to find the STK installation directory and navigate to the proper file, then set the file as the master data file for ARINC424 runways:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+
+
+<span class="n">install_dir</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">execute_command</span><span class="p">(</span><span class="s2">&quot;GetDirectory / STKHome&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">runway_catalog</span><span class="o">.</span><span class="n">arinc424_runways</span><span class="o">.</span><span class="n">master_data_filepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+    <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">install_dir</span><span class="p">)</span>
+    <span class="o">/</span> <span class="s2">&quot;Data&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;Resources&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;stktraining&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;samples&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;FAANFD18&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The runway catalog now contains information about the runways included in the file. View the names of the first <span class="math notranslate nohighlight">\(5\)</span> runways (alphabetically) in the catalog:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">runway_catalog</span><span class="o">.</span><span class="n">arinc424_runways</span><span class="o">.</span><span class="n">child_names</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;A L MANGHAM JR. RGNL 18 36&#39;,
+ &#39;A. PAUL VANCE FREDERICKTOWN RG 01 19&#39;,
+ &#39;ABBEVILLE CHRIS CRUSTA MEMORIA 16 34&#39;,
+ &#39;ABERDEEN RGNL 13 31&#39;,
+ &#39;ABERDEEN RGNL 17 35&#39;]
+</pre></div></div>
+</div>
+<p>Determine how many runways are included in the catalog:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">runway_catalog</span><span class="o">.</span><span class="n">arinc424_runways</span><span class="o">.</span><span class="n">child_names</span><span class="p">)</span><span class="si">}</span><span class="s2"> runways stored in the catalog.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+There are 5004 runways stored in the catalog.
+</pre></div></div>
+</div>
+<p>Now, use the catalog to select the runway at Telluride Regional Airport. Later in the scenario, the runway is included in the aircraft’s mission planning as the landing destination.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">telluride_runway</span> <span class="o">=</span> <span class="n">runway_catalog</span><span class="o">.</span><span class="n">arinc424_runways</span><span class="o">.</span><span class="n">get_arinc424_item</span><span class="p">(</span>
+    <span class="s2">&quot;TELLURIDE RGNL 09 27&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The catalog item stores information about the runway, including its length, width, location, and bearing. Determine the length of the runway:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Telluride runway is </span><span class="si">{</span><span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;Length&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> ft. long&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Telluride runway is 7111.0 ft. long
+</pre></div></div>
+</div>
+</section>
+<section id="Insert-the-Telluride-Regional-Airport">
+<h2>Insert the Telluride Regional Airport<a class="headerlink" href="#Insert-the-Telluride-Regional-Airport" title="Link to this heading">#</a></h2>
+<p>Insert a place object to represent Telluride Regional Airport:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">telluride</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;Telluride&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The Telluride runway catalog object stores information about the runway’s location. Using that object, assign the location of the place object to the runway’s using geodetic coordinates:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">telluride</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span>
+    <span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Altitude&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Insert-the-Colorado-Springs-Municipal-Airport">
+<h2>Insert the Colorado Springs Municipal Airport<a class="headerlink" href="#Insert-the-Colorado-Springs-Municipal-Airport" title="Link to this heading">#</a></h2>
+<p>First, use the Aviator runway catalog to get a runway at Colorado Springs Municipal Airport:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorado_springs_runway</span> <span class="o">=</span> <span class="n">runway_catalog</span><span class="o">.</span><span class="n">arinc424_runways</span><span class="o">.</span><span class="n">get_arinc424_item</span><span class="p">(</span>
+    <span class="s2">&quot;CITY OF COLORADO SPRINGS MUNI 17L 35R&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, insert a place object to represent the airport:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorado_springs</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;ColoradoSprings&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Use the runway catalog item to assign the place object’s location to the same coordinates as the runway’s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorado_springs</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span>
+    <span class="n">colorado_springs_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">colorado_springs_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">colorado_springs_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Altitude&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to see both airports in the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1090</span><span class="p">,</span> <span class="mi">35060</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_aviator-fuel-calculator_53_0.png" src="../_images/examples_aviator-fuel-calculator_53_0.png" />
+</div>
+</div>
+</section>
+<section id="Configure-the-aircraft-model">
+<h2>Configure the aircraft model<a class="headerlink" href="#Configure-the-aircraft-model" title="Link to this heading">#</a></h2>
+<p>The Aviator catalog also provides aircraft models, which can be used with STK aircraft objects. An aircraft model defines the physical characteristics of the aircraft, the aircraft configuration, and the modes of flight that define how the aircraft flies in any given situation. Set the aircraft’s model to a basic business jet.</p>
+<p>First, get the aircraft model catalog using the Aviator propagator:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft_models</span> <span class="o">=</span> <span class="n">aviator_propagator</span><span class="o">.</span><span class="n">aviator_catalog</span><span class="o">.</span><span class="n">aircraft_category</span><span class="o">.</span><span class="n">aircraft_models</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the model corresponding to a basic business jet:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">business_jet</span> <span class="o">=</span> <span class="n">aircraft_models</span><span class="o">.</span><span class="n">get_aircraft</span><span class="p">(</span><span class="s2">&quot;Basic Business Jet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Aircraft models are read-only by default, so their performance models cannot be edited. To create a custom aircraft model, duplicate the model from the catalog, then rename it. Remove any catalog item with the same name before doing so.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">aircraft_models</span><span class="o">.</span><span class="n">get_as_catalog_source</span><span class="p">()</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Basic Business Jet Copy&quot;</span><span class="p">):</span>
+    <span class="n">aircraft_models</span><span class="o">.</span><span class="n">get_aircraft</span><span class="p">(</span><span class="s2">&quot;Basic Business Jet Copy&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="n">business_jet</span><span class="o">.</span><span class="n">get_as_catalog_item</span><span class="p">()</span><span class="o">.</span><span class="n">duplicate</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Basic Business Jet Copy&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>To assign the model to the aircraft, use the Aviator propagator’s mission. An Aviator mission describes an aircraft’s flight, including its route, flight procedures, and performance characteristics. Get the mission, then use the <code class="docutils literal notranslate"><span class="pre">vehicle</span></code> property to assign the model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span> <span class="o">=</span> <span class="n">aviator_propagator</span><span class="o">.</span><span class="n">aviator_mission</span>
+<span class="n">mission</span><span class="o">.</span><span class="n">vehicle</span> <span class="o">=</span> <span class="n">aircraft_models</span><span class="o">.</span><span class="n">get_aircraft</span><span class="p">(</span><span class="s2">&quot;Basic Business Jet Copy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Configure-the-aircraft-performance-models">
+<h2>Configure the aircraft performance models<a class="headerlink" href="#Configure-the-aircraft-performance-models" title="Link to this heading">#</a></h2>
+<p>Aircraft properties provide access to performance models. Performance models are used to define the behavior of the aircraft in flight. By specifying performance models to use with each phase of the mission, it is possible to vary the manner in which the aircraft performs based on the priorities of the mission. Although the aircraft model previously assigned is representative of an aircraft type, it is not representative of a specific aircraft, so it is necessary to customize the model to match
+desired characteristics.</p>
+<p>First, configure the aircraft’s acceleration performance model. To do so, first add a phase to the mission. A phase is a logical unit of an aircraft’s mission. Performance models can be specified for each phase and are used by the procedures executed within them.</p>
+<p>Use the aircraft’s mission to select the first phase:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phase</span> <span class="o">=</span> <span class="n">mission</span><span class="o">.</span><span class="n">phases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the phases’s acceleration performance model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acceleration_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span>
+    <span class="s2">&quot;Acceleration&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+</div>
+<p>Through the <code class="docutils literal notranslate"><span class="pre">IAircraftBasicAccelerationModel</span></code> object, it is possible to configure the basic, aerodynamics, and propulsion characteristics of the aircraft. Set the level turns to scale by atmosphere density, which causes the aircraft to consider dynamic pressure when calculating turn radius.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccelerationManeuverMode</span>
+
+
+<span class="n">acceleration_performance_model</span><span class="o">.</span><span class="n">level_turns</span><span class="o">.</span><span class="n">maneuver_mode</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">AccelerationManeuverMode</span><span class="o">.</span><span class="n">ACCELERATION_MANEUVER_MODE_DENSITY_SCALE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the climb and descent transitions to scale by atmosphere density:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acceleration_performance_model</span><span class="o">.</span><span class="n">climb_and_descent_transitions</span><span class="o">.</span><span class="n">maneuver_mode</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">AccelerationManeuverMode</span><span class="o">.</span><span class="n">ACCELERATION_MANEUVER_MODE_DENSITY_SCALE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the aerodynamics characteristics by setting the aerodynamic strategy type to basic fixed wing aerodynamics. To do so, use the performance model’s <code class="docutils literal notranslate"><span class="pre">aerodynamics</span></code> property, which contains an <code class="docutils literal notranslate"><span class="pre">IAircraftAero</span></code> object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">AircraftAerodynamicStrategy</span>
+
+
+<span class="n">acceleration_performance_model</span><span class="o">.</span><span class="n">aerodynamics</span><span class="o">.</span><span class="n">aerodynamic_strategy</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">AircraftAerodynamicStrategy</span><span class="o">.</span><span class="n">AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the aircraft’s propulsion to also use a basic fixed wing strategy by accessing the performance model’s <code class="docutils literal notranslate"><span class="pre">propulsion</span></code> property, which contains an <code class="docutils literal notranslate"><span class="pre">IAircraftProp</span></code> object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">AircraftPropulsionStrategy</span>
+
+
+<span class="n">acceleration_performance_model</span><span class="o">.</span><span class="n">propulsion</span><span class="o">.</span><span class="n">propulsion_strategy</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">AircraftPropulsionStrategy</span><span class="o">.</span><span class="n">AIRCRAFT_PROPULSION_BASIC_FIXED_WING</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the aircraft’s climb performance model. The basic climb performance model defines the flight characteristics of the aircraft while climbing. Select the climb performance model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span><span class="s2">&quot;Climb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+</div>
+<p>Configure the model to use aero/propulsion fuel flow:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_performance_model</span><span class="o">.</span><span class="n">use_aerodynamic_propulsion_fuel</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the aircraft’s cruise performance model, which defines the flight characteristics of the aircraft during level flight. Select the cruise performance model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cruise_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span><span class="s2">&quot;Cruise&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+</div>
+<p>The aircraft climbs to <span class="math notranslate nohighlight">\(25000\)</span> ft and then levels off. Set the default cruise altitude to <span class="math notranslate nohighlight">\(25000\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cruise_performance_model</span><span class="o">.</span><span class="n">default_cruise_altitude</span> <span class="o">=</span> <span class="mi">25000</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the model to use aero/propulstion fuel flow:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cruise_performance_model</span><span class="o">.</span><span class="n">use_aerodynamic_propulsion_fuel</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the aircraft’s basic descent, landing, and takeoff performance models. Set all three to use aero/propulsion fuel flow:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">descent_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span><span class="s2">&quot;Descent&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">descent_performance_model</span><span class="o">.</span><span class="n">use_aerodynamic_propulsion_fuel</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">landing_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span><span class="s2">&quot;Landing&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">landing_performance_model</span><span class="o">.</span><span class="n">use_aerodynamic_propulsion_fuel</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">takeoff_performance_model</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">get_performance_model_by_type</span><span class="p">(</span><span class="s2">&quot;Takeoff&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span>
+<span class="n">takeoff_performance_model</span><span class="o">.</span><span class="n">use_aerodynamic_propulsion_fuel</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Set-the-aircraft's-fuel-and-payload">
+<h2>Set the aircraft’s fuel and payload<a class="headerlink" href="#Set-the-aircraft's-fuel-and-payload" title="Link to this heading">#</a></h2>
+<p>The aircraft has an empty weight of <span class="math notranslate nohighlight">\(31000\)</span> lb, accounting for the pilot, instructor, and baggage. To set the aircraft’s empty weight, use the mission’s <code class="docutils literal notranslate"><span class="pre">configuration</span></code> property:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mission</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">empty_weight</span> <span class="o">=</span> <span class="mi">31000</span>
+</pre></div>
+</div>
+</div>
+<p>Through the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> property, it is also possible to access detail’s about the aircraft’s weight and capacity. Determine the aircraft’s maximum landing weight:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The aircraft&#39;s maximum landing weight is </span><span class="si">{</span><span class="n">mission</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">max_landing_weight</span><span class="si">}</span><span class="s2"> lb.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The aircraft&#39;s maximum landing weight is 40000.0 lb.
+</pre></div></div>
+</div>
+<p>It is also possible to use the <code class="docutils literal notranslate"><span class="pre">configuration</span></code> property to access the aircraft’s internal fuel tanks, stations, and external fuel tanks that are attached to the stations. To do so, use the <code class="docutils literal notranslate"><span class="pre">get_stations</span></code> method:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stations</span> <span class="o">=</span> <span class="n">mission</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">get_stations</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Determine the capacity and initial state of the aircraft’s fuel tank. Select the aircraft’s internal fuel tank from the list of stations:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">internal_fuel</span> <span class="o">=</span> <span class="n">stations</span><span class="o">.</span><span class="n">get_internal_fuel_tank_by_name</span><span class="p">(</span><span class="s2">&quot;Internal Fuel&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, determine the fuel tank’s capacity and initial state:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The internal fuel tank has a capacity of </span><span class="si">{</span><span class="n">internal_fuel</span><span class="o">.</span><span class="n">capacity</span><span class="si">}</span><span class="s2"> lb and initially holds </span><span class="si">{</span><span class="n">internal_fuel</span><span class="o">.</span><span class="n">initial_fuel_state</span><span class="si">}</span><span class="s2"> lb of fuel&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The internal fuel tank has a capacity of 20000.0 lb and initially holds 20000.0 lb of fuel
+</pre></div></div>
+</div>
+</section>
+<section id="Configure-the-mission-wind-model">
+<h2>Configure the mission wind model<a class="headerlink" href="#Configure-the-mission-wind-model" title="Link to this heading">#</a></h2>
+<p>The wind and atmosphere model is used to simulate wind and atmospheric conditions for a scenario, procedure, or mission. Select the wind model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_model</span> <span class="o">=</span> <span class="n">mission</span><span class="o">.</span><span class="n">wind_model</span>
+</pre></div>
+</div>
+</div>
+<p>By default, the wind model is set to use constant wind, so it is possible in this case to directly use the model’s <code class="docutils literal notranslate"><span class="pre">mode_as_constant</span></code> property to set the wind. Set the wind bearing to <span class="math notranslate nohighlight">\(180^\circ\)</span> and the wind speed to <span class="math notranslate nohighlight">\(20\)</span> nm/hr:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_model</span><span class="o">.</span><span class="n">mode_as_constant</span><span class="o">.</span><span class="n">wind_bearing</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">wind_model</span><span class="o">.</span><span class="n">mode_as_constant</span><span class="o">.</span><span class="n">wind_speed</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-the-aircraft's-flight-plan">
+<h2>Create the aircraft’s flight plan<a class="headerlink" href="#Create-the-aircraft's-flight-plan" title="Link to this heading">#</a></h2>
+<p>The aircraft has one phase in its flight plan. The aircraft takes off from Colorado Springs Municipal Airport and flies direct to Blue Mesa radio beacon. Turning at Blue Mesa , the aircraft flies to Cones, and then begins its final approach and lands at Telluride Regional Airport.</p>
+<p>The aircraft will first take off from the Colorado Springs runway named “CITY OF COLORADO SPRINGS MUNI 17L 35R”, so the first procedure is a takeoff procedure using a catalog runway as a site type. Insert the first procedure in the phase:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcedureType</span><span class="p">,</span> <span class="n">SiteType</span>
+
+
+<span class="n">takeoff_procedure</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">procedures</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">SiteType</span><span class="o">.</span><span class="n">SITE_RUNWAY_FROM_CATALOG</span><span class="p">,</span> <span class="n">ProcedureType</span><span class="o">.</span><span class="n">PROCEDURE_TAKEOFF</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the takeoff procedure’s site to the catalog entry for the “CITY OF COLORADO SPRINGS MUNI 17L 35R” runway so that the procedure starts from the runway:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">takeoff_procedure</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">set_catalog_runway</span><span class="p">(</span><span class="n">colorado_springs_runway</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Now, configure the takeoff procedure’s properties. Name the takeoff “COS Runway”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">takeoff_procedure</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;COS Runway&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the runway’s heading. The heading refers to the direction that the aircraft is pointing, and is derived from the runway site definition. The first numerical value indicates the bearing relative to magnetic north and the second value indicates the bearing relative to true north. Set the procedure to use the runway’s low end:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunwayHighLowEnd</span>
+
+
+<span class="n">takeoff_procedure</span><span class="o">.</span><span class="n">runway_heading_options</span><span class="o">.</span><span class="n">runway_mode</span> <span class="o">=</span> <span class="n">RunwayHighLowEnd</span><span class="o">.</span><span class="n">LOW_END</span>
+</pre></div>
+</div>
+</div>
+<p>Set the runway’s altitude offset to <span class="math notranslate nohighlight">\(7\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">takeoff_procedure</span><span class="o">.</span><span class="n">mode_as_normal</span><span class="o">.</span><span class="n">runway_altitude_offset</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<p>Then, enable the use of the runway terrain in calculations:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">takeoff_procedure</span><span class="o">.</span><span class="n">mode_as_normal</span><span class="o">.</span><span class="n">use_runway_terrain</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Because of terrain, the aircraft must gain altitude before flying to Blue Mesa. It will do so in a basic maneuver procedure following takeoff. A basic maneuver procedure is a single action undertaken by the aircraft. It is unlike most procedures in Aviator, which represent sets of actions that together comprise a common flying procedure.</p>
+<p>Insert a basic maneuver procedure that starts from the end of the previous procedure:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_procedure</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">procedures</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">SiteType</span><span class="o">.</span><span class="n">SITE_END_OF_PREV_PROCEDURE</span><span class="p">,</span> <span class="n">ProcedureType</span><span class="o">.</span><span class="n">PROCEDURE_BASIC_MANEUVER</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Change the procedure’s name to “Climb”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_procedure</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Climb&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the aircraft’s stop conditions. Each basic maneuver requires at least one stopping condition, which dictates when the maneuver will end regardless of whether any other goals are met. The maneuver will stop if any one of the stopping conditions is met.</p>
+<p>Disable the time of flight stop condition:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_procedure</span><span class="o">.</span><span class="n">use_max_time_of_flight</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Set a downrange stop condition of <span class="math notranslate nohighlight">\(20\)</span> nm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_procedure</span><span class="o">.</span><span class="n">use_max_downrange</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">climb_procedure</span><span class="o">.</span><span class="n">max_downrange</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the vertical/profile strategies. Set the altitude mode to specify altitude change:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutopilotAltitudeMode</span>
+
+
+<span class="n">climb_procedure</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">altitude_mode</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">AutopilotAltitudeMode</span><span class="o">.</span><span class="n">AUTOPILOT_SPECIFY_ALTITUDE_CHANGE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the relative altitude change to <span class="math notranslate nohighlight">\(10000\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">climb_procedure</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">relative_altitude_change</span> <span class="o">=</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+</div>
+<p>The next procedure flies the aircraft to Blue Mesa after it has finished its climb. The site for the procedure is derived from a Navaid in the catalog representing Blue Mesa, and the aircraft flies between two waypoints.</p>
+<p>Insert a procedure after the climb procedure, with a site type of <code class="docutils literal notranslate"><span class="pre">SITE_NAVAID_FROM_CATALOG</span></code> and a procedure type of <code class="docutils literal notranslate"><span class="pre">PROCEDURE_BASIC_POINT_TO_POINT</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa_procedure</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">procedures</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">SiteType</span><span class="o">.</span><span class="n">SITE_NAVAID_FROM_CATALOG</span><span class="p">,</span> <span class="n">ProcedureType</span><span class="o">.</span><span class="n">PROCEDURE_BASIC_POINT_TO_POINT</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Because of the procedure type designation, the procedure’s <code class="docutils literal notranslate"><span class="pre">site</span></code> property contains an <code class="docutils literal notranslate"><span class="pre">ISiteNavaidFromCatalog</span></code> object. First, get the navaid catalog item corresponding to “HBU”, which is the FAA designator for the Blue Mesa radio site.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa_navaid</span> <span class="o">=</span> <span class="n">aviator_propagator</span><span class="o">.</span><span class="n">aviator_catalog</span><span class="o">.</span><span class="n">navaid_category</span><span class="o">.</span><span class="n">arinc424_navaids</span><span class="o">.</span><span class="n">get_arinc424_item</span><span class="p">(</span>
+    <span class="s2">&quot;HBU&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the procedure’s site to the navaid:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa_procedure</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">set_catalog_navaid</span><span class="p">(</span><span class="n">blue_mesa_navaid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add a place object at the navaid’s location:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;BlueMesa&quot;</span><span class="p">)</span>
+<span class="n">blue_mesa</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span>
+    <span class="n">blue_mesa_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span> <span class="n">blue_mesa_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span> <span class="mi">0</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Now, configure the procedure. The procedure type is a basic point to point procedure, which represents a basic traverse between two waypoints. With this procedure type, the aircraft travels a straight line through 3D space from the end of the previous procedure to the site of the current procedure. It smoothly accelerates/decelerates under a constant climb/descent to arrive at the specified speed, altitude, and heading.</p>
+<p>Set the procedure’s name to “Blue Mesa”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa_procedure</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Blue Mesa&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the procedure to use a fly direct navigation mode. This mode means that the aircraft flies directly to the procedure site from the end of the previous procedure, turning as necessary.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">PointToPointMode</span>
+
+
+<span class="n">blue_mesa_procedure</span><span class="o">.</span><span class="n">navigation_options</span><span class="o">.</span><span class="n">navigation_mode</span> <span class="o">=</span> <span class="n">PointToPointMode</span><span class="o">.</span><span class="n">FLY_DIRECT</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the procedure’s enroute options, which define the turning performance characteristics of the aircraft during enroute segments of the procedure. Set the turn factor, which is the maximum amount - expressed as a multiplier - that the turn radius is increased to minimize the bank angle required to complete turns. Set the turn factor to 5:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blue_mesa_procedure</span><span class="o">.</span><span class="n">enroute_options</span><span class="o">.</span><span class="n">max_turn_radius_factor</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<p>Next, insert another basic point to point procedure to fly from Blue Mesa to Cones, which has an FAA designator of “ETL”.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">procedures</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">SiteType</span><span class="o">.</span><span class="n">SITE_NAVAID_FROM_CATALOG</span><span class="p">,</span> <span class="n">ProcedureType</span><span class="o">.</span><span class="n">PROCEDURE_BASIC_POINT_TO_POINT</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Get the navaid catalog item corresponding to the Cones beacon:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_navaid</span> <span class="o">=</span> <span class="n">aviator_propagator</span><span class="o">.</span><span class="n">aviator_catalog</span><span class="o">.</span><span class="n">navaid_category</span><span class="o">.</span><span class="n">arinc424_navaids</span><span class="o">.</span><span class="n">get_arinc424_item</span><span class="p">(</span>
+    <span class="s2">&quot;ETL&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the procedure’s site to the navaid:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">set_catalog_navaid</span><span class="p">(</span><span class="n">cones_navaid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Add a place object at the navaid’s location:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;Cones&quot;</span><span class="p">)</span>
+<span class="n">cones</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span>
+    <span class="n">cones_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span> <span class="n">cones_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span> <span class="mi">0</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the procedure’s name to “Cones”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Cones&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the procedure’s altitude options. Altitude parameters define the altitude that the aircraft will attempt to achieve and sustain during the procedure. Set the Use Aircraft Default Cruise Altitude option to false:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span><span class="o">.</span><span class="n">altitude_options</span><span class="o">.</span><span class="n">use_default_cruise_altitude</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the procedure’s altitude to <span class="math notranslate nohighlight">\(15000\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span><span class="o">.</span><span class="n">altitude_options</span><span class="o">.</span><span class="n">altitude</span> <span class="o">=</span> <span class="mi">15000</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the procedure’s enroute options to use a turn factor of <span class="math notranslate nohighlight">\(5\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cones_procedure</span><span class="o">.</span><span class="n">enroute_options</span><span class="o">.</span><span class="n">max_turn_radius_factor</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the procedure’s enroute cruise airspeed options. The enroute cruise airspeed parameters define the airspeed performance characteristics of the aircraft during enroute segments of the procedure. Set the airspeed type to other airspeed, which allows the manual setting of a constant airspeed:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">CruiseSpeed</span>
+
+
+<span class="n">cones_procedure</span><span class="o">.</span><span class="n">enroute_cruise_airspeed_options</span><span class="o">.</span><span class="n">cruise_speed_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">CruiseSpeed</span><span class="o">.</span><span class="n">OTHER_AIRSPEED</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the airspeed to <span class="math notranslate nohighlight">\(250\)</span> nm/hr using calibrated airspeed.:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">AirspeedType</span>
+
+
+<span class="n">cones_procedure</span><span class="o">.</span><span class="n">enroute_cruise_airspeed_options</span><span class="o">.</span><span class="n">set_other_airspeed</span><span class="p">(</span>
+    <span class="n">AirspeedType</span><span class="o">.</span><span class="n">CAS</span><span class="p">,</span> <span class="mi">250</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, insert the last procedure in the phase, which is a landing procedure arriving at the Telluride runway. Insert the procedure:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">procedures</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">SiteType</span><span class="o">.</span><span class="n">SITE_RUNWAY_FROM_CATALOG</span><span class="p">,</span> <span class="n">ProcedureType</span><span class="o">.</span><span class="n">PROCEDURE_LANDING</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the site to the Telluride runway:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">set_catalog_runway</span><span class="p">(</span><span class="n">telluride_runway</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the landing procedure. A landing procedure brings an aircraft down from the air to a runway site. Set the procedure’s name to “Telluride Runway”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Telluride Runway&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Set the approach mode, which describes the type of landing, to Intercept Glideslope. An intercept glideslope approach designates that the aircraft performs a landing following VFR flight rules and uses Basic Point to Point methodology to fly to the Initial Approach Fix Range and then descend to landing along the glideslope.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.aviator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApproachMode</span>
+
+
+<span class="n">landing_procedure</span><span class="o">.</span><span class="n">approach_mode</span> <span class="o">=</span> <span class="n">ApproachMode</span><span class="o">.</span><span class="n">INTERCEPT_GLIDESLOPE</span>
+</pre></div>
+</div>
+</div>
+<p>Set the runway’s heading to the low end:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span><span class="o">.</span><span class="n">runway_heading_options</span><span class="o">.</span><span class="n">runway_mode</span> <span class="o">=</span> <span class="n">RunwayHighLowEnd</span><span class="o">.</span><span class="n">LOW_END</span>
+</pre></div>
+</div>
+</div>
+<p>Set the runway altitude offset to <span class="math notranslate nohighlight">\(7\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span><span class="o">.</span><span class="n">mode_as_intercept_glideslope</span><span class="o">.</span><span class="n">runway_altitude_offset</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, enable the use of terrain for runway altitude:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_procedure</span><span class="o">.</span><span class="n">mode_as_intercept_glideslope</span><span class="o">.</span><span class="n">use_runway_terrain</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="View-the-aircraft's-flight">
+<h2>View the aircraft’s flight<a class="headerlink" href="#View-the-aircraft's-flight" title="Link to this heading">#</a></h2>
+<p>The aircraft’s flight is now visible in the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1090</span><span class="p">,</span> <span class="mi">35060</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_aviator-fuel-calculator_187_0.png" src="../_images/examples_aviator-fuel-calculator_187_0.png" />
+</div>
+</div>
+</section>
+<section id="Create-a-flight-profile-by-time-report">
+<h2>Create a flight profile by time report<a class="headerlink" href="#Create-a-flight-profile-by-time-report" title="Link to this heading">#</a></h2>
+<p>To determine how much fuel is required for the mission, and how much payload can be carried on board the aircraft, create a flight profile by time report. In this report type, flight data is sampled using a constant time step between grid points. This report style is only available for Aviator propagated vehicles.</p>
+<p>Select the report from the aircraft’s <code class="docutils literal notranslate"><span class="pre">data_providers</span></code> method, calculate the data for every minute between the scenario’s start and stop times, and convert the report to a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flight_profile_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aircraft</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Flight Profile By Time&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the columns of the dataframe corresponding to the aircraft’s weight and fuel state, then select the first and last rows of each:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flight_profile_df</span><span class="p">[[</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;fuel state&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weight</th>
+      <th>fuel state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51000.0</td>
+      <td>20000.0</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>44388.42275516406</td>
+      <td>13388.42275516408</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The first row corresponds to the aircraft’s starting weight and fuel state, and the last row corresponds to the ending weight and fuel state. The plane is approximately <span class="math notranslate nohighlight">\(4404\)</span> lb above its maximum landing weight of <span class="math notranslate nohighlight">\(40000\)</span> lbs when it touches down, and lands with approximately <span class="math notranslate nohighlight">\(13404\)</span> lb of fuel.</p>
+</section>
+<section id="Adjust-the-initial-fuel-state">
+<h2>Adjust the initial fuel state<a class="headerlink" href="#Adjust-the-initial-fuel-state" title="Link to this heading">#</a></h2>
+<p>To ensure that the aircraft does not land with a weight higher than its maximum landing weight, it is possible to adjust either the initial fuel state or payload. In this case, because the aircraft landed with more fuel than necessary, adjust the initial fuel state. Remove <span class="math notranslate nohighlight">\(6000\)</span> pounds of fuel by setting the initial fuel state to <span class="math notranslate nohighlight">\(14000\)</span> lb:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">internal_fuel</span><span class="o">.</span><span class="n">initial_fuel_state</span> <span class="o">=</span> <span class="mi">14000</span>
+</pre></div>
+</div>
+</div>
+<p>Then, update the aircraft’s route and re-calculate the flight profile by time report:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">aviator_propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+<span class="n">flight_profile_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aircraft</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Flight Profile By Time&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">flight_profile_df</span><span class="p">[[</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;fuel state&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weight</th>
+      <th>fuel state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>45000.0</td>
+      <td>14000.0</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>38547.50572913153</td>
+      <td>7547.505729131538</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The aircraft’s landing weight is now under the maximum weight, and it still has approximately <span class="math notranslate nohighlight">\(7561\)</span> lb of fuel upon landing.</p>
+</section>
+<section id="Visualize-the-adjusted-fuel-state-over-time">
+<h2>Visualize the adjusted fuel state over time<a class="headerlink" href="#Visualize-the-adjusted-fuel-state-over-time" title="Link to this heading">#</a></h2>
+<p>Plot the aircraft’s weight and fuel state over the duration of its flight:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dateutil</span><span class="w"> </span><span class="kn">import</span> <span class="n">parser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="n">flight_profile_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aircraft</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Flight Profile By Time&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">flight_profile_df</span><span class="p">[[</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;fuel state&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">]]</span>
+
+<span class="c1"># Convert data to correct types</span>
+<span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">])</span>
+<span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;fuel state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">flight_profile_df</span><span class="p">[</span><span class="s2">&quot;fuel state&quot;</span><span class="p">])</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">flight_profile_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Aircraft weight&quot;</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">flight_profile_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;fuel state&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;firebrick&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fuel state&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Aircraft Weight and Fuel State Over Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Weight (lb)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Add waypoint information</span>
+<span class="n">lla_position_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aircraft</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;LLA State&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_waypoint_time</span><span class="p">(</span><span class="n">waypoint_lat</span><span class="p">,</span> <span class="n">waypoint_lon</span><span class="p">,</span> <span class="n">lla_df</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the time at which the aircraft flies over a waypoint.&quot;&quot;&quot;</span>
+    <span class="n">valid_lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lla_df</span><span class="p">[</span><span class="s2">&quot;lat&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lla_df</span><span class="p">),</span> <span class="n">waypoint_lat</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+        <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-03</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">valid_lons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lla_df</span><span class="p">[</span><span class="s2">&quot;lon&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lla_df</span><span class="p">),</span> <span class="n">waypoint_lon</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">lla_df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">valid_lats</span><span class="p">,</span> <span class="n">valid_lons</span><span class="p">)][</span><span class="s2">&quot;time&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+
+
+<span class="n">telluride_time</span> <span class="o">=</span> <span class="n">find_waypoint_time</span><span class="p">(</span>
+    <span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">telluride_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">lla_position_df</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">telluride_time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Telluride&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;seagreen&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="n">telluride_time</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+    <span class="mi">20000</span><span class="p">,</span>
+    <span class="s2">&quot;Telluride&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;seagreen&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">colorado_springs_time</span> <span class="o">=</span> <span class="n">find_waypoint_time</span><span class="p">(</span>
+    <span class="n">colorado_springs_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">colorado_springs_runway</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">lla_position_df</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+    <span class="n">colorado_springs_time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Colorado Springs&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;olivedrab&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="n">colorado_springs_time</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+    <span class="mi">20000</span><span class="p">,</span>
+    <span class="s2">&quot;Colorado Springs&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;olivedrab&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">cones_time</span> <span class="o">=</span> <span class="n">find_waypoint_time</span><span class="p">(</span>
+    <span class="n">cones_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">cones_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">lla_position_df</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">cones_time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cones&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;deepskyblue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="n">cones_time</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+    <span class="mi">20000</span><span class="p">,</span>
+    <span class="s2">&quot;Cones&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;deepskyblue&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">blue_mesa_time</span> <span class="o">=</span> <span class="n">find_waypoint_time</span><span class="p">(</span>
+    <span class="n">blue_mesa_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">),</span>
+    <span class="n">blue_mesa_navaid</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;Longitude&quot;</span><span class="p">),</span>
+    <span class="n">lla_position_df</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">blue_mesa_time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Blue Mesa&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;midnightblue&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="n">blue_mesa_time</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+    <span class="mi">20000</span><span class="p">,</span>
+    <span class="s2">&quot;Blue Mesa&quot;</span><span class="p">,</span>
+    <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;midnightblue&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_aviator-fuel-calculator_203_0.png" src="../_images/examples_aviator-fuel-calculator_203_0.png" />
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"8fb4e6a8b5914711ace8dbc6fd8e9df3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0832a19f08aa46c0a496b3a82eb46f28": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_8fb4e6a8b5914711ace8dbc6fd8e9df3", "resizable": true, "tabbable": null, "tooltip": null}}, "fc9d572cb56143fc8ac2aaf9ffd4fee1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6ffb7dba4aa04e7ba3bcd1df41948b18": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_fc9d572cb56143fc8ac2aaf9ffd4fee1", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "55b91db547704bcab4b35705a364dfda": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c210f60fca2047bfa2c16f4f7d936371": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_55b91db547704bcab4b35705a364dfda", "resizable": true, "tabbable": null, "tooltip": null}}, "198ffd7981eb4937a4534eca2df8d3e0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "250fa810e6b449a9896c2a039b02e4dc": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_198ffd7981eb4937a4534eca2df8d3e0", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="multifunction-radar-design.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multifunction radar design</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="aircraft-carrier-landing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multi-aircraft carrier landing with Aviator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-an-Aviator-mission?">What is an Aviator mission?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-an-aircraft">Add an aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-a-runway-at-Telluride-Regional-Airport">Insert a runway at Telluride Regional Airport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-the-Telluride-Regional-Airport">Insert the Telluride Regional Airport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-the-Colorado-Springs-Municipal-Airport">Insert the Colorado Springs Municipal Airport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-aircraft-model">Configure the aircraft model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-aircraft-performance-models">Configure the aircraft performance models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-aircraft's-fuel-and-payload">Set the aircraft’s fuel and payload</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-mission-wind-model">Configure the mission wind model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-the-aircraft's-flight-plan">Create the aircraft’s flight plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#View-the-aircraft's-flight">View the aircraft’s flight</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-flight-profile-by-time-report">Create a flight profile by time report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Adjust-the-initial-fuel-state">Adjust the initial fuel state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualize-the-adjusted-fuel-state-over-time">Visualize the adjusted fuel state over time</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/aviator-fuel-calculator.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/aviator-fuel-calculator.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+ISTKObjectCollection
+====================
+
+.. py:class:: ansys.stk.core.stkobjects.ISTKObjectCollection
+
+   Represents a collection of STK objects.
+
+.. py:currentmodule:: ISTKObjectCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.contains`
+              - Check whether the collection contains an object with the given type and name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.copy_object`
+              - Copy and paste the specified object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.get_elements`
+              - Return a collection of objects of specified type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.get_item_by_index`
+              - Retrieve an Stk object from the collection by index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.get_item_by_name`
+              - Retrieve an Stk object from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.import_object`
+              - Import object from external file and returns the pointer to the object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.item`
+              - Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.new`
+              - Create an STK object using specified class and instance name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.new_on_central_body`
+              - Create an STK object using specified class, instance name and the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.unload`
+              - Remove an STK object using specified object's type and name.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection._new_enum`
+              - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.count`
+              - Return the number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISTKObjectCollection.supported_child_types`
+              - Return the available objects that can be added to this object.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ISTKObjectCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection._new_enum
+    :type: EnumeratorProxy
+
+    Return an enumerator for the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.count
+    :type: int
+
+    Return the number of elements in the collection.
+
+.. py:property:: supported_child_types
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.supported_child_types
+    :type: list
+
+    Return the available objects that can be added to this object.
+
+
+Method detail
+-------------
+
+.. py:method:: contains(self, class_type: STKObjectType, inst_name: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.contains
+
+    Check whether the collection contains an object with the given type and name.
+
+    :Parameters:
+
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: copy_object(self, object_to_clone: ISTKObject, new_object_name: str) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.copy_object
+
+    Copy and paste the specified object.
+
+    :Parameters:
+
+        **object_to_clone** : :obj:`~ISTKObject`
+
+        **new_object_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+
+.. py:method:: get_elements(self, class_type: STKObjectType) -> ISTKObjectElementCollection
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.get_elements
+
+    Return a collection of objects of specified type.
+
+    :Parameters:
+
+        **class_type** : :obj:`~STKObjectType`
+
+
+    :Returns:
+
+        :obj:`~ISTKObjectElementCollection`
+
+.. py:method:: get_item_by_index(self, index: int) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.get_item_by_index
+
+    Retrieve an Stk object from the collection by index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+.. py:method:: get_item_by_name(self, name: str) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.get_item_by_name
+
+    Retrieve an Stk object from the collection by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+.. py:method:: import_object(self, file_path: str) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.import_object
+
+    Import object from external file and returns the pointer to the object.
+
+    :Parameters:
+
+        **file_path** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.item
+
+    Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+.. py:method:: new(self, class_type: STKObjectType, inst_name: str) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.new
+
+    Create an STK object using specified class and instance name.
+
+    :Parameters:
+
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+.. py:method:: new_on_central_body(self, class_type: STKObjectType, inst_name: str, central_body_name: str) -> ISTKObject
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.new_on_central_body
+
+    Create an STK object using specified class, instance name and the central body.
+
+    :Parameters:
+
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
+        **central_body_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISTKObject`
+
+
+.. py:method:: unload(self, class_type: STKObjectType, inst_name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ISTKObjectCollection.unload
+
+    Remove an STK object using specified object's type and name.
+
+    :Parameters:
+
+        **class_type** : :obj:`~STKObjectType`
+
+        **inst_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

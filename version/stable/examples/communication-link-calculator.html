@@ -1,0 +1,2964 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Communication link budget calculator &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/communication-link-calculator';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multifunction radar parametric study" href="multifunction-radar-parametric-study.html" />
+    <link rel="prev" title="Radar cross section detection calculator" href="radar-cross-section-detection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/communication-link-calculator.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Communication link budget calculator</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/communication-link-calculator.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/communication-link-calculator.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/communication-link-calculator.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Communication-link-budget-calculator">
+<h1>Communication link budget calculator<a class="headerlink" href="#Communication-link-budget-calculator" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to model a communications system including transmitters and receivers, and calculate link budgets considering factors like terrain, rain models, and atmospheric losses using Python and PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/StartCommunications.htm">this</a> tutorial.</p>
+<section id="What-are-communications-links,-and-how-are-they-evaluated?">
+<h2>What are communications links, and how are they evaluated?<a class="headerlink" href="#What-are-communications-links,-and-how-are-they-evaluated?" title="Link to this heading">#</a></h2>
+<p>Communication links define the ways that a transmitter and a receiver access each other. STK allows the modeling of two kinds of links: basic and multi-hop. A basic communications link is access between just a single transmitter and a single receiver. A multi-hop communications link is defined by a group of communication objects consisting of a transmitter, receiver, re-transmitter, and another receiver. STK also allows setting constraints on communication links, including terrain masking
+constraints.</p>
+<p>Communications links in STK can be analyzed using link budget reports, which include all the link parameters associated with the selected receiver or transmitter. Link budget reports take light speed delay into account. They also take computed refraction into account if enabled on the transmitter or receiver objects. Link budget reports include many communications-specific fields, including EIRP (effective isotropic radiated power in the link direction), C/N (Carrier-to-Noise ratio at the
+receiver input), Eb/No (Signal-to-Noise ratio at the receiver), and BER (Bit Error Rate). Link budget reports can also include access-specific information, such as the loss calculated by different selected models, including atmospheric, rain, cloud/fog, and terrain models.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>A team of scientists is monitoring glacial meltwater in a remote, mountainous location (latitude <span class="math notranslate nohighlight">\(47.5605^\circ\)</span>, longitude <span class="math notranslate nohighlight">\(11.5027^\circ\)</span>). They need to determine how their location impacts a link budget between them and a low earth orbit (LEO), Earth observation satellite which is downloading data to the team. The satellite has a simple transmitter with an isotropic antenna pattern, a frequency of <span class="math notranslate nohighlight">\(1.7045\)</span> GHz, an EIRP of <span class="math notranslate nohighlight">\(10\)</span> dBW, a data rate of <span class="math notranslate nohighlight">\(4.2\)</span> Mb/sec,
+and a right-hand circular polarization. The camp’s receiver is steerable, points at the satellite, and is placed on a half power sensor located <span class="math notranslate nohighlight">\(6\)</span> ft above the ground, with a frequency of <span class="math notranslate nohighlight">\(1.7045\)</span> GHz and <span class="math notranslate nohighlight">\(1.6\)</span> m. The receiver has a parabolic antenna with a design frequency of <span class="math notranslate nohighlight">\(1.7\)</span> GHz, a <span class="math notranslate nohighlight">\(1.6\)</span> m diameter, and right-hand circular polarization.</p>
+<p>Model and analyze a link budget between the ground site and the Earth observation satellite, taking into account different factors such as terrain, rain and atmospheric absorption, and system noise temperature from sun, atmosphere, rain, and cosmic background.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create a new scenario in STK by running:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;Communications&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d6a7b5cd234145c8b2416aac7bf9b243"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_communication-link-calculator_13_1.png" src="../_images/examples_communication-link-calculator_13_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;15 Mar 2024 06:00:00.000&quot;</span><span class="p">,</span> <span class="s2">&quot;16 Mar 2024 06:00:00.000&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-analytical-and-visual-terrain">
+<h2>Add analytical and visual terrain<a class="headerlink" href="#Add-analytical-and-visual-terrain" title="Link to this heading">#</a></h2>
+<p>Use an STK terrain file (file extension PDTT) included with the STK install to add analytical terrain to the scenario. The file contains information on the terrain around the scientists’ camp site. Use a Connect command to find the path to the RaistingStation.pdtt file:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">TerrainFileType</span>
+
+
+<span class="n">install_dir</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">execute_command</span><span class="p">(</span><span class="s2">&quot;GetDirectory / STKHome&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">terrain_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+    <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">install_dir</span><span class="p">)</span>
+    <span class="o">/</span> <span class="s2">&quot;Data&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;Resources&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;stktraining&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;imagery&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;RaistingStation.pdtt&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add the file to the Earth central body’s terrain collection:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">terrain</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Earth&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">terrain_collection</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">terrain_path</span><span class="p">,</span> <span class="n">TerrainFileType</span><span class="o">.</span><span class="n">PDTT</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This file is used for analysis by default after it is inserted.</p>
+</section>
+<section id="Add-a-satellite">
+<h2>Add a satellite<a class="headerlink" href="#Add-a-satellite" title="Link to this heading">#</a></h2>
+<p>The Earth observation satellite is in a sun-synchronous orbit. It can thus be modelled by an SGP4 propagator, which is used for LEO satellites. The satellite communicating with the camp has a common name of TerraSarX, which corresponds to a space surveillance catalog number of <span class="math notranslate nohighlight">\(31698\)</span>.</p>
+<p>To add the satellite, first insert a satellite object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span><span class="p">,</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;TerraSarX_31698&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the satellite’s propagator to the SGP4 propagator:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">SGP4</span><span class="p">)</span>
+<span class="n">propagator</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, use the propagator’s <code class="docutils literal notranslate"><span class="pre">common_tasks</span></code> property to add the satellite’s orbit from an online source, and propagate the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">propagator</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">add_segments_from_online_source</span><span class="p">(</span><span class="s2">&quot;31698&quot;</span><span class="p">)</span>
+<span class="n">propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-the-camp-site">
+<h2>Add the camp site<a class="headerlink" href="#Add-the-camp-site" title="Link to this heading">#</a></h2>
+<p>Add a place object to represent the camp site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">camp_site</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;CampSite&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Assign the site’s position to latitude <span class="math notranslate nohighlight">\(47.5605^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(11.5027^\circ\)</span>, with an elevation of <span class="math notranslate nohighlight">\(6\)</span> ft (<span class="math notranslate nohighlight">\(0.0018288\)</span> km) to simulate the height of the equipment at the site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">camp_site</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_planetodetic</span><span class="p">(</span><span class="mf">47.5605</span><span class="p">,</span> <span class="mf">11.5027</span><span class="p">,</span> <span class="mf">0.0018288</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Model-a-simple-transmitter">
+<h2>Model a simple transmitter<a class="headerlink" href="#Model-a-simple-transmitter" title="Link to this heading">#</a></h2>
+<p>The satellite has a simple transmitter model, a model type which uses an isotropic, omnidirectional antenna, which is an ideal spherical pattern antenna with constant gain. Insert the transmitter on the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">TRANSMITTER</span><span class="p">,</span> <span class="s2">&quot;DownloadTransmitter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The transmitter’s <code class="docutils literal notranslate"><span class="pre">model</span></code> property now contains a <code class="docutils literal notranslate"><span class="pre">TransmitterModelSimple</span></code> object. Set the model’s frequency to <span class="math notranslate nohighlight">\(1.7045\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransmitterModelSimple</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter_model</span> <span class="o">=</span> <span class="n">TransmitterModelSimple</span><span class="p">(</span>
+    <span class="n">transmitter</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+<span class="n">transmitter_model</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">1.7045</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the model’s EIRP, which is the effective isotropic radiated power at the output of the transmit antenna. Set the EIRP to <span class="math notranslate nohighlight">\(10\)</span> dBW:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter_model</span><span class="o">.</span><span class="n">eirp</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<p>Next, set the model’s data rate to <span class="math notranslate nohighlight">\(4.2\)</span> Mb/sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter_model</span><span class="o">.</span><span class="n">data_rate</span> <span class="o">=</span> <span class="mf">4.2</span>
+</pre></div>
+</div>
+</div>
+<p>Then, enable polarization on the model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transmitter_model</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the model’s polarization type to right-hand circular:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolarizationType</span>
+
+
+<span class="n">transmitter_model</span><span class="o">.</span><span class="n">set_polarization_type</span><span class="p">(</span><span class="n">PolarizationType</span><span class="o">.</span><span class="n">RIGHT_HAND_CIRCULAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-a-steerable-sensor">
+<h2>Add a steerable sensor<a class="headerlink" href="#Add-a-steerable-sensor" title="Link to this heading">#</a></h2>
+<p>The receiver antenna at the camp site is steerable. To create a steering device, add a sensor object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">camp_site</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;ServoMotor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the sensor’s pattern to a half power pattern, which is designed to visually model parabolic antennas. The sensor half angle is determined by frequency and antenna diameter.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPattern</span>
+
+
+<span class="n">sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">HALF_POWER</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor’s <code class="docutils literal notranslate"><span class="pre">pattern</span></code> property now holds a <code class="docutils literal notranslate"><span class="pre">SensorHalfPowerPattern</span></code> object, through which it is possible to configure the half power model. First, set the sensor’s frequency to <span class="math notranslate nohighlight">\(1.7045\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="o">.</span><span class="n">pattern</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">1.7045</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the sensor’s antenna diameter to <span class="math notranslate nohighlight">\(1.6\)</span> m:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="o">.</span><span class="n">pattern</span><span class="o">.</span><span class="n">antenna_diameter</span> <span class="o">=</span> <span class="mf">1.6</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor is steerable and tracks the satellite, so set the sensor’s pointing type to targeted:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPointing</span>
+
+
+<span class="n">sensor</span><span class="o">.</span><span class="n">set_pointing_type</span><span class="p">(</span><span class="n">SensorPointing</span><span class="o">.</span><span class="n">TARGETED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor’s <code class="docutils literal notranslate"><span class="pre">pointing</span></code> property now holds a <code class="docutils literal notranslate"><span class="pre">SensorPointingTargeted</span></code> object, through which it is possible to set the satellite as the sensor’s target:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span><span class="o">.</span><span class="n">pointing</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Satellite/TerraSarX_31698&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Calculate-access">
+<h2>Calculate access<a class="headerlink" href="#Calculate-access" title="Link to this heading">#</a></h2>
+<p>Get and compute the access between the camp site’s sensor and the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor_to_satellite_access</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">satellite</span><span class="p">)</span>
+<span class="n">sensor_to_satellite_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the access data during the entire scenario as a dataframe:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor_to_satellite_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">sensor_to_satellite_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">sensor_to_satellite_access_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>15 Mar 2024 06:22:09.458394650</td>
+      <td>15 Mar 2024 06:33:14.874552309</td>
+      <td>665.4161576585711</td>
+      <td>N/A</td>
+      <td>92880</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>33W</td>
+      <td>521.7361574932914</td>
+      <td>7745.443597705119</td>
+      <td>33WWT2173645444</td>
+      <td>30R</td>
+      <td>419.93311379561754</td>
+      <td>3183.561712039982</td>
+      <td>30RVS1993383562</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>15 Mar 2024 07:58:01.500105812</td>
+      <td>15 Mar 2024 08:02:54.221900294</td>
+      <td>292.7217944814738</td>
+      <td>N/A</td>
+      <td>92881</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>29W</td>
+      <td>366.3935165120598</td>
+      <td>7345.475509726332</td>
+      <td>29WLP6639445476</td>
+      <td>27U</td>
+      <td>429.62145253038983</td>
+      <td>5346.728487058212</td>
+      <td>27UVP2962146728</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>15 Mar 2024 15:31:09.921082116</td>
+      <td>15 Mar 2024 15:41:19.040164169</td>
+      <td>609.1190820532502</td>
+      <td>N/A</td>
+      <td>92886</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>36S</td>
+      <td>488.9442601190258</td>
+      <td>3580.2257910631242</td>
+      <td>36SVA8894480226</td>
+      <td>33W</td>
+      <td>473.4377277545171</td>
+      <td>7750.483657208226</td>
+      <td>33WVT7343850484</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>15 Mar 2024 17:04:09.317277119</td>
+      <td>15 Mar 2024 17:15:35.046016598</td>
+      <td>685.7287394791856</td>
+      <td>N/A</td>
+      <td>92887</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>32R</td>
+      <td>684.1302660527213</td>
+      <td>2804.2680862111097</td>
+      <td>32RPP8413004268</td>
+      <td>29W</td>
+      <td>581.3720108624226</td>
+      <td>7521.636185530031</td>
+      <td>29WNR8137221636</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>15 Mar 2024 18:42:20.852340085</td>
+      <td>15 Mar 2024 18:47:07.001005909</td>
+      <td>286.14866582359537</td>
+      <td>N/A</td>
+      <td>92888</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>28S</td>
+      <td>411.79831536120537</td>
+      <td>4198.952095364672</td>
+      <td>28SDG1179898952</td>
+      <td>27U</td>
+      <td>413.58106896236995</td>
+      <td>6176.115365635918</td>
+      <td>27UVB1358176115</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>16 Mar 2024 04:31:32.112160260</td>
+      <td>16 Mar 2024 04:41:28.374312584</td>
+      <td>596.2621523233247</td>
+      <td>N/A</td>
+      <td>92894</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>37W</td>
+      <td>469.61327075042703</td>
+      <td>7158.601010664799</td>
+      <td>37WDM6961358601</td>
+      <td>34R</td>
+      <td>788.3165946467708</td>
+      <td>3051.857144479871</td>
+      <td>34RGR8831751857</td>
+    </tr>
+  </tbody>
+</table>
+<p>6 rows × 60 columns</p>
+</div></div>
+</div>
+<p>The sensor is able to access the satellite six times throughout the duration of the scenario.</p>
+<p>The access between the sensor and the satellite can be seen in the 3D graphics window approximately <span class="math notranslate nohighlight">\(1389\)</span> seconds after the scenario begins:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">current_time</span> <span class="o">=</span> <span class="mf">1389.458394</span>
+<span class="n">globe</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2703.568833967754</span><span class="p">,</span> <span class="o">-</span><span class="mf">5862.711497073381</span><span class="p">,</span> <span class="mf">9424.82507431983</span><span class="p">]</span>
+<span class="n">globe</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_communication-link-calculator_70_0.png" src="../_images/examples_communication-link-calculator_70_0.png" />
+</div>
+</div>
+</section>
+<section id="Model-the-receiver">
+<h2>Model the receiver<a class="headerlink" href="#Model-the-receiver" title="Link to this heading">#</a></h2>
+<p>The sensor’s receiver is modelled using a complex receiver model, which allows selecting among a variety of analytical and realistic antenna models and defining the characteristics of the selected antenna type.</p>
+<p>First, add the receiver on the sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">RECEIVER</span><span class="p">,</span> <span class="s2">&quot;DownloadReceiver&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the receiver’s model type to the complex receiver model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">&quot;Complex Receiver Model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, use the model’s <code class="docutils literal notranslate"><span class="pre">antenna_control</span></code> property to set the receiver’s embedded model to a parabolic antenna:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReceiverModelComplex</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_model</span> <span class="o">=</span> <span class="n">ReceiverModelComplex</span><span class="p">(</span><span class="n">receiver</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="p">)</span>
+<span class="n">receiver_model</span><span class="o">.</span><span class="n">antenna_control</span><span class="o">.</span><span class="n">embedded_model_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span>
+    <span class="s2">&quot;Parabolic&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The receiver model’s antenna control’s <code class="docutils literal notranslate"><span class="pre">embedded_model</span></code> property now holds an <code class="docutils literal notranslate"><span class="pre">AntennaModelParabolic</span></code> object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AntennaModelInputType</span><span class="p">,</span> <span class="n">AntennaModelParabolic</span>
+
+
+<span class="n">antenna_control</span> <span class="o">=</span> <span class="n">AntennaModelParabolic</span><span class="p">(</span>
+    <span class="n">receiver_model</span><span class="o">.</span><span class="n">antenna_control</span><span class="o">.</span><span class="n">embedded_model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+<span class="n">antenna_control</span><span class="o">.</span><span class="n">input_type</span> <span class="o">=</span> <span class="n">AntennaModelInputType</span><span class="o">.</span><span class="n">DIAMETER</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the diameter to <span class="math notranslate nohighlight">\(1.6\)</span> m:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_control</span><span class="o">.</span><span class="n">diameter</span> <span class="o">=</span> <span class="mf">1.6</span>
+</pre></div>
+</div>
+</div>
+<p>Set the design frequency to <span class="math notranslate nohighlight">\(1.7\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_control</span><span class="o">.</span><span class="n">design_frequency</span> <span class="o">=</span> <span class="mf">1.7</span>
+</pre></div>
+</div>
+</div>
+<p>Next, enable the use of polarization on the receiver model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_model</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>The receiver’s polarization type is the same as the transmitter’s polarization, so set the model’s polarization type to right-hand circular:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_model</span><span class="o">.</span><span class="n">set_polarization_type</span><span class="p">(</span><span class="n">PolarizationType</span><span class="o">.</span><span class="n">RIGHT_HAND_CIRCULAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Calculate access<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Get and calculate the access between the receiver and transmitter:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_access</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">transmitter</span><span class="p">)</span>
+<span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the link information for the access for the entire scenario, using a time step of <span class="math notranslate nohighlight">\(30\)</span> s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_link_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Link Information&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Get the columns corresponding to time, atmospheric loss (atmos loss), rain loss, EIRP in the link direction (eirp), received isotropic power at the receiver antenna (rcvd. iso. power), power flux density at the receiver antenna (flux density), receiver gain over equivalent noise temperature (g/T), carrier-to-noise density at the receiver input (c/no), bandwidth, carrier-to-noise ratio at the receiver input (c/n), signal-to-noise ratio at the receiver (eb/no), bit error rate (ber), and calculated
+system noise temperatures (tatmos, train, tsun, tearth, tcosmic, tantenna, tequivalent):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">link_budget_columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;atmos loss&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rain loss&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;eirp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rcvd. frequency&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rcvd. iso. power&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;flux density&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;g/t&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;c/no&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bandwidth&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;c/n&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;eb/no&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ber&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tatmos&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tsun&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tearth&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tcosmic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tantenna&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tequivalent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">receiver_basic_link_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="n">link_budget_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>atmos loss</th>
+      <th>rain loss</th>
+      <th>eirp</th>
+      <th>rcvd. frequency</th>
+      <th>rcvd. iso. power</th>
+      <th>flux density</th>
+      <th>g/t</th>
+      <th>c/no</th>
+      <th>bandwidth</th>
+      <th>c/n</th>
+      <th>eb/no</th>
+      <th>ber</th>
+      <th>tatmos</th>
+      <th>train</th>
+      <th>tsun</th>
+      <th>tearth</th>
+      <th>tcosmic</th>
+      <th>tantenna</th>
+      <th>tequivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15 Mar 2024 06:22:09.458394650</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704539</td>
+      <td>-155.457601</td>
+      <td>-129.369976</td>
+      <td>1.900768</td>
+      <td>15.042306</td>
+      <td>8.4</td>
+      <td>5.799513</td>
+      <td>8.809813</td>
+      <td>0.000048</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15 Mar 2024 07:58:01.500105812</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704517</td>
+      <td>-155.454205</td>
+      <td>-129.36658</td>
+      <td>1.900657</td>
+      <td>15.045591</td>
+      <td>8.4</td>
+      <td>5.802798</td>
+      <td>8.813098</td>
+      <td>0.000048</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15 Mar 2024 15:31:09.921082116</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704535</td>
+      <td>-155.391722</td>
+      <td>-129.304097</td>
+      <td>1.900751</td>
+      <td>15.108167</td>
+      <td>8.4</td>
+      <td>5.865375</td>
+      <td>8.875675</td>
+      <td>0.000043</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15 Mar 2024 17:04:09.317277119</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704539</td>
+      <td>-155.372865</td>
+      <td>-129.285241</td>
+      <td>1.900771</td>
+      <td>15.127045</td>
+      <td>8.4</td>
+      <td>5.884252</td>
+      <td>8.894552</td>
+      <td>0.000041</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15 Mar 2024 18:42:20.852340085</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704515</td>
+      <td>-155.405099</td>
+      <td>-129.317474</td>
+      <td>1.900647</td>
+      <td>15.094687</td>
+      <td>8.4</td>
+      <td>5.851894</td>
+      <td>8.862194</td>
+      <td>0.000044</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>16 Mar 2024 04:31:32.112160260</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704533</td>
+      <td>-155.452536</td>
+      <td>-129.364911</td>
+      <td>1.90074</td>
+      <td>15.047343</td>
+      <td>8.4</td>
+      <td>5.80455</td>
+      <td>8.81485</td>
+      <td>0.000048</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>15 Mar 2024 06:22:39.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704539</td>
+      <td>-154.765272</td>
+      <td>-128.677647</td>
+      <td>1.900766</td>
+      <td>15.734634</td>
+      <td>8.4</td>
+      <td>6.491841</td>
+      <td>9.502141</td>
+      <td>0.000012</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>15 Mar 2024 07:58:31.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704514</td>
+      <td>-155.18293</td>
+      <td>-129.095305</td>
+      <td>1.900642</td>
+      <td>15.316851</td>
+      <td>8.4</td>
+      <td>6.074058</td>
+      <td>9.084358</td>
+      <td>0.000029</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15 Mar 2024 15:31:39.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704535</td>
+      <td>-154.772723</td>
+      <td>-128.685098</td>
+      <td>1.900746</td>
+      <td>15.727162</td>
+      <td>8.4</td>
+      <td>6.484369</td>
+      <td>9.494669</td>
+      <td>0.000012</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>15 Mar 2024 17:04:39.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704539</td>
+      <td>-154.657114</td>
+      <td>-128.56949</td>
+      <td>1.90077</td>
+      <td>15.842795</td>
+      <td>8.4</td>
+      <td>6.600002</td>
+      <td>9.610302</td>
+      <td>0.00001</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The dataframe now shows information corresponding to an STK link budget report. From the data, it is possible to see that as the satellite rises over the horizon of the central body, the site receives transmissions. When the satellite falls below the horizon, the site loses transmissions. Additionally, because the access calculation does not include any environmental factor models or system noise temperature considerations, the columns corresponding to the losses/noise all have values of 0.</p>
+</section>
+<section id="Add-terrain-to-the-analysis">
+<h2>Add terrain to the analysis<a class="headerlink" href="#Add-terrain-to-the-analysis" title="Link to this heading">#</a></h2>
+<p>Next, add a terrain mask to the receiver to add terrain into the access analysis. A terrain mask causes STK to constrain access to an object by any terrain data in the line of sight to which access is being calculated. Add a terrain mask access constraint:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccessConstraintType</span>
+
+
+<span class="n">terrain_constraint</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">TERRAIN_MASK</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Recalculate the access between the receiver and transmitter, then get the data corresponding to a link budget report:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+<span class="n">receiver_terrain_link_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Link Information&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">receiver_terrain_link_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="n">link_budget_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>atmos loss</th>
+      <th>rain loss</th>
+      <th>eirp</th>
+      <th>rcvd. frequency</th>
+      <th>rcvd. iso. power</th>
+      <th>flux density</th>
+      <th>g/t</th>
+      <th>c/no</th>
+      <th>bandwidth</th>
+      <th>c/n</th>
+      <th>eb/no</th>
+      <th>ber</th>
+      <th>tatmos</th>
+      <th>train</th>
+      <th>tsun</th>
+      <th>tearth</th>
+      <th>tcosmic</th>
+      <th>tantenna</th>
+      <th>tequivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15 Mar 2024 06:23:47.759570010</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704537</td>
+      <td>-152.945069</td>
+      <td>-126.857445</td>
+      <td>1.900759</td>
+      <td>17.554828</td>
+      <td>8.4</td>
+      <td>8.312036</td>
+      <td>11.322336</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15 Mar 2024 15:33:36.548124287</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704527</td>
+      <td>-152.052659</td>
+      <td>-125.965034</td>
+      <td>1.900709</td>
+      <td>18.447189</td>
+      <td>8.4</td>
+      <td>9.204396</td>
+      <td>12.214696</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15 Mar 2024 17:07:34.413895835</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-148.927067</td>
+      <td>-122.839442</td>
+      <td>1.900741</td>
+      <td>21.572814</td>
+      <td>8.4</td>
+      <td>12.330021</td>
+      <td>15.340321</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16 Mar 2024 04:32:28.173285490</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704531</td>
+      <td>-154.328235</td>
+      <td>-128.24061</td>
+      <td>1.900728</td>
+      <td>16.171633</td>
+      <td>8.4</td>
+      <td>6.92884</td>
+      <td>9.93914</td>
+      <td>0.000004</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15 Mar 2024 06:24:17.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704536</td>
+      <td>-152.071471</td>
+      <td>-125.983846</td>
+      <td>1.900753</td>
+      <td>18.428421</td>
+      <td>8.4</td>
+      <td>9.185629</td>
+      <td>12.195928</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>15 Mar 2024 15:34:06.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704524</td>
+      <td>-151.374141</td>
+      <td>-125.286516</td>
+      <td>1.900692</td>
+      <td>19.125691</td>
+      <td>8.4</td>
+      <td>9.882898</td>
+      <td>12.893198</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>15 Mar 2024 17:08:04.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.70453</td>
+      <td>-147.664614</td>
+      <td>-121.57699</td>
+      <td>1.900725</td>
+      <td>22.83525</td>
+      <td>8.4</td>
+      <td>13.592457</td>
+      <td>16.602757</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>16 Mar 2024 04:32:58.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704529</td>
+      <td>-153.707919</td>
+      <td>-127.620295</td>
+      <td>1.90072</td>
+      <td>16.791939</td>
+      <td>8.4</td>
+      <td>7.549146</td>
+      <td>10.559446</td>
+      <td>0.000001</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15 Mar 2024 06:24:47.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-151.110464</td>
+      <td>-125.02284</td>
+      <td>1.900746</td>
+      <td>19.38942</td>
+      <td>8.4</td>
+      <td>10.146627</td>
+      <td>13.156927</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>15 Mar 2024 15:34:36.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.0</td>
+      <td>1.70452</td>
+      <td>-150.737395</td>
+      <td>-124.64977</td>
+      <td>1.900671</td>
+      <td>19.762415</td>
+      <td>8.4</td>
+      <td>10.519622</td>
+      <td>13.529922</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Next, get the access data for the updated access:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span>
+<span class="p">)</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>15 Mar 2024 06:23:47.759570010</td>
+      <td>15 Mar 2024 06:30:05.292544675</td>
+      <td>377.53297466502795</td>
+      <td>N/A</td>
+      <td>92880</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>32V</td>
+      <td>542.9914547844054</td>
+      <td>7093.029825590829</td>
+      <td>32VNR4299193030</td>
+      <td>30T</td>
+      <td>693.268160537319</td>
+      <td>4503.764360442385</td>
+      <td>30TXL9326803764</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>15 Mar 2024 15:33:36.548124287</td>
+      <td>15 Mar 2024 15:39:49.757492637</td>
+      <td>373.2093683504718</td>
+      <td>N/A</td>
+      <td>92886</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>36T</td>
+      <td>281.6489596792608</td>
+      <td>4602.228375321448</td>
+      <td>36TTM8164902228</td>
+      <td>34W</td>
+      <td>432.3377418050118</td>
+      <td>7159.205100170075</td>
+      <td>34WDS3233859205</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>15 Mar 2024 17:07:34.413895835</td>
+      <td>15 Mar 2024 17:13:56.389724097</td>
+      <td>381.97582826247526</td>
+      <td>N/A</td>
+      <td>92887</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>32S</td>
+      <td>380.03813667867576</td>
+      <td>4231.048799749039</td>
+      <td>32SLH8003831049</td>
+      <td>30V</td>
+      <td>544.3636974596918</td>
+      <td>6859.598604629627</td>
+      <td>30VWP4436459599</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>16 Mar 2024 04:32:28.173285490</td>
+      <td>16 Mar 2024 04:38:33.018850881</td>
+      <td>364.84556539097684</td>
+      <td>N/A</td>
+      <td>92894</td>
+      <td>47.560500000000005</td>
+      <td>11.502699999999999</td>
+      <td>0.8701674116786334</td>
+      <td>47.560500000000005</td>
+      <td>...</td>
+      <td>5270.488855657932</td>
+      <td>32TPT8826570489</td>
+      <td>36V</td>
+      <td>657.7641124914722</td>
+      <td>6783.648184475049</td>
+      <td>36VXN5776483648</td>
+      <td>35S</td>
+      <td>474.6037894108813</td>
+      <td>4268.177771106299</td>
+      <td>35SMC7460468178</td>
+    </tr>
+  </tbody>
+</table>
+<p>4 rows × 60 columns</p>
+</div></div>
+</div>
+<p>Before adding a terrain mask, there were <span class="math notranslate nohighlight">\(6\)</span> accesses between the receiver and transmitter. By adding a terrain mask, the accesses blocked by terrain have been removed from the report, and there are now only <span class="math notranslate nohighlight">\(4\)</span> accesses between the receiver and transmitter.</p>
+</section>
+<section id="Model-environmental-factors">
+<h2>Model environmental factors<a class="headerlink" href="#Model-environmental-factors" title="Link to this heading">#</a></h2>
+<p>Environmental factors can affect the performance of a communications link. In STK, it is possible to enable or disable the use of different environmental factors at three levels: scenario, platform (facilities, places, targets, and all vehicles except satellites), and subobject (transmitter, receiver, radar, and antenna). In this case, since the scenario only includes a single receiver/transmitter pair, set the environmental factors at the scenario level.</p>
+<p>First, add a rain model, which is used to estimate the amount of degradation (or fading) of signal when passing through rain. The degradation is primarily due to absorption by water molecules and is a function of frequency and elevation angle. Generally speaking, the rain loss increases with increasing frequency. The loss also increases with decreasing ground elevation angle due to a greater path distance through the portion of the atmosphere where rain occurs. Rain also causes an increase in
+the antenna noise temperature. Set the <code class="docutils literal notranslate"><span class="pre">enable_rain_loss</span></code> property to <code class="docutils literal notranslate"><span class="pre">True</span></code> on the scenario’s RF environment’s propagation channel:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span><span class="o">.</span><span class="n">rf_environment</span><span class="o">.</span><span class="n">propagation_channel</span><span class="o">.</span><span class="n">enable_rain_loss</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Then, enable the use of the atmospheric absorption model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span><span class="o">.</span><span class="n">rf_environment</span><span class="o">.</span><span class="n">propagation_channel</span><span class="o">.</span><span class="n">enable_atmospheric_absorption</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>It is possible to configure which specific model is used for the different environmental factors. However, in this case, the default models are sufficient.</p>
+<p>Next, recalculate the access between the receiver and transmitter:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+<span class="n">receiver_environmental_link_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Link Information&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">receiver_environmental_link_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="n">link_budget_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>atmos loss</th>
+      <th>rain loss</th>
+      <th>eirp</th>
+      <th>rcvd. frequency</th>
+      <th>rcvd. iso. power</th>
+      <th>flux density</th>
+      <th>g/t</th>
+      <th>c/no</th>
+      <th>bandwidth</th>
+      <th>c/n</th>
+      <th>eb/no</th>
+      <th>ber</th>
+      <th>tatmos</th>
+      <th>train</th>
+      <th>tsun</th>
+      <th>tearth</th>
+      <th>tcosmic</th>
+      <th>tantenna</th>
+      <th>tequivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15 Mar 2024 06:23:47.759570010</td>
+      <td>0.23797</td>
+      <td>0.005026</td>
+      <td>10.0</td>
+      <td>1.704537</td>
+      <td>-153.188065</td>
+      <td>-127.10044</td>
+      <td>1.900759</td>
+      <td>17.311833</td>
+      <td>8.4</td>
+      <td>8.06904</td>
+      <td>11.07934</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15 Mar 2024 15:33:36.548124287</td>
+      <td>0.174104</td>
+      <td>0.003672</td>
+      <td>10.0</td>
+      <td>1.704527</td>
+      <td>-152.230434</td>
+      <td>-126.14281</td>
+      <td>1.900709</td>
+      <td>18.269414</td>
+      <td>8.4</td>
+      <td>9.026621</td>
+      <td>12.036921</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15 Mar 2024 17:07:34.413895835</td>
+      <td>0.085919</td>
+      <td>0.00175</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-149.014736</td>
+      <td>-122.927111</td>
+      <td>1.900741</td>
+      <td>21.485144</td>
+      <td>8.4</td>
+      <td>12.242352</td>
+      <td>15.252651</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16 Mar 2024 04:32:28.173285490</td>
+      <td>0.479177</td>
+      <td>0.012249</td>
+      <td>10.0</td>
+      <td>1.704531</td>
+      <td>-154.81966</td>
+      <td>-128.732036</td>
+      <td>1.900728</td>
+      <td>15.680207</td>
+      <td>8.4</td>
+      <td>6.437414</td>
+      <td>9.447714</td>
+      <td>0.000014</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15 Mar 2024 06:24:17.000000000</td>
+      <td>0.17687</td>
+      <td>0.003635</td>
+      <td>10.0</td>
+      <td>1.704536</td>
+      <td>-152.251976</td>
+      <td>-126.164351</td>
+      <td>1.900753</td>
+      <td>18.247917</td>
+      <td>8.4</td>
+      <td>9.005124</td>
+      <td>12.015424</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>15 Mar 2024 15:34:06.000000000</td>
+      <td>0.144554</td>
+      <td>0.002995</td>
+      <td>10.0</td>
+      <td>1.704524</td>
+      <td>-151.52169</td>
+      <td>-125.434065</td>
+      <td>1.900692</td>
+      <td>18.978142</td>
+      <td>8.4</td>
+      <td>9.735349</td>
+      <td>12.745649</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>15 Mar 2024 17:08:04.000000000</td>
+      <td>0.069449</td>
+      <td>0.001407</td>
+      <td>10.0</td>
+      <td>1.70453</td>
+      <td>-147.735471</td>
+      <td>-121.647846</td>
+      <td>1.900725</td>
+      <td>22.764393</td>
+      <td>8.4</td>
+      <td>13.5216</td>
+      <td>16.5319</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>16 Mar 2024 04:32:58.000000000</td>
+      <td>0.332202</td>
+      <td>0.007488</td>
+      <td>10.0</td>
+      <td>1.704529</td>
+      <td>-154.047609</td>
+      <td>-127.959985</td>
+      <td>1.90072</td>
+      <td>16.452249</td>
+      <td>8.4</td>
+      <td>7.209456</td>
+      <td>10.219756</td>
+      <td>0.000002</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15 Mar 2024 06:24:47.000000000</td>
+      <td>0.136309</td>
+      <td>0.00276</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-151.249533</td>
+      <td>-125.161908</td>
+      <td>1.900746</td>
+      <td>19.250351</td>
+      <td>8.4</td>
+      <td>10.007559</td>
+      <td>13.017859</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>15 Mar 2024 15:34:36.000000000</td>
+      <td>0.124049</td>
+      <td>0.00254</td>
+      <td>10.0</td>
+      <td>1.70452</td>
+      <td>-150.863984</td>
+      <td>-124.77636</td>
+      <td>1.900671</td>
+      <td>19.635825</td>
+      <td>8.4</td>
+      <td>10.393032</td>
+      <td>13.403332</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>290.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>After adding environmental factor models, the atmospheric and rain losses are now greater than <span class="math notranslate nohighlight">\(0\)</span>. However, the losses are minimal, so the losses in C/N and Eb/No are also minimal.</p>
+</section>
+<section id="Model-system-noise-temperature">
+<h2>Model system noise temperature<a class="headerlink" href="#Model-system-noise-temperature" title="Link to this heading">#</a></h2>
+<p>The receiver’s system noise temperature enables specifying the system’s inherent noise characteristics, which can help simulate real-world RF situations more accurately. STK can use either a constant system noise temperature value, or can calculate it based off of different noise sources. In this case, configure the receiver model’s system noise temperature to use calculated values:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">NoiseTemperatureComputeType</span>
+
+
+<span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">compute_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">NoiseTemperatureComputeType</span><span class="o">.</span><span class="n">CALCULATE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Do the same for the model’s antenna noise temperature:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">compute_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">NoiseTemperatureComputeType</span><span class="o">.</span><span class="n">CALCULATE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, enable the use of sun, atmosphere, rain, and cosmic background in computations:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_sun</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_atmosphere</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_rain</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">receiver_model</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_cosmic_background</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, recompute the access and get the updated link information:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+<span class="n">receiver_noise_link_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">receiver_basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Link Information&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">receiver_noise_link_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)[</span><span class="n">link_budget_columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>atmos loss</th>
+      <th>rain loss</th>
+      <th>eirp</th>
+      <th>rcvd. frequency</th>
+      <th>rcvd. iso. power</th>
+      <th>flux density</th>
+      <th>g/t</th>
+      <th>c/no</th>
+      <th>bandwidth</th>
+      <th>c/n</th>
+      <th>eb/no</th>
+      <th>ber</th>
+      <th>tatmos</th>
+      <th>train</th>
+      <th>tsun</th>
+      <th>tearth</th>
+      <th>tcosmic</th>
+      <th>tantenna</th>
+      <th>tequivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>15 Mar 2024 06:23:47.759570010</td>
+      <td>0.23797</td>
+      <td>0.005026</td>
+      <td>10.0</td>
+      <td>1.704537</td>
+      <td>-153.188065</td>
+      <td>-127.10044</td>
+      <td>7.279596</td>
+      <td>22.69067</td>
+      <td>8.4</td>
+      <td>13.447877</td>
+      <td>16.458177</td>
+      <td>0.0</td>
+      <td>6.108648</td>
+      <td>1.497981</td>
+      <td>0.000463</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>8.957091</td>
+      <td>84.045461</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15 Mar 2024 15:33:36.548124287</td>
+      <td>0.174104</td>
+      <td>0.003672</td>
+      <td>10.0</td>
+      <td>1.704527</td>
+      <td>-152.230434</td>
+      <td>-126.14281</td>
+      <td>7.366124</td>
+      <td>23.734829</td>
+      <td>8.4</td>
+      <td>14.492036</td>
+      <td>17.502336</td>
+      <td>0.0</td>
+      <td>4.489744</td>
+      <td>1.458123</td>
+      <td>0.000346</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>7.298213</td>
+      <td>82.386583</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15 Mar 2024 17:07:34.413895835</td>
+      <td>0.085919</td>
+      <td>0.00175</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-149.014736</td>
+      <td>-122.927111</td>
+      <td>7.489463</td>
+      <td>27.073866</td>
+      <td>8.4</td>
+      <td>17.831073</td>
+      <td>20.841373</td>
+      <td>0.0</td>
+      <td>2.228967</td>
+      <td>1.401542</td>
+      <td>0.011442</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>4.991951</td>
+      <td>80.08032</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16 Mar 2024 04:32:28.173285490</td>
+      <td>0.479177</td>
+      <td>0.012249</td>
+      <td>10.0</td>
+      <td>1.704531</td>
+      <td>-154.81966</td>
+      <td>-128.732036</td>
+      <td>6.982775</td>
+      <td>20.762253</td>
+      <td>8.4</td>
+      <td>11.519461</td>
+      <td>14.529761</td>
+      <td>0.0</td>
+      <td>12.06549</td>
+      <td>1.710349</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.1256</td>
+      <td>14.90144</td>
+      <td>89.98981</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15 Mar 2024 06:24:17.000000000</td>
+      <td>0.17687</td>
+      <td>0.003635</td>
+      <td>10.0</td>
+      <td>1.704536</td>
+      <td>-152.251976</td>
+      <td>-126.164351</td>
+      <td>7.362507</td>
+      <td>23.70967</td>
+      <td>8.4</td>
+      <td>14.466878</td>
+      <td>17.477178</td>
+      <td>0.0</td>
+      <td>4.560209</td>
+      <td>1.457031</td>
+      <td>0.000458</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>7.367698</td>
+      <td>82.456068</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>15 Mar 2024 15:34:06.000000000</td>
+      <td>0.144554</td>
+      <td>0.002995</td>
+      <td>10.0</td>
+      <td>1.704524</td>
+      <td>-151.52169</td>
+      <td>-125.434065</td>
+      <td>7.407127</td>
+      <td>24.484576</td>
+      <td>8.4</td>
+      <td>15.241783</td>
+      <td>18.252083</td>
+      <td>0.0</td>
+      <td>3.735207</td>
+      <td>1.438195</td>
+      <td>0.000325</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>6.523728</td>
+      <td>81.612097</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>15 Mar 2024 17:08:04.000000000</td>
+      <td>0.069449</td>
+      <td>0.001407</td>
+      <td>10.0</td>
+      <td>1.70453</td>
+      <td>-147.735471</td>
+      <td>-121.647846</td>
+      <td>7.513623</td>
+      <td>28.377291</td>
+      <td>8.4</td>
+      <td>19.134498</td>
+      <td>22.144798</td>
+      <td>0.0</td>
+      <td>1.803877</td>
+      <td>1.391453</td>
+      <td>0.002083</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>4.547414</td>
+      <td>79.635783</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>16 Mar 2024 04:32:58.000000000</td>
+      <td>0.332202</td>
+      <td>0.007488</td>
+      <td>10.0</td>
+      <td>1.704529</td>
+      <td>-154.047609</td>
+      <td>-127.959985</td>
+      <td>7.224173</td>
+      <td>21.775703</td>
+      <td>8.4</td>
+      <td>12.53291</td>
+      <td>15.54321</td>
+      <td>0.0</td>
+      <td>8.465337</td>
+      <td>1.570418</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>10.035755</td>
+      <td>85.124125</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15 Mar 2024 06:24:47.000000000</td>
+      <td>0.136309</td>
+      <td>0.00276</td>
+      <td>10.0</td>
+      <td>1.704534</td>
+      <td>-151.249533</td>
+      <td>-125.161908</td>
+      <td>7.418791</td>
+      <td>24.768397</td>
+      <td>8.4</td>
+      <td>15.525604</td>
+      <td>18.535904</td>
+      <td>0.0</td>
+      <td>3.524091</td>
+      <td>1.431281</td>
+      <td>0.00045</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>6.305823</td>
+      <td>81.394192</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>15 Mar 2024 15:34:36.000000000</td>
+      <td>0.124049</td>
+      <td>0.00254</td>
+      <td>10.0</td>
+      <td>1.70452</td>
+      <td>-150.863984</td>
+      <td>-124.77636</td>
+      <td>7.435875</td>
+      <td>25.17103</td>
+      <td>8.4</td>
+      <td>15.928237</td>
+      <td>18.938537</td>
+      <td>0.0</td>
+      <td>3.209762</td>
+      <td>1.424816</td>
+      <td>0.000302</td>
+      <td>0.0</td>
+      <td>1.35</td>
+      <td>5.98488</td>
+      <td>81.073249</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>There are now non-zero values in the tatmos, train, tsun, tcosmic, tantenna, and tequivalent columns. Calculating system noise temperature improved the report and extended the time available for downloading data.</p>
+</section>
+<section id="Plot-the-different-link-budgets">
+<h2>Plot the different link budgets<a class="headerlink" href="#Plot-the-different-link-budgets" title="Link to this heading">#</a></h2>
+<p>Visualize the calculated link budgets under the different modeling factors:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Format data</span>
+<span class="n">receiver_environmental_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">receiver_environmental_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">receiver_environmental_link_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">receiver_terrain_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">receiver_terrain_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">receiver_terrain_link_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">receiver_noise_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">receiver_noise_link_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">receiver_noise_link_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot dataframes</span>
+<span class="n">receiver_environmental_link_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;c/no&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;terrain, environmental&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkblue&quot;</span>
+<span class="p">)</span>
+<span class="n">receiver_terrain_link_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;c/no&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;terrain&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;deeppink&quot;</span>
+<span class="p">)</span>
+<span class="n">receiver_noise_link_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;c/no&quot;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;terrain, environmental, system noise&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;palegreen&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure plot style</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set title and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Carrier to Noise Ratio Over Time Under Different Models&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;C/N (dB)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="c1"># Set figure size</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Show figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_communication-link-calculator_128_0.png" src="../_images/examples_communication-link-calculator_128_0.png" />
+</div>
+</div>
+<p>The model accounting for only terrain has similar C/N values to the model accounting for terrain and environmental factors, as the losses from environmental factors were minimal in this analysis. The model accounting for terrain, environmental factors, and system noise consistently had the highest C/N values, as calculating system noise temperature improved the link budget.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"703f80b1f9d94bc7885edb2469375783": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5d1753ba6e9348b395335065f240c579": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_703f80b1f9d94bc7885edb2469375783", "resizable": true, "tabbable": null, "tooltip": null}}, "36e52700686c42b39324d247723bb36a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d6a7b5cd234145c8b2416aac7bf9b243": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_36e52700686c42b39324d247723bb36a", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="radar-cross-section-detection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Radar cross section detection calculator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="multifunction-radar-parametric-study.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multifunction radar parametric study</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-are-communications-links,-and-how-are-they-evaluated?">What are communications links, and how are they evaluated?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-analytical-and-visual-terrain">Add analytical and visual terrain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-satellite">Add a satellite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-the-camp-site">Add the camp site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-a-simple-transmitter">Model a simple transmitter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-steerable-sensor">Add a steerable sensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-access">Calculate access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-the-receiver">Model the receiver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Calculate access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-terrain-to-the-analysis">Add terrain to the analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-environmental-factors">Model environmental factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Model-system-noise-temperature">Model system noise temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Plot-the-different-link-budgets">Plot the different link budgets</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/communication-link-calculator.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/communication-link-calculator.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

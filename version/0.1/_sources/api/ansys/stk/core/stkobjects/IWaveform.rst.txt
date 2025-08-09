@@ -1,0 +1,82 @@
+IWaveform
+=========
+
+.. py:class:: ansys.stk.core.stkobjects.IWaveform
+
+   Provide access to the properties and methods defining an antenna model.
+
+.. py:currentmodule:: IWaveform
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.name`
+              - Get the waveform name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.type`
+              - Get the waveform type enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency_specification`
+              - Get or set the frequency specification.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency`
+              - Get or set the frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.wavelength`
+              - Get or set the wavelength.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.power`
+              - Get the power.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IWaveform
+
+
+Property detail
+---------------
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.IWaveform.name
+    :type: str
+
+    Get the waveform name.
+
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.IWaveform.type
+    :type: WaveformType
+
+    Get the waveform type enumeration.
+
+.. py:property:: frequency_specification
+    :canonical: ansys.stk.core.stkobjects.IWaveform.frequency_specification
+    :type: FrequencySpecificationType
+
+    Get or set the frequency specification.
+
+.. py:property:: frequency
+    :canonical: ansys.stk.core.stkobjects.IWaveform.frequency
+    :type: float
+
+    Get or set the frequency.
+
+.. py:property:: wavelength
+    :canonical: ansys.stk.core.stkobjects.IWaveform.wavelength
+    :type: float
+
+    Get or set the wavelength.
+
+.. py:property:: power
+    :canonical: ansys.stk.core.stkobjects.IWaveform.power
+    :type: float
+
+    Get the power.
+
+

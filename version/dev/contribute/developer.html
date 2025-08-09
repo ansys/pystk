@@ -1,0 +1,1878 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Contributing as a developer &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute/developer';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Artifacts" href="../artifacts.html" />
+    <link rel="prev" title="Contributing as a documentarian" href="documentarian.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/contribute/developer.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentarian.html">Documentarian</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Developer</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../contribute.html" class="nav-link">Contribute</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Contributing as a developer</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-as-a-developer">
+<h1>Contributing as a developer<a class="headerlink" href="#contributing-as-a-developer" title="Link to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-code-fork"></span> Fork the repository</div>
+<p class="sd-card-text">Learn how to fork the project and get your own copy.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#fork-the-repository"><span class="std std-ref">Fork the repository</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-download"></span> Clone the repository</div>
+<p class="sd-card-text">Download your own copy in your local machine.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#clone-the-repository"><span class="std std-ref">Clone the repository</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-download"></span> Install for developers</div>
+<p class="sd-card-text">Install the project in editable mode.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#install-for-developers"><span class="std std-ref">Install for developers</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fab fa-docker"></span> Build Docker containers</div>
+<p class="sd-card-text">Build the Docker containers for testing.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#build-docker-containers"><span class="std std-ref">Build the Docker containers</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-vial-circle-check"></span> Run the tests</div>
+<p class="sd-card-text">Verify your changes by testing the project.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#run-tests"><span class="std std-ref">Run the tests</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-arrows-spin"></span> Run the CI/CD pipelines</div>
+<p class="sd-card-text">Understand the different CI/CD pipelines.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#run-pipelines"><span class="std std-ref">Run CI/CD pipelines</span></a></div>
+</div>
+</div>
+</div>
+<section id="fork-the-repository">
+<span id="id1"></span><h2>Fork the repository<a class="headerlink" href="#fork-the-repository" title="Link to this heading">#</a></h2>
+<p>Forking the repository is the first step to contributing to the project. This
+allows you to have your own copy of the project so you can make changes without
+affection the main project. Once you have made your changes, you can submit a
+pull-request to the main project to have your changes reviewed and merged.</p>
+<p class="sd-text-center"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference external" href="https://github.com/ansys/pystk/fork"><span><span class="fa fa-code-fork"></span> Fork this project</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are an Ansys employee, you can skip this step.</p>
+</div>
+</section>
+<section id="clone-the-repository">
+<span id="id2"></span><h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Link to this heading">#</a></h2>
+<p>Make sure you <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">configure SSH</a> with your GitHub
+account. This allows you to clone the repository without having to use tokens
+or passwords. Also, make sure you have <a class="reference external" href="https://git-scm.com/">git</a> installed in your machine.</p>
+<p>To clone the repository using SSH, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ansys/pystk
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not an Ansys employee, you need to <a class="reference internal" href="#fork-the-repository"><span class="std std-ref">fork the repository</span></a> and
+replace <code class="docutils literal notranslate"><span class="pre">ansys</span></code> with your GitHub user name in the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>
+command.</p>
+</div>
+</section>
+<section id="install-for-developers">
+<span id="id3"></span><h2>Install for developers<a class="headerlink" href="#install-for-developers" title="Link to this heading">#</a></h2>
+<p>Installing PySTK in development mode allows you to perform changes to the code
+and see the changes reflected in your environment without having to reinstall
+the library every time you make a change.</p>
+<section id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h3>
+<p>Start by navigating to the project’s root directory by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pystk</span>
+</pre></div>
+</div>
+<p>Then, create a new virtual environment named <code class="docutils literal notranslate"><span class="pre">.venv</span></code> to isolate your system’s
+Python environment by running:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python -m venv .venv
+</pre></div>
+</div>
+<p>Finally, activate this environment by running:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+CMD</label><div class="sd-tab-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.venv\Scripts\activate.bat
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+PowerShell</label><div class="sd-tab-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.venv\Scripts\Activate.ps1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+macOS/Linux/UNIX</label><div class="sd-tab-content docutils">
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>source .venv/bin/activate
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="development-mode">
+<h3>Development mode<a class="headerlink" href="#development-mode" title="Link to this heading">#</a></h3>
+<p>Now, install PySTK in editable mode by running:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python -m pip install --editable .
+</pre></div>
+</div>
+<p>Verify the installation by checking the version of the library:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PySTK version is </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; PySTK version is 0.2.dev0
+</pre></div>
+</div>
+</section>
+<section id="install-tox">
+<h3>Install Tox<a class="headerlink" href="#install-tox" title="Link to this heading">#</a></h3>
+<p>Once the project is installed, you can install <a class="reference external" href="https://tox.wiki/en/stable/">Tox</a>. This is a cross-platform
+automation tool. The main advantage of Tox is that it allows you to test your
+project in different environments and configurations in a temporary and
+isolated Python virtual environment. To install Tox, run:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python -m pip install tox
+</pre></div>
+</div>
+<p>Finally, verify the installation by listing all the different environments
+(automation rules) for PySTK:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python -m tox list
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-three-bars" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></span><span class="sd-summary-text">Default Tox environments</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Environment</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">code-style</p></td>
+<td><p class="sd-card-text">Checks project code style</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration</p></td>
+<td><p class="sd-card-text">Test PySTK core API migration assistant</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator</p></td>
+<td><p class="sd-card-text">Test PySTK core aviator</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly</p></td>
+<td><p class="sd-card-text">Test PySTK core stk with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core stk</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core stk without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk</p></td>
+<td><p class="sd-card-text">Test PySTK core stk</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt</p></td>
+<td><p class="sd-card-text">Test PySTK core vgt</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics</p></td>
+<td><p class="sd-card-text">Test PySTK core with no graphics</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly</p></td>
+<td><p class="sd-card-text">Test PySTK core with graphics only</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-cov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core without Linux and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-cov</p></td>
+<td><p class="sd-card-text">Test PySTK core and measure coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nocov-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nocov</p></td>
+<td><p class="sd-card-text">Test PySTK core</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-linux</p></td>
+<td><p class="sd-card-text">Test PySTK core without Linux</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core</p></td>
+<td><p class="sd-card-text">Test PySTK core</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-extensions-graphs-cov</p></td>
+<td><p class="sd-card-text">Test PySTK extensions graphs and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-extensions-graphs</p></td>
+<td><p class="sd-card-text">Test PySTK extensions graphs</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-extensions-cov</p></td>
+<td><p class="sd-card-text">Test PySTK extensions and measure coverage</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-extensions</p></td>
+<td><p class="sd-card-text">Test PySTK extensions</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">doc-style-linux</p></td>
+<td><p class="sd-card-text">Checks project documentation style</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">doc-style-windows</p></td>
+<td><p class="sd-card-text">Checks project documentation style</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">doc-links</p></td>
+<td><p class="sd-card-text">Check documentation links</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">doc-html</p></td>
+<td><p class="sd-card-text">Build HTML documentation</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">doc-pdf</p></td>
+<td><p class="sd-card-text">Build PDF documentation</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-build-ubuntu_images</p></td>
+<td><p class="sd-card-text">Build all Docker images for Ubuntu</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-build-windows_images</p></td>
+<td><p class="sd-card-text">Build all Docker images for Windows</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py310-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.10 and Ubuntu in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py310-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.10 and Ubuntu in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py310-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.10 and Windows in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py310-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.10 and Windows in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py311-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.11 and Ubuntu in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py311-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.11 and Ubuntu in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py311-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.11 and Windows in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py311-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.11 and Windows in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py312-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.12 and Ubuntu in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py312-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.12 and Ubuntu in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py312-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.12 and Windows in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py312-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.12 and Windows in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py313-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.13 and Ubuntu in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py313-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.13 and Ubuntu in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py313-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.13 and Windows in a Linux host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py313-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">Run a PySTK container with Python 3.13 and Windows in a Windows host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">vulnerabilities-code</p></td>
+<td><p class="sd-card-text">Checks vulnerabilities within the source code and its dependencies</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">vulnerabilities-deps</p></td>
+<td><p class="sd-card-text">Checks vulnerabilities within the source code and its dependencies</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">dist</p></td>
+<td><p class="sd-card-text">Build wheel and source distribution artifacts</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details></section>
+</section>
+<section id="build-the-docker-containers">
+<span id="build-docker-containers"></span><h2>Build the Docker containers<a class="headerlink" href="#build-the-docker-containers" title="Link to this heading">#</a></h2>
+<p>STK is containerized using Docker. This allows you to deploy the project in
+multiple environments without having to worry about dependencies.</p>
+<p>Although building a Docker container is not required if you have <a class="reference external" href="https://www.ansys.com/products/missions/ansys-stk">STK software</a>
+installed in your local machine, it helps to isolate all your development
+environment.</p>
+<p>To build the Docker containers, you need to have <a class="reference external" href="https://docs.docker.com/engine/">Docker Engine</a> and <a class="reference external" href="https://docs.docker.com/compose/">Docker
+Compose</a> installed in your system.</p>
+<p>Then, download the latest <a class="reference external" href="https://support.agi.com/downloads">STK Engine</a> artifacts for your platform.</p>
+<p>Next, create a folder named <code class="docutils literal notranslate"><span class="pre">distributions/</span></code> inside next to the corresponding
+<code class="docutils literal notranslate"><span class="pre">docker/&lt;platform&gt;/stk-engine/</span></code> and place the artifacts inside this folder.</p>
+<p>Ensure the <code class="docutils literal notranslate"><span class="pre">ANSYSLMD_LICENSE_FILE=&lt;PORT&gt;&#64;&lt;HOSTNAME&gt;</span></code> environment variable is
+set and that your license server has a valid license for running STK.</p>
+<p>Build the docker images for your platform by running the corresponding Tox
+environment:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-three-bars" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></span><span class="sd-summary-text">Docker build environments</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Environment</p></th>
+<th class="head"><p class="sd-card-text">Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">docker-build-ubuntu_images</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-build-ubuntu_images</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-build-windows_images</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-build-windows_images</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details><p>Finally, run the container by running the corresponding Tox environment:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-three-bars" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></span><span class="sd-summary-text">Docker run environments</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Environment</p></th>
+<th class="head"><p class="sd-card-text">Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py310-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py310-ubuntu_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py310-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py310-ubuntu_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py310-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py310-windows_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py310-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py310-windows_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py311-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py311-ubuntu_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py311-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py311-ubuntu_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py311-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py311-windows_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py311-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py311-windows_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py312-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py312-ubuntu_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py312-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py312-ubuntu_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py312-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py312-windows_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py312-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py312-windows_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py313-ubuntu_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py313-ubuntu_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py313-ubuntu_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py313-ubuntu_container-windows_host</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">docker-run-py313-windows_container-linux_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py313-windows_container-linux_host</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">docker-run-py313-windows_container-windows_host</p></td>
+<td><p class="sd-card-text">python -m tox -e docker-run-py313-windows_container-windows_host</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details></section>
+<section id="run-the-tests">
+<span id="run-tests"></span><h2>Run the tests<a class="headerlink" href="#run-the-tests" title="Link to this heading">#</a></h2>
+<p>Once you have made your changes, you can run the tests to verify that your
+modifications did not break the project. PySTK tests support different markers
+to avoid running the whole suite of tests. These markers are associated to a
+dedicated <a class="reference external" href="https://tox.wiki/en/stable/">Tox</a> environment.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-three-bars" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></span><span class="sd-summary-text">Testing environments</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Environment</p></th>
+<th class="head"><p class="sd-card-text">Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nographics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nographics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nographics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-graphicsonly</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-graphicsonly</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-migration-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-migration</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-migration</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nographics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nographics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nographics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-graphicsonly</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-graphicsonly</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-aviator-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-aviator</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-aviator</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nographics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nographics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nographics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-graphicsonly</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-graphicsonly</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-stk-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-stk</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-stk</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nographics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nographics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nographics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-graphicsonly</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-graphicsonly</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-vgt-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-vgt</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-vgt</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nographics-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nographics</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nographics</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-graphicsonly-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-graphicsonly</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-graphicsonly</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-cov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-cov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-cov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-nocov-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nocov-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core-nocov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-nocov</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-core-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-core</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-core</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-extensions-graphs-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-extensions-graphs-cov</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-extensions-graphs</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-extensions-graphs</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">tests-extensions-cov</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-extensions-cov</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">tests-extensions</p></td>
+<td><p class="sd-card-text">python -m tox -e tests-extensions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details></section>
+<section id="run-ci-cd-pipelines">
+<span id="run-pipelines"></span><h2>Run CI/CD pipelines<a class="headerlink" href="#run-ci-cd-pipelines" title="Link to this heading">#</a></h2>
+<p>PySTK has a set of CI/CD pipelines that are executed automatically when certain
+events are detected in the repository. Some of these events include opening a
+pull-request, labelling a pull-request, and tagging a commit.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The CI/CD pipelines are protected. Only team members of the <code class="docutils literal notranslate"><span class="pre">PySTK</span>
+<span class="pre">developers</span> <span class="pre">team</span></code> can run the pipelines. For non team members, a <code class="docutils literal notranslate"><span class="pre">PySTK</span>
+<span class="pre">developers</span> <span class="pre">team</span></code> member must authorize the CI/CD run for every new commit
+or change. This prevents unauthorized or malicious code from being executed
+in the runners.</p>
+</div>
+<p>You can label a pull-request to skip certain jobs in the pipeline. Supported
+labels are listed in the <a class="reference external" href="https://github.com/ansys/pystk/labels">PySTK labels</a> page.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Label</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">style:skip</span></code></p></td>
+<td><p>Skip the style job</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs:skip</span></code></p></td>
+<td><p>Skip the documentation job</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs:examples</span></code></p></td>
+<td><p>Build the documentation with examples</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs:api</span></code></p></td>
+<td><p>Build the documentation with API references</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tests:skip</span></code></p></td>
+<td><p>Skip the tests job</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="documentarian.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Contributing as a documentarian</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../artifacts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Artifacts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-the-repository">Fork the repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">Clone the repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-for-developers">Install for developers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-mode">Development mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-tox">Install Tox</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-docker-containers">Build the Docker containers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-tests">Run the tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-ci-cd-pipelines">Run CI/CD pipelines</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/doc/source/contribute/developer.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/contribute/developer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

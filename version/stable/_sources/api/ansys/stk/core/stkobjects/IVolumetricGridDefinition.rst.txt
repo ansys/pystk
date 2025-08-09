@@ -1,0 +1,18 @@
+IVolumetricGridDefinition
+=========================
+
+.. py:class:: ansys.stk.core.stkobjects.IVolumetricGridDefinition
+
+   Base interface IVolumetricGridDefinition. VolumetricGridSpatialCalculation and VolumetricExternalFile implement this interface.
+
+.. py:currentmodule:: IVolumetricGridDefinition
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IVolumetricGridDefinition
+
+
+

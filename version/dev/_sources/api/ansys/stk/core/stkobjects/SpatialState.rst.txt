@@ -1,0 +1,148 @@
+SpatialState
+============
+
+.. py:class:: ansys.stk.core.stkobjects.SpatialState
+
+   Represents a position and an attitude of an object.
+
+.. py:currentmodule:: SpatialState
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.query_velocity_fixed`
+              - Return a velocity of the vehicle in central body fixed frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.query_velocity_inertial`
+              - Return a velocity of the vehicle in central body inertial frame.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.central_body`
+              - Return a name of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.current_time`
+              - Return the current time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_orientation`
+              - Return an attitude of the vehicle in central body fixed frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_position`
+              - Return a position of the vehicle in central body fixed frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_orientation`
+              - Return an attitude of the vehicle in central body inertial frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_position`
+              - Return a position of the vehicle in central body inertial frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.is_available`
+              - Return whether the spatial state is valid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.start_time`
+              - Return the start time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.stop_time`
+              - Return the stop time.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import SpatialState
+
+
+Property detail
+---------------
+
+.. py:property:: central_body
+    :canonical: ansys.stk.core.stkobjects.SpatialState.central_body
+    :type: str
+
+    Return a name of the central body.
+
+.. py:property:: current_time
+    :canonical: ansys.stk.core.stkobjects.SpatialState.current_time
+    :type: typing.Any
+
+    Return the current time.
+
+.. py:property:: fixed_orientation
+    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_orientation
+    :type: IOrientation
+
+    Return an attitude of the vehicle in central body fixed frame.
+
+.. py:property:: fixed_position
+    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_position
+    :type: IPosition
+
+    Return a position of the vehicle in central body fixed frame.
+
+.. py:property:: inertial_orientation
+    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_orientation
+    :type: IOrientation
+
+    Return an attitude of the vehicle in central body inertial frame.
+
+.. py:property:: inertial_position
+    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_position
+    :type: IPosition
+
+    Return a position of the vehicle in central body inertial frame.
+
+.. py:property:: is_available
+    :canonical: ansys.stk.core.stkobjects.SpatialState.is_available
+    :type: bool
+
+    Return whether the spatial state is valid.
+
+.. py:property:: start_time
+    :canonical: ansys.stk.core.stkobjects.SpatialState.start_time
+    :type: typing.Any
+
+    Return the start time.
+
+.. py:property:: stop_time
+    :canonical: ansys.stk.core.stkobjects.SpatialState.stop_time
+    :type: typing.Any
+
+    Return the stop time.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+.. py:method:: query_velocity_fixed(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkobjects.SpatialState.query_velocity_fixed
+
+    Return a velocity of the vehicle in central body fixed frame.
+
+    :Returns:
+
+        :obj:`~typing.Tuple[float, float, float]`
+
+.. py:method:: query_velocity_inertial(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkobjects.SpatialState.query_velocity_inertial
+
+    Return a velocity of the vehicle in central body inertial frame.
+
+    :Returns:
+
+        :obj:`~typing.Tuple[float, float, float]`
+
+
+

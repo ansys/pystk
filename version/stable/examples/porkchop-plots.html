@@ -1,0 +1,1434 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Porkchop plots &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/porkchop-plots';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Radar cross section detection calculator" href="radar-cross-section-detection.html" />
+    <link rel="prev" title="Lambert transfer" href="lambert-transfer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/porkchop-plots.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Porkchop plots</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/porkchop-plots.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/porkchop-plots.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/porkchop-plots.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Porkchop-plots">
+<h1>Porkchop plots<a class="headerlink" href="#Porkchop-plots" title="Link to this heading">#</a></h1>
+<p>This tutorial showcases how to create a porkchop plot using Python and PySTK.</p>
+<section id="What-is-a-porkchop-plot?">
+<h2>What is a porkchop plot?<a class="headerlink" href="#What-is-a-porkchop-plot?" title="Link to this heading">#</a></h2>
+<p>A porkchop plot is a graphical tool used in astrodynamics to visualize the fuel or energy requirements for space missions, especially interplanetary travel. It shows contours of mission parameters, typically launch and arrival dates, with color-coded regions indicating different energy costs. The plot’s shape often resembles a porkchop, hence the name.</p>
+<p>Porkchop plots are usually generated under the assumption of the restricted two-body problem. The restricted two-body problem assumes that each planet is treated as a single point mass, focusing solely on the gravitational influence of the Sun. This simplifies the model by ignoring gravitational interactions between planets, allowing spacecraft trajectories to be calculated based only on the Sun’s and a single planet’s gravity. The trajectory of the spacecraft is computed by solving a <a class="reference internal" href="lambert-transfer.html"><span class="doc">Lambert
+transfer</span></a>.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>The goal of this tutorial is to reproduce the porkchop in Fig. 4 from NASA’s Interplanetary Mission Design Handbook, Volume I, Part 2, available for download <a class="reference external" href="https://ntrs.nasa.gov/citations/19840010158">here</a>. This porkchop shows the characteristic energy at launch <span class="math notranslate nohighlight">\(C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2\)</span> for a interplanetary Lambert transfer between Earth and Mars.</p>
+<p><img alt="Fig. 7 directly taken from NASA's manual" src="../_images/nasa-porkchop.png" /></p>
+</section>
+<section id="Overview-of-the-algorithm">
+<h2>Overview of the algorithm<a class="headerlink" href="#Overview-of-the-algorithm" title="Link to this heading">#</a></h2>
+<p>Solving for a porkchop requires various steps:</p>
+<ul class="simple">
+<li><p>Generating a span of launch and arrival dates</p></li>
+<li><p>Solving the position of the planets for each combination of launch and arrival dates</p></li>
+<li><p>Solving the Lambert transfer for each combination of planetary positions</p></li>
+<li><p>Computing the characteristic energy at launch</p></li>
+<li><p>Collecting all the solutions and generating the contour map</p></li>
+</ul>
+<p>Some of these steps can be implemented as functions to ease the readability of the code and its maintenance.</p>
+</section>
+<section id="Launch-STK">
+<h2>Launch STK<a class="headerlink" href="#Launch-STK" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance in headless mode (no GUI):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Next, create a new scenario. The central body for this scenario must be the Sun.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SCENARIO</span><span class="p">,</span> <span class="s2">&quot;PorkchopPlot&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Generating-a-span-of-launch-and-arrival-dates">
+<h2>Generating a span of launch and arrival dates<a class="headerlink" href="#Generating-a-span-of-launch-and-arrival-dates" title="Link to this heading">#</a></h2>
+<p>Generating a span of launch and arrival dates allows to compute, in the future, for any combination of dates. When manipulating dates and times in PySTK, it is important to always use the API. Do not rely on the Python module since it does not account for leap-seconds.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">linspace_dates</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a list of linearly spaced dates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    start_date : ~ansys.stk.core.stkutil.Date</span>
+<span class="sd">        Date to start the generation.</span>
+<span class="sd">    end_date : ~ansys.stk.core.stkutil.Date</span>
+<span class="sd">        Date to end the generation.</span>
+<span class="sd">    interval : float</span>
+<span class="sd">        Desired time interval between generated dates.</span>
+<span class="sd">    unit : str</span>
+<span class="sd">        Name of the units associated to the time interval.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dates : list[~ansys.stk.core.stkutil.Date]</span>
+<span class="sd">        List of dates linearly spaced by the desired interval.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">next_date</span> <span class="o">=</span> <span class="n">start_date</span>
+    <span class="k">while</span> <span class="n">next_date</span><span class="o">.</span><span class="n">whole_days</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="o">.</span><span class="n">whole_days</span><span class="p">:</span>
+        <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_date</span><span class="p">)</span>
+        <span class="n">next_date</span> <span class="o">=</span> <span class="n">next_date</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+<p>Declare the launch and arrival boundary dates as shown in the original figure by NASA:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_launch</span><span class="p">,</span> <span class="n">last_launch</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">conversion_utility</span><span class="o">.</span><span class="n">new_date</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;29 May 1990&quot;</span><span class="p">,</span> <span class="s2">&quot;5 Nov 1990&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">first_arrival</span><span class="p">,</span> <span class="n">last_arrival</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">conversion_utility</span><span class="o">.</span><span class="n">new_date</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;25 Nov 1990&quot;</span><span class="p">,</span> <span class="s2">&quot;30 Dec 1991&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Then, generate the launch and arrival date spans:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">launch_span</span> <span class="o">=</span> <span class="n">linspace_dates</span><span class="p">(</span><span class="n">first_launch</span><span class="p">,</span> <span class="n">last_launch</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="n">arrival_span</span> <span class="o">=</span> <span class="n">linspace_dates</span><span class="p">(</span><span class="n">first_arrival</span><span class="p">,</span> <span class="n">last_arrival</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is possible to print previous lists to verify the values they contain:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Launch span&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">linspace_dates</span><span class="p">(</span><span class="n">first_launch</span><span class="p">,</span> <span class="n">last_launch</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Launch span: 29 May 1990 00:00:00.000, 30 May 1990 00:00:00.000, 31 May 1990 00:00:00.000, 1 Jun 1990 00:00:00.000, 2 Jun 1990 00:00:00.000, ...
+</pre></div></div>
+</div>
+</section>
+<section id="Solve-the-ephemerides-of-the-planets">
+<h2>Solve the ephemerides of the planets<a class="headerlink" href="#Solve-the-ephemerides-of-the-planets" title="Link to this heading">#</a></h2>
+<p>With launch and arrival dates generated, it is time to generate a routine for computing the state vector of the planets. This function was presented in the <a class="reference internal" href="lambert-transfer.html"><span class="doc">Lambert transfer</span></a> example. Therefore, it is reproduced in here:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">from_data_result_to_dict</span><span class="p">(</span><span class="n">data_result</span><span class="p">:</span> <span class="s2">&quot;DataProviderResult&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a data provider result to a dictionary.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_result : DataProviderResult</span>
+<span class="sd">        Data result instance to be converted.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Dictionary representing the elements and values of the data provider.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">key</span><span class="p">:</span> <span class="n">data_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">key_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key_id</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">element_names</span><span class="p">)</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_object_pos_vel_at_epoch</span><span class="p">(</span>
+    <span class="n">stk_object</span><span class="p">:</span> <span class="s2">&quot;STKObject&quot;</span><span class="p">,</span> <span class="n">epoch</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_name</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the position and velocity vectors of an object in the desired reference frame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stk_object : ~ansys.stkcore.stkobjects.STKObject</span>
+<span class="sd">        Name of the object.</span>
+<span class="sd">    epoch : ~ansys.stk.core.stkutil.Date</span>
+<span class="sd">        Epoch date.</span>
+<span class="sd">    frame_name : str</span>
+<span class="sd">        Reference frame name.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple(list[float, float, float], list[float, float, float])</span>
+<span class="sd">        Tuple containing the position and velocity vectors as a list.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Position&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Velocity&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span>
+        <span class="n">data_provider</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">stk_object</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_data_provider_time_varying_from_path</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Cartesian </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">frame_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">from_data_result_to_dict</span><span class="p">(</span>
+            <span class="n">data_provider</span><span class="o">.</span><span class="n">execute_single_elements</span><span class="p">(</span><span class="n">epoch</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="n">state</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>Now, add the planets to the scene:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">EphemSourceType</span><span class="p">,</span> <span class="n">PlanetPositionSourceType</span>
+
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Mars&quot;</span><span class="p">]:</span>
+    <span class="n">planet</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLANET</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">)</span>
+    <span class="n">planet</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_position_source_central_body</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">EphemSourceType</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">)</span>
+
+<span class="n">earth</span><span class="p">,</span> <span class="n">mars</span> <span class="o">=</span> <span class="p">[</span><span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">object_name</span><span class="p">]</span> <span class="k">for</span> <span class="n">object_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Mars&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<p>It is possible to print the position at one date to verify previous functions. The position of the Earth for the first launch days is computed:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Earth ephemerides&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Date&#39;</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Position&#39;</span><span class="si">:</span><span class="s2">&lt;47</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Velocity&#39;</span><span class="si">:</span><span class="s2">&lt;50</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;----&#39;</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="mi">45</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="si">:</span><span class="s2">&lt;47</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="mi">25</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="si">:</span><span class="s2">&lt;50</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">launch_span</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="p">(</span><span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">rz</span><span class="p">),</span> <span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_object_pos_vel_at_epoch</span><span class="p">(</span><span class="n">earth</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s2">&quot;ICRF&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;UTCG&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">rx</span><span class="si">:</span><span class="s2">&gt;10.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">ry</span><span class="si">:</span><span class="s2">&gt;10.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">rz</span><span class="si">:</span><span class="s2">&gt;10.2f</span><span class="si">}</span><span class="s2">] km   [</span><span class="si">{</span><span class="n">vx</span><span class="si">:</span><span class="s2">&gt;3.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">vy</span><span class="si">:</span><span class="s2">&gt;3.2f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">vz</span><span class="si">:</span><span class="s2">&gt;3.2f</span><span class="si">}</span><span class="s2">] km/s &quot;</span>
+    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Earth ephemerides
+=================
+
+Date                      Position                                        Velocity
+----                      ---------------------------------------------   -------------------------
+29 May 1990 00:00:00.000  [-57973714.01, -128535857.92, -55730606.57] km   [27.05, -10.55, -4.57] km/s
+1 Jun 1990 00:00:00.000   [-50891797.48, -131103475.18, -56843561.68] km   [27.58, -9.26, -4.01] km/s
+4 Jun 1990 00:00:00.000   [-43681896.13, -133335785.54, -57811257.78] km   [28.04, -7.96, -3.45] km/s
+7 Jun 1990 00:00:00.000   [-36362341.89, -135228643.32, -58631957.88] km   [28.43, -6.64, -2.88] km/s
+10 Jun 1990 00:00:00.000  [-28951096.38, -136778432.41, -59304085.80] km   [28.75, -5.31, -2.30] km/s
+...
+</pre></div></div>
+</div>
+</section>
+<section id="Add-a-satellite">
+<h2>Add a satellite<a class="headerlink" href="#Add-a-satellite" title="Link to this heading">#</a></h2>
+<p>A satellite object is used to solve for the Lambert transfer between Earth and Mars. Astrogator is used for its propagation. Make sure to clean the main sequence.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new_on_central_body</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;Satellite&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span>
+<span class="p">)</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">ASTROGATOR</span><span class="p">)</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">remove_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<section id="Initial-state">
+<h3>Initial state<a class="headerlink" href="#Initial-state" title="Link to this heading">#</a></h3>
+<p>The initial state of the satellite must be changed for every launch date. However, the initial state segment instance remains in the main sequence. Therefore, it is possible to configure here only the constant parameters of the initial state of the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ElementSetType</span><span class="p">,</span> <span class="n">SegmentType</span>
+
+
+<span class="n">initial_state</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">INITIAL_STATE</span><span class="p">,</span> <span class="s2">&quot;Initial State&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">coord_system_name</span> <span class="o">=</span> <span class="s2">&quot;CentralBody/Sun Inertial&quot;</span>
+<span class="n">initial_state</span><span class="o">.</span><span class="n">set_element_type</span><span class="p">(</span><span class="n">ElementSetType</span><span class="o">.</span><span class="n">CARTESIAN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Interplanetary-transfer">
+<h3>Interplanetary transfer<a class="headerlink" href="#Interplanetary-transfer" title="Link to this heading">#</a></h3>
+<p>For the interplanetary transfer, a similar situation occurs. The different segments of the Lambert trajectory remain no matter the launch and arrival dates. Therefore, it is possible configure here only the constant parameters.</p>
+<p>Start by declaring the different segments of the Lambert transfer:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transfer</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+    <span class="n">SegmentType</span><span class="o">.</span><span class="n">TARGET_SEQUENCE</span><span class="p">,</span> <span class="s2">&quot;Lambert Transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span>
+<span class="p">)</span>
+<span class="n">first_impulse</span> <span class="o">=</span> <span class="n">transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">SegmentType</span><span class="o">.</span><span class="n">MANEUVER</span><span class="p">,</span> <span class="s2">&quot;First Impulse&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">propagate</span> <span class="o">=</span> <span class="n">transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">SegmentType</span><span class="o">.</span><span class="n">PROPAGATE</span><span class="p">,</span> <span class="s2">&quot;Propagate&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">last_impulse</span> <span class="o">=</span> <span class="n">transfer</span><span class="o">.</span><span class="n">segments</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">SegmentType</span><span class="o">.</span><span class="n">MANEUVER</span><span class="p">,</span> <span class="s2">&quot;Last Impulse&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Configure the type of segments:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ManeuverType</span>
+
+
+<span class="n">first_impulse</span><span class="o">.</span><span class="n">set_maneuver_type</span><span class="p">(</span><span class="n">ManeuverType</span><span class="o">.</span><span class="n">IMPULSIVE</span><span class="p">)</span>
+<span class="n">propagate</span><span class="o">.</span><span class="n">propagator_name</span> <span class="o">=</span> <span class="s2">&quot;Sun Point Mass&quot;</span>
+<span class="n">last_impulse</span><span class="o">.</span><span class="n">set_maneuver_type</span><span class="p">(</span><span class="n">ManeuverType</span><span class="o">.</span><span class="n">IMPULSIVE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Add a Lambert profile to the interplanetary transfer:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transfer</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">remove_all</span><span class="p">()</span>
+<span class="n">lambert</span> <span class="o">=</span> <span class="n">transfer</span><span class="o">.</span><span class="n">profiles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Lambert Profile&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Configure the profile. Do not configure any parameters related with the target:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LambertSolutionOptionType</span><span class="p">,</span>
+    <span class="n">LambertTargetCoordinateType</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">coord_system_name</span> <span class="o">=</span> <span class="s2">&quot;CentralBody/Sun Inertial&quot;</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">set_target_coord_type</span><span class="p">(</span><span class="n">LambertTargetCoordinateType</span><span class="o">.</span><span class="n">CARTESIAN</span><span class="p">)</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_second_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">solution_option</span> <span class="o">=</span> <span class="n">LambertSolutionOptionType</span><span class="o">.</span><span class="n">FIXED_TIME</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">revolutions</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">central_body_collision_altitude_padding</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>Allow the profile to write its results to the transfer segments:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_to_first_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">first_maneuver_segment</span> <span class="o">=</span> <span class="n">first_impulse</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_duration_to_propagate</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">disable_non_lambert_propagate_stop_conditions</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">propagate_segment</span> <span class="o">=</span> <span class="n">propagate</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">enable_write_to_second_maneuver</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">lambert</span><span class="o">.</span><span class="n">second_maneuver_segment</span> <span class="o">=</span> <span class="n">last_impulse</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<p>Activate the profile and configure its behavior when solving for the results:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ProfileMode</span><span class="p">,</span>
+    <span class="n">ProfilesFinish</span><span class="p">,</span>
+    <span class="n">TargetSequenceAction</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="n">lambert</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ProfileMode</span><span class="o">.</span><span class="n">ACTIVE</span>
+<span class="n">transfer</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="n">TargetSequenceAction</span><span class="o">.</span><span class="n">RUN_ACTIVE_PROFILES</span>
+<span class="n">transfer</span><span class="o">.</span><span class="n">when_profiles_finish</span> <span class="o">=</span> <span class="n">ProfilesFinish</span><span class="o">.</span><span class="n">RUN_TO_RETURN_AND_CONTINUE</span>
+<span class="n">transfer</span><span class="o">.</span><span class="n">continue_on_failure</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">transfer</span><span class="o">.</span><span class="n">reset_inner_targeters</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="Solve-the-transfer">
+<h2>Solve the transfer<a class="headerlink" href="#Solve-the-transfer" title="Link to this heading">#</a></h2>
+<p>Only the constant parameters have been configured so far. Now, it is time to create a routine capable of modifying the state of the satellite and the Lambert profile so that the required impulses can be solved for any launch and arrival date.</p>
+<p><strong>Note:</strong> the porkchop plots presented in NASA’s manual assume prograde transfers. However, the Lambert profile only differentiates between long and short solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude can not be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects.astrogator</span><span class="w"> </span><span class="kn">import</span> <span class="n">LambertDirectionOfMotionType</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">lambert_solver</span><span class="p">(</span>
+    <span class="n">satellite</span><span class="p">,</span> <span class="n">departure_body</span><span class="p">,</span> <span class="n">arrival_body</span><span class="p">,</span> <span class="n">launch_date</span><span class="p">,</span> <span class="n">arrival_date</span><span class="p">,</span> <span class="n">is_prograde</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solve the Lambert transfer between two bodies for a given launch and arrival date.&quot;&quot;&quot;</span>
+    <span class="c1"># Retrieve the initial state and lambert profile from the satellite</span>
+    <span class="n">initial_state</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="p">[</span><span class="s2">&quot;Initial State&quot;</span><span class="p">]</span>
+    <span class="n">lambert</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">main_sequence</span><span class="p">[</span><span class="s2">&quot;Lambert Transfer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">profiles</span><span class="p">[</span>
+        <span class="s2">&quot;Lambert Profile&quot;</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Compute the time of flight</span>
+    <span class="n">time_of_flight</span> <span class="o">=</span> <span class="n">arrival_date</span><span class="o">.</span><span class="n">span</span><span class="p">(</span><span class="n">launch_date</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">if</span> <span class="n">time_of_flight</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">time_of_flight</span> <span class="o">=</span> <span class="n">time_of_flight</span>
+
+    <span class="c1"># Compute the departure and arrival state vectors</span>
+    <span class="n">departure_position</span><span class="p">,</span> <span class="n">departure_velocity</span> <span class="o">=</span> <span class="n">get_object_pos_vel_at_epoch</span><span class="p">(</span>
+        <span class="n">departure_body</span><span class="p">,</span> <span class="n">launch_date</span><span class="p">,</span> <span class="s2">&quot;ICRF&quot;</span>
+    <span class="p">)</span>
+    <span class="n">arrival_position</span><span class="p">,</span> <span class="n">arrival_velocity</span> <span class="o">=</span> <span class="n">get_object_pos_vel_at_epoch</span><span class="p">(</span>
+        <span class="n">arrival_body</span><span class="p">,</span> <span class="n">arrival_date</span><span class="p">,</span> <span class="s2">&quot;ICRF&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Impose the direction of motion according to the angular momentum of the orbit</span>
+    <span class="n">r1_cross_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">departure_position</span><span class="p">,</span> <span class="n">arrival_position</span><span class="p">)</span>
+    <span class="n">r1_times_r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">departure_position</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">arrival_position</span><span class="p">)</span>
+    <span class="n">h0_z</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1_cross_r2</span> <span class="o">/</span> <span class="n">r1_times_r2</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">is_prograde</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">LambertDirectionOfMotionType</span><span class="o">.</span><span class="n">LONG</span>
+            <span class="k">if</span> <span class="n">h0_z</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="n">LambertDirectionOfMotionType</span><span class="o">.</span><span class="n">SHORT</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">LambertDirectionOfMotionType</span><span class="o">.</span><span class="n">SHORT</span>
+            <span class="k">if</span> <span class="n">h0_z</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="n">LambertDirectionOfMotionType</span><span class="o">.</span><span class="n">LONG</span>
+        <span class="p">)</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">direction_of_motion</span> <span class="o">=</span> <span class="n">path</span>
+
+    <span class="c1"># Update the initial state of the satellite</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">orbit_epoch</span> <span class="o">=</span> <span class="n">launch_date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">)</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">departure_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">departure_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">departure_position</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">departure_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">departure_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">initial_state</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">vz</span> <span class="o">=</span> <span class="n">departure_velocity</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># Update final state of satellite</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_position_x</span> <span class="o">=</span> <span class="n">arrival_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_position_y</span> <span class="o">=</span> <span class="n">arrival_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_position_z</span> <span class="o">=</span> <span class="n">arrival_position</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_x</span> <span class="o">=</span> <span class="n">arrival_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_y</span> <span class="o">=</span> <span class="n">arrival_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="n">lambert</span><span class="o">.</span><span class="n">target_velocity_z</span> <span class="o">=</span> <span class="n">arrival_velocity</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+
+    <span class="c1"># Run the mission control sequence</span>
+    <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">run_mcs</span><span class="p">()</span>
+    <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">apply_all_profile_changes</span><span class="p">()</span>
+
+    <span class="c1"># Compute the impulses</span>
+    <span class="n">delta_v1</span> <span class="o">=</span> <span class="n">first_impulse</span><span class="o">.</span><span class="n">maneuver</span><span class="o">.</span><span class="n">attitude_control</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">delta_v2</span> <span class="o">=</span> <span class="n">last_impulse</span><span class="o">.</span><span class="n">maneuver</span><span class="o">.</span><span class="n">attitude_control</span><span class="o">.</span><span class="n">magnitude</span> <span class="o">/</span> <span class="mi">1000</span>
+
+    <span class="k">return</span> <span class="n">delta_v1</span><span class="p">,</span> <span class="n">delta_v2</span><span class="p">,</span> <span class="n">time_of_flight</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, solve the transfer for every launch and arrival date combination:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dv_arrival_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">arrival_span</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">launch_span</span><span class="p">)))</span>
+<span class="n">c3_launch_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">arrival_span</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">launch_span</span><span class="p">)))</span>
+<span class="n">tof_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">arrival_span</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">launch_span</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">launch_date</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">launch_span</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">arrival_date</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arrival_span</span><span class="p">):</span>
+        <span class="n">dv_launch</span><span class="p">,</span> <span class="n">dv_arrival</span><span class="p">,</span> <span class="n">tof</span> <span class="o">=</span> <span class="n">lambert_solver</span><span class="p">(</span>
+            <span class="n">satellite</span><span class="p">,</span> <span class="n">earth</span><span class="p">,</span> <span class="n">mars</span><span class="p">,</span> <span class="n">launch_date</span><span class="p">,</span> <span class="n">arrival_date</span>
+        <span class="p">)</span>
+
+        <span class="n">dv_arrival_values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dv_arrival</span>
+        <span class="n">c3_launch_values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dv_launch</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">tof_values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tof</span> <span class="o">/</span> <span class="mi">3600</span> <span class="o">/</span> <span class="mi">24</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Plot-the-porkchop">
+<h2>Plot the porkchop<a class="headerlink" href="#Plot-the-porkchop" title="Link to this heading">#</a></h2>
+<p>With the values for <span class="math notranslate nohighlight">\(C_{3_{\text{launch}}}\)</span>, <span class="math notranslate nohighlight">\(\Delta v_{\text{arrival}}\)</span>, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, we need to convert the <code class="docutils literal notranslate"><span class="pre">Date</span></code> objects to <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> objects so that Matplotlib can correctly interpret them as time values.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">as_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a :ref:`~Date` object into a :ref:`~datetime.datetime` instance.</span>
+
+<span class="sd">    Warns</span>
+<span class="sd">    -----</span>
+<span class="sd">    If a leap second is casted, one second is subtracted.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    Casting as Python dates introduces a loss of precision. Avoid using casted</span>
+<span class="sd">    date types in future computations.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">utcg_format_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> %b %Y %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">),</span> <span class="n">utcg_format_str</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">LeapSecondsError</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Date </span><span class="si">{</span><span class="n">date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;UTCG&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> is a leap second.&quot;</span><span class="p">)</span>
+        <span class="n">adjusted_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="s2">&quot;sec&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">adjusted_date</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">),</span> <span class="n">utcg_format_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Cast dates to ensure Matplotlib representation:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">launch_span</span> <span class="o">=</span> <span class="p">[</span><span class="n">as_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">launch_span</span><span class="p">]</span>
+<span class="n">arrival_span</span> <span class="o">=</span> <span class="p">[</span><span class="n">as_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">arrival_span</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>To increase the beauty of the porkchop plot, the following contour levels apply:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c3_launch_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">dv_arrival_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">tof_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, plot the porkchop</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">patheffects</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mlines</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;EARTH - MARS 1990, C3L</span><span class="se">\n</span><span class="s2">BALLISTIC TRANSFER TRAJECTORY&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;LAUNCH DATE&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;ARRIVAL DATE&quot;</span><span class="p">)</span>
+
+<span class="c1"># Contour color for the characteristic energy</span>
+<span class="n">c3_colors</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">launch_span</span><span class="p">,</span> <span class="n">arrival_span</span><span class="p">,</span> <span class="n">c3_launch_values</span><span class="p">,</span> <span class="n">c3_launch_levels</span><span class="p">)</span>
+<span class="n">c3_colorbar_axes</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+<span class="n">c3_colorbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c3_colors</span><span class="p">,</span> <span class="n">c3_colorbar_axes</span><span class="p">)</span>
+<span class="n">c3_colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;Characteristic energy $km^2 / s^2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Contour lines for the characteristic energy</span>
+<span class="n">c3_lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
+    <span class="n">launch_span</span><span class="p">,</span>
+    <span class="n">arrival_span</span><span class="p">,</span>
+    <span class="n">c3_launch_values</span><span class="p">,</span>
+    <span class="n">c3_launch_levels</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">c3_lines</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.1f</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Lines for the arrival velocity</span>
+<span class="n">dv_arrival_lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
+    <span class="n">launch_span</span><span class="p">,</span>
+    <span class="n">arrival_span</span><span class="p">,</span>
+    <span class="n">dv_arrival_values</span><span class="p">,</span>
+    <span class="n">dv_arrival_levels</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span>
+    <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">dv_arrival_labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span>
+    <span class="n">dv_arrival_lines</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.0f</span><span class="s2"> km/s&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+
+<span class="c1"># Lines for the time of flight</span>
+<span class="n">tof_lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
+    <span class="n">launch_span</span><span class="p">,</span>
+    <span class="n">arrival_span</span><span class="p">,</span>
+    <span class="n">tof_values</span><span class="p">,</span>
+    <span class="n">tof_levels</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">tof_lines</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">path_effects</span><span class="o">=</span><span class="p">[</span><span class="n">patheffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)])</span>
+<span class="n">tof_labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span>
+    <span class="n">tof_lines</span><span class="p">,</span>
+    <span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.0f</span><span class="s2"> days&quot;</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="n">use_clabeltext</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">tof_labels</span><span class="p">,</span> <span class="n">path_effects</span><span class="o">=</span><span class="p">[</span><span class="n">patheffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)])</span>
+
+<span class="c1"># Format dates shown in the axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%y/%m/</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%y/%m/</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># Set the ticks for bot axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">as_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">linspace_dates</span><span class="p">(</span><span class="n">first_launch</span><span class="p">,</span> <span class="n">last_launch</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">)]</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">as_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">linspace_dates</span><span class="p">(</span><span class="n">first_arrival</span><span class="p">,</span> <span class="n">last_arrival</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Custom legend</span>
+<span class="n">legend_lines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">mlines</span><span class="o">.</span><span class="n">Line2D</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Time of flight&quot;</span><span class="p">),</span>
+    <span class="n">mlines</span><span class="o">.</span><span class="n">Line2D</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Arrival velocity&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">legend_lines</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_porkchop-plots_48_0.png" src="../_images/examples_porkchop-plots_48_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lambert-transfer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lambert transfer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="radar-cross-section-detection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Radar cross section detection calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-a-porkchop-plot?">What is a porkchop plot?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Overview-of-the-algorithm">Overview of the algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-STK">Launch STK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Generating-a-span-of-launch-and-arrival-dates">Generating a span of launch and arrival dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Solve-the-ephemerides-of-the-planets">Solve the ephemerides of the planets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-satellite">Add a satellite</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Initial-state">Initial state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Interplanetary-transfer">Interplanetary transfer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Solve-the-transfer">Solve the transfer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Plot-the-porkchop">Plot the porkchop</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/porkchop-plots.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/porkchop-plots.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

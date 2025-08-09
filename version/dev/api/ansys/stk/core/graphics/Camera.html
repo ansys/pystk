@@ -1,0 +1,1619 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Camera &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../../../../../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/stk/core/graphics/Camera';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="CameraSnapshot" href="CameraSnapshot.html" />
+    <link rel="prev" title="BrightnessFilterFactory" href="BrightnessFilterFactory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/api/ansys/stk/core/graphics/Camera.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../core.html">The <code class="docutils literal notranslate"><span class="pre">core</span></code> library</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../stkengine.html">🖿 stkengine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkobjects.html">🖿 stkobjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkrfchannelmodeler.html">🖿 stkrfchannelmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities.html">🖿 utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../analysis_workbench.html">🗎 analysis_workbench</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../graphics.html">🗎 graphics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IConvolutionFilter.html"> IConvolutionFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IDisplayCondition.html"> IDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IGlobeImageOverlay.html"> IGlobeImageOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IGlobeOverlay.html"> IGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IKmlContainer.html"> IKmlContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IKmlFeature.html"> IKmlFeature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOverlay.html"> IOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPathPrimitiveUpdatePolicy.html"> IPathPrimitiveUpdatePolicy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPositionInterpolator.html"> IPositionInterpolator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IPrimitive.html"> IPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IProjection.html"> IProjection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRaster.html"> IRaster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRasterFilter.html"> IRasterFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRasterStream.html"> IRasterStream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IScreenOverlay.html"> IScreenOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IScreenOverlayCollectionBase.html"> IScreenOverlayCollectionBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IScreenOverlayContainer.html"> IScreenOverlayContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITerrainOverlay.html"> ITerrainOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITriangulatorResult.html"> ITriangulatorResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGICustomTerrainOverlay.html"> AGICustomTerrainOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGICustomTerrainOverlayFactory.html"> AGICustomTerrainOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIProcessedImageGlobeOverlay.html"> AGIProcessedImageGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIProcessedImageGlobeOverlayFactory.html"> AGIProcessedImageGlobeOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIProcessedTerrainOverlay.html"> AGIProcessedTerrainOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIProcessedTerrainOverlayFactory.html"> AGIProcessedTerrainOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIRoamImageGlobeOverlay.html"> AGIRoamImageGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AGIRoamImageGlobeOverlayFactory.html"> AGIRoamImageGlobeOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromLuminanceFilter.html"> AlphaFromLuminanceFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromLuminanceFilterFactory.html"> AlphaFromLuminanceFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromPixelFilter.html"> AlphaFromPixelFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromPixelFilterFactory.html"> AlphaFromPixelFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromRasterFilter.html"> AlphaFromRasterFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlphaFromRasterFilterFactory.html"> AlphaFromRasterFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AltitudeDisplayCondition.html"> AltitudeDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AltitudeDisplayConditionFactory.html"> AltitudeDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AxesPrimitive.html"> AxesPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AxesPrimitiveFactory.html"> AxesPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BandExtractFilter.html"> BandExtractFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BandExtractFilterFactory.html"> BandExtractFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BandOrderFilter.html"> BandOrderFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BandOrderFilterFactory.html"> BandOrderFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BatchPrimitiveIndex.html"> BatchPrimitiveIndex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlurFilter.html"> BlurFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlurFilterFactory.html"> BlurFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoundingSphere.html"> BoundingSphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoundingSphereFactory.html"> BoundingSphereFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BoxTriangulatorInitializer.html"> BoxTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrightnessFilter.html"> BrightnessFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BrightnessFilterFactory.html"> BrightnessFilterFactory</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"> Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CameraSnapshot.html"> CameraSnapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CameraVideoRecording.html"> CameraVideoRecording</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CentralBodyGraphics.html"> CentralBodyGraphics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CentralBodyGraphicsIndexer.html"> CentralBodyGraphicsIndexer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Clouds.html"> Clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ColorToLuminanceFilter.html"> ColorToLuminanceFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ColorToLuminanceFilterFactory.html"> ColorToLuminanceFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompositeDisplayCondition.html"> CompositeDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompositeDisplayConditionFactory.html"> CompositeDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompositePrimitive.html"> CompositePrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CompositePrimitiveFactory.html"> CompositePrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstantDisplayCondition.html"> ConstantDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstantDisplayConditionFactory.html"> ConstantDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContrastFilter.html"> ContrastFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContrastFilterFactory.html"> ContrastFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConvolutionFilter.html"> ConvolutionFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConvolutionFilterFactory.html"> ConvolutionFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomImageGlobeOverlay.html"> CustomImageGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomImageGlobeOverlayPluginActivator.html"> CustomImageGlobeOverlayPluginActivator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomImageGlobeOverlayPluginActivatorFactory.html"> CustomImageGlobeOverlayPluginActivatorFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomImageGlobeOverlayPluginProxy.html"> CustomImageGlobeOverlayPluginProxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CylinderTriangulatorInitializer.html"> CylinderTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DisplayCondition.html"> DisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceDisplayCondition.html"> DistanceDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceDisplayConditionFactory.html"> DistanceDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToGlobeOverlayDisplayCondition.html"> DistanceToGlobeOverlayDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToGlobeOverlayDisplayConditionFactory.html"> DistanceToGlobeOverlayDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToPositionDisplayCondition.html"> DistanceToPositionDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToPositionDisplayConditionFactory.html"> DistanceToPositionDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToPrimitiveDisplayCondition.html"> DistanceToPrimitiveDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DistanceToPrimitiveDisplayConditionFactory.html"> DistanceToPrimitiveDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DurationPathPrimitiveUpdatePolicy.html"> DurationPathPrimitiveUpdatePolicy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DurationPathPrimitiveUpdatePolicyFactory.html"> DurationPathPrimitiveUpdatePolicyFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EdgeDetectFilter.html"> EdgeDetectFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EdgeDetectFilterFactory.html"> EdgeDetectFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EllipsoidTriangulatorInitializer.html"> EllipsoidTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtrudedPolylineTriangulatorInitializer.html"> ExtrudedPolylineTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtrudedPolylineTriangulatorResult.html"> ExtrudedPolylineTriangulatorResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FactoryAndInitializers.html"> FactoryAndInitializers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FilteringRasterStream.html"> FilteringRasterStream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FilteringRasterStreamFactory.html"> FilteringRasterStreamFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlipFilter.html"> FlipFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlipFilterFactory.html"> FlipFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FrameRate.html"> FrameRate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GammaCorrectionFilter.html"> GammaCorrectionFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GammaCorrectionFilterFactory.html"> GammaCorrectionFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GaussianBlurFilter.html"> GaussianBlurFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GaussianBlurFilterFactory.html"> GaussianBlurFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeospatialImageGlobeOverlay.html"> GeospatialImageGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeospatialImageGlobeOverlayFactory.html"> GeospatialImageGlobeOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GlobeImageOverlay.html"> GlobeImageOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GlobeImageOverlayAddCompleteEventArgs.html"> GlobeImageOverlayAddCompleteEventArgs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GlobeImageOverlayInitializer.html"> GlobeImageOverlayInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GlobeOverlay.html"> GlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GlobeOverlaySettings.html"> GlobeOverlaySettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GradientDetectFilter.html"> GradientDetectFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GradientDetectFilterFactory.html"> GradientDetectFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphicsFont.html"> GraphicsFont</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphicsFontFactory.html"> GraphicsFontFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GreatArcInterpolator.html"> GreatArcInterpolator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GreatArcInterpolatorFactory.html"> GreatArcInterpolatorFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageCollection.html"> ImageCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jpeg2000WriterInitializer.html"> Jpeg2000WriterInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlContainer.html"> KmlContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlDocument.html"> KmlDocument</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlDocumentCollection.html"> KmlDocumentCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlDocumentLoadedEventArgs.html"> KmlDocumentLoadedEventArgs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlFeature.html"> KmlFeature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlFeatureCollection.html"> KmlFeatureCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlFolder.html"> KmlFolder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlGraphics.html"> KmlGraphics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlNetworkLink.html"> KmlNetworkLink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LevelsFilter.html"> LevelsFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LevelsFilterFactory.html"> LevelsFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lighting.html"> Lighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchPrimitive.html"> MarkerBatchPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchPrimitiveFactory.html"> MarkerBatchPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchPrimitiveOptionalParameters.html"> MarkerBatchPrimitiveOptionalParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchPrimitiveOptionalParametersFactory.html"> MarkerBatchPrimitiveOptionalParametersFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximumCountPathPrimitiveUpdatePolicy.html"> MaximumCountPathPrimitiveUpdatePolicy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximumCountPathPrimitiveUpdatePolicyFactory.html"> MaximumCountPathPrimitiveUpdatePolicyFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelArticulation.html"> ModelArticulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelArticulationCollection.html"> ModelArticulationCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelPrimitive.html"> ModelPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelPrimitiveFactory.html"> ModelPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelTransformation.html"> ModelTransformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ObjectCollection.html"> ObjectCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Overlay.html"> Overlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPoint.html"> PathPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPointCollection.html"> PathPointCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPointFactory.html"> PathPointFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPrimitive.html"> PathPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPrimitiveFactory.html"> PathPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPrimitiveUpdatePolicy.html"> PathPrimitiveUpdatePolicy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PickResult.html"> PickResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PickResultCollection.html"> PickResultCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PixelSizeDisplayCondition.html"> PixelSizeDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PixelSizeDisplayConditionFactory.html"> PixelSizeDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointBatchPrimitive.html"> PointBatchPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointBatchPrimitiveFactory.html"> PointBatchPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointBatchPrimitiveOptionalParameters.html"> PointBatchPrimitiveOptionalParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointBatchPrimitiveOptionalParametersFactory.html"> PointBatchPrimitiveOptionalParametersFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolylinePrimitive.html"> PolylinePrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolylinePrimitiveFactory.html"> PolylinePrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolylinePrimitiveOptionalParameters.html"> PolylinePrimitiveOptionalParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolylinePrimitiveOptionalParametersFactory.html"> PolylinePrimitiveOptionalParametersFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PositionInterpolator.html"> PositionInterpolator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Primitive.html"> Primitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PrimitiveManager.html"> PrimitiveManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectedRasterOverlay.html"> ProjectedRasterOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectedRasterOverlayFactory.html"> ProjectedRasterOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Projection.html"> Projection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectionFactory.html"> ProjectionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectionRasterStreamPluginActivator.html"> ProjectionRasterStreamPluginActivator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectionRasterStreamPluginActivatorFactory.html"> ProjectionRasterStreamPluginActivatorFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectionRasterStreamPluginProxy.html"> ProjectionRasterStreamPluginProxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProjectionStream.html"> ProjectionStream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Raster.html"> Raster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterAttributes.html"> RasterAttributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterAttributesFactory.html"> RasterAttributesFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterFactory.html"> RasterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterFilter.html"> RasterFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterImageGlobeOverlay.html"> RasterImageGlobeOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterImageGlobeOverlayFactory.html"> RasterImageGlobeOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterStream.html"> RasterStream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RendererTexture2D.html"> RendererTexture2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RendererTextureTemplate2D.html"> RendererTextureTemplate2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RenderingEventArgs.html"> RenderingEventArgs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RhumbLineInterpolator.html"> RhumbLineInterpolator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RhumbLineInterpolatorFactory.html"> RhumbLineInterpolatorFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RotateFilter.html"> RotateFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RotateFilterFactory.html"> RotateFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Scene.html"> Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneCollection.html"> SceneCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneDisplayCondition.html"> SceneDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneDisplayConditionFactory.html"> SceneDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneGlobeOverlaySettings.html"> SceneGlobeOverlaySettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneManager.html"> SceneManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SceneManagerInitializer.html"> SceneManagerInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlay.html"> ScreenOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayCollection.html"> ScreenOverlayCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayCollectionBase.html"> ScreenOverlayCollectionBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayFactory.html"> ScreenOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayManager.html"> ScreenOverlayManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayPickResult.html"> ScreenOverlayPickResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayPickResultCollection.html"> ScreenOverlayPickResultCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SequenceFilter.html"> SequenceFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SequenceFilterFactory.html"> SequenceFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SharpenFilter.html"> SharpenFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SharpenFilterFactory.html"> SharpenFilterFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SolidPrimitive.html"> SolidPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SolidPrimitiveFactory.html"> SolidPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SolidTriangulatorResult.html"> SolidTriangulatorResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stereoscopic.html"> Stereoscopic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceExtentTriangulatorInitializer.html"> SurfaceExtentTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceMeshPrimitive.html"> SurfaceMeshPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceMeshPrimitiveFactory.html"> SurfaceMeshPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfacePolygonTriangulatorInitializer.html"> SurfacePolygonTriangulatorInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceShapesInitializer.html"> SurfaceShapesInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceShapesResult.html"> SurfaceShapesResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceTriangulatorResult.html"> SurfaceTriangulatorResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TerrainOverlay.html"> TerrainOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TerrainOverlayAddCompleteEventArgs.html"> TerrainOverlayAddCompleteEventArgs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TerrainOverlayCollection.html"> TerrainOverlayCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TerrainOverlayInitializer.html"> TerrainOverlayInitializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextBatchPrimitive.html"> TextBatchPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextBatchPrimitiveFactory.html"> TextBatchPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextBatchPrimitiveOptionalParameters.html"> TextBatchPrimitiveOptionalParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextBatchPrimitiveOptionalParametersFactory.html"> TextBatchPrimitiveOptionalParametersFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextOverlay.html"> TextOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextOverlayFactory.html"> TextOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Texture2DFactory.html"> Texture2DFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureFilter2D.html"> TextureFilter2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureFilter2DFactory.html"> TextureFilter2DFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureMatrix.html"> TextureMatrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureMatrixFactory.html"> TextureMatrixFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureScreenOverlay.html"> TextureScreenOverlay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureScreenOverlayFactory.html"> TextureScreenOverlayFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeIntervalDisplayCondition.html"> TimeIntervalDisplayCondition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeIntervalDisplayConditionFactory.html"> TimeIntervalDisplayConditionFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriangleMeshPrimitive.html"> TriangleMeshPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriangleMeshPrimitiveFactory.html"> TriangleMeshPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriangleMeshPrimitiveOptionalParameters.html"> TriangleMeshPrimitiveOptionalParameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriangleMeshPrimitiveOptionalParametersFactory.html"> TriangleMeshPrimitiveOptionalParametersFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TriangulatorResult.html"> TriangulatorResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorPrimitive.html"> VectorPrimitive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorPrimitiveFactory.html"> VectorPrimitiveFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoStream.html"> VideoStream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoStreamFactory.html"> VideoStreamFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VisualEffects.html"> VisualEffects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AntiAliasingMethod.html">≔ AntiAliasingMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BinaryLogicOperation.html">≔ BinaryLogicOperation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlurMethod.html">≔ BlurMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConstrainedUpAxis.html">≔ ConstrainedUpAxis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CylinderFillOptions.html">≔ CylinderFillOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EdgeDetectMethod.html">≔ EdgeDetectMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FaceCullingMode.html">≔ FaceCullingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FontStyle.html">≔ FontStyle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GradientDetectMethod.html">≔ GradientDetectMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Jpeg2000CompressionProfile.html">≔ Jpeg2000CompressionProfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlNetworkLinkRefreshMode.html">≔ KmlNetworkLinkRefreshMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="KmlNetworkLinkViewRefreshMode.html">≔ KmlNetworkLinkViewRefreshMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MagnificationFilter.html">≔ MagnificationFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MapProjection.html">≔ MapProjection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchRenderingMethod.html">≔ MarkerBatchRenderingMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchRenderPass.html">≔ MarkerBatchRenderPass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchSizeSource.html">≔ MarkerBatchSizeSource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchSizeUnit.html">≔ MarkerBatchSizeUnit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MarkerBatchSortOrder.html">≔ MarkerBatchSortOrder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinificationFilter.html">≔ MinificationFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelTransformationType.html">≔ ModelTransformationType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ModelUpAxis.html">≔ ModelUpAxis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Origin.html">≔ Origin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OutlineAppearance.html">≔ OutlineAppearance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OverlayAspectRatioMode.html">≔ OverlayAspectRatioMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OverlayRole.html">≔ OverlayRole</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PathPrimitiveRemoveLocation.html">≔ PathPrimitiveRemoveLocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolylineType.html">≔ PolylineType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PrimitiveIndicesOrderHint.html">≔ PrimitiveIndicesOrderHint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PrimitivesSortOrder.html">≔ PrimitivesSortOrder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterBand.html">≔ RasterBand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterFlipAxis.html">≔ RasterFlipAxis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterFormat.html">≔ RasterFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterOrientation.html">≔ RasterOrientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterSharpenMethod.html">≔ RasterSharpenMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RasterType.html">≔ RasterType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RefreshRate.html">≔ RefreshRate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RendererShadingModel.html">≔ RendererShadingModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RenderPass.html">≔ RenderPass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RenderPassHint.html">≔ RenderPassHint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayOrigin.html">≔ ScreenOverlayOrigin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayPinningOrigin.html">≔ ScreenOverlayPinningOrigin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ScreenOverlayUnit.html">≔ ScreenOverlayUnit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SetHint.html">≔ SetHint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotFileFormat.html">≔ SnapshotFileFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StereoProjectionMode.html">≔ StereoProjectionMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StereoscopicDisplayMode.html">≔ StereoscopicDisplayMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceMeshRenderingMethod.html">≔ SurfaceMeshRenderingMethod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureFormat.html">≔ TextureFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextureWrap.html">≔ TextureWrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoFormat.html">≔ VideoFormat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoPlayback.html">≔ VideoPlayback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Visibility.html">≔ Visibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindingOrder.html">≔ WindingOrder</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkdesktop.html">🗎 stkdesktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkruntime.html">🗎 stkruntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkutil.html">🗎 stkutil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stkx.html">🗎 stkx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uiapplication.html">🗎 uiapplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uicore.html">🗎 uicore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions.html">The <code class="docutils literal notranslate"><span class="pre">extensions</span></code> module</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../../api.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../core.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">core</span></code> library</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../graphics.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">graphics</span></code> module</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Camera</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="camera">
+<h1>Camera<a class="headerlink" href="#camera" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.stk.core.graphics.Camera">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.stk.core.graphics.</span></span><span class="sig-name descname"><span class="pre">Camera</span></span><a class="headerlink" href="#ansys.stk.core.graphics.Camera" title="Link to this definition">#</a></dt>
+<dd><p>Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.</p>
+</dd></dl>
+
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Methods</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.cartographic_to_window" title="ansys.stk.core.graphics.Camera.cartographic_to_window"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cartographic_to_window</span></code></a></p></td>
+<td><p>Convert a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control…</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.try_cartographic_to_window" title="ansys.stk.core.graphics.Camera.try_cartographic_to_window"><code class="xref py py-attr docutils literal notranslate"><span class="pre">try_cartographic_to_window</span></code></a></p></td>
+<td><p>Convert a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.try_window_to_cartographic" title="ansys.stk.core.graphics.Camera.try_window_to_cartographic"><code class="xref py py-attr docutils literal notranslate"><span class="pre">try_window_to_cartographic</span></code></a></p></td>
+<td><p>Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view" title="ansys.stk.core.graphics.Camera.view"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view</span></code></a></p></td>
+<td><p>View from a point to a point. Sets the camera’s position and the reference point the camera is looking at.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.view_central_body" title="ansys.stk.core.graphics.Camera.view_central_body"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_central_body</span></code></a></p></td>
+<td><p>Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera’s position is set so the entire central body is visible.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view_direction" title="ansys.stk.core.graphics.Camera.view_direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_direction</span></code></a></p></td>
+<td><p>View from a point to a direction. Sets the camera’s position and the direction vector indicating where the camera is looking.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.view_direction_with_up_axis" title="ansys.stk.core.graphics.Camera.view_direction_with_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_direction_with_up_axis</span></code></a></p></td>
+<td><p>View from a point to a direction. Sets the camera’s position and the direction vector indicating where the camera is looking.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view_extent" title="ansys.stk.core.graphics.Camera.view_extent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_extent</span></code></a></p></td>
+<td><p>Zooms to a cartographic extent on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north. The axes is set to an east-north-up axes at the center of extent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.view_offset" title="ansys.stk.core.graphics.Camera.view_offset"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_offset</span></code></a></p></td>
+<td><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the offset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view_offset_direction" title="ansys.stk.core.graphics.Camera.view_offset_direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_offset_direction</span></code></a></p></td>
+<td><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the direction vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.view_offset_direction_with_up_axis" title="ansys.stk.core.graphics.Camera.view_offset_direction_with_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_offset_direction_with_up_axis</span></code></a></p></td>
+<td><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the direction vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view_offset_with_up_axis" title="ansys.stk.core.graphics.Camera.view_offset_with_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_offset_with_up_axis</span></code></a></p></td>
+<td><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.view_rectangular_extent" title="ansys.stk.core.graphics.Camera.view_rectangular_extent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_rectangular_extent</span></code></a></p></td>
+<td><p>Zooms to a rectangular extent composed of west, south, east, north on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north…</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.view_with_up_axis" title="ansys.stk.core.graphics.Camera.view_with_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">view_with_up_axis</span></code></a></p></td>
+<td><p>View from a point to a point. Sets the camera’s position and the reference point the camera is looking at.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.visibility_test" title="ansys.stk.core.graphics.Camera.visibility_test"><code class="xref py py-attr docutils literal notranslate"><span class="pre">visibility_test</span></code></a></p></td>
+<td><p>Get the visibility of a sphere against the view frustum and any occluding central bodies.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.window_to_cartographic" title="ansys.stk.core.graphics.Camera.window_to_cartographic"><code class="xref py py-attr docutils literal notranslate"><span class="pre">window_to_cartographic</span></code></a></p></td>
+<td><p>Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Properties</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.allow_rotation_over_constrained_up_axis" title="ansys.stk.core.graphics.Camera.allow_rotation_over_constrained_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">allow_rotation_over_constrained_up_axis</span></code></a></p></td>
+<td><p>Get or set whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.axes" title="ansys.stk.core.graphics.Camera.axes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">axes</span></code></a></p></td>
+<td><p>Get or set camera’s axes of rotation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.constrained_up_axis" title="ansys.stk.core.graphics.Camera.constrained_up_axis"><code class="xref py py-attr docutils literal notranslate"><span class="pre">constrained_up_axis</span></code></a></p></td>
+<td><p>Get or set the axis to constrain the up vector to.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.direction" title="ansys.stk.core.graphics.Camera.direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">direction</span></code></a></p></td>
+<td><p>Get or set the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.distance" title="ansys.stk.core.graphics.Camera.distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">distance</span></code></a></p></td>
+<td><p>Get or set the distance the camera position is from the reference point.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.distance_per_radius" title="ansys.stk.core.graphics.Camera.distance_per_radius"><code class="xref py py-attr docutils literal notranslate"><span class="pre">distance_per_radius</span></code></a></p></td>
+<td><p>Return the distance that the Camera’s Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.far_near_plane_ratio" title="ansys.stk.core.graphics.Camera.far_near_plane_ratio"><code class="xref py py-attr docutils literal notranslate"><span class="pre">far_near_plane_ratio</span></code></a></p></td>
+<td><p>Get or set the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower…</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.far_plane" title="ansys.stk.core.graphics.Camera.far_plane"><code class="xref py py-attr docutils literal notranslate"><span class="pre">far_plane</span></code></a></p></td>
+<td><p>Get or set the distance from the camera to the far plane.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.field_of_view" title="ansys.stk.core.graphics.Camera.field_of_view"><code class="xref py py-attr docutils literal notranslate"><span class="pre">field_of_view</span></code></a></p></td>
+<td><p>Get or set field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal…</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.horizontal_field_of_view" title="ansys.stk.core.graphics.Camera.horizontal_field_of_view"><code class="xref py py-attr docutils literal notranslate"><span class="pre">horizontal_field_of_view</span></code></a></p></td>
+<td><p>Get the horizontal field of view.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.lock_view_direction" title="ansys.stk.core.graphics.Camera.lock_view_direction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">lock_view_direction</span></code></a></p></td>
+<td><p>Get or set whether the camera’s direction is locked.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.near_plane" title="ansys.stk.core.graphics.Camera.near_plane"><code class="xref py py-attr docutils literal notranslate"><span class="pre">near_plane</span></code></a></p></td>
+<td><p>Get or set the distance from the camera to the near plane.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.pixel_size_per_distance" title="ansys.stk.core.graphics.Camera.pixel_size_per_distance"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pixel_size_per_distance</span></code></a></p></td>
+<td><p>Get the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.position" title="ansys.stk.core.graphics.Camera.position"><code class="xref py py-attr docutils literal notranslate"><span class="pre">position</span></code></a></p></td>
+<td><p>Get or set the position of the camera. The array contains the components of the position arranged in the order x, y, z.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.position_reference_frame" title="ansys.stk.core.graphics.Camera.position_reference_frame"><code class="xref py py-attr docutils literal notranslate"><span class="pre">position_reference_frame</span></code></a></p></td>
+<td><p>Get the reference frame that the position is returned in. This reference frame is composed of the camera’s from point and the axes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.reference_point" title="ansys.stk.core.graphics.Camera.reference_point"><code class="xref py py-attr docutils literal notranslate"><span class="pre">reference_point</span></code></a></p></td>
+<td><p>Get or set the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.reference_point_reference_frame" title="ansys.stk.core.graphics.Camera.reference_point_reference_frame"><code class="xref py py-attr docutils literal notranslate"><span class="pre">reference_point_reference_frame</span></code></a></p></td>
+<td><p>Get the reference frame that the reference point is returned in. This reference frame is composed of the camera’s to point and the axes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.snapshot" title="ansys.stk.core.graphics.Camera.snapshot"><code class="xref py py-attr docutils literal notranslate"><span class="pre">snapshot</span></code></a></p></td>
+<td><p>Get the camera snapshot settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.up_vector" title="ansys.stk.core.graphics.Camera.up_vector"><code class="xref py py-attr docutils literal notranslate"><span class="pre">up_vector</span></code></a></p></td>
+<td><p>Get or set the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Camera.vertical_field_of_view" title="ansys.stk.core.graphics.Camera.vertical_field_of_view"><code class="xref py py-attr docutils literal notranslate"><span class="pre">vertical_field_of_view</span></code></a></p></td>
+<td><p>Get the vertical field of view.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Camera.video_recording" title="ansys.stk.core.graphics.Camera.video_recording"><code class="xref py py-attr docutils literal notranslate"><span class="pre">video_recording</span></code></a></p></td>
+<td><p>Get the camera video recorder.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>Change the camera reference frame</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scenario scenario: Scenario object</span>
+<span class="c1"># STKObjectRoot root: STK Object Model Root</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">scene_manager</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">scenes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">view_central_body</span><span class="p">(</span>
+    <span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">.</span><span class="n">central_bodies</span><span class="o">.</span><span class="n">earth</span><span class="o">.</span><span class="n">analysis_workbench_components</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Fixed&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Change the camera view to Imagery Extents</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scenario scenario: Scenario object</span>
+<span class="c1"># AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">scene_manager</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="n">imageryTile</span><span class="o">.</span><span class="n">extent</span>
+<span class="c1"># Change extent in the default 3D window</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">scenes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">view_extent</span><span class="p">(</span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="p">)</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="import-detail">
+<h2>Import detail<a class="headerlink" href="#import-detail" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.graphics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Camera</span>
+</pre></div>
+</div>
+</section>
+<section id="property-detail">
+<h2>Property detail<a class="headerlink" href="#property-detail" title="Link to this heading">#</a></h2>
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.allow_rotation_over_constrained_up_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">allow_rotation_over_constrained_up_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></em><a class="headerlink" href="#Camera.allow_rotation_over_constrained_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>Get or set whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.axes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">axes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></em><a class="headerlink" href="#Camera.axes" title="Link to this definition">#</a></dt>
+<dd><p>Get or set camera’s axes of rotation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.constrained_up_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">constrained_up_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ConstrainedUpAxis.html#ansys.stk.core.graphics.ConstrainedUpAxis" title="ansys.stk.core.graphics.ConstrainedUpAxis"><span class="pre">ConstrainedUpAxis</span></a></em><a class="headerlink" href="#Camera.constrained_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the axis to constrain the up vector to.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.direction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">direction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></em><a class="headerlink" href="#Camera.direction" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.distance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">distance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.distance" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the distance the camera position is from the reference point.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.distance_per_radius">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">distance_per_radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.distance_per_radius" title="Link to this definition">#</a></dt>
+<dd><p>Return the distance that the Camera’s Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.far_near_plane_ratio">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">far_near_plane_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.far_near_plane_ratio" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower…</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.far_plane">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">far_plane</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.far_plane" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the distance from the camera to the far plane.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.field_of_view">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">field_of_view</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.field_of_view" title="Link to this definition">#</a></dt>
+<dd><p>Get or set field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal…</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.horizontal_field_of_view">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">horizontal_field_of_view</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.horizontal_field_of_view" title="Link to this definition">#</a></dt>
+<dd><p>Get the horizontal field of view.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.lock_view_direction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">lock_view_direction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></em><a class="headerlink" href="#Camera.lock_view_direction" title="Link to this definition">#</a></dt>
+<dd><p>Get or set whether the camera’s direction is locked.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.near_plane">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">near_plane</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.near_plane" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the distance from the camera to the near plane.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.pixel_size_per_distance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">pixel_size_per_distance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.pixel_size_per_distance" title="Link to this definition">#</a></dt>
+<dd><p>Get the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.position">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">position</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></em><a class="headerlink" href="#Camera.position" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the position of the camera. The array contains the components of the position arranged in the order x, y, z.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.position_reference_frame">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">position_reference_frame</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolSystem.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem"><span class="pre">IVectorGeometryToolSystem</span></a></em><a class="headerlink" href="#Camera.position_reference_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get the reference frame that the position is returned in. This reference frame is composed of the camera’s from point and the axes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.reference_point">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">reference_point</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></em><a class="headerlink" href="#Camera.reference_point" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.reference_point_reference_frame">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">reference_point_reference_frame</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolSystem.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem"><span class="pre">IVectorGeometryToolSystem</span></a></em><a class="headerlink" href="#Camera.reference_point_reference_frame" title="Link to this definition">#</a></dt>
+<dd><p>Get the reference frame that the reference point is returned in. This reference frame is composed of the camera’s to point and the axes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.snapshot">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">snapshot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="CameraSnapshot.html#ansys.stk.core.graphics.CameraSnapshot" title="ansys.stk.core.graphics.CameraSnapshot"><span class="pre">CameraSnapshot</span></a></em><a class="headerlink" href="#Camera.snapshot" title="Link to this definition">#</a></dt>
+<dd><p>Get the camera snapshot settings.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.up_vector">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">up_vector</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></em><a class="headerlink" href="#Camera.up_vector" title="Link to this definition">#</a></dt>
+<dd><p>Get or set the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.vertical_field_of_view">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">vertical_field_of_view</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#Camera.vertical_field_of_view" title="Link to this definition">#</a></dt>
+<dd><p>Get the vertical field of view.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="Camera.video_recording">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">video_recording</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="CameraVideoRecording.html#ansys.stk.core.graphics.CameraVideoRecording" title="ansys.stk.core.graphics.CameraVideoRecording"><span class="pre">CameraVideoRecording</span></a></em><a class="headerlink" href="#Camera.video_recording" title="Link to this definition">#</a></dt>
+<dd><p>Get the camera video recorder.</p>
+</dd></dl>
+
+</section>
+<section id="method-detail">
+<h2>Method detail<a class="headerlink" href="#method-detail" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.cartographic_to_window">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">cartographic_to_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Camera.cartographic_to_window" title="Link to this definition">#</a></dt>
+<dd><p>Convert a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control…</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>position</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.try_cartographic_to_window">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">try_cartographic_to_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Camera.try_cartographic_to_window" title="Link to this definition">#</a></dt>
+<dd><p>Convert a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>position</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.try_window_to_cartographic">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">try_window_to_cartographic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Camera.try_window_to_cartographic" title="Link to this definition">#</a></dt>
+<dd><p>Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>position</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view" title="Link to this definition">#</a></dt>
+<dd><p>View from a point to a point. Sets the camera’s position and the reference point the camera is looking at.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>camera_position</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_central_body">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_central_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_central_body" title="Link to this definition">#</a></dt>
+<dd><p>Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera’s position is set so the entire central body is visible.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_direction">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolVector.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolVector" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolVector"><span class="pre">IVectorGeometryToolVector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_direction" title="Link to this definition">#</a></dt>
+<dd><p>View from a point to a direction. Sets the camera’s position and the direction vector indicating where the camera is looking.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>camera_position</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>direction</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolVector</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_direction_with_up_axis">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_direction_with_up_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolVector.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolVector" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolVector"><span class="pre">IVectorGeometryToolVector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_direction_with_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>View from a point to a direction. Sets the camera’s position and the direction vector indicating where the camera is looking.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>camera_position</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>direction</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolVector</span></code></p>
+<p><strong>up_axis</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_extent">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_extent" title="Link to this definition">#</a></dt>
+<dd><p>Zooms to a cartographic extent on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north. The axes is set to an east-north-up axes at the center of extent.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>extent</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_offset">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_offset" title="Link to this definition">#</a></dt>
+<dd><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the offset.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>offset</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_offset_direction">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_offset_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolVector.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolVector" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolVector"><span class="pre">IVectorGeometryToolVector</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_offset_direction" title="Link to this definition">#</a></dt>
+<dd><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the direction vector.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>direction</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolVector</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_offset_direction_with_up_axis">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_offset_direction_with_up_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolVector.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolVector" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolVector"><span class="pre">IVectorGeometryToolVector</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_offset_direction_with_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the direction vector.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>direction</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolVector</span></code></p>
+<p><strong>up_axis</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_offset_with_up_axis">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_offset_with_up_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_offset_with_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>Set the camera’s reference point - the point the camera is looking at. The camera’s position is the reference point translated by the offset.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>offset</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+<p><strong>up_axis</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_rectangular_extent">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_rectangular_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">west</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">south</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">east</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_rectangular_extent" title="Link to this definition">#</a></dt>
+<dd><p>Zooms to a rectangular extent composed of west, south, east, north on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north…</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>west</strong> : <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p>
+<p><strong>south</strong> : <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p>
+<p><strong>east</strong> : <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p>
+<p><strong>north</strong> : <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.view_with_up_axis">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">view_with_up_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolAxes.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolAxes"><span class="pre">IVectorGeometryToolAxes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolPoint.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolPoint"><span class="pre">IVectorGeometryToolPoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#Camera.view_with_up_axis" title="Link to this definition">#</a></dt>
+<dd><p>View from a point to a point. Sets the camera’s position and the reference point the camera is looking at.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>axes</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolAxes</span></code></p>
+<p><strong>camera_position</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>reference_point</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolPoint</span></code></p>
+<p><strong>up_axis</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.visibility_test">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">visibility_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../analysis_workbench/IVectorGeometryToolSystem.html#ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem" title="ansys.stk.core.analysis_workbench.IVectorGeometryToolSystem"><span class="pre">IVectorGeometryToolSystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="BoundingSphere.html#ansys.stk.core.graphics.BoundingSphere" title="ansys.stk.core.graphics.BoundingSphere"><span class="pre">BoundingSphere</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="Visibility.html#ansys.stk.core.graphics.Visibility" title="ansys.stk.core.graphics.Visibility"><span class="pre">Visibility</span></a></span></span><a class="headerlink" href="#Camera.visibility_test" title="Link to this definition">#</a></dt>
+<dd><p>Get the visibility of a sphere against the view frustum and any occluding central bodies.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reference_frame</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">IVectorGeometryToolSystem</span></code></p>
+<p><strong>sphere</strong> : <code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingSphere</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Visibility</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Camera.window_to_cartographic">
+<span class="sig-prename descclassname"><span class="pre">Camera.</span></span><span class="sig-name descname"><span class="pre">window_to_cartographic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#Camera.window_to_cartographic" title="Link to this definition">#</a></dt>
+<dd><p>Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position…</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_body</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<p><strong>position</strong> : <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="BrightnessFilterFactory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BrightnessFilterFactory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CameraSnapshot.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CameraSnapshot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.stk.core.graphics.Camera"><code class="docutils literal notranslate"><span class="pre">ansys.stk.core.graphics.Camera</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-detail">Import detail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-detail">Property detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.allow_rotation_over_constrained_up_axis"><code class="docutils literal notranslate"><span class="pre">allow_rotation_over_constrained_up_axis</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.axes"><code class="docutils literal notranslate"><span class="pre">axes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.constrained_up_axis"><code class="docutils literal notranslate"><span class="pre">constrained_up_axis</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.direction"><code class="docutils literal notranslate"><span class="pre">direction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.distance"><code class="docutils literal notranslate"><span class="pre">distance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.distance_per_radius"><code class="docutils literal notranslate"><span class="pre">distance_per_radius</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.far_near_plane_ratio"><code class="docutils literal notranslate"><span class="pre">far_near_plane_ratio</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.far_plane"><code class="docutils literal notranslate"><span class="pre">far_plane</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.field_of_view"><code class="docutils literal notranslate"><span class="pre">field_of_view</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.horizontal_field_of_view"><code class="docutils literal notranslate"><span class="pre">horizontal_field_of_view</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.lock_view_direction"><code class="docutils literal notranslate"><span class="pre">lock_view_direction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.near_plane"><code class="docutils literal notranslate"><span class="pre">near_plane</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.pixel_size_per_distance"><code class="docutils literal notranslate"><span class="pre">pixel_size_per_distance</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.position"><code class="docutils literal notranslate"><span class="pre">position</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.position_reference_frame"><code class="docutils literal notranslate"><span class="pre">position_reference_frame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.reference_point"><code class="docutils literal notranslate"><span class="pre">reference_point</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.reference_point_reference_frame"><code class="docutils literal notranslate"><span class="pre">reference_point_reference_frame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.snapshot"><code class="docutils literal notranslate"><span class="pre">snapshot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.up_vector"><code class="docutils literal notranslate"><span class="pre">up_vector</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.vertical_field_of_view"><code class="docutils literal notranslate"><span class="pre">vertical_field_of_view</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.video_recording"><code class="docutils literal notranslate"><span class="pre">video_recording</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-detail">Method detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.cartographic_to_window"><code class="docutils literal notranslate"><span class="pre">cartographic_to_window()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.try_cartographic_to_window"><code class="docutils literal notranslate"><span class="pre">try_cartographic_to_window()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.try_window_to_cartographic"><code class="docutils literal notranslate"><span class="pre">try_window_to_cartographic()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view"><code class="docutils literal notranslate"><span class="pre">view()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_central_body"><code class="docutils literal notranslate"><span class="pre">view_central_body()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_direction"><code class="docutils literal notranslate"><span class="pre">view_direction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_direction_with_up_axis"><code class="docutils literal notranslate"><span class="pre">view_direction_with_up_axis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_extent"><code class="docutils literal notranslate"><span class="pre">view_extent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_offset"><code class="docutils literal notranslate"><span class="pre">view_offset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_offset_direction"><code class="docutils literal notranslate"><span class="pre">view_offset_direction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_offset_direction_with_up_axis"><code class="docutils literal notranslate"><span class="pre">view_offset_direction_with_up_axis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_offset_with_up_axis"><code class="docutils literal notranslate"><span class="pre">view_offset_with_up_axis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_rectangular_extent"><code class="docutils literal notranslate"><span class="pre">view_rectangular_extent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.view_with_up_axis"><code class="docutils literal notranslate"><span class="pre">view_with_up_axis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.visibility_test"><code class="docutils literal notranslate"><span class="pre">visibility_test()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Camera.window_to_cartographic"><code class="docutils literal notranslate"><span class="pre">window_to_cartographic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/ansys/pystk/edit/main/ansys/stk/core/graphics/Camera.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/api/ansys/stk/core/graphics/Camera.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

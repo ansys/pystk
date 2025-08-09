@@ -1,0 +1,36 @@
+AxisOffset
+==========
+
+.. py:class:: ansys.stk.core.stkobjects.AxisOffset
+
+   IntEnum
+
+
+.. py:currentmodule:: AxisOffset
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SENSOR_RADIUS`
+              - Sensor Radius: offset along the axis of the boresight by a distance calculated by STK using the radius entered.
+
+            * - :py:attr:`~BORESIGHT_OFFSET`
+              - Boresight Offset: offset along the axis of the boresight by the distance specified.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import AxisOffset
+
+

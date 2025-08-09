@@ -1,0 +1,2778 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Sensors and access &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/sensor-access';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Satellite coverage area calculator" href="satellite-coverage-calculator.html" />
+    <link rel="prev" title="Access between facility and satellite calculator" href="facility-to-satellite-access.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/sensor-access.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Sensors and access</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/sensor-access.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/sensor-access.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/sensor-access.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Sensors-and-access">
+<h1>Sensors and access<a class="headerlink" href="#Sensors-and-access" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to use different types of sensors to analyze <a class="reference internal" href="facility-to-satellite-access.html#What-is-access?"><span class="std std-ref">access</span></a> using Python and PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/IntroSensors.htm">this training</a>.</p>
+<section id="What-are-sensors?">
+<h2>What are sensors?<a class="headerlink" href="#What-are-sensors?" title="Link to this heading">#</a></h2>
+<p>Sensor objects model the field-of-view and other properties of sensing devices attached to other STK objects. There are a large variety of sensor types that can be modeled in STK, including electro-optical and infrared sensors, parabolic antennas, push broom sensors, star trackers, and radars. Sensors can be customized in many ways, including by designating the properties of a sensor’s field-of-view. Additionally, sensors can behave in different ways. Sensors can be fixed to point in the same
+direction as their parent object’s reference frame, targeted to track other objects, or spinning to model instruments that spin, scan, or sweep over time. STK also allows the application of an azimuth-elevation mask to a sensor, and the consideration of this mask during calculations. A refraction model to constrain an atmosphere-based sensor’s line of sight and elevation angles can be modeled. It is also possible to customize the resolution of the sensor in terms of focus and image quality.
+Finally, many access constraints can be declared, including elevation, line of sight, sun, and temporal, on sensors to describe in what ways they can see other objects.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>An air traffic control center is located in the Western United States between New Mexico and Wyoming. This area sees air traffic from a nearby airport, with the traffic flying between Cheyenne, Wyoming (latitude <span class="math notranslate nohighlight">\(41.1400^\circ\)</span>, longitude <span class="math notranslate nohighlight">\(-104.8202^\circ\)</span>) and Raton, New Mexico (latitude <span class="math notranslate nohighlight">\(36.9034^\circ\)</span>, longitude <span class="math notranslate nohighlight">\(-104.4392^\circ\)</span>). The center uses a radar system to track aircraft flying through the airport’s control zone. The center is located at a latitude of
+<span class="math notranslate nohighlight">\(38.8006^\circ\)</span> and a longitude of <span class="math notranslate nohighlight">\(-104.6784^\circ\)</span>. The radar’s antenna is <span class="math notranslate nohighlight">\(50\)</span> ft (<span class="math notranslate nohighlight">\(0.01524\)</span> km) above ground. The center has two sensors: one fixed sensor with a field of view constrained by a range of <span class="math notranslate nohighlight">\(150\)</span> km, and one sweeping radar. The fixed sensor has a simple conic pattern with a cone half angle of <span class="math notranslate nohighlight">\(90^\circ\)</span>. The sweeping radar has a rectangular pattern with a <span class="math notranslate nohighlight">\(5^\circ\)</span> vertical half angle and a <span class="math notranslate nohighlight">\(35^\circ\)</span> horizontal half angle.
+Determine how well these sensors are able to view an aircraft flying between Cheyenne and Raton.</p>
+<p>Additionally, determine if a low earth orbit (LEO) satellite can take pictures of a ground site in Raton, and if it can take pictures of an aircraft as it flies between Cheyenne and Raton. The satellite flies in a low-earth circular orbit, with an inclination of <span class="math notranslate nohighlight">\(60^\circ\)</span>, an altitude of <span class="math notranslate nohighlight">\(800\)</span> km, and a RAAN of <span class="math notranslate nohighlight">\(20^\circ\)</span>. The satellite has two sensors: one fixed sensor with a simple conic pattern and a cone half angle of <span class="math notranslate nohighlight">\(45^\circ\)</span>, and one sensor that is targeted
+towards Raton. The targeted sensor has a simple conic pattern with a cone half angle of <span class="math notranslate nohighlight">\(5^\circ\)</span>. Determine if either of the satellite’s sensors can take pictures of Raton and the aircraft during the scenario period.</p>
+<p>All sensors in the problem have angular resolutions of <span class="math notranslate nohighlight">\(1^\circ\)</span>.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create an STK scenario using the STK Root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;SensorDesign&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bbe416711f4b43f19db7f03c64aa29e4"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_13_1.png" src="../_images/examples_sensor-access_13_1.png" />
+</div>
+</div>
+<p>It is also possible to show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_plotter</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "df3ce8d879084b809ec606b7c2dc379e"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_15_1.png" src="../_images/examples_sensor-access_15_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;1 Jul 2016 16:00:00.000&quot;</span><span class="p">,</span> <span class="s2">&quot;2 Jul 2016 16:00:00.000&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-the-air-traffic-control-center">
+<h2>Add the air traffic control center<a class="headerlink" href="#Add-the-air-traffic-control-center" title="Link to this heading">#</a></h2>
+<p>The air traffic control center’s site is modeled with a place object. The radar site is located at a latitude of <span class="math notranslate nohighlight">\(38.8006^\circ\)</span> and a longitude of <span class="math notranslate nohighlight">\(-104.6784^\circ\)</span>. The radar’s antenna is <span class="math notranslate nohighlight">\(50\)</span> ft (<span class="math notranslate nohighlight">\(0.01524\)</span> km) above the ground.</p>
+<p>First, insert a place object to represent the airport’s radar site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">radar_site</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;RadarSite&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the radar site’s position using geodetic coordinates. Provide the latitude, longitude, and altitude corresponding to the radar’s antenna:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_site</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span><span class="mf">38.8006</span><span class="p">,</span> <span class="o">-</span><span class="mf">104.6784</span><span class="p">,</span> <span class="mf">0.01524</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-relevant-locations">
+<h2>Add relevant locations<a class="headerlink" href="#Add-relevant-locations" title="Link to this heading">#</a></h2>
+<p>Two places of interest in the vicinity of the radar site are Cheyenne, Wyoming, and Raton, New Mexico.</p>
+<p>First, add a place object to represent Cheyenne:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheyenne</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;Cheyenne&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Cheyenne is located at a latitude of <span class="math notranslate nohighlight">\(41.1400^\circ\)</span> and a longitude of <span class="math notranslate nohighlight">\(-104.8202^\circ\)</span>. Set the place’s location to match Cheyenne’s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheyenne</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span><span class="mf">41.1400</span><span class="p">,</span> <span class="o">-</span><span class="mf">104.8202</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add a place object to represent Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raton</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;Raton&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Raton is located at a latitude of <span class="math notranslate nohighlight">\(36.9034^\circ\)</span> and a longitude of <span class="math notranslate nohighlight">\(-104.4392^\circ\)</span>. Set the place’s location to match Raton’s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raton</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span><span class="mf">36.9034</span><span class="p">,</span> <span class="o">-</span><span class="mf">104.4392</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-an-aircraft">
+<h2>Add an aircraft<a class="headerlink" href="#Add-an-aircraft" title="Link to this heading">#</a></h2>
+<p>To determine how well the radar site can view aircraft flying between Cheyenne and Raton, introduce a test aircraft flying between the cities to use in access calculations.</p>
+<p>First, insert an aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">AIRCRAFT</span><span class="p">,</span> <span class="s2">&quot;Aircraft&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Because the aircraft’s route is defined by a set of waypoints, the aircraft’s flight is modeled with a Great Arc propagator. Set the aircraft’s propagator to the Great Arc propagator:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">aircraft</span><span class="o">.</span><span class="n">set_route_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">GREAT_ARC</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The aircraft flies between Cheyenne and Raton, so the propagator’s route must include waypoints for both locations.</p>
+<p>First, add a waypoint to the aircraft’s route to represent Cheyenne:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheyenne_waypoint</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Set the waypoint’s location to match Cheyenne’s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheyenne_waypoint</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mf">41.1400</span>
+<span class="n">cheyenne_waypoint</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="o">-</span><span class="mf">104.8202</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add a waypoint to the route representing Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raton_waypoint</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Set the waypoint’s location to match Raton’s:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raton_waypoint</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mf">36.9034</span>
+<span class="n">raton_waypoint</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="o">-</span><span class="mf">104.4392</span>
+</pre></div>
+</div>
+</div>
+<p>Then, propagate the aircraft’s route:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The 2D graphics window now shows the aircraft’s route, as well as both cities and the radar site:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6110</span><span class="p">,</span> <span class="mi">34540</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_53_0.png" src="../_images/examples_sensor-access_53_0.png" />
+</div>
+</div>
+</section>
+<section id="Add-a-satellite">
+<h2>Add a satellite<a class="headerlink" href="#Add-a-satellite" title="Link to this heading">#</a></h2>
+<p>An imaging satellite flies in a low-earth circular orbit, with an inclination of <span class="math notranslate nohighlight">\(60^\circ\)</span>, an altitude of <span class="math notranslate nohighlight">\(800\)</span> km, and a RAAN of <span class="math notranslate nohighlight">\(20^\circ\)</span>. Determine if this satellite can view a site of interest at Raton.</p>
+<p>First, insert a satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;ImageSat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the satellite’s propagator to J4Pertubation:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">J4_PERTURBATION</span><span class="p">)</span>
+<span class="n">propagator</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span>
+</pre></div>
+</div>
+</div>
+<p>Set the orbit’s coordinate type to classical:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkutil</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrbitStateType</span>
+
+
+<span class="n">orbit</span> <span class="o">=</span> <span class="n">propagator</span><span class="o">.</span><span class="n">initial_state</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">OrbitStateType</span><span class="o">.</span><span class="n">CLASSICAL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Use the returned <code class="docutils literal notranslate"><span class="pre">IOrbitStateClassical</span></code> object to set the <code class="docutils literal notranslate"><span class="pre">size_shape_type</span></code> property. This property designates which pair of elements describe the orbit. Set the <code class="docutils literal notranslate"><span class="pre">size_shape_type</span></code> to Semimajor Axis and Eccentricity:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassicalSizeShape</span>
+
+
+<span class="n">orbit</span><span class="o">.</span><span class="n">size_shape_type</span> <span class="o">=</span> <span class="n">ClassicalSizeShape</span><span class="o">.</span><span class="n">SEMIMAJOR_AXIS</span>
+</pre></div>
+</div>
+</div>
+<p>Set the orbit’s semimajor axis to <span class="math notranslate nohighlight">\(7178.14\)</span> km and it’s eccentricity to <span class="math notranslate nohighlight">\(0\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbit</span><span class="o">.</span><span class="n">size_shape</span><span class="o">.</span><span class="n">semi_major_axis</span> <span class="o">=</span> <span class="mf">7178.14</span>
+<span class="n">orbit</span><span class="o">.</span><span class="n">size_shape</span><span class="o">.</span><span class="n">eccentricity</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the <code class="docutils literal notranslate"><span class="pre">orientation</span></code> property of the <code class="docutils literal notranslate"><span class="pre">IOrbitStateClassical</span></code> object to set the inclination to <span class="math notranslate nohighlight">\(60^\circ\)</span> and the argument of perigee to <span class="math notranslate nohighlight">\(0^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbit</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">inclination</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">orbit</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">argument_of_periapsis</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>Using the orientation property, set the ascending node type to RAAN:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrientationAscNode</span>
+
+
+<span class="n">orbit</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">ascending_node_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">OrientationAscNode</span><span class="o">.</span><span class="n">RIGHT_ASCENSION_ASCENDING_NODE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the RAAN value to <span class="math notranslate nohighlight">\(20^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbit</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">ascending_node</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the <code class="docutils literal notranslate"><span class="pre">location</span></code> property of the <code class="docutils literal notranslate"><span class="pre">IOrbitStateClassical</span></code> object to set the location type to true anomaly:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassicalLocation</span>
+
+
+<span class="n">orbit</span><span class="o">.</span><span class="n">location_type</span> <span class="o">=</span> <span class="n">ClassicalLocation</span><span class="o">.</span><span class="n">TRUE_ANOMALY</span>
+</pre></div>
+</div>
+</div>
+<p>Set the true anomaly value to <span class="math notranslate nohighlight">\(0^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbit</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, assign the orbit to the propagator and propagate the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">initial_state</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">orbit</span><span class="p">)</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The satellite’s orbit can now be seen in the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_79_0.png" src="../_images/examples_sensor-access_79_0.png" />
+</div>
+</div>
+</section>
+<section id="Add-a-fixed-sensor-on-the-satellite">
+<h2>Add a fixed sensor on the satellite<a class="headerlink" href="#Add-a-fixed-sensor-on-the-satellite" title="Link to this heading">#</a></h2>
+<p>The satellite has two sensors. The first sensor is a fixed sensor. A fixed sensor always points in a fixed direction with respect to its parent object. Because this sensor is attached to the satellite, it points with respect to the satellite’s reference frame. And because the satellite is a moving object, even though the sensor is fixed, the sensor’s field-of-view changes along with the satellite’s movement.</p>
+<p>The fixed sensor has a simple conic pattern with a <span class="math notranslate nohighlight">\(45^\circ\)</span> cone angle and an angular resolution of <span class="math notranslate nohighlight">\(1^\circ\)</span>. Determine if this sensor can see Raton during the analysis period.</p>
+<p>First, insert a sensor on the satellite. By default, the sensor’s type is fixed.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_sat_sensor</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;FixedSatelliteSensor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the sensor’s pattern to simple conic with a cone half angle of <span class="math notranslate nohighlight">\(45^\circ\)</span> and an angular resolution of <span class="math notranslate nohighlight">\(1^\circ\)</span>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPattern</span>
+
+
+<span class="n">fixed_sat_sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">SIMPLE_CONIC</span><span class="p">)</span>
+<span class="n">fixed_sat_sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_simple_conic</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorSimpleConicPattern at 0x7f19b4169ee0&gt;
+</pre></div></div>
+</div>
+<p>It is possible to see the sensor’s field of vision in the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12770</span><span class="p">,</span> <span class="mi">9060</span><span class="p">,</span> <span class="mi">4570</span><span class="p">]</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_88_0.png" src="../_images/examples_sensor-access_88_0.png" />
+</div>
+</div>
+</section>
+<section id="Compute-fixed-access">
+<h2>Compute fixed access<a class="headerlink" href="#Compute-fixed-access" title="Link to this heading">#</a></h2>
+<p>Determine if the fixed sensor on the satellite can take pictures of the site of interest in Raton during the analysis period. To do so, add Raton as an associated object to the sensor. Then, compute access.</p>
+<p>Create an access object between the fixed sensor and Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_sat_access</span> <span class="o">=</span> <span class="n">fixed_sat_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">raton</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Use the access object to compute the accesses between the sensor and Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_sat_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the access object’s data providers to get an Access Data report for the time period between the scenario’s start and end times. Convert the report to a pandas data frame for easier viewing:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_sat_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span>
+<span class="p">)</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1 Jul 2016 23:18:46.105978785</td>
+      <td>1 Jul 2016 23:22:28.508132578</td>
+      <td>222.4021537936569</td>
+      <td>5</td>
+      <td>N/A</td>
+      <td>44.64160606195129</td>
+      <td>-105.54934589619562</td>
+      <td>810.5207584145228</td>
+      <td>34.600431001996206</td>
+      <td>...</td>
+      <td>3831.066334023972</td>
+      <td>15STU9227431066</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2 Jul 2016 15:44:40.789351295</td>
+      <td>2 Jul 2016 15:47:17.084610386</td>
+      <td>156.29525909059157</td>
+      <td>15</td>
+      <td>N/A</td>
+      <td>37.543106963651354</td>
+      <td>-114.17838758736924</td>
+      <td>807.9054072558267</td>
+      <td>44.502777565416324</td>
+      <td>...</td>
+      <td>4929.058972331137</td>
+      <td>13TCK6798329059</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 60 columns</p>
+</div></div>
+</div>
+<p>There are two rows in the dataframe, each corresponding to an access. The access durations were approximately 222 and 156 seconds.</p>
+</section>
+<section id="Add-a-moving-sensor-on-a-the-satellite">
+<h2>Add a moving sensor on a the satellite<a class="headerlink" href="#Add-a-moving-sensor-on-a-the-satellite" title="Link to this heading">#</a></h2>
+<p>Many satellites can gimbal their sensors to track other objects (stationary and moving). STK provides a variety of sensor definitions and pointing types that model this type of movement. In this scenario, the satellite has a second moving sensor targeted towards Raton. Compare the access times for Raton between the fixed and targeted sensors.</p>
+<p>First, insert a sensor on the satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_sensor</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;MovingSatelliteSensor&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor is inserted as a fixed sensor by default, so set the sensor’s pointing type to targeted:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPointing</span>
+
+
+<span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">set_pointing_type</span><span class="p">(</span><span class="n">SensorPointing</span><span class="o">.</span><span class="n">TARGETED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the sensor’s pattern to simple conic with a cone half angle of <span class="math notranslate nohighlight">\(5^\circ\)</span> and an angular resolution of <span class="math notranslate nohighlight">\(1^\circ\)</span>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">SIMPLE_CONIC</span><span class="p">)</span>
+<span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_simple_conic</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorSimpleConicPattern at 0x7f18f8df5b80&gt;
+</pre></div></div>
+</div>
+<p>Because the sensor is set to a pointing type, the sensor’s <code class="docutils literal notranslate"><span class="pre">pointing</span></code> method now holds an <code class="docutils literal notranslate"><span class="pre">ISensorPointingTargeted</span></code> object, through which it is possible to add a target to the sensor. Add Raton as the target:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">pointing</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">raton</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Compute-targeted-access">
+<h2>Compute targeted access<a class="headerlink" href="#Compute-targeted-access" title="Link to this heading">#</a></h2>
+<p>Determine how the access times for the targeted sensor compare to those for the fixed sensor.</p>
+<p>First, create an access between the moving sensor and Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_access</span> <span class="o">=</span> <span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">raton</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Use the access object to compute the accesses between the sensor and Raton:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the access object’s data providers to get an Access Data report for the time period between the scenario’s start and end times and convert the report to a pandas data frame:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_sat_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span>
+<span class="p">)</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1 Jul 2016 16:06:33.049809639</td>
+      <td>1 Jul 2016 16:21:57.152261250</td>
+      <td>924.1024516105075</td>
+      <td>1</td>
+      <td>N/A</td>
+      <td>20.285767650070557</td>
+      <td>-129.36604153658092</td>
+      <td>802.5562646358665</td>
+      <td>58.16700201092655</td>
+      <td>...</td>
+      <td>6450.603230623984</td>
+      <td>18VUK3821550603</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1 Jul 2016 17:54:25.060501227</td>
+      <td>1 Jul 2016 18:06:09.207856720</td>
+      <td>704.1473554934373</td>
+      <td>2</td>
+      <td>N/A</td>
+      <td>40.539631854283336</td>
+      <td>-139.47752979369412</td>
+      <td>808.9974722813364</td>
+      <td>60.112559216728016</td>
+      <td>...</td>
+      <td>6663.973873723716</td>
+      <td>17VMG8588663974</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1 Jul 2016 19:43:08.553027776</td>
+      <td>1 Jul 2016 19:52:18.294239363</td>
+      <td>549.7412115866955</td>
+      <td>3</td>
+      <td>N/A</td>
+      <td>57.46978939076494</td>
+      <td>-132.12885821785932</td>
+      <td>815.1702866187368</td>
+      <td>55.027278669767256</td>
+      <td>...</td>
+      <td>6098.299080227297</td>
+      <td>18UWF6496398299</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1 Jul 2016 21:28:32.974179185</td>
+      <td>1 Jul 2016 21:41:19.335843053</td>
+      <td>766.3616638681815</td>
+      <td>4</td>
+      <td>N/A</td>
+      <td>60.0107019562527</td>
+      <td>-127.84050781624738</td>
+      <td>816.0143169833198</td>
+      <td>35.39156120417346</td>
+      <td>...</td>
+      <td>3917.3880958860636</td>
+      <td>19SCV7136517388</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1 Jul 2016 23:12:41.033277783</td>
+      <td>1 Jul 2016 23:28:27.715572094</td>
+      <td>946.6822943115185</td>
+      <td>5</td>
+      <td>N/A</td>
+      <td>57.19384433048181</td>
+      <td>-132.49546371482245</td>
+      <td>815.0763929645328</td>
+      <td>16.825693733152512</td>
+      <td>...</td>
+      <td>1861.8648738498089</td>
+      <td>17QKU4087261865</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>2 Jul 2016 00:57:36.728203010</td>
+      <td>2 Jul 2016 01:11:41.846292923</td>
+      <td>845.1180899124702</td>
+      <td>6</td>
+      <td>N/A</td>
+      <td>49.553863449062</td>
+      <td>-138.36287266828663</td>
+      <td>812.3480198351768</td>
+      <td>9.558465306211271</td>
+      <td>...</td>
+      <td>1056.5968701679828</td>
+      <td>13PDL8980456597</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>2 Jul 2016 13:54:26.287735300</td>
+      <td>2 Jul 2016 14:09:07.052286736</td>
+      <td>880.7645514356118</td>
+      <td>14</td>
+      <td>N/A</td>
+      <td>9.642644126336576</td>
+      <td>-106.89257720820613</td>
+      <td>800.5985510809237</td>
+      <td>50.94133065418992</td>
+      <td>...</td>
+      <td>5645.458672879423</td>
+      <td>19UCS5043745459</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>2 Jul 2016 15:38:13.760676593</td>
+      <td>2 Jul 2016 15:53:50.041424933</td>
+      <td>936.2807483397046</td>
+      <td>15</td>
+      <td>N/A</td>
+      <td>18.605143905238382</td>
+      <td>-127.59884142877311</td>
+      <td>802.164835688554</td>
+      <td>57.74393438668241</td>
+      <td>...</td>
+      <td>6402.195283919831</td>
+      <td>18VUK7322002195</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+      <td>13S</td>
+      <td>549.9610548503704</td>
+      <td>4084.3031255548854</td>
+      <td>13SEA4996184303</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 60 columns</p>
+</div></div>
+</div>
+<p>The targeted sensor is able to access Raton 8 times, as opposed to the fixed sensor’s 2 accesses. The targeted sensor’s accesses are also longer, ranging between approximately 549 and 946 seconds. The increased access is because the targeted sensor locks onto the assigned target using the sensor’s boresight. This represents point-to-point access. Because the access is only constrained by the line-of-site, the targeted sensor can access Raton from horizon to horizon. The field of view of the
+fixed sensor has to pass over Raton to be able to access it, so the access time for the targeted sensor is much higher.</p>
+<p><strong>Conclusion:</strong> Both cameras attached to the imaging satellite have opportunities to take pictures of Raton.</p>
+</section>
+<section id="Add-a-fixed-sensor-on-the-radar-site">
+<h2>Add a fixed sensor on the radar site<a class="headerlink" href="#Add-a-fixed-sensor-on-the-radar-site" title="Link to this heading">#</a></h2>
+<p>Now, determine if the radar site can see an aircraft flying between Cheyenne and Raton. The site has two sensors, one of which is a fixed sensor. Sensors can be used to model instruments attached to stationary objects, such as Facility, Place, and Target objects. Fixed sensors attached to stationary objects also point with respect to the parent object’s reference frame. Since stationary objects never change position or direction, a fixed sensor on a fixed object always points in a fixed
+direction. The radar site has one fixed sensor representing the site’s entire possible field of view.</p>
+<p>First, add a sensor to the radar site. The sensor is inserted as a fixed sensor by default.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_sensor</span> <span class="o">=</span> <span class="n">radar_site</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;RadarDome&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the sensor’s pattern to simple conic with a cone half angle of <span class="math notranslate nohighlight">\(90^\circ\)</span> and an angular resolution of <span class="math notranslate nohighlight">\(1^\circ\)</span>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">SIMPLE_CONIC</span><span class="p">)</span>
+<span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_simple_conic</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorSimpleConicPattern at 0x7f19fe5239b0&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Add-a-constraint-to-the-sensor">
+<h2>Add a constraint to the sensor<a class="headerlink" href="#Add-a-constraint-to-the-sensor" title="Link to this heading">#</a></h2>
+<p>The fixed sensor attached to the facility is similar to the fixed sensor attached to the imaging satellite. However, the site’s sensor has a larger field-of-view, and instead of pointing straight down this sensor points straight up from the radar site. So, the sensor has an upwards looking field-of-view that covers everything above the site. This is not a realistic field of view, so limit the sensor’s range so that the field-of-view spans a constrained area mimicking the field-of-view of the
+actual air traffic control radar. Limit the field-of-view to a maximum range of <span class="math notranslate nohighlight">\(150\)</span> km.</p>
+<p>First, add a range access constraint to the sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccessConstraintType</span>
+
+
+<span class="n">dome_range_constraint</span> <span class="o">=</span> <span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">RANGE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the constraint to have a maximum range of <span class="math notranslate nohighlight">\(150\)</span> km:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dome_range_constraint</span><span class="o">.</span><span class="n">enable_maximum</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">dome_range_constraint</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">150</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor can now only see <span class="math notranslate nohighlight">\(150\)</span> km in each direction.</p>
+</section>
+<section id="Configure-the-2D-projection-properties">
+<h2>Configure the 2D projection properties<a class="headerlink" href="#Configure-the-2D-projection-properties" title="Link to this heading">#</a></h2>
+<p>2D graphics projection properties for sensors control the display of sensor projection graphics in the 2D Graphics window. When the sensor’s display is set to project to the range constraint, STK projects the sensor’s field-of-view to the maximum range previously specified for the sensor.</p>
+<p>Configure the sensor’s 2D graphics properties to show a projection of the maximum range on the 2D map:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorProjectionDistanceType</span>
+
+
+<span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">distance_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">SensorProjectionDistanceType</span><span class="o">.</span><span class="n">RANGE_CONSTRAINT</span>
+<span class="p">)</span>
+<span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">use_constraints</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">show_on_2d_map</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to see the range of <span class="math notranslate nohighlight">\(150\)</span> km around the radar site on the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_136_0.png" src="../_images/examples_sensor-access_136_0.png" />
+</div>
+</div>
+</section>
+<section id="Calculate-access">
+<h2>Calculate access<a class="headerlink" href="#Calculate-access" title="Link to this heading">#</a></h2>
+<p>From the projection on the map, it is clear that the fixed sensor can access the flight along its route. Now, determine how long the sensor can access the flight for.</p>
+<p>Create an access between the sensor and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_access</span> <span class="o">=</span> <span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Compute the accesses between the sensor and aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>View the Access Data report for the scenario’s duration as a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">radar_dome_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_dome_access_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1 Jul 2016 16:29:43.624000142</td>
+      <td>1 Jul 2016 17:22:37.004589558</td>
+      <td>3173.3805894163347</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.280420811043</td>
+      <td>4417.174860867255</td>
+      <td>13SEE2528017175</td>
+      <td>13S</td>
+      <td>543.3819113064714</td>
+      <td>4173.175177047483</td>
+      <td>13SEB4338273175</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 60 columns</p>
+</div></div>
+</div>
+<p>The fixed sensor can view the aircraft for approximately <span class="math notranslate nohighlight">\(3173\)</span> seconds.</p>
+</section>
+<section id="Generate-an-AER-report">
+<h2>Generate an AER report<a class="headerlink" href="#Generate-an-AER-report" title="Link to this heading">#</a></h2>
+<p>An AER (azimuth, elevation, and range) report describes the location of the aircraft when it is within the sensor’s view. This data can be useful for many purposes, including air traffic control. To get the AER report, first select the AER Data report from the access’s data providers. Then, select the Default report from the <code class="docutils literal notranslate"><span class="pre">IDataProviders</span></code> object stored in the <code class="docutils literal notranslate"><span class="pre">IDataProviderGroup</span></code>’s <code class="docutils literal notranslate"><span class="pre">group</span></code> property. Finally, convert the report to a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aer_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">radar_dome_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;AER Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to graph the azimuth, elevation, and range data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Convert columns to correct types</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">aer_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;azimuth&quot;</span><span class="p">,</span> <span class="s2">&quot;elevation&quot;</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">]</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">aer_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create a plot and duplicate the x-axis</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot range, azimuth, and elevation</span>
+<span class="p">(</span><span class="n">line1</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">aer_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Range (km)&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">line2</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">aer_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;azimuth&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;skyblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Azimuth (deg)&quot;</span>
+<span class="p">)</span>
+<span class="p">(</span><span class="n">line3</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">aer_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;elevation&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Elevation (deg)&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Azimuth, Elevation, and Range over Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Angle (deg)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Distance (km)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine legends</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">,</span> <span class="n">line3</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="c1"># Set major and minor locators</span>
+<span class="n">xlocator_major</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">MinuteLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">xlocator_minor</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">MinuteLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">xlocator_major</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">xlocator_minor</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_151_0.png" src="../_images/examples_sensor-access_151_0.png" />
+</div>
+</div>
+</section>
+<section id="Add-a-moving-sensor-to-the-control-site">
+<h2>Add a moving sensor to the control site<a class="headerlink" href="#Add-a-moving-sensor-to-the-control-site" title="Link to this heading">#</a></h2>
+<p>Often, the dome created by a fixed sensor object is used to model a field-of-view, or the overall volume of space in which radar looks. The radar itself often sweeps or scans through that field-of-view in a repeating cycle. The area of space represented by such a scanning or spinning radar at any given instant is its field-of-view. To model the aircraft control site’s radar itself, build a sweeping radar beam using a moving sensor.</p>
+<p>First, insert a sensor on the radar site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_sweep_sensor</span> <span class="o">=</span> <span class="n">radar_site</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;RadarSweep&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>To model a field-of-view of a radar, use a rectangular sensor. Rectangular sensor types are typically used for modeling the field-of-view of instruments such as push broom sensors and star trackers. Rectangular sensors are defined according to specified vertical and horizontal half-angles.</p>
+<p>Set the radar’s sensor pattern to a rectangular pattern with a <span class="math notranslate nohighlight">\(5^\circ\)</span> vertical half angle and a <span class="math notranslate nohighlight">\(35^\circ\)</span> horizontal half angle:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">RECTANGULAR</span><span class="p">)</span>
+<span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_rectangular</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorRectangularPattern at 0x7f18c664f230&gt;
+</pre></div></div>
+</div>
+<p>This sensor configuration creates a wedge type field-of-view. Right now, that “wedge” is just pointing straight up. The radar afixed to the radar site sweeps or scans in a repeating cycle. Since the radar “scans”, the full range of the radar is not always covered. Configure the sensor’s field-of-view to provide a visual representation of the area that the radar does cover at any given point in time. Set the properties of the sensor to rotate and point at <span class="math notranslate nohighlight">\(35^\circ\)</span> elevation. Set the spin
+axis elevation to <span class="math notranslate nohighlight">\(90^\circ\)</span> for horizontal rotation with a cone angle of <span class="math notranslate nohighlight">\(55^\circ\)</span> for a <span class="math notranslate nohighlight">\(35^\circ\)</span> elevation from the horizon.</p>
+<p>First, set the radar’s pointing type to spinning. This type of sensor is used to model radars, push broom sensors, and other instruments that spin, scan, or sweep over time.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">set_pointing_type</span><span class="p">(</span><span class="n">SensorPointing</span><span class="o">.</span><span class="n">SPINNING</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The sensor’s <code class="docutils literal notranslate"><span class="pre">pointing</span></code> property now contains an <code class="docutils literal notranslate"><span class="pre">ISensorPointingSpinning</span></code> object. The spin rate property of this object describes the rate at which the boresight spins about the spin axis, measured in revolutions per minute. Set the spin rate to <span class="math notranslate nohighlight">\(12\)</span> revs/min:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">pointing</span><span class="o">.</span><span class="n">spin_rate</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+<p>The spin axis cone angle of the object designates the cone angle used in defining the spin axis, i.e. the angle between the spin axis and the sensor boresight. Set the spin axis cone angle to <span class="math notranslate nohighlight">\(55^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">pointing</span><span class="o">.</span><span class="n">spin_axis_cone_angle</span> <span class="o">=</span> <span class="mi">55</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Add a constraint to the sensor<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Right now, the field-of-view extends beyond the limits of the actual radar (modeled with the fixed sensor) because there are no constraints on the moving sensor. The airport’s primary surveillance radar has a range of <span class="math notranslate nohighlight">\(150\)</span> km, so limit the range of the moving sensor to model that constraint.</p>
+<p>First, add a range constraint to the sweeping sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweep_range_constraint</span> <span class="o">=</span> <span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">RANGE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the constraint to a maximum range of <span class="math notranslate nohighlight">\(150\)</span> km:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweep_range_constraint</span><span class="o">.</span><span class="n">enable_maximum</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">sweep_range_constraint</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">150</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Configure the 2D projection properties<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>To view the moving sensor’s field of view on the 2D graphics window, configure some of the sensors graphics properties:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.utilities.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+
+
+<span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">distance_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">SensorProjectionDistanceType</span><span class="o">.</span><span class="n">RANGE_CONSTRAINT</span>
+<span class="p">)</span>
+<span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">use_constraints</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">show_on_2d_map</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">from_rgb</span><span class="p">(</span><span class="mi">247</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
+<span class="n">radar_dome_sensor</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">from_rgb</span><span class="p">(</span><span class="mi">199</span><span class="p">,</span> <span class="mi">247</span><span class="p">,</span> <span class="mi">87</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The sweeping radar’s field-of-view can now be seen in red, while the fixed sensor’s field-of-view is seen in yellow:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_176_0.png" src="../_images/examples_sensor-access_176_0.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Calculate access<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Now, determine when the sweeping radar sensor can see the aircraft flying between Cheyenne and Raton. To do so, first create an access between the sensor and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweeping_access</span> <span class="o">=</span> <span class="n">radar_sweep_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute the access:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweeping_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>View the Access Data report as a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweeping_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">sweeping_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sweeping_access_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>start time</th>
+      <th>stop time</th>
+      <th>duration</th>
+      <th>from pass number</th>
+      <th>to pass number</th>
+      <th>from start lat</th>
+      <th>from start lon</th>
+      <th>from start alt</th>
+      <th>from stop lat</th>
+      <th>...</th>
+      <th>from stop utm northing</th>
+      <th>from stop mgrs cell</th>
+      <th>to start utm zone</th>
+      <th>to start utm easting</th>
+      <th>to start utm northing</th>
+      <th>to start mgrs cell</th>
+      <th>to stop utm zone</th>
+      <th>to stop utm easting</th>
+      <th>to stop utm northing</th>
+      <th>to stop mgrs cell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1 Jul 2016 16:29:44.959379948</td>
+      <td>1 Jul 2016 16:29:45.069238069</td>
+      <td>0.10985812090734726</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.2880471455817</td>
+      <td>4417.072186212919</td>
+      <td>13SEE2528817072</td>
+      <td>13S</td>
+      <td>525.2886745434362</td>
+      <td>4417.0637394439145</td>
+      <td>13SEE2528917064</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1 Jul 2016 16:29:49.957907071</td>
+      <td>1 Jul 2016 16:29:50.067158543</td>
+      <td>0.10925147191278484</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.3165936075204</td>
+      <td>4416.687859540542</td>
+      <td>13SEE2531716688</td>
+      <td>13S</td>
+      <td>525.3172175389718</td>
+      <td>4416.6794594147095</td>
+      <td>13SEE2531716679</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1 Jul 2016 16:29:54.958925769</td>
+      <td>1 Jul 2016 16:29:55.068941395</td>
+      <td>0.11001562633441608</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.3451542144485</td>
+      <td>4416.303341257241</td>
+      <td>13SEE2534516303</td>
+      <td>13S</td>
+      <td>525.3457825081036</td>
+      <td>4416.29488237626</td>
+      <td>13SEE2534616295</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1 Jul 2016 16:29:59.957342786</td>
+      <td>1 Jul 2016 16:30:00.066790864</td>
+      <td>0.10944807754867725</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.373699878892</td>
+      <td>4415.91902297327</td>
+      <td>13SEE2537415919</td>
+      <td>13S</td>
+      <td>525.3743249294548</td>
+      <td>4415.91060772913</td>
+      <td>13SEE2537415911</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1 Jul 2016 16:30:04.958727379</td>
+      <td>1 Jul 2016 16:30:05.069065928</td>
+      <td>0.11033854954098388</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>525.402262406432</td>
+      <td>4415.534476479608</td>
+      <td>13SEE2540215534</td>
+      <td>13S</td>
+      <td>525.4028925405532</td>
+      <td>4415.525992768</td>
+      <td>13SEE2540315526</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>630</th>
+      <td>631</td>
+      <td>1 Jul 2016 17:22:12.542224315</td>
+      <td>1 Jul 2016 17:22:12.653353757</td>
+      <td>0.1111294416596138</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>543.2425746781303</td>
+      <td>4175.056096733071</td>
+      <td>13SEB4324375056</td>
+      <td>13S</td>
+      <td>543.2432076749731</td>
+      <td>4175.047551954639</td>
+      <td>13SEB4324375048</td>
+    </tr>
+    <tr>
+      <th>631</th>
+      <td>632</td>
+      <td>1 Jul 2016 17:22:17.544283581</td>
+      <td>1 Jul 2016 17:22:17.651152843</td>
+      <td>0.10686926212838443</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>543.2710664940284</td>
+      <td>4174.671486767361</td>
+      <td>13SEB4327174671</td>
+      <td>13S</td>
+      <td>543.2716752215562</td>
+      <td>4174.663269554475</td>
+      <td>13SEB4327274663</td>
+    </tr>
+    <tr>
+      <th>632</th>
+      <td>633</td>
+      <td>1 Jul 2016 17:22:22.542340083</td>
+      <td>1 Jul 2016 17:22:22.654827862</td>
+      <td>0.11248777895161766</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>543.2995353604724</td>
+      <td>4174.287184527559</td>
+      <td>13SEB4330074287</td>
+      <td>13S</td>
+      <td>543.3001760877119</td>
+      <td>4174.278535303976</td>
+      <td>13SEB4330074279</td>
+    </tr>
+    <tr>
+      <th>633</th>
+      <td>634</td>
+      <td>1 Jul 2016 17:22:27.543842019</td>
+      <td>1 Jul 2016 17:22:27.654655324</td>
+      <td>0.11081330513934518</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>543.3280237022229</td>
+      <td>4173.902617319151</td>
+      <td>13SEB4332873903</td>
+      <td>13S</td>
+      <td>543.328654888386</td>
+      <td>4173.894096845366</td>
+      <td>13SEB4332973894</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>635</td>
+      <td>1 Jul 2016 17:22:32.542549067</td>
+      <td>1 Jul 2016 17:22:32.651154964</td>
+      <td>0.10860589718777192</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>38.800599999999996</td>
+      <td>-104.6784</td>
+      <td>1.8668768006919723</td>
+      <td>38.800599999999996</td>
+      <td>...</td>
+      <td>4294.698440149648</td>
+      <td>13SEC2792694698</td>
+      <td>13S</td>
+      <td>543.3564959745349</td>
+      <td>4173.518264962751</td>
+      <td>13SEB4335673518</td>
+      <td>13S</td>
+      <td>543.3571145841732</td>
+      <td>4173.509914216294</td>
+      <td>13SEB4335773510</td>
+    </tr>
+  </tbody>
+</table>
+<p>635 rows × 60 columns</p>
+</div></div>
+</div>
+<p>The sweeping radar is able to access the aircraft 635 times during the aircraft’s flight, as indicated by the 635 rows in the dataframe.</p>
+<p>Now, use the dataframe to convert the duration column to numeric form and calculate the average duration of access between the sensor and the aircraft:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])</span>
+<span class="n">sweeping_access_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+np.float64(0.11147695893969853)
+</pre></div></div>
+</div>
+<p>The average duration of access was approximately <span class="math notranslate nohighlight">\(0.111\)</span> seconds.</p>
+</section>
+<section id="Visualize-access-with-a-graph">
+<h2>Visualize access with a graph<a class="headerlink" href="#Visualize-access-with-a-graph" title="Link to this heading">#</a></h2>
+<p>The duration and time of access can be visualized with a graph.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+
+
+<span class="c1"># Convert data to correct type</span>
+<span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">])</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sweeping_access_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;start time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;deepskyblue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Access Duration over Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Start Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Duration (seconds)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_191_0.png" src="../_images/examples_sensor-access_191_0.png" />
+</div>
+</div>
+</section>
+<section id="Analyze-multiple-accesses">
+<h2>Analyze multiple accesses<a class="headerlink" href="#Analyze-multiple-accesses" title="Link to this heading">#</a></h2>
+<p>Create an access graph that shows all four sensors and their accesses to the aircraft. There are already existing calculations in this scenario for the access between the radar site’s fixed and moving sensors and the aircraft. However, there are no access calculations between either of the sensors on the satellite and the aircraft.</p>
+<p>First, create an access between the satellite’s fixed sensor and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_aircraft_access</span> <span class="o">=</span> <span class="n">fixed_sat_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute the access:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Convert the “Access Duration” report to a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_aircraft_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">fixed_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, create an access between the satellite’s moving sensor and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_aircraft_access</span> <span class="o">=</span> <span class="n">moving_sat_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute the access:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, convert the “Access Duration” report to a pandas dataframe:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moving_aircraft_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">moving_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Access Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Now, there are access duration reports for the accesses between all four sensors in the scenario and the aircraft. Group these reports into a list:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access_reports</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">fixed_aircraft_access_df</span><span class="p">,</span>
+    <span class="n">moving_aircraft_access_df</span><span class="p">,</span>
+    <span class="n">sweeping_access_df</span><span class="p">,</span>
+    <span class="n">radar_dome_access_df</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Convert the start and stop times for each report to a time format, and the duration columns to a time delta format:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">report</span> <span class="ow">in</span> <span class="n">access_reports</span><span class="p">:</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">])</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;stop time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">&quot;stop time&quot;</span><span class="p">])</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, graph all the reports together in an event plot:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">broken_barh</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span>
+        <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">fixed_aircraft_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">],</span> <span class="n">fixed_aircraft_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;cornflowerblue&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fixed sensor on satellite&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">broken_barh</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span>
+        <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">moving_aircraft_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">],</span>
+            <span class="n">moving_aircraft_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="p">),</span>
+    <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;aquamarine&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Moving sensor on satellite&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">broken_barh</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">],</span> <span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])),</span>
+    <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;mediumslateblue&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sweeping radar&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">broken_barh</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">radar_dome_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">],</span> <span class="n">radar_dome_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])),</span>
+    <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;lightpink&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fixed radar dome&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Access To Aircraft by Sensor&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set the size of the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_211_0.png" src="../_images/examples_sensor-access_211_0.png" />
+</div>
+</div>
+<p>The graph shows that all of the sensors can see the aircraft during its flight, with the fixed radar dome able to see the aircraft for the longest duration of time. However, because the sweeping radar sees the aircraft for very short bursts of time, it is difficult to make out the different accesses. To better see the sweeping radar’s accesses, create a plot zoomed in on the access between 16:54 and 16:56.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">broken_barh</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;start time&quot;</span><span class="p">],</span> <span class="n">sweeping_access_df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">])),</span>
+    <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;mediumslateblue&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sweeping radar&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Access To Aircraft by Sweeping Radar&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set the size of the plot</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">right</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_sensor-access_213_0.png" src="../_images/examples_sensor-access_213_0.png" />
+</div>
+</div>
+<p><strong>Conclusion:</strong> All of the sensors involved in the scenario can see the aircraft during its flight.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"5dba356a2dc24c5da839ad9c329dc633": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4f1d618c052d4458a6c175de43b7697a": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_5dba356a2dc24c5da839ad9c329dc633", "resizable": true, "tabbable": null, "tooltip": null}}, "6965d24e9b4040e3baa698dbce031ca4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bbe416711f4b43f19db7f03c64aa29e4": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_6965d24e9b4040e3baa698dbce031ca4", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "46463807951e4cc1a14ae9d87b4c0729": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "49d7532cfab646eaaffb2174325644b0": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_46463807951e4cc1a14ae9d87b4c0729", "resizable": true, "tabbable": null, "tooltip": null}}, "1271fee47a1a421e9bd940e6bdc5fcdf": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "df3ce8d879084b809ec606b7c2dc379e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_1271fee47a1a421e9bd940e6bdc5fcdf", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="facility-to-satellite-access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Access between facility and satellite calculator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="satellite-coverage-calculator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Satellite coverage area calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-are-sensors?">What are sensors?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-the-air-traffic-control-center">Add the air traffic control center</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-relevant-locations">Add relevant locations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-an-aircraft">Add an aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-satellite">Add a satellite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-fixed-sensor-on-the-satellite">Add a fixed sensor on the satellite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Compute-fixed-access">Compute fixed access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-moving-sensor-on-a-the-satellite">Add a moving sensor on a the satellite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Compute-targeted-access">Compute targeted access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-fixed-sensor-on-the-radar-site">Add a fixed sensor on the radar site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-constraint-to-the-sensor">Add a constraint to the sensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-2D-projection-properties">Configure the 2D projection properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-access">Calculate access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Generate-an-AER-report">Generate an AER report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-moving-sensor-to-the-control-site">Add a moving sensor to the control site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Add a constraint to the sensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Configure the 2D projection properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Calculate access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualize-access-with-a-graph">Visualize access with a graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Analyze-multiple-accesses">Analyze multiple accesses</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/sensor-access.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/sensor-access.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

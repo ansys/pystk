@@ -1,0 +1,2776 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: ansys-stk
+DocumentNamespace: https://anchore.com/syft/dir/ansys-stk-8e06ed6c-077b-4323-b443-31da027924f3
+LicenseListVersion: 3.25
+Creator: Organization: Anchore, Inc
+Creator: Tool: syft-1.26.0
+Created: 2025-08-09T00:30:33Z
+
+##### Unpackaged files
+
+FileName: lib/python3.11/site-packages/PIL/_avif.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-avif.cpython-311-x86-64-linux-gnu.so-80002c7063e0fbfd
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_bounded_integers.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-bounded-integers.cpython-311-x86-64-linux-gnu.so-4673bb7cb1a8da5a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_common.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-common.cpython-311-x86-64-linux-gnu.so-1a665fa4e32656f2
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_generator.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-generator.cpython-311-x86-64-linux-gnu.so-fde7b6bfeca16926
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imaging.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imaging.cpython-311-x86-64-linux-gnu.so-1b8fb0f6e5925271
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imagingcms.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imagingcms.cpython-311-x86-64-linux-gnu.so-6eb4a89cc420246b
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imagingft.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imagingft.cpython-311-x86-64-linux-gnu.so-6c82677afb9222d5
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imagingmath.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imagingmath.cpython-311-x86-64-linux-gnu.so-82b14e2bb40b258c
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imagingmorph.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imagingmorph.cpython-311-x86-64-linux-gnu.so-a0fed05c1773c51a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_imagingtk.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-imagingtk.cpython-311-x86-64-linux-gnu.so-186aa4efc9b5199e
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/simplejpeg/_jpeg.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-jpeg.cpython-311-x86-64-linux-gnu.so-45ff18349533e398
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-mt19937.cpython-311-x86-64-linux-gnu.so-5c2f9d2750f2bb41
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-multiarray-tests.cpython-311-x86-64-linux-gnu.so-8cca5b870364b0fb
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-multiarray-umath.cpython-311-x86-64-linux-gnu.so-607dc7898d5405ba
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_operand_flag_tests.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-operand-flag-tests.cpython-311-x86-64-linux-gnu.so-98548431a1df6561
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-pcg64.cpython-311-x86-64-linux-gnu.so-65606bf3bfbf8af2
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_philox.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-philox.cpython-311-x86-64-linux-gnu.so-f63ae9afa5831c0b
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/fft/_pocketfft_umath.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-pocketfft-umath.cpython-311-x86-64-linux-gnu.so-7a5806c62cee824d
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_rational_tests.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-rational-tests.cpython-311-x86-64-linux-gnu.so-a7a536fca2110bf4
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-sfc64.cpython-311-x86-64-linux-gnu.so-03fce30392508e4d
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_simd.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-simd.cpython-311-x86-64-linux-gnu.so-994818bda4841c37
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_struct_ufunc_tests.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-struct-ufunc-tests.cpython-311-x86-64-linux-gnu.so-473fd3984c9e45b7
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-umath-linalg.cpython-311-x86-64-linux-gnu.so-94f6c883223a72a8
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/_core/_umath_tests.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-umath-tests.cpython-311-x86-64-linux-gnu.so-4a8ce8f179df09e6
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/PIL/_webp.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...-webp.cpython-311-x86-64-linux-gnu.so-f0dd208fbef00fd7
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-5620312fcbe2a743
+FileType: TEXT
+FileChecksum: SHA1: 8c40618c0af7468b1374ba62459d2f12ae7e3f6e
+FileChecksum: SHA256: 95ec155e6d19940391684ac5c1f44a90d0cfb6afb58655ddfdce7cbf24f77ef6
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/typing_extensions-4.14.1.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-859127623a3d5a80
+FileType: TEXT
+FileChecksum: SHA1: 1e160dd9c570136f871ec4bafa74108343dab88c
+FileChecksum: SHA256: f0b4b77a7174c372b22f85988a69457ec91c9e401183eb2ffcbead1db3cc4b9b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-afe96420e32ca5fa
+FileType: TEXT
+FileChecksum: SHA1: 779818ed39a331f3345da5f3325951f4e2073fa7
+FileChecksum: SHA256: 5f3db719d37e5dd05a79dc4a3935170ae0a1011acdf4dbc770a1dd9e4a6fd3c1
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-d769490bc95ac127
+FileType: TEXT
+FileChecksum: SHA1: c8394d32cd328a33767ed9d90ad274433e94d445
+FileChecksum: SHA256: 522383ba04aa905e39bc474a500a59adc53426e98f32049f44f6d9bed7bf07a5
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipython_pygments_lexers-1.1.1.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-e9868043b4c93fcf
+FileType: TEXT
+FileChecksum: SHA1: c3d7d961ebc6f2444fa8af6611055a7d9c0d261c
+FileChecksum: SHA256: 6b38c0946bdbc4778f4e38e2298547cbd7d13aeba9979ec4e4a412eabfbdfadb
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jupyterlab_widgets-3.0.15.dist-info/METADATA
+SPDXID: SPDXRef-File-...METADATA-f5270ebfd5421854
+FileType: TEXT
+FileChecksum: SHA1: 0e33ecb9e3223135e22ebd10c0e57d384f6ff4e0
+FileChecksum: SHA256: af59942e4fb1e9cf08bdd9eeb8266b0b4445848a7dbf87f1492e7fb99b0ad3e0
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/RECORD
+SPDXID: SPDXRef-File-...RECORD-63da38afd51022d1
+FileType: TEXT
+FileChecksum: SHA1: 74554aaa28d56cb6c8226f5262c2eeecc1f1a45b
+FileChecksum: SHA256: 73ed12b5b6b3180917d59a725f73c4ec46f54937c28e88ad4c6cae15e7b32ef3
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/typing_extensions-4.14.1.dist-info/RECORD
+SPDXID: SPDXRef-File-...RECORD-7624742a3719aab0
+FileType: TEXT
+FileChecksum: SHA1: 2a294e103bd83279fd600897135a8584c2d52120
+FileChecksum: SHA256: a1b3159663f871189dc1c06d181982ce0d73f3bbfa3f954980ea3560c4fb96f1
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/RECORD
+SPDXID: SPDXRef-File-...RECORD-ccbb5b96ac3656b2
+FileType: TEXT
+FileChecksum: SHA1: d4e1c9714a3b467cdfc8ea769e990b745b1ba36f
+FileChecksum: SHA256: 747448186fc0cc4b0adde9dd51e04e371c9724599fe4602cb9b42060bdead33b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipython_pygments_lexers-1.1.1.dist-info/RECORD
+SPDXID: SPDXRef-File-...RECORD-f36ff2c4e6f77872
+FileType: TEXT
+FileChecksum: SHA1: 7f84ddab7010824a0b52a70ae5d0bf03c91d49ea
+FileChecksum: SHA256: a601c87e87a63f4e126ce5e320367930d30129be677cb4a4980332f61b8aff31
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jupyterlab_widgets-3.0.15.dist-info/RECORD
+SPDXID: SPDXRef-File-...RECORD-ff8dc9004ef53ae8
+FileType: TEXT
+FileChecksum: SHA1: 8f25aedb4ad84cf46856bfdc7c40a6bfa7f13b8d
+FileChecksum: SHA256: 30012129ccc804d6dd96fbbb5a5f171518690bd4f1d38e25522779ddd34dea7e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/METADATA
+SPDXID: SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-METADATA-9d009dddfdd8575f
+FileType: TEXT
+FileChecksum: SHA1: d0bf498b012a979b8e16c1aff9f8eeef2b2a43f2
+FileChecksum: SHA256: 2f685b64220f241ec53f6c79f26af05f6eaa408195cd7adecdc9311aa19f34aa
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/RECORD
+SPDXID: SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-RECORD-242bfb3d104abade
+FileType: TEXT
+FileChecksum: SHA1: 0ff1fb8cbbd2b94e7ae4bda6aa9ec9cc1854bb12
+FileChecksum: SHA256: ab439cf5b5ff4a35176d657a7532483e128a854d19f934bc45f96f47115b5a65
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/asttokens-3.0.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...asttokens-3.0.0.dist-info-METADATA-93779355a30fd89c
+FileType: TEXT
+FileChecksum: SHA1: 13141c9845659c46c6e5ad0a24f9c75f6201a521
+FileChecksum: SHA256: 720d7258d2603bac73a90cda2ac428289b8a64c11fb89021d3b8902c080dbfa9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/asttokens-3.0.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...asttokens-3.0.0.dist-info-RECORD-8a4cc588ef60172c
+FileType: TEXT
+FileChecksum: SHA1: 450c65c8a92fa5949559d8f0e5c1db2a4c400d0d
+FileChecksum: SHA256: 0a38388e87cd70a8c8acab259fa65d82b74b080e989c2706528af8f357e99d0a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/bit_generator.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...bit-generator.cpython-311-x86-64-linux-gnu.so-261df313724d19d9
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/comm-0.2.3.dist-info/METADATA
+SPDXID: SPDXRef-File-...comm-0.2.3.dist-info-METADATA-54656aa53bd6fb2e
+FileType: TEXT
+FileChecksum: SHA1: 81c261abc836f37f232316b6abca643a57e07849
+FileChecksum: SHA256: e475291f8fdedbecbbfd788a2c5de9c912424d23574aba7b9fc51985d7158878
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/comm-0.2.3.dist-info/RECORD
+SPDXID: SPDXRef-File-...comm-0.2.3.dist-info-RECORD-03ba431746071f3f
+FileType: TEXT
+FileChecksum: SHA1: 4eb8bd6de6d83facae843798bfde7f5a2ed0c7c5
+FileChecksum: SHA256: d4854a07c72d25313dfa1c7322a12a09455a57adbf66939d785aeb8f07b79ee5
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/decorator-5.2.1.dist-info/METADATA
+SPDXID: SPDXRef-File-...decorator-5.2.1.dist-info-METADATA-749a15d7748c7e88
+FileType: TEXT
+FileChecksum: SHA1: 6c06e8950c30d2278d2ad8b77144c6c129564f5d
+FileChecksum: SHA256: 8bbe9fa7b94da3441b8a75f73412634aefc6855a7d03c8ae69bfbe9bef26281e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/decorator-5.2.1.dist-info/RECORD
+SPDXID: SPDXRef-File-...decorator-5.2.1.dist-info-RECORD-d1fdb16c289f2681
+FileType: TEXT
+FileChecksum: SHA1: f71f2d52244e9736cb880ddb4db2c4202fcd23f7
+FileChecksum: SHA256: 45852ceb6d280245a84929f384f97ad0384c2d0b26fa43496bc81258aa0ceb8a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/direct_url.json
+SPDXID: SPDXRef-File-...direct-url.json-101aa5ebf5d50d53
+FileType: APPLICATION
+FileChecksum: SHA1: 105ca8bc2e8747ba794f95bac69f020db2db597d
+FileChecksum: SHA256: 6ff4068fa252ec9ddaa0dbe5406ea139549dbb191c26f85111f33680876c09b9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/executing-2.2.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...executing-2.2.0.dist-info-METADATA-9af082f4e5c09592
+FileType: TEXT
+FileChecksum: SHA1: 510de45682c6208b7ef4d02253f53c26d0a40fc3
+FileChecksum: SHA256: e8c0afe2a7c1e1f675224d075e64cb613e8a45c48d343b1151e9a218230863f7
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/executing-2.2.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...executing-2.2.0.dist-info-RECORD-8270558cc8c7836d
+FileType: TEXT
+FileChecksum: SHA1: f6a7682c7557bd72ab56d27626bf50cc8afa84ba
+FileChecksum: SHA256: e55aff1bece535917655ab7d77739549c89a38e44f208ee99faf46ceeaeb5fc4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipython-9.4.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...ipython-9.4.0.dist-info-METADATA-9eb56ff7304e4796
+FileType: TEXT
+FileChecksum: SHA1: d5b40624e14e485285e2185ee213f221ecae08f8
+FileChecksum: SHA256: 77875372b7b2603ff84b4384dc94aab2df644f5a510aba1308d3707489c18996
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipython-9.4.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...ipython-9.4.0.dist-info-RECORD-de6b802aa33d9313
+FileType: TEXT
+FileChecksum: SHA1: f50d636ba2940f6f0053c9123831467ac996e43e
+FileChecksum: SHA256: bc3324a18c9885759b8885b8a9427e644187202e138d826eedc76895e0868f89
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipython-9.4.0.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...ipython-9.4.0.dist-info-top-level.txt-9d00f4c4c8f05b60
+FileType: TEXT
+FileChecksum: SHA1: b1e8ae8afabcd603a2cfb351847b649c498c33c3
+FileChecksum: SHA256: 3ca8ef1ed342059f441d399dda6c09d49fe4de3d05e83d654c5cc87091453c45
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/METADATA
+SPDXID: SPDXRef-File-...ipywidgets-8.1.7.dist-info-METADATA-b34f6bb164063331
+FileType: TEXT
+FileChecksum: SHA1: ce356d62c7a669f497c986a132e7fc3212de450e
+FileChecksum: SHA256: d3d77f2d1bfdef0a44114c1240d1bd4ee5f3821d333002b366155358948bddae
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/RECORD
+SPDXID: SPDXRef-File-...ipywidgets-8.1.7.dist-info-RECORD-838d4a9cc92b7bb1
+FileType: TEXT
+FileChecksum: SHA1: 1148576512fcc05f66645f7298f6e7cb84752fb5
+FileChecksum: SHA256: c42ff1e5cb7bfdb03643d2f4075be1a5e2ae7c268128af0d6deb4cb41caba0a4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jedi-0.19.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...jedi-0.19.2.dist-info-METADATA-a8f199271866c7e5
+FileType: TEXT
+FileChecksum: SHA1: db769b405059e723ecb775ccb9167773b93d128f
+FileChecksum: SHA256: 34154330a5f5f3462ac080460e640ccb1e3b2fb145c416161bd32b09b0987ffb
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jedi-0.19.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...jedi-0.19.2.dist-info-RECORD-8dd14c316a2b8802
+FileType: TEXT
+FileChecksum: SHA1: 4b64c163b5da48983ceb8112ad3027ea4f185501
+FileChecksum: SHA256: b7089e4d638800c127fdbd03c643189b53dc28eb74f16337d003c86b62469f32
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jedi-0.19.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...jedi-0.19.2.dist-info-top-level.txt-555416fe2cf78781
+FileType: TEXT
+FileChecksum: SHA1: fba3cc15b9417de1ca56ce15e8edd717ac10f1e9
+FileChecksum: SHA256: 4aa363f54efbc8e9f965fe098ba0aa2fcf83d9e360fc5ef5187a3c57c48c574e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jupyter_rfb-0.5.3.dist-info/METADATA
+SPDXID: SPDXRef-File-...jupyter-rfb-0.5.3.dist-info-METADATA-f26539d4f923da98
+FileType: TEXT
+FileChecksum: SHA1: f5ed35d28b9904c324ded257748598e0de3df585
+FileChecksum: SHA256: 6a3a91f1cc594147e1f1a1e643bce3663283a3b5250cae3feaca92bc866ade9b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/jupyter_rfb-0.5.3.dist-info/RECORD
+SPDXID: SPDXRef-File-...jupyter-rfb-0.5.3.dist-info-RECORD-65a93821e08494f6
+FileType: TEXT
+FileChecksum: SHA1: 85204076b739d46c6ceadc03ac741f94a49910d2
+FileChecksum: SHA256: d9d434a2e5e5e8119eeb25c9458161c1643f2e8540229d04c310002038e2f419
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/linalg/lapack_lite.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...lapack-lite.cpython-311-x86-64-linux-gnu.so-9c60f0d14a6fe0dc
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libbrotlicommon-c55a5f7a.so.1.1.0
+SPDXID: SPDXRef-File-...libbrotlicommon-c55a5f7a.so.1.1.0-9a78dda4dd90eeb1
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libbrotlidec-2ced2f3a.so.1.1.0
+SPDXID: SPDXRef-File-...libbrotlidec-2ced2f3a.so.1.1.0-e8fbf810705ecd8a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libfreetype-083ff72c.so.6.20.2
+SPDXID: SPDXRef-File-...libfreetype-083ff72c.so.6.20.2-4304449696f23fef
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0
+SPDXID: SPDXRef-File-...libgfortran-040039e1-0352e75f.so.5.0.0-bf5ca062875cc406
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libharfbuzz-fe5b8f8d.so.0.61121.0
+SPDXID: SPDXRef-File-...libharfbuzz-fe5b8f8d.so.0.61121.0-ec9e0431d8fe6d8d
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/liblcms2-cc10e42f.so.2.0.17
+SPDXID: SPDXRef-File-...liblcms2-cc10e42f.so.2.0.17-8c472da36ebfe7cb
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libopenjp2-56811f71.so.2.5.3
+SPDXID: SPDXRef-File-...libopenjp2-56811f71.so.2.5.3-5180a32edf297b4b
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libpng16-d00bd151.so.16.49.0
+SPDXID: SPDXRef-File-...libpng16-d00bd151.so.16.49.0-fb42c607635556bc
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0
+SPDXID: SPDXRef-File-...libquadmath-96973f99-934c22de.so.0.0.0-2e54ff33d46d103a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-8fb3d286.so
+SPDXID: SPDXRef-File-...libscipy-openblas64--8fb3d286.so-f6900096c3dbdb20
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libsharpyuv-60a7c00b.so.0.1.1
+SPDXID: SPDXRef-File-...libsharpyuv-60a7c00b.so.0.1.1-dff7095c32fd0ddc
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libwebpdemux-efaed568.so.2.0.16
+SPDXID: SPDXRef-File-...libwebpdemux-efaed568.so.2.0.16-55e554bb474f3f70
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libwebpmux-6f2b1ad9.so.3.1.1
+SPDXID: SPDXRef-File-...libwebpmux-6f2b1ad9.so.3.1.1-ef8d747080bd4e0b
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so
+SPDXID: SPDXRef-File-...mtrand.cpython-311-x86-64-linux-gnu.so-d7cb7e1093a9325a
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy-2.3.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...numpy-2.3.2.dist-info-METADATA-70a338f8db03471d
+FileType: TEXT
+FileChecksum: SHA1: dc6a163de544b90292e824cae5fc570952e5d075
+FileChecksum: SHA256: 635b660beb094f45197a19e805e4c619ac1bdb725d33e4b2b2685c300cc9615e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/numpy-2.3.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...numpy-2.3.2.dist-info-RECORD-7ecfb34a81002c38
+FileType: TEXT
+FileChecksum: SHA1: 6c29a9a586e3446fe0654df9bb95125acf83afc5
+FileChecksum: SHA256: 71f99d904c4353189c93da71d4aeb9ff919330dfd05a88c7e79413aa423e4daf
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/parso-0.8.4.dist-info/METADATA
+SPDXID: SPDXRef-File-...parso-0.8.4.dist-info-METADATA-475194dda30624d7
+FileType: TEXT
+FileChecksum: SHA1: d2be42f6e9e8d1b47ab907e1a0025b5b9c54cb00
+FileChecksum: SHA256: 09d76fda8c39ad05c8f3c744d0b74f2621a1aa9b35a72922cc252bf8f8b56bae
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/parso-0.8.4.dist-info/RECORD
+SPDXID: SPDXRef-File-...parso-0.8.4.dist-info-RECORD-b7212d89633a2a1e
+FileType: TEXT
+FileChecksum: SHA1: 91944a7aeffd621d7293ecfb98f4757e159f76e2
+FileChecksum: SHA256: 245a64cfa90d73ac3bce8347de21d8f7b4fdf2064fe2faf73608572009ce5580
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/parso-0.8.4.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...parso-0.8.4.dist-info-top-level.txt-1170c859345a056f
+FileType: TEXT
+FileChecksum: SHA1: 6550b7333f8037cd63fb8c5931a4178f6c842b65
+FileChecksum: SHA256: 18e38a4023dc9ebd3fec8440af1c88d025f92cbbb858b973211015592faf278b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pexpect-4.9.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...pexpect-4.9.0.dist-info-METADATA-326c463743191aae
+FileType: TEXT
+FileChecksum: SHA1: f31642dfa90681633830ac5c8d9a6dbbfc39e49d
+FileChecksum: SHA256: 2d7c5ac5fdefde4a0194ec522fbcc0ca70e99e1a2a956eea444168f8591650aa
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pexpect-4.9.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...pexpect-4.9.0.dist-info-RECORD-057e1c578f3fad23
+FileType: TEXT
+FileChecksum: SHA1: 73c3863897eb05ede75b4cc170944303e6bc39d6
+FileChecksum: SHA256: 18d1ff314a7a49821e1907a870b096a1aa90c0e726f99858d0da77043343a3ac
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pexpect-4.9.0.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...pexpect-4.9.0.dist-info-top-level.txt-abbb8f81b3941299
+FileType: TEXT
+FileChecksum: SHA1: d0ecd34bf1fa737b033e68a74d7ed6264c960909
+FileChecksum: SHA256: 3be6f7518f55419916df20c078535ab5438a3b81a88d558ee134c7a08f7e13b9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow-11.3.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...pillow-11.3.0.dist-info-METADATA-9ee54b0f99f94e20
+FileType: TEXT
+FileChecksum: SHA1: cfa30a9f6b357e201fba2f34c74f093f1eaf50bd
+FileChecksum: SHA256: d53d4d78f8a8efe182396711ef76840386d2ba4ccdad421f58cc00c3b3401f73
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow-11.3.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...pillow-11.3.0.dist-info-RECORD-085fdbcdb3af5208
+FileType: TEXT
+FileChecksum: SHA1: 19f4a79d4d3d7862b38f1ada1f5bcd1d508c7e39
+FileChecksum: SHA256: 1c6ccf795afafbcc65ba618a753983697dbac16fa8699d95c34806b308744bae
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow-11.3.0.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...pillow-11.3.0.dist-info-top-level.txt-5e5d62a52e510768
+FileType: TEXT
+FileChecksum: SHA1: 7874f2b6a9121fb487328754f5b4c521e2fb7e94
+FileChecksum: SHA256: ae266aae4fa1c99aa1e5fd59d19c228b774a7f112c07286ef5c53d20e0c5f8d6
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libXau-154567c4.so.6.0.0
+SPDXID: SPDXRef-File-...pillow.libs-libXau-154567c4.so.6.0.0-d82f47842cbbd3cc
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libavif-01e67780.so.16.3.0
+SPDXID: SPDXRef-File-...pillow.libs-libavif-01e67780.so.16.3.0-562bbcd0ea33c627
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libjpeg-8a13c6e0.so.62.4.0
+SPDXID: SPDXRef-File-...pillow.libs-libjpeg-8a13c6e0.so.62.4.0-c55a22d8d904a389
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/liblzma-64b7ab39.so.5.8.1
+SPDXID: SPDXRef-File-...pillow.libs-liblzma-64b7ab39.so.5.8.1-fa57cb3199968d9b
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libtiff-13a02c81.so.6.1.0
+SPDXID: SPDXRef-File-...pillow.libs-libtiff-13a02c81.so.6.1.0-c6988f30e05666f0
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libwebp-5f0275c0.so.7.1.10
+SPDXID: SPDXRef-File-...pillow.libs-libwebp-5f0275c0.so.7.1.10-46bdcabb937685aa
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pillow.libs/libxcb-64009ff3.so.1.1.0
+SPDXID: SPDXRef-File-...pillow.libs-libxcb-64009ff3.so.1.1.0-a2cbe416c42b4d61
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/t32.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t32.exe-05e91d1f64f7dbf0
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: c6f8034e2e8183d35d3f2b035405294ee01fa273
+FileChecksum: SHA256: 6b4195e640a85ac32eb6f9628822a622057df1e459df7c17a12f97aeabc9415b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/t64-arm.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t64-arm.exe-747a75510fd85cfe
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: c88f99bb82cbbf96992c36b61f6c614a15abc9d6
+FileChecksum: SHA256: ebc4c06b7d95e74e315419ee7e88e1d0f71e9e9477538c00a93a9ff8c66a6cfc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/t64.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-t64.exe-1146a050cb3b0460
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 0d0c5e3b06f56ad12a77da46ab3fdab81acda628
+FileChecksum: SHA256: 81a618f21cb87db9076134e70388b6e9cb7c2106739011b6a51772d22cae06b7
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/w32.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w32.exe-441af514ca1e8256
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 3a1e4e67422d9dd54f7e8bba2bb014474d2f6ea0
+FileChecksum: SHA256: 47872cc77f8e18cf642f868f23340a468e537e64521d9a3a416c8b84384d064b
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/w64-arm.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w64-arm.exe-7696484562084d01
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: e0db21e02eea22f0da5b44745d1dd0184ddc6ebe
+FileChecksum: SHA256: c5dc9884a8f458371550e09bd396e5418bf375820a31b9899f6499bf391c7b2e
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip/_vendor/distlib/w64.exe
+SPDXID: SPDXRef-File-...pip--vendor-distlib-w64.exe-9e1c3418430b4943
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: 34d3e30bcbf87581902409bf5f621f48c5fc2b10
+FileChecksum: SHA256: 7a319ffaba23a017d7b1e18ba726ba6c54c53d6446db55f92af53c279894f8ad
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip-25.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-METADATA-ec3e4cc4a8dd7620
+FileType: TEXT
+FileChecksum: SHA1: 93027e6485f574b6e60d25a013c82425b49307b7
+FileChecksum: SHA256: 97a3ad14d71fd8914a38f24af5b31a1f9faeb05aea66a4af40d979d6d7ad229f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip-25.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-RECORD-a173ade8e9590bc4
+FileType: TEXT
+FileChecksum: SHA1: 08ec6f1854f7cd4bda796f3e1e453766f2a576ef
+FileChecksum: SHA256: cfe29325ced9f8312c5d72e9bb1fb078396aa8c98813bdf4b25b96dfdb2eba94
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pip-25.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...pip-25.2.dist-info-top-level.txt-03bcf6f908a1e34b
+FileType: TEXT
+FileChecksum: SHA1: d7a03141d5d6b1e88b6b59ef08b6681df212c599
+FileChecksum: SHA256: ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/RECORD
+SPDXID: SPDXRef-File-...prompt-toolkit-3.0.51.dist-info-RECORD-22d56a65d435c405
+FileType: TEXT
+FileChecksum: SHA1: 860718049a577702e135593f30e8ff84788b108c
+FileChecksum: SHA256: 6239806647e4722eb41594ed3ca4ad772b7d0238b21bb2ae7c1644fa223614c8
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ptyprocess-0.7.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...ptyprocess-0.7.0.dist-info-METADATA-28e80389f601ecf5
+FileType: TEXT
+FileChecksum: SHA1: d6643f4095bb329dec106a6f17abc6eb3cef0387
+FileChecksum: SHA256: c3c2b96b5d9a55da5958c34d08c18a0849f56609026cc46d5c95b8b77fcf3e0c
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ptyprocess-0.7.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...ptyprocess-0.7.0.dist-info-RECORD-6e2cdda7eeaca845
+FileType: TEXT
+FileChecksum: SHA1: 7bbe892afe0c99e20af3bab4e357cd93cdc5889e
+FileChecksum: SHA256: c4033a1a5bbd4f0aabc0b7f57aae33d735a97680c439581546f0a952654f1947
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/METADATA
+SPDXID: SPDXRef-File-...pure-eval-0.2.3.dist-info-METADATA-dfe74402513f7171
+FileType: TEXT
+FileChecksum: SHA1: 0df8cca421897448e6b38d3a31515391146ea4de
+FileChecksum: SHA256: 97cdad3355bf3083668e8a5e98ad2a958cd68839b369a35b171e372ab48ee986
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/RECORD
+SPDXID: SPDXRef-File-...pure-eval-0.2.3.dist-info-RECORD-219d521ad7ac838b
+FileType: TEXT
+FileChecksum: SHA1: e9f2e2c9a1ccba47c157b4e764fb971edf99ce2c
+FileChecksum: SHA256: 284435bdb66a1dc88959559e214b8ae0d1fbbf1c6c92622624f33a9327ad7c51
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pygments-2.19.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...pygments-2.19.2.dist-info-METADATA-cdd898521cafcd18
+FileType: TEXT
+FileChecksum: SHA1: afee6b8cae57db32719d0559389750d7923f0605
+FileChecksum: SHA256: 7ae100d67d67006c6479803dd835fcf47a9b59fac794441ea8e66aa7f5984d82
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pygments-2.19.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...pygments-2.19.2.dist-info-RECORD-4cca3b3f4bd3e136
+FileType: TEXT
+FileChecksum: SHA1: fddb4075bbb4441c37f50f602f0870eecf662213
+FileChecksum: SHA256: 8e89d4dc1f4336d1324748e9e938d6fa5c257f1ae8c504257a2ec573313a7858
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/sidecar-0.7.0.dist-info/METADATA
+SPDXID: SPDXRef-File-...sidecar-0.7.0.dist-info-METADATA-b9e7235d782285f6
+FileType: TEXT
+FileChecksum: SHA1: 17f475b8e6e955f5e2bda52a361727b9e426386e
+FileChecksum: SHA256: 2e98b3a196d6f13ca3cbe9b32ea1beeaf0eef2ab7e631f5e11966c3e1666e588
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/sidecar-0.7.0.dist-info/RECORD
+SPDXID: SPDXRef-File-...sidecar-0.7.0.dist-info-RECORD-d42eefc45f36c265
+FileType: TEXT
+FileChecksum: SHA1: 543aee8ee95d5f9dab9267dcbcfa64af4c9181a3
+FileChecksum: SHA256: c9abc28cf088738df4c37f0c7f48a0848ae048fba13655069ae4daedb140ec74
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/METADATA
+SPDXID: SPDXRef-File-...simplejpeg-1.8.2.dist-info-METADATA-a96b9e7a7a8f1eb7
+FileType: TEXT
+FileChecksum: SHA1: 1518c9f3ab84a9c5a22cb28bbe8e1d1c72da80fc
+FileChecksum: SHA256: 1f4c72313514b449f84278f2b94253c68cfaaa0d386ca5abe408cc10389c7560
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/RECORD
+SPDXID: SPDXRef-File-...simplejpeg-1.8.2.dist-info-RECORD-35918e6f87e68b83
+FileType: TEXT
+FileChecksum: SHA1: e7c9b1de26052c5b63f25e44f6209018fc2fcfac
+FileChecksum: SHA256: 1dbf001b2ce3c4944bb1e83c49cafd0bf5f2719fd5e0f9891ad1aca1b69b0f64
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/stack_data-0.6.3.dist-info/METADATA
+SPDXID: SPDXRef-File-...stack-data-0.6.3.dist-info-METADATA-86c7d577e81d67f0
+FileType: TEXT
+FileChecksum: SHA1: 50229eb4df7afdb15ede1d22ed42dfdb2d715a19
+FileChecksum: SHA256: f28a66f2adde54e7031355e09a166e437bc0d023a31c10c973ac494288ca4c6f
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/stack_data-0.6.3.dist-info/RECORD
+SPDXID: SPDXRef-File-...stack-data-0.6.3.dist-info-RECORD-328f4cf1b22b701f
+FileType: TEXT
+FileChecksum: SHA1: 65daaaa8988168e5884a0fc7dae43a779363bda3
+FileChecksum: SHA256: 522b69b3fb8bc2aba2e176a824f62b51cda7c3c30e78abbf9ebf90ce5e3cb615
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-0ef7b593fbcc6c99
+FileType: TEXT
+FileChecksum: SHA1: faf99fc15dd24d3ea93ef5587e728a521e01cc96
+FileChecksum: SHA256: 6a3db8bf3c37c1cdd7b0bdd0d2c1e27485fa37b4da562103af547f47841b823a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-4602f5439e8d5ea4
+FileType: TEXT
+FileChecksum: SHA1: a54d3c8b4eef8813a6453f862fbfde517e7a60ed
+FileChecksum: SHA256: e6b257ac41b1eacb782a49a138f47a9742130db579df1fd7cba32eaceba45df0
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/stack_data-0.6.3.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-55f1d77457e96727
+FileType: TEXT
+FileChecksum: SHA1: 5b12e382e8a40b2ca77f7ed3c26e78b9113d4d25
+FileChecksum: SHA256: 21aacf058618f5e7c99008149eeca43143f39d047e79b590618b1072a606c42a
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/asttokens-3.0.0.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-6333d2e3c866c2b0
+FileType: TEXT
+FileChecksum: SHA1: 9b064258ceeb6f8bcf042a8c1d53014a0d414846
+FileChecksum: SHA256: 9c90f07920fbfcd0613a547773c6e428930a33ea719404bc2b287c19c093d9d9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-9834dae742cf6459
+FileType: TEXT
+FileChecksum: SHA1: 241d99e096acb03355ec1b751b5b299299d1f250
+FileChecksum: SHA256: d15889a91b4964b212ec87e31eb520608e9122f598d1c7e4d4e8c0969e3466cc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/executing-2.2.0.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-a2193e0ce0d901fc
+FileType: TEXT
+FileChecksum: SHA1: 2e855c368d5396cb1dddf1ceaa34d0f6e176f4ea
+FileChecksum: SHA256: 6fd46d7f736d4aa734fca6a4e8bfe5be76dd28f0341948a6da9f9770542c7f98
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-a3ef4ed30b92de9a
+FileType: TEXT
+FileChecksum: SHA1: d8fe0bf3a98651570bd82e49549c768a009c5951
+FileChecksum: SHA256: f2651b7e38dd42b952344dd68cbcfed4112546878cf3ee21cd46641e56f156fb
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-a6a57e8bea03660c
+FileType: TEXT
+FileChecksum: SHA1: bf0646817643322111040af96e2ac785a600292e
+FileChecksum: SHA256: c21b1dc952faadc4628f138d71db6377293498e9a3ff67c4c4d9228f6c55bddc
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-c0ca06d76c4a0018
+FileType: TEXT
+FileChecksum: SHA1: 2afd595f8448b76b799852c0cb94ea0b7f94241f
+FileChecksum: SHA256: 43a218cda34af9bdd908e12dd79d787e35845ce7e1f9602309665370e6ee1e48
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/decorator-5.2.1.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...top-level.txt-c25622b0cd5c685b
+FileType: TEXT
+FileChecksum: SHA1: d5cde0b27f3caa302e8ab03bdf70087d33203b25
+FileChecksum: SHA256: 2a7e9e423a3cddcb56c5757204c398b74fd8a634630739ca615b8dcae0bf0d22
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/traitlets-5.14.3.dist-info/METADATA
+SPDXID: SPDXRef-File-...traitlets-5.14.3.dist-info-METADATA-75f7c3f0fe61d41c
+FileType: TEXT
+FileChecksum: SHA1: 5fd919888bfd7b48df9f78ecd70d5502d0f04929
+FileChecksum: SHA256: ca0707dd88c2f8bbfd99800813df0b2cd19b884921efce72dcc9bf604fee5d56
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/traitlets-5.14.3.dist-info/RECORD
+SPDXID: SPDXRef-File-...traitlets-5.14.3.dist-info-RECORD-258c5dcdaca56288
+FileType: TEXT
+FileChecksum: SHA1: 31efe11e399dd346652506048c5a12d2ebfd6dba
+FileChecksum: SHA256: 0eba1c31b0d8a7996cd2ceac0fa25d5bdbc1771fe08b06558b780a91d4219bda
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/METADATA
+SPDXID: SPDXRef-File-...wcwidth-0.2.13.dist-info-METADATA-6ffe9fa21d925964
+FileType: TEXT
+FileChecksum: SHA1: eadc5273da2c36f135fb4ac741e7da8a0156a8ee
+FileChecksum: SHA256: c01b3600bb9b9f49137611050d7735819054ff37f8ae57cd82fd584b4da3ccb4
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/RECORD
+SPDXID: SPDXRef-File-...wcwidth-0.2.13.dist-info-RECORD-4537e2e80ec7222a
+FileType: TEXT
+FileChecksum: SHA1: 31981c2d242fd65369d8c253113e2572cdbb87ff
+FileChecksum: SHA256: ba851d41a7e0e86db75e37e49bae350e113ec9c66c371dbf985ecd0bba3851b9
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/top_level.txt
+SPDXID: SPDXRef-File-...wcwidth-0.2.13.dist-info-top-level.txt-9ada588c9aaa8523
+FileType: TEXT
+FileChecksum: SHA1: ae4dfbf802da41489ab250fba6605f4b02fd91d0
+FileChecksum: SHA256: 2cb8d2f121625d7b8b11c0f604d7457468692967b9a291edbe7eca363f402112
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+##### Package: ansys-stk
+
+PackageName: ansys-stk
+SPDXID: SPDXRef-DocumentRoot-Directory-ansys-stk
+PackageVersion: 0.2.dev0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: FILE
+FilesAnalyzed: false
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-0adacc207c3f4a90
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/t64-arm.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-155265e0cc280d26
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/t64.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-234c4176e1f4ee2b
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/w64-arm.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-96ca15df6e892e0b
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/w32.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-a44285c28ded40d9
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/t32.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: Simple Launcher
+
+PackageName: Simple Launcher
+SPDXID: SPDXRef-Package-binary-Simple-Launcher-f74225a542780316
+PackageVersion: 1.1.0.14
+PackageSupplier: Organization: Simple Launcher User
+PackageOriginator: Organization: Simple Launcher User
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /lib/python3.11/site-packages/pip/_vendor/distlib/w64.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:Simple_Launcher:Simple_Launcher:1.1.0.14:*:*:*:*:*:*:*
+
+##### Package: ansys-stk
+
+PackageName: ansys-stk
+SPDXID: SPDXRef-Package-python-ansys-stk-5ad1fda79bc836bd
+PackageVersion: 0.2.dev0
+PackageSupplier: Person: "ANSYS, Inc." (pyansys.core@ansys.com)
+PackageOriginator: Person: "ANSYS, Inc." (pyansys.core@ansys.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/METADATA, /lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/RECORD, /lib/python3.11/site-packages/ansys_stk-0.2.dev0.dist-info/direct_url.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core_project:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_coreproject:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,-inc-\"-\<pyansys-core:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"ansys\,_inc_\"_\<pyansys_core:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys-stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys_stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:python-ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:python_ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys-stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys_stk:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:ansys-stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ansys:ansys_stk:0.2.dev0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ansys-stk@0.2.dev0
+
+##### Package: asttokens
+
+PackageName: asttokens
+SPDXID: SPDXRef-Package-python-asttokens-32ca67e4c3b1f846
+PackageVersion: 3.0.0
+PackageSupplier: Person: Dmitry Sagalovskiy, Grist Labs (dmitry@getgrist.com)
+PackageOriginator: Person: Dmitry Sagalovskiy, Grist Labs (dmitry@getgrist.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/asttokens-3.0.0.dist-info/METADATA, /lib/python3.11/site-packages/asttokens-3.0.0.dist-info/RECORD, /lib/python3.11/site-packages/asttokens-3.0.0.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-Apache-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs_project:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs_project:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labsproject:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labsproject:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs_project:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labsproject:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_sagalovskiy\,_grist_labs:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-asttokens:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-asttokens:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_asttokens:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_asttokens:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_project:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_project:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitryproject:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitryproject:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:asttokens:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:asttokens:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-asttokens:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_asttokens:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry_project:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitryproject:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:asttokens:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:dmitry:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:asttokens:3.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/asttokens@3.0.0
+
+##### Package: comm
+
+PackageName: comm
+SPDXID: SPDXRef-Package-python-comm-538a362cef00277f
+PackageVersion: 0.2.3
+PackageSupplier: Person: Jupyter contributors
+PackageOriginator: Person: Jupyter contributors
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/comm-0.2.3.dist-info/METADATA, /lib/python3.11/site-packages/comm-0.2.3.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors_project:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors_project:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributorsproject:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributorsproject:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors_project:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributorsproject:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_contributors:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-comm:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-comm:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_comm:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_comm:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:comm:python-comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:comm:python_comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-comm:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_comm:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:comm:comm:0.2.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/comm@0.2.3
+
+##### Package: decorator
+
+PackageName: decorator
+SPDXID: SPDXRef-Package-python-decorator-0e4000316e4d73cf
+PackageVersion: 5.2.1
+PackageSupplier: Person: Michele Simionato (michele.simionato@gmail.com)
+PackageOriginator: Person: Michele Simionato (michele.simionato@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/decorator-5.2.1.dist-info/METADATA, /lib/python3.11/site-packages/decorator-5.2.1.dist-info/RECORD, /lib/python3.11/site-packages/decorator-5.2.1.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-2-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:decorator:5.2.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/decorator@5.2.1
+
+##### Package: executing
+
+PackageName: executing
+SPDXID: SPDXRef-Package-python-executing-dcc57b565beae07e
+PackageVersion: 2.2.0
+PackageSupplier: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageOriginator: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/executing-2.2.0.dist-info/METADATA, /lib/python3.11/site-packages/executing-2.2.0.dist-info/RECORD, /lib/python3.11/site-packages/executing-2.2.0.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-executing:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-executing:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_executing:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_executing:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:executing:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:executing:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-executing:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_executing:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:executing:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:executing:2.2.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/executing@2.2.0
+
+##### Package: ipython
+
+PackageName: ipython
+SPDXID: SPDXRef-Package-python-ipython-ae71ff4003e226f8
+PackageVersion: 9.4.0
+PackageSupplier: Person: The IPython Development Team (ipython-dev@python.org)
+PackageOriginator: Person: The IPython Development Team (ipython-dev@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/ipython-9.4.0.dist-info/METADATA, /lib/python3.11/site-packages/ipython-9.4.0.dist-info/RECORD, /lib/python3.11/site-packages/ipython-9.4.0.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_project:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_project:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_teamproject:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_teamproject:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_project:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_teamproject:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev_project:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev_project:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_devproject:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_devproject:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev_project:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-dev:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-dev:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_devproject:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-dev:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_dev:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ipython:9.4.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ipython@9.4.0
+
+##### Package: ipython-pygments-lexers
+
+PackageName: ipython-pygments-lexers
+SPDXID: SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38
+PackageVersion: 1.1.1
+PackageSupplier: Person: The IPython Development Team (ipython-dev@python.org)
+PackageOriginator: Person: The IPython Development Team (ipython-dev@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/ipython_pygments_lexers-1.1.1.dist-info/METADATA, /lib/python3.11/site-packages/ipython_pygments_lexers-1.1.1.dist-info/RECORD
+PackageLicenseConcluded: BSD-3-Clause
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments-lexers:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments-lexers:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments_lexers:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments_lexers:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments-lexers:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments-lexers:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments_lexers:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments_lexers:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments-lexers:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments-lexers:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments_lexers:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments_lexers:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments-lexers:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments-lexers:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments_lexers:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments_lexers:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython-pygments:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython_pygments:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-pygments:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_pygments:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipython:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipython:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ipython-pygments-lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ipython_pygments_lexers:1.1.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ipython-pygments-lexers@1.1.1
+
+##### Package: ipywidgets
+
+PackageName: ipywidgets
+SPDXID: SPDXRef-Package-python-ipywidgets-74913da808cdf2ce
+PackageVersion: 8.1.7
+PackageSupplier: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageOriginator: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/METADATA, /lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/RECORD, /lib/python3.11/site-packages/ipywidgets-8.1.7.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-BSD-3-Clause-License
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipywidgets:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipywidgets:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipywidgets:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipywidgets:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipywidgets:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipywidgets:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ipywidgets:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ipywidgets:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipywidgets:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ipywidgets:8.1.7:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ipywidgets@8.1.7
+
+##### Package: jedi
+
+PackageName: jedi
+SPDXID: SPDXRef-Package-python-jedi-7ff27902d0bf13f0
+PackageVersion: 0.19.2
+PackageSupplier: Person: David Halter (davidhalter88@gmail.com)
+PackageOriginator: Person: David Halter (davidhalter88@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/jedi-0.19.2.dist-info/METADATA, /lib/python3.11/site-packages/jedi-0.19.2.dist-info/RECORD, /lib/python3.11/site-packages/jedi-0.19.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jedi:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jedi:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jedi:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jedi:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jedi:python-jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jedi:python_jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jedi:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jedi:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jedi:jedi:0.19.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/jedi@0.19.2
+
+##### Package: jupyter-rfb
+
+PackageName: jupyter-rfb
+SPDXID: SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+PackageVersion: 0.5.3
+PackageSupplier: Person: Almar Klein
+PackageOriginator: Person: Almar Klein
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/jupyter_rfb-0.5.3.dist-info/METADATA, /lib/python3.11/site-packages/jupyter_rfb-0.5.3.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein_project:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein_project:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_kleinproject:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_kleinproject:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter-rfb:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter-rfb:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter_rfb:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter_rfb:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein_project:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein_project:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_kleinproject:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_kleinproject:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-rfb:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-rfb:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_rfb:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_rfb:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter-rfb:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter-rfb:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter_rfb:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter_rfb:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyter:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyter:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:almar_klein:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-rfb:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-rfb:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_rfb:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_rfb:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:jupyter-rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:jupyter_rfb:0.5.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/jupyter-rfb@0.5.3
+
+##### Package: jupyterlab-widgets
+
+PackageName: jupyterlab-widgets
+SPDXID: SPDXRef-Package-python-jupyterlab-widgets-a51e6e4c4c5cc5f6
+PackageVersion: 3.0.15
+PackageSupplier: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageOriginator: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/jupyterlab_widgets-3.0.15.dist-info/METADATA, /lib/python3.11/site-packages/jupyterlab_widgets-3.0.15.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter_project:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter_project:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyterproject:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyterproject:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter_project:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter_project:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-development-team-\<jupyter:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-development-team-\<jupyter:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyterproject:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyterproject:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-development-team-\<jupyter:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter-development-team-\<jupyter:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_\<jupyter:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab-widgets:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab-widgets:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab_widgets:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab_widgets:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab-widgets:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab-widgets:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab_widgets:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab_widgets:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab-widgets:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab-widgets:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab_widgets:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab_widgets:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab-widgets:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab-widgets:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab_widgets:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab_widgets:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-jupyterlab:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_jupyterlab:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterlab:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:jupyterlab-widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:jupyterlab_widgets:3.0.15:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/jupyterlab-widgets@3.0.15
+
+##### Package: matplotlib-inline
+
+PackageName: matplotlib-inline
+SPDXID: SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48
+PackageVersion: 0.1.7
+PackageSupplier: Person: IPython Development Team (ipython-dev@python.org)
+PackageOriginator: Person: IPython Development Team (ipython-dev@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/METADATA, /lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/RECORD, /lib/python3.11/site-packages/matplotlib_inline-0.1.7.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib-inline:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib-inline:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib_inline:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib_inline:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib-inline:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib-inline:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib_inline:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib_inline:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib-inline:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib-inline:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib_inline:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib_inline:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib-inline:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib-inline:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib_inline:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib_inline:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-matplotlib:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_matplotlib:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:matplotlib:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:matplotlib-inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:matplotlib_inline:0.1.7:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/matplotlib-inline@0.1.7
+
+##### Package: numpy
+
+PackageName: numpy
+SPDXID: SPDXRef-Package-python-numpy-48febbef2b321c2b
+PackageVersion: 2.3.2
+PackageSupplier: Person: Travis E. Oliphant et al.
+PackageOriginator: Person: Travis E. Oliphant et al.
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/numpy-2.3.2.dist-info/METADATA, /lib/python3.11/site-packages/numpy-2.3.2.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al__project:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al__project:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_project:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_project:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al__project:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_project:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:travis_e__oliphant_et_al_:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-numpy:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-numpy:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_numpy:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_numpy:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:numpy:python-numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:numpy:python_numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-numpy:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_numpy:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:numpy:numpy:2.3.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/numpy@2.3.2
+
+##### Package: parso
+
+PackageName: parso
+SPDXID: SPDXRef-Package-python-parso-7534b5990cccf4ce
+PackageVersion: 0.8.4
+PackageSupplier: Person: David Halter (davidhalter88@gmail.com)
+PackageOriginator: Person: David Halter (davidhalter88@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/parso-0.8.4.dist-info/METADATA, /lib/python3.11/site-packages/parso-0.8.4.dist-info/RECORD, /lib/python3.11/site-packages/parso-0.8.4.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88_project:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter_project:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88project:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halterproject:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-parso:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-parso:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_parso:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_parso:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:davidhalter88:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:david_halter:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:parso:python-parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:parso:python_parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-parso:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_parso:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:parso:parso:0.8.4:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/parso@0.8.4
+
+##### Package: pexpect
+
+PackageName: pexpect
+SPDXID: SPDXRef-Package-python-pexpect-9167c77edcb54488
+PackageVersion: 4.9.0
+PackageSupplier: Person: Noah Spurrier; Thomas Kluyver; Jeff Quast (noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com)
+PackageOriginator: Person: Noah Spurrier; Thomas Kluyver; Jeff Quast (noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/pexpect-4.9.0.dist-info/METADATA, /lib/python3.11/site-packages/pexpect-4.9.0.dist-info/RECORD, /lib/python3.11/site-packages/pexpect-4.9.0.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-ISC-license
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast_project:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast_project:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quastproject:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quastproject:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast_project:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quastproject:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_spurrier\;_thomas_kluyver\;_jeff_quast:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pexpect:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pexpect:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pexpect:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pexpect:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_project:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_project:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noahproject:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noahproject:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pexpect:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pexpect:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pexpect:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pexpect:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah_project:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah:python-pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah:python_pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noahproject:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pexpect:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:noah:pexpect:4.9.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pexpect@4.9.0
+
+##### Package: pillow
+
+PackageName: pillow
+SPDXID: SPDXRef-Package-python-pillow-575dc36654707dd4
+PackageVersion: 11.3.0
+PackageSupplier: Person: "Jeffrey A. Clark" (aclark@aclark.net)
+PackageOriginator: Person: "Jeffrey A. Clark" (aclark@aclark.net)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/pillow-11.3.0.dist-info/METADATA, /lib/python3.11/site-packages/pillow-11.3.0.dist-info/RECORD, /lib/python3.11/site-packages/pillow-11.3.0.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT-CMU
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark_project:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark_project:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclarkproject:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclarkproject:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark_project:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey-a--clark\"-\<aclark:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey-a--clark\"-\<aclark:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclarkproject:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey-a--clark\"-\<aclark:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\"jeffrey_a__clark\"_\<aclark:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pillow:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pillow:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pillow:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pillow:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pillow:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pillow:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pillow:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pillow:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pillow:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pillow:11.3.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pillow@11.3.0
+
+##### Package: pip
+
+PackageName: pip
+SPDXID: SPDXRef-Package-python-pip-7da65dfabd5c2828
+PackageVersion: 25.2
+PackageSupplier: Person: The pip developers (distutils-sig@python.org)
+PackageOriginator: Person: The pip developers (distutils-sig@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/pip-25.2.dist-info/METADATA, /lib/python3.11/site-packages/pip-25.2.dist-info/RECORD, /lib/python3.11/site-packages/pip-25.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig_project:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sigproject:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip-developers-\<distutils-sig:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip_developers_\<distutils_sig:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:python-pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:python_pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pypa:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pip:pip:25.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pip@25.2
+
+##### Package: prompt-toolkit
+
+PackageName: prompt-toolkit
+SPDXID: SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4
+PackageVersion: 3.0.51
+PackageSupplier: Person: Jonathan Slenders
+PackageOriginator: Person: Jonathan Slenders
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/METADATA, /lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/RECORD, /lib/python3.11/site-packages/prompt_toolkit-3.0.51.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders_project:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders_project:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slendersproject:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slendersproject:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt-toolkit:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt-toolkit:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt_toolkit:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt_toolkit:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders_project:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders_project:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slendersproject:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slendersproject:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt-toolkit:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt-toolkit:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt_toolkit:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt_toolkit:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt-toolkit:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt-toolkit:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt_toolkit:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt_toolkit:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jonathan_slenders:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt-toolkit:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt-toolkit:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt_toolkit:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt_toolkit:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-prompt:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_prompt:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prompt:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:prompt-toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:prompt_toolkit:3.0.51:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/prompt-toolkit@3.0.51
+
+##### Package: ptyprocess
+
+PackageName: ptyprocess
+SPDXID: SPDXRef-Package-python-ptyprocess-3cb724ebfae87690
+PackageVersion: 0.7.0
+PackageSupplier: Person: Thomas Kluyver (thomas@kluyver.me.uk)
+PackageOriginator: Person: Thomas Kluyver (thomas@kluyver.me.uk)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/ptyprocess-0.7.0.dist-info/METADATA, /lib/python3.11/site-packages/ptyprocess-0.7.0.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-UNKNOWN
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver_project:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver_project:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyverproject:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyverproject:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ptyprocess:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ptyprocess:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ptyprocess:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ptyprocess:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver_project:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyverproject:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_project:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_project:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomasproject:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomasproject:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ptyprocess:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ptyprocess:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-ptyprocess:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_ptyprocess:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_kluyver:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas_project:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas:python-ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas:python_ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomasproject:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ptyprocess:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:thomas:ptyprocess:0.7.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/ptyprocess@0.7.0
+
+##### Package: pure-eval
+
+PackageName: pure-eval
+SPDXID: SPDXRef-Package-python-pure-eval-2d498baeace216ba
+PackageVersion: 0.2.3
+PackageSupplier: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageOriginator: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/METADATA, /lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/RECORD, /lib/python3.11/site-packages/pure_eval-0.2.3.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure-eval:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure-eval:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure_eval:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure_eval:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure-eval:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure-eval:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure_eval:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure_eval:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure-eval:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure-eval:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure_eval:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure_eval:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure:python-pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure:python_pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pure:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pure:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure-eval:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure-eval:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure_eval:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure_eval:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure:pure-eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pure:pure_eval:0.2.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pure-eval@0.2.3
+
+##### Package: pygments
+
+PackageName: pygments
+SPDXID: SPDXRef-Package-python-pygments-e4ec2ac2f6258bec
+PackageVersion: 2.19.2
+PackageSupplier: Person: Georg Brandl (georg@python.org)
+PackageOriginator: Person: Georg Brandl (georg@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/pygments-2.19.2.dist-info/METADATA, /lib/python3.11/site-packages/pygments-2.19.2.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-2-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg_project:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg_project:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georgproject:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georgproject:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg_project:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg-brandl-\<georg:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg-brandl-\<georg:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georgproject:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pygments:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pygments:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pygments:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pygments:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg-brandl-\<georg:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:georg_brandl_\<georg:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pygments:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pygments:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-pygments:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_pygments:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:pygments:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:pygments:2.19.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/pygments@2.19.2
+
+##### Package: sidecar
+
+PackageName: sidecar
+SPDXID: SPDXRef-Package-python-sidecar-51c4b1bea3fb1012
+PackageVersion: 0.7.0
+PackageSupplier: Person: Project Jupyter (ipython-dev@scipy.org)
+PackageOriginator: Person: Project Jupyter (ipython-dev@scipy.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/sidecar-0.7.0.dist-info/METADATA, /lib/python3.11/site-packages/sidecar-0.7.0.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev_project:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev_project:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_devproject:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_devproject:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev_project:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project-jupyter-\<ipython-dev:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project-jupyter-\<ipython-dev:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_devproject:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project-jupyter-\<ipython-dev:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:project_jupyter_\<ipython_dev:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-sidecar:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-sidecar:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_sidecar:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_sidecar:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-sidecar:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_sidecar:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:sidecar:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:sidecar:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:sidecar:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:sidecar:0.7.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/sidecar@0.7.0
+
+##### Package: simplejpeg
+
+PackageName: simplejpeg
+SPDXID: SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea
+PackageVersion: 1.8.2
+PackageSupplier: Person: Joachim Folz (joachim.folz@dfki.de)
+PackageOriginator: Person: Joachim Folz (joachim.folz@dfki.de)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/METADATA, /lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/RECORD, /lib/python3.11/site-packages/simplejpeg-1.8.2.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-51ef13458adf01ae2a34f53e18fa72db0390962e64d213d3b92c7272844522a5
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz_project:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz_project:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folzproject:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folzproject:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz_project:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim-folz-\<joachim-folz:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim-folz-\<joachim-folz:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folzproject:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim-folz-\<joachim-folz:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:joachim_folz_\<joachim_folz:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-simplejpeg:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-simplejpeg:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_simplejpeg:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_simplejpeg:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-simplejpeg:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_simplejpeg:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:simplejpeg:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:simplejpeg:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:simplejpeg:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:simplejpeg:1.8.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/simplejpeg@1.8.2
+
+##### Package: stack-data
+
+PackageName: stack-data
+SPDXID: SPDXRef-Package-python-stack-data-c22375d3c567d126
+PackageVersion: 0.6.3
+PackageSupplier: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageOriginator: Person: Alex Hall (alex.mojaki@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/stack_data-0.6.3.dist-info/METADATA, /lib/python3.11/site-packages/stack_data-0.6.3.dist-info/RECORD, /lib/python3.11/site-packages/stack_data-0.6.3.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack-data:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack-data:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack_data:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack_data:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki_project:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojakiproject:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall_project:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack-data:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack-data:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack_data:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack_data:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack-data:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack-data:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack_data:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack_data:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hallproject:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-stack:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_stack:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack:python-stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack:python_stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex-mojaki:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_mojaki:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack-data:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack-data:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack_data:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack_data:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:alex_hall:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack:stack-data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stack:stack_data:0.6.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/stack-data@0.6.3
+
+##### Package: traitlets
+
+PackageName: traitlets
+SPDXID: SPDXRef-Package-python-traitlets-fe2c3a6408e8e18d
+PackageVersion: 5.14.3
+PackageSupplier: Person: IPython Development Team (ipython-dev@python.org)
+PackageOriginator: Person: IPython Development Team (ipython-dev@python.org)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/traitlets-5.14.3.dist-info/METADATA, /lib/python3.11/site-packages/traitlets-5.14.3.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev_project:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_devproject:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython-development-team-\<ipython-dev:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ipython_development_team_\<ipython_dev:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-traitlets:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-traitlets:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_traitlets:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_traitlets:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-traitlets:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_traitlets:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:traitlets:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:traitlets:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:traitlets:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:traitlets:5.14.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/traitlets@5.14.3
+
+##### Package: typing-extensions
+
+PackageName: typing-extensions
+SPDXID: SPDXRef-Package-python-typing-extensions-a95a6d417dc4fb1e
+PackageVersion: 4.14.1
+PackageSupplier: Person: "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" (levkivskyi@gmail.com)
+PackageOriginator: Person: "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" (levkivskyi@gmail.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/typing_extensions-4.14.1.dist-info/METADATA, /lib/python3.11/site-packages/typing_extensions-4.14.1.dist-info/RECORD
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: PSF-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing-extensions:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing-extensions:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing_extensions:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing_extensions:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing-extensions:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing-extensions:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing_extensions:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing_extensions:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing-extensions:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing-extensions:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing_extensions:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing_extensions:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing-extensions:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing-extensions:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing_extensions:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing_extensions:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-typing:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_typing:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing:python-typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing:python_typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing:typing-extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:typing:typing_extensions:4.14.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/typing-extensions@4.14.1
+
+##### Package: wcwidth
+
+PackageName: wcwidth
+SPDXID: SPDXRef-Package-python-wcwidth-8a7702c13cef4f72
+PackageVersion: 0.2.13
+PackageSupplier: Person: Jeff Quast (contact@jeffquast.com)
+PackageOriginator: Person: Jeff Quast (contact@jeffquast.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/METADATA, /lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/RECORD, /lib/python3.11/site-packages/wcwidth-0.2.13.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast_project:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast_project:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quastproject:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quastproject:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact_project:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact_project:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contactproject:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contactproject:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-wcwidth:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-wcwidth:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_wcwidth:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_wcwidth:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast_project:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quastproject:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact_project:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contactproject:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-wcwidth:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_wcwidth:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:wcwidth:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:wcwidth:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jeff_quast:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:contact:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:wcwidth:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:wcwidth:0.2.13:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/wcwidth@0.2.13
+
+##### Package: widgetsnbextension
+
+PackageName: widgetsnbextension
+SPDXID: SPDXRef-Package-python-widgetsnbextension-230dcb531f59a019
+PackageVersion: 4.0.14
+PackageSupplier: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageOriginator: Person: Jupyter Development Team (jupyter@googlegroups.com)
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed python package manifest file: /lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/METADATA, /lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/RECORD, /lib/python3.11/site-packages/widgetsnbextension-4.0.14.dist-info/top_level.txt
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: LicenseRef-BSD-3-Clause-License
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team_project:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-widgetsnbextension:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-widgetsnbextension:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_widgetsnbextension:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_widgetsnbextension:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_teamproject:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python-widgetsnbextension:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python_widgetsnbextension:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:widgetsnbextension:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:widgetsnbextension:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_development_team:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:widgetsnbextension:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter_project:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyterproject:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python-widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:python_widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:jupyter:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:python:widgetsnbextension:4.0.14:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:pypi/widgetsnbextension@4.0.14
+
+##### Other Licenses
+
+LicenseID: LicenseRef-51ef13458adf01ae2a34f53e18fa72db0390962e64d213d3b92c7272844522a5
+ExtractedText: NOASSERTION
+LicenseName: sha256:51ef13458adf01ae2a34f53e18fa72db0390962e64d213d3b92c7272844522a5
+
+LicenseID: LicenseRef-Apache-2.0
+ExtractedText: NOASSERTION
+LicenseName: Apache 2.0
+
+LicenseID: LicenseRef-BSD-3-Clause-License
+ExtractedText: NOASSERTION
+LicenseName: BSD 3-Clause License
+
+LicenseID: LicenseRef-ISC-license
+ExtractedText: NOASSERTION
+LicenseName: ISC license
+
+LicenseID: LicenseRef-UNKNOWN
+ExtractedText: NOASSERTION
+LicenseName: UNKNOWN
+
+##### Relationships
+
+Relationship: SPDXRef-Package-python-decorator-0e4000316e4d73cf DEPENDENCY_OF SPDXRef-Package-python-ipython-ae71ff4003e226f8
+Relationship: SPDXRef-Package-python-pure-eval-2d498baeace216ba DEPENDENCY_OF SPDXRef-Package-python-stack-data-c22375d3c567d126
+Relationship: SPDXRef-Package-python-ptyprocess-3cb724ebfae87690 DEPENDENCY_OF SPDXRef-Package-python-pexpect-9167c77edcb54488
+Relationship: SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea DEPENDENCY_OF SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+Relationship: SPDXRef-Package-python-numpy-48febbef2b321c2b DEPENDENCY_OF SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+Relationship: SPDXRef-Package-python-ipywidgets-74913da808cdf2ce DEPENDENCY_OF SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+Relationship: SPDXRef-Package-python-parso-7534b5990cccf4ce DEPENDENCY_OF SPDXRef-Package-python-jedi-7ff27902d0bf13f0
+Relationship: SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38 DEPENDENCY_OF SPDXRef-Package-python-ipython-ae71ff4003e226f8
+Relationship: SPDXRef-Package-python-wcwidth-8a7702c13cef4f72 DEPENDENCY_OF SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4
+Relationship: SPDXRef-Package-python-jupyterlab-widgets-a51e6e4c4c5cc5f6 DEPENDENCY_OF SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+Relationship: SPDXRef-Package-python-typing-extensions-a95a6d417dc4fb1e DEPENDENCY_OF SPDXRef-Package-python-pillow-575dc36654707dd4
+Relationship: SPDXRef-Package-python-ipython-ae71ff4003e226f8 DEPENDENCY_OF SPDXRef-Package-python-executing-dcc57b565beae07e
+Relationship: SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48 DEPENDENCY_OF SPDXRef-Package-python-ipython-ae71ff4003e226f8
+Relationship: SPDXRef-Package-python-pygments-e4ec2ac2f6258bec DEPENDENCY_OF SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38
+Relationship: SPDXRef-Package-python-pygments-e4ec2ac2f6258bec DEPENDENCY_OF SPDXRef-Package-python-stack-data-c22375d3c567d126
+Relationship: SPDXRef-Package-python-traitlets-fe2c3a6408e8e18d DEPENDENCY_OF SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48
+Relationship: SPDXRef-Package-binary-Simple-Launcher-0adacc207c3f4a90 OTHER SPDXRef-File-...pip--vendor-distlib-t64-arm.exe-747a75510fd85cfe
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-decorator-0e4000316e4d73cf OTHER SPDXRef-File-...decorator-5.2.1.dist-info-METADATA-749a15d7748c7e88
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-decorator-0e4000316e4d73cf OTHER SPDXRef-File-...top-level.txt-c25622b0cd5c685b
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-decorator-0e4000316e4d73cf OTHER SPDXRef-File-...decorator-5.2.1.dist-info-RECORD-d1fdb16c289f2681
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-155265e0cc280d26 OTHER SPDXRef-File-...pip--vendor-distlib-t64.exe-1146a050cb3b0460
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-widgetsnbextension-230dcb531f59a019 OTHER SPDXRef-File-...RECORD-63da38afd51022d1
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-widgetsnbextension-230dcb531f59a019 OTHER SPDXRef-File-...top-level.txt-a3ef4ed30b92de9a
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-widgetsnbextension-230dcb531f59a019 OTHER SPDXRef-File-...METADATA-d769490bc95ac127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-234c4176e1f4ee2b OTHER SPDXRef-File-...pip--vendor-distlib-w64-arm.exe-7696484562084d01
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pure-eval-2d498baeace216ba OTHER SPDXRef-File-...top-level.txt-0ef7b593fbcc6c99
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pure-eval-2d498baeace216ba OTHER SPDXRef-File-...pure-eval-0.2.3.dist-info-RECORD-219d521ad7ac838b
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pure-eval-2d498baeace216ba OTHER SPDXRef-File-...pure-eval-0.2.3.dist-info-METADATA-dfe74402513f7171
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-asttokens-32ca67e4c3b1f846 OTHER SPDXRef-File-...top-level.txt-6333d2e3c866c2b0
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-asttokens-32ca67e4c3b1f846 OTHER SPDXRef-File-...asttokens-3.0.0.dist-info-RECORD-8a4cc588ef60172c
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-asttokens-32ca67e4c3b1f846 OTHER SPDXRef-File-...asttokens-3.0.0.dist-info-METADATA-93779355a30fd89c
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ptyprocess-3cb724ebfae87690 OTHER SPDXRef-File-...ptyprocess-0.7.0.dist-info-METADATA-28e80389f601ecf5
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ptyprocess-3cb724ebfae87690 OTHER SPDXRef-File-...ptyprocess-0.7.0.dist-info-RECORD-6e2cdda7eeaca845
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea OTHER SPDXRef-File-...simplejpeg-1.8.2.dist-info-RECORD-35918e6f87e68b83
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea OTHER SPDXRef-File-...top-level.txt-a6a57e8bea03660c
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea OTHER SPDXRef-File-...simplejpeg-1.8.2.dist-info-METADATA-a96b9e7a7a8f1eb7
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-numpy-48febbef2b321c2b OTHER SPDXRef-File-...numpy-2.3.2.dist-info-METADATA-70a338f8db03471d
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-numpy-48febbef2b321c2b OTHER SPDXRef-File-...numpy-2.3.2.dist-info-RECORD-7ecfb34a81002c38
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4 OTHER SPDXRef-File-...prompt-toolkit-3.0.51.dist-info-RECORD-22d56a65d435c405
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4 OTHER SPDXRef-File-...top-level.txt-4602f5439e8d5ea4
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4 OTHER SPDXRef-File-...METADATA-5620312fcbe2a743
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-sidecar-51c4b1bea3fb1012 OTHER SPDXRef-File-...sidecar-0.7.0.dist-info-METADATA-b9e7235d782285f6
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-sidecar-51c4b1bea3fb1012 OTHER SPDXRef-File-...sidecar-0.7.0.dist-info-RECORD-d42eefc45f36c265
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-comm-538a362cef00277f OTHER SPDXRef-File-...comm-0.2.3.dist-info-RECORD-03ba431746071f3f
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-comm-538a362cef00277f OTHER SPDXRef-File-...comm-0.2.3.dist-info-METADATA-54656aa53bd6fb2e
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pillow-575dc36654707dd4 OTHER SPDXRef-File-...pillow-11.3.0.dist-info-RECORD-085fdbcdb3af5208
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pillow-575dc36654707dd4 OTHER SPDXRef-File-...pillow-11.3.0.dist-info-top-level.txt-5e5d62a52e510768
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pillow-575dc36654707dd4 OTHER SPDXRef-File-...pillow-11.3.0.dist-info-METADATA-9ee54b0f99f94e20
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-5ad1fda79bc836bd OTHER SPDXRef-File-...direct-url.json-101aa5ebf5d50d53
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-5ad1fda79bc836bd OTHER SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-RECORD-242bfb3d104abade
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ansys-stk-5ad1fda79bc836bd OTHER SPDXRef-File-...ansys-stk-0.2.dev0.dist-info-METADATA-9d009dddfdd8575f
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipywidgets-74913da808cdf2ce OTHER SPDXRef-File-...ipywidgets-8.1.7.dist-info-RECORD-838d4a9cc92b7bb1
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipywidgets-74913da808cdf2ce OTHER SPDXRef-File-...ipywidgets-8.1.7.dist-info-METADATA-b34f6bb164063331
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipywidgets-74913da808cdf2ce OTHER SPDXRef-File-...top-level.txt-c0ca06d76c4a0018
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-parso-7534b5990cccf4ce OTHER SPDXRef-File-...parso-0.8.4.dist-info-top-level.txt-1170c859345a056f
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-parso-7534b5990cccf4ce OTHER SPDXRef-File-...parso-0.8.4.dist-info-METADATA-475194dda30624d7
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-parso-7534b5990cccf4ce OTHER SPDXRef-File-...parso-0.8.4.dist-info-RECORD-b7212d89633a2a1e
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38 OTHER SPDXRef-File-...METADATA-e9868043b4c93fcf
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38 OTHER SPDXRef-File-...RECORD-f36ff2c4e6f77872
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-7da65dfabd5c2828 OTHER SPDXRef-File-...pip-25.2.dist-info-top-level.txt-03bcf6f908a1e34b
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-7da65dfabd5c2828 OTHER SPDXRef-File-...pip-25.2.dist-info-RECORD-a173ade8e9590bc4
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pip-7da65dfabd5c2828 OTHER SPDXRef-File-...pip-25.2.dist-info-METADATA-ec3e4cc4a8dd7620
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jedi-7ff27902d0bf13f0 OTHER SPDXRef-File-...jedi-0.19.2.dist-info-top-level.txt-555416fe2cf78781
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jedi-7ff27902d0bf13f0 OTHER SPDXRef-File-...jedi-0.19.2.dist-info-RECORD-8dd14c316a2b8802
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jedi-7ff27902d0bf13f0 OTHER SPDXRef-File-...jedi-0.19.2.dist-info-METADATA-a8f199271866c7e5
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-wcwidth-8a7702c13cef4f72 OTHER SPDXRef-File-...wcwidth-0.2.13.dist-info-RECORD-4537e2e80ec7222a
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-wcwidth-8a7702c13cef4f72 OTHER SPDXRef-File-...wcwidth-0.2.13.dist-info-METADATA-6ffe9fa21d925964
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-wcwidth-8a7702c13cef4f72 OTHER SPDXRef-File-...wcwidth-0.2.13.dist-info-top-level.txt-9ada588c9aaa8523
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pexpect-9167c77edcb54488 OTHER SPDXRef-File-...pexpect-4.9.0.dist-info-RECORD-057e1c578f3fad23
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pexpect-9167c77edcb54488 OTHER SPDXRef-File-...pexpect-4.9.0.dist-info-METADATA-326c463743191aae
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pexpect-9167c77edcb54488 OTHER SPDXRef-File-...pexpect-4.9.0.dist-info-top-level.txt-abbb8f81b3941299
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-96ca15df6e892e0b OTHER SPDXRef-File-...pip--vendor-distlib-w32.exe-441af514ca1e8256
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-a44285c28ded40d9 OTHER SPDXRef-File-...pip--vendor-distlib-t32.exe-05e91d1f64f7dbf0
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jupyterlab-widgets-a51e6e4c4c5cc5f6 OTHER SPDXRef-File-...METADATA-f5270ebfd5421854
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jupyterlab-widgets-a51e6e4c4c5cc5f6 OTHER SPDXRef-File-...RECORD-ff8dc9004ef53ae8
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-typing-extensions-a95a6d417dc4fb1e OTHER SPDXRef-File-...RECORD-7624742a3719aab0
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-typing-extensions-a95a6d417dc4fb1e OTHER SPDXRef-File-...METADATA-859127623a3d5a80
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipython-ae71ff4003e226f8 OTHER SPDXRef-File-...ipython-9.4.0.dist-info-top-level.txt-9d00f4c4c8f05b60
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipython-ae71ff4003e226f8 OTHER SPDXRef-File-...ipython-9.4.0.dist-info-METADATA-9eb56ff7304e4796
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-ipython-ae71ff4003e226f8 OTHER SPDXRef-File-...ipython-9.4.0.dist-info-RECORD-de6b802aa33d9313
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240 OTHER SPDXRef-File-...jupyter-rfb-0.5.3.dist-info-RECORD-65a93821e08494f6
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240 OTHER SPDXRef-File-...jupyter-rfb-0.5.3.dist-info-METADATA-f26539d4f923da98
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-stack-data-c22375d3c567d126 OTHER SPDXRef-File-...stack-data-0.6.3.dist-info-RECORD-328f4cf1b22b701f
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-stack-data-c22375d3c567d126 OTHER SPDXRef-File-...top-level.txt-55f1d77457e96727
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-stack-data-c22375d3c567d126 OTHER SPDXRef-File-...stack-data-0.6.3.dist-info-METADATA-86c7d577e81d67f0
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48 OTHER SPDXRef-File-...top-level.txt-9834dae742cf6459
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48 OTHER SPDXRef-File-...METADATA-afe96420e32ca5fa
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48 OTHER SPDXRef-File-...RECORD-ccbb5b96ac3656b2
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-executing-dcc57b565beae07e OTHER SPDXRef-File-...executing-2.2.0.dist-info-RECORD-8270558cc8c7836d
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-executing-dcc57b565beae07e OTHER SPDXRef-File-...executing-2.2.0.dist-info-METADATA-9af082f4e5c09592
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-executing-dcc57b565beae07e OTHER SPDXRef-File-...top-level.txt-a2193e0ce0d901fc
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pygments-e4ec2ac2f6258bec OTHER SPDXRef-File-...pygments-2.19.2.dist-info-RECORD-4cca3b3f4bd3e136
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-pygments-e4ec2ac2f6258bec OTHER SPDXRef-File-...pygments-2.19.2.dist-info-METADATA-cdd898521cafcd18
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-Simple-Launcher-f74225a542780316 OTHER SPDXRef-File-...pip--vendor-distlib-w64.exe-9e1c3418430b4943
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-traitlets-fe2c3a6408e8e18d OTHER SPDXRef-File-...traitlets-5.14.3.dist-info-RECORD-258c5dcdaca56288
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-python-traitlets-fe2c3a6408e8e18d OTHER SPDXRef-File-...traitlets-5.14.3.dist-info-METADATA-75f7c3f0fe61d41c
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-a44285c28ded40d9
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-0adacc207c3f4a90
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-155265e0cc280d26
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-96ca15df6e892e0b
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-234c4176e1f4ee2b
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-binary-Simple-Launcher-f74225a542780316
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ansys-stk-5ad1fda79bc836bd
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-asttokens-32ca67e4c3b1f846
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-comm-538a362cef00277f
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-decorator-0e4000316e4d73cf
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-executing-dcc57b565beae07e
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ipython-ae71ff4003e226f8
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ipython-pygments-lexers-7d0c778975a5df38
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ipywidgets-74913da808cdf2ce
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-jedi-7ff27902d0bf13f0
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-jupyter-rfb-bbbe422e60d6b240
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-jupyterlab-widgets-a51e6e4c4c5cc5f6
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-matplotlib-inline-c29499a14aaeaa48
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-numpy-48febbef2b321c2b
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-parso-7534b5990cccf4ce
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pexpect-9167c77edcb54488
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pillow-575dc36654707dd4
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pip-7da65dfabd5c2828
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-prompt-toolkit-5194eab12e368ee4
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-ptyprocess-3cb724ebfae87690
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pure-eval-2d498baeace216ba
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-pygments-e4ec2ac2f6258bec
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-sidecar-51c4b1bea3fb1012
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-simplejpeg-3ee6bc562465e1ea
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-stack-data-c22375d3c567d126
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-traitlets-fe2c3a6408e8e18d
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-typing-extensions-a95a6d417dc4fb1e
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-wcwidth-8a7702c13cef4f72
+Relationship: SPDXRef-DocumentRoot-Directory-ansys-stk CONTAINS SPDXRef-Package-python-widgetsnbextension-230dcb531f59a019
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-DocumentRoot-Directory-ansys-stk

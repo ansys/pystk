@@ -1,0 +1,51 @@
+ExternalEphemerisFormatType
+===========================
+
+.. py:class:: ansys.stk.core.stkobjects.ExternalEphemerisFormatType
+
+   IntEnum
+
+
+.. py:currentmodule:: ExternalEphemerisFormatType
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unsupported ephemeris format.
+
+            * - :py:attr:`~STK`
+              - ASCII text file formatted for compatibility with STK that ends with '.e' extension.
+
+            * - :py:attr:`~CCSDS`
+              - CCSDS orbit ephemeris file format that ends with '.oem' extension.
+
+            * - :py:attr:`~ITC`
+              - Define a file format that ends with '.itc' extension. The file type is utilized by some Air Force entities and requires USGOV license.
+
+            * - :py:attr:`~STK_BINARY`
+              - STK Binary ephemeris file format that ends with '.be' extension.
+
+            * - :py:attr:`~CODE500`
+              - Code500 ephemeris file format that ends with '.EPH' extension.
+
+            * - :py:attr:`~CCSDS_V2`
+              - CCSDS v2 orbit ephemeris file format that ends with '.oem' extension.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ExternalEphemerisFormatType
+
+

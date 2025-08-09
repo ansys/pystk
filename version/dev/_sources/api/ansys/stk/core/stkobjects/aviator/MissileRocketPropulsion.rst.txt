@@ -1,0 +1,107 @@
+MissileRocketPropulsion
+=======================
+
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion
+
+   Class defining the Rocket propulsion options for a missile.
+
+.. py:currentmodule:: MissileRocketPropulsion
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.boost_chamber_pressure`
+              - Get or set the combustion chamber pressure during the boost phase.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.boost_fuel_fraction`
+              - Get or set the amount of fuel that is consumed during the boost phase.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.combustion_chamber_pressure`
+              - Get or set the pressure in the combustion chamber.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.no_thrust_when_no_fuel`
+              - Opt to have no thrust if the fuel is empty.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.nozzle_exit_diameter`
+              - Get or set the diameter of the nozzle exit.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.nozzle_expansion_ratio`
+              - Get or set the exit area divided by the throat area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.propellant_characteristic_velocity`
+              - Get or set the propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine).
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.propellant_specific_heat_ratio`
+              - Get or set the ratio of the propellant's constant-pressure specific heat to the constant volume specific heat.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.use_boost_sustain_mode`
+              - Opt for the engine to use a boost phase to achieve a target velocity and then transition to a sustenance phase.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import MissileRocketPropulsion
+
+
+Property detail
+---------------
+
+.. py:property:: boost_chamber_pressure
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.boost_chamber_pressure
+    :type: float
+
+    Get or set the combustion chamber pressure during the boost phase.
+
+.. py:property:: boost_fuel_fraction
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.boost_fuel_fraction
+    :type: float
+
+    Get or set the amount of fuel that is consumed during the boost phase.
+
+.. py:property:: combustion_chamber_pressure
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.combustion_chamber_pressure
+    :type: float
+
+    Get or set the pressure in the combustion chamber.
+
+.. py:property:: no_thrust_when_no_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.no_thrust_when_no_fuel
+    :type: bool
+
+    Opt to have no thrust if the fuel is empty.
+
+.. py:property:: nozzle_exit_diameter
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.nozzle_exit_diameter
+    :type: float
+
+    Get or set the diameter of the nozzle exit.
+
+.. py:property:: nozzle_expansion_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.nozzle_expansion_ratio
+    :type: float
+
+    Get or set the exit area divided by the throat area.
+
+.. py:property:: propellant_characteristic_velocity
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.propellant_characteristic_velocity
+    :type: float
+
+    Get or set the propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine).
+
+.. py:property:: propellant_specific_heat_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.propellant_specific_heat_ratio
+    :type: float
+
+    Get or set the ratio of the propellant's constant-pressure specific heat to the constant volume specific heat.
+
+.. py:property:: use_boost_sustain_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion.use_boost_sustain_mode
+    :type: bool
+
+    Opt for the engine to use a boost phase to achieve a target velocity and then transition to a sustenance phase.
+
+

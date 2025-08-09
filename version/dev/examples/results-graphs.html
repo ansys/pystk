@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Results and graphs &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/results-graphs';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Access between facility and satellite calculator" href="facility-to-satellite-access.html" />
+    <link rel="prev" title="Create and load scenarios" href="create-load-scenarios.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/results-graphs.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Results and graphs</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/results-graphs.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Results-and-graphs">
+<h1>Results and graphs<a class="headerlink" href="#Results-and-graphs" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how the STK object model provides direct access to the data provider tools exposed by each object in STK that form the foundation of the report styles in the GUI.</p>
+<p>The following example uses the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report to demonstrate the retrieval of data through the object model. This report consists of specific J2000 data provider elements from two groups: <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code>.</p>
+<p><img alt="The J2000 Position Velocity report contents" src="../_images/object-model-report-contents.png" /></p>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+<p>Create an STK scenario using the STK Root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;GraphsAndResults&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_widget</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "47ef8708803d46d0a07b39127f227298"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_results-graphs_10_1.png" src="../_images/examples_results-graphs_10_1.png" />
+</div>
+</div>
+<p>Show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_widget</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5615f3cc9b074c6f94c1da62090bfe37"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_results-graphs_12_1.png" src="../_images/examples_results-graphs_12_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Adding-a-satellite-to-the-scenario">
+<h2>Adding a satellite to the scenario<a class="headerlink" href="#Adding-a-satellite-to-the-scenario" title="Link to this heading">#</a></h2>
+<p>Now that a new scenario is available, add a new satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;SatelliteTwoBody&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Ensure that the satellite’s associated times use the scenario’s times as well.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorTwoBody</span><span class="p">,</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">TWO_BODY</span><span class="p">)</span>
+
+<span class="n">propagator</span> <span class="o">=</span> <span class="n">PropagatorTwoBody</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span><span class="p">)</span>
+<span class="n">propagator</span><span class="o">.</span><span class="n">ephemeris_interval</span><span class="o">.</span><span class="n">set_start_and_stop_times</span><span class="p">(</span>
+    <span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span>
+<span class="p">)</span>
+
+<span class="n">propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Setup-data-providers-for-use-in-the-object-model">
+<h2>Setup data providers for use in the object model<a class="headerlink" href="#Setup-data-providers-for-use-in-the-object-model" title="Link to this heading">#</a></h2>
+<p>To retrieve the data for the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report, setup its specific data providers for use in the Object Model. Use the various <code class="docutils literal notranslate"><span class="pre">DataProvider</span></code> interfaces to do this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataProviderGroup</span>
+
+
+<span class="n">cart_vel</span> <span class="o">=</span> <span class="n">DataProviderGroup</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">&quot;Cartesian Velocity&quot;</span><span class="p">])</span>
+<span class="n">cart_pos</span> <span class="o">=</span> <span class="n">DataProviderGroup</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">&quot;Cartesian Position&quot;</span><span class="p">])</span>
+
+<span class="n">cart_vel_j2000</span> <span class="o">=</span> <span class="n">cart_vel</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;J2000&quot;</span><span class="p">)</span>
+<span class="n">cart_pos_j2000</span> <span class="o">=</span> <span class="n">cart_pos</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;J2000&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataProviderCollection</span></code> and <code class="docutils literal notranslate"><span class="pre">DataProviderGroup</span></code> variables can be used to access information about the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Some data providers available for the the &quot;SatelliteTwoBody&quot; satellite:&#39;</span><span class="p">)</span>
+
+<span class="n">data_providers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_providers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">...and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_providers</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s2"> more &quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_providers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some data providers within the Cartesian Velocity group:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cart_vel</span><span class="o">.</span><span class="n">group</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some data providers within the Cartesian Position group:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cart_pos</span><span class="o">.</span><span class="n">group</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Some data providers available for the the &#34;SatelliteTwoBody&#34; satellite:
+        Active Constraints
+        All Constraints
+        Angles
+        Articulation
+        Astrogator Accel Hist
+        Astrogator Log
+        Astrogator MCS Ephemeris Segments
+        Astrogator Maneuver Ephemeris Block Final
+        Astrogator Maneuver Ephemeris Block History
+        Astrogator Maneuver Ephemeris Block Initial
+        ...and 150 more
+Some data providers within the Cartesian Velocity group:
+        TrueOfDateRotating
+        Fixed
+        ICRF
+        MeanOfDate
+        MeanOfEpoch
+        TrueOfDate
+        TrueOfEpoch
+        B1950
+        TEMEOfEpoch
+        TEMEOfDate
+        AlignmentAtEpoch
+        J2000
+Some data providers within the Cartesian Position group:
+        TrueOfDateRotating
+        Fixed
+        ICRF
+        MeanOfDate
+        MeanOfEpoch
+        TrueOfDate
+        TrueOfEpoch
+        B1950
+        TEMEOfEpoch
+        TEMEOfDate
+        AlignmentAtEpoch
+        J2000
+</pre></div></div>
+</div>
+<p>The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface with inputs so it can compute the proper data.</p>
+</section>
+<section id="Data-provider-%22PreData%22-inputs">
+<h2>Data provider “PreData” inputs<a class="headerlink" href="#Data-provider-%22PreData%22-inputs" title="Link to this heading">#</a></h2>
+<p>Some data providers require input data before the calculation can provide data results. This data is known as PreData. There are two ways to ascertain if PreData is required for a particular data provider:</p>
+<ul class="simple">
+<li><p>Refer to the data provider documentation which provides the format of the PreData if any is required.</p></li>
+<li><p>Retrieve the data provider schema and parse it for PreData tags.</p></li>
+</ul>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">DataProviderCollection.get_schema()</span></code> method to get the schema for all STK data providers.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">get_schema</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>Once the format of the PreData is known, set the <code class="docutils literal notranslate"><span class="pre">IDataProvider.pre_data</span></code> property. This property must be set before issuing the data provider’s calculation method.</p>
+</section>
+<section id="Set-the-pre_data-property-on-the-IDataProvider-interface">
+<h2>Set the <code class="docutils literal notranslate"><span class="pre">pre_data</span></code> property on the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface<a class="headerlink" href="#Set-the-pre_data-property-on-the-IDataProvider-interface" title="Link to this heading">#</a></h2>
+<p>The following example demonstrates setting the satellite’s object path as the PreData for the <code class="docutils literal notranslate"><span class="pre">RIC</span> <span class="pre">Coordinates</span></code> data provider and then calls the data provider’s computation execution method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataProviderResult</span><span class="p">,</span> <span class="n">DataProviderTimeVarying</span>
+
+
+<span class="n">provider</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">data_providers</span><span class="p">[</span><span class="s2">&quot;RIC Coordinates&quot;</span><span class="p">])</span>
+
+<span class="n">provider</span><span class="o">.</span><span class="n">pre_data</span> <span class="o">=</span> <span class="s2">&quot;Satellite/SatelliteTwoBody&quot;</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Data-provider-time-inputs">
+<h2>Data provider time inputs<a class="headerlink" href="#Data-provider-time-inputs" title="Link to this heading">#</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Period</span></code> section of the <code class="docutils literal notranslate"><span class="pre">Report</span></code> window in STK, highlight <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Specify</span> <span class="pre">Time</span> <span class="pre">Properties</span></code> radio button. The <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report uses a time period to provide the underlying data provider’s information about what data to compute. Provide the same information to the object model data providers.</p>
+<p><img alt="Report time properties" src="../_images/specify-time-properties.png" /></p>
+</section>
+<section id="Retrieve-the-data">
+<h2>Retrieve the data<a class="headerlink" href="#Retrieve-the-data" title="Link to this heading">#</a></h2>
+<p>There are three ways to compute the data, depending on the data provider type. The first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time.</p>
+<p>Provide input information to the data providers by casting the data provider interfaces to the proper execution interface. In the case of the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code> data providers, cast to <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_time_var</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">cart_vel_j2000</span><span class="p">)</span>
+<span class="n">pos_time_var</span> <span class="o">=</span> <span class="n">DataProviderTimeVarying</span><span class="p">(</span><span class="n">cart_pos_j2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Retrieve the information from the data providers. The data is always returned as a <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> object. Provide the <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying.execute()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying</span></code> interfaces with the data provider inputs (start time, stop time, and step size):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_result</span> <span class="o">=</span> <span class="n">vel_time_var</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pos_result</span> <span class="o">=</span> <span class="n">pos_time_var</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vel_result</span></code> and <code class="docutils literal notranslate"><span class="pre">pos_result</span></code> now contain the data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span></code> data providers, more data than the original report contained.</p>
+</section>
+<section id="Retrieve-specific-elements">
+<h2>Retrieve specific elements<a class="headerlink" href="#Retrieve-specific-elements" title="Link to this heading">#</a></h2>
+<p>Recall that the original <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report contained only four elements of the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span> <span class="pre">J2000</span></code> group: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Similarly, the <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Position</span> <span class="pre">J2000</span></code> data provider contained within your report style only contains three elements: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<p>When the J2000 data provider of <code class="docutils literal notranslate"><span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> was executed, seven elements were retrieved instead of the four specifically contained in the report, adding the <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">radial</span></code>, and <code class="docutils literal notranslate"><span class="pre">intrack</span></code> elements to the <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code>. To be precise as possible, DataProviderResult<code class="docutils literal notranslate"><span class="pre">should</span> <span class="pre">contain</span> <span class="pre">only</span> <span class="pre">the</span> <span class="pre">elements</span> <span class="pre">which</span> <span class="pre">were</span> <span class="pre">contained</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">original</span> <span class="pre">report.</span> <span class="pre">To</span> <span class="pre">do</span> <span class="pre">this,</span> <span class="pre">use</span> <span class="pre">the</span></code>DataProviderTimeVarying.execute_elements()` method.</p>
+<p>First, specify in an array the elements to retrieve from the data provider. Next, pass the array into <code class="docutils literal notranslate"><span class="pre">DataProviderTimeVarying.execute_elements()</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_elems</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;speed&quot;</span><span class="p">]</span>
+<span class="n">pos_elems</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
+
+<span class="n">vel_result</span> <span class="o">=</span> <span class="n">vel_time_var</span><span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+    <span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">vel_elems</span>
+<span class="p">)</span>
+<span class="n">pos_result</span> <span class="o">=</span> <span class="n">pos_time_var</span><span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+    <span class="s2">&quot;1 Jul 2020 17:14:00.00&quot;</span><span class="p">,</span> <span class="s2">&quot;1 Jul 2020 17:29:00.00&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">pos_elems</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The original data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report is now stored in <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> objects and ready to traverse.</p>
+</section>
+<section id="Traverse-the-result-data">
+<h2>Traverse the result data<a class="headerlink" href="#Traverse-the-result-data" title="Link to this heading">#</a></h2>
+<p>Review the original report. The data in the report consisted of time intervals with various elements.</p>
+<p><img alt="Original report" src="../_images/original-report-data.png" /></p>
+<p>Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Cartesian</span> <span class="pre">Velocity</span></code> and <code class="docutils literal notranslate"><span class="pre">Position</span></code> data providers, that interface is the <code class="docutils literal notranslate"><span class="pre">DataProviderResultIntervalCollection</span></code>. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">write_interval_data</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">DataProviderResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Traverse and write the data stored in a DataProviderResult.&quot;&quot;&quot;</span>
+    <span class="n">intervals</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">intervals</span>
+
+    <span class="c1"># iterate through the intervals</span>
+    <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Interval from </span><span class="si">{</span><span class="n">interval</span><span class="o">.</span><span class="n">start_time</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">interval</span><span class="o">.</span><span class="n">stop_time</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+
+        <span class="c1"># iterate through the datasets stored in the interval</span>
+        <span class="k">for</span> <span class="n">data_set</span> <span class="ow">in</span> <span class="n">interval</span><span class="o">.</span><span class="n">data_sets</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Found </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2"> values for </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">element_name</span><span class="si">}</span><span class="s2"> (element type </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">element_type</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">data_set</span><span class="o">.</span><span class="n">dimension_name</span><span class="si">}</span><span class="s2"> dimension):&quot;</span>
+            <span class="p">)</span>
+
+            <span class="c1"># get the values stored in the datasets</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+
+            <span class="c1"># iterate through the array of values</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> the type of data returned by the DataProvider can be determined using the <code class="docutils literal notranslate"><span class="pre">DataProviderResult.category</span></code> property, which returns an enumeration describing the interface. The <code class="docutils literal notranslate"><span class="pre">DataProviderResult.value</span></code> property is then cast to one of three interfaces, depending on the category enumeration: <code class="docutils literal notranslate"><span class="pre">DataProviderResultIntervalCollection</span></code>, <code class="docutils literal notranslate"><span class="pre">DataProviderResultSubSectionCollection</span></code>, or <code class="docutils literal notranslate"><span class="pre">DataProviderResultTextMessage</span></code>.</p>
+</section>
+<section id="Complete-the-output">
+<h2>Complete the output<a class="headerlink" href="#Complete-the-output" title="Link to this heading">#</a></h2>
+<p>Finally, call the method with <code class="docutils literal notranslate"><span class="pre">DataProviderResult</span></code> arguments. The data from the <code class="docutils literal notranslate"><span class="pre">J2000</span> <span class="pre">Position</span> <span class="pre">Velocity</span></code> report is traversed and output:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position Results:&quot;</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">pos_result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velocity Results:&quot;</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">vel_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Position Results:
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Distance dimension):
+                6678.136999999842
+                6662.055595999814
+                6613.888738883715
+                6533.868407417515
+                6422.379991449177
+                6279.960435813884
+                6107.295654327432
+                5905.217226323169
+                5674.698391641722
+                5416.849363363476
+                5132.911980855586
+                4824.253728889795
+                4492.361151630885
+                4138.832693218803
+                3765.3709994230403
+                3373.77471744714
+        Found 16 values for y (element type 0, Distance dimension):
+                1.2844455118041068e-07
+                407.04478219807294
+                812.1291759033289
+                1213.3022344024714
+                1608.6318484279448
+                1996.2140516114755
+                2374.1821902710767
+                2740.715913492852
+                3094.049940212913
+                3432.4825610729454
+                3754.3838341085398
+                4058.203434790289
+                4342.478122619497
+                4605.838788311895
+                4847.017047632431
+                5064.851350122475
+        Found 16 values for z (element type 0, Distance dimension):
+                -0.0014439285727015064
+                221.00581861546254
+                440.9486841830188
+                658.7678751383198
+                873.4143417791785
+                1083.8543147167877
+                1289.0742836632373
+                1488.0858786481817
+                1679.9306301559957
+                1863.6845852578706
+                2038.4627575068937
+                2203.423389164732
+                2357.7720052324125
+                2500.7652397603797
+                2631.7144160097528
+                2749.988863222182
+Velocity Results:
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Rate dimension):
+                7.969357629372144e-07
+                -0.5358323531434941
+                -1.0690848547132925
+                -1.597188484213541
+                -2.1175998158204066
+                -2.627812470963073
+                -3.1253691894177638
+                -3.6078736638386957
+                -4.073002080732068
+                -4.5185143122870635
+                -4.942264705167773
+                -5.342212414297114
+                -5.716431231872658
+                -6.063118864269918
+                -6.380605612157488
+                -6.6673624120176225
+        Found 16 values for y (element type 0, Rate dimension):
+                6.789530475108605
+                6.7731807795289605
+                6.724210435379403
+                6.642855291139251
+                6.529507165313793
+                6.384711959378201
+                6.20916702863432
+                6.003717823643776
+                5.7693538184117195
+                5.507203744933367
+                5.218530157050754
+                4.9047233498069955
+                4.567294663576756
+                4.207869205226281
+                3.8281780213560204
+                3.4300497613226204
+        Found 16 values for z (element type 0, Rate dimension):
+                3.686413846300054
+                3.6775368027751996
+                3.650948193658638
+                3.6067760736564716
+                3.545233182285063
+                3.466615919285813
+                3.3713029171197983
+                3.2597532174173915
+                3.1325040601653185
+                2.9901682962787737
+                2.8334314360200348
+                2.6630483474788242
+                2.4798396210150284
+                2.284687617173175
+                2.0785322171024756
+                1.8623662959490732
+        Found 16 values for speed (element type 0, Rate dimension):
+                7.725760229169805
+                7.725760229169805
+                7.725760229169805
+                7.725760229169806
+                7.725760229169804
+                7.725760229169806
+                7.725760229169804
+                7.725760229169804
+                7.725760229169803
+                7.725760229169802
+                7.7257602291698015
+                7.725760229169803
+                7.7257602291698015
+                7.725760229169802
+                7.725760229169805
+                7.725760229169806
+</pre></div></div>
+</div>
+<p>As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling <code class="docutils literal notranslate"><span class="pre">write_interval_data()</span></code> changes the data that is output to be displayed in meters per second, rather then kilometers per second.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">&quot;DistanceUnit&quot;</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">pos_result</span><span class="p">)</span>
+<span class="n">write_interval_data</span><span class="p">(</span><span class="n">vel_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Distance dimension):
+                6678136.999999843
+                6662055.595999814
+                6613888.738883715
+                6533868.407417515
+                6422379.991449177
+                6279960.435813884
+                6107295.654327433
+                5905217.226323169
+                5674698.391641722
+                5416849.3633634765
+                5132911.980855586
+                4824253.728889795
+                4492361.151630885
+                4138832.693218803
+                3765370.99942304
+                3373774.7174471403
+        Found 16 values for y (element type 0, Distance dimension):
+                0.00012844455118041069
+                407044.78219807293
+                812129.1759033289
+                1213302.2344024715
+                1608631.8484279448
+                1996214.0516114754
+                2374182.1902710767
+                2740715.913492852
+                3094049.940212913
+                3432482.5610729456
+                3754383.83410854
+                4058203.434790289
+                4342478.122619498
+                4605838.788311895
+                4847017.047632431
+                5064851.350122475
+        Found 16 values for z (element type 0, Distance dimension):
+                -1.4439285727015063
+                221005.81861546254
+                440948.6841830188
+                658767.8751383198
+                873414.3417791785
+                1083854.3147167878
+                1289074.2836632372
+                1488085.8786481817
+                1679930.6301559957
+                1863684.5852578706
+                2038462.7575068937
+                2203423.389164732
+                2357772.0052324124
+                2500765.23976038
+                2631714.4160097525
+                2749988.863222182
+Interval from 1 Jul 2020 17:14:00.000 to 1 Jul 2020 17:29:00.000:
+        Found 16 values for x (element type 0, Rate dimension):
+                0.0007969357629372144
+                -535.8323531434941
+                -1069.0848547132925
+                -1597.1884842135412
+                -2117.5998158204065
+                -2627.812470963073
+                -3125.3691894177637
+                -3607.873663838696
+                -4073.002080732068
+                -4518.514312287063
+                -4942.264705167773
+                -5342.212414297114
+                -5716.431231872658
+                -6063.118864269918
+                -6380.605612157488
+                -6667.362412017623
+        Found 16 values for y (element type 0, Rate dimension):
+                6789.530475108605
+                6773.180779528961
+                6724.210435379403
+                6642.855291139252
+                6529.507165313793
+                6384.711959378201
+                6209.16702863432
+                6003.717823643777
+                5769.35381841172
+                5507.2037449333675
+                5218.5301570507545
+                4904.723349806995
+                4567.294663576756
+                4207.869205226281
+                3828.1780213560205
+                3430.0497613226203
+        Found 16 values for z (element type 0, Rate dimension):
+                3686.413846300054
+                3677.5368027751997
+                3650.948193658638
+                3606.7760736564715
+                3545.2331822850633
+                3466.6159192858127
+                3371.302917119798
+                3259.7532174173916
+                3132.5040601653186
+                2990.1682962787736
+                2833.4314360200347
+                2663.0483474788243
+                2479.8396210150286
+                2284.687617173175
+                2078.5322171024754
+                1862.3662959490732
+        Found 16 values for speed (element type 0, Rate dimension):
+                7725.760229169805
+                7725.760229169805
+                7725.760229169805
+                7725.760229169806
+                7725.760229169804
+                7725.760229169806
+                7725.760229169804
+                7725.760229169804
+                7725.760229169803
+                7725.760229169802
+                7725.760229169801
+                7725.760229169803
+                7725.760229169801
+                7725.760229169802
+                7725.760229169805
+                7725.760229169806
+</pre></div></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"9b03f22fbe2c47e982569f060c89def1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "78e46e92b0044c53ade67b0b1d62a59b": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_9b03f22fbe2c47e982569f060c89def1", "resizable": true, "tabbable": null, "tooltip": null}}, "fba2770bd71d473e97046499bd62ccfd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "47ef8708803d46d0a07b39127f227298": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_fba2770bd71d473e97046499bd62ccfd", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "24103eb26b934f7a811feb6c42f8d0c5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e5e500c6c8d942938da1e5d55a4ae253": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_24103eb26b934f7a811feb6c42f8d0c5", "resizable": true, "tabbable": null, "tooltip": null}}, "06a910aebf0e4cdebe4bb40a2b132501": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5615f3cc9b074c6f94c1da62090bfe37": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_06a910aebf0e4cdebe4bb40a2b132501", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="create-load-scenarios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Create and load scenarios</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="facility-to-satellite-access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Access between facility and satellite calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Adding-a-satellite-to-the-scenario">Adding a satellite to the scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Setup-data-providers-for-use-in-the-object-model">Setup data providers for use in the object model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-provider-%22PreData%22-inputs">Data provider “PreData” inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-pre_data-property-on-the-IDataProvider-interface">Set the <code class="docutils literal notranslate"><span class="pre">pre_data</span></code> property on the <code class="docutils literal notranslate"><span class="pre">IDataProvider</span></code> interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-provider-time-inputs">Data provider time inputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Retrieve-the-data">Retrieve the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Retrieve-specific-elements">Retrieve specific elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Traverse-the-result-data">Traverse the result data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Complete-the-output">Complete the output</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/results-graphs.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/results-graphs.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

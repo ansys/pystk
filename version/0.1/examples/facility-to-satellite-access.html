@@ -1,0 +1,1589 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Access between facility and satellite calculator &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/facility-to-satellite-access';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sensors and access" href="sensor-access.html" />
+    <link rel="prev" title="Results and graphs" href="results-graphs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/facility-to-satellite-access.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Access between facility and satellite calculator</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/facility-to-satellite-access.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/facility-to-satellite-access.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/facility-to-satellite-access.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Access-between-facility-and-satellite-calculator">
+<h1>Access between facility and satellite calculator<a class="headerlink" href="#Access-between-facility-and-satellite-calculator" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stkdevkit/Content/stkObjects/ObjectModelTutorial.html">this tutorial</a>.</p>
+<section id="What-is-access?">
+<h2>What is access?<a class="headerlink" href="#What-is-access?" title="Link to this heading">#</a></h2>
+<p>The intervisibility or access calculation is the starting calculation for most STK analyses. Imagine a two-dimensional coordinate system. Regardless of where two distinct points are located, it is always possible to draw a line between the points. For an accurate analysis, the calculation needs to be restricted (constrained). This is done by adding access constraints. STK assumes that objects cannot “see” each other through the planet Earth by automatically enabling “Line of sight” constraint on
+all objects. However, in many cases, other access constraints are also needed. For example, it is possible to define constraints around many conditions including elevation angle, sun light or umbra restrictions, gimbal speed, range, and more. Access considering these constraints can be calculated between many kinds of objects, including sensors and satellites.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>A facility is located at latitude <span class="math notranslate nohighlight">\(40^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-80^\circ\)</span>. The facility includes a sensor with a pattern type of complex conic, with an inner cone half angle of <span class="math notranslate nohighlight">\(50^\circ\)</span>, an outer cone half angle of <span class="math notranslate nohighlight">\(90^\circ\)</span>, a minimum clock angle of <span class="math notranslate nohighlight">\(0^\circ\)</span>, and a maximum clock angle of <span class="math notranslate nohighlight">\(90^\circ\)</span>. The sensor has a maximum range of <span class="math notranslate nohighlight">\(40\)</span> km. The sensor interacts with the International Space Station (SSN number <span class="math notranslate nohighlight">\(25544\)</span>), which has an SPG4
+propagator. This satellite can also only be seen if it is directly illuminated by the Sun.</p>
+<p>Calculate the time periods during which the sensor can communicate with the satellite. Find the azimuth, elevation, and range of the satellite during these access periods. Finally, create a vector between the facility and satellite, and, for each access interval, determine at what time this vector was at a minimum magnitude.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create an STK scenario using the STK Root object:</p>
+<p><strong>Note:</strong> there can be only one scenario open at a time.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;SatelliteAccessScenario&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "69a6f7723882443898cc8b0e816a8009"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_facility-to-satellite-access_14_1.png" src="../_images/examples_facility-to-satellite-access_14_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;5 Jun 2022&quot;</span><span class="p">,</span> <span class="s2">&quot;6 Jun 2022&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-facility-object">
+<h2>Create a facility object<a class="headerlink" href="#Create-a-facility-object" title="Link to this heading">#</a></h2>
+<p>Create a Static STK Object (facility). All new objects are attached to an existing parent object. In this case, the new facility is added to the children collection of the scenario.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">facility</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">FACILITY</span><span class="p">,</span> <span class="s2">&quot;Philadelphia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> the “new” method returns an object of the <code class="docutils literal notranslate"><span class="pre">ISTKObject</span></code> type.</p>
+<section id="Set-the-facility-position">
+<h3>Set the facility position<a class="headerlink" href="#Set-the-facility-position" title="Link to this heading">#</a></h3>
+<p>By default, new facility and place objects are created at AGI’s main office location. It is possible to change the facility position.</p>
+<p>First set the position units to degrees:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;LatitudeUnit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">&quot;deg&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;LongitudeUnit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">&quot;deg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the position of the facility using a cartodetic (latitude, longitude, altitude) position. The <code class="docutils literal notranslate"><span class="pre">position</span></code> property is of the type <code class="docutils literal notranslate"><span class="pre">IPosition</span></code> located in the STK Utility library (<code class="docutils literal notranslate"><span class="pre">ansys.stk.core.stkutil</span></code>). Change the position of the facility to latitude <span class="math notranslate nohighlight">\(39.95^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-75.16^\circ\)</span>, which corresponds approximately to Philadelphia’s location:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facility</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_planetodetic</span><span class="p">(</span><span class="mf">39.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.16</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>To get the current position of the facility, run:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">altitude</span> <span class="o">=</span> <span class="n">facility</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">query_planetodetic_array</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">latitude</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">longitude</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">altitude</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+latitude = 39.95
+longitude = -75.16
+altitude = -0.021741627612921713
+</pre></div></div>
+</div>
+</section>
+<section id="Change-the-facility-label">
+<h3>Change the facility label<a class="headerlink" href="#Change-the-facility-label" title="Link to this heading">#</a></h3>
+<!-- Google.WordList.application = off --><p>The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the <code class="docutils literal notranslate"><span class="pre">IFacility</span></code> interface contains the <code class="docutils literal notranslate"><span class="pre">graphics</span></code> property, which in turn contains the <code class="docutils literal notranslate"><span class="pre">label_name</span></code> property. To change the label, the “Use Instance Name as Label” property must first be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">facility</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">use_instance_name_label</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">facility</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">label_name</span> <span class="o">=</span> <span class="s2">&quot;Philadelphia Facility&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-a-sensor-to-a-facility">
+<h3>Add a sensor to a facility<a class="headerlink" href="#Add-a-sensor-to-a-facility" title="Link to this heading">#</a></h3>
+<p>The Sensor object belongs to a group of sub objects. The Sensor object cannot exist by itself. It must be attached to another object, such as a facility or aircraft.</p>
+<p>It is possible to use the <code class="docutils literal notranslate"><span class="pre">children</span></code> collection of the facility object to check if “MySensor” is already part of the collection. If the sensor already exists, it is possible to get the sensor object from the children collection using the path from the facility to the sensor.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">facility</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;MySensor&quot;</span><span class="p">):</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_object_from_path</span><span class="p">(</span><span class="s2">&quot;Facility/MyFacility/Sensor/MySensor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In this case, the sensor has not yet been created, so create the object from the root:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">facility</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;MySensor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="Set-the-sensor-pattern">
+<h4>Set the sensor pattern<a class="headerlink" href="#Set-the-sensor-pattern" title="Link to this heading">#</a></h4>
+<p>Now, set the sensor’s pattern to complex conic. The default sensor object is defined as a simple conic sensor. So, the first step is to change the sensor type to complex conic. The API also provides a helper function to set the sensor pattern properties. To access this helper function, get an <code class="docutils literal notranslate"><span class="pre">ISensorCommonTasks</span></code> object through the sensor’s <code class="docutils literal notranslate"><span class="pre">common_tasks</span></code> property.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPattern</span>
+
+
+<span class="n">sensor</span><span class="o">.</span><span class="n">set_pattern_type</span><span class="p">(</span><span class="n">SensorPattern</span><span class="o">.</span><span class="n">COMPLEX_CONIC</span><span class="p">)</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_complex_conic</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorComplexConicPattern at 0x7fd77c05d550&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Add-access-constraints-to-the-sensor">
+<h4>Add access constraints to the sensor<a class="headerlink" href="#Add-access-constraints-to-the-sensor" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">access_constraints</span></code> property of the sensor holds an <code class="docutils literal notranslate"><span class="pre">AccessConstraintCollection</span></code>, which has an <code class="docutils literal notranslate"><span class="pre">add_constraint</span></code> method. Use this method to add a range constraint using the <code class="docutils literal notranslate"><span class="pre">ACCESS_CONSTRAINTS</span></code> enumeration.</p>
+<p>Add an access constraint to the sensor defining a maximum range of <span class="math notranslate nohighlight">\(40\)</span> km:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccessConstraintType</span>
+
+
+<span class="n">access_constraint</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This method returns an <code class="docutils literal notranslate"><span class="pre">IAccessConstraintMinMax</span></code> object, through it is possible to access the access constraint attributes. Use this object to enable a maximum range value and set it to 40 km (the units are set to km by default):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access_constraint</span><span class="o">.</span><span class="n">enable_maximum</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">access_constraint</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">40</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="Add-a-satellite-using-the-SPG4-propagator">
+<h3>Add a satellite using the SPG4 propagator<a class="headerlink" href="#Add-a-satellite-using-the-SPG4-propagator" title="Link to this heading">#</a></h3>
+<p><strong>Note:</strong> this portion requires internet access.</p>
+<p>First, create the satellite using online data for the International Space Station (SSN number <span class="math notranslate nohighlight">\(25544\)</span>):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">satellite</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;MySatellite&quot;</span><span class="p">)</span>
+<span class="n">satellite</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">SGP4</span><span class="p">)</span>
+<span class="n">propagator</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">propagator</span>
+<span class="n">propagator</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">add_segments_from_online_source</span><span class="p">(</span><span class="s2">&quot;25544&quot;</span><span class="p">)</span>
+<span class="n">propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The propagator property of the satellite returns an <code class="docutils literal notranslate"><span class="pre">IVehiclePropagatorSGP4</span></code> object, which has a <code class="docutils literal notranslate"><span class="pre">common_tasks</span></code> property. Through this property, it is possible to access <code class="docutils literal notranslate"><span class="pre">IVehiclePropagatorSGP4CommonTasks</span></code>, which holds helper methods for this propagator type. Then, use the <code class="docutils literal notranslate"><span class="pre">add_segs_from_online_source</span></code> helper method to add the satellite from the AGI server.</p>
+<p>Visualize the satellite’s orbit using the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">9520</span><span class="p">,</span> <span class="mi">14250</span><span class="p">,</span> <span class="mi">18300</span><span class="p">]</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_facility-to-satellite-access_54_0.png" src="../_images/examples_facility-to-satellite-access_54_0.png" />
+</div>
+</div>
+<section id="Add-access-constraints-to-the-satellite">
+<h4>Add access constraints to the satellite<a class="headerlink" href="#Add-access-constraints-to-the-satellite" title="Link to this heading">#</a></h4>
+<p>Since it is very hard to observe satellites when they are in the Earth’s shadow, add a direct sun constraint to the satellite object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConstraintLighting</span>
+
+
+<span class="n">lighting_constraint</span> <span class="o">=</span> <span class="n">satellite</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">LIGHTING</span>
+<span class="p">)</span>
+<span class="n">lighting_constraint</span><span class="o">.</span><span class="n">condition</span> <span class="o">=</span> <span class="n">ConstraintLighting</span><span class="o">.</span><span class="n">DIRECT_SUN</span>
+</pre></div>
+</div>
+</div>
+<p>Now that the satellite can only be “seen” if it is illuminated by the Sun, it is possible to run an access or intervisibility calculation.</p>
+</section>
+</section>
+<section id="Calculate-access">
+<h3>Calculate access<a class="headerlink" href="#Calculate-access" title="Link to this heading">#</a></h3>
+<p>Create and calculate the access between facility and satellite:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access</span> <span class="o">=</span> <span class="n">facility</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">satellite</span><span class="p">)</span>
+<span class="n">access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>It is possible to access results of STK calculations through data providers. The data providers in the object model are the equivalent of the Report and Graph Manager in the user interface.</p>
+</section>
+<section id="Get-AER-(azimuth,-elevation,-range)-access-results">
+<h3>Get AER (azimuth, elevation, range) access results<a class="headerlink" href="#Get-AER-(azimuth,-elevation,-range)-access-results" title="Link to this heading">#</a></h3>
+<p>Determine the access periods using the <code class="docutils literal notranslate"><span class="pre">computed_access_interval_times</span></code> property:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access_intervals</span> <span class="o">=</span> <span class="n">access</span><span class="o">.</span><span class="n">computed_access_interval_times</span>
+</pre></div>
+</div>
+</div>
+<p>Next, get the data provider corresponding to an AER report with the default reference frame.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access_data_provider_aer</span> <span class="o">=</span> <span class="n">access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;AER Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+<span class="n">data_provider_elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Azimuth&quot;</span><span class="p">,</span> <span class="s2">&quot;Elevation&quot;</span><span class="p">,</span> <span class="s2">&quot;Range&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Execute the element call return results based on the time interval and time step. The “data sets” represent columns of the report. The order of the columns is the same as in the report. The order of the columns requested in the elements array is ignored. Since the data is returned in the columns format, create lists that represents the rows of data:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">access_intervals</span><span class="o">.</span><span class="n">count</span><span class="p">):</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">access_intervals</span><span class="o">.</span><span class="n">get_interval</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">data_provider_result</span> <span class="o">=</span> <span class="n">access_data_provider_aer</span><span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+        <span class="n">times</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">times</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data_provider_elements</span>
+    <span class="p">)</span>
+    <span class="n">time_values</span> <span class="o">=</span> <span class="n">data_provider_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">get_data_set_by_name</span><span class="p">(</span>
+        <span class="s2">&quot;Time&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+    <span class="n">azimuth_values</span> <span class="o">=</span> <span class="n">data_provider_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">get_data_set_by_name</span><span class="p">(</span>
+        <span class="s2">&quot;Azimuth&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+    <span class="n">elevation_values</span> <span class="o">=</span> <span class="n">data_provider_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">get_data_set_by_name</span><span class="p">(</span>
+        <span class="s2">&quot;Elevation&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+    <span class="n">range_values</span> <span class="o">=</span> <span class="n">data_provider_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">get_data_set_by_name</span><span class="p">(</span>
+        <span class="s2">&quot;Range&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">get_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Alternately, convert all the data provider data sets corresponding to the entire scenario duration to a pandas <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aer_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;AER Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">aer_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>time</th>
+      <th>azimuth</th>
+      <th>elevation</th>
+      <th>range</th>
+      <th>azimuthrate</th>
+      <th>elevationrate</th>
+      <th>rangerate</th>
+      <th>path delay</th>
+      <th>from precision pass</th>
+      <th>to precision pass</th>
+      <th>from precision path</th>
+      <th>to precision path</th>
+      <th>strand name</th>
+      <th>local hour angle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5 Jun 2022 00:24:37.599089028</td>
+      <td>300.052762</td>
+      <td>0.000244</td>
+      <td>2358.923995</td>
+      <td>-0.041374</td>
+      <td>0.060051</td>
+      <td>-6.7179</td>
+      <td>0.007869</td>
+      <td>0.0</td>
+      <td>34329.307805</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>333.73539</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>5 Jun 2022 02:03:59.288830876</td>
+      <td>258.011356</td>
+      <td>0.000001</td>
+      <td>2346.569117</td>
+      <td>-0.169754</td>
+      <td>0.020131</td>
+      <td>-2.283346</td>
+      <td>0.007827</td>
+      <td>0.0</td>
+      <td>34330.377019</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>336.219909</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>5 Jun 2022 15:31:07.170631212</td>
+      <td>184.239352</td>
+      <td>0.000003</td>
+      <td>2349.565768</td>
+      <td>-0.102938</td>
+      <td>0.051089</td>
+      <td>-5.655068</td>
+      <td>0.007837</td>
+      <td>0.0</td>
+      <td>34339.069955</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>358.445653</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>5 Jun 2022 17:06:27.701139550</td>
+      <td>235.590097</td>
+      <td>0.000066</td>
+      <td>2355.009054</td>
+      <td>0.011451</td>
+      <td>0.062082</td>
+      <td>-6.887626</td>
+      <td>0.007855</td>
+      <td>0.0</td>
+      <td>34340.096808</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>341.332402</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5 Jun 2022 18:44:12.639419811</td>
+      <td>277.398778</td>
+      <td>0.000008</td>
+      <td>2362.494324</td>
+      <td>0.085647</td>
+      <td>0.054447</td>
+      <td>-6.051478</td>
+      <td>0.00788</td>
+      <td>0.0</td>
+      <td>34341.149579</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>333.509388</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5251</th>
+      <td>4</td>
+      <td>5 Jun 2022 17:17:22.767001058</td>
+      <td>51.869375</td>
+      <td>0.000003</td>
+      <td>2365.638229</td>
+      <td>0.012308</td>
+      <td>-0.061728</td>
+      <td>6.8808</td>
+      <td>0.007891</td>
+      <td>0.0</td>
+      <td>34340.214394</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>Facility/Philadelphia to Satellite/MySatellite</td>
+      <td>25.17837</td>
+    </tr>
+    <tr>
+      <th>5252</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>5253</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>5254</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>5255</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+<p>5256 rows × 15 columns</p>
+</div></div>
+</div>
+<p>Visualize the data using a line chart:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Convert columns to correct types</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;azimuth&quot;</span><span class="p">,</span> <span class="s2">&quot;elevation&quot;</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">]</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">aer_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create a plot and duplicate the x-axis</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot range, azimuth, and elevation, grouped by access interval</span>
+<span class="n">aer_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;access number&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Range (km)&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span>
+<span class="p">)</span>
+<span class="n">aer_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;access number&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;azimuth&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;skyblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Azimuth (deg)&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span>
+<span class="p">)</span>
+<span class="n">aer_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;access number&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;elevation&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Elevation (deg)&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Azimuth, Elevation, and Range over Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Angle (deg)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Distance (km)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine legends</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span> <span class="k">if</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">[:</span><span class="n">i</span><span class="p">]]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">unique</span><span class="p">),</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower center&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="c1"># Set major and minor locators</span>
+<span class="n">xlocator_major</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">HourLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xlocator_minor</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">HourLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">xlocator_major</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">xlocator_minor</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_facility-to-satellite-access_73_0.png" src="../_images/examples_facility-to-satellite-access_73_0.png" />
+</div>
+</div>
+<p>Or, convert the data to a numpy array:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_provider_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[&#39;5 Jun 2022 23:36:17.228000000&#39;, &#39;304.6597384798389&#39;,
+        &#39;7.690884734202653e-05&#39;, &#39;2360.8072164694368&#39;],
+       [&#39;5 Jun 2022 23:36:18.000000000&#39;, &#39;304.64976739063997&#39;,
+        &#39;0.047668870883251606&#39;, &#39;2355.491774173851&#39;],
+       [&#39;5 Jun 2022 23:36:19.000000000&#39;, &#39;304.63676679432916&#39;,
+        &#39;0.10947486636925786&#39;, &#39;2348.6066136850327&#39;],
+       [&#39;5 Jun 2022 23:36:20.000000000&#39;, &#39;304.62366979261054&#39;,
+        &#39;0.17146102149218695&#39;, &#39;2341.7216101435324&#39;],
+       [&#39;5 Jun 2022 23:36:21.000000000&#39;, &#39;304.61047553312335&#39;,
+        &#39;0.23362894252280153&#39;, &#39;2334.836770212341&#39;],
+       [&#39;5 Jun 2022 23:36:22.000000000&#39;, &#39;304.5971831301829&#39;,
+        &#39;0.29598022754408626&#39;, &#39;2327.9521035815387&#39;],
+       [&#39;5 Jun 2022 23:36:23.000000000&#39;, &#39;304.5837917104987&#39;,
+        &#39;0.3585165199533179&#39;, &#39;2321.0676170917422&#39;],
+       [&#39;5 Jun 2022 23:36:24.000000000&#39;, &#39;304.5703003198983&#39;,
+        &#39;0.42123940150189604&#39;, &#39;2314.183326494246&#39;],
+       [&#39;5 Jun 2022 23:36:25.000000000&#39;, &#39;304.5567080625841&#39;,
+        &#39;0.48415055325898415&#39;, &#39;2307.2992388161165&#39;],
+       [&#39;5 Jun 2022 23:36:26.000000000&#39;, &#39;304.54301403193233&#39;,
+        &#39;0.5472516759227987&#39;, &#39;2300.415361177397&#39;]], dtype=&#39;&lt;U32&#39;)
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Analysis-Workbench">
+<h2>Analysis Workbench<a class="headerlink" href="#Analysis-Workbench" title="Link to this heading">#</a></h2>
+<section id="Create-a-vector-between-the-satellite-and-facility-objects">
+<h3>Create a vector between the satellite and facility objects<a class="headerlink" href="#Create-a-vector-between-the-satellite-and-facility-objects" title="Link to this heading">#</a></h3>
+<p>AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench capability is located in the <code class="docutils literal notranslate"><span class="pre">vgt</span></code> property of the <code class="docutils literal notranslate"><span class="pre">ISTKObject</span></code> interface.</p>
+<p>Create a vector between the satellite and facility objects:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.analysis_workbench</span><span class="w"> </span><span class="kn">import</span> <span class="n">VectorType</span>
+
+
+<span class="n">vector</span> <span class="o">=</span> <span class="n">facility</span><span class="o">.</span><span class="n">analysis_workbench_components</span><span class="o">.</span><span class="n">vectors</span><span class="o">.</span><span class="n">factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="s2">&quot;FromTo&quot;</span><span class="p">,</span> <span class="s2">&quot;Vector description&quot;</span><span class="p">,</span> <span class="n">VectorType</span><span class="o">.</span><span class="n">DISPLACEMENT</span>
+<span class="p">)</span>
+<span class="n">vector</span><span class="o">.</span><span class="n">destination</span><span class="o">.</span><span class="n">set_point</span><span class="p">(</span>
+    <span class="n">satellite</span><span class="o">.</span><span class="n">analysis_workbench_components</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Center&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Visualize the vector and set its size to <span class="math notranslate nohighlight">\(4.0\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeometricElementType</span>
+
+
+<span class="n">boresight_vector</span> <span class="o">=</span> <span class="n">facility</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">vector_geometry_tool_components</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">GeometricElementType</span><span class="o">.</span><span class="n">VECTOR_ELEMENT</span><span class="p">,</span> <span class="s2">&quot;Facility/Philadelphia FromTo Vector&quot;</span>
+<span class="p">)</span>
+<span class="n">facility</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">vector_size_scale</span> <span class="o">=</span> <span class="mf">4.0</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> all vectors on the single object are the same size. To modify the vector’s appearance, it is necessary to set the global vector properties.</p>
+<p><strong>Note:</strong> the add method requires an object type as an enumeration and a fully qualified path to the Analysis Workbench object. The path consists of the path to the parent object, the object name, and the object type (<code class="docutils literal notranslate"><span class="pre">&quot;Facility/MyFacility</span> <span class="pre">FromTo</span> <span class="pre">Vector&quot;</span></code>).</p>
+<p>STK reports times of the local minimum, so get the vector between objects and calculate the vector’s magnitude for each local minimum time:</p>
+<p>First, get the built in calculation object from Analysis Workbench:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parameter_sets</span> <span class="o">=</span> <span class="n">access</span><span class="o">.</span><span class="n">analysis_workbench_components</span><span class="o">.</span><span class="n">parameter_sets</span><span class="o">.</span><span class="n">item</span><span class="p">(</span>
+    <span class="s2">&quot;From-To-AER(Body)&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the magnitude vector:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">magnitude</span> <span class="o">=</span> <span class="n">parameter_sets</span><span class="o">.</span><span class="n">embedded_components</span><span class="o">.</span><span class="n">item</span><span class="p">(</span>
+    <span class="s2">&quot;From-To-AER(Body).Cartesian.Magnitude&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Get the times of the minimum value for each access interval:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_times</span> <span class="o">=</span> <span class="n">parameter_sets</span><span class="o">.</span><span class="n">embedded_components</span><span class="o">.</span><span class="n">item</span><span class="p">(</span>
+    <span class="s2">&quot;From-To-AER(Body).Cartesian.Magnitude.TimesOfLocalMin&quot;</span>
+<span class="p">)</span>
+<span class="n">time_array</span> <span class="o">=</span> <span class="n">min_times</span><span class="o">.</span><span class="n">find_times</span><span class="p">()</span><span class="o">.</span><span class="n">times</span>
+<span class="k">for</span> <span class="n">at_time</span> <span class="ow">in</span> <span class="n">time_array</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">magnitude</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">at_time</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Result at time </span><span class="si">{</span><span class="n">at_time</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Result at time 5 Jun 2022 00:29:54.346: 703.4346331456488
+Result at time 5 Jun 2022 02:05:48.301: 2218.532849415285
+Result at time 5 Jun 2022 15:35:34.641: 1392.327361190391
+Result at time 5 Jun 2022 17:11:54.368: 439.0647412531941
+Result at time 5 Jun 2022 18:49:07.715: 1152.8110323541014
+Result at time 5 Jun 2022 20:26:58.466: 1416.9342686962138
+Result at time 5 Jun 2022 22:04:43.134: 985.9089992272043
+Result at time 5 Jun 2022 23:41:43.194: 466.4188799077625
+</pre></div></div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"626db7affbab4ab6b93f3cf4342d5886": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a9bc8b50155e4869bc5feddf60da7096": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_626db7affbab4ab6b93f3cf4342d5886", "resizable": true, "tabbable": null, "tooltip": null}}, "0ffda8a058014f4e939f7f2435eff61b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "69a6f7723882443898cc8b0e816a8009": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_0ffda8a058014f4e939f7f2435eff61b", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="results-graphs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Results and graphs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sensor-access.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sensors and access</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-access?">What is access?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-facility-object">Create a facility object</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-facility-position">Set the facility position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Change-the-facility-label">Change the facility label</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-sensor-to-a-facility">Add a sensor to a facility</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-sensor-pattern">Set the sensor pattern</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-access-constraints-to-the-sensor">Add access constraints to the sensor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-a-satellite-using-the-SPG4-propagator">Add a satellite using the SPG4 propagator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-access-constraints-to-the-satellite">Add access constraints to the satellite</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-access">Calculate access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Get-AER-(azimuth,-elevation,-range)-access-results">Get AER (azimuth, elevation, range) access results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Analysis-Workbench">Analysis Workbench</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-vector-between-the-satellite-and-facility-objects">Create a vector between the satellite and facility objects</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/facility-to-satellite-access.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/facility-to-satellite-access.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

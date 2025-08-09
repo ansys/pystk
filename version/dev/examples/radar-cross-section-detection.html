@@ -1,0 +1,2349 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Radar cross section detection calculator &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/radar-cross-section-detection';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Communication link budget calculator" href="communication-link-calculator.html" />
+    <link rel="prev" title="Porkchop plots" href="porkchop-plots.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/radar-cross-section-detection.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Radar cross section detection calculator</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radar-cross-section-detection.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radar-cross-section-detection.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/radar-cross-section-detection.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Radar-cross-section-detection-calculator">
+<h1>Radar cross section detection calculator<a class="headerlink" href="#Radar-cross-section-detection-calculator" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to determine a radar’s ability to track differently sized targets with varying radar cross sections using Python and PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/StartRadar.htm">this</a> tutorial.</p>
+<section id="What-is-radar-cross-section?">
+<h2>What is radar cross section?<a class="headerlink" href="#What-is-radar-cross-section?" title="Link to this heading">#</a></h2>
+<p>One important property of a potential radar target is its radar cross section (RCS), which measures how easily the object can be detected by a radar, with a higher RCS corresponding to a more easily detected target. How easily an object can be detected has to do with its echo, which is a function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the same echo signal as the target if it were substituted for the target. Through STK, it is possible
+to either specify the RCS of all targets at the scenario level, or to specify the RCS individually for each target. It is also possible to select different RCS computation methods, including directly using a constant value, using output files from <a class="reference external" href="https://www.ansys.com/products/electronics/ansys-hfss">Ansys HFSS</a>, and using aspect dependent RCS files. Finally, STK supports the use of Swerling cases, which account for RCS fluctuations considering a range of fluctuation values and possible
+correlations between radar scans.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>A radar site which surveils aircraft flying over it is located at latitude <span class="math notranslate nohighlight">\(35.75174^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(139.35621^\circ\)</span>. The site’s antenna is located <span class="math notranslate nohighlight">\(50\)</span> ft above the ground. The radar site has a servo system for antenna positioning, modeled by a sensor with a simple conic field of view with a <span class="math notranslate nohighlight">\(2^\circ\)</span> half angle. The sensor locks onto aircraft. The sensor can track aircraft with an elevation angle from <span class="math notranslate nohighlight">\(0^\circ\)</span> to <span class="math notranslate nohighlight">\(30^\circ\)</span>, and a range of up to
+<span class="math notranslate nohighlight">\(150\)</span> km. Anything higher than <span class="math notranslate nohighlight">\(30^\circ\)</span> is the cone of silence in which the radar cannot track the aircraft. The sensor has a monostatic aircraft surveillance radar on it with a search/track mode. The radar has a waveform with a fixed pulse repetition frequency of <span class="math notranslate nohighlight">\(1000\)</span> Hz and a pulse width of <span class="math notranslate nohighlight">\(1\)</span> microsecond. The radar’s antenna is modeled by the cosine squared aperture rectangular antenna pattern, with an antenna transmit frequency between <span class="math notranslate nohighlight">\(2.7\)</span> and <span class="math notranslate nohighlight">\(2.9\)</span>
+GHz. The antenna also has an X dimension beamwidth of <span class="math notranslate nohighlight">\(5^\circ\)</span>, a Y dimension beamwidth of <span class="math notranslate nohighlight">\(1.4^\circ\)</span>, a design frequency of <span class="math notranslate nohighlight">\(2.8\)</span> GHz, a main-lobe gain of <span class="math notranslate nohighlight">\(34\)</span> dB, and an efficiency of <span class="math notranslate nohighlight">\(55\)</span>%. The radar’s transmitter has a frequency range of <span class="math notranslate nohighlight">\(2.7-2.9\)</span> GHz, a peak power of <span class="math notranslate nohighlight">\(20\)</span> kW, and uses linear polarization. The radar’s receiver uses linear polarization, and computes system noise temperature taking into account Sun and cosmic background noise.</p>
+<p>Using a test aircraft, determine if the aircraft surveillance radar can see a large aircraft (RCS: <span class="math notranslate nohighlight">\(19\)</span> dBsm), a medium aircraft (RCS: <span class="math notranslate nohighlight">\(10\)</span> dBsm), a small aircraft (RCS: <span class="math notranslate nohighlight">\(0\)</span> dBsm), and a bird (RCS: <span class="math notranslate nohighlight">\(-20\)</span> dBsm).</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create an STK scenario using the STK Root object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;IntroductionToRadar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_widget</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1f862abf293f4485bf4533257ff59b9b"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_13_1.png" src="../_images/examples_radar-cross-section-detection_13_1.png" />
+</div>
+</div>
+<p>Show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_widget</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "05b0136652624ba0bcbab62e1e3e5068"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_15_1.png" src="../_images/examples_radar-cross-section-detection_15_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;5 May 2024 03:00:00.000&quot;</span><span class="p">,</span> <span class="s2">&quot;5 May 2024 03:30:00.000&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-the-target-aircraft">
+<h2>Create the target aircraft<a class="headerlink" href="#Create-the-target-aircraft" title="Link to this heading">#</a></h2>
+<p>A test aircraft is used to analyze the airfield surveillance radar. Insert the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">aircraft</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">AIRCRAFT</span><span class="p">,</span> <span class="s2">&quot;TargetAircraft&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The aircraft’s route is designated by a great arc propagator, which uses waypoints to calculate how the aircraft flies. The aircraft flies between two waypoints. The first is located at latitude <span class="math notranslate nohighlight">\(37^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(139.7^\circ\)</span>, and the second is located at latitude <span class="math notranslate nohighlight">\(34^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(139.1^\circ\)</span>. The aircraft flies at an altitude of <span class="math notranslate nohighlight">\(25000\)</span> ft (<span class="math notranslate nohighlight">\(7.62\)</span> km) and a speed of <span class="math notranslate nohighlight">\(330\)</span> nm/hr at both waypoints.</p>
+<p>Insert the first waypoint:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint1</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">waypoint1</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mi">37</span>
+<span class="n">waypoint1</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="mf">139.7</span>
+<span class="n">waypoint1</span><span class="o">.</span><span class="n">altitude</span> <span class="o">=</span> <span class="mf">7.62</span>
+<span class="n">waypoint1</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">330</span>
+</pre></div>
+</div>
+</div>
+<p>Insert the second waypoint:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint2</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mi">34</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="mf">139.1</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">altitude</span> <span class="o">=</span> <span class="mf">7.62</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">330</span>
+</pre></div>
+</div>
+</div>
+<p>Then, propagate the aircraft’s route:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to view the aircraft’s route in the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_widget</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">12290</span><span class="p">,</span> <span class="mi">32850</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">map_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_30_0.png" src="../_images/examples_radar-cross-section-detection_30_0.png" />
+</div>
+</div>
+</section>
+<section id="Specify-the-radar-cross-section">
+<h2>Specify the radar cross section<a class="headerlink" href="#Specify-the-radar-cross-section" title="Link to this heading">#</a></h2>
+<p>Before setting up and constraining a radar system, STK allows the specification of a potential radar target’s radar cross section. Use the RCS of a popular four-engined turboprop transport aircraft.</p>
+<p>First, set the radar cross section’s <code class="docutils literal notranslate"><span class="pre">inherit</span></code> property to <code class="docutils literal notranslate"><span class="pre">False</span></code>. When the <code class="docutils literal notranslate"><span class="pre">inherit</span></code> property is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the RCS is inherited from the scenario. In this case, set the property to <code class="docutils literal notranslate"><span class="pre">False</span></code> to specify the RCS for only the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span><span class="o">.</span><span class="n">radar_cross_section</span><span class="o">.</span><span class="n">inherit</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Get the model’s first frequency band:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span> <span class="o">=</span> <span class="n">aircraft</span><span class="o">.</span><span class="n">radar_cross_section</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">frequency_bands</span><span class="p">[</span>
+    <span class="mi">0</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Configure the band to use a constant frequency:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">set_compute_strategy</span><span class="p">(</span><span class="s2">&quot;Constant Value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the constant frequency to <span class="math notranslate nohighlight">\(19\)</span> dBsm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">constant_value</span> <span class="o">=</span> <span class="mi">19</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the radar 3D graphics. Enable the visualization of RCS volume for the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aircraft</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">radar_cross_section</span><span class="o">.</span><span class="n">volume_graphics</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to see the aircraft’s constant RCS in the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_widget</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3435.3329</span><span class="p">,</span> <span class="mf">3789.8112</span><span class="p">,</span> <span class="mf">3815.5677</span><span class="p">]</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_44_0.png" src="../_images/examples_radar-cross-section-detection_44_0.png" />
+</div>
+</div>
+</section>
+<section id="Insert-the-radar-site">
+<h2>Insert the radar site<a class="headerlink" href="#Insert-the-radar-site" title="Link to this heading">#</a></h2>
+<p>The radar site is modeled by a place object. Insert the site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Place</span>
+
+
+<span class="n">radar_site</span> <span class="o">=</span> <span class="n">Place</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;RadarSite&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>The site is located at latitude <span class="math notranslate nohighlight">\(35.75174^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(139.35621^\circ\)</span>. The site’s antenna is located <span class="math notranslate nohighlight">\(50\)</span> ft above the ground. Assign the site’s position:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_site</span><span class="o">.</span><span class="n">use_terrain</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">radar_site</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span><span class="mf">35.75174</span><span class="p">,</span> <span class="mf">139.35621</span><span class="p">,</span> <span class="mf">0.01524</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Insert-the-antenna-servo-system">
+<h2>Insert the antenna servo system<a class="headerlink" href="#Insert-the-antenna-servo-system" title="Link to this heading">#</a></h2>
+<p>Insert a sensor to simulate a servo system for antenna positioning. In STK, it is possible to create a spinning sensor to simulate a spinning radar antenna normally seen at an airfield. However, in this case, the sensor locks onto the aircraft and is constrained to point in a limited area. This simulates the actual field of view of the airfield surveillance radar both horizontally and vertically.</p>
+<p>Insert a sensor on the radar site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_sensor</span> <span class="o">=</span> <span class="n">radar_site</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SENSOR</span><span class="p">,</span> <span class="s2">&quot;AntennaSensor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Assign a simple conic field of view with a <span class="math notranslate nohighlight">\(2^\circ\)</span> half angle to the sensor:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPattern</span>
+
+
+<span class="n">antenna_sensor</span><span class="o">.</span><span class="n">common_tasks</span><span class="o">.</span><span class="n">set_pattern_simple_conic</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.SensorSimpleConicPattern at 0x7f9b501b72f0&gt;
+</pre></div></div>
+</div>
+<p>The sensor points at the aircraft, so set the sensor’s pointing type to targeted:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">SensorPointing</span>
+
+
+<span class="n">antenna_sensor</span><span class="o">.</span><span class="n">set_pointing_type</span><span class="p">(</span><span class="n">SensorPointing</span><span class="o">.</span><span class="n">TARGETED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the aircraft as the sensor’s target:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_sensor</span><span class="o">.</span><span class="n">pointing</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aircraft</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Set-range-and-elevation-angle-constraints">
+<h2>Set range and elevation angle constraints<a class="headerlink" href="#Set-range-and-elevation-angle-constraints" title="Link to this heading">#</a></h2>
+<p>A typical airport surveillance radar’s nominal range is <span class="math notranslate nohighlight">\(60\)</span> miles and the elevation angle of the beam can track from <span class="math notranslate nohighlight">\(0^\circ\)</span> to <span class="math notranslate nohighlight">\(30^\circ\)</span>. Anything higher than <span class="math notranslate nohighlight">\(30^\circ\)</span> is the cone of silence in which the radar cannot track the aircraft. Extend the sensor’s maximum range to <span class="math notranslate nohighlight">\(150\)</span> km in order to lock onto the aircraft when it’s above the horizon.</p>
+<p>First, insert an elevation angle constraint on the sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccessConstraintType</span>
+
+
+<span class="n">elevation_constraint</span> <span class="o">=</span> <span class="n">antenna_sensor</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">ELEVATION_ANGLE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The elevation angle constraint is represented by an <code class="docutils literal notranslate"><span class="pre">AccessConstraintMinMax</span></code> object, through which it is possible to enable a minimum and/or maximum amount on the constraint, and designate what those amounts are. Use the constraint to enable a maximum elevation angle and set the maximum angle to <span class="math notranslate nohighlight">\(30^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elevation_constraint</span><span class="o">.</span><span class="n">enable_maximum</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">elevation_constraint</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<p>Then, insert a range constraint on the sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">range_constraint</span> <span class="o">=</span> <span class="n">antenna_sensor</span><span class="o">.</span><span class="n">access_constraints</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span>
+    <span class="n">AccessConstraintType</span><span class="o">.</span><span class="n">RANGE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The range constraint is also represented by an <code class="docutils literal notranslate"><span class="pre">AccessConstraintMinMax</span></code> object. Use this object to set a maximum range of <span class="math notranslate nohighlight">\(150\)</span> km:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">range_constraint</span><span class="o">.</span><span class="n">enable_maximum</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">range_constraint</span><span class="o">.</span><span class="n">maximum</span> <span class="o">=</span> <span class="mi">150</span>
+</pre></div>
+</div>
+</div>
+<p>View the sensor’s field of view using the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_widget</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3555</span><span class="p">,</span> <span class="mi">4084</span><span class="p">,</span> <span class="mi">3861</span><span class="p">]</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_71_0.png" src="../_images/examples_radar-cross-section-detection_71_0.png" />
+</div>
+</div>
+</section>
+<section id="Calculate-access">
+<h2>Calculate access<a class="headerlink" href="#Calculate-access" title="Link to this heading">#</a></h2>
+<p>Next, get and compute the access between the sensor and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basic_access</span> <span class="o">=</span> <span class="n">antenna_sensor</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">basic_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Generate an azimuth-elevation-range report to see the effect the constraints have on the accesses:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aer_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">basic_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;AER Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">aer_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>access number</th>
+      <th>time</th>
+      <th>azimuth</th>
+      <th>elevation</th>
+      <th>range</th>
+      <th>azimuthrate</th>
+      <th>elevationrate</th>
+      <th>rangerate</th>
+      <th>path delay</th>
+      <th>from precision pass</th>
+      <th>to precision pass</th>
+      <th>from precision path</th>
+      <th>to precision path</th>
+      <th>strand name</th>
+      <th>local hour angle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5 May 2024 03:00:00.000000000</td>
+      <td>12.45404734722865</td>
+      <td>2.4262391541155717</td>
+      <td>142.19354620286657</td>
+      <td>7.41707399024173</td>
+      <td>8.578876466875577</td>
+      <td>-328.7986218202578</td>
+      <td>0.00047430661582175814</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>0.34378801541209814</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>5 May 2024 03:00:00.465588995</td>
+      <td>155.33552870842385</td>
+      <td>28.14590949842654</td>
+      <td>16.087906997688346</td>
+      <td>743.8957142523444</td>
+      <td>-461.9351423204619</td>
+      <td>241.15458349861123</td>
+      <td>5.366348141315932e-05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>0.06527742842577614</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>5 May 2024 03:00:00.196816962</td>
+      <td>15.13110298811972</td>
+      <td>5.266574186930059</td>
+      <td>77.72474540872938</td>
+      <td>24.98925202844396</td>
+      <td>25.139771123401626</td>
+      <td>-326.49276232486045</td>
+      <td>0.00025926184376769536</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>0.2250116267314337</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>5 May 2024 03:00:00.673142400</td>
+      <td>183.62283078311037</td>
+      <td>5.031611184073533</td>
+      <td>80.8918491421213</td>
+      <td>23.054501011337923</td>
+      <td>-23.33292289256693</td>
+      <td>326.7468214886276</td>
+      <td>0.000269826164679971</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>359.9442713946181</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>5 May 2024 03:00:00.393633923</td>
+      <td>42.73106714577967</td>
+      <td>27.862184658609007</td>
+      <td>16.23764316519118</td>
+      <td>726.3999565882272</td>
+      <td>455.88376277654504</td>
+      <td>-243.07405443667042</td>
+      <td>5.416294750547454e-05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>0.10769877459971705</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>5 May 2024 03:00:00.880695806</td>
+      <td>186.21207013940705</td>
+      <td>2.2570199217615854</td>
+      <td>148.92351178405576</td>
+      <td>6.760668503951863</td>
+      <td>-7.953516847366064</td>
+      <td>328.8833852117256</td>
+      <td>0.000496755364619799</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Place/RadarSite/Sensor/AntennaSensor to Aircra...</td>
+      <td>359.82504611174136</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Notice that the first access ends and the second access begins at an approximate elevation angle of <span class="math notranslate nohighlight">\(30\)</span> degrees. There is a break in access when the elevation angle exceeds <span class="math notranslate nohighlight">\(30\)</span> degrees due to the modeled cone of silence.</p>
+<p>It is also possible to see this cone of silence on a plot of the aircraft’s elevation when it is accessed by the sensor:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Convert columns to correct types</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;elevation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;elevation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create a plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Group by access number, then plot elevation</span>
+<span class="n">aer_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;access number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Access Elevation over Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Angle (deg)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="c1"># Set major and minor locators</span>
+<span class="n">xlocator_major</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">MicrosecondLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">xlocator_major</span><span class="p">)</span>
+
+<span class="c1"># Remove axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_79_0.png" src="../_images/examples_radar-cross-section-detection_79_0.png" />
+</div>
+</div>
+</section>
+<section id="Insert-an-airport-surveillance-radar">
+<h2>Insert an airport surveillance radar<a class="headerlink" href="#Insert-an-airport-surveillance-radar" title="Link to this heading">#</a></h2>
+<p>Insert the airport surveillance radar on the sensor:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">airport_radar</span> <span class="o">=</span> <span class="n">antenna_sensor</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">RADAR</span><span class="p">,</span> <span class="s2">&quot;Radar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In this scenario, the radar is a monostatic radar with a search/track mode. A monostatic radar uses a common antenna for both transmitting and receiving. A search/track radar detects and tracks point targets. Both the monostatic radar type and the search/track mode are default when a radar is inserted, so there is no need to designate either.</p>
+</section>
+<section id="Define-the-waveform">
+<h2>Define the waveform<a class="headerlink" href="#Define-the-waveform" title="Link to this heading">#</a></h2>
+<p>Radar systems often use multiple pulse integration to increase the signal-to-noise ratio. The fixed pulse repetition frequency (PRF) is the number of pulses of a repeating signal in a specific time unit. After producing a brief transmission pulse, the transmitter is turned off in order for the receiver to hear the reflections of that signal off of targets. The default waveform for radars in STK uses a fixed PRF with a default value of <span class="math notranslate nohighlight">\(0.001\)</span> MHz. In this case, the airport surveillance
+radar uses a fixed PRF of <span class="math notranslate nohighlight">\(1000\)</span> Hz, so the defaults can be used directly.</p>
+</section>
+<section id="Define-the-pulse-width">
+<h2>Define the pulse width<a class="headerlink" href="#Define-the-pulse-width" title="Link to this heading">#</a></h2>
+<p>Pulse width is the width of the transmitted pulse (the uncompressed RF bandwidth can also be taken as the inverse of the pulse width). Set the pulse width to one microsecond:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarModelMonostatic</span>
+
+
+<span class="n">monostatic</span> <span class="o">=</span> <span class="n">RadarModelMonostatic</span><span class="p">(</span><span class="n">airport_radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="p">)</span>
+<span class="n">monostatic</span><span class="o">.</span><span class="n">mode_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">waveform</span><span class="o">.</span><span class="n">pulse_definition</span><span class="o">.</span><span class="n">pulse_width</span> <span class="o">=</span> <span class="mf">1e-6</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Define-the-antenna-model">
+<h2>Define the antenna model<a class="headerlink" href="#Define-the-antenna-model" title="Link to this heading">#</a></h2>
+<p>The radar’s antenna is modeled by the cosine squared aperture rectangular antenna pattern, with an antenna transmit frequency between <span class="math notranslate nohighlight">\(2.7\)</span> and <span class="math notranslate nohighlight">\(2.9\)</span> GHz. The antenna also has an X dimension beamwidth of <span class="math notranslate nohighlight">\(5^\circ\)</span>, a Y dimension beamwidth of <span class="math notranslate nohighlight">\(1.4^\circ\)</span>, a design frequency of <span class="math notranslate nohighlight">\(2.8\)</span> GHz, a main-lobe gain of <span class="math notranslate nohighlight">\(34\)</span> dB, and an efficiency of <span class="math notranslate nohighlight">\(55\)</span>%.</p>
+<p>First, set the radar’s antenna model to the cosine squared aperture rectangular antenna pattern:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">AntennaModelApertureRectangularCosineSquared</span>
+
+
+<span class="n">antenna_control</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">antenna_control</span>
+<span class="n">antenna_control</span><span class="o">.</span><span class="n">embedded_model_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span>
+    <span class="s2">&quot;Cosine Squared Aperture Rectangular&quot;</span>
+<span class="p">)</span>
+<span class="n">antenna_model</span> <span class="o">=</span> <span class="n">AntennaModelApertureRectangularCosineSquared</span><span class="p">(</span>
+    <span class="n">antenna_control</span><span class="o">.</span><span class="n">embedded_model_component_linking</span><span class="o">.</span><span class="n">component</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the antenna model to use beamwidth:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RectangularApertureInputType</span>
+
+
+<span class="n">antenna_model</span><span class="o">.</span><span class="n">input_type</span> <span class="o">=</span> <span class="n">RectangularApertureInputType</span><span class="o">.</span><span class="n">BEAMWIDTHS</span>
+</pre></div>
+</div>
+</div>
+<p>Set the X beamwidth to <span class="math notranslate nohighlight">\(5^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_model</span><span class="o">.</span><span class="n">x_beamwidth</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<p>Set the Y beamwidth to <span class="math notranslate nohighlight">\(1.4^\circ\)</span></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_model</span><span class="o">.</span><span class="n">y_beamwidth</span> <span class="o">=</span> <span class="mf">1.4</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the antenna’s design frequency to <span class="math notranslate nohighlight">\(2.8\)</span> GHz.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_model</span><span class="o">.</span><span class="n">design_frequency</span> <span class="o">=</span> <span class="mf">2.8</span>
+</pre></div>
+</div>
+</div>
+<p>Disable the automatic computation of main-lobe gain for the antenna. When the <code class="docutils literal notranslate"><span class="pre">compute_mainlobe_gain</span></code> property is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the main-lobe gain is automatically calculated based on beamwidth or diameter, efficiency, and design frequency. In this case, disable the computation of main-lobe gain, and instead set the value to <span class="math notranslate nohighlight">\(34\)</span> dB:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_model</span><span class="o">.</span><span class="n">compute_mainlobe_gain</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">antenna_model</span><span class="o">.</span><span class="n">mainlobe_gain</span> <span class="o">=</span> <span class="mi">34</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the antenna’s efficiency to <span class="math notranslate nohighlight">\(55\)</span>%:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">antenna_model</span><span class="o">.</span><span class="n">efficiency</span> <span class="o">=</span> <span class="mi">55</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Define-the-radar-transmitter">
+<h2>Define the radar transmitter<a class="headerlink" href="#Define-the-radar-transmitter" title="Link to this heading">#</a></h2>
+<p>The transmitter has a frequency range of <span class="math notranslate nohighlight">\(2.7-2.9\)</span> GHz, a peak power of <span class="math notranslate nohighlight">\(20\)</span> kW, and uses linear polarization.</p>
+<p>First, configure the transmitter to use frequency (instead of wavelength) as its frequency specification:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarFrequencySpecificationType</span>
+
+
+<span class="n">radar_transmitter</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">transmitter</span>
+<span class="n">radar_transmitter</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="n">RadarFrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the transmitter’s frequency to <span class="math notranslate nohighlight">\(2.8\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_transmitter</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">2.8</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the transmitter’s power to <span class="math notranslate nohighlight">\(20\)</span> kW (<span class="math notranslate nohighlight">\(43.01\)</span> dBW):</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_transmitter</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="mf">43.01</span>
+</pre></div>
+</div>
+</div>
+<p>Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna’s orientation. An aircraft surveillance radar system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.</p>
+<p>Enable the use of polarization on the transmitter:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_transmitter</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Linear polarization is the default value for transmitters, so there is no need to change the polarization type.</p>
+</section>
+<section id="Configure-the-radar-receiver">
+<h2>Configure the radar receiver<a class="headerlink" href="#Configure-the-radar-receiver" title="Link to this heading">#</a></h2>
+<p>The radar’s receiver uses linear polarization, and computes system noise temperature using the default values, and taking into account Sun and cosmic background noise.</p>
+<p>First, enable polarization on the radar receiver:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_receiver</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="o">.</span><span class="n">receiver</span>
+<span class="n">radar_receiver</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Linear polarization is the default polarization type, so the default type can be used directly.</p>
+<p>Next, add the receiver’s system noise temperature. Compute system noise temperature using the default values, and take into account Sun and cosmic background noise.</p>
+<p>Set the receiver’s system noise temperature compute type to calculate:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">NoiseTemperatureComputeType</span>
+
+
+<span class="n">radar_receiver</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">compute_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">NoiseTemperatureComputeType</span><span class="o">.</span><span class="n">CALCULATE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, use the receiver’s system noise temperature’s <code class="docutils literal notranslate"><span class="pre">antenna_noise_temperature</span></code> property to access an <code class="docutils literal notranslate"><span class="pre">AntennaNoiseTemperature</span></code> object, through which it is possible to set the antenna noise temperature parameters. Set the compute type to calculate and then enable the use of Sun and cosmic background in antenna noise temperature calculations:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_receiver</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">compute_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">NoiseTemperatureComputeType</span><span class="o">.</span><span class="n">CALCULATE</span>
+<span class="p">)</span>
+<span class="n">radar_receiver</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_sun</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">radar_receiver</span><span class="o">.</span><span class="n">system_noise_temperature</span><span class="o">.</span><span class="n">antenna_noise_temperature</span><span class="o">.</span><span class="n">use_cosmic_background</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Determine-the-probability-of-detection">
+<h2>Determine the probability of detection<a class="headerlink" href="#Determine-the-probability-of-detection" title="Link to this heading">#</a></h2>
+<p>For this radar, the probability of detection (Pdet) is based on a value of <span class="math notranslate nohighlight">\(0.800000\)</span> or higher, with <span class="math notranslate nohighlight">\(1\)</span> being the highest value. Determine the Pdet for a large aircraft, a medium aircraft, a small aircraft, and a bird by changing the aircraft’s constant RCS value to simulate different sized-targets.</p>
+<p>Start by determining the Pdet of the large turboprop aircraft.</p>
+<p>Compute access between the radar and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_aircraft_access</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">large_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Next, generate a radar SearchTrack report using a step value of <span class="math notranslate nohighlight">\(30\)</span> sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_aircraft_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">large_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar SearchTrack&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the report’s <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code> (the Pdet for a single pulse), <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code> (the Pdet for multiple pulses), <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pulses</span> <span class="pre">integrated</span></code> (the number of pulses integrated), <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">snr1</span></code> (the signal-to-noise ratio (SNR) for a single pulse), and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">snr</span></code> (the SNR for multiple pulses):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_aircraft_df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t snr1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t pulses integrated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t pdet1</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t snr1</th>
+      <th>s/t integrated snr</th>
+      <th>s/t pulses integrated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.004241189154789869</td>
+      <td>0.8990454122417457</td>
+      <td>0.4039825109939072</td>
+      <td>16.085999751663856</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>38.487444062754676</td>
+      <td>38.487444062754676</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>38.333965316780535</td>
+      <td>38.333965316780535</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0005349943277871887</td>
+      <td>0.2999687378212546</td>
+      <td>-5.246222130023764</td>
+      <td>16.024825853624314</td>
+      <td>134</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>As can be seen by the difference between the <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code> and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code> columns, pulse integration improves the ability of the radar to detect targets by combining the returns from multiple pulses. Pulse integration also improves the signal-to-noise ratio.</p>
+</section>
+<section id="Simulate-a-medium-sized-aircraft">
+<h2>Simulate a medium-sized aircraft<a class="headerlink" href="#Simulate-a-medium-sized-aircraft" title="Link to this heading">#</a></h2>
+<p>To simulate a medium-sized aircraft, change the target aircraft’s RCS to <span class="math notranslate nohighlight">\(10\)</span> dBsm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">constant_value</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute access between the aircraft and the radar:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium_aircraft_access</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">medium_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Generate a radar SearchTrack report using a step value of <span class="math notranslate nohighlight">\(30\)</span> sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium_aircraft_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">medium_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar SearchTrack&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pulses</span> <span class="pre">integrated</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">snr1</span></code>, and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">snr</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium_aircraft_df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t snr1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t pulses integrated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t pdet1</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t snr1</th>
+      <th>s/t integrated snr</th>
+      <th>s/t pulses integrated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00025371021992869145</td>
+      <td>0.07763118319057452</td>
+      <td>-8.596017489006092</td>
+      <td>16.012960938559388</td>
+      <td>289</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>29.48744406275468</td>
+      <td>29.48744406275468</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>29.33396531678053</td>
+      <td>29.33396531678053</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0001332979757668818</td>
+      <td>0.0022131674685955697</td>
+      <td>-14.24622213002376</td>
+      <td>12.846477479734546</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The radar’s ability to track this aircraft has diminished due to the aircraft’s smaller RCS.</p>
+</section>
+<section id="Simulate-a-small-aircraft">
+<h2>Simulate a small aircraft<a class="headerlink" href="#Simulate-a-small-aircraft" title="Link to this heading">#</a></h2>
+<p>To simulate a small aircraft, change the target aircraft’s RCS to <span class="math notranslate nohighlight">\(0\)</span> dBsm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">constant_value</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute access between the aircraft and the radar:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_aircraft_access</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">small_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Generate a radar SearchTrack report using a step value of <span class="math notranslate nohighlight">\(30\)</span> sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_aircraft_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">small_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar SearchTrack&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pulses</span> <span class="pre">integrated</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">snr1</span></code>, and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">snr</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_aircraft_df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t snr1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t pulses integrated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t pdet1</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t snr1</th>
+      <th>s/t integrated snr</th>
+      <th>s/t pulses integrated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00011254140305492283</td>
+      <td>0.00034616354655054465</td>
+      <td>-18.596017489006094</td>
+      <td>8.496682120752215</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>19.487444062754676</td>
+      <td>19.487444062754676</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>19.33396531678053</td>
+      <td>19.33396531678053</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00010345088906840799</td>
+      <td>0.00014192164338157505</td>
+      <td>-24.24622213002376</td>
+      <td>2.846477479734546</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The radar’s ability to track this aircraft has again diminished due to the aircraft’s smaller RCS.</p>
+</section>
+<section id="Simulate-a-bird">
+<h2>Simulate a bird<a class="headerlink" href="#Simulate-a-bird" title="Link to this heading">#</a></h2>
+<p>To simulate a bird, change the target aircraft’s RCS to <span class="math notranslate nohighlight">\(-20\)</span> dBsm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">constant_value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<p>Then, compute access between the aircraft and the radar:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bird_aircraft_access</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">bird_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Generate a radar SearchTrack report using a step value of <span class="math notranslate nohighlight">\(30\)</span> sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bird_aircraft_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">bird_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar SearchTrack&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pulses</span> <span class="pre">integrated</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">snr1</span></code>, and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">snr</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bird_aircraft_df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t snr1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t pulses integrated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t pdet1</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t snr1</th>
+      <th>s/t integrated snr</th>
+      <th>s/t pulses integrated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9.998618444776282e-05</td>
+      <td>0.00010148169909176745</td>
+      <td>-38.596017489006094</td>
+      <td>-11.503317879247785</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0028605647015461574</td>
+      <td>0.8289110078005205</td>
+      <td>-0.5125559372453223</td>
+      <td>16.019569200508116</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0026825084239399796</td>
+      <td>0.8206050695303343</td>
+      <td>-0.6660346832194677</td>
+      <td>16.054943896137708</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.999623842592416e-05</td>
+      <td>0.00010050601836099273</td>
+      <td>-44.24622213002376</td>
+      <td>-17.153522520265454</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The Pdet is very low for an object with this RCS. To track objects like birds, the radar system would need a different frequency or higher power.</p>
+</section>
+<section id="Load-an-external-Aspect-Dependent-RCS-file">
+<h2>Load an external Aspect Dependent RCS file<a class="headerlink" href="#Load-an-external-Aspect-Dependent-RCS-file" title="Link to this heading">#</a></h2>
+<p>Using an Aspect Dependent RCS file built for a specific target aircraft generates much more realistic data.</p>
+<p>To use an external file, first set the target aircraft’s RCS to use an external file in computations:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span><span class="o">.</span><span class="n">set_compute_strategy</span><span class="p">(</span><span class="s2">&quot;External File&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, upload the <code class="docutils literal notranslate"><span class="pre">X-47B_Notional_Sample.rcs</span></code> file, which is included with the STK install, by using the band’s <code class="docutils literal notranslate"><span class="pre">compute_strategy</span></code> property, which now holds a <code class="docutils literal notranslate"><span class="pre">RadarCrossSectionComputeStrategyExternalFile</span></code> object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+
+
+<span class="n">install_dir</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">execute_command</span><span class="p">(</span><span class="s2">&quot;GetDirectory / STKHome&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+    <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">install_dir</span><span class="p">)</span>
+    <span class="o">/</span> <span class="s2">&quot;Data&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;Resources&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;stktraining&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;samples&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;SeaRangeResources&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;X-47B&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;X-47B_Notional_Sample.rcs&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to see the aircraft’s aspect dependent RCS pattern in the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_widget</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3435.3329</span><span class="p">,</span> <span class="mf">3789.8112</span><span class="p">,</span> <span class="mf">3815.5677</span><span class="p">]</span>
+<span class="n">globe_widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_174_0.png" src="../_images/examples_radar-cross-section-detection_174_0.png" />
+</div>
+</div>
+<p>Recompute the access between the aircraft and the radar:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aspect_dep_aircraft_access</span> <span class="o">=</span> <span class="n">airport_radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">aircraft</span><span class="p">)</span>
+<span class="n">aspect_dep_aircraft_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Generate a radar SearchTrack report using a step value of <span class="math notranslate nohighlight">\(30\)</span> sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aspect_dep_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aspect_dep_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar SearchTrack&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pdet1</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">pdet</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">pulses</span> <span class="pre">integrated</span></code>, <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">snr1</span></code>, and <code class="docutils literal notranslate"><span class="pre">s/t</span> <span class="pre">integrated</span> <span class="pre">snr</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aspect_dep_df</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t snr1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s/t pulses integrated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t pdet1</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t snr1</th>
+      <th>s/t integrated snr</th>
+      <th>s/t pulses integrated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00010357772989095509</td>
+      <td>0.0001439764356074659</td>
+      <td>-24.088820853084524</td>
+      <td>3.003878756673781</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.7754405309015666</td>
+      <td>0.9999987492289983</td>
+      <td>10.868408484863252</td>
+      <td>16.889008398142874</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.23677011455720495</td>
+      <td>0.9997005710099416</td>
+      <td>7.734541751840621</td>
+      <td>16.18552215198319</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00010132858779850437</td>
+      <td>0.0001147151699025594</td>
+      <td>-28.402239189069576</td>
+      <td>-1.3095395793112694</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Depending on the reflection from the aircraft back to the radar, it is possible for there to be fluctuation in the values. This is noticeable in the S/T Pulses Integrated column.</p>
+</section>
+<section id="Graph-the-RCS">
+<h2>Graph the RCS<a class="headerlink" href="#Graph-the-RCS" title="Link to this heading">#</a></h2>
+<p>Use the Radar RCS report to get information about how the RCS changes over time:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rcs_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">aspect_dep_aircraft_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar RCS&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rcs_df</span><span class="p">[</span><span class="s2">&quot;incident el bf&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     3.709178
+1    28.240029
+2    28.006714
+3     3.161044
+4         None
+5      3.10671
+Name: incident el bf, dtype: object
+</pre></div></div>
+</div>
+<p>Visualize changes to the RCS and the elevation:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Convert columns to correct types</span>
+<span class="n">rcs_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">aer_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rcs&quot;</span><span class="p">,</span> <span class="s2">&quot;incident el bf&quot;</span><span class="p">]</span>
+<span class="n">rcs_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">rcs_df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create a plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># Duplicate axis</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Group by access number, then plot rcs and elevation</span>
+<span class="n">rcs_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;access number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rcs&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;RCS (dBsm)&quot;</span>
+<span class="p">)</span>
+<span class="n">rcs_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;access number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;incident el bf&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tomato&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Elevation (deg)&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Accessed Aircraft RCS over Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;RCS (dBsm)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Incident Elevation BF (deg)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine legends</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="c1"># Improve x-axis formatting</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="c1"># Set major and minor locators</span>
+<span class="n">xlocator_major</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">MicrosecondLocator</span><span class="p">(</span><span class="n">interval</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">xlocator_major</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_radar-cross-section-detection_187_0.png" src="../_images/examples_radar-cross-section-detection_187_0.png" />
+</div>
+</div>
+<p>As seen previously, there is a cone of silence in the middle of the graph, corresponding to when the elevation angle is over <span class="math notranslate nohighlight">\(30^\circ\)</span>.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"5cfbfbb3a6e045ec9ad911aa15a29054": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "535f5583ae2d469399db4eac89e159ae": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_5cfbfbb3a6e045ec9ad911aa15a29054", "resizable": true, "tabbable": null, "tooltip": null}}, "b2d939d894ba44bd8c2b1c5f10c43072": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1f862abf293f4485bf4533257ff59b9b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_b2d939d894ba44bd8c2b1c5f10c43072", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "15ce3aaabfa244f294af749fb43570a8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "aad0752dfe8b40b6bf426b46b5c7b1ca": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_15ce3aaabfa244f294af749fb43570a8", "resizable": true, "tabbable": null, "tooltip": null}}, "e5a1859a67bf4c589e13b8f47e7150b2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "05b0136652624ba0bcbab62e1e3e5068": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_e5a1859a67bf4c589e13b8f47e7150b2", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="porkchop-plots.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Porkchop plots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="communication-link-calculator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Communication link budget calculator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-radar-cross-section?">What is radar cross section?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-the-target-aircraft">Create the target aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Specify-the-radar-cross-section">Specify the radar cross section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-the-radar-site">Insert the radar site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-the-antenna-servo-system">Insert the antenna servo system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-range-and-elevation-angle-constraints">Set range and elevation angle constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Calculate-access">Calculate access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Insert-an-airport-surveillance-radar">Insert an airport surveillance radar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-waveform">Define the waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-pulse-width">Define the pulse width</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-antenna-model">Define the antenna model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-radar-transmitter">Define the radar transmitter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-radar-receiver">Configure the radar receiver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Determine-the-probability-of-detection">Determine the probability of detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Simulate-a-medium-sized-aircraft">Simulate a medium-sized aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Simulate-a-small-aircraft">Simulate a small aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Simulate-a-bird">Simulate a bird</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Load-an-external-Aspect-Dependent-RCS-file">Load an external Aspect Dependent RCS file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Graph-the-RCS">Graph the RCS</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/radar-cross-section-detection.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/radar-cross-section-detection.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+VehicleGraphics3DBPlaneEvent
+============================
+
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent
+
+   3D BPlane Event.
+
+.. py:currentmodule:: VehicleGraphics3DBPlaneEvent
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.after_event`
+              - Get or set the duration after the event that the B-Plane will be displayed. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.always_display`
+              - Whether the B-Plane will be displayed throughout the scenario's animation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event`
+              - Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch`
+              - Get or set the event epoch. Uses DateFormat Dimension.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import VehicleGraphics3DBPlaneEvent
+
+
+Property detail
+---------------
+
+.. py:property:: after_event
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.after_event
+    :type: float
+
+    Get or set the duration after the event that the B-Plane will be displayed. Uses Time Dimension.
+
+.. py:property:: always_display
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.always_display
+    :type: bool
+
+    Whether the B-Plane will be displayed throughout the scenario's animation.
+
+.. py:property:: before_event
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.before_event
+    :type: float
+
+    Get or set the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
+
+.. py:property:: event_epoch
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent.event_epoch
+    :type: typing.Any
+
+    Get or set the event epoch. Uses DateFormat Dimension.
+
+

@@ -1,0 +1,2574 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Multifunction radar design &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/multifunction-radar-design';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Commercial aircraft fuel calculator with Aviator" href="aviator-fuel-calculator.html" />
+    <link rel="prev" title="Multifunction radar parametric study" href="multifunction-radar-parametric-study.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/multifunction-radar-design.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-calculator.html">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Multifunction radar design</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/multifunction-radar-design.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/multifunction-radar-design.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/0.1/examples/multifunction-radar-design.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Multifunction-radar-design">
+<h1>Multifunction radar design<a class="headerlink" href="#Multifunction-radar-design" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to simulate and design a multifunction radar system using PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/MFR_Tutorial.htm">this</a> tutorial.</p>
+<section id="What-are-multifunction-radar-systems?">
+<h2>What are multifunction radar systems?<a class="headerlink" href="#What-are-multifunction-radar-systems?" title="Link to this heading">#</a></h2>
+<p>Multifunction radars have multiple beams which execute in parallel, allowing them to carry out multiple tasks simultaneously. Each of these beams can be configured individually and assigned independent tasks. A multifunction radar system can include beams that track a specific target, beams that scan the horizon, or beams that are fixed in one direction. A multifunction radar system can also control its system behavior dynamically, making changes that are based on pre-defined rules. For example,
+when a target is detected by one beam, the system can switch to another beam that is more suitable for that target. A multifunction radar system can also switch radar waveforms to increase fidelity. The switching control executes based on the range to a target that the radar is tracking. When the system detects a target, it can select a waveform that is appropriate to the target’s range classification.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>A radar site is located near a regional airport at latitude <span class="math notranslate nohighlight">\(34.7422^\circ\)</span> and longitude $ -118.225^:nbsphinx-math:<cite>circ`$. The radar antenna is located :math:`50</cite> ft above the ground. A small private aircraft with a radar cross section of <span class="math notranslate nohighlight">\(10\)</span> dBsm flies through the zone from east to west.</p>
+<p>A multifunction radar with three beams tracks the aircraft. The three beams are:</p>
+<ul class="simple">
+<li><p>A horizon search beam that is fixed and scans in one direction.</p></li>
+<li><p>A targeted beam that tracks the private plane once it is detected by the horizon search beam.</p></li>
+<li><p>A volume search beam that spins and scans the horizon.</p></li>
+</ul>
+<p>Determine how well the radar system can track the plane.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create a new scenario in STK by running:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;MultifunctionRadar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "57f63deaa5ea4cda9fbda9a1d4cd4204"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_13_1.png" src="../_images/examples_multifunction-radar-design_13_1.png" />
+</div>
+</div>
+<p>Show a 2D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_plotter</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "79b403fbf26847c798b9ee1ef5f77563"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_15_1.png" src="../_images/examples_multifunction-radar-design_15_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Scenario</span>
+
+
+<span class="n">scenario</span> <span class="o">=</span> <span class="n">Scenario</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="p">)</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;26 Apr 2023 18:00:00.000&quot;</span><span class="p">,</span> <span class="s2">&quot;26 Apr 2023 19:00:00.000&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Set-the-unit-preferences">
+<h2>Set the unit preferences<a class="headerlink" href="#Set-the-unit-preferences" title="Link to this heading">#</a></h2>
+<p>For this problem, the distances are be provided in feet, so change the distance unit preference to ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">units_preferences</span><span class="o">.</span><span class="n">set_current_unit</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-the-radar-site">
+<h2>Create the radar site<a class="headerlink" href="#Create-the-radar-site" title="Link to this heading">#</a></h2>
+<p>The radar site is located near a regional airport, at latitude <span class="math notranslate nohighlight">\(34.7422^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-118.225^\circ\)</span> with a height <span class="math notranslate nohighlight">\(50\)</span> ft above ground. First, insert a place object to represent the site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Place</span><span class="p">,</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">radar_site</span> <span class="o">=</span> <span class="n">Place</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">PLACE</span><span class="p">,</span> <span class="s2">&quot;RadarSite&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Then, assign the radar site’s position:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_site</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">assign_geodetic</span><span class="p">(</span><span class="mf">34.7422</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.225</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the height above ground of the site to <span class="math notranslate nohighlight">\(50\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_site</span><span class="o">.</span><span class="n">height_above_ground</span> <span class="o">=</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-small-private-aircraft">
+<h2>Create a small private aircraft<a class="headerlink" href="#Create-a-small-private-aircraft" title="Link to this heading">#</a></h2>
+<p>To model the small private aircraft flying from east to west through the airfield, insert an aircraft object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Aircraft</span>
+
+
+<span class="n">small_aircraft</span> <span class="o">=</span> <span class="n">Aircraft</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">AIRCRAFT</span><span class="p">,</span> <span class="s2">&quot;SmallAircraft&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the aircraft to use Mean Sea Level (MSL) as its altitude reference:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">VehicleAltitudeReference</span>
+
+
+<span class="n">small_aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">set_altitude_reference_type</span><span class="p">(</span>
+    <span class="n">VehicleAltitudeReference</span><span class="o">.</span><span class="n">MEAN_SEA_LEVEL</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The aircraft flies between two points. The first point is located at latitude <span class="math notranslate nohighlight">\(34.75^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-117.50^\circ\)</span>. The second point is located at latitude <span class="math notranslate nohighlight">\(34.75^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-119.0^\circ\)</span>. At both points, the aircraft flies at an altitude of <span class="math notranslate nohighlight">\(5000\)</span> ft with a speed of <span class="math notranslate nohighlight">\(140\)</span> mi/hr (equivalent to <span class="math notranslate nohighlight">\(205.333\)</span> ft/sec).</p>
+<p>Add the first waypoint to the aircraft’s route:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint1</span> <span class="o">=</span> <span class="n">small_aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the waypoint’s latitude to <span class="math notranslate nohighlight">\(34.75^\circ\)</span> and longitude to <span class="math notranslate nohighlight">\(-117.50^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint1</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mf">34.75</span>
+<span class="n">waypoint1</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="o">-</span><span class="mf">117.50</span>
+</pre></div>
+</div>
+</div>
+<p>Set the waypoint’s altitude to <span class="math notranslate nohighlight">\(5000\)</span> ft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint1</span><span class="o">.</span><span class="n">altitude</span> <span class="o">=</span> <span class="mi">5000</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the speed of the plane at the waypoint to <span class="math notranslate nohighlight">\(205.333\)</span> ft/sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint1</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mf">205.333</span>
+</pre></div>
+</div>
+</div>
+<p>Next, add the second waypoint to the aircraft’s route:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint2</span> <span class="o">=</span> <span class="n">small_aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">waypoints</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Set the location of the waypoint to latitude <span class="math notranslate nohighlight">\(34.75^\circ\)</span> and longitude <span class="math notranslate nohighlight">\(-119.0^\circ\)</span>, and set the altitude to <span class="math notranslate nohighlight">\(5000\)</span> ft and speed to <span class="math notranslate nohighlight">\(205.333\)</span> ft/sec:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waypoint2</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mf">34.75</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="o">-</span><span class="mf">119.0</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">altitude</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">waypoint2</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mf">205.333</span>
+</pre></div>
+</div>
+</div>
+<p>Then, propagate the aircraft’s route:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_aircraft</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Next, specify the aircraft’s RCS. Set the airliner’s radar cross section’s <code class="docutils literal notranslate"><span class="pre">inherit</span></code> property to false in order to override the default RCS value inherited from the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_aircraft_rcs</span> <span class="o">=</span> <span class="n">small_aircraft</span><span class="o">.</span><span class="n">radar_cross_section</span>
+<span class="n">small_aircraft_rcs</span><span class="o">.</span><span class="n">inherit</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>Get the aircraft’s RCS model, select the model’s first frequency band, and configure the model to use a constant RCS of <span class="math notranslate nohighlight">\(10\)</span> dBsm:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarCrossSectionModel</span>
+
+
+<span class="n">rcs_model</span> <span class="o">=</span> <span class="n">RadarCrossSectionModel</span><span class="p">(</span><span class="n">small_aircraft_rcs</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="p">)</span>
+<span class="n">band1</span> <span class="o">=</span> <span class="n">rcs_model</span><span class="o">.</span><span class="n">frequency_bands</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">band1</span><span class="o">.</span><span class="n">set_compute_strategy</span><span class="p">(</span><span class="s2">&quot;Constant Value&quot;</span><span class="p">)</span>
+<span class="n">band1</span><span class="o">.</span><span class="n">compute_strategy</span><span class="o">.</span><span class="n">constant_value</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to view the aircraft’s route relative to the radar site using the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">30427439</span><span class="p">,</span> <span class="mi">110996044</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_54_0.png" src="../_images/examples_multifunction-radar-design_54_0.png" />
+</div>
+</div>
+</section>
+<section id="Create-a-multifunction-radar-system">
+<h2>Create a multifunction radar system<a class="headerlink" href="#Create-a-multifunction-radar-system" title="Link to this heading">#</a></h2>
+<p>To create the multifunction radar system, first insert a radar object on the radar site:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Radar</span>
+
+
+<span class="n">radar</span> <span class="o">=</span> <span class="n">Radar</span><span class="p">(</span><span class="n">radar_site</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">RADAR</span><span class="p">,</span> <span class="s2">&quot;MultifunctionRadar&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Set the radar’s model type to multifunction:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">set_component</span><span class="p">(</span><span class="s2">&quot;Multifunction&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the radar’s model, which is now a <code class="docutils literal notranslate"><span class="pre">RadarModelMultifunction</span></code> object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarModelMultifunction</span>
+
+
+<span class="n">multifunction_model</span> <span class="o">=</span> <span class="n">RadarModelMultifunction</span><span class="p">(</span><span class="n">radar</span><span class="o">.</span><span class="n">model_component_linking</span><span class="o">.</span><span class="n">component</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>All the beams created in this scenario are oriented along the radar object’s pointing type, which is fixed. Configure the radar model to use a fixed pointing strategy:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PointingStrategyType</span>
+
+
+<span class="n">multifunction_model</span><span class="o">.</span><span class="n">set_pointing_strategy_type</span><span class="p">(</span><span class="n">PointingStrategyType</span><span class="o">.</span><span class="n">FIXED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Now, any beams created on the radar remain fixed relative to the radar itself.</p>
+<p>Next, set the radar transmitter’s power limit, which corresponds to the peak output power of the transmitter, to <span class="math notranslate nohighlight">\(40\)</span> dBW:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multifunction_model</span><span class="o">.</span><span class="n">transmitter</span><span class="o">.</span><span class="n">maximum_power_limit</span> <span class="o">=</span> <span class="mi">40</span>
+</pre></div>
+</div>
+</div>
+<p>Then, specify the transmitter polarization, which describes the orientation of the electric field vector with reference to the antenna’s orientation. The transmitter is linearly polarized with the electrical field aligned with the reference axis.</p>
+<p>First, enable the use of polarization on the transmitter:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multifunction_model</span><span class="o">.</span><span class="n">transmitter</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Set the transmitter’s polarization type to linear:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolarizationType</span>
+
+
+<span class="n">multifunction_model</span><span class="o">.</span><span class="n">transmitter</span><span class="o">.</span><span class="n">set_polarization_type</span><span class="p">(</span><span class="n">PolarizationType</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, specify the receiver polarization. Enable polarization on the receiver:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multifunction_model</span><span class="o">.</span><span class="n">receiver</span><span class="o">.</span><span class="n">enable_polarization</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the receiver polarization to linear as well:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multifunction_model</span><span class="o">.</span><span class="n">receiver</span><span class="o">.</span><span class="n">set_polarization_type</span><span class="p">(</span><span class="n">PolarizationType</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, add additional gain to the radar. In this scenario, it is necessary to model gains and losses that affect performance but are not defined using built-in analytical models. When the transmitted signal returns to the receiver, the system adds a separate gain to the signal.</p>
+<p>Add a pre-receive gain of <span class="math notranslate nohighlight">\(10\)</span> dB to the radar’s receiver:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multifunction_model</span><span class="o">.</span><span class="n">receiver</span><span class="o">.</span><span class="n">pre_receive_gains_losses</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.AdditionalGainLoss at 0x7f23e41796a0&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Access-the-component-directory">
+<h2>Access the component directory<a class="headerlink" href="#Access-the-component-directory" title="Link to this heading">#</a></h2>
+<p>Some of the radar’s beams use custom waveform strategies. Pre-configured waveform strategies are stored in the component browser, and can be duplicated to change and save them.</p>
+<p>To create waveform strategies, first get all available radar components from the component directory:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Component</span>
+
+
+<span class="n">radar_components</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">component_directory</span><span class="o">.</span><span class="n">get_components</span><span class="p">(</span><span class="n">Component</span><span class="o">.</span><span class="n">RADAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the radar waveform components folder:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar_waveform_components</span> <span class="o">=</span> <span class="n">radar_components</span><span class="o">.</span><span class="n">get_folder</span><span class="p">(</span><span class="s2">&quot;Radar Waveforms&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-horizon-search-beam-and-a-targeted-beam-associated-with-it">
+<h2>Create a horizon search beam and a targeted beam associated with it<a class="headerlink" href="#Create-a-horizon-search-beam-and-a-targeted-beam-associated-with-it" title="Link to this heading">#</a></h2>
+<p>The radar’s first beam is a horizon search beam that is fixed in a single direction, with an azimuth of <span class="math notranslate nohighlight">\(85^\circ\)</span> and an elevation of <span class="math notranslate nohighlight">\(3^\circ\)</span>. It has a beam width of <span class="math notranslate nohighlight">\(2^\circ\)</span>. Once the horizon search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of <span class="math notranslate nohighlight">\(1.4^\circ\)</span> and a gain of <span class="math notranslate nohighlight">\(30\)</span> dB, and uses range-dependent waveform strategies.</p>
+<p>First, select the first beam and name it “HorizonTargeted”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span> <span class="o">=</span> <span class="n">multifunction_model</span><span class="o">.</span><span class="n">antenna_beams</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="s2">&quot;HorizonTargeted&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then, create a new beam and name it “HorizonSearch”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search</span> <span class="o">=</span> <span class="n">multifunction_model</span><span class="o">.</span><span class="n">antenna_beams</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">horizon_search</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="s2">&quot;HorizonSearch&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Configure-the-horizon-search-beam">
+<h2>Configure the horizon search beam<a class="headerlink" href="#Configure-the-horizon-search-beam" title="Link to this heading">#</a></h2>
+<p>First, set the beam width to <span class="math notranslate nohighlight">\(2^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search</span><span class="o">.</span><span class="n">beam_width</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<p>The horizon search beam uses a rectangular waveform with a frequency of <span class="math notranslate nohighlight">\(3.5\)</span> GHz. Get the rectangular waveform component from the component browser, then duplicate the component and name it “Horizon Search Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Horizon Search Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the waveform to have a frequency of <span class="math notranslate nohighlight">\(3.5\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FrequencySpecificationType</span>
+
+
+<span class="n">horizon_search_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">horizon_search_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">3.5</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, configure the beam to use the waveform:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">fixed_waveform</span> <span class="o">=</span> <span class="s2">&quot;Horizon Search Rectangular&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Next, set the pointing properties for the beam. The beam points in a fixed direction, with an azimuth of <span class="math notranslate nohighlight">\(85^\circ\)</span> and an elevation of <span class="math notranslate nohighlight">\(3^\circ\)</span>, and rotates about the boresight.</p>
+<p>By default, the beam’s pointing strategy is already set to fixed. Assign the azimuth and elevation for the beam, and configure it to rotate about the boresight:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkutil</span><span class="w"> </span><span class="kn">import</span> <span class="n">AzElAboutBoresight</span>
+
+
+<span class="n">horizon_search</span><span class="o">.</span><span class="n">pointing_strategy</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">assign_az_el</span><span class="p">(</span>
+    <span class="mi">85</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">AzElAboutBoresight</span><span class="o">.</span><span class="n">ROTATE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Determine-when-the-horizon-search-beam-detects-the-private-aircraft">
+<h2>Determine when the horizon search beam detects the private aircraft<a class="headerlink" href="#Determine-when-the-horizon-search-beam-detects-the-private-aircraft" title="Link to this heading">#</a></h2>
+<p>First, get and compute the access between the radar and the small aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search_access</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">small_aircraft</span><span class="p">)</span>
+<span class="n">horizon_search_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the data for S/T Integrated SNR and S/T Integrated PDet over time, and view the first five rows of the data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">horizon_search_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar Multifunction&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;HorizonSearch&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+        <span class="s2">&quot;26 Apr 2023 18:36:35.057&quot;</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;S/T Integrated SNR&quot;</span><span class="p">,</span> <span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">,</span> <span class="s2">&quot;Time&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">horizon_search_access_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t integrated pdet</th>
+      <th>s/t integrated snr</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0001001745655270937</td>
+      <td>-53.36434355350096</td>
+      <td>26 Apr 2023 18:00:00.000000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.00010017456378316388</td>
+      <td>-53.34796893393854</td>
+      <td>26 Apr 2023 18:00:01.000000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.00010017456203100844</td>
+      <td>-53.33157902177783</td>
+      <td>26 Apr 2023 18:00:02.000000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00010017456027055924</td>
+      <td>-53.31517358750019</td>
+      <td>26 Apr 2023 18:00:03.000000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.00010017455850177996</td>
+      <td>-53.29875270215837</td>
+      <td>26 Apr 2023 18:00:04.000000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Next, plot the S/T Integrated SNR and S/T Integrated PDet over time:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">md</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># Convert columns to correct types</span>
+<span class="n">horizon_search_access_df_df_graphing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">horizon_search_access_df_df_graphing</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">horizon_search_access_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">horizon_search_access_df_df_graphing</span><span class="p">[</span><span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_search_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated snr&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">horizon_search_access_df_df_graphing</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_search_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated pdet&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">horizon_search_access_df_df_graphing</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;SNR&quot;</span>
+<span class="p">)</span>
+<span class="n">horizon_search_access_df_df_graphing</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;PDet&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine legends</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="c1"># Set axes labels</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;S/T Integrated SNR (dB)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_109_0.png" src="../_images/examples_multifunction-radar-design_109_0.png" />
+</div>
+</div>
+<p>When the private plane flies through the beam, S/T Integrated PDet and SNR (dB) spike. The S/T Integrated SNR (dB) rises as the range between the radar and the aircraft decreases. The S/T Integrated SNR increases in the middle of the graph because the range decreases and the private plane is in a side lobe.</p>
+<p>Next, set the time interval for the Horizon Search beam. The beam begins searching at the scenario time, then stops once it detects the private plane. At that point, the radar switches to the targeted beam.</p>
+<p>To set the interval, get the first time when the beam can track the plane with a PDet higher than 0.8:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_search_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_search_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated pdet&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">first_time</span> <span class="o">=</span> <span class="n">horizon_search_access_df</span><span class="p">[</span>
+    <span class="n">horizon_search_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.8</span>
+<span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Then set the beam’s activity to use time intervals:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarActivityType</span>
+
+
+<span class="n">horizon_search</span><span class="o">.</span><span class="n">set_activity_type</span><span class="p">(</span><span class="n">RadarActivityType</span><span class="o">.</span><span class="n">TIME_INTERVAL_LIST</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add an interval to the beam:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval</span> <span class="o">=</span> <span class="n">horizon_search</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">time_intervals</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the stop time to the first time the plane is tracked:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval</span><span class="o">.</span><span class="n">stop</span> <span class="o">=</span> <span class="n">first_time</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Configure-the-horizon-targeted-beam">
+<h2>Configure the horizon targeted beam<a class="headerlink" href="#Configure-the-horizon-targeted-beam" title="Link to this heading">#</a></h2>
+<p>Once the Horizon Search beam detects the private plane, the radar model switches to using an active tracking beam targeting the private plane. The beam has a beam width of <span class="math notranslate nohighlight">\(1.4^\circ\)</span> and a gain of <span class="math notranslate nohighlight">\(30\)</span> dB, and uses range-dependent waveform strategies.</p>
+<p>First, set the beam width to <span class="math notranslate nohighlight">\(1.4^\circ\)</span> and the gain to <span class="math notranslate nohighlight">\(30\)</span> dB:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">beam_width</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">gain</span> <span class="o">=</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-range-dependent-waveform-strategies">
+<h2>Create range-dependent waveform strategies<a class="headerlink" href="#Create-range-dependent-waveform-strategies" title="Link to this heading">#</a></h2>
+<p>It is possible to change a beam’s frequency, power, or both by creating unique waveforms for that beam based on distance to the target. The horizon targeted beam tracks the private plane. During the scenario analysis period, the plane’s distance from the radar site varies from <span class="math notranslate nohighlight">\(20\)</span> to <span class="math notranslate nohighlight">\(250\)</span> km. The beam switches waveforms based on the distance to the aircraft from the radar. The default waveform strategy settings in STK are optimal. However, for this scenario, the beam uses different
+frequencies based on the distance to the aircraft. Therefore, create and customize four new waveforms. STK’s multifunction radar automatically switches from one waveform to another based on the distance between the plane and the radar site. Later, reuse these waveforms for a beam which targets the airliner.</p>
+<p>The first waveform is used for long range. Duplicate the <code class="docutils literal notranslate"><span class="pre">Long</span> <span class="pre">Range</span> <span class="pre">Rectangular</span></code> component, and name the duplicate “Aircraft Long Range Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">long_range_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Long Range Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Aircraft Long Range Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The long-range rectangular waveform uses low pulse repetition frequency (PRF) rectangular pulses, with a default PRF of <span class="math notranslate nohighlight">\(0.0005\)</span> MHz. Configure the waveform’s frequency to <span class="math notranslate nohighlight">\(2.0\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FrequencySpecificationType</span>
+
+
+<span class="n">long_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">long_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<p>Next, set the medium-range rectangular waveform by duplicating the <code class="docutils literal notranslate"><span class="pre">Medium</span> <span class="pre">Range</span> <span class="pre">Rectangular</span></code> component, which uses a default PRF of <span class="math notranslate nohighlight">\(0.002\)</span> MHz. Name the duplicate “Aircraft Medium Range Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium_range_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Medium Range Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Aircraft Medium Range Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Configure the waveform’s frequency to <span class="math notranslate nohighlight">\(3.0\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medium_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">medium_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the short-range rectangular waveform. Duplicate the <code class="docutils literal notranslate"><span class="pre">Short</span> <span class="pre">Range</span> <span class="pre">Rectangular</span></code> component, which uses a default PRF of <span class="math notranslate nohighlight">\(0.005\)</span> MHz, and name the duplicate “Aircraft Short Range Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">short_range_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Short Range Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Aircraft Short Range Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the waveform’s frequency to <span class="math notranslate nohighlight">\(8.0\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">short_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">short_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">8.0</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, set the ultra-long-range rectangular waveform by duplicating the <code class="docutils literal notranslate"><span class="pre">Ultra</span> <span class="pre">Long</span> <span class="pre">Range</span> <span class="pre">Rectangular</span></code> component, which has a default PRF of <span class="math notranslate nohighlight">\(0.0001\)</span> MHz, and naming the duplicate “Aircraft Ultra Long Range Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ultra_long_range_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Ultra Long Range Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Aircraft Ultra Long Range Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the waveform’s frequency to <span class="math notranslate nohighlight">\(1.0\)</span> GHz:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ultra_long_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">ultra_long_range_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+<p>Next, override the beam’s default waveform strategies in order to support dynamic waveform switching. Configure the beam’s waveform strategy to use range limits to choose between waveforms:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">WaveformSelectionStrategyType</span>
+
+
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">set_waveform_selection_strategy</span><span class="p">(</span>
+    <span class="n">WaveformSelectionStrategyType</span><span class="o">.</span><span class="n">RANGE_LIMITS</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, override the default selection strategies for all four ranges of waveforms:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">override_default_short_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">override_default_medium_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">override_default_long_range_waveform</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">override_default_ultra_long_range_waveform</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, configure the beam to use the four previously configured waveform components:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">short_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Aircraft Short Range Rectangular&quot;</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">medium_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Aircraft Medium Range Rectangular&quot;</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">long_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Aircraft Long Range Rectangular&quot;</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">ultra_long_range_waveform</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Aircraft Ultra Long Range Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the pointing option for the Horizon Targeted beam. Set the pointing strategy type to targeted:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">set_pointing_strategy_type</span><span class="p">(</span><span class="n">PointingStrategyType</span><span class="o">.</span><span class="n">TARGETED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is possible to see all of the available targets for the beam by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">pointing_strategy</span><span class="o">.</span><span class="n">available_target_objects</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Aircraft/SmallAircraft&#39;]
+</pre></div></div>
+</div>
+<p>Assign the private plane as the target:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted</span><span class="o">.</span><span class="n">pointing_strategy</span><span class="o">.</span><span class="n">target_object</span> <span class="o">=</span> <span class="s2">&quot;Aircraft/SmallAircraft&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="View-how-waveform-strategies-vary-with-range-for-the-horizon-targeted-beam">
+<h2>View how waveform strategies vary with range for the horizon targeted beam<a class="headerlink" href="#View-how-waveform-strategies-vary-with-range-for-the-horizon-targeted-beam" title="Link to this heading">#</a></h2>
+<p>First, get and compute the access between the radar and the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_airplane_access</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">small_aircraft</span><span class="p">)</span>
+<span class="n">horizon_targeted_airplane_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the data for S/T PDet1, S/T Integrated PDet, and Waveform ID over time, and view the first five rows of the data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">horizon_targeted_airplane_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar Multifunction&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;HorizonTargeted&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;S/T PDet1&quot;</span><span class="p">,</span> <span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">,</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Waveform ID&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted_access_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t integrated pdet</th>
+      <th>s/t pdet1</th>
+      <th>time</th>
+      <th>waveform id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.999633090008432</td>
+      <td>0.1485120952256964</td>
+      <td>26 Apr 2023 18:00:00.000000000</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.9992090696427715</td>
+      <td>0.1622263651262525</td>
+      <td>26 Apr 2023 18:00:10.000000000</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.9995544923471046</td>
+      <td>0.17778627114177797</td>
+      <td>26 Apr 2023 18:00:20.000000000</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.9997598505392916</td>
+      <td>0.19417124541870723</td>
+      <td>26 Apr 2023 18:00:30.000000000</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.9998765226200849</td>
+      <td>0.21191980819163767</td>
+      <td>26 Apr 2023 18:00:40.000000000</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Then, get the data for the range between the aircraft and the radar over the duration of the scenario:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_aer_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">horizon_targeted_airplane_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;AER Data&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Range&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted_aer_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>26 Apr 2023 18:00:00.000000000</td>
+      <td>217877.61131736395</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>26 Apr 2023 18:00:10.000000000</td>
+      <td>215824.8819606678</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>26 Apr 2023 18:00:20.000000000</td>
+      <td>213772.1618459629</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>26 Apr 2023 18:00:30.000000000</td>
+      <td>211719.44996986052</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26 Apr 2023 18:00:40.000000000</td>
+      <td>209666.7465950436</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Then, combine the data for range and the data for S/T Integrated PDet and S/t PDet 1 over time and view the first five rows of the data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">horizon_targeted_aer_df</span><span class="p">,</span> <span class="n">horizon_targeted_access_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span>
+<span class="p">)</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>range</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t pdet1</th>
+      <th>waveform id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>26 Apr 2023 18:00:00.000000000</td>
+      <td>217877.61131736395</td>
+      <td>0.999633090008432</td>
+      <td>0.1485120952256964</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>26 Apr 2023 18:00:10.000000000</td>
+      <td>215824.8819606678</td>
+      <td>0.9992090696427715</td>
+      <td>0.1622263651262525</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>26 Apr 2023 18:00:20.000000000</td>
+      <td>213772.1618459629</td>
+      <td>0.9995544923471046</td>
+      <td>0.17778627114177797</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>26 Apr 2023 18:00:30.000000000</td>
+      <td>211719.44996986052</td>
+      <td>0.9997598505392916</td>
+      <td>0.19417124541870723</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26 Apr 2023 18:00:40.000000000</td>
+      <td>209666.7465950436</td>
+      <td>0.9998765226200849</td>
+      <td>0.21191980819163767</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Next, find the time at which the range is the lowest, and multiply the range values up to that point by -1:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">df_merged</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>range</th>
+      <th>s/t integrated pdet</th>
+      <th>s/t pdet1</th>
+      <th>waveform id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>26 Apr 2023 18:00:00.000000000</td>
+      <td>-217877.611317</td>
+      <td>0.999633</td>
+      <td>0.1485120952256964</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>26 Apr 2023 18:00:10.000000000</td>
+      <td>-215824.881961</td>
+      <td>0.999209</td>
+      <td>0.1622263651262525</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>26 Apr 2023 18:00:20.000000000</td>
+      <td>-213772.161846</td>
+      <td>0.999554</td>
+      <td>0.17778627114177797</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>26 Apr 2023 18:00:30.000000000</td>
+      <td>-211719.449970</td>
+      <td>0.999760</td>
+      <td>0.19417124541870723</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26 Apr 2023 18:00:40.000000000</td>
+      <td>-209666.746595</td>
+      <td>0.999877</td>
+      <td>0.21191980819163767</td>
+      <td>Aircraft_Long_Range_Rectangular</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Finally, plot the range vs. S/T Integrated PDet for each waveform type:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Plot data by waveform</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;navy&quot;</span><span class="p">,</span> <span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="s2">&quot;pink&quot;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;waveform id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;waveform id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">label</span><span class="p">][</span><span class="s2">&quot;range&quot;</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;waveform id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">label</span><span class="p">][</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Configure styling</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Configure axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Range (ft)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add line representing 0.8 PDet</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_166_0.png" src="../_images/examples_multifunction-radar-design_166_0.png" />
+</div>
+</div>
+<p>A negative range indicates that the private plane is approaching the radar site, while a positive range means that the plane is moving away from the site. The range is 0 when the plane is directly above the site.</p>
+<p>The ultra long range waveform is never used, as the aircraft is never far enough from the radar site for the beam to switch to this waveform. Because the beam moves between waveforms based on range from the target, there is good tracking (above 0.8 PDet) at almost all times. The only times when the PDet is below 0.8 is when the respective waveforms are used at the very limits of their configured ranges.</p>
+</section>
+<section id="Configure-the-target-airliner-beam's-start-time">
+<h2>Configure the target airliner beam’s start time<a class="headerlink" href="#Configure-the-target-airliner-beam's-start-time" title="Link to this heading">#</a></h2>
+<p>Next, configure the beam to start tracking the private plane when the horizon search beam is first able to track it. Configure the beam to use a time interval list as its activity type:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">RadarActivityType</span>
+
+
+<span class="n">horizon_targeted</span><span class="o">.</span><span class="n">set_activity_type</span><span class="p">(</span><span class="n">RadarActivityType</span><span class="o">.</span><span class="n">TIME_INTERVAL_LIST</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add an interval to the beam’s activity, and set the start time to the first time the horizon search beam detects the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval</span> <span class="o">=</span> <span class="n">horizon_targeted</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">time_intervals</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="n">interval</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">first_time</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Determine-when-the-horizon-targeted-beam-detects-the-private-aircraft">
+<h2>Determine when the horizon targeted beam detects the private aircraft<a class="headerlink" href="#Determine-when-the-horizon-targeted-beam-detects-the-private-aircraft" title="Link to this heading">#</a></h2>
+<p>Recompute the access between the radar and the small aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_airplane_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the data for S/T PDet1 and S/T Integrated PDet over time, and view the first five rows of the data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">horizon_targeted_airplane_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar Multifunction&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;HorizonTargeted&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">&quot;S/T PDet1&quot;</span><span class="p">,</span> <span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">,</span> <span class="s2">&quot;Time&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted_access_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>s/t integrated pdet</th>
+      <th>s/t pdet1</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.9760980261415276</td>
+      <td>0.013724321716949556</td>
+      <td>26 Apr 2023 18:13:28.000000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.9793747062578052</td>
+      <td>0.01422083450338697</td>
+      <td>26 Apr 2023 18:13:29.000000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.9761283327917564</td>
+      <td>0.014737747182353794</td>
+      <td>26 Apr 2023 18:13:30.000000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.9794124743390872</td>
+      <td>0.015275897539162609</td>
+      <td>26 Apr 2023 18:13:31.000000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.9823326130615648</td>
+      <td>0.01583613251335886</td>
+      <td>26 Apr 2023 18:13:32.000000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Next, plot the S/T PDet1 and S/T Integrated PDet over time:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert columns to correct types</span>
+<span class="n">horizon_targeted_access_df_graphing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">horizon_targeted_access_df_graphing</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+    <span class="n">horizon_targeted_access_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted_access_df_graphing</span><span class="p">[</span><span class="s2">&quot;s/t pdet1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_targeted_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t pdet1&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">horizon_targeted_access_df_graphing</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_targeted_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated pdet&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">horizon_targeted_access_df_graphing</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t pdet1&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;PDet1&quot;</span>
+<span class="p">)</span>
+<span class="n">horizon_targeted_access_df_graphing</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Integrated PDet&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PDet&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure legend</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_180_0.png" src="../_images/examples_multifunction-radar-design_180_0.png" />
+</div>
+</div>
+<p>S/T PDet1 uses one pulse and S/T Integrated PDet uses up to 512 pulses. Both S/T PDet1 and S/T Integrated PDet show reflections from the private plane. However, the S/T PDet1 values drop twice, while the S/T Integrated PDet values only drop below 0.8 on two instances.</p>
+<p>Once the horizon targeted beam can no longer track the private plane, the radar switches back to using the horizon search beam. To configure the time intervals, first find the first time that the horizon targeted beam cannot see the private plane with a PDet above 0.8:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horizon_targeted_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">horizon_targeted_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated pdet&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">last_time</span> <span class="o">=</span> <span class="n">horizon_targeted_access_df</span><span class="p">[</span>
+    <span class="n">horizon_targeted_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.8</span>
+<span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Then, add a new time interval to the horizon search beam’s activity:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval2</span> <span class="o">=</span> <span class="n">horizon_search</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">time_intervals</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Set the start time to the last time that the horizon targeted beam can track the aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval2</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">last_time</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the horizon targeted beam to turn off once it can no longer track the private plane:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interval</span><span class="o">.</span><span class="n">stop</span> <span class="o">=</span> <span class="n">last_time</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-volume-search-beam">
+<h2>Create a volume search beam<a class="headerlink" href="#Create-a-volume-search-beam" title="Link to this heading">#</a></h2>
+<p>The last beam on the radar is a volume search beam that scans the horizon. The beam has a gain of <span class="math notranslate nohighlight">\(30\)</span> dB and a beam width of <span class="math notranslate nohighlight">\(5^\circ\)</span>. It spins continuously over <span class="math notranslate nohighlight">\(360^\circ\)</span>. The cone angle is <span class="math notranslate nohighlight">\(87^\circ\)</span> with a spin rate of <span class="math notranslate nohighlight">\(60^\circ\)</span> per second.</p>
+<p>First, create the beam by adding a beam to the multifunction model’s antenna beams:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search</span> <span class="o">=</span> <span class="n">multifunction_model</span><span class="o">.</span><span class="n">antenna_beams</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, rename the beam to “VolumeSearch”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="s2">&quot;VolumeSearch&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>To set the beam width, it is necessary to first set the beam’s gain, because a larger beam width necessitates a lower gain. If the beam width were set first, STK would produce an invalid sidelobe gain computation error.</p>
+<p>First set the gain to <span class="math notranslate nohighlight">\(30\)</span> dB and then the beam width to <span class="math notranslate nohighlight">\(5^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search</span><span class="o">.</span><span class="n">gain</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">volume_search</span><span class="o">.</span><span class="n">beam_width</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the volume search beam’s waveform strategy. The beam uses a volume search rectangular waveform, with a frequency of <span class="math notranslate nohighlight">\(3.5\)</span> GHz and a power of <span class="math notranslate nohighlight">\(50\)</span> dBW.</p>
+<p>First, get the <code class="docutils literal notranslate"><span class="pre">Rectangular</span></code> waveform component, then duplicate it and name the duplicate “Volume Search Rectangular”:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search_rectangular_waveform</span> <span class="o">=</span> <span class="n">radar_waveform_components</span><span class="o">.</span><span class="n">duplicate_component</span><span class="p">(</span>
+    <span class="s2">&quot;Rectangular&quot;</span><span class="p">,</span> <span class="s2">&quot;Volume Search Rectangular&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Next, configure the waveform to use frequency, then set the frequency to <span class="math notranslate nohighlight">\(3.5\)</span> GHz and the power to <span class="math notranslate nohighlight">\(50\)</span> dBW:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search_rectangular_waveform</span><span class="o">.</span><span class="n">frequency_specification</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FrequencySpecificationType</span><span class="o">.</span><span class="n">FREQUENCY</span>
+<span class="p">)</span>
+<span class="n">volume_search_rectangular_waveform</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">volume_search_rectangular_waveform</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<p>Then, configure the volume search beam to use the waveform:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search</span><span class="o">.</span><span class="n">waveform_selection_strategy</span><span class="o">.</span><span class="n">fixed_waveform</span> <span class="o">=</span> <span class="s2">&quot;Volume Search Rectangular&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Next, set the beam’s pointing type to spinning:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search</span><span class="o">.</span><span class="n">set_pointing_strategy_type</span><span class="p">(</span><span class="n">PointingStrategyType</span><span class="o">.</span><span class="n">SPINNING</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The beam’s <code class="docutils literal notranslate"><span class="pre">pointing_strategy</span></code> property now returns a <code class="docutils literal notranslate"><span class="pre">PointingStrategySpinning</span></code> object. Use the <code class="docutils literal notranslate"><span class="pre">PointingStrategySpinning</span></code> object to set the cone angle to <span class="math notranslate nohighlight">\(87^\circ\)</span> and the spin rate to <span class="math notranslate nohighlight">\(60^\circ\)</span> per second:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point_strategy</span> <span class="o">=</span> <span class="n">volume_search</span><span class="o">.</span><span class="n">pointing_strategy</span>
+<span class="n">point_strategy</span><span class="o">.</span><span class="n">cone_angle</span> <span class="o">=</span> <span class="mi">87</span>
+<span class="n">point_strategy</span><span class="o">.</span><span class="n">spin_rate</span> <span class="o">=</span> <span class="mi">60</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Determine-when-the-beam-can-track-the-plane">
+<h2>Determine when the beam can track the plane<a class="headerlink" href="#Determine-when-the-beam-can-track-the-plane" title="Link to this heading">#</a></h2>
+<p>To determine when the beam can track the aircraft, first get and compute the access between the radar and the small aircraft:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">volume_search_access</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">get_access_to_object</span><span class="p">(</span><span class="n">small_aircraft</span><span class="p">)</span>
+<span class="n">volume_search_access</span><span class="o">.</span><span class="n">compute_access</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Then, get the data for Time, S/T Integrated SNR, S/T Integrated PDet, and S/T Pulses Integrated every minute during both accesses:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Time&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;S/T Integrated SNR&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;S/T Pulses Integrated&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">volume_search_access_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">volume_search_access</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Radar Multifunction&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;VolumeSearch&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">execute_elements</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">elements</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, plot the S/T Integrated SNR and S/T Integrated PDet over the duration of the scenario:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert columns to correct types</span>
+<span class="n">volume_search_access_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">volume_search_access_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">volume_search_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">volume_search_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated snr&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+<span class="n">volume_search_access_df</span><span class="p">[</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">volume_search_access_df</span><span class="p">[</span>
+    <span class="s2">&quot;s/t integrated pdet&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">volume_search_access_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t integrated snr&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Integrated SNR&quot;</span>
+<span class="p">)</span>
+<span class="n">volume_search_access_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;s/t integrated pdet&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Integrated PDet&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine legends</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_lines</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="c1"># Add line representing 0.8 PDet</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;S/T Integrated SNR&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;S/T Integrated PDet&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_216_0.png" src="../_images/examples_multifunction-radar-design_216_0.png" />
+</div>
+</div>
+<p>The volume search beam obtains reflections from the private plane. There are a couple of instances in which the S/T Integrated PDet for the private plane is above 0.80000, so the volume search picks up the private plane.</p>
+</section>
+<section id="Visualize-the-radar-system">
+<h2>Visualize the radar system<a class="headerlink" href="#Visualize-the-radar-system" title="Link to this heading">#</a></h2>
+<p>First, configure the 3D graphics for the radar. Changes to the radar’s 3D graphics settings are applied to all beams in the system.</p>
+<p>Configure graphics to show the volumes of the beams:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">volume</span><span class="o">.</span><span class="n">show</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the gain scale to <span class="math notranslate nohighlight">\(328\)</span> ft/dB:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">volume</span><span class="o">.</span><span class="n">gain_scale</span> <span class="o">=</span> <span class="mi">328</span>
+</pre></div>
+</div>
+</div>
+<p>Then, for both azimuth and elevation, set the volume graphics resolution to <span class="math notranslate nohighlight">\(0.5^\circ\)</span> ranging from <span class="math notranslate nohighlight">\(-180^\circ\)</span> to <span class="math notranslate nohighlight">\(180^\circ\)</span>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[91]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span><span class="o">.</span><span class="n">graphics_3d</span><span class="o">.</span><span class="n">volume</span><span class="o">.</span><span class="n">set_resolution</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>It is now possible to see the beams in the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[92]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17039826</span><span class="p">,</span> <span class="mi">2810211</span><span class="p">,</span> <span class="mi">11818867</span><span class="p">]</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[92]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_227_0.png" src="../_images/examples_multifunction-radar-design_227_0.png" />
+</div>
+</div>
+<p>Only the volume search and horizon search beams are visible at this point, as the horizon targeted beam is inactive at the start of the scenario and so does not have graphics associated with it.</p>
+<p>To view the horizon targeted beam, convert the first time that the target airliner is active to epoch seconds, then set the animation current time:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[93]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">current_time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">conversion_utility</span><span class="o">.</span><span class="n">convert_date</span><span class="p">(</span><span class="s2">&quot;UTCG&quot;</span><span class="p">,</span> <span class="s2">&quot;EpSec&quot;</span><span class="p">,</span> <span class="n">first_time</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, view the horizon targeted beam and volume search beams:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[94]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17039826</span><span class="p">,</span> <span class="mi">2810211</span><span class="p">,</span> <span class="mi">11818867</span><span class="p">]</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[94]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_multifunction-radar-design_232_0.png" src="../_images/examples_multifunction-radar-design_232_0.png" />
+</div>
+</div>
+<p>The horizon search beam is no longer active, so it is not shown.</p>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"e0173365d6ec424b9217cf6e5c5f0954": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fe86a143989c4ee290c665c88313bd0f": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_e0173365d6ec424b9217cf6e5c5f0954", "resizable": true, "tabbable": null, "tooltip": null}}, "7417eb0cb6d8427e813a0882f9786c36": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "57f63deaa5ea4cda9fbda9a1d4cd4204": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_7417eb0cb6d8427e813a0882f9786c36", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "6228e03f3217428f820f41129a130caa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "52c9a47bb9cb45958b698656737379fc": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_6228e03f3217428f820f41129a130caa", "resizable": true, "tabbable": null, "tooltip": null}}, "cbefdebb39874224932e8b4e23d32154": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "79b403fbf26847c798b9ee1ef5f77563": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_cbefdebb39874224932e8b4e23d32154", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="multifunction-radar-parametric-study.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multifunction radar parametric study</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="aviator-fuel-calculator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Commercial aircraft fuel calculator with Aviator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-are-multifunction-radar-systems?">What are multifunction radar systems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-unit-preferences">Set the unit preferences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-the-radar-site">Create the radar site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-small-private-aircraft">Create a small private aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-multifunction-radar-system">Create a multifunction radar system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Access-the-component-directory">Access the component directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-horizon-search-beam-and-a-targeted-beam-associated-with-it">Create a horizon search beam and a targeted beam associated with it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-horizon-search-beam">Configure the horizon search beam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Determine-when-the-horizon-search-beam-detects-the-private-aircraft">Determine when the horizon search beam detects the private aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-horizon-targeted-beam">Configure the horizon targeted beam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-range-dependent-waveform-strategies">Create range-dependent waveform strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#View-how-waveform-strategies-vary-with-range-for-the-horizon-targeted-beam">View how waveform strategies vary with range for the horizon targeted beam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-target-airliner-beam's-start-time">Configure the target airliner beam’s start time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Determine-when-the-horizon-targeted-beam-detects-the-private-aircraft">Determine when the horizon targeted beam detects the private aircraft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-volume-search-beam">Create a volume search beam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Determine-when-the-beam-can-track-the-plane">Determine when the beam can track the plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualize-the-radar-system">Visualize the radar system</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/multifunction-radar-design.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/multifunction-radar-design.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

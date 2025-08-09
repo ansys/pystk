@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Contributing as a documentarian &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute/documentarian';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing as a developer" href="developer.html" />
+    <link rel="prev" title="Contributing as a user" href="user.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/contribute/documentarian.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Documentarian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../contribute.html" class="nav-link">Contribute</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Contributing as a documentarian</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-as-a-documentarian">
+<h1>Contributing as a documentarian<a class="headerlink" href="#contributing-as-a-documentarian" title="Link to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-pencil"></span> Write documentation</div>
+<p class="sd-card-text">Explain how to get started, use, and contribute to the project.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#write-documentation"><span class="std std-ref">Write documentation</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-laptop-code"></span> Add a new example</div>
+<p class="sd-card-text">Showcase the capabilities of PySTK by adding a new example.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#write-examples"><span class="std std-ref">Write a new example</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-clone"></span> Add a new code snippet</div>
+<p class="sd-card-text">Demonstrate a common PySTK task by adding a new code snippet.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#write-snippets"><span class="std std-ref">Write a new code snippet</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-pt-2 sd-pb-2 sd-pl-2 sd-pr-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fa fa-file-code"></span> Build the documentation</div>
+<p class="sd-card-text">Render the documentation to see your changes reflected.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="#build-documentation"><span class="std std-ref">Build the documentation</span></a></div>
+</div>
+</div>
+</div>
+<section id="write-documentation">
+<span id="id1"></span><h2>Write documentation<a class="headerlink" href="#write-documentation" title="Link to this heading">#</a></h2>
+<p>The documentation generator used in PySTK is <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>. Most of the documents
+are written in <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>. Some parts of the documentation, like the
+<a class="reference internal" href="../examples.html#examples"><span class="std std-ref">examples</span></a>, use mix of <a class="reference external" href="https://www.markdownguide.org/">markdown</a> and Python. If
+you are interested in writing examples, see the <a class="reference internal" href="#write-examples"><span class="std std-ref">writing examples</span></a>
+section.</p>
+<p>The documentation is located in the <code class="docutils literal notranslate"><span class="pre">doc/source</span></code> directory. The landing page
+is declared in the <code class="docutils literal notranslate"><span class="pre">doc/source/index.rst</span></code> file. The rest of the files contain
+the main pages of different sections of the documentation. Finally, the
+<code class="docutils literal notranslate"><span class="pre">doc/source/_static/</span></code> folder contains various assets like images, and CSS
+files.</p>
+<p>The layout of the <code class="docutils literal notranslate"><span class="pre">doc/source</span></code> directory is reflected in the slug of the
+online documentation. For example, the
+<code class="docutils literal notranslate"><span class="pre">doc/source/contribute/documentarian.rst</span></code> renders as
+<code class="docutils literal notranslate"><span class="pre">https://docs.pystk.com/contribute/documentarian</span></code>.</p>
+<p>Thus, if you create a new file, it important to follow these rules:</p>
+<ul class="simple">
+<li><p>Use lowercase letters for file and directory names</p></li>
+<li><p>Use short and descriptive names</p></li>
+<li><p>Use hyphens to separate words</p></li>
+<li><p>Play smart with the hierarchy of the files and directories</p></li>
+</ul>
+<p>All files need to be included in a table of contents. No dangling files are
+permitted. If a file is not included in the table of contents, Sphinx raises a
+warning that makes the build to fail.</p>
+<p>A table of contents can be declared using a directive like this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:hidden:</span>
+    <span class="nc">:maxdepth:</span> 3
+
+    path-to-file-A
+    path-to-file-B
+    path-to-file-C
+<span class="c">    ...</span>
+</pre></div>
+</div>
+<p>The path to the file is relative to the directory where the table of contents
+is declared.</p>
+</section>
+<section id="write-a-new-example">
+<span id="write-examples"></span><h2>Write a new example<a class="headerlink" href="#write-a-new-example" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../examples.html#examples"><span class="std std-ref">examples</span></a> section of the documentation showcases different
+capabilities of PySTK. Each example is a standalone Python script. Despite
+being <code class="docutils literal notranslate"><span class="pre">*.py</span></code> files, they are written in a mix of <a class="reference external" href="https://www.markdownguide.org/">markdown</a> and Python. This
+is possible thanks to the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">myst-parser</a> Sphinx extension. In addition, these
+Python files can be opened as Jupyter Notebooks thanks to the <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">jupytext</a>
+extension.</p>
+<p>Documentarians writing new examples are encouraged to open a new Jupyter Lab
+session and write the example as a Jupyter Notebook. This way, the
+documentarian can test the code and see the output in real-time. The created
+Jupyter Notebook gets stored as a Python file automatically.</p>
+<p>Finally, here are some tips for writing examples:</p>
+<ul class="simple">
+<li><p>Start the example with an explanation of the main topic. For example, if you
+are discussing a certain orbital maneuver, explain what that maneuver
+entails. Similarly, if an example is centered around satellite coverage,
+provide an explanation of what coverage is. Try to use as many relevant
+keywords as possible in this section to optimize for Search Engine
+Optimization.</p></li>
+<li><p>The second section of the example should be a problem statement. This
+statement should include all of the parameters needed in the example, as well
+as a description of what the example aims to determine. Write this section in
+an imperative form.</p></li>
+<li><p>Include an explanation with each code cell. In a Jupyter notebook, this
+entails adding a markdown cell before each code cell. The explanations should
+be included before, not after, the corresponding code.</p></li>
+<li><p>The examples are built with the documentation and included in the help. As
+part of the build process, screenshots of the STK Engine 2D and 3D graphics
+are inserted in the document. You do not need to include the screenshots
+yourself. However, do include the graphics widgets (2D or 3D) at points in
+your example. When the documentation is built, a screenshot of the widget
+is inserted in its place. Jupyter widgets are included in
+<a class="reference internal" href="../api/ansys/stk/core/stkengine/experimental/jupyterwidgets.html#module-ansys.stk.core.stkengine.experimental.jupyterwidgets" title="ansys.stk.core.stkengine.experimental.jupyterwidgets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jupyterwidgets</span></code></a>.</p></li>
+</ul>
+</section>
+<section id="write-a-new-code-snippet">
+<span id="write-snippets"></span><h2>Write a new code snippet<a class="headerlink" href="#write-a-new-code-snippet" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../user-guide/code-snippets.html#pystk-code-snippets"><span class="std std-ref">code snippets</span></a> demonstrate how to perform
+common tasks in PySTK. Code snippets are written in <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> test functions
+in the <a class="reference external" href="https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests">code snippet directory</a> and are run as part of the
+tests. They are also included in the documentation, providing PySTK users
+useful templates for the building blocks of PySTK scenario design. This
+enables the snippets to appear:</p>
+<ul class="simple">
+<li><p>On the API reference pages for the elements used in the snippet</p></li>
+<li><p>On the <a class="reference internal" href="../user-guide/code-snippets.html#pystk-code-snippets"><span class="std std-ref">code snippets</span></a> landing page</p></li>
+<li><p>In the quick info provided by code completion tools such as <a class="reference external" href="https://code.visualstudio.com/docs/editing/intellisense">IntelliSense</a></p></li>
+</ul>
+<p>To contribute your own code snippet, first identify the critical API element
+or elements used in the snippet. In the following example, the primary element
+of interest is the <a class="reference internal" href="../api/ansys/stk/core/stkobjects/Scenario.html#ansys.stk.core.stkobjects.Scenario" title="ansys.stk.core.stkobjects.Scenario"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scenario</span></code></a> object.
+Additionally, for instructional purposes, this example demonstrates the
+process of attaching this snippet to its
+<a class="reference internal" href="../api/ansys/stk/core/stkobjects/Scenario.html#Scenario.set_time_period" title="ansys.stk.core.stkobjects.Scenario.set_time_period"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_time_period()</span></code></a> method.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># STKObjectRoot root: STK Object Model Root</span>
+<span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;1 Jan 2012 12:00:00.000&quot;</span><span class="p">,</span> <span class="n">stop_time</span><span class="o">=</span><span class="s2">&quot;2 Jan 2012 12:00:00.000&quot;</span><span class="p">)</span>
+<span class="c1"># Use scenario.start_time, scenario.stop_time to get time period</span>
+</pre></div>
+</div>
+<p>Next, wrap the snippet in a method with a descriptive name ending with
+<code class="docutils literal notranslate"><span class="pre">Snippet</span></code>. If the method consumes a non-self parameter, add a comment to the
+first line of the method describing its type to orient the user to the
+snippet’s assumed configuration. Decorate this method with PySTK’s
+<code class="docutils literal notranslate"><span class="pre">&#64;code_snippet</span></code> decorator:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Attribute</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>name</strong></p></td>
+<td><p>A Pascal-cased name briefly describing the snippet’s objective (tip: use this name followed by <code class="docutils literal notranslate"><span class="pre">Snippet</span></code> to name the function enclosing the snippet)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>description</strong></p></td>
+<td><p>A sentence-style phrase describing the task performed in the snippet</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>category</strong></p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">|</span></code>-separated list describing the organization of the capability. See the <a class="reference internal" href="../user-guide/code-snippets.html#pystk-code-snippets"><span class="std std-ref">code snippets</span></a> landing page for the list of existing categories and subcategories. New categories can be created on a need basis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eid</strong></p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">|</span></code>-separated list of ids for the one or more elements previously identified as central to the snippet. Each id should be of the form <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;~&lt;class/interface</span> <span class="pre">name&gt;(~&lt;method/property</span> <span class="pre">name&gt;)</span></code> where <code class="docutils literal notranslate"><span class="pre">module</span></code> represents the namespace of the module where the element is defined, starting after <code class="docutils literal notranslate"><span class="pre">ansys.stk.core</span></code>. Omit the parenthesized portion if the <code class="docutils literal notranslate"><span class="pre">eid</span></code> corresponds to a class or interface.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here is an example of a decorated method for the preceding code snippet:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@code_snippet</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Set the current scenario&#39;s time period&quot;</span><span class="p">,</span>
+    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Scenario | Scenario Management&quot;</span><span class="p">,</span>
+    <span class="n">eid</span><span class="o">=</span><span class="s2">&quot;stkobjects~Scenario | stkobjects~Scenario~set_time_period&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">SetScenarioTimePeriodSnippet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+    <span class="c1"># STKObjectRoot root: STK Object Model Root</span>
+    <span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;1 Jan 2012 12:00:00.000&quot;</span><span class="p">,</span> <span class="n">stop_time</span><span class="o">=</span><span class="s2">&quot;2 Jan 2012 12:00:00.000&quot;</span><span class="p">)</span>
+    <span class="c1"># Use scenario.start_time, scenario.stop_time to get time period</span>
+</pre></div>
+</div>
+<p>Next, add a pytest-discoverable method (beginning with <code class="docutils literal notranslate"><span class="pre">test</span></code>) that calls
+the decorated method. This new method should perform any configuration that
+the decorated method assumes upon entry. When automating this configuration,
+you may assume that an STK application is started and a basic STK scenario is
+open. You may access the <code class="xref py py-class docutils literal notranslate"><span class="pre">StkObjectRoot</span></code>
+for this application using <code class="docutils literal notranslate"><span class="pre">self.get_root()</span></code>.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_SetScenarioTimePeriodSnippet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">SetScenarioTimePeriodSnippet</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+<span class="nd">@code_snippet</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SetScenarioTimePeriod&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Set the current scenario&#39;s time period&quot;</span><span class="p">,</span>
+    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Scenario | Scenario Management&quot;</span><span class="p">,</span>
+    <span class="n">eid</span><span class="o">=</span><span class="s2">&quot;stkobjects~Scenario | stkobjects~Scenario~set_time_period&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">SetScenarioTimePeriodSnippet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+    <span class="c1"># STKObjectRoot root: STK Object Model Root</span>
+    <span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;1 Jan 2012 12:00:00.000&quot;</span><span class="p">,</span> <span class="n">stop_time</span><span class="o">=</span><span class="s2">&quot;2 Jan 2012 12:00:00.000&quot;</span><span class="p">)</span>
+    <span class="c1"># Use scenario.start_time, scenario.stop_time to get time period</span>
+</pre></div>
+</div>
+<p>Copy these methods into the file corresponding to the value provided for the
+<code class="docutils literal notranslate"><span class="pre">&#64;code_snippet</span></code> decorator’s <code class="docutils literal notranslate"><span class="pre">category</span></code> attribute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you created a new category for this attribute, you may also need to
+create a new test file. If this is the case, create a copy of
+<code class="docutils literal notranslate"><span class="pre">template_snippets.py</span></code> in the <a class="reference external" href="https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests">code snippet directory</a> and rename the copy
+<code class="docutils literal notranslate"><span class="pre">&lt;subcategory&gt;_snippets.py</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;subcategory&gt;</span></code> is the new subcategory.
+If necessary, create directories matching the category organization up to
+<code class="docutils literal notranslate"><span class="pre">doc_snippets_tests</span></code>.</p>
+</div>
+<p>Run the tests defined in the <a class="reference external" href="https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests">code snippet directory</a> and make sure
+your new snippet runs and passes.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>test-snippets
+</pre></div>
+</div>
+<p>To ensure properly formatted changes (including additions, deletions, and
+modifications) to the snippets in the <a class="reference external" href="https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests">code snippet directory</a> are
+propagated to the corresponding documentation and source files, PySTK provides
+a snippet updater tool.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>doc-snippets
+</pre></div>
+</div>
+<p>View the changes using a diff application to ensure the process completed
+smoothly. Once you have verified these changes, you are ready to open a PR on
+the <a class="reference external" href="https://github.com/ansys/pystk/pulls">PySTK pull requests</a> page.</p>
+</section>
+<section id="build-the-documentation">
+<span id="build-documentation"></span><h2>Build the documentation<a class="headerlink" href="#build-the-documentation" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://tox.wiki/en/stable/">Tox</a> is used for automating the build of the documentation. There are
+different environments for cleaning the build, running the tests, and building
+the documentation in different formats such as HTML or PDF. The following
+environments are available:</p>
+<p>The following
+environments are available:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-three-bars" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></span><span class="sd-summary-text">Documentation environments</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Environment</p></th>
+<th class="head"><p class="sd-card-text">Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">doc-style-linux</p></td>
+<td><p class="sd-card-text">python -m tox -e doc-style-linux</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">doc-style-windows</p></td>
+<td><p class="sd-card-text">python -m tox -e doc-style-windows</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">doc-links</p></td>
+<td><p class="sd-card-text">python -m tox -e doc-links</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">doc-html</p></td>
+<td><p class="sd-card-text">python -m tox -e doc-html</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">doc-pdf</p></td>
+<td><p class="sd-card-text">python -m tox -e doc-pdf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details><p>Two environment variables are available for the documentation build:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BUILD_EXAMPLES</span></code>: if set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the examples are built. This is the
+default behavior. When set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the examples are not built.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BUILD_API</span></code>: if set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the API documentation is built. This is
+the default behavior. When set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the API documentation is not
+built.</p></li>
+</ul>
+<p>By using these environment variables, you can speed up the build process. This
+allows to shorten the build time when only certain parts of the documentation
+are modified.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="user.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Contributing as a user</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="developer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contributing as a developer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-documentation">Write documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-new-example">Write a new example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-new-code-snippet">Write a new code snippet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-documentation">Build the documentation</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/doc/source/contribute/documentarian.rst">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/contribute/documentarian.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

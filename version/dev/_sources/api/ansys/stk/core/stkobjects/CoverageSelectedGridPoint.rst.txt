@@ -1,0 +1,59 @@
+CoverageSelectedGridPoint
+=========================
+
+.. py:class:: ansys.stk.core.stkobjects.CoverageSelectedGridPoint
+
+   Represents a point selected with the grid inspector.
+
+.. py:currentmodule:: CoverageSelectedGridPoint
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals`
+              - Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.latitude`
+              - Latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint.longitude`
+              - Longitude.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import CoverageSelectedGridPoint
+
+
+Property detail
+---------------
+
+.. py:property:: intervals
+    :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.intervals
+    :type: list
+
+    Return a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
+
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.latitude
+    :type: typing.Any
+
+    Latitude.
+
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.CoverageSelectedGridPoint.longitude
+    :type: typing.Any
+
+    Longitude.
+
+

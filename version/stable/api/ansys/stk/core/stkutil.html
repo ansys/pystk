@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>The stkutil module &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../../../../_static/documentation_options.js?v=91f6191e"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/stk/core/stkutil';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ICartesian3Vector" href="stkutil/ICartesian3Vector.html" />
+    <link rel="prev" title="STKRuntimeApplication" href="stkruntime/STKRuntimeApplication.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="release/['0', '1']" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/api/ansys/stk/core/stkutil.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../core.html">The <code class="docutils literal notranslate"><span class="pre">core</span></code> library</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="stkengine.html">🖿 stkengine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stkobjects.html">🖿 stkobjects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stkrfchannelmodeler.html">🖿 stkrfchannelmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">🖿 utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_workbench.html">🗎 analysis_workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html">🗎 graphics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stkdesktop.html">🗎 stkdesktop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stkruntime.html">🗎 stkruntime</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">🗎 stkutil</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ICartesian3Vector.html"> ICartesian3Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IDirection.html"> IDirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ILocationData.html"> ILocationData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrbitState.html"> IOrbitState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientation.html"> IOrientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientationAzEl.html"> IOrientationAzEl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientationEulerAngles.html"> IOrientationEulerAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientationPositionOffset.html"> IOrientationPositionOffset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientationQuaternion.html"> IOrientationQuaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IOrientationYPRAngles.html"> IOrientationYPRAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IPosition.html"> IPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/IRuntimeTypeInfoProvider.html"> IRuntimeTypeInfoProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Cartesian.html"> Cartesian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Cartesian2Vector.html"> Cartesian2Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Cartesian3Vector.html"> Cartesian3Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CommRadOrientationAzEl.html"> CommRadOrientationAzEl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CommRadOrientationEulerAngles.html"> CommRadOrientationEulerAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CommRadOrientationOffsetCart.html"> CommRadOrientationOffsetCart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CommRadOrientationQuaternion.html"> CommRadOrientationQuaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CommRadOrientationYPRAngles.html"> CommRadOrientationYPRAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ConversionUtility.html"> ConversionUtility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Cylindrical.html"> Cylindrical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Date.html"> Date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Direction.html"> Direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DirectionEuler.html"> DirectionEuler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DirectionPR.html"> DirectionPR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DirectionRADec.html"> DirectionRADec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DirectionXYZ.html"> DirectionXYZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DoublesCollection.html"> DoublesCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ExecuteCommandResult.html"> ExecuteCommandResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ExecuteMultipleCommandsResult.html"> ExecuteMultipleCommandsResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Geocentric.html"> Geocentric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Geodetic.html"> Geodetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Orientation.html"> Orientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrientationAzEl.html"> OrientationAzEl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrientationEulerAngles.html"> OrientationEulerAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrientationQuaternion.html"> OrientationQuaternion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrientationYPRAngles.html"> OrientationYPRAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Planetocentric.html"> Planetocentric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Planetodetic.html"> Planetodetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Position.html"> Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/PropertyInfo.html"> PropertyInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/PropertyInfoCollection.html"> PropertyInfoCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Quantity.html"> Quantity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/RuntimeTypeInfo.html"> RuntimeTypeInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/Spherical.html"> Spherical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/UnitPreferencesDimension.html"> UnitPreferencesDimension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/UnitPreferencesDimensionCollection.html"> UnitPreferencesDimensionCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/UnitPreferencesUnit.html"> UnitPreferencesUnit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/UnitPreferencesUnitCollection.html"> UnitPreferencesUnitCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/AzElAboutBoresight.html">≔ AzElAboutBoresight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/CoordinateSystem.html">≔ CoordinateSystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/DirectionType.html">≔ DirectionType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/EulerDirectionSequence.html">≔ EulerDirectionSequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/EulerOrientationSequenceType.html">≔ EulerOrientationSequenceType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/ExecuteMultipleCommandsMode.html">≔ ExecuteMultipleCommandsMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/FillStyle.html">≔ FillStyle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/LineStyle.html">≔ LineStyle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/LogMessageDisplayID.html">≔ LogMessageDisplayID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/LogMessageType.html">≔ LogMessageType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrbitStateType.html">≔ OrbitStateType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/OrientationType.html">≔ OrientationType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/PositionType.html">≔ PositionType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/PropertyInfoValueType.html">≔ PropertyInfoValueType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/PRSequence.html">≔ PRSequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stkutil/YPRAnglesSequence.html">≔ YPRAnglesSequence</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="stkx.html">🗎 stkx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uiapplication.html">🗎 uiapplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uicore.html">🗎 uicore</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions.html">The <code class="docutils literal notranslate"><span class="pre">extensions</span></code> module</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../api.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../core.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">core</span></code> library</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The <code class="docutils literal notranslate"><span class="pre">stkutil</span></code> module</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.stk.core.stkutil">
+<span id="the-stkutil-module"></span><h1>The <code class="docutils literal notranslate"><span class="pre">stkutil</span></code> module<a class="headerlink" href="#module-ansys.stk.core.stkutil" title="Link to this heading">#</a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Interfaces</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/ICartesian3Vector.html#ansys.stk.core.stkutil.ICartesian3Vector" title="ansys.stk.core.stkutil.ICartesian3Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">ICartesian3Vector</span></code></a></p></td>
+<td><p>Represents a cartesian 3-D vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IDirection.html#ansys.stk.core.stkutil.IDirection" title="ansys.stk.core.stkutil.IDirection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IDirection</span></code></a></p></td>
+<td><p>Interface to set and retrieve direction options for aligned and constrained vectors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/ILocationData.html#ansys.stk.core.stkutil.ILocationData" title="ansys.stk.core.stkutil.ILocationData"><code class="xref py py-class docutils literal notranslate"><span class="pre">ILocationData</span></code></a></p></td>
+<td><p>Base interface ILocationData. IPosition derives from this interface.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IOrbitState.html#ansys.stk.core.stkutil.IOrbitState" title="ansys.stk.core.stkutil.IOrbitState"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrbitState</span></code></a></p></td>
+<td><p>Interface to set and retrieve the coordinate type used to specify the orbit state.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/IOrientation.html#ansys.stk.core.stkutil.IOrientation" title="ansys.stk.core.stkutil.IOrientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientation</span></code></a></p></td>
+<td><p>Interface to set and retrieve the orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IOrientationAzEl.html#ansys.stk.core.stkutil.IOrientationAzEl" title="ansys.stk.core.stkutil.IOrientationAzEl"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientationAzEl</span></code></a></p></td>
+<td><p>Interface for AzEl orientation method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/IOrientationEulerAngles.html#ansys.stk.core.stkutil.IOrientationEulerAngles" title="ansys.stk.core.stkutil.IOrientationEulerAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientationEulerAngles</span></code></a></p></td>
+<td><p>Interface for Euler Angles orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IOrientationPositionOffset.html#ansys.stk.core.stkutil.IOrientationPositionOffset" title="ansys.stk.core.stkutil.IOrientationPositionOffset"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientationPositionOffset</span></code></a></p></td>
+<td><p>Interface for defining the orientation origin position offset relative to the parent object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/IOrientationQuaternion.html#ansys.stk.core.stkutil.IOrientationQuaternion" title="ansys.stk.core.stkutil.IOrientationQuaternion"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientationQuaternion</span></code></a></p></td>
+<td><p>Quaternion representing orientation between two sets of axes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IOrientationYPRAngles.html#ansys.stk.core.stkutil.IOrientationYPRAngles" title="ansys.stk.core.stkutil.IOrientationYPRAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">IOrientationYPRAngles</span></code></a></p></td>
+<td><p>Interface for Yaw-Pitch Roll (YPR) Angles orientation system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/IPosition.html#ansys.stk.core.stkutil.IPosition" title="ansys.stk.core.stkutil.IPosition"><code class="xref py py-class docutils literal notranslate"><span class="pre">IPosition</span></code></a></p></td>
+<td><p>IPosition provides access to the position of the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/IRuntimeTypeInfoProvider.html#ansys.stk.core.stkutil.IRuntimeTypeInfoProvider" title="ansys.stk.core.stkutil.IRuntimeTypeInfoProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">IRuntimeTypeInfoProvider</span></code></a></p></td>
+<td><p>Access point for RuntimeTypeInfo.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Classes</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Cartesian.html#ansys.stk.core.stkutil.Cartesian" title="ansys.stk.core.stkutil.Cartesian"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cartesian</span></code></a></p></td>
+<td><p>Class used to access a position using Cartesian Coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Cartesian2Vector.html#ansys.stk.core.stkutil.Cartesian2Vector" title="ansys.stk.core.stkutil.Cartesian2Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cartesian2Vector</span></code></a></p></td>
+<td><p>A 2-D cartesian vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Cartesian3Vector.html#ansys.stk.core.stkutil.Cartesian3Vector" title="ansys.stk.core.stkutil.Cartesian3Vector"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cartesian3Vector</span></code></a></p></td>
+<td><p>A 3-D cartesian vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/CommRadOrientationAzEl.html#ansys.stk.core.stkutil.CommRadOrientationAzEl" title="ansys.stk.core.stkutil.CommRadOrientationAzEl"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommRadOrientationAzEl</span></code></a></p></td>
+<td><p>AzEl orientation method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/CommRadOrientationEulerAngles.html#ansys.stk.core.stkutil.CommRadOrientationEulerAngles" title="ansys.stk.core.stkutil.CommRadOrientationEulerAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommRadOrientationEulerAngles</span></code></a></p></td>
+<td><p>Euler Angles orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/CommRadOrientationOffsetCart.html#ansys.stk.core.stkutil.CommRadOrientationOffsetCart" title="ansys.stk.core.stkutil.CommRadOrientationOffsetCart"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommRadOrientationOffsetCart</span></code></a></p></td>
+<td><p>Orientation offset cartesian.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/CommRadOrientationQuaternion.html#ansys.stk.core.stkutil.CommRadOrientationQuaternion" title="ansys.stk.core.stkutil.CommRadOrientationQuaternion"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommRadOrientationQuaternion</span></code></a></p></td>
+<td><p>Quaternion orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/CommRadOrientationYPRAngles.html#ansys.stk.core.stkutil.CommRadOrientationYPRAngles" title="ansys.stk.core.stkutil.CommRadOrientationYPRAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommRadOrientationYPRAngles</span></code></a></p></td>
+<td><p>Yaw-Pitch Roll (YPR) Angles orientation system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/ConversionUtility.html#ansys.stk.core.stkutil.ConversionUtility" title="ansys.stk.core.stkutil.ConversionUtility"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConversionUtility</span></code></a></p></td>
+<td><p>Object that contains a unit conversion utility.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Cylindrical.html#ansys.stk.core.stkutil.Cylindrical" title="ansys.stk.core.stkutil.Cylindrical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cylindrical</span></code></a></p></td>
+<td><p>Class defining cylindrical position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Date.html#ansys.stk.core.stkutil.Date" title="ansys.stk.core.stkutil.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a></p></td>
+<td><p>Object that contains a date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Direction.html#ansys.stk.core.stkutil.Direction" title="ansys.stk.core.stkutil.Direction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Direction</span></code></a></p></td>
+<td><p>Class defining direction options for aligned and constrained vectors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/DirectionEuler.html#ansys.stk.core.stkutil.DirectionEuler" title="ansys.stk.core.stkutil.DirectionEuler"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectionEuler</span></code></a></p></td>
+<td><p>Euler direction sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/DirectionPR.html#ansys.stk.core.stkutil.DirectionPR" title="ansys.stk.core.stkutil.DirectionPR"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectionPR</span></code></a></p></td>
+<td><p>Pitch-Roll (PR) direction sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/DirectionRADec.html#ansys.stk.core.stkutil.DirectionRADec" title="ansys.stk.core.stkutil.DirectionRADec"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectionRADec</span></code></a></p></td>
+<td><p>Spherical direction (Right Ascension and Declination).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/DirectionXYZ.html#ansys.stk.core.stkutil.DirectionXYZ" title="ansys.stk.core.stkutil.DirectionXYZ"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectionXYZ</span></code></a></p></td>
+<td><p>Cartesian direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/DoublesCollection.html#ansys.stk.core.stkutil.DoublesCollection" title="ansys.stk.core.stkutil.DoublesCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DoublesCollection</span></code></a></p></td>
+<td><p>A collection of doubles.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/ExecuteCommandResult.html#ansys.stk.core.stkutil.ExecuteCommandResult" title="ansys.stk.core.stkutil.ExecuteCommandResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExecuteCommandResult</span></code></a></p></td>
+<td><p>Collection of strings returned by the ExecuteCommand.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/ExecuteMultipleCommandsResult.html#ansys.stk.core.stkutil.ExecuteMultipleCommandsResult" title="ansys.stk.core.stkutil.ExecuteMultipleCommandsResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExecuteMultipleCommandsResult</span></code></a></p></td>
+<td><p>Collection of objects returned by the ExecuteMultipleCommands.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Geocentric.html#ansys.stk.core.stkutil.Geocentric" title="ansys.stk.core.stkutil.Geocentric"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocentric</span></code></a></p></td>
+<td><p>Class defining Geocentric position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Geodetic.html#ansys.stk.core.stkutil.Geodetic" title="ansys.stk.core.stkutil.Geodetic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geodetic</span></code></a></p></td>
+<td><p>Class defining Geodetic position.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Orientation.html#ansys.stk.core.stkutil.Orientation" title="ansys.stk.core.stkutil.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
+<td><p>Class defining the orientation of an orbit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/OrientationAzEl.html#ansys.stk.core.stkutil.OrientationAzEl" title="ansys.stk.core.stkutil.OrientationAzEl"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrientationAzEl</span></code></a></p></td>
+<td><p>AzEl orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/OrientationEulerAngles.html#ansys.stk.core.stkutil.OrientationEulerAngles" title="ansys.stk.core.stkutil.OrientationEulerAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrientationEulerAngles</span></code></a></p></td>
+<td><p>Euler Angles orientation method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/OrientationQuaternion.html#ansys.stk.core.stkutil.OrientationQuaternion" title="ansys.stk.core.stkutil.OrientationQuaternion"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrientationQuaternion</span></code></a></p></td>
+<td><p>Quaternion orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/OrientationYPRAngles.html#ansys.stk.core.stkutil.OrientationYPRAngles" title="ansys.stk.core.stkutil.OrientationYPRAngles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrientationYPRAngles</span></code></a></p></td>
+<td><p>Yaw-Pitch Roll (YPR) Angles orientation system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Planetocentric.html#ansys.stk.core.stkutil.Planetocentric" title="ansys.stk.core.stkutil.Planetocentric"><code class="xref py py-class docutils literal notranslate"><span class="pre">Planetocentric</span></code></a></p></td>
+<td><p>Class defining Planetocentric position.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Planetodetic.html#ansys.stk.core.stkutil.Planetodetic" title="ansys.stk.core.stkutil.Planetodetic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Planetodetic</span></code></a></p></td>
+<td><p>Class defining Planetodetic position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/Position.html#ansys.stk.core.stkutil.Position" title="ansys.stk.core.stkutil.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code></a></p></td>
+<td><p>The Position class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/PropertyInfo.html#ansys.stk.core.stkutil.PropertyInfo" title="ansys.stk.core.stkutil.PropertyInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertyInfo</span></code></a></p></td>
+<td><p>Property Information coclass.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/PropertyInfoCollection.html#ansys.stk.core.stkutil.PropertyInfoCollection" title="ansys.stk.core.stkutil.PropertyInfoCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertyInfoCollection</span></code></a></p></td>
+<td><p>Property Information Collection coclass.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Quantity.html#ansys.stk.core.stkutil.Quantity" title="ansys.stk.core.stkutil.Quantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quantity</span></code></a></p></td>
+<td><p>Object that contains a quantity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/RuntimeTypeInfo.html#ansys.stk.core.stkutil.RuntimeTypeInfo" title="ansys.stk.core.stkutil.RuntimeTypeInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeTypeInfo</span></code></a></p></td>
+<td><p>Runtime Type info coclass.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/Spherical.html#ansys.stk.core.stkutil.Spherical" title="ansys.stk.core.stkutil.Spherical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spherical</span></code></a></p></td>
+<td><p>Class defining spherical position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/UnitPreferencesDimension.html#ansys.stk.core.stkutil.UnitPreferencesDimension" title="ansys.stk.core.stkutil.UnitPreferencesDimension"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitPreferencesDimension</span></code></a></p></td>
+<td><p>Object that contains info on the Dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/UnitPreferencesDimensionCollection.html#ansys.stk.core.stkutil.UnitPreferencesDimensionCollection" title="ansys.stk.core.stkutil.UnitPreferencesDimensionCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitPreferencesDimensionCollection</span></code></a></p></td>
+<td><p>Object that contains a collection of dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/UnitPreferencesUnit.html#ansys.stk.core.stkutil.UnitPreferencesUnit" title="ansys.stk.core.stkutil.UnitPreferencesUnit"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitPreferencesUnit</span></code></a></p></td>
+<td><p>Object that contains info on the unit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/UnitPreferencesUnitCollection.html#ansys.stk.core.stkutil.UnitPreferencesUnitCollection" title="ansys.stk.core.stkutil.UnitPreferencesUnitCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitPreferencesUnitCollection</span></code></a></p></td>
+<td><p>Object that contains a collection of UnitPreferencesUnit.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Enums</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/AzElAboutBoresight.html#ansys.stk.core.stkutil.AzElAboutBoresight" title="ansys.stk.core.stkutil.AzElAboutBoresight"><code class="xref py py-class docutils literal notranslate"><span class="pre">AzElAboutBoresight</span></code></a></p></td>
+<td><p>About Boresight options for AzEl orientation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/CoordinateSystem.html#ansys.stk.core.stkutil.CoordinateSystem" title="ansys.stk.core.stkutil.CoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateSystem</span></code></a></p></td>
+<td><p>Earth-centered coordinate systems for defining certain propagators.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/DirectionType.html#ansys.stk.core.stkutil.DirectionType" title="ansys.stk.core.stkutil.DirectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectionType</span></code></a></p></td>
+<td><p>Direction options for aligned and constrained vectors.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/EulerDirectionSequence.html#ansys.stk.core.stkutil.EulerDirectionSequence" title="ansys.stk.core.stkutil.EulerDirectionSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">EulerDirectionSequence</span></code></a></p></td>
+<td><p>Euler direction sequences.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/EulerOrientationSequenceType.html#ansys.stk.core.stkutil.EulerOrientationSequenceType" title="ansys.stk.core.stkutil.EulerOrientationSequenceType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EulerOrientationSequenceType</span></code></a></p></td>
+<td><p>Euler rotation sequence options:.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/ExecuteMultipleCommandsMode.html#ansys.stk.core.stkutil.ExecuteMultipleCommandsMode" title="ansys.stk.core.stkutil.ExecuteMultipleCommandsMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExecuteMultipleCommandsMode</span></code></a></p></td>
+<td><p>Enumeration defines a set of actions when an error occurs while executing a command batch.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/FillStyle.html#ansys.stk.core.stkutil.FillStyle" title="ansys.stk.core.stkutil.FillStyle"><code class="xref py py-class docutils literal notranslate"><span class="pre">FillStyle</span></code></a></p></td>
+<td><p>Fill Style.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/LineStyle.html#ansys.stk.core.stkutil.LineStyle" title="ansys.stk.core.stkutil.LineStyle"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineStyle</span></code></a></p></td>
+<td><p>Line Style.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/LogMessageDisplayID.html#ansys.stk.core.stkutil.LogMessageDisplayID" title="ansys.stk.core.stkutil.LogMessageDisplayID"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogMessageDisplayID</span></code></a></p></td>
+<td><p>Log message destination options.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/LogMessageType.html#ansys.stk.core.stkutil.LogMessageType" title="ansys.stk.core.stkutil.LogMessageType"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogMessageType</span></code></a></p></td>
+<td><p>Log message types.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/OrbitStateType.html#ansys.stk.core.stkutil.OrbitStateType" title="ansys.stk.core.stkutil.OrbitStateType"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrbitStateType</span></code></a></p></td>
+<td><p>Coordinate types used in specifying orbit state.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/OrientationType.html#ansys.stk.core.stkutil.OrientationType" title="ansys.stk.core.stkutil.OrientationType"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrientationType</span></code></a></p></td>
+<td><p>Orientation methods.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/PositionType.html#ansys.stk.core.stkutil.PositionType" title="ansys.stk.core.stkutil.PositionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PositionType</span></code></a></p></td>
+<td><p>Facility/place/target position types.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/PropertyInfoValueType.html#ansys.stk.core.stkutil.PropertyInfoValueType" title="ansys.stk.core.stkutil.PropertyInfoValueType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertyInfoValueType</span></code></a></p></td>
+<td><p>The enumeration used to determine what type of property is being used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stkutil/PRSequence.html#ansys.stk.core.stkutil.PRSequence" title="ansys.stk.core.stkutil.PRSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">PRSequence</span></code></a></p></td>
+<td><p>Pitch-Roll (PR) direction sequences.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stkutil/YPRAnglesSequence.html#ansys.stk.core.stkutil.YPRAnglesSequence" title="ansys.stk.core.stkutil.YPRAnglesSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">YPRAnglesSequence</span></code></a></p></td>
+<td><p>Yaw-Pitch-Roll (YPR) sequences.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Objects and enumerations shared by the STK X and STK Objects libraries.</p>
+<p>The
+types provided by STK Util are used indirectly through methods and properties
+in the STK X and STK Objects libraries.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="stkruntime/STKRuntimeApplication.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">STKRuntimeApplication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="stkutil/ICartesian3Vector.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ICartesian3Vector</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="None">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/api/ansys/stk/core/stkutil.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

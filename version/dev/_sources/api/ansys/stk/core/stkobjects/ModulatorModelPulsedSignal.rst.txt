@@ -1,0 +1,61 @@
+ModulatorModelPulsedSignal
+==========================
+
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelPulsedSignal
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
+
+   Class defining a pulsed signal modulator model.
+
+.. py:currentmodule:: ModulatorModelPulsedSignal
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.number_of_pulses`
+              - Get or set the number of pulses.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.pulse_period`
+              - Get or set the pulse period.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.pulse_width`
+              - Get or set the pulse width.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ModulatorModelPulsedSignal
+
+
+Property detail
+---------------
+
+.. py:property:: number_of_pulses
+    :canonical: ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.number_of_pulses
+    :type: int
+
+    Get or set the number of pulses.
+
+.. py:property:: pulse_period
+    :canonical: ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.pulse_period
+    :type: float
+
+    Get or set the pulse period.
+
+.. py:property:: pulse_width
+    :canonical: ansys.stk.core.stkobjects.ModulatorModelPulsedSignal.pulse_width
+    :type: float
+
+    Get or set the pulse width.
+
+

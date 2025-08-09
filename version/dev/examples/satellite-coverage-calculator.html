@@ -1,0 +1,1786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="PyAnsys" />
+    <title>Satellite coverage area calculator &#8212; PySTK</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/ansys-sphinx-theme.css?v=ce7f2556" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=789c53a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/highlight.css?v=e507d2d0" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/search.css?v=6f836f60" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  
+  
+  
+
+  
+    <link href="../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/satellite-coverage-calculator';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://stk.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Satellite coverage analysis" href="satellite-coverage-analysis.html" />
+    <link rel="prev" title="Sensors and access" href="sensor-access.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="main" />
+  <link rel="canonical" href="https://stk.docs.pyansys.com/version/stable/examples/satellite-coverage-calculator.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PySTK - Home"/>
+    <img src="../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PySTK - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contribute.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../artifacts.html">
+    Artifacts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pystk" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamental concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-load-scenarios.html">Create and load scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="facility-to-satellite-access.html">Access between facility and satellite calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results-graphs.html">Results and graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensor-access.html">Sensors and access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Coverage examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Satellite coverage area calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="satellite-coverage-analysis.html">Satellite coverage analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Orbital maneuvers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hohmann-transfer.html">Hohmann transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bielliptic-transfer.html">Bi-elliptic transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambert-transfer.html">Lambert transfer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mission analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="porkchop-plots.html">Porkchop plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Communications and radar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="radar-cross-section-detection.html">Radar cross section detection calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication-link-calculator.html">Communication link budget calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-parametric-study.html">Multifunction radar parametric study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifunction-radar-design.html">Multifunction radar design</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aviator mission planning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="aviator-fuel-calculator.html">Commercial aircraft fuel calculator with Aviator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aircraft-carrier-landing.html">Multi-aircraft carrier landing with Aviator</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../examples.html" class="nav-link">Examples</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Satellite coverage area calculator</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/satellite-coverage-calculator.py"><span> Download as Python script <span class="fab fa-python"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/satellite-coverage-calculator.ipynb"><span> Download as Jupyter notebook <span class="fas fa-book"></span></span></a></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-align-major-center docutils">
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://stk.docs.pyansys.com/version/dev/examples/satellite-coverage-calculator.pdf"><span> Download as PDF document <span class="fas fa-file-pdf"></span></span></a></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="Satellite-coverage-area-calculator">
+<h1>Satellite coverage area calculator<a class="headerlink" href="#Satellite-coverage-area-calculator" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to calculate satellite coverage using Python and PySTK. It is inspired by <a class="reference external" href="https://help.agi.com/stk/Content/training/GetStart_7_Coverage.htm">this training</a>.</p>
+<section id="What-is-satellite-coverage?">
+<h2>What is satellite coverage?<a class="headerlink" href="#What-is-satellite-coverage?" title="Link to this heading">#</a></h2>
+<p>Engineers and operators often need to determine the times that a satellite can “access” (or see) another object. Satellite coverage describes which areas of the Earth can access a satellite considering constraints defining what constitutes a valid access, including elevation angle, sun light or umbra restrictions, gimbal speed, range, and more. Satellite coverage can be calculated globally, or over a certain region.</p>
+</section>
+<section id="Problem-statement">
+<h2>Problem statement<a class="headerlink" href="#Problem-statement" title="Link to this heading">#</a></h2>
+<p>Two satellites present circular orbits. The first satellite has an inclination of <span class="math notranslate nohighlight">\(97.3^\circ\)</span> and an altitude of <span class="math notranslate nohighlight">\(400\)</span> km. The second satellite has a RAAN of <span class="math notranslate nohighlight">\(340^\circ\)</span>. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of <span class="math notranslate nohighlight">\(-23.5^\circ\)</span> and <span class="math notranslate nohighlight">\(23.5^\circ\)</span>. Use a point resolution of <span class="math notranslate nohighlight">\(3.0^\circ\)</span>. Determine which satellite achieves higher coverage of the tropics region and if coverage
+is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.</p>
+</section>
+<section id="Launch-a-new-STK-instance">
+<h2>Launch a new STK instance<a class="headerlink" href="#Launch-a-new-STK-instance" title="Link to this heading">#</a></h2>
+<p>Start by launching a new STK instance. In this example, STKEngine is used.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKEngine</span>
+
+
+<span class="n">stk</span> <span class="o">=</span> <span class="n">STKEngine</span><span class="o">.</span><span class="n">start_application</span><span class="p">(</span><span class="n">no_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">stk</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using STK Engine v12.10.0
+</pre></div></div>
+</div>
+</section>
+<section id="Create-a-new-scenario">
+<h2>Create a new scenario<a class="headerlink" href="#Create-a-new-scenario" title="Link to this heading">#</a></h2>
+<p>Create a new scenario in STK by running:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">new_object_root</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">new_scenario</span><span class="p">(</span><span class="s2">&quot;Coverage&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once the scenario is created, it is possible to show a 3D graphics window by running:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">GlobeWidget</span>
+
+
+<span class="n">globe_plotter</span> <span class="o">=</span> <span class="n">GlobeWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b4d7e116e0ed4f07aad9f5b58a238637"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_5_1.png" src="../_images/examples_satellite-coverage-calculator_5_1.png" />
+</div>
+</div>
+<p>A 2D graphics window can be created to better visualize the satellite coverage area:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkengine.experimental.jupyterwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapWidget</span>
+
+
+<span class="n">map_plotter</span> <span class="o">=</span> <span class="n">MapWidget</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "474518dab43b49f1a36d2c4dc7361f33"}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_7_1.png" src="../_images/examples_satellite-coverage-calculator_7_1.png" />
+</div>
+</div>
+</section>
+<section id="Set-the-scenario-time-period">
+<h2>Set the scenario time period<a class="headerlink" href="#Set-the-scenario-time-period" title="Link to this heading">#</a></h2>
+<p>Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scenario</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span>
+<span class="n">scenario</span><span class="o">.</span><span class="n">set_time_period</span><span class="p">(</span><span class="s2">&quot;1 Jul 2016&quot;</span><span class="p">,</span> <span class="s2">&quot;2 Jul 2016&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Add-the-satellites-to-the-scenario">
+<h2>Add the satellites to the scenario<a class="headerlink" href="#Add-the-satellites-to-the-scenario" title="Link to this heading">#</a></h2>
+<p>First, add a satellite in a polar orbit:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">STKObjectType</span>
+
+
+<span class="n">polar_sat</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;PolarSat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, set the satellite’s propagator to J4Pertubation:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropagatorType</span>
+
+
+<span class="n">polar_sat</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">J4_PERTURBATION</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The satellite should have a circular orbit with an inclination of <span class="math notranslate nohighlight">\(97.3^\circ\)</span> and an altitude of <span class="math notranslate nohighlight">\(400\)</span> km, which translates to an initial state of <span class="math notranslate nohighlight">\(r_x = -6374.80\)</span> km, <span class="math notranslate nohighlight">\(r_y = -2303.27\)</span> km, <span class="math notranslate nohighlight">\(r_z = -0.0000357827\)</span> km, <span class="math notranslate nohighlight">\(v_x = -0.499065\)</span> km/s, <span class="math notranslate nohighlight">\(v_y = 1.38127\)</span> km/s, and <span class="math notranslate nohighlight">\(v_z = 7.6064\)</span> km/s given with respect to J2000 frame:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">CoordinateSystem</span>
+
+
+<span class="n">polar_sat_propagator</span> <span class="o">=</span> <span class="n">polar_sat</span><span class="o">.</span><span class="n">propagator</span>
+<span class="n">r_vec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">6374.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">2303.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0000357827</span><span class="p">]</span>
+<span class="n">v_vec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.499065</span><span class="p">,</span> <span class="mf">1.38127</span><span class="p">,</span> <span class="mf">7.6064</span><span class="p">]</span>
+<span class="n">polar_sat_propagator</span><span class="o">.</span><span class="n">initial_state</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">assign_cartesian</span><span class="p">(</span>
+    <span class="n">CoordinateSystem</span><span class="o">.</span><span class="n">J2000</span><span class="p">,</span> <span class="o">*</span><span class="n">r_vec</span><span class="p">,</span> <span class="o">*</span><span class="n">v_vec</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then, insert a satellite named Shuttle:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shuttle</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">,</span> <span class="s2">&quot;Shuttle&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the satellite’s propagator to J4Pertubation:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shuttle</span><span class="o">.</span><span class="n">set_propagator_type</span><span class="p">(</span><span class="n">PropagatorType</span><span class="o">.</span><span class="n">J4_PERTURBATION</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The satellite should have a circular orbit with a RAAN of <span class="math notranslate nohighlight">\(340^\circ\)</span>, which translates to an initial state of <span class="math notranslate nohighlight">\(r_x = -6878.12\)</span> km, <span class="math notranslate nohighlight">\(r_y = -16.3051\)</span> km, <span class="math notranslate nohighlight">\(r_z = 0.00199559\)</span> km, <span class="math notranslate nohighlight">\(v_x = -0.0115701\)</span> km/s, <span class="math notranslate nohighlight">\(v_y = -4.88136\)</span> km/s, and <span class="math notranslate nohighlight">\(v_z = 5.38292\)</span> km/s with respect to the J2000 frame:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shuttle_propagator</span> <span class="o">=</span> <span class="n">shuttle</span><span class="o">.</span><span class="n">propagator</span>
+<span class="n">r_vec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">6878.12</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.3051</span><span class="p">,</span> <span class="mf">0.00199559</span><span class="p">]</span>
+<span class="n">v_vec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0115701</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.88136</span><span class="p">,</span> <span class="mf">5.38292</span><span class="p">]</span>
+<span class="n">shuttle_propagator</span><span class="o">.</span><span class="n">initial_state</span><span class="o">.</span><span class="n">representation</span><span class="o">.</span><span class="n">assign_cartesian</span><span class="p">(</span>
+    <span class="n">CoordinateSystem</span><span class="o">.</span><span class="n">J2000</span><span class="p">,</span> <span class="o">*</span><span class="n">r_vec</span><span class="p">,</span> <span class="o">*</span><span class="n">v_vec</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, propagate both satellites:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polar_sat_propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+<span class="n">shuttle_propagator</span><span class="o">.</span><span class="n">propagate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>View their paths in 2D or 3D using the graphics widgets:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_27_0.png" src="../_images/examples_satellite-coverage-calculator_27_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_28_0.png" src="../_images/examples_satellite-coverage-calculator_28_0.png" />
+</div>
+</div>
+</section>
+<section id="Create-a-coverage-definition">
+<h2>Create a coverage definition<a class="headerlink" href="#Create-a-coverage-definition" title="Link to this heading">#</a></h2>
+<p>Create a coverage definition object modeling the region of Tropics:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">current_scenario</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="n">STKObjectType</span><span class="o">.</span><span class="n">COVERAGE_DEFINITION</span><span class="p">,</span> <span class="s2">&quot;Tropics&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of <span class="math notranslate nohighlight">\(-23.5^\circ\)</span>, a maximum latitude of <span class="math notranslate nohighlight">\(23.5^\circ\)</span>, and point granularity of <span class="math notranslate nohighlight">\(3.0^\circ\)</span> lat/lon:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">CoverageBounds</span>
+
+
+<span class="n">tropics</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">bounds_type</span> <span class="o">=</span> <span class="n">CoverageBounds</span><span class="o">.</span><span class="n">LATITUDE</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">minimum_latitude</span> <span class="o">=</span> <span class="o">-</span><span class="mf">23.5</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">maximum_latitude</span> <span class="o">=</span> <span class="mf">23.5</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">resolution</span><span class="o">.</span><span class="n">latitude_longitude</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<section id="Assign-the-assets">
+<h3>Assign the assets<a class="headerlink" href="#Assign-the-assets" title="Link to this heading">#</a></h3>
+<p>Assign the satellites (PolarSat and Shuttle) as assets on the coverage definition. To do so, use a path to the satellites of the form <code class="docutils literal notranslate"><span class="pre">ItemType/ItemName</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">asset_list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Satellite/PolarSat&quot;</span><span class="p">)</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">asset_list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Satellite/Shuttle&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;ansys.stk.core.stkobjects.CoverageAssetListElement at 0x7f81280999a0&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Configure-the-2D-graphics">
+<h3>Configure the 2D graphics<a class="headerlink" href="#Configure-the-2D-graphics" title="Link to this heading">#</a></h3>
+<p>Use the coverage definition’s static property (which holds a <code class="docutils literal notranslate"><span class="pre">ICoverageGraphics2DStatic</span></code> object), to set the Show Regions, Show Region Labels, Show Points, and Points - Fill graphics properties.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_region</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_labels</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_points</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">fill_points</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>To set the visibility for Progress of Computations, use a <code class="docutils literal notranslate"><span class="pre">CoverageGraphics2DProgres</span></code>s object, which is available through the <code class="docutils literal notranslate"><span class="pre">ICoverageGraphics</span></code> object’s <code class="docutils literal notranslate"><span class="pre">progress</span></code> property.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">progress</span><span class="o">.</span><span class="n">show_graphics</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<p>To set the satisfaction visibility, use an <code class="docutils literal notranslate"><span class="pre">ICoverageGraphics2DAnimation</span></code> object, which is accessible through the <code class="docutils literal notranslate"><span class="pre">ICoverageGraphics</span></code> object’s <code class="docutils literal notranslate"><span class="pre">animation</span></code> property.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">show_satisfaction</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<p>View the coverage definition’s graphics using the 2D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_45_0.png" src="../_images/examples_satellite-coverage-calculator_45_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Compute-coverage-and-create-reports">
+<h2>Compute coverage and create reports<a class="headerlink" href="#Compute-coverage-and-create-reports" title="Link to this heading">#</a></h2>
+<p>Use the tropics coverage definition object to compute accesses:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">compute_accesses</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<section id="Create-reports">
+<h3>Create reports<a class="headerlink" href="#Create-reports" title="Link to this heading">#</a></h3>
+<p>To create reports, access the data providers associated with the coverage object. Then, select the type of report using the <code class="docutils literal notranslate"><span class="pre">item</span></code> method and the name of the report. The Coverage By Asset and Coverage by Latitude reports correspond to <code class="docutils literal notranslate"><span class="pre">IDataProviderFixed</span></code> objects. By using the <code class="docutils literal notranslate"><span class="pre">exec</span></code> method, compute the data needed for these reports. The <code class="docutils literal notranslate"><span class="pre">exec</span></code> method returns an <code class="docutils literal notranslate"><span class="pre">IDataProviderResult</span></code> object, through which it is possible to access an <code class="docutils literal notranslate"><span class="pre">IDataProviderResultDataSetCollection</span></code> through the
+<code class="docutils literal notranslate"><span class="pre">data_sets</span></code> property. This object corresponds to the desired data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">access_by_asset</span> <span class="o">=</span> <span class="n">tropics</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Coverage By Asset&quot;</span><span class="p">)</span>
+<span class="n">access_by_latitude</span> <span class="o">=</span> <span class="n">tropics</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Coverage by Latitude&quot;</span><span class="p">)</span>
+<span class="n">asset_data_provider_results</span> <span class="o">=</span> <span class="n">access_by_asset</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">latitude_data_provider_results</span> <span class="o">=</span> <span class="n">access_by_latitude</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Which satellite achieved a higher average coverage of the tropics region?</strong></p>
+<p>Converting to a pandas <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> makes the answer clear:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asset_data_provider_results</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>asset name</th>
+      <th>minimum % coverage</th>
+      <th>maximum % coverage</th>
+      <th>average % coverage</th>
+      <th>accumulated % coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PolarSat</td>
+      <td>0.0</td>
+      <td>12.070150071988149</td>
+      <td>2.7044063855152123</td>
+      <td>100.0000000000001</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Shuttle</td>
+      <td>0.0</td>
+      <td>9.339998891577475</td>
+      <td>1.7469341686996132</td>
+      <td>100.0000000000001</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p><strong>Answer:</strong> the satellite <code class="docutils literal notranslate"><span class="pre">PolarSat</span></code> achieved higher average coverage of the tropics region with an average coverage percentage of <span class="math notranslate nohighlight">\(2.704572194409824\)</span>.</p>
+<p><strong>Note:</strong> converting to a numpy array is also possible:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asset_data_provider_results</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[&#39;PolarSat&#39;, &#39;0.0&#39;, &#39;12.070150071988149&#39;, &#39;2.7044063855152123&#39;,
+        &#39;100.0000000000001&#39;],
+       [&#39;Shuttle&#39;, &#39;0.0&#39;, &#39;9.339998891577475&#39;, &#39;1.7469341686996132&#39;,
+        &#39;100.0000000000001&#39;]], dtype=&#39;&lt;U32&#39;)
+</pre></div></div>
+</div>
+<p><strong>Was coverage better or worse near the Equator?</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitude_df</span> <span class="o">=</span> <span class="n">latitude_data_provider_results</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitude_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latitude</th>
+      <th>percent time covered</th>
+      <th>total time covered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-22.0</td>
+      <td>4.344714</td>
+      <td>3753.832597</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-20.0</td>
+      <td>4.325173</td>
+      <td>3736.949390</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-17.0</td>
+      <td>4.318560</td>
+      <td>3731.235983</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-14.0</td>
+      <td>4.307214</td>
+      <td>3721.433274</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-12.0</td>
+      <td>4.304650</td>
+      <td>3719.217480</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-9.0</td>
+      <td>4.304709</td>
+      <td>3719.268226</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-7.0</td>
+      <td>4.303542</td>
+      <td>3718.260550</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-4.0</td>
+      <td>4.308319</td>
+      <td>3722.387271</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-1.0</td>
+      <td>4.317896</td>
+      <td>3730.661812</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>4.325503</td>
+      <td>3737.234936</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4.0</td>
+      <td>4.339434</td>
+      <td>3749.270679</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7.0</td>
+      <td>4.354874</td>
+      <td>3762.610800</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>9.0</td>
+      <td>4.376322</td>
+      <td>3781.141929</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>12.0</td>
+      <td>4.400561</td>
+      <td>3802.085007</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14.0</td>
+      <td>4.422868</td>
+      <td>3821.358001</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>17.0</td>
+      <td>4.465236</td>
+      <td>3857.963995</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>20.0</td>
+      <td>4.505125</td>
+      <td>3892.428202</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>22.0</td>
+      <td>4.551806</td>
+      <td>3932.760568</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p><strong>Answer:</strong> coverage was worse near the equator.</p>
+<p>It is also possible to visualize the data in graph form:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">latitude_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;percent time covered&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;hotpink&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure the style of the plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Coverage by Latitude&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Latitude&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Percent time covered&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_63_0.png" src="../_images/examples_satellite-coverage-calculator_63_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Assess-the-quality-of-coverage">
+<h2>Assess the quality of coverage<a class="headerlink" href="#Assess-the-quality-of-coverage" title="Link to this heading">#</a></h2>
+<section id="Set-the-graphics">
+<h3>Set the graphics<a class="headerlink" href="#Set-the-graphics" title="Link to this heading">#</a></h3>
+<p>The Figure of Merit object has its own graphics which the Coverage Definition graphics interferes with. Thus, turn off the Show Regions and Show Points options of the Coverage Definition:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_region</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">tropics</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_points</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-a-Figure-of-Merit">
+<h3>Create a Figure of Merit<a class="headerlink" href="#Create-a-Figure-of-Merit" title="Link to this heading">#</a></h3>
+<p>Create a Figure of Merit:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span> <span class="o">=</span> <span class="n">tropics</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">STKObjectType</span><span class="o">.</span><span class="n">FIGURE_OF_MERIT</span><span class="p">,</span> <span class="s2">&quot;Coverage&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Define-the-coverage">
+<h3>Define the coverage<a class="headerlink" href="#Define-the-coverage" title="Link to this heading">#</a></h3>
+<p>Set the coverage definition to N Asset Coverage:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureOfMeritDefinitionType</span>
+
+
+<span class="n">coverage</span><span class="o">.</span><span class="n">set_definition_type</span><span class="p">(</span><span class="n">FigureOfMeritDefinitionType</span><span class="o">.</span><span class="n">N_ASSET_COVERAGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Set the compute type to Maximum:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureOfMeritCompute</span>
+
+
+<span class="n">coverage</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">set_compute_type</span><span class="p">(</span><span class="n">FigureOfMeritCompute</span><span class="o">.</span><span class="n">MAXIMUM</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Configure-the-graphics">
+<h3>Configure the graphics<a class="headerlink" href="#Configure-the-graphics" title="Link to this heading">#</a></h3>
+<p>Set some animation graphics options for the Figure of Merit object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureOfMeritGraphics2DAccumulation</span>
+
+
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">show_graphics</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">accumulation</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FigureOfMeritGraphics2DAccumulation</span><span class="o">.</span><span class="n">CURRENT_TIME</span>
+<span class="p">)</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">fill_points</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">marker_style</span> <span class="o">=</span> <span class="s2">&quot;Star&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Configure-the-static-graphics">
+<h3>Configure the static graphics<a class="headerlink" href="#Configure-the-static-graphics" title="Link to this heading">#</a></h3>
+<p>Set some static graphics options:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_graphics</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">fill_points</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">marker_style</span> <span class="o">=</span> <span class="s2">&quot;Circle&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>View the figure of merit using the 3D graphics window:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_83_0.png" src="../_images/examples_satellite-coverage-calculator_83_0.png" />
+</div>
+</div>
+</section>
+<section id="Define-the-coverage-for-the-Figure-of-Merit">
+<h3>Define the coverage for the Figure of Merit<a class="headerlink" href="#Define-the-coverage-for-the-Figure-of-Merit" title="Link to this heading">#</a></h3>
+<p>Adjust the definition of the Figure of Merit’s coverage to determine which points have coverage from both satellites at the same time:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureOfMeritSatisfactionType</span>
+
+
+<span class="n">coverage</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">satisfaction</span><span class="o">.</span><span class="n">enable_satisfaction</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">satisfaction</span><span class="o">.</span><span class="n">satisfaction_type</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FigureOfMeritSatisfactionType</span><span class="o">.</span><span class="n">AT_LEAST</span>
+<span class="p">)</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">satisfaction</span><span class="o">.</span><span class="n">satisfaction_threshold</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<p>The 3D Graphics window immediately reflects the reduction in the amount of the coverage region that satisfies the ‘at least 2’ criterion.</p>
+</section>
+<section id="Configure-the-animation-graphics">
+<h3>Configure the animation graphics<a class="headerlink" href="#Configure-the-animation-graphics" title="Link to this heading">#</a></h3>
+<p>Set some animation graphics to see when points are covered by neither, one, or both satellites:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.stkobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureOfMeritGraphics2DColorMethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ansys.stk.core.utilities.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+
+
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">static</span><span class="o">.</span><span class="n">show_graphics</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">show_graphics</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">color_method</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">FigureOfMeritGraphics2DColorMethod</span><span class="o">.</span><span class="n">EXPLICIT</span>
+<span class="p">)</span>
+<span class="n">level1</span> <span class="o">=</span> <span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">level_attributes</span><span class="o">.</span><span class="n">add_level</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">level1</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">from_rgb</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">214</span><span class="p">)</span>
+<span class="n">level2</span> <span class="o">=</span> <span class="n">coverage</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">animation_settings</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">level_attributes</span><span class="o">.</span><span class="n">add_level</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">level2</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">from_rgb</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">195</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Animate the scenario:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">rewind</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">globe_plotter</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">34200</span><span class="p">,</span> <span class="o">-</span><span class="mi">7780</span><span class="p">,</span> <span class="mi">340</span><span class="p">]</span>
+<span class="n">globe_plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_93_0.png" src="../_images/examples_satellite-coverage-calculator_93_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">play_forward</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Note that points are highlighted in pink when they are covered by only one satellite, and in blue when covered by both satellites.</p>
+</section>
+<section id="Create-a-Satisfied-by-Time-report">
+<h3>Create a Satisfied by Time report<a class="headerlink" href="#Create-a-Satisfied-by-Time-report" title="Link to this heading">#</a></h3>
+<p>The Satisfied by Time report summarizes the percentage and true area of the grid that satisfies the Figure Of Merit at each time step:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satisfied_by_time_result</span> <span class="o">=</span> <span class="n">coverage</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="s2">&quot;Satisfied by Time&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+    <span class="n">scenario</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span> <span class="n">scenario</span><span class="o">.</span><span class="n">stop_time</span><span class="p">,</span> <span class="mf">60.0</span>
+<span class="p">)</span>
+<span class="n">satisfied_by_time_df</span> <span class="o">=</span> <span class="n">satisfied_by_time_result</span><span class="o">.</span><span class="n">data_sets</span><span class="o">.</span><span class="n">to_pandas_dataframe</span><span class="p">()</span>
+<span class="n">satisfied_by_time_df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>percent satisfied</th>
+      <th>area satisfied</th>
+      <th>percent accum coverage</th>
+      <th>accum area coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1 Jul 2016 00:00:00.000000000</td>
+      <td>3.479722290551911</td>
+      <td>7090692.232415388</td>
+      <td>3.479722290551911</td>
+      <td>7090692.232415388</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1 Jul 2016 00:01:00.000000000</td>
+      <td>4.382031771021817</td>
+      <td>8929344.369045507</td>
+      <td>4.572083389543204</td>
+      <td>9316615.944960214</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1 Jul 2016 00:02:00.000000000</td>
+      <td>4.888604822780123</td>
+      <td>9961597.320094619</td>
+      <td>5.365667029969145</td>
+      <td>10933715.496329198</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1 Jul 2016 00:03:00.000000000</td>
+      <td>5.108045699201793</td>
+      <td>10408755.911497833</td>
+      <td>6.067986007367905</td>
+      <td>12364843.414565872</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1 Jul 2016 00:04:00.000000000</td>
+      <td>5.233103154517493</td>
+      <td>10663587.720754664</td>
+      <td>6.679608856079816</td>
+      <td>13611158.212245163</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1436</th>
+      <td>1 Jul 2016 23:56:00.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>22.25567711958941</td>
+      <td>45350790.58104603</td>
+    </tr>
+    <tr>
+      <th>1437</th>
+      <td>1 Jul 2016 23:57:00.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>22.25567711958941</td>
+      <td>45350790.58104603</td>
+    </tr>
+    <tr>
+      <th>1438</th>
+      <td>1 Jul 2016 23:58:00.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>22.25567711958941</td>
+      <td>45350790.58104603</td>
+    </tr>
+    <tr>
+      <th>1439</th>
+      <td>1 Jul 2016 23:59:00.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>22.25567711958941</td>
+      <td>45350790.58104603</td>
+    </tr>
+    <tr>
+      <th>1440</th>
+      <td>2 Jul 2016 00:00:00.000000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>22.25567711958941</td>
+      <td>45350790.58104603</td>
+    </tr>
+  </tbody>
+</table>
+<p>1441 rows × 5 columns</p>
+</div></div>
+</div>
+<p>Visualize the data with a line chart:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+
+<span class="c1"># convert data to correct types</span>
+<span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">satisfied_by_time_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;percent satisfied&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span>
+    <span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;percent satisfied&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;percent accum coverage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span>
+    <span class="n">satisfied_by_time_df</span><span class="p">[</span><span class="s2">&quot;percent accum coverage&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot data</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">satisfied_by_time_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;percent satisfied&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;dodgerblue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Satisfied&quot;</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">satisfied_by_time_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;percent accum coverage&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;firebrick&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Accumulated&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Set title and axes labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Satisfaction over Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage %&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure style</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s2">&quot;whitesmoke&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_satellite-coverage-calculator_100_0.png" src="../_images/examples_satellite-coverage-calculator_100_0.png" />
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"397b20597d884adbb5949d17d12cddc9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "107e24fc2b2b4aec90bcc3ccd25d60d9": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_397b20597d884adbb5949d17d12cddc9", "resizable": true, "tabbable": null, "tooltip": null}}, "9e3e04bb88354b79a3a12c6224fe9362": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b4d7e116e0ed4f07aad9f5b58a238637": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_9e3e04bb88354b79a3a12c6224fe9362", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "5fcad311630048328cda9b678af5403d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "676cc79ffc1a45ca87beb97e43cc5387": {"model_name": "RemoteFrameBufferModel", "model_module": "jupyter_rfb", "model_module_version": "^0.5.3", "state": {"_dom_classes": [], "_model_module": "jupyter_rfb", "_model_module_version": "^0.5.3", "_model_name": "RemoteFrameBufferModel", "_view_count": null, "_view_module": "jupyter_rfb", "_view_module_version": "^0.5.3", "_view_name": "RemoteFrameBufferView", "css_height": "480px", "css_width": "640px", "cursor": "default", "frame_feedback": {}, "has_visible_views": false, "layout": "IPY_MODEL_5fcad311630048328cda9b678af5403d", "resizable": true, "tabbable": null, "tooltip": null}}, "2585b3b9585f4098986a122b25903311": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "474518dab43b49f1a36d2c4dc7361f33": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_2585b3b9585f4098986a122b25903311", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sensor-access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sensors and access</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="satellite-coverage-analysis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Satellite coverage analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#What-is-satellite-coverage?">What is satellite coverage?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Problem-statement">Problem statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Launch-a-new-STK-instance">Launch a new STK instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-new-scenario">Create a new scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-scenario-time-period">Set the scenario time period</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Add-the-satellites-to-the-scenario">Add the satellites to the scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-coverage-definition">Create a coverage definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Assign-the-assets">Assign the assets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-2D-graphics">Configure the 2D graphics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Compute-coverage-and-create-reports">Compute coverage and create reports</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-reports">Create reports</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Assess-the-quality-of-coverage">Assess the quality of coverage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Set-the-graphics">Set the graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-Figure-of-Merit">Create a Figure of Merit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-coverage">Define the coverage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-graphics">Configure the graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-static-graphics">Configure the static graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Define-the-coverage-for-the-Figure-of-Merit">Define the coverage for the Figure of Merit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Configure-the-animation-graphics">Configure the animation graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Create-a-Satisfied-by-Time-report">Create a Satisfied by Time report</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="https://github.com/ansys/pystk/blob/main/examples/satellite-coverage-calculator.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/satellite-coverage-calculator.py.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "minMatchCharLength": 2, "threshold": 0.2}');
+const SEARCH_FILE = "../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.5.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
