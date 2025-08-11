@@ -19,7 +19,7 @@
    :alt: PyPI
 
 .. |codecov| image:: https://codecov.io/gh/pyansys/ansys-stk/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/pyansys/pystk
+   :target: https://app.codecov.io/gh/ansys/pystk
    :alt: Codecov
 
 .. |GH-CI| image:: https://github.com/ansys/pystk/actions/workflows/ci_cd_night.yml/badge.svg?label=CI
