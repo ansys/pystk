@@ -113,6 +113,16 @@ jobs:
       - name: "Checkout the project"
         uses: actions/checkout@v4
 
+      - name: "Download wheelhouse into static path"
+        uses: actions/download-artifact@v4
+        with:
+          path: "doc/source/_static/wheelhouse"
+          pattern: "*-wheelhouse-*"
+
+      - name: "Display the wheelhouse layout"
+        run: |
+          tree doc/source/_static/wheelhouse
+
       - name: "Generate the name of the Docker image and the container"
         run: |
           python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
