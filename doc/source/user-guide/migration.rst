@@ -233,7 +233,7 @@ Once you have accumulated one or more traces to cover all of the paths in your P
 
 .. code-block:: console
 
-    $ pystk-migration-assistant record apply --recordings-directory=... snippet.py
+    $ pystk-migration-assistant apply --recordings-directory=...
     INFO: Applying changes from ...
     INFO: Writing ... snippet.py-migrated
 
@@ -259,7 +259,7 @@ There are additional options available to control how the changes are applied. U
 Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review the suggested code changes. Once you are satisfied with the results, rename the ``.py-migrated`` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
+Review and test the suggested code changes. Once you are satisfied with the results, rename the ``.py-migrated`` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
 
 
 Migration table
