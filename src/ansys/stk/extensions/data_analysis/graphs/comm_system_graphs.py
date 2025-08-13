@@ -21,12 +21,14 @@
 # SOFTWARE.
 
 """Provides graphs for CommSystem objects."""
-from ansys.stk.extensions.data_analysis.graphs.graph_helpers import line_chart
-from ansys.stk.core.stkobjects import CommSystem
-
 import collections.abc
 import typing
+
 import matplotlib
+
+from ansys.stk.core.stkobjects import CommSystem
+from ansys.stk.extensions.data_analysis.graphs.graph_helpers import line_chart
+
 
 def carrier_to_noise_vs_time_line_chart(stk_object :CommSystem, start_time : typing.Any = None, stop_time :typing.Any = None, step : float = 60, colormap: matplotlib.colors.Colormap = None,  time_unit_abbreviation: str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     r"""Graph the carrier-to-noise ratio and the carrier-to-noise-plus-interference ratio as a function of time.
@@ -55,7 +57,8 @@ def carrier_to_noise_vs_time_line_chart(stk_object :CommSystem, start_time : typ
     matplotlib.figure.Figure
         The newly created figure.
     matplotlib.axes.Axes
-        The newly created axes."""
+        The newly created axes.
+    """
     root = stk_object.root
     start_time = start_time or root.current_scenario.start_time
     stop_time = stop_time or root.current_scenario.stop_time

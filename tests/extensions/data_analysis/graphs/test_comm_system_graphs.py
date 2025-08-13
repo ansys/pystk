@@ -44,7 +44,7 @@ def comm_system(stk_root):
     comm_system =  scenario.children.new(STKObjectType.COMM_SYSTEM, "CommSystem")
     receiver =  facility.children.new(STKObjectType.RECEIVER, "Receiver")
     transmitter =  facility.children.new(STKObjectType.TRANSMITTER, "Transmitter")
-    receiver_constellation =  scenario.children.new(STKObjectType.CONSTELLATION, "ReceiverConstellation")       
+    receiver_constellation =  scenario.children.new(STKObjectType.CONSTELLATION, "ReceiverConstellation")
     receiver_constellation.objects.add_object(receiver)
     transmitter_constellation =  scenario.children.new(STKObjectType.CONSTELLATION, "TransmitterConstellation")
     transmitter_constellation.objects.add_object(transmitter)
