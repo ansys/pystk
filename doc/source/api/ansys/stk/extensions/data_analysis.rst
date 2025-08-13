@@ -16,6 +16,14 @@ Summary
 
             * - :py:obj:`~ansys.stk.extensions.data_analysis.graphs`
 
+    .. tab-item:: Submodules
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:obj:`~ansys.stk.extensions.data_analysis._dates`
+
 Description
 -----------
 
@@ -33,3 +41,9 @@ A set of high-level workflows for automating common data analysis tasks with PyS
     :hidden:
 
      🖿 graphs<data_analysis/graphs>
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+    :hidden:
+
+     🗎 _dates<data_analysis/_dates>

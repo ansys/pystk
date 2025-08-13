@@ -1,7 +1,7 @@
 az_el_polar_center_90_graph
 ===========================
 
-.. image:: /graph_images_temp/test_az_el_polar_center_90_graph.png
+.. image:: /graph_images_temp/test_az_el_polar_center_90_graph_access.png
   :width: 600
   :alt: image of output from az_el_polar_center_90_graph
 
@@ -20,13 +20,16 @@ az_el_polar_center_90_graph
         The STK Access object.
 
         **start_time** : :obj:`~typing.Any`
-        The start time of the calculation.
+        The start time of the calculation (the default is None, which implies using the scenario start time).
 
         **stop_time** : :obj:`~typing.Any`
-        The stop time of the calculation.
+        The stop time of the calculation (the default is None, which implies using the scenario stop time).
 
         **step_time** : :obj:`~float`
         The step time for the calculation (the default is 60 seconds).
+
+        **colormap** : :obj:`~matplotlib.colors.Colormap`
+        The colormap with which to color the data (the default is None).
 
 
 

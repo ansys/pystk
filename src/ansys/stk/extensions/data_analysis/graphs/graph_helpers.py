@@ -26,7 +26,7 @@ A set of helper functions for graphing basic STK desktop graph types.
 """
 
 import collections.abc
-from math import radians
+from math import ceil, radians
 import typing
 
 import matplotlib
@@ -235,7 +235,7 @@ def interval_plot(data : list[pandas.DataFrame], root : STKObjectRoot, element_p
     # return figure and axis
     return fig, ax
 
-def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None, time_unit_abbreviation: str = "UTCG", formatter: collections.abc.Callable[[float, float], str] = None) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
+def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_columns : list[str], time_columns: list[str], axes : list[dict], x_column : str, x_label : str, title : str, colormap: matplotlib.colors.Colormap = None, time_unit_abbreviation: str = "UTCG", formatter: collections.abc.Callable[[float, float], str] = None, multiple_data_providers: bool = False) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]:
     """Create a line chart from the provided dataframe and axes information.
 
     Parameters
@@ -262,6 +262,8 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
         The time unit for formatting (the default is "UTCG").
     formatter : collections.abc.Callable[[float, float], str]
         The formatter for time axes (the default is None).
+    multiple_data_providers: bool
+        Whether each dataframe provided corresponds to a different data provider and axis (the default is False).
 
     Returns
     -------
@@ -284,29 +286,37 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
     axes_list = [ax]
 
     # data conversions
-    for df in data:
+    for i, df in enumerate(data):
+        df.dropna(inplace=True, subset=[x_column])
+        if multiple_data_providers:
+            numerical_columns_to_convert = numerical_columns[i]
+        else:
+            numerical_columns_to_convert = numerical_columns
         if time_columns:
-            df = _convert_columns(df, numerical_columns, time_columns, units_preferences, root=root)
+            df = _convert_columns(df, numerical_columns_to_convert, time_columns, units_preferences, root=root)
         elif numerical_columns:
-            df = _convert_columns(df, numerical_columns, time_columns, units_preferences)
-        df.dropna(axis=0, inplace=True)
+            df = _convert_columns(df, numerical_columns_to_convert, time_columns, units_preferences)
         df.sort_values(x_column, inplace=True)
     if x_column in time_columns:
         all_times = (pandas.concat([df[x_column] for df in data])).sort_values()
         time_difference = all_times.iloc[-1] - all_times.iloc[0]
         matplotlib.units.registry[_STKDate] = _STKDateConverter(root, time_difference, time_unit_abbreviation, formatter)
 
+    # used to count line number to subset color map
+    line_count = 0
+    # line collection for legend
+    mpl_lines = []
     for i in range(len(data)):
         df = data[i]
-
-        # line collection for legend
-        mpl_lines = []
 
         # create color map with correct length
         colors = colormap(np.linspace(0, 1, num_lines)) if colormap else matplotlib.pyplot.cm.rainbow(np.linspace(0, 1, num_lines))
 
         # used to count line number to subset color map
-        line_count = 0
+        if not multiple_data_providers:
+            line_count = 0
+            # line collection for legend
+            mpl_lines = []
 
         # get x data from dataframe
         x_data = df[x_column]
@@ -320,23 +330,24 @@ def line_chart(data : list[pandas.DataFrame], root : STKObjectRoot, numerical_co
                 axes_list.append(ax)
             ax = axes_list[j]
             # iterate through lines under axis
-            for j in range(len(axis["lines"])):
-                line = axis["lines"][j]
-                # get y data
-                y_data = df[line["y_name"]]
-                # get line label
-                label = line["label"]
-                # if line uses unit, get current unit
-                if line["use_unit"]:
-                    unit = units_preferences.get_current_unit_abbrv(line["dimension"])
-                    # check if unit should be squared in label
-                    if line["unit_squared"]:
-                        label = label + f"({unit}^2)"
-                    else:
-                        label = label + f"({unit})"
+            for k in range(len(axis["lines"])):
+                if (not multiple_data_providers) or (multiple_data_providers and i == j):
+                    line = axis["lines"][k]
+                    # get y data
+                    y_data = df[line["y_name"]]
+                    # get line label
+                    label = line["label"]
+                    # if line uses unit, get current unit
+                    if line["use_unit"]:
+                        unit = units_preferences.get_current_unit_abbrv(line["dimension"])
+                        # check if unit should be squared in label
+                        if line["unit_squared"]:
+                            label = label + f"({unit}^2)"
+                        else:
+                            label = label + f"({unit})"
 
-                mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count], linewidth=1.5))
-                line_count += 1
+                    mpl_lines.extend(ax.plot(x_data, y_data, label=label, color=colors[line_count], linewidth=1.5))
+                    line_count += 1
 
             if i == 0:
                 # if axis uses unit, set unit in label
@@ -525,7 +536,9 @@ def interval_pie_chart(
     df["graph gap"] = df[start_column].shift(-1) - df[stop_column]
 
     # last gap is from end of last duration to stop time
-    df.at[df.index[-1], "graph gap"] = _STKDate.from_value_and_format(root, stop_time, unit=date_unit) - df.iloc[-1][stop_column]
+    last_gap = _STKDate.from_value_and_format(root, stop_time, unit=date_unit) - df.iloc[-1][stop_column]
+    #if last_gap != 0:
+    df.at[df.index[-1], "graph gap"] = last_gap
     # first gap is from analysis start time to start of first duration
     first_gap = df[start_column][0] - _STKDate.from_value_and_format(root, start_time, unit=date_unit)
 
@@ -569,18 +582,23 @@ def interval_pie_chart(
         for duration, gap in zip_list:
             flat_list.extend([duration, gap])
 
-            if not np.isnan(duration):
+            if not np.isnan(duration) and duration != 0:
                 label_list.append(f"duration {count -1}: {duration:.2f}({unit})")
 
-            if not np.isnan(gap):
+            if not np.isnan(gap) and gap !=0:
                 label_list.append(f"gap {count}: {gap:.2f}({unit})")
+
             count += 1
 
-        # remove any nan values
-        cleaned_list = [x for x in flat_list if not np.isnan(x)]
+        # remove any nan or 0 values
+        cleaned_list = [x for x in flat_list if not np.isnan(x) and x!=0]
         # get gap before start of first interval, add to data and label lists
-        cleaned_list.insert(0, first_gap)
-        label_list.insert(0, f"gap 1: {first_gap:.2f}({unit})")
+        if first_gap != 0:
+            cleaned_list.insert(0, first_gap)
+            label_list.insert(0, f"gap 1: {first_gap:.2f}({unit})")
+        # if no first gap, reverse color order to maintain blue for durations and gray for gaps
+        else:
+            colors.reverse()
         # plot intervals
         matplotlib.pyplot.pie(
             cleaned_list,
@@ -594,7 +612,7 @@ def interval_pie_chart(
         # create legend
         ax.legend(
             labels=label_list,
-            ncol=len(cleaned_list) / 4,
+            ncol=ceil(len(cleaned_list) / 4),
             loc="lower center",
             bbox_to_anchor=(0.5, -0.15),
             shadow=True,

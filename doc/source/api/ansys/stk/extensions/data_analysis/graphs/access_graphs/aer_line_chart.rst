@@ -1,7 +1,7 @@
 aer_line_chart
 ==============
 
-.. image:: /graph_images_temp/test_aer_line_chart.png
+.. image:: /graph_images_temp/test_aer_line_chart_access.png
   :width: 600
   :alt: image of output from aer_line_chart
 
@@ -20,10 +20,10 @@ aer_line_chart
         The STK Access object.
 
         **start_time** : :obj:`~typing.Any`
-        The start time of the calculation.
+        The start time of the calculation (the default is None, which implies using the scenario start time).
 
         **stop_time** : :obj:`~typing.Any`
-        The stop time of the calculation.
+        The stop time of the calculation (the default is None, which implies using the scenario stop time).
 
         **step_time** : :obj:`~float`
         The step time for the calculation (the default is 60 seconds).

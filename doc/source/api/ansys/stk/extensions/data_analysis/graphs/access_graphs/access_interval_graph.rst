@@ -1,7 +1,7 @@
 access_interval_graph
 =====================
 
-.. image:: /graph_images_temp/test_access_interval_graph.png
+.. image:: /graph_images_temp/test_access_interval_graph_access.png
   :width: 600
   :alt: image of output from access_interval_graph
 
@@ -18,10 +18,10 @@ access_interval_graph
         The STK Access object.
 
         **start_time** : :obj:`~typing.Any`
-        The start time of the calculation.
+        The start time of the calculation (the default is None, which implies using the scenario start time).
 
         **stop_time** : :obj:`~typing.Any`
-        The stop time of the calculation.
+        The stop time of the calculation (the default is None, which implies using the scenario stop time).
 
         **colormap** : :obj:`~matplotlib.colors.Colormap`
         The colormap with which to color the data (the default is None).
