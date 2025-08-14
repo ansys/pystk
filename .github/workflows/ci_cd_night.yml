@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
