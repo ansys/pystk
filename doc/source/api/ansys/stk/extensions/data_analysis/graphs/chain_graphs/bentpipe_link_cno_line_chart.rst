@@ -1,7 +1,7 @@
 bentpipe_link_cno_line_chart
 ============================
 
-.. py:function:: bentpipe_link_cno_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.chain_graphs.bentpipe_link_cno_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.chain_graphs.bentpipe_link_cno_line_chart
 
     Graph the carrier-to-noise density ratio for uplink, downlink, and composite link as a function of time for a bent pipe communications system.

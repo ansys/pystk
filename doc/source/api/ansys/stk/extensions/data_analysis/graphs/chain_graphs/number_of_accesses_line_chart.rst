@@ -5,7 +5,7 @@ number_of_accesses_line_chart
   :width: 600
   :alt: image of output from number_of_accesses_line_chart
 
-.. py:function:: number_of_accesses_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.chain_graphs.number_of_accesses_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.chain_graphs.number_of_accesses_line_chart
 
     Create a plot of the number of objects participating in a strand that completes the chain at the given time, as a function of time.

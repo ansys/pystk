@@ -5,7 +5,7 @@ gaps_interval_graph
   :width: 600
   :alt: image of output from gaps_interval_graph
 
-.. py:function:: gaps_interval_graph(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.access_graphs.gaps_interval_graph(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.gaps_interval_graph
 
     Create an interval graph of the intervals where access does not exist between the objects.

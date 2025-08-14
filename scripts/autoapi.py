@@ -117,7 +117,13 @@ class ManualRSTGenerator:
 
             if path_to_src_file.name == "__init__.py":
                 for entry in path_to_src_file.parent.iterdir():
-                    if entry.is_file() and entry.suffix == ".py" and entry.name != "__init__.py":
+                    is_private_entry = entry.name.startswith("_")
+                    if (
+                        entry.is_file()
+                        and entry.suffix == ".py"
+                        and entry.name != "__init__.py"
+                        and not is_private_entry
+                    ):
                         submodules.append(entry.stem)
                     elif entry.is_dir() and entry.name != "__pycache__":
                         subpackages.append(entry.name)
@@ -549,7 +555,7 @@ class ManualRSTGenerator:
             fq_name = f"{namespace}.{module_name}.{func_def.name}"
             f.writelines(
                 [
-                    f".. py:function:: {func_def.name}({arg_str})",
+                    f".. py:function:: {fq_name}({arg_str})",
                     f"{' -> ' + ', '.join(ret_type) if ret_type else ''}\n",
                     f"    :canonical: {fq_name}\n\n",
                 ]

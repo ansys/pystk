@@ -1,7 +1,7 @@
 angle_between_line_chart
 ========================
 
-.. py:function:: angle_between_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.chain_graphs.angle_between_line_chart(stk_object: ~Chain, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.chain_graphs.angle_between_line_chart
 
     Create a plot of the angle and ranges for each three object sub-strand of a Chain, as a function of time, for each strand access interval that overlaps with the requested report time intervals.

@@ -5,7 +5,7 @@ angular_rates_line_chart
   :width: 600
   :alt: image of output from angular_rates_line_chart
 
-.. py:function:: angular_rates_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.access_graphs.angular_rates_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.angular_rates_line_chart
 
     Create a plot of the azimuth rate, elevation rate, and angular rate over time, during each access interval, from the perspective of the selected object in the Access Tool.

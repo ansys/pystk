@@ -1,7 +1,7 @@
 flight_profile_by_time_line_chart
 =================================
 
-.. py:function:: flight_profile_by_time_line_chart(stk_object: ~Aircraft, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.aircraft_graphs.flight_profile_by_time_line_chart(stk_object: ~Aircraft, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.aircraft_graphs.flight_profile_by_time_line_chart
 
     Create a plot of altitude and true air speed as a function of time.

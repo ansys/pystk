@@ -5,7 +5,7 @@ gi_region_satisfaction_interval_graph
   :width: 600
   :alt: image of output from gi_region_satisfaction_interval_graph
 
-.. py:function:: gi_region_satisfaction_interval_graph(stk_object: ~FigureOfMerit, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.figure_of_merit_graphs.gi_region_satisfaction_interval_graph(stk_object: ~FigureOfMerit, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.figure_of_merit_graphs.gi_region_satisfaction_interval_graph
 
     Create an interval graph of the intervals of time when the region selected by the grid inspector is partially covered.

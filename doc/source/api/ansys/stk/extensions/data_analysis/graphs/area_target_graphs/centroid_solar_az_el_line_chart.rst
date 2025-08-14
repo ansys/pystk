@@ -5,7 +5,7 @@ centroid_solar_az_el_line_chart
   :width: 600
   :alt: image of output from centroid_solar_az_el_line_chart
 
-.. py:function:: centroid_solar_az_el_line_chart(stk_object: ~AreaTarget, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.area_target_graphs.centroid_solar_az_el_line_chart(stk_object: ~AreaTarget, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.area_target_graphs.centroid_solar_az_el_line_chart
 
     Create a plot of the elevation and azimuth over time, describing the relative position vector of the apparent Sun to the area target centroid, with respect to the local horizontal plane.

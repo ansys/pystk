@@ -5,7 +5,7 @@ lat_lon_position_line_chart
   :width: 600
   :alt: image of output from lat_lon_position_line_chart
 
-.. py:function:: lat_lon_position_line_chart(stk_object: ~GroundVehicle, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.ground_vehicle_graphs.lat_lon_position_line_chart(stk_object: ~GroundVehicle, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.ground_vehicle_graphs.lat_lon_position_line_chart
 
     Plot the latitude and longitude of the location of the object, computed with respect to the object's central body shape, as a function of time.

@@ -56,8 +56,6 @@ Summary
 
             * - :py:obj:`~ansys.stk.extensions.data_analysis.graphs.transmitter_graphs`
 
-            * - :py:obj:`~ansys.stk.extensions.data_analysis.graphs._common_graphs`
-
 Description
 -----------
 
@@ -95,4 +93,3 @@ A set of high-level workflows for automating common graphing tasks with PySTK.
      🗎 ship_graphs<graphs/ship_graphs>
      🗎 target_graphs<graphs/target_graphs>
      🗎 transmitter_graphs<graphs/transmitter_graphs>
-     🗎 _common_graphs<graphs/_common_graphs>

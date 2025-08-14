@@ -5,7 +5,7 @@ carrier_to_noise_vs_time_line_chart
   :width: 600
   :alt: image of output from carrier_to_noise_vs_time_line_chart
 
-.. py:function:: carrier_to_noise_vs_time_line_chart(stk_object: ~CommSystem, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.comm_system_graphs.carrier_to_noise_vs_time_line_chart(stk_object: ~CommSystem, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.comm_system_graphs.carrier_to_noise_vs_time_line_chart
 
     Graph the carrier-to-noise ratio and the carrier-to-noise-plus-interference ratio as a function of time.

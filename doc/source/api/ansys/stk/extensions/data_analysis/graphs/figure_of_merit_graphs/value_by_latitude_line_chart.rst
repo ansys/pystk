@@ -5,7 +5,7 @@ value_by_latitude_line_chart
   :width: 600
   :alt: image of output from value_by_latitude_line_chart
 
-.. py:function:: value_by_latitude_line_chart(stk_object: ~FigureOfMerit, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.figure_of_merit_graphs.value_by_latitude_line_chart(stk_object: ~FigureOfMerit, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.figure_of_merit_graphs.value_by_latitude_line_chart
 
     Create a plot of the minimum, maximum, and average figure of merit value, sampled over all grid points at the same latitude, as a function of latitude.

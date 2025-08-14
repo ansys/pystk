@@ -5,7 +5,7 @@ cumulative_sunlight_cumulative_pie_chart
   :width: 600
   :alt: image of output from cumulative_sunlight_cumulative_pie_chart
 
-.. py:function:: cumulative_sunlight_cumulative_pie_chart(stk_object: ~Facility, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.facility_graphs.cumulative_sunlight_cumulative_pie_chart(stk_object: ~Facility, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.facility_graphs.cumulative_sunlight_cumulative_pie_chart
 
     Create a pie chart showing the total duration of full sunlight within the graph's requested time interval.

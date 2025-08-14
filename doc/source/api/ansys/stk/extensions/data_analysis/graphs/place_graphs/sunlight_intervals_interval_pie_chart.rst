@@ -5,7 +5,7 @@ sunlight_intervals_interval_pie_chart
   :width: 600
   :alt: image of output from sunlight_intervals_interval_pie_chart
 
-.. py:function:: sunlight_intervals_interval_pie_chart(stk_object: ~Place, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.place_graphs.sunlight_intervals_interval_pie_chart(stk_object: ~Place, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.place_graphs.sunlight_intervals_interval_pie_chart
 
     Create a pie chart showing each interval of full sunlight within the graph's requested time interval, separated by gaps indicating the intervals of penumbra/umbra lighting condition before and after each sunlight interval.

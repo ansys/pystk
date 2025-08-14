@@ -5,7 +5,7 @@ probability_of_detection_line_chart
   :width: 600
   :alt: image of output from probability_of_detection_line_chart
 
-.. py:function:: probability_of_detection_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.access_graphs.probability_of_detection_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.probability_of_detection_line_chart
 
     Graph the probability of a radar pulse search detection versus time.

@@ -5,7 +5,7 @@ gap_duration_line_chart
   :width: 600
   :alt: image of output from gap_duration_line_chart
 
-.. py:function:: gap_duration_line_chart(stk_object: ~CoverageDefinition, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs.gap_duration_line_chart(stk_object: ~CoverageDefinition, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs.gap_duration_line_chart
 
     Create a plot of the cumulative distribution of the access duration gaps of all grid points.

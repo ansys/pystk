@@ -5,7 +5,7 @@ solar_panel_power_line_chart
   :width: 600
   :alt: image of output from solar_panel_power_line_chart
 
-.. py:function:: solar_panel_power_line_chart(stk_object: ~Satellite, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.satellite_graphs.solar_panel_power_line_chart(stk_object: ~Satellite, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.satellite_graphs.solar_panel_power_line_chart
 
     Create a plot of the power of the solar panels illuminated by the sun over time.

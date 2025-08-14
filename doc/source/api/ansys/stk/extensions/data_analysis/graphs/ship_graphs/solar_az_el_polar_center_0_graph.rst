@@ -5,7 +5,7 @@ solar_az_el_polar_center_0_graph
   :width: 600
   :alt: image of output from solar_az_el_polar_center_0_graph
 
-.. py:function:: solar_az_el_polar_center_0_graph(stk_object: ~Ship, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.ship_graphs.solar_az_el_polar_center_0_graph(stk_object: ~Ship, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.ship_graphs.solar_az_el_polar_center_0_graph
 
     Create a polar plot with elevation as radius and azimuth as angle theta over time, describing the apparent relative position vector of the Sun with respect to Fixed VVLH axes (ECFVVLH).

@@ -5,7 +5,7 @@ receiver_filter_line_chart
   :width: 600
   :alt: image of output from receiver_filter_line_chart
 
-.. py:function:: receiver_filter_line_chart(stk_object: ~Receiver, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.receiver_graphs.receiver_filter_line_chart(stk_object: ~Receiver, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.receiver_graphs.receiver_filter_line_chart
 
     Show the receiver RF filter magnitude data as a function of receiver bandwidth frequency.

@@ -5,7 +5,7 @@ cumulative_dwell_cumulative_pie_chart
   :width: 600
   :alt: image of output from cumulative_dwell_cumulative_pie_chart
 
-.. py:function:: cumulative_dwell_cumulative_pie_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.access_graphs.cumulative_dwell_cumulative_pie_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.cumulative_dwell_cumulative_pie_chart
 
     Graph access interval durations as a cumulative pie chart.

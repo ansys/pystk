@@ -5,7 +5,7 @@ gi_region_coverage_line_chart
   :width: 600
   :alt: image of output from gi_region_coverage_line_chart
 
-.. py:function:: gi_region_coverage_line_chart(stk_object: ~CoverageDefinition, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs.gi_region_coverage_line_chart(stk_object: ~CoverageDefinition, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs.gi_region_coverage_line_chart
 
     Create a plot of the percentage of coverage over time of the region selected by the grid inspector.
