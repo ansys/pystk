@@ -39,7 +39,7 @@ def basic_ship(stk_root):
     ship.set_route_type(PropagatorType.GREAT_ARC)
     route = ship.route
     route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
-    route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
+    route.set_altitude_reference_type(VehicleAltitudeReference.MEAN_SEA_LEVEL)
     waypoint = route.waypoints.add()
     waypoint.latitude = 72
     waypoint.longitude = -7.82
