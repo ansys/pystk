@@ -51,7 +51,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     steps:
       - name: "Checkout project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Install jq"
         run: |
@@ -111,7 +111,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Download wheelhouse into static path"
         uses: actions/download-artifact@v5
@@ -204,7 +204,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Generate the name of the docker image and the container"
         run: |
