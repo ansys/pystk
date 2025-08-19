@@ -29,7 +29,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       github.event.type != 'labeled'
     steps:
-     - uses: actions/checkout@v4
+     - uses: actions/checkout@v5
 
      - name: "Update labels"
        uses: micnncim/action-label-syncer@v1
@@ -64,7 +64,7 @@ jobs:
     steps:
 
       - name: "Checkout project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
         uses: actions/setup-python@v5
@@ -114,7 +114,7 @@ jobs:
     needs: vulnerabilities
     steps:
       - name: "Checkout project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Install jq"
         run: |
@@ -190,7 +190,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
         if: |
@@ -319,7 +319,7 @@ jobs:
       # the CI/CD session.
 
       - name: "Download latest API docs"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: steps.build-doc-full.outcome == 'skipped'
         with:
           ref: "gh-pages"
@@ -385,7 +385,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Generate the name of the docker image and the container"
         run: |
