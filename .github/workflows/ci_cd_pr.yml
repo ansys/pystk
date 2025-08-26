@@ -469,7 +469,7 @@ jobs:
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           path: .cov/${{ env.ANSYS_STK }}-coverage
           name: ${{ env.ANSYS_STK }}-coverage
