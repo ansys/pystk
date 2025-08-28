@@ -39,7 +39,7 @@ The STK desktop application or STK Engine must be installed and licensed on your
     * - STK Release
       - 12.9
     * - PySTK Release
-        0.1.x
+        - 0.1.x
 
 Install the STK Desktop application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
