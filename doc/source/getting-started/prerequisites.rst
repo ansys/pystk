@@ -28,7 +28,7 @@ https://jupyter.org/install.
 Install the STK Desktop application or STK Engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The STK desktop application or STK Engine must be installed and licensed on your machine. Table
+The STK desktop application or STK Engine must be installed and licensed on your machine.
 
 .. list-table:: Compatibility Table
     :widths: auto
