@@ -1,7 +1,7 @@
 interval_pie_chart
 ==================
 
-.. py:function:: interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[~str], time_columns: list[~str], start_column: ~str, stop_column: ~str, start_time: ~str, stop_time: ~str, title: ~str, dimension: ~str, cumulative: ~bool = False, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.graph_helpers.interval_pie_chart(root: ~STKObjectRoot, df: ~pandas.DataFrame, numerical_columns: list[~str], time_columns: list[~str], start_column: ~str, stop_column: ~str, start_time: ~str, stop_time: ~str, title: ~str, dimension: ~str, cumulative: ~bool = False, color_list: list[~typing.Any] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.interval_pie_chart
 
     Create an interval pie chart from the provided dataframe.

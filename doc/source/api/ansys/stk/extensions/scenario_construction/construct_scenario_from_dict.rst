@@ -1,7 +1,7 @@
 construct_scenario_from_dict
 ============================
 
-.. py:function:: construct_scenario_from_dict(root: ~STKObjectRoot, dictionary: ~dict) -> ~Scenario
+.. py:function:: ansys.stk.extensions.scenario_construction.construct_scenario_from_dict(root: ~STKObjectRoot, dictionary: ~dict) -> ~Scenario
     :canonical: ansys.stk.extensions.scenario_construction.construct_scenario_from_dict
 
     Create a scenario with sub-objects from a dictionary describing its structure.
@@ -41,11 +41,7 @@ construct_scenario_from_dict
                 "type": "Scenario",
                 "name": "MyScenario",
                 "children": [
-                    {
-                        "type": "Place",
-                        "name": "MyPlace",
-                        "children": [{"type": "Sensor", "name": "MySensor", "children": []}],
-                    }
+                    {"type": "Place", "name": "MyPlace", "children": [{"type": "Sensor", "name": "MySensor", "children": []}]}
                 ],
             },
         )

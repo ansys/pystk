@@ -44,7 +44,7 @@ class ManualRSTGenerator:
             is_autofile = any(
                 auto_path in path_resolved.parents or auto_path == path_resolved for auto_path in auto_file_paths
             )
-            is_private_file = path.name.startswith("_")
+            is_private_file = path.name.startswith("_") and ("__init__") not in path.name
             is_internal_file = "internal" in path.parts
             if not is_autofile and not is_internal_file and not is_private_file:
                 self._generate_rst_for_pymodule(str(path))
@@ -117,7 +117,13 @@ class ManualRSTGenerator:
 
             if path_to_src_file.name == "__init__.py":
                 for entry in path_to_src_file.parent.iterdir():
-                    if entry.is_file() and entry.suffix == ".py" and entry.name != "__init__.py":
+                    is_private_entry = entry.name.startswith("_")
+                    if (
+                        entry.is_file()
+                        and entry.suffix == ".py"
+                        and entry.name != "__init__.py"
+                        and not is_private_entry
+                    ):
                         submodules.append(entry.stem)
                     elif entry.is_dir() and entry.name != "__pycache__":
                         subpackages.append(entry.name)
@@ -481,11 +487,64 @@ class ManualRSTGenerator:
             )
 
             # For graphs, insert test image
-            graph_module_list = ["access_graphs"]
-            if module_name in graph_module_list:
+            graph_module_list = [
+                "access_graphs",
+                "aircraft_graphs",
+                "antenna_graphs",
+                "area_target_graphs",
+                "chain_graphs",
+                "comm_system_graphs",
+                "coverage_definition_graphs",
+                "facility_graphs",
+                "figure_of_merit_graphs",
+                "ground_vehicle_graphs",
+                "launch_vehicle_graphs",
+                "line_target_graphs",
+                "missile_graphs",
+                "place_graphs",
+                "radar_graphs",
+                "receiver_graphs",
+                "satellite_graphs",
+                "sensor_graphs",
+                "ship_graphs",
+                "target_graphs",
+                "transmitter_graphs",
+                "scenario_graphs",
+            ]
+            # Exclude images for untested graphs to avoid broken links
+            exclude_image_functions = [
+                "tle_teme_residuals_line_chart",
+                "radar_propagation_loss_line_chart",
+                "flight_profile_by_downrange_line_chart",
+                "flight_profile_by_time_line_chart",
+                "angle_between_line_chart",
+                "bentpipe_link_cno_line_chart",
+            ]
+            # Images generated once, but not generated as part of testing
+            shared_image_functions = [
+                "model_area_line_chart",
+                "solar_panel_area_line_chart",
+                "solar_panel_power_line_chart",
+                "obscuration_line_chart",
+            ]
+            # Substitute missing graphs of the same type
+            substitute_graph_key = {
+                "sunlight_intervals_interval_pie_chart_launchvehicle": "sunlight_intervals_interval_pie_chart_satellite",
+                "sunlight_intervals_interval_pie_chart_missile": "sunlight_intervals_interval_pie_chart_satellite",
+            }
+            class_name = module_name.replace("_graphs", "").replace("_", "")
+            if module_name in graph_module_list and func_def.name not in exclude_image_functions:
+                func_module_path = f"{func_def.name}_{class_name}"
+                if func_def.name in shared_image_functions:
+                    graph_image_path = f"/graph_images_temp/{func_def.name}.png"
+                elif func_module_path in substitute_graph_key:
+                    substitute_path = substitute_graph_key[func_module_path]
+                    graph_image_path = f"/graph_images_temp/test_{substitute_path}.png"
+                else:
+                    graph_image_path = f"/graph_images_temp/test_{func_module_path}.png"
                 f.writelines(
                     [
-                        f".. image:: /graph_images_temp/test_{func_def.name}.png\n",
+                        f".. image:: {graph_image_path}\n",
                         "  :width: 600\n",
                         f"  :alt: image of output from {func_def.name}\n\n",
                     ]
@@ -496,7 +555,7 @@ class ManualRSTGenerator:
             fq_name = f"{namespace}.{module_name}.{func_def.name}"
             f.writelines(
                 [
-                    f".. py:function:: {func_def.name}({arg_str})",
+                    f".. py:function:: {fq_name}({arg_str})",
                     f"{' -> ' + ', '.join(ret_type) if ret_type else ''}\n",
                     f"    :canonical: {fq_name}\n\n",
                 ]

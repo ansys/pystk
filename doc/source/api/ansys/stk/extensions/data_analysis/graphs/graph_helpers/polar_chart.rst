@@ -1,7 +1,7 @@
 polar_chart
 ===========
 
-.. py:function:: polar_chart(data: list[~pandas.DataFrame], root: ~STKObjectRoot, numerical_columns: list[~str], axis: ~dict, title: ~str, origin_0: ~bool = False, convert_negative_r: ~bool = False, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.graph_helpers.polar_chart(data: list[~pandas.DataFrame], root: ~STKObjectRoot, numerical_columns: list[~str], axis: ~dict, title: ~str, origin_0: ~bool = False, convert_negative_r: ~bool = False, colormap: ~matplotlib.colors.Colormap = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.polar_chart
 
     Create a polar chart from the provided dataframe and axis information.
