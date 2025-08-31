@@ -84,6 +84,7 @@ migration = [
 vulnerabilities = [
     "bandit[toml]==1.8.6",
     "safety==3.6.0",
+    "typer==0.16.1",
 ]
 tests = [
     "numpy==2.2.6",
@@ -111,7 +112,7 @@ doc = [
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "pandas==2.3.1",
+    "pandas==2.3.2",
     "matplotlib==3.10.5",
     "plotly==6.3.0",
     "sphinxcontrib-jquery==4.1",
