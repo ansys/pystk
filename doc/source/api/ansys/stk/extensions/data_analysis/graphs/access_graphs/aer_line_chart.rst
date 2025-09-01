@@ -1,11 +1,11 @@
 aer_line_chart
 ==============
 
-.. image:: /graph_images_temp/test_aer_line_chart.png
+.. image:: /graph_images_temp/test_aer_line_chart_access.png
   :width: 600
   :alt: image of output from aer_line_chart
 
-.. py:function:: aer_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.access_graphs.aer_line_chart(stk_object: ~Access, start_time: ~typing.Any = None, stop_time: ~typing.Any = None, step: ~float = 60, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.access_graphs.aer_line_chart
 
     Create a plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals.
@@ -20,10 +20,10 @@ aer_line_chart
         The STK Access object.
 
         **start_time** : :obj:`~typing.Any`
-        The start time of the calculation.
+        The start time of the calculation (the default is None, which implies using the scenario start time).
 
         **stop_time** : :obj:`~typing.Any`
-        The stop time of the calculation.
+        The stop time of the calculation (the default is None, which implies using the scenario stop time).
 
         **step_time** : :obj:`~float`
         The step time for the calculation (the default is 60 seconds).

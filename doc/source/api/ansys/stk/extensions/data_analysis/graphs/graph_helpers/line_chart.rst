@@ -1,7 +1,7 @@
 line_chart
 ==========
 
-.. py:function:: line_chart(data: list[~pandas.DataFrame], root: ~STKObjectRoot, numerical_columns: list[~str], time_columns: list[~str], axes: list[~dict], x_column: ~str, x_label: ~str, title: ~str, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
+.. py:function:: ansys.stk.extensions.data_analysis.graphs.graph_helpers.line_chart(data: list[~pandas.DataFrame], root: ~STKObjectRoot, numerical_columns: list[~str], time_columns: list[~str], axes: list[~dict], x_column: ~str, x_label: ~str, title: ~str, colormap: ~matplotlib.colors.Colormap = None, time_unit_abbreviation: ~str = 'UTCG', formatter: collections.abc.Callable[[float, float], str] = None, multiple_data_providers: ~bool = False) -> ~matplotlib.figure.Figure, ~matplotlib.axes.Axes
     :canonical: ansys.stk.extensions.data_analysis.graphs.graph_helpers.line_chart
 
     Create a line chart from the provided dataframe and axes information.
@@ -42,6 +42,9 @@ line_chart
 
         **formatter** : :obj:`~collections.abc.Callable` [[:obj:`~float`, :obj:`~float`], :obj:`~str`]
         The formatter for time axes (the default is None).
+
+        **multiple_data_providers: bool** : :obj:`~`
+        Whether each dataframe provided corresponds to a different data provider and axis (the default is False).
 
 
 
