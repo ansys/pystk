@@ -30,6 +30,17 @@ Install the STK Desktop application or STK Engine
 
 The STK desktop application or STK Engine must be installed and licensed on your machine.
 
+.. list-table:: Compatibility Table
+    :widths: auto
+    :header-rows: 1
+
+    * - Ansys Release
+      - 2025.1
+    * - STK Release
+      - 12.10
+    * - PySTK Release
+      - 0.1.x
+
 Install the STK Desktop application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
