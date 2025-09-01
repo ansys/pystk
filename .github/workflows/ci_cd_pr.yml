@@ -29,15 +29,15 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       github.event.type != 'labeled'
     steps:
-     - uses: actions/checkout@v5
+     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
      - name: "Update labels"
-       uses: micnncim/action-label-syncer@v1
+       uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c # v1.3.0
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
      - name: "Label pull-request"
-       uses: actions/labeler@v5.0.0
+       uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9 # v5.0.0
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -49,7 +49,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: ansys/actions/doc-changelog@v10
+    - uses: ansys/actions/doc-changelog@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
       with:
         token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
         use-conventional-commits: true
@@ -64,10 +64,10 @@ jobs:
     steps:
 
       - name: "Checkout project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -101,7 +101,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: vulnerabilities
     steps:
-      - uses: ansys/actions/code-style@v10
+      - uses: ansys/actions/code-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -114,7 +114,7 @@ jobs:
     needs: vulnerabilities
     steps:
       - name: "Checkout project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: "Install jq"
         run: |
@@ -136,7 +136,7 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v10
+      - uses: ansys/actions/doc-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
@@ -158,7 +158,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@v10
+      - uses: ansys/actions/build-wheelhouse@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -190,17 +190,17 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
         if: |
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
@@ -319,7 +319,7 @@ jobs:
       # the CI/CD session.
 
       - name: "Download latest API docs"
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         if: steps.build-doc-full.outcome == 'skipped'
         with:
           ref: "gh-pages"
@@ -351,7 +351,7 @@ jobs:
           cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
 
       - name: "Upload HTML documentation artifacts"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           path: doc/_build/html
           name: documentation-html
@@ -385,7 +385,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: "Generate the name of the docker image and the container"
         run: |
@@ -493,14 +493,14 @@ jobs:
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           path: .cov/${{ env.ANSYS_STK }}-coverage
           name: ${{ env.ANSYS_STK }}-coverage
 
       - name: "Upload coverage reports to Codecov"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@fdcc8476540edceab3de004e990f80d881c6cc00 # v5.5.0
         with:
           files: .cov/coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -522,7 +522,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: ansys/actions/build-library@v10
+      - uses: ansys/actions/build-library@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
         with:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
