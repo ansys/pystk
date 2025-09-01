@@ -69,13 +69,28 @@ jobs:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           dev-mode: true
 
+  actions-style:
+    name: "Actions style checks"
+    runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
+    needs: vulnerabilities
+    steps:
+      - uses: ansys/actions/check-actions-security@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+        with:
+          generate-summary: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          auditing-level: 'high'
+          trust-ansys-actions: true
+
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: vulnerabilities
+    needs: actions-style
     steps:
       - uses: ansys/actions/code-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
         with:
@@ -87,7 +102,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: vulnerabilities
+    needs: actions-style
     steps:
       - name: "Checkout project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
