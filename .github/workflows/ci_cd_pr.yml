@@ -142,14 +142,12 @@ jobs:
           # Combine both file lists and convert them to a JSON array
           # vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
           vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
-          echo "files=$(echo ${vale_files})" >> "${GITHUB_OUTPUT}"
+          echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
       - uses: ansys/actions/doc-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
-        env:
-          VALE_FILES: ${{ steps.vale.outputs.files }}
         with:
           checkout: false
-          files: "${VALE_FILES}"
+          files: '${{ steps.vale.outputs.files }}'
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
           fail-level: 'warning'
