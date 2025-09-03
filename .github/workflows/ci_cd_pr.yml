@@ -230,8 +230,8 @@ jobs:
         run: |
           image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
           container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
-          echo "IMAGE=${image_name}" >> $GITHUB_ENV
-          echo "CONTAINER=${container_name}" >> $GITHUB_ENV
+          echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
+          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
         if: |
@@ -420,8 +420,8 @@ jobs:
         run: |
           image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
           container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
-          echo "image=${image_name}" >> $GITHUB_ENV
-          echo "container=${container_name}" >> $GITHUB_ENV
+          echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
+          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
         env:
