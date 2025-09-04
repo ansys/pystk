@@ -33,7 +33,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: ansys/actions/doc-deploy-changelog@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/doc-deploy-changelog@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
@@ -46,7 +46,7 @@ jobs:
       contents: read
     steps:
       - name: "Run code style checks"
-        uses: ansys/actions/code-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+        uses: ansys/actions/code-style@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -85,7 +85,7 @@ jobs:
           vale_files=$(echo -e "${python_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-      - uses: ansys/actions/doc-style@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/doc-style@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           checkout: false
           files: '${{ steps.vale.outputs.files }}'
@@ -107,7 +107,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/build-wheelhouse@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -398,7 +398,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: ansys/actions/build-library@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/build-library@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
@@ -437,7 +437,7 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: ansys/actions/release-github@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/release-github@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           library-name: ${{ env.ANSYS_STK }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -453,7 +453,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: ansys/actions/doc-deploy-stable@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/doc-deploy-stable@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
