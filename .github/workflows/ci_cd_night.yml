@@ -58,7 +58,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/build-wheelhouse@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -352,7 +352,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: ansys/actions/doc-deploy-dev@d93d46bd89025d3c78a0d18a68a9f16434c74382 # v10.0.15
+      - uses: ansys/actions/doc-deploy-dev@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
