@@ -253,7 +253,7 @@ jobs:
             --name "${STK_CONTAINER}" \
             --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
             --volume ${PWD}:/home/stk/pystk \
-            "${STK_PYTHON_IMAGE}"
+            "${STK_IMAGE}"
 
       - name: "Install the project with the testing dependencies"
         env:
