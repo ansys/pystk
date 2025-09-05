@@ -138,6 +138,8 @@ jobs:
             "quarto install tinytex"
 
       - name: "Install Tox"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -145,6 +147,8 @@ jobs:
             "python -m pip install --upgrade pip tox && rm -rf .tox"
 
       - name: "Build the full documentation"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
