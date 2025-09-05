@@ -1,0 +1,15 @@
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.display tbody tr.even>.sorting_1{
+    background-color: var(--ast-color-table-background);
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1:hover,
+table.dataTable.display tbody tr.even>.sorting_1:hover{
+    background-color: var(--ast-color-table-row-hover-bg);
+}
+
+
+table.dataTable.display tbody tr.odd>.sorting_1:active,
+table.dataTable.display tbody tr.even>.sorting_1:active{
+    background-color: var(--ast-color-table-active-bg);
+}
