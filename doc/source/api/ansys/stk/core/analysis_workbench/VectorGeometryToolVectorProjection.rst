@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.source`
-              - Specify a source vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.reference_plane`
               - Specify a reference plane.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.source`
+              - Specify a source vector.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: source
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.source
-    :type: VectorGeometryToolVectorReference
-
-    Specify a source vector.
-
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.reference_plane
     :type: VectorGeometryToolPlaneReference
 
     Specify a reference plane.
+
+.. py:property:: source
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorProjection.source
+    :type: VectorGeometryToolVectorReference
+
+    Specify a source vector.
 
 

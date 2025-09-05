@@ -58,7 +58,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: find_angle(self, epoch: typing.Any) -> AnalysisWorkbenchAngleFindAngleResult
     :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolAngle.find_angle
 
@@ -118,4 +117,5 @@ Method detail
     :Returns:
 
         :obj:`~AnalysisWorkbenchAngleFindWithRateResult`
+
 

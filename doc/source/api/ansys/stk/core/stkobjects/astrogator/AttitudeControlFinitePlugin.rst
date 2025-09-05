@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_name`
-              - Get the selected plugin's name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_config`
               - Get the properties of the selected plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_name`
+              - Get the selected plugin's name.
 
 
 
@@ -47,21 +47,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: plugin_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_name
-    :type: str
-
-    Get the selected plugin's name.
-
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_config
     :type: PluginProperties
 
     Get the properties of the selected plugin.
 
+.. py:property:: plugin_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.plugin_name
+    :type: str
+
+    Get the selected plugin's name.
+
 
 Method detail
 -------------
+
+
 
 .. py:method:: select_plugin_by_name(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin.select_plugin_by_name
@@ -76,6 +78,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 

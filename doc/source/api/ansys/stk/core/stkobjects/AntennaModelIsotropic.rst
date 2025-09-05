@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelIsotropic.mainlobe_gain`
-              - Get the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelIsotropic.efficiency`
               - Get or set the efficiency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelIsotropic.mainlobe_gain`
+              - Get the mainlobe gain.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: mainlobe_gain
-    :canonical: ansys.stk.core.stkobjects.AntennaModelIsotropic.mainlobe_gain
-    :type: float
-
-    Get the mainlobe gain.
-
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelIsotropic.efficiency
     :type: float
 
     Get or set the efficiency.
+
+.. py:property:: mainlobe_gain
+    :canonical: ansys.stk.core.stkobjects.AntennaModelIsotropic.mainlobe_gain
+    :type: float
+
+    Get the mainlobe gain.
 
 

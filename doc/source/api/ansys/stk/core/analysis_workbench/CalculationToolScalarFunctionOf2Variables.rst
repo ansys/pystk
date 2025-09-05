@@ -20,30 +20,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.x`
-              - The scalar argument X.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_x`
-              - The unit used to interpret numerical values of scalar argument X.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.available_functions`
+              - The available functions. A function(x,y) uses some combination of two scalar arguments x and y as well as one to three constant coefficients a, b, c.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.coefficient_a`
               - The constant coefficient A.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.y`
-              - The scalar argument Y.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_y`
-              - The unit used to interpret numerical values of scalar argument Y.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.coefficient_b`
               - The constant coefficient B.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.coefficient_c`
               - The constant coefficient C.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance`
-              - Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension`
               - The output dimension. Use any of STK supported dimensions. This value will be used if OutputDimensionInheritance is false.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.available_functions`
-              - The available functions. A function(x,y) uses some combination of two scalar arguments x and y as well as one to three constant coefficients a, b, c.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.selected_function`
-              - The selected function.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance`
+              - Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_units`
               - The unit for the selected dimension. The unit is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.selected_function`
+              - The selected function.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_x`
+              - The unit used to interpret numerical values of scalar argument X.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_y`
+              - The unit used to interpret numerical values of scalar argument Y.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.x`
+              - The scalar argument X.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.y`
+              - The scalar argument Y.
 
 
 
@@ -58,35 +58,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: x
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.x
-    :type: ICalculationToolScalar
+.. py:property:: available_functions
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.available_functions
+    :type: list
 
-    The scalar argument X.
-
-.. py:property:: units_x
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_x
-    :type: str
-
-    The unit used to interpret numerical values of scalar argument X.
+    The available functions. A function(x,y) uses some combination of two scalar arguments x and y as well as one to three constant coefficients a, b, c.
 
 .. py:property:: coefficient_a
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.coefficient_a
     :type: float
 
     The constant coefficient A.
-
-.. py:property:: y
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.y
-    :type: ICalculationToolScalar
-
-    The scalar argument Y.
-
-.. py:property:: units_y
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_y
-    :type: str
-
-    The unit used to interpret numerical values of scalar argument Y.
 
 .. py:property:: coefficient_b
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.coefficient_b
@@ -100,23 +82,23 @@ Property detail
 
     The constant coefficient C.
 
-.. py:property:: output_dimension_inheritance
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance
-    :type: InheritDimensionType
-
-    Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
-
 .. py:property:: output_dimension
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension
     :type: str
 
     The output dimension. Use any of STK supported dimensions. This value will be used if OutputDimensionInheritance is false.
 
-.. py:property:: available_functions
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.available_functions
-    :type: list
+.. py:property:: output_dimension_inheritance
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance
+    :type: InheritDimensionType
 
-    The available functions. A function(x,y) uses some combination of two scalar arguments x and y as well as one to three constant coefficients a, b, c.
+    Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
+
+.. py:property:: output_units
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_units
+    :type: str
+
+    The unit for the selected dimension. The unit is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
 
 .. py:property:: selected_function
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.selected_function
@@ -124,10 +106,28 @@ Property detail
 
     The selected function.
 
-.. py:property:: output_units
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.output_units
+.. py:property:: units_x
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_x
     :type: str
 
-    The unit for the selected dimension. The unit is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
+    The unit used to interpret numerical values of scalar argument X.
+
+.. py:property:: units_y
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.units_y
+    :type: str
+
+    The unit used to interpret numerical values of scalar argument Y.
+
+.. py:property:: x
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.x
+    :type: ICalculationToolScalar
+
+    The scalar argument X.
+
+.. py:property:: y
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarFunctionOf2Variables.y
+    :type: ICalculationToolScalar
+
+    The scalar argument Y.
 
 

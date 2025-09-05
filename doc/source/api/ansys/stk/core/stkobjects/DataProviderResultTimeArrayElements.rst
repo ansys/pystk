@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid`
-              - Return true if the result is valid, false otherwise.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.count`
               - Get the number of arrays in the result.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid`
+              - Return true if the result is valid, false otherwise.
 
 
 
@@ -45,21 +45,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: valid
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid
-    :type: bool
-
-    Return true if the result is valid, false otherwise.
-
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.count
     :type: int
 
     Get the number of arrays in the result.
 
+.. py:property:: valid
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid
+    :type: bool
+
+    Return true if the result is valid, false otherwise.
+
 
 Method detail
 -------------
+
 
 .. py:method:: get_array(self, index_or_name: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.get_array
@@ -74,6 +75,5 @@ Method detail
     :Returns:
 
         :obj:`~list`
-
 
 

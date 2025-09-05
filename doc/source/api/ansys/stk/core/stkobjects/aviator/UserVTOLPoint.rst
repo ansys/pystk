@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.get_terrain_altitude`
-              - Set the VTOL Point altitude to the terrain altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.copy_site`
               - Copy the site to the clipboard.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.paste_site`
-              - Paste the site to the clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.get_terrain_altitude`
+              - Set the VTOL Point altitude to the terrain altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.paste_site`
+              - Paste the site to the clipboard.
 
     .. tab-item:: Properties
 
@@ -79,32 +79,10 @@ Method detail
 
 
 
-.. py:method:: get_terrain_altitude(self) -> float
-    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.get_terrain_altitude
-
-    Set the VTOL Point altitude to the terrain altitude.
-
-    :Returns:
-
-        :obj:`~float`
-
-
-
-
-
 .. py:method:: copy_site(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.copy_site
 
     Copy the site to the clipboard.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: paste_site(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.paste_site
-
-    Paste the site to the clipboard.
 
     :Returns:
 
@@ -118,4 +96,26 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
+.. py:method:: get_terrain_altitude(self) -> float
+    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.get_terrain_altitude
+
+    Set the VTOL Point altitude to the terrain altitude.
+
+    :Returns:
+
+        :obj:`~float`
+
+
+
+
+
+.. py:method:: paste_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.paste_site
+
+    Paste the site to the clipboard.
+
+    :Returns:
+
+        :obj:`~None`
 

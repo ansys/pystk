@@ -18,8 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.time`
-              - Time of the ellipse. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.bearing`
+              - Get or set the bearing of the ellipse: the angle, measured in an easterly direction, between the major axis and the local North direction. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.custom_position`
               - Opt whether to specify a custom position for the center of the ellipse. Otherwise the object's center is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.latitude`
@@ -30,8 +30,8 @@ Overview
               - Get or set the semimajor axis of the ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.semi_minor_axis`
               - Get or set the semiminor axis of the ellipse. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.bearing`
-              - Get or set the bearing of the ellipse: the angle, measured in an easterly direction, between the major axis and the local North direction. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement.time`
+              - Time of the ellipse. Uses DateFormat Dimension.
 
 
 
@@ -46,11 +46,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: time
-    :canonical: ansys.stk.core.stkobjects.VehicleEllipseDataElement.time
+.. py:property:: bearing
+    :canonical: ansys.stk.core.stkobjects.VehicleEllipseDataElement.bearing
     :type: typing.Any
 
-    Time of the ellipse. Uses DateFormat Dimension.
+    Get or set the bearing of the ellipse: the angle, measured in an easterly direction, between the major axis and the local North direction. Uses Angle Dimension.
 
 .. py:property:: custom_position
     :canonical: ansys.stk.core.stkobjects.VehicleEllipseDataElement.custom_position
@@ -82,10 +82,10 @@ Property detail
 
     Get or set the semiminor axis of the ellipse. Uses Distance Dimension.
 
-.. py:property:: bearing
-    :canonical: ansys.stk.core.stkobjects.VehicleEllipseDataElement.bearing
+.. py:property:: time
+    :canonical: ansys.stk.core.stkobjects.VehicleEllipseDataElement.time
     :type: typing.Any
 
-    Get or set the bearing of the ellipse: the angle, measured in an easterly direction, between the major axis and the local North direction. Uses Angle Dimension.
+    Time of the ellipse. Uses DateFormat Dimension.
 
 

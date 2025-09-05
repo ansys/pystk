@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.coord_system_name`
               - Get or set the coordinate system within which the element is defined.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_complex_part`
+              - Whether this value represents the real or imaginary part of an Eigenvector element.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_number`
               - Get or set the number identifying one of the six Eigenvectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.state_variable`
               - Get or set the variable identifying the component within an Eigenvector.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_complex_part`
-              - Whether this value represents the real or imaginary part of an Eigenvector element.
 
 
 
@@ -48,6 +48,12 @@ Property detail
 
     Get or set the coordinate system within which the element is defined.
 
+.. py:property:: eigenvector_complex_part
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_complex_part
+    :type: ComplexNumber
+
+    Whether this value represents the real or imaginary part of an Eigenvector element.
+
 .. py:property:: eigenvector_number
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_number
     :type: STMEigenNumber
@@ -59,11 +65,5 @@ Property detail
     :type: STMPerturbationVariables
 
     Get or set the variable identifying the component within an Eigenvector.
-
-.. py:property:: eigenvector_complex_part
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_complex_part
-    :type: ComplexNumber
-
-    Whether this value represents the real or imaginary part of an Eigenvector element.
 
 

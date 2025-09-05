@@ -24,10 +24,10 @@ Overview
               - Compute the data; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_elements`
               - Compute the data and return just the indicated data elements; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array`
-              - Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_elements_event_array`
               - Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array`
+              - Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
 
 
 Import detail
@@ -76,24 +76,6 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: execute_event_array(self, event_array: ITimeToolTimeArray, start_time: typing.Any, stop_time: typing.Any) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array
-
-    Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
-
-    :Parameters:
-
-        **event_array** : :obj:`~ITimeToolTimeArray`
-
-        **start_time** : :obj:`~typing.Any`
-
-        **stop_time** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~DataProviderResult`
-
 .. py:method:: execute_elements_event_array(self, event_array: ITimeToolTimeArray, start_time: typing.Any, stop_time: typing.Any, element_names: list) -> DataProviderResult
     :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_elements_event_array
 
@@ -108,6 +90,24 @@ Method detail
         **stop_time** : :obj:`~typing.Any`
 
         **element_names** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~DataProviderResult`
+
+.. py:method:: execute_event_array(self, event_array: ITimeToolTimeArray, start_time: typing.Any, stop_time: typing.Any) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array
+
+    Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
+
+    :Parameters:
+
+        **event_array** : :obj:`~ITimeToolTimeArray`
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
 
 
     :Returns:

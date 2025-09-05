@@ -61,10 +61,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: create_symbol(self, symbol_id: str, save_image_file_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.create_symbol
 
@@ -80,4 +76,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 

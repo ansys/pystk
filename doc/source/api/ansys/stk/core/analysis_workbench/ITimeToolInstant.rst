@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.type`
-              - Return the type of time instant.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.today`
-              - Return time instant that corresponds to today's GMT midnight.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.tomorrow`
-              - Return time instant that corresponds to tomorrow's GMT midnight.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_today`
               - Return time instant that corresponds to today's GMT noon.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_tomorrow`
               - Return time instant that corresponds to tomorrow's GMT noon.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.today`
+              - Return time instant that corresponds to today's GMT midnight.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.tomorrow`
+              - Return time instant that corresponds to tomorrow's GMT midnight.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolInstant.type`
+              - Return the type of time instant.
 
 
 Import detail
@@ -52,11 +52,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.type
-    :type: TimeEventType
+.. py:property:: noon_today
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_today
+    :type: ITimeToolInstant
 
-    Return the type of time instant.
+    Return time instant that corresponds to today's GMT noon.
+
+.. py:property:: noon_tomorrow
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_tomorrow
+    :type: ITimeToolInstant
+
+    Return time instant that corresponds to tomorrow's GMT noon.
 
 .. py:property:: today
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.today
@@ -70,26 +76,15 @@ Property detail
 
     Return time instant that corresponds to tomorrow's GMT midnight.
 
-.. py:property:: noon_today
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_today
-    :type: ITimeToolInstant
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.type
+    :type: TimeEventType
 
-    Return time instant that corresponds to today's GMT noon.
-
-.. py:property:: noon_tomorrow
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.noon_tomorrow
-    :type: ITimeToolInstant
-
-    Return time instant that corresponds to tomorrow's GMT noon.
+    Return the type of time instant.
 
 
 Method detail
 -------------
-
-
-
-
-
 
 .. py:method:: find_occurrence(self) -> TimeToolInstantOccurrenceResult
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.find_occurrence
@@ -99,6 +94,8 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolInstantOccurrenceResult`
+
+
 
 .. py:method:: occurs_before(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolInstant.occurs_before
@@ -113,4 +110,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
 

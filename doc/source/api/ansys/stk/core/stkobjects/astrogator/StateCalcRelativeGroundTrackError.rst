@@ -24,12 +24,12 @@ Overview
               - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.direction`
               - Get or set the direction to search for the desired value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed`
-              - True if signed based on RxV.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference_selection`
-              - Get or set the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference`
               - Get the reference object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference_selection`
+              - Get or set the reference object selection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed`
+              - True if signed based on RxV.
 
 
 
@@ -56,11 +56,11 @@ Property detail
 
     Get or set the direction to search for the desired value.
 
-.. py:property:: signed
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed
-    :type: bool
+.. py:property:: reference
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference
+    :type: ILinkToObject
 
-    True if signed based on RxV.
+    Get the reference object.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference_selection
@@ -68,10 +68,10 @@ Property detail
 
     Get or set the reference object selection.
 
-.. py:property:: reference
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference
-    :type: ILinkToObject
+.. py:property:: signed
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed
+    :type: bool
 
-    Get the reference object.
+    True if signed based on RxV.
 
 

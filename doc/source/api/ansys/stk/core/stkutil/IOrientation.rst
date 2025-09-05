@@ -18,8 +18,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.convert_to`
-              - Change the orientation method to the type specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign`
               - Assign a new orientation method.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_az_el`
@@ -30,20 +28,22 @@ Overview
               - Set orientation using the Quaternion representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_ypr_angles`
               - Set orientation using the YPR angles representation.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.convert_to`
+              - Change the orientation method to the type specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_az_el`
               - Get orientation using the AzEl representation.
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_euler_angles`
-              - Get orientation using the Euler angles representation.
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_quaternion`
-              - Get orientation using the Quaternion representation.
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_ypr_angles`
-              - Get orientation using the YPR angles representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_az_el_array`
               - Return the AzEl elements as an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_euler_angles`
+              - Get orientation using the Euler angles representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_euler_angles_array`
               - Return the Euler elements as an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_quaternion`
+              - Get orientation using the Quaternion representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_quaternion_array`
               - Return the Quaternion elements as an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_ypr_angles`
+              - Get orientation using the YPR angles representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_ypr_angles_array`
               - Return the YPR Angles elements as an array.
 
@@ -77,21 +77,6 @@ Property detail
 
 Method detail
 -------------
-
-.. py:method:: convert_to(self, type: OrientationType) -> IOrientation
-    :canonical: ansys.stk.core.stkutil.IOrientation.convert_to
-
-    Change the orientation method to the type specified.
-
-    :Parameters:
-
-        **type** : :obj:`~OrientationType`
-
-
-    :Returns:
-
-        :obj:`~IOrientation`
-
 
 .. py:method:: assign(self, orientation: IOrientation) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign
@@ -185,6 +170,21 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: convert_to(self, type: OrientationType) -> IOrientation
+    :canonical: ansys.stk.core.stkutil.IOrientation.convert_to
+
+    Change the orientation method to the type specified.
+
+    :Parameters:
+
+        **type** : :obj:`~OrientationType`
+
+
+    :Returns:
+
+        :obj:`~IOrientation`
+
+
 .. py:method:: query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AzElAboutBoresight]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_az_el
 
@@ -193,6 +193,15 @@ Method detail
     :Returns:
 
         :obj:`~typing.Tuple[typing.Any, typing.Any, AzElAboutBoresight]`
+
+.. py:method:: query_az_el_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IOrientation.query_az_el_array
+
+    Return the AzEl elements as an array.
+
+    :Returns:
+
+        :obj:`~list`
 
 .. py:method:: query_euler_angles(self, sequence: EulerOrientationSequenceType) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles
@@ -208,38 +217,6 @@ Method detail
 
         :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any]`
 
-.. py:method:: query_quaternion(self) -> typing.Tuple[float, float, float, float]
-    :canonical: ansys.stk.core.stkutil.IOrientation.query_quaternion
-
-    Get orientation using the Quaternion representation.
-
-    :Returns:
-
-        :obj:`~typing.Tuple[float, float, float, float]`
-
-.. py:method:: query_ypr_angles(self, sequence: YPRAnglesSequence) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
-    :canonical: ansys.stk.core.stkutil.IOrientation.query_ypr_angles
-
-    Get orientation using the YPR angles representation.
-
-    :Parameters:
-
-        **sequence** : :obj:`~YPRAnglesSequence`
-
-
-    :Returns:
-
-        :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any]`
-
-.. py:method:: query_az_el_array(self) -> list
-    :canonical: ansys.stk.core.stkutil.IOrientation.query_az_el_array
-
-    Return the AzEl elements as an array.
-
-    :Returns:
-
-        :obj:`~list`
-
 .. py:method:: query_euler_angles_array(self, sequence: EulerOrientationSequenceType) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles_array
 
@@ -254,6 +231,15 @@ Method detail
 
         :obj:`~list`
 
+.. py:method:: query_quaternion(self) -> typing.Tuple[float, float, float, float]
+    :canonical: ansys.stk.core.stkutil.IOrientation.query_quaternion
+
+    Get orientation using the Quaternion representation.
+
+    :Returns:
+
+        :obj:`~typing.Tuple[float, float, float, float]`
+
 .. py:method:: query_quaternion_array(self) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_quaternion_array
 
@@ -262,6 +248,20 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+.. py:method:: query_ypr_angles(self, sequence: YPRAnglesSequence) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkutil.IOrientation.query_ypr_angles
+
+    Get orientation using the YPR angles representation.
+
+    :Parameters:
+
+        **sequence** : :obj:`~YPRAnglesSequence`
+
+
+    :Returns:
+
+        :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any]`
 
 .. py:method:: query_ypr_angles_array(self, sequence: YPRAnglesSequence) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_ypr_angles_array

@@ -62,6 +62,7 @@ Method detail
 -------------
 
 
+
 .. py:method:: set_filepath(self, filepath: str) -> str
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalAerodynamic.set_filepath
 
@@ -75,5 +76,4 @@ Method detail
     :Returns:
 
         :obj:`~str`
-
 

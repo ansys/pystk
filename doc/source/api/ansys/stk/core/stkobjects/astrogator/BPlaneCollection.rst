@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.add`
               - Add a BPlane.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.item`
+              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.remove`
               - Remove a BPlane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.remove_all`
               - Remove all BPlanes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.item`
-              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -81,6 +81,21 @@ Method detail
 
         :obj:`~None`
 
+
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~str`
+
 .. py:method:: remove(self, plane_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.remove
 
@@ -103,20 +118,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: item(self, index: int) -> str
-    :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~str`
-
 
 

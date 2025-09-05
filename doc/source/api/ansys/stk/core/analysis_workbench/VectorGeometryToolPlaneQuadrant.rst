@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.reference_system`
-              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.quadrant`
               - Specify a quadrant.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.reference_system`
+              - Specify a reference system.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_system
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.reference_system
-    :type: VectorGeometryToolSystemReference
-
-    Specify a reference system.
-
 .. py:property:: quadrant
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.quadrant
     :type: PlaneQuadrantType
 
     Specify a quadrant.
+
+.. py:property:: reference_system
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneQuadrant.reference_system
+    :type: VectorGeometryToolSystemReference
+
+    Specify a reference system.
 
 

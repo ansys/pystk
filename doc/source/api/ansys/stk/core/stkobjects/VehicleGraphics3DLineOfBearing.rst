@@ -22,20 +22,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.bearing`
               - Get or set the bearing value, relative to North. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_latitude`
-              - Specify the latitude for the origin of the line of bearing. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_longitude`
-              - Specify the longitude for the origin of the line of bearing. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_altitude`
-              - Specify the altitude for the origin of the line of bearing. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.length`
-              - Get or set the length of the line of bearing. The value must be greater than 0. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.bearing_error`
               - Get or set the margin of error in either direction of the Line of Bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.error_color`
               - Get or set the color of the bearing error lines. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.error_line_width`
               - Get or set the line width of the bearing error lines.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.length`
+              - Get or set the length of the line of bearing. The value must be greater than 0. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_altitude`
+              - Specify the altitude for the origin of the line of bearing. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_latitude`
+              - Specify the latitude for the origin of the line of bearing. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_longitude`
+              - Specify the longitude for the origin of the line of bearing. Uses Angle Dimension.
 
 
 
@@ -56,30 +56,6 @@ Property detail
 
     Get or set the bearing value, relative to North. Uses Angle Dimension.
 
-.. py:property:: origin_latitude
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_latitude
-    :type: float
-
-    Specify the latitude for the origin of the line of bearing. Uses Angle Dimension.
-
-.. py:property:: origin_longitude
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_longitude
-    :type: float
-
-    Specify the longitude for the origin of the line of bearing. Uses Angle Dimension.
-
-.. py:property:: origin_altitude
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_altitude
-    :type: float
-
-    Specify the altitude for the origin of the line of bearing. Uses Distance Dimension.
-
-.. py:property:: length
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.length
-    :type: float
-
-    Get or set the length of the line of bearing. The value must be greater than 0. Uses Distance Dimension.
-
 .. py:property:: bearing_error
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.bearing_error
     :type: float
@@ -97,5 +73,29 @@ Property detail
     :type: LineWidth
 
     Get or set the line width of the bearing error lines.
+
+.. py:property:: length
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.length
+    :type: float
+
+    Get or set the length of the line of bearing. The value must be greater than 0. Uses Distance Dimension.
+
+.. py:property:: origin_altitude
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_altitude
+    :type: float
+
+    Specify the altitude for the origin of the line of bearing. Uses Distance Dimension.
+
+.. py:property:: origin_latitude
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_latitude
+    :type: float
+
+    Specify the latitude for the origin of the line of bearing. Uses Angle Dimension.
+
+.. py:property:: origin_longitude
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing.origin_longitude
+    :type: float
+
+    Specify the longitude for the origin of the line of bearing. Uses Angle Dimension.
 
 

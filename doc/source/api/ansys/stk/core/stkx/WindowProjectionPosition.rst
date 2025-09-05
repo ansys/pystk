@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid`
+              - Indicate if the returned projected position is valid or not.
             * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.x_position`
               - Projected window X position.
             * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.y_position`
               - Projected window Y position.
-            * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid`
-              - Indicate if the returned projected position is valid or not.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: is_window_projection_position_valid
+    :canonical: ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid
+    :type: bool
+
+    Indicate if the returned projected position is valid or not.
+
 .. py:property:: x_position
     :canonical: ansys.stk.core.stkx.WindowProjectionPosition.x_position
     :type: float
@@ -49,11 +55,5 @@ Property detail
     :type: float
 
     Projected window Y position.
-
-.. py:property:: is_window_projection_position_valid
-    :canonical: ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid
-    :type: bool
-
-    Indicate if the returned projected position is valid or not.
 
 

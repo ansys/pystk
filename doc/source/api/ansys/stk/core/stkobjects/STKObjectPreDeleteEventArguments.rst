@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.path`
-              - Object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.continue_object_deletion`
               - The status to continue or stop the object deletion.
+            * - :py:attr:`~ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.path`
+              - Object path.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: path
-    :canonical: ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.path
-    :type: str
-
-    Object path.
-
 .. py:property:: continue_object_deletion
     :canonical: ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.continue_object_deletion
     :type: bool
 
     The status to continue or stop the object deletion.
+
+.. py:property:: path
+    :canonical: ansys.stk.core.stkobjects.STKObjectPreDeleteEventArguments.path
+    :type: str
+
+    Object path.
 
 

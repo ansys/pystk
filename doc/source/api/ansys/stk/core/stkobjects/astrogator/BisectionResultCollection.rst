@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.get_result_by_paths`
               - Return the result specified by the object/result names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -63,21 +63,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> BisectionResult
-    :canonical: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~BisectionResult`
-
-
 
 .. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> BisectionResult
     :canonical: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.get_result_by_paths
@@ -94,4 +79,19 @@ Method detail
     :Returns:
 
         :obj:`~BisectionResult`
+
+.. py:method:: item(self, index: int) -> BisectionResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~BisectionResult`
+
 

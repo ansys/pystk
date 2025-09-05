@@ -80,6 +80,7 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
     "css/search.css",
+    "css/datatable.css",
 ]
 html_js_files = []
 
@@ -186,9 +187,6 @@ linkcheck_ignore = [
     # TODO: Determine a way to link to examples without breaking the linkcheck
     # https://github.com/ansys/pystk/issues/657
     r"../examples/",
-    # TODO: changelog links
-    # https://github.com/ansys/pystk/issues/706
-    f"https://github.com/ansys/{html_context['github_repo']}/*",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------

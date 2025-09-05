@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.backlobe_gain`
+              - Get or set the back lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.diameter`
               - Get or set the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.efficiency`
               - Get or set the efficiency.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.backlobe_gain`
-              - Get or set the back lobe gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.turn_spacing`
-              - Get or set the turn spacing.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.number_of_turns`
               - Get or set the number of turns.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.turn_spacing`
+              - Get or set the turn spacing.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHelix.use_backlobe_as_mainlobe_atten`
               - Get or set the option for using the back lobe gain as a main lobe gain attenuation.
 
@@ -46,6 +46,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: backlobe_gain
+    :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.backlobe_gain
+    :type: float
+
+    Get or set the back lobe gain.
+
 .. py:property:: diameter
     :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.diameter
     :type: float
@@ -58,23 +64,17 @@ Property detail
 
     Get or set the efficiency.
 
-.. py:property:: backlobe_gain
-    :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.backlobe_gain
+.. py:property:: number_of_turns
+    :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.number_of_turns
     :type: float
 
-    Get or set the back lobe gain.
+    Get or set the number of turns.
 
 .. py:property:: turn_spacing
     :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.turn_spacing
     :type: float
 
     Get or set the turn spacing.
-
-.. py:property:: number_of_turns
-    :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.number_of_turns
-    :type: float
-
-    Get or set the number of turns.
 
 .. py:property:: use_backlobe_as_mainlobe_atten
     :canonical: ansys.stk.core.stkobjects.AntennaModelHelix.use_backlobe_as_mainlobe_atten

@@ -18,10 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_mach`
-              - Get or set the mach number design point of the engine.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_efficiency`
+              - Get or set the efficiency of the burner.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_pressure_ratio`
+              - Get or set the pressure ratio from the burner exit to the entrance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_altitude`
               - Get or set the altitude design point of the engine.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_mach`
+              - Get or set the mach number design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_thrust`
               - Get or set the thrust design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.engine_temp`
@@ -30,16 +34,12 @@ Overview
               - Get or set the heating value of the fuel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.inlet_pressure_ratio`
               - Get or set the pressure ratio from the inlet exit to the entrance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_pressure_ratio`
-              - Get or set the pressure ratio from the burner exit to the entrance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.no_thrust_when_no_fuel`
+              - Opt to have no thrust if the fuel is empty.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.nozzle_pressure_ratio`
               - Get or set the pressure ratio from the nozzle exit to the entrance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.p_0over_p9`
               - Get or set the pressure ratio from ambient conditions to the engine exit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_efficiency`
-              - Get or set the efficiency of the burner.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.no_thrust_when_no_fuel`
-              - Opt to have no thrust if the fuel is empty.
 
 
 
@@ -54,17 +54,29 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: design_mach
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_mach
+.. py:property:: burner_efficiency
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_efficiency
     :type: float
 
-    Get or set the mach number design point of the engine.
+    Get or set the efficiency of the burner.
+
+.. py:property:: burner_pressure_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_pressure_ratio
+    :type: float
+
+    Get or set the pressure ratio from the burner exit to the entrance.
 
 .. py:property:: design_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_altitude
     :type: float
 
     Get or set the altitude design point of the engine.
+
+.. py:property:: design_mach
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_mach
+    :type: float
+
+    Get or set the mach number design point of the engine.
 
 .. py:property:: design_thrust
     :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.design_thrust
@@ -90,11 +102,11 @@ Property detail
 
     Get or set the pressure ratio from the inlet exit to the entrance.
 
-.. py:property:: burner_pressure_ratio
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_pressure_ratio
-    :type: float
+.. py:property:: no_thrust_when_no_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.no_thrust_when_no_fuel
+    :type: bool
 
-    Get or set the pressure ratio from the burner exit to the entrance.
+    Opt to have no thrust if the fuel is empty.
 
 .. py:property:: nozzle_pressure_ratio
     :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.nozzle_pressure_ratio
@@ -107,17 +119,5 @@ Property detail
     :type: float
 
     Get or set the pressure ratio from ambient conditions to the engine exit.
-
-.. py:property:: burner_efficiency
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.burner_efficiency
-    :type: float
-
-    Get or set the efficiency of the burner.
-
-.. py:property:: no_thrust_when_no_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion.no_thrust_when_no_fuel
-    :type: bool
-
-    Opt to have no thrust if the fuel is empty.
 
 

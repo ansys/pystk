@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.Lighting.enabled`
-              - Get or set whether or not lighting is enabled.
             * - :py:attr:`~ansys.stk.core.graphics.Lighting.ambient_intensity`
               - Get or set the ambient intensity throughout the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Lighting.diffuse_intensity`
               - Get or set the diffuse intensity from the sun.
+            * - :py:attr:`~ansys.stk.core.graphics.Lighting.enabled`
+              - Get or set whether or not lighting is enabled.
             * - :py:attr:`~ansys.stk.core.graphics.Lighting.night_lights_intensity`
               - Get or set the overall brightness for the night light's image overlay, night overlay.
 
@@ -79,12 +79,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enabled
-    :canonical: ansys.stk.core.graphics.Lighting.enabled
-    :type: bool
-
-    Get or set whether or not lighting is enabled.
-
 .. py:property:: ambient_intensity
     :canonical: ansys.stk.core.graphics.Lighting.ambient_intensity
     :type: float
@@ -96,6 +90,12 @@ Property detail
     :type: float
 
     Get or set the diffuse intensity from the sun.
+
+.. py:property:: enabled
+    :canonical: ansys.stk.core.graphics.Lighting.enabled
+    :type: bool
+
+    Get or set whether or not lighting is enabled.
 
 .. py:property:: night_lights_intensity
     :canonical: ansys.stk.core.graphics.Lighting.night_lights_intensity

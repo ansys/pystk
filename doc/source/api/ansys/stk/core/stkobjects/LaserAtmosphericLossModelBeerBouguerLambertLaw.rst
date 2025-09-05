@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers`
+              - Get the atmosphere layer collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.enable_evenly_spaced_heights`
               - Get the option for enabling evenly spaced layer heights.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.maximum_altitude`
               - Get the maximum altitude of the atmosphere.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers`
-              - Get the atmosphere layer collection.
 
 
 
@@ -51,6 +51,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: atmosphere_layers
+    :canonical: ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers
+    :type: BeerBouguerLambertLawLayerCollection
+
+    Get the atmosphere layer collection.
+
 .. py:property:: enable_evenly_spaced_heights
     :canonical: ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.enable_evenly_spaced_heights
     :type: bool
@@ -63,16 +69,9 @@ Property detail
 
     Get the maximum altitude of the atmosphere.
 
-.. py:property:: atmosphere_layers
-    :canonical: ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers
-    :type: BeerBouguerLambertLawLayerCollection
-
-    Get the atmosphere layer collection.
-
 
 Method detail
 -------------
-
 
 
 .. py:method:: create_evenly_spaced_layers(self, layer_count: int, max_altitude: float) -> BeerBouguerLambertLawLayerCollection
@@ -104,5 +103,6 @@ Method detail
     :Returns:
 
         :obj:`~BeerBouguerLambertLawLayerCollection`
+
 
 

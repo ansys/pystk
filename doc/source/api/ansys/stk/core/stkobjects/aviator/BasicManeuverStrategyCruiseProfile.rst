@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.reference_frame`
-              - Get or set the reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.use_default_cruise_altitude`
-              - Opt whether to use the aircraft's default cruise altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.level_off`
-              - Opt whether to require the aircraft to level off at the specified altitude. This altitude is only enabled of the Default Cruise Altitude option is not selected.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.requested_altitude`
-              - Get or set the desired MSL Altitude for the maneuver. This altitude is only enabled of the Default Cruise Altitude option is not selected.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.cruise_airspeed_options`
-              - Get the interface for the cruise airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.stop_after_level_off`
-              - Select to stop the maneuver as soon as the aircraft achieves its goal altitude and levels off, regardless if any basic stopping conditions have been triggered.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.cruise_airspeed_options`
+              - Get the interface for the cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.level_off`
+              - Opt whether to require the aircraft to level off at the specified altitude. This altitude is only enabled of the Default Cruise Altitude option is not selected.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.reference_frame`
+              - Get or set the reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.requested_altitude`
+              - Get or set the desired MSL Altitude for the maneuver. This altitude is only enabled of the Default Cruise Altitude option is not selected.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.stop_after_level_off`
+              - Select to stop the maneuver as soon as the aircraft achieves its goal altitude and levels off, regardless if any basic stopping conditions have been triggered.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.use_default_cruise_altitude`
+              - Opt whether to use the aircraft's default cruise altitude.
 
 
 
@@ -48,29 +48,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_frame
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.reference_frame
-    :type: BasicManeuverReferenceFrame
-
-    Get or set the reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind.
-
-.. py:property:: use_default_cruise_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.use_default_cruise_altitude
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_acceleration
     :type: bool
 
-    Opt whether to use the aircraft's default cruise altitude.
-
-.. py:property:: level_off
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.level_off
-    :type: bool
-
-    Opt whether to require the aircraft to level off at the specified altitude. This altitude is only enabled of the Default Cruise Altitude option is not selected.
-
-.. py:property:: requested_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.requested_altitude
-    :type: float
-
-    Get or set the desired MSL Altitude for the maneuver. This altitude is only enabled of the Default Cruise Altitude option is not selected.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.cruise_airspeed_options
@@ -78,16 +60,34 @@ Property detail
 
     Get the interface for the cruise airspeed options.
 
+.. py:property:: level_off
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.level_off
+    :type: bool
+
+    Opt whether to require the aircraft to level off at the specified altitude. This altitude is only enabled of the Default Cruise Altitude option is not selected.
+
+.. py:property:: reference_frame
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.reference_frame
+    :type: BasicManeuverReferenceFrame
+
+    Get or set the reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind.
+
+.. py:property:: requested_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.requested_altitude
+    :type: float
+
+    Get or set the desired MSL Altitude for the maneuver. This altitude is only enabled of the Default Cruise Altitude option is not selected.
+
 .. py:property:: stop_after_level_off
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.stop_after_level_off
     :type: bool
 
     Select to stop the maneuver as soon as the aircraft achieves its goal altitude and levels off, regardless if any basic stopping conditions have been triggered.
 
-.. py:property:: compensate_for_coriolis_acceleration
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_acceleration
+.. py:property:: use_default_cruise_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.use_default_cruise_altitude
     :type: bool
 
-    Get or set the option to compensate for the acceleration due to the Coriolis effect.
+    Opt whether to use the aircraft's default cruise altitude.
 
 

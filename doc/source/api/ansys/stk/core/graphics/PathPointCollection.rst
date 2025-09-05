@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.PathPointCollection.count`
-              - A total number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.PathPointCollection._new_enum`
               - Return an enumerator that iterates through the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.PathPointCollection.count`
+              - A total number of elements in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.graphics.PathPointCollection.count
-    :type: int
-
-    A total number of elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.PathPointCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that iterates through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.PathPointCollection.count
+    :type: int
+
+    A total number of elements in the collection.
 
 
 Method detail

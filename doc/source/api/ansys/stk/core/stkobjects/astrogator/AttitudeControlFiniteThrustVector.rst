@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.attitude_update`
               - How and when the attitude will be updated.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name`
-              - Get or set the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.body_constraint_vector`
               - Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name`
+              - Get or set the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_vector`
               - Define the thrust vector in the reference axes.
 
@@ -48,17 +48,17 @@ Property detail
 
     How and when the attitude will be updated.
 
-.. py:property:: thrust_axes_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name
-    :type: str
-
-    Get or set the thrust axes.
-
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.body_constraint_vector
     :type: IDirection
 
     Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
+
+.. py:property:: thrust_axes_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name
+    :type: str
+
+    Get or set the thrust axes.
 
 .. py:property:: thrust_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_vector

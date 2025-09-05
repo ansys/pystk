@@ -33,10 +33,10 @@ Overview
               - Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order`
               - Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
-              - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type`
               - Solid Tide Type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
+              - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_secular_variations`
               - Opt whether to include or ignore secular variations defined by the gravity field model.
 
@@ -71,17 +71,17 @@ Property detail
 
     Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
 
-.. py:property:: use_ocean_tides
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides
-    :type: bool
-
-    Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
-
 .. py:property:: solid_tide_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type
     :type: SolidTide
 
     Solid Tide Type.
+
+.. py:property:: use_ocean_tides
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides
+    :type: bool
+
+    Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
 
 .. py:property:: use_secular_variations
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_secular_variations
@@ -92,12 +92,6 @@ Property detail
 
 Method detail
 -------------
-
-
-
-
-
-
 
 
 
@@ -120,4 +114,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 

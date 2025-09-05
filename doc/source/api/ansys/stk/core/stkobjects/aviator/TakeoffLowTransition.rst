@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.use_runway_terrain`
-              - Opt whether to use terrain data to define the runway's ground level attitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.runway_altitude_offset`
-              - Get or set the altitude offset above the ground level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.hold_on_deck`
               - Get or set the duration the aircraft will wait before beginning the takeoff.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.runway_altitude_offset`
+              - Get or set the altitude offset above the ground level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.use_runway_terrain`
+              - Opt whether to use terrain data to define the runway's ground level attitude.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_runway_terrain
-    :canonical: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.use_runway_terrain
-    :type: bool
+.. py:property:: hold_on_deck
+    :canonical: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.hold_on_deck
+    :type: typing.Any
 
-    Opt whether to use terrain data to define the runway's ground level attitude.
+    Get or set the duration the aircraft will wait before beginning the takeoff.
 
 .. py:property:: runway_altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.runway_altitude_offset
@@ -50,10 +50,10 @@ Property detail
 
     Get or set the altitude offset above the ground level.
 
-.. py:property:: hold_on_deck
-    :canonical: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.hold_on_deck
-    :type: typing.Any
+.. py:property:: use_runway_terrain
+    :canonical: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition.use_runway_terrain
+    :type: bool
 
-    Get or set the duration the aircraft will wait before beginning the takeoff.
+    Opt whether to use terrain data to define the runway's ground level attitude.
 
 

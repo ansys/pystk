@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.set_path`
-              - Set a new plane using a specified path.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.set_plane`
-              - Set a new plane.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.get_plane`
               - Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.set_path`
+              - Set a new plane using a specified path.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.set_plane`
+              - Set a new plane.
 
 
 Import detail
@@ -41,6 +41,29 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: get_plane(self) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.get_plane
+
+    Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolPlane`
+
+.. py:method:: has_cyclic_dependency(self, plane: IVectorGeometryToolPlane) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.has_cyclic_dependency
+
+    Test whether the input component and the target component form a cyclic dependency.
+
+    :Parameters:
+
+        **plane** : :obj:`~IVectorGeometryToolPlane`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 .. py:method:: set_path(self, path: str) -> None
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.set_path
@@ -69,27 +92,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_plane(self) -> IVectorGeometryToolPlane
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.get_plane
-
-    Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
-
-    :Returns:
-
-        :obj:`~IVectorGeometryToolPlane`
-
-.. py:method:: has_cyclic_dependency(self, plane: IVectorGeometryToolPlane) -> bool
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPlaneReference.has_cyclic_dependency
-
-    Test whether the input component and the target component form a cyclic dependency.
-
-    :Parameters:
-
-        **plane** : :obj:`~IVectorGeometryToolPlane`
-
-
-    :Returns:
-
-        :obj:`~bool`
 

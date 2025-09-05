@@ -20,14 +20,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.central_body_gravity`
               - Get the central body gravity parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity`
-              - Get the 3rd body gravity parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.drag`
               - Get the atmospheric drag parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.solar_radiation_pressure`
-              - Get the solar radiation pressure parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.physical_data`
               - Get the physical data parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.solar_radiation_pressure`
+              - Get the solar radiation pressure parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity`
+              - Get the 3rd body gravity parameters.
 
 
 
@@ -48,17 +48,17 @@ Property detail
 
     Get the central body gravity parameters.
 
-.. py:property:: third_body_gravity
-    :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity
-    :type: PropagatorLOPThirdBodyGravity
-
-    Get the 3rd body gravity parameters.
-
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.drag
     :type: VehicleLOPForceModelDrag
 
     Get the atmospheric drag parameters.
+
+.. py:property:: physical_data
+    :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.physical_data
+    :type: VehiclePhysicalData
+
+    Get the physical data parameters.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.solar_radiation_pressure
@@ -66,10 +66,10 @@ Property detail
 
     Get the solar radiation pressure parameters.
 
-.. py:property:: physical_data
-    :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.physical_data
-    :type: VehiclePhysicalData
+.. py:property:: third_body_gravity
+    :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity
+    :type: PropagatorLOPThirdBodyGravity
 
-    Get the physical data parameters.
+    Get the 3rd body gravity parameters.
 
 

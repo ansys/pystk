@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.pressure_mode`
               - Get or set the pressure mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator`
+              - Get the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency`
               - Get or set the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency_mode`
               - Thrust - the calculations that are effected by the thrust efficiency value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator`
-              - Get the propagator.
 
 
 
@@ -48,6 +48,12 @@ Property detail
 
     Get or set the pressure mode.
 
+.. py:property:: propagator
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator
+    :type: ManeuverFinitePropagator
+
+    Get the propagator.
+
 .. py:property:: thrust_efficiency
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency
     :type: float
@@ -59,11 +65,5 @@ Property detail
     :type: ThrustType
 
     Thrust - the calculations that are effected by the thrust efficiency value.
-
-.. py:property:: propagator
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator
-    :type: ManeuverFinitePropagator
-
-    Get the propagator.
 
 

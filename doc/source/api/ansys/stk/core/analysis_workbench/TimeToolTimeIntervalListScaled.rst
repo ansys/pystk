@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.original_intervals`
-              - The original interval list.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.absolute_increment`
               - The absolute increment value which creates a new interval list by expanding (or shortening if negative) every interval in the original interval list by shifting interval's start/stop times equally by half of specified increment value.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.original_intervals`
+              - The original interval list.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.relative_increment`
               - The relative increment value from which absolute increment is obtained by multiplying relative value by interval duration...
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.use_absolute_increment`
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: original_intervals
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.original_intervals
-    :type: ITimeToolTimeIntervalList
-
-    The original interval list.
-
 .. py:property:: absolute_increment
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.absolute_increment
     :type: float
 
     The absolute increment value which creates a new interval list by expanding (or shortening if negative) every interval in the original interval list by shifting interval's start/stop times equally by half of specified increment value.
+
+.. py:property:: original_intervals
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.original_intervals
+    :type: ITimeToolTimeIntervalList
+
+    The original interval list.
 
 .. py:property:: relative_increment
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListScaled.relative_increment

@@ -18,32 +18,32 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.inherit_from_scenario`
-              - Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the facility or place.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.color`
-              - The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.marker_style`
-              - The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_label`
-              - Display the label for the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.az_el_mask`
               - The graphics az-el mask properties for the place.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.color`
+              - The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.contours`
               - The range contours properties for the place.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label`
-              - Use the name of the object as the label for the place.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.inherit_from_scenario`
+              - Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the facility or place.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_color`
+              - The color in which the label for the object is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_name`
               - Use a user-specified name as the label for the place. This does not have to correspond to the name of the object in the Object Browser.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_notes`
               - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.marker_color`
               - The color in which the marker for the object is displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_color`
-              - The color in which the label for the object is displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_graphics`
-              - Specify whether graphics attributes of the place are visible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.marker_style`
+              - The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.radar_cross_section`
               - Get the radar cross section graphics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_graphics`
+              - Specify whether graphics attributes of the place are visible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_label`
+              - Display the label for the place.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label`
+              - Use the name of the object as the label for the place.
 
 
 
@@ -58,11 +58,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: inherit_from_scenario
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.inherit_from_scenario
-    :type: bool
+.. py:property:: az_el_mask
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.az_el_mask
+    :type: BasicAzElMask
 
-    Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the facility or place.
+    The graphics az-el mask properties for the place.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.PlaceGraphics.color
@@ -70,35 +70,23 @@ Property detail
 
     The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
 
-.. py:property:: marker_style
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.marker_style
-    :type: str
-
-    The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
-
-.. py:property:: show_label
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.show_label
-    :type: bool
-
-    Display the label for the place.
-
-.. py:property:: az_el_mask
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.az_el_mask
-    :type: BasicAzElMask
-
-    The graphics az-el mask properties for the place.
-
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.PlaceGraphics.contours
     :type: Graphics2DRangeContours
 
     The range contours properties for the place.
 
-.. py:property:: use_instance_name_label
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label
+.. py:property:: inherit_from_scenario
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.inherit_from_scenario
     :type: bool
 
-    Use the name of the object as the label for the place.
+    Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the facility or place.
+
+.. py:property:: label_color
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.label_color
+    :type: Color
+
+    The color in which the label for the object is displayed.
 
 .. py:property:: label_name
     :canonical: ansys.stk.core.stkobjects.PlaceGraphics.label_name
@@ -118,11 +106,17 @@ Property detail
 
     The color in which the marker for the object is displayed.
 
-.. py:property:: label_color
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.label_color
-    :type: Color
+.. py:property:: marker_style
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.marker_style
+    :type: str
 
-    The color in which the label for the object is displayed.
+    The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
+
+.. py:property:: radar_cross_section
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.radar_cross_section
+    :type: RadarCrossSectionGraphics
+
+    Get the radar cross section graphics interface.
 
 .. py:property:: show_graphics
     :canonical: ansys.stk.core.stkobjects.PlaceGraphics.show_graphics
@@ -130,10 +124,16 @@ Property detail
 
     Specify whether graphics attributes of the place are visible.
 
-.. py:property:: radar_cross_section
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.radar_cross_section
-    :type: RadarCrossSectionGraphics
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.show_label
+    :type: bool
 
-    Get the radar cross section graphics interface.
+    Display the label for the place.
+
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label
+    :type: bool
+
+    Use the name of the object as the label for the place.
 
 

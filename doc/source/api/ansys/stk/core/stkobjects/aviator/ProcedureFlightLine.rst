@@ -31,28 +31,28 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.altitude_options`
               - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.fly_cruise_airspeed_profile`
-              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.flight_line_airspeed_options`
-              - Get the flight line airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_options`
               - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_turn_direction_options`
               - Get the enroute turn direction options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options`
-              - Get the enroute cruise airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type`
-              - Get or set the procedure methodology used to calculate the flight line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course`
-              - Get or set the outbound course.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading`
-              - Get or set the option to use a magnetic heading.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.flight_line_airspeed_options`
+              - Get the flight line airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.fly_cruise_airspeed_profile`
+              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.leg_length`
               - Get or set the length of the flight line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off`
-              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.level_off_mode`
               - Get or set the level off mode. This is only used when the must level off option is on.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off`
+              - Opt whether the procedure must level off.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course`
+              - Get or set the outbound course.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type`
+              - Get or set the procedure methodology used to calculate the flight line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading`
+              - Get or set the option to use a magnetic heading.
 
 
 
@@ -73,17 +73,11 @@ Property detail
 
     Get the altitude options.
 
-.. py:property:: fly_cruise_airspeed_profile
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.fly_cruise_airspeed_profile
-    :type: bool
-
-    Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
-
-.. py:property:: flight_line_airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.flight_line_airspeed_options
+.. py:property:: enroute_cruise_airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options
     :type: CruiseAirspeedOptions
 
-    Get the flight line airspeed options.
+    Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_options
@@ -97,29 +91,17 @@ Property detail
 
     Get the enroute turn direction options.
 
-.. py:property:: enroute_cruise_airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options
+.. py:property:: flight_line_airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.flight_line_airspeed_options
     :type: CruiseAirspeedOptions
 
-    Get the enroute cruise airspeed options.
+    Get the flight line airspeed options.
 
-.. py:property:: procedure_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type
-    :type: FlightLineProcedureType
-
-    Get or set the procedure methodology used to calculate the flight line.
-
-.. py:property:: outbound_course
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course
-    :type: typing.Any
-
-    Get or set the outbound course.
-
-.. py:property:: use_magnetic_heading
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading
+.. py:property:: fly_cruise_airspeed_profile
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.fly_cruise_airspeed_profile
     :type: bool
 
-    Get or set the option to use a magnetic heading.
+    Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
 
 .. py:property:: leg_length
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.leg_length
@@ -127,33 +109,39 @@ Property detail
 
     Get or set the length of the flight line.
 
-.. py:property:: must_level_off
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off
-    :type: bool
-
-    Opt whether the procedure must level off.
-
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
     Get or set the level off mode. This is only used when the must level off option is on.
 
+.. py:property:: must_level_off
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off
+    :type: bool
+
+    Opt whether the procedure must level off.
+
+.. py:property:: outbound_course
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course
+    :type: typing.Any
+
+    Get or set the outbound course.
+
+.. py:property:: procedure_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type
+    :type: FlightLineProcedureType
+
+    Get or set the procedure methodology used to calculate the flight line.
+
+.. py:property:: use_magnetic_heading
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading
+    :type: bool
+
+    Get or set the option to use a magnetic heading.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -170,4 +158,16 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -20,52 +20,52 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis`
-              - One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentricity`
-              - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.inclination`
-              - Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.raan`
-              - Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_periapsis`
-              - Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.true_anomaly`
-              - Get or set the angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_shape`
+              - Describes the shape of the ellipse. Uses Distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_size`
               - Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_shape`
+              - Describes the shape of the ellipse. Uses Distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_size`
               - Measured from the center of the Earth to the points of maximum and minimum radius in the orbit. Uses Distance dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_latitude`
+              - Get or set the sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_periapsis`
+              - Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentric_anomaly`
+              - Angle measured with origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentricity`
+              - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.element_type`
+              - Which type of element (osculating or mean).
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.inclination`
+              - Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.lan`
+              - Get or set the Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_anomaly`
+              - Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_motion`
               - Get or set the uniform rate of the satellite in a circular orbit of the same period, typically expressed as degrees or radians per second, or as revolutions per day. Uses AngleRate dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_shape`
+              - Describes the shape of the ellipse. Uses Distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_size`
               - Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_shape`
+              - Describes the shape of the ellipse. Uses Distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_size`
               - Measured from the center of the Earth to the points of maximum and minimum radius in the orbit. Uses Distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.period`
               - Get or set the duration of one orbit, based on assumed two-body motion. Uses Time dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.lan`
-              - Get or set the Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_latitude`
-              - Get or set the sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentric_anomaly`
-              - Angle measured with origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_anomaly`
-              - Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.raan`
+              - Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis`
+              - One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_ascending_node`
               - Get or set the elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_periapsis`
               - Get or set the elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.element_type`
-              - Which type of element (osculating or mean).
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_shape`
-              - Describes the shape of the ellipse. Uses Distance dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_shape`
-              - Describes the shape of the ellipse. Uses Distance dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_shape`
-              - Describes the shape of the ellipse. Uses Distance dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_shape`
-              - Describes the shape of the ellipse. Uses Distance dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.true_anomaly`
+              - Get or set the angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension.
 
 
 
@@ -80,41 +80,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: semimajor_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis
+.. py:property:: apoapsis_altitude_shape
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_shape
     :type: float
 
-    One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
-
-.. py:property:: eccentricity
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentricity
-    :type: float
-
-    Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
-
-.. py:property:: inclination
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.inclination
-    :type: typing.Any
-
-    Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
-
-.. py:property:: raan
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.raan
-    :type: typing.Any
-
-    Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension.
-
-.. py:property:: arg_of_periapsis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_periapsis
-    :type: typing.Any
-
-    Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
-
-.. py:property:: true_anomaly
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.true_anomaly
-    :type: typing.Any
-
-    Get or set the angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension.
+    Describes the shape of the ellipse. Uses Distance dimension.
 
 .. py:property:: apoapsis_altitude_size
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_size
@@ -122,11 +92,65 @@ Property detail
 
     Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension.
 
+.. py:property:: apoapsis_radius_shape
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_shape
+    :type: float
+
+    Describes the shape of the ellipse. Uses Distance dimension.
+
 .. py:property:: apoapsis_radius_size
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_size
     :type: float
 
     Measured from the center of the Earth to the points of maximum and minimum radius in the orbit. Uses Distance dimension.
+
+.. py:property:: arg_of_latitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_latitude
+    :type: typing.Any
+
+    Get or set the sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension.
+
+.. py:property:: arg_of_periapsis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_periapsis
+    :type: typing.Any
+
+    Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
+
+.. py:property:: eccentric_anomaly
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentric_anomaly
+    :type: typing.Any
+
+    Angle measured with origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse. Uses Angle Dimension.
+
+.. py:property:: eccentricity
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentricity
+    :type: float
+
+    Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
+
+.. py:property:: element_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.element_type
+    :type: ElementType
+
+    Which type of element (osculating or mean).
+
+.. py:property:: inclination
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.inclination
+    :type: typing.Any
+
+    Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
+
+.. py:property:: lan
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.lan
+    :type: typing.Any
+
+    Get or set the Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension.
+
+.. py:property:: mean_anomaly
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_anomaly
+    :type: typing.Any
+
+    Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
 
 .. py:property:: mean_motion
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_motion
@@ -134,11 +158,23 @@ Property detail
 
     Get or set the uniform rate of the satellite in a circular orbit of the same period, typically expressed as degrees or radians per second, or as revolutions per day. Uses AngleRate dimension.
 
+.. py:property:: periapsis_altitude_shape
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_shape
+    :type: float
+
+    Describes the shape of the ellipse. Uses Distance dimension.
+
 .. py:property:: periapsis_altitude_size
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_size
     :type: float
 
     Measured from the ``surface`` of the Earth to the points of maximum and minimum radius in the orbit. For these values, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance dimension.
+
+.. py:property:: periapsis_radius_shape
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_shape
+    :type: float
+
+    Describes the shape of the ellipse. Uses Distance dimension.
 
 .. py:property:: periapsis_radius_size
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_size
@@ -152,29 +188,17 @@ Property detail
 
     Get or set the duration of one orbit, based on assumed two-body motion. Uses Time dimension.
 
-.. py:property:: lan
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.lan
+.. py:property:: raan
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.raan
     :type: typing.Any
 
-    Get or set the Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension.
+    Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension.
 
-.. py:property:: arg_of_latitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.arg_of_latitude
-    :type: typing.Any
+.. py:property:: semimajor_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis
+    :type: float
 
-    Get or set the sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension.
-
-.. py:property:: eccentric_anomaly
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentric_anomaly
-    :type: typing.Any
-
-    Angle measured with origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse. Uses Angle Dimension.
-
-.. py:property:: mean_anomaly
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_anomaly
-    :type: typing.Any
-
-    Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
+    One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
 
 .. py:property:: time_past_ascending_node
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_ascending_node
@@ -188,34 +212,10 @@ Property detail
 
     Get or set the elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension.
 
-.. py:property:: element_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.element_type
-    :type: ElementType
+.. py:property:: true_anomaly
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.true_anomaly
+    :type: typing.Any
 
-    Which type of element (osculating or mean).
-
-.. py:property:: apoapsis_altitude_shape
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_altitude_shape
-    :type: float
-
-    Describes the shape of the ellipse. Uses Distance dimension.
-
-.. py:property:: apoapsis_radius_shape
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.apoapsis_radius_shape
-    :type: float
-
-    Describes the shape of the ellipse. Uses Distance dimension.
-
-.. py:property:: periapsis_altitude_shape
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_altitude_shape
-    :type: float
-
-    Describes the shape of the ellipse. Uses Distance dimension.
-
-.. py:property:: periapsis_radius_shape
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.periapsis_radius_shape
-    :type: float
-
-    Describes the shape of the ellipse. Uses Distance dimension.
+    Get or set the angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension.
 
 

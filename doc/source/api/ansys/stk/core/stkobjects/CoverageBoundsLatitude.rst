@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitude.minimum_latitude`
-              - Minimum latitude for defining a grid using latitude bounds.  Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitude.maximum_latitude`
               - Maximum latitude for defining a grid using latitude bounds. Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitude.minimum_latitude`
+              - Minimum latitude for defining a grid using latitude bounds.  Uses Latitude Dimension.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_latitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitude.minimum_latitude
-    :type: typing.Any
-
-    Minimum latitude for defining a grid using latitude bounds.  Uses Latitude Dimension.
-
 .. py:property:: maximum_latitude
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitude.maximum_latitude
     :type: typing.Any
 
     Maximum latitude for defining a grid using latitude bounds. Uses Latitude Dimension.
+
+.. py:property:: minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitude.minimum_latitude
+    :type: typing.Any
+
+    Minimum latitude for defining a grid using latitude bounds.  Uses Latitude Dimension.
 
 

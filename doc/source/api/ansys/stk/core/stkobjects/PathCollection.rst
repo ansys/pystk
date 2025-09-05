@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.add`
               - Add a new element to the collection. Must be the full path to the file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.remove`
               - Remove an element from the collection given a filename.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PathCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -53,21 +53,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.PathCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.PathCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.PathCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.PathCollection.add
+
+    Add a new element to the collection. Must be the full path to the file.
+
+    :Parameters:
+
+        **filename** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 
 .. py:method:: item(self, index: int) -> str
@@ -84,15 +98,14 @@ Method detail
 
         :obj:`~str`
 
+.. py:method:: remove(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.PathCollection.remove
 
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.PathCollection.remove_at
-
-    Remove an element from the collection using specified index.
+    Remove an element from the collection given a filename.
 
     :Parameters:
 
-        **index** : :obj:`~int`
+        **filename** : :obj:`~str`
 
 
     :Returns:
@@ -108,31 +121,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filename: str) -> None
-    :canonical: ansys.stk.core.stkobjects.PathCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.PathCollection.remove_at
 
-    Add a new element to the collection. Must be the full path to the file.
+    Remove an element from the collection using specified index.
 
     :Parameters:
 
-        **filename** : :obj:`~str`
+        **index** : :obj:`~int`
 
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, filename: str) -> None
-    :canonical: ansys.stk.core.stkobjects.PathCollection.remove
-
-    Remove an element from the collection given a filename.
-
-    :Parameters:
-
-        **filename** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 

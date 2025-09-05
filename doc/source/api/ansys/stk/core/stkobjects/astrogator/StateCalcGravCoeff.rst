@@ -22,16 +22,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.central_body_name`
               - Get or set the central body of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename`
-              - Source for the gravity coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.coefficient_type`
               - Coefficient type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.degree`
               - Degree of the coefficient.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.order`
-              - Order of the coefficient.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename`
+              - Source for the gravity coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.normalization_type`
               - Normalization type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.order`
+              - Order of the coefficient.
 
 
 
@@ -52,12 +52,6 @@ Property detail
 
     Get or set the central body of the component.
 
-.. py:property:: gravity_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename
-    :type: str
-
-    Source for the gravity coefficient.
-
 .. py:property:: coefficient_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.coefficient_type
     :type: GravityCoefficientType
@@ -70,16 +64,22 @@ Property detail
 
     Degree of the coefficient.
 
-.. py:property:: order
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.order
-    :type: int
+.. py:property:: gravity_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename
+    :type: str
 
-    Order of the coefficient.
+    Source for the gravity coefficient.
 
 .. py:property:: normalization_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.normalization_type
     :type: GravityCoefficientNormalizationType
 
     Normalization type.
+
+.. py:property:: order
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.order
+    :type: int
+
+    Order of the coefficient.
 
 

@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level`
+              - Add a level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level_range`
+              - Add a level range.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.item`
               - Return an LevelAttribute given an index number.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.remove`
               - Remove an LevelAttribute Item with given index.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.remove_all`
               - Remove all LevelAttribute.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level`
-              - Add a level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.add_level_range`
-              - Add a level range.
 
     .. tab-item:: Properties
 
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.count`
-              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum`
               - Enumerates through LevelAttributeCollection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.count`
+              - Return the size of the collection.
 
 
 
@@ -53,60 +53,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.count
-    :type: int
-
-    Return the size of the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through LevelAttributeCollection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.count
+    :type: int
+
+    Return the size of the collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> LevelAttribute
-    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.item
-
-    Return an LevelAttribute given an index number.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~LevelAttribute`
-
-
-.. py:method:: remove(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove
-
-    Remove an LevelAttribute Item with given index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove_all
-
-    Remove all LevelAttribute.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add_level(self, level: typing.Any) -> LevelAttribute
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.add_level
@@ -139,4 +100,43 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: item(self, index: int) -> LevelAttribute
+    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.item
+
+    Return an LevelAttribute given an index number.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~LevelAttribute`
+
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove
+
+    Remove an LevelAttribute Item with given index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.remove_all
+
+    Remove all LevelAttribute.
+
+    :Returns:
+
+        :obj:`~None`
+
 

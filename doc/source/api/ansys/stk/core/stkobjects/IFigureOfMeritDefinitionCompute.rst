@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type`
-              - Set the type of compute option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.is_compute_type_supported`
               - Is the type of compute option supported?
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type`
+              - Set the type of compute option.
 
     .. tab-item:: Properties
 
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type`
-              - Type of compute option to be used for navigation accuracy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_supported_types`
-              - Compute supported types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute`
               - Compute.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_supported_types`
+              - Compute supported types.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type`
+              - Type of compute option to be used for navigation accuracy.
 
 
 Import detail
@@ -50,11 +50,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: compute_type
-    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type
-    :type: FigureOfMeritCompute
+.. py:property:: compute
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute
+    :type: IFigureOfMeritDefinitionData
 
-    Type of compute option to be used for navigation accuracy.
+    Compute.
 
 .. py:property:: compute_supported_types
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_supported_types
@@ -62,30 +62,18 @@ Property detail
 
     Compute supported types.
 
-.. py:property:: compute
-    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute
-    :type: IFigureOfMeritDefinitionData
+.. py:property:: compute_type
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type
+    :type: FigureOfMeritCompute
 
-    Compute.
+    Type of compute option to be used for navigation accuracy.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_compute_type(self, compute_type: FigureOfMeritCompute) -> None
-    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type
 
-    Set the type of compute option.
-
-    :Parameters:
-
-        **compute_type** : :obj:`~FigureOfMeritCompute`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: is_compute_type_supported(self, compute_type: FigureOfMeritCompute) -> bool
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.is_compute_type_supported
@@ -101,5 +89,17 @@ Method detail
 
         :obj:`~bool`
 
+.. py:method:: set_compute_type(self, compute_type: FigureOfMeritCompute) -> None
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type
 
+    Set the type of compute option.
+
+    :Parameters:
+
+        **compute_type** : :obj:`~FigureOfMeritCompute`
+
+
+    :Returns:
+
+        :obj:`~None`
 

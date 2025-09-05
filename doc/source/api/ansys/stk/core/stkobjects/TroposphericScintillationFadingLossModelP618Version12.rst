@@ -24,14 +24,14 @@ Overview
               - Get or set the TropoScintillation average fade time choice.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.compute_deep_fade`
               - Do not use this property, as it is deprecated. The ComputeDeepFade property should not be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_exceeded`
+              - Get or set the fade exceeded percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_outage`
               - Do not use this property, as it is deprecated. Use the FadeExceeded property.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.percent_time_refractivity_gradient`
               - Get or set the percentage of time that the refractivity gradient is less than -100 N units / km.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.surface_temperature`
               - Get or set the surface temperature.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_exceeded`
-              - Get or set the fade exceeded percent.
 
 
 
@@ -58,6 +58,12 @@ Property detail
 
     Do not use this property, as it is deprecated. The ComputeDeepFade property should not be used.
 
+.. py:property:: fade_exceeded
+    :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_exceeded
+    :type: float
+
+    Get or set the fade exceeded percent.
+
 .. py:property:: fade_outage
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_outage
     :type: float
@@ -75,11 +81,5 @@ Property detail
     :type: float
 
     Get or set the surface temperature.
-
-.. py:property:: fade_exceeded
-    :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12.fade_exceeded
-    :type: float
-
-    Get or set the fade exceeded percent.
 
 

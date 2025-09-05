@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create`
               - Create and register an interval using specified name, description, and type.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_between_time_instants`
+              - Create an interval using specified start and stop time instants.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_fixed`
               - Create an interval defined between two explicitly specified start and stop times.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_fixed_duration`
               - Create an interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_between_time_instants`
-              - Create an interval using specified start and stop time instants.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_from_interval_list`
               - Create an interval from a specified interval list by using one of several selection methods.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_scaled`
@@ -68,6 +68,22 @@ Method detail
 
         :obj:`~ITimeToolTimeInterval`
 
+.. py:method:: create_between_time_instants(self, name: str, description: str) -> ITimeToolTimeInterval
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_between_time_instants
+
+    Create an interval using specified start and stop time instants.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ITimeToolTimeInterval`
+
 .. py:method:: create_fixed(self, name: str, description: str) -> ITimeToolTimeInterval
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_fixed
 
@@ -88,22 +104,6 @@ Method detail
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_fixed_duration
 
     Create an interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ITimeToolTimeInterval`
-
-.. py:method:: create_between_time_instants(self, name: str, description: str) -> ITimeToolTimeInterval
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFactory.create_between_time_instants
-
-    Create an interval using specified start and stop time instants.
 
     :Parameters:
 

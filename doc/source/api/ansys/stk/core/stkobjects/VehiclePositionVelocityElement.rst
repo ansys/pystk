@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.x`
-              - X collection. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.y`
-              - Y collection. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.z`
-              - Z collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.vx`
               - Vx collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.vy`
               - Vy collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.vz`
               - Vz collection. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.x`
+              - X collection. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.y`
+              - Y collection. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement.z`
+              - Z collection. Dimensionless.
 
 
 
@@ -43,24 +43,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: x
-    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.x
-    :type: float
-
-    X collection. Dimensionless.
-
-.. py:property:: y
-    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.y
-    :type: float
-
-    Y collection. Dimensionless.
-
-.. py:property:: z
-    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.z
-    :type: float
-
-    Z collection. Dimensionless.
 
 .. py:property:: vx
     :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.vx
@@ -79,5 +61,23 @@ Property detail
     :type: float
 
     Vz collection. Dimensionless.
+
+.. py:property:: x
+    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.x
+    :type: float
+
+    X collection. Dimensionless.
+
+.. py:property:: y
+    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.y
+    :type: float
+
+    Y collection. Dimensionless.
+
+.. py:property:: z
+    :canonical: ansys.stk.core.stkobjects.VehiclePositionVelocityElement.z
+    :type: float
+
+    Z collection. Dimensionless.
 
 

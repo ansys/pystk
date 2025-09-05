@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.set_empty_cg`
-              - Set the aircraft's Empty CG position.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.paste_configuration`
-              - Paste the aircraft's configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.get_stations`
               - Get a collection of the aircraft's payload stations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.paste_configuration`
+              - Paste the aircraft's configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.save`
               - Save.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.set_empty_cg`
+              - Set the aircraft's Empty CG position.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_weight`
-              - Get or set the empty weight of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight`
-              - Get or set the max landing weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index`
               - Get or set the base drag index of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgx`
@@ -45,22 +41,26 @@ Overview
               - Get the Y value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgz`
               - Get the Z value of the aircraft's Empty CG position.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_weight`
-              - Get the total weight of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_weight_max_fuel`
-              - Get the total weight of the aircraft with all fuel tanks full.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_drag_index`
-              - Get the total drag index of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_weight`
+              - Get or set the empty weight of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.initial_fuel_state`
+              - Get the initial fuel state of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight`
+              - Get or set the max landing weight of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_capacity`
+              - Get the total fuel capacity of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_cgx`
               - Get the X value of the aircraft's Total CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_cgy`
               - Get the Y value of the aircraft's Total CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_cgz`
               - Get the Z value of the aircraft's Total CG position.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_capacity`
-              - Get the total fuel capacity of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.initial_fuel_state`
-              - Get the initial fuel state of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_drag_index`
+              - Get the total drag index of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_weight`
+              - Get the total weight of the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.total_weight_max_fuel`
+              - Get the total weight of the aircraft with all fuel tanks full.
 
 
 
@@ -113,18 +113,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: empty_weight
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_weight
-    :type: float
-
-    Get or set the empty weight of the aircraft.
-
-.. py:property:: max_landing_weight
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight
-    :type: float
-
-    Get or set the max landing weight of the aircraft.
-
 .. py:property:: base_drag_index
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index
     :type: float
@@ -149,23 +137,29 @@ Property detail
 
     Get the Z value of the aircraft's Empty CG position.
 
-.. py:property:: total_weight
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_weight
+.. py:property:: empty_weight
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_weight
     :type: float
 
-    Get the total weight of the aircraft.
+    Get or set the empty weight of the aircraft.
 
-.. py:property:: total_weight_max_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_weight_max_fuel
+.. py:property:: initial_fuel_state
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.initial_fuel_state
     :type: float
 
-    Get the total weight of the aircraft with all fuel tanks full.
+    Get the initial fuel state of the aircraft.
 
-.. py:property:: total_drag_index
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_drag_index
+.. py:property:: max_landing_weight
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight
     :type: float
 
-    Get the total drag index of the aircraft.
+    Get or set the max landing weight of the aircraft.
+
+.. py:property:: total_capacity
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_capacity
+    :type: float
+
+    Get the total fuel capacity of the aircraft.
 
 .. py:property:: total_cgx
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_cgx
@@ -185,17 +179,23 @@ Property detail
 
     Get the Z value of the aircraft's Total CG position.
 
-.. py:property:: total_capacity
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_capacity
+.. py:property:: total_drag_index
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_drag_index
     :type: float
 
-    Get the total fuel capacity of the aircraft.
+    Get the total drag index of the aircraft.
 
-.. py:property:: initial_fuel_state
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.initial_fuel_state
+.. py:property:: total_weight
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_weight
     :type: float
 
-    Get the initial fuel state of the aircraft.
+    Get the total weight of the aircraft.
+
+.. py:property:: total_weight_max_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.total_weight_max_fuel
+    :type: float
+
+    Get the total weight of the aircraft with all fuel tanks full.
 
 
 Method detail
@@ -208,7 +208,40 @@ Method detail
 
 
 
+.. py:method:: get_stations(self) -> StationCollection
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.get_stations
 
+    Get a collection of the aircraft's payload stations.
+
+    :Returns:
+
+        :obj:`~StationCollection`
+
+
+
+
+.. py:method:: paste_configuration(self, other_configuration: Configuration) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.paste_configuration
+
+    Paste the aircraft's configuration.
+
+    :Parameters:
+
+        **other_configuration** : :obj:`~Configuration`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: save(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.save
+
+    Save.
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: set_empty_cg(self, x: float, y: float, z: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.set_empty_cg
@@ -234,37 +267,4 @@ Method detail
 
 
 
-.. py:method:: paste_configuration(self, other_configuration: Configuration) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.paste_configuration
-
-    Paste the aircraft's configuration.
-
-    :Parameters:
-
-        **other_configuration** : :obj:`~Configuration`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: get_stations(self) -> StationCollection
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.get_stations
-
-    Get a collection of the aircraft's payload stations.
-
-    :Returns:
-
-        :obj:`~StationCollection`
-
-
-
-.. py:method:: save(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.Configuration.save
-
-    Save.
-
-    :Returns:
-
-        :obj:`~None`
 

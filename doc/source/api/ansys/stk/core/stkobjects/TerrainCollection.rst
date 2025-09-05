@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.item`
-              - Given an index, returns an Terrain interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.add`
               - Add a terrain item to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.item`
+              - Given an index, returns an Terrain interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.remove`
               - Remove a given index from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.remove_all`
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.count`
-              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection._new_enum`
               - Enumerates through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.count`
+              - The number of items in the collection.
 
 
 
@@ -51,37 +51,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.TerrainCollection.count
-    :type: int
-
-    The number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.TerrainCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.TerrainCollection.count
+    :type: int
+
+    The number of items in the collection.
+
 
 Method detail
 -------------
-
-
-
-.. py:method:: item(self, index: int) -> Terrain
-    :canonical: ansys.stk.core.stkobjects.TerrainCollection.item
-
-    Given an index, returns an Terrain interface.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~Terrain`
 
 .. py:method:: add(self, location: str, terrain_file_type: TerrainFileType) -> Terrain
     :canonical: ansys.stk.core.stkobjects.TerrainCollection.add
@@ -93,6 +77,21 @@ Method detail
         **location** : :obj:`~str`
 
         **terrain_file_type** : :obj:`~TerrainFileType`
+
+
+    :Returns:
+
+        :obj:`~Terrain`
+
+
+.. py:method:: item(self, index: int) -> Terrain
+    :canonical: ansys.stk.core.stkobjects.TerrainCollection.item
+
+    Given an index, returns an Terrain interface.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
 
 
     :Returns:
@@ -121,4 +120,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

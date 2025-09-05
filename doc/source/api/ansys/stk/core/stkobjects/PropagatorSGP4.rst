@@ -29,22 +29,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.step`
-              - Step size. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.segments`
-              - Get the element set list.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_enabled`
               - Whether automatic update is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_settings`
               - Allow configuring the auto-update parameters and settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.common_tasks`
               - Most commonly used tasks such as importing file data, etc.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.settings`
-              - Propagator settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.ephemeris_interval`
               - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.international_designator`
               - International designation of the satellite.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.segments`
+              - Get the element set list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.settings`
+              - Propagator settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.step`
+              - Step size. Uses Time Dimension.
 
 
 
@@ -77,18 +77,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.step
-    :type: float
-
-    Step size. Uses Time Dimension.
-
-.. py:property:: segments
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.segments
-    :type: PropagatorSGP4SegmentCollection
-
-    Get the element set list.
-
 .. py:property:: automatic_update_enabled
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_enabled
     :type: bool
@@ -107,12 +95,6 @@ Property detail
 
     Most commonly used tasks such as importing file data, etc.
 
-.. py:property:: settings
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.settings
-    :type: PropagatorSGP4PropagatorSettings
-
-    Propagator settings.
-
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.ephemeris_interval
     :type: ITimeToolTimeIntervalSmartInterval
@@ -125,9 +107,34 @@ Property detail
 
     International designation of the satellite.
 
+.. py:property:: segments
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.segments
+    :type: PropagatorSGP4SegmentCollection
+
+    Get the element set list.
+
+.. py:property:: settings
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.settings
+    :type: PropagatorSGP4PropagatorSettings
+
+    Propagator settings.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.step
+    :type: float
+
+    Step size. Uses Time Dimension.
+
 
 Method detail
 -------------
+
+
+
+
+
+
+
 
 .. py:method:: propagate(self) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.propagate
@@ -137,13 +144,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
 
 
 

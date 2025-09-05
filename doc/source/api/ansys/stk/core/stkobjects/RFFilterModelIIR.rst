@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelIIR.sampling_frequency`
-              - Get or set the sampling frequency.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelIIR.numerator_complex_polynomial`
-              - Get the numerator complex polynomial.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelIIR.denominator_complex_polynomial`
               - Get the denominator complex polynomial.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelIIR.numerator_complex_polynomial`
+              - Get the numerator complex polynomial.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelIIR.sampling_frequency`
+              - Get or set the sampling frequency.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sampling_frequency
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelIIR.sampling_frequency
-    :type: float
+.. py:property:: denominator_complex_polynomial
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelIIR.denominator_complex_polynomial
+    :type: CommRadComplexNumberCollection
 
-    Get or set the sampling frequency.
+    Get the denominator complex polynomial.
 
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.RFFilterModelIIR.numerator_complex_polynomial
@@ -52,10 +52,10 @@ Property detail
 
     Get the numerator complex polynomial.
 
-.. py:property:: denominator_complex_polynomial
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelIIR.denominator_complex_polynomial
-    :type: CommRadComplexNumberCollection
+.. py:property:: sampling_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelIIR.sampling_frequency
+    :type: float
 
-    Get the denominator complex polynomial.
+    Get or set the sampling frequency.
 
 

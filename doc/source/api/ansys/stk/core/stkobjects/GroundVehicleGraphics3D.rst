@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleGraphics3D.vapor_trail`
-              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleGraphics3D.radar_cross_section`
               - Get the radar cross section graphics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleGraphics3D.vapor_trail`
+              - Vapor trail attributes.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: vapor_trail
-    :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics3D.vapor_trail
-    :type: Graphics3DVaporTrail
-
-    Vapor trail attributes.
-
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
     Get the radar cross section graphics interface.
+
+.. py:property:: vapor_trail
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics3D.vapor_trail
+    :type: Graphics3DVaporTrail
+
+    Vapor trail attributes.
 
 

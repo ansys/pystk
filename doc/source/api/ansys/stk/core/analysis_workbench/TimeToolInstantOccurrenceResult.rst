@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.is_valid`
-              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.epoch`
               - The epoch at which the event occurs.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.is_valid`
+              - Indicate whether the result object is valid.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.is_valid
-    :type: bool
-
-    Indicate whether the result object is valid.
-
 .. py:property:: epoch
     :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.epoch
     :type: typing.Any
 
     The epoch at which the event occurs.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantOccurrenceResult.is_valid
+    :type: bool
+
+    Indicate whether the result object is valid.
 
 

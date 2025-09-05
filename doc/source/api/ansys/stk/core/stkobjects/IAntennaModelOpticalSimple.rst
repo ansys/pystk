@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain`
-              - Get or set the option for computing gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain`
-              - Get or set the maximum gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.area`
               - Get or set the area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain`
+              - Get or set the option for computing gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.efficiency`
               - Get or set the area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain`
+              - Get or set the maximum gain.
 
 
 Import detail
@@ -39,28 +39,28 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: compute_gain
-    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain
-    :type: bool
-
-    Get or set the option for computing gain.
-
-.. py:property:: maximum_gain
-    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain
-    :type: float
-
-    Get or set the maximum gain.
-
 .. py:property:: area
     :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.area
     :type: float
 
     Get or set the area.
 
+.. py:property:: compute_gain
+    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain
+    :type: bool
+
+    Get or set the option for computing gain.
+
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.efficiency
     :type: float
 
     Get or set the area.
+
+.. py:property:: maximum_gain
+    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain
+    :type: float
+
+    Get or set the maximum gain.
 
 

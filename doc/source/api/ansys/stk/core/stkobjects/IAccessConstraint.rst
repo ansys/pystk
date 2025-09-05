@@ -20,16 +20,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_name`
               - Property used to access the constraint name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
-              - Return true if the access constraint is a plugin.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval`
-              - Exclude Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
               - Property used to access the constraint type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.maximum_time_step`
-              - Maximum time step used in adaptive sampling.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval`
+              - Exclude Time Intervals.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
+              - Return true if the access constraint is a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.maximum_relative_motion`
               - Maximum relative motion used in adaptive sampling.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.maximum_time_step`
+              - Maximum time step used in adaptive sampling.
 
 
 Examples
@@ -237,11 +237,11 @@ Property detail
 
     Property used to access the constraint name.
 
-.. py:property:: is_plugin
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.is_plugin
-    :type: bool
+.. py:property:: constraint_type
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.constraint_type
+    :type: AccessConstraintType
 
-    Return true if the access constraint is a plugin.
+    Property used to access the constraint type.
 
 .. py:property:: exclusion_interval
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval
@@ -249,22 +249,22 @@ Property detail
 
     Exclude Time Intervals.
 
-.. py:property:: constraint_type
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.constraint_type
-    :type: AccessConstraintType
+.. py:property:: is_plugin
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.is_plugin
+    :type: bool
 
-    Property used to access the constraint type.
-
-.. py:property:: maximum_time_step
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.maximum_time_step
-    :type: float
-
-    Maximum time step used in adaptive sampling.
+    Return true if the access constraint is a plugin.
 
 .. py:property:: maximum_relative_motion
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.maximum_relative_motion
     :type: float
 
     Maximum relative motion used in adaptive sampling.
+
+.. py:property:: maximum_time_step
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.maximum_time_step
+    :type: float
+
+    Maximum time step used in adaptive sampling.
 
 

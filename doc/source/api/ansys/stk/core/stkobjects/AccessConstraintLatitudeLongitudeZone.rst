@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_longitude`
-              - Minimum Longitude value. Uses Longitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_latitude`
-              - Minimum Latitude value. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_longitude`
-              - Maximum Longitude value. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_latitude`
               - Maximum Latitude. Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_longitude`
+              - Maximum Longitude value. Uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_latitude`
+              - Minimum Latitude value. Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_longitude`
+              - Minimum Longitude value. Uses Longitude Dimension.
 
 
 
@@ -42,17 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_longitude
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_longitude
+.. py:property:: maximum_latitude
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_latitude
     :type: typing.Any
 
-    Minimum Longitude value. Uses Longitude Dimension.
-
-.. py:property:: minimum_latitude
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_latitude
-    :type: typing.Any
-
-    Minimum Latitude value. Uses Latitude Dimension.
+    Maximum Latitude. Uses Latitude Dimension.
 
 .. py:property:: maximum_longitude
     :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_longitude
@@ -60,10 +54,16 @@ Property detail
 
     Maximum Longitude value. Uses Longitude Dimension.
 
-.. py:property:: maximum_latitude
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.maximum_latitude
+.. py:property:: minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_latitude
     :type: typing.Any
 
-    Maximum Latitude. Uses Latitude Dimension.
+    Minimum Latitude value. Uses Latitude Dimension.
+
+.. py:property:: minimum_longitude
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintLatitudeLongitudeZone.minimum_longitude
+    :type: typing.Any
+
+    Minimum Longitude value. Uses Longitude Dimension.
 
 

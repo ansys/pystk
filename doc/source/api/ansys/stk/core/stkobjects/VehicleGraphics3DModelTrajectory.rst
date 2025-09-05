@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.trajectory_marker`
-              - Represents the vehicle while traveling along its actual trajectory.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.ground_marker`
-              - Represents the vehicle's position along its ground track.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.show_point`
-              - Whether the point that is shown at certain viewing distances to represent an object, is visible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.point_size`
-              - A size of the point (in pixels). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type`
-              - Get or set the glTF reflection map type property. A member of the ModelGltfReflectionMapType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_image_based`
               - Get the glTF Image Based properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type`
+              - Get or set the glTF reflection map type property. A member of the ModelGltfReflectionMapType enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.ground_marker`
+              - Represents the vehicle's position along its ground track.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.point_size`
+              - A size of the point (in pixels). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.show_point`
+              - Whether the point that is shown at certain viewing distances to represent an object, is visible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.trajectory_marker`
+              - Represents the vehicle while traveling along its actual trajectory.
 
 
 
@@ -46,29 +46,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: trajectory_marker
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.trajectory_marker
-    :type: Graphics3DMarker
+.. py:property:: gltf_image_based
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_image_based
+    :type: Graphics3DModelglTFImageBased
 
-    Represents the vehicle while traveling along its actual trajectory.
-
-.. py:property:: ground_marker
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.ground_marker
-    :type: Graphics3DMarker
-
-    Represents the vehicle's position along its ground track.
-
-.. py:property:: show_point
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.show_point
-    :type: bool
-
-    Whether the point that is shown at certain viewing distances to represent an object, is visible.
-
-.. py:property:: point_size
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.point_size
-    :type: typing.Any
-
-    A size of the point (in pixels). Dimensionless.
+    Get the glTF Image Based properties.
 
 .. py:property:: gltf_reflection_map_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type
@@ -76,10 +58,28 @@ Property detail
 
     Get or set the glTF reflection map type property. A member of the ModelGltfReflectionMapType enumeration.
 
-.. py:property:: gltf_image_based
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_image_based
-    :type: Graphics3DModelglTFImageBased
+.. py:property:: ground_marker
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.ground_marker
+    :type: Graphics3DMarker
 
-    Get the glTF Image Based properties.
+    Represents the vehicle's position along its ground track.
+
+.. py:property:: point_size
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.point_size
+    :type: typing.Any
+
+    A size of the point (in pixels). Dimensionless.
+
+.. py:property:: show_point
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.show_point
+    :type: bool
+
+    Whether the point that is shown at certain viewing distances to represent an object, is visible.
+
+.. py:property:: trajectory_marker
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.trajectory_marker
+    :type: Graphics3DMarker
+
+    Represents the vehicle while traveling along its actual trajectory.
 
 

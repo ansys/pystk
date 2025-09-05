@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.set_path`
-              - Set a new system.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.set_system`
-              - Set a new system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.get_system`
               - Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.set_path`
+              - Set a new system.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.set_system`
+              - Set a new system.
 
 
 Import detail
@@ -41,6 +41,29 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: get_system(self) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.get_system
+
+    Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolSystem`
+
+.. py:method:: has_cyclic_dependency(self, system: IVectorGeometryToolSystem) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.has_cyclic_dependency
+
+    Test whether the input component and the target component form a cyclic dependency.
+
+    :Parameters:
+
+        **system** : :obj:`~IVectorGeometryToolSystem`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 .. py:method:: set_path(self, path: str) -> None
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.set_path
@@ -69,27 +92,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_system(self) -> IVectorGeometryToolSystem
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.get_system
-
-    Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object.
-
-    :Returns:
-
-        :obj:`~IVectorGeometryToolSystem`
-
-.. py:method:: has_cyclic_dependency(self, system: IVectorGeometryToolSystem) -> bool
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolSystemReference.has_cyclic_dependency
-
-    Test whether the input component and the target component form a cyclic dependency.
-
-    :Parameters:
-
-        **system** : :obj:`~IVectorGeometryToolSystem`
-
-
-    :Returns:
-
-        :obj:`~bool`
 

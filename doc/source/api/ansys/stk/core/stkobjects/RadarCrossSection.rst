@@ -27,12 +27,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSection instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.model`
               - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSection instead. Gets the current RCS model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.model_component_linking`
               - Get the link/embed controller for managing the radar cross section model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.supported_models`
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSection instead. Gets an array of supported model names.
 
 
 
@@ -47,12 +47,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSection.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSection instead. Gets an array of supported model names.
-
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSection.model
     :type: RadarCrossSectionModel
@@ -65,9 +59,16 @@ Property detail
 
     Get the link/embed controller for managing the radar cross section model component.
 
+.. py:property:: supported_models
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSection.supported_models
+    :type: list
+
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSection instead. Gets an array of supported model names.
+
 
 Method detail
 -------------
+
 
 
 .. py:method:: set_model(self, model_name: str) -> None
@@ -83,6 +84,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 

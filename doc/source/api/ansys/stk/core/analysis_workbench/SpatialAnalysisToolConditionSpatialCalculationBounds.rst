@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_minimum`
-              - Get the minimum bound value from the bounds. Call SetMinimum to apply changes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_minimum`
-              - Set the minimum bound value for the bounds.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_maximum`
               - Get the maximum bound value from the bounds. Call SetMaximum to apply changes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_maximum`
-              - Set the maximum bound value for the condition.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_minimum`
+              - Get the minimum bound value from the bounds. Call SetMinimum to apply changes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set`
               - Set the min/max bounds. Throws an exception if the minimum is greater than maximum.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_maximum`
+              - Set the maximum bound value for the condition.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_minimum`
+              - Set the minimum bound value for the bounds.
 
     .. tab-item:: Properties
 
@@ -71,9 +71,14 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: get_maximum(self) -> Quantity
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_maximum
 
+    Get the maximum bound value from the bounds. Call SetMaximum to apply changes.
 
+    :Returns:
 
+        :obj:`~Quantity`
 
 .. py:method:: get_minimum(self) -> Quantity
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_minimum
@@ -84,42 +89,7 @@ Method detail
 
         :obj:`~Quantity`
 
-.. py:method:: set_minimum(self, value: Quantity) -> None
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_minimum
 
-    Set the minimum bound value for the bounds.
-
-    :Parameters:
-
-        **value** : :obj:`~Quantity`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: get_maximum(self) -> Quantity
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.get_maximum
-
-    Get the maximum bound value from the bounds. Call SetMaximum to apply changes.
-
-    :Returns:
-
-        :obj:`~Quantity`
-
-.. py:method:: set_maximum(self, value: Quantity) -> None
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_maximum
-
-    Set the maximum bound value for the condition.
-
-    :Parameters:
-
-        **value** : :obj:`~Quantity`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: set(self, min: Quantity, max: Quantity) -> None
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set
@@ -136,4 +106,34 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: set_maximum(self, value: Quantity) -> None
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_maximum
+
+    Set the maximum bound value for the condition.
+
+    :Parameters:
+
+        **value** : :obj:`~Quantity`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_minimum(self, value: Quantity) -> None
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionSpatialCalculationBounds.set_minimum
+
+    Set the minimum bound value for the bounds.
+
+    :Parameters:
+
+        **value** : :obj:`~Quantity`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
 

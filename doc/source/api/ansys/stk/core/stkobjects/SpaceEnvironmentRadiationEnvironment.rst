@@ -87,7 +87,6 @@ Method detail
 
 
 
-
 .. py:method:: get_crres_electron_energies(self) -> list
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.get_crres_electron_energies
 
@@ -123,6 +122,7 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
 
 
 

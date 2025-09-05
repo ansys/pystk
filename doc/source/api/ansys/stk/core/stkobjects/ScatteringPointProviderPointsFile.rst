@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.filename`
-              - Get or set the scattering points filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.default_scattering_point_model`
               - Get the link/embed controller for managing the default scattering point model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.filename`
+              - Get or set the scattering points filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.scattering_points`
               - Get the collection of scattering points.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.filename
-    :type: str
-
-    Get or set the scattering points filename.
-
 .. py:property:: default_scattering_point_model
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.default_scattering_point_model
     :type: IComponentLinkEmbedControl
 
     Get the link/embed controller for managing the default scattering point model component.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.filename
+    :type: str
+
+    Get or set the scattering points filename.
 
 .. py:property:: scattering_points
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile.scattering_points

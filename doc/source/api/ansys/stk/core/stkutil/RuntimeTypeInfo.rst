@@ -27,12 +27,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.properties`
-              - Get the collection of properties.
-            * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.is_collection`
-              - Determine if the interface is a collection.
             * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.count`
               - If the interface is a collection, returns the collection count.
+            * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.is_collection`
+              - Determine if the interface is a collection.
+            * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.properties`
+              - Get the collection of properties.
 
 
 
@@ -47,11 +47,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: properties
-    :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.properties
-    :type: PropertyInfoCollection
+.. py:property:: count
+    :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.count
+    :type: int
 
-    Get the collection of properties.
+    If the interface is a collection, returns the collection count.
 
 .. py:property:: is_collection
     :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.is_collection
@@ -59,17 +59,15 @@ Property detail
 
     Determine if the interface is a collection.
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.count
-    :type: int
+.. py:property:: properties
+    :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.properties
+    :type: PropertyInfoCollection
 
-    If the interface is a collection, returns the collection count.
+    Get the collection of properties.
 
 
 Method detail
 -------------
-
-
 
 
 .. py:method:: get_item(self, index: int) -> PropertyInfo
@@ -85,4 +83,6 @@ Method detail
     :Returns:
 
         :obj:`~PropertyInfo`
+
+
 

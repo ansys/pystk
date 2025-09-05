@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.top_height`
-              - Get or set the height of the top of the layer.
             * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.extinction_coefficient`
               - Get or set the extinction coefficient.
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.top_height`
+              - Get or set the height of the top of the layer.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: top_height
-    :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.top_height
-    :type: float
-
-    Get or set the height of the top of the layer.
-
 .. py:property:: extinction_coefficient
     :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.extinction_coefficient
     :type: float
 
     Get or set the extinction coefficient.
+
+.. py:property:: top_height
+    :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer.top_height
+    :type: float
+
+    Get or set the height of the top of the layer.
 
 

@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.divisor`
               - Get or set the divisor for the result of the convolution kernel operation.
-            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.offset`
-              - Get or set the offset for the result of the convolution kernel operation. The value is added to the result of the operation.
             * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.kernel`
               - Get or set the convolution kernel of the filter. The array contains the 9 elements of the kernel of the convolution matrix...
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.offset`
+              - Get or set the offset for the result of the convolution kernel operation. The value is added to the result of the operation.
 
 
 Import detail
@@ -43,16 +43,16 @@ Property detail
 
     Get or set the divisor for the result of the convolution kernel operation.
 
-.. py:property:: offset
-    :canonical: ansys.stk.core.graphics.IConvolutionFilter.offset
-    :type: float
-
-    Get or set the offset for the result of the convolution kernel operation. The value is added to the result of the operation.
-
 .. py:property:: kernel
     :canonical: ansys.stk.core.graphics.IConvolutionFilter.kernel
     :type: list
 
     Get or set the convolution kernel of the filter. The array contains the 9 elements of the kernel of the convolution matrix...
+
+.. py:property:: offset
+    :canonical: ansys.stk.core.graphics.IConvolutionFilter.offset
+    :type: float
+
+    Get or set the offset for the result of the convolution kernel operation. The value is added to the result of the operation.
 
 

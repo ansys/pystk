@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.max_thrust`
-              - Get or set the maximum thrust of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.fuel_flow`
               - Get or set the fuel flow at max thrust.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.max_thrust`
+              - Get or set the maximum thrust of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.no_thrust_when_no_fuel`
               - Opt to have no thrust if the fuel is empty.
 
@@ -38,17 +38,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: max_thrust
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.max_thrust
-    :type: float
-
-    Get or set the maximum thrust of the missile.
-
 .. py:property:: fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.fuel_flow
     :type: float
 
     Get or set the fuel flow at max thrust.
+
+.. py:property:: max_thrust
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.max_thrust
+    :type: float
+
+    Get or set the maximum thrust of the missile.
 
 .. py:property:: no_thrust_when_no_fuel
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion.no_thrust_when_no_fuel

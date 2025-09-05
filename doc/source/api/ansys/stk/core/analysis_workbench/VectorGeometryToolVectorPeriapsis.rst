@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.central_body`
               - Specify a central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.reference_point`
-              - Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.mean_element_type`
               - Specify the mean element theory type for approximating motion.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.reference_point`
+              - Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify a central body.
 
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.reference_point
-    :type: VectorGeometryToolPointReference
-
-    Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
-
 .. py:property:: mean_element_type
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.mean_element_type
     :type: MeanElementTheory
 
     Specify the mean element theory type for approximating motion.
+
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorPeriapsis.reference_point
+    :type: VectorGeometryToolPointReference
+
+    Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 
 

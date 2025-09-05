@@ -22,14 +22,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.get_all_conditions`
               - Get all spatial conditions.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.set_all_conditions`
-              - Set all spatial conditions.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.set_condition`
-              - Set spatial conditions at a position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.get_condition`
               - Get spatial conditions at a position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.remove_condition`
               - Remove spatial conditions at a position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.set_all_conditions`
+              - Set all spatial conditions.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.set_condition`
+              - Set spatial conditions at a position.
 
     .. tab-item:: Properties
 
@@ -83,6 +83,34 @@ Method detail
 
         :obj:`~list`
 
+.. py:method:: get_condition(self, pos: int) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.get_condition
+
+    Get spatial conditions at a position.
+
+    :Parameters:
+
+        **pos** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolume`
+
+.. py:method:: remove_condition(self, pos: int) -> None
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.remove_condition
+
+    Remove spatial conditions at a position.
+
+    :Parameters:
+
+        **pos** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 .. py:method:: set_all_conditions(self, conditions: list) -> None
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.set_all_conditions
 
@@ -105,34 +133,6 @@ Method detail
     :Parameters:
 
         **ref** : :obj:`~ISpatialAnalysisToolVolume`
-
-        **pos** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: get_condition(self, pos: int) -> ISpatialAnalysisToolVolume
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.get_condition
-
-    Get spatial conditions at a position.
-
-    :Parameters:
-
-        **pos** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~ISpatialAnalysisToolVolume`
-
-.. py:method:: remove_condition(self, pos: int) -> None
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolConditionCombined.remove_condition
-
-    Remove spatial conditions at a position.
-
-    :Parameters:
 
         **pos** : :obj:`~int`
 

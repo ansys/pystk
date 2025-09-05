@@ -29,34 +29,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_convergence`
-              - Get or set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.repeat_count`
-              - Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.inherited`
-              - Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.max_trip_times`
-              - Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.sequence`
-              - Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.aberration_type`
+              - Get or set the model of aberration to be used in access computations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection`
+              - Return the base selection object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection_type`
+              - Get the base object for the access calculation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.before_conditions`
+              - A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.clock_host`
+              - Time values are reported with a clock colocated with the clock host object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.constraints`
               - Further conditions that must be met in order for the stopping condition to be deemed satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.criterion`
               - Specify the direction from which the stopping condition value must be achieved.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.before_conditions`
-              - A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.aberration_type`
-              - Get or set the model of aberration to be used in access computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection_type`
-              - Get the base object for the access calculation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection`
-              - Return the base selection object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.clock_host`
-              - Time values are reported with a clock colocated with the clock host object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.inherited`
+              - Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.max_trip_times`
+              - Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.repeat_count`
+              - Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.sequence`
+              - Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.signal_sense`
               - Get or set the direction of the signal.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.target_object`
               - Get the target object for the access calculation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_convergence`
+              - Get or set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_delay_convergence_tolerance`
               - Get or set the tolerance used when iterating to determine the light time delay. The iteration stops when the improvement in the value is less than this tolerance. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.use_light_time_delay`
@@ -75,35 +75,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: time_convergence
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_convergence
-    :type: float
+.. py:property:: aberration_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.aberration_type
+    :type: AberrationType
 
-    Get or set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension.
+    Get or set the model of aberration to be used in access computations.
 
-.. py:property:: repeat_count
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.repeat_count
-    :type: float
+.. py:property:: base_selection
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection
+    :type: ILinkToObject
 
-    Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
+    Return the base selection object.
 
-.. py:property:: inherited
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.inherited
-    :type: bool
+.. py:property:: base_selection_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection_type
+    :type: BaseSelection
 
-    Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
+    Get the base object for the access calculation.
 
-.. py:property:: max_trip_times
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.max_trip_times
-    :type: float
+.. py:property:: before_conditions
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.before_conditions
+    :type: StoppingConditionCollection
 
-    Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
+    A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
-.. py:property:: sequence
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.sequence
-    :type: str
+.. py:property:: clock_host
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.clock_host
+    :type: IvClockHost
 
-    Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
+    Time values are reported with a clock colocated with the clock host object.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.constraints
@@ -117,35 +117,29 @@ Property detail
 
     Specify the direction from which the stopping condition value must be achieved.
 
-.. py:property:: before_conditions
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.before_conditions
-    :type: StoppingConditionCollection
+.. py:property:: inherited
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.inherited
+    :type: bool
 
-    A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
+    Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
 
-.. py:property:: aberration_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.aberration_type
-    :type: AberrationType
+.. py:property:: max_trip_times
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.max_trip_times
+    :type: float
 
-    Get or set the model of aberration to be used in access computations.
+    Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
 
-.. py:property:: base_selection_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection_type
-    :type: BaseSelection
+.. py:property:: repeat_count
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.repeat_count
+    :type: float
 
-    Get the base object for the access calculation.
+    Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
 
-.. py:property:: base_selection
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection
-    :type: ILinkToObject
+.. py:property:: sequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.sequence
+    :type: str
 
-    Return the base selection object.
-
-.. py:property:: clock_host
-    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.clock_host
-    :type: IvClockHost
-
-    Time values are reported with a clock colocated with the clock host object.
+    Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.signal_sense
@@ -158,6 +152,12 @@ Property detail
     :type: ILinkToObject
 
     Get the target object for the access calculation.
+
+.. py:property:: time_convergence
+    :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_convergence
+    :type: float
+
+    Get or set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension.
 
 .. py:property:: time_delay_convergence_tolerance
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.time_delay_convergence_tolerance
@@ -191,6 +191,8 @@ Method detail
 
 
 
+
+
 .. py:method:: set_base_selection(self, selection: BaseSelection) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.set_base_selection
 
@@ -204,8 +206,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 
 
 

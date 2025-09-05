@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.LevelsFilter.set_level_adjustment`
-              - Set the linear level adjustment value for the given raster band. Both negative and positive values are accepted.
             * - :py:attr:`~ansys.stk.core.graphics.LevelsFilter.clear_adjustments`
               - Clear the level adjustment values for all bands.
+            * - :py:attr:`~ansys.stk.core.graphics.LevelsFilter.set_level_adjustment`
+              - Set the linear level adjustment value for the given raster band. Both negative and positive values are accepted.
 
 
 Import detail
@@ -38,6 +38,15 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: clear_adjustments(self) -> None
+    :canonical: ansys.stk.core.graphics.LevelsFilter.clear_adjustments
+
+    Clear the level adjustment values for all bands.
+
+    :Returns:
+
+        :obj:`~None`
+
 .. py:method:: set_level_adjustment(self, band: RasterBand, adjustment: int) -> None
     :canonical: ansys.stk.core.graphics.LevelsFilter.set_level_adjustment
 
@@ -49,15 +58,6 @@ Method detail
 
         **adjustment** : :obj:`~int`
 
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: clear_adjustments(self) -> None
-    :canonical: ansys.stk.core.graphics.LevelsFilter.clear_adjustments
-
-    Clear the level adjustment values for all bands.
 
     :Returns:
 

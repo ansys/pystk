@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.object_name`
-              - Get or set the object name to link to.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.valid_object_names`
-              - Return the valid object names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.bearing`
               - Get or set the bearing from the STK object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.use_magnetic_bearing`
-              - Get or set the option to use a magnetic bearing.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.object_name`
+              - Get or set the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.range`
               - Get or set the range from the STK object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.use_magnetic_bearing`
+              - Get or set the option to use a magnetic bearing.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.valid_object_names`
+              - Return the valid object names.
 
 
 
@@ -53,29 +53,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: object_name
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.object_name
-    :type: str
-
-    Get or set the object name to link to.
-
-.. py:property:: valid_object_names
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.valid_object_names
-    :type: list
-
-    Return the valid object names.
-
 .. py:property:: bearing
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.bearing
     :type: typing.Any
 
     Get or set the bearing from the STK object.
 
-.. py:property:: use_magnetic_bearing
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.use_magnetic_bearing
-    :type: bool
+.. py:property:: object_name
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.object_name
+    :type: str
 
-    Get or set the option to use a magnetic bearing.
+    Get or set the object name to link to.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.range
@@ -83,16 +71,21 @@ Property detail
 
     Get or set the range from the STK object.
 
+.. py:property:: use_magnetic_bearing
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.use_magnetic_bearing
+    :type: bool
+
+    Get or set the option to use a magnetic bearing.
+
+.. py:property:: valid_object_names
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToSTKObject.valid_object_names
+    :type: list
+
+    Return the valid object names.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
 
 
 
@@ -104,4 +97,11 @@ Method detail
     :Returns:
 
         :obj:`~ISite`
+
+
+
+
+
+
+
 

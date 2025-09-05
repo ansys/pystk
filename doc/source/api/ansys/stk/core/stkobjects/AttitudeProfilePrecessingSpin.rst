@@ -24,16 +24,16 @@ Overview
               - Get the spin axis in the body frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.inertial_precession`
               - Get the precession in the inertial frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.precession`
-              - Get the precession rate and offset.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.spin`
-              - Get the spin rate and offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.nutation_angle`
               - Nutation angle by which the spin axis is offset from the angular momentum direction defined in the inertial frame. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.precession`
+              - Get the precession rate and offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.reference_axes`
               - Reference axes with respect to which precessing spin is defined. The satellite's body axes or any axes dependent upon the satellite's body axes are invalid for this attitude profile; all other axes are valid choices for the reference axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.smart_epoch`
               - Get the epoch of the attitude profile.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.spin`
+              - Get the spin rate and offset.
 
 
 
@@ -60,23 +60,17 @@ Property detail
 
     Get the precession in the inertial frame.
 
-.. py:property:: precession
-    :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.precession
-    :type: RotationRateAndOffset
-
-    Get the precession rate and offset.
-
-.. py:property:: spin
-    :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.spin
-    :type: RotationRateAndOffset
-
-    Get the spin rate and offset.
-
 .. py:property:: nutation_angle
     :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.nutation_angle
     :type: float
 
     Nutation angle by which the spin axis is offset from the angular momentum direction defined in the inertial frame. Uses Angle Dimension.
+
+.. py:property:: precession
+    :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.precession
+    :type: RotationRateAndOffset
+
+    Get the precession rate and offset.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.reference_axes
@@ -89,5 +83,11 @@ Property detail
     :type: ITimeToolInstantSmartEpoch
 
     Get the epoch of the attitude profile.
+
+.. py:property:: spin
+    :canonical: ansys.stk.core.stkobjects.AttitudeProfilePrecessingSpin.spin
+    :type: RotationRateAndOffset
+
+    Get the spin rate and offset.
 
 

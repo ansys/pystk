@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.decay_factor`
+              - Get or set the decay factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.maximum_value`
               - Get or set the maximum value.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_range`
+              - Get or set the start range.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_value`
               - Get or set the start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.step_size`
               - Get or set the step size.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_range`
-              - Get or set the start range.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.stop_range`
               - Get or set the stop range.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.decay_factor`
-              - Get or set the decay factor.
 
 
 
@@ -46,11 +46,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: decay_factor
+    :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.decay_factor
+    :type: float
+
+    Get or set the decay factor.
+
 .. py:property:: maximum_value
     :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.maximum_value
     :type: float
 
     Get or set the maximum value.
+
+.. py:property:: start_range
+    :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_range
+    :type: float
+
+    Get or set the start range.
 
 .. py:property:: start_value
     :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_value
@@ -64,22 +76,10 @@ Property detail
 
     Get or set the step size.
 
-.. py:property:: start_range
-    :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.start_range
-    :type: float
-
-    Get or set the start range.
-
 .. py:property:: stop_range
     :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.stop_range
     :type: float
 
     Get or set the stop range.
-
-.. py:property:: decay_factor
-    :canonical: ansys.stk.core.stkobjects.RadarSTCAttenuationDecayFactor.decay_factor
-    :type: float
-
-    Get or set the decay factor.
 
 

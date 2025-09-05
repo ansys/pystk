@@ -29,12 +29,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.cruise_speed_type`
               - Get or set the method for determining the aircraft's airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type`
-              - Get the airspeed type for the other airspeed option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed`
-              - Get the airspeed for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.fly_cruise_airspeed_profile`
               - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed`
+              - Get the airspeed for the other airspeed option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type`
+              - Get the airspeed type for the other airspeed option.
 
 
 Import detail
@@ -54,11 +54,11 @@ Property detail
 
     Get or set the method for determining the aircraft's airspeed.
 
-.. py:property:: other_airspeed_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type
-    :type: AirspeedType
+.. py:property:: fly_cruise_airspeed_profile
+    :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.fly_cruise_airspeed_profile
+    :type: bool
 
-    Get the airspeed type for the other airspeed option.
+    Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
 
 .. py:property:: other_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed
@@ -66,15 +66,17 @@ Property detail
 
     Get the airspeed for the other airspeed option.
 
-.. py:property:: fly_cruise_airspeed_profile
-    :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.fly_cruise_airspeed_profile
-    :type: bool
+.. py:property:: other_airspeed_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type
+    :type: AirspeedType
 
-    Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
+    Get the airspeed type for the other airspeed option.
 
 
 Method detail
 -------------
+
+
 
 
 
@@ -95,6 +97,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 

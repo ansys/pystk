@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.history`
-              - Get the historical data, consisting of all data points received from the time of the most current data point back to the last point within the look behind duration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.spline`
-              - Get the spline between the last point received and the new point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.look_ahead`
-              - Get the look ahead data, calculated on the basis of the last received data point.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.drop_out`
               - Get the drop out, i.e. data that is outside the time out gap.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.history`
+              - Get the historical data, consisting of all data points received from the time of the most current data point back to the last point within the look behind duration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.look_ahead`
+              - Get the look ahead data, calculated on the basis of the last received data point.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.spline`
+              - Get the spline between the last point received and the new point.
 
 
 
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: drop_out
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.drop_out
+    :type: IVehicleGraphics2DAttributesBasic
+
+    Get the drop out, i.e. data that is outside the time out gap.
+
 .. py:property:: history
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.history
     :type: IVehicleGraphics2DAttributesBasic
 
     Get the historical data, consisting of all data points received from the time of the most current data point back to the last point within the look behind duration.
-
-.. py:property:: spline
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.spline
-    :type: IVehicleGraphics2DAttributesBasic
-
-    Get the spline between the last point received and the new point.
 
 .. py:property:: look_ahead
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.look_ahead
@@ -60,10 +60,10 @@ Property detail
 
     Get the look ahead data, calculated on the basis of the last received data point.
 
-.. py:property:: drop_out
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.drop_out
+.. py:property:: spline
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime.spline
     :type: IVehicleGraphics2DAttributesBasic
 
-    Get the drop out, i.e. data that is outside the time out gap.
+    Get the spline between the last point received and the new point.
 
 

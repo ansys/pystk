@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.height_coordinates`
+              - Return height Coordinates parameters for the Height system.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.radius_coordinates`
+              - Return radius Coordinates parameters for the Radius system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.reference_system`
               - Get the reference system in which cylindrical parameters are computed.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.theta_coordinates`
               - Return theta Coordinates parameters for the Theta system.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.radius_coordinates`
-              - Return radius Coordinates parameters for the Radius system.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.height_coordinates`
-              - Return height Coordinates parameters for the Height system.
 
 
 
@@ -42,6 +42,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: height_coordinates
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.height_coordinates
+    :type: SpatialAnalysisToolGridCoordinateDefinition
+
+    Return height Coordinates parameters for the Height system.
+
+.. py:property:: radius_coordinates
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.radius_coordinates
+    :type: SpatialAnalysisToolGridCoordinateDefinition
+
+    Return radius Coordinates parameters for the Radius system.
+
 .. py:property:: reference_system
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.reference_system
     :type: IVectorGeometryToolSystem
@@ -53,17 +65,5 @@ Property detail
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Return theta Coordinates parameters for the Theta system.
-
-.. py:property:: radius_coordinates
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.radius_coordinates
-    :type: SpatialAnalysisToolGridCoordinateDefinition
-
-    Return radius Coordinates parameters for the Radius system.
-
-.. py:property:: height_coordinates
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridCylindrical.height_coordinates
-    :type: SpatialAnalysisToolGridCoordinateDefinition
-
-    Return height Coordinates parameters for the Height system.
 
 

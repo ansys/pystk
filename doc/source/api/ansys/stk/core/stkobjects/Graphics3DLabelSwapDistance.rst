@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_value`
-              - Distance at which one level of detail is swapped for another. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_level`
               - Get Distance Level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_value`
+              - Distance at which one level of detail is swapped for another. Uses Distance Dimension.
 
 
 
@@ -45,21 +45,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: distance_value
-    :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_value
-    :type: float
-
-    Distance at which one level of detail is swapped for another. Uses Distance Dimension.
-
 .. py:property:: distance_level
     :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_level
     :type: Graphics3DLabelSwapDistanceType
 
     Get Distance Level.
 
+.. py:property:: distance_value
+    :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_value
+    :type: float
+
+    Distance at which one level of detail is swapped for another. Uses Distance Dimension.
+
 
 Method detail
 -------------
+
 
 
 
@@ -76,5 +77,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 

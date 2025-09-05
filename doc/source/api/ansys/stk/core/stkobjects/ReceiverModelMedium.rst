@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_demodulator`
               - Set the current demodulator model by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter`
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.set_polarization_type`
               - Set the current polarization type.
 
@@ -33,56 +33,56 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.enable_filter`
-              - Get or set the flag determines whether or not to enable the Filter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.pre_receive_gains_losses`
-              - Get the collection of additional pre-receive gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.pre_demodulator_gains_losses`
-              - Get the collection of additional pre-demod gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.link_margin`
-              - Get the interface for configuring the link margin computation parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.scale_bandwidth_automatically`
-              - Get or set the auto scale bandwidth option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.bandwidth`
-              - Get or set the bandwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.select_demodulator_automatically`
-              - Get or set the auto select demodulator option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_demodulators`
-              - Get an array of supported demodulator model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.demodulator`
-              - Get the current demodulator model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.use_rain`
-              - Get or set the option for computing rain loss.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values`
-              - Get an array of supported rain outage percent values.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.rain_outage_percent`
-              - Get or set the rain outage percent.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.enable_polarization`
-              - Get or set the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.polarization`
-              - Get the polarization.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.track_frequency_automatically`
-              - Get or set the auto track frequency option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.frequency`
-              - Get or set the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.antenna_gain`
               - Get or set the antennaGain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.antenna_to_lna_line_loss`
               - Get or set the antenna to LNA line loss.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.bandwidth`
+              - Get or set the bandwidth.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.demodulator`
+              - Get the current demodulator model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.enable_filter`
+              - Get or set the flag determines whether or not to enable the Filter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.enable_polarization`
+              - Get or set the enable polarization option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter`
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking`
+              - Get the link/embed controller for managing the filter model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.frequency`
+              - Get or set the frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.interference`
+              - Get the radio frequency interference.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.link_margin`
+              - Get the interface for configuring the link margin computation parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.lna_gain`
               - Get or set the LNA gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.lna_to_receiver_line_loss`
               - Get or set the LNA to receiver line loss.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.polarization`
+              - Get the polarization.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.pre_demodulator_gains_losses`
+              - Get the collection of additional pre-demod gains and losses.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.pre_receive_gains_losses`
+              - Get the collection of additional pre-receive gains and losses.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.rain_outage_percent`
+              - Get or set the rain outage percent.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.scale_bandwidth_automatically`
+              - Get or set the auto scale bandwidth option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.select_demodulator_automatically`
+              - Get or set the auto select demodulator option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_demodulators`
+              - Get an array of supported demodulator model names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters`
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values`
+              - Get an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.system_noise_temperature`
               - Get the system noise temperature interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.interference`
-              - Get the radio frequency interference.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking`
-              - Get the link/embed controller for managing the filter model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.track_frequency_automatically`
+              - Get or set the auto track frequency option.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMedium.use_rain`
+              - Get or set the option for computing rain loss.
 
 
 
@@ -97,114 +97,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable_filter
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.enable_filter
-    :type: bool
-
-    Get or set the flag determines whether or not to enable the Filter.
-
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
-
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
-
-.. py:property:: pre_receive_gains_losses
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_receive_gains_losses
-    :type: AdditionalGainLossCollection
-
-    Get the collection of additional pre-receive gains and losses.
-
-.. py:property:: pre_demodulator_gains_losses
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_demodulator_gains_losses
-    :type: AdditionalGainLossCollection
-
-    Get the collection of additional pre-demod gains and losses.
-
-.. py:property:: link_margin
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.link_margin
-    :type: LinkMargin
-
-    Get the interface for configuring the link margin computation parameters.
-
-.. py:property:: scale_bandwidth_automatically
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.scale_bandwidth_automatically
-    :type: bool
-
-    Get or set the auto scale bandwidth option.
-
-.. py:property:: bandwidth
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.bandwidth
-    :type: float
-
-    Get or set the bandwidth.
-
-.. py:property:: select_demodulator_automatically
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.select_demodulator_automatically
-    :type: bool
-
-    Get or set the auto select demodulator option.
-
-.. py:property:: supported_demodulators
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_demodulators
-    :type: list
-
-    Get an array of supported demodulator model names.
-
-.. py:property:: demodulator
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.demodulator
-    :type: IDemodulatorModel
-
-    Get the current demodulator model.
-
-.. py:property:: use_rain
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.use_rain
-    :type: bool
-
-    Get or set the option for computing rain loss.
-
-.. py:property:: supported_rain_outage_percent_values
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values
-    :type: list
-
-    Get an array of supported rain outage percent values.
-
-.. py:property:: rain_outage_percent
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.rain_outage_percent
-    :type: float
-
-    Get or set the rain outage percent.
-
-.. py:property:: enable_polarization
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.enable_polarization
-    :type: bool
-
-    Get or set the enable polarization option.
-
-.. py:property:: polarization
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.polarization
-    :type: IPolarization
-
-    Get the polarization.
-
-.. py:property:: track_frequency_automatically
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.track_frequency_automatically
-    :type: bool
-
-    Get or set the auto track frequency option.
-
-.. py:property:: frequency
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.frequency
-    :type: float
-
-    Get or set the frequency.
-
 .. py:property:: antenna_gain
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.antenna_gain
     :type: float
@@ -216,6 +108,60 @@ Property detail
     :type: float
 
     Get or set the antenna to LNA line loss.
+
+.. py:property:: bandwidth
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.bandwidth
+    :type: float
+
+    Get or set the bandwidth.
+
+.. py:property:: demodulator
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.demodulator
+    :type: IDemodulatorModel
+
+    Get the current demodulator model.
+
+.. py:property:: enable_filter
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.enable_filter
+    :type: bool
+
+    Get or set the flag determines whether or not to enable the Filter.
+
+.. py:property:: enable_polarization
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.enable_polarization
+    :type: bool
+
+    Get or set the enable polarization option.
+
+.. py:property:: filter
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter
+    :type: IRFFilterModel
+
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets the current filter model.
+
+.. py:property:: filter_component_linking
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the filter model component.
+
+.. py:property:: frequency
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.frequency
+    :type: float
+
+    Get or set the frequency.
+
+.. py:property:: interference
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.interference
+    :type: RFInterference
+
+    Get the radio frequency interference.
+
+.. py:property:: link_margin
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.link_margin
+    :type: LinkMargin
+
+    Get the interface for configuring the link margin computation parameters.
 
 .. py:property:: lna_gain
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.lna_gain
@@ -229,23 +175,77 @@ Property detail
 
     Get or set the LNA to receiver line loss.
 
+.. py:property:: polarization
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.polarization
+    :type: IPolarization
+
+    Get the polarization.
+
+.. py:property:: pre_demodulator_gains_losses
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_demodulator_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional pre-demod gains and losses.
+
+.. py:property:: pre_receive_gains_losses
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_receive_gains_losses
+    :type: AdditionalGainLossCollection
+
+    Get the collection of additional pre-receive gains and losses.
+
+.. py:property:: rain_outage_percent
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.rain_outage_percent
+    :type: float
+
+    Get or set the rain outage percent.
+
+.. py:property:: scale_bandwidth_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.scale_bandwidth_automatically
+    :type: bool
+
+    Get or set the auto scale bandwidth option.
+
+.. py:property:: select_demodulator_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.select_demodulator_automatically
+    :type: bool
+
+    Get or set the auto select demodulator option.
+
+.. py:property:: supported_demodulators
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_demodulators
+    :type: list
+
+    Get an array of supported demodulator model names.
+
+.. py:property:: supported_filters
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_filters
+    :type: list
+
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Gets an array of supported filter model names.
+
+.. py:property:: supported_rain_outage_percent_values
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.supported_rain_outage_percent_values
+    :type: list
+
+    Get an array of supported rain outage percent values.
+
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.system_noise_temperature
     :type: SystemNoiseTemperature
 
     Get the system noise temperature interface.
 
-.. py:property:: interference
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.interference
-    :type: RFInterference
+.. py:property:: track_frequency_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.track_frequency_automatically
+    :type: bool
 
-    Get the radio frequency interference.
+    Get or set the auto track frequency option.
 
-.. py:property:: filter_component_linking
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.filter_component_linking
-    :type: IComponentLinkEmbedControl
+.. py:property:: use_rain
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.use_rain
+    :type: bool
 
-    Get the link/embed controller for managing the filter model component.
+    Get or set the option for computing rain loss.
 
 
 Method detail
@@ -254,19 +254,23 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
 
 
-    :Returns:
 
-        :obj:`~None`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -293,13 +297,19 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.set_filter
+
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on ReceiverModelMedium instead. Sets the current filter model by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
 
 
+    :Returns:
 
-
-
-
-
+        :obj:`~None`
 
 .. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.set_polarization_type
@@ -314,16 +324,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
-
-
-
 
 
 

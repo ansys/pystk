@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.access_interval`
+              - Return an access interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.duration`
+              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.start_time`
               - Get a start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.stop_time`
               - Get a stop time. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.duration`
-              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.access_interval`
-              - Return an access interval.
 
 
 
@@ -42,6 +42,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: access_interval
+    :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.access_interval
+    :type: ITimeToolTimeIntervalSmartInterval
+
+    Return an access interval.
+
+.. py:property:: duration
+    :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.duration
+    :type: typing.Any
+
+    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
+
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.start_time
     :type: TimePeriodValue
@@ -53,17 +65,5 @@ Property detail
     :type: TimePeriodValue
 
     Get a stop time. Uses DateFormat Dimension.
-
-.. py:property:: duration
-    :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.duration
-    :type: typing.Any
-
-    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
-
-.. py:property:: access_interval
-    :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.access_interval
-    :type: ITimeToolTimeIntervalSmartInterval
-
-    Return an access interval.
 
 

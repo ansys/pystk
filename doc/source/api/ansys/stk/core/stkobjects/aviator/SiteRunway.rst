@@ -35,20 +35,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.altitude`
               - Get or set the runway altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.latitude`
-              - Get or set the runway latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.longitude`
-              - Get or set the runway longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.length`
-              - Get or set the length of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.altitude_reference`
               - Get or set the altitude reference for the runway.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.low_end_heading`
-              - Get or set the low end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.high_end_heading`
               - Get or set the high end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.is_magnetic`
               - Opt whether to use a magnetic heading for the runway heading.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.latitude`
+              - Get or set the runway latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.length`
+              - Get or set the length of the runway.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.longitude`
+              - Get or set the runway longitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRunway.low_end_heading`
+              - Get or set the low end heading of the runway.
 
 
 
@@ -115,35 +115,11 @@ Property detail
 
     Get or set the runway altitude.
 
-.. py:property:: latitude
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.latitude
-    :type: typing.Any
-
-    Get or set the runway latitude.
-
-.. py:property:: longitude
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.longitude
-    :type: typing.Any
-
-    Get or set the runway longitude.
-
-.. py:property:: length
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.length
-    :type: float
-
-    Get or set the length of the runway.
-
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.altitude_reference
     :type: AGLMSL
 
     Get or set the altitude reference for the runway.
-
-.. py:property:: low_end_heading
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.low_end_heading
-    :type: typing.Any
-
-    Get or set the low end heading of the runway.
 
 .. py:property:: high_end_heading
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.high_end_heading
@@ -157,25 +133,33 @@ Property detail
 
     Opt whether to use a magnetic heading for the runway heading.
 
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.latitude
+    :type: typing.Any
+
+    Get or set the runway latitude.
+
+.. py:property:: length
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.length
+    :type: float
+
+    Get or set the length of the runway.
+
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.longitude
+    :type: typing.Any
+
+    Get or set the runway longitude.
+
+.. py:property:: low_end_heading
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.low_end_heading
+    :type: typing.Any
+
+    Get or set the low end heading of the runway.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .. py:method:: add_to_catalog(self, overwrite: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.add_to_catalog
@@ -190,6 +174,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 
 .. py:method:: copy_from_catalog(self, runway: ICatalogRunway) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRunway.copy_from_catalog
@@ -213,4 +201,16 @@ Method detail
     :Returns:
 
         :obj:`~ISite`
+
+
+
+
+
+
+
+
+
+
+
+
 

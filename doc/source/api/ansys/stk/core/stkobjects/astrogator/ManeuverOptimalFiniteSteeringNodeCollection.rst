@@ -61,6 +61,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: item(self, index: int) -> ManeuverOptimalFiniteSteeringNodeElement
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.item
 
@@ -74,6 +75,5 @@ Method detail
     :Returns:
 
         :obj:`~ManeuverOptimalFiniteSteeringNodeElement`
-
 
 

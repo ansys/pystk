@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.mainlobe_gain`
-              - Get or set the main-lobe gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.efficiency`
-              - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.diameter`
               - Get or set the diameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.efficiency`
+              - Get or set the efficiency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.mainlobe_gain`
+              - Get or set the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUF1245.polarization_advantage`
               - Get or set the option for enabling polarization advantage.
 
@@ -42,11 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: mainlobe_gain
-    :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.mainlobe_gain
+.. py:property:: diameter
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.diameter
     :type: float
 
-    Get or set the main-lobe gain.
+    Get or set the diameter.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.efficiency
@@ -54,11 +54,11 @@ Property detail
 
     Get or set the efficiency.
 
-.. py:property:: diameter
-    :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.diameter
+.. py:property:: mainlobe_gain
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.mainlobe_gain
     :type: float
 
-    Get or set the diameter.
+    Get or set the main-lobe gain.
 
 .. py:property:: polarization_advantage
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUF1245.polarization_advantage

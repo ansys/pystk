@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_as_procedure`
-              - Get the procedure interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.copy_procedures`
+              - Copy the airway route as a set of procedures to the clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_airway_names`
               - Get the a list of names of the available airways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_as_procedure`
+              - Get the procedure interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_sequences`
               - Get a list of sequence options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_waypoints`
               - Get a list of available waypoints for the airway.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.copy_procedures`
-              - Copy the airway route as a set of procedures to the clipboard.
 
     .. tab-item:: Properties
 
@@ -37,22 +37,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.altitude_options`
-              - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_options`
-              - Get the enroute options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_cruise_airspeed_options`
-              - Get the enroute cruise airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.router`
-              - Get or set the router used to provide available airways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.airway_id`
               - Get or set the airway ID.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence`
-              - Get or set the direction the aircraft will fly the route.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.altitude_options`
+              - Get the altitude options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.entry_id`
               - Get or set the ID of the entry waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.exit_id`
               - Get or set the ID of the exit waypoint.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.router`
+              - Get or set the router used to provide available airways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence`
+              - Get or set the direction the aircraft will fly the route.
 
 
 
@@ -67,17 +67,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: airway_id
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.airway_id
+    :type: str
+
+    Get or set the airway ID.
+
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.altitude_options
     :type: AltitudeMSLOptions
 
     Get the altitude options.
-
-.. py:property:: enroute_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_options
-    :type: EnrouteOptions
-
-    Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_cruise_airspeed_options
@@ -85,23 +85,11 @@ Property detail
 
     Get the enroute cruise airspeed options.
 
-.. py:property:: router
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.router
-    :type: str
+.. py:property:: enroute_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_options
+    :type: EnrouteOptions
 
-    Get or set the router used to provide available airways.
-
-.. py:property:: airway_id
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.airway_id
-    :type: str
-
-    Get or set the airway ID.
-
-.. py:property:: sequence
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence
-    :type: str
-
-    Get or set the direction the aircraft will fly the route.
+    Get the enroute options.
 
 .. py:property:: entry_id
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.entry_id
@@ -115,19 +103,33 @@ Property detail
 
     Get or set the ID of the exit waypoint.
 
+.. py:property:: router
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.router
+    :type: str
+
+    Get or set the router used to provide available airways.
+
+.. py:property:: sequence
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence
+    :type: str
+
+    Get or set the direction the aircraft will fly the route.
+
 
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> IProcedure
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_as_procedure
 
-    Get the procedure interface.
+
+
+.. py:method:: copy_procedures(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.copy_procedures
+
+    Copy the airway route as a set of procedures to the clipboard.
 
     :Returns:
 
-        :obj:`~IProcedure`
-
+        :obj:`~None`
 
 
 
@@ -144,7 +146,14 @@ Method detail
 
         :obj:`~list`
 
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_as_procedure
 
+    Get the procedure interface.
+
+    :Returns:
+
+        :obj:`~IProcedure`
 
 .. py:method:: get_sequences(self) -> list
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_sequences
@@ -155,10 +164,6 @@ Method detail
 
         :obj:`~list`
 
-
-
-
-
 .. py:method:: get_waypoints(self) -> list
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.get_waypoints
 
@@ -168,12 +173,7 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: copy_procedures(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.copy_procedures
 
-    Copy the airway route as a set of procedures to the clipboard.
 
-    :Returns:
 
-        :obj:`~None`
 

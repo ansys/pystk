@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.stk_object_path`
-              - Get or set the scene contributor path.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.material`
-              - Get or set the scene contributor material.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.central_body_name`
               - Get the tileset central body name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.focused_ray_density`
               - Get or set the target focused ray density.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.material`
+              - Get or set the scene contributor material.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor.stk_object_path`
+              - Get or set the scene contributor path.
 
 
 
@@ -40,18 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: stk_object_path
-    :canonical: ansys.stk.core.stkrfchannelmodeler.SceneContributor.stk_object_path
-    :type: str
-
-    Get or set the scene contributor path.
-
-.. py:property:: material
-    :canonical: ansys.stk.core.stkrfchannelmodeler.SceneContributor.material
-    :type: str
-
-    Get or set the scene contributor material.
-
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkrfchannelmodeler.SceneContributor.central_body_name
     :type: str
@@ -63,5 +51,17 @@ Property detail
     :type: float
 
     Get or set the target focused ray density.
+
+.. py:property:: material
+    :canonical: ansys.stk.core.stkrfchannelmodeler.SceneContributor.material
+    :type: str
+
+    Get or set the scene contributor material.
+
+.. py:property:: stk_object_path
+    :canonical: ansys.stk.core.stkrfchannelmodeler.SceneContributor.stk_object_path
+    :type: str
+
+    Get or set the scene contributor path.
 
 

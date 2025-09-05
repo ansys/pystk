@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.enable_control_parameter`
-              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.enable_control_parameter`
+              - Enable the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -35,22 +35,22 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name`
               - Get or set the calculation object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available`
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name`
               - Get or set the coordinate system of the input state.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x`
-              - Get or set the x position component. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y`
-              - Get or set the y position component. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z`
-              - Get or set the z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vx`
               - Get or set the x velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vy`
               - Get or set the y velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vz`
               - Get or set the z velocity component. Uses Rate Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available`
-              - Return whether or not the control parameters can be set.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x`
+              - Get or set the x position component. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y`
+              - Get or set the y position component. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z`
+              - Get or set the z position component. Uses Distance Dimension.
 
 
 
@@ -71,29 +71,17 @@ Property detail
 
     Get or set the calculation object.
 
+.. py:property:: control_parameters_available
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available
+    :type: bool
+
+    Return whether or not the control parameters can be set.
+
 .. py:property:: input_coord_system_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name
     :type: str
 
     Get or set the coordinate system of the input state.
-
-.. py:property:: x
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x
-    :type: typing.Any
-
-    Get or set the x position component. Uses Distance Dimension.
-
-.. py:property:: y
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y
-    :type: typing.Any
-
-    Get or set the y position component. Uses Distance Dimension.
-
-.. py:property:: z
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z
-    :type: typing.Any
-
-    Get or set the z position component. Uses Distance Dimension.
 
 .. py:property:: vx
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vx
@@ -113,11 +101,23 @@ Property detail
 
     Get or set the z velocity component. Uses Rate Dimension.
 
-.. py:property:: control_parameters_available
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available
-    :type: bool
+.. py:property:: x
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x
+    :type: typing.Any
 
-    Return whether or not the control parameters can be set.
+    Get or set the x position component. Uses Distance Dimension.
+
+.. py:property:: y
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y
+    :type: typing.Any
+
+    Get or set the y position component. Uses Distance Dimension.
+
+.. py:property:: z
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z
+    :type: typing.Any
+
+    Get or set the z position component. Uses Distance Dimension.
 
 
 Method detail
@@ -125,33 +125,6 @@ Method detail
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.. py:method:: enable_control_parameter(self, param: ControlOrbitStateValue) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.enable_control_parameter
-
-    Enable the specified control parameter.
-
-    :Parameters:
-
-        **param** : :obj:`~ControlOrbitStateValue`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: disable_control_parameter(self, param: ControlOrbitStateValue) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.disable_control_parameter
@@ -167,6 +140,22 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: enable_control_parameter(self, param: ControlOrbitStateValue) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.enable_control_parameter
+
+    Enable the specified control parameter.
+
+    :Parameters:
+
+        **param** : :obj:`~ControlOrbitStateValue`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
 .. py:method:: is_control_parameter_enabled(self, param: ControlOrbitStateValue) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.is_control_parameter_enabled
 
@@ -180,5 +169,16 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+
+
+
+
+
+
+
 
 

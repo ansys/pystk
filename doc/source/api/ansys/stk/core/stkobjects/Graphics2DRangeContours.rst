@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_graphics`
-              - Display range contours representing the various regions of the surface that can see an object at the specified level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours`
-              - Display the range contours as a filled polygon on the surface of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units`
+              - Get the available units for the LabelUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style`
               - Get or set the style in which the range contours polygon is filled. A member of the FillStyle enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_translucency`
+              - Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units`
+              - Get or set the display units on the 2d map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes`
               - The collection of level attributes defining the way in which the range contours are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.number_of_decimal_digits`
               - Number of decimal digits.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units`
-              - Get or set the display units on the 2d map.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units`
-              - Get the available units for the LabelUnit.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_translucency`
-              - Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours`
+              - Display the range contours as a filled polygon on the surface of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_graphics`
+              - Display range contours representing the various regions of the surface that can see an object at the specified level.
 
 
 
@@ -69,23 +69,29 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.show_graphics
-    :type: bool
+.. py:property:: available_label_units
+    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units
+    :type: list
 
-    Display range contours representing the various regions of the surface that can see an object at the specified level.
-
-.. py:property:: show_filled_contours
-    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours
-    :type: bool
-
-    Display the range contours as a filled polygon on the surface of the central body.
+    Get the available units for the LabelUnit.
 
 .. py:property:: fill_style
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style
     :type: FillStyle
 
     Get or set the style in which the range contours polygon is filled. A member of the FillStyle enumeration.
+
+.. py:property:: fill_translucency
+    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_translucency
+    :type: float
+
+    Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
+
+.. py:property:: label_units
+    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units
+    :type: str
+
+    Get or set the display units on the 2d map.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes
@@ -99,22 +105,16 @@ Property detail
 
     Number of decimal digits.
 
-.. py:property:: label_units
-    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units
-    :type: str
+.. py:property:: show_filled_contours
+    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours
+    :type: bool
 
-    Get or set the display units on the 2d map.
+    Display the range contours as a filled polygon on the surface of the central body.
 
-.. py:property:: available_label_units
-    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units
-    :type: list
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.show_graphics
+    :type: bool
 
-    Get the available units for the LabelUnit.
-
-.. py:property:: fill_translucency
-    :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_translucency
-    :type: float
-
-    Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
+    Display range contours representing the various regions of the surface that can see an object at the specified level.
 
 

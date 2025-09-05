@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageLatLonBox.longitude_span`
-              - Longitude span.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageLatLonBox.latitude_span`
-              - Latitude span.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageLatLonBox.center`
               - Center object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageLatLonBox.latitude_span`
+              - Latitude span.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageLatLonBox.longitude_span`
+              - Longitude span.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: longitude_span
-    :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.longitude_span
-    :type: float
+.. py:property:: center
+    :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.center
+    :type: ISTKObject
 
-    Longitude span.
+    Center object.
 
 .. py:property:: latitude_span
     :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.latitude_span
@@ -50,10 +50,10 @@ Property detail
 
     Latitude span.
 
-.. py:property:: center
-    :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.center
-    :type: ISTKObject
+.. py:property:: longitude_span
+    :canonical: ansys.stk.core.stkobjects.CoverageLatLonBox.longitude_span
+    :type: float
 
-    Center object.
+    Longitude span.
 
 

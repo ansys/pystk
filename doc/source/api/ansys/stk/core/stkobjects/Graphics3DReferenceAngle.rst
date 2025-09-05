@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_angle_value`
-              - If selected, select a unit from the drop-down menu. Only available for angles.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAngle.angle_unit_abbreviation`
               - The angle unit abbreviation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_angle_value`
+              - If selected, select a unit from the drop-down menu. Only available for angles.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_dihedral_angle_supporting_arcs`
               - Select to show dihedral angle supporting arcs. Only available for angles.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_angle_value
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_angle_value
-    :type: bool
-
-    If selected, select a unit from the drop-down menu. Only available for angles.
-
 .. py:property:: angle_unit_abbreviation
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAngle.angle_unit_abbreviation
     :type: str
 
     The angle unit abbreviation.
+
+.. py:property:: show_angle_value
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_angle_value
+    :type: bool
+
+    If selected, select a unit from the drop-down menu. Only available for angles.
 
 .. py:property:: show_dihedral_angle_supporting_arcs
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAngle.show_dihedral_angle_supporting_arcs

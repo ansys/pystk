@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.add_segments_from_file`
+              - Add multiple segments from the array returned in GetSegsFromFile.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.get_ssc_numbers_from_file`
               - Return an array of SSC Numbers from the file selected.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.get_segments_from_file`
               - Return an array of available segments from a file using the specified SSC Number.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.add_segments_from_file`
-              - Add multiple segments from the array returned in GetSegsFromFile.
 
     .. tab-item:: Properties
 
@@ -59,6 +59,20 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: add_segments_from_file(self, segments: list) -> None
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.add_segments_from_file
+
+    Add multiple segments from the array returned in GetSegsFromFile.
+
+    :Parameters:
+
+        **segments** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 .. py:method:: get_ssc_numbers_from_file(self) -> list
@@ -83,18 +97,4 @@ Method detail
     :Returns:
 
         :obj:`~list`
-
-.. py:method:: add_segments_from_file(self, segments: list) -> None
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.add_segments_from_file
-
-    Add multiple segments from the array returned in GetSegsFromFile.
-
-    :Parameters:
-
-        **segments** : :obj:`~list`
-
-
-    :Returns:
-
-        :obj:`~None`
 

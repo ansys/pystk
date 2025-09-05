@@ -22,14 +22,14 @@ Overview
               - Specify whether planet properties set for 2D Graphics are used in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_inertial_position`
               - Display the position of the planet as a point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_sub_planet_point`
-              - Display the location at which the planet is overhead on the globe.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_orbit`
+              - Display the planet's orbit around its parent object in the 3D graphics window as defined in 2D Graphics for that planet. For instance, the Moon orbits around the Sun.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_position_label`
               - Display a label at the inertial position of the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_sub_planet_label`
               - Display a label on the globe at the location at which the planet is overhead.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_orbit`
-              - Display the planet's orbit around its parent object in the 3D graphics window as defined in 2D Graphics for that planet. For instance, the Moon orbits around the Sun.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetGraphics3D.show_sub_planet_point`
+              - Display the location at which the planet is overhead on the globe.
 
 
 
@@ -56,11 +56,11 @@ Property detail
 
     Display the position of the planet as a point.
 
-.. py:property:: show_sub_planet_point
-    :canonical: ansys.stk.core.stkobjects.PlanetGraphics3D.show_sub_planet_point
+.. py:property:: show_orbit
+    :canonical: ansys.stk.core.stkobjects.PlanetGraphics3D.show_orbit
     :type: bool
 
-    Display the location at which the planet is overhead on the globe.
+    Display the planet's orbit around its parent object in the 3D graphics window as defined in 2D Graphics for that planet. For instance, the Moon orbits around the Sun.
 
 .. py:property:: show_position_label
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics3D.show_position_label
@@ -74,10 +74,10 @@ Property detail
 
     Display a label on the globe at the location at which the planet is overhead.
 
-.. py:property:: show_orbit
-    :canonical: ansys.stk.core.stkobjects.PlanetGraphics3D.show_orbit
+.. py:property:: show_sub_planet_point
+    :canonical: ansys.stk.core.stkobjects.PlanetGraphics3D.show_sub_planet_point
     :type: bool
 
-    Display the planet's orbit around its parent object in the 3D graphics window as defined in 2D Graphics for that planet. For instance, the Moon orbits around the Sun.
+    Display the location at which the planet is overhead on the globe.
 
 

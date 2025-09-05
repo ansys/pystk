@@ -54,7 +54,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: evaluate(self, epoch: typing.Any) -> CalculationToolConditionSetEvaluateResult
     :canonical: ansys.stk.core.analysis_workbench.ICalculationToolConditionSet.evaluate
 
@@ -82,4 +81,5 @@ Method detail
     :Returns:
 
         :obj:`~CalculationToolConditionSetEvaluateWithRateResult`
+
 

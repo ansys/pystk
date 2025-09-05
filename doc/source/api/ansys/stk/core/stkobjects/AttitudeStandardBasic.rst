@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.set_profile_type`
-              - Set basic attitude profile type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.is_profile_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.set_profile_type`
+              - Set basic attitude profile type.
 
     .. tab-item:: Properties
 
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type`
-              - Get basic attitude profile type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile`
               - Return the profile interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type`
+              - Get basic attitude profile type.
 
 
 
@@ -49,11 +49,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: profile_type
-    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type
-    :type: AttitudeProfile
+.. py:property:: profile
+    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile
+    :type: IVehicleAttitudeProfile
 
-    Get basic attitude profile type.
+    Return the profile interface.
 
 .. py:property:: profile_supported_types
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_supported_types
@@ -61,30 +61,15 @@ Property detail
 
     Return an array of valid choices.
 
-.. py:property:: profile
-    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile
-    :type: IVehicleAttitudeProfile
+.. py:property:: profile_type
+    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type
+    :type: AttitudeProfile
 
-    Return the profile interface.
+    Get basic attitude profile type.
 
 
 Method detail
 -------------
-
-
-.. py:method:: set_profile_type(self, profile: AttitudeProfile) -> None
-    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.set_profile_type
-
-    Set basic attitude profile type.
-
-    :Parameters:
-
-        **profile** : :obj:`~AttitudeProfile`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: is_profile_type_supported(self, profile: AttitudeProfile) -> bool
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.is_profile_type_supported
@@ -101,4 +86,19 @@ Method detail
         :obj:`~bool`
 
 
+
+
+.. py:method:: set_profile_type(self, profile: AttitudeProfile) -> None
+    :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.set_profile_type
+
+    Set basic attitude profile type.
+
+    :Parameters:
+
+        **profile** : :obj:`~AttitudeProfile`
+
+
+    :Returns:
+
+        :obj:`~None`
 

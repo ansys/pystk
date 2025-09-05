@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.final_flight_path_angle`
               - Get or set the pitch angle of the flight path at the end of the procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.min_enroute_flight_path_angle`
-              - Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.max_enroute_flight_path_angle`
               - Get or set the maximum pitch angle of the flight path during enroute segments of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.max_vert_plane_radius_factor`
               - Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.min_enroute_flight_path_angle`
+              - Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
 
 
 
@@ -46,12 +46,6 @@ Property detail
 
     Get or set the pitch angle of the flight path at the end of the procedure.
 
-.. py:property:: min_enroute_flight_path_angle
-    :canonical: ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.min_enroute_flight_path_angle
-    :type: typing.Any
-
-    Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
-
 .. py:property:: max_enroute_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.max_enroute_flight_path_angle
     :type: typing.Any
@@ -63,5 +57,11 @@ Property detail
     :type: float
 
     Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+
+.. py:property:: min_enroute_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions.min_enroute_flight_path_angle
+    :type: typing.Any
+
+    Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
 
 

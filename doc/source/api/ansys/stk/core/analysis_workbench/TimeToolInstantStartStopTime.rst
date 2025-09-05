@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.use_start`
-              - Indicate whether to use start (true) or stop (false).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.reference_interval`
               - The reference interval.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.use_start`
+              - Indicate whether to use start (true) or stop (false).
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_start
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.use_start
-    :type: bool
-
-    Indicate whether to use start (true) or stop (false).
-
 .. py:property:: reference_interval
     :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.reference_interval
     :type: ITimeToolTimeInterval
 
     The reference interval.
+
+.. py:property:: use_start
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolInstantStartStopTime.use_start
+    :type: bool
+
+    Indicate whether to use start (true) or stop (false).
 
 

@@ -18,10 +18,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.lead_duration`
-              - How long before the maneuver starts the maneuver attitude. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.trail_duration`
-              - How long to maintain that attitude after the maneuver. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.body_axis`
               - Whether the engine acceleration (the direction opposite the engine's exhaust) is aligned with positive or negative X, Y or Z body axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.constraint_sign`
@@ -30,6 +26,10 @@ Overview
               - Constraint Vector - the vector toward which this body vector is constrained.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.custom_function`
               - Get or set the attitude definition to use for other STK functions.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.lead_duration`
+              - How long before the maneuver starts the maneuver attitude. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.trail_duration`
+              - How long to maintain that attitude after the maneuver. Uses Time Dimension.
 
 
 Import detail
@@ -42,18 +42,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: lead_duration
-    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.lead_duration
-    :type: float
-
-    How long before the maneuver starts the maneuver attitude. Uses Time Dimension.
-
-.. py:property:: trail_duration
-    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.trail_duration
-    :type: float
-
-    How long to maintain that attitude after the maneuver. Uses Time Dimension.
 
 .. py:property:: body_axis
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.body_axis
@@ -78,5 +66,17 @@ Property detail
     :type: CustomFunction
 
     Get or set the attitude definition to use for other STK functions.
+
+.. py:property:: lead_duration
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.lead_duration
+    :type: float
+
+    How long before the maneuver starts the maneuver attitude. Uses Time Dimension.
+
+.. py:property:: trail_duration
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.trail_duration
+    :type: float
+
+    How long to maintain that attitude after the maneuver. Uses Time Dimension.
 
 

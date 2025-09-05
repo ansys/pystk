@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.latitude`
+              - Latitude of the latitude line. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.start_longitude`
               - Longitude at which the latitude line begins. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.stop_longitude`
               - Longitude at which the latitude line ends. Uses Longitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.latitude`
-              - Latitude of the latitude line. Uses Latitude Dimension.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.latitude
+    :type: typing.Any
+
+    Latitude of the latitude line. Uses Latitude Dimension.
+
 .. py:property:: start_longitude
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.start_longitude
     :type: typing.Any
@@ -51,11 +57,5 @@ Property detail
     :type: typing.Any
 
     Longitude at which the latitude line ends. Uses Longitude Dimension.
-
-.. py:property:: latitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLine.latitude
-    :type: typing.Any
-
-    Latitude of the latitude line. Uses Latitude Dimension.
 
 

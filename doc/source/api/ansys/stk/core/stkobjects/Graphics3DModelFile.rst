@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelFile.filename`
-              - Path and filename of the model file.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelFile.file_path`
               - Absolute path and filename of the model file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelFile.filename`
+              - Path and filename of the model file.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelFile.filename
-    :type: str
-
-    Path and filename of the model file.
-
 .. py:property:: file_path
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelFile.file_path
     :type: str
 
     Absolute path and filename of the model file.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelFile.filename
+    :type: str
+
+    Path and filename of the model file.
 
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeLevel.value`
-              - Get the volume level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeLevel.color`
               - Get or set the volume level color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeLevel.value`
+              - Get the volume level value.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: value
-    :canonical: ansys.stk.core.stkobjects.AntennaVolumeLevel.value
-    :type: float
-
-    Get the volume level value.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeLevel.color
     :type: Color
 
     Get or set the volume level color.
+
+.. py:property:: value
+    :canonical: ansys.stk.core.stkobjects.AntennaVolumeLevel.value
+    :type: float
+
+    Get the volume level value.
 
 

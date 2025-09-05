@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.level`
-              - Get or set the contour level for which graphics properties are being defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.color`
               - Get or set the color assigned to the given contour level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.level`
+              - Get or set the contour level for which graphics properties are being defined.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: level
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.level
-    :type: typing.Any
-
-    Get or set the contour level for which graphics properties are being defined.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.color
     :type: Color
 
     Get or set the color assigned to the given contour level.
+
+.. py:property:: level
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement.level
+    :type: typing.Any
+
+    Get or set the contour level for which graphics properties are being defined.
 
 

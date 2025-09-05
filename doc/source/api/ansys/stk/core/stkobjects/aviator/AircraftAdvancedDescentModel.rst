@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_descent_override_airspeed`
-              - Set the override airspeed and airspeed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_airspeed_limit`
-              - Set the airspeed limit and airspeed type below the altitude threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_airspeed_limit`
+              - Set the airspeed limit and airspeed type below the altitude threshold.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_descent_override_airspeed`
+              - Set the override airspeed and airspeed type.
 
     .. tab-item:: Properties
 
@@ -33,26 +33,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit`
+              - Get the airsepeed limit below the altitude threshold.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit_type`
+              - Get the airspeed limit type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.altitude_limit`
+              - Get or set the altitude threshold, below which the airspeed limit will be applied.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.compute_delta_altitude`
+              - Get or set the maximum change in altitude in a computed segment before the data is sampled again.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed`
+              - Get the override airsepeed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed_type`
+              - Get the override airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_speed_type`
               - Get or set the mode to calculate the aircraft's airspeed while descending .
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_stall_speed_ratio`
               - Get or set the ratio of the airspeed upon leaving the ground to the stall speed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed_type`
-              - Get the override airspeed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed`
-              - Get the override airsepeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.speedbrakes`
               - Get or set the extension of the speedbrakes during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.use_airspeed_limit`
               - Opt to limit the airspeed below a specified altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.altitude_limit`
-              - Get or set the altitude threshold, below which the airspeed limit will be applied.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit_type`
-              - Get the airspeed limit type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit`
-              - Get the airsepeed limit below the altitude threshold.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.compute_delta_altitude`
-              - Get or set the maximum change in altitude in a computed segment before the data is sampled again.
 
 
 
@@ -67,6 +67,42 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: airspeed_limit
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit
+    :type: float
+
+    Get the airsepeed limit below the altitude threshold.
+
+.. py:property:: airspeed_limit_type
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit_type
+    :type: AirspeedType
+
+    Get the airspeed limit type.
+
+.. py:property:: altitude_limit
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.altitude_limit
+    :type: float
+
+    Get or set the altitude threshold, below which the airspeed limit will be applied.
+
+.. py:property:: compute_delta_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.compute_delta_altitude
+    :type: float
+
+    Get or set the maximum change in altitude in a computed segment before the data is sampled again.
+
+.. py:property:: descent_override_airspeed
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed
+    :type: float
+
+    Get the override airsepeed.
+
+.. py:property:: descent_override_airspeed_type
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed_type
+    :type: AirspeedType
+
+    Get the override airspeed type.
+
 .. py:property:: descent_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_speed_type
     :type: DescentSpeedType
@@ -78,18 +114,6 @@ Property detail
     :type: float
 
     Get or set the ratio of the airspeed upon leaving the ground to the stall speed.
-
-.. py:property:: descent_override_airspeed_type
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed_type
-    :type: AirspeedType
-
-    Get the override airspeed type.
-
-.. py:property:: descent_override_airspeed
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.descent_override_airspeed
-    :type: float
-
-    Get the override airsepeed.
 
 .. py:property:: speedbrakes
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.speedbrakes
@@ -103,30 +127,6 @@ Property detail
 
     Opt to limit the airspeed below a specified altitude.
 
-.. py:property:: altitude_limit
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.altitude_limit
-    :type: float
-
-    Get or set the altitude threshold, below which the airspeed limit will be applied.
-
-.. py:property:: airspeed_limit_type
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit_type
-    :type: AirspeedType
-
-    Get the airspeed limit type.
-
-.. py:property:: airspeed_limit
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.airspeed_limit
-    :type: float
-
-    Get the airsepeed limit below the altitude threshold.
-
-.. py:property:: compute_delta_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.compute_delta_altitude
-    :type: float
-
-    Get or set the maximum change in altitude in a computed segment before the data is sampled again.
-
 
 Method detail
 -------------
@@ -136,6 +136,37 @@ Method detail
 
 
 
+
+
+
+
+
+
+
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.get_as_catalog_item
+
+    Get the catalog item interface for this object.
+
+    :Returns:
+
+        :obj:`~ICatalogItem`
+
+.. py:method:: set_airspeed_limit(self, airspeed_type: AirspeedType, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_airspeed_limit
+
+    Set the airspeed limit and airspeed type below the altitude threshold.
+
+    :Parameters:
+
+        **airspeed_type** : :obj:`~AirspeedType`
+
+        **airspeed** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: set_descent_override_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_descent_override_airspeed
@@ -156,35 +187,4 @@ Method detail
 
 
 
-
-
-
-
-
-.. py:method:: set_airspeed_limit(self, airspeed_type: AirspeedType, airspeed: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.set_airspeed_limit
-
-    Set the airspeed limit and airspeed type below the altitude threshold.
-
-    :Parameters:
-
-        **airspeed_type** : :obj:`~AirspeedType`
-
-        **airspeed** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
-.. py:method:: get_as_catalog_item(self) -> ICatalogItem
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel.get_as_catalog_item
-
-    Get the catalog item interface for this object.
-
-    :Returns:
-
-        :obj:`~ICatalogItem`
 

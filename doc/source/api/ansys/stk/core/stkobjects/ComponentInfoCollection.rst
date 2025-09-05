@@ -18,20 +18,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.item`
-              - Allow the user to iterate through the components.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.get_folder`
-              - Return the specified folder.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.remove`
-              - Remove the named component from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.duplicate_component`
               - Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.load_component`
-              - Load a component from a specified file (full path) into the current folder and then returns the loaded component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.get_folder`
+              - Return the specified folder.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.get_item_by_index`
               - Retrieve component info from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.get_item_by_name`
               - Retrieve component info from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.item`
+              - Allow the user to iterate through the components.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.load_component`
+              - Load a component from a specified file (full path) into the current folder and then returns the loaded component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.remove`
+              - Remove the named component from the collection.
 
     .. tab-item:: Properties
 
@@ -41,12 +41,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection._new_enum`
               - Enumerates through the components.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders`
+              - Return an array of Folder names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.count`
               - Get the number of components available.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_count`
               - Get the number of folders available.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders`
-              - Return an array of Folder names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name`
               - Get the current folder's name.
 
@@ -69,6 +69,12 @@ Property detail
 
     Enumerates through the components.
 
+.. py:property:: available_folders
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders
+    :type: list
+
+    Return an array of Folder names.
+
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.count
     :type: int
@@ -81,12 +87,6 @@ Property detail
 
     Get the number of folders available.
 
-.. py:property:: available_folders
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders
-    :type: list
-
-    Return an array of Folder names.
-
 .. py:property:: folder_name
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name
     :type: str
@@ -97,14 +97,18 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.item
 
-    Allow the user to iterate through the components.
+
+.. py:method:: duplicate_component(self, index_or_component_name: typing.Any, new_component_name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.duplicate_component
+
+    Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
 
     :Parameters:
 
-        **index_or_name** : :obj:`~typing.Any`
+        **index_or_component_name** : :obj:`~typing.Any`
+
+        **new_component_name** : :obj:`~str`
 
 
     :Returns:
@@ -126,53 +130,6 @@ Method detail
     :Returns:
 
         :obj:`~ComponentInfoCollection`
-
-
-
-
-.. py:method:: remove(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.remove
-
-    Remove the named component from the collection.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: duplicate_component(self, index_or_component_name: typing.Any, new_component_name: str) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.duplicate_component
-
-    Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
-
-    :Parameters:
-
-        **index_or_component_name** : :obj:`~typing.Any`
-
-        **new_component_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
-
-.. py:method:: load_component(self, file_name: str) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.load_component
-
-    Load a component from a specified file (full path) into the current folder and then returns the loaded component.
-
-    :Parameters:
-
-        **file_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
 
 .. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.get_item_by_index
@@ -201,4 +158,47 @@ Method detail
     :Returns:
 
         :obj:`~IComponentInfo`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.item
+
+    Allow the user to iterate through the components.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: load_component(self, file_name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.load_component
+
+    Load a component from a specified file (full path) into the current folder and then returns the loaded component.
+
+    :Parameters:
+
+        **file_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: remove(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.remove
+
+    Remove the named component from the collection.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

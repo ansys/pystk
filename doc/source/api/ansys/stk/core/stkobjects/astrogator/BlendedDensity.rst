@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range`
-              - Get or set the blending range (distance dimension), begins at lower bound of upper model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name`
               - Return the name of the embedded nominal atmospheric model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range`
+              - Get or set the blending range (distance dimension), begins at lower bound of upper model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name`
               - Return the name of the embedded low altitude atmospheric model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude`
-              - True if using approximate altitude formula (enforced on embedded models).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atmosphere_model`
               - Get the lowest valid altitude of the upper atmospheric density model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude`
+              - True if using approximate altitude formula (enforced on embedded models).
 
 
 
@@ -55,17 +55,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: density_blending_altitude_range
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range
-    :type: float
-
-    Get or set the blending range (distance dimension), begins at lower bound of upper model.
-
 .. py:property:: atmos_density_model_name
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name
     :type: str
 
     Return the name of the embedded nominal atmospheric model.
+
+.. py:property:: density_blending_altitude_range
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range
+    :type: float
+
+    Get or set the blending range (distance dimension), begins at lower bound of upper model.
 
 .. py:property:: low_altitude_atmosphere_density_model_name
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name
@@ -73,17 +73,17 @@ Property detail
 
     Return the name of the embedded low altitude atmospheric model.
 
-.. py:property:: use_approx_altitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude
-    :type: bool
-
-    True if using approximate altitude formula (enforced on embedded models).
-
 .. py:property:: lower_bound_upper_atmosphere_model
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atmosphere_model
     :type: float
 
     Get the lowest valid altitude of the upper atmospheric density model.
+
+.. py:property:: use_approx_altitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude
+    :type: bool
+
+    True if using approximate altitude formula (enforced on embedded models).
 
 
 Method detail
@@ -103,6 +103,9 @@ Method detail
 
         :obj:`~None`
 
+
+
+
 .. py:method:: low_altitude_atmosphere_density_model(self, value: IComponentInfo) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model
 
@@ -116,9 +119,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
 
 
 

@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_graphics`
-              - Opt whether to display elevation angle contours.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_filled_cones`
-              - Opt whether to display elevation angle contours as filled cones in space.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.translucency`
-              - Translucency of elevation contour cone. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.fill`
               - Opt whether to display elevation angle contours as a filled polygon on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.fill_translucency`
               - Translucency of the filled polygon. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_filled_cones`
+              - Opt whether to display elevation angle contours as filled cones in space.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_graphics`
+              - Opt whether to display elevation angle contours.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.translucency`
+              - Translucency of elevation contour cone. Dimensionless.
 
 
 
@@ -42,24 +42,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_graphics
-    :type: bool
-
-    Opt whether to display elevation angle contours.
-
-.. py:property:: show_filled_cones
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_filled_cones
-    :type: bool
-
-    Opt whether to display elevation angle contours as filled cones in space.
-
-.. py:property:: translucency
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.translucency
-    :type: float
-
-    Translucency of elevation contour cone. Dimensionless.
-
 .. py:property:: fill
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.fill
     :type: bool
@@ -71,5 +53,23 @@ Property detail
     :type: float
 
     Translucency of the filled polygon. Dimensionless.
+
+.. py:property:: show_filled_cones
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_filled_cones
+    :type: bool
+
+    Opt whether to display elevation angle contours as filled cones in space.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.show_graphics
+    :type: bool
+
+    Opt whether to display elevation angle contours.
+
+.. py:property:: translucency
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DElevationContours.translucency
+    :type: float
+
+    Translucency of elevation contour cone. Dimensionless.
 
 

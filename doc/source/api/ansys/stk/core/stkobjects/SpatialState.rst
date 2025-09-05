@@ -29,24 +29,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_position`
-              - Return a position of the vehicle in central body fixed frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_position`
-              - Return a position of the vehicle in central body inertial frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_orientation`
-              - Return an attitude of the vehicle in central body inertial frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_orientation`
-              - Return an attitude of the vehicle in central body fixed frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.current_time`
-              - Return the current time.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.central_body`
               - Return a name of the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.current_time`
+              - Return the current time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_orientation`
+              - Return an attitude of the vehicle in central body fixed frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.fixed_position`
+              - Return a position of the vehicle in central body fixed frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_orientation`
+              - Return an attitude of the vehicle in central body inertial frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.inertial_position`
+              - Return a position of the vehicle in central body inertial frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.is_available`
+              - Return whether the spatial state is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.start_time`
               - Return the start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.stop_time`
               - Return the stop time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpatialState.is_available`
-              - Return whether the spatial state is valid.
 
 
 
@@ -61,29 +61,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: fixed_position
-    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_position
-    :type: IPosition
+.. py:property:: central_body
+    :canonical: ansys.stk.core.stkobjects.SpatialState.central_body
+    :type: str
 
-    Return a position of the vehicle in central body fixed frame.
-
-.. py:property:: inertial_position
-    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_position
-    :type: IPosition
-
-    Return a position of the vehicle in central body inertial frame.
-
-.. py:property:: inertial_orientation
-    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_orientation
-    :type: IOrientation
-
-    Return an attitude of the vehicle in central body inertial frame.
-
-.. py:property:: fixed_orientation
-    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_orientation
-    :type: IOrientation
-
-    Return an attitude of the vehicle in central body fixed frame.
+    Return a name of the central body.
 
 .. py:property:: current_time
     :canonical: ansys.stk.core.stkobjects.SpatialState.current_time
@@ -91,11 +73,35 @@ Property detail
 
     Return the current time.
 
-.. py:property:: central_body
-    :canonical: ansys.stk.core.stkobjects.SpatialState.central_body
-    :type: str
+.. py:property:: fixed_orientation
+    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_orientation
+    :type: IOrientation
 
-    Return a name of the central body.
+    Return an attitude of the vehicle in central body fixed frame.
+
+.. py:property:: fixed_position
+    :canonical: ansys.stk.core.stkobjects.SpatialState.fixed_position
+    :type: IPosition
+
+    Return a position of the vehicle in central body fixed frame.
+
+.. py:property:: inertial_orientation
+    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_orientation
+    :type: IOrientation
+
+    Return an attitude of the vehicle in central body inertial frame.
+
+.. py:property:: inertial_position
+    :canonical: ansys.stk.core.stkobjects.SpatialState.inertial_position
+    :type: IPosition
+
+    Return a position of the vehicle in central body inertial frame.
+
+.. py:property:: is_available
+    :canonical: ansys.stk.core.stkobjects.SpatialState.is_available
+    :type: bool
+
+    Return whether the spatial state is valid.
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.SpatialState.start_time
@@ -109,17 +115,9 @@ Property detail
 
     Return the stop time.
 
-.. py:property:: is_available
-    :canonical: ansys.stk.core.stkobjects.SpatialState.is_available
-    :type: bool
-
-    Return whether the spatial state is valid.
-
 
 Method detail
 -------------
-
-
 
 
 
@@ -145,4 +143,6 @@ Method detail
     :Returns:
 
         :obj:`~typing.Tuple[float, float, float]`
+
+
 

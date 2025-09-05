@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.step`
-              - Step size. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.initial_state`
-              - Get the initial state.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.ephemeris_interval`
-              - Get the propagator's ephemeris interval.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.propagation_frame`
-              - Get or set the propagation frame.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.supported_propagation_frames`
-              - Return supported propagation frames.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.display_coordinate_type`
               - The propagator's display coordinate type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.initial_state`
+              - Get the initial state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.propagation_frame`
+              - Get or set the propagation frame.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.step`
+              - Step size. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorJ4Perturbation.supported_propagation_frames`
+              - Return supported propagation frames.
 
 
 
@@ -70,17 +70,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.step
-    :type: float
+.. py:property:: display_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.display_coordinate_type
+    :type: PropagatorDisplayCoordinateType
 
-    Step size. Uses Time Dimension.
-
-.. py:property:: initial_state
-    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.initial_state
-    :type: VehicleZonalPropagatorInitialState
-
-    Get the initial state.
+    The propagator's display coordinate type.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.ephemeris_interval
@@ -88,11 +82,23 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
+.. py:property:: initial_state
+    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.initial_state
+    :type: VehicleZonalPropagatorInitialState
+
+    Get the initial state.
+
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.propagation_frame
     :type: VehiclePropagationFrame
 
     Get or set the propagation frame.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.step
+    :type: float
+
+    Step size. Uses Time Dimension.
 
 .. py:property:: supported_propagation_frames
     :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.supported_propagation_frames
@@ -100,15 +106,13 @@ Property detail
 
     Return supported propagation frames.
 
-.. py:property:: display_coordinate_type
-    :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.display_coordinate_type
-    :type: PropagatorDisplayCoordinateType
-
-    The propagator's display coordinate type.
-
 
 Method detail
 -------------
+
+
+
+
 
 .. py:method:: propagate(self) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorJ4Perturbation.propagate
@@ -118,10 +122,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
 
 
 

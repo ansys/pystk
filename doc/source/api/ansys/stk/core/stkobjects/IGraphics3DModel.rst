@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.visible`
-              - Display one or several models in the 3D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.scale_value`
-              - Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
+              - Articulation property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold`
               - Get the detail threshold attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_data`
               - Get the model data property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_type`
               - Get or set the model type property. A member of the ModelType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
-              - Articulation property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.scale_value`
+              - Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.visible`
+              - Display one or several models in the 3D Graphics window.
 
 
 Import detail
@@ -43,17 +43,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: visible
-    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.visible
-    :type: bool
+.. py:property:: articulation
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
+    :type: Graphics3DModelArticulation
 
-    Display one or several models in the 3D Graphics window.
-
-.. py:property:: scale_value
-    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.scale_value
-    :type: float
-
-    Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
+    Articulation property.
 
 .. py:property:: detail_threshold
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold
@@ -73,10 +67,16 @@ Property detail
 
     Get or set the model type property. A member of the ModelType enumeration.
 
-.. py:property:: articulation
-    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: Graphics3DModelArticulation
+.. py:property:: scale_value
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.scale_value
+    :type: float
 
-    Articulation property.
+    Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
+
+.. py:property:: visible
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.visible
+    :type: bool
+
+    Display one or several models in the 3D Graphics window.
 
 

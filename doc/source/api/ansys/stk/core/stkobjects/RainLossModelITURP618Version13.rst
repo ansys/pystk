@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.surface_temperature`
-              - Get or set the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.enable_depolarization_loss`
               - Get or set the option to user de-polarization loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.enable_itu_1510`
               - Get or set the option to use surface temperatures from ITU-R P.1510.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.use_annual_itu_1510`
-              - Get or set the option to use the annual average surface temperature for ITU-R P.1510.
             * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.itu_1510_month`
               - Get or set the month for ITU-R P.1510 Surface Temperatures.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.surface_temperature`
+              - Get or set the surface temperature.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13.use_annual_itu_1510`
+              - Get or set the option to use the annual average surface temperature for ITU-R P.1510.
 
 
 
@@ -44,12 +44,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: surface_temperature
-    :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.surface_temperature
-    :type: float
-
-    Get or set the surface temperature.
-
 .. py:property:: enable_depolarization_loss
     :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.enable_depolarization_loss
     :type: bool
@@ -62,16 +56,22 @@ Property detail
 
     Get or set the option to use surface temperatures from ITU-R P.1510.
 
-.. py:property:: use_annual_itu_1510
-    :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.use_annual_itu_1510
-    :type: bool
-
-    Get or set the option to use the annual average surface temperature for ITU-R P.1510.
-
 .. py:property:: itu_1510_month
     :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.itu_1510_month
     :type: int
 
     Get or set the month for ITU-R P.1510 Surface Temperatures.
+
+.. py:property:: surface_temperature
+    :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.surface_temperature
+    :type: float
+
+    Get or set the surface temperature.
+
+.. py:property:: use_annual_itu_1510
+    :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version13.use_annual_itu_1510
+    :type: bool
+
+    Get or set the option to use the annual average surface temperature for ITU-R P.1510.
 
 

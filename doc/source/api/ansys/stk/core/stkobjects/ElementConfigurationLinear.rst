@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.maximum_look_angle`
+              - Get the maximum look angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.number_of_elements`
               - Get or set the number of elements on the perimiter of the circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.spacing`
               - Get or set the spacing between adjacent elements in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.tilt_angle`
               - Get or set the tilt angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.maximum_look_angle`
-              - Get the maximum look angle.
 
 
 
@@ -41,6 +41,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: maximum_look_angle
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.maximum_look_angle
+    :type: typing.Any
+
+    Get the maximum look angle.
 
 .. py:property:: number_of_elements
     :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.number_of_elements
@@ -59,11 +65,5 @@ Property detail
     :type: typing.Any
 
     Get or set the tilt angle.
-
-.. py:property:: maximum_look_angle
-    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.maximum_look_angle
-    :type: typing.Any
-
-    Get the maximum look angle.
 
 

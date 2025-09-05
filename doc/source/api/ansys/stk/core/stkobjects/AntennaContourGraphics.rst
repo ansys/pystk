@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.contour`
+              - Get the current contour type's properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.show`
               - Opt whether to display volume graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.supported_contour_types`
               - Get an array of the supported contour types.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.contour`
-              - Get the current contour type's properties.
 
 
 
@@ -49,6 +49,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: contour
+    :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.contour
+    :type: IAntennaContour
+
+    Get the current contour type's properties.
+
 .. py:property:: show
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.show
     :type: bool
@@ -61,16 +67,9 @@ Property detail
 
     Get an array of the supported contour types.
 
-.. py:property:: contour
-    :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.contour
-    :type: IAntennaContour
-
-    Get the current contour type's properties.
-
 
 Method detail
 -------------
-
 
 
 .. py:method:: is_contour_type_supported(self, value: AntennaContourType) -> bool
@@ -87,7 +86,6 @@ Method detail
 
         :obj:`~bool`
 
-
 .. py:method:: set_contour_type(self, value: AntennaContourType) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.set_contour_type
 
@@ -101,5 +99,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 

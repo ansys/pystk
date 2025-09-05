@@ -19,6 +19,11 @@ repos:
     - id: ruff-format
       exclude: "^src|^tests|^examples/.*_.*"
 
+- repo: https://github.com/zizmorcore/zizmor-pre-commit
+  rev: v1.12.1
+  hooks:
+    - id: zizmor
+
 # NOTE: Ruff does not check for python code in some part of the documentation,
 # e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
 - repo: https://github.com/adamchainz/blacken-docs

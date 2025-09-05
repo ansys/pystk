@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelPencilBeam.beamwidth`
+              - Get the computed beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelPencilBeam.mainlobe_gain`
               - Get or set the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelPencilBeam.sidelobe_gain`
               - Get or set the sidelobe gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelPencilBeam.beamwidth`
-              - Get the computed beamwidth.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: beamwidth
+    :canonical: ansys.stk.core.stkobjects.AntennaModelPencilBeam.beamwidth
+    :type: typing.Any
+
+    Get the computed beamwidth.
+
 .. py:property:: mainlobe_gain
     :canonical: ansys.stk.core.stkobjects.AntennaModelPencilBeam.mainlobe_gain
     :type: float
@@ -51,11 +57,5 @@ Property detail
     :type: float
 
     Get or set the sidelobe gain.
-
-.. py:property:: beamwidth
-    :canonical: ansys.stk.core.stkobjects.AntennaModelPencilBeam.beamwidth
-    :type: typing.Any
-
-    Get the computed beamwidth.
 
 

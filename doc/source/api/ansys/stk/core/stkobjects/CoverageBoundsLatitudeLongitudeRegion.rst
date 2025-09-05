@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_latitude`
-              - Minimum latitude for defining a grid using lat-lon region.  Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.maximum_latitude`
               - Maximum latitude for defining a grid using lat-lon bounds. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_longitude`
-              - Minimum longitude for defining a grid using lat-lon region.  Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.maximum_longitude`
               - Maximum longitude for defining a grid using lat-lon region. Uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_latitude`
+              - Minimum latitude for defining a grid using lat-lon region.  Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_longitude`
+              - Minimum longitude for defining a grid using lat-lon region.  Uses Longitude Dimension.
 
 
 
@@ -42,28 +42,28 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_latitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_latitude
-    :type: typing.Any
-
-    Minimum latitude for defining a grid using lat-lon region.  Uses Latitude Dimension.
-
 .. py:property:: maximum_latitude
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.maximum_latitude
     :type: typing.Any
 
     Maximum latitude for defining a grid using lat-lon bounds. Uses Latitude Dimension.
 
-.. py:property:: minimum_longitude
-    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_longitude
-    :type: typing.Any
-
-    Minimum longitude for defining a grid using lat-lon region.  Uses Longitude Dimension.
-
 .. py:property:: maximum_longitude
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.maximum_longitude
     :type: typing.Any
 
     Maximum longitude for defining a grid using lat-lon region. Uses Longitude Dimension.
+
+.. py:property:: minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_latitude
+    :type: typing.Any
+
+    Minimum latitude for defining a grid using lat-lon region.  Uses Latitude Dimension.
+
+.. py:property:: minimum_longitude
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsLatitudeLongitudeRegion.minimum_longitude
+    :type: typing.Any
+
+    Minimum longitude for defining a grid using lat-lon region.  Uses Longitude Dimension.
 
 

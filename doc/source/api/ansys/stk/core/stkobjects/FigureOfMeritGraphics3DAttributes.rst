@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size`
+              - Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.show_graphics`
               - Opt whether to display coverage data for all points based on evaluation over the entire coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.translucency`
               - Percentage translucency of the static graphics when grid points are filled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size`
-              - Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: point_size
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size
+    :type: float
+
+    Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
+
 .. py:property:: show_graphics
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.show_graphics
     :type: bool
@@ -49,11 +55,5 @@ Property detail
     :type: float
 
     Percentage translucency of the static graphics when grid points are filled.
-
-.. py:property:: point_size
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size
-    :type: float
-
-    Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
 
 

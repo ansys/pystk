@@ -102,8 +102,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: deconflict(self) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesCustom.deconflict
 
@@ -112,6 +110,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

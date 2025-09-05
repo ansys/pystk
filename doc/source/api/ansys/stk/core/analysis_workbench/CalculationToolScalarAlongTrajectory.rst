@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.trajectory_point`
-              - Trajectory point.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.spatial_calculation`
               - Spatial Calculation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.trajectory_point`
+              - Trajectory point.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: trajectory_point
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.trajectory_point
-    :type: IVectorGeometryToolPoint
-
-    Trajectory point.
-
 .. py:property:: spatial_calculation
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.spatial_calculation
     :type: ISpatialAnalysisToolSpatialCalculation
 
     Spatial Calculation.
+
+.. py:property:: trajectory_point
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarAlongTrajectory.trajectory_point
+    :type: IVectorGeometryToolPoint
+
+    Trajectory point.
 
 

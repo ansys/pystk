@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.central_body`
               - Get the central body for the volume calc. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume calc.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.reference_point`
+              - A reference point. Can be any point from VGT.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.shape_model`
               - The Volume Calc Altitude Reference Type.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.use_custom_reference`
               - Whether to use custom reference.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.reference_point`
-              - A reference point. Can be any point from VGT.
 
 
 
@@ -48,6 +48,12 @@ Property detail
 
     Get the central body for the volume calc. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume calc.
 
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.reference_point
+    :type: IVectorGeometryToolPoint
+
+    A reference point. Can be any point from VGT.
+
 .. py:property:: shape_model
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.shape_model
     :type: SpatialCalculationAltitudeReferenceType
@@ -59,11 +65,5 @@ Property detail
     :type: bool
 
     Whether to use custom reference.
-
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAltitude.reference_point
-    :type: IVectorGeometryToolPoint
-
-    A reference point. Can be any point from VGT.
 
 

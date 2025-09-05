@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.exclusion_angle`
-              - Exclusion Angle value. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.assigned_objects`
               - Return a safearray of assigned objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.available_objects`
               - Return a safearray of available objects.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.exclusion_angle`
+              - Exclusion Angle value. Uses Angle Dimension.
 
 
 
@@ -53,12 +53,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: exclusion_angle
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.exclusion_angle
-    :type: typing.Any
-
-    Exclusion Angle value. Uses Angle Dimension.
-
 .. py:property:: assigned_objects
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.assigned_objects
     :type: list
@@ -71,13 +65,15 @@ Property detail
 
     Return a safearray of available objects.
 
+.. py:property:: exclusion_angle
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.exclusion_angle
+    :type: typing.Any
+
+    Exclusion Angle value. Uses Angle Dimension.
+
 
 Method detail
 -------------
-
-
-
-
 
 .. py:method:: add_exclusion_object(self, object_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.add_exclusion_object
@@ -92,6 +88,10 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 
 .. py:method:: is_object_assigned(self, object_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.is_object_assigned

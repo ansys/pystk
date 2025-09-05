@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size_font_style_outline`
-              - Initialize a graphics font with the given arguments.
             * - :py:attr:`~ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size`
               - Initialize a graphics font with the typeface name and size.
+            * - :py:attr:`~ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size_font_style_outline`
+              - Initialize a graphics font with the given arguments.
 
 
 Import detail
@@ -35,6 +35,22 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: initialize_with_name_size(self, name: str, size: int) -> GraphicsFont
+    :canonical: ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size
+
+    Initialize a graphics font with the typeface name and size.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **size** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~GraphicsFont`
 
 .. py:method:: initialize_with_name_size_font_style_outline(self, name: str, size: int, font_style: FontStyle, outline: bool) -> GraphicsFont
     :canonical: ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size_font_style_outline
@@ -50,22 +66,6 @@ Method detail
         **font_style** : :obj:`~FontStyle`
 
         **outline** : :obj:`~bool`
-
-
-    :Returns:
-
-        :obj:`~GraphicsFont`
-
-.. py:method:: initialize_with_name_size(self, name: str, size: int) -> GraphicsFont
-    :canonical: ansys.stk.core.graphics.GraphicsFontFactory.initialize_with_name_size
-
-    Initialize a graphics font with the typeface name and size.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **size** : :obj:`~int`
 
 
     :Returns:

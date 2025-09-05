@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.reference_frame`
-              - Get or set the reference frame the aircraft will use to fly straight ahead.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.reference_frame`
+              - Get or set the reference frame the aircraft will use to fly straight ahead.
 
 
 
@@ -81,16 +81,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_frame
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.reference_frame
-    :type: StraightAheadReferenceFrame
-
-    Get or set the reference frame the aircraft will use to fly straight ahead.
-
 .. py:property:: compensate_for_coriolis_acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.compensate_for_coriolis_acceleration
     :type: bool
 
     Get or set the option to compensate for the acceleration due to the Coriolis effect.
+
+.. py:property:: reference_frame
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead.reference_frame
+    :type: StraightAheadReferenceFrame
+
+    Get or set the reference frame the aircraft will use to fly straight ahead.
 
 

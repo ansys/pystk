@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing`
-              - Opt whether to use a target pointing attitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.targets`
-              - Get the targets used for the attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.target_times`
               - Get the target times.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.targets`
+              - Get the targets used for the attitude profile.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing`
+              - Opt whether to use a target pointing attitude.
 
 
 Import detail
@@ -37,11 +37,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_target_pointing
-    :canonical: ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing
-    :type: bool
+.. py:property:: target_times
+    :canonical: ansys.stk.core.stkobjects.IVehiclePointing.target_times
+    :type: VehicleTargetTimes
 
-    Opt whether to use a target pointing attitude.
+    Get the target times.
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.targets
@@ -49,10 +49,10 @@ Property detail
 
     Get the targets used for the attitude profile.
 
-.. py:property:: target_times
-    :canonical: ansys.stk.core.stkobjects.IVehiclePointing.target_times
-    :type: VehicleTargetTimes
+.. py:property:: use_target_pointing
+    :canonical: ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing
+    :type: bool
 
-    Get the target times.
+    Opt whether to use a target pointing attitude.
 
 

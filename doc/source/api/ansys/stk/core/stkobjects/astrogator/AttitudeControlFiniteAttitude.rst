@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.attitude_update`
               - How and when the attitude will be updated.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.reference_axes_name`
-              - Ref Axes - the reference axes to be used in modeling this maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.orientation`
               - Get the orientation of the attitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.reference_axes_name`
+              - Ref Axes - the reference axes to be used in modeling this maneuver.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     How and when the attitude will be updated.
 
-.. py:property:: reference_axes_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.reference_axes_name
-    :type: str
-
-    Ref Axes - the reference axes to be used in modeling this maneuver.
-
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.orientation
     :type: IOrientation
 
     Get the orientation of the attitude.
+
+.. py:property:: reference_axes_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAttitude.reference_axes_name
+    :type: str
+
+    Ref Axes - the reference axes to be used in modeling this maneuver.
 
 

@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_file`
-              - Specify a planet ephemeris file, with a .pe extension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_central_body`
               - Specify the planet using a central body and a desired ephemeris source.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_file`
+              - Specify a planet ephemeris file, with a .pe extension.
 
 
 Import detail
@@ -35,20 +35,6 @@ Import detail
 
 Method detail
 -------------
-
-.. py:method:: set_position_source_file(self, file: str) -> PlanetPositionFile
-    :canonical: ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_file
-
-    Specify a planet ephemeris file, with a .pe extension.
-
-    :Parameters:
-
-        **file** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~PlanetPositionFile`
 
 .. py:method:: set_position_source_central_body(self, central_body: str, ephem_source: EphemSourceType) -> PlanetPositionCentralBody
     :canonical: ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_central_body
@@ -65,4 +51,18 @@ Method detail
     :Returns:
 
         :obj:`~PlanetPositionCentralBody`
+
+.. py:method:: set_position_source_file(self, file: str) -> PlanetPositionFile
+    :canonical: ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_file
+
+    Specify a planet ephemeris file, with a .pe extension.
+
+    :Parameters:
+
+        **file** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~PlanetPositionFile`
 

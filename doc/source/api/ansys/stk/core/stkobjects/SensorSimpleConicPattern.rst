@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSimpleConicPattern.cone_angle`
-              - Simple cone angle defining the sensor pattern. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSimpleConicPattern.angular_resolution`
               - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSimpleConicPattern.cone_angle`
+              - Simple cone angle defining the sensor pattern. Uses Angle Dimension.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: cone_angle
-    :canonical: ansys.stk.core.stkobjects.SensorSimpleConicPattern.cone_angle
-    :type: typing.Any
-
-    Simple cone angle defining the sensor pattern. Uses Angle Dimension.
-
 .. py:property:: angular_resolution
     :canonical: ansys.stk.core.stkobjects.SensorSimpleConicPattern.angular_resolution
     :type: typing.Any
 
     Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+
+.. py:property:: cone_angle
+    :canonical: ansys.stk.core.stkobjects.SensorSimpleConicPattern.cone_angle
+    :type: typing.Any
+
+    Simple cone angle defining the sensor pattern. Uses Angle Dimension.
 
 

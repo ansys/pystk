@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.type`
-              - The type of objects in the database.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.auxiliary_database`
+              - The auxiliary database file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.default_database`
               - The default database file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.default_direction`
               - The default directory of the database file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.enable_auxiliary_database`
               - Enable the auxiliary database.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.auxiliary_database`
-              - The auxiliary database file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioDatabase.type`
+              - The type of objects in the database.
 
 
 
@@ -42,11 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.ScenarioDatabase.type
+.. py:property:: auxiliary_database
+    :canonical: ansys.stk.core.stkobjects.ScenarioDatabase.auxiliary_database
     :type: str
 
-    The type of objects in the database.
+    The auxiliary database file.
 
 .. py:property:: default_database
     :canonical: ansys.stk.core.stkobjects.ScenarioDatabase.default_database
@@ -66,10 +66,10 @@ Property detail
 
     Enable the auxiliary database.
 
-.. py:property:: auxiliary_database
-    :canonical: ansys.stk.core.stkobjects.ScenarioDatabase.auxiliary_database
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.ScenarioDatabase.type
     :type: str
 
-    The auxiliary database file.
+    The type of objects in the database.
 
 

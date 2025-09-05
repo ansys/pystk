@@ -22,18 +22,18 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.about_vector`
               - Specify a vector around which the the reference vector is revolved.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.reference_vector`
-              - Specify a reference vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.start_clock_angle`
-              - Specify a start angle.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.stop_clock_angle`
-              - Specify a stop angle.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.start_epoch`
-              - Specify an epoch at which the coning vector is aligned with the reference vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.clock_angle_rate`
               - Specify a rotation rate.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.mode`
               - Specify either unidirectional or bidirectional mode.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.reference_vector`
+              - Specify a reference vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.start_clock_angle`
+              - Specify a start angle.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.start_epoch`
+              - Specify an epoch at which the coning vector is aligned with the reference vector.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.stop_clock_angle`
+              - Specify a stop angle.
 
 
 
@@ -54,6 +54,18 @@ Property detail
 
     Specify a vector around which the the reference vector is revolved.
 
+.. py:property:: clock_angle_rate
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.clock_angle_rate
+    :type: float
+
+    Specify a rotation rate.
+
+.. py:property:: mode
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.mode
+    :type: RotationSweepModeType
+
+    Specify either unidirectional or bidirectional mode.
+
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.reference_vector
     :type: VectorGeometryToolVectorReference
@@ -66,28 +78,16 @@ Property detail
 
     Specify a start angle.
 
-.. py:property:: stop_clock_angle
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.stop_clock_angle
-    :type: float
-
-    Specify a stop angle.
-
 .. py:property:: start_epoch
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.start_epoch
     :type: typing.Any
 
     Specify an epoch at which the coning vector is aligned with the reference vector.
 
-.. py:property:: clock_angle_rate
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.clock_angle_rate
+.. py:property:: stop_clock_angle
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.stop_clock_angle
     :type: float
 
-    Specify a rotation rate.
-
-.. py:property:: mode
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorConing.mode
-    :type: RotationSweepModeType
-
-    Specify either unidirectional or bidirectional mode.
+    Specify a stop angle.
 
 

@@ -20,20 +20,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.add`
               - Add a calc object to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.item`
-              - Return a calc object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.remove`
-              - Remove a calc object from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.cut`
               - Copy a calc object to the clipboard and removes the calc object from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.paste`
-              - Pastes a calc object from the clipboard into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.insert_copy`
-              - Copy a calc object and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.get_item_by_index`
               - Retrieve a calc object found by the index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.get_item_by_name`
               - Retrieve a calc object found by the name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.insert_copy`
+              - Copy a calc object and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.item`
+              - Return a calc object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.paste`
+              - Pastes a calc object from the clipboard into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.remove`
+              - Remove a calc object from the collection.
 
     .. tab-item:: Properties
 
@@ -89,35 +89,6 @@ Method detail
 
         :obj:`~IComponentInfo`
 
-.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.item
-
-    Return a calc object.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
-
-.. py:method:: remove(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.remove
-
-    Remove a calc object from the collection.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
 
 .. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.cut
@@ -132,29 +103,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: paste(self) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.paste
-
-    Pastes a calc object from the clipboard into the list.
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
-
-.. py:method:: insert_copy(self, calc_obj: IComponentInfo) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.insert_copy
-
-    Copy a calc object and inserts the copy into the list.
-
-    :Parameters:
-
-        **calc_obj** : :obj:`~IComponentInfo`
-
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
 
 .. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.get_item_by_index
@@ -183,4 +131,56 @@ Method detail
     :Returns:
 
         :obj:`~IComponentInfo`
+
+.. py:method:: insert_copy(self, calc_obj: IComponentInfo) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.insert_copy
+
+    Copy a calc object and inserts the copy into the list.
+
+    :Parameters:
+
+        **calc_obj** : :obj:`~IComponentInfo`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.item
+
+    Return a calc object.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: paste(self) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.paste
+
+    Pastes a calc object from the clipboard into the list.
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.remove
+
+    Remove a calc object from the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

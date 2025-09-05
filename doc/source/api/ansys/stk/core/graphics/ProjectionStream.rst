@@ -55,8 +55,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: update(self, time: Date, next_time: Date) -> bool
     :canonical: ansys.stk.core.graphics.ProjectionStream.update
 
@@ -72,4 +70,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
 

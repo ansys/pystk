@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body`
-              - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates`
-              - Return latitude Coordinates parameters for the Theta system.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates`
-              - Return longtitude Coordinates parameters for the Radius system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.altitude_grid_parameters`
               - Return altitude parameters for the Height system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.auto_fit_bounds`
               - Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates`
+              - Return latitude Coordinates parameters for the Theta system.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.longitude_coordinates`
+              - Return longtitude Coordinates parameters for the Radius system.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body`
+              - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
 
 
 
@@ -44,11 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_central_body
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body
-    :type: str
+.. py:property:: altitude_grid_parameters
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.altitude_grid_parameters
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
+    Return altitude parameters for the Height system.
+
+.. py:property:: auto_fit_bounds
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.auto_fit_bounds
+    :type: bool
+
+    Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
 
 .. py:property:: latitude_coordinates
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.latitude_coordinates
@@ -62,16 +68,10 @@ Property detail
 
     Return longtitude Coordinates parameters for the Radius system.
 
-.. py:property:: altitude_grid_parameters
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.altitude_grid_parameters
-    :type: SpatialAnalysisToolGridCoordinateDefinition
+.. py:property:: reference_central_body
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.reference_central_body
+    :type: str
 
-    Return altitude parameters for the Height system.
-
-.. py:property:: auto_fit_bounds
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude.auto_fit_bounds
-    :type: bool
-
-    Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
+    Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
 
 

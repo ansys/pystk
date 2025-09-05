@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.is_valid`
-              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.index`
               - Index of an interval in the collection.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.is_valid`
+              - Indicate whether the result object is valid.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.is_valid
-    :type: bool
-
-    Indicate whether the result object is valid.
-
 .. py:property:: index
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.index
     :type: int
 
     Index of an interval in the collection.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionOccurredResult.is_valid
+    :type: bool
+
+    Indicate whether the result object is valid.
 
 

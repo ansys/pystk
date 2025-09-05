@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.type`
-              - Return the type of interval list.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.labels`
-              - Get the label descriptions associated with the interval list.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.descriptions`
               - Get the labels associated with the interval list.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.labels`
+              - Get the label descriptions associated with the interval list.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.type`
+              - Return the type of interval list.
 
 
 Import detail
@@ -48,11 +48,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.type
-    :type: EventIntervalListType
+.. py:property:: descriptions
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.descriptions
+    :type: list
 
-    Return the type of interval list.
+    Get the labels associated with the interval list.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.labels
@@ -60,17 +60,15 @@ Property detail
 
     Get the label descriptions associated with the interval list.
 
-.. py:property:: descriptions
-    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.descriptions
-    :type: list
+.. py:property:: type
+    :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.type
+    :type: EventIntervalListType
 
-    Get the labels associated with the interval list.
+    Return the type of interval list.
 
 
 Method detail
 -------------
-
-
 
 
 .. py:method:: find_intervals(self) -> TimeToolIntervalListResult
@@ -81,6 +79,7 @@ Method detail
     :Returns:
 
         :obj:`~TimeToolIntervalListResult`
+
 
 .. py:method:: occurred(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.analysis_workbench.ITimeToolTimeIntervalList.occurred
@@ -95,4 +94,5 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 

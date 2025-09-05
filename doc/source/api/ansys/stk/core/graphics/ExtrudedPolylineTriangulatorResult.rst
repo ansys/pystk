@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions`
-              - Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.bottom_boundary_positions`
               - Get the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.boundary_positions_winding_order`
               - Get the winding order of top boundary positions and bottom boundary positions.
+            * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions`
+              - Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
 
 
 
@@ -40,12 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: top_boundary_positions
-    :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions
-    :type: list
-
-    Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
-
 .. py:property:: bottom_boundary_positions
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.bottom_boundary_positions
     :type: list
@@ -57,5 +51,11 @@ Property detail
     :type: WindingOrder
 
     Get the winding order of top boundary positions and bottom boundary positions.
+
+.. py:property:: top_boundary_positions
+    :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions
+    :type: list
+
+    Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
 
 

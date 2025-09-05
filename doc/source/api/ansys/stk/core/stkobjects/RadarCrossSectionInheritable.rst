@@ -29,12 +29,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.inherit`
               - Get or set the option to inherit the radar cross section from the scenario object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model`
               - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets the current RCS model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model_component_linking`
               - Get the link/embed controller for managing the radar cross section model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models`
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
 
 
 
@@ -55,12 +55,6 @@ Property detail
 
     Get or set the option to inherit the radar cross section from the scenario object.
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
-
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model
     :type: RadarCrossSectionModel
@@ -73,9 +67,16 @@ Property detail
 
     Get the link/embed controller for managing the radar cross section model component.
 
+.. py:property:: supported_models
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models
+    :type: list
+
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
+
 
 Method detail
 -------------
+
 
 
 
@@ -93,6 +94,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 

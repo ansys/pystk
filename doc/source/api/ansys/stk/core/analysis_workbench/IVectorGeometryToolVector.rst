@@ -54,7 +54,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchVectorFindInAxesResult
     :canonical: ansys.stk.core.analysis_workbench.IVectorGeometryToolVector.find_in_axes
 
@@ -86,4 +85,5 @@ Method detail
     :Returns:
 
         :obj:`~AnalysisWorkbenchVectorFindInAxesWithRateResult`
+
 

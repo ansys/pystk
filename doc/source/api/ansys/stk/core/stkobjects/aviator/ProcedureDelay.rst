@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode`
-              - Get or set the mode for handling the altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude`
               - Get or set the requested altitude of the procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode`
+              - Get or set the mode for handling the altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.cruise_airspeed_options`
               - Get the interface for the cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.turn_direction`
@@ -44,17 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: altitude_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode
-    :type: DelayAltitudeMode
-
-    Get or set the mode for handling the altitude of the aircraft.
-
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude
     :type: float
 
     Get or set the requested altitude of the procedure.
+
+.. py:property:: altitude_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode
+    :type: DelayAltitudeMode
+
+    Get or set the mode for handling the altitude of the aircraft.
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.cruise_airspeed_options

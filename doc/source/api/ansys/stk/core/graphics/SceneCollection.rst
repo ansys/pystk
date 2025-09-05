@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.SceneCollection.count`
-              - Total number of scenes in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.SceneCollection._new_enum`
               - Return an enumerator that iterates through the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneCollection.count`
+              - Total number of scenes in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.graphics.SceneCollection.count
-    :type: int
-
-    Total number of scenes in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.SceneCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that iterates through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.SceneCollection.count
+    :type: int
+
+    Total number of scenes in the collection.
 
 
 Method detail

@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.reference_system`
-              - Get the reference system in which spherical parameters are computed.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.azimuth_grid_parameters`
               - Return azimuth coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.elevation_grid_parameters`
               - Return elevation coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.range_coordinates`
               - Return range coordinates parameters for the spherical volume grid.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.reference_system`
+              - Get the reference system in which spherical parameters are computed.
 
 
 
@@ -41,12 +41,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: reference_system
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.reference_system
-    :type: IVectorGeometryToolSystem
-
-    Get the reference system in which spherical parameters are computed.
 
 .. py:property:: azimuth_grid_parameters
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.azimuth_grid_parameters
@@ -65,5 +59,11 @@ Property detail
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Return range coordinates parameters for the spherical volume grid.
+
+.. py:property:: reference_system
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridSpherical.reference_system
+    :type: IVectorGeometryToolSystem
+
+    Get the reference system in which spherical parameters are computed.
 
 

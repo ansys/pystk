@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_raw_plugin_object`
-              - Return a raw pointer to the access plugin constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_property`
               - Get a property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_raw_plugin_object`
+              - Return a raw pointer to the access plugin constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.set_property`
               - Set a property.
 
@@ -59,14 +59,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_raw_plugin_object(self) -> typing.Any
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_raw_plugin_object
-
-    Return a raw pointer to the access plugin constraint.
-
-    :Returns:
-
-        :obj:`~typing.Any`
 
 .. py:method:: get_property(self, path: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_property
@@ -77,6 +69,15 @@ Method detail
 
         **path** : :obj:`~str`
 
+
+    :Returns:
+
+        :obj:`~typing.Any`
+
+.. py:method:: get_raw_plugin_object(self) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintPluginMinMax.get_raw_plugin_object
+
+    Return a raw pointer to the access plugin constraint.
 
     :Returns:
 
@@ -97,5 +98,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 

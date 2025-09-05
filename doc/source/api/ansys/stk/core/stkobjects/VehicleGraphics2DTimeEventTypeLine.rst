@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.set_offset_type`
-              - Offset direction (left or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.is_offset_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.set_offset_type`
+              - Offset direction (left or right).
 
     .. tab-item:: Properties
 
@@ -33,20 +33,20 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.color`
               - Line color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.event_interval`
+              - Event interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.line_style`
               - Line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.line_width`
               - Line width.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer`
-              - User-defined unique ID.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type`
-              - Offset direction (left or right).
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_pixels`
               - Offset amount in pixels. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.event_interval`
-              - Event interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type`
+              - Offset direction (left or right).
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer`
+              - User-defined unique ID.
 
 
 
@@ -67,6 +67,12 @@ Property detail
 
     Line color.
 
+.. py:property:: event_interval
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.event_interval
+    :type: ITimeToolTimeIntervalSmartInterval
+
+    Event interval.
+
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.line_style
     :type: LineStyle
@@ -79,17 +85,11 @@ Property detail
 
     Line width.
 
-.. py:property:: unique_identifer
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer
-    :type: str
+.. py:property:: offset_pixels
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_pixels
+    :type: int
 
-    User-defined unique ID.
-
-.. py:property:: offset_type
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type
-    :type: VehicleGraphics2DOffset
-
-    Offset direction (left or right).
+    Offset amount in pixels. Dimensionless.
 
 .. py:property:: offset_supported_types
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_supported_types
@@ -97,22 +97,38 @@ Property detail
 
     Return an array of valid choices.
 
-.. py:property:: offset_pixels
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_pixels
-    :type: int
+.. py:property:: offset_type
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type
+    :type: VehicleGraphics2DOffset
 
-    Offset amount in pixels. Dimensionless.
+    Offset direction (left or right).
 
-.. py:property:: event_interval
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.event_interval
-    :type: ITimeToolTimeIntervalSmartInterval
+.. py:property:: unique_identifer
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer
+    :type: str
 
-    Event interval.
+    User-defined unique ID.
 
 
 Method detail
 -------------
 
+
+
+
+.. py:method:: is_offset_type_supported(self, offset: VehicleGraphics2DOffset) -> bool
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.is_offset_type_supported
+
+    Get a value indicating whether the specified type can be used.
+
+    :Parameters:
+
+        **offset** : :obj:`~VehicleGraphics2DOffset`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 
 
@@ -135,22 +151,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: is_offset_type_supported(self, offset: VehicleGraphics2DOffset) -> bool
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.is_offset_type_supported
-
-    Get a value indicating whether the specified type can be used.
-
-    :Parameters:
-
-        **offset** : :obj:`~VehicleGraphics2DOffset`
-
-
-    :Returns:
-
-        :obj:`~bool`
-
-
 
 
 

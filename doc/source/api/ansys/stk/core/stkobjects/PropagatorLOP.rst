@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.step`
-              - Step size. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.initial_state`
-              - Get the initial state.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.force_model`
-              - Get the force model parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.ephemeris_interval`
-              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.display_coordinate_type`
               - The propagator's display coordinate type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.force_model`
+              - Get the force model parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.initial_state`
+              - Get the initial state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOP.step`
+              - Step size. Uses Time Dimension.
 
 
 
@@ -53,23 +53,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.step
-    :type: float
+.. py:property:: display_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.display_coordinate_type
+    :type: PropagatorDisplayCoordinateType
 
-    Step size. Uses Time Dimension.
-
-.. py:property:: initial_state
-    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.initial_state
-    :type: VehicleInitialState
-
-    Get the initial state.
-
-.. py:property:: force_model
-    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.force_model
-    :type: VehicleLOPForceModel
-
-    Get the force model parameters.
+    The propagator's display coordinate type.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.PropagatorLOP.ephemeris_interval
@@ -77,15 +65,32 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
-.. py:property:: display_coordinate_type
-    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.display_coordinate_type
-    :type: PropagatorDisplayCoordinateType
+.. py:property:: force_model
+    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.force_model
+    :type: VehicleLOPForceModel
 
-    The propagator's display coordinate type.
+    Get the force model parameters.
+
+.. py:property:: initial_state
+    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.initial_state
+    :type: VehicleInitialState
+
+    Get the initial state.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.PropagatorLOP.step
+    :type: float
+
+    Step size. Uses Time Dimension.
 
 
 Method detail
 -------------
+
+
+
+
+
 
 .. py:method:: propagate(self) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorLOP.propagate
@@ -95,11 +100,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
 
 
 

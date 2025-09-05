@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.get_as_procedure`
-              - Get the procedure interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.copy_procedures`
               - Copy the search pattern maneuvers as a set of procedures to the clipboard.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.get_as_procedure`
+              - Get the procedure interface.
 
     .. tab-item:: Properties
 
@@ -33,26 +33,26 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.altitude_options`
               - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_options`
-              - Get the enroute options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_cruise_airspeed_options`
-              - Get the enroute cruise airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type`
-              - Get or set the procedure methodology used to calculate the flight line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation`
-              - Get or set the maximum distance between the parallel flight lines of the search pattern.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode`
-              - Get or set the mode to determine the course of the search pattern.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.first_leg_retrograde`
-              - Get or set the option to fly the first leg of the search pattern on the reverse heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.centroid_true_course`
               - Get or set the specific course of the search pattern.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode`
+              - Get or set the mode to determine the course of the search pattern.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_options`
+              - Get the enroute options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.first_leg_retrograde`
+              - Get or set the option to fly the first leg of the search pattern on the reverse heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.fly_cruise_airspeed_profile`
               - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.must_level_off`
-              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.level_off_mode`
               - Get or set the level off mode. This is only used when the must level off option is on.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation`
+              - Get or set the maximum distance between the parallel flight lines of the search pattern.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.must_level_off`
+              - Opt whether the procedure must level off.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type`
+              - Get or set the procedure methodology used to calculate the flight line.
 
 
 
@@ -73,29 +73,11 @@ Property detail
 
     Get the altitude options.
 
-.. py:property:: enroute_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_options
-    :type: EnrouteOptions
+.. py:property:: centroid_true_course
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.centroid_true_course
+    :type: typing.Any
 
-    Get the enroute options.
-
-.. py:property:: enroute_cruise_airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_cruise_airspeed_options
-    :type: CruiseAirspeedOptions
-
-    Get the enroute cruise airspeed options.
-
-.. py:property:: procedure_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type
-    :type: FlightLineProcedureType
-
-    Get or set the procedure methodology used to calculate the flight line.
-
-.. py:property:: max_separation
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation
-    :type: float
-
-    Get or set the maximum distance between the parallel flight lines of the search pattern.
+    Get or set the specific course of the search pattern.
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode
@@ -103,17 +85,23 @@ Property detail
 
     Get or set the mode to determine the course of the search pattern.
 
+.. py:property:: enroute_cruise_airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_cruise_airspeed_options
+    :type: CruiseAirspeedOptions
+
+    Get the enroute cruise airspeed options.
+
+.. py:property:: enroute_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_options
+    :type: EnrouteOptions
+
+    Get the enroute options.
+
 .. py:property:: first_leg_retrograde
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.first_leg_retrograde
     :type: bool
 
     Get or set the option to fly the first leg of the search pattern on the reverse heading.
-
-.. py:property:: centroid_true_course
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.centroid_true_course
-    :type: typing.Any
-
-    Get or set the specific course of the search pattern.
 
 .. py:property:: fly_cruise_airspeed_profile
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.fly_cruise_airspeed_profile
@@ -121,21 +109,53 @@ Property detail
 
     Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
 
-.. py:property:: must_level_off
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.must_level_off
-    :type: bool
-
-    Opt whether the procedure must level off.
-
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
     Get or set the level off mode. This is only used when the must level off option is on.
 
+.. py:property:: max_separation
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation
+    :type: float
+
+    Get or set the maximum distance between the parallel flight lines of the search pattern.
+
+.. py:property:: must_level_off
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.must_level_off
+    :type: bool
+
+    Opt whether the procedure must level off.
+
+.. py:property:: procedure_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type
+    :type: FlightLineProcedureType
+
+    Get or set the procedure methodology used to calculate the flight line.
+
 
 Method detail
 -------------
+
+
+
+
+.. py:method:: copy_procedures(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.copy_procedures
+
+    Copy the search pattern maneuvers as a set of procedures to the clipboard.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+
 
 .. py:method:: get_as_procedure(self) -> IProcedure
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.get_as_procedure
@@ -153,24 +173,4 @@ Method detail
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-.. py:method:: copy_procedures(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.copy_procedures
-
-    Copy the search pattern maneuvers as a set of procedures to the clipboard.
-
-    :Returns:
-
-        :obj:`~None`
 

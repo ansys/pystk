@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.coord_system_name`
               - Get or set the coordinate system within which the element is defined.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_number`
-              - Get or set the number identifying one of the six Eigenvalues.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_complex_part`
               - Whether this value represents the real or imaginary part of the Eigenvalue.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_number`
+              - Get or set the number identifying one of the six Eigenvalues.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Get or set the coordinate system within which the element is defined.
 
-.. py:property:: eigenvalue_number
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_number
-    :type: STMEigenNumber
-
-    Get or set the number identifying one of the six Eigenvalues.
-
 .. py:property:: eigenvalue_complex_part
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_complex_part
     :type: ComplexNumber
 
     Whether this value represents the real or imaginary part of the Eigenvalue.
+
+.. py:property:: eigenvalue_number
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval.eigenvalue_number
+    :type: STMEigenNumber
+
+    Get or set the number identifying one of the six Eigenvalues.
 
 

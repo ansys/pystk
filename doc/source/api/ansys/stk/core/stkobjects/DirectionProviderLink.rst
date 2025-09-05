@@ -20,8 +20,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type`
-              - Get or set the Limits Exceeded Behavior type.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_a`
               - Get or set Azimuth Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_b`
@@ -30,6 +28,8 @@ Overview
               - Get or set Elevation Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.elevation_steering_limit_b`
               - Get or set Elevation Steering Limit B.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type`
+              - Get or set the Limits Exceeded Behavior type.
 
 
 
@@ -43,12 +43,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: limits_exceeded_behavior_type
-    :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type
-    :type: LimitsExceededBehaviorType
-
-    Get or set the Limits Exceeded Behavior type.
 
 .. py:property:: azimuth_steering_limit_a
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_a
@@ -73,5 +67,11 @@ Property detail
     :type: float
 
     Get or set Elevation Steering Limit B.
+
+.. py:property:: limits_exceeded_behavior_type
+    :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type
+    :type: LimitsExceededBehaviorType
+
+    Get or set the Limits Exceeded Behavior type.
 
 

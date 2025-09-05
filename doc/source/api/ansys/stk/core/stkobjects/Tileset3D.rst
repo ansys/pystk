@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3D.name`
               - Name of the 3DTileset.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3D.reference_frame`
+              - Reference Frame (VGT System) of the 3DTileset.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3D.source_type`
               - Source type of the 3DTileset. A member of the Tileset3DSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3D.uri`
               - URI of the 3DTileset asset.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3D.reference_frame`
-              - Reference Frame (VGT System) of the 3DTileset.
 
 
 
@@ -46,6 +46,12 @@ Property detail
 
     Name of the 3DTileset.
 
+.. py:property:: reference_frame
+    :canonical: ansys.stk.core.stkobjects.Tileset3D.reference_frame
+    :type: str
+
+    Reference Frame (VGT System) of the 3DTileset.
+
 .. py:property:: source_type
     :canonical: ansys.stk.core.stkobjects.Tileset3D.source_type
     :type: Tileset3DSourceType
@@ -57,11 +63,5 @@ Property detail
     :type: str
 
     URI of the 3DTileset asset.
-
-.. py:property:: reference_frame
-    :canonical: ansys.stk.core.stkobjects.Tileset3D.reference_frame
-    :type: str
-
-    Reference Frame (VGT System) of the 3DTileset.
 
 

@@ -18,20 +18,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.item`
-              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.add`
               - Add a procedure with the specified site at the end of the current phase.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.add_at_index`
               - Add a procedure with the specified site at the given index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.disable_auto_propagate`
+              - Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.enable_auto_propagate`
+              - Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.remove`
               - Remove given procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.remove_at_index`
               - Remove procedure at the given index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.enable_auto_propagate`
-              - Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.disable_auto_propagate`
-              - Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
 
     .. tab-item:: Properties
 
@@ -39,10 +39,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -216,37 +216,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> IProcedure
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~IProcedure`
-
 
 .. py:method:: add(self, site_type: SiteType, procedure_type: ProcedureType) -> IProcedure
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.add
@@ -282,6 +266,39 @@ Method detail
 
         :obj:`~IProcedure`
 
+
+.. py:method:: disable_auto_propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.disable_auto_propagate
+
+    Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: enable_auto_propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.enable_auto_propagate
+
+    Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: item(self, index: int) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~IProcedure`
+
 .. py:method:: remove(self, procedure: IProcedure) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.remove
 
@@ -310,21 +327,4 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: enable_auto_propagate(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.enable_auto_propagate
-
-    Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: disable_auto_propagate(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.disable_auto_propagate
-
-    Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
-
-    :Returns:
-
-        :obj:`~None`
 

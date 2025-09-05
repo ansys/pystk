@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.remove`
-              - Remove a specified element.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.item`
-              - Return an element by name or at a specified position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.get_item_by_index`
               - Retrieve a condition from the collection by index.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.get_item_by_name`
               - Retrieve a condition from the collection by name.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.item`
+              - Return an element by name or at a specified position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.remove`
+              - Remove a specified element.
 
     .. tab-item:: Properties
 
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup._new_enum`
+              - Return a COM enumerator.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.context`
               - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.count`
               - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.factory`
               - Return a factory object used to create calc scalar components.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolConditionGroup._new_enum`
-              - Return a COM enumerator.
 
 
 
@@ -56,6 +56,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup._new_enum
+    :type: EnumeratorProxy
+
+    Return a COM enumerator.
 
 .. py:property:: context
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.context
@@ -75,30 +81,9 @@ Property detail
 
     Return a factory object used to create calc scalar components.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup._new_enum
-    :type: EnumeratorProxy
-
-    Return a COM enumerator.
-
 
 Method detail
 -------------
-
-.. py:method:: remove(self, event_name: str) -> None
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.remove
-
-    Remove a specified element.
-
-    :Parameters:
-
-        **event_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 
 .. py:method:: contains(self, name: str) -> bool
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.contains
@@ -115,20 +100,6 @@ Method detail
         :obj:`~bool`
 
 
-
-.. py:method:: item(self, index_or_name: typing.Any) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.item
-
-    Return an element by name or at a specified position.
-
-    :Parameters:
-
-        **index_or_name** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~ICalculationToolCondition`
 
 
 .. py:method:: get_item_by_index(self, index: int) -> ICalculationToolCondition
@@ -158,4 +129,33 @@ Method detail
     :Returns:
 
         :obj:`~ICalculationToolCondition`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.item
+
+    Return an element by name or at a specified position.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~ICalculationToolCondition`
+
+.. py:method:: remove(self, event_name: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolConditionGroup.remove
+
+    Remove a specified element.
+
+    :Parameters:
+
+        **event_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

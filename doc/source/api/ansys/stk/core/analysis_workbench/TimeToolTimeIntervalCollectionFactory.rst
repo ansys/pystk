@@ -22,12 +22,12 @@ Overview
               - Create and register an event interval collection using specified name, description, and type.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_lighting`
               - Create an event interval collection defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_satisfaction`
+              - Create an event interval collection containing intervals during which condition set is satisfied.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_signaled`
               - Create an event interval collection recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_satisfaction`
-              - Create an event interval collection containing intervals during which condition set is satisfied.
 
 
 Import detail
@@ -76,6 +76,22 @@ Method detail
 
         :obj:`~ITimeToolTimeIntervalCollection`
 
+.. py:method:: create_satisfaction(self, name: str, description: str) -> ITimeToolTimeIntervalCollection
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_satisfaction
+
+    Create an event interval collection containing intervals during which condition set is satisfied.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **description** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ITimeToolTimeIntervalCollection`
+
 .. py:method:: create_signaled(self, name: str, description: str) -> ITimeToolTimeIntervalCollection
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_signaled
 
@@ -105,20 +121,4 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-.. py:method:: create_satisfaction(self, name: str, description: str) -> ITimeToolTimeIntervalCollection
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalCollectionFactory.create_satisfaction
-
-    Create an event interval collection containing intervals during which condition set is satisfied.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-        **description** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~ITimeToolTimeIntervalCollection`
 

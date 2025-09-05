@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.supported_block_types`
-              - Get an array of supported block types.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.beamwidth`
+              - Get the beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.block_type`
               - Get or set the block type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.efficiency`
               - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.maximum_gain`
               - Get the maximum gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.beamwidth`
-              - Get the beamwidth.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSGlobal.supported_block_types`
+              - Get an array of supported block types.
 
 
 
@@ -44,11 +44,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_block_types
-    :canonical: ansys.stk.core.stkobjects.AntennaModelGPSGlobal.supported_block_types
-    :type: list
+.. py:property:: beamwidth
+    :canonical: ansys.stk.core.stkobjects.AntennaModelGPSGlobal.beamwidth
+    :type: typing.Any
 
-    Get an array of supported block types.
+    Get the beamwidth.
 
 .. py:property:: block_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelGPSGlobal.block_type
@@ -68,10 +68,10 @@ Property detail
 
     Get the maximum gain.
 
-.. py:property:: beamwidth
-    :canonical: ansys.stk.core.stkobjects.AntennaModelGPSGlobal.beamwidth
-    :type: typing.Any
+.. py:property:: supported_block_types
+    :canonical: ansys.stk.core.stkobjects.AntennaModelGPSGlobal.supported_block_types
+    :type: list
 
-    Get the beamwidth.
+    Get an array of supported block types.
 
 

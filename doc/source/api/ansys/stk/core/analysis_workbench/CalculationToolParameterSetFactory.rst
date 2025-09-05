@@ -24,10 +24,10 @@ Overview
               - Create a parameter set defined by identifying one set of axes in reference to another.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_ground_trajectory`
               - Create a parameter set defined by identifying location in reference central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_trajectory`
-              - Create a parameter set defined by identifying location in reference coordinate system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_orbit`
               - Create a parameter set defined by identifying orbiting point and its central body.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_trajectory`
+              - Create a parameter set defined by identifying location in reference coordinate system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_vector`
               - Create a parameter set defined by identifying vector in reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.is_type_supported`
@@ -96,10 +96,10 @@ Method detail
 
         :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_trajectory(self, name: str, description: str) -> ICalculationToolParameterSet
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_trajectory
+.. py:method:: create_orbit(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_orbit
 
-    Create a parameter set defined by identifying location in reference coordinate system.
+    Create a parameter set defined by identifying orbiting point and its central body.
 
     :Parameters:
 
@@ -112,10 +112,10 @@ Method detail
 
         :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_orbit(self, name: str, description: str) -> ICalculationToolParameterSet
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_orbit
+.. py:method:: create_trajectory(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolParameterSetFactory.create_trajectory
 
-    Create a parameter set defined by identifying orbiting point and its central body.
+    Create a parameter set defined by identifying location in reference coordinate system.
 
     :Parameters:
 

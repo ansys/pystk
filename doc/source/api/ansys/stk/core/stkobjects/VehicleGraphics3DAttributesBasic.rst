@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics`
-              - Opt to display the selected graphics properties instead of using those defined in terms of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color`
               - Get or set the line color used when UseCustomColor is true.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.line_width`
               - Get or set the line width.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics`
+              - Opt to display the selected graphics properties instead of using those defined in terms of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.translucency`
               - Get or set the translucency. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.use_custom_color`
@@ -44,12 +44,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics
-    :type: bool
-
-    Opt to display the selected graphics properties instead of using those defined in terms of intervals.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color
     :type: Color
@@ -61,6 +55,12 @@ Property detail
     :type: LineWidth
 
     Get or set the line width.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics
+    :type: bool
+
+    Opt to display the selected graphics properties instead of using those defined in terms of intervals.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.translucency

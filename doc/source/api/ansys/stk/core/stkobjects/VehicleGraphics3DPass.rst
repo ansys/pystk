@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPass.track_data`
-              - Get the leading/trailing ground and orbit track data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPass.tick_marks`
               - Get the tick mark data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPass.track_data`
+              - Get the leading/trailing ground and orbit track data.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: track_data
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPass.track_data
-    :type: VehicleGraphics3DOrbitTrackData
-
-    Get the leading/trailing ground and orbit track data.
-
 .. py:property:: tick_marks
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPass.tick_marks
     :type: VehicleGraphics3DOrbitTickMarks
 
     Get the tick mark data.
+
+.. py:property:: track_data
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPass.track_data
+    :type: VehicleGraphics3DOrbitTrackData
+
+    Get the leading/trailing ground and orbit track data.
 
 

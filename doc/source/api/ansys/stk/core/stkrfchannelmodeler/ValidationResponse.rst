@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ValidationResponse.value`
-              - Get the validation indicator.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ValidationResponse.message`
               - Get the validation message.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ValidationResponse.value`
+              - Get the validation indicator.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: value
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ValidationResponse.value
-    :type: bool
-
-    Get the validation indicator.
-
 .. py:property:: message
     :canonical: ansys.stk.core.stkrfchannelmodeler.ValidationResponse.message
     :type: str
 
     Get the validation message.
+
+.. py:property:: value
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ValidationResponse.value
+    :type: bool
+
+    Get the validation indicator.
 
 

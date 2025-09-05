@@ -22,10 +22,10 @@ Overview
               - Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate.
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack`
               - Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
-            * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.stop_recording`
-              - Stop recording.
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.start_recording_video`
               - Start recording a video file at the specified bit and frame rate.
+            * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.stop_recording`
+              - Stop recording.
 
     .. tab-item:: Properties
 
@@ -100,15 +100,6 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: stop_recording(self) -> None
-    :canonical: ansys.stk.core.graphics.CameraVideoRecording.stop_recording
-
-    Stop recording.
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: start_recording_video(self, file_directory: str, file_prefix: str, video_format: VideoFormat, video_bit_rate: int, video_frame_rate: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_video
 
@@ -126,6 +117,15 @@ Method detail
 
         **video_frame_rate** : :obj:`~int`
 
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: stop_recording(self) -> None
+    :canonical: ansys.stk.core.graphics.CameraVideoRecording.stop_recording
+
+    Stop recording.
 
     :Returns:
 

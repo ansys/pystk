@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.type`
-              - Get the response type.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.data`
               - Get the response data.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.transmit_antenna_count`
-              - Get the transmit antenna count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.receive_antenna_count`
               - Get the receive antenna count.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.transmit_antenna_count`
+              - Get the transmit antenna count.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.type`
+              - Get the response type.
 
 
 Import detail
@@ -39,17 +39,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.type
-    :type: ChannelResponseType
-
-    Get the response type.
-
 .. py:property:: data
     :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.data
     :type: list
 
     Get the response data.
+
+.. py:property:: receive_antenna_count
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.receive_antenna_count
+    :type: int
+
+    Get the receive antenna count.
 
 .. py:property:: transmit_antenna_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.transmit_antenna_count
@@ -57,10 +57,10 @@ Property detail
 
     Get the transmit antenna count.
 
-.. py:property:: receive_antenna_count
-    :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.receive_antenna_count
-    :type: int
+.. py:property:: type
+    :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.type
+    :type: ChannelResponseType
 
-    Get the receive antenna count.
+    Get the response type.
 
 

@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.type`
-              - Get the option for where to end the drop line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.show_graphics`
-              - Opt whether to display the drop line.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.use_2d_color`
-              - Opt whether to use the color in the vehicle's 2D attributes for the drop line.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.color`
               - Get or set the color of the drop line (if the 2D graphics color is not used).
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_width`
-              - Get or set the line width of the drop line.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_style`
               - Get or set the line style of the drop line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_width`
+              - Get or set the line width of the drop line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.show_graphics`
+              - Opt whether to display the drop line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.type`
+              - Get the option for where to end the drop line.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.use_2d_color`
+              - Opt whether to use the color in the vehicle's 2D attributes for the drop line.
 
 
 
@@ -44,29 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.type
-    :type: VehicleGraphics3DDropLineType
-
-    Get the option for where to end the drop line.
-
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.show_graphics
-    :type: bool
-
-    Opt whether to display the drop line.
-
-.. py:property:: use_2d_color
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.use_2d_color
-    :type: bool
-
-    Opt whether to use the color in the vehicle's 2D attributes for the drop line.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.color
     :type: Color
 
     Get or set the color of the drop line (if the 2D graphics color is not used).
+
+.. py:property:: line_style
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_style
+    :type: LineStyle
+
+    Get or set the line style of the drop line.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_width
@@ -74,10 +62,22 @@ Property detail
 
     Get or set the line width of the drop line.
 
-.. py:property:: line_style
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_style
-    :type: LineStyle
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.show_graphics
+    :type: bool
 
-    Get or set the line style of the drop line.
+    Opt whether to display the drop line.
+
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.type
+    :type: VehicleGraphics3DDropLineType
+
+    Get the option for where to end the drop line.
+
+.. py:property:: use_2d_color
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.use_2d_color
+    :type: bool
+
+    Opt whether to use the color in the vehicle's 2D attributes for the drop line.
 
 

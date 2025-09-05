@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle`
+              - Opt whether to ignore the flight path angle.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode`
+              - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper`
+              - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_pull_up_g`
               - Get or set the force normal to the velocity vector used to transition into a climb or to a transition out of a dive into the next flight segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_push_over_g`
               - Get or set the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode`
-              - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle`
-              - Opt whether to ignore the flight path angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper`
-              - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 
 
@@ -92,6 +92,24 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: ignore_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle
+    :type: bool
+
+    Opt whether to ignore the flight path angle.
+
+.. py:property:: maneuver_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode
+    :type: AccelerationManeuverMode
+
+    Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+
+.. py:property:: maneuver_mode_helper
+    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper
+    :type: AerodynamicPropulsionManeuverModeHelper
+
+    Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
+
 .. py:property:: max_pull_up_g
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_pull_up_g
     :type: float
@@ -103,23 +121,5 @@ Property detail
     :type: float
 
     Get or set the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
-
-.. py:property:: maneuver_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode
-    :type: AccelerationManeuverMode
-
-    Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
-
-.. py:property:: ignore_flight_path_angle
-    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle
-    :type: bool
-
-    Opt whether to ignore the flight path angle.
-
-.. py:property:: maneuver_mode_helper
-    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper
-    :type: AerodynamicPropulsionManeuverModeHelper
-
-    Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 

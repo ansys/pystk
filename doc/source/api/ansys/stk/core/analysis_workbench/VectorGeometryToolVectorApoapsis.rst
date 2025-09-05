@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.reference_point`
-              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.central_body`
               - Specify a central body.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.mean_element_type`
               - Specify the mean element theory type for approximating motion.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.reference_point`
+              - Specify a reference point.
 
 
 
@@ -40,12 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_point
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.reference_point
-    :type: VectorGeometryToolPointReference
-
-    Specify a reference point.
-
 .. py:property:: central_body
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.central_body
     :type: AnalysisWorkbenchCentralBodyReference
@@ -57,5 +51,11 @@ Property detail
     :type: MeanElementTheory
 
     Specify the mean element theory type for approximating motion.
+
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorApoapsis.reference_point
+    :type: VectorGeometryToolPointReference
+
+    Specify a reference point.
 
 

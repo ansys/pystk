@@ -24,6 +24,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher`
+              - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+
+                If gRPC is not active, the batcher will be disabled.
+                max_batch is the maximum number of calls to batch together.
+                Set disable_batching=True to disable batching operations for this batcher.
+                See grpcutilities module for more information.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context`
               - Create a new object model context for the STK Desktop application.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options`
@@ -35,13 +42,6 @@ Overview
                 { "disable batching" : bool }. Disable all batching operations.
                 { "release batch size" : int }. Number of interfaces to be garbage collected before
                 sending the entire batch to STK to be released. Default value is 12.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher`
-              - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-
-                If gRPC is not active, the batcher will be disabled.
-                max_batch is the maximum number of calls to batch together.
-                Set disable_batching=True to disable batching operations for this batcher.
-                See grpcutilities module for more information.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.shutdown`
               - Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication()).
 
@@ -77,6 +77,27 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: new_grpc_call_batcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
+    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher
+
+    Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+
+    If gRPC is not active, the batcher will be disabled.
+    max_batch is the maximum number of calls to batch together.
+    Set disable_batching=True to disable batching operations for this batcher.
+    See grpcutilities module for more information.
+
+    :Parameters:
+
+        **max_batch** : :obj:`~int`
+
+        **disable_batching** : :obj:`~bool`
+
+
+    :Returns:
+
+        :obj:`~GrpcCallBatcher`
+
 .. py:method:: new_object_model_context(self) -> STKObjectModelContext
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context
 
@@ -106,27 +127,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: new_grpc_call_batcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
-    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher
-
-    Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-
-    If gRPC is not active, the batcher will be disabled.
-    max_batch is the maximum number of calls to batch together.
-    Set disable_batching=True to disable batching operations for this batcher.
-    See grpcutilities module for more information.
-
-    :Parameters:
-
-        **max_batch** : :obj:`~int`
-
-        **disable_batching** : :obj:`~bool`
-
-
-    :Returns:
-
-        :obj:`~GrpcCallBatcher`
 
 .. py:method:: shutdown(self) -> None
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.shutdown

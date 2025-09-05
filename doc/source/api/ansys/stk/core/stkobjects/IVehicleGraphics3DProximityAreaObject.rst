@@ -18,20 +18,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics`
-              - Specify whether to show the proximity area object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color`
               - Specify a line color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style`
+              - Specify a line style type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width`
               - Specify a line width.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics`
+              - Specify whether to show the proximity area object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_label`
               - Specify whether to display a label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_text`
               - Specify whether to display a text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.text`
               - Specify a text.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style`
-              - Specify a line style type.
 
 
 Import detail
@@ -45,23 +45,29 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics
-    :type: bool
-
-    Specify whether to show the proximity area object.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color
     :type: Color
 
     Specify a line color.
 
+.. py:property:: line_style
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style
+    :type: LineStyle
+
+    Specify a line style type.
+
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width
     :type: LineWidth
 
     Specify a line width.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics
+    :type: bool
+
+    Specify whether to show the proximity area object.
 
 .. py:property:: show_label
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_label
@@ -80,11 +86,5 @@ Property detail
     :type: str
 
     Specify a text.
-
-.. py:property:: line_style
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style
-    :type: LineStyle
-
-    Specify a line style type.
 
 

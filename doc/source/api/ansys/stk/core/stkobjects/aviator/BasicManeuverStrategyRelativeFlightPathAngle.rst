@@ -22,14 +22,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_absolute_altitude`
-              - Set whether to enable and a value for the minimum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_max_absolute_altitude`
               - Set whether to enable and a value for the maximum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_altitude_relative_anchor`
-              - Set whether to enable and a value for the minimum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_max_altitude_relative_anchor`
               - Set whether to enable and a value for the maximum altitude offset from the target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_absolute_altitude`
+              - Set whether to enable and a value for the minimum absolute altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_altitude_relative_anchor`
+              - Set whether to enable and a value for the minimum altitude offset from the target.
 
     .. tab-item:: Properties
 
@@ -37,36 +37,36 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle`
-              - Get or set the flight path angle for the maneuver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.airspeed_options`
+              - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.anchor_altitude_offset`
               - Get or set the goal height above or below the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor`
-              - Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration`
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_mode`
               - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_pitch_rate`
               - Get the specified pitch rate for a control limit mode of specify max pitch rate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.airspeed_options`
-              - Get the airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_absolute_altitude`
-              - Get the minimum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_absolute_altitude`
-              - Get the option to specify a minimum absolute altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle`
+              - Get or set the flight path angle for the maneuver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor`
+              - Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.max_absolute_altitude`
               - Get the maximum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_absolute_altitude`
-              - Get the option to specify a maximum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_altitude_relative_anchor`
-              - Get the minimum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_altitude_relative_anchor`
-              - Get the option to specify a minimum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.max_altitude_relative_anchor`
               - Get the maximum altitude offset from the target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_absolute_altitude`
+              - Get the minimum absolute altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_altitude_relative_anchor`
+              - Get the minimum altitude offset from the target.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_absolute_altitude`
+              - Get the option to specify a maximum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_altitude_relative_anchor`
               - Get the option to specify a maximum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration`
-              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_absolute_altitude`
+              - Get the option to specify a minimum absolute altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_altitude_relative_anchor`
+              - Get the option to specify a minimum altitude offset from the target.
 
 
 
@@ -81,11 +81,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: flight_path_angle
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle
-    :type: typing.Any
+.. py:property:: airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.airspeed_options
+    :type: BasicManeuverAirspeedOptions
 
-    Get or set the flight path angle for the maneuver.
+    Get the airspeed options.
 
 .. py:property:: anchor_altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.anchor_altitude_offset
@@ -93,11 +93,11 @@ Property detail
 
     Get or set the goal height above or below the target.
 
-.. py:property:: maneuver_factor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor
-    :type: float
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration
+    :type: bool
 
-    Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_mode
@@ -111,23 +111,17 @@ Property detail
 
     Get the specified pitch rate for a control limit mode of specify max pitch rate.
 
-.. py:property:: airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.airspeed_options
-    :type: BasicManeuverAirspeedOptions
+.. py:property:: flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle
+    :type: typing.Any
 
-    Get the airspeed options.
+    Get or set the flight path angle for the maneuver.
 
-.. py:property:: min_absolute_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_absolute_altitude
+.. py:property:: maneuver_factor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor
     :type: float
 
-    Get the minimum absolute altitude.
-
-.. py:property:: use_min_absolute_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_absolute_altitude
-    :type: bool
-
-    Get the option to specify a minimum absolute altitude.
+    Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
 
 .. py:property:: max_absolute_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.max_absolute_altitude
@@ -135,11 +129,17 @@ Property detail
 
     Get the maximum absolute altitude.
 
-.. py:property:: use_max_absolute_altitude
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_absolute_altitude
-    :type: bool
+.. py:property:: max_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.max_altitude_relative_anchor
+    :type: float
 
-    Get the option to specify a maximum absolute altitude.
+    Get the maximum altitude offset from the target.
+
+.. py:property:: min_absolute_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_absolute_altitude
+    :type: float
+
+    Get the minimum absolute altitude.
 
 .. py:property:: min_altitude_relative_anchor
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.min_altitude_relative_anchor
@@ -147,17 +147,11 @@ Property detail
 
     Get the minimum altitude offset from the target.
 
-.. py:property:: use_min_altitude_relative_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_altitude_relative_anchor
+.. py:property:: use_max_absolute_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_absolute_altitude
     :type: bool
 
-    Get the option to specify a minimum altitude offset from the target.
-
-.. py:property:: max_altitude_relative_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.max_altitude_relative_anchor
-    :type: float
-
-    Get the maximum altitude offset from the target.
+    Get the option to specify a maximum absolute altitude.
 
 .. py:property:: use_max_altitude_relative_anchor
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_altitude_relative_anchor
@@ -165,15 +159,28 @@ Property detail
 
     Get the option to specify a maximum altitude offset from the target.
 
-.. py:property:: compensate_for_coriolis_acceleration
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration
+.. py:property:: use_min_absolute_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_absolute_altitude
     :type: bool
 
-    Get or set the option to compensate for the acceleration due to the Coriolis effect.
+    Get the option to specify a minimum absolute altitude.
+
+.. py:property:: use_min_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_min_altitude_relative_anchor
+    :type: bool
+
+    Get the option to specify a minimum altitude offset from the target.
 
 
 Method detail
 -------------
+
+
+
+
+
+
+
 
 
 
@@ -199,27 +206,6 @@ Method detail
 
         :obj:`~None`
 
-
-
-
-.. py:method:: set_min_absolute_altitude(self, enable: bool, altitude: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_absolute_altitude
-
-    Set whether to enable and a value for the minimum absolute altitude.
-
-    :Parameters:
-
-        **enable** : :obj:`~bool`
-
-        **altitude** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
 .. py:method:: set_max_absolute_altitude(self, enable: bool, altitude: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_max_absolute_altitude
 
@@ -236,7 +222,37 @@ Method detail
 
         :obj:`~None`
 
+.. py:method:: set_max_altitude_relative_anchor(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_max_altitude_relative_anchor
 
+    Set whether to enable and a value for the maximum altitude offset from the target.
+
+    :Parameters:
+
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_min_absolute_altitude(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_absolute_altitude
+
+    Set whether to enable and a value for the minimum absolute altitude.
+
+    :Parameters:
+
+        **enable** : :obj:`~bool`
+
+        **altitude** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: set_min_altitude_relative_anchor(self, enable: bool, altitude: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_min_altitude_relative_anchor
@@ -255,22 +271,6 @@ Method detail
         :obj:`~None`
 
 
-
-.. py:method:: set_max_altitude_relative_anchor(self, enable: bool, altitude: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_max_altitude_relative_anchor
-
-    Set whether to enable and a value for the maximum altitude offset from the target.
-
-    :Parameters:
-
-        **enable** : :obj:`~bool`
-
-        **altitude** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 

@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLink.linked_object`
+              - Return the STK object associated with the instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLink.name`
               - Return STK object name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLink.path`
               - Return STK object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLink.type`
               - Return STK object type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLink.linked_object`
-              - Return the STK object associated with the instance.
 
 
 
@@ -39,6 +39,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: linked_object
+    :canonical: ansys.stk.core.stkobjects.ObjectLink.linked_object
+    :type: ISTKObject
+
+    Return the STK object associated with the instance.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.ObjectLink.name
@@ -57,11 +63,5 @@ Property detail
     :type: STKObjectType
 
     Return STK object type.
-
-.. py:property:: linked_object
-    :canonical: ansys.stk.core.stkobjects.ObjectLink.linked_object
-    :type: ISTKObject
-
-    Return the STK object associated with the instance.
 
 

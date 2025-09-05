@@ -29,10 +29,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.name`
               - Get or set the name of the sequence.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment`
-              - Get or set the user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence`
               - Return the segment collection of the sequence.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment`
+              - Get or set the user comment.
 
 
 
@@ -53,17 +53,17 @@ Property detail
 
     Get or set the name of the sequence.
 
-.. py:property:: user_comment
-    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment
-    :type: str
-
-    Get or set the user comment.
-
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence
     :type: MCSSegmentCollection
 
     Return the segment collection of the sequence.
+
+.. py:property:: user_comment
+    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment
+    :type: str
+
+    Get or set the user comment.
 
 
 Method detail

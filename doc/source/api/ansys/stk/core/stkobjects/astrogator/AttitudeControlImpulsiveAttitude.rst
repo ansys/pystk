@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.delta_v_magnitude`
               - Get or set the size of the delta-V to be applied along the X axis - as defined by the selected axes and rotation. Uses Rate Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.reference_axes_name`
-              - Ref Axes - the reference axes to be used in modeling this maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.orientation`
               - Get the orientation of the attitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.reference_axes_name`
+              - Ref Axes - the reference axes to be used in modeling this maneuver.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Get or set the size of the delta-V to be applied along the X axis - as defined by the selected axes and rotation. Uses Rate Dimension.
 
-.. py:property:: reference_axes_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.reference_axes_name
-    :type: str
-
-    Ref Axes - the reference axes to be used in modeling this maneuver.
-
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.orientation
     :type: IOrientation
 
     Get the orientation of the attitude.
+
+.. py:property:: reference_axes_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAttitude.reference_axes_name
+    :type: str
+
+    Ref Axes - the reference axes to be used in modeling this maneuver.
 
 

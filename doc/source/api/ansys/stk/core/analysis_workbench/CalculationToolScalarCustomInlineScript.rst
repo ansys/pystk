@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.script_type`
-              - Script type allowed {JScript | Matlab | VBScript}.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.value_function`
-              - The Value function to be evaluated.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.derivative_function`
               - The Derivative function to be evaluated.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.dimension`
               - Dimension name.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.script_type`
+              - Script type allowed {JScript | Matlab | VBScript}.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.value_function`
+              - The Value function to be evaluated.
 
 
 
@@ -53,18 +53,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: script_type
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.script_type
-    :type: str
-
-    Script type allowed {JScript | Matlab | VBScript}.
-
-.. py:property:: value_function
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.value_function
-    :type: str
-
-    The Value function to be evaluated.
-
 .. py:property:: derivative_function
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.derivative_function
     :type: str
@@ -77,13 +65,21 @@ Property detail
 
     Dimension name.
 
+.. py:property:: script_type
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.script_type
+    :type: str
+
+    Script type allowed {JScript | Matlab | VBScript}.
+
+.. py:property:: value_function
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.value_function
+    :type: str
+
+    The Value function to be evaluated.
+
 
 Method detail
 -------------
-
-
-
-
 
 
 
@@ -98,6 +94,8 @@ Method detail
 
         :obj:`~list`
 
+
+
 .. py:method:: set_all_arguments(self, calc_list: list) -> None
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarCustomInlineScript.set_all_arguments
 
@@ -111,4 +109,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 

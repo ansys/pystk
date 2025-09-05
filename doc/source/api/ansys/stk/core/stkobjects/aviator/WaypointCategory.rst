@@ -18,12 +18,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_waypoints`
-              - Get the User Waypoints.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_runways`
-              - Get the User Runways.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_vtol_points`
-              - Get the User VTOL Points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_airports`
               - Get the ARINC-424 airports.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_helipads`
@@ -40,6 +34,12 @@ Overview
               - Get the DAFIF runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.dafif_waypoints`
               - Get the DAFIF waypoints.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_runways`
+              - Get the User Runways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_vtol_points`
+              - Get the User VTOL Points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WaypointCategory.user_waypoints`
+              - Get the User Waypoints.
 
 
 
@@ -53,24 +53,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: user_waypoints
-    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_waypoints
-    :type: UserWaypointSource
-
-    Get the User Waypoints.
-
-.. py:property:: user_runways
-    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_runways
-    :type: UserRunwaySource
-
-    Get the User Runways.
-
-.. py:property:: user_vtol_points
-    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_vtol_points
-    :type: UserVTOLPointSource
-
-    Get the User VTOL Points.
 
 .. py:property:: arinc424_airports
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_airports
@@ -119,5 +101,23 @@ Property detail
     :type: DAFIFSource
 
     Get the DAFIF waypoints.
+
+.. py:property:: user_runways
+    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_runways
+    :type: UserRunwaySource
+
+    Get the User Runways.
+
+.. py:property:: user_vtol_points
+    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_vtol_points
+    :type: UserVTOLPointSource
+
+    Get the User VTOL Points.
+
+.. py:property:: user_waypoints
+    :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_waypoints
+    :type: UserWaypointSource
+
+    Get the User Waypoints.
 
 

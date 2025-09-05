@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency`
-              - Get or set the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.order`
               - Get or set the filter order.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency`
+              - Get or set the sampling frequency.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sampling_frequency
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency
-    :type: float
-
-    Get or set the sampling frequency.
-
 .. py:property:: order
     :canonical: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.order
     :type: int
 
     Get or set the filter order.
+
+.. py:property:: sampling_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency
+    :type: float
+
+    Get or set the sampling frequency.
 
 

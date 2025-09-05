@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.axes`
               - Specify the axes.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.reference_axes`
-              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.differencing_time_step`
               - Time step used in numerical evaluation of derivatives using central differencing.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.reference_axes`
+              - Specify a reference axes.
 
 
 
@@ -46,16 +46,16 @@ Property detail
 
     Specify the axes.
 
-.. py:property:: reference_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.reference_axes
-    :type: VectorGeometryToolAxesReference
-
-    Specify a reference axes.
-
 .. py:property:: differencing_time_step
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.differencing_time_step
     :type: float
 
     Time step used in numerical evaluation of derivatives using central differencing.
+
+.. py:property:: reference_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolVectorAngularVelocity.reference_axes
+    :type: VectorGeometryToolAxesReference
+
+    Specify a reference axes.
 
 

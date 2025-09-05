@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.scalar`
-              - The input scalar component used to compute the derivative.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.differencing_time_step`
               - The time step used, if necessary, in numerical evaluation of derivatives using central differencing.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.force_use_of_numerical_differences`
               - Force the use of numerical differences even if the derivative can be computed analytically.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.scalar`
+              - The input scalar component used to compute the derivative.
 
 
 
@@ -40,12 +40,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: scalar
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.scalar
-    :type: ICalculationToolScalar
-
-    The input scalar component used to compute the derivative.
-
 .. py:property:: differencing_time_step
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.differencing_time_step
     :type: float
@@ -57,5 +51,11 @@ Property detail
     :type: bool
 
     Force the use of numerical differences even if the derivative can be computed analytically.
+
+.. py:property:: scalar
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarDerivative.scalar
+    :type: ICalculationToolScalar
+
+    The input scalar component used to compute the derivative.
 
 

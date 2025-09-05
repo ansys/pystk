@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IntegratorTimeRegularization.use`
-              - Opt whether to integrate the orbit with respect to regularized time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IntegratorTimeRegularization.exponent`
               - Exponent used in the regularization equation. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IntegratorTimeRegularization.steps_per_orbit`
               - Integration steps per orbit. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IntegratorTimeRegularization.use`
+              - Opt whether to integrate the orbit with respect to regularized time.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use
-    :canonical: ansys.stk.core.stkobjects.IntegratorTimeRegularization.use
-    :type: bool
-
-    Opt whether to integrate the orbit with respect to regularized time.
-
 .. py:property:: exponent
     :canonical: ansys.stk.core.stkobjects.IntegratorTimeRegularization.exponent
     :type: float
@@ -55,5 +49,11 @@ Property detail
     :type: int
 
     Integration steps per orbit. Dimensionless.
+
+.. py:property:: use
+    :canonical: ansys.stk.core.stkobjects.IntegratorTimeRegularization.use
+    :type: bool
+
+    Opt whether to integrate the orbit with respect to regularized time.
 
 

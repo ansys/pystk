@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.azimuth_broadening_factor`
-              - Get or set the azimuth broadening factor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.range_broadening_factor`
-              - Get or set the range broadening factor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.if_bandwidth`
-              - Get or set the IF bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.analysis_mode`
               - Get or set the analysis mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.analysis_mode_value`
               - Get or set the analysis mode value.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.azimuth_broadening_factor`
+              - Get or set the azimuth broadening factor.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.if_bandwidth`
+              - Get or set the IF bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.multiplicative_noise_ratio`
               - Get or set the multiplicative noise ratio.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.range_broadening_factor`
+              - Get or set the range broadening factor.
 
 
 
@@ -44,24 +44,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: azimuth_broadening_factor
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.azimuth_broadening_factor
-    :type: float
-
-    Get or set the azimuth broadening factor.
-
-.. py:property:: range_broadening_factor
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.range_broadening_factor
-    :type: float
-
-    Get or set the range broadening factor.
-
-.. py:property:: if_bandwidth
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.if_bandwidth
-    :type: float
-
-    Get or set the IF bandwidth.
-
 .. py:property:: analysis_mode
     :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.analysis_mode
     :type: RadarSARPulseIntegrationAnalysisMode
@@ -74,10 +56,28 @@ Property detail
 
     Get or set the analysis mode value.
 
+.. py:property:: azimuth_broadening_factor
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.azimuth_broadening_factor
+    :type: float
+
+    Get or set the azimuth broadening factor.
+
+.. py:property:: if_bandwidth
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.if_bandwidth
+    :type: float
+
+    Get or set the IF bandwidth.
+
 .. py:property:: multiplicative_noise_ratio
     :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.multiplicative_noise_ratio
     :type: float
 
     Get or set the multiplicative noise ratio.
+
+.. py:property:: range_broadening_factor
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.range_broadening_factor
+    :type: float
+
+    Get or set the range broadening factor.
 
 

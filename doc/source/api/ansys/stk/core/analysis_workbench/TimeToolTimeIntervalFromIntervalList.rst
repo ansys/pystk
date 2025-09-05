@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.reference_intervals`
-              - The reference interval list.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_selection`
-              - The method used to select an interval from the reference interval list.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_number`
               - An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_selection`
+              - The method used to select an interval from the reference interval list.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.reference_intervals`
+              - The reference interval list.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_intervals
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.reference_intervals
-    :type: ITimeToolTimeIntervalList
+.. py:property:: interval_number
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_number
+    :type: int
 
-    The reference interval list.
+    An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd.
 
 .. py:property:: interval_selection
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_selection
@@ -52,10 +52,10 @@ Property detail
 
     The method used to select an interval from the reference interval list.
 
-.. py:property:: interval_number
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.interval_number
-    :type: int
+.. py:property:: reference_intervals
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalFromIntervalList.reference_intervals
+    :type: ITimeToolTimeIntervalList
 
-    An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd.
+    The reference interval list.
 
 

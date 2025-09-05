@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_station_path`
-              - Instance path for the commanding object. NONE can be used to clear the commanding object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.receive_station_path`
-              - Instance path for the receiving object. NONE can be used to clear the receiving object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_preparation_time`
-              - Amount of time in seconds required for command preparation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.commanding_time`
-              - Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.pre_collection_time`
-              - Amount of time in seconds required from receipt of commanding until a collection can be performed by the assets.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.collection_time`
-              - Amount of time in seconds required for data collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.post_collection_time`
-              - Amount of time in seconds required from asset collection until data can be transmitted to the ReceiveStation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.downlink_time`
-              - Amount of time in seconds required for transmission of the collected data from the assets to the ReceiveStation.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.allow_forward_crosslink`
               - Determine if a single cross-link between assets is allowed to be used to minimize the response time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.collection_time`
+              - Amount of time in seconds required for data collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_preparation_time`
+              - Amount of time in seconds required for command preparation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_station_path`
+              - Instance path for the commanding object. NONE can be used to clear the commanding object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.commanding_time`
+              - Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.downlink_time`
+              - Amount of time in seconds required for transmission of the collected data from the assets to the ReceiveStation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.post_collection_time`
+              - Amount of time in seconds required from asset collection until data can be transmitted to the ReceiveStation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.pre_collection_time`
+              - Amount of time in seconds required from receipt of commanding until a collection can be performed by the assets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.receive_station_path`
+              - Instance path for the receiving object. NONE can be used to clear the receiving object.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.time_step`
               - Get or set the value in seconds to be used during the computation of satisfaction intervals.
 
@@ -54,35 +54,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: command_station_path
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_station_path
-    :type: str
+.. py:property:: allow_forward_crosslink
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.allow_forward_crosslink
+    :type: bool
 
-    Instance path for the commanding object. NONE can be used to clear the commanding object.
-
-.. py:property:: receive_station_path
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.receive_station_path
-    :type: str
-
-    Instance path for the receiving object. NONE can be used to clear the receiving object.
-
-.. py:property:: command_preparation_time
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_preparation_time
-    :type: float
-
-    Amount of time in seconds required for command preparation.
-
-.. py:property:: commanding_time
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.commanding_time
-    :type: float
-
-    Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
-
-.. py:property:: pre_collection_time
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.pre_collection_time
-    :type: float
-
-    Amount of time in seconds required from receipt of commanding until a collection can be performed by the assets.
+    Determine if a single cross-link between assets is allowed to be used to minimize the response time.
 
 .. py:property:: collection_time
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.collection_time
@@ -90,11 +66,23 @@ Property detail
 
     Amount of time in seconds required for data collection.
 
-.. py:property:: post_collection_time
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.post_collection_time
+.. py:property:: command_preparation_time
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_preparation_time
     :type: float
 
-    Amount of time in seconds required from asset collection until data can be transmitted to the ReceiveStation.
+    Amount of time in seconds required for command preparation.
+
+.. py:property:: command_station_path
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.command_station_path
+    :type: str
+
+    Instance path for the commanding object. NONE can be used to clear the commanding object.
+
+.. py:property:: commanding_time
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.commanding_time
+    :type: float
+
+    Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
 
 .. py:property:: downlink_time
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.downlink_time
@@ -102,11 +90,23 @@ Property detail
 
     Amount of time in seconds required for transmission of the collected data from the assets to the ReceiveStation.
 
-.. py:property:: allow_forward_crosslink
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.allow_forward_crosslink
-    :type: bool
+.. py:property:: post_collection_time
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.post_collection_time
+    :type: float
 
-    Determine if a single cross-link between assets is allowed to be used to minimize the response time.
+    Amount of time in seconds required from asset collection until data can be transmitted to the ReceiveStation.
+
+.. py:property:: pre_collection_time
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.pre_collection_time
+    :type: float
+
+    Amount of time in seconds required from receipt of commanding until a collection can be performed by the assets.
+
+.. py:property:: receive_station_path
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.receive_station_path
+    :type: str
+
+    Instance path for the receiving object. NONE can be used to clear the receiving object.
 
 .. py:property:: time_step
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData.time_step

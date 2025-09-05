@@ -27,16 +27,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference`
-              - Get or set the area of the lifting surface of the missile.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max`
-              - Get or set the max coefficient of lift.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cd`
-              - Get or set the coefficient of drag.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.calculate_aoa`
               - Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cd`
+              - Get or set the coefficient of drag.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max`
+              - Get or set the max coefficient of lift.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.max_aoa`
               - Get the missile's maximum angle of attack.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference`
+              - Get or set the area of the lifting surface of the missile.
 
 
 
@@ -51,17 +51,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: s_reference
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference
-    :type: float
+.. py:property:: calculate_aoa
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.calculate_aoa
+    :type: bool
 
-    Get or set the area of the lifting surface of the missile.
-
-.. py:property:: cl_max
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max
-    :type: float
-
-    Get or set the max coefficient of lift.
+    Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default.
 
 .. py:property:: cd
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cd
@@ -69,17 +63,23 @@ Property detail
 
     Get or set the coefficient of drag.
 
-.. py:property:: calculate_aoa
-    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.calculate_aoa
-    :type: bool
+.. py:property:: cl_max
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max
+    :type: float
 
-    Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default.
+    Get or set the max coefficient of lift.
 
 .. py:property:: max_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.max_aoa
     :type: typing.Any
 
     Get the missile's maximum angle of attack.
+
+.. py:property:: s_reference
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference
+    :type: float
+
+    Get or set the area of the lifting surface of the missile.
 
 
 Method detail

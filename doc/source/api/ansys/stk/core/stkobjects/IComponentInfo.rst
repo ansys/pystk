@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.is_read_only`
-              - Return true if the component is read-only.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.export`
               - Export the component with default component name as file name and component type as file extension to the scenario directory.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.export_with_filename_path`
               - Export the component with specified file name and location.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.is_read_only`
+              - Return true if the component is read-only.
 
     .. tab-item:: Properties
 
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.description`
+              - Get the description for this component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.name`
               - Get or set the component name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.user_comment`
               - Get or set the user comment for this component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.description`
-              - Get the description for this component.
 
 
 Import detail
@@ -50,6 +50,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: description
+    :canonical: ansys.stk.core.stkobjects.IComponentInfo.description
+    :type: str
+
+    Get the description for this component.
+
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.IComponentInfo.name
     :type: str
@@ -62,29 +68,10 @@ Property detail
 
     Get or set the user comment for this component.
 
-.. py:property:: description
-    :canonical: ansys.stk.core.stkobjects.IComponentInfo.description
-    :type: str
-
-    Get the description for this component.
-
 
 Method detail
 -------------
 
-
-
-
-
-
-.. py:method:: is_read_only(self) -> bool
-    :canonical: ansys.stk.core.stkobjects.IComponentInfo.is_read_only
-
-    Return true if the component is read-only.
-
-    :Returns:
-
-        :obj:`~bool`
 
 .. py:method:: export(self) -> None
     :canonical: ansys.stk.core.stkobjects.IComponentInfo.export
@@ -108,4 +95,17 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: is_read_only(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.IComponentInfo.is_read_only
+
+    Return true if the component is read-only.
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+
+
 

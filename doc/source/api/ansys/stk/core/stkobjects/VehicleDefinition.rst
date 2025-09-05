@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleDefinition.break_angle_type`
-              - Latitude or longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleDefinition.break_angle`
               - Value of latitude or longitude used for defining pass break.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleDefinition.break_angle_type`
+              - Latitude or longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleDefinition.direction`
               - Descending or ascending.
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: break_angle_type
-    :canonical: ansys.stk.core.stkobjects.VehicleDefinition.break_angle_type
-    :type: VehicleBreakAngleType
-
-    Latitude or longitude.
-
 .. py:property:: break_angle
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.break_angle
     :type: IVehicleBreakAngle
 
     Value of latitude or longitude used for defining pass break.
+
+.. py:property:: break_angle_type
+    :canonical: ansys.stk.core.stkobjects.VehicleDefinition.break_angle_type
+    :type: VehicleBreakAngleType
+
+    Latitude or longitude.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.direction
@@ -68,6 +68,9 @@ Property detail
 
 Method detail
 -------------
+
+
+
 
 
 .. py:method:: set_break_angle_type(self, break_angle_type: VehicleBreakAngleType) -> None
@@ -83,7 +86,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
 

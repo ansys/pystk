@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude`
-              - Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
-            * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.maximum_altitude`
-              - Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
             * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.central_body`
               - Get or set the central body to which the altitude is relative.
+            * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.maximum_altitude`
+              - Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
+            * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude`
+              - Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_altitude
-    :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude
-    :type: float
+.. py:property:: central_body
+    :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.central_body
+    :type: str
 
-    Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
+    Get or set the central body to which the altitude is relative.
 
 .. py:property:: maximum_altitude
     :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.maximum_altitude
@@ -52,10 +52,10 @@ Property detail
 
     Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
 
-.. py:property:: central_body
-    :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.central_body
-    :type: str
+.. py:property:: minimum_altitude
+    :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude
+    :type: float
 
-    Get or set the central body to which the altitude is relative.
+    Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
 
 

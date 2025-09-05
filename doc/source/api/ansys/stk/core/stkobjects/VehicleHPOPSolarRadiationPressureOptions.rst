@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position`
-              - Specify the direction of the Sun for SRP computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.atmosphere_altitude_of_earth_shape_for_eclipse`
               - Atmospheric altitude for the shape of the Earth for eclipses. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position`
+              - Specify the direction of the Sun for SRP computations.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: method_to_compute_sun_position
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position
-    :type: MethodToComputeSunPosition
-
-    Specify the direction of the Sun for SRP computations.
-
 .. py:property:: atmosphere_altitude_of_earth_shape_for_eclipse
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.atmosphere_altitude_of_earth_shape_for_eclipse
     :type: float
 
     Atmospheric altitude for the shape of the Earth for eclipses. Uses Distance Dimension.
+
+.. py:property:: method_to_compute_sun_position
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position
+    :type: MethodToComputeSunPosition
+
+    Specify the direction of the Sun for SRP computations.
 
 

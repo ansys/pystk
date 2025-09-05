@@ -20,28 +20,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_a`
-              - Set the interval list A.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_a`
-              - Set the interval A.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_b`
-              - Set the interval list B.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_b`
-              - Set the interval B.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.add_interval`
               - Add interval.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.add_interval_list`
               - Add interval list.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval`
-              - Set the interval at given index.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list`
-              - Set the interval list at given index.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.get_time_component`
               - Get time component at given position.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.get_time_component_size`
               - Get time component list size.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.remove_time_component`
               - Remove time component at given position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval`
+              - Set the interval at given index.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_a`
+              - Set the interval A.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_b`
+              - Set the interval B.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list`
+              - Set the interval list at given index.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_a`
+              - Set the interval list A.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_b`
+              - Set the interval list B.
 
     .. tab-item:: Properties
 
@@ -91,66 +91,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
-.. py:method:: set_interval_list_a(self, ref_intervals: ITimeToolTimeIntervalList) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_a
-
-    Set the interval list A.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_interval_a(self, ref_intervals: ITimeToolTimeInterval) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_a
-
-    Set the interval A.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_interval_list_b(self, ref_intervals: ITimeToolTimeIntervalList) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_b
-
-    Set the interval list B.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_interval_b(self, ref_intervals: ITimeToolTimeInterval) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_b
-
-    Set the interval B.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: add_interval(self, ref_intervals: ITimeToolTimeInterval) -> None
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.add_interval
 
@@ -173,38 +113,6 @@ Method detail
     :Parameters:
 
         **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_interval(self, ref_intervals: ITimeToolTimeInterval, pos: int) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval
-
-    Set the interval at given index.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
-
-        **pos** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: set_interval_list(self, ref_intervals: ITimeToolTimeIntervalList, pos: int) -> None
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list
-
-    Set the interval list at given index.
-
-    :Parameters:
-
-        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
-
-        **pos** : :obj:`~int`
 
 
     :Returns:
@@ -234,6 +142,10 @@ Method detail
 
         :obj:`~int`
 
+
+
+
+
 .. py:method:: remove_time_component(self, pos: int) -> None
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.remove_time_component
 
@@ -242,6 +154,94 @@ Method detail
     :Parameters:
 
         **pos** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval(self, ref_intervals: ITimeToolTimeInterval, pos: int) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval
+
+    Set the interval at given index.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
+        **pos** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval_a(self, ref_intervals: ITimeToolTimeInterval) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_a
+
+    Set the interval A.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval_b(self, ref_intervals: ITimeToolTimeInterval) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_b
+
+    Set the interval B.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeInterval`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval_list(self, ref_intervals: ITimeToolTimeIntervalList, pos: int) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list
+
+    Set the interval list at given index.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
+        **pos** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval_list_a(self, ref_intervals: ITimeToolTimeIntervalList) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_a
+
+    Set the interval list A.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_interval_list_b(self, ref_intervals: ITimeToolTimeIntervalList) -> None
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeIntervalListMerged.set_interval_list_b
+
+    Set the interval list B.
+
+    :Parameters:
+
+        **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
 
 
     :Returns:

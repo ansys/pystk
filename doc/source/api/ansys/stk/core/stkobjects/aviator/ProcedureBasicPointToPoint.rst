@@ -31,12 +31,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.altitude_options`
               - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.navigation_options`
-              - Get the navigation options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_options`
-              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_options`
+              - Get the enroute options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.navigation_options`
+              - Get the navigation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.vertical_plane_options`
               - Get the vertical plane options.
 
@@ -59,11 +59,11 @@ Property detail
 
     Get the altitude options.
 
-.. py:property:: navigation_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.navigation_options
-    :type: NavigationOptions
+.. py:property:: enroute_cruise_airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_cruise_airspeed_options
+    :type: ICruiseAirspeedAndProfileOptions
 
-    Get the navigation options.
+    Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_options
@@ -71,11 +71,11 @@ Property detail
 
     Get the enroute options.
 
-.. py:property:: enroute_cruise_airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_cruise_airspeed_options
-    :type: ICruiseAirspeedAndProfileOptions
+.. py:property:: navigation_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.navigation_options
+    :type: NavigationOptions
 
-    Get the enroute cruise airspeed options.
+    Get the navigation options.
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.vertical_plane_options
@@ -90,8 +90,6 @@ Method detail
 
 
 
-
-
 .. py:method:: get_as_procedure(self) -> IProcedure
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.get_as_procedure
 
@@ -100,4 +98,6 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
+
 

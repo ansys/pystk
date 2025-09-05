@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.calculation_object_name`
               - Get or set the calculation object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.difference_order`
+              - Get or set the order of the difference calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.other_segment_name`
               - Get or set the segment to be compared against.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.segment_state_to_use`
               - Get or set the segment state to use in the calculation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.difference_order`
-              - Get or set the order of the difference calculation.
 
 
 
@@ -48,6 +48,12 @@ Property detail
 
     Get or set the calculation object.
 
+.. py:property:: difference_order
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.difference_order
+    :type: SegmentDifferenceOrder
+
+    Get or set the order of the difference calculation.
+
 .. py:property:: other_segment_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.other_segment_name
     :type: str
@@ -59,11 +65,5 @@ Property detail
     :type: SegmentState
 
     Get or set the segment state to use in the calculation.
-
-.. py:property:: difference_order
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.difference_order
-    :type: SegmentDifferenceOrder
-
-    Get or set the order of the difference calculation.
 
 

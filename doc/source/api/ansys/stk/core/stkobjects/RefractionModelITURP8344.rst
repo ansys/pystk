@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelITURP8344.ceiling`
-              - Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelITURP8344.atmosphere_altitude`
               - Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelITURP8344.ceiling`
+              - Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelITURP8344.knee_bend_factor`
               - Used to compute the distance to the knee bend point of the refracted path. Dimensionless.
 
@@ -38,17 +38,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: ceiling
-    :canonical: ansys.stk.core.stkobjects.RefractionModelITURP8344.ceiling
-    :type: float
-
-    Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
-
 .. py:property:: atmosphere_altitude
     :canonical: ansys.stk.core.stkobjects.RefractionModelITURP8344.atmosphere_altitude
     :type: float
 
     Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
+
+.. py:property:: ceiling
+    :canonical: ansys.stk.core.stkobjects.RefractionModelITURP8344.ceiling
+    :type: float
+
+    Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
 
 .. py:property:: knee_bend_factor
     :canonical: ansys.stk.core.stkobjects.RefractionModelITURP8344.knee_bend_factor

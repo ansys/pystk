@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.step`
-              - Step size. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.spice`
-              - Name of SPICE file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.body_name`
-              - Body name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.segments`
-              - Get the segment list.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.available_body_names`
               - Get a list of available body names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.body_name`
+              - Body name.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.ephemeris_interval`
               - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.segments`
+              - Get the segment list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.spice`
+              - Name of SPICE file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.step`
+              - Step size. Uses Time Dimension.
 
 
 
@@ -80,17 +80,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.step
-    :type: float
+.. py:property:: available_body_names
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.available_body_names
+    :type: list
 
-    Step size. Uses Time Dimension.
-
-.. py:property:: spice
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.spice
-    :type: str
-
-    Name of SPICE file.
+    Get a list of available body names.
 
 .. py:property:: body_name
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.body_name
@@ -98,27 +92,37 @@ Property detail
 
     Body name.
 
-.. py:property:: segments
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.segments
-    :type: PropagatorSPICESegmentsCollection
-
-    Get the segment list.
-
-.. py:property:: available_body_names
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.available_body_names
-    :type: list
-
-    Get a list of available body names.
-
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.ephemeris_interval
     :type: ITimeToolTimeIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
+.. py:property:: segments
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.segments
+    :type: PropagatorSPICESegmentsCollection
+
+    Get the segment list.
+
+.. py:property:: spice
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.spice
+    :type: str
+
+    Name of SPICE file.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.step
+    :type: float
+
+    Step size. Uses Time Dimension.
+
 
 Method detail
 -------------
+
+
+
+
 
 .. py:method:: propagate(self) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.propagate
@@ -128,10 +132,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
 
 
 

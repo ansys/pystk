@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.is_valid`
-              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.intervals`
               - A collection of found intervals.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.is_valid`
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.start`
               - The start time of the entire interval span.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.stop`
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.is_valid
-    :type: bool
-
-    Indicate whether the result object is valid.
-
 .. py:property:: intervals
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.intervals
     :type: TimeToolIntervalCollection
 
     A collection of found intervals.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.is_valid
+    :type: bool
+
+    Indicate whether the result object is valid.
 
 .. py:property:: start
     :canonical: ansys.stk.core.analysis_workbench.TimeToolTimeArrayFindTimesResult.start

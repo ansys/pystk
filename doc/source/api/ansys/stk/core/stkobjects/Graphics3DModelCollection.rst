@@ -22,10 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.add`
               - Add a model file at the given time. Time Param uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.remove`
-              - Remove an item at the given index.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.item`
               - Return an Graphics3DModelItem at the given index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.remove`
+              - Remove an item at the given index.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.count`
-              - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection._new_enum`
               - Enumerates through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelCollection.count`
+              - Number of items in the collection.
 
 
 
@@ -51,22 +51,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.count
-    :type: int
-
-    Number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.count
+    :type: int
+
+    Number of items in the collection.
+
 
 Method detail
 -------------
-
 
 .. py:method:: add(self, time: typing.Any, filename: str) -> Graphics3DModelItem
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.add
@@ -78,6 +77,21 @@ Method detail
         **time** : :obj:`~typing.Any`
 
         **filename** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~Graphics3DModelItem`
+
+
+.. py:method:: item(self, index: int) -> Graphics3DModelItem
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.item
+
+    Return an Graphics3DModelItem at the given index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
 
 
     :Returns:
@@ -97,19 +111,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: item(self, index: int) -> Graphics3DModelItem
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelCollection.item
-
-    Return an Graphics3DModelItem at the given index.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~Graphics3DModelItem`
 
 

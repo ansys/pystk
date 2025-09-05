@@ -68,7 +68,6 @@ Method detail
 -------------
 
 
-
 .. py:method:: get_altitude(self, lat: typing.Any, lon: typing.Any, alt_ref: AltitudeReferenceType) -> float
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitude
 
@@ -148,4 +147,5 @@ Method detail
     :Returns:
 
         :obj:`~float`
+
 

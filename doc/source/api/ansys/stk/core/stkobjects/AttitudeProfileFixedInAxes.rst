@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.available_reference_axes`
+              - Return the available reference axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.orientation`
               - Get the orientation of the body-fixed axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.reference_axes`
               - Reference axes with respect to which the body-fixed axes are oriented. The satellite's body axes or any axes dependent upon the satellite's body axes are invalid for this attitude profile; all other axes are valid choices for the reference axes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.available_reference_axes`
-              - Return the available reference axes.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: available_reference_axes
+    :canonical: ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.available_reference_axes
+    :type: list
+
+    Return the available reference axes.
+
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.orientation
     :type: IOrientation
@@ -51,11 +57,5 @@ Property detail
     :type: str
 
     Reference axes with respect to which the body-fixed axes are oriented. The satellite's body axes or any axes dependent upon the satellite's body axes are invalid for this attitude profile; all other axes are valid choices for the reference axes.
-
-.. py:property:: available_reference_axes
-    :canonical: ansys.stk.core.stkobjects.AttitudeProfileFixedInAxes.available_reference_axes
-    :type: list
-
-    Return the available reference axes.
 
 

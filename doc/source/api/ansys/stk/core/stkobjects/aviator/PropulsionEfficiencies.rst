@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level`
-              - Get or set the technology level of the jet engine.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.intake_type`
-              - Get or set the jet engine intake type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.turbine_type`
-              - Get or set the jet engine turbine type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.exhaust_nozzle_type`
               - Get or set the jet engine exhaust nozzle type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.intake_type`
+              - Get or set the jet engine intake type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level`
+              - Get or set the technology level of the jet engine.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.turbine_type`
+              - Get or set the jet engine turbine type.
 
 
 
@@ -40,11 +40,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: technology_level
-    :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level
-    :type: JetEngineTechnologyLevel
+.. py:property:: exhaust_nozzle_type
+    :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.exhaust_nozzle_type
+    :type: JetEngineExhaustNozzleType
 
-    Get or set the technology level of the jet engine.
+    Get or set the jet engine exhaust nozzle type.
 
 .. py:property:: intake_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.intake_type
@@ -52,16 +52,16 @@ Property detail
 
     Get or set the jet engine intake type.
 
+.. py:property:: technology_level
+    :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level
+    :type: JetEngineTechnologyLevel
+
+    Get or set the technology level of the jet engine.
+
 .. py:property:: turbine_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.turbine_type
     :type: JetEngineTurbineType
 
     Get or set the jet engine turbine type.
-
-.. py:property:: exhaust_nozzle_type
-    :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.exhaust_nozzle_type
-    :type: JetEngineExhaustNozzleType
-
-    Get or set the jet engine exhaust nozzle type.
 
 

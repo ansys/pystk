@@ -29,16 +29,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.analysis_interval`
               - The volume analysis interval or interval list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type`
-              - Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
-              - The time array when Evaluation of spatial calculation at times from time array is used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
-              - Get or set the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals`
               - Get the available analysis intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_times_from_time_array`
               - Get the available times from time array.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type`
+              - Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
+              - Get or set the step size.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
+              - The time array when Evaluation of spatial calculation at times from time array is used.
 
 
 
@@ -59,24 +59,6 @@ Property detail
 
     The volume analysis interval or interval list.
 
-.. py:property:: evaluation_of_spatial_calculation_type
-    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
-    :type: VolumetricSpatialCalculationEvaluationType
-
-    Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
-
-.. py:property:: time_array
-    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array
-    :type: str
-
-    The time array when Evaluation of spatial calculation at times from time array is used.
-
-.. py:property:: step_size
-    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size
-    :type: float
-
-    Get or set the step size.
-
 .. py:property:: available_analysis_intervals
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals
     :type: list
@@ -89,9 +71,29 @@ Property detail
 
     Get the available times from time array.
 
+.. py:property:: evaluation_of_spatial_calculation_type
+    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
+    :type: VolumetricSpatialCalculationEvaluationType
+
+    Get evaluation of spatial calculation type. A member of the VolumetricSpatialCalculationEvaluationType enumeration.
+
+.. py:property:: step_size
+    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size
+    :type: float
+
+    Get or set the step size.
+
+.. py:property:: time_array
+    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array
+    :type: str
+
+    The time array when Evaluation of spatial calculation at times from time array is used.
+
 
 Method detail
 -------------
+
+
 
 
 
@@ -109,8 +111,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 
 
 

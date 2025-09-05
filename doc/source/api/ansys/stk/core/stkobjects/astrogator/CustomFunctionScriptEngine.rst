@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.script_filename`
-              - Get or set the file containing the function to call.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.file_extension_name`
               - Get or set the file extension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.script_filename`
+              - Get or set the file containing the function to call.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: script_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.script_filename
-    :type: str
-
-    Get or set the file containing the function to call.
-
 .. py:property:: file_extension_name
     :canonical: ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.file_extension_name
     :type: str
 
     Get or set the file extension.
+
+.. py:property:: script_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine.script_filename
+    :type: str
+
+    Get or set the file containing the function to call.
 
 

@@ -18,6 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.barycenter`
+              - The Inertial system at the Sun's barycenter.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.fixed`
               - The Sun's Fixed coordinate system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.icrf`
@@ -26,8 +28,6 @@ Overview
               - The Sun's Inertial coordinate system (as defined in STK).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.j2000`
               - The Sun's J2000 coordinate system.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.barycenter`
-              - The Inertial system at the Sun's barycenter.
 
 
 
@@ -41,6 +41,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: barycenter
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.barycenter
+    :type: IVectorGeometryToolSystem
+
+    The Inertial system at the Sun's barycenter.
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.fixed
@@ -65,11 +71,5 @@ Property detail
     :type: IVectorGeometryToolSystem
 
     The Sun's J2000 coordinate system.
-
-.. py:property:: barycenter
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolWellKnownSunSystems.barycenter
-    :type: IVectorGeometryToolSystem
-
-    The Inertial system at the Sun's barycenter.
 
 

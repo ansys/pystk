@@ -20,6 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.about_vector`
+              - The Volume Calc Angle Off Vector reference about vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.angle`
               - The Volume Calc Angle Off Vector Type.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.reference_plane`
@@ -28,8 +30,6 @@ Overview
               - The Volume Calc Angle Off Vector reference point.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.reference_vector`
               - The Volume Calc Angle Off Vector reference vector.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.about_vector`
-              - The Volume Calc Angle Off Vector reference about vector.
 
 
 
@@ -43,6 +43,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: about_vector
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.about_vector
+    :type: IVectorGeometryToolVector
+
+    The Volume Calc Angle Off Vector reference about vector.
 
 .. py:property:: angle
     :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.angle
@@ -67,11 +73,5 @@ Property detail
     :type: IVectorGeometryToolVector
 
     The Volume Calc Angle Off Vector reference vector.
-
-.. py:property:: about_vector
-    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolCalculationAngleToLocation.about_vector
-    :type: IVectorGeometryToolVector
-
-    The Volume Calc Angle Off Vector reference about vector.
 
 

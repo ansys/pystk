@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.altitude`
+              - Specify an altitude value.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.latitude`
               - Specify a latitude angle.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.longitude`
               - Specify a longitude angle.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.altitude`
-              - Specify an altitude value.
 
 
 
@@ -38,6 +38,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: altitude
+    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.altitude
+    :type: float
+
+    Specify an altitude value.
+
 .. py:property:: latitude
     :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.latitude
     :type: float
@@ -49,11 +55,5 @@ Property detail
     :type: float
 
     Specify a longitude angle.
-
-.. py:property:: altitude
-    :canonical: ansys.stk.core.analysis_workbench.AnalysisWorkbenchPositionLLA.altitude
-    :type: float
-
-    Specify an altitude value.
 
 

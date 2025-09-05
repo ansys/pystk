@@ -20,10 +20,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_all_tracks`
               - Compute the position of all tracks at the given time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks`
-              - Compute the position of all track of given Id at the given time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_track`
               - Compute the position of the track Id at the given time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks`
+              - Compute the position of all track of given Id at the given time.
 
     .. tab-item:: Properties
 
@@ -73,22 +73,6 @@ Method detail
 
         :obj:`~MTOTrackPointCollection`
 
-.. py:method:: compute_tracks(self, track_ids: list, time: typing.Any) -> MTOTrackPointCollection
-    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks
-
-    Compute the position of all track of given Id at the given time.
-
-    :Parameters:
-
-        **track_ids** : :obj:`~list`
-
-        **time** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~MTOTrackPointCollection`
-
 .. py:method:: compute_track(self, track_id: int, time: typing.Any) -> MTOTrackPoint
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_track
 
@@ -104,4 +88,20 @@ Method detail
     :Returns:
 
         :obj:`~MTOTrackPoint`
+
+.. py:method:: compute_tracks(self, track_ids: list, time: typing.Any) -> MTOTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks
+
+    Compute the position of all track of given Id at the given time.
+
+    :Parameters:
+
+        **track_ids** : :obj:`~list`
+
+        **time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~MTOTrackPointCollection`
 

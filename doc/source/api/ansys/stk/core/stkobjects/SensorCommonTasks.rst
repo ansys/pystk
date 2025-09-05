@@ -18,28 +18,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_simple_conic`
-              - Define the sensor using a simple conic pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_complex_conic`
               - Define the sensor using a complex conic pattern.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_custom`
+              - Define the sensor using a custom pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_eoir`
               - Define the sensor using a EOIR pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_half_power`
               - Define the sensor using a half power pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_rectangular`
               - Define the sensor using a rectangular pattern.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_custom`
-              - Define the sensor using a custom pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_sar`
               - Define the sensor using a SAR pattern.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_az_el`
-              - Set the pointing method to Fixed with an AzEl orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler`
-              - Set the pointing method to Fixed with a Euler Angles orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion`
-              - Set the pointing method to Fixed with a Quaternion orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr`
-              - Set the pointing method to Fixed with a YPR Angles orientation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_simple_conic`
+              - Define the sensor using a simple conic pattern.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model`
+              - Set the pointing method to 3DModel.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_along_vector`
+              - Set the pointing method to Along Vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_az_el`
               - Set the pointing method to FixedAxes with an AzEl orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler`
@@ -48,16 +44,20 @@ Overview
               - Set the pointing method to FixedAxes with a Quaternion orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_ypr`
               - Set the pointing method to FixedAxes with a YPR Angles orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model`
-              - Set the pointing method to 3DModel.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_az_el`
+              - Set the pointing method to Fixed with an AzEl orientation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler`
+              - Set the pointing method to Fixed with a Euler Angles orientation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion`
+              - Set the pointing method to Fixed with a Quaternion orientation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr`
+              - Set the pointing method to Fixed with a YPR Angles orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_grazing_altitude`
               - Set the pointing method to GrazingAlt.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_spinning`
               - Set the pointing method to Spinning.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_targeted_tracking`
               - Set the pointing method to Targeted with Tracking.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_along_vector`
-              - Set the pointing method to Along Vector.
 
 
 Examples
@@ -149,22 +149,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_pattern_simple_conic(self, cone_angle: typing.Any, angular_resolution: typing.Any) -> SensorSimpleConicPattern
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_simple_conic
-
-    Define the sensor using a simple conic pattern.
-
-    :Parameters:
-
-        **cone_angle** : :obj:`~typing.Any`
-
-        **angular_resolution** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~SensorSimpleConicPattern`
-
 .. py:method:: set_pattern_complex_conic(self, inner_cone_half_angle: typing.Any, outer_cone_half_angle: typing.Any, minimum_clock_angle: typing.Any, maximum_clock_angle: typing.Any) -> SensorComplexConicPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_complex_conic
 
@@ -184,6 +168,20 @@ Method detail
     :Returns:
 
         :obj:`~SensorComplexConicPattern`
+
+.. py:method:: set_pattern_custom(self, filename: str) -> SensorCustomPattern
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_custom
+
+    Define the sensor using a custom pattern.
+
+    :Parameters:
+
+        **filename** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~SensorCustomPattern`
 
 .. py:method:: set_pattern_eoir(self, line_of_site_jitter: float, processing_level: SensorEOIRProcessingLevelType) -> SensorEOIRPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_eoir
@@ -235,20 +233,6 @@ Method detail
 
         :obj:`~SensorRectangularPattern`
 
-.. py:method:: set_pattern_custom(self, filename: str) -> SensorCustomPattern
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_custom
-
-    Define the sensor using a custom pattern.
-
-    :Parameters:
-
-        **filename** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~SensorCustomPattern`
-
 .. py:method:: set_pattern_sar(self, min_elevation_angle: typing.Any, max_elevation_angle: typing.Any, fore_exclusion_angle: typing.Any, aft_exclusion_angle: typing.Any, parent_altitude: float) -> SensorSARPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_sar
 
@@ -271,131 +255,53 @@ Method detail
 
         :obj:`~SensorSARPattern`
 
-.. py:method:: set_pointing_fixed_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixed
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_az_el
+.. py:method:: set_pattern_simple_conic(self, cone_angle: typing.Any, angular_resolution: typing.Any) -> SensorSimpleConicPattern
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_simple_conic
 
-    Set the pointing method to Fixed with an AzEl orientation.
+    Define the sensor using a simple conic pattern.
 
     :Parameters:
 
-        **azimuth** : :obj:`~typing.Any`
+        **cone_angle** : :obj:`~typing.Any`
 
-        **elevation** : :obj:`~typing.Any`
-
-        **about_boresight** : :obj:`~AzElAboutBoresight`
+        **angular_resolution** : :obj:`~typing.Any`
 
 
     :Returns:
 
-        :obj:`~SensorPointingFixed`
+        :obj:`~SensorSimpleConicPattern`
 
-    Examples
-    --------
+.. py:method:: set_pointing_3d_model(self, attach_name: str) -> SensorPointing3DModel
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model
 
-    Define sensor pointing fixed AzEl
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_az_el(4.5, -45.0, AzElAboutBoresight.ROTATE)
-
-
-.. py:method:: set_pointing_fixed_euler(self, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler
-
-    Set the pointing method to Fixed with a Euler Angles orientation.
+    Set the pointing method to 3DModel.
 
     :Parameters:
 
-        **sequence** : :obj:`~EulerOrientationSequenceType`
-
-        **a** : :obj:`~typing.Any`
-
-        **b** : :obj:`~typing.Any`
-
-        **c** : :obj:`~typing.Any`
+        **attach_name** : :obj:`~str`
 
 
     :Returns:
 
-        :obj:`~SensorPointingFixed`
+        :obj:`~SensorPointing3DModel`
 
-    Examples
-    --------
+.. py:method:: set_pointing_along_vector(self, alignment_vector: str, constraint_vector: str, clock_angle_offset: typing.Any) -> SensorPointingAlongVector
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_along_vector
 
-    Define sensor pointing fixed Euler
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
-
-
-.. py:method:: set_pointing_fixed_quaternion(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion
-
-    Set the pointing method to Fixed with a Quaternion orientation.
+    Set the pointing method to Along Vector.
 
     :Parameters:
 
-        **qx** : :obj:`~float`
+        **alignment_vector** : :obj:`~str`
 
-        **qy** : :obj:`~float`
+        **constraint_vector** : :obj:`~str`
 
-        **qz** : :obj:`~float`
-
-        **qs** : :obj:`~float`
+        **clock_angle_offset** : :obj:`~typing.Any`
 
 
     :Returns:
 
-        :obj:`~SensorPointingFixed`
-
-    Examples
-    --------
-
-    Define sensor pointing fixed Quaternion
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
-
-
-.. py:method:: set_pointing_fixed_ypr(self, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixed
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr
-
-    Set the pointing method to Fixed with a YPR Angles orientation.
-
-    :Parameters:
-
-        **sequence** : :obj:`~YPRAnglesSequence`
-
-        **yaw** : :obj:`~typing.Any`
-
-        **pitch** : :obj:`~typing.Any`
-
-        **roll** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~SensorPointingFixed`
-
-    Examples
-    --------
-
-    Define sensor pointing fixed YPR
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_ypr(YPRAnglesSequence.RPY, 12, 24, 36)
-
+        :obj:`~SensorPointingAlongVector`
 
 .. py:method:: set_pointing_fixed_axes_az_el(self, reference_axes: str, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_az_el
@@ -533,19 +439,131 @@ Method detail
         sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
 
 
-.. py:method:: set_pointing_3d_model(self, attach_name: str) -> SensorPointing3DModel
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model
+.. py:method:: set_pointing_fixed_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_az_el
 
-    Set the pointing method to 3DModel.
+    Set the pointing method to Fixed with an AzEl orientation.
 
     :Parameters:
 
-        **attach_name** : :obj:`~str`
+        **azimuth** : :obj:`~typing.Any`
+
+        **elevation** : :obj:`~typing.Any`
+
+        **about_boresight** : :obj:`~AzElAboutBoresight`
 
 
     :Returns:
 
-        :obj:`~SensorPointing3DModel`
+        :obj:`~SensorPointingFixed`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed AzEl
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_az_el(4.5, -45.0, AzElAboutBoresight.ROTATE)
+
+
+.. py:method:: set_pointing_fixed_euler(self, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler
+
+    Set the pointing method to Fixed with a Euler Angles orientation.
+
+    :Parameters:
+
+        **sequence** : :obj:`~EulerOrientationSequenceType`
+
+        **a** : :obj:`~typing.Any`
+
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~SensorPointingFixed`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed Euler
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+
+
+.. py:method:: set_pointing_fixed_quaternion(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion
+
+    Set the pointing method to Fixed with a Quaternion orientation.
+
+    :Parameters:
+
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~SensorPointingFixed`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed Quaternion
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
+
+
+.. py:method:: set_pointing_fixed_ypr(self, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr
+
+    Set the pointing method to Fixed with a YPR Angles orientation.
+
+    :Parameters:
+
+        **sequence** : :obj:`~YPRAnglesSequence`
+
+        **yaw** : :obj:`~typing.Any`
+
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~SensorPointingFixed`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed YPR
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_ypr(YPRAnglesSequence.RPY, 12, 24, 36)
+
 
 .. py:method:: set_pointing_grazing_altitude(self, azimuth_offset: typing.Any, grazing_alt: float) -> SensorPointingGrazingAltitude
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_grazing_altitude
@@ -608,22 +626,4 @@ Method detail
     :Returns:
 
         :obj:`~SensorPointingTargeted`
-
-.. py:method:: set_pointing_along_vector(self, alignment_vector: str, constraint_vector: str, clock_angle_offset: typing.Any) -> SensorPointingAlongVector
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_along_vector
-
-    Set the pointing method to Along Vector.
-
-    :Parameters:
-
-        **alignment_vector** : :obj:`~str`
-
-        **constraint_vector** : :obj:`~str`
-
-        **clock_angle_offset** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~SensorPointingAlongVector`
 

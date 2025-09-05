@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.trajectory`
-              - Specify a trajectory point.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.direction`
+              - Specify a direction (incoming or outgoing).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.reference_vector`
               - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.target_body`
               - Specify a target central body.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.direction`
-              - Specify a direction (incoming or outgoing).
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.trajectory`
+              - Specify a trajectory point.
 
 
 
@@ -42,11 +42,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: trajectory
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.trajectory
-    :type: VectorGeometryToolPointReference
+.. py:property:: direction
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.direction
+    :type: AsymptoteDirectionType
 
-    Specify a trajectory point.
+    Specify a direction (incoming or outgoing).
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.reference_vector
@@ -60,10 +60,10 @@ Property detail
 
     Specify a target central body.
 
-.. py:property:: direction
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.direction
-    :type: AsymptoteDirectionType
+.. py:property:: trajectory
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesBPlane.trajectory
+    :type: VectorGeometryToolPointReference
 
-    Specify a direction (incoming or outgoing).
+    Specify a trajectory point.
 
 

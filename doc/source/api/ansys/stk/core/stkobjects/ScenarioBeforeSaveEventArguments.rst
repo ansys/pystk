@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.path`
-              - Scenario file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.continue_save`
               - The status to allow/disallow continue saving.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.path`
+              - Scenario file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_as`
               - Saving as user-specified file type and filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_as_vdf`
@@ -42,17 +42,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: path
-    :canonical: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.path
-    :type: str
-
-    Scenario file path.
-
 .. py:property:: continue_save
     :canonical: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.continue_save
     :type: bool
 
     The status to allow/disallow continue saving.
+
+.. py:property:: path
+    :canonical: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.path
+    :type: str
+
+    Scenario file path.
 
 .. py:property:: save_as
     :canonical: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_as

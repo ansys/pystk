@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_identifier`
-              - Get or set the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_config`
               - Get the properties of the selected plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_identifier`
+              - Get or set the plugin name.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: plugin_identifier
-    :canonical: ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_identifier
-    :type: str
-
-    Get or set the plugin name.
-
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_config
     :type: PluginProperties
 
     Get the properties of the selected plugin.
+
+.. py:property:: plugin_identifier
+    :canonical: ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction.plugin_identifier
+    :type: str
+
+    Get or set the plugin name.
 
 

@@ -31,34 +31,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file`
-              - Set the ephemeris filename.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file_duration`
-              - Get the ephemeris file duration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_start_duration`
-              - Set whether to use Start and Duration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.start_time`
-              - Set the start time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.duration`
-              - Set the duration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.flight_mode`
-              - Get the flight mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_shift_rotate`
-              - Set whether to use Shift/Rotate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.shift_time`
-              - Get the shift time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.latitude`
-              - Get the waypoint latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.longitude`
-              - Get the waypoint longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude`
               - Get the altitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude_mode`
+              - Get the alt mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.course`
               - Get the course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.course_mode`
               - Get the course mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude_mode`
-              - Get the alt mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.duration`
+              - Set the duration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file`
+              - Set the ephemeris filename.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file_duration`
+              - Get the ephemeris file duration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.flight_mode`
+              - Get the flight mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.latitude`
+              - Get the waypoint latitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.longitude`
+              - Get the waypoint longitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.shift_time`
+              - Get the shift time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.start_time`
+              - Set the start time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_shift_rotate`
+              - Set whether to use Shift/Rotate.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_start_duration`
+              - Set whether to use Start and Duration.
 
 
 
@@ -73,71 +73,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: ephemeris_file
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file
-    :type: None
-
-    Set the ephemeris filename.
-
-.. py:property:: ephemeris_file_duration
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file_duration
-    :type: float
-
-    Get the ephemeris file duration.
-
-.. py:property:: use_start_duration
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_start_duration
-    :type: None
-
-    Set whether to use Start and Duration.
-
-.. py:property:: start_time
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.start_time
-    :type: None
-
-    Set the start time.
-
-.. py:property:: duration
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.duration
-    :type: None
-
-    Set the duration.
-
-.. py:property:: flight_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.flight_mode
-    :type: ExtEphemFlightMode
-
-    Get the flight mode.
-
-.. py:property:: use_shift_rotate
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_shift_rotate
-    :type: None
-
-    Set whether to use Shift/Rotate.
-
-.. py:property:: shift_time
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.shift_time
-    :type: float
-
-    Get the shift time.
-
-.. py:property:: latitude
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.latitude
-    :type: float
-
-    Get the waypoint latitude.
-
-.. py:property:: longitude
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.longitude
-    :type: float
-
-    Get the waypoint longitude.
-
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude
     :type: float
 
     Get the altitude.
+
+.. py:property:: altitude_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude_mode
+    :type: EphemShiftRotateAltitudeMode
+
+    Get the alt mode.
 
 .. py:property:: course
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.course
@@ -151,15 +97,73 @@ Property detail
 
     Get the course mode.
 
-.. py:property:: altitude_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude_mode
-    :type: EphemShiftRotateAltitudeMode
+.. py:property:: duration
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.duration
+    :type: None
 
-    Get the alt mode.
+    Set the duration.
+
+.. py:property:: ephemeris_file
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file
+    :type: None
+
+    Set the ephemeris filename.
+
+.. py:property:: ephemeris_file_duration
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.ephemeris_file_duration
+    :type: float
+
+    Get the ephemeris file duration.
+
+.. py:property:: flight_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.flight_mode
+    :type: ExtEphemFlightMode
+
+    Get the flight mode.
+
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.latitude
+    :type: float
+
+    Get the waypoint latitude.
+
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.longitude
+    :type: float
+
+    Get the waypoint longitude.
+
+.. py:property:: shift_time
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.shift_time
+    :type: float
+
+    Get the shift time.
+
+.. py:property:: start_time
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.start_time
+    :type: None
+
+    Set the start time.
+
+.. py:property:: use_shift_rotate
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_shift_rotate
+    :type: None
+
+    Set whether to use Shift/Rotate.
+
+.. py:property:: use_start_duration
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.use_start_duration
+    :type: None
+
+    Set whether to use Start and Duration.
 
 
 Method detail
 -------------
+
+
+
+
 
 
 
@@ -185,18 +189,6 @@ Method detail
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .. py:method:: shift_rotate_set(self) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.shift_rotate_set
 
@@ -205,4 +197,12 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
+
+
 

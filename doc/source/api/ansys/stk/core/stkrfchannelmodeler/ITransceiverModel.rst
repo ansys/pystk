@@ -27,12 +27,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.type`
-              - Get the transceiver unique identifier.
-            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.supported_antenna_types`
-              - Get the supported antenna types.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.antenna`
               - Get the transceiver's antenna settings.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.supported_antenna_types`
+              - Get the supported antenna types.
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.type`
+              - Get the transceiver unique identifier.
 
 
 Import detail
@@ -46,11 +46,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.type
-    :type: TransceiverModelType
+.. py:property:: antenna
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.antenna
+    :type: IAntenna
 
-    Get the transceiver unique identifier.
+    Get the transceiver's antenna settings.
 
 .. py:property:: supported_antenna_types
     :canonical: ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.supported_antenna_types
@@ -58,11 +58,11 @@ Property detail
 
     Get the supported antenna types.
 
-.. py:property:: antenna
-    :canonical: ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.antenna
-    :type: IAntenna
+.. py:property:: type
+    :canonical: ansys.stk.core.stkrfchannelmodeler.ITransceiverModel.type
+    :type: TransceiverModelType
 
-    Get the transceiver's antenna settings.
+    Get the transceiver unique identifier.
 
 
 Method detail

@@ -27,22 +27,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.pixel_size`
-              - The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_type`
-              - Specify a 3D marker type to represent the object at the specified threshold. A member of the MarkerType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.angle`
               - The angle representing the amount of rotation of the marker. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_data`
+              - The MarkerData property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_type`
+              - Specify a 3D marker type to represent the object at the specified threshold. A member of the MarkerType enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode`
+              - Control the rotation of the marker.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.pixel_size`
+              - The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.rotate_from_north`
+              - Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.x_origin`
               - The horizontal point of origin for the marker (left, center or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.y_origin`
               - The vertical point of origin for the marker (top, center or bottom).
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_data`
-              - The MarkerData property.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.rotate_from_north`
-              - Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode`
-              - Control the rotation of the marker.
 
 
 
@@ -57,11 +57,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: pixel_size
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.pixel_size
-    :type: int
+.. py:property:: angle
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.angle
+    :type: typing.Any
 
-    The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
+    The angle representing the amount of rotation of the marker. Uses Angle Dimension.
+
+.. py:property:: marker_data
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_data
+    :type: IGraphics3DMarkerData
+
+    The MarkerData property.
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_type
@@ -69,11 +75,23 @@ Property detail
 
     Specify a 3D marker type to represent the object at the specified threshold. A member of the MarkerType enumeration.
 
-.. py:property:: angle
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.angle
-    :type: typing.Any
+.. py:property:: orientation_mode
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode
+    :type: Graphics3DMarkerOrientation
 
-    The angle representing the amount of rotation of the marker. Uses Angle Dimension.
+    Control the rotation of the marker.
+
+.. py:property:: pixel_size
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.pixel_size
+    :type: int
+
+    The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
+
+.. py:property:: rotate_from_north
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.rotate_from_north
+    :type: bool
+
+    Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.x_origin
@@ -86,24 +104,6 @@ Property detail
     :type: Graphics3DMarkerOriginType
 
     The vertical point of origin for the marker (top, center or bottom).
-
-.. py:property:: marker_data
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.marker_data
-    :type: IGraphics3DMarkerData
-
-    The MarkerData property.
-
-.. py:property:: rotate_from_north
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.rotate_from_north
-    :type: bool
-
-    Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
-
-.. py:property:: orientation_mode
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode
-    :type: Graphics3DMarkerOrientation
-
-    Control the rotation of the marker.
 
 
 Method detail

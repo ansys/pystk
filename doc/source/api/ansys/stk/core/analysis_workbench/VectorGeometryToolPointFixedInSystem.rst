@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.reference`
-              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.fixed_point`
               - Specify the point's position. The position is relative with respect to the specified reference system.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.reference`
+              - Specify a reference system.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.reference
-    :type: VectorGeometryToolSystemReference
-
-    Specify a reference system.
-
 .. py:property:: fixed_point
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.fixed_point
     :type: IPosition
 
     Specify the point's position. The position is relative with respect to the specified reference system.
+
+.. py:property:: reference
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolPointFixedInSystem.reference
+    :type: VectorGeometryToolSystemReference
+
+    Specify a reference system.
 
 

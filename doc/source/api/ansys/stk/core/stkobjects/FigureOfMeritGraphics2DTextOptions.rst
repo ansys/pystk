@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.title`
-              - Legend title.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.number_of_decimal_digits`
-              - Number of decimal digits to use in range values in legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.floating_point_format`
               - Text format for floating point numbers.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.number_of_decimal_digits`
+              - Number of decimal digits to use in range values in legend.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.title`
+              - Legend title.
 
 
 
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: title
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.title
-    :type: str
+.. py:property:: floating_point_format
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.floating_point_format
+    :type: FigureOfMeritGraphics2DFloatingPointFormat
 
-    Legend title.
+    Text format for floating point numbers.
 
 .. py:property:: number_of_decimal_digits
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.number_of_decimal_digits
@@ -50,10 +50,10 @@ Property detail
 
     Number of decimal digits to use in range values in legend.
 
-.. py:property:: floating_point_format
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.floating_point_format
-    :type: FigureOfMeritGraphics2DFloatingPointFormat
+.. py:property:: title
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions.title
+    :type: str
 
-    Text format for floating point numbers.
+    Legend title.
 
 

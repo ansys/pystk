@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.reference_axes`
-              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.fixed_orientation`
               - Specify a desired orientation and the applicable parameters.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.reference_axes`
+              - Specify a reference axes.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_axes
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.reference_axes
-    :type: VectorGeometryToolAxesReference
-
-    Specify a reference axes.
-
 .. py:property:: fixed_orientation
     :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.fixed_orientation
     :type: IOrientation
 
     Specify a desired orientation and the applicable parameters.
+
+.. py:property:: reference_axes
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesFixed.reference_axes
+    :type: VectorGeometryToolAxesReference
+
+    Specify a reference axes.
 
 

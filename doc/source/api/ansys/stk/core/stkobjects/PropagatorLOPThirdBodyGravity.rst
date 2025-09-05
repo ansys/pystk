@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_solar_gravity`
-              - Opt whether to use solar gravity.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_lunar_gravity`
               - Opt whether to use lunar gravity.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_solar_gravity`
+              - Opt whether to use solar gravity.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_solar_gravity
-    :canonical: ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_solar_gravity
-    :type: bool
-
-    Opt whether to use solar gravity.
-
 .. py:property:: use_lunar_gravity
     :canonical: ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_lunar_gravity
     :type: bool
 
     Opt whether to use lunar gravity.
+
+.. py:property:: use_solar_gravity
+    :canonical: ansys.stk.core.stkobjects.PropagatorLOPThirdBodyGravity.use_solar_gravity
+    :type: bool
+
+    Opt whether to use solar gravity.
 
 

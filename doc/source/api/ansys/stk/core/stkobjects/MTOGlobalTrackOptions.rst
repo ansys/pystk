@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.save_track_data`
-              - Opt whether to save the tracks you define with the scenario. Otherwise, the MTO will be saved with the scenario, but all track data will be discarded.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier`
-              - Get or set the ID of the track to be referenced for working with other tools.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size`
-              - Block size used when allocating new tracks. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference`
               - Criterion used to reference the altitude. A member of the AltitudeReferenceType enumeration.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size`
+              - Block size used when allocating new tracks. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier`
+              - Get or set the ID of the track to be referenced for working with other tools.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.is_static`
               - Opt whether to make the MTO static.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.maximum_number_of_points_before_pruning`
               - Prune the tracks by keeping a maximum number of points. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.save_track_data`
+              - Opt whether to save the tracks you define with the scenario. Otherwise, the MTO will be saved with the scenario, but all track data will be discarded.
 
 
 
@@ -44,17 +44,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: save_track_data
-    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.save_track_data
-    :type: bool
+.. py:property:: altitude_reference
+    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference
+    :type: AltitudeReferenceType
 
-    Opt whether to save the tracks you define with the scenario. Otherwise, the MTO will be saved with the scenario, but all track data will be discarded.
-
-.. py:property:: computation_track_identifier
-    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier
-    :type: int
-
-    Get or set the ID of the track to be referenced for working with other tools.
+    Criterion used to reference the altitude. A member of the AltitudeReferenceType enumeration.
 
 .. py:property:: block_size
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size
@@ -62,11 +56,11 @@ Property detail
 
     Block size used when allocating new tracks. Dimensionless.
 
-.. py:property:: altitude_reference
-    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference
-    :type: AltitudeReferenceType
+.. py:property:: computation_track_identifier
+    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier
+    :type: int
 
-    Criterion used to reference the altitude. A member of the AltitudeReferenceType enumeration.
+    Get or set the ID of the track to be referenced for working with other tools.
 
 .. py:property:: is_static
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.is_static
@@ -79,5 +73,11 @@ Property detail
     :type: int
 
     Prune the tracks by keeping a maximum number of points. Dimensionless.
+
+.. py:property:: save_track_data
+    :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.save_track_data
+    :type: bool
+
+    Opt whether to save the tracks you define with the scenario. Otherwise, the MTO will be saved with the scenario, but all track data will be discarded.
 
 

@@ -20,14 +20,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.from_object`
               - From object for a connection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.to_object`
-              - To object for a connection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.min_num_uses`
-              - Get or set the minimum number of uses for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.max_num_uses`
               - Get or set the maximum number of uses for a connection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.min_num_uses`
+              - Get or set the minimum number of uses for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.parent_platform_restriction`
               - Get or set the parent platform restriction for a connection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnection.to_object`
+              - To object for a connection.
 
 
 
@@ -48,11 +48,11 @@ Property detail
 
     From object for a connection.
 
-.. py:property:: to_object
-    :canonical: ansys.stk.core.stkobjects.ChainConnection.to_object
-    :type: ISTKObject
+.. py:property:: max_num_uses
+    :canonical: ansys.stk.core.stkobjects.ChainConnection.max_num_uses
+    :type: int
 
-    To object for a connection.
+    Get or set the maximum number of uses for a connection.
 
 .. py:property:: min_num_uses
     :canonical: ansys.stk.core.stkobjects.ChainConnection.min_num_uses
@@ -60,16 +60,16 @@ Property detail
 
     Get or set the minimum number of uses for a connection.
 
-.. py:property:: max_num_uses
-    :canonical: ansys.stk.core.stkobjects.ChainConnection.max_num_uses
-    :type: int
-
-    Get or set the maximum number of uses for a connection.
-
 .. py:property:: parent_platform_restriction
     :canonical: ansys.stk.core.stkobjects.ChainConnection.parent_platform_restriction
     :type: ChainParentPlatformRestriction
 
     Get or set the parent platform restriction for a connection.
+
+.. py:property:: to_object
+    :canonical: ansys.stk.core.stkobjects.ChainConnection.to_object
+    :type: ISTKObject
+
+    To object for a connection.
 
 

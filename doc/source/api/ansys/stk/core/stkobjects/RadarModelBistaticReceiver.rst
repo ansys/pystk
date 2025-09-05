@@ -29,24 +29,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode`
-              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver`
-              - Get the radar receiver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.antenna_control`
+              - Get the radar antenna control.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.bistatic_transmitters`
+              - Get the bistatic transmitter collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter`
+              - Get the radar clutter settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry`
               - Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.jamming`
               - Get the radar jamming.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.bistatic_transmitters`
-              - Get the bistatic transmitter collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.antenna_control`
-              - Get the radar antenna control.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter`
-              - Get the radar clutter settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode`
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode_component_linking`
               - Get the link/embed controller for managing the radar mode component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver`
+              - Get the radar receiver.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes`
+              - Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
 
 
 
@@ -61,23 +61,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_modes
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes
-    :type: list
+.. py:property:: antenna_control
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.antenna_control
+    :type: AntennaControl
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
+    Get the radar antenna control.
 
-.. py:property:: mode
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode
-    :type: IRadarModeBistaticReceiver
+.. py:property:: bistatic_transmitters
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.bistatic_transmitters
+    :type: ObjectLinkCollection
 
-    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
+    Get the bistatic transmitter collection.
 
-.. py:property:: receiver
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver
-    :type: RadarReceiver
+.. py:property:: clutter
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter
+    :type: RadarClutter
 
-    Get the radar receiver.
+    Get the radar clutter settings.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry
@@ -91,23 +91,11 @@ Property detail
 
     Get the radar jamming.
 
-.. py:property:: bistatic_transmitters
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.bistatic_transmitters
-    :type: ObjectLinkCollection
+.. py:property:: mode
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode
+    :type: IRadarModeBistaticReceiver
 
-    Get the bistatic transmitter collection.
-
-.. py:property:: antenna_control
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.antenna_control
-    :type: AntennaControl
-
-    Get the radar antenna control.
-
-.. py:property:: clutter
-    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter
-    :type: RadarClutter
-
-    Get the radar clutter settings.
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets the current radar mode.
 
 .. py:property:: mode_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.mode_component_linking
@@ -115,9 +103,28 @@ Property detail
 
     Get the link/embed controller for managing the radar mode component.
 
+.. py:property:: receiver
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver
+    :type: RadarReceiver
+
+    Get the radar receiver.
+
+.. py:property:: supported_modes
+    :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.supported_modes
+    :type: list
+
+    Do not use this property, as it is deprecated. Use ModeComponentLinking on RadarModelBistaticReceiver instead. Gets an array of supported mode names.
+
 
 Method detail
 -------------
+
+
+
+
+
+
+
 
 
 .. py:method:: set_mode(self, mode_name: str) -> None
@@ -133,12 +140,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
 
 

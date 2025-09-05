@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
 
 
 Method detail

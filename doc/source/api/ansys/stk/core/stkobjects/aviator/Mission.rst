@@ -27,18 +27,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.atmosphere_model`
+              - Get the mission atmosphere model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.configuration`
+              - Get the aircraft's configuration for the mission.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.is_valid`
+              - Check whether the mission is valid. Calling this property will propagate the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.phases`
               - Get the mission phases.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.vehicle`
               - Get or set the vehicle used in the mission.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.configuration`
-              - Get the aircraft's configuration for the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.wind_model`
               - Get the mission wind model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.atmosphere_model`
-              - Get the mission atmosphere model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.is_valid`
-              - Check whether the mission is valid. Calling this property will propagate the mission.
 
 
 
@@ -171,6 +171,24 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: atmosphere_model
+    :canonical: ansys.stk.core.stkobjects.aviator.Mission.atmosphere_model
+    :type: AtmosphereModel
+
+    Get the mission atmosphere model.
+
+.. py:property:: configuration
+    :canonical: ansys.stk.core.stkobjects.aviator.Mission.configuration
+    :type: Configuration
+
+    Get the aircraft's configuration for the mission.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.stkobjects.aviator.Mission.is_valid
+    :type: bool
+
+    Check whether the mission is valid. Calling this property will propagate the mission.
+
 .. py:property:: phases
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.phases
     :type: PhaseCollection
@@ -183,38 +201,15 @@ Property detail
 
     Get or set the vehicle used in the mission.
 
-.. py:property:: configuration
-    :canonical: ansys.stk.core.stkobjects.aviator.Mission.configuration
-    :type: Configuration
-
-    Get the aircraft's configuration for the mission.
-
 .. py:property:: wind_model
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.wind_model
     :type: WindModel
 
     Get the mission wind model.
 
-.. py:property:: atmosphere_model
-    :canonical: ansys.stk.core.stkobjects.aviator.Mission.atmosphere_model
-    :type: AtmosphereModel
-
-    Get the mission atmosphere model.
-
-.. py:property:: is_valid
-    :canonical: ansys.stk.core.stkobjects.aviator.Mission.is_valid
-    :type: bool
-
-    Check whether the mission is valid. Calling this property will propagate the mission.
-
 
 Method detail
 -------------
-
-
-
-
-
 
 
 
@@ -226,4 +221,9 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
+
+
+
+
 

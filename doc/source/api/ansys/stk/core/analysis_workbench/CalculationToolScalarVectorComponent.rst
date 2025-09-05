@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.component`
+              - The component of the vector to return as the value of the scalar.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.input_vector`
               - Vector.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.reference_axes`
               - Axes used to resolve the vector's components.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.component`
-              - The component of the vector to return as the value of the scalar.
 
 
 
@@ -40,6 +40,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: component
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.component
+    :type: VectorComponentType
+
+    The component of the vector to return as the value of the scalar.
+
 .. py:property:: input_vector
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.input_vector
     :type: IVectorGeometryToolVector
@@ -51,11 +57,5 @@ Property detail
     :type: IVectorGeometryToolAxes
 
     Axes used to resolve the vector's components.
-
-.. py:property:: component
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarVectorComponent.component
-    :type: VectorComponentType
-
-    The component of the vector to return as the value of the scalar.
 
 

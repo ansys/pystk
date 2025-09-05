@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_forward`
-              - Animate forward.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_backward`
-              - Animate backward.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.pause`
-              - Pause the animation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.rewind`
-              - Stop and reset the animation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_forward`
-              - Advance the animation one step forward.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_backward`
-              - Reverse the animation one step backward.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.faster`
               - Increase the speed of the animation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.pause`
+              - Pause the animation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_backward`
+              - Animate backward.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_forward`
+              - Animate forward.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.rewind`
+              - Stop and reset the animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.slower`
               - Decrease the speed of the animation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_backward`
+              - Reverse the animation one step backward.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_forward`
+              - Advance the animation one step forward.
 
     .. tab-item:: Properties
 
@@ -41,16 +41,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.mode`
-              - Animation mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.current_time`
-              - Current animation time. In Epoch seconds.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step`
-              - Get animation time step.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.animation_options`
               - Animation options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.current_time`
+              - Current animation time. In Epoch seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.high_speed`
               - Control the animation speed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.mode`
+              - Animation mode.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step`
+              - Get animation time step.
 
 
 Examples
@@ -87,11 +87,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: mode
-    :canonical: ansys.stk.core.stkobjects.IAnimation.mode
-    :type: AnimationEndTimeMode
+.. py:property:: animation_options
+    :canonical: ansys.stk.core.stkobjects.IAnimation.animation_options
+    :type: AnimationOptionType
 
-    Animation mode.
+    Animation options.
 
 .. py:property:: current_time
     :canonical: ansys.stk.core.stkobjects.IAnimation.current_time
@@ -99,32 +99,49 @@ Property detail
 
     Current animation time. In Epoch seconds.
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.IAnimation.step
-    :type: str
-
-    Get animation time step.
-
-.. py:property:: animation_options
-    :canonical: ansys.stk.core.stkobjects.IAnimation.animation_options
-    :type: AnimationOptionType
-
-    Animation options.
-
 .. py:property:: high_speed
     :canonical: ansys.stk.core.stkobjects.IAnimation.high_speed
     :type: bool
 
     Control the animation speed.
 
+.. py:property:: mode
+    :canonical: ansys.stk.core.stkobjects.IAnimation.mode
+    :type: AnimationEndTimeMode
+
+    Animation mode.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.IAnimation.step
+    :type: str
+
+    Get animation time step.
+
 
 Method detail
 -------------
 
-.. py:method:: play_forward(self) -> None
-    :canonical: ansys.stk.core.stkobjects.IAnimation.play_forward
 
-    Animate forward.
+
+
+
+.. py:method:: faster(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.faster
+
+    Increase the speed of the animation.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+.. py:method:: pause(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.pause
+
+    Pause the animation.
 
     :Returns:
 
@@ -139,10 +156,10 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: pause(self) -> None
-    :canonical: ansys.stk.core.stkobjects.IAnimation.pause
+.. py:method:: play_forward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.play_forward
 
-    Pause the animation.
+    Animate forward.
 
     :Returns:
 
@@ -152,33 +169,6 @@ Method detail
     :canonical: ansys.stk.core.stkobjects.IAnimation.rewind
 
     Stop and reset the animation.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: step_forward(self) -> None
-    :canonical: ansys.stk.core.stkobjects.IAnimation.step_forward
-
-    Advance the animation one step forward.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: step_backward(self) -> None
-    :canonical: ansys.stk.core.stkobjects.IAnimation.step_backward
-
-    Reverse the animation one step backward.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: faster(self) -> None
-    :canonical: ansys.stk.core.stkobjects.IAnimation.faster
-
-    Increase the speed of the animation.
 
     :Returns:
 
@@ -194,11 +184,21 @@ Method detail
         :obj:`~None`
 
 
+.. py:method:: step_backward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.step_backward
 
+    Reverse the animation one step backward.
 
+    :Returns:
 
+        :obj:`~None`
 
+.. py:method:: step_forward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.step_forward
 
+    Advance the animation one step forward.
 
+    :Returns:
 
+        :obj:`~None`
 

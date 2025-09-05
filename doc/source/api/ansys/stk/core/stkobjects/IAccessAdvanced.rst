@@ -20,12 +20,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.aberration_type`
               - Model used for including aberration in apparent direction computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.time_delay_convergence`
-              - Time delay convergence tolerance. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.event_detection`
               - Event detection strategy used in access calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.sampling`
               - Sampling method used in access calculations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.time_delay_convergence`
+              - Time delay convergence tolerance. Uses Time Dimension.
 
 
 Import detail
@@ -45,12 +45,6 @@ Property detail
 
     Model used for including aberration in apparent direction computations.
 
-.. py:property:: time_delay_convergence
-    :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.time_delay_convergence
-    :type: float
-
-    Time delay convergence tolerance. Uses Time Dimension.
-
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.event_detection
     :type: AccessEventDetection
@@ -62,5 +56,11 @@ Property detail
     :type: AccessSampling
 
     Sampling method used in access calculations.
+
+.. py:property:: time_delay_convergence
+    :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.time_delay_convergence
+    :type: float
+
+    Time delay convergence tolerance. Uses Time Dimension.
 
 

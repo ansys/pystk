@@ -20,18 +20,18 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.drag`
               - Get the additional atmospheric drag options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solar_radiation_pressure`
-              - Get the additional solar radiation pressure options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static`
-              - Get the static force model options concerning satellite mass and relativistic accelerations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides`
-              - Get the solid tides options.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.ocean_tides`
               - Get the ocean tides options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.radiation_pressure`
-              - Get the radiation pressure options.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.plugin_propagator`
               - Get the plugin propagator parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.radiation_pressure`
+              - Get the radiation pressure options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solar_radiation_pressure`
+              - Get the additional solar radiation pressure options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides`
+              - Get the solid tides options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static`
+              - Get the static force model options concerning satellite mass and relativistic accelerations.
 
 
 
@@ -52,29 +52,17 @@ Property detail
 
     Get the additional atmospheric drag options.
 
-.. py:property:: solar_radiation_pressure
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solar_radiation_pressure
-    :type: VehicleHPOPSolarRadiationPressureOptions
-
-    Get the additional solar radiation pressure options.
-
-.. py:property:: static
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static
-    :type: PropagatorHPOPStaticForceModelSettings
-
-    Get the static force model options concerning satellite mass and relativistic accelerations.
-
-.. py:property:: solid_tides
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides
-    :type: SolidTides
-
-    Get the solid tides options.
-
 .. py:property:: ocean_tides
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.ocean_tides
     :type: OceanTides
 
     Get the ocean tides options.
+
+.. py:property:: plugin_propagator
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.plugin_propagator
+    :type: VehiclePluginPropagator
+
+    Get the plugin propagator parameters.
 
 .. py:property:: radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.radiation_pressure
@@ -82,10 +70,22 @@ Property detail
 
     Get the radiation pressure options.
 
-.. py:property:: plugin_propagator
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.plugin_propagator
-    :type: VehiclePluginPropagator
+.. py:property:: solar_radiation_pressure
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solar_radiation_pressure
+    :type: VehicleHPOPSolarRadiationPressureOptions
 
-    Get the plugin propagator parameters.
+    Get the additional solar radiation pressure options.
+
+.. py:property:: solid_tides
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides
+    :type: SolidTides
+
+    Get the solid tides options.
+
+.. py:property:: static
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static
+    :type: PropagatorHPOPStaticForceModelSettings
+
+    Get the static force model options concerning satellite mass and relativistic accelerations.
 
 

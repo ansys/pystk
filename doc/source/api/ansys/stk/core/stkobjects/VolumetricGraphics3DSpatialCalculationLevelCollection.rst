@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.add`
               - Add a new level to the collection. When adding a level with duplicate 'Value', it will update 'Color' and 'Translucency' values of the existing level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
 
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -51,60 +51,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, level: int) -> VolumetricGraphics3DSpatialCalculationLevel
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-        **level** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~VolumetricGraphics3DSpatialCalculationLevel`
-
-
-.. py:method:: remove_at(self, level: int) -> None
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-        **level** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add(self, value: float, color: agcolor.Color, translucency: float) -> VolumetricGraphics3DSpatialCalculationLevel
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.add
@@ -123,4 +84,43 @@ Method detail
     :Returns:
 
         :obj:`~VolumetricGraphics3DSpatialCalculationLevel`
+
+
+.. py:method:: item(self, level: int) -> VolumetricGraphics3DSpatialCalculationLevel
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **level** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~VolumetricGraphics3DSpatialCalculationLevel`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, level: int) -> None
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **level** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

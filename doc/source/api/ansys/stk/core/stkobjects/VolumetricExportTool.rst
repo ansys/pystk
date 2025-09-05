@@ -29,14 +29,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.export_data_format_type`
               - Volumetric data export format type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.volume_grid_export_type`
-              - Volumetric data export format type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.include_grid_point_cartesian`
               - Include grid point cartesian coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.include_grid_point_native`
               - Include grid point native coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.include_grid_reference`
               - Include grid point native coordinates.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricExportTool.volume_grid_export_type`
+              - Volumetric data export format type.
 
 
 
@@ -54,12 +54,6 @@ Property detail
 .. py:property:: export_data_format_type
     :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.export_data_format_type
     :type: VolumetricDataExportFormatType
-
-    Volumetric data export format type.
-
-.. py:property:: volume_grid_export_type
-    :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.volume_grid_export_type
-    :type: VolumetricVolumeGridExportType
 
     Volumetric data export format type.
 
@@ -81,19 +75,15 @@ Property detail
 
     Include grid point native coordinates.
 
+.. py:property:: volume_grid_export_type
+    :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.volume_grid_export_type
+    :type: VolumetricVolumeGridExportType
+
+    Volumetric data export format type.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
-
 
 .. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.export
@@ -108,4 +98,14 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
+
+
+
+
 

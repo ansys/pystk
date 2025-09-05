@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.level_turns`
-              - Get the level turns interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.acceleration_mode`
+              - Get the acceleration mode interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.attitude_transitions`
               - Get the attitude transitions interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.climb_and_descent_transitions`
               - Get the climb and descent transitions interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.acceleration_mode`
-              - Get the acceleration mode interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.level_turns`
+              - Get the level turns interface.
 
 
 
@@ -51,11 +51,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: level_turns
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.level_turns
-    :type: LevelTurns
+.. py:property:: acceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.acceleration_mode
+    :type: AircraftAccelerationMode
 
-    Get the level turns interface.
+    Get the acceleration mode interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.attitude_transitions
@@ -69,16 +69,15 @@ Property detail
 
     Get the climb and descent transitions interface.
 
-.. py:property:: acceleration_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.acceleration_mode
-    :type: AircraftAccelerationMode
+.. py:property:: level_turns
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.level_turns
+    :type: LevelTurns
 
-    Get the acceleration mode interface.
+    Get the level turns interface.
 
 
 Method detail
 -------------
-
 
 
 
@@ -91,4 +90,5 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogItem`
+
 

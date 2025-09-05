@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance`
+              - Get the vehicle's 3D covariance properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display`
+              - Get the vehicle's 3D data display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model`
               - Get the vehicle's 3D model properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.route`
-              - Get the vehicle's 3D route properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing`
+              - Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.offsets`
               - Get the vehicle's 3D offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.range_contours`
               - Get the vehicle's 3D range contour properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance`
-              - Get the vehicle's 3D covariance properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.route`
+              - Get the vehicle's 3D route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.vector`
               - Get the vehicle's 3D vector properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display`
-              - Get the vehicle's 3D data display properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing`
-              - Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance`
               - Get the vehicle's 3D velocity covariance properties.
 
@@ -49,17 +49,29 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: covariance
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance
+    :type: VehicleGraphics3DCovariance
+
+    Get the vehicle's 3D covariance properties.
+
+.. py:property:: data_display
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display
+    :type: Graphics3DDataDisplayCollection
+
+    Get the vehicle's 3D data display properties.
+
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model
     :type: VehicleGraphics3DModelRoute
 
     Get the vehicle's 3D model properties.
 
-.. py:property:: route
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.route
-    :type: VehicleGraphics3DRoute
+.. py:property:: model_pointing
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing
+    :type: Graphics3DModelPointing
 
-    Get the vehicle's 3D route properties.
+    Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.offsets
@@ -73,29 +85,17 @@ Property detail
 
     Get the vehicle's 3D range contour properties.
 
-.. py:property:: covariance
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance
-    :type: VehicleGraphics3DCovariance
+.. py:property:: route
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.route
+    :type: VehicleGraphics3DRoute
 
-    Get the vehicle's 3D covariance properties.
+    Get the vehicle's 3D route properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.vector
     :type: Graphics3DVector
 
     Get the vehicle's 3D vector properties.
-
-.. py:property:: data_display
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display
-    :type: Graphics3DDataDisplayCollection
-
-    Get the vehicle's 3D data display properties.
-
-.. py:property:: model_pointing
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing
-    :type: Graphics3DModelPointing
-
-    Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance

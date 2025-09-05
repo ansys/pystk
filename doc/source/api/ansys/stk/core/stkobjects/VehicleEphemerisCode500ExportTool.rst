@@ -69,10 +69,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.export
 
@@ -86,4 +82,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
 

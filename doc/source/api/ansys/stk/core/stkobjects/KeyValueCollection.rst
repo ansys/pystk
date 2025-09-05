@@ -18,18 +18,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.item`
-              - Given a key, returns associated element.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.contains`
               - Determine whether the collection contains the specified key.
+            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.get_read_only`
+              - Given a key, returns read-only flag.
+            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.item`
+              - Given a key, returns associated element.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.remove_all`
               - Remove all elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.remove_key`
               - Remove an element associated with specified key.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.set`
               - Set the value associated with specified key.
-            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.get_read_only`
-              - Given a key, returns read-only flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.set_read_only`
               - Given a key, sets read-only flag.
 
@@ -39,10 +39,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection._new_enum`
               - Return an enumerator containing the keys in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.count`
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.keys`
               - Return an array of keys of the collection.
 
@@ -59,17 +59,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator containing the keys in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
 
 .. py:property:: keys
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.keys
@@ -81,6 +81,34 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: contains(self, key: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.contains
+
+    Determine whether the collection contains the specified key.
+
+    :Parameters:
+
+        **key** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: get_read_only(self, key: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.get_read_only
+
+    Given a key, returns read-only flag.
+
+    :Parameters:
+
+        **key** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
 
 .. py:method:: item(self, key: str) -> str
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.item
@@ -96,20 +124,6 @@ Method detail
 
         :obj:`~str`
 
-
-.. py:method:: contains(self, key: str) -> bool
-    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.contains
-
-    Determine whether the collection contains the specified key.
-
-    :Parameters:
-
-        **key** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~bool`
 
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.remove_all
@@ -150,21 +164,6 @@ Method detail
 
         :obj:`~None`
 
-
-.. py:method:: get_read_only(self, key: str) -> bool
-    :canonical: ansys.stk.core.stkobjects.KeyValueCollection.get_read_only
-
-    Given a key, returns read-only flag.
-
-    :Parameters:
-
-        **key** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~bool`
-
 .. py:method:: set_read_only(self, key: str, is_read_only: bool) -> None
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.set_read_only
 
@@ -180,4 +179,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

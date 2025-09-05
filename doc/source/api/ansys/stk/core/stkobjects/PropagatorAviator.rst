@@ -55,6 +55,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: get_flight_mission(self) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.PropagatorAviator.get_flight_mission
 
@@ -63,5 +64,4 @@ Method detail
     :Returns:
 
         :obj:`~typing.Any`
-
 

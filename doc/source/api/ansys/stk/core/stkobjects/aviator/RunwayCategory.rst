@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways`
-              - Get the user runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.arinc424_runways`
               - Get the ARINC-424 runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.dafif_runways`
               - Get the DAFIF runways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways`
+              - Get the user runways.
 
 
 
@@ -38,12 +38,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: user_runways
-    :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways
-    :type: UserRunwaySource
-
-    Get the user runways.
-
 .. py:property:: arinc424_runways
     :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.arinc424_runways
     :type: ARINC424Source
@@ -55,5 +49,11 @@ Property detail
     :type: DAFIFSource
 
     Get the DAFIF runways.
+
+.. py:property:: user_runways
+    :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways
+    :type: UserRunwaySource
+
+    Get the user runways.
 
 

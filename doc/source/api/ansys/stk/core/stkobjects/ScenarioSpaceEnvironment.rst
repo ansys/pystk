@@ -27,10 +27,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment`
-              - Get the radiation environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.graphics_3d`
               - Get the 3D Graphics settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment`
+              - Get the radiation environment settings.
 
 
 
@@ -45,23 +45,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: radiation_environment
-    :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment
-    :type: SpaceEnvironmentRadiationEnvironment
-
-    Get the radiation environment settings.
-
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.graphics_3d
     :type: SpaceEnvironmentScenarioGraphics3D
 
     Get the 3D Graphics settings.
 
+.. py:property:: radiation_environment
+    :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment
+    :type: SpaceEnvironmentRadiationEnvironment
+
+    Get the radiation environment settings.
+
 
 Method detail
 -------------
-
-
 
 .. py:method:: compute_saa_flux_intensity(self, channel: SpaceEnvironmentSAAChannel, lat: float, lon: float, alt: float) -> float
     :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.compute_saa_flux_intensity
@@ -82,4 +80,6 @@ Method detail
     :Returns:
 
         :obj:`~float`
+
+
 

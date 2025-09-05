@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step`
+              - Time step used in numerical evaluation of scalar calculation time rate of change (derivatives using central differencing).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.point_1`
               - Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.point_2`
               - Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.surface_central_body`
               - Central body on which the surface distance between points is to be calculated.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step`
-              - Time step used in numerical evaluation of scalar calculation time rate of change (derivatives using central differencing).
 
 
 
@@ -41,6 +41,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: differencing_time_step
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step
+    :type: float
+
+    Time step used in numerical evaluation of scalar calculation time rate of change (derivatives using central differencing).
 
 .. py:property:: point_1
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.point_1
@@ -59,11 +65,5 @@ Property detail
     :type: str
 
     Central body on which the surface distance between points is to be calculated.
-
-.. py:property:: differencing_time_step
-    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step
-    :type: float
-
-    Time step used in numerical evaluation of scalar calculation time rate of change (derivatives using central differencing).
 
 

@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.central_body`
+              - Get the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.frame`
+              - Get the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.segment_name`
               - Get the segment name.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.segment_type`
               - Get the segment type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.frame`
-              - Get the coordinate axes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.central_body`
-              - Get the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.start_time`
               - Get the start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICESegment.stop_time`
@@ -44,6 +44,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: central_body
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.central_body
+    :type: str
+
+    Get the central body.
+
+.. py:property:: frame
+    :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.frame
+    :type: str
+
+    Get the coordinate axes.
+
 .. py:property:: segment_name
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.segment_name
     :type: str
@@ -55,18 +67,6 @@ Property detail
     :type: str
 
     Get the segment type.
-
-.. py:property:: frame
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.frame
-    :type: str
-
-    Get the coordinate axes.
-
-.. py:property:: central_body
-    :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.central_body
-    :type: str
-
-    Get the central body.
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICESegment.start_time

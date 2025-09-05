@@ -18,22 +18,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.minification_filter`
-              - Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.magnification_filter`
-              - Get the magnification filter used when the pixel being textured maps to an area greater than one texel.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.wrap_s`
-              - Get the texture wrap for the s direction.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.wrap_t`
-              - Get the texture wrap for the t direction.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.nearest_clamp_to_edge`
-              - Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge.
-            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.nearest_repeat`
-              - Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat.
             * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.linear_clamp_to_edge`
               - Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge.
             * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.linear_repeat`
               - Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.magnification_filter`
+              - Get the magnification filter used when the pixel being textured maps to an area greater than one texel.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.minification_filter`
+              - Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.nearest_clamp_to_edge`
+              - Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.nearest_repeat`
+              - Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.wrap_s`
+              - Get the texture wrap for the s direction.
+            * - :py:attr:`~ansys.stk.core.graphics.TextureFilter2D.wrap_t`
+              - Get the texture wrap for the t direction.
 
 
 
@@ -48,11 +48,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minification_filter
-    :canonical: ansys.stk.core.graphics.TextureFilter2D.minification_filter
-    :type: MinificationFilter
+.. py:property:: linear_clamp_to_edge
+    :canonical: ansys.stk.core.graphics.TextureFilter2D.linear_clamp_to_edge
+    :type: TextureFilter2D
 
-    Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel.
+    Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge.
+
+.. py:property:: linear_repeat
+    :canonical: ansys.stk.core.graphics.TextureFilter2D.linear_repeat
+    :type: TextureFilter2D
+
+    Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat.
 
 .. py:property:: magnification_filter
     :canonical: ansys.stk.core.graphics.TextureFilter2D.magnification_filter
@@ -60,17 +66,11 @@ Property detail
 
     Get the magnification filter used when the pixel being textured maps to an area greater than one texel.
 
-.. py:property:: wrap_s
-    :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_s
-    :type: TextureWrap
+.. py:property:: minification_filter
+    :canonical: ansys.stk.core.graphics.TextureFilter2D.minification_filter
+    :type: MinificationFilter
 
-    Get the texture wrap for the s direction.
-
-.. py:property:: wrap_t
-    :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_t
-    :type: TextureWrap
-
-    Get the texture wrap for the t direction.
+    Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel.
 
 .. py:property:: nearest_clamp_to_edge
     :canonical: ansys.stk.core.graphics.TextureFilter2D.nearest_clamp_to_edge
@@ -84,16 +84,16 @@ Property detail
 
     Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat.
 
-.. py:property:: linear_clamp_to_edge
-    :canonical: ansys.stk.core.graphics.TextureFilter2D.linear_clamp_to_edge
-    :type: TextureFilter2D
+.. py:property:: wrap_s
+    :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_s
+    :type: TextureWrap
 
-    Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge.
+    Get the texture wrap for the s direction.
 
-.. py:property:: linear_repeat
-    :canonical: ansys.stk.core.graphics.TextureFilter2D.linear_repeat
-    :type: TextureFilter2D
+.. py:property:: wrap_t
+    :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_t
+    :type: TextureWrap
 
-    Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat.
+    Get the texture wrap for the t direction.
 
 

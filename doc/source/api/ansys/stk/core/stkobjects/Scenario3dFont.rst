@@ -27,16 +27,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.name`
-              - Get or set the font name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.point_size`
-              - Font size in points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.available_fonts`
+              - Names of fonts installed in the system.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.bold`
               - Specify whether the font is bold.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.italic`
               - Specify whether the font is italic.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.available_fonts`
-              - Names of fonts installed in the system.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.name`
+              - Get or set the font name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.point_size`
+              - Font size in points.
 
 
 
@@ -51,17 +51,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.name
-    :type: str
+.. py:property:: available_fonts
+    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.available_fonts
+    :type: list
 
-    Get or set the font name.
-
-.. py:property:: point_size
-    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.point_size
-    :type: Scenario3dPointSize
-
-    Font size in points.
+    Names of fonts installed in the system.
 
 .. py:property:: bold
     :canonical: ansys.stk.core.stkobjects.Scenario3dFont.bold
@@ -75,21 +69,21 @@ Property detail
 
     Specify whether the font is italic.
 
-.. py:property:: available_fonts
-    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.available_fonts
-    :type: list
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.name
+    :type: str
 
-    Names of fonts installed in the system.
+    Get or set the font name.
+
+.. py:property:: point_size
+    :canonical: ansys.stk.core.stkobjects.Scenario3dFont.point_size
+    :type: Scenario3dPointSize
+
+    Font size in points.
 
 
 Method detail
 -------------
-
-
-
-
-
-
 
 
 
@@ -107,4 +101,10 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+
+
 

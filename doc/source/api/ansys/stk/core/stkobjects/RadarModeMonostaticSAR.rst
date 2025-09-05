@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_definition`
-              - Get the interface for configuring the SAR waveform pulse definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSAR.modulator`
               - Get the interface for setting the modulator parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_definition`
+              - Get the interface for configuring the SAR waveform pulse definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_integration`
               - Get the interface for configuring the SAR waveform pulse integration.
 
@@ -40,17 +40,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: pulse_definition
-    :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_definition
-    :type: RadarWaveformSarPulseDefinition
-
-    Get the interface for configuring the SAR waveform pulse definition.
-
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSAR.modulator
     :type: RadarModulator
 
     Get the interface for setting the modulator parameters.
+
+.. py:property:: pulse_definition
+    :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_definition
+    :type: RadarWaveformSarPulseDefinition
+
+    Get the interface for configuring the SAR waveform pulse definition.
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSAR.pulse_integration

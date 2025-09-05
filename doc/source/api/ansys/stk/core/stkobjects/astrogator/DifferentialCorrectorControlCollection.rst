@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.get_control_by_paths`
               - Return the control specified by the object/control path.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.item`
+              - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
 
@@ -73,21 +73,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> DifferentialCorrectorControl
-    :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-        **index** : :obj:`~int`
-
-
-    :Returns:
-
-        :obj:`~DifferentialCorrectorControl`
-
-
 
 .. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> DifferentialCorrectorControl
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.get_control_by_paths
@@ -104,5 +89,20 @@ Method detail
     :Returns:
 
         :obj:`~DifferentialCorrectorControl`
+
+.. py:method:: item(self, index: int) -> DifferentialCorrectorControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~DifferentialCorrectorControl`
+
 
 

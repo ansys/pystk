@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.set_attributes_type`
-              - Set the type of display.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.set_attributes_type`
+              - Set the type of display.
 
     .. tab-item:: Properties
 
@@ -29,38 +29,38 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_type`
-              - Type of display: basic, during access intervals, during custom intervals, or real time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes`
               - Get the 2D Graphics attributes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.pass_data`
-              - Get the 2D trajectory graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.resolution`
-              - Get the resolution graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_type`
+              - Type of display: basic, during access intervals, during custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.elevation_contours`
               - Get the elevation contours graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.ground_ellipses`
               - Get the ground ellipses graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.range_contours`
-              - Get the range contour graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.lighting`
-              - Get the lighting graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.swath`
-              - Get the swath graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.label_notes`
-              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.use_instance_name_label`
-              - Specify whether to use the name of the missile (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.label_name`
               - The user-specified name to use as a label for the missile.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.lighting`
+              - Get the lighting graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.pass_data`
+              - Get the 2D trajectory graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section`
+              - Get the radar cross section graphics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.range_contours`
+              - Get the range contour graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.resolution`
+              - Get the resolution graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.saa`
               - Get the missile's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.show_graphics`
               - Specify whether graphics attributes of the missile are visible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section`
-              - Get the radar cross section graphics interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.swath`
+              - Get the swath graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.use_instance_name_label`
+              - Specify whether to use the name of the missile (as shown in the Object Browser) as its label.
 
 
 
@@ -75,11 +75,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: attributes_type
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes_type
-    :type: VehicleGraphics2DAttributeType
+.. py:property:: attributes
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes
+    :type: IVehicleGraphics2DAttributes
 
-    Type of display: basic, during access intervals, during custom intervals, or real time.
+    Get the 2D Graphics attributes.
 
 .. py:property:: attributes_supported_types
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes_supported_types
@@ -87,23 +87,11 @@ Property detail
 
     Return an array of valid choices.
 
-.. py:property:: attributes
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes
-    :type: IVehicleGraphics2DAttributes
+.. py:property:: attributes_type
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes_type
+    :type: VehicleGraphics2DAttributeType
 
-    Get the 2D Graphics attributes.
-
-.. py:property:: pass_data
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.pass_data
-    :type: VehicleGraphics2DTrajectoryPassData
-
-    Get the 2D trajectory graphics.
-
-.. py:property:: resolution
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.resolution
-    :type: VehicleGraphics2DTrajectoryResolution
-
-    Get the resolution graphics.
+    Type of display: basic, during access intervals, during custom intervals, or real time.
 
 .. py:property:: elevation_contours
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.elevation_contours
@@ -117,23 +105,11 @@ Property detail
 
     Get the ground ellipses graphics.
 
-.. py:property:: range_contours
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.range_contours
-    :type: Graphics2DRangeContours
+.. py:property:: label_name
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.label_name
+    :type: str
 
-    Get the range contour graphics.
-
-.. py:property:: lighting
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.lighting
-    :type: VehicleGraphics2DLighting
-
-    Get the lighting graphics.
-
-.. py:property:: swath
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.swath
-    :type: VehicleGraphics2DSwath
-
-    Get the swath graphics.
+    The user-specified name to use as a label for the missile.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.label_notes
@@ -141,17 +117,35 @@ Property detail
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
-.. py:property:: use_instance_name_label
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.use_instance_name_label
-    :type: bool
+.. py:property:: lighting
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.lighting
+    :type: VehicleGraphics2DLighting
 
-    Specify whether to use the name of the missile (as shown in the Object Browser) as its label.
+    Get the lighting graphics.
 
-.. py:property:: label_name
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.label_name
-    :type: str
+.. py:property:: pass_data
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.pass_data
+    :type: VehicleGraphics2DTrajectoryPassData
 
-    The user-specified name to use as a label for the missile.
+    Get the 2D trajectory graphics.
+
+.. py:property:: radar_cross_section
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section
+    :type: RadarCrossSectionGraphics
+
+    Get the radar cross section graphics interface.
+
+.. py:property:: range_contours
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.range_contours
+    :type: Graphics2DRangeContours
+
+    Get the range contour graphics.
+
+.. py:property:: resolution
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.resolution
+    :type: VehicleGraphics2DTrajectoryResolution
+
+    Get the resolution graphics.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.saa
@@ -165,30 +159,26 @@ Property detail
 
     Specify whether graphics attributes of the missile are visible.
 
-.. py:property:: radar_cross_section
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section
-    :type: RadarCrossSectionGraphics
+.. py:property:: swath
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.swath
+    :type: VehicleGraphics2DSwath
 
-    Get the radar cross section graphics interface.
+    Get the swath graphics.
+
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.use_instance_name_label
+    :type: bool
+
+    Specify whether to use the name of the missile (as shown in the Object Browser) as its label.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics.set_attributes_type
-
-    Set the type of display.
-
-    :Parameters:
-
-        **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
 
-    :Returns:
 
-        :obj:`~None`
 
 .. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics2DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.is_attributes_type_supported
@@ -215,9 +205,19 @@ Method detail
 
 
 
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics.set_attributes_type
+
+    Set the type of display.
+
+    :Parameters:
+
+        **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
 
+    :Returns:
 
+        :obj:`~None`
 
 
 

@@ -18,16 +18,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.positions`
-              - Get the positions of the mesh. Three array elements (in the order x, y, z) constitute one position.
-            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.normals`
-              - Get the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal.
-            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.indices`
-              - Get indices into positions and normals. Every 3 indices represent 1 triangle. The indices returned consider the three components of a position or normal (x, y, and z) as a single array element...
-            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order`
-              - Get the orientation of front-facing triangles in the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere`
               - Get the bounding sphere that encompasses the mesh.
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.indices`
+              - Get indices into positions and normals. Every 3 indices represent 1 triangle. The indices returned consider the three components of a position or normal (x, y, and z) as a single array element...
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.normals`
+              - Get the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal.
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.positions`
+              - Get the positions of the mesh. Three array elements (in the order x, y, z) constitute one position.
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order`
+              - Get the orientation of front-facing triangles in the mesh.
 
 
 Import detail
@@ -41,17 +41,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: positions
-    :canonical: ansys.stk.core.graphics.ITriangulatorResult.positions
-    :type: list
+.. py:property:: bounding_sphere
+    :canonical: ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere
+    :type: BoundingSphere
 
-    Get the positions of the mesh. Three array elements (in the order x, y, z) constitute one position.
-
-.. py:property:: normals
-    :canonical: ansys.stk.core.graphics.ITriangulatorResult.normals
-    :type: list
-
-    Get the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal.
+    Get the bounding sphere that encompasses the mesh.
 
 .. py:property:: indices
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.indices
@@ -59,16 +53,22 @@ Property detail
 
     Get indices into positions and normals. Every 3 indices represent 1 triangle. The indices returned consider the three components of a position or normal (x, y, and z) as a single array element...
 
+.. py:property:: normals
+    :canonical: ansys.stk.core.graphics.ITriangulatorResult.normals
+    :type: list
+
+    Get the normals of the mesh. Every position in positions has corresponding normal. Normals are commonly used for lighting. Three array elements (in the order x, y, z) constitute one normal.
+
+.. py:property:: positions
+    :canonical: ansys.stk.core.graphics.ITriangulatorResult.positions
+    :type: list
+
+    Get the positions of the mesh. Three array elements (in the order x, y, z) constitute one position.
+
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order
     :type: WindingOrder
 
     Get the orientation of front-facing triangles in the mesh.
-
-.. py:property:: bounding_sphere
-    :canonical: ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere
-    :type: BoundingSphere
-
-    Get the bounding sphere that encompasses the mesh.
 
 

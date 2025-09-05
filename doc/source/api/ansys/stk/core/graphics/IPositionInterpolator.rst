@@ -52,7 +52,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: interpolate(self, positions: list) -> list
     :canonical: ansys.stk.core.graphics.IPositionInterpolator.interpolate
 
@@ -66,4 +65,5 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
 

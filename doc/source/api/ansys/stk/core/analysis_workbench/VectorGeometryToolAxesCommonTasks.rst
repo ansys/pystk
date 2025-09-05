@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion`
-              - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
-            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles`
-              - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_fixed`
               - Create non-persistent fixed axes based on specified axes.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles`
+              - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion`
+              - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.sample`
               - Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
 
@@ -40,22 +40,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_topocentric_axes_quaternion(self, origin_point: IVectorGeometryToolPoint, qx: float, qy: float, qz: float, qs: float) -> VectorGeometryToolAxesFixed
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion
+.. py:method:: create_fixed(self, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolAxesFixed
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_fixed
 
-    Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
+    Create non-persistent fixed axes based on specified axes.
 
     :Parameters:
 
-        **origin_point** : :obj:`~IVectorGeometryToolPoint`
-
-        **qx** : :obj:`~float`
-
-        **qy** : :obj:`~float`
-
-        **qz** : :obj:`~float`
-
-        **qs** : :obj:`~float`
+        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
 
 
     :Returns:
@@ -84,14 +76,22 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: create_fixed(self, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolAxesFixed
-    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_fixed
+.. py:method:: create_topocentric_axes_quaternion(self, origin_point: IVectorGeometryToolPoint, qx: float, qy: float, qz: float, qs: float) -> VectorGeometryToolAxesFixed
+    :canonical: ansys.stk.core.analysis_workbench.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion
 
-    Create non-persistent fixed axes based on specified axes.
+    Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
 
     :Parameters:
 
-        **reference_axes** : :obj:`~IVectorGeometryToolAxes`
+        **origin_point** : :obj:`~IVectorGeometryToolPoint`
+
+        **qx** : :obj:`~float`
+
+        **qy** : :obj:`~float`
+
+        **qz** : :obj:`~float`
+
+        **qs** : :obj:`~float`
 
 
     :Returns:

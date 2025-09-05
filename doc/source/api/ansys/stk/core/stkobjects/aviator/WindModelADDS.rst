@@ -27,20 +27,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.name`
-              - Get or set the name of the wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.blend_time`
               - Get or set the blend time to transition from the previous wind model if one exists.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type`
-              - Get or set the message interpolation type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type`
-              - Get or set the message extrapolation type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type`
-              - Get or set the missing message type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.interpolation_blend_time`
               - Get or set the blend time to transition from the previous wind condition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type`
+              - Get or set the message extrapolation type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type`
+              - Get or set the message interpolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.messages`
               - Get the messages from the current forecast.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type`
+              - Get or set the missing message type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.name`
+              - Get or set the name of the wind model.
 
 
 
@@ -55,35 +55,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: name
-    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.name
-    :type: str
-
-    Get or set the name of the wind model.
-
 .. py:property:: blend_time
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.blend_time
     :type: float
 
     Get or set the blend time to transition from the previous wind model if one exists.
-
-.. py:property:: message_interpolation_type
-    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type
-    :type: ADDSMessageInterpolationType
-
-    Get or set the message interpolation type.
-
-.. py:property:: message_extrapolation_type
-    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type
-    :type: ADDSMessageExtrapolationType
-
-    Get or set the message extrapolation type.
-
-.. py:property:: missing_message_type
-    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type
-    :type: ADDSMissingMessageType
-
-    Get or set the missing message type.
 
 .. py:property:: interpolation_blend_time
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.interpolation_blend_time
@@ -91,27 +67,39 @@ Property detail
 
     Get or set the blend time to transition from the previous wind condition.
 
+.. py:property:: message_extrapolation_type
+    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type
+    :type: ADDSMessageExtrapolationType
+
+    Get or set the message extrapolation type.
+
+.. py:property:: message_interpolation_type
+    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type
+    :type: ADDSMessageInterpolationType
+
+    Get or set the message interpolation type.
+
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.messages
     :type: ADDSMessageCollection
 
     Get the messages from the current forecast.
 
+.. py:property:: missing_message_type
+    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type
+    :type: ADDSMissingMessageType
+
+    Get or set the missing message type.
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.name
+    :type: str
+
+    Get or set the name of the wind model.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
-
-
-
 
 .. py:method:: add_current_forecast(self) -> str
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.add_current_forecast
@@ -121,5 +109,17 @@ Method detail
     :Returns:
 
         :obj:`~str`
+
+
+
+
+
+
+
+
+
+
+
+
 
 

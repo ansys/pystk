@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp`
-              - Whether the color ramp is used. Setting this property has no effect if the color ramp is not supported.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color`
-              - The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_end_color`
               - The end color of the color ramp. Setting this property has no effect if the color ramp is not supported.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.umbra`
-              - Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color`
+              - The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.penumbra`
               - Configure the appearance of the orbit track, the marker, etc. when the vehicle is only partially in sunlight.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.sunlight`
               - Configure the appearance of the orbit track, the marker, etc. when the vehicle is in complete sunlight.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.umbra`
+              - Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp`
+              - Whether the color ramp is used. Setting this property has no effect if the color ramp is not supported.
 
 
 
@@ -55,29 +55,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_color_ramp
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp
-    :type: bool
-
-    Whether the color ramp is used. Setting this property has no effect if the color ramp is not supported.
-
-.. py:property:: color_ramp_start_color
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color
-    :type: Color
-
-    The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
-
 .. py:property:: color_ramp_end_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_end_color
     :type: Color
 
     The end color of the color ramp. Setting this property has no effect if the color ramp is not supported.
 
-.. py:property:: umbra
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.umbra
-    :type: IVehicleGraphics2DAttributesBasic
+.. py:property:: color_ramp_start_color
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color
+    :type: Color
 
-    Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
+    The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.penumbra
@@ -91,14 +79,21 @@ Property detail
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle is in complete sunlight.
 
+.. py:property:: umbra
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.umbra
+    :type: IVehicleGraphics2DAttributesBasic
+
+    Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
+
+.. py:property:: use_color_ramp
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp
+    :type: bool
+
+    Whether the color ramp is used. Setting this property has no effect if the color ramp is not supported.
+
 
 Method detail
 -------------
-
-
-
-
-
 
 
 
@@ -112,4 +107,9 @@ Method detail
     :Returns:
 
         :obj:`~IAnalysisWorkbenchComponent`
+
+
+
+
+
 

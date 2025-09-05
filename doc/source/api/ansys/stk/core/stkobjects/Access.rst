@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.remove_access`
-              - Remove the access that was computed between two objects.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.compute_access`
-              - Recomputes the access between two objects.  Calls to ComputeAccess should not be made between calls to BeginUpdate and EndUpdate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_time_period`
-              - If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_intervals`
-              - Allow a list of intervals to be used for the access calculation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_event_intervals`
-              - Access is computed using the intervals in the specified event interval list.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.clear_access`
               - Clear the access intervals, but not the definitional settings of the access object itself (like step size, light time delay settings, time interval, etc.).
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.compute_access`
+              - Recomputes the access between two objects.  Calls to ComputeAccess should not be made between calls to BeginUpdate and EndUpdate.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.remove_access`
+              - Remove the access that was computed between two objects.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_event_intervals`
+              - Access is computed using the intervals in the specified event interval list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_intervals`
+              - Allow a list of intervals to be used for the access calculation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.specify_access_time_period`
+              - If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
 
     .. tab-item:: Properties
 
@@ -39,30 +39,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_providers`
-              - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period`
               - Specify the time period option. A member of the AccessTimeType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.graphics`
-              - Get the Graphics properties for the Access computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.advanced`
-              - Get the Advanced properties for the Access computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_displays`
-              - Get the VO Data Display Collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.computed_access_interval_times`
-              - Return a list of the computed access interval times.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period_data`
               - Return an TimeIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an AccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an AccessAllowedTimeIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.advanced`
+              - Get the Advanced properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.analysis_workbench_components`
               - Get a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.save_computed_data`
-              - Flag indicating whether to save computed data with the Access instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.base`
               - Base object used in the access.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Access.target`
-              - Target object used in the access.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.computed_access_interval_times`
+              - Return a list of the computed access interval times.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_displays`
+              - Get the VO Data Display Collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_providers`
+              - Return the object representing a list of available data providers for the object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.graphics`
+              - Get the Graphics properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.name`
               - Name of the access.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.save_computed_data`
+              - Flag indicating whether to save computed data with the Access instance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Access.target`
+              - Target object used in the access.
 
 
 
@@ -169,41 +169,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: data_providers
-    :canonical: ansys.stk.core.stkobjects.Access.data_providers
-    :type: DataProviderCollection
-
-    Return the object representing a list of available data providers for the object.
-
 .. py:property:: access_time_period
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period
     :type: AccessTimeType
 
     Specify the time period option. A member of the AccessTimeType enumeration.
-
-.. py:property:: graphics
-    :canonical: ansys.stk.core.stkobjects.Access.graphics
-    :type: AccessGraphics
-
-    Get the Graphics properties for the Access computations.
-
-.. py:property:: advanced
-    :canonical: ansys.stk.core.stkobjects.Access.advanced
-    :type: AccessAdvancedSettings
-
-    Get the Advanced properties for the Access computations.
-
-.. py:property:: data_displays
-    :canonical: ansys.stk.core.stkobjects.Access.data_displays
-    :type: Graphics3DDataDisplayCollection
-
-    Get the VO Data Display Collection.
-
-.. py:property:: computed_access_interval_times
-    :canonical: ansys.stk.core.stkobjects.Access.computed_access_interval_times
-    :type: TimeIntervalCollection
-
-    Return a list of the computed access interval times.
 
 .. py:property:: access_time_period_data
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period_data
@@ -211,17 +181,17 @@ Property detail
 
     Return an TimeIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an AccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an AccessAllowedTimeIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
 
+.. py:property:: advanced
+    :canonical: ansys.stk.core.stkobjects.Access.advanced
+    :type: AccessAdvancedSettings
+
+    Get the Advanced properties for the Access computations.
+
 .. py:property:: analysis_workbench_components
     :canonical: ansys.stk.core.stkobjects.Access.analysis_workbench_components
     :type: IAnalysisWorkbenchComponentProvider
 
     Get a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
-
-.. py:property:: save_computed_data
-    :canonical: ansys.stk.core.stkobjects.Access.save_computed_data
-    :type: bool
-
-    Flag indicating whether to save computed data with the Access instance.
 
 .. py:property:: base
     :canonical: ansys.stk.core.stkobjects.Access.base
@@ -229,11 +199,29 @@ Property detail
 
     Base object used in the access.
 
-.. py:property:: target
-    :canonical: ansys.stk.core.stkobjects.Access.target
-    :type: ISTKObject
+.. py:property:: computed_access_interval_times
+    :canonical: ansys.stk.core.stkobjects.Access.computed_access_interval_times
+    :type: TimeIntervalCollection
 
-    Target object used in the access.
+    Return a list of the computed access interval times.
+
+.. py:property:: data_displays
+    :canonical: ansys.stk.core.stkobjects.Access.data_displays
+    :type: Graphics3DDataDisplayCollection
+
+    Get the VO Data Display Collection.
+
+.. py:property:: data_providers
+    :canonical: ansys.stk.core.stkobjects.Access.data_providers
+    :type: DataProviderCollection
+
+    Return the object representing a list of available data providers for the object.
+
+.. py:property:: graphics
+    :canonical: ansys.stk.core.stkobjects.Access.graphics
+    :type: AccessGraphics
+
+    Get the Graphics properties for the Access computations.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.Access.name
@@ -241,15 +229,31 @@ Property detail
 
     Name of the access.
 
+.. py:property:: save_computed_data
+    :canonical: ansys.stk.core.stkobjects.Access.save_computed_data
+    :type: bool
+
+    Flag indicating whether to save computed data with the Access instance.
+
+.. py:property:: target
+    :canonical: ansys.stk.core.stkobjects.Access.target
+    :type: ISTKObject
+
+    Target object used in the access.
+
 
 Method detail
 -------------
 
 
-.. py:method:: remove_access(self) -> None
-    :canonical: ansys.stk.core.stkobjects.Access.remove_access
 
-    Remove the access that was computed between two objects.
+
+
+
+.. py:method:: clear_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.Access.clear_access
+
+    Clear the access intervals, but not the definitional settings of the access object itself (like step size, light time delay settings, time interval, etc.).
 
     :Returns:
 
@@ -266,34 +270,13 @@ Method detail
 
 
 
-.. py:method:: specify_access_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.Access.specify_access_time_period
-
-    If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
-
-    :Parameters:
-
-        **start_time** : :obj:`~typing.Any`
-
-        **stop_time** : :obj:`~typing.Any`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 
+.. py:method:: remove_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.Access.remove_access
 
-.. py:method:: specify_access_intervals(self, access_intervals: list) -> None
-    :canonical: ansys.stk.core.stkobjects.Access.specify_access_intervals
-
-    Allow a list of intervals to be used for the access calculation.
-
-    :Parameters:
-
-        **access_intervals** : :obj:`~list`
-
+    Remove the access that was computed between two objects.
 
     :Returns:
 
@@ -315,18 +298,35 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: clear_access(self) -> None
-    :canonical: ansys.stk.core.stkobjects.Access.clear_access
+.. py:method:: specify_access_intervals(self, access_intervals: list) -> None
+    :canonical: ansys.stk.core.stkobjects.Access.specify_access_intervals
 
-    Clear the access intervals, but not the definitional settings of the access object itself (like step size, light time delay settings, time interval, etc.).
+    Allow a list of intervals to be used for the access calculation.
+
+    :Parameters:
+
+        **access_intervals** : :obj:`~list`
+
 
     :Returns:
 
         :obj:`~None`
 
+.. py:method:: specify_access_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.Access.specify_access_time_period
+
+    If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
+
+    :Parameters:
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
 
 
+    :Returns:
 
+        :obj:`~None`
 
 
 

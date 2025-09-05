@@ -60,8 +60,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: is_group(self) -> bool
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.is_group
 
@@ -70,4 +68,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
 

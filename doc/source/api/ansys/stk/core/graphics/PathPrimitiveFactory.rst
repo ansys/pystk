@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitiveFactory.minimum_width_supported`
-              - Get the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PathPrimitiveFactory.maximum_width_supported`
               - Get the maximum width, in pixels, supported by the video card.
+            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitiveFactory.minimum_width_supported`
+              - Get the minimum width, in pixels, supported by the video card.
 
 
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_width_supported
-    :canonical: ansys.stk.core.graphics.PathPrimitiveFactory.minimum_width_supported
-    :type: float
-
-    Get the minimum width, in pixels, supported by the video card.
-
 .. py:property:: maximum_width_supported
     :canonical: ansys.stk.core.graphics.PathPrimitiveFactory.maximum_width_supported
     :type: float
 
     Get the maximum width, in pixels, supported by the video card.
+
+.. py:property:: minimum_width_supported
+    :canonical: ansys.stk.core.graphics.PathPrimitiveFactory.minimum_width_supported
+    :type: float
+
+    Get the minimum width, in pixels, supported by the video card.
 
 
 Method detail

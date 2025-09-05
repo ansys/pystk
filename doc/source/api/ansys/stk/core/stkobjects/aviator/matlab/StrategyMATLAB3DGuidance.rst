@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_time_to_go`
-              - Set the option to use the stop time from target stopping condition and set the according value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_slant_range`
-              - Set the option to use the stop slant range stopping condition and set the according value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid`
-              - Check if the MATLAB function path is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_velocity`
               - Cancel the position velocity strategies for MATLAB 3D Guidance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid`
+              - Check if the MATLAB function path is valid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_slant_range`
+              - Set the option to use the stop slant range stopping condition and set the according value.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_time_to_go`
+              - Set the option to use the stop time from target stopping condition and set the according value.
 
     .. tab-item:: Properties
 
@@ -35,38 +35,38 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_name`
-              - Get or set the target name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.valid_target_names`
-              - Return the valid target names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_resolution`
-              - Get or set the target position/velocity sampling resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_time_to_go`
-              - Get the option to specify a time to go stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_time_to_go`
-              - Get the stop time from the target at which the maneuver will stop.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_slant_range`
-              - Get the option to specify a range from target stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_slant_range`
-              - Get the range from the target at which the maneuver will stop.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.function_name`
-              - Get or set the name of the MATLAB function.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.check_for_errors`
-              - Get or set the option to check the function for errors.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.display_output`
-              - Get or set the option to display the output from the MATLAB function.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.closure_mode`
-              - Get or set the closure mode for the guidance strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_max_angle`
-              - Get or set the closure high off boresight max angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_angle_tol`
-              - Get or set the closure high off boresight angle tolerance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.compute_tas_dot`
-              - Get or set the option to allow MATLAB to compute the true airspeed for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.airspeed_options`
               - Get the airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.check_for_errors`
+              - Get or set the option to check the function for errors.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.closure_mode`
+              - Get or set the closure mode for the guidance strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.compute_tas_dot`
+              - Get or set the option to allow MATLAB to compute the true airspeed for the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.display_output`
+              - Get or set the option to display the output from the MATLAB function.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.function_name`
+              - Get or set the name of the MATLAB function.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_angle_tol`
+              - Get or set the closure high off boresight angle tolerance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_max_angle`
+              - Get or set the closure high off boresight max angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_velocity_strategies`
               - Get the position velocity strategies for MATLAB 3D Guidance.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_slant_range`
+              - Get the range from the target at which the maneuver will stop.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_time_to_go`
+              - Get the stop time from the target at which the maneuver will stop.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_name`
+              - Get or set the target name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_resolution`
+              - Get or set the target position/velocity sampling resolution.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_slant_range`
+              - Get the option to specify a range from target stopping condition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_time_to_go`
+              - Get the option to specify a time to go stopping condition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.valid_target_names`
+              - Return the valid target names.
 
 
 
@@ -81,53 +81,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: target_name
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_name
-    :type: str
+.. py:property:: airspeed_options
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.airspeed_options
+    :type: IBasicManeuverAirspeedOptions
 
-    Get or set the target name.
-
-.. py:property:: valid_target_names
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.valid_target_names
-    :type: list
-
-    Return the valid target names.
-
-.. py:property:: target_resolution
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_resolution
-    :type: float
-
-    Get or set the target position/velocity sampling resolution.
-
-.. py:property:: use_stop_time_to_go
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_time_to_go
-    :type: bool
-
-    Get the option to specify a time to go stopping condition.
-
-.. py:property:: stop_time_to_go
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_time_to_go
-    :type: float
-
-    Get the stop time from the target at which the maneuver will stop.
-
-.. py:property:: use_stop_slant_range
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_slant_range
-    :type: bool
-
-    Get the option to specify a range from target stopping condition.
-
-.. py:property:: stop_slant_range
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_slant_range
-    :type: float
-
-    Get the range from the target at which the maneuver will stop.
-
-.. py:property:: function_name
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.function_name
-    :type: str
-
-    Get or set the name of the MATLAB function.
+    Get the airspeed options.
 
 .. py:property:: check_for_errors
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.check_for_errors
@@ -135,29 +93,11 @@ Property detail
 
     Get or set the option to check the function for errors.
 
-.. py:property:: display_output
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.display_output
-    :type: bool
-
-    Get or set the option to display the output from the MATLAB function.
-
 .. py:property:: closure_mode
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.closure_mode
     :type: ClosureMode
 
     Get or set the closure mode for the guidance strategy.
-
-.. py:property:: hobs_max_angle
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_max_angle
-    :type: typing.Any
-
-    Get or set the closure high off boresight max angle.
-
-.. py:property:: hobs_angle_tol
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_angle_tol
-    :type: typing.Any
-
-    Get or set the closure high off boresight angle tolerance.
 
 .. py:property:: compute_tas_dot
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.compute_tas_dot
@@ -165,11 +105,29 @@ Property detail
 
     Get or set the option to allow MATLAB to compute the true airspeed for the aircraft.
 
-.. py:property:: airspeed_options
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.airspeed_options
-    :type: IBasicManeuverAirspeedOptions
+.. py:property:: display_output
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.display_output
+    :type: bool
 
-    Get the airspeed options.
+    Get or set the option to display the output from the MATLAB function.
+
+.. py:property:: function_name
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.function_name
+    :type: str
+
+    Get or set the name of the MATLAB function.
+
+.. py:property:: hobs_angle_tol
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_angle_tol
+    :type: typing.Any
+
+    Get or set the closure high off boresight angle tolerance.
+
+.. py:property:: hobs_max_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.hobs_max_angle
+    :type: typing.Any
+
+    Get or set the closure high off boresight max angle.
 
 .. py:property:: position_velocity_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_velocity_strategies
@@ -177,16 +135,101 @@ Property detail
 
     Get the position velocity strategies for MATLAB 3D Guidance.
 
+.. py:property:: stop_slant_range
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_slant_range
+    :type: float
+
+    Get the range from the target at which the maneuver will stop.
+
+.. py:property:: stop_time_to_go
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.stop_time_to_go
+    :type: float
+
+    Get the stop time from the target at which the maneuver will stop.
+
+.. py:property:: target_name
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_name
+    :type: str
+
+    Get or set the target name.
+
+.. py:property:: target_resolution
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.target_resolution
+    :type: float
+
+    Get or set the target position/velocity sampling resolution.
+
+.. py:property:: use_stop_slant_range
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_slant_range
+    :type: bool
+
+    Get the option to specify a range from target stopping condition.
+
+.. py:property:: use_stop_time_to_go
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.use_stop_time_to_go
+    :type: bool
+
+    Get the option to specify a time to go stopping condition.
+
+.. py:property:: valid_target_names
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.valid_target_names
+    :type: list
+
+    Return the valid target names.
+
 
 Method detail
 -------------
 
 
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_velocity
+
+    Cancel the position velocity strategies for MATLAB 3D Guidance.
+
+    :Returns:
+
+        :obj:`~None`
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+.. py:method:: is_function_path_valid(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid
+
+    Check if the MATLAB function path is valid.
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: set_stop_slant_range(self, enable: bool, range: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_slant_range
+
+    Set the option to use the stop slant range stopping condition and set the according value.
+
+    :Parameters:
+
+        **enable** : :obj:`~bool`
+
+        **range** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: set_stop_time_to_go(self, enable: bool, time: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_time_to_go
@@ -206,53 +249,10 @@ Method detail
 
 
 
-.. py:method:: set_stop_slant_range(self, enable: bool, range: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.set_stop_slant_range
-
-    Set the option to use the stop slant range stopping condition and set the according value.
-
-    :Parameters:
-
-        **enable** : :obj:`~bool`
-
-        **range** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
-.. py:method:: is_function_path_valid(self) -> bool
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid
-
-    Check if the MATLAB function path is valid.
-
-    :Returns:
-
-        :obj:`~bool`
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-.. py:method:: cancel_target_position_velocity(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_velocity
-
-    Cancel the position velocity strategies for MATLAB 3D Guidance.
-
-    :Returns:
-
-        :obj:`~None`
 

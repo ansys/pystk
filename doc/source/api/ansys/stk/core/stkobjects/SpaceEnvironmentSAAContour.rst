@@ -63,8 +63,6 @@ Method detail
 
 
 
-
-
 .. py:method:: compute_saa_flux_intensity(self, time: typing.Any) -> float
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentSAAContour.compute_saa_flux_intensity
 
@@ -78,4 +76,6 @@ Method detail
     :Returns:
 
         :obj:`~float`
+
+
 

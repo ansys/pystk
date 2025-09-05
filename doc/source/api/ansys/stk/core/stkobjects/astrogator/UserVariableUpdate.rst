@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.enable_control_parameter`
-              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.enable_control_parameter`
+              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available`
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.unit_dimension`
               - Get the dimension of the user variable.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action`
+              - Action to be performed using the value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_name`
               - Get the name of the user variable.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_value`
               - Update value of the user variable.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action`
-              - Action to be performed using the value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available`
-              - Return whether or not the control parameters can be set.
 
 
 
@@ -55,11 +55,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: control_parameters_available
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available
+    :type: bool
+
+    Return whether or not the control parameters can be set.
+
 .. py:property:: unit_dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.unit_dimension
     :type: str
 
     Get the dimension of the user variable.
+
+.. py:property:: variable_action
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action
+    :type: UpdateAction
+
+    Action to be performed using the value.
 
 .. py:property:: variable_name
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_name
@@ -73,41 +85,24 @@ Property detail
 
     Update value of the user variable.
 
-.. py:property:: variable_action
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action
-    :type: UpdateAction
-
-    Action to be performed using the value.
-
-.. py:property:: control_parameters_available
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available
-    :type: bool
-
-    Return whether or not the control parameters can be set.
-
 
 Method detail
 -------------
 
 
+.. py:method:: disable_control_parameter(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.disable_control_parameter
 
-
-
-
-
-.. py:method:: enable_control_parameter(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.enable_control_parameter
-
-    Enable or disables the specified control parameter.
+    Disables the specified control parameter.
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.disable_control_parameter
+.. py:method:: enable_control_parameter(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.enable_control_parameter
 
-    Disables the specified control parameter.
+    Enable or disables the specified control parameter.
 
     :Returns:
 
@@ -121,5 +116,10 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+
 
 

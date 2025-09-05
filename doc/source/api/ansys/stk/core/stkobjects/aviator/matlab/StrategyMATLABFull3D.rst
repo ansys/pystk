@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name`
-              - Get or set the name of the MATLAB function.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.check_for_errors`
               - Get or set the option to check the function for errors.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.display_output`
               - Get or set the option to display the output from the MATLAB function.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name`
+              - Get or set the name of the MATLAB function.
 
 
 
@@ -49,12 +49,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: function_name
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name
-    :type: str
-
-    Get or set the name of the MATLAB function.
-
 .. py:property:: check_for_errors
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.check_for_errors
     :type: bool
@@ -67,9 +61,19 @@ Property detail
 
     Get or set the option to display the output from the MATLAB function.
 
+.. py:property:: function_name
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name
+    :type: str
+
+    Get or set the name of the MATLAB function.
+
 
 Method detail
 -------------
+
+
+
+
 
 
 
@@ -81,8 +85,4 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-
-
-
 
