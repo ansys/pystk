@@ -55,9 +55,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     steps:
       - name: "Checkout project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -82,7 +79,7 @@ jobs:
           # https://github.com/errata-ai/vale/issues/858
           # Combine both file lists and convert them to a JSON array
           # vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
-          vale_files=$(echo -e "${python_files}" | jq -R . | jq -s .)
+          vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
       - uses: ansys/actions/doc-style@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
