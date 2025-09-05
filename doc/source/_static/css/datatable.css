@@ -21,3 +21,7 @@ table.dataTable.display tbody tr.even>.sorting_1:active{
 .dataTables_wrapper .dataTables_paginate {
     color: var(--ast-color-text);
 }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    color: var(--ast-color-text) !important; /* !important to override inline style */
+}
