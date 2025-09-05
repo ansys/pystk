@@ -187,6 +187,8 @@ jobs:
             "quarto install tinytex"
 
       - name: "Install Tox"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -194,6 +196,8 @@ jobs:
             "python -m pip install --upgrade pip tox && rm -rf .tox"
 
       - name: "Build the full documentation"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -244,8 +248,8 @@ jobs:
 
       - name: "Start the container from the desired image"
         env:
-          STK_IMAGE: ${{ steps.docker.outputs.IMAGE }}
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_IMAGE: ${{ steps.docker.outputs.image }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker run \
             --detach -it \
@@ -257,7 +261,7 @@ jobs:
 
       - name: "Install the project with the testing dependencies"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -266,7 +270,7 @@ jobs:
 
       - name: "Install coverage dependencies"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -277,7 +281,7 @@ jobs:
 
       - name: "Run the extensions tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -286,7 +290,7 @@ jobs:
 
       - name: "Run the API migration assistant tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -296,7 +300,7 @@ jobs:
 
       - name: "Run the aviator tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -305,7 +309,7 @@ jobs:
 
       - name: "Run the non graphics stk tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -315,7 +319,7 @@ jobs:
 
       - name: "Run the graphics only stk tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -324,7 +328,7 @@ jobs:
 
       - name: "Run the vgt tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -333,7 +337,7 @@ jobs:
 
       - name: "Run the doc snippet tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -345,7 +349,7 @@ jobs:
       - name: "Combine all coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }}/.cov \
@@ -355,7 +359,7 @@ jobs:
       - name: "Generate coverage report in XML and HTML"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
@@ -383,7 +387,7 @@ jobs:
       - name: "Stop the container"
         if: always()
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.CONTAINER }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker stop "${STK_CONTAINER}"
           docker logs "${STK_CONTAINER}"
@@ -420,7 +424,7 @@ jobs:
           path: ${{ env.ANSYS_STK }}-artifacts
 
       - name: "Upload artifacts to PyPI using trusted publisher"
-        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
         with:
           repository-url: "https://upload.pypi.org/legacy/"
           print-hash: true
