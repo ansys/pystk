@@ -80,6 +80,7 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
     "css/search.css",
+    "css/datatable.css",
 ]
 html_js_files = []
 
