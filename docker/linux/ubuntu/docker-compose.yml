@@ -19,6 +19,8 @@ services:
       context: ./stk-engine-pybase
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04
+      additional_contexts:
+        "ansys/stk-12.10:dev-ubuntu22.04": "service:stk"
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -32,6 +34,9 @@ services:
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04
         basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
+      additional_contexts:
+        "ansys/stk-12.10:dev-ubuntu22.04": "service:stk"
+        "ansys/stk-12.10:dev-ubuntu22.04-pybase": "service:stk-pybase"
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -45,6 +50,9 @@ services:
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04
         basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
+      additional_contexts:
+        "ansys/stk-12.10:dev-ubuntu22.04": "service:stk"
+        "ansys/stk-12.10:dev-ubuntu22.04-pybase": "service:stk-pybase"
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -58,6 +66,9 @@ services:
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04
         basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
+      additional_contexts:
+        "ansys/stk-12.10:dev-ubuntu22.04": "service:stk"
+        "ansys/stk-12.10:dev-ubuntu22.04-pybase": "service:stk-pybase"
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -71,7 +82,8 @@ services:
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04
         basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
+      additional_contexts:
+        "ansys/stk-12.10:dev-ubuntu22.04": "service:stk"
+        "ansys/stk-12.10:dev-ubuntu22.04-pybase": "service:stk-pybase"
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
-
-
