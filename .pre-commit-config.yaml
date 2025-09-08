@@ -23,6 +23,7 @@ repos:
   rev: v1.12.1
   hooks:
     - id: zizmor
+      args: ["--persona=pedantic"]
 
 # NOTE: Ruff does not check for python code in some part of the documentation,
 # e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
