@@ -114,7 +114,7 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.3.2",
-    "matplotlib==3.10.5",
+    "matplotlib==3.10.6",
     "plotly==6.3.0",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
