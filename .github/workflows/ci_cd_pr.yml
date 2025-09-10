@@ -296,6 +296,8 @@ jobs:
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
