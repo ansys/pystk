@@ -58,7 +58,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
+      - uses: ansys/actions/build-wheelhouse@33399106dc8b62d83c8aad1fb2c333c8055df180 # v10.0.20
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -335,7 +335,7 @@ jobs:
 
       - name: "Upload coverage reports to Codecov"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: codecov/codecov-action@fdcc8476540edceab3de004e990f80d881c6cc00 # v5.5.0
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
         with:
           files: .cov/coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -356,7 +356,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: ansys/actions/doc-deploy-dev@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
+      - uses: ansys/actions/doc-deploy-dev@33399106dc8b62d83c8aad1fb2c333c8055df180 # v10.0.20
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
