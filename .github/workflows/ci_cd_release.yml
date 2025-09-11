@@ -139,8 +139,8 @@ jobs:
       - name: "Generate the name of the Docker image and the container"
         id: docker
         run: |
-          image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
-          container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
+          image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
+          container_name="stk-python${MAIN_PYTHON_VERSION}"
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
           echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
@@ -153,7 +153,7 @@ jobs:
             --detach -it \
             --network="host" \
             --name "${STK_CONTAINER}" \
-            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${LICENSE_SERVER} \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
 
@@ -163,23 +163,23 @@ jobs:
         run: |
           docker exec \
             --user root \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "apt update && apt install -y wget pandoc"
 
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${{ env.QUARTO_VERSION }}/quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb"
 
           docker exec \
             --user root \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "dpkg -i quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+            "dpkg -i quarto-${QUARTO_VERSION}-linux-amd64.deb"
 
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "quarto install tinytex"
 
@@ -188,7 +188,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --upgrade pip tox && rm -rf .tox"
 
@@ -197,7 +197,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
@@ -237,9 +237,11 @@ jobs:
 
       - name: "Generate the name of the docker image and the container"
         id: docker
+        env:
+          PYTHON: python-${{ matrix.python }}
         run: |
-          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ matrix.python }}
-          container_name=stk-python${{ matrix.python }}
+          python_image_name="${STK_DOCKER_IMAGE}-${PYTHON}"
+          container_name="stk-${PYTHON}"
           echo "image=${python_image_name}" >> "${GITHUB_OUTPUT}"
           echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
@@ -252,7 +254,7 @@ jobs:
             --detach -it \
             --network="host" \
             --name "${STK_CONTAINER}" \
-            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${LICENSE_SERVER} \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
 
@@ -261,7 +263,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --upgrade pip tox && rm -rf .tox"
 
@@ -270,7 +272,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
@@ -281,7 +283,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/extensions && tox -e tests-extensions-cov"
 
@@ -290,7 +292,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/migration && tox -e tests-core-migration-cov"
 
@@ -299,7 +301,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/aviator && tox -e tests-core-aviator-graphics-cov-linux"
 
@@ -308,7 +310,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/stknogfx && tox -e tests-core-stk-nographics-cov-linux"
 
@@ -317,7 +319,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/stkgfx && tox -e tests-core-stk-graphicsonly-cov-linux"
 
@@ -326,7 +328,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/vgt && tox -e tests-core-vgt-graphics-cov-linux"
 
@@ -335,7 +337,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
@@ -347,7 +349,7 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }}/.cov \
+            --workdir ${PYSTK_DIR}/.cov \
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=coverage && coverage combine aviator stknogfx stkgfx vgt snippets migration extensions"
 
@@ -357,11 +359,11 @@ jobs:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "coverage html --rcfile pyproject.toml --data-file=.cov/coverage --directory=.cov/${{ env.ANSYS_STK }}-coverage --fail-under=89"
+            "coverage html --rcfile pyproject.toml --data-file=.cov/coverage --directory=.cov/${ANSYS_STK}-coverage --fail-under=89"
           docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
+            --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "coverage xml --rcfile pyproject.toml --data-file=.cov/coverage -o .cov/coverage.xml"
 
