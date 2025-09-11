@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk-12.10:dev-ubuntu22.04
-ARG basePythonImage=ansys/stk-12.10:dev-ubuntu22.04-pybase
+ARG baseImage=ansys/stk-13.0:dev-ubuntu22.04
+ARG basePythonImage=ansys/stk-13.0:dev-ubuntu22.04-pybase
 FROM ${basePythonImage} AS builder
 
 ##############################################
