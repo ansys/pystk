@@ -277,9 +277,9 @@ jobs:
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
-          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true"
+          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
         run: |
-          if [[ "${NEEDS_SELF_HOSTED_RUNNER}" ]]; then
+          if [[ "${NEEDS_SELF_HOSTED_RUNNER}" == "true" ]]; then
             docker exec \
               --workdir ${PYSTK_DIR} \
               "${STK_CONTAINER}" /bin/bash -c \
@@ -386,9 +386,9 @@ jobs:
         if: always()
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
-          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true"
+          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
         run: |
-          if [[ ${NEEDS_SELF_HOSTED_RUNNER} ]]; then
+          if [[ "${NEEDS_SELF_HOSTED_RUNNER}" == "true" ]]; then
             docker stop "${STK_CONTAINER}"
             docker logs "${STK_CONTAINER}"
             docker rm "${STK_CONTAINER}"
