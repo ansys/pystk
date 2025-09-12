@@ -153,7 +153,7 @@ jobs:
             --detach -it \
             --network="host" \
             --name "${STK_CONTAINER}" \
-            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${LICENSE_SERVER} \
+            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${{ secrets.LICENSE_SERVER }} \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
 
@@ -254,7 +254,7 @@ jobs:
             --detach -it \
             --network="host" \
             --name "${STK_CONTAINER}" \
-            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${LICENSE_SERVER} \
+            --env ANSYSLMD_LICENSE_FILE=${LICENSE_SERVER_PORT}@${{ secrets.LICENSE_SERVER }} \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
 
