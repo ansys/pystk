@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkobjects.astrogator",
+        "OldRootScope": "agi.stk13.stkobjects.astrogator",
         "NewRootScope": "ansys.stk.core.stkobjects.astrogator"
     },
     "MemberMappings": [
@@ -743,6 +743,111 @@
             "ParentScope": "IAgVABisectionResultCollection",
             "OldName": "GetResultByPaths",
             "NewName": "get_result_by_paths"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "SegmentName",
+            "NewName": "segment_name"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "DesiredEpochType",
+            "NewName": "desired_epoch_type"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "Epoch",
+            "NewName": "epoch"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "Preview",
+            "NewName": "preview"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "Export",
+            "NewName": "export"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "UseDefaultRecordName",
+            "NewName": "use_default_record_name"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "RecordName",
+            "NewName": "record_name"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordCreator",
+            "OldName": "Reset",
+            "NewName": "reset"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "PreviewResultLabel",
+            "NewName": "preview_result_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "EpochLabel",
+            "NewName": "epoch_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "RxLabel",
+            "NewName": "rx_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "RyLabel",
+            "NewName": "ry_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "RzLabel",
+            "NewName": "rz_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "VxLabel",
+            "NewName": "vx_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "VyLabel",
+            "NewName": "vy_label"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecordPreview",
+            "OldName": "VzLabel",
+            "NewName": "vz_label"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
         },
         {
             "ParentScope": "IAgVAStoppingConditionElement",
@@ -1750,6 +1855,51 @@
             "NewName": "maximum_fuel_mass"
         },
         {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "DragInitialCorrection",
+            "NewName": "drag_initial_correction"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "DragLongTermInitialCorrection",
+            "NewName": "drag_long_term_initial_correction"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "DensityModelInitialCorrection",
+            "NewName": "density_model_initial_correction"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "SRPInitialCorrection",
+            "NewName": "srp_initial_correction"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "SRPLongTermInitialCorrection",
+            "NewName": "srp_long_term_initial_correction"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "BallisticCoefficient",
+            "NewName": "ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "CrAOverM",
+            "NewName": "cr_a_over_m"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "DragNPlateStochasticCorrectionParameters",
+            "NewName": "drag_n_plate_stochastic_correction_parameters"
+        },
+        {
+            "ParentScope": "IAgVAStochasticParameters",
+            "OldName": "SRPNPlateStochasticCorrectionParameters",
+            "NewName": "srp_n_plate_stochastic_correction_parameters"
+        },
+        {
             "ParentScope": "IAgVAMCSSegmentProperties",
             "OldName": "DisplayCoordinateSystem",
             "NewName": "display_coordinate_system"
@@ -1838,6 +1988,26 @@
             "ParentScope": "IAgVAMCSInitialState",
             "OldName": "UserVariables",
             "NewName": "user_variables"
+        },
+        {
+            "ParentScope": "IAgVAMCSInitialState",
+            "OldName": "StochasticParameters",
+            "NewName": "stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMCSInitialState",
+            "OldName": "FlightDynamicsRecordName",
+            "NewName": "flight_dynamics_record_name"
+        },
+        {
+            "ParentScope": "IAgVAMCSInitialState",
+            "OldName": "PropagatorName",
+            "NewName": "propagator_name"
+        },
+        {
+            "ParentScope": "IAgVAMCSInitialState",
+            "OldName": "UnlockInitialStateSegment",
+            "NewName": "unlock_initial_state_segment"
         },
         {
             "ParentScope": "IAgVAMCSSegment",
@@ -2043,6 +2213,11 @@
             "ParentScope": "IAgVADriverMCS",
             "OldName": "CalculationGraphs",
             "NewName": "calculation_graphs"
+        },
+        {
+            "ParentScope": "IAgVADriverMCS",
+            "OldName": "FlightDynamicsRecordCreator",
+            "NewName": "flight_dynamics_record_creator"
         },
         {
             "ParentScope": "IAgVAElementCartesian",
@@ -5760,6 +5935,21 @@
             "NewName": "custom_display_unit"
         },
         {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParam",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParam",
+            "OldName": "InitialEstimate",
+            "NewName": "initial_estimate"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticCorrectionParam",
+            "OldName": "LongTermInitialEstimate",
+            "NewName": "long_term_initial_estimate"
+        },
+        {
             "ParentScope": "IAgVAStateCalcHeightAboveTerrain",
             "OldName": "CentralBodyName",
             "NewName": "central_body_name"
@@ -7920,6 +8110,91 @@
             "NewName": "control_parameters_available"
         },
         {
+            "ParentScope": "IAgVANPlateStochasticParamsCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParamsCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParamsCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParamsCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParamsCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgVAStochasticDensityCorrection",
+            "OldName": "HalfLife",
+            "NewName": "half_life"
+        },
+        {
+            "ParentScope": "IAgVAStochasticDensityCorrection",
+            "OldName": "Sigma",
+            "NewName": "sigma"
+        },
+        {
+            "ParentScope": "IAgVAStochasticDensityCorrection",
+            "OldName": "SigmaScale",
+            "NewName": "sigma_scale"
+        },
+        {
+            "ParentScope": "IAgVAStochasticDensityCorrection",
+            "OldName": "DensityRatioRoot",
+            "NewName": "density_ratio_root"
+        },
+        {
+            "ParentScope": "IAgVAStochasticDensityCorrection",
+            "OldName": "DensityIncreaseThreshold",
+            "NewName": "density_increase_threshold"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "ModelType",
+            "NewName": "model_type"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "HalfLife",
+            "NewName": "half_life"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "Sigma",
+            "NewName": "sigma"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "SigmaLongTerm",
+            "NewName": "sigma_long_term"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "ErrorThreshold",
+            "NewName": "error_threshold"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "PNStep",
+            "NewName": "process_noise_step"
+        },
+        {
+            "ParentScope": "IAgVAStochasticModelParams",
+            "OldName": "DiffusionCoefficient",
+            "NewName": "diffusion_coefficient"
+        },
+        {
             "ParentScope": "IAgVACR3BPFunc",
             "OldName": "SecondaryName",
             "NewName": "secondary_name"
@@ -8023,21 +8298,6 @@
             "ParentScope": "IAgVARadiationPressureFunction",
             "OldName": "CentralBodyName",
             "NewName": "central_body_name"
-        },
-        {
-            "ParentScope": "IAgVARadiationPressureFunction",
-            "OldName": "OverrideSegmentSettings",
-            "NewName": "override_segment_settings"
-        },
-        {
-            "ParentScope": "IAgVARadiationPressureFunction",
-            "OldName": "RadPressureCoeff",
-            "NewName": "radiation_pressure_coefficient"
-        },
-        {
-            "ParentScope": "IAgVARadiationPressureFunction",
-            "OldName": "RadPressureArea",
-            "NewName": "radiation_pressure_area"
         },
         {
             "ParentScope": "IAgVAYarkovskyFunc",
@@ -8200,6 +8460,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVACira72Function",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAExponential",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8243,6 +8533,26 @@
             "ParentScope": "IAgVAExponential",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAExponential",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAExponential",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAExponential",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAExponential",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVAHarrisPriester",
@@ -8303,6 +8613,26 @@
             "ParentScope": "IAgVAHarrisPriester",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAHarrisPriester",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAHarrisPriester",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAHarrisPriester",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAHarrisPriester",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVADensityModelPlugin",
@@ -8525,6 +8855,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaRoberts",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAJacchiaBowman2008",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8620,6 +8980,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAJacchiaBowman2008",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAJacchia_1960",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8663,6 +9053,26 @@
             "ParentScope": "IAgVAJacchia_1960",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1960",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1960",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1960",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1960",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVAJacchia_1970",
@@ -8745,6 +9155,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1970",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAJacchia_1971",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8825,6 +9265,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAJacchia_1971",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAMSISE_1990",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8905,6 +9375,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMSISE_1990",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAMSIS_1986",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -8985,6 +9485,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMSIS_1986",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVANRLMSISE_2000",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9065,6 +9595,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVANRLMSISE_2000",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAUS_Standard_Atmosphere",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9103,6 +9663,26 @@
             "ParentScope": "IAgVAUS_Standard_Atmosphere",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAUS_Standard_Atmosphere",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAUS_Standard_Atmosphere",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAUS_Standard_Atmosphere",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAUS_Standard_Atmosphere",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVAMarsGRAM37",
@@ -9180,6 +9760,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM37",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAMarsGRAM2005",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9255,6 +9865,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2005",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAVenusGRAM2005",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9308,6 +9948,36 @@
             "ParentScope": "IAgVAVenusGRAM2005",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAVenusGRAM2005",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVAMarsGRAM2010",
@@ -9385,6 +10055,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2010",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAMarsGRAM2001",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9460,6 +10160,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2001",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVAMarsGRAM2000",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9533,6 +10263,36 @@
             "ParentScope": "IAgVAMarsGRAM2000",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVAMarsGRAM2000",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVADTM2012",
@@ -9615,6 +10375,36 @@
             "NewName": "n_plate_definition_file"
         },
         {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVADTM2012",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
+        },
+        {
             "ParentScope": "IAgVADTM2020",
             "OldName": "UseApproximateAltitude",
             "NewName": "use_approximate_altitude"
@@ -9693,6 +10483,36 @@
             "ParentScope": "IAgVADTM2020",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "UseStochasticBallisticCoeff",
+            "NewName": "use_stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "UseStochasticDensityCorrection",
+            "NewName": "use_stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "StochasticBallisticCoefficient",
+            "NewName": "stochastic_ballistic_coefficient"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "StochasticDensityCorrection",
+            "NewName": "stochastic_density_correction"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
+        },
+        {
+            "ParentScope": "IAgVADTM2020",
+            "OldName": "DragCorrectionType",
+            "NewName": "drag_correction_type"
         },
         {
             "ParentScope": "IAgVAGravityFieldFunction",
@@ -9875,6 +10695,21 @@
             "NewName": "solar_radius"
         },
         {
+            "ParentScope": "IAgVASRPAeroT20",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPAeroT20",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPAeroT20",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPAeroT30",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -9910,6 +10745,21 @@
             "NewName": "solar_radius"
         },
         {
+            "ParentScope": "IAgVASRPAeroT30",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPAeroT30",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPAeroT30",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPGSPM04aIIA",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -9945,6 +10795,21 @@
             "NewName": "solar_radius"
         },
         {
+            "ParentScope": "IAgVASRPGSPM04aIIA",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aIIA",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aIIA",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPGSPM04aIIR",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -9980,6 +10845,21 @@
             "NewName": "solar_radius"
         },
         {
+            "ParentScope": "IAgVASRPGSPM04aIIR",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aIIR",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aIIR",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPGSPM04aeIIA",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -10015,6 +10895,21 @@
             "NewName": "solar_radius"
         },
         {
+            "ParentScope": "IAgVASRPGSPM04aeIIA",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aeIIA",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aeIIA",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPGSPM04aeIIR",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -10048,6 +10943,21 @@
             "ParentScope": "IAgVASRPGSPM04aeIIR",
             "OldName": "SolarRadius",
             "NewName": "solar_radius"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aeIIR",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aeIIR",
+            "OldName": "K1StochasticSRPCoefficient",
+            "NewName": "k1_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPGSPM04aeIIR",
+            "OldName": "K2StochasticSRPCoefficient",
+            "NewName": "k2_stochastic_srp_coefficient"
         },
         {
             "ParentScope": "IAgVASRPSpherical",
@@ -10098,6 +11008,21 @@
             "ParentScope": "IAgVASRPSpherical",
             "OldName": "SolarRadius",
             "NewName": "solar_radius"
+        },
+        {
+            "ParentScope": "IAgVASRPSpherical",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPSpherical",
+            "OldName": "StochasticSRPCoefficient",
+            "NewName": "stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPSpherical",
+            "OldName": "SRPCorrectionType",
+            "NewName": "srp_correction_type"
         },
         {
             "ParentScope": "IAgVASRPNPlate",
@@ -10153,6 +11078,16 @@
             "ParentScope": "IAgVASRPNPlate",
             "OldName": "NPlateDefinitionFile",
             "NewName": "n_plate_definition_file"
+        },
+        {
+            "ParentScope": "IAgVASRPNPlate",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPNPlate",
+            "OldName": "NPlateStochasticParameters",
+            "NewName": "n_plate_stochastic_parameters"
         },
         {
             "ParentScope": "IAgVASRPTabAreaVec",
@@ -10215,6 +11150,16 @@
             "NewName": "interpolation_method"
         },
         {
+            "ParentScope": "IAgVASRPTabAreaVec",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPTabAreaVec",
+            "OldName": "StochasticSRPCoefficient",
+            "NewName": "stochastic_srp_coefficient"
+        },
+        {
             "ParentScope": "IAgVASRPVariableArea",
             "OldName": "AtmosAlt",
             "NewName": "atmosphere_altitude"
@@ -10268,6 +11213,16 @@
             "ParentScope": "IAgVASRPVariableArea",
             "OldName": "VariableAreaHistoryFile",
             "NewName": "variable_area_history_file"
+        },
+        {
+            "ParentScope": "IAgVASRPVariableArea",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVASRPVariableArea",
+            "OldName": "StochasticSRPCoefficient",
+            "NewName": "stochastic_srp_coefficient"
         },
         {
             "ParentScope": "IAgVAThirdBodyFunction",
@@ -10343,6 +11298,41 @@
             "ParentScope": "IAgVASRPReflectionPlugin",
             "OldName": "SolarRadius",
             "NewName": "solar_radius"
+        },
+        {
+            "ParentScope": "IAgVASRPReflectionPlugin",
+            "OldName": "UseStochasticSRPCoeff",
+            "NewName": "use_stochastic_srp_coefficient"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "NominalValue",
+            "NewName": "nominal_value"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "EstimateParameter",
+            "NewName": "estimate_parameter"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "HalfLife",
+            "NewName": "half_life"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "Sigma",
+            "NewName": "sigma"
+        },
+        {
+            "ParentScope": "IAgVANPlateStochasticParam",
+            "OldName": "LongTermSigma",
+            "NewName": "long_term_sigma"
         },
         {
             "ParentScope": "IAgVAEngineModelThrustCoefficients",
@@ -11565,66 +12555,6 @@
             "NewName": "set_single_step_integrator"
         },
         {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "InitialStep",
-            "NewName": "initial_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "UseFixedStep",
-            "NewName": "use_fixed_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "UseMaxStep",
-            "NewName": "use_max_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "UseMinStep",
-            "NewName": "use_min_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "MaxStep",
-            "NewName": "max_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "MinStep",
-            "NewName": "min_step"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "MaxRelErr",
-            "NewName": "max_relative_err"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "MaxAbsErr",
-            "NewName": "max_absolute_err"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "HighSafetyCoefficient",
-            "NewName": "high_safety_coefficient"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "LowSafetyCoefficient",
-            "NewName": "low_safety_coefficient"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "ErrorControl",
-            "NewName": "error_control"
-        },
-        {
-            "ParentScope": "IAgVARK2nd3rd",
-            "OldName": "MaxIterations",
-            "NewName": "max_iterations"
-        },
-        {
             "ParentScope": "IAgVARK4th",
             "OldName": "InitialStep",
             "NewName": "initial_step"
@@ -11686,66 +12616,6 @@
         },
         {
             "ParentScope": "IAgVARK4th5th",
-            "OldName": "MaxIterations",
-            "NewName": "max_iterations"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "InitialStep",
-            "NewName": "initial_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "UseFixedStep",
-            "NewName": "use_fixed_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "UseMaxStep",
-            "NewName": "use_max_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "UseMinStep",
-            "NewName": "use_min_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "MaxStep",
-            "NewName": "max_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "MinStep",
-            "NewName": "min_step"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "MaxRelErr",
-            "NewName": "max_relative_err"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "MaxAbsErr",
-            "NewName": "max_absolute_err"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "HighSafetyCoefficient",
-            "NewName": "high_safety_coefficient"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "LowSafetyCoefficient",
-            "NewName": "low_safety_coefficient"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
-            "OldName": "ErrorControl",
-            "NewName": "error_control"
-        },
-        {
-            "ParentScope": "IAgVARK4thAdapt",
             "OldName": "MaxIterations",
             "NewName": "max_iterations"
         },
@@ -11873,6 +12743,76 @@
             "ParentScope": "IAgVARKV8th9th",
             "OldName": "CoeffType",
             "NewName": "coefficient_type"
+        },
+        {
+            "ParentScope": "IAgVAStateConfigCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgVAStateConfigCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgVAStateConfigCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgVAStateConfigCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgVAStateConfigCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "Notes",
+            "NewName": "notes"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "RecordTimeStamp",
+            "NewName": "record_time_stamp"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "PropagatorName",
+            "NewName": "propagator_name"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "Propagator",
+            "NewName": "propagator"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "StateConfigProperties",
+            "NewName": "state_config_properties"
+        },
+        {
+            "ParentScope": "IAgVAFlightDynamicsRecord",
+            "OldName": "ExportPropToBrowser",
+            "NewName": "export_propulsion_to_browser"
+        },
+        {
+            "ParentScope": "IAgVAStateConfig",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgVAStateConfig",
+            "OldName": "Value",
+            "NewName": "value"
+        },
+        {
+            "ParentScope": "IAgVAStateConfig",
+            "OldName": "Description",
+            "NewName": "description"
         }
     ],
     "InterfaceMappings": [
@@ -11983,6 +12923,18 @@
         {
             "OldName": "IAgVABisectionResultCollection",
             "NewName": "BisectionResultCollection"
+        },
+        {
+            "OldName": "IAgVAFlightDynamicsRecordCreator",
+            "NewName": "FlightDynamicsRecordCreator"
+        },
+        {
+            "OldName": "IAgVAFlightDynamicsRecordPreview",
+            "NewName": "FlightDynamicsRecordPreview"
+        },
+        {
+            "OldName": "IAgVANPlateStochasticCorrectionParamsCollection",
+            "NewName": "NPlateStochasticCorrectionParametersCollection"
         },
         {
             "OldName": "IAgVAStoppingConditionElement",
@@ -12103,6 +13055,10 @@
         {
             "OldName": "IAgVAFuelTank",
             "NewName": "FuelTank"
+        },
+        {
+            "OldName": "IAgVAStochasticParameters",
+            "NewName": "StochasticParameters"
         },
         {
             "OldName": "IAgVAMCSSegmentProperties",
@@ -12491,6 +13447,10 @@
         {
             "OldName": "IAgVABisectionControl",
             "NewName": "BisectionControl"
+        },
+        {
+            "OldName": "IAgVANPlateStochasticCorrectionParam",
+            "NewName": "NPlateStochasticCorrectionParameter"
         },
         {
             "OldName": "IAgVAStateCalcHeightAboveTerrain",
@@ -13134,7 +14094,7 @@
         },
         {
             "OldName": "IAgVAStateCalcGravCoeff",
-            "NewName": "StateCalcGravCoeff"
+            "NewName": "StateCalcGravCoefficient"
         },
         {
             "OldName": "IAgVAStateCalcSpeedOfLight",
@@ -13235,6 +14195,18 @@
         {
             "OldName": "IAgVAPowerSolarArray",
             "NewName": "PowerSolarArray"
+        },
+        {
+            "OldName": "IAgVANPlateStochasticParamsCollection",
+            "NewName": "NPlateStochasticParametersCollection"
+        },
+        {
+            "OldName": "IAgVAStochasticDensityCorrection",
+            "NewName": "StochasticDensityCorrection"
+        },
+        {
+            "OldName": "IAgVAStochasticModelParams",
+            "NewName": "StochasticModelParameters"
         },
         {
             "OldName": "IAgVAGeneralRelativityFunction",
@@ -13421,6 +14393,10 @@
             "NewName": "SRPReflectionPlugin"
         },
         {
+            "OldName": "IAgVANPlateStochasticParam",
+            "NewName": "NPlateStochasticParameter"
+        },
+        {
             "OldName": "IAgVAEngineModelThrustCoefficients",
             "NewName": "EngineModelThrustCoefficients"
         },
@@ -13529,10 +14505,6 @@
             "NewName": "GaussJacksonIntegrator"
         },
         {
-            "OldName": "IAgVARK2nd3rd",
-            "NewName": "RungeKutta2nd3rd"
-        },
-        {
             "OldName": "IAgVARK4th",
             "NewName": "RungeKutta4th"
         },
@@ -13541,16 +14513,24 @@
             "NewName": "RungeKutta4th5th"
         },
         {
-            "OldName": "IAgVARK4thAdapt",
-            "NewName": "RungeKutta4thAdapt"
-        },
-        {
             "OldName": "IAgVARKF7th8th",
             "NewName": "RungeKuttaF7th8th"
         },
         {
             "OldName": "IAgVARKV8th9th",
             "NewName": "RungeKuttaV8th9th"
+        },
+        {
+            "OldName": "IAgVAStateConfigCollection",
+            "NewName": "StateConfigCollection"
+        },
+        {
+            "OldName": "IAgVAFlightDynamicsRecord",
+            "NewName": "FlightDynamicsRecord"
+        },
+        {
+            "OldName": "IAgVAStateConfig",
+            "NewName": "StateConfig"
         }
     ],
     "ClassMappings": [
@@ -13577,6 +14557,10 @@
         {
             "OldName": "AgVAFuelTank",
             "NewName": "FuelTank"
+        },
+        {
+            "OldName": "AgVAStochasticParameters",
+            "NewName": "StochasticParameters"
         },
         {
             "OldName": "AgVAElementCartesian",
@@ -14548,7 +15532,7 @@
         },
         {
             "OldName": "AgVAStateCalcGravCoeff",
-            "NewName": "StateCalcGravCoeff"
+            "NewName": "StateCalcGravCoefficient"
         },
         {
             "OldName": "AgVAStateCalcSpeedOfLight",
@@ -14939,20 +15923,12 @@
             "NewName": "GaussJacksonIntegrator"
         },
         {
-            "OldName": "AgVARK2nd3rd",
-            "NewName": "RungeKutta2nd3rd"
-        },
-        {
             "OldName": "AgVARK4th",
             "NewName": "RungeKutta4th"
         },
         {
             "OldName": "AgVARK4th5th",
             "NewName": "RungeKutta4th5th"
-        },
-        {
-            "OldName": "AgVARK4thAdapt",
-            "NewName": "RungeKutta4thAdapt"
         },
         {
             "OldName": "AgVARKF7th8th",
@@ -15169,6 +16145,50 @@
         {
             "OldName": "AgVABisectionResultCollection",
             "NewName": "BisectionResultCollection"
+        },
+        {
+            "OldName": "AgVAFlightDynamicsRecordCreator",
+            "NewName": "FlightDynamicsRecordCreator"
+        },
+        {
+            "OldName": "AgVAFlightDynamicsRecordPreview",
+            "NewName": "FlightDynamicsRecordPreview"
+        },
+        {
+            "OldName": "AgVAFlightDynamicsRecord",
+            "NewName": "FlightDynamicsRecord"
+        },
+        {
+            "OldName": "AgVAStateConfig",
+            "NewName": "StateConfig"
+        },
+        {
+            "OldName": "AgVAStateConfigCollection",
+            "NewName": "StateConfigCollection"
+        },
+        {
+            "OldName": "AgVANPlateStochasticParam",
+            "NewName": "NPlateStochasticParameter"
+        },
+        {
+            "OldName": "AgVANPlateStochasticParamsCollection",
+            "NewName": "NPlateStochasticParametersCollection"
+        },
+        {
+            "OldName": "AgVAStochasticDensityCorrection",
+            "NewName": "StochasticDensityCorrection"
+        },
+        {
+            "OldName": "AgVAStochasticModelParams",
+            "NewName": "StochasticModelParameters"
+        },
+        {
+            "OldName": "AgVANPlateStochasticCorrectionParam",
+            "NewName": "NPlateStochasticCorrectionParameter"
+        },
+        {
+            "OldName": "AgVANPlateStochasticCorrectionParamsCollection",
+            "NewName": "NPlateStochasticCorrectionParametersCollection"
         }
     ],
     "EnumTypeMappings": [
@@ -15282,7 +16302,7 @@
         },
         {
             "OldName": "AgEVAUpdateParam",
-            "NewName": "UpdateParam"
+            "NewName": "UpdateParameter"
         },
         {
             "OldName": "AgEVAUpdateAction",
@@ -15465,6 +16485,10 @@
             "NewName": "GridSearchDesiredOperation"
         },
         {
+            "OldName": "AgEVAFlightDynamicsRecordEpochType",
+            "NewName": "FlightDynamicsRecordEpochType"
+        },
+        {
             "OldName": "AgEVAElement",
             "NewName": "ElementType"
         },
@@ -15614,7 +16638,7 @@
         },
         {
             "OldName": "AgEVAGravParamSource",
-            "NewName": "GravParamSource"
+            "NewName": "GravParameterSource"
         },
         {
             "OldName": "AgEVAEphemSource",
@@ -15659,6 +16683,18 @@
         {
             "OldName": "AgEVATabVecInterpMethod",
             "NewName": "TabVecInterpolationMethod"
+        },
+        {
+            "OldName": "AgEVADragCorrectionType",
+            "NewName": "DragCorrectionType"
+        },
+        {
+            "OldName": "AgEVASRPCorrectionType",
+            "NewName": "SRPCorrectionType"
+        },
+        {
+            "OldName": "AgEVAStochasticModel",
+            "NewName": "StochasticModel"
         },
         {
             "OldName": "AgESolidTide",
@@ -15730,7 +16766,7 @@
         },
         {
             "OldName": "AgEVACoeffRKV8th9th",
-            "NewName": "CoeffRungeKuttaV8th9th"
+            "NewName": "CoefficientRungeKuttaV8th9th"
         }
     ],
     "EnumValueMappings": [
@@ -16052,7 +17088,7 @@
         {
             "ParentScope": "AgEVAConvergenceCriteria",
             "OldName": "eVAConvervenceCriteriaEitherEqualityConstraintsOrControlParams",
-            "NewName": "CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS"
+            "NewName": "CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS"
         },
         {
             "ParentScope": "AgEVADCScalingMethod",
@@ -17885,6 +18921,21 @@
             "NewName": "MAXIMIZE_VALUE"
         },
         {
+            "ParentScope": "AgEVAFlightDynamicsRecordEpochType",
+            "OldName": "eAgEVAFlightDynamicsRecordClosestPoint",
+            "NewName": "CLOSEST_POINT"
+        },
+        {
+            "ParentScope": "AgEVAFlightDynamicsRecordEpochType",
+            "OldName": "eAgEVAFlightDynamicsRecordFirstPoint",
+            "NewName": "FIRST_POINT"
+        },
+        {
+            "ParentScope": "AgEVAFlightDynamicsRecordEpochType",
+            "OldName": "eAgEVAFlightDynamicsRecordLastPoint",
+            "NewName": "LAST_POINT"
+        },
+        {
             "ParentScope": "AgEVAElement",
             "OldName": "eVAElementOsculating",
             "NewName": "OSCULATING"
@@ -18745,6 +19796,61 @@
             "NewName": "MAGNITUDE_AND_DIRECTION_INTERPOLATION"
         },
         {
+            "ParentScope": "AgEVADragCorrectionType",
+            "OldName": "eVADragCorrectionTypeBallisticCoeffRelative",
+            "NewName": "BALLISTIC_COEFFICIENT_RELATIVE"
+        },
+        {
+            "ParentScope": "AgEVADragCorrectionType",
+            "OldName": "eVADragCorrectionTypeBallisticCoeffAdditive",
+            "NewName": "BALLISTIC_COEFFICIENT_ADDITIVE"
+        },
+        {
+            "ParentScope": "AgEVADragCorrectionType",
+            "OldName": "eVADragCorrectionTypeCdRelative",
+            "NewName": "CD_RELATIVE"
+        },
+        {
+            "ParentScope": "AgEVADragCorrectionType",
+            "OldName": "eVADragCorrectionTypeCdAdditive",
+            "NewName": "CD_ADDITIVE"
+        },
+        {
+            "ParentScope": "AgEVASRPCorrectionType",
+            "OldName": "eVASRPCorrectionTypeCrA_M_Relative",
+            "NewName": "CR_A_OVER_M_RELATIVE"
+        },
+        {
+            "ParentScope": "AgEVASRPCorrectionType",
+            "OldName": "eVASRPCorrectionTypeCrA_M_Additive",
+            "NewName": "CR_A_OVER_M_ADDITIVE"
+        },
+        {
+            "ParentScope": "AgEVASRPCorrectionType",
+            "OldName": "eVASRPCorrectionTypeCrRelative",
+            "NewName": "CR_RELATIVE"
+        },
+        {
+            "ParentScope": "AgEVASRPCorrectionType",
+            "OldName": "eVASRPCorrectionTypeCrAdditive",
+            "NewName": "CR_ADDITIVE"
+        },
+        {
+            "ParentScope": "AgEVAStochasticModel",
+            "OldName": "eVAStochasticModelGaussMarkov",
+            "NewName": "GAUSS_MARKOV"
+        },
+        {
+            "ParentScope": "AgEVAStochasticModel",
+            "OldName": "eVAStochasticModelRandomWalk",
+            "NewName": "RANDOM_WALK"
+        },
+        {
+            "ParentScope": "AgEVAStochasticModel",
+            "OldName": "eVAStochasticModelVasicek",
+            "NewName": "VASICEK"
+        },
+        {
             "ParentScope": "AgEVAControlEngineConstAcc",
             "OldName": "eVAControlEngineConstAccGrav",
             "NewName": "GRAV"
@@ -19256,11 +20362,6 @@
         },
         {
             "ParentScope": "AgEVANumericalIntegrator",
-            "OldName": "eVANumericalIntegratorRK4thAdapt",
-            "NewName": "RUNGE_KUTTA_4TH_ADAPT"
-        },
-        {
-            "ParentScope": "AgEVANumericalIntegrator",
             "OldName": "eVANumericalIntegratorRKF7th8th",
             "NewName": "RUNGE_KUTTA_FEHLBERG_7TH_8TH"
         },
@@ -19278,11 +20379,6 @@
             "ParentScope": "AgEVANumericalIntegrator",
             "OldName": "eVANumericalIntegratorGaussJackson",
             "NewName": "GAUSS_JACKSON"
-        },
-        {
-            "ParentScope": "AgEVANumericalIntegrator",
-            "OldName": "eVANumericalIntegratorRK2nd3rd",
-            "NewName": "RUNGE_KUTTA_2ND_3RD"
         },
         {
             "ParentScope": "AgEVANumericalIntegrator",

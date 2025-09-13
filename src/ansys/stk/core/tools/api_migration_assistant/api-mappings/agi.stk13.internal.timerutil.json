@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.internal.timerutil",
+        "OldRootScope": "agi.stk13.internal.timerutil",
         "NewRootScope": "ansys.stk.core.internal.timerutil"
     },
     "MemberMappings": [],

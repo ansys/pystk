@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.internal.marshall",
+        "OldRootScope": "agi.stk13.internal.marshall",
         "NewRootScope": "ansys.stk.core.internal.marshall"
     },
     "MemberMappings": [],

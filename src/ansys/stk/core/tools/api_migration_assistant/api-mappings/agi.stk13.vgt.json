@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.vgt",
+        "OldRootScope": "agi.stk13.vgt",
         "NewRootScope": "ansys.stk.core.analysis_workbench"
     },
     "MemberMappings": [
@@ -2171,8 +2171,18 @@
         },
         {
             "ParentScope": "IAgCrdnEventArrayFiltered",
-            "OldName": "FilterIntervalList",
-            "NewName": "filter_interval_list"
+            "OldName": "GetFilterIntervalListOrInterval",
+            "NewName": "get_filter_interval_list_or_interval"
+        },
+        {
+            "ParentScope": "IAgCrdnEventArrayFiltered",
+            "OldName": "SetFilterIntervalList",
+            "NewName": "set_filter_interval_list"
+        },
+        {
+            "ParentScope": "IAgCrdnEventArrayFiltered",
+            "OldName": "SetFilterInterval",
+            "NewName": "set_filter_interval"
         },
         {
             "ParentScope": "IAgCrdnEventArrayFixedStep",
@@ -3571,33 +3581,18 @@
         },
         {
             "ParentScope": "IAgCrdnGridCoordinateDefinition",
-            "OldName": "SetGridValuesFixedNumberOfSteps",
-            "NewName": "set_grid_values_fixed_number_of_steps"
-        },
-        {
-            "ParentScope": "IAgCrdnGridCoordinateDefinition",
             "OldName": "SetGridValuesCustom",
             "NewName": "set_custom"
         },
         {
             "ParentScope": "IAgCrdnGridCoordinateDefinition",
-            "OldName": "SetGridValuesFixedNumberOfStepsEx",
-            "NewName": "set_fixed_number_of_steps"
+            "OldName": "SetGridValuesFixedNumberOfSteps",
+            "NewName": "set_grid_values_fixed_number_of_steps"
         },
         {
             "ParentScope": "IAgCrdnGridValuesCustom",
             "OldName": "Values",
             "NewName": "values"
-        },
-        {
-            "ParentScope": "IAgCrdnGridValuesFixedNumberOfSteps",
-            "OldName": "Min",
-            "NewName": "min"
-        },
-        {
-            "ParentScope": "IAgCrdnGridValuesFixedNumberOfSteps",
-            "OldName": "Max",
-            "NewName": "max"
         },
         {
             "ParentScope": "IAgCrdnGridValuesFixedNumberOfSteps",

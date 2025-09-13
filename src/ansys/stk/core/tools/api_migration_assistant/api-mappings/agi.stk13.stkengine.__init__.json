@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkengine",
+        "OldRootScope": "agi.stk13.stkengine",
         "NewRootScope": "ansys.stk.core.stkengine"
     },
     "MemberMappings": [

@@ -1,12 +1,12 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.uicore",
+        "OldRootScope": "agi.stk13.uicore",
         "NewRootScope": "ansys.stk.core.uicore"
     },
     "MemberMappings": [
         {
             "ParentScope": "IAgUiToolbar",
-            "OldName": "ID",
+            "OldName": "Id",
             "NewName": "identifier"
         },
         {

@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkruntime",
+        "OldRootScope": "agi.stk13.stkruntime",
         "NewRootScope": "ansys.stk.core.stkruntime"
     },
     "MemberMappings": [

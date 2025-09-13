@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.internal.grpcutil",
+        "OldRootScope": "agi.stk13.internal.grpcutil",
         "NewRootScope": "ansys.stk.core.internal.grpcutil"
     },
     "MemberMappings": [

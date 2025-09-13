@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkobjects",
+        "OldRootScope": "agi.stk13.stkobjects",
         "NewRootScope": "ansys.stk.core.stkobjects"
     },
     "MemberMappings": [
@@ -1060,11 +1060,6 @@
             "NewName": "preferred_maximum_time_step"
         },
         {
-            "ParentScope": "IAgAccessConstraintCollection",
-            "OldName": "RemoveNamedConstraintEx",
-            "NewName": "remove_named_constraint_ex"
-        },
-        {
             "ParentScope": "IAgImmutableIntervalCollection",
             "OldName": "Count",
             "NewName": "count"
@@ -1786,21 +1781,6 @@
         },
         {
             "ParentScope": "IAgStkObjectRoot",
-            "OldName": "LoadVDFFromSDF",
-            "NewName": "load_vdf_from_sdf"
-        },
-        {
-            "ParentScope": "IAgStkObjectRoot",
-            "OldName": "LoadVDFFromSDFWithVersion",
-            "NewName": "load_vdf_from_sdf_with_version"
-        },
-        {
-            "ParentScope": "IAgStkObjectRoot",
-            "OldName": "SaveVDFToSDF",
-            "NewName": "save_vdf_to_sdf"
-        },
-        {
-            "ParentScope": "IAgStkObjectRoot",
             "OldName": "RFChannelModeler",
             "NewName": "rf_channel_modeler"
         },
@@ -2420,6 +2400,16 @@
             "NewName": "time"
         },
         {
+            "ParentScope": "IAgChainAnalysisOptions",
+            "OldName": "ProcessingDelayTime",
+            "NewName": "processing_delay_time"
+        },
+        {
+            "ParentScope": "IAgChainAnalysisOptions",
+            "OldName": "DataRate",
+            "NewName": "data_rate"
+        },
+        {
             "ParentScope": "IAgStkCentralBodyEllipsoid",
             "OldName": "A",
             "NewName": "radius_a"
@@ -2498,6 +2488,11 @@
             "ParentScope": "IAgAccessConstraint",
             "OldName": "MaxRelMotion",
             "NewName": "maximum_relative_motion"
+        },
+        {
+            "ParentScope": "IAgAccessConstraint",
+            "OldName": "Enabled",
+            "NewName": "enabled"
         },
         {
             "ParentScope": "IAgAccessCnstrTimeSlipRange",
@@ -2610,39 +2605,14 @@
             "NewName": "maximum_relative_motion"
         },
         {
-            "ParentScope": "IAgAccessCnstrThirdBody",
-            "OldName": "AssignedObstructions",
-            "NewName": "assigned_obstructions"
-        },
-        {
-            "ParentScope": "IAgAccessCnstrThirdBody",
-            "OldName": "IsObstructionAssigned",
-            "NewName": "is_obstruction_assigned"
-        },
-        {
-            "ParentScope": "IAgAccessCnstrThirdBody",
-            "OldName": "AddObstruction",
-            "NewName": "add_obstruction"
-        },
-        {
-            "ParentScope": "IAgAccessCnstrThirdBody",
-            "OldName": "RemoveObstruction",
-            "NewName": "remove_obstruction"
-        },
-        {
-            "ParentScope": "IAgAccessCnstrThirdBody",
-            "OldName": "AvailableObstructions",
-            "NewName": "available_obstructions"
+            "ParentScope": "IAgAccessCnstrExclZonesCollection",
+            "OldName": "Enabled",
+            "NewName": "enabled"
         },
         {
             "ParentScope": "IAgAccessCnstrIntervals",
             "OldName": "Filename",
             "NewName": "filename"
-        },
-        {
-            "ParentScope": "IAgAccessCnstrIntervals",
-            "OldName": "ActionType",
-            "NewName": "action_type"
         },
         {
             "ParentScope": "IAgAccessCnstrIntervals",
@@ -4970,36 +4940,6 @@
             "NewName": "compute_saa_flux_intensity"
         },
         {
-            "ParentScope": "IAgRadarClutterMap",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMap",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMap",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSection",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSection",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSection",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
             "ParentScope": "IAgRadarCrossSection",
             "OldName": "ModelComponentLinking",
             "NewName": "model_component_linking"
@@ -5768,11 +5708,6 @@
             "ParentScope": "IAgScenario",
             "OldName": "GetAccessBetweenObjectsByPath",
             "NewName": "get_access_between_objects_by_path"
-        },
-        {
-            "ParentScope": "IAgScenario",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
         },
         {
             "ParentScope": "IAgScenario",
@@ -7585,6 +7520,11 @@
             "NewName": "get_stars_in_field_of_view"
         },
         {
+            "ParentScope": "IAgSensor",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgSnProjConstantAlt",
             "OldName": "Min",
             "NewName": "minimum"
@@ -7625,79 +7565,9 @@
             "NewName": "exclude_horizon_arcs"
         },
         {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "InheritAtmosAbsorptionModel",
-            "NewName": "inherit_atmospheric_absorption_model"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "SupportedLocalAtmosAbsorptionModels",
-            "NewName": "supported_local_atmospheric_absorption_models"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "SetLocalAtmosAbsorptionModel",
-            "NewName": "set_local_atmospheric_absorption_model"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "LocalAtmosAbsorptionModel",
-            "NewName": "local_atmospheric_absorption_model"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "EnableLocalRainData",
-            "NewName": "enable_local_rain_data"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "LocalRainIsoHeight",
-            "NewName": "local_rain_height"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "LocalRainRate",
-            "NewName": "local_rain_rate"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "LocalSurfaceTemperature",
-            "NewName": "local_surface_temperature"
-        },
-        {
-            "ParentScope": "IAgAtmosphere",
-            "OldName": "PropagationChannel",
-            "NewName": "propagation_channel"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapInheritable",
-            "OldName": "Inherit",
-            "NewName": "inherit"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapInheritable",
-            "OldName": "ClutterMap",
-            "NewName": "clutter_map"
-        },
-        {
             "ParentScope": "IAgRadarCrossSectionInheritable",
             "OldName": "Inherit",
             "NewName": "inherit"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSectionInheritable",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSectionInheritable",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgRadarCrossSectionInheritable",
-            "OldName": "Model",
-            "NewName": "model"
         },
         {
             "ParentScope": "IAgRadarCrossSectionInheritable",
@@ -7723,11 +7593,6 @@
             "ParentScope": "IAgPlatformRFEnvironment",
             "OldName": "LocalRainRate",
             "NewName": "local_rain_rate"
-        },
-        {
-            "ParentScope": "IAgPlatformRFEnvironment",
-            "OldName": "LocalSurfaceTemperature",
-            "NewName": "local_surface_temperature"
         },
         {
             "ParentScope": "IAgPlatformRFEnvironment",
@@ -8051,16 +7916,6 @@
         },
         {
             "ParentScope": "IAgTarget",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgTarget",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgTarget",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -8093,6 +7948,11 @@
             "ParentScope": "IAgTarget",
             "OldName": "MaxRangeWhenComputingAzElMask",
             "NewName": "maximum_range_when_computing_az_el_mask"
+        },
+        {
+            "ParentScope": "IAgTarget",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgAreaTypeEllipse",
@@ -8350,6 +8210,11 @@
             "NewName": "common_tasks"
         },
         {
+            "ParentScope": "IAgAreaTarget",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgAreaTypePattern",
             "OldName": "Lat",
             "NewName": "latitude"
@@ -8545,6 +8410,11 @@
             "NewName": "common_tasks"
         },
         {
+            "ParentScope": "IAgPlanet",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgStGraphics",
             "OldName": "Color",
             "NewName": "color"
@@ -8651,8 +8521,13 @@
         },
         {
             "ParentScope": "IAgStar",
-            "OldName": "ProperMotionRadialVelocity",
-            "NewName": "proper_motion_radial_velocity"
+            "OldName": "RadialVelocity",
+            "NewName": "radial_velocity"
+        },
+        {
+            "ParentScope": "IAgStar",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgFaGraphics",
@@ -8846,16 +8721,6 @@
         },
         {
             "ParentScope": "IAgFacility",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgFacility",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgFacility",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -8888,6 +8753,11 @@
             "ParentScope": "IAgFacility",
             "OldName": "MaxRangeWhenComputingAzElMask",
             "NewName": "maximum_range_when_computing_az_el_mask"
+        },
+        {
+            "ParentScope": "IAgFacility",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgPlaceGraphics",
@@ -9081,16 +8951,6 @@
         },
         {
             "ParentScope": "IAgPlace",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgPlace",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgPlace",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -9123,6 +8983,11 @@
             "ParentScope": "IAgPlace",
             "OldName": "MaxRangeWhenComputingAzElMask",
             "NewName": "maximum_range_when_computing_az_el_mask"
+        },
+        {
+            "ParentScope": "IAgPlace",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgAntennaNoiseTemperature",
@@ -9636,8 +9501,8 @@
         },
         {
             "ParentScope": "IAgScatteringPointProvider",
-            "OldName": "PointProviderType",
-            "NewName": "point_provider_type"
+            "OldName": "Type",
+            "NewName": "type"
         },
         {
             "ParentScope": "IAgScatteringPointProviderSinglePoint",
@@ -11886,11 +11751,6 @@
         },
         {
             "ParentScope": "IAgAntennaVolumeGraphics",
-            "OldName": "GainOffset",
-            "NewName": "gain_offset"
-        },
-        {
-            "ParentScope": "IAgAntennaVolumeGraphics",
             "OldName": "GainScale",
             "NewName": "gain_scale"
         },
@@ -12336,21 +12196,6 @@
         },
         {
             "ParentScope": "IAgAntenna",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgAntenna",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgAntenna",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
-            "ParentScope": "IAgAntenna",
             "OldName": "Orientation",
             "NewName": "orientation"
         },
@@ -12405,6 +12250,11 @@
             "NewName": "model_component_linking"
         },
         {
+            "ParentScope": "IAgAntenna",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgAntennaControl",
             "OldName": "ReferenceType",
             "NewName": "reference_type"
@@ -12418,21 +12268,6 @@
             "ParentScope": "IAgAntennaControl",
             "OldName": "LinkedAntennaObject",
             "NewName": "linked_antenna_object"
-        },
-        {
-            "ParentScope": "IAgAntennaControl",
-            "OldName": "SupportedEmbeddedModels",
-            "NewName": "supported_embedded_models"
-        },
-        {
-            "ParentScope": "IAgAntennaControl",
-            "OldName": "SetEmbeddedModel",
-            "NewName": "set_embedded_model"
-        },
-        {
-            "ParentScope": "IAgAntennaControl",
-            "OldName": "EmbeddedModel",
-            "NewName": "embedded_model"
         },
         {
             "ParentScope": "IAgAntennaControl",
@@ -12456,7 +12291,7 @@
         },
         {
             "ParentScope": "IAgAntennaBeam",
-            "OldName": "ID",
+            "OldName": "Id",
             "NewName": "identifier"
         },
         {
@@ -12716,21 +12551,6 @@
         },
         {
             "ParentScope": "IAgTransmitterModelSimple",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelSimple",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelSimple",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelSimple",
             "OldName": "SupportedModulators",
             "NewName": "supported_modulators"
         },
@@ -12793,21 +12613,6 @@
             "ParentScope": "IAgTransmitterModelMedium",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMedium",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMedium",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMedium",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgTransmitterModelMedium",
@@ -12876,21 +12681,6 @@
         },
         {
             "ParentScope": "IAgTransmitterModelComplex",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelComplex",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelComplex",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelComplex",
             "OldName": "SupportedModulators",
             "NewName": "supported_modulators"
         },
@@ -12923,21 +12713,6 @@
             "ParentScope": "IAgTransmitterModelMultibeam",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMultibeam",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMultibeam",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelMultibeam",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgTransmitterModelMultibeam",
@@ -13008,21 +12783,6 @@
             "ParentScope": "IAgTransmitterModelLaser",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelLaser",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelLaser",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgTransmitterModelLaser",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgTransmitterModelLaser",
@@ -13241,21 +13001,6 @@
         },
         {
             "ParentScope": "IAgReTransmitterModelSimple",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelSimple",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelSimple",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelSimple",
             "OldName": "SaturatedEirp",
             "NewName": "saturated_eirp"
         },
@@ -13288,21 +13033,6 @@
             "ParentScope": "IAgReTransmitterModelMedium",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelMedium",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelMedium",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelMedium",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgReTransmitterModelMedium",
@@ -13343,21 +13073,6 @@
             "ParentScope": "IAgReTransmitterModelComplex",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelComplex",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelComplex",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReTransmitterModelComplex",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgReTransmitterModelComplex",
@@ -13421,21 +13136,6 @@
         },
         {
             "ParentScope": "IAgTransmitter",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgTransmitter",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgTransmitter",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
-            "ParentScope": "IAgTransmitter",
             "OldName": "Refraction",
             "NewName": "refraction"
         },
@@ -13485,6 +13185,11 @@
             "NewName": "model_component_linking"
         },
         {
+            "ParentScope": "IAgTransmitter",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgDemodulatorModel",
             "OldName": "Name",
             "NewName": "name"
@@ -13493,36 +13198,6 @@
             "ParentScope": "IAgDemodulatorModel",
             "OldName": "Type",
             "NewName": "type"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "EnableAtmosphericLossModel",
-            "NewName": "enable_atmospheric_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "SetAtmosphericLossModel",
-            "NewName": "set_atmospheric_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "AtmosphericLossModel",
-            "NewName": "atmospheric_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "EnableTroposphericScintillationLossModel",
-            "NewName": "enable_tropospheric_scintillation_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "SetTroposphericScintillationLossModel",
-            "NewName": "set_tropospheric_scintillation_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationLossModels",
-            "OldName": "TroposphericScintillationLossModel",
-            "NewName": "tropospheric_scintillation_loss_model"
         },
         {
             "ParentScope": "IAgLinkMargin",
@@ -13553,21 +13228,6 @@
             "ParentScope": "IAgReceiverModelSimple",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelSimple",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReceiverModelSimple",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelSimple",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgReceiverModelSimple",
@@ -13676,21 +13336,6 @@
         },
         {
             "ParentScope": "IAgReceiverModelMedium",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMedium",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMedium",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMedium",
             "OldName": "PreReceiveGainsLosses",
             "NewName": "pre_receive_gains_losses"
         },
@@ -13813,21 +13458,6 @@
             "ParentScope": "IAgReceiverModelComplex",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelComplex",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReceiverModelComplex",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelComplex",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgReceiverModelComplex",
@@ -13956,21 +13586,6 @@
         },
         {
             "ParentScope": "IAgReceiverModelMultibeam",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMultibeam",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMultibeam",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelMultibeam",
             "OldName": "PreReceiveGainsLosses",
             "NewName": "pre_receive_gains_losses"
         },
@@ -14073,21 +13688,6 @@
             "ParentScope": "IAgReceiverModelLaser",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelLaser",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgReceiverModelLaser",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgReceiverModelLaser",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgReceiverModelLaser",
@@ -14201,11 +13801,6 @@
         },
         {
             "ParentScope": "IAgReceiverModelLaser",
-            "OldName": "PropagationLossModels",
-            "NewName": "propagation_loss_models"
-        },
-        {
-            "ParentScope": "IAgReceiverModelLaser",
             "OldName": "FilterComponentLinking",
             "NewName": "filter_component_linking"
         },
@@ -14286,21 +13881,6 @@
         },
         {
             "ParentScope": "IAgReceiver",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgReceiver",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgReceiver",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
-            "ParentScope": "IAgReceiver",
             "OldName": "Refraction",
             "NewName": "refraction"
         },
@@ -14348,6 +13928,11 @@
             "ParentScope": "IAgReceiver",
             "OldName": "ModelComponentLinking",
             "NewName": "model_component_linking"
+        },
+        {
+            "ParentScope": "IAgReceiver",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgRadarActivity",
@@ -14555,26 +14140,6 @@
             "NewName": "jammers"
         },
         {
-            "ParentScope": "IAgRadarClutterGeometryModel",
-            "OldName": "Name",
-            "NewName": "name"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometryModel",
-            "OldName": "Type",
-            "NewName": "type"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometryModelPlugin",
-            "OldName": "PluginConfiguration",
-            "NewName": "plugin_configuration"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometryModelPlugin",
-            "OldName": "RawPluginObject",
-            "NewName": "raw_plugin_object"
-        },
-        {
             "ParentScope": "IAgRadarClutter",
             "OldName": "Enabled",
             "NewName": "enabled"
@@ -14583,26 +14148,6 @@
             "ParentScope": "IAgRadarClutter",
             "OldName": "ScatteringPointProviderList",
             "NewName": "scattering_point_provider_list"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometry",
-            "OldName": "Enabled",
-            "NewName": "enabled"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometry",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometry",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgRadarClutterGeometry",
-            "OldName": "Model",
-            "NewName": "model"
         },
         {
             "ParentScope": "IAgRadarTransmitter",
@@ -14661,21 +14206,6 @@
         },
         {
             "ParentScope": "IAgRadarTransmitter",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitter",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitter",
-            "OldName": "Filter",
-            "NewName": "filter"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitter",
             "OldName": "FilterComponentLinking",
             "NewName": "filter_component_linking"
         },
@@ -14713,21 +14243,6 @@
             "ParentScope": "IAgRadarTransmitterMultifunction",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitterMultifunction",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitterMultifunction",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgRadarTransmitterMultifunction",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgRadarTransmitterMultifunction",
@@ -14803,21 +14318,6 @@
             "ParentScope": "IAgRadarReceiver",
             "OldName": "EnableFilter",
             "NewName": "enable_filter"
-        },
-        {
-            "ParentScope": "IAgRadarReceiver",
-            "OldName": "SupportedFilters",
-            "NewName": "supported_filters"
-        },
-        {
-            "ParentScope": "IAgRadarReceiver",
-            "OldName": "SetFilter",
-            "NewName": "set_filter"
-        },
-        {
-            "ParentScope": "IAgRadarReceiver",
-            "OldName": "Filter",
-            "NewName": "filter"
         },
         {
             "ParentScope": "IAgRadarReceiver",
@@ -15441,21 +14941,6 @@
         },
         {
             "ParentScope": "IAgRadarModelMonostatic",
-            "OldName": "SupportedModes",
-            "NewName": "supported_modes"
-        },
-        {
-            "ParentScope": "IAgRadarModelMonostatic",
-            "OldName": "SetMode",
-            "NewName": "set_mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelMonostatic",
-            "OldName": "Mode",
-            "NewName": "mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelMonostatic",
             "OldName": "Transmitter",
             "NewName": "transmitter"
         },
@@ -15463,11 +14948,6 @@
             "ParentScope": "IAgRadarModelMonostatic",
             "OldName": "Receiver",
             "NewName": "receiver"
-        },
-        {
-            "ParentScope": "IAgRadarModelMonostatic",
-            "OldName": "ClutterGeometry",
-            "NewName": "clutter_geometry"
         },
         {
             "ParentScope": "IAgRadarModelMonostatic",
@@ -15491,7 +14971,7 @@
         },
         {
             "ParentScope": "IAgRadarAntennaBeam",
-            "OldName": "ID",
+            "OldName": "Id",
             "NewName": "identifier"
         },
         {
@@ -15511,8 +14991,8 @@
         },
         {
             "ParentScope": "IAgRadarAntennaBeam",
-            "OldName": "BeamWidth",
-            "NewName": "beam_width"
+            "OldName": "Beamwidth",
+            "NewName": "beamwidth"
         },
         {
             "ParentScope": "IAgRadarAntennaBeam",
@@ -15636,11 +15116,6 @@
         },
         {
             "ParentScope": "IAgRadarModelMultifunction",
-            "OldName": "ClutterGeometry",
-            "NewName": "clutter_geometry"
-        },
-        {
-            "ParentScope": "IAgRadarModelMultifunction",
             "OldName": "Jamming",
             "NewName": "jamming"
         },
@@ -15711,21 +15186,6 @@
         },
         {
             "ParentScope": "IAgRadarModelBistaticTransmitter",
-            "OldName": "SupportedModes",
-            "NewName": "supported_modes"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticTransmitter",
-            "OldName": "SetMode",
-            "NewName": "set_mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticTransmitter",
-            "OldName": "Mode",
-            "NewName": "mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticTransmitter",
             "OldName": "Transmitter",
             "NewName": "transmitter"
         },
@@ -15776,28 +15236,8 @@
         },
         {
             "ParentScope": "IAgRadarModelBistaticReceiver",
-            "OldName": "SupportedModes",
-            "NewName": "supported_modes"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticReceiver",
-            "OldName": "SetMode",
-            "NewName": "set_mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticReceiver",
-            "OldName": "Mode",
-            "NewName": "mode"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticReceiver",
             "OldName": "Receiver",
             "NewName": "receiver"
-        },
-        {
-            "ParentScope": "IAgRadarModelBistaticReceiver",
-            "OldName": "ClutterGeometry",
-            "NewName": "clutter_geometry"
         },
         {
             "ParentScope": "IAgRadarModelBistaticReceiver",
@@ -15996,21 +15436,6 @@
         },
         {
             "ParentScope": "IAgRadar",
-            "OldName": "SupportedModels",
-            "NewName": "supported_models"
-        },
-        {
-            "ParentScope": "IAgRadar",
-            "OldName": "SetModel",
-            "NewName": "set_model"
-        },
-        {
-            "ParentScope": "IAgRadar",
-            "OldName": "Model",
-            "NewName": "model"
-        },
-        {
-            "ParentScope": "IAgRadar",
             "OldName": "Refraction",
             "NewName": "refraction"
         },
@@ -16055,29 +15480,9 @@
             "NewName": "model_component_linking"
         },
         {
-            "ParentScope": "IAgRadarClutterMapModel",
-            "OldName": "Name",
-            "NewName": "name"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapModel",
-            "OldName": "Type",
-            "NewName": "type"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapModelPlugin",
-            "OldName": "PluginConfiguration",
-            "NewName": "plugin_configuration"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapModelPlugin",
-            "OldName": "RawPluginObject",
-            "NewName": "raw_plugin_object"
-        },
-        {
-            "ParentScope": "IAgRadarClutterMapModelConstantCoefficient",
-            "OldName": "ConstantCoefficient",
-            "NewName": "constant_coefficient"
+            "ParentScope": "IAgRadar",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgRadarCrossSectionComputeStrategy",
@@ -16846,16 +16251,6 @@
         },
         {
             "ParentScope": "IAgTroposphericScintillationFadingLossModelP618_12",
-            "OldName": "ComputeDeepFade",
-            "NewName": "compute_deep_fade"
-        },
-        {
-            "ParentScope": "IAgTroposphericScintillationFadingLossModelP618_12",
-            "OldName": "FadeOutage",
-            "NewName": "fade_outage"
-        },
-        {
-            "ParentScope": "IAgTroposphericScintillationFadingLossModelP618_12",
             "OldName": "PercentTimeRefractivityGradient",
             "NewName": "percent_time_refractivity_gradient"
         },
@@ -16878,16 +16273,6 @@
             "ParentScope": "IAgIonosphericFadingLossModel",
             "OldName": "Type",
             "NewName": "type"
-        },
-        {
-            "ParentScope": "IAgIonosphericFadingLossModelP531_13",
-            "OldName": "UseAlternateAPFile",
-            "NewName": "use_alternate_ap_file"
-        },
-        {
-            "ParentScope": "IAgIonosphericFadingLossModelP531_13",
-            "OldName": "Filename",
-            "NewName": "filename"
         },
         {
             "ParentScope": "IAgCloudsAndFogFadingLossModel",
@@ -16995,14 +16380,29 @@
             "NewName": "type"
         },
         {
-            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676",
+            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676_9",
             "OldName": "FastApproximationMethod",
             "NewName": "fast_approximation_method"
         },
         {
-            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676",
+            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676_9",
             "OldName": "SeasonalRegionalMethod",
             "NewName": "seasonal_regional_method"
+        },
+        {
+            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676_13",
+            "OldName": "FastApproximationMethod",
+            "NewName": "fast_approximation_method"
+        },
+        {
+            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676_13",
+            "OldName": "UseWaterVaporFromSection2_2",
+            "NewName": "use_water_vapor_from_section2_2"
+        },
+        {
+            "ParentScope": "IAgAtmosphericAbsorptionModelITURP676_13",
+            "OldName": "AtmosphereDataType",
+            "NewName": "atmosphere_data_type"
         },
         {
             "ParentScope": "IAgAtmosphericAbsorptionModelTirem",
@@ -17058,11 +16458,6 @@
             "ParentScope": "IAgSolarActivityConfigurationSolarFlux",
             "OldName": "SolarFlux",
             "NewName": "solar_flux"
-        },
-        {
-            "ParentScope": "IAgAtmosphericAbsorptionModelVoacap",
-            "OldName": "SunspotNumber",
-            "NewName": "sunspot_number"
         },
         {
             "ParentScope": "IAgAtmosphericAbsorptionModelVoacap",
@@ -17141,38 +16536,8 @@
         },
         {
             "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedAtmosAbsorptionModels",
-            "NewName": "supported_atmospheric_absorption_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetAtmosAbsorptionModel",
-            "NewName": "set_atmospheric_absorption_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "AtmosAbsorptionModel",
-            "NewName": "atmospheric_absorption_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
             "OldName": "EnableRainLoss",
             "NewName": "enable_rain_loss"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedRainLossModels",
-            "NewName": "supported_rain_loss_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetRainLossModel",
-            "NewName": "set_rain_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "RainLossModel",
-            "NewName": "rain_loss_model"
         },
         {
             "ParentScope": "IAgPropagationChannel",
@@ -17198,66 +16563,6 @@
             "ParentScope": "IAgPropagationChannel",
             "OldName": "EnableUrbanTerrestrialLoss",
             "NewName": "enable_urban_terrestrial_loss"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedUrbanTerrestrialLossModels",
-            "NewName": "supported_urban_terrestrial_loss_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetUrbanTerrestrialLossModel",
-            "NewName": "set_urban_terrestrial_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "UrbanTerrestrialLossModel",
-            "NewName": "urban_terrestrial_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedCloudsAndFogFadingLossModels",
-            "NewName": "supported_clouds_and_fog_fading_loss_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetCloudsAndFogFadingLossModel",
-            "NewName": "set_clouds_and_fog_fading_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "CloudsAndFogFadingLossModel",
-            "NewName": "clouds_and_fog_fading_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedTroposphericScintillationFadingLossModels",
-            "NewName": "supported_tropospheric_scintillation_fading_loss_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetTroposphericScintillationFadingLossModel",
-            "NewName": "set_tropospheric_scintillation_fading_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "TroposphericScintillationFadingLossModel",
-            "NewName": "tropospheric_scintillation_fading_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SupportedIonosphericFadingLossModels",
-            "NewName": "supported_ionospheric_fading_loss_models"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "SetIonosphericFadingLossModel",
-            "NewName": "set_ionospheric_fading_loss_model"
-        },
-        {
-            "ParentScope": "IAgPropagationChannel",
-            "OldName": "IonosphericFadingLossModel",
-            "NewName": "ionospheric_fading_loss_model"
         },
         {
             "ParentScope": "IAgPropagationChannel",
@@ -17511,28 +16816,8 @@
         },
         {
             "ParentScope": "IAgLaserPropagationChannel",
-            "OldName": "SetAtmosphericLossModel",
-            "NewName": "set_atmospheric_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationChannel",
-            "OldName": "AtmosphericLossModel",
-            "NewName": "atmospheric_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationChannel",
             "OldName": "EnableTroposphericScintillationLossModel",
             "NewName": "enable_tropospheric_scintillation_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationChannel",
-            "OldName": "SetTroposphericScintillationLossModel",
-            "NewName": "set_tropospheric_scintillation_loss_model"
-        },
-        {
-            "ParentScope": "IAgLaserPropagationChannel",
-            "OldName": "TroposphericScintillationLossModel",
-            "NewName": "tropospheric_scintillation_loss_model"
         },
         {
             "ParentScope": "IAgLaserPropagationChannel",
@@ -18090,11 +17375,6 @@
             "NewName": "add_segments_from_online"
         },
         {
-            "ParentScope": "IAgVeSGP4OnlineAutoLoad",
-            "OldName": "AddLatestSegFromOnline",
-            "NewName": "add_latest_segment_from_online"
-        },
-        {
             "ParentScope": "IAgVeSGP4LoadFile",
             "OldName": "File",
             "NewName": "file"
@@ -18341,16 +17621,6 @@
         },
         {
             "ParentScope": "IAgVeInitialState",
-            "OldName": "PropagationFrame",
-            "NewName": "propagation_frame"
-        },
-        {
-            "ParentScope": "IAgVeInitialState",
-            "OldName": "SupportedPropagationFrames",
-            "NewName": "supported_propagation_frames"
-        },
-        {
-            "ParentScope": "IAgVeInitialState",
             "OldName": "OrbitEpoch",
             "NewName": "orbit_epoch"
         },
@@ -18513,11 +17783,6 @@
             "ParentScope": "IAgVeHPOPForceModelDrag",
             "OldName": "DragModel",
             "NewName": "drag_model"
-        },
-        {
-            "ParentScope": "IAgVeHPOPForceModelDrag",
-            "OldName": "LowAltAtmosphericDensityModel",
-            "NewName": "low_altitude_atmospheric_density_model"
         },
         {
             "ParentScope": "IAgVeHPOPForceModelDrag",
@@ -19113,11 +18378,6 @@
             "ParentScope": "IAgVeExpDensModelParams",
             "OldName": "ScaleHeight",
             "NewName": "scale_height"
-        },
-        {
-            "ParentScope": "IAgVeAdvanced",
-            "OldName": "AtmosphericDensityModel",
-            "NewName": "atmospheric_density_model"
         },
         {
             "ParentScope": "IAgVeAdvanced",
@@ -23810,11 +23070,6 @@
             "NewName": "use_terrain_in_lighting_computations"
         },
         {
-            "ParentScope": "IAgGreatArcVehicle",
-            "OldName": "LightingMaxStep",
-            "NewName": "lighting_maximum_step"
-        },
-        {
             "ParentScope": "IAgVeVOBPlaneTemplateDisplayElement",
             "OldName": "IsVisible",
             "NewName": "show_graphics"
@@ -25015,6 +24270,106 @@
             "NewName": "file_format"
         },
         {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "Originator",
+            "NewName": "originator"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "ObjectID",
+            "NewName": "object_id"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "ObjectName",
+            "NewName": "object_name"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "Classification",
+            "NewName": "classification"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "MessageID",
+            "NewName": "message_id"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "ReferenceFrame",
+            "NewName": "reference_frame"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "DateFormat",
+            "NewName": "date_format"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "EphemerisFormat",
+            "NewName": "ephemeris_format"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "TimePrecision",
+            "NewName": "time_precision"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "StepSize",
+            "NewName": "step_size"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "TimePeriod",
+            "NewName": "time_period"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "ReferenceFramesSupported",
+            "NewName": "reference_frames_supported"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "UseSatelliteCenterAndFrame",
+            "NewName": "use_satellite_center_and_frame"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "Export",
+            "NewName": "export"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "TimeSystem",
+            "NewName": "time_system"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "IncludeAcceleration",
+            "NewName": "include_acceleration"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "IncludeCovariance",
+            "NewName": "include_covariance"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "HasCovarianceData",
+            "NewName": "has_covariance_data"
+        },
+        {
+            "ParentScope": "IAgVeEphemerisCCSDSv3ExportTool",
+            "OldName": "FileFormat",
+            "NewName": "file_format"
+        },
+        {
             "ParentScope": "IAgSaExportTools",
             "OldName": "GetEphemerisCCSDSExportTool",
             "NewName": "get_ephemeris_ccsds_export_tool"
@@ -25053,6 +24408,11 @@
             "ParentScope": "IAgSaExportTools",
             "OldName": "GetEphemerisCCSDSv2ExportTool",
             "NewName": "get_ephemeris_ccsds_v2_export_tool"
+        },
+        {
+            "ParentScope": "IAgSaExportTools",
+            "OldName": "GetEphemerisCCSDSv3ExportTool",
+            "NewName": "get_ephemeris_ccsds_v3_export_tool"
         },
         {
             "ParentScope": "IAgSatellite",
@@ -25156,11 +24516,6 @@
         },
         {
             "ParentScope": "IAgSatellite",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgSatellite",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -25168,11 +24523,6 @@
             "ParentScope": "IAgSatellite",
             "OldName": "UseTerrainInLightingComputations",
             "NewName": "use_terrain_in_lighting_computations"
-        },
-        {
-            "ParentScope": "IAgSatellite",
-            "OldName": "LightingMaxStep",
-            "NewName": "lighting_maximum_step"
         },
         {
             "ParentScope": "IAgSatellite",
@@ -25188,6 +24538,11 @@
             "ParentScope": "IAgSatellite",
             "OldName": "GetEOIR",
             "NewName": "get_eoir_settings"
+        },
+        {
+            "ParentScope": "IAgSatellite",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgLvGraphics",
@@ -25471,16 +24826,6 @@
         },
         {
             "ParentScope": "IAgLaunchVehicle",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgLaunchVehicle",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgLaunchVehicle",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -25493,11 +24838,6 @@
             "ParentScope": "IAgLaunchVehicle",
             "OldName": "UseTerrainInLightingComputations",
             "NewName": "use_terrain_in_lighting_computations"
-        },
-        {
-            "ParentScope": "IAgLaunchVehicle",
-            "OldName": "LightingMaxStep",
-            "NewName": "lighting_maximum_step"
         },
         {
             "ParentScope": "IAgLaunchVehicle",
@@ -25518,6 +24858,11 @@
             "ParentScope": "IAgLaunchVehicle",
             "OldName": "LightingMaxStepCbShape",
             "NewName": "lighting_maximum_step_central_body_shape"
+        },
+        {
+            "ParentScope": "IAgLaunchVehicle",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgGvGraphics",
@@ -25571,16 +24916,6 @@
         },
         {
             "ParentScope": "IAgGroundVehicle",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgGroundVehicle",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgGroundVehicle",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -25608,6 +24943,11 @@
             "ParentScope": "IAgGroundVehicle",
             "OldName": "GetEOIR",
             "NewName": "get_eoir_settings"
+        },
+        {
+            "ParentScope": "IAgGroundVehicle",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgMsGraphics",
@@ -25886,16 +25226,6 @@
         },
         {
             "ParentScope": "IAgMissile",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgMissile",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgMissile",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -25908,11 +25238,6 @@
             "ParentScope": "IAgMissile",
             "OldName": "UseTerrainInLightingComputations",
             "NewName": "use_terrain_in_lighting_computations"
-        },
-        {
-            "ParentScope": "IAgMissile",
-            "OldName": "LightingMaxStep",
-            "NewName": "lighting_maximum_step"
         },
         {
             "ParentScope": "IAgMissile",
@@ -25938,6 +25263,11 @@
             "ParentScope": "IAgMissile",
             "OldName": "GetEOIR",
             "NewName": "get_eoir_settings"
+        },
+        {
+            "ParentScope": "IAgMissile",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgAcGraphics",
@@ -26021,16 +25351,6 @@
         },
         {
             "ParentScope": "IAgAircraft",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgAircraft",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgAircraft",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -26058,6 +25378,11 @@
             "ParentScope": "IAgAircraft",
             "OldName": "GetEOIR",
             "NewName": "get_eoir_settings"
+        },
+        {
+            "ParentScope": "IAgAircraft",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgShGraphics",
@@ -26121,16 +25446,6 @@
         },
         {
             "ParentScope": "IAgShip",
-            "OldName": "Atmosphere",
-            "NewName": "atmosphere"
-        },
-        {
-            "ParentScope": "IAgShip",
-            "OldName": "RadarClutterMap",
-            "NewName": "radar_clutter_map"
-        },
-        {
-            "ParentScope": "IAgShip",
             "OldName": "RadarCrossSection",
             "NewName": "radar_cross_section"
         },
@@ -26158,6 +25473,11 @@
             "ParentScope": "IAgShip",
             "OldName": "GetEOIR",
             "NewName": "get_eoir_settings"
+        },
+        {
+            "ParentScope": "IAgShip",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
         },
         {
             "ParentScope": "IAgMtoGfxMarker",
@@ -27355,6 +26675,11 @@
             "NewName": "allow_object_access"
         },
         {
+            "ParentScope": "IAgLineTarget",
+            "OldName": "ChainAnalysisOptions",
+            "NewName": "chain_analysis_options"
+        },
+        {
             "ParentScope": "IAgChGfxStatic",
             "OldName": "IsVisible",
             "NewName": "show_graphics"
@@ -27398,11 +26723,6 @@
             "ParentScope": "IAgChGfxAnimation",
             "OldName": "OptimalPathIsLineVisible",
             "NewName": "show_optimal_path_line"
-        },
-        {
-            "ParentScope": "IAgChGfxAnimation",
-            "OldName": "OptimalPathColor",
-            "NewName": "optimal_path_color"
         },
         {
             "ParentScope": "IAgChGfxAnimation",
@@ -27678,11 +26998,6 @@
             "ParentScope": "IAgChOptimalStrandOpts",
             "OldName": "CalcScalarFileName",
             "NewName": "calc_scalar_file_name"
-        },
-        {
-            "ParentScope": "IAgChain",
-            "OldName": "Objects",
-            "NewName": "objects"
         },
         {
             "ParentScope": "IAgChain",
@@ -28686,16 +28001,6 @@
         },
         {
             "ParentScope": "IAgFmGfxColorOptions",
-            "OldName": "Background",
-            "NewName": "background"
-        },
-        {
-            "ParentScope": "IAgFmGfxColorOptions",
-            "OldName": "Text",
-            "NewName": "text"
-        },
-        {
-            "ParentScope": "IAgFmGfxColorOptions",
             "OldName": "BackgroundColor",
             "NewName": "background_color"
         },
@@ -29241,7 +28546,7 @@
         },
         {
             "ParentScope": "IAgFmDefSystemResponseTime",
-            "OldName": "CommandPerpTime",
+            "OldName": "CommandPrepTime",
             "NewName": "command_preparation_time"
         },
         {
@@ -29533,16 +28838,6 @@
             "ParentScope": "IAgSpEnvMagFieldGfx",
             "OldName": "FieldLineRefresh",
             "NewName": "field_line_refresh"
-        },
-        {
-            "ParentScope": "IAgSpEnvMagFieldGfx",
-            "OldName": "ColorRampStart",
-            "NewName": "color_ramp_start"
-        },
-        {
-            "ParentScope": "IAgSpEnvMagFieldGfx",
-            "OldName": "ColorRampStop",
-            "NewName": "color_ramp_stop"
         },
         {
             "ParentScope": "IAgSpEnvMagFieldGfx",
@@ -31400,11 +30695,6 @@
             "NewName": "save_as_vdf"
         },
         {
-            "ParentScope": "IAgScenarioBeforeSaveEventArgs",
-            "OldName": "SDFSave",
-            "NewName": "save_to_sdf"
-        },
-        {
             "ParentScope": "IAgPctCmpltEventArgs",
             "OldName": "Cancel",
             "NewName": "cancel"
@@ -31777,6 +31067,10 @@
             "NewName": "IVehicleLeadTrailDataTime"
         },
         {
+            "OldName": "IAgChainAnalysisOptions",
+            "NewName": "ChainAnalysisOptions"
+        },
+        {
             "OldName": "IAgStkCentralBodyEllipsoid",
             "NewName": "CentralBodyEllipsoid"
         },
@@ -31799,10 +31093,6 @@
         {
             "OldName": "IAgAccessCnstrExclZonesCollection",
             "NewName": "AccessConstraintExclZonesCollection"
-        },
-        {
-            "OldName": "IAgAccessCnstrThirdBody",
-            "NewName": "AccessConstraintThirdBody"
         },
         {
             "OldName": "IAgAccessCnstrIntervals",
@@ -32233,10 +31523,6 @@
             "NewName": "ScenarioSpaceEnvironment"
         },
         {
-            "OldName": "IAgRadarClutterMap",
-            "NewName": "IRadarClutterMap"
-        },
-        {
             "OldName": "IAgRadarCrossSection",
             "NewName": "RadarCrossSection"
         },
@@ -32537,14 +31823,6 @@
             "NewName": "SensorProjectionObjectAltitude"
         },
         {
-            "OldName": "IAgAtmosphere",
-            "NewName": "Atmosphere"
-        },
-        {
-            "OldName": "IAgRadarClutterMapInheritable",
-            "NewName": "IRadarClutterMapInheritable"
-        },
-        {
             "OldName": "IAgRadarCrossSectionInheritable",
             "NewName": "RadarCrossSectionInheritable"
         },
@@ -32554,7 +31832,7 @@
         },
         {
             "OldName": "IAgPlatformRFEnvironment",
-            "NewName": "IPlatformRFEnvironment"
+            "NewName": "PlatformRFEnvironment"
         },
         {
             "OldName": "IAgRadarCrossSectionVO",
@@ -33373,10 +32651,6 @@
             "NewName": "IDemodulatorModel"
         },
         {
-            "OldName": "IAgLaserPropagationLossModels",
-            "NewName": "LaserPropagationLossModels"
-        },
-        {
             "OldName": "IAgLinkMargin",
             "NewName": "LinkMargin"
         },
@@ -33477,20 +32751,8 @@
             "NewName": "RadarJamming"
         },
         {
-            "OldName": "IAgRadarClutterGeometryModel",
-            "NewName": "IRadarClutterGeometryModel"
-        },
-        {
-            "OldName": "IAgRadarClutterGeometryModelPlugin",
-            "NewName": "IRadarClutterGeometryModelPlugin"
-        },
-        {
             "OldName": "IAgRadarClutter",
             "NewName": "RadarClutter"
-        },
-        {
-            "OldName": "IAgRadarClutterGeometry",
-            "NewName": "RadarClutterGeometry"
         },
         {
             "OldName": "IAgRadarTransmitter",
@@ -33683,18 +32945,6 @@
         {
             "OldName": "IAgRadar",
             "NewName": "Radar"
-        },
-        {
-            "OldName": "IAgRadarClutterMapModel",
-            "NewName": "IRadarClutterMapModel"
-        },
-        {
-            "OldName": "IAgRadarClutterMapModelPlugin",
-            "NewName": "IRadarClutterMapModelPlugin"
-        },
-        {
-            "OldName": "IAgRadarClutterMapModelConstantCoefficient",
-            "NewName": "IRadarClutterMapModelConstantCoefficient"
         },
         {
             "OldName": "IAgRadarCrossSectionComputeStrategy",
@@ -33913,10 +33163,6 @@
             "NewName": "IIonosphericFadingLossModel"
         },
         {
-            "OldName": "IAgIonosphericFadingLossModelP531_13",
-            "NewName": "IonosphericFadingLossModelP531Version13"
-        },
-        {
             "OldName": "IAgCloudsAndFogFadingLossModel",
             "NewName": "ICloudsAndFogFadingLossModel"
         },
@@ -33933,8 +33179,12 @@
             "NewName": "IAtmosphericAbsorptionModel"
         },
         {
-            "OldName": "IAgAtmosphericAbsorptionModelITURP676",
-            "NewName": "IAtmosphericAbsorptionModelITURP676"
+            "OldName": "IAgAtmosphericAbsorptionModelITURP676_9",
+            "NewName": "AtmosphericAbsorptionModelITURP676Version9"
+        },
+        {
+            "OldName": "IAgAtmosphericAbsorptionModelITURP676_13",
+            "NewName": "AtmosphericAbsorptionModelITURP676Version13"
         },
         {
             "OldName": "IAgAtmosphericAbsorptionModelTirem",
@@ -34022,7 +33272,7 @@
         },
         {
             "OldName": "IAgLaserPropagationChannel",
-            "NewName": "ILaserPropagationChannel"
+            "NewName": "LaserPropagationChannel"
         },
         {
             "OldName": "IAgCommSystemLinkSelectionCriteria",
@@ -34151,10 +33401,6 @@
         {
             "OldName": "IAgVeSGP4OnlineLoad",
             "NewName": "PropagatorSGP4OnlineLoad"
-        },
-        {
-            "OldName": "IAgVeSGP4OnlineAutoLoad",
-            "NewName": "PropagatorSGP4OnlineAutoLoad"
         },
         {
             "OldName": "IAgVeSGP4LoadFile",
@@ -35311,6 +34557,10 @@
         {
             "OldName": "IAgVeEphemerisCCSDSv2ExportTool",
             "NewName": "VehicleEphemerisCCSDSv2ExportTool"
+        },
+        {
+            "OldName": "IAgVeEphemerisCCSDSv3ExportTool",
+            "NewName": "VehicleEphemerisCCSDSv3ExportTool"
         },
         {
             "OldName": "IAgSaExportTools",
@@ -36687,10 +35937,6 @@
             "NewName": "AccessConstraintLatitudeLongitudeZone"
         },
         {
-            "OldName": "AgAccessCnstrThirdBody",
-            "NewName": "AccessConstraintThirdBody"
-        },
-        {
             "OldName": "AgAccessCnstrExclZonesCollection",
             "NewName": "AccessConstraintExclZonesCollection"
         },
@@ -37197,10 +36443,6 @@
         {
             "OldName": "AgVeSGP4OnlineLoad",
             "NewName": "PropagatorSGP4OnlineLoad"
-        },
-        {
-            "OldName": "AgVeSGP4OnlineAutoLoad",
-            "NewName": "PropagatorSGP4OnlineAutoLoad"
         },
         {
             "OldName": "AgVeGroundEllipsesCollection",
@@ -39103,6 +38345,10 @@
             "NewName": "VehicleEphemerisCCSDSv2ExportTool"
         },
         {
+            "OldName": "AgVeEphemerisCCSDSv3ExportTool",
+            "NewName": "VehicleEphemerisCCSDSv3ExportTool"
+        },
+        {
             "OldName": "AgStkPreferencesConnect",
             "NewName": "PreferencesConnect"
         },
@@ -39783,10 +39029,6 @@
             "NewName": "RadarClutter"
         },
         {
-            "OldName": "AgRadarClutterGeometry",
-            "NewName": "RadarClutterGeometry"
-        },
-        {
             "OldName": "AgScatteringPointProviderCollectionElement",
             "NewName": "ScatteringPointProviderCollectionElement"
         },
@@ -39927,12 +39169,12 @@
             "NewName": "AntennaNoiseTemperature"
         },
         {
-            "OldName": "AgAtmosphere",
-            "NewName": "Atmosphere"
+            "OldName": "AgPlatformRFEnvironment",
+            "NewName": "PlatformRFEnvironment"
         },
         {
-            "OldName": "AgLaserPropagationLossModels",
-            "NewName": "LaserPropagationLossModels"
+            "OldName": "AgLaserPropagationChannel",
+            "NewName": "LaserPropagationChannel"
         },
         {
             "OldName": "AgLaserAtmosphericLossModel",
@@ -41013,6 +40255,10 @@
         {
             "OldName": "AgVeEOIR",
             "NewName": "VehicleEOIR"
+        },
+        {
+            "OldName": "AgChainAnalysisOptions",
+            "NewName": "ChainAnalysisOptions"
         }
     ],
     "EnumTypeMappings": [
@@ -41051,10 +40297,6 @@
         {
             "OldName": "AgEAzElMaskType",
             "NewName": "AzElMaskType"
-        },
-        {
-            "OldName": "AgEActionType",
-            "NewName": "ActionType"
         },
         {
             "OldName": "AgEAxisOffset",
@@ -42137,10 +41379,6 @@
             "NewName": "WaveformSelectionStrategyType"
         },
         {
-            "OldName": "AgERadarClutterGeometryModelType",
-            "NewName": "RadarClutterGeometryModelType"
-        },
-        {
             "OldName": "AgEAntennaControlRefType",
             "NewName": "AntennaControlReferenceType"
         },
@@ -42293,10 +41531,6 @@
             "NewName": "RadarContinuousWaveAnalysisMode"
         },
         {
-            "OldName": "AgERadarClutterMapModelType",
-            "NewName": "RadarClutterMapModelType"
-        },
-        {
             "OldName": "AgERadarSwerlingCase",
             "NewName": "RadarSwerlingCase"
         },
@@ -42331,6 +41565,10 @@
         {
             "OldName": "AgEAtmosphericAbsorptionModelType",
             "NewName": "AtmosphericAbsorptionModelType"
+        },
+        {
+            "OldName": "AgEITURP676AtmosphereDataType",
+            "NewName": "ITURP676AtmosphereDataType"
         },
         {
             "OldName": "AgEUrbanTerrestrialLossModelType",
@@ -42835,16 +42073,6 @@
             "ParentScope": "AgEAzElMaskType",
             "OldName": "eAzElMaskNone",
             "NewName": "NONE"
-        },
-        {
-            "ParentScope": "AgEActionType",
-            "OldName": "eActionInclude",
-            "NewName": "INCLUDE"
-        },
-        {
-            "ParentScope": "AgEActionType",
-            "OldName": "eActionExclude",
-            "NewName": "EXCLUDE"
         },
         {
             "ParentScope": "AgEAxisOffset",
@@ -44083,11 +43311,6 @@
         },
         {
             "ParentScope": "AgEAccessConstraints",
-            "OldName": "eCstrATCentroidElevationAngle",
-            "NewName": "AREA_TARGET_CENTROID_ELEVATION_ANGLE"
-        },
-        {
-            "ParentScope": "AgEAccessConstraints",
             "OldName": "eCstrAzimuthAngle",
             "NewName": "AZIMUTH_ANGLE"
         },
@@ -44360,26 +43583,6 @@
             "ParentScope": "AgEAccessConstraints",
             "OldName": "eCstrSunSpecularExclusion",
             "NewName": "SUN_SPECULAR_EXCLUSION_ANGLE"
-        },
-        {
-            "ParentScope": "AgEAccessConstraints",
-            "OldName": "eCstrThirdBodyObstruction",
-            "NewName": "THIRD_BODY_OBSTRUCTION"
-        },
-        {
-            "ParentScope": "AgEAccessConstraints",
-            "OldName": "eCstrCentroidAzimuthAngle",
-            "NewName": "CENTROID_AZIMUTH_ANGLE"
-        },
-        {
-            "ParentScope": "AgEAccessConstraints",
-            "OldName": "eCstrCentroidRange",
-            "NewName": "CENTROID_RANGE"
-        },
-        {
-            "ParentScope": "AgEAccessConstraints",
-            "OldName": "eCstrCentroidSunElevationAngle",
-            "NewName": "CENTROID_SUN_ELEVATION_ANGLE"
         },
         {
             "ParentScope": "AgEAccessConstraints",
@@ -45218,11 +44421,6 @@
         },
         {
             "ParentScope": "AgEAtmosphericDensityModel",
-            "OldName": "eExponentialModel",
-            "NewName": "EXPONENTIAL_MODEL"
-        },
-        {
-            "ParentScope": "AgEAtmosphericDensityModel",
             "OldName": "eHarrisPriester",
             "NewName": "HARRIS_PRIESTER"
         },
@@ -45265,11 +44463,6 @@
             "ParentScope": "AgEAtmosphericDensityModel",
             "OldName": "eUnknownDensModel",
             "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgEAtmosphericDensityModel",
-            "OldName": "eUserDefined",
-            "NewName": "USER_DEFINED"
         },
         {
             "ParentScope": "AgEAtmosphericDensityModel",
@@ -45405,11 +44598,6 @@
             "ParentScope": "AgELoadMethodType",
             "OldName": "eFileLoad",
             "NewName": "FILE_LOAD"
-        },
-        {
-            "ParentScope": "AgELoadMethodType",
-            "OldName": "eOnlineAutoLoad",
-            "NewName": "ONLINE_AUTOMATIC_LOAD"
         },
         {
             "ParentScope": "AgELoadMethodType",
@@ -45810,11 +44998,6 @@
             "ParentScope": "AgEThirdBodyGravSourceType",
             "OldName": "eCBFile",
             "NewName": "CENTRAL_BODY_FILE"
-        },
-        {
-            "ParentScope": "AgEThirdBodyGravSourceType",
-            "OldName": "eHPOPHistorical",
-            "NewName": "HPOP_HISTORICAL"
         },
         {
             "ParentScope": "AgEThirdBodyGravSourceType",
@@ -46642,6 +45825,11 @@
             "NewName": "STRAND_METRIC_DURATION"
         },
         {
+            "ParentScope": "AgEChOptimalStrandMetricType",
+            "OldName": "eChOptStrandMetricDataRate",
+            "NewName": "STRAND_METRIC_DATA_RATE"
+        },
+        {
             "ParentScope": "AgEChOptimalStrandCalculationScalarMetricType",
             "OldName": "eChOptStrandCalculationScalarMetricUnknown",
             "NewName": "UNKNOWN"
@@ -47333,21 +46521,6 @@
         },
         {
             "ParentScope": "AgEFmConstraintName",
-            "OldName": "eFmCentroidAzimuthAngle",
-            "NewName": "CENTROID_AZIMUTH_ANGLE"
-        },
-        {
-            "ParentScope": "AgEFmConstraintName",
-            "OldName": "eFmCentroidRange",
-            "NewName": "CENTROID_RANGE"
-        },
-        {
-            "ParentScope": "AgEFmConstraintName",
-            "OldName": "eFmCentroidSunElevationAngle",
-            "NewName": "CENTROID_SUN_ELEVATION_ANGLE"
-        },
-        {
-            "ParentScope": "AgEFmConstraintName",
             "OldName": "eFmCollectionAngle",
             "NewName": "COLLECTION_ANGLE"
         },
@@ -47400,11 +46573,6 @@
             "ParentScope": "AgEFmConstraintName",
             "OldName": "eFmBetaAngle",
             "NewName": "BETA_ANGLE"
-        },
-        {
-            "ParentScope": "AgEFmConstraintName",
-            "OldName": "eFmATCentroidElevationAngle",
-            "NewName": "AREA_TARGET_CENTROID_ELEVATION_ANGLE"
         },
         {
             "ParentScope": "AgEFmConstraintName",
@@ -47925,11 +47093,6 @@
             "ParentScope": "AgEFmConstraintName",
             "OldName": "eFmAccessConstraintPlugin",
             "NewName": "ACCESS_CONSTRAINT_PLUGIN"
-        },
-        {
-            "ParentScope": "AgEFmConstraintName",
-            "OldName": "eFmThirdBodyObs",
-            "NewName": "THIRD_BODY_OBS"
         },
         {
             "ParentScope": "AgEFmConstraintName",
@@ -49232,6 +48395,11 @@
             "NewName": "CCSDS_V2"
         },
         {
+            "ParentScope": "AgEStkExternalEphemerisFormat",
+            "OldName": "eStkExternalEphemerisFormatCCSDSv3",
+            "NewName": "CCSDS_V3"
+        },
+        {
             "ParentScope": "AgEStkExternalFileMessageLevel",
             "OldName": "eStkExternalFileMessageLevelUnknown",
             "NewName": "UNKNOWN"
@@ -49853,12 +49021,12 @@
         },
         {
             "ParentScope": "AgEEphemExportToolFileFormat",
-            "OldName": "eCCSDSv2OrbitEphemerisMessage",
+            "OldName": "eCCSDSOrbitEphemerisMessage",
             "NewName": "ORBIT_EPHEMERIS_MESSAGE"
         },
         {
             "ParentScope": "AgEEphemExportToolFileFormat",
-            "OldName": "eCCSDSv2XML",
+            "OldName": "eCCSDSXML",
             "NewName": "XML"
         },
         {
@@ -51472,46 +50640,6 @@
             "NewName": "FIXED_TIME"
         },
         {
-            "ParentScope": "AgERadarClutterGeometryModelType",
-            "OldName": "eRadarClutterGeometryModelTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgERadarClutterGeometryModelType",
-            "OldName": "eRadarClutterGeometryModelTypeSinglePoint",
-            "NewName": "SINGLE_POINT"
-        },
-        {
-            "ParentScope": "AgERadarClutterGeometryModelType",
-            "OldName": "eRadarClutterGeometryModelTypeSmoothOblateEarth",
-            "NewName": "SMOOTH_OBLATE_EARTH"
-        },
-        {
-            "ParentScope": "AgERadarClutterGeometryModelType",
-            "OldName": "eRadarClutterGeometryModelTypePlugin",
-            "NewName": "PLUGIN"
-        },
-        {
-            "ParentScope": "AgERadarClutterGeometryModelType",
-            "OldName": "eRadarClutterGeometryModelTypeRangeOverCFARCells",
-            "NewName": "RANGE_OVER_CFAR_CELLS"
-        },
-        {
-            "ParentScope": "AgERadarClutterMapModelType",
-            "OldName": "eRadarClutterMapModelTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgERadarClutterMapModelType",
-            "OldName": "eRadarClutterMapModelTypePlugin",
-            "NewName": "PLUGIN"
-        },
-        {
-            "ParentScope": "AgERadarClutterMapModelType",
-            "OldName": "eRadarClutterMapModelTypeConstantCoefficient",
-            "NewName": "CONSTANT_COEFFICIENT"
-        },
-        {
             "ParentScope": "AgERadarSwerlingCase",
             "OldName": "eRadarSwerlingCase0",
             "NewName": "CASE_0"
@@ -52030,6 +51158,21 @@
             "ParentScope": "AgEAtmosphericAbsorptionModelType",
             "OldName": "eAtmosphericAbsorptionModelTypeITURP676_13",
             "NewName": "ITURP676_13"
+        },
+        {
+            "ParentScope": "AgEITURP676AtmosphereDataType",
+            "OldName": "eITURP676AtmosphereDataTypeUnknown",
+            "NewName": "UNKNOWN"
+        },
+        {
+            "ParentScope": "AgEITURP676AtmosphereDataType",
+            "OldName": "eITURP676AtmosphereDataTypeAnnualGlobal",
+            "NewName": "ANNUAL_GLOBAL"
+        },
+        {
+            "ParentScope": "AgEITURP676AtmosphereDataType",
+            "OldName": "eITURP676AtmosphereDataTypeSeasonalRegional",
+            "NewName": "SEASONAL_REGIONAL"
         },
         {
             "ParentScope": "AgEUrbanTerrestrialLossModelType",

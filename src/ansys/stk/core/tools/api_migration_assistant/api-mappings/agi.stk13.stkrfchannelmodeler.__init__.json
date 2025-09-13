@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkrfchannelmodeler",
+        "OldRootScope": "agi.stk13.stkrfchannelmodeler",
         "NewRootScope": "ansys.stk.core.stkrfchannelmodeler"
     },
     "MemberMappings": [
@@ -405,6 +405,11 @@
             "NewName": "west_longitude"
         },
         {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "SetExtentValues",
+            "NewName": "set_extent_values"
+        },
+        {
             "ParentScope": "IAgStkRfcmMaterial",
             "OldName": "Type",
             "NewName": "type"
@@ -413,6 +418,16 @@
             "ParentScope": "IAgStkRfcmMaterial",
             "OldName": "Properties",
             "NewName": "properties"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "HeightStandardDeviation",
+            "NewName": "height_standard_deviation"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "Roughness",
+            "NewName": "roughness"
         },
         {
             "ParentScope": "IAgStkRfcmFacetTileset",
@@ -565,6 +580,11 @@
             "NewName": "angular_velocity"
         },
         {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "DataDimensions",
+            "NewName": "data_dimensions"
+        },
+        {
             "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
             "OldName": "PulseCount",
             "NewName": "pulse_count"
@@ -573,6 +593,11 @@
             "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
             "OldName": "FrequencySampleCount",
             "NewName": "frequency_sample_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
+            "OldName": "DataDimensions",
+            "NewName": "data_dimensions"
         },
         {
             "ParentScope": "IAgStkRfcmResponse",

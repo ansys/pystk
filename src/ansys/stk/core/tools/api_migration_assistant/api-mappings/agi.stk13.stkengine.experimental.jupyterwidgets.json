@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkengine.experimental.jupyterwidgets",
+        "OldRootScope": "agi.stk13.stkengine.experimental.jupyterwidgets",
         "NewRootScope": "ansys.stk.core.stkengine.experimental.jupyterwidgets"
     },
     "MemberMappings": [

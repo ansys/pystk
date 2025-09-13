@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkxrfb",
+        "OldRootScope": "agi.stk13.stkxrfb",
         "NewRootScope": "ansys.stk.core.stkxrfb"
     },
     "MemberMappings": [

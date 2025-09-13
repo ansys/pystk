@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.uiapplication",
+        "OldRootScope": "agi.stk13.uiapplication",
         "NewRootScope": "ansys.stk.core.uiapplication"
     },
     "MemberMappings": [
@@ -175,6 +175,11 @@
             "NewName": "process_id"
         },
         {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "PrefFilesMode",
+            "NewName": "preferences_files_mode"
+        },
+        {
             "ParentScope": "IAgUiApplicationPartnerAccess",
             "OldName": "GrantPartnerAccess",
             "NewName": "grant_partner_access"
@@ -245,6 +250,10 @@
             "NewName": "ApplicationLogMessageType"
         },
         {
+            "OldName": "AgEPrefFilesMode",
+            "NewName": "PreferencesFilesMode"
+        },
+        {
             "OldName": "AgEAppConstants",
             "NewName": "ApplicationConstants"
         },
@@ -292,6 +301,21 @@
             "ParentScope": "AgEUiLogMsgType",
             "OldName": "eUiLogMsgAlarm",
             "NewName": "ALARM"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_NoLoad_NoSave",
+            "NewName": "_NO_LOAD_NO_SAVE"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_Load_No_Save",
+            "NewName": "_LOAD_NO_SAVE"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_Load_And_Save",
+            "NewName": "_LOAD_AND_SAVE"
         },
         {
             "ParentScope": "AgEAppConstants",

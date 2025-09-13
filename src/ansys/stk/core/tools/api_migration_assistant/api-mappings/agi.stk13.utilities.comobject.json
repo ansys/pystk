@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.utilities.comobject",
+        "OldRootScope": "agi.stk13.utilities.comobject",
         "NewRootScope": "ansys.stk.core.utilities.comobject"
     },
     "MemberMappings": [

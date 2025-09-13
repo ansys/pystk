@@ -1,14 +1,9 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkx",
+        "OldRootScope": "agi.stk13.stkx",
         "NewRootScope": "ansys.stk.core.stkx"
     },
     "MemberMappings": [
-        {
-            "ParentScope": "IAgSTKXApplication",
-            "OldName": "UseHook",
-            "NewName": "use_hook"
-        },
         {
             "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
             "OldName": "SetIgnoreError",
@@ -136,16 +131,6 @@
         },
         {
             "ParentScope": "IAgSTKXApplication",
-            "OldName": "GetLicensingReport",
-            "NewName": "get_licensing_report"
-        },
-        {
-            "ParentScope": "IAgSTKXApplication",
-            "OldName": "VendorID",
-            "NewName": "vendor_id"
-        },
-        {
-            "ParentScope": "IAgSTKXApplication",
             "OldName": "SetOnlineOptions",
             "NewName": "set_online_options"
         },
@@ -198,6 +183,11 @@
             "ParentScope": "IAgSTKXApplication",
             "OldName": "ShowSLAIfNotAccepted",
             "NewName": "show_sla_if_not_accepted"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "UseHook",
+            "NewName": "use_hook"
         },
         {
             "ParentScope": "IAgSTKXApplication",
@@ -416,11 +406,6 @@
         },
         {
             "ParentScope": "IAgUiAxVOCntrl",
-            "OldName": "VendorID",
-            "NewName": "vendor_id"
-        },
-        {
-            "ParentScope": "IAgUiAxVOCntrl",
             "OldName": "RubberBandPickInfo",
             "NewName": "rubber_band_pick_info"
         },
@@ -586,11 +571,6 @@
         },
         {
             "ParentScope": "IAgUiAx2DCntrl",
-            "OldName": "VendorID",
-            "NewName": "vendor_id"
-        },
-        {
-            "ParentScope": "IAgUiAx2DCntrl",
             "OldName": "MouseMode",
             "NewName": "mouse_mode"
         },
@@ -723,11 +703,6 @@
             "ParentScope": "IAgUiAxGfxAnalysisCntrl",
             "OldName": "NoLogo",
             "NewName": "no_logo"
-        },
-        {
-            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
-            "OldName": "VendorID",
-            "NewName": "vendor_id"
         },
         {
             "ParentScope": "IAgUiAxGfxAnalysisCntrl",

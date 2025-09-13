@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkengine.tkcontrols",
+        "OldRootScope": "agi.stk13.stkengine.tkcontrols",
         "NewRootScope": "ansys.stk.core.stkengine.tkcontrols"
     },
     "MemberMappings": [],

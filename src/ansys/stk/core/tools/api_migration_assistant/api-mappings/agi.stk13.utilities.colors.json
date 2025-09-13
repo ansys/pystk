@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.utilities.colors",
+        "OldRootScope": "agi.stk13.utilities.colors",
         "NewRootScope": "ansys.stk.core.utilities.colors"
     },
     "MemberMappings": [

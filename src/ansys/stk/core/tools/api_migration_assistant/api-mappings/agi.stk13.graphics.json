@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.graphics",
+        "OldRootScope": "agi.stk13.graphics",
         "NewRootScope": "ansys.stk.core.graphics"
     },
     "MemberMappings": [
@@ -755,6 +755,11 @@
             "NewName": "point_batch_primitive_optional_parameters"
         },
         {
+            "ParentScope": "IAgStkGraphicsFactoryAndInitializers",
+            "OldName": "CesiumionTerrainOverlay",
+            "NewName": "cesium_ion_terrain_overlay"
+        },
+        {
             "ParentScope": "IAgStkGraphicsExtrudedPolylineTriangulatorResult",
             "OldName": "TopBoundaryPositions",
             "NewName": "top_boundary_positions"
@@ -883,11 +888,6 @@
             "ParentScope": "IAgStkGraphicsCameraVideoRecording",
             "OldName": "IsRecording",
             "NewName": "is_recording"
-        },
-        {
-            "ParentScope": "IAgStkGraphicsCameraVideoRecording",
-            "OldName": "StartRecording",
-            "NewName": "start_recording"
         },
         {
             "ParentScope": "IAgStkGraphicsCameraVideoRecording",
@@ -2990,6 +2990,11 @@
             "NewName": "set_position_cartographic"
         },
         {
+            "ParentScope": "IAgStkGraphicsModelPrimitive",
+            "OldName": "AllowColladaModels",
+            "NewName": "allow_collada_models"
+        },
+        {
             "ParentScope": "IAgStkGraphicsModelTransformation",
             "OldName": "CurrentValue",
             "NewName": "current_value"
@@ -3753,11 +3758,6 @@
             "ParentScope": "IAgStkGraphicsPrimitiveManager",
             "OldName": "Count",
             "NewName": "count"
-        },
-        {
-            "ParentScope": "IAgStkGraphicsPrimitiveManager",
-            "OldName": "PrecisionExponent",
-            "NewName": "precision_exponent"
         },
         {
             "ParentScope": "IAgStkGraphicsPrimitiveManager",
@@ -4945,6 +4945,16 @@
             "NewName": "initialize_with_string"
         },
         {
+            "ParentScope": "IAgStkGraphicsCesiumionTerrainOverlayFactory",
+            "OldName": "InitializeWithString",
+            "NewName": "initialize_with_string"
+        },
+        {
+            "ParentScope": "IAgStkGraphicsCesiumionTerrainOverlayFactory",
+            "OldName": "InitializeWithAssetURI",
+            "NewName": "initialize_with_asset_uri"
+        },
+        {
             "ParentScope": "IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory",
             "OldName": "Initialize",
             "NewName": "initialize"
@@ -5445,6 +5455,11 @@
             "NewName": "initialize_with_string_uri_and_up_axis"
         },
         {
+            "ParentScope": "IAgStkGraphicsModelPrimitiveFactory",
+            "OldName": "AllowColladaModels",
+            "NewName": "allow_collada_models"
+        },
+        {
             "ParentScope": "IAgStkGraphicsPathPrimitiveFactory",
             "OldName": "Initialize",
             "NewName": "initialize"
@@ -5933,6 +5948,10 @@
             "NewName": "CentralBodyGraphicsIndexer"
         },
         {
+            "OldName": "IAgStkGraphicsCesiumionTerrainOverlay",
+            "NewName": "CesiumIonTerrainOverlay"
+        },
+        {
             "OldName": "IAgStkGraphicsCustomImageGlobeOverlay",
             "NewName": "CustomImageGlobeOverlay"
         },
@@ -6409,6 +6428,10 @@
             "NewName": "AGIRoamImageGlobeOverlayFactory"
         },
         {
+            "OldName": "IAgStkGraphicsCesiumionTerrainOverlayFactory",
+            "NewName": "CesiumIonTerrainOverlayFactory"
+        },
+        {
             "OldName": "IAgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory",
             "NewName": "CustomImageGlobeOverlayPluginActivatorFactory"
         },
@@ -6817,6 +6840,10 @@
         {
             "OldName": "AgStkGraphicsCentralBodyGraphicsIndexer",
             "NewName": "CentralBodyGraphicsIndexer"
+        },
+        {
+            "OldName": "AgStkGraphicsCesiumionTerrainOverlay",
+            "NewName": "CesiumIonTerrainOverlay"
         },
         {
             "OldName": "AgStkGraphicsCustomImageGlobeOverlay",
@@ -7293,6 +7320,10 @@
         {
             "OldName": "AgStkGraphicsAGIRoamImageGlobeOverlayFactory",
             "NewName": "AGIRoamImageGlobeOverlayFactory"
+        },
+        {
+            "OldName": "AgStkGraphicsCesiumionTerrainOverlayFactory",
+            "NewName": "CesiumIonTerrainOverlayFactory"
         },
         {
             "OldName": "AgStkGraphicsCustomImageGlobeOverlayPluginActivatorFactory",
@@ -8134,6 +8165,11 @@
             "ParentScope": "AgEStkGraphicsModelTransformationType",
             "OldName": "eStkGraphicsModelTransformationTypeTranslateBlue",
             "NewName": "TRANSLATE_BLUE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeAnimation",
+            "NewName": "ANIMATION"
         },
         {
             "ParentScope": "AgEStkGraphicsOrigin",

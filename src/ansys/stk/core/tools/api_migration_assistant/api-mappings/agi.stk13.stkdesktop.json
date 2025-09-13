@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkdesktop",
+        "OldRootScope": "agi.stk13.stkdesktop",
         "NewRootScope": "ansys.stk.core.stkdesktop"
     },
     "MemberMappings": [

@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.internal.comevents",
+        "OldRootScope": "agi.stk13.internal.comevents",
         "NewRootScope": "ansys.stk.core.internal.comevents"
     },
     "MemberMappings": [

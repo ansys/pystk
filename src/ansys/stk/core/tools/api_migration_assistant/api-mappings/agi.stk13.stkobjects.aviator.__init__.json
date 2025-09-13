@@ -1,6 +1,6 @@
 {
     "RootMapping": {
-        "OldRootScope": "agi.stk12.stkobjects.aviator",
+        "OldRootScope": "agi.stk13.stkobjects.aviator",
         "NewRootScope": "ansys.stk.core.stkobjects.aviator"
     },
     "MemberMappings": [
