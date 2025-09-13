@@ -246,8 +246,10 @@ Manage STK Desktop application events
     from ansys.stk.core.stkdesktop import STKDesktop
     from ansys.stk.core.stkobjects import STKObjectType
 
+
     def on_stk_object_added_custom_callback(path: str):
         print(f"{path} has been added.")
+
 
     stk = STKDesktop.start_application(visible=True)
     root = stk.root
@@ -276,6 +278,7 @@ Manage STK Engine events
     # STKObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path: str):
         print(f"Scenario {path} has been created.")
+
 
     stk_object_root_events = root.subscribe()
     stk_object_root_events.on_scenario_new += on_scenario_new_custom_callback

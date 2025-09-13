@@ -6846,6 +6846,15 @@ class Lighting(SupportsDeleteCallback):
 
     Examples
     --------
+    Control the Lighting of the 3D scene:
+    >>> # Scenario scenario: Scenario object
+    >>> # Modify the lighting levels
+    >>> manager = scenario.scene_manager
+    >>> lighting = manager.scenes.item(0).lighting
+    >>> lighting.ambient_intensity = 0.20  # Percent
+    >>> lighting.diffuse_intensity = 4  # Percent
+    >>> lighting.night_lights_intensity = 5  # Percent
+
     Set Vehicle Lighting Properties:
     >>> # Satellite satellite: Satellite object
     >>> lighting = satellite.graphics.lighting
@@ -6864,15 +6873,6 @@ class Lighting(SupportsDeleteCallback):
     >>> umbra.visible = True
     >>> umbra.color = Colors.Red
     >>> umbra.line_width = LineWidth.WIDTH2
-
-    Control the Lighting of the 3D scene:
-    >>> # Scenario scenario: Scenario object
-    >>> # Modify the lighting levels
-    >>> manager = scenario.scene_manager
-    >>> lighting = manager.scenes.item(0).lighting
-    >>> lighting.ambient_intensity = 0.20  # Percent
-    >>> lighting.diffuse_intensity = 4  # Percent
-    >>> lighting.night_lights_intensity = 5  # Percent
     """
 
     _num_methods = 8
