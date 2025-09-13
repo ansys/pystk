@@ -43,8 +43,6 @@ Overview
               - Return a type of the active drag model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmosphere_density_model`
               - Select the low altitude atmospheric density model to be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model`
-              - Do not use this property, as it is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude`
               - Solar and geomagnetic flux.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude_type`
@@ -101,12 +99,6 @@ Property detail
 
     Select the low altitude atmospheric density model to be used.
 
-.. py:property:: low_altitude_atmospheric_density_model
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model
-    :type: AtmosphericDensityModel
-
-    Do not use this property, as it is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
-
 .. py:property:: solar_flux_geo_magnitude
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude
     :type: IVehicleSolarFluxGeoMagnitude
@@ -149,8 +141,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-
 
 
 

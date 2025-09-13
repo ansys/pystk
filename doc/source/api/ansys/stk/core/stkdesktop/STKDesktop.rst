@@ -30,6 +30,8 @@ Overview
                 grpc_port is the integral port number that the gRPC server is using.
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+                grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+                see https://grpc.io/docs/guides/auth/ for more information).
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
               - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
@@ -50,6 +52,8 @@ Overview
                 grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+                grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+                see https://grpc.io/docs/guides/auth/ for more information).
                 Only available on Windows.
 
 Import detail
@@ -63,7 +67,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
+.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_channel_credentials) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
 
     Attach to an existing STK Desktop instance.
@@ -74,6 +78,8 @@ Method detail
     grpc_port is the integral port number that the gRPC server is using.
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
     grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+    grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+    see https://grpc.io/docs/guides/auth/ for more information).
     Only available on Windows.
 
     :Parameters:
@@ -117,7 +123,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0) -> STKDesktopApplication
+.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_channel_credentials) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
     Create a new STK Desktop application instance.
@@ -130,6 +136,8 @@ Method detail
     grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
     grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+    grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+    see https://grpc.io/docs/guides/auth/ for more information).
     Only available on Windows.
 
     :Parameters:

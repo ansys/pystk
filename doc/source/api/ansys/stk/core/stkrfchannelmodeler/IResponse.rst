@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.data`
-              - Get the response data.
+              - Get the response data in a single dimension. Reshape to a multi-dimensional array using the DataDimensions property from the derived response class.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.receive_antenna_count`
               - Get the receive antenna count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IResponse.transmit_antenna_count`
@@ -43,7 +43,7 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.data
     :type: list
 
-    Get the response data.
+    Get the response data in a single dimension. Reshape to a multi-dimensional array using the DataDimensions property from the derived response class.
 
 .. py:property:: receive_antenna_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.IResponse.receive_antenna_count

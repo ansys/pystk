@@ -36,8 +36,12 @@ Overview
               - Get or set the solar force method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.solar_radius`
               - Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.stochastic_srp_coefficient`
+              - Stochastic SRP Coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.sun_position`
               - Get or set the sun position computation.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.use_stochastic_srp_coefficient`
+              - True if using a stochastic SRP for propagation or estimation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.use_sun_central_body_file_values`
               - True if solar values should come from the Sun.cb file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea.variable_area_history_file`
@@ -104,11 +108,23 @@ Property detail
 
     Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
 
+.. py:property:: stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPVariableArea.stochastic_srp_coefficient
+    :type: StochasticModelParameters
+
+    Stochastic SRP Coefficient.
+
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPVariableArea.sun_position
     :type: SunPosition
 
     Get or set the sun position computation.
+
+.. py:property:: use_stochastic_srp_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.SRPVariableArea.use_stochastic_srp_coefficient
+    :type: bool
+
+    True if using a stochastic SRP for propagation or estimation.
 
 .. py:property:: use_sun_central_body_file_values
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPVariableArea.use_sun_central_body_file_values

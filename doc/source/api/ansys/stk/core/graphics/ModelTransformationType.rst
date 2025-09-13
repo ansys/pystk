@@ -88,6 +88,9 @@ Overview
             * - :py:attr:`~TRANSLATE_BLUE`
               - Translate the blue band of color associated with the geometry.
 
+            * - :py:attr:`~ANIMATION`
+              - Control an animation cycle defined on the model.
+
 
 Import detail
 -------------

@@ -3,7 +3,7 @@ ModelPrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.ModelPrimitiveFactory
 
-   The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
+   The model primitive loads and renders `glTF 2.0 <https://www.khronos.org/gltf/>`_ (.gltf, .glb), `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models/>`_ (MDL) models.
 
 .. py:currentmodule:: ModelPrimitiveFactory
 
@@ -18,6 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitiveFactory.allow_collada_models`
+              - Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitiveFactory.initialize`
               - Initialize a default model primitive.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitiveFactory.initialize_with_string_uri`
@@ -37,6 +39,20 @@ Import detail
 
 Method detail
 -------------
+
+.. py:method:: allow_collada_models(self, allow: bool) -> None
+    :canonical: ansys.stk.core.graphics.ModelPrimitiveFactory.allow_collada_models
+
+    Support for loading COLLADA 3D model format has been officially removed. This method will allow users to continue loading COLLADA models for a short period of time.
+
+    :Parameters:
+
+        **allow** : :obj:`~bool`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 .. py:method:: initialize(self) -> ModelPrimitive
     :canonical: ansys.stk.core.graphics.ModelPrimitiveFactory.initialize

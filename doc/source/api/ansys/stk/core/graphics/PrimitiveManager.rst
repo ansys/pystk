@@ -37,8 +37,6 @@ Overview
               - Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.count`
               - Get the number of primitives in the manager.
-            * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.precision_exponent`
-              - Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis...
             * - :py:attr:`~ansys.stk.core.graphics.PrimitiveManager.translucent_primitives_sort_order`
               - Get or set the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality...
 
@@ -66,12 +64,6 @@ Property detail
     :type: int
 
     Get the number of primitives in the manager.
-
-.. py:property:: precision_exponent
-    :canonical: ansys.stk.core.graphics.PrimitiveManager.precision_exponent
-    :type: int
-
-    Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis...
 
 .. py:property:: translucent_primitives_sort_order
     :canonical: ansys.stk.core.graphics.PrimitiveManager.translucent_primitives_sort_order
@@ -119,8 +111,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
-
-
 
 
 .. py:method:: remove(self, primitive: IPrimitive) -> None

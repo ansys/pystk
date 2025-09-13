@@ -35,12 +35,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_mode`
               - Mode by which color is assigned.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start`
-              - Do not use this property, as it is deprecated. Magnetic field start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start_color`
               - Magnetic field start color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop`
-              - Do not use this property, as it is deprecated. Magnetic field stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop_color`
               - Magnetic field stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_scale`
@@ -91,23 +87,11 @@ Property detail
 
     Mode by which color is assigned.
 
-.. py:property:: color_ramp_start
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start
-    :type: Color
-
-    Do not use this property, as it is deprecated. Magnetic field start color.
-
 .. py:property:: color_ramp_start_color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start_color
     :type: Color
 
     Magnetic field start color.
-
-.. py:property:: color_ramp_stop
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop
-    :type: Color
-
-    Do not use this property, as it is deprecated. Magnetic field stop color.
 
 .. py:property:: color_ramp_stop_color
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop_color
@@ -202,10 +186,6 @@ Property detail
 
 Method detail
 -------------
-
-
-
-
 
 
 

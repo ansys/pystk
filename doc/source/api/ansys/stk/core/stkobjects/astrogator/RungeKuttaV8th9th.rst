@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: coefficient_type
     :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coefficient_type
-    :type: CoeffRungeKuttaV8th9th
+    :type: CoefficientRungeKuttaV8th9th
 
     Get or set the set of coefficients to use.
 

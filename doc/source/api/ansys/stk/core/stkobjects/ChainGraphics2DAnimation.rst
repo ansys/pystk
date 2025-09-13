@@ -26,8 +26,6 @@ Overview
               - Get or set the width of the valid strand lines used in animation graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_optimal_strands_to_display`
               - The number of animation optimal strands lines to show.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color`
-              - Do not use this property, as it is deprecated. Use OptimalPathColorRampStartColor. Gets or sets the color in which the optimal strands lines are to be displayed during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_end_color`
               - The end color for the color ramp in which the optimal strands lines are to be displayed during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_start_color`
@@ -81,12 +79,6 @@ Property detail
     :type: int
 
     The number of animation optimal strands lines to show.
-
-.. py:property:: optimal_path_color
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color
-    :type: Color
-
-    Do not use this property, as it is deprecated. Use OptimalPathColorRampStartColor. Gets or sets the color in which the optimal strands lines are to be displayed during animation.
 
 .. py:property:: optimal_path_color_ramp_end_color
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_end_color

@@ -1,12 +1,12 @@
-UpdateParam
-===========
+UpdateParameter
+===============
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.UpdateParam
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UpdateParameter
 
    IntEnum
 
 
-.. py:currentmodule:: UpdateParam
+.. py:currentmodule:: UpdateParameter
 
 Overview
 --------
@@ -58,6 +58,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import UpdateParam
+    from ansys.stk.core.stkobjects.astrogator import UpdateParameter
 
 

@@ -20,6 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.drag_correction_type`
+              - Drag correction type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.drag_model_plugin_name`
@@ -28,14 +30,20 @@ Overview
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.n_plate_definition_file`
               - Drag N-Plate definition file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.n_plate_stochastic_parameters`
+              - NPlate Stochastic Parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.reference_altitude`
               - Get or set the reference altitude. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.reference_density`
               - Get or set the reference density. Uses Density Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.scale_altitude`
               - Get or set the scale altitude. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.stochastic_ballistic_coefficient`
+              - Stochastic Ballistic Coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.use_approximate_altitude`
               - True if using approximate altitude formula.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.use_stochastic_ballistic_coefficient`
+              - True if using stochastic model for ballistic coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Exponential.variable_area_history_file`
               - Drag variable area history file.
 
@@ -51,6 +59,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: drag_correction_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.drag_correction_type
+    :type: DragCorrectionType
+
+    Drag correction type.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.drag_model_plugin
@@ -76,6 +90,12 @@ Property detail
 
     Drag N-Plate definition file.
 
+.. py:property:: n_plate_stochastic_parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.n_plate_stochastic_parameters
+    :type: NPlateStochasticParametersCollection
+
+    NPlate Stochastic Parameters.
+
 .. py:property:: reference_altitude
     :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.reference_altitude
     :type: float
@@ -94,11 +114,23 @@ Property detail
 
     Get or set the scale altitude. Uses Distance Dimension.
 
+.. py:property:: stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.stochastic_ballistic_coefficient
+    :type: StochasticModelParameters
+
+    Stochastic Ballistic Coefficient.
+
 .. py:property:: use_approximate_altitude
     :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.use_approximate_altitude
     :type: bool
 
     True if using approximate altitude formula.
+
+.. py:property:: use_stochastic_ballistic_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.use_stochastic_ballistic_coefficient
+    :type: bool
+
+    True if using stochastic model for ballistic coefficient.
 
 .. py:property:: variable_area_history_file
     :canonical: ansys.stk.core.stkobjects.astrogator.Exponential.variable_area_history_file

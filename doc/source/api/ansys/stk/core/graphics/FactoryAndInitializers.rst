@@ -48,6 +48,8 @@ Overview
               - Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.FactoryAndInitializers.brightness_filter`
               - Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
+            * - :py:attr:`~ansys.stk.core.graphics.FactoryAndInitializers.cesium_ion_terrain_overlay`
+              - Access global methods and properties of CesiumionTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.FactoryAndInitializers.color_to_luminance_filter`
               - Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.FactoryAndInitializers.composite_display_condition`
@@ -287,6 +289,12 @@ Property detail
     :type: BrightnessFilterFactory
 
     Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
+
+.. py:property:: cesium_ion_terrain_overlay
+    :canonical: ansys.stk.core.graphics.FactoryAndInitializers.cesium_ion_terrain_overlay
+    :type: CesiumIonTerrainOverlayFactory
+
+    Access global methods and properties of CesiumionTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: color_to_luminance_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.color_to_luminance_filter

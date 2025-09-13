@@ -39,8 +39,8 @@ Overview
               - Get the constraints imposed on the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.altitude_reference`
               - Get or set the altitude reference of the object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Facility.atmosphere`
-              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Facility.chain_analysis_options`
+              - Get the facility's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.graphics`
               - Get the 2D Graphics properties of the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.graphics_3d`
@@ -59,8 +59,6 @@ Overview
               - Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.position`
               - Get the position of the facility.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Facility.radar_clutter_map`
-              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.radar_cross_section`
               - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.rf_environment`
@@ -153,11 +151,11 @@ Property detail
 
     Get or set the altitude reference of the object.
 
-.. py:property:: atmosphere
-    :canonical: ansys.stk.core.stkobjects.Facility.atmosphere
-    :type: Atmosphere
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Facility.chain_analysis_options
+    :type: ChainAnalysisOptions
 
-    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Get the facility's chain analysis options.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Facility.graphics
@@ -213,12 +211,6 @@ Property detail
 
     Get the position of the facility.
 
-.. py:property:: radar_clutter_map
-    :canonical: ansys.stk.core.stkobjects.Facility.radar_clutter_map
-    :type: IRadarClutterMapInheritable
-
-    Return the radar clutter map.
-
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Facility.radar_cross_section
     :type: RadarCrossSectionInheritable
@@ -227,7 +219,7 @@ Property detail
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Facility.rf_environment
-    :type: IPlatformRFEnvironment
+    :type: PlatformRFEnvironment
 
     Get the RF environment.
 
@@ -286,7 +278,6 @@ Method detail
     :Returns:
 
         :obj:`~typing.Any`
-
 
 
 

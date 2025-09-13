@@ -34,9 +34,6 @@ Overview
             * - :py:attr:`~APPARENT_TIME`
               - Apparent time. Use interface IAccessConstraintMinMaxBase.
 
-            * - :py:attr:`~AREA_TARGET_CENTROID_ELEVATION_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Area Target centroid elevation angle. Use interface IAccessConstraintMinMaxBase.
-
             * - :py:attr:`~AZIMUTH_ANGLE`
               - Azimuth angle. Use interface IAccessConstraintMinMaxBase.
 
@@ -201,18 +198,6 @@ Overview
 
             * - :py:attr:`~SUN_SPECULAR_EXCLUSION_ANGLE`
               - Sun specular exclusion. Use interface AccessConstraintAngle.
-
-            * - :py:attr:`~THIRD_BODY_OBSTRUCTION`
-              - Do not use this enumeration, as it is deprecated. Third body obstruction. Use interface AccessConstraintThirdBody.
-
-            * - :py:attr:`~CENTROID_AZIMUTH_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Centroid azimuth angle. Use interface IAccessConstraintMinMaxBase.
-
-            * - :py:attr:`~CENTROID_RANGE`
-              - Do not use this enumeration, as it is deprecated. Centroid range. Use interface IAccessConstraintMinMaxBase.
-
-            * - :py:attr:`~CENTROID_SUN_ELEVATION_ANGLE`
-              - Do not use this enumeration, as it is deprecated. Centroid sun elevation angle. Use interface IAccessConstraintMinMaxBase.
 
             * - :py:attr:`~COLLECTION_ANGLE`
               - Collection angle. Use interface IAccessConstraintMinMaxBase.

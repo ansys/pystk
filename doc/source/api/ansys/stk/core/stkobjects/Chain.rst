@@ -69,8 +69,6 @@ Overview
               - Maximum number of objects in all strands for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.maximum_time_step`
               - Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.objects`
-              - Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.optimal_strand_opts`
               - Optimal strands settings for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.recompute_automatically`
@@ -135,8 +133,8 @@ Define and compute a chain (advanced)
     chain.clear_access()
 
     # Add some objects to chain
-    chain.objects.add("Facility/MyFacility")
-    chain.objects.add_object(satellite)
+    chain.start_object = facility
+    chain.end_object = satellite
 
     # Configure chain parameters
     chain.recompute_automatically = False
@@ -164,9 +162,9 @@ Define and compute a chain (basic)
 
     # Chain chain: Chain object
 
-    # Add some objects to chain (using STK path)
-    chain.objects.add("Facility/MyFacility")
-    chain.objects.add("Satellite/MySatellite")
+    # Add some objects to chain
+    chain.start_object = facility
+    chain.end_object = satellite
 
     # Compute the chain
     chain.compute_access()
@@ -289,12 +287,6 @@ Property detail
 
     Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
 
-.. py:property:: objects
-    :canonical: ansys.stk.core.stkobjects.Chain.objects
-    :type: ObjectLinkCollection
-
-    Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
-
 .. py:property:: optimal_strand_opts
     :canonical: ansys.stk.core.stkobjects.Chain.optimal_strand_opts
     :type: ChainOptimalStrandOpts
@@ -363,7 +355,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 
 

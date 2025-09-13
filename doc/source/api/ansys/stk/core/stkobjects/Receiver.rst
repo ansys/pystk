@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Receiver instead. Sets the current receiver model by name.
 
     .. tab-item:: Properties
 
@@ -31,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.chain_analysis_options`
+              - Get the receiver's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.graphics`
               - Get the 2D Graphics properties for the receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.graphics_3d`
               - Get the 3D Graphics properties for the receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.laser_environment`
               - Get the object laser environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets the current receiver model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model_component_linking`
               - Get the link/embed controller for managing the receiver model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction`
@@ -49,8 +47,6 @@ Overview
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.rf_environment`
               - Get the object RF environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
 
@@ -64,7 +60,7 @@ Receiver additional Gain
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    recModel = receiver.model
+    recModel = receiver.model_component_linking.component
     gain = recModel.pre_receive_gains_losses.add(5)  # dB
     gain.identifier = "Example Gain"
 
@@ -74,10 +70,10 @@ Modify Receiver Filter Properties
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    recModel = receiver.model
+    recModel = receiver.model_component_linking.component
     recModel.enable_filter = True
-    recModel.set_filter("Bessel")
-    recFilter = recModel.filter
+    recModel.filter_component_linking.set_component("Bessel")
+    recFilter = recModel.filter_component_linking.component
     recFilter.lower_bandwidth_limit = -20
     recFilter.upper_bandwidth_limit = 20
     recFilter.cut_off_frequency = 10
@@ -88,7 +84,7 @@ Modify Receiver Demodulator Properties
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    recModel = receiver.model
+    recModel = receiver.model_component_linking.component
     recModel.select_demodulator_automatically = False
     recModel.set_demodulator("16PSK")
 
@@ -98,8 +94,8 @@ Modify Receiver System Noise Temperature
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
+    receiver.model_component_linking.set_component("Complex Receiver Model")
+    recModel = receiver.model_component_linking.component
     recModel.system_noise_temperature.constant_noise_temperature = 280  # K
 
 
@@ -109,8 +105,8 @@ Modify Orientation of the Receiver Antenna
 
     # Complex receivers Only
     # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
+    receiver.model_component_linking.set_component("Complex Receiver Model")
+    recModel = receiver.model_component_linking.component
     antennaControl = recModel.antenna_control
     antOrientation = antennaControl.embedded_model_orientation
     antOrientation.assign_az_el(45, 85, AzElAboutBoresight.ROTATE)
@@ -124,7 +120,7 @@ Modify Receiver Polarization Properties
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    recModel = receiver.model
+    recModel = receiver.model_component_linking.component
     recModel.enable_polarization = True
     recModel.set_polarization_type(PolarizationType.LINEAR)
     polarization = recModel.polarization
@@ -137,11 +133,11 @@ Modify Receiver Embedded Antenna
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
+    receiver.model_component_linking.set_component("Complex Receiver Model")
+    recModel = receiver.model_component_linking.component
     antennaControl = recModel.antenna_control
-    antennaControl.set_embedded_model("Hemispherical")
-    antennaControl.embedded_model.efficiency = 85  # Percent
+    antennaControl.embedded_model_component_linking.set_component("Hemispherical")
+    antennaControl.embedded_model_component_linking.component.efficiency = 85  # Percent
 
 
 Modify Receiver Model Type
@@ -149,8 +145,8 @@ Modify Receiver Model Type
 .. code-block:: python
 
     # Receiver receiver: Receiver object
-    receiver.set_model("Complex Receiver Model")
-    recModel = receiver.model
+    receiver.model_component_linking.set_component("Complex Receiver Model")
+    recModel = receiver.model_component_linking.component
     recModel.track_frequency_automatically = False
     recModel.frequency = 11.81
 
@@ -174,6 +170,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Receiver.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the receiver's chain analysis options.
+
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Receiver.graphics
     :type: ReceiverGraphics
@@ -191,12 +193,6 @@ Property detail
     :type: ObjectLaserEnvironment
 
     Get the object laser environment settings.
-
-.. py:property:: model
-    :canonical: ansys.stk.core.stkobjects.Receiver.model
-    :type: IReceiverModel
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets the current receiver model.
 
 .. py:property:: model_component_linking
     :canonical: ansys.stk.core.stkobjects.Receiver.model_component_linking
@@ -228,12 +224,6 @@ Property detail
 
     Get the object RF environment settings.
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.Receiver.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Receiver instead. Gets an array of supported model names.
-
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Receiver.use_refraction_in_access
     :type: bool
@@ -243,6 +233,7 @@ Property detail
 
 Method detail
 -------------
+
 
 
 .. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
@@ -264,22 +255,6 @@ Method detail
 
 
 
-
-
-
-.. py:method:: set_model(self, model_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Receiver.set_model
-
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on Receiver instead. Sets the current receiver model by name.
-
-    :Parameters:
-
-        **model_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 

@@ -62,6 +62,9 @@ Summary
             * - :py:class:`~ansys.stk.core.uiapplication.ApplicationOpenLogFileMode`
               - Log file open modes.
 
+            * - :py:class:`~ansys.stk.core.uiapplication.PreferencesFilesMode`
+              - Specify how application should handle user preference files
+
 
 
 Description
@@ -101,4 +104,5 @@ The STK UI Application library is a COM library containing classes, interfaces a
     ≔ ApplicationErrorCodes<uiapplication/ApplicationErrorCodes>
     ≔ ApplicationLogMessageType<uiapplication/ApplicationLogMessageType>
     ≔ ApplicationOpenLogFileMode<uiapplication/ApplicationOpenLogFileMode>
+    ≔ PreferencesFilesMode<uiapplication/PreferencesFilesMode>
 

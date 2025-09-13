@@ -32,8 +32,6 @@ Overview
               - Get or set the solar activity configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type`
               - Get or set the solar activity configuration enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number`
-              - Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average`
               - Get or set the indicator to use day of month average.
 
@@ -85,12 +83,6 @@ Property detail
     :type: Graphics3DACAPSolarActivityConfigurationType
 
     Get or set the solar activity configuration enumeration.
-
-.. py:property:: sunspot_number
-    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.sunspot_number
-    :type: int
-
-    Do not use this property, as it is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
 
 .. py:property:: use_day_of_month_average
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.use_day_of_month_average

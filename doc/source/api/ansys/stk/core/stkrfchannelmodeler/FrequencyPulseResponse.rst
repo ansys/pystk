@@ -20,6 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse.data_dimensions`
+              - Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Pulse Count, Frequency Sample Count, Complex Number (imaginary and real)}.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse.frequency_sample_count`
               - Get the frequency sample count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse.pulse_count`
@@ -37,6 +39,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: data_dimensions
+    :canonical: ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse.data_dimensions
+    :type: list
+
+    Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Pulse Count, Frequency Sample Count, Complex Number (imaginary and real)}.
 
 .. py:property:: frequency_sample_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse.frequency_sample_count

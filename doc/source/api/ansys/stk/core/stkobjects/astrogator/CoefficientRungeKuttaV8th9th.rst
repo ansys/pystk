@@ -1,12 +1,12 @@
-CoeffRungeKuttaV8th9th
-======================
+CoefficientRungeKuttaV8th9th
+============================
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.CoeffRungeKuttaV8th9th
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CoefficientRungeKuttaV8th9th
 
    IntEnum
 
 
-.. py:currentmodule:: CoeffRungeKuttaV8th9th
+.. py:currentmodule:: CoefficientRungeKuttaV8th9th
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import CoeffRungeKuttaV8th9th
+    from ansys.stk.core.stkobjects.astrogator import CoefficientRungeKuttaV8th9th
 
 

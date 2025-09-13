@@ -22,8 +22,6 @@ Overview
               - Send a connect command to STK X.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.execute_multiple_commands`
               - Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
-            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.get_licensing_report`
-              - Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.get_online_options`
               - Get http proxy online options.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.is_feature_available`
@@ -65,8 +63,6 @@ Overview
               - Show the Software License Agreement dialog if not already accepted.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.use_hook`
               - Start engine with or without message hook setup (default: engine starts with message hook setup.).
-            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.vendor_id`
-              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.version`
               - Return the version number.
 
@@ -139,15 +135,9 @@ Property detail
 
 .. py:property:: use_hook
     :canonical: ansys.stk.core.stkx.STKXApplication.use_hook
-    :type: None
+    :type: bool
 
     Start engine with or without message hook setup (default: engine starts with message hook setup.).
-
-.. py:property:: vendor_id
-    :canonical: ansys.stk.core.stkx.STKXApplication.vendor_id
-    :type: str
-
-    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: version
     :canonical: ansys.stk.core.stkx.STKXApplication.version
@@ -194,15 +184,6 @@ Method detail
     :Returns:
 
         :obj:`~ExecuteMultipleCommandsResult`
-
-.. py:method:: get_licensing_report(self) -> str
-    :canonical: ansys.stk.core.stkx.STKXApplication.get_licensing_report
-
-    Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document.
-
-    :Returns:
-
-        :obj:`~str`
 
 .. py:method:: get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]
     :canonical: ansys.stk.core.stkx.STKXApplication.get_online_options
@@ -286,6 +267,7 @@ Method detail
         :obj:`~None`
 
 
+
 .. py:method:: use_software_renderer(self) -> None
     :canonical: ansys.stk.core.stkx.STKXApplication.use_software_renderer
 
@@ -294,8 +276,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
 
 

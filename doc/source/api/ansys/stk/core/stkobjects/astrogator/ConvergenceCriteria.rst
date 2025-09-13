@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~EQUALITY_CONSTRAINT_WITHIN_TOLERANCE`
               - Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence.
 
-            * - :py:attr:`~CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS`
+            * - :py:attr:`~CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS`
               - Equality Constraints Satisfied or Parameter Variations within Tolerance - the differences between the achieved and desired EC values must be within tolerances, or the last updates to the control parameters must be within tolerances for convergence.
 
 

@@ -51,6 +51,8 @@ Overview
               - Get the Automatic Sequences.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.calculation_graphs`
               - Get the calculation graphs.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.flight_dynamics_record_creator`
+              - Get the flight dynamics record creator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.main_sequence`
               - Get the Mission Control Sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSDriver.options`
@@ -102,6 +104,12 @@ Property detail
     :type: CalculationGraphCollection
 
     Get the calculation graphs.
+
+.. py:property:: flight_dynamics_record_creator
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.flight_dynamics_record_creator
+    :type: FlightDynamicsRecordCreator
+
+    Get the flight dynamics record creator.
 
 .. py:property:: main_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.main_sequence
@@ -197,6 +205,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

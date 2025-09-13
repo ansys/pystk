@@ -1,12 +1,12 @@
-GravParamSource
-===============
+GravParameterSource
+===================
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.GravParamSource
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GravParameterSource
 
    IntEnum
 
 
-.. py:currentmodule:: GravParamSource
+.. py:currentmodule:: GravParameterSource
 
 Overview
 --------
@@ -37,6 +37,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import GravParamSource
+    from ansys.stk.core.stkobjects.astrogator import GravParameterSource
 
 

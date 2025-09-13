@@ -22,6 +22,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.access_constraints`
               - Get the constraints imposed on the planet.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Planet.chain_analysis_options`
+              - Get the planet's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.common_tasks`
               - Common Tasks associated with the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.Planet.graphics`
@@ -76,6 +78,12 @@ Property detail
     :type: AccessConstraintCollection
 
     Get the constraints imposed on the planet.
+
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Planet.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the planet's chain analysis options.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.Planet.common_tasks

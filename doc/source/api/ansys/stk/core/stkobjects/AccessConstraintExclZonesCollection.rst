@@ -49,6 +49,8 @@ Overview
               - Get the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.count`
               - Number of items in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.enabled`
+              - Indicate whether the constraint should be considered (true) or ignored (false) in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval`
               - Get or set the ExclInterval.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.is_plugin`
@@ -94,6 +96,12 @@ Property detail
     :type: int
 
     Number of items in the collection.
+
+.. py:property:: enabled
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.enabled
+    :type: bool
+
+    Indicate whether the constraint should be considered (true) or ignored (false) in access computations.
 
 .. py:property:: exclusion_interval
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval
@@ -144,6 +152,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 
