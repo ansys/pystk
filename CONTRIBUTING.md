@@ -72,11 +72,12 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY        TAG                          IMAGE ID       CREATED        SIZE
-    ansys/stk-13.0   dev-ubuntu22.04-python3.13   5a6ca2ffecae   4 hours ago    4.04GB
-    ansys/stk-13.0   dev-ubuntu22.04-python3.12   94bafab28a80   4 hours ago    4.03GB
-    ansys/stk-13.0   dev-ubuntu22.04-python3.11   97bdccd1c2a6   4 hours ago    4.03GB
-    ansys/stk-13.0   dev-ubuntu22.04-pybase       c9fb6e9502df   5 hours ago    4.21GB
-    ansys/stk-13.0   dev-ubuntu22.04              1e26759936b1   5 hours ago    3.42GB
+    ansys/stk-13.0    dev-ubuntu22.04-python3.13   9eea14569958   14 minutes ago   5.33GB
+    ansys/stk-13.0    dev-ubuntu22.04-python3.12   edee06182a7a   15 minutes ago   5.32GB
+    ansys/stk-13.0    dev-ubuntu22.04-python3.11   205043fd378b   16 minutes ago   5.32GB
+    ansys/stk-13.0    dev-ubuntu22.04-python3.10   c4ec5d4bd662   22 minutes ago   5.21GB
+    ansys/stk-13.0    dev-ubuntu22.04-pybase       3e620a3bbaad   25 minutes ago   5.5GB
+    ansys/stk-13.0    dev-ubuntu22.04              d57b49b927df   30 minutes ago   4.71GB
     ```
 
 - **Windows**
