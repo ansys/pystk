@@ -174,6 +174,7 @@ class SEETHelper(object):
         Assert.assertAlmostEqual(1.240913, stopOM, delta=1e-05)
         Assert.assertAlmostEqual(1.240913, stopDP, delta=1e-05)
 
+        # BField (ECF x)
         pBxStart: float = 0
         pByStart: float = 0
         pBzStart: float = 0

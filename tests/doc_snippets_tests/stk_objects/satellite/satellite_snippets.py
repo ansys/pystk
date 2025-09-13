@@ -165,7 +165,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
         forceModel = satellite.propagator.force_model
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
@@ -232,7 +232,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         satellite.set_propagator_type(PropagatorType.SPICE)
         propagator = satellite.propagator
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         bspPath = ["STKData", "Spice", "planets.bsp"]
@@ -359,7 +359,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     def SatelliteAttitudeExternalSnippet(self, satellite):
         # Satellite satellite: Satellite object
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         satellite.attitude.external.load(
@@ -416,7 +416,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         attributes.line.style = LineStyle.LONG_DASH
         attributes.color = Colors.Lime
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
@@ -707,7 +707,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
         orbitmarker = model.orbit_marker
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))

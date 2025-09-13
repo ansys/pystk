@@ -1256,7 +1256,7 @@ class GatorHelper(object):
         Assert.assertFalse(launch.is_control_parameter_enabled(ControlLaunch.TIME_OF_FLIGHT))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myLaunch", "TimeOfFlight")
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             scriptingTool: "ScriptingTool" = dc.scripting_tool
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
@@ -2704,7 +2704,6 @@ class GatorHelper(object):
                     Console.WriteLine("*** The {0} profile does not have an a test created for it.", profile)
 
             count: int = ts.profiles.count
-
             i: int = 0
             while i < count:
                 profile: "IProfile" = ts.profiles[i]
@@ -2971,7 +2970,6 @@ class GatorHelper(object):
             control: "SearchPluginControl" = controlCollection.get_control_by_paths("myProp", "BogusControlPath")
 
         count: int = controlCollection.count
-
         i: int = 0
         while i < count:
             control: "SearchPluginControl" = controlCollection[i]
@@ -3015,7 +3013,6 @@ class GatorHelper(object):
 
         pluginResultsCollection: "SearchPluginResultCollection" = profileSearchPlugin.results
         count = pluginResultsCollection.count
-
         i: int = 0
         while i < count:
             result: "SearchPluginResult" = pluginResultsCollection[0]
@@ -3053,7 +3050,7 @@ class GatorHelper(object):
 
         with pytest.raises(Exception):
             pluginResult: "SearchPluginResult" = pluginResultsCollection.get_result_by_paths("ObjectPath", "ResultPath")
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             scriptingTool: "ScriptingTool" = profileSearchPlugin.scripting_tool
 
         status: str = profileSearchPlugin.status
@@ -3093,7 +3090,7 @@ class GatorHelper(object):
 
         with pytest.raises(Exception):
             name3: str = optimizer.control_parameters[-1].name
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             scriptingTool: "ScriptingTool" = optimizer.scripting_tool
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
@@ -3216,7 +3213,7 @@ class GatorHelper(object):
 
         with pytest.raises(Exception):
             name3: str = optimizer.control_parameters[-1].name
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             scriptingTool: "ScriptingTool" = optimizer.scripting_tool
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
@@ -3627,7 +3624,7 @@ class GatorHelper(object):
 
     @staticmethod
     def TestProfileScriptingTool(iAgVAProfile: "IProfile", ts: "MCSTargetSequence"):
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             Assert.assertEqual(iAgVAProfile.type, Profile.SCRIPTING_TOOL)
             scriptingTool: "ProfileScriptingTool" = clr.CastAs(iAgVAProfile, ProfileScriptingTool)
             GatorHelper.Test_IAgVAProfile(ts, scriptingTool, ProfileMode.NOT_ACTIVE)
@@ -3677,9 +3674,11 @@ class GatorHelper(object):
         dc.clear_corrections_before_run = False
         Assert.assertFalse(dc.clear_corrections_before_run)
 
-        dc.convergence_criteria = ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS
+        dc.convergence_criteria = (
+            ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS
+        )
         Assert.assertEqual(
-            ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS,
+            ConvergenceCriteria.CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMETERS,
             dc.convergence_criteria,
         )
         dc.convergence_criteria = ConvergenceCriteria.EQUALITY_CONSTRAINT_WITHIN_TOLERANCE
@@ -4047,7 +4046,7 @@ class GatorHelper(object):
         sequence.sequence_state_to_pass = SequenceStateToPass.FINAL
         Assert.assertEqual(SequenceStateToPass.FINAL, sequence.sequence_state_to_pass)
         sequence.segments.insert(SegmentType.PROPAGATE, "Prop1", "-")
-        if not OSHelper.IsLinux():
+        if OSHelper.SupportsScriptingTool():
             scriptingTool: "ScriptingTool" = sequence.scripting_tool
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
@@ -4264,7 +4263,6 @@ class GatorHelper(object):
         coCol.remove("CalcObject")
 
         GatorHelper.m_logger.WriteLine("CalcObjectWrappers tested via indexing:")
-
         i: int = 0
         while i < coCol.count:
             wrapperByIndex: "ScriptingCalculationObject" = coCol[i]
@@ -4482,7 +4480,6 @@ class GatorHelper(object):
         direction: "IDirection" = velVec.body_constraint_vector
         Assert.assertIsNotNone(direction)
         direction.assign_xyz(1, 2, 3)
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -4530,7 +4527,6 @@ class GatorHelper(object):
         orientation: "IOrientation" = att.orientation
         Assert.assertIsNotNone(orientation)
         orientation.assign_quaternion(0.0, 0.0, 0.0, 1.0)
-
         qx: float = 0
         qy: float = 0
         qz: float = 0
@@ -4584,7 +4580,6 @@ class GatorHelper(object):
         z = thrust.z
 
         thrust.assign_spherical(10, 20, 30)
-
         az: typing.Any = None
         el: typing.Any = None
 
@@ -4984,7 +4979,6 @@ class GatorHelper(object):
         optFinite.export_nodes(filename)
 
         steeringNodesColl: "ManeuverOptimalFiniteSteeringNodeCollection" = optFinite.steering_nodes
-
         i: int = 0
         while i < steeringNodesColl.count:
             elem: "ManeuverOptimalFiniteSteeringNodeElement" = steeringNodesColl[i]
@@ -5216,7 +5210,6 @@ class GatorHelper(object):
         Assert.assertEqual(BodyAxis.PLUS_Z, lagrange.body_axis)
 
         lagrange.body_constraint_vector.assign_xyz(1, 2, 3)
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -5639,6 +5632,39 @@ class GatorHelper(object):
                 fuel.tank_volume = 1.4
                 Assert.assertEqual(1.4, fuel.tank_volume)
 
+    @staticmethod
+    def TestStochasticParameters(stochasticParams: "StochasticParameters", isReadOnly: bool):
+        if isReadOnly:
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                stochasticParams.drag_initial_correction = 0.0
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                stochasticParams.drag_long_term_initial_correction = 0.0
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                stochasticParams.density_model_initial_correction = 0.0
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                stochasticParams.srp_initial_correction = 0.0
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                stochasticParams.srp_long_term_initial_correction = 0.0
+
+        else:
+            stochasticParams.drag_initial_correction = 0.034
+            Assert.assertEqual(0.034, stochasticParams.drag_initial_correction)
+
+            stochasticParams.drag_long_term_initial_correction = 0.123
+            Assert.assertEqual(0.123, stochasticParams.drag_long_term_initial_correction)
+
+            stochasticParams.density_model_initial_correction = 1.5555
+            Assert.assertEqual(1.5555, stochasticParams.density_model_initial_correction)
+
+            stochasticParams.srp_initial_correction = 0.999919
+            Assert.assertEqual(0.999919, stochasticParams.srp_initial_correction)
+
+            stochasticParams.srp_long_term_initial_correction = 1.3e-06
+            Assert.assertEqual(1.3e-06, stochasticParams.srp_long_term_initial_correction)
+
+            Assert.assertAlmostEqual(0.0482036, stochasticParams.ballistic_coefficient, delta=1e-07)
+            Assert.assertAlmostEqual(0.0285429, stochasticParams.cr_a_over_m, delta=1e-07)
+
     # TODO check readonly as well.
     @staticmethod
     def TestLaunch(launch: "MCSLaunch", isFromCM: bool):
@@ -5782,8 +5808,8 @@ class GatorHelper(object):
         sEpoch: str = str(segment.get_result_value("Epoch"))
 
         GatorHelper.TestFuelTank(initState.fuel_tank, False, isFromCM)
-
         GatorHelper.TestSpaceCraftParameters(initState.spacecraft_parameters, False)
+        GatorHelper.TestStochasticParameters(initState.stochastic_parameters, False)
 
         # Test spherical and cartesian because only these two work for centralbody/fixed
         initState.set_element_type(ElementSetType.SPHERICAL)
@@ -6163,77 +6189,77 @@ class GatorHelper(object):
         GatorHelper.TestRuntimeTypeInfo(update)
 
         Assert.assertEqual(SegmentType.UPDATE, segment.type)
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.CD))
-        Assert.assertEqual(1, update.get_value(UpdateParam.CD))
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.CD))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.CD))
 
-        update.set_action_and_value(UpdateParam.CK, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.CK))
-        Assert.assertEqual(1, update.get_value(UpdateParam.CK))
+        update.set_action_and_value(UpdateParameter.CK, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.CK))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.CK))
 
-        update.set_action_and_value(UpdateParam.CR, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.CR))
-        Assert.assertEqual(1, update.get_value(UpdateParam.CR))
+        update.set_action_and_value(UpdateParameter.CR, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.CR))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.CR))
 
-        update.set_action_and_value(UpdateParam.DRAG_AREA, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.DRAG_AREA))
-        Assert.assertEqual(1, update.get_value(UpdateParam.DRAG_AREA))
+        update.set_action_and_value(UpdateParameter.DRAG_AREA, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.DRAG_AREA))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.DRAG_AREA))
 
-        update.set_action_and_value(UpdateParam.DRY_MASS, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.DRY_MASS))
-        Assert.assertEqual(1, update.get_value(UpdateParam.DRY_MASS))
+        update.set_action_and_value(UpdateParameter.DRY_MASS, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.DRY_MASS))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.DRY_MASS))
 
-        update.set_action_and_value(UpdateParam.FUEL_DENSITY, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.FUEL_DENSITY))
-        Assert.assertEqual(1, update.get_value(UpdateParam.FUEL_DENSITY))
+        update.set_action_and_value(UpdateParameter.FUEL_DENSITY, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.FUEL_DENSITY))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.FUEL_DENSITY))
 
-        update.set_action_and_value(UpdateParam.FUEL_MASS, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.FUEL_MASS))
-        Assert.assertEqual(1, update.get_value(UpdateParam.FUEL_MASS))
+        update.set_action_and_value(UpdateParameter.FUEL_MASS, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.FUEL_MASS))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.FUEL_MASS))
 
-        update.set_action_and_value(UpdateParam.RADIATION_PRESSURE_AREA, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.RADIATION_PRESSURE_AREA))
-        Assert.assertEqual(1, update.get_value(UpdateParam.RADIATION_PRESSURE_AREA))
+        update.set_action_and_value(UpdateParameter.RADIATION_PRESSURE_AREA, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.RADIATION_PRESSURE_AREA))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.RADIATION_PRESSURE_AREA))
 
-        update.set_action_and_value(UpdateParam.SRP_AREA, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.SRP_AREA))
-        Assert.assertEqual(1, update.get_value(UpdateParam.SRP_AREA))
+        update.set_action_and_value(UpdateParameter.SRP_AREA, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.SRP_AREA))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.SRP_AREA))
 
-        update.set_action_and_value(UpdateParam.TANK_PRESSURE, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.TANK_PRESSURE))
-        Assert.assertEqual(1, update.get_value(UpdateParam.TANK_PRESSURE))
+        update.set_action_and_value(UpdateParameter.TANK_PRESSURE, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.TANK_PRESSURE))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.TANK_PRESSURE))
 
-        update.set_action_and_value(UpdateParam.TANK_TEMPERATURE, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.TANK_TEMPERATURE))
-        Assert.assertEqual(1, update.get_value(UpdateParam.TANK_TEMPERATURE))
+        update.set_action_and_value(UpdateParameter.TANK_TEMPERATURE, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.TANK_TEMPERATURE))
+        Assert.assertEqual(1, update.get_value(UpdateParameter.TANK_TEMPERATURE))
 
         # Test the action enums
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.ADD_VALUE, 1)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.ADD_VALUE, 1)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.NO_CHANGE, 1)
-        Assert.assertEqual(UpdateAction.NO_CHANGE, update.get_action(UpdateParam.CD))
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.NO_CHANGE, 1)
+        Assert.assertEqual(UpdateAction.NO_CHANGE, update.get_action(UpdateParameter.CD))
 
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.SET_TO_NEW_VALUE, 1)
-        Assert.assertEqual(UpdateAction.SET_TO_NEW_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.SET_TO_NEW_VALUE, 1)
+        Assert.assertEqual(UpdateAction.SET_TO_NEW_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_action_and_value(UpdateParam.CD, UpdateAction.SUBTRACT_VALUE, 1)
-        Assert.assertEqual(UpdateAction.SUBTRACT_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action_and_value(UpdateParameter.CD, UpdateAction.SUBTRACT_VALUE, 1)
+        Assert.assertEqual(UpdateAction.SUBTRACT_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_action(UpdateParam.CD, UpdateAction.ADD_VALUE)
-        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action(UpdateParameter.CD, UpdateAction.ADD_VALUE)
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_action(UpdateParam.CD, UpdateAction.NO_CHANGE)
-        Assert.assertEqual(UpdateAction.NO_CHANGE, update.get_action(UpdateParam.CD))
+        update.set_action(UpdateParameter.CD, UpdateAction.NO_CHANGE)
+        Assert.assertEqual(UpdateAction.NO_CHANGE, update.get_action(UpdateParameter.CD))
 
-        update.set_action(UpdateParam.CD, UpdateAction.SET_TO_NEW_VALUE)
-        Assert.assertEqual(UpdateAction.SET_TO_NEW_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action(UpdateParameter.CD, UpdateAction.SET_TO_NEW_VALUE)
+        Assert.assertEqual(UpdateAction.SET_TO_NEW_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_action(UpdateParam.CD, UpdateAction.SUBTRACT_VALUE)
-        Assert.assertEqual(UpdateAction.SUBTRACT_VALUE, update.get_action(UpdateParam.CD))
+        update.set_action(UpdateParameter.CD, UpdateAction.SUBTRACT_VALUE)
+        Assert.assertEqual(UpdateAction.SUBTRACT_VALUE, update.get_action(UpdateParameter.CD))
 
-        update.set_value(UpdateParam.CR, 2)
-        Assert.assertEqual(2, update.get_value(UpdateParam.CR))
+        update.set_value(UpdateParameter.CR, 2)
+        Assert.assertEqual(2, update.get_value(UpdateParameter.CR))
 
     @staticmethod
     def TestProfileLambertProfile(iAgVAProfile: "IProfile", ts: "MCSTargetSequence"):
@@ -7007,7 +7033,7 @@ class GatorHelper(object):
 
             with pytest.raises(Exception):
                 name3: str = profBisection.control_parameters[-1].name
-            if not OSHelper.IsLinux():
+            if OSHelper.SupportsScriptingTool():
                 scriptingTool: "ScriptingTool" = profBisection.scripting_tool
                 scriptingTool.enable = True
                 Assert.assertTrue(scriptingTool.enable)
@@ -7120,7 +7146,6 @@ class GatorHelper(object):
         Assert.assertEqual("Graph2Graph1Graph3", allNames)
 
         allNames = ""
-
         i: int = 0
         while i <= 2:
             allNames += tgColl[i].name

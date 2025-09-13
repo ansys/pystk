@@ -261,7 +261,6 @@ class ChainSnippets(CodeSnippetsTestBase):
             if intervalListResult.is_valid:
                 Console.WriteLine("Link Name: {0}", objectParticipationIntervals.labels[i])
                 Console.WriteLine("--------------")
-
                 j: int = 0
                 while j < intervalListResult.interval_collections[i].count:
                     startTime: typing.Any = intervalListResult.interval_collections[i][j].start

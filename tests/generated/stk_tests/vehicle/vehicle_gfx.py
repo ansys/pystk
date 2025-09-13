@@ -756,7 +756,6 @@ class GfxIntervalsCollectionHelper(object):
 
         # Item
         self.m_logger.WriteLine3("\tThe new IntervalCollection contain: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             oInterval = oCollection[iIndex]
@@ -777,7 +776,6 @@ class GfxIntervalsCollectionHelper(object):
         oCollection.remove_at(0)
         self.m_logger.WriteLine3("\tAfter RemoveAt(0) collection contains {0} elements.", oCollection.count)
         Assert.assertEqual((iCount - 1), oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             oInterval = oCollection[iIndex]
@@ -797,7 +795,6 @@ class GfxIntervalsCollectionHelper(object):
         oCollection.remove_at(3)
         self.m_logger.WriteLine3("\tAfter RemoveAt(3) collection contains {0} elements.", oCollection.count)
         Assert.assertEqual((iCount - 2), oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             oInterval = oCollection[iIndex]
@@ -817,7 +814,6 @@ class GfxIntervalsCollectionHelper(object):
         oCollection.remove_at(1)
         self.m_logger.WriteLine3("\tAfter RemoveAt(1) collection contains {0} elements.", oCollection.count)
         Assert.assertEqual((iCount - 3), oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             oInterval = oCollection[iIndex]
@@ -1022,7 +1018,6 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine3(
             "After AddLevelRange() the Elevations Collection contains: {0} elements.", oElevations.count
         )
-
         iIndex: int = 0
         while iIndex < oElevations.count:
             # Item
@@ -1374,7 +1369,7 @@ class GfxGroundEllipsesHelper(object):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("\tGfxGroundEllipses collection contains: {0} elements", oCollection.count)
-
+        # Item
         iIndex: int = 0
         while iIndex < oCollection.count:
             oEllipse: "VehicleGraphics2DGroundEllipsesElement" = oCollection[iIndex]
@@ -1692,7 +1687,6 @@ class GfxLeadTrailDataHelper(object):
         # LeadDataSupportedTypes
         arSupportedTypes = leadTrailData.lead_data_supported_types
         self.m_logger.WriteLine3("\tThe LeadData supports: {0} types", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             self.m_logger.WriteLine8(
@@ -1706,7 +1700,6 @@ class GfxLeadTrailDataHelper(object):
 
         # LeadDataType
         self.m_logger.WriteLine6("\tThe current LeadDataType is: {0}", leadTrailData.lead_data_type)
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
@@ -1765,7 +1758,6 @@ class GfxLeadTrailDataHelper(object):
         # TrailDataSupportedTypes
         arSupportedTypes = leadTrailData.trail_data_supported_types
         self.m_logger.WriteLine3("\tThe TrailData supports: {0} types", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             self.m_logger.WriteLine8(
@@ -1779,7 +1771,6 @@ class GfxLeadTrailDataHelper(object):
 
         # TrailDataType
         self.m_logger.WriteLine6("\tThe current TrailDataType is: {0}", leadTrailData.trail_data_type)
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
@@ -1876,7 +1867,6 @@ class GfxSwathHelper(object):
         # ElevationSupportedTypes
         arTypes = oSwath.elevation_supported_types
         self.m_logger.WriteLine3("Available {0} Elevation types.", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "VehicleGraphics2DElevation" = VehicleGraphics2DElevation(int(arTypes[iIndex][0]))
@@ -1884,6 +1874,7 @@ class GfxSwathHelper(object):
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
+            # SetElevationType
             oSwath.set_elevation_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Elevation type is: {0}", oSwath.elevation_type)
             Assert.assertEqual(eType, oSwath.elevation_type)
@@ -2044,7 +2035,6 @@ class GfxWaypointMarkersHelper(object):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("The WaypointMarkers collection contains: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             if iIndex == 0:
@@ -2129,7 +2119,6 @@ class GfxTimeEventsHelper(object):
         Assert.assertIsNotNone(timeEventsElement)
         self.m_logger.WriteLine3("After Add() the Time Events collection contains: {0} elements.", oCollection.count)
         Assert.assertEqual(1, oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             self.m_logger.WriteLine8(
@@ -2157,7 +2146,6 @@ class GfxTimeEventsHelper(object):
         # TimeEventTypeSupportedTypes
         arTypes = timeEventsElement.time_event_type_supported_types
         self.m_logger.WriteLine3("An array of supported TimeEvent types contains: {0} elements.", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "VehicleGraphics2DTimeEventType" = VehicleGraphics2DTimeEventType(int(arTypes[iIndex][0]))
@@ -2223,7 +2211,6 @@ class GfxTimeEventsHelper(object):
                 self.m_logger.WriteLine3(
                     "\t\tArray of supported Offset types contains: {0} elements", len(arOffsetTypes)
                 )
-
                 i: int = 0
                 while i < len(arOffsetTypes):
                     eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
@@ -2341,7 +2328,6 @@ class GfxTimeEventsHelper(object):
                 self.m_logger.WriteLine3(
                     "\t\tArray of supported Offset types contains: {0} elements", len(arOffsetTypes)
                 )
-
                 i: int = 0
                 while i < len(arOffsetTypes):
                     eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
@@ -2411,7 +2397,6 @@ class GfxLabelNoteHelper(object):
         Assert.assertIsNotNone(oCollection)
         # Count
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             self.m_logger.WriteLine9(
@@ -2437,7 +2422,6 @@ class GfxLabelNoteHelper(object):
         Assert.assertEqual("Label Note 2", oNote.note)
         Assert.assertEqual((iCount + 2), oCollection.count)
         self.m_logger.WriteLine3("The LabelNotes collection contains: {0} elements.", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Note, NoteVisible, LabelVisible

@@ -52,7 +52,7 @@ class CameraSnippets(CodeSnippetsTestBase):
     def test_CameraExtentsSnippet(self):
         try:
             scenario = self.get_scenario()
-            installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
             imageryTile = scenario.scene_manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
                 os.path.join(
                     installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx"

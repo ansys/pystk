@@ -23,7 +23,6 @@
 import pytest
 from test_util import *
 from app_provider import *
-from antenna.antenna_helper import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
@@ -289,6 +288,7 @@ class ExportDataFileHelper(object):
                 stkEphem.central_body_name = "Uvanus"
 
         else:
+
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 stkEphem.central_body_name = "Europa"
 
@@ -727,7 +727,7 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(ExportToolStepSizeType.SPECIFY, ccsdsv2.step_size.step_size_type)
         ccsdsv2.step_size.value = 3600
         Assert.assertEqual(3600, ccsdsv2.step_size.value)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             ccsdsv2.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
         ccsdsv2.time_system = CCSDSTimeSystem.GPS
@@ -955,6 +955,424 @@ class ExportDataFileHelper(object):
 
     # endregion
 
+    # region EphemerisCCSDSv3ExportTool
+    def EphemerisCCSDSv3ExportTool(self, ccsdsv3: "VehicleEphemerisCCSDSv3ExportTool"):
+        # Test "UseSatelliteCenterAndFrame"
+        ccsdsv3.use_satellite_center_and_frame = False
+        Assert.assertFalse(ccsdsv3.use_satellite_center_and_frame)
+
+        # Check that the CentralBody and ReferenceFrame are writable
+        ccsdsv3.central_body_name = "Jupiter"
+        Assert.assertEqual("Jupiter", ccsdsv3.central_body_name)
+        ccsdsv3.reference_frame = CCSDSReferenceFrame.EME2000
+        Assert.assertEqual(CCSDSReferenceFrame.EME2000, ccsdsv3.reference_frame)
+
+        ccsdsv3.use_satellite_center_and_frame = True
+        Assert.assertTrue(ccsdsv3.use_satellite_center_and_frame)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            ccsdsv3.central_body_name = "Earth"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            ccsdsv3.reference_frame = CCSDSReferenceFrame.FIXED
+
+        ccsdsv3.use_satellite_center_and_frame = False
+
+        ccsdsv3.originator = "Test1"
+        Assert.assertEqual("Test1", ccsdsv3.originator)
+        ccsdsv3.object_id = "2000-000B"
+        Assert.assertEqual("2000-000B", ccsdsv3.object_id)
+        ccsdsv3.object_name = "TestSatellite"
+        Assert.assertEqual("TestSatellite", ccsdsv3.object_name)
+        ccsdsv3.central_body_name = "Moon"
+        Assert.assertEqual("Moon", ccsdsv3.central_body_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.central_body_name = "Uvanus"
+
+        # specific central bodies have specific reference frames  (See 42071)
+        # Earth:  ICRF, J2000, TOD, ITRF, Fixed, ITRF frames
+        ccsdsv3.central_body_name = "Earth"
+        RefsSupported = ccsdsv3.reference_frames_supported
+        refTypeObj: typing.Any
+        for refTypeObj in RefsSupported:
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
+            ccsdsv3.reference_frame = refType
+            Assert.assertEqual(refType, ccsdsv3.reference_frame)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
+
+        # Moon: ICRF, J2000, TOD, MeanEarth, Fixed
+        ccsdsv3.central_body_name = "Moon"
+        RefsSupported = ccsdsv3.reference_frames_supported
+        refTypeObj: typing.Any
+        for refTypeObj in RefsSupported:
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
+            ccsdsv3.reference_frame = refType
+            Assert.assertEqual(refType, ccsdsv3.reference_frame)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.reference_frame = CCSDSReferenceFrame.ITRF
+
+        # other cb's: ICRF, J2000, TOD, Fixed
+        ccsdsv3.central_body_name = "Sun"
+        RefsSupported = ccsdsv3.reference_frames_supported
+        refTypeObj: typing.Any
+        for refTypeObj in RefsSupported:
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
+            ccsdsv3.reference_frame = refType
+            Assert.assertEqual(refType, ccsdsv3.reference_frame)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.reference_frame = CCSDSReferenceFrame.ITRF
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
+
+        # pick a valid combination
+        ccsdsv3.central_body_name = "Moon"
+        ccsdsv3.reference_frame = CCSDSReferenceFrame.EME2000
+
+        ccsdsv3.time_precision = 7
+        Assert.assertEqual(7, ccsdsv3.time_precision)
+        ccsdsv3.date_format = CCSDSDateFormat.YDOY
+        Assert.assertEqual(CCSDSDateFormat.YDOY, ccsdsv3.date_format)
+        ccsdsv3.date_format = CCSDSDateFormat.YMD
+        Assert.assertEqual(CCSDSDateFormat.YMD, ccsdsv3.date_format)
+        ccsdsv3.ephemeris_format = CCSDSEphemerisFormatType.FLOATING_POINT
+        Assert.assertEqual(CCSDSEphemerisFormatType.FLOATING_POINT, ccsdsv3.ephemeris_format)
+        ccsdsv3.ephemeris_format = CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION
+        Assert.assertEqual(CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION, ccsdsv3.ephemeris_format)
+
+        ccsdsv3.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, ccsdsv3.time_period.time_period_type)
+        ccsdsv3.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, ccsdsv3.time_period.time_period_type)
+        ccsdsv3.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, ccsdsv3.time_period.start)
+        ccsdsv3.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, ccsdsv3.time_period.stop)
+
+        ccsdsv3.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, ccsdsv3.step_size.step_size_type)
+        ccsdsv3.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, ccsdsv3.step_size.step_size_type)
+        ccsdsv3.step_size.value = 3600
+        Assert.assertEqual(3600, ccsdsv3.step_size.value)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            ccsdsv3.step_size.step_size_type = ExportToolStepSizeType.NATIVE
+
+        ccsdsv3.time_system = CCSDSTimeSystem.GPS
+        Assert.assertEqual(CCSDSTimeSystem.GPS, ccsdsv3.time_system)
+        ccsdsv3.time_system = CCSDSTimeSystem.TAI
+        Assert.assertEqual(CCSDSTimeSystem.TAI, ccsdsv3.time_system)
+        ccsdsv3.time_system = CCSDSTimeSystem.TDB
+        Assert.assertEqual(CCSDSTimeSystem.TDB, ccsdsv3.time_system)
+        ccsdsv3.time_system = CCSDSTimeSystem.TT
+        Assert.assertEqual(CCSDSTimeSystem.TT, ccsdsv3.time_system)
+        ccsdsv3.time_system = CCSDSTimeSystem.UTC
+        Assert.assertEqual(CCSDSTimeSystem.UTC, ccsdsv3.time_system)
+
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator Test1 ObjectName TestSatellite ObjectID 2000-000B TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '"'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
+        omSr = om.OpenText()
+        omFile: str = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS.oem"))
+        connectSr = connect.OpenText()
+        connectFile: str = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        # Test whether the names with ws are handled
+        ccsdsv3.originator = "Originator with ws"
+        Assert.assertEqual(ccsdsv3.originator, "Originator with ws")
+        ccsdsv3.object_id = "ObjectID with ws"
+        Assert.assertEqual(ccsdsv3.object_id, "ObjectID with ws")
+        ccsdsv3.object_name = "ObjectName with ws"
+        Assert.assertEqual(ccsdsv3.object_name, "ObjectName with ws")
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '"'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        # export CCSDS ephemeris using the satellite's center and reference frame
+        ccsdsv3.use_satellite_center_and_frame = True
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_1.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS_1.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '" UseSatCenterAndFrame Yes'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS_1.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS_1.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        # Properties specific to v2
+
+        Assert.assertFalse(ccsdsv3.has_covariance_data)
+        Assert.assertFalse(ccsdsv3.include_covariance)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            ccsdsv3.include_covariance = True
+
+        ccsdsv3.include_acceleration = False
+        Assert.assertFalse(ccsdsv3.include_acceleration)
+        ccsdsv3.include_acceleration = True
+        Assert.assertTrue(ccsdsv3.include_acceleration)
+
+        ccsdsv3.file_format = EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE
+        Assert.assertEqual(EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE, ccsdsv3.file_format)
+
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_2.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS_2.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat KVN TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '" UseSatCenterAndFrame Yes'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS_2.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS_2.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        ccsdsv3.file_format = EphemExportToolFileFormat.XML
+        Assert.assertEqual(EphemExportToolFileFormat.XML, ccsdsv3.file_format)
+
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_3.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS_3.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat XML TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '" UseSatCenterAndFrame Yes'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS_3.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS_3.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        # Properties specific to v3
+
+        Assert.assertEqual("", ccsdsv3.classification)
+        Assert.assertEqual("", ccsdsv3.message_id)
+        ccsdsv3.classification = "Classification with ws"
+        Assert.assertEqual(ccsdsv3.classification, "Classification with ws")
+        ccsdsv3.message_id = "MessageID with ws"
+        Assert.assertEqual(ccsdsv3.message_id, "MessageID with ws")
+
+        ccsdsv3.file_format = EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE
+        Assert.assertEqual(EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE, ccsdsv3.file_format)
+
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_4.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS_4.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat KVN TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '" UseSatCenterAndFrame Yes Classification "Classification with ws" MessageID "MessageID with ws"'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS_4.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS_4.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+        ccsdsv3.file_format = EphemExportToolFileFormat.XML
+        Assert.assertEqual(EphemExportToolFileFormat.XML, ccsdsv3.file_format)
+
+        ccsdsv3.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_5.oem"))
+        self._root.execute_command(
+            (
+                (
+                    (
+                        (
+                            (
+                                (
+                                    (("ExportDataFile " + self._oObj.path) + ' Ephemeris "')
+                                    + TestBase.GetScenarioFile("ConnectExternalFileCCSDS_5.oem")
+                                )
+                                + '" Type CCSDSv3 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat XML TimePeriod "'
+                            )
+                            + str((Scenario(self._root.current_scenario)).start_time)
+                        )
+                        + '" "'
+                    )
+                    + str((Scenario(self._root.current_scenario)).stop_time)
+                )
+                + '" UseSatCenterAndFrame Yes Classification "Classification with ws" MessageID "MessageID with ws"'
+            )
+        )
+
+        om = FileInfo(TestBase.GetScenarioFile("OMExternalFileCCSDS_5.oem"))
+        omSr = om.OpenText()
+        omFile = omSr.ReadToEnd()
+        omSr.Close()
+
+        connect = FileInfo(TestBase.GetScenarioFile("ConnectExternalFileCCSDS_5.oem"))
+        connectSr = connect.OpenText()
+        connectFile = connectSr.ReadToEnd()
+        connectSr.Close()
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
+
+    # endregion
+
     # region EphemerisCode500ExportTool
     def EphemerisCode500ExportTool(self, code500: "VehicleEphemerisCode500ExportTool"):
         code500.satellite_identifer = 40
@@ -1085,7 +1503,6 @@ class ExportDataFileHelper(object):
     @staticmethod
     def IndexOf(array: "List[int]", pattern: "List[int]", offset: int):
         success: int = 0
-
         index: int = offset
         while index < Array.Length(array):
             if array[index] == pattern[success]:
@@ -1290,7 +1707,6 @@ class BasicGroundEllipsesHelper(object):
         # Count
         iCount: int = oCollection.count
         self.m_logger.WriteLine3("\tGroundEllipses collection contains: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -1302,7 +1718,6 @@ class BasicGroundEllipsesHelper(object):
             Assert.assertIsNotNone(oDataCollection)
             # Count
             self.m_logger.WriteLine3("\t\t\tData collection contains: {0} elements", oDataCollection.count)
-
             i: int = 0
             while i < oDataCollection.count:
                 # Item
@@ -1364,7 +1779,6 @@ class BasicGroundEllipsesHelper(object):
         oCollection[(oCollection.count - 1)].ellipse_name = "ModifiedEllipse1"
         Assert.assertEqual("ModifiedEllipse1", oCollection[(oCollection.count - 1)].ellipse_name)
         self.m_logger.WriteLine3("\tGroundEllipses collection contains: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Item
@@ -1404,7 +1818,6 @@ class BasicGroundEllipsesHelper(object):
             Assert.assertIsNotNone(oDataElement)
             Assert.assertEqual(1, oDataCollection.count)
             self.m_logger.WriteLine3("\t\t\tAfter Add() Data collection contains: {0} elements", oDataCollection.count)
-
             i: int = 0
             while i < oDataCollection.count:
                 # Item
@@ -1618,7 +2031,6 @@ class PropagatorGreatArcHelper(object):
         arTypes = oGreatArc.altitude_reference_supported_types
         Assert.assertTrue((0 != len(arTypes)))
         self.m_logger.WriteLine3("\tThe object supports {0} altitude ref types.", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eRefType: "VehicleAltitudeReference" = VehicleAltitudeReference(int(arTypes[iIndex][0]))
@@ -2329,9 +2741,9 @@ class PropagatorLOPHelper(object):
     def ForceModelAdvancedTest(self, oAdvanved: "VehicleLOPDragSettings", bIsReadOnly: bool):
         Assert.assertIsNotNone(oAdvanved)
         if bIsReadOnly:
-            # AtmosphericDensityModel
+            # AtmosDensityModel
             with pytest.raises(Exception):
-                oAdvanved.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
+                oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
             # UseOsculatingAlt
             with pytest.raises(Exception):
                 oAdvanved.use_osculating_altitude = True
@@ -2346,19 +2758,17 @@ class PropagatorLOPHelper(object):
 
         else:
             # AtmosphericDensityModel (STANDARD_ATMOSPHERE_MODEL_1976)
-            self.m_logger.WriteLine6(
-                "\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model
-            )
-            oAdvanved.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
-            self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
+            self.m_logger.WriteLine6("\tThe current AtmosDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
+            oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
+            self.m_logger.WriteLine6("\tThe new AtmosDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
             Assert.assertEqual(
-                AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmospheric_density_model
+                LOPAtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmosphere_density_model
             )
 
             with pytest.raises(Exception):
-                oAdvanved.atmospheric_density_model = AtmosphericDensityModel.HARRIS_PRIESTER
+                oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.EXPONENTIAL
 
-            # AtmosDensityModel (STANDARD_ATMOSPHERE_MODEL_1976)
+            # AtmosDensityModel(STANDARD_ATMOSPHERE_MODEL_1976)
             self.m_logger.WriteLine6(
                 "\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmosphere_density_model
             )
@@ -2390,11 +2800,11 @@ class PropagatorLOPHelper(object):
             Assert.assertEqual(43.21, oAdvanved.density_weighing_factor)
             with pytest.raises(Exception):
                 oAdvanved.density_weighing_factor = -43.21
-            # AtmosphericDensityModel (EXPONENTIAL_MODEL)
-            oAdvanved.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
-            self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
-            Assert.assertEqual(AtmosphericDensityModel.EXPONENTIAL_MODEL, oAdvanved.atmospheric_density_model)
-            # AtmosDensityModel (EXPONENTIAL_MODEL)
+            # AtmosDensityModel (EXPONENTIAL)
+            oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.EXPONENTIAL
+            self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
+            Assert.assertEqual(LOPAtmosphericDensityModel.EXPONENTIAL, oAdvanved.atmosphere_density_model)
+            # AtmosDensityModel (eExponentialModel)
             oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.EXPONENTIAL
             self.m_logger.WriteLine6("\tThe new AtmosDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
             Assert.assertEqual(LOPAtmosphericDensityModel.EXPONENTIAL, oAdvanved.atmosphere_density_model)
@@ -2859,7 +3269,8 @@ class PropagatorSGP4Helper(object):
         # AvailableRoutines
         arRoutines = oSegments.available_routines
         self.m_logger.WriteLine3("\tThe Segment collection contains: {0} available routines.", Array.Length(arRoutines))
-
+        # removed this assert because the number depends on the the dll's located in the modules dir.
+        # Assert.AreEqual(1, arRoutines.Length);
         iIndex: int = 0
         while iIndex < Array.Length(arRoutines):
             self.m_logger.WriteLine7("\t\tRoutine {0}: {1}", iIndex, arRoutines[iIndex])
@@ -2935,7 +3346,6 @@ class PropagatorSGP4Helper(object):
             self.m_logger.WriteLine3(
                 "\t\tThe loaded file contains: {0} segments for SSC 1749", Array.Length(arSegments)
             )
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -2965,7 +3375,6 @@ class PropagatorSGP4Helper(object):
             self.m_logger.WriteLine3(
                 "\t\tThe loaded file contains: {0} segments for SSC 799501749", Array.Length(arSegments)
             )
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -2998,7 +3407,6 @@ class PropagatorSGP4Helper(object):
             self.m_logger.WriteLine3(
                 "\t\tThe loaded file contains: {0} segments for SSC A0058", Array.Length(arSegments)
             )
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -3023,7 +3431,6 @@ class PropagatorSGP4Helper(object):
             self.m_logger.WriteLine3(
                 "\t\tThe loaded file contains: {0} segments for SSC NotA5", Array.Length(arSegments)
             )
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -3067,23 +3474,6 @@ class PropagatorSGP4Helper(object):
         oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         oSGP4.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("smallSet_unsorted.OMM.csv")
         preview = oSGP4.automatic_update_settings.file_source.preview()
-        oSGP4.propagate()
-
-        # LoadMethodType (ONLINE_AUTOMATIC_LOAD)
-        oSGP4.ephemeris_interval.set_explicit_interval("18 Jan 2003 01:23:45.678", "19 Jan 2003 02:46:24.680")
-        oSegments.load_method_type = LoadMethod.ONLINE_AUTOMATIC_LOAD
-        self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LoadMethod.ONLINE_AUTOMATIC_LOAD, oSegments.load_method_type)
-
-        # this is backwards compatibility using a deprecated interface
-        # the current interface is PropagatorSGP4OnlineLoad
-
-        # LoadMethod
-        oLoader: "PropagatorSGP4OnlineAutoLoad" = clr.CastAs(oSegments.load_method, PropagatorSGP4OnlineAutoLoad)
-        Assert.assertIsNotNone(oLoader)
-        # AddLatestSegFromOnline
-        oLoader.add_latest_segment_from_online("123")  # this currently does nothing!
-        # Propagate
         oSGP4.propagate()
 
         # LoadMethodType (ONLINE_LOAD)
@@ -3453,7 +3843,6 @@ class PropagatorSGP4Helper(object):
         if Array.Length(arSSCNumbers) > 0:
             arSegments = oFile.get_segments_from_file(str(arSSCNumbers[0]))
             self.m_logger.WriteLine3("\t\tThe loaded file contains: {0} segments", Array.Length(arSegments))
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -3474,7 +3863,6 @@ class PropagatorSGP4Helper(object):
             # GetSegsFromFile
             arSegments = oFile.get_segments_from_file(str(arSSCNumbers[0]))
             self.m_logger.WriteLine3("\t\tThe loaded file contains: {0} Segments", Array.Length(arSegments))
-
             iIndex: int = 0
             while iIndex < Array.Length(arSegments):
                 self.m_logger.WriteLine7("\t\t\tSegment {0}: {1}", iIndex, arSegments[iIndex])
@@ -3520,7 +3908,6 @@ class PropagatorSGP4Helper(object):
         # This way the unit test won't fail here for a few (million) years.
         arSegs = oLoader.get_segments_from_online("11054")
         self.m_logger.WriteLine3("\t\tThe Segs array contains: {0} elements.", Array.Length(arSegs))
-
         iIndex: int = 0
         while iIndex < Array.Length(arSegs):
             self.m_logger.WriteLine7("\t\t\tElement {0}: {1}", iIndex, arSegs[iIndex])
@@ -3588,7 +3975,6 @@ class PropagatorSPICEHelper(object):
         # AvailableBodyNames
         arNames = oSPICE.available_body_names
         self.m_logger.WriteLine3("\tThe AvailableBodyNames array contains: {0} elements.", Array.Length(arNames))
-
         iIndex: int = 0
         while iIndex < Array.Length(arNames):
             oSPICE.body_name = str(arNames[iIndex])
@@ -3698,7 +4084,6 @@ class PropagatorUserExternalHelper(object):
         # AvailablePropagators
         arPropagators = oUser.available_propagators
         self.m_logger.WriteLine("\tAvailable {0} propagators:")
-
         iIndex: int = 0
         while iIndex < Array.Length(arPropagators):
             self.m_logger.WriteLine7("\t\tPropagator {0}: {1}", iIndex, arPropagators[iIndex])
@@ -3720,7 +4105,6 @@ class PropagatorUserExternalHelper(object):
         # AvailableVehicleIDs
         arIDs = oUser.available_vehicle_identifiers
         self.m_logger.WriteLine("\tAvailable {0} VehicleIDs:")
-
         iIndex: int = 0
         while iIndex < Array.Length(arIDs):
             self.m_logger.WriteLine7("\t\tVehicleID {0}: {1}", iIndex, arIDs[iIndex])
@@ -3818,6 +4202,7 @@ class PropagatorHPOPHelper(object):
             self.m_logger.WriteLine(eclipseBody)
 
         Assert.assertTrue(bodies.is_eclipsing_body_assigned("Earth"))
+
         bodies.assign_eclipsing_body("Ceres")
         Assert.assertTrue(bodies.is_eclipsing_body_assigned("Ceres"))
         with pytest.raises(Exception):
@@ -4098,9 +4483,9 @@ class PropagatorHPOPHelper(object):
         # SetSolarFluxGeoMagType (readonly)
         with pytest.raises(Exception):
             oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
-        # LowAltAtmosphericDensityModel
+        # LowAltAtmosDensityModel
         with pytest.raises(Exception):
-            oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
+            oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
         # BlendingRange
         with pytest.raises(Exception):
             oDrag.blending_range = 20
@@ -4148,12 +4533,6 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(DragModel.PLUGIN, oDrag.drag_model_type)
 
         self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        # AtmosphericDensityModel (EXPONENTIAL_MODEL)
-        with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
-        # AtmosphericDensityModel (USER_DEFINED)
-        with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = AtmosphericDensityModel.USER_DEFINED
         # AtmosphericDensityModel (UNKNOWN)
         with pytest.raises(Exception):
             oDrag.atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
@@ -4355,40 +4734,7 @@ class PropagatorHPOPHelper(object):
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
-        # LowAltAtmosphericDensityModel (UNKNOWN)
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
-        Assert.assertEqual(AtmosphericDensityModel.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
-        self.m_logger.WriteLine6(
-            "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
-        )
-        with pytest.raises(Exception):
-            oDrag.blending_range = 50.0
-
-        # LowAltAtmosphericDensityModel (MSIS90)
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS90
-        Assert.assertEqual(AtmosphericDensityModel.MSIS90, oDrag.low_altitude_atmospheric_density_model)
-        self.m_logger.WriteLine6(
-            "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
-        )
-        self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
-        # BlendingRange
-        oDrag.blending_range = 50.0
-        self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
-
-        # LowAltAtmosphericDensityModel (MSIS00)
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
-        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
-        self.m_logger.WriteLine6(
-            "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
-        )
-        self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
-        # BlendingRange
-        oDrag.blending_range = 30.0
-        self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
-        # Reset LowAltAtmosphericDensityModel
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
-
-        # LowAltAtmosDensityModel (UNKNOWN)
+        # LowAltAtmosDensityModel (NONE)
         oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
         Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmosphere_density_model)
         self.m_logger.WriteLine6(
@@ -4397,7 +4743,7 @@ class PropagatorHPOPHelper(object):
         with pytest.raises(Exception):
             oDrag.blending_range = 50.0
 
-        # LowAltAtmosDensityModel (MSIS90)
+        # LowAltAtmosDensityModel (MSISE1990)
         oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
         Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmosphere_density_model)
         self.m_logger.WriteLine6(
@@ -4408,7 +4754,7 @@ class PropagatorHPOPHelper(object):
         oDrag.blending_range = 50.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
-        # LowAltAtmosDensityModel (MSIS00)
+        # LowAltAtmosDensityModel (NRLMSISE2000)
         oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NRLMSISE2000
         Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NRLMSISE2000, oDrag.low_altitude_atmosphere_density_model)
         self.m_logger.WriteLine6(
@@ -4422,20 +4768,20 @@ class PropagatorHPOPHelper(object):
         oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
         Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmosphere_density_model)
 
-        # LowAltAtmosphericDensityModel
+        # LowAltAtmosDensityModel
         # Try to set to equivalent of "None"
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
-        Assert.assertEqual(AtmosphericDensityModel.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmosphere_density_model)
         # If None above, then shouldn't be able to set the Blending Range
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oDrag.blending_range = 30
 
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
-        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
-        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS90
-        Assert.assertEqual(AtmosphericDensityModel.MSIS90, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NRLMSISE2000
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NRLMSISE2000, oDrag.low_altitude_atmosphere_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmosphere_density_model)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.CIRA72
+            oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.UNKNOWN
 
         # BlendingRange
         oDrag.blending_range = 30
@@ -4639,43 +4985,35 @@ class PropagatorHPOPHelper(object):
     def ThirdBodyGravity(self, oGravity: "PropagatorHPOPThirdBodyGravityCollection"):
         Assert.assertIsNotNone(oGravity)
         # Count
-        self.m_logger.WriteLine3("\tThe current ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe current ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         # _NewEnum
         thirdBodyGravityElement: "PropagatorHPOPThirdBodyGravityElement"
+        # Count
+        # m_logger.WriteLine("\tThe current ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         # _NewEnum
         for thirdBodyGravityElement in oGravity:
-            self.m_logger.WriteLine8(
-                "\t\tElement: Name = {0}, Source = {1}, GravityValue = {2}",
-                thirdBodyGravityElement.central_body,
-                thirdBodyGravityElement.source,
-                thirdBodyGravityElement.gravity_value,
-            )
+            pass
 
         # RemoveAll
         oGravity.remove_all()
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual(0, oGravity.count)
         # AvailableThirdBodies
         arBodies = oGravity.available_third_body_names
-        self.m_logger.WriteLine3("\tAvailable {0} ThirdBodies.", Array.Length(arBodies))
-
+        # m_logger.WriteLine("\tAvailable {0} ThirdBodies.", arBodies.Length);
         iIndex: int = 0
         while iIndex < Array.Length(arBodies):
             centralBody: str = str(arBodies[iIndex])
-            self.m_logger.WriteLine7("\t\tBody {0}: {1}", iIndex, centralBody)
+            # m_logger.WriteLine("\t\tBody {0}: {1}", iIndex, centralBody);
             # Add
             thirdBodyGravityElement: "PropagatorHPOPThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
             Assert.assertIsNotNone(thirdBodyGravityElement)
-            self.m_logger.WriteLine8(
-                "\t\t\tAdded: Name = {0}, Source = {1}, GravityValue = {2}",
-                thirdBodyGravityElement.central_body,
-                thirdBodyGravityElement.source,
-                thirdBodyGravityElement.gravity_value,
-            )
+            # m_logger.WriteLine("\t\t\tAdded: Name = {0}, Source = {1}, GravityValue = {2}",
+            #    thirdBodyGravityElement.CentralBody, thirdBodyGravityElement.Source, thirdBodyGravityElement.GravityValue);
             gravValue: float = thirdBodyGravityElement.gravity_value
-            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
-            Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
-            with pytest.raises(Exception):
+            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.CENTRAL_BODY_FILE
+            Assert.assertTrue((gravValue == thirdBodyGravityElement.gravity_value))
+            with pytest.raises(Exception, match=RegexSubstringMatch("already in list")):
                 oGravity.add_third_body(centralBody)
 
             iIndex += 1
@@ -4688,84 +5026,59 @@ class PropagatorHPOPHelper(object):
             thirdBodyGravityElement: "PropagatorHPOPThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
             Assert.assertIsNotNone(thirdBodyGravityElement)
             Assert.assertEqual(thirdBodyGravityElement.central_body, centralBody)
-            self.m_logger.WriteLine8(
-                "\t\t\tAdded: CentralBody = {0}, Source = {1}, GravityValue = {2}",
-                thirdBodyGravityElement.central_body,
-                thirdBodyGravityElement.source,
-                thirdBodyGravityElement.gravity_value,
-            )
+            # m_logger.WriteLine("\t\t\tAdded: CentralBody = {0}, Source = {1}, GravityValue = {2}",
+            #    thirdBodyGravityElement.CentralBody, thirdBodyGravityElement.Source, thirdBodyGravityElement.GravityValue);
             gravValue: float = thirdBodyGravityElement.gravity_value
-            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
-            Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
-            with pytest.raises(Exception):
+            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.CENTRAL_BODY_FILE
+            Assert.assertTrue((gravValue == thirdBodyGravityElement.gravity_value))
+            with pytest.raises(Exception, match=RegexSubstringMatch("already in list")):
                 oGravity.add_third_body(centralBody)
 
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual(Array.Length(arBodies), oGravity.count)
         # Item
         oBody: "PropagatorHPOPThirdBodyGravityElement" = oGravity[0]
         Assert.assertIsNotNone(oBody)
         # Source (CENTRAL_BODY_FILE)
         oBody.source = ThirdBodyGravitySourceType.CENTRAL_BODY_FILE
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oBody.gravity_value = 123.456
-        self.m_logger.WriteLine8(
-            "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
-            oBody.central_body,
-            oBody.source,
-            oBody.gravity_value,
-        )
-        # Source (HPOP_HISTORICAL)
-        oBody.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
-        with pytest.raises(Exception):
-            oBody.gravity_value = 123.456
-        self.m_logger.WriteLine8(
-            "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
-            oBody.central_body,
-            oBody.source,
-            oBody.gravity_value,
-        )
+        # m_logger.WriteLine("\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
+        #    oBody.CentralBody, oBody.Source, oBody.GravityValue);
         # Source (JPL_DEVELOPMENTAL_EPHEMERIS)
         oBody.source = ThirdBodyGravitySourceType.JPL_DEVELOPMENTAL_EPHEMERIS
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oBody.gravity_value = 123.456
-        self.m_logger.WriteLine8(
-            "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
-            oBody.central_body,
-            oBody.source,
-            oBody.gravity_value,
-        )
+        # m_logger.WriteLine("\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
+        #    oBody.CentralBody, oBody.Source, oBody.GravityValue);
         # Source (USER_SPECIFIED)
         oBody.source = ThirdBodyGravitySourceType.USER_SPECIFIED
         oBody.gravity_value = 123.456
         Assert.assertEqual(123.456, oBody.gravity_value)
-        with pytest.raises(Exception):
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oBody.gravity_value = -123.456
-        self.m_logger.WriteLine8(
-            "\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}",
-            oBody.central_body,
-            oBody.source,
-            oBody.gravity_value,
-        )
+        # m_logger.WriteLine("\t\tUpdated: Name = {0}, Source = {1}, GravityValue = {2}", oBody.CentralBody, oBody.Source, oBody.GravityValue);
 
         # RemoveAt
         oGravity.remove_at(0)
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual((Array.Length(arBodies) - 1), oGravity.count)
         # RemoveByType
         centralBody1: str = oGravity[1].central_body
         oGravity.remove_third_body(centralBody1)
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual((Array.Length(arBodies) - 2), oGravity.count)
-        with pytest.raises(Exception):
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             oGravity.remove_third_body(centralBody1)
+
         # Remove by name
         oGravity.remove_third_body(oGravity[1].central_body)
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual((Array.Length(arBodies) - 3), oGravity.count)
         # RemoveAll
         oGravity.remove_all()
-        self.m_logger.WriteLine3("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.count)
+        # m_logger.WriteLine("\tThe new ThirdBodyGravity collection contains: {0} elements.", oGravity.Count);
         Assert.assertEqual(0, oGravity.count)
 
     # endregion
@@ -5506,7 +5819,7 @@ class PropagatorHPOPHelper(object):
 
         else:
             self.m_logger.WriteLine3("\tThe PositionVelocity collection contains: {0} elements.", oCollection.count)
-
+            # Item
             iIndex: int = 0
             while iIndex < oCollection.count:
                 positionVelocityElement: "VehiclePositionVelocityElement" = oCollection[iIndex]
@@ -5915,7 +6228,6 @@ class PropagatorBallisticHelper(object):
         # LaunchSupportedTypes
         arLanchTypes = oBallistic.launch_supported_types
         self.m_logger.WriteLine3("\tThe Missile supports: {0} Lunch types", len(arLanchTypes))
-
         iIndex: int = 0
         while iIndex < len(arLanchTypes):
             eLaunch: "VehicleLaunch" = VehicleLaunch(int(arLanchTypes[iIndex][0]))
@@ -5994,7 +6306,6 @@ class PropagatorBallisticHelper(object):
         # ImpactLocationSupportedTypes
         arImpactTypes = oBallistic.impact_location_supported_types
         self.m_logger.WriteLine3("\tThe Missile supports: {0} ImpactLocatioin types", len(arImpactTypes))
-
         iIndex: int = 0
         while iIndex < len(arImpactTypes):
             eImpact: "VehicleImpactLocation" = VehicleImpactLocation(int(arImpactTypes[iIndex][0]))
@@ -6040,7 +6351,6 @@ class PropagatorBallisticHelper(object):
                 # ImpactSupportedTypes
                 arPITypes = oPoint.impact_supported_types
                 self.m_logger.WriteLine3("\t\tThe Point supports: {0} Impact types", len(arPITypes))
-
                 j: int = 0
                 while j < len(arPITypes):
                     eI: "VehicleImpact" = VehicleImpact(int(arPITypes[j][0]))
@@ -6114,7 +6424,6 @@ class PropagatorBallisticHelper(object):
                 # LaunchControlSupportedTypes
                 arLCTypes = oPoint.launch_control_supported_types
                 self.m_logger.WriteLine3("\t\tThe Point supports: {0} LaunchControl types", len(arLCTypes))
-
                 j: int = 0
                 while j < len(arLCTypes):
                     eI: "VehicleLaunchControl" = VehicleLaunchControl(int(arLCTypes[j][0]))
@@ -6264,7 +6573,6 @@ class LLAReportReader(object):
             columns[0] = line[0 : (0 + 24)]
             line = line[24:]
             line = line.strip()
-
             pos: int = 1
             while (pos < Array.Length(columns)) and (len(line) != 0):
                 ws: int = line.find(" ")
@@ -6378,6 +6686,7 @@ class BoostedOMRealtimePointBuilderHelper(object):
         obj.root.units_preferences.set_current_unit("Longitude", "deg")
         obj.root.units_preferences.set_current_unit("Distance", "km")
 
+        # Initialize the arrays used to add realtime LLA points in batches
         times = None
         lat = None
         lon = None
@@ -6458,7 +6767,6 @@ class PropagatorRealtimeHelper(object):
 
         supportedPropagators = realtime.supported_look_ahead_propagators
         Assert.assertEqual(1, Array.Rank(supportedPropagators), "rank should be 1")
-
         i: int = 0
         while i < len(supportedPropagators):
             supportedType: "LookAheadPropagator" = LookAheadPropagator(int(supportedPropagators[i]))
@@ -6842,7 +7150,6 @@ class BasicAttitudeStandardHelper(object):
         # ProfileSupportedTypes
         arTypes = oBasic.profile_supported_types
         self.m_logger.WriteLine3("\tThe current object supports: {0} profile types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "AttitudeProfile" = AttitudeProfile(int(arTypes[iIndex][0]))
@@ -7501,7 +7808,6 @@ class BasicAttitudeStandardHelper(object):
                 oCollection.add("Bogus")
 
             strTarget: str = ""
-
             iIndex: int = 0
             while iIndex < Array.Length(arTargets):
                 strTarget = str(arTargets[iIndex])
@@ -7815,7 +8121,6 @@ class ScheduleTimesHelper(object):
 
         else:
             arAvailTargets = oCollection.available_targets
-
             i: int = 0
             while i < Array.Length(arAvailTargets):
                 name: str = str(arAvailTargets[i])
@@ -7936,7 +8241,6 @@ class BasicAttitudeRealTimeHelper(object):
         dtTime: "Date" = self._application.conversion_utility.new_date(
             self._application.units_preferences.get_current_unit_abbrv("DateFormat"), str(startTime)
         )
-
         i: int = 0
         while i < MAX_POINTS:
             wp: "VehicleWaypointsElement" = ga.waypoints.add()
@@ -8171,7 +8475,6 @@ class BasicAttitudeRealTimeHelper(object):
         # Enumerate supported profiles and verify each one by setting it
         # as a datareference profile.
         supportedProfileTypes = oAttitude.data_reference.profile_supported_types
-
         i: int = 0
         while i < len(supportedProfileTypes):
             profileid: "AttitudeProfile" = AttitudeProfile(int(supportedProfileTypes[i][0]))
@@ -8250,7 +8553,8 @@ class BasicAttitudeRealTimeHelper(object):
                     fixed.reference_axes = "CentralBody/Earth Fixed"
 
                 oAttitude.clear_all()
-
+                # Re-add the attitude data but this time using the
+                # data reference profile.
                 pos: int = 0
                 while pos < Array.Length(data):
                     time: str = dtTime.format("UTCG")
@@ -8427,7 +8731,6 @@ class AccessEventDetectionHelper(object):
             # SupportedTypes
             arTypes = oDetection.supported_types
             self.m_logger.WriteLine3("\tThe Access Event Detection supports: {0} types", len(arTypes))
-
             iIndex: int = 0
             while iIndex < len(arTypes):
                 eType: "EventDetection" = EventDetection(int(arTypes[iIndex][0]))
@@ -8533,7 +8836,6 @@ class AccessSamplingHelper(object):
             # SupportedTypes
             arTypes = oSampling.supported_types
             self.m_logger.WriteLine3("\tThe Access Sampling supports: {0} types", len(arTypes))
-
             iIndex: int = 0
             while iIndex < len(arTypes):
                 eType: "SamplingMethod" = SamplingMethod(int(arTypes[iIndex][0]))
@@ -8716,7 +9018,6 @@ class SpatialInfoHelper(object):
         i: int = 0
         while i < intervals.count:
             dateFormat: str = self.Application.units_preferences.get_current_unit_abbrv("DateFormat")
-
             start: typing.Any = None
             stop: typing.Any = None
 
@@ -8861,7 +9162,6 @@ class EclipsingBodiesHelper(object):
         self.logger.WriteLine3(
             "The Available CentralBodies array contains: {0} elements", Array.Length(arAvailableBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailableBodies):
             # IsCentralBodyAssigned
@@ -8880,7 +9180,6 @@ class EclipsingBodiesHelper(object):
         self.logger.WriteLine3(
             "The Assigned CentralBodies array contains: {0} elements", Array.Length(arAssignedBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAssignedBodies):
             # IsCentralBodyAssigned
@@ -8936,7 +9235,6 @@ class EclipsingBodiesHelper(object):
         self.logger.WriteLine3(
             "The Available CentralBodies array contains: {0} elements", Array.Length(arAvailableBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailableBodies):
             strBody: str = str(arAvailableBodies[iIndex])
@@ -8965,7 +9263,6 @@ class EclipsingBodiesHelper(object):
         self.logger.WriteLine3(
             "The Assigned CentralBodies array contains: {0} elements", Array.Length(arAssignedBodies)
         )
-
         iIndex: int = 0
         while iIndex < Array.Length(arAssignedBodies):
             strBody: str = str(arAssignedBodies[iIndex])
@@ -9036,7 +9333,7 @@ class EclipsingBodiesHelper(object):
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9053,7 +9350,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         laserAtmosLossModel = clr.CastAs(
             laserPropChan.atmospheric_loss_model_component_linking.component, ILaserAtmosphericLossModel
         )
-        laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
+        laserPropChan.atmospheric_loss_model_component_linking.set_component("Beer-Bouguer-Lambert Law")
         Assert.assertEqual(
             "Beer-Bouguer-Lambert Law", laserPropChan.atmospheric_loss_model_component_linking.component.name
         )
@@ -9132,7 +9429,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9209,7 +9506,7 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
+        laserPropChan: "LaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -9267,992 +9564,10 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         huf.nominal_ground_refractive_index_structure_parameter = 97
         Assert.assertEqual(97, huf.nominal_ground_refractive_index_structure_parameter)
 
-
-# endregion
-
-
-# region PlatformRF_Environment_EnvironmentalDataHelper
-class PlatformRF_Environment_EnvironmentalDataHelper(object):
-    # region Run
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_itu_618_section2_p5 = False
-        Assert.assertFalse(propChan.enable_itu_618_section2_p5)
-        propChan.enable_itu_618_section2_p5 = True
-        Assert.assertTrue(propChan.enable_itu_618_section2_p5)
-
-
-# endregion
-
-
-# region PlatformRF_Environment_RainCloudFog_RainModelHelper
-class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
-    # region Run
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_rain_loss = False
-        Assert.assertFalse(propChan.enable_rain_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.rain_loss_model_component_linking.set_component("Crane 1985")
-
-        propChan.enable_rain_loss = True
-        Assert.assertTrue(propChan.enable_rain_loss)
-
-        arSupportedRainLossModels = propChan.rain_loss_model_component_linking.supported_components
-        rainLossModelName: str
-        for rainLossModelName in arSupportedRainLossModels:
-            propChan.rain_loss_model_component_linking.set_component(rainLossModelName)
-            rainLossModel: "IRainLossModel" = clr.CastAs(
-                propChan.rain_loss_model_component_linking.component, IRainLossModel
-            )
-            Assert.assertEqual(rainLossModelName, rainLossModel.name)
-            if rainLossModelName == "Crane 1985":
-                Assert.assertEqual(RainLossModelType.CRANE1985, rainLossModel.type)
-                crane85: "RainLossModelCrane1985" = clr.CastAs(rainLossModel, RainLossModelCrane1985)
-                crane85.surface_temperature = -100
-                Assert.assertEqual(-100, crane85.surface_temperature)
-                crane85.surface_temperature = 100
-                Assert.assertEqual(100, crane85.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    crane85.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    crane85.surface_temperature = 101
-
-            elif rainLossModelName == "Script Plugin":
-                if not OSHelper.IsLinux():
-                    # script plugins do not work on linux
-                    Assert.assertEqual(RainLossModelType.SCRIPT_PLUGIN, rainLossModel.type)
-                    scriptPlugin: "RainLossModelScriptPlugin" = clr.CastAs(rainLossModel, RainLossModelScriptPlugin)
-                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                        scriptPlugin.filename = r"C:\bogus.vbs"
-                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-                        scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-                    scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RainLossModel.vbs")
-                    Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs"), scriptPlugin.filename)
-
-            elif rainLossModelName == "CCIR 1983":
-                Assert.assertEqual(RainLossModelType.CCIR1983, rainLossModel.type)
-                ccir83: "RainLossModelCCIR1983" = clr.CastAs(rainLossModel, RainLossModelCCIR1983)
-                ccir83.surface_temperature = -100
-                Assert.assertEqual(-100, ccir83.surface_temperature)
-                ccir83.surface_temperature = 100
-                Assert.assertEqual(100, ccir83.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    ccir83.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    ccir83.surface_temperature = 101
-
-            elif rainLossModelName == "Crane 1982":
-                Assert.assertEqual(RainLossModelType.CRANE1982, rainLossModel.type)
-                crane82: "RainLossModelCrane1982" = clr.CastAs(rainLossModel, RainLossModelCrane1982)
-                crane82.surface_temperature = -100
-                Assert.assertEqual(-100, crane82.surface_temperature)
-                crane82.surface_temperature = 100
-                Assert.assertEqual(100, crane82.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    crane82.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    crane82.surface_temperature = 101
-
-            elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(RainLossModelType.ITU_R_P618_10, rainLossModel.type)
-                itu618_10: "RainLossModelITURP618Version10" = clr.CastAs(rainLossModel, RainLossModelITURP618Version10)
-                itu618_10.surface_temperature = -100
-                Assert.assertEqual(-100, itu618_10.surface_temperature)
-                itu618_10.surface_temperature = 100
-                Assert.assertEqual(100, itu618_10.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_10.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_10.surface_temperature = 101
-                itu618_10.enable_depolarization_loss = False
-                Assert.assertFalse(itu618_10.enable_depolarization_loss)
-                itu618_10.enable_depolarization_loss = True
-                Assert.assertTrue(itu618_10.enable_depolarization_loss)
-
-            elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(RainLossModelType.ITU_R_P618_12, rainLossModel.type)
-                itu618_12: "RainLossModelITURP618Version12" = clr.CastAs(rainLossModel, RainLossModelITURP618Version12)
-                itu618_12.surface_temperature = -100
-                Assert.assertEqual(-100, itu618_12.surface_temperature)
-                itu618_12.surface_temperature = 100
-                Assert.assertEqual(100, itu618_12.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_12.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_12.surface_temperature = 101
-                itu618_12.enable_depolarization_loss = False
-                Assert.assertFalse(itu618_12.enable_depolarization_loss)
-                itu618_12.enable_depolarization_loss = True
-                Assert.assertTrue(itu618_12.enable_depolarization_loss)
-
-            elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(RainLossModelType.ITU_R_P618_13, rainLossModel.type)
-                itu618_13: "RainLossModelITURP618Version13" = clr.CastAs(rainLossModel, RainLossModelITURP618Version13)
-
-                itu618_13.enable_itu_1510 = False
-                Assert.assertFalse(itu618_13.enable_itu_1510)
-
-                itu618_13.surface_temperature = -100
-                Assert.assertEqual(-100, itu618_13.surface_temperature)
-                itu618_13.surface_temperature = 100
-                Assert.assertEqual(100, itu618_13.surface_temperature)
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_13.surface_temperature = -101
-                with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                    itu618_13.surface_temperature = 101
-
-                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                    itu618_13.use_annual_itu_1510 = True
-                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                    itu618_13.itu_1510_month = 1
-
-                itu618_13.enable_itu_1510 = True
-                Assert.assertTrue(itu618_13.enable_itu_1510)
-
-                with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                    itu618_13.surface_temperature = 100
-
-                itu618_13.use_annual_itu_1510 = False
-                Assert.assertFalse(itu618_13.use_annual_itu_1510)
-
-                itu618_13.itu_1510_month = 1
-                Assert.assertEqual(1, itu618_13.itu_1510_month)
-                itu618_13.itu_1510_month = 12
-                Assert.assertEqual(12, itu618_13.itu_1510_month)
-                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                    itu618_13.itu_1510_month = 0
-                with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                    itu618_13.itu_1510_month = 13
-
-                itu618_13.use_annual_itu_1510 = True
-                Assert.assertTrue(itu618_13.use_annual_itu_1510)
-
-                with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                    itu618_13.itu_1510_month = 1
-
-                itu618_13.enable_depolarization_loss = False
-                Assert.assertFalse(itu618_13.enable_depolarization_loss)
-                itu618_13.enable_depolarization_loss = True
-                Assert.assertTrue(itu618_13.enable_depolarization_loss)
-
-            else:
-                Assert.fail("Unknown Rain Loss Model name")
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.rain_loss_model_component_linking.set_component("bogus")
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-
-# endregion
-
-
-# region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
-class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "STKObjectRoot"):
-        holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
-        root.units_preferences.set_current_unit("Temperature", "degC")
-        root.units_preferences.set_current_unit("MassUnit", "g")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedCFFLM = propChan.clouds_and_fog_fading_loss_model_component_linking.supported_components
-        Assert.assertEqual(2, Array.Length(arSupportedCFFLM))
-        Assert.assertEqual("ITU-R P840-7", arSupportedCFFLM[0])
-        Assert.assertEqual("ITU-R P840-6", arSupportedCFFLM[1])
-
-        propChan.enable_clouds_and_fog_fading_loss = False
-        Assert.assertFalse(propChan.enable_clouds_and_fog_fading_loss)
-
-        propChan.enable_clouds_and_fog_fading_loss = True
-        Assert.assertTrue(propChan.enable_clouds_and_fog_fading_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-5")
-
-        propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-7")
-        cfflm: "ICloudsAndFogFadingLossModel" = clr.CastAs(
-            propChan.clouds_and_fog_fading_loss_model_component_linking.component, ICloudsAndFogFadingLossModel
-        )
-        Assert.assertEqual("ITU-R P840-7", cfflm.name)
-        Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_7_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version7))
-
-        propChan.clouds_and_fog_fading_loss_model_component_linking.set_component("ITU-R P840-6")
-        cfflm = clr.CastAs(
-            propChan.clouds_and_fog_fading_loss_model_component_linking.component, ICloudsAndFogFadingLossModel
-        )
-        Assert.assertEqual("ITU-R P840-6", cfflm.name)
-        Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version6))
-
-        root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840Version7"):
-        cfflm7.cloud_ceiling = 0
-        Assert.assertEqual(0, cfflm7.cloud_ceiling)
-        cfflm7.cloud_ceiling = 20
-        Assert.assertEqual(20, cfflm7.cloud_ceiling)
-        cfflm7.cloud_ceiling = 0
-        Assert.assertEqual(0, cfflm7.cloud_ceiling)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_ceiling = -1
-        # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudCeiling = 21; });   // no max
-
-        cfflm7.cloud_layer_thickness = 1
-        Assert.assertEqual(1, cfflm7.cloud_layer_thickness)
-        cfflm7.cloud_layer_thickness = 20
-        Assert.assertEqual(20, cfflm7.cloud_layer_thickness)
-        cfflm7.cloud_layer_thickness = 1
-        Assert.assertEqual(1, cfflm7.cloud_layer_thickness)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_layer_thickness = 0
-        # TryCatchAssertBlock.ExpectedException("is invalid", delegate () { cfflm7.CloudLayerThickness = 21; });   // no max
-
-        cfflm7.cloud_temperature = -100
-        Assert.assertEqual(-100, cfflm7.cloud_temperature)
-        cfflm7.cloud_temperature = 100
-        Assert.assertEqual(100, cfflm7.cloud_temperature)
-        cfflm7.cloud_temperature = -100
-        Assert.assertEqual(-100, cfflm7.cloud_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_temperature = 101
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.UNKNOWN
-
-        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.DENSITY_VALUE
-        # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
-        cfflm7.cloud_liquid_water_density = 0
-        Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
-        cfflm7.cloud_liquid_water_density = 100
-        Assert.assertEqual(100, cfflm7.cloud_liquid_water_density)
-        cfflm7.cloud_liquid_water_density = 0
-        Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_liquid_water_density = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.cloud_liquid_water_density = 101
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.liquid_water_percent_annual_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.liquid_water_percent_monthly_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            cfflm7.average_data_month = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            cfflm7.use_rain_height_as_cloud_layer_thickness = True
-
-        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.ANNUAL_EXCEEDED
-        cfflm7.liquid_water_percent_annual_exceeded = 0.1
-        Assert.assertEqual(0.1, cfflm7.liquid_water_percent_annual_exceeded)
-        cfflm7.liquid_water_percent_annual_exceeded = 99
-        Assert.assertEqual(99, cfflm7.liquid_water_percent_annual_exceeded)
-        cfflm7.use_rain_height_as_cloud_layer_thickness = False
-        Assert.assertFalse(cfflm7.use_rain_height_as_cloud_layer_thickness)
-        cfflm7.use_rain_height_as_cloud_layer_thickness = True
-        Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.liquid_water_percent_annual_exceeded = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.liquid_water_percent_annual_exceeded = 100
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.cloud_liquid_water_density = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.liquid_water_percent_monthly_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            cfflm7.average_data_month = 1
-
-        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.MONTHLY_EXCEEDED
-        cfflm7.liquid_water_percent_monthly_exceeded = 1.0
-        Assert.assertEqual(1.0, cfflm7.liquid_water_percent_monthly_exceeded)
-        cfflm7.liquid_water_percent_monthly_exceeded = 99.0
-        Assert.assertEqual(99.0, cfflm7.liquid_water_percent_monthly_exceeded)
-        cfflm7.average_data_month = 1  # helpstring
-        Assert.assertEqual(1, cfflm7.average_data_month)
-        cfflm7.average_data_month = 12
-        Assert.assertEqual(12, cfflm7.average_data_month)
-        cfflm7.use_rain_height_as_cloud_layer_thickness = False
-        Assert.assertFalse(cfflm7.use_rain_height_as_cloud_layer_thickness)
-        cfflm7.use_rain_height_as_cloud_layer_thickness = True
-        Assert.assertTrue(cfflm7.use_rain_height_as_cloud_layer_thickness)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.liquid_water_percent_monthly_exceeded = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.liquid_water_percent_monthly_exceeded = 100
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.average_data_month = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm7.average_data_month = 13
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.cloud_liquid_water_density = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm7.liquid_water_percent_annual_exceeded = 1
-
-    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840Version6"):
-        cfflm6.cloud_ceiling = 0
-        Assert.assertEqual(0, cfflm6.cloud_ceiling)
-        cfflm6.cloud_ceiling = 20
-        Assert.assertEqual(20, cfflm6.cloud_ceiling)
-        cfflm6.cloud_ceiling = 0
-        Assert.assertEqual(0, cfflm6.cloud_ceiling)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_ceiling = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_ceiling = 21
-
-        cfflm6.cloud_layer_thickness = 0
-        Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
-        cfflm6.cloud_layer_thickness = 20
-        Assert.assertEqual(20, cfflm6.cloud_layer_thickness)
-        cfflm6.cloud_layer_thickness = 0
-        Assert.assertEqual(0, cfflm6.cloud_layer_thickness)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_layer_thickness = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_layer_thickness = 21
-
-        cfflm6.cloud_temperature = -100
-        Assert.assertEqual(-100, cfflm6.cloud_temperature)
-        cfflm6.cloud_temperature = 100
-        Assert.assertEqual(100, cfflm6.cloud_temperature)
-        cfflm6.cloud_temperature = -100
-        Assert.assertEqual(-100, cfflm6.cloud_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_temperature = 101
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.UNKNOWN
-
-        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.DENSITY_VALUE
-        # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
-        cfflm6.cloud_liquid_water_density = 0
-        Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
-        cfflm6.cloud_liquid_water_density = 100
-        Assert.assertEqual(100, cfflm6.cloud_liquid_water_density)
-        cfflm6.cloud_liquid_water_density = 0
-        Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_liquid_water_density = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.cloud_liquid_water_density = 101
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.liquid_water_percent_annual_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.liquid_water_percent_monthly_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            cfflm6.average_data_month = 1
-
-        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.ANNUAL_EXCEEDED
-        cfflm6.liquid_water_percent_annual_exceeded = 0.1
-        Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
-        cfflm6.liquid_water_percent_annual_exceeded = 99
-        Assert.assertEqual(99, cfflm6.liquid_water_percent_annual_exceeded)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.liquid_water_percent_annual_exceeded = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.liquid_water_percent_annual_exceeded = 100
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.cloud_liquid_water_density = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.liquid_water_percent_monthly_exceeded = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            cfflm6.average_data_month = 1
-
-        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.MONTHLY_EXCEEDED
-        cfflm6.liquid_water_percent_monthly_exceeded = 1.0
-        Assert.assertEqual(1.0, cfflm6.liquid_water_percent_monthly_exceeded)
-        cfflm6.liquid_water_percent_monthly_exceeded = 99.0
-        Assert.assertEqual(99.0, cfflm6.liquid_water_percent_monthly_exceeded)
-        cfflm6.average_data_month = 1  # helpstring
-        Assert.assertEqual(1, cfflm6.average_data_month)
-        cfflm6.average_data_month = 12
-        Assert.assertEqual(12, cfflm6.average_data_month)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.liquid_water_percent_monthly_exceeded = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.liquid_water_percent_monthly_exceeded = 100
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.average_data_month = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cfflm6.average_data_month = 13
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.cloud_liquid_water_density = 1
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            cfflm6.liquid_water_percent_annual_exceeded = 1
-
-
-# endregion
-
-
-# region PlatformRF_Environment_AtmosphericAbsorptionHelper
-class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
     # endregion
 
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-        atmosAbsorb: "IAtmosphericAbsorptionModel" = clr.CastAs(
-            propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
-        )
-
-        propChan.enable_atmospheric_absorption = False
-        Assert.assertFalse(propChan.enable_atmospheric_absorption)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-13")
-
-        propChan.enable_atmospheric_absorption = True
-        Assert.assertTrue(propChan.enable_atmospheric_absorption)
-
-        helper = AtmosphereHelper(self._root)
-        supportedAtmosAbsorptionModels = propChan.atmospheric_absorption_model_component_linking.supported_components
-        aaModelName: str
-        for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.atmospheric_absorption_model_component_linking.set_component(aaModelName)
-            aaModel: "IAtmosphericAbsorptionModel" = clr.CastAs(
-                propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
-            )
-            Assert.assertEqual(aaModelName, aaModel.name)
-            if aaModelName == "ITU-R P676-13":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_13, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
-                )
-            elif aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_9, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
-                )
-            elif aaModelName == "Script Plugin":
-                if not OSHelper.IsLinux():
-                    # script plugins do not work on linux
-                    Assert.assertEqual(AtmosphericAbsorptionModelType.SCRIPT_PLUGIN, aaModel.type)
-                    self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
-                        clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
-                    )
-
-            elif aaModelName == "Simple Satcom":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.SIMPLE_SATCOM, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
-                )
-            elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM331, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM320, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 5.50":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM550, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "VOACAP":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelVoacap(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelGraphics3DACAP)
-                )
-            elif aaModelName == "Early ITU Foliage Model CSharp Example":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
-                )
-            elif aaModelName == "Early ITU Foliage Model JScript Example":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
-                )
-            elif aaModelName == "Python Plugin":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
-                )
-            else:
-                Assert.fail("Unknown model type")
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.atmospheric_absorption_model_component_linking.set_component("bogus")
-
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
-        iturp676.fast_approximation_method = False
-        Assert.assertFalse(iturp676.fast_approximation_method)
-        iturp676.fast_approximation_method = True
-        Assert.assertTrue(iturp676.fast_approximation_method)
-
-        iturp676.seasonal_regional_method = False
-        Assert.assertFalse(iturp676.seasonal_regional_method)
-        iturp676.seasonal_regional_method = True
-        Assert.assertTrue(iturp676.seasonal_regional_method)
-
-    def Test_IAgAtmosphericAbsorptionModelScriptPlugin(self, scriptPlugin: "AtmosphericAbsorptionModelScriptPlugin"):
-        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            scriptPlugin.filename = r"C:\bogus.vbs"
-        with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-            scriptPlugin.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-
-        scriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-        Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), scriptPlugin.filename)
-
-    def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
-        self._root.units_preferences.set_current_unit("DistanceUnit", "m")
-        simpleSatcom.water_vapor_concentration = 0
-        Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
-        simpleSatcom.water_vapor_concentration = 100
-        Assert.assertEqual(100, simpleSatcom.water_vapor_concentration)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.water_vapor_concentration = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.water_vapor_concentration = 101
-
-        simpleSatcom.surface_temperature = -100
-        Assert.assertEqual(-100, simpleSatcom.surface_temperature)
-        simpleSatcom.surface_temperature = 100
-        Assert.assertEqual(100, simpleSatcom.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simpleSatcom.surface_temperature = 101
-
-    def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTIREM"):
-        tirem.surface_temperature = -100
-        Assert.assertEqual(-100, tirem.surface_temperature)
-        tirem.surface_temperature = 100
-        Assert.assertEqual(100, tirem.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_temperature = 101
-
-        self._root.units_preferences.set_current_unit("DistanceUnit", "m")
-        tirem.surface_humidity = 0
-        Assert.assertEqual(0, tirem.surface_humidity)
-        tirem.surface_humidity = 13.25
-        Assert.assertEqual(13.25, tirem.surface_humidity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = 14
-
-        tirem.surface_conductivity = 1e-05
-        Assert.assertEqual(1e-05, tirem.surface_conductivity)
-        tirem.surface_conductivity = 100
-        Assert.assertEqual(100, tirem.surface_conductivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_conductivity = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_conductivity = 101
-
-        tirem.surface_refractivity = 200
-        Assert.assertEqual(200, tirem.surface_refractivity)
-        tirem.surface_refractivity = 450
-        Assert.assertEqual(450, tirem.surface_refractivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_refractivity = 199
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_refractivity = 451
-
-        tirem.relative_permittivity = 0
-        Assert.assertEqual(0, tirem.relative_permittivity)
-        tirem.relative_permittivity = 100
-        Assert.assertEqual(100, tirem.relative_permittivity)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = 101
-
-        tirem.override_terrain_sample_resolution = False
-        Assert.assertFalse(tirem.override_terrain_sample_resolution)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            tirem.terrain_sample_resolution = 1
-
-        tirem.override_terrain_sample_resolution = True
-        Assert.assertTrue(tirem.override_terrain_sample_resolution)
-
-        self._root.units_preferences.set_current_unit("DistanceUnit", "km")
-        tirem.terrain_sample_resolution = 0.0001
-        Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
-        tirem.terrain_sample_resolution = 10
-        Assert.assertEqual(10, tirem.terrain_sample_resolution)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.terrain_sample_resolution = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.terrain_sample_resolution = 11
-
 
 # endregion
-
-
-# region PlatformRF_Environment_UrbanAndTerrestrialHelper
-class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
-    # endregion
-
-    def Run(self, rfEnv: "IPlatformRFEnvironment", IsVehicle: bool):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        propChan.enable_urban_terrestrial_loss = False
-        Assert.assertFalse(propChan.enable_urban_terrestrial_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.urban_terrestrial_loss_model_component_linking.set_component("Two Ray")
-
-        propChan.enable_urban_terrestrial_loss = True
-        Assert.assertTrue(propChan.enable_urban_terrestrial_loss)
-
-        supportedUrbTerrModels = propChan.urban_terrestrial_loss_model_component_linking.supported_components
-        utModelName: str
-        for utModelName in supportedUrbTerrModels:
-            propChan.urban_terrestrial_loss_model_component_linking.set_component(utModelName)
-            utModel: "IUrbanTerrestrialLossModel" = clr.CastAs(
-                propChan.urban_terrestrial_loss_model_component_linking.component, IUrbanTerrestrialLossModel
-            )
-            Assert.assertEqual(utModelName, utModel.name)
-            if utModelName == "Two Ray":
-                Assert.assertEqual(UrbanTerrestrialLossModelType.TWO_RAY, utModel.type)
-                self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
-            elif utModelName == "Urban Propagation Wireless InSite 64":
-                Assert.assertEqual(UrbanTerrestrialLossModelType.WIRELESS_INSITE_64, utModel.type)  # was RT
-                self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
-                    clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64), IsVehicle
-                )
-            else:
-                Assert.fail("Unknown model type")
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.urban_terrestrial_loss_model_component_linking.set_component("bogus")
-        self._root.units_preferences.set_current_unit("Temperature", holdUnit)
-
-    def Test_IAgUrbanTerrestrialLossModelTwoRay(self, twoRay: "UrbanTerrestrialLossModelTwoRay"):
-        twoRay.loss_factor = 0.1
-        Assert.assertEqual(0.1, twoRay.loss_factor)
-        twoRay.loss_factor = 10
-        Assert.assertEqual(10, twoRay.loss_factor)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            twoRay.loss_factor = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            twoRay.loss_factor = 11
-
-        twoRay.surface_temperature = -100
-        Assert.assertEqual(-100, twoRay.surface_temperature)
-        twoRay.surface_temperature = 100
-        Assert.assertEqual(100, twoRay.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            twoRay.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            twoRay.surface_temperature = 101
-
-    def Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
-        self, wisRT: "UrbanTerrestrialLossModelWirelessInSite64", IsVehicle: bool
-    ):
-        arSupportedCalculationMethods = wisRT.supported_calculation_methods
-        Assert.assertEqual(4, Array.Length(arSupportedCalculationMethods))  # was 5 in WirelessInSiteRT
-        sCalcMethod: str
-        for sCalcMethod in arSupportedCalculationMethods:
-            if ((((sCalcMethod == "COST_HATA")) or ((sCalcMethod == "HATA"))) or ((sCalcMethod == "TPGEODESIC"))) or (
-                (sCalcMethod == "WALFISCH_IKEGAMI")
-            ):
-                wisRT.calculation_method = sCalcMethod
-                Assert.assertEqual(sCalcMethod, wisRT.calculation_method)
-            else:
-                Assert.fail("Unknown Calculation Method")
-
-            wisRT.enable_ground_reflection = False
-            Assert.assertFalse(wisRT.enable_ground_reflection)
-            wisRT.enable_ground_reflection = True
-            Assert.assertTrue(wisRT.enable_ground_reflection)
-
-            wisRT.surface_temperature = -100
-            Assert.assertEqual(-100, wisRT.surface_temperature)
-            wisRT.surface_temperature = 100
-            Assert.assertEqual(100, wisRT.surface_temperature)
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                wisRT.surface_temperature = -101
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                wisRT.surface_temperature = 101
-
-            geometryData: "WirelessInSite64GeometryData" = wisRT.geometry_data
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                geometryData.filename = TestBase.GetScenarioFile("Bogus.shp")
-            filename: str = None
-            if IsVehicle:
-                filename = TestBase.GetScenarioFile("Skopje.shp")
-
-            else:
-                filename = TestBase.GetScenarioFile("..", "Skopje.shp")
-
-            geometryData.filename = filename
-            Assert.assertTrue(("Skopje.shp" in geometryData.filename))
-
-            geometryData.projection_horizontal_datum = ProjectionHorizontalDatumType.WGS84_LATITUDE_LONGITUDE
-            Assert.assertEqual(
-                ProjectionHorizontalDatumType.WGS84_LATITUDE_LONGITUDE, geometryData.projection_horizontal_datum
-            )
-            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                geometryData.projection_horizontal_datum = ProjectionHorizontalDatumType.WGS84_UTM
-
-            geometryData.building_height_data_attribute = "GM_LAYER"
-            Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
-            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                geometryData.building_height_data_attribute = "Some"
-
-            geometryData.building_height_reference_method = BuildHeightReferenceMethod.HEIGHT_ABOVE_SEA_LEVEL
-            Assert.assertEqual(
-                BuildHeightReferenceMethod.HEIGHT_ABOVE_SEA_LEVEL, geometryData.building_height_reference_method
-            )
-            geometryData.building_height_reference_method = BuildHeightReferenceMethod.HEIGHT_ABOVE_TERRAIN
-            Assert.assertEqual(
-                BuildHeightReferenceMethod.HEIGHT_ABOVE_TERRAIN, geometryData.building_height_reference_method
-            )
-
-            geometryData.override_geometry_tile_origin = False
-            Assert.assertFalse(geometryData.override_geometry_tile_origin)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                geometryData.geometry_tile_origin_latitude = 0
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                geometryData.geometry_tile_origin_longitude = 0
-
-            geometryData.override_geometry_tile_origin = True
-            Assert.assertTrue(geometryData.override_geometry_tile_origin)
-
-            geometryData.geometry_tile_origin_latitude = -90
-            Assert.assertEqual(-90, geometryData.geometry_tile_origin_latitude)
-            geometryData.geometry_tile_origin_latitude = 90
-            Assert.assertEqual(90, geometryData.geometry_tile_origin_latitude)
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                geometryData.geometry_tile_origin_latitude = -91
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                geometryData.geometry_tile_origin_latitude = 91
-
-            geometryData.geometry_tile_origin_longitude = -180
-            Assert.assertEqual(-180, geometryData.geometry_tile_origin_longitude)
-            geometryData.geometry_tile_origin_longitude = 360
-            Assert.assertEqual(360, geometryData.geometry_tile_origin_longitude)
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                geometryData.geometry_tile_origin_longitude = -181
-            with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                geometryData.geometry_tile_origin_longitude = 361
-
-            geometryData.use_terrain_data = False
-            Assert.assertFalse(geometryData.use_terrain_data)
-
-            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_maximum_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_maximum_longitude), delta=0.01)
-            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_minimum_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_minimum_longitude), delta=0.01)
-
-            geometryData.use_terrain_data = True
-            Assert.assertTrue(geometryData.use_terrain_data)
-
-            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_maximum_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_maximum_longitude), delta=0.01)
-            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_minimum_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_minimum_longitude), delta=0.01)
-
-
-# endregion
-
-
-# region PlatformRF_Environment_TropoScintillationHelper
-class PlatformRF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
-    # endregion
-
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        holdUnit: str = self._root.units_preferences.get_current_unit_abbrv("Temperature")
-        self._root.units_preferences.set_current_unit("Temperature", "degC")
-
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        arSupportedTSFLM = propChan.tropospheric_scintillation_fading_loss_model_component_linking.supported_components
-        Assert.assertEqual(2, Array.Length(arSupportedTSFLM))
-        Assert.assertEqual("ITU-R P618-12", arSupportedTSFLM[0])
-        Assert.assertEqual("ITU-R P618-8", arSupportedTSFLM[1])
-
-        propChan.enable_tropospheric_scintillation_fading_loss = False
-        Assert.assertFalse(propChan.enable_tropospheric_scintillation_fading_loss)
-
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-12")
-
-        propChan.enable_tropospheric_scintillation_fading_loss = True
-        Assert.assertTrue(propChan.enable_tropospheric_scintillation_fading_loss)
-
-        propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-12")
-        tsflm: "ITroposphericScintillationFadingLossModel" = clr.CastAs(
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.component,
-            ITroposphericScintillationFadingLossModel,
-        )
-        Assert.assertEqual("ITU-R P618-12", tsflm.name)
-        Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_12, tsflm.type)
-        self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
-            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version12)
-        )
-
-        propChan.tropospheric_scintillation_fading_loss_model_component_linking.set_component("ITU-R P618-8")
-        tsflm = clr.CastAs(
-            propChan.tropospheric_scintillation_fading_loss_model_component_linking.component,
-            ITroposphericScintillationFadingLossModel,
-        )
-        Assert.assertEqual("ITU-R P618-8", tsflm.name)
-        Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_8, tsflm.type)
-        self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
-            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version8)
-        )
-
-    def Test_IAgTroposphericScintillationFadingLossModelP618_12(
-        self, tsflm12: "TroposphericScintillationFadingLossModelP618Version12"
-    ):
-        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
-            tsflm12.compute_deep_fade = True
-
-        tsflm12.surface_temperature = -100
-        Assert.assertEqual(-100, tsflm12.surface_temperature)
-        tsflm12.surface_temperature = 100
-        Assert.assertEqual(100, tsflm12.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.surface_temperature = 101
-
-        tsflm12.fade_outage = 0.01
-        Assert.assertEqual(0.01, tsflm12.fade_outage)
-        tsflm12.fade_outage = 40
-        Assert.assertEqual(40, tsflm12.fade_outage)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_outage = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_outage = 51
-
-        tsflm12.fade_exceeded = 0.01
-        Assert.assertEqual(0.01, tsflm12.fade_exceeded)
-        tsflm12.fade_exceeded = 50
-        Assert.assertEqual(50, tsflm12.fade_exceeded)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_exceeded = 0
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.fade_exceeded = 51
-
-        tsflm12.percent_time_refractivity_gradient = 0
-        Assert.assertEqual(0, tsflm12.percent_time_refractivity_gradient)
-        tsflm12.percent_time_refractivity_gradient = 100
-        Assert.assertEqual(100, tsflm12.percent_time_refractivity_gradient)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.percent_time_refractivity_gradient = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm12.percent_time_refractivity_gradient = 101
-
-        tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.WORST_MONTH
-        Assert.assertEqual(TroposphericScintillationAverageTimeChoiceType.WORST_MONTH, tsflm12.average_time_choice)
-        tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.YEAR
-        Assert.assertEqual(TroposphericScintillationAverageTimeChoiceType.YEAR, tsflm12.average_time_choice)
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.UNKNOWN
-
-    def Test_IAgTroposphericScintillationFadingLossModelP618_8(
-        self, tsflm8: "TroposphericScintillationFadingLossModelP618Version8"
-    ):
-        tsflm8.compute_deep_fade = False
-        Assert.assertFalse(tsflm8.compute_deep_fade)
-        tsflm8.compute_deep_fade = True
-        Assert.assertTrue(tsflm8.compute_deep_fade)
-
-        tsflm8.surface_temperature = -100
-        Assert.assertEqual(-100, tsflm8.surface_temperature)
-        tsflm8.surface_temperature = 100
-        Assert.assertEqual(100, tsflm8.surface_temperature)
-        tsflm8.surface_temperature = -100
-        Assert.assertEqual(-100, tsflm8.surface_temperature)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.surface_temperature = -101
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.surface_temperature = 101
-
-        tsflm8.fade_outage = 0
-        Assert.assertEqual(0, tsflm8.fade_outage)
-        tsflm8.fade_outage = 100
-        Assert.assertEqual(100, tsflm8.fade_outage)
-        tsflm8.fade_outage = 0
-        Assert.assertEqual(0, tsflm8.fade_outage)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.fade_outage = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.fade_outage = 101
-
-        tsflm8.percent_time_refractivity_gradient = 0
-        Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
-        tsflm8.percent_time_refractivity_gradient = 100
-        Assert.assertEqual(100, tsflm8.percent_time_refractivity_gradient)
-        tsflm8.percent_time_refractivity_gradient = 0
-        Assert.assertEqual(0, tsflm8.percent_time_refractivity_gradient)
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.percent_time_refractivity_gradient = -1
-        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tsflm8.percent_time_refractivity_gradient = 101
-
-
-# endregion
-
-
-# region PlatformRF_Environment_CustomModelsHelper
-class PlatformRF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "STKObjectRoot"):
-        self._root: "STKObjectRoot" = root
-
-    # endregion
-
-    def Run(self, rfEnv: "IPlatformRFEnvironment"):
-        propChan: "PropagationChannel" = rfEnv.propagation_channel
-
-        self.Test_IAgCustomPropagationModel(propChan.custom_a)
-        self.Test_IAgCustomPropagationModel(propChan.custom_b)
-        self.Test_IAgCustomPropagationModel(propChan.custom_c)
-
-    def Test_IAgCustomPropagationModel(self, customModel: "CustomPropagationModel"):
-        if not OSHelper.IsLinux():
-            customModel.enable = False
-            Assert.assertFalse(customModel.enable)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-
-            customModel.enable = True
-            Assert.assertTrue(customModel.enable)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                customModel.filename = r"C:\bogus.vbs"
-            with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-                customModel.filename = TestBase.GetScenarioFile("ChainTest", "ChainTest.sc")
-            customModel.filename = TestBase.GetScenarioFile("CommRad", "VB_AbsorpModel.vbs")
-            Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_AbsorpModel.vbs"), customModel.filename)
-
-
 # endregion
 # endregion
 # endregion

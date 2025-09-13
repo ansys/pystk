@@ -382,7 +382,6 @@ class EarlyBoundTests(TestBase):
         start: int = DateTime.Now.Ticks
 
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
-
         timeList = []
         latList = []
         lonList = []
@@ -512,7 +511,6 @@ class EarlyBoundTests(TestBase):
         start = DateTime.Now.Ticks
         TestBase.Application.execute_command("BatchGraphics * On")
         TestBase.Application.execute_command("Graphics */MTO/Mto1 BatchGraphics On")
-
         i: int = 0
         while i < 1000:
             TestBase.Application.execute_command(("Track */MTO/Mto1 Add " + str(((i + 1)))))
@@ -542,7 +540,6 @@ class EarlyBoundTests(TestBase):
         self.Units.reset_units()
         # Count
         TestBase.logger.WriteLine3("\tThe current TrackCollection contains: {0} elements.", oTrackCollection.count)
-
         iIndex: int = 0
         while iIndex < oTrackCollection.count:
             TestBase.logger.WriteLine9(
@@ -573,7 +570,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, oTrackCollection.count)
         # Count
         TestBase.logger.WriteLine3("\tThe new TrackCollection contains: {0} elements.", oTrackCollection.count)
-
         iIndex: int = 0
         while iIndex < oTrackCollection.count:
             # Item
@@ -655,7 +651,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tThe new TrackCollection contains: {0} elements.", oTrackCollection.count)
         # RemoveTracksId
         trackIds = []
-
         i: int = 0
         while i < 100:
             mtoTrack: "MTOTrack" = oTrackCollection[i]
@@ -669,7 +664,6 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tThe new TrackCollection contains: {0} elements.", oTrackCollection.count)
         # RemoveTracks
         tracksList = []
-
         i: int = 0
         while i < 25:
             mtoTrack: "MTOTrack" = oTrackCollection[i]
@@ -710,7 +704,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(2, oTrackCollection[0].points.count)
         with pytest.raises(Exception):
             oTrackCollection.load_command_file("InvalidFileName")
-
+        # Points
         iIndex: int = 0
         while iIndex < oTrackCollection.count:
             self.BasicTrackPointCollectionHelper(oTrackCollection[iIndex].points)
@@ -728,7 +722,6 @@ class EarlyBoundTests(TestBase):
 
         # Count
         TestBase.logger.WriteLine3("\tThe current TrackPointCollection contains: {0} elements.", oPoints.count)
-
         iIndex: int = 0
         while iIndex < oPoints.count:
             # Item
@@ -805,7 +798,6 @@ class EarlyBoundTests(TestBase):
 
         # Position
         pos: "IPosition" = oPoint.position
-
         lat: typing.Any = None
         lon: typing.Any = None
 
@@ -1012,7 +1004,6 @@ class EarlyBoundTests(TestBase):
         while i < oTrackCollection.count:
             pointCollection: "MTOTrackPointCollection" = oTrackCollection[i].points
             pointCollection.recycling = True
-
             j: int = 0
             while j < 5:
                 point: "MTOTrackPoint" = pointCollection.add(i)
@@ -1409,7 +1400,6 @@ class EarlyBoundTests(TestBase):
 
         # Confirm position by looking at last track's last point
         trackId5: "MTOTrack" = oTrackCollection.get_track_from_identifier(5)
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -1600,7 +1590,6 @@ class EarlyBoundTests(TestBase):
 
         # Confirm position by looking at last track's last point
         trackId5: "MTOTrack" = oTrackCollection.get_track_from_identifier(5)
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -1793,7 +1782,6 @@ class EarlyBoundTests(TestBase):
 
         # Confirm position by looking at last track's last point
         trackId5: "MTOTrack" = oTrackCollection.get_track_from_identifier(5)
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -2166,7 +2154,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oTracks)
         # Count
         TestBase.logger.WriteLine3("\tThe current VOTrackCollection contains: {0} elements.", oTracks.count)
-
         iIndex: int = 0
         while iIndex < oTracks.count:
             TestBase.logger.WriteLine8(
@@ -2230,7 +2217,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oTracks)
         # Count
         TestBase.logger.WriteLine3("\tThe new VOTrackCollection contains: {0} elements.", oTracks.count)
-
         iIndex: int = 0
         while iIndex < oTracks.count:
             # Item
@@ -2377,7 +2363,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(MarkerShape3d.SHAPE_CIRCLE, oShape.style)
             oShape.style = MarkerShape3d.SHAPE_POINT
             Assert.assertEqual(MarkerShape3d.SHAPE_POINT, oShape.style)
-            with pytest.raises(STKInvalidCastError):
+            with pytest.raises(RuntimeError):
                 oF: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
             oMarker.marker_type = MarkerType.IMAGE_FILE
@@ -2386,7 +2372,7 @@ class EarlyBoundTests(TestBase):
             oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
             Assert.assertIsNotNone(oFile)
             self.VOMarkerFileHelper(oFile)
-            with pytest.raises(STKInvalidCastError):
+            with pytest.raises(RuntimeError):
                 oShape = Graphics3DMarkerShape(oMarker.marker_data)
 
             oMarker.pixel_size = 12
@@ -2633,10 +2619,10 @@ class EarlyBoundTests(TestBase):
         artic.save_articulation_file_on_save = True
         Assert.assertEqual(True, artic.save_articulation_file_on_save)
 
+        # LODs test
         iIndex: int = 0
         while iIndex < artic.level_of_detail_count:
             arAvailableArtic = artic.get_available_articulations(iIndex)
-
             i: int = 0
             while i < Array.Length(arAvailableArtic):
                 strArtic: str = str(arAvailableArtic[i])
@@ -2646,7 +2632,6 @@ class EarlyBoundTests(TestBase):
                     iIndex, strArtic
                 )
                 Assert.assertIsNotNone(oTransformations)
-
                 j: int = 0
                 while j < oTransformations.count:
                     modelTrans: "Graphics3DModelTransformation" = oTransformations[j]
@@ -2982,7 +2967,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oTrackCollection)
         # Count
         TestBase.logger.WriteLine3("\tThe current TrackCollection contains: {0} elements.", oTrackCollection.count)
-
         iIndex: int = 0
         while iIndex < oTrackCollection.count:
             TestBase.logger.WriteLine9(

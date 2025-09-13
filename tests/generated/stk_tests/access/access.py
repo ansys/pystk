@@ -719,7 +719,6 @@ class EarlyBoundTests(TestBase):
 
         intColl: "TimeIntervalCollection" = myAccess.computed_access_interval_times
         Assert.assertEqual(1, intColl.count)
-
         pStart: typing.Any = None
         pStop: typing.Any = None
 
@@ -793,7 +792,6 @@ class EarlyBoundTests(TestBase):
         intColl: "TimeIntervalCollectionReadOnly" = onePtAccess.compute_first_satisfaction(
             "1 Jan 1997 01:05:00.000", "1 Jan 1997 01:20:00.000", 1, 3.0
         )
-
         start: typing.Any = None
         stop: typing.Any = None
 
@@ -843,7 +841,7 @@ class EarlyBoundTests(TestBase):
             rFEnvironment: "RFEnvironment" = clr.CastAs(scenario.rf_environment, RFEnvironment)
             propagationChannel: "PropagationChannel" = clr.CastAs(rFEnvironment.propagation_channel, PropagationChannel)
             propagationChannel.enable_atmospheric_absorption = True
-            propagationChannel.set_atmospheric_absorption_model("VOACAP")
+            propagationChannel.atmospheric_absorption_model_component_linking.set_component("VOACAP")
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(PropagatorType.TWO_BODY)
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)

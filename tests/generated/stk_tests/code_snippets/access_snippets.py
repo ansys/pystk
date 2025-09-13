@@ -182,41 +182,6 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     # endregion
 
-    # region AddAndConfigureThirdBodyObstructionConstraint
-    def test_AddAndConfigureThirdBodyObstructionConstraint(self):
-        satelliteName: str = "satellite1"
-        stkobject: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            STKObjectType.SATELLITE, satelliteName
-        )
-        self.AddAndConfigureThirdBodyObstructionConstraint(stkobject.access_constraints)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, satelliteName)
-
-    def AddAndConfigureThirdBodyObstructionConstraint(self, accessconstraints: "AccessConstraintCollection"):
-        # Get AccessConstraintThirdBody interface
-        thirdBodyConstraint: "AccessConstraintThirdBody" = clr.CastAs(
-            accessconstraints.add_constraint(AccessConstraintType.THIRD_BODY_OBSTRUCTION), AccessConstraintThirdBody
-        )
-
-        # AvailableObstructions returns a one dimensional array of obstruction paths
-        availableArray = thirdBodyConstraint.available_obstructions
-
-        # In this example add all available obstructions
-        Console.WriteLine("Available obstructions")
-        available: str
-        for available in availableArray:
-            Console.WriteLine(available)
-            thirdBodyConstraint.add_obstruction(available)
-
-        # AssignedObstructions returns a one dimensional array of obstruction paths
-        assignedArray = thirdBodyConstraint.assigned_obstructions
-
-        Console.WriteLine("Assigned obstructions")
-        assigned: str
-        for assigned in assignedArray:
-            Console.WriteLine(assigned)
-
-    # endregion
-
     # region AddAndConfigureCbObstructionConstraint
     def test_AddAndConfigureCbObstructionConstraint(self):
         satelliteName: str = "satellite1"
@@ -417,6 +382,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         # Compute results
         results: "OnePointAccessResultCollection" = onePtAccess.compute()
 
+        # Print results
         i: int = 0
         while i < results.count:
             result: "OnePointAccessResult" = results[i]
@@ -515,7 +481,6 @@ class AccessSnippets(CodeSnippetsTestBase):
         # and the second is a corresponding enumeration value.
 
         arAvailable = accessConstraints.available_constraints()
-
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
@@ -661,11 +626,8 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddMultipleAccessConstraintsOfTheSameTypeToAnObject(self, stkobject: "ISTKObject"):
         accessConstraints: "AccessConstraintCollection" = stkobject.access_constraints
 
-        # Add constraints
-        # Only the APPARENT_TIME, DURATION, GMT, INTERVALS, LOCAL_TIME constraint
-        # types can be added multiple times to the constraint collection.
-        accessConstraints.add_constraint(AccessConstraintType.LOCAL_TIME)
-        accessConstraints.add_constraint(AccessConstraintType.LOCAL_TIME)
+        accessConstraints.add_constraint(AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
+        accessConstraints.add_constraint(AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
 
     # endregion
 

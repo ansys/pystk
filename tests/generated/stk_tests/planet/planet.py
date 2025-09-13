@@ -25,6 +25,7 @@ from test_util import *
 from access_constraints.access_constraint_helper import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from ansys.stk.core.utilities.colors import *
@@ -441,5 +442,13 @@ class EarlyBoundTests(TestBase):
         oHelper.DoTest(
             EarlyBoundTests.AG_PL.access_constraints, ISTKObject(EarlyBoundTests.AG_PL), TestBase.TemporaryDirectory
         )
+
+    # endregion
+
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_PL.chain_analysis_options, False)
 
     # endregion

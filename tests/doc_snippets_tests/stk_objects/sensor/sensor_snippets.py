@@ -284,7 +284,7 @@ class SensorSnippets(CodeSnippetsTestBase):
     def SensorBodyMaskSnippet(self, sensor):
         # Sensor sensor: Sensor object
         if os.name == "nt":
-            installPath = r"C:\Program Files\AGI\STK 12"
+            installPath = r"C:\Program Files\AGI\STK_ODTK 13"
         else:
             installPath = os.environ["STK_INSTALL_DIR"]
         bmskPath = ["Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"]

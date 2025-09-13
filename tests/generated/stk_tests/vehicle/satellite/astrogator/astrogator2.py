@@ -649,9 +649,9 @@ class EarlyBoundTests(TestBase):
 
         diffAcrossSegs: "StoppingConditionElement" = prop2.stopping_conditions.add("UserSelect")
 
-        (
-            StoppingCondition(diffAcrossSegs.properties)
-        ).user_calculation_object_name = "Segments/Difference Across Segments"
+        (StoppingCondition(diffAcrossSegs.properties)).user_calculation_object_name = (
+            "Segments/Difference Across Segments"
+        )
         stopCondCalcObj: "StateCalcDifferenceOtherSegment" = StateCalcDifferenceOtherSegment(
             (StoppingCondition(diffAcrossSegs.properties)).user_calculation_object
         )

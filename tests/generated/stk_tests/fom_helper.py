@@ -85,6 +85,7 @@ class FOMHelper(object):
             # ConstraintName and Constraint
             oConstraint.constraint = "AngularRate"
             Assert.assertEqual("AngularRate", oConstraint.constraint)
+
             self.m_logger.WriteLine6("\t\t\tThe current ConstraintName is: {0}", oConstraint.constraint_name)
             oConstraint.constraint_name = FigureOfMeritConstraintName.ALTITUDE
             self.m_logger.WriteLine6("\t\t\tThe new ConstraintName is: {0}", oConstraint.constraint_name)
@@ -466,7 +467,6 @@ class FOMHelper(object):
         # ComputeSupportedTypes
         arTypes = oCompute.compute_supported_types
         self.m_logger.WriteLine3("\t\t\tThe Compute supports: {0} types", Array.Length(arTypes))
-
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
             eComputeType: "FigureOfMeritCompute" = FigureOfMeritCompute(int(arTypes[iIndex]))
@@ -782,7 +782,6 @@ class FOMHelper(object):
         # SupportedMethods
         arMethods = oDOP.supported_methods
         self.m_logger.WriteLine3("\t\t\tThe DilutionOfPrecision supports: {0} methods", Array.Length(arMethods))
-
         iIndex: int = 0
         while iIndex < Array.Length(arMethods):
             eMethod: "FigureOfMeritMethod" = FigureOfMeritMethod(int(arMethods[iIndex]))
@@ -801,7 +800,6 @@ class FOMHelper(object):
         # SupportedTypes
         arTypes = oDOP.supported_types
         self.m_logger.WriteLine3("\t\t\tThe DilutionOfPrecision supports: {0} types", Array.Length(arTypes))
-
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
             eType: "FigureOfMeritNavigationComputeType" = FigureOfMeritNavigationComputeType(int(arTypes[iIndex]))
@@ -1241,7 +1239,6 @@ class FOMHelper(object):
                     gfxLevelAttributesElement.color = Colors.from_argb(13426158)
 
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-
             iIndex: int = 0
             while iIndex < oCollection.count:
                 # Item
@@ -1258,7 +1255,6 @@ class FOMHelper(object):
             oCollection.remove_at(0)
             Assert.assertEqual(5, oCollection.count)
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
-
             iIndex: int = 0
             while iIndex < oCollection.count:
                 # Item
@@ -1317,15 +1313,7 @@ class FOMHelper(object):
         self, oOptions: "FigureOfMeritGraphics2DColorOptions", bReadOnly: bool, bIsVisibleReadOnly: bool
     ):
         Assert.assertIsNotNone(oOptions)
-        if bReadOnly and bIsVisibleReadOnly:
-            # Background
-            with pytest.raises(Exception):
-                oOptions.background = 3430008
-            # Text
-            with pytest.raises(Exception):
-                oOptions.text = 5666960
-
-        else:
+        if (not bReadOnly) or (not bIsVisibleReadOnly):
             # BackgroundColor
             self.m_logger.WriteLine6("\tThe current Background is: {0}", oOptions.background_color)
             oOptions.background_color = Colors.Blue

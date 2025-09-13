@@ -31,6 +31,7 @@ class Unit(object):
 
 
 class TryCatchAssertBlock(object):
+
     @staticmethod
     def DoActionRunFinalize(action, finalizer):
         try:
@@ -66,7 +67,6 @@ class CodeRunner(object):
             def action1():
                 nonlocal watch
                 watch.Start()
-
                 i: int = 0
                 while i < maxIterations:
                     action(i)

@@ -149,6 +149,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
         # ConvertDateArray returns a one dimensional array of converted dates
         converted = converter.convert_date_array("UTCG", "Epsec", tempDates)
 
+        # Print results
         i: int = 0
         while i < Array.Length(converted):
             Console.WriteLine("Date: {0}", converted[i])

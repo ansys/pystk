@@ -144,6 +144,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             # GetAvailableArticulations returns a one dimensional array of articulation names
             articulations = modelArticulation.get_available_articulations(lod)
 
+            # Enumerate through available articulations
             articulation: int = 0
             while articulation < Array.Length(articulations):
                 # We need the articulation string to call the GetAvailableTransformations function

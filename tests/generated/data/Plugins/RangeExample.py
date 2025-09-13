@@ -21,15 +21,15 @@
 # SOFTWARE.
 
 import typing
-from agi.stk12.plugins.accessconstraintplugin import (
+from agi.stk13.plugins.accessconstraintplugin import (
     AgEAccessConstraintObjectType,
     AgEAccessConstraintDependencyFlags,
     AgEAltitudeReference,
     AgEAccessApparentPositionType,
 )
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale, AgEUtFrame
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale, AgEUtFrame
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgAccessConstraintPlugin(object):

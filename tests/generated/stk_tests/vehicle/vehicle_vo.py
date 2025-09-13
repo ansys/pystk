@@ -230,7 +230,6 @@ class VOAttributesIntervalsHelper(object):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine3("\tThe current Intervals Collection contains: {0} elements", oCollection.count)
         intervalsElement: "VehicleGraphics3DIntervalsElement" = None
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             intervalsElement = oCollection[iIndex]
@@ -260,7 +259,6 @@ class VOAttributesIntervalsHelper(object):
         )
         Assert.assertIsNotNone(oNewElement3)
         self.m_logger.WriteLine3("\tUpdated Intervals Collection contains: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             intervalsElement = oCollection[iIndex]
@@ -371,7 +369,6 @@ class VOCovarianceHelper(object):
         # SigmaScaleSupportedTypes
         arChoices = oCovariance.sigma_scale_supported_types
         self.m_logger.WriteLine3("Number of supported Sigma Scale types is: {0}", len(arChoices))
-
         iIndex: int = 0
         while iIndex < len(arChoices):
             self.m_logger.WriteLine8(
@@ -413,7 +410,6 @@ class VOCovarianceHelper(object):
         arChoices = oCovariance.attributes_supported_types
         Assert.assertIsNotNone(arChoices)
         self.m_logger.WriteLine3("Number of supported Attributes types is: {0}", len(arChoices))
-
         iIndex: int = 0
         while iIndex < len(arChoices):
             self.m_logger.WriteLine8(
@@ -482,7 +478,6 @@ class VOVelocityCovarianceHelper(object):
         arChoices = oVelCovariance.attributes_supported_types
         Assert.assertIsNotNone(arChoices)
         self.m_logger.WriteLine3("Number of supported Attributes types is: {0}", len(arChoices))
-
         iIndex: int = 0
         while iIndex < len(arChoices):
             self.m_logger.WriteLine8(
@@ -539,7 +534,6 @@ class VOCovariancePointingContourHelper(object):
         Assert.assertIsNotNone(oCPContour)
         arSupportedTypes = oCPContour.attributes_supported_types
         self.m_logger.WriteLine3("Array of supported types contains: {0} elements.", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             self.m_logger.WriteLine8(
@@ -553,7 +547,6 @@ class VOCovariancePointingContourHelper(object):
 
         # Attributes test
         bCaught: bool = False
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             eType: "VehicleGraphics3DAttributeType" = VehicleGraphics3DAttributeType(int(arSupportedTypes[iIndex][0]))
@@ -596,7 +589,6 @@ class VOCovariancePointingContourHelper(object):
         # SigmaScale test
         arSupportedTypes = oCPContour.sigma_scale_supported_types
         self.m_logger.WriteLine3("Array of supported SigmaScale types contains: {0} elements.", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             self.m_logger.WriteLine8(
@@ -719,6 +711,7 @@ class VODropLinePosItemCollectionHelper(object):
         for oItem in oCollection:
             self.m_logger.WriteLine6("\tElement: {0}", oItem.type)
 
+        # Item
         iIndex: int = 0
         while iIndex < oCollection.count:
             dropLinePosItem: "VehicleGraphics3DDropLinePositionItem" = oCollection[iIndex]
@@ -798,6 +791,7 @@ class VODropLinePathItemCollectionHelper(object):
         for oItem in oCollection:
             self.m_logger.WriteLine6("\tElement: {0}", oItem.type)
 
+        # Item
         iIndex: int = 0
         while iIndex < oCollection.count:
             dropLinePathItem: "VehicleGraphics3DDropLinePathItem" = oCollection[iIndex]
@@ -1069,9 +1063,9 @@ class VORouteModelHelper(object):
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
-        (
-            clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = (
+            r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        )
         oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1167,7 +1161,7 @@ class VOMarkerHelper(object):
         Assert.assertEqual(MarkerShape3d.SHAPE_CIRCLE, oShape.style)
         oShape.style = MarkerShape3d.SHAPE_POINT
         Assert.assertEqual(MarkerShape3d.SHAPE_POINT, oShape.style)
-        with pytest.raises(STKInvalidCastError):
+        with pytest.raises(RuntimeError):
             voMarkerFileX: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
         oMarker.marker_type = (
@@ -1181,7 +1175,7 @@ class VOMarkerHelper(object):
         oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
-        with pytest.raises(STKInvalidCastError):
+        with pytest.raises(RuntimeError):
             oShape = Graphics3DMarkerShape(oMarker.marker_data)
 
         oMarker.pixel_size = 12
@@ -1281,11 +1275,11 @@ class VOModelHelper(object):
             oModelFile.filename = "sat.mdl"
         with pytest.raises(Exception):
             oModelFile.filename = ""
-        oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "satellite.dae")
-        Assert.assertEqual(TestBase.PathCombine("VO", "Models", "satellite.dae"), oModelFile.filename)
+        oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "satellite.glb")
+        Assert.assertEqual(TestBase.PathCombine("VO", "Models", "satellite.glb"), oModelFile.filename)
         self.m_logger.WriteLine5("\t\tThe new Filename is: {0}", oModelFile.filename)
         # FilePath
-        Assert.assertEqual(TestBase.GetScenarioFile("VO", "Models", "satellite.dae"), oModelFile.file_path)
+        Assert.assertEqual(TestBase.GetScenarioFile("VO", "Models", "satellite.glb"), oModelFile.file_path)
 
         # ModelType (List)
         oModel.model_type = ModelType.LIST
@@ -1295,7 +1289,6 @@ class VOModelHelper(object):
         Assert.assertIsNotNone(oModelList)
         iSize: int = oModelList.count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
-
         iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine8(
@@ -1307,7 +1300,7 @@ class VOModelHelper(object):
 
             iIndex += 1
 
-        oModelList.add("1 Jan 2007 12:00:00.000", TestBase.GetScenarioFile("VO", "Models", "satellite.dae"))
+        oModelList.add("1 Jan 2007 12:00:00.000", TestBase.GetScenarioFile("VO", "Models", "satellite.glb"))
         Assert.assertEqual(2, oModelList.count)
         oModelList.remove(1)
         Assert.assertEqual(1, oModelList.count)
@@ -1327,7 +1320,6 @@ class VOModelHelper(object):
         oModelList.add((time + 1), oModelList[0].graphics_3d_model_file.file_path)
         iSize = oModelList.count
         self.m_logger.WriteLine3("\t\tThe Model list collection contains: {0} elements", iSize)
-
         iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine8(
@@ -1358,13 +1350,13 @@ class VOModelHelper(object):
                 )
 
                 voModelFile: "Graphics3DModelFile" = oItem.graphics_3d_model_file
-                Assert.assertEqual((TestBase.PathCombine("VO", "Models", "satellite.dae")), voModelFile.filename)
-                Assert.assertTrue((TestBase.PathCombine("VO", "Models", "satellite.dae") in voModelFile.file_path))
+                Assert.assertEqual((TestBase.PathCombine("VO", "Models", "satellite.glb")), voModelFile.filename)
+                Assert.assertTrue((TestBase.PathCombine("VO", "Models", "satellite.glb") in voModelFile.file_path))
                 voModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "pegasus.mdl")
                 Assert.assertEqual(TestBase.PathCombine("VO", "Models", "pegasus.mdl"), voModelFile.filename)
                 Assert.assertTrue((TestBase.PathCombine("VO", "Models", "pegasus.mdl") in voModelFile.file_path))
                 with pytest.raises(Exception, match=RegexSubstringMatch("file does not exist")):
-                    voModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "bogus.dae")
+                    voModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "bogus.glb")
 
         # restore DateFormat
         self.m_oUnits.set_current_unit("DateFormat", strUnit)
@@ -1621,13 +1613,11 @@ class VOModelHelper(object):
 
         # LODs test
         self.m_logger.WriteLine3("\tThe number of LODs is: {0}", oArticulation.level_of_detail_count)
-
         iIndex: int = 0
         while iIndex < oArticulation.level_of_detail_count:
             self.m_logger.WriteLine3("\t\tLODs: {0}", iIndex)
             arAvailableArtic = oArticulation.get_available_articulations(iIndex)
             self.m_logger.WriteLine3("\t\t\tThere are {0} available Articulations.", Array.Length(arAvailableArtic))
-
             i: int = 0
             while i < Array.Length(arAvailableArtic):
                 strArtic: str = str(arAvailableArtic[i])
@@ -1639,7 +1629,6 @@ class VOModelHelper(object):
                 Assert.assertIsNotNone(oTransformations)
                 self.m_logger.WriteLine5("\t\t\t\tTransformation name is: {0}.", oTransformations.name)
                 self.m_logger.WriteLine3("\t\t\t\tThere are {0} available Transformations.", oTransformations.count)
-
                 j: int = 0
                 while j < oTransformations.count:
                     modelTrans: "Graphics3DModelTransformation" = oTransformations[j]
@@ -1738,9 +1727,9 @@ class VOTargetModelHelper(object):
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
-        (
-            clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = (
+            r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        )
         oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1811,9 +1800,9 @@ class VOTrajectoryModelHelper(object):
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
-        (
-            clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = (
+            r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        )
         oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1894,9 +1883,9 @@ class VOSatelliteModelHelper(object):
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
-        (
-            clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = (
+            r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
+        )
         oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1958,7 +1947,6 @@ class VOModelPointingHelper(object):
         Assert.assertIsNotNone(oPECollection)
         # Count
         self.m_logger.WriteLine3("The Pointable Elements collection contains: {0} elements", oPECollection.count)
-
         iIndex: int = 0
         while iIndex < oPECollection.count:
             # Index
@@ -1967,7 +1955,6 @@ class VOModelPointingHelper(object):
             iIndex += 1
 
         self.m_logger.WriteLine3("The Pointable Elements collection contains: {0} elements.", oPECollection.count)
-
         iIndex: int = 0
         while iIndex < oPECollection.count:
             pointableElementsElement: "Graphics3DPointableElementsElement" = oPECollection[iIndex]
@@ -1983,7 +1970,6 @@ class VOModelPointingHelper(object):
 
         # Add
         self.m_logger.WriteLine3("The Pointable Elements collection still contains: {0} elements", oPECollection.count)
-
         iIndex: int = 0
         while iIndex < oPECollection.count:
             self.m_logger.WriteLine5("\tElement: {0}", oPECollection[iIndex].pointing_name)
@@ -2120,7 +2106,6 @@ class VOModelPointingHelper(object):
         oModelPointing.load_intervals(
             TestBase.GetScenarioFile("MdlPtgInts.int"), oModelPointing.pointable_elements[0].pointing_name
         )
-
         i: int = 0
         while i < oModelPointing.pointable_elements.count:
             self.m_logger.WriteLine(oModelPointing.pointable_elements[i].pointing_name)
@@ -3661,7 +3646,6 @@ class VOLeadTrailDataHelper(object):
         # SupportedDataTypes
         arSupportedTypes = leadTrailData.supported_data_types
         self.m_logger.WriteLine3("\tThe LeadTrailData supports: {0} types", len(arSupportedTypes))
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             self.m_logger.WriteLine8(
@@ -3675,7 +3659,6 @@ class VOLeadTrailDataHelper(object):
 
         # LeadDataType
         self.m_logger.WriteLine6("\tThe current LeadDataType is: {0}", leadTrailData.lead_data_type)
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
@@ -3752,7 +3735,6 @@ class VOLeadTrailDataHelper(object):
 
         # TrailDataType
         self.m_logger.WriteLine6("\tThe current TrailDataType is: {0}", leadTrailData.trail_data_type)
-
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
             eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
@@ -3881,7 +3863,6 @@ class VOWaypointMarkersHelper(object):
         # Item test
         bCaught: bool = False
         self.m_logger.WriteLine("\tCollection elements test:")
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             waypointMarkersElement: "VehicleGraphics3DWaypointMarkersElement" = oCollection[iIndex]
@@ -4127,7 +4108,6 @@ class VOPathTickMarksHelper(object):
         # TickDataSupportedTypes
         arTypes = oPath.tick_data_supported_types
         self.m_logger.WriteLine3("\tThe PathTickMarks supports: {0} types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
@@ -4198,7 +4178,7 @@ class VOPathTickMarksHelper(object):
         oPath.show_graphics = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oPath.show_graphics)
         Assert.assertEqual(True, oPath.show_graphics)
-
+        # TickData
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "TickData" = TickData(int(arTypes[iIndex][0]))
@@ -4812,7 +4792,6 @@ class VOSystemsHelper(object):
 
             # VOWindow
             self.m_logger.WriteLine5("\tThe current VOWindow is: {0}", oVeVOSystemsElementBase.graphics_3d_window)
-
             i: int = 0
             while i < Array.Length(arWindows):
                 oVeVOSystemsElementBase.graphics_3d_window = str(arWindows[i])
@@ -4917,7 +4896,6 @@ class VOVectorsHelper(object):
 
         # Count
         self.m_logger.WriteLine3("The current VectorCollection contains: {0} elements", oCollection.count)
-
         iIndex: int = 0
         while iIndex < oCollection.count:
             refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection[iIndex]
@@ -4957,6 +4935,7 @@ class VOVectorsHelper(object):
                 GeometricElementType.ANGLE_ELEMENT, ""
             )
 
+        # Add Angle element
         iIndex: int = 0
         while iIndex < len(arAvailable):
             eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
@@ -4976,6 +4955,7 @@ class VOVectorsHelper(object):
 
             iIndex += 1
 
+        # Add Axes element
         iIndex: int = 0
         while iIndex < len(arAvailable):
             eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
@@ -4995,6 +4975,7 @@ class VOVectorsHelper(object):
 
             iIndex += 1
 
+        # Add Plane element
         iIndex: int = 0
         while iIndex < len(arAvailable):
             eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
@@ -5014,6 +4995,7 @@ class VOVectorsHelper(object):
 
             iIndex += 1
 
+        # Add Point element
         iIndex: int = 0
         while iIndex < len(arAvailable):
             eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
@@ -5035,7 +5017,6 @@ class VOVectorsHelper(object):
 
         # Add Vector element
         bFound: bool = False
-
         iIndex: int = 0
         while iIndex < len(arAvailable):
             eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
@@ -6072,6 +6053,7 @@ class VOVectorsHelper(object):
         if (
             clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
         ).name == "Aircraft/Boing737 Body.-X Vector":
+
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # because not a distance unit vector
                 oVector.true_scale = False
 
@@ -6091,6 +6073,7 @@ class VOVectorsHelper(object):
         elif (
             clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
         ).name == "Aircraft/Boing737 MagField(IGRF) Vector":
+
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # because not a distance unit vector
                 oVector.true_scale = False
 
@@ -6110,6 +6093,7 @@ class VOVectorsHelper(object):
         elif (
             clr.CastAs(oVector, IGraphics3DReferenceAnalysisWorkbenchComponent)
         ).name == "Satellite/Satellite1 Moon Vector":
+
             oVector.true_scale = False
             Assert.assertFalse(oVector.true_scale)
             oVector.true_scale = True
@@ -6266,7 +6250,6 @@ class VOVaporTrailHelper(object):
         Assert.assertTrue(oVaporTrail.use_attach_point)
         # AttachPointName
         self.m_logger.WriteLine5("\tThe current AttachPointName is: {0}", oVaporTrail.attachment_point_name)
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailablePoints):
             oVaporTrail.attachment_point_name = str(arAvailablePoints[iIndex])
