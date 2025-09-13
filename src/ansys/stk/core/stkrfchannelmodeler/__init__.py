@@ -53,11 +53,7 @@ from ..internal.apiutil import (
     set_interface_attribute,
 )
 from ..internal.comutil import IDispatch, IUnknown
-from ..utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class ChannelResponseType(IntEnum):
     """Channel Response Type"""
@@ -111,7 +107,7 @@ class AnalysisConfigurationComputeStepMode(IntEnum):
     """Fixed Step size"""
     FIXED_STEP_COUNT = 1
     """Fixed Step count"""
-    CONTINUOUS_CHANNEL_SOUNDINGS = 0
+    CONTINUOUS_CHANNEL_SOUNDINGS = 2
     """Continuous channel soundings"""
 
 AnalysisConfigurationComputeStepMode.FIXED_STEP_SIZE.__doc__ = "Fixed Step size"
@@ -209,7 +205,7 @@ class IProgressTrackCancel(object):
     _get_cancel_requested_method_offset = 1
     _update_progress_method_offset = 2
     _metadata = {
-        "iid_data" : (5390916084034846203, 17403183235954599586),
+        "iid_data" : (5189323083975178084, 12155257170465652875),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -245,7 +241,7 @@ class IProgressTrackCancel(object):
     _property_names[cancel_requested] = "cancel_requested"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5390916084034846203, 17403183235954599586), IProgressTrackCancel)
+agcls.AgClassCatalog.add_catalog_entry((5189323083975178084, 12155257170465652875), IProgressTrackCancel)
 agcls.AgTypeNameMap["IProgressTrackCancel"] = IProgressTrackCancel
 
 class IAntenna(object):
@@ -255,7 +251,7 @@ class IAntenna(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_type_method_offset = 1
     _metadata = {
-        "iid_data" : (5683541619882775739, 9487067282181233037),
+        "iid_data" : (5148557275996632377, 8767940624566663358),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -284,7 +280,7 @@ class IAntenna(object):
     _property_names[type] = "type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5683541619882775739, 9487067282181233037), IAntenna)
+agcls.AgClassCatalog.add_catalog_entry((5148557275996632377, 8767940624566663358), IAntenna)
 agcls.AgTypeNameMap["IAntenna"] = IAntenna
 
 class ITransceiverModel(object):
@@ -297,7 +293,7 @@ class ITransceiverModel(object):
     _get_supported_antenna_types_method_offset = 3
     _get_antenna_method_offset = 4
     _metadata = {
-        "iid_data" : (5260850364807721395, 1562001126796197285),
+        "iid_data" : (5130641926513793015, 9641467165878334596),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -351,7 +347,7 @@ class ITransceiverModel(object):
     _property_names[antenna] = "antenna"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5260850364807721395, 1562001126796197285), ITransceiverModel)
+agcls.AgClassCatalog.add_catalog_entry((5130641926513793015, 9641467165878334596), ITransceiverModel)
 agcls.AgTypeNameMap["ITransceiverModel"] = ITransceiverModel
 
 class ISceneContributorCollection(object):
@@ -368,7 +364,7 @@ class ISceneContributorCollection(object):
     _remove_all_method_offset = 7
     _contains_method_offset = 8
     _metadata = {
-        "iid_data" : (4727679194678330883, 10823296216059869100),
+        "iid_data" : (4655659453865151327, 5356126618700587164),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -465,7 +461,7 @@ class ISceneContributorCollection(object):
     _property_names[_new_enum] = "_new_enum"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4727679194678330883, 10823296216059869100), ISceneContributorCollection)
+agcls.AgClassCatalog.add_catalog_entry((4655659453865151327, 5356126618700587164), ISceneContributorCollection)
 agcls.AgTypeNameMap["ISceneContributorCollection"] = ISceneContributorCollection
 
 class IResponse(object):
@@ -478,7 +474,7 @@ class IResponse(object):
     _get_transmit_antenna_count_method_offset = 3
     _get_receive_antenna_count_method_offset = 4
     _metadata = {
-        "iid_data" : (5273345876967495470, 8911670956953360542),
+        "iid_data" : (5122426286237758455, 16157611143711992501),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -509,7 +505,7 @@ class IResponse(object):
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @property
     def data(self) -> list:
-        """Get the response data."""
+        """Get the response data in a single dimension. Reshape to a multi-dimensional array using the DataDimensions property from the derived response class."""
         return self._intf.get_property(IResponse._metadata, IResponse._get_data_metadata)
 
     _get_transmit_antenna_count_metadata = { "offset" : _get_transmit_antenna_count_method_offset,
@@ -534,7 +530,7 @@ class IResponse(object):
     _property_names[receive_antenna_count] = "receive_antenna_count"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5273345876967495470, 8911670956953360542), IResponse)
+agcls.AgClassCatalog.add_catalog_entry((5122426286237758455, 16157611143711992501), IResponse)
 agcls.AgTypeNameMap["IResponse"] = IResponse
 
 class IAnalysisLink(object):
@@ -552,7 +548,7 @@ class IAnalysisLink(object):
     _get_analysis_intervals_method_offset = 8
     _compute_method_offset = 9
     _metadata = {
-        "iid_data" : (5200039314651946484, 7207498084283752120),
+        "iid_data" : (5004542476303939694, 2475971475159732381),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -651,7 +647,7 @@ class IAnalysisLink(object):
     _property_names[analysis_intervals] = "analysis_intervals"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5200039314651946484, 7207498084283752120), IAnalysisLink)
+agcls.AgClassCatalog.add_catalog_entry((5004542476303939694, 2475971475159732381), IAnalysisLink)
 agcls.AgTypeNameMap["IAnalysisLink"] = IAnalysisLink
 
 class IAnalysisConfigurationModel(object):
@@ -684,7 +680,7 @@ class IAnalysisConfigurationModel(object):
     _get_facet_tileset_collection_method_offset = 23
     _get_analysis_extent_method_offset = 24
     _metadata = {
-        "iid_data" : (5297348179628469644, 14335374035294896569),
+        "iid_data" : (5047897331686887030, 8592805011568395442),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -912,7 +908,7 @@ class IAnalysisConfigurationModel(object):
     _property_names[analysis_extent] = "analysis_extent"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5297348179628469644, 14335374035294896569), IAnalysisConfigurationModel)
+agcls.AgClassCatalog.add_catalog_entry((5047897331686887030, 8592805011568395442), IAnalysisConfigurationModel)
 agcls.AgTypeNameMap["IAnalysisConfigurationModel"] = IAnalysisConfigurationModel
 
 class IRadarAnalysisConfigurationModel(object):
@@ -923,7 +919,7 @@ class IRadarAnalysisConfigurationModel(object):
     _get_transceiver_configuration_collection_method_offset = 1
     _get_imaging_data_product_list_method_offset = 2
     _metadata = {
-        "iid_data" : (4635842407038885586, 5216845520973926036),
+        "iid_data" : (5295919618977899412, 380209664131620768),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -961,7 +957,7 @@ class IRadarAnalysisConfigurationModel(object):
     _property_names[imaging_data_product_list] = "imaging_data_product_list"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4635842407038885586, 5216845520973926036), IRadarAnalysisConfigurationModel)
+agcls.AgClassCatalog.add_catalog_entry((5295919618977899412, 380209664131620768), IRadarAnalysisConfigurationModel)
 agcls.AgTypeNameMap["IRadarAnalysisConfigurationModel"] = IRadarAnalysisConfigurationModel
 
 
@@ -1008,7 +1004,7 @@ class RadarImagingDataProduct(SupportsDeleteCallback):
     _get_minimum_pulse_count_method_offset = 35
     _get_identifier_method_offset = 36
     _metadata = {
-        "iid_data" : (5142214519392837796, 6233112050034224043),
+        "iid_data" : (5639756055740420746, 14831647007956190867),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1339,20 +1335,24 @@ class RadarImagingDataProduct(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarImagingDataProduct, [RadarImagingDataProduct, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5074933986252676529, 8852701032538182291), RadarImagingDataProduct)
+agcls.AgClassCatalog.add_catalog_entry((5226680878930314362, 6014842735258329523), RadarImagingDataProduct)
 agcls.AgTypeNameMap["RadarImagingDataProduct"] = RadarImagingDataProduct
 
 class Material(SupportsDeleteCallback):
     """Properties for a material."""
 
-    _num_methods = 4
+    _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_type_method_offset = 1
     _set_type_method_offset = 2
     _get_properties_method_offset = 3
     _set_properties_method_offset = 4
+    _get_height_standard_deviation_method_offset = 5
+    _set_height_standard_deviation_method_offset = 6
+    _get_roughness_method_offset = 7
+    _set_roughness_method_offset = 8
     _metadata = {
-        "iid_data" : (5106970972732140092, 12345568409569237644),
+        "iid_data" : (4741553615154377493, 2156103163304633273),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1391,8 +1391,42 @@ class Material(SupportsDeleteCallback):
         """Set material properties."""
         return self._intf.set_property(Material._metadata, Material._set_properties_metadata, value)
 
+    _get_height_standard_deviation_metadata = { "offset" : _get_height_standard_deviation_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def height_standard_deviation(self) -> float:
+        """Get or set the material height standard deviation"""
+        return self._intf.get_property(Material._metadata, Material._get_height_standard_deviation_metadata)
+
+    _set_height_standard_deviation_metadata = { "offset" : _set_height_standard_deviation_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @height_standard_deviation.setter
+    def height_standard_deviation(self, value:float) -> None:
+        """Get or set the material height standard deviation"""
+        return self._intf.set_property(Material._metadata, Material._set_height_standard_deviation_metadata, value)
+
+    _get_roughness_metadata = { "offset" : _get_roughness_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def roughness(self) -> float:
+        """Get or set the material roughness"""
+        return self._intf.get_property(Material._metadata, Material._get_roughness_metadata)
+
+    _set_roughness_metadata = { "offset" : _set_roughness_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @roughness.setter
+    def roughness(self, value:float) -> None:
+        """Get or set the material roughness"""
+        return self._intf.set_property(Material._metadata, Material._set_roughness_metadata, value)
+
     _property_names[type] = "type"
     _property_names[properties] = "properties"
+    _property_names[height_standard_deviation] = "height_standard_deviation"
+    _property_names[roughness] = "roughness"
 
     def __init__(self, source_object=None):
         """Construct an object of type Material."""
@@ -1407,7 +1441,7 @@ class Material(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Material, [Material, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5585828003287260468, 16548653199708755882), Material)
+agcls.AgClassCatalog.add_catalog_entry((5551816211234442013, 13389948598869303701), Material)
 agcls.AgTypeNameMap["Material"] = Material
 
 class FacetTileset(SupportsDeleteCallback):
@@ -1422,7 +1456,7 @@ class FacetTileset(SupportsDeleteCallback):
     _get_reference_frame_method_offset = 5
     _get_central_body_name_method_offset = 6
     _metadata = {
-        "iid_data" : (4789527447108154914, 637873324861092488),
+        "iid_data" : (4690660055317251169, 12365511564088604577),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1496,7 +1530,7 @@ class FacetTileset(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FacetTileset, [FacetTileset, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4888196436732093925, 11141857126072407213), FacetTileset)
+agcls.AgClassCatalog.add_catalog_entry((5450031916903433591, 5575085354633319297), FacetTileset)
 agcls.AgTypeNameMap["FacetTileset"] = FacetTileset
 
 class ValidationResponse(SupportsDeleteCallback):
@@ -1507,7 +1541,7 @@ class ValidationResponse(SupportsDeleteCallback):
     _get_value_method_offset = 1
     _get_message_method_offset = 2
     _metadata = {
-        "iid_data" : (4994438691132779782, 1415141693988703135),
+        "iid_data" : (5579774226002829185, 17104797398372433833),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1546,13 +1580,13 @@ class ValidationResponse(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ValidationResponse, [ValidationResponse, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4804640472049572896, 16088033728626929551), ValidationResponse)
+agcls.AgClassCatalog.add_catalog_entry((5164176704895655660, 4265067833704363702), ValidationResponse)
 agcls.AgTypeNameMap["ValidationResponse"] = ValidationResponse
 
 class Extent(SupportsDeleteCallback):
     """Properties for a cartographic extent definition. One use of this interface is for defining the facet tile set analysis extent."""
 
-    _num_methods = 8
+    _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_north_latitude_method_offset = 1
     _set_north_latitude_method_offset = 2
@@ -1562,8 +1596,9 @@ class Extent(SupportsDeleteCallback):
     _set_east_longitude_method_offset = 6
     _get_west_longitude_method_offset = 7
     _set_west_longitude_method_offset = 8
+    _set_extent_values_method_offset = 9
     _metadata = {
-        "iid_data" : (4919157609295249505, 12211194950299458230),
+        "iid_data" : (4925304525695672828, 7391264363279355565),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1634,6 +1669,13 @@ class Extent(SupportsDeleteCallback):
         """Get or set the west longitude."""
         return self._intf.set_property(Extent._metadata, Extent._set_west_longitude_metadata, value)
 
+    _set_extent_values_metadata = { "offset" : _set_extent_values_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def set_extent_values(self, north:float, south:float, east:float, west:float) -> None:
+        """Set the extent values in degrees"""
+        return self._intf.invoke(Extent._metadata, Extent._set_extent_values_metadata, north, south, east, west)
+
     _property_names[north_latitude] = "north_latitude"
     _property_names[south_latitude] = "south_latitude"
     _property_names[east_longitude] = "east_longitude"
@@ -1652,7 +1694,7 @@ class Extent(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Extent, [Extent, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4900388743329603538, 7944534523141337986), Extent)
+agcls.AgClassCatalog.add_catalog_entry((5151834154770850459, 13344785038746445746), Extent)
 agcls.AgTypeNameMap["Extent"] = Extent
 
 class CommunicationsWaveform(SupportsDeleteCallback):
@@ -1674,7 +1716,7 @@ class CommunicationsWaveform(SupportsDeleteCallback):
     _get_unambiguous_channel_delay_method_offset = 12
     _get_unambiguous_channel_distance_method_offset = 13
     _metadata = {
-        "iid_data" : (5073231083378675674, 13078442724957062319),
+        "iid_data" : (5701009895544568603, 4060828244725623999),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1807,7 +1849,7 @@ class CommunicationsWaveform(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommunicationsWaveform, [CommunicationsWaveform, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5578603191846218821, 13050805049586632106), CommunicationsWaveform)
+agcls.AgClassCatalog.add_catalog_entry((5501289608801900526, 13017124479502804625), CommunicationsWaveform)
 agcls.AgTypeNameMap["CommunicationsWaveform"] = CommunicationsWaveform
 
 class RadarWaveform(SupportsDeleteCallback):
@@ -1822,7 +1864,7 @@ class RadarWaveform(SupportsDeleteCallback):
     _get_bandwidth_method_offset = 5
     _set_bandwidth_method_offset = 6
     _metadata = {
-        "iid_data" : (5372724197743564578, 12276101041325134501),
+        "iid_data" : (4829791723709714335, 18003048008441454732),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1894,7 +1936,7 @@ class RadarWaveform(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarWaveform, [RadarWaveform, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4703831939351115472, 12881818140868134074), RadarWaveform)
+agcls.AgClassCatalog.add_catalog_entry((5130441002877563298, 11472922400229006745), RadarWaveform)
 agcls.AgTypeNameMap["RadarWaveform"] = RadarWaveform
 
 class ParametricBeamAntenna(IAntenna, SupportsDeleteCallback):
@@ -1909,7 +1951,7 @@ class ParametricBeamAntenna(IAntenna, SupportsDeleteCallback):
     _get_horizontal_beamwidth_method_offset = 5
     _set_horizontal_beamwidth_method_offset = 6
     _metadata = {
-        "iid_data" : (5066231717385365390, 5698936586915315868),
+        "iid_data" : (5443044110083441021, 4335029080365028777),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1983,7 +2025,7 @@ class ParametricBeamAntenna(IAntenna, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ParametricBeamAntenna, [ParametricBeamAntenna, IAntenna])
 
-agcls.AgClassCatalog.add_catalog_entry((5281565447641177900, 16732104418991711902), ParametricBeamAntenna)
+agcls.AgClassCatalog.add_catalog_entry((5608046540505248573, 11285439221430522042), ParametricBeamAntenna)
 agcls.AgTypeNameMap["ParametricBeamAntenna"] = ParametricBeamAntenna
 
 class ElementExportPatternAntenna(IAntenna, SupportsDeleteCallback):
@@ -1994,7 +2036,7 @@ class ElementExportPatternAntenna(IAntenna, SupportsDeleteCallback):
     _get_hfss_element_export_pattern_file_method_offset = 1
     _set_hfss_element_export_pattern_file_method_offset = 2
     _metadata = {
-        "iid_data" : (4766319250734673987, 12312688800869503421),
+        "iid_data" : (5702957983798155509, 612537758527468167),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2034,7 +2076,7 @@ class ElementExportPatternAntenna(IAntenna, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ElementExportPatternAntenna, [ElementExportPatternAntenna, IAntenna])
 
-agcls.AgClassCatalog.add_catalog_entry((4825374820807761942, 16197124924034080433), ElementExportPatternAntenna)
+agcls.AgClassCatalog.add_catalog_entry((4622115852148269206, 14645709675013215925), ElementExportPatternAntenna)
 agcls.AgTypeNameMap["ElementExportPatternAntenna"] = ElementExportPatternAntenna
 
 class FarFieldDataPatternAntenna(IAntenna, SupportsDeleteCallback):
@@ -2045,7 +2087,7 @@ class FarFieldDataPatternAntenna(IAntenna, SupportsDeleteCallback):
     _get_hfss_far_field_data_pattern_file_method_offset = 1
     _set_hfss_far_field_data_pattern_file_method_offset = 2
     _metadata = {
-        "iid_data" : (5411664539639735101, 603918576028509367),
+        "iid_data" : (4766535495631233693, 4277778482148036535),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2085,7 +2127,7 @@ class FarFieldDataPatternAntenna(IAntenna, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FarFieldDataPatternAntenna, [FarFieldDataPatternAntenna, IAntenna])
 
-agcls.AgClassCatalog.add_catalog_entry((5592290011870032292, 2726481583475271050), FarFieldDataPatternAntenna)
+agcls.AgClassCatalog.add_catalog_entry((5088999985869299634, 3360945610388407703), FarFieldDataPatternAntenna)
 agcls.AgTypeNameMap["FarFieldDataPatternAntenna"] = FarFieldDataPatternAntenna
 
 class Transceiver(SupportsDeleteCallback):
@@ -2101,7 +2143,7 @@ class Transceiver(SupportsDeleteCallback):
     _get_central_body_name_method_offset = 6
     _get_model_method_offset = 7
     _metadata = {
-        "iid_data" : (5558123964013987462, 4268831737052389557),
+        "iid_data" : (5344947488130358189, 3864536301493169838),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2183,7 +2225,7 @@ class Transceiver(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Transceiver, [Transceiver, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4774390769497310370, 10087295320591673777), Transceiver)
+agcls.AgClassCatalog.add_catalog_entry((5764020437003561125, 11866983976314225332), Transceiver)
 agcls.AgTypeNameMap["Transceiver"] = Transceiver
 
 class CommunicationsTransceiverConfiguration(SupportsDeleteCallback):
@@ -2199,7 +2241,7 @@ class CommunicationsTransceiverConfiguration(SupportsDeleteCallback):
     _get_include_parent_object_facets_method_offset = 6
     _set_include_parent_object_facets_method_offset = 7
     _metadata = {
-        "iid_data" : (5172902671839407480, 8994840099133695906),
+        "iid_data" : (5339551930090768236, 7774580073833889162),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2280,7 +2322,7 @@ class CommunicationsTransceiverConfiguration(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommunicationsTransceiverConfiguration, [CommunicationsTransceiverConfiguration, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4989635995711489442, 13106208359506057875), CommunicationsTransceiverConfiguration)
+agcls.AgClassCatalog.add_catalog_entry((4978837709042199279, 16007307245290930305), CommunicationsTransceiverConfiguration)
 agcls.AgTypeNameMap["CommunicationsTransceiverConfiguration"] = CommunicationsTransceiverConfiguration
 
 class RadarTransceiverConfiguration(SupportsDeleteCallback):
@@ -2294,7 +2336,7 @@ class RadarTransceiverConfiguration(SupportsDeleteCallback):
     _get_mode_method_offset = 4
     _set_mode_method_offset = 5
     _metadata = {
-        "iid_data" : (4659302401260160265, 11650713832413966732),
+        "iid_data" : (4970430663528823873, 18390649212433641400),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2358,7 +2400,7 @@ class RadarTransceiverConfiguration(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarTransceiverConfiguration, [RadarTransceiverConfiguration, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5302182047077719402, 6821497016786865593), RadarTransceiverConfiguration)
+agcls.AgClassCatalog.add_catalog_entry((4784738055343873436, 14125734708469202355), RadarTransceiverConfiguration)
 agcls.AgTypeNameMap["RadarTransceiverConfiguration"] = RadarTransceiverConfiguration
 
 class RadarImagingDataProductCollection(SupportsDeleteCallback):
@@ -2372,7 +2414,7 @@ class RadarImagingDataProductCollection(SupportsDeleteCallback):
     _contains_method_offset = 4
     _find_by_identifier_method_offset = 5
     _metadata = {
-        "iid_data" : (4970923993909938536, 14862492402545961636),
+        "iid_data" : (5088766265993511249, 12626778349551849876),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2448,7 +2490,7 @@ class RadarImagingDataProductCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarImagingDataProductCollection, [RadarImagingDataProductCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5262960150006393489, 11430595506678663558), RadarImagingDataProductCollection)
+agcls.AgClassCatalog.add_catalog_entry((5427500380070641141, 1979161084254511271), RadarImagingDataProductCollection)
 agcls.AgTypeNameMap["RadarImagingDataProductCollection"] = RadarImagingDataProductCollection
 
 class RadarTransceiverConfigurationCollection(SupportsDeleteCallback):
@@ -2465,7 +2507,7 @@ class RadarTransceiverConfigurationCollection(SupportsDeleteCallback):
     _remove_all_method_offset = 7
     _contains_method_offset = 8
     _metadata = {
-        "iid_data" : (4807842543420809634, 14097660371338695355),
+        "iid_data" : (5695111455108751189, 11654867469952205963),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2562,7 +2604,7 @@ class RadarTransceiverConfigurationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarTransceiverConfigurationCollection, [RadarTransceiverConfigurationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4790458976272477186, 15304866967432392352), RadarTransceiverConfigurationCollection)
+agcls.AgClassCatalog.add_catalog_entry((4714051373887209245, 7488076708093085605), RadarTransceiverConfigurationCollection)
 agcls.AgTypeNameMap["RadarTransceiverConfigurationCollection"] = RadarTransceiverConfigurationCollection
 
 class AnalysisConfiguration(SupportsDeleteCallback):
@@ -2579,7 +2621,7 @@ class AnalysisConfiguration(SupportsDeleteCallback):
     _set_central_body_name_method_offset = 7
     _get_model_method_offset = 8
     _metadata = {
-        "iid_data" : (5101846457140874039, 3763858361601011076),
+        "iid_data" : (5248807055816840987, 5379050123730892468),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2669,7 +2711,7 @@ class AnalysisConfiguration(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisConfiguration, [AnalysisConfiguration, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5392730798104370011, 563428922600983438), AnalysisConfiguration)
+agcls.AgClassCatalog.add_catalog_entry((5677711054846454801, 10373044160440040109), AnalysisConfiguration)
 agcls.AgTypeNameMap["AnalysisConfiguration"] = AnalysisConfiguration
 
 class CommunicationsAnalysisConfigurationModel(IAnalysisConfigurationModel, SupportsDeleteCallback):
@@ -2679,7 +2721,7 @@ class CommunicationsAnalysisConfigurationModel(IAnalysisConfigurationModel, Supp
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_transceiver_configuration_collection_method_offset = 1
     _metadata = {
-        "iid_data" : (4842510040248443164, 4420140607317663404),
+        "iid_data" : (5377579515007843975, 8243992647081021339),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2711,7 +2753,7 @@ class CommunicationsAnalysisConfigurationModel(IAnalysisConfigurationModel, Supp
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommunicationsAnalysisConfigurationModel, [CommunicationsAnalysisConfigurationModel, IAnalysisConfigurationModel])
 
-agcls.AgClassCatalog.add_catalog_entry((5515277576377628430, 13436450372685581228), CommunicationsAnalysisConfigurationModel)
+agcls.AgClassCatalog.add_catalog_entry((5011550854218530883, 5141056899419203769), CommunicationsAnalysisConfigurationModel)
 agcls.AgTypeNameMap["CommunicationsAnalysisConfigurationModel"] = CommunicationsAnalysisConfigurationModel
 
 class RadarISarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAnalysisConfigurationModel, SupportsDeleteCallback):
@@ -2721,7 +2763,7 @@ class RadarISarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAna
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_radar_target_collection_method_offset = 1
     _metadata = {
-        "iid_data" : (4699547487188819079, 7119029616558802341),
+        "iid_data" : (5560239334934040690, 13238250037870844544),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2755,7 +2797,7 @@ class RadarISarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAna
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarISarAnalysisConfigurationModel, [RadarISarAnalysisConfigurationModel, IAnalysisConfigurationModel, IRadarAnalysisConfigurationModel])
 
-agcls.AgClassCatalog.add_catalog_entry((5228864121001253272, 11476005751415570308), RadarISarAnalysisConfigurationModel)
+agcls.AgClassCatalog.add_catalog_entry((5595337984047056268, 14286340175974646680), RadarISarAnalysisConfigurationModel)
 agcls.AgTypeNameMap["RadarISarAnalysisConfigurationModel"] = RadarISarAnalysisConfigurationModel
 
 class RadarSarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAnalysisConfigurationModel, SupportsDeleteCallback):
@@ -2765,7 +2807,7 @@ class RadarSarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAnal
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_image_location_collection_method_offset = 1
     _metadata = {
-        "iid_data" : (4854169440574638134, 10421576952529875864),
+        "iid_data" : (5664266325122672211, 16093828039737084302),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2799,7 +2841,7 @@ class RadarSarAnalysisConfigurationModel(IAnalysisConfigurationModel, IRadarAnal
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarSarAnalysisConfigurationModel, [RadarSarAnalysisConfigurationModel, IAnalysisConfigurationModel, IRadarAnalysisConfigurationModel])
 
-agcls.AgClassCatalog.add_catalog_entry((5764377955799592933, 16878723110774774148), RadarSarAnalysisConfigurationModel)
+agcls.AgClassCatalog.add_catalog_entry((4618872771739007313, 785458950983957423), RadarSarAnalysisConfigurationModel)
 agcls.AgTypeNameMap["RadarSarAnalysisConfigurationModel"] = RadarSarAnalysisConfigurationModel
 
 class TransceiverCollection(SupportsDeleteCallback):
@@ -2817,7 +2859,7 @@ class TransceiverCollection(SupportsDeleteCallback):
     _remove_all_method_offset = 8
     _find_by_identifier_method_offset = 9
     _metadata = {
-        "iid_data" : (5453563073797309057, 6941833189803444112),
+        "iid_data" : (5066882531418439896, 6025038992297931663),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2921,7 +2963,7 @@ class TransceiverCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TransceiverCollection, [TransceiverCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5274798942248124582, 15790306252761209771), TransceiverCollection)
+agcls.AgClassCatalog.add_catalog_entry((5054772411595164986, 13575262620310048164), TransceiverCollection)
 agcls.AgTypeNameMap["TransceiverCollection"] = TransceiverCollection
 
 class FacetTilesetCollection(SupportsDeleteCallback):
@@ -2937,7 +2979,7 @@ class FacetTilesetCollection(SupportsDeleteCallback):
     _remove_all_method_offset = 6
     _add_method_offset = 7
     _metadata = {
-        "iid_data" : (5753655749563624094, 7998985330621454980),
+        "iid_data" : (5345107458893416639, 1879233173021731765),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3027,7 +3069,7 @@ class FacetTilesetCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FacetTilesetCollection, [FacetTilesetCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5307708137821167772, 1526680685227976082), FacetTilesetCollection)
+agcls.AgClassCatalog.add_catalog_entry((5241353233790358467, 31149073901229443), FacetTilesetCollection)
 agcls.AgTypeNameMap["FacetTilesetCollection"] = FacetTilesetCollection
 
 class SceneContributor(SupportsDeleteCallback):
@@ -3043,7 +3085,7 @@ class SceneContributor(SupportsDeleteCallback):
     _get_focused_ray_density_method_offset = 6
     _set_focused_ray_density_method_offset = 7
     _metadata = {
-        "iid_data" : (5289282663936466784, 6187411627788191675),
+        "iid_data" : (5575428253904179354, 871515086261766274),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3124,7 +3166,7 @@ class SceneContributor(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneContributor, [SceneContributor, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4973272663297336587, 5054245476557569700), SceneContributor)
+agcls.AgClassCatalog.add_catalog_entry((5589375568961599488, 14409153256328659874), SceneContributor)
 agcls.AgTypeNameMap["SceneContributor"] = SceneContributor
 
 class SceneContributorCollection(ISceneContributorCollection, SupportsDeleteCallback):
@@ -3143,7 +3185,7 @@ class SceneContributorCollection(ISceneContributorCollection, SupportsDeleteCall
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneContributorCollection, [ISceneContributorCollection])
 
-agcls.AgClassCatalog.add_catalog_entry((5079782350604257666, 16703292362421634220), SceneContributorCollection)
+agcls.AgClassCatalog.add_catalog_entry((5758395187433166913, 985915763780147333), SceneContributorCollection)
 agcls.AgTypeNameMap["SceneContributorCollection"] = SceneContributorCollection
 
 class RadarTargetCollection(ISceneContributorCollection, SupportsDeleteCallback):
@@ -3162,7 +3204,7 @@ class RadarTargetCollection(ISceneContributorCollection, SupportsDeleteCallback)
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarTargetCollection, [ISceneContributorCollection])
 
-agcls.AgClassCatalog.add_catalog_entry((5310760862917692294, 11829976016985872805), RadarTargetCollection)
+agcls.AgClassCatalog.add_catalog_entry((5205732992222383405, 4091993162712122275), RadarTargetCollection)
 agcls.AgTypeNameMap["RadarTargetCollection"] = RadarTargetCollection
 
 class RadarSarImageLocation(SupportsDeleteCallback):
@@ -3177,7 +3219,7 @@ class RadarSarImageLocation(SupportsDeleteCallback):
     _get_longitude_method_offset = 5
     _set_longitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4928415407610984061, 7191108097270096522),
+        "iid_data" : (5083014330116168059, 15940326948769439153),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3249,7 +3291,7 @@ class RadarSarImageLocation(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarSarImageLocation, [RadarSarImageLocation, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5444737755923510910, 18321320075764662437), RadarSarImageLocation)
+agcls.AgClassCatalog.add_catalog_entry((5268390739219090653, 5243515772457973653), RadarSarImageLocation)
 agcls.AgTypeNameMap["RadarSarImageLocation"] = RadarSarImageLocation
 
 class RadarSarImageLocationCollection(SupportsDeleteCallback):
@@ -3267,7 +3309,7 @@ class RadarSarImageLocationCollection(SupportsDeleteCallback):
     _contains_method_offset = 8
     _find_method_offset = 9
     _metadata = {
-        "iid_data" : (5715838980280879821, 3014522816578550712),
+        "iid_data" : (4764964873053444677, 13541437245688784278),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3371,7 +3413,7 @@ class RadarSarImageLocationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarSarImageLocationCollection, [RadarSarImageLocationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4952796876820433574, 17254855614936067770), RadarSarImageLocationCollection)
+agcls.AgClassCatalog.add_catalog_entry((5685305254463026309, 8912470404726757004), RadarSarImageLocationCollection)
 agcls.AgTypeNameMap["RadarSarImageLocationCollection"] = RadarSarImageLocationCollection
 
 class CommunicationsTransceiverConfigurationCollection(SupportsDeleteCallback):
@@ -3388,7 +3430,7 @@ class CommunicationsTransceiverConfigurationCollection(SupportsDeleteCallback):
     _remove_all_method_offset = 7
     _contains_method_offset = 8
     _metadata = {
-        "iid_data" : (5571394370622903367, 10058552235130119822),
+        "iid_data" : (5345775547056167751, 16252874551860572851),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3485,7 +3527,7 @@ class CommunicationsTransceiverConfigurationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommunicationsTransceiverConfigurationCollection, [CommunicationsTransceiverConfigurationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4918177005773267776, 5330117875639860627), CommunicationsTransceiverConfigurationCollection)
+agcls.AgClassCatalog.add_catalog_entry((5303350899362741451, 15194854434690147218), CommunicationsTransceiverConfigurationCollection)
 agcls.AgTypeNameMap["CommunicationsTransceiverConfigurationCollection"] = CommunicationsTransceiverConfigurationCollection
 
 class AnalysisConfigurationCollection(SupportsDeleteCallback):
@@ -3504,7 +3546,7 @@ class AnalysisConfigurationCollection(SupportsDeleteCallback):
     _contains_method_offset = 9
     _find_method_offset = 10
     _metadata = {
-        "iid_data" : (4662220020043770228, 1775359325286225077),
+        "iid_data" : (5139223614838802727, 10699109125304608912),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3615,7 +3657,7 @@ class AnalysisConfigurationCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisConfigurationCollection, [AnalysisConfigurationCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4928253720090755449, 12599536154964304772), AnalysisConfigurationCollection)
+agcls.AgClassCatalog.add_catalog_entry((5108384052532699175, 9239904611326260382), AnalysisConfigurationCollection)
 agcls.AgTypeNameMap["AnalysisConfigurationCollection"] = AnalysisConfigurationCollection
 
 class ComputeOptions(SupportsDeleteCallback):
@@ -3638,7 +3680,7 @@ class ComputeOptions(SupportsDeleteCallback):
     _get_bounding_box_side_length_method_offset = 13
     _set_bounding_box_side_length_method_offset = 14
     _metadata = {
-        "iid_data" : (5486226833155479016, 11259931109832989631),
+        "iid_data" : (5319721960260637185, 7309251030269011901),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3778,7 +3820,7 @@ class ComputeOptions(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ComputeOptions, [ComputeOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5519048876673409941, 3923537089545973176), ComputeOptions)
+agcls.AgClassCatalog.add_catalog_entry((4766697304710355048, 11020176142052091815), ComputeOptions)
 agcls.AgTypeNameMap["ComputeOptions"] = ComputeOptions
 
 class STKRFChannelModeler(SupportsDeleteCallback):
@@ -3798,7 +3840,7 @@ class STKRFChannelModeler(SupportsDeleteCallback):
     _construct_analysis_method_offset = 10
     _validate_analysis_method_offset = 11
     _metadata = {
-        "iid_data" : (5326550927957697862, 7805227810553142921),
+        "iid_data" : (5482733239574373466, 18166728626667036302),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3868,7 +3910,7 @@ class STKRFChannelModeler(SupportsDeleteCallback):
         return self._intf.get_property(STKRFChannelModeler._metadata, STKRFChannelModeler._get_supported_gpu_properties_list_metadata)
 
     _set_gpu_devices_metadata = { "offset" : _set_gpu_devices_method_offset,
-            "arg_types" : (agcom.LPSAFEARRAY,),
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def set_gpu_devices(self, gpu_device_ids:list) -> None:
         """Set the desired GPU device IDs"""
@@ -3908,7 +3950,7 @@ class STKRFChannelModeler(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKRFChannelModeler, [STKRFChannelModeler, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5711907369548252697, 4711585359054994589), STKRFChannelModeler)
+agcls.AgClassCatalog.add_catalog_entry((5114857258521425339, 16799304675451814790), STKRFChannelModeler)
 agcls.AgTypeNameMap["STKRFChannelModeler"] = STKRFChannelModeler
 
 class CommunicationsTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
@@ -3918,7 +3960,7 @@ class CommunicationsTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_waveform_method_offset = 1
     _metadata = {
-        "iid_data" : (5551616547060849613, 1549009027122701441),
+        "iid_data" : (4807723900367125848, 14400719289172710809),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3950,7 +3992,7 @@ class CommunicationsTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommunicationsTransceiverModel, [CommunicationsTransceiverModel, ITransceiverModel])
 
-agcls.AgClassCatalog.add_catalog_entry((5460540020574842430, 12586276357591230339), CommunicationsTransceiverModel)
+agcls.AgClassCatalog.add_catalog_entry((5700000732757610746, 9267747997565531836), CommunicationsTransceiverModel)
 agcls.AgTypeNameMap["CommunicationsTransceiverModel"] = CommunicationsTransceiverModel
 
 class RadarTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
@@ -3960,7 +4002,7 @@ class RadarTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_waveform_method_offset = 1
     _metadata = {
-        "iid_data" : (5397355634120071946, 14881756830326487198),
+        "iid_data" : (5172686738002011084, 2528836882571932832),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -3992,13 +4034,13 @@ class RadarTransceiverModel(ITransceiverModel, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarTransceiverModel, [RadarTransceiverModel, ITransceiverModel])
 
-agcls.AgClassCatalog.add_catalog_entry((5535067053932425138, 5002300541366460048), RadarTransceiverModel)
+agcls.AgClassCatalog.add_catalog_entry((5243014444346680384, 17762784428435053729), RadarTransceiverModel)
 agcls.AgTypeNameMap["RadarTransceiverModel"] = RadarTransceiverModel
 
 class RangeDopplerResponse(IResponse, SupportsDeleteCallback):
     """The properties for a range doppler channel characterization response."""
 
-    _num_methods = 6
+    _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_range_values_method_offset = 1
     _get_range_count_method_offset = 2
@@ -4006,8 +4048,9 @@ class RangeDopplerResponse(IResponse, SupportsDeleteCallback):
     _get_velocity_count_method_offset = 4
     _get_pulse_count_method_offset = 5
     _get_angular_velocity_method_offset = 6
+    _get_data_dimensions_method_offset = 7
     _metadata = {
-        "iid_data" : (4709129566781506392, 18419786988973210803),
+        "iid_data" : (4775466745073477908, 4613390586284496029),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4062,12 +4105,21 @@ class RangeDopplerResponse(IResponse, SupportsDeleteCallback):
         """Get the angular velocity."""
         return self._intf.get_property(RangeDopplerResponse._metadata, RangeDopplerResponse._get_angular_velocity_metadata)
 
+    _get_data_dimensions_metadata = { "offset" : _get_data_dimensions_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg,) }
+    @property
+    def data_dimensions(self) -> list:
+        """Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Velocity Count, Range Count, Complex Number (imaginary and real)}."""
+        return self._intf.get_property(RangeDopplerResponse._metadata, RangeDopplerResponse._get_data_dimensions_metadata)
+
     _property_names[range_values] = "range_values"
     _property_names[range_count] = "range_count"
     _property_names[velocity_values] = "velocity_values"
     _property_names[velocity_count] = "velocity_count"
     _property_names[pulse_count] = "pulse_count"
     _property_names[angular_velocity] = "angular_velocity"
+    _property_names[data_dimensions] = "data_dimensions"
 
     def __init__(self, source_object=None):
         """Construct an object of type RangeDopplerResponse."""
@@ -4084,18 +4136,19 @@ class RangeDopplerResponse(IResponse, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RangeDopplerResponse, [RangeDopplerResponse, IResponse])
 
-agcls.AgClassCatalog.add_catalog_entry((5543401830740382270, 3545126179169781131), RangeDopplerResponse)
+agcls.AgClassCatalog.add_catalog_entry((5632652412576303983, 13971576127268070073), RangeDopplerResponse)
 agcls.AgTypeNameMap["RangeDopplerResponse"] = RangeDopplerResponse
 
 class FrequencyPulseResponse(IResponse, SupportsDeleteCallback):
     """The properties for a frequency pulse channel characterization response."""
 
-    _num_methods = 2
+    _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_pulse_count_method_offset = 1
     _get_frequency_sample_count_method_offset = 2
+    _get_data_dimensions_method_offset = 3
     _metadata = {
-        "iid_data" : (5226211774985697343, 303850293307315840),
+        "iid_data" : (5691094288870661932, 6275219520155905449),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4118,8 +4171,17 @@ class FrequencyPulseResponse(IResponse, SupportsDeleteCallback):
         """Get the frequency sample count."""
         return self._intf.get_property(FrequencyPulseResponse._metadata, FrequencyPulseResponse._get_frequency_sample_count_metadata)
 
+    _get_data_dimensions_metadata = { "offset" : _get_data_dimensions_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg,) }
+    @property
+    def data_dimensions(self) -> list:
+        """Get the dimensions of the data. The dimensions are ordered in {Transmit Antenna Count, Receive Antenna Count, Pulse Count, Frequency Sample Count, Complex Number (imaginary and real)}."""
+        return self._intf.get_property(FrequencyPulseResponse._metadata, FrequencyPulseResponse._get_data_dimensions_metadata)
+
     _property_names[pulse_count] = "pulse_count"
     _property_names[frequency_sample_count] = "frequency_sample_count"
+    _property_names[data_dimensions] = "data_dimensions"
 
     def __init__(self, source_object=None):
         """Construct an object of type FrequencyPulseResponse."""
@@ -4136,7 +4198,7 @@ class FrequencyPulseResponse(IResponse, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FrequencyPulseResponse, [FrequencyPulseResponse, IResponse])
 
-agcls.AgClassCatalog.add_catalog_entry((5371909063848130331, 188560514196819341), FrequencyPulseResponse)
+agcls.AgClassCatalog.add_catalog_entry((4861563049527470555, 17549780910734032023), FrequencyPulseResponse)
 agcls.AgTypeNameMap["FrequencyPulseResponse"] = FrequencyPulseResponse
 
 class AnalysisLink(IAnalysisLink, SupportsDeleteCallback):
@@ -4155,7 +4217,7 @@ class AnalysisLink(IAnalysisLink, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisLink, [IAnalysisLink])
 
-agcls.AgClassCatalog.add_catalog_entry((5035691807805684055, 1039028034256790706), AnalysisLink)
+agcls.AgClassCatalog.add_catalog_entry((5060158165662953403, 11836744488341586055), AnalysisLink)
 agcls.AgTypeNameMap["AnalysisLink"] = AnalysisLink
 
 class RadarSarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
@@ -4165,7 +4227,7 @@ class RadarSarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_image_location_name_method_offset = 1
     _metadata = {
-        "iid_data" : (5684254587119606851, 6835131856690226323),
+        "iid_data" : (5021421490689678073, 8232694972196791714),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4197,7 +4259,7 @@ class RadarSarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarSarAnalysisLink, [RadarSarAnalysisLink, IAnalysisLink])
 
-agcls.AgClassCatalog.add_catalog_entry((5067638514630488731, 265473950441651589), RadarSarAnalysisLink)
+agcls.AgClassCatalog.add_catalog_entry((4866171615548271834, 17813028962091228814), RadarSarAnalysisLink)
 agcls.AgTypeNameMap["RadarSarAnalysisLink"] = RadarSarAnalysisLink
 
 class RadarISarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
@@ -4207,7 +4269,7 @@ class RadarISarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_target_object_path_method_offset = 1
     _metadata = {
-        "iid_data" : (4668749688519013855, 7019281282042502068),
+        "iid_data" : (5204187003231234038, 12438436543135854776),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4239,7 +4301,7 @@ class RadarISarAnalysisLink(IAnalysisLink, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RadarISarAnalysisLink, [RadarISarAnalysisLink, IAnalysisLink])
 
-agcls.AgClassCatalog.add_catalog_entry((5167524712546203694, 8283996936521855423), RadarISarAnalysisLink)
+agcls.AgClassCatalog.add_catalog_entry((5007071857080535607, 5914757046513508527), RadarISarAnalysisLink)
 agcls.AgTypeNameMap["RadarISarAnalysisLink"] = RadarISarAnalysisLink
 
 class AnalysisLinkCollection(SupportsDeleteCallback):
@@ -4251,7 +4313,7 @@ class AnalysisLinkCollection(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5753809382164761882, 12578733845637557142),
+        "iid_data" : (5385625875110262874, 9943192813766780073),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4313,7 +4375,7 @@ class AnalysisLinkCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisLinkCollection, [AnalysisLinkCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5590692282349627472, 14211210503561071262), AnalysisLinkCollection)
+agcls.AgClassCatalog.add_catalog_entry((4920812217082674708, 3127837926356734904), AnalysisLinkCollection)
 agcls.AgTypeNameMap["AnalysisLinkCollection"] = AnalysisLinkCollection
 
 class Analysis(SupportsDeleteCallback):
@@ -4323,7 +4385,7 @@ class Analysis(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_analysis_link_collection_method_offset = 1
     _metadata = {
-        "iid_data" : (5641135177332540089, 160659604875743665),
+        "iid_data" : (5680527335101181193, 5726398768767138459),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4353,7 +4415,7 @@ class Analysis(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Analysis, [Analysis, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4803344109459367919, 15926375216492296123), Analysis)
+agcls.AgClassCatalog.add_catalog_entry((5490184404645219457, 12664048901702803107), Analysis)
 agcls.AgTypeNameMap["Analysis"] = Analysis
 
 class GpuProperties(SupportsDeleteCallback):
@@ -4368,7 +4430,7 @@ class GpuProperties(SupportsDeleteCallback):
     _get_speed_mhz_method_offset = 5
     _get_memory_gb_method_offset = 6
     _metadata = {
-        "iid_data" : (4721899476075187212, 4888009188086501010),
+        "iid_data" : (4687254183925427724, 1328639251241963677),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4443,5 +4505,5 @@ class GpuProperties(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GpuProperties, [GpuProperties, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4745059216132635585, 4320058157532729488), GpuProperties)
+agcls.AgClassCatalog.add_catalog_entry((4703832968121801901, 9915671482244684202), GpuProperties)
 agcls.AgTypeNameMap["GpuProperties"] = GpuProperties

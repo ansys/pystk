@@ -54,7 +54,6 @@ from ...internal.comutil import (
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...stkobjects import IAnimation, Scenario, STKObjectRoot
 from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
-from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
@@ -172,7 +171,7 @@ class RemoteFrameBufferHost(object):
     Assemble a vtable following the layout of that interface
     """
     _iid_unknown = GUID(IUnknown._guid)
-    _iid_iagremoteframebufferhost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
+    _iid_iagremoteframebufferhost = GUID('{86B3E7CB-6B45-43D4-88B1-2939FBF1E956}')
 
     def __init__(self, owner):
         """Construct an object of type RemoteFrameBufferHost."""
@@ -268,7 +267,7 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
-        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._unknown)
+        self._rfbHostImplUnk.p.value = addressof(self._rfbHostImpl._unknown)
 
         self._rfbHost = IRemoteFrameBufferHost()
         self._rfbHost._private_init(self._rfbHostImplUnk)
@@ -330,7 +329,7 @@ class WidgetBase(RemoteFrameBuffer):
     def __setattr__(self, attrname, value):
         try:
             self._interface.__setattr__(self, attrname, value)
-        except STKAttributeError:
+        except AttributeError:
             RemoteFrameBuffer.__setattr__(self, attrname, value)
 
     def __get_modifiers(self, event):
@@ -452,7 +451,7 @@ class GlobeWidget(Graphics3DControlBase, WidgetBase):
     #   root.ExecuteCommand('Animate * Start Loop')
     #   g
 
-    _progid = "STKX12.VOControl.1"
+    _progid = "STKX13.VOControl.1"
     _interface = Graphics3DControlBase
 
     def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):
@@ -466,7 +465,7 @@ class GlobeWidget(Graphics3DControlBase, WidgetBase):
 
 class MapWidget(Graphics2DControlBase, WidgetBase):
     """The 2D Map widget for jupyter."""
-    _progid = "STKX12.2DControl.1"
+    _progid = "STKX13.2DControl.1"
     _interface = Graphics2DControlBase
 
     def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):
@@ -480,7 +479,7 @@ class MapWidget(Graphics2DControlBase, WidgetBase):
 
 class GfxAnalysisWidget(GraphicsAnalysisControlBase, WidgetBase):
     """The Graphics Analysis widget for jupyter."""
-    _progid = "STKX12.GfxAnalysisControl.1"
+    _progid = "STKX13.GfxAnalysisControl.1"
     _interface = GraphicsAnalysisControlBase
 
     def __init__(self, root: STKObjectRoot, w: int, h: int, title: str = None):

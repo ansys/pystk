@@ -23,14 +23,13 @@
 
 import os
 import typing
-import copy
 
 from ctypes import byref, cast, pointer, POINTER, Structure
 
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
 from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded
 from ..utilities.comobject  import COMObject
-from ..utilities.exceptions import STKRuntimeError
+from .apiutil import error_msg_from_hresult
 
 ###############################################################################
 #   Backwards Compatibility Mapping
@@ -57,7 +56,7 @@ AgBackwardsCompatabilityMapping = _CreateBackwardsCompatibilityMapping()
 ###############################################################################
 
 class _CreateAgClassCatalog(object):
-    """Singleton class for registering STK Object Model classes"""
+    """Singleton class for registering Object Model classes"""
     def __init__(self):
         self.catalog = dict()
 
@@ -110,12 +109,9 @@ def evaluate_hresult(hr:HRESULT) -> None:
             msg = ierrorinfo.get_description()
             del(ierrorinfo)
             del(punk)
-        elif (hr & 0xFFFFFFFF) == 0x80070057: # E_INVALIDARG
-            msg = "One or more arguments are invalid."
-        elif (hr & 0xFFFFFFFF) == 0x8007000E: # E_OUTOFMEMORY
-            msg = "Data size exceeds memory limit. Try chunking the data request."
-        hresult_val = "(HRESULT = 0x%x)" % (hr & 0xFFFFFFFF)
-        raise STKRuntimeError(msg if msg is not None else hresult_val)
+        else:
+            msg = error_msg_from_hresult(hr)
+        raise RuntimeError(msg)
 
 
 ###############################################################################
@@ -222,7 +218,7 @@ class _IProvideClassInfo(object):
                 type_info = _ITypeInfo(pUnk)
                 type_attr = type_info.get_type_attr()
                 if type_attr is not None:
-                    guid = copy.deepcopy(type_attr.guid)
+                    guid = GUID.from_guid(type_attr.guid)
                     type_info.release_type_attr(type_attr)
                 else:
                     guid = None
@@ -364,7 +360,7 @@ class _IEnumMoniker(object):
         num_fetched = ULONG(0)
         pUnk = IUnknown()
         CLSID_AgUiApplication = GUID()
-        OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
+        OLE32Lib.CLSIDFromString("STK13.Application", CLSID_AgUiApplication)
         OLE32Lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
         pUnk.take_ownership()
         self._Next(one_obj, byref(pUnk.p), byref(num_fetched))

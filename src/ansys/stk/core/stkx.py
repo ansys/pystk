@@ -89,11 +89,7 @@ from .internal.eventutil import (
 )
 from .stkutil import ExecuteCommandResult, ExecuteMultipleCommandsMode, ExecuteMultipleCommandsResult, LineStyle
 from .utilities import colors as agcolor
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class ShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
@@ -274,7 +270,7 @@ class IDrawElement(object):
     _get_visible_method_offset = 1
     _set_visible_method_offset = 2
     _metadata = {
-        "iid_data" : (4799429500509160029, 14297494079902626208),
+        "iid_data" : (5628420527828914297, 11851369920546476691),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -310,7 +306,7 @@ class IDrawElement(object):
     _property_names[visible] = "visible"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4799429500509160029, 14297494079902626208), IDrawElement)
+agcls.AgClassCatalog.add_catalog_entry((5628420527828914297, 11851369920546476691), IDrawElement)
 agcls.AgTypeNameMap["IDrawElement"] = IDrawElement
 
 class IDrawElementRect(IDrawElement):
@@ -330,7 +326,7 @@ class IDrawElementRect(IDrawElement):
     _get_line_style_method_offset = 10
     _set_line_style_method_offset = 11
     _metadata = {
-        "iid_data" : (5216817853639421657, 10124586112684702141),
+        "iid_data" : (5760057209317875442, 11089162376366659215),
         "vtable_reference" : IDrawElement._vtable_offset + IDrawElement._num_methods - 1,
     }
     _property_names = {}
@@ -442,7 +438,7 @@ class IDrawElementRect(IDrawElement):
     _property_names[line_style] = "line_style"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5216817853639421657, 10124586112684702141), IDrawElementRect)
+agcls.AgClassCatalog.add_catalog_entry((5760057209317875442, 11089162376366659215), IDrawElementRect)
 agcls.AgTypeNameMap["IDrawElementRect"] = IDrawElementRect
 
 class IDrawElementCollection(object):
@@ -459,7 +455,7 @@ class IDrawElementCollection(object):
     _get_visible_method_offset = 7
     _set_visible_method_offset = 8
     _metadata = {
-        "iid_data" : (5345909665096890445, 1033150257057093781),
+        "iid_data" : (5260087635497314219, 16347332931743479485),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -558,7 +554,7 @@ class IDrawElementCollection(object):
     _property_names[visible] = "visible"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5345909665096890445, 1033150257057093781), IDrawElementCollection)
+agcls.AgClassCatalog.add_catalog_entry((5260087635497314219, 16347332931743479485), IDrawElementCollection)
 agcls.AgTypeNameMap["IDrawElementCollection"] = IDrawElementCollection
 
 
@@ -566,7 +562,7 @@ agcls.AgTypeNameMap["IDrawElementCollection"] = IDrawElementCollection
 class Graphics3DControlBase(SupportsDeleteCallback):
     """AGI Globe control."""
 
-    _num_methods = 48
+    _num_methods = 46
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_back_color_method_offset = 1
     _set_back_color_method_offset = 2
@@ -582,42 +578,40 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _set_no_logo_method_offset = 12
     _get_ole_drop_mode_method_offset = 13
     _set_ole_drop_mode_method_offset = 14
-    _get_vendor_id_method_offset = 15
-    _set_vendor_id_method_offset = 16
-    _rubber_band_pick_info_method_offset = 17
-    _get_mouse_mode_method_offset = 18
-    _set_mouse_mode_method_offset = 19
-    _get_draw_elements_method_offset = 20
-    _get_ready_state_method_offset = 21
-    _get_ppt_preload_mode_method_offset = 22
-    _set_ppt_preload_mode_method_offset = 23
-    _get_advanced_pick_mode_method_offset = 24
-    _set_advanced_pick_mode_method_offset = 25
-    _copy_from_window_id_method_offset = 26
-    _start_object_editing_method_offset = 27
-    _apply_object_editing_method_offset = 28
-    _stop_object_editing_method_offset = 29
-    _get_is_object_editing_method_offset = 30
-    _get_in_zoom_mode_method_offset = 31
-    _set_mouse_cursor_from_file_method_offset = 32
-    _restore_mouse_cursor_method_offset = 33
-    _set_mouse_cursor_from_handle_method_offset = 34
-    _get_show_progress_image_method_offset = 35
-    _set_show_progress_image_method_offset = 36
-    _get_progress_image_x_offset_method_offset = 37
-    _set_progress_image_x_offset_method_offset = 38
-    _get_progress_image_y_offset_method_offset = 39
-    _set_progress_image_y_offset_method_offset = 40
-    _get_progress_image_file_method_offset = 41
-    _set_progress_image_file_method_offset = 42
-    _get_progress_image_x_origin_method_offset = 43
-    _set_progress_image_x_origin_method_offset = 44
-    _get_progress_image_y_origin_method_offset = 45
-    _set_progress_image_y_origin_method_offset = 46
-    _get_picture_from_file_method_offset = 47
-    _set_picture_from_file_method_offset = 48
+    _rubber_band_pick_info_method_offset = 15
+    _get_mouse_mode_method_offset = 16
+    _set_mouse_mode_method_offset = 17
+    _get_draw_elements_method_offset = 18
+    _get_ready_state_method_offset = 19
+    _get_ppt_preload_mode_method_offset = 20
+    _set_ppt_preload_mode_method_offset = 21
+    _get_advanced_pick_mode_method_offset = 22
+    _set_advanced_pick_mode_method_offset = 23
+    _copy_from_window_id_method_offset = 24
+    _start_object_editing_method_offset = 25
+    _apply_object_editing_method_offset = 26
+    _stop_object_editing_method_offset = 27
+    _get_is_object_editing_method_offset = 28
+    _get_in_zoom_mode_method_offset = 29
+    _set_mouse_cursor_from_file_method_offset = 30
+    _restore_mouse_cursor_method_offset = 31
+    _set_mouse_cursor_from_handle_method_offset = 32
+    _get_show_progress_image_method_offset = 33
+    _set_show_progress_image_method_offset = 34
+    _get_progress_image_x_offset_method_offset = 35
+    _set_progress_image_x_offset_method_offset = 36
+    _get_progress_image_y_offset_method_offset = 37
+    _set_progress_image_y_offset_method_offset = 38
+    _get_progress_image_file_method_offset = 39
+    _set_progress_image_file_method_offset = 40
+    _get_progress_image_x_origin_method_offset = 41
+    _set_progress_image_x_origin_method_offset = 42
+    _get_progress_image_y_origin_method_offset = 43
+    _set_progress_image_y_origin_method_offset = 44
+    _get_picture_from_file_method_offset = 45
+    _set_picture_from_file_method_offset = 46
     _metadata = {
-        "iid_data" : (5444819458222045731, 10574496678292917690),
+        "iid_data" : (5755316323156254440, 16340472556888379575),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -730,21 +724,6 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     @ole_drop_mode.setter
     def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
-
-    _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def vendor_id(self) -> str:
-        """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_vendor_id_metadata)
-
-    _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @vendor_id.setter
-    def vendor_id(self, vendor_id:str) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_vendor_id_metadata, vendor_id)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
@@ -991,7 +970,6 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
-    _property_names[vendor_id] = "vendor_id"
     _property_names[mouse_mode] = "mouse_mode"
     _property_names[draw_elements] = "draw_elements"
     _property_names[ready_state] = "ready_state"
@@ -1020,13 +998,13 @@ class Graphics3DControlBase(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Graphics3DControlBase, [Graphics3DControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5003010835586718402, 17495775815022733215), Graphics3DControlBase)
+agcls.AgClassCatalog.add_catalog_entry((4702692981507542637, 14841496120833509769), Graphics3DControlBase)
 agcls.AgTypeNameMap["Graphics3DControlBase"] = Graphics3DControlBase
 
 class Graphics2DControlBase(SupportsDeleteCallback):
     """AGI Map control."""
 
-    _num_methods = 45
+    _num_methods = 43
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_back_color_method_offset = 1
     _set_back_color_method_offset = 2
@@ -1043,38 +1021,36 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _set_no_logo_method_offset = 13
     _get_ole_drop_mode_method_offset = 14
     _set_ole_drop_mode_method_offset = 15
-    _get_vendor_id_method_offset = 16
-    _set_vendor_id_method_offset = 17
-    _get_mouse_mode_method_offset = 18
-    _set_mouse_mode_method_offset = 19
-    _get_ready_state_method_offset = 20
-    _copy_from_window_id_method_offset = 21
-    _rubber_band_pick_info_method_offset = 22
-    _get_advanced_pick_mode_method_offset = 23
-    _set_advanced_pick_mode_method_offset = 24
-    _get_window_projected_position_method_offset = 25
-    _get_in_zoom_mode_method_offset = 26
-    _set_mouse_cursor_from_file_method_offset = 27
-    _restore_mouse_cursor_method_offset = 28
-    _set_mouse_cursor_from_handle_method_offset = 29
-    _get_show_progress_image_method_offset = 30
-    _set_show_progress_image_method_offset = 31
-    _get_progress_image_x_offset_method_offset = 32
-    _set_progress_image_x_offset_method_offset = 33
-    _get_progress_image_y_offset_method_offset = 34
-    _set_progress_image_y_offset_method_offset = 35
-    _get_progress_image_file_method_offset = 36
-    _set_progress_image_file_method_offset = 37
-    _get_progress_image_x_origin_method_offset = 38
-    _set_progress_image_x_origin_method_offset = 39
-    _get_progress_image_y_origin_method_offset = 40
-    _set_progress_image_y_origin_method_offset = 41
-    _get_picture_from_file_method_offset = 42
-    _set_picture_from_file_method_offset = 43
-    _get_pan_mode_enabled_method_offset = 44
-    _set_pan_mode_enabled_method_offset = 45
+    _get_mouse_mode_method_offset = 16
+    _set_mouse_mode_method_offset = 17
+    _get_ready_state_method_offset = 18
+    _copy_from_window_id_method_offset = 19
+    _rubber_band_pick_info_method_offset = 20
+    _get_advanced_pick_mode_method_offset = 21
+    _set_advanced_pick_mode_method_offset = 22
+    _get_window_projected_position_method_offset = 23
+    _get_in_zoom_mode_method_offset = 24
+    _set_mouse_cursor_from_file_method_offset = 25
+    _restore_mouse_cursor_method_offset = 26
+    _set_mouse_cursor_from_handle_method_offset = 27
+    _get_show_progress_image_method_offset = 28
+    _set_show_progress_image_method_offset = 29
+    _get_progress_image_x_offset_method_offset = 30
+    _set_progress_image_x_offset_method_offset = 31
+    _get_progress_image_y_offset_method_offset = 32
+    _set_progress_image_y_offset_method_offset = 33
+    _get_progress_image_file_method_offset = 34
+    _set_progress_image_file_method_offset = 35
+    _get_progress_image_x_origin_method_offset = 36
+    _set_progress_image_x_origin_method_offset = 37
+    _get_progress_image_y_origin_method_offset = 38
+    _set_progress_image_y_origin_method_offset = 39
+    _get_picture_from_file_method_offset = 40
+    _set_picture_from_file_method_offset = 41
+    _get_pan_mode_enabled_method_offset = 42
+    _set_pan_mode_enabled_method_offset = 43
     _metadata = {
-        "iid_data" : (5744647361091700561, 18202512224966495930),
+        "iid_data" : (5050754371719525381, 2220746668469695642),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1194,21 +1170,6 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     @ole_drop_mode.setter
     def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
-
-    _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def vendor_id(self) -> str:
-        """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_vendor_id_metadata)
-
-    _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @vendor_id.setter
-    def vendor_id(self, vendor_id:str) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1425,7 +1386,6 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
-    _property_names[vendor_id] = "vendor_id"
     _property_names[mouse_mode] = "mouse_mode"
     _property_names[ready_state] = "ready_state"
     _property_names[advanced_pick_mode] = "advanced_pick_mode"
@@ -1452,7 +1412,7 @@ class Graphics2DControlBase(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Graphics2DControlBase, [Graphics2DControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4768515753680544793, 142788673313023873), Graphics2DControlBase)
+agcls.AgClassCatalog.add_catalog_entry((5282650413006135393, 1308832256522158520), Graphics2DControlBase)
 agcls.AgTypeNameMap["Graphics2DControlBase"] = Graphics2DControlBase
 
 class PickInfoData(SupportsDeleteCallback):
@@ -1467,7 +1427,7 @@ class PickInfoData(SupportsDeleteCallback):
     _get_is_object_path_valid_method_offset = 5
     _get_is_lat_lon_altitude_valid_method_offset = 6
     _metadata = {
-        "iid_data" : (5698141537397851098, 16489903714142238396),
+        "iid_data" : (5095284727995613085, 1272110162266713781),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1542,13 +1502,13 @@ class PickInfoData(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickInfoData, [PickInfoData, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5212232262739807565, 596295451586007969), PickInfoData)
+agcls.AgClassCatalog.add_catalog_entry((5237657917144607746, 17746628831672826803), PickInfoData)
 agcls.AgTypeNameMap["PickInfoData"] = PickInfoData
 
 class STKXApplication(SupportsDeleteCallback):
     """STK X Application object."""
 
-    _num_methods = 28
+    _num_methods = 26
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _execute_command_method_offset = 1
     _get_enable_connect_method_offset = 2
@@ -1558,28 +1518,26 @@ class STKXApplication(SupportsDeleteCallback):
     _get_host_id_method_offset = 6
     _get_registration_id_method_offset = 7
     _get_version_method_offset = 8
-    _get_licensing_report_method_offset = 9
-    _get_vendor_id_method_offset = 10
-    _set_vendor_id_method_offset = 11
-    _set_online_options_method_offset = 12
-    _get_online_options_method_offset = 13
-    _set_connect_handler_method_offset = 14
-    _get_log_file_full_name_method_offset = 15
-    _get_logging_mode_method_offset = 16
-    _set_logging_mode_method_offset = 17
-    _get_connect_max_connections_method_offset = 18
-    _set_connect_max_connections_method_offset = 19
-    _execute_multiple_commands_method_offset = 20
-    _is_feature_available_method_offset = 21
-    _get_no_graphics_method_offset = 22
-    _set_no_graphics_method_offset = 23
-    _terminate_method_offset = 24
-    _get_show_sla_if_not_accepted_method_offset = 25
-    _set_show_sla_if_not_accepted_method_offset = 26
-    _set_use_hook_method_offset = 27
-    _use_software_renderer_method_offset = 28
+    _set_online_options_method_offset = 9
+    _get_online_options_method_offset = 10
+    _set_connect_handler_method_offset = 11
+    _get_log_file_full_name_method_offset = 12
+    _get_logging_mode_method_offset = 13
+    _set_logging_mode_method_offset = 14
+    _get_connect_max_connections_method_offset = 15
+    _set_connect_max_connections_method_offset = 16
+    _execute_multiple_commands_method_offset = 17
+    _is_feature_available_method_offset = 18
+    _get_no_graphics_method_offset = 19
+    _set_no_graphics_method_offset = 20
+    _terminate_method_offset = 21
+    _get_show_sla_if_not_accepted_method_offset = 22
+    _set_show_sla_if_not_accepted_method_offset = 23
+    _get_use_hook_method_offset = 24
+    _set_use_hook_method_offset = 25
+    _use_software_renderer_method_offset = 26
     _metadata = {
-        "iid_data" : (5592884008737014642, 4650136333548635012),
+        "iid_data" : (5451411510624686901, 5826643244584847294),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1649,28 +1607,6 @@ class STKXApplication(SupportsDeleteCallback):
     def version(self) -> str:
         """Return the version number."""
         return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_version_metadata)
-
-    _get_licensing_report_metadata = { "offset" : _get_licensing_report_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    def get_licensing_report(self) -> str:
-        """Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._get_licensing_report_metadata, OutArg())
-
-    _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def vendor_id(self) -> str:
-        """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_vendor_id_metadata)
-
-    _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @vendor_id.setter
-    def vendor_id(self, vendor_id:str) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_vendor_id_metadata, vendor_id)
 
     _set_online_options_metadata = { "offset" : _set_online_options_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL),),
@@ -1782,14 +1718,13 @@ class STKXApplication(SupportsDeleteCallback):
     def show_sla_if_not_accepted(self, value:bool) -> None:
         return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_show_sla_if_not_accepted_metadata, value)
 
-    _get_use_hook_metadata = { "offset" : 0,
-            "arg_types" : (),
-            "marshallers" : () }
+    _get_use_hook_metadata = { "offset" : _get_use_hook_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_hook(self) -> None:
-        """use_hook is a write-only property."""
-        raise RuntimeError("use_hook is a write-only property.")
-
+    def use_hook(self) -> bool:
+        """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_use_hook_metadata)
 
     _set_use_hook_metadata = { "offset" : _set_use_hook_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -1811,7 +1746,6 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names[host_id] = "host_id"
     _property_names[registration_id] = "registration_id"
     _property_names[version] = "version"
-    _property_names[vendor_id] = "vendor_id"
     _property_names[log_file_full_name] = "log_file_full_name"
     _property_names[logging_mode] = "logging_mode"
     _property_names[connect_max_connections] = "connect_max_connections"
@@ -1832,7 +1766,7 @@ class STKXApplication(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXApplication, [STKXApplication, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5023115714797155685, 12229237601155197353), STKXApplication)
+agcls.AgClassCatalog.add_catalog_entry((4965612477927357047, 8047925612354185625), STKXApplication)
 agcls.AgTypeNameMap["STKXApplication"] = STKXApplication
 
 class STKXApplicationPartnerAccess(SupportsDeleteCallback):
@@ -1842,7 +1776,7 @@ class STKXApplicationPartnerAccess(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _grant_partner_access_method_offset = 1
     _metadata = {
-        "iid_data" : (4662950884101382286, 14871068326245298338),
+        "iid_data" : (4656947247342630568, 6384161945059936654),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1870,7 +1804,7 @@ class STKXApplicationPartnerAccess(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXApplicationPartnerAccess, [STKXApplicationPartnerAccess, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5641990270821292264, 4458084339625729464), STKXApplicationPartnerAccess)
+agcls.AgClassCatalog.add_catalog_entry((4703777975430642151, 17291114889972261525), STKXApplicationPartnerAccess)
 agcls.AgTypeNameMap["STKXApplicationPartnerAccess"] = STKXApplicationPartnerAccess
 
 class DataObject(SupportsDeleteCallback):
@@ -1880,7 +1814,7 @@ class DataObject(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_files_method_offset = 1
     _metadata = {
-        "iid_data" : (4629740546250705181, 15420305044692593073),
+        "iid_data" : (4642770678746827267, 8490102002319634849),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1910,7 +1844,7 @@ class DataObject(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DataObject, [DataObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5114260017860305690, 8438919698207166871), DataObject)
+agcls.AgClassCatalog.add_catalog_entry((4669950847213151624, 11716425685151442827), DataObject)
 agcls.AgTypeNameMap["DataObject"] = DataObject
 
 class DataObjectFiles(SupportsDeleteCallback):
@@ -1922,7 +1856,7 @@ class DataObjectFiles(SupportsDeleteCallback):
     _item_method_offset = 2
     _get_count_method_offset = 3
     _metadata = {
-        "iid_data" : (5022012349477980193, 9093199729173088151),
+        "iid_data" : (5241656308538360439, 1178344093334617245),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1984,7 +1918,7 @@ class DataObjectFiles(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DataObjectFiles, [DataObjectFiles, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4834386749312660211, 7512407219312220557), DataObjectFiles)
+agcls.AgClassCatalog.add_catalog_entry((5720513526779713943, 6221409099379914630), DataObjectFiles)
 agcls.AgTypeNameMap["DataObjectFiles"] = DataObjectFiles
 
 class RubberBandPickInfoData(SupportsDeleteCallback):
@@ -1994,7 +1928,7 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_object_paths_method_offset = 1
     _metadata = {
-        "iid_data" : (5465369937390436249, 5504180940665807527),
+        "iid_data" : (5560493386036245755, 13880678457623717547),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2024,7 +1958,7 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RubberBandPickInfoData, [RubberBandPickInfoData, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4985968678511795353, 17743300322106185909), RubberBandPickInfoData)
+agcls.AgClassCatalog.add_catalog_entry((5458801463718913441, 17686737888889441455), RubberBandPickInfoData)
 agcls.AgTypeNameMap["RubberBandPickInfoData"] = RubberBandPickInfoData
 
 class ObjectPathCollection(SupportsDeleteCallback):
@@ -2037,7 +1971,7 @@ class ObjectPathCollection(SupportsDeleteCallback):
     _get__new_enum_method_offset = 3
     _range_method_offset = 4
     _metadata = {
-        "iid_data" : (5633526467684881384, 4210768304776055218),
+        "iid_data" : (4873072426225207527, 3451812691016086192),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2106,7 +2040,7 @@ class ObjectPathCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ObjectPathCollection, [ObjectPathCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5468637706198187096, 15368573397963727005), ObjectPathCollection)
+agcls.AgClassCatalog.add_catalog_entry((5431479243483082589, 6842341544396155807), ObjectPathCollection)
 agcls.AgTypeNameMap["ObjectPathCollection"] = ObjectPathCollection
 
 class DrawElementRect(IDrawElementRect, SupportsDeleteCallback):
@@ -2125,7 +2059,7 @@ class DrawElementRect(IDrawElementRect, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElementRect, [IDrawElementRect])
 
-agcls.AgClassCatalog.add_catalog_entry((5240823309103310773, 8687967398961860752), DrawElementRect)
+agcls.AgClassCatalog.add_catalog_entry((5647133156743739852, 8979899515705915799), DrawElementRect)
 agcls.AgTypeNameMap["DrawElementRect"] = DrawElementRect
 
 class DrawElementCollection(IDrawElementCollection, SupportsDeleteCallback):
@@ -2144,7 +2078,7 @@ class DrawElementCollection(IDrawElementCollection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElementCollection, [IDrawElementCollection])
 
-agcls.AgClassCatalog.add_catalog_entry((4818369897478707705, 12447301819569005480), DrawElementCollection)
+agcls.AgClassCatalog.add_catalog_entry((4846626779169586992, 12981751770474951553), DrawElementCollection)
 agcls.AgTypeNameMap["DrawElementCollection"] = DrawElementCollection
 
 class Draw2DElemRect(IDrawElementRect, SupportsDeleteCallback):
@@ -2163,7 +2097,7 @@ class Draw2DElemRect(IDrawElementRect, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElementRect])
 
-agcls.AgClassCatalog.add_catalog_entry((5576559474231799426, 4548115262096126086), Draw2DElemRect)
+agcls.AgClassCatalog.add_catalog_entry((4925473448220414623, 7614461974460404874), Draw2DElemRect)
 agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
 
 class Draw2DElemCollection(IDrawElementCollection, SupportsDeleteCallback):
@@ -2182,13 +2116,13 @@ class Draw2DElemCollection(IDrawElementCollection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElementCollection])
 
-agcls.AgClassCatalog.add_catalog_entry((5331482112311797798, 13317960878959927180), Draw2DElemCollection)
+agcls.AgClassCatalog.add_catalog_entry((4825844800505981150, 12877675232260377739), Draw2DElemCollection)
 agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
 class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     """AGI Gfx Analysis control."""
 
-    _num_methods = 17
+    _num_methods = 15
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_back_color_method_offset = 1
     _set_back_color_method_offset = 2
@@ -2197,18 +2131,16 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _set_picture_method_offset = 5
     _get_no_logo_method_offset = 6
     _set_no_logo_method_offset = 7
-    _get_vendor_id_method_offset = 8
-    _set_vendor_id_method_offset = 9
-    _get_ready_state_method_offset = 10
-    _get_application_method_offset = 11
-    _get_control_mode_method_offset = 12
-    _set_control_mode_method_offset = 13
-    _get_picture_from_file_method_offset = 14
-    _set_picture_from_file_method_offset = 15
-    _get_window_id_method_offset = 16
-    _set_window_id_method_offset = 17
+    _get_ready_state_method_offset = 8
+    _get_application_method_offset = 9
+    _get_control_mode_method_offset = 10
+    _set_control_mode_method_offset = 11
+    _get_picture_from_file_method_offset = 12
+    _set_picture_from_file_method_offset = 13
+    _get_window_id_method_offset = 14
+    _set_window_id_method_offset = 15
     _metadata = {
-        "iid_data" : (5436709951419699304, 6539416614287221654),
+        "iid_data" : (5043927542341553470, 3435865452458513818),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2266,21 +2198,6 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     @no_logo.setter
     def no_logo(self, no_logo:bool) -> None:
         return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_no_logo_metadata, no_logo)
-
-    _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def vendor_id(self) -> str:
-        """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_vendor_id_metadata)
-
-    _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @vendor_id.setter
-    def vendor_id(self, vendor_id:str) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2347,7 +2264,6 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
     _property_names[no_logo] = "no_logo"
-    _property_names[vendor_id] = "vendor_id"
     _property_names[ready_state] = "ready_state"
     _property_names[application] = "application"
     _property_names[control_mode] = "control_mode"
@@ -2367,7 +2283,7 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GraphicsAnalysisControlBase, [GraphicsAnalysisControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5164937275880325572, 6916941637376451755), GraphicsAnalysisControlBase)
+agcls.AgClassCatalog.add_catalog_entry((5014026146283335070, 224619130580477084), GraphicsAnalysisControlBase)
 agcls.AgTypeNameMap["GraphicsAnalysisControlBase"] = GraphicsAnalysisControlBase
 
 class WindowProjectionPosition(SupportsDeleteCallback):
@@ -2379,7 +2295,7 @@ class WindowProjectionPosition(SupportsDeleteCallback):
     _get_y_position_method_offset = 2
     _get_is_window_projection_position_valid_method_offset = 3
     _metadata = {
-        "iid_data" : (5662259557636712932, 6540783716662451641),
+        "iid_data" : (4973576687073445418, 9233127695963312296),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2427,7 +2343,7 @@ class WindowProjectionPosition(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindowProjectionPosition, [WindowProjectionPosition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5214780816983359777, 2472702336144982961), WindowProjectionPosition)
+agcls.AgClassCatalog.add_catalog_entry((4893863575783400406, 8243445408594598314), WindowProjectionPosition)
 agcls.AgTypeNameMap["WindowProjectionPosition"] = WindowProjectionPosition
 
 class DrawElementLine(SupportsDeleteCallback):
@@ -2447,7 +2363,7 @@ class DrawElementLine(SupportsDeleteCallback):
     _get_line_style_method_offset = 10
     _set_line_style_method_offset = 11
     _metadata = {
-        "iid_data" : (5362792549588471260, 16309530468251733149),
+        "iid_data" : (4941722960863766416, 11670089675664877230),
         "vtable_reference" : IDrawElement._vtable_offset + IDrawElement._num_methods - 1,
     }
     _property_names = {}
@@ -2559,7 +2475,7 @@ class DrawElementLine(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElementLine, [DrawElementLine, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5698625807246192592, 13092199471832302782), DrawElementLine)
+agcls.AgClassCatalog.add_catalog_entry((4857795362755123937, 15595470460410295944), DrawElementLine)
 agcls.AgTypeNameMap["DrawElementLine"] = DrawElementLine
 
 class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
@@ -2580,7 +2496,7 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _get_handled_method_offset = 11
     _set_handled_method_offset = 12
     _metadata = {
-        "iid_data" : (5021181385185406140, 17247430173549626005),
+        "iid_data" : (5720974690728289973, 10366462130882712979),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2704,7 +2620,7 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXSSLCertificateErrorEventArgs, [STKXSSLCertificateErrorEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5554115527393925356, 13023286019988610437), STKXSSLCertificateErrorEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((5441759658174404467, 7058418447957075853), STKXSSLCertificateErrorEventArgs)
 agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"] = STKXSSLCertificateErrorEventArgs
 
 class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
@@ -2715,7 +2631,7 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
     _get_acknowledge_method_offset = 1
     _set_acknowledge_method_offset = 2
     _metadata = {
-        "iid_data" : (5616982977185734553, 10125948910293673126),
+        "iid_data" : (4866391703832323418, 17032249666119597455),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2753,5 +2669,5 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXConControlQuitReceivedEventArgs, [STKXConControlQuitReceivedEventArgs, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5130572763297124902, 5647256661091814069), STKXConControlQuitReceivedEventArgs)
+agcls.AgClassCatalog.add_catalog_entry((4908290544374795249, 3464197164321935535), STKXConControlQuitReceivedEventArgs)
 agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"] = STKXConControlQuitReceivedEventArgs

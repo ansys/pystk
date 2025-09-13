@@ -30,11 +30,7 @@ from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IUnknown
 from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property,
     set_interface_attribute)
-from ..utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class IRemoteFrameBufferHost(object):
     """Called by engine to request operations from the host using the remote frame buffer."""
@@ -43,7 +39,7 @@ class IRemoteFrameBufferHost(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _refresh_method_offset = 1
     _metadata = {
-        "iid_data" : (4933363163864868357, 6362292819724085430),
+        "iid_data" : (4887649441960683467, 6262802818133504392),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -70,7 +66,7 @@ class IRemoteFrameBufferHost(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4933363163864868357, 6362292819724085430), IRemoteFrameBufferHost)
+agcls.AgClassCatalog.add_catalog_entry((4887649441960683467, 6262802818133504392), IRemoteFrameBufferHost)
 agcls.AgTypeNameMap["IRemoteFrameBufferHost"] = IRemoteFrameBufferHost
 
 class IRemoteFrameBuffer(object):
@@ -94,7 +90,7 @@ class IRemoteFrameBuffer(object):
     _set_to_directx_rendering_method_offset = 14
     _update_directx_rendering_texture_method_offset = 15
     _metadata = {
-        "iid_data" : (4781006033999273496, 11877164716837129142),
+        "iid_data" : (5092725537887735708, 17412474012788944557),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -219,5 +215,5 @@ class IRemoteFrameBuffer(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4781006033999273496, 11877164716837129142), IRemoteFrameBuffer)
+agcls.AgClassCatalog.add_catalog_entry((5092725537887735708, 17412474012788944557), IRemoteFrameBuffer)
 agcls.AgTypeNameMap["IRemoteFrameBuffer"] = IRemoteFrameBuffer

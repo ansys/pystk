@@ -36,7 +36,6 @@ else:
 from ..internal.comutil import BOOL, CHAR, DWORD, INT, LONG, LPCWSTR, LPVOID, WINFUNCTYPE, IUnknown
 from ..stkengine import STKEngine
 from ..stkx import Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase
-from ..utilities.exceptions import STKAttributeError, STKRuntimeError
 
 if os.name != "nt":
     from ctypes.util import find_library
@@ -61,7 +60,7 @@ class NativeContainerMethods:
             self.AgPythonKeyReleased                                                                        = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
     def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
-            raise STKRuntimeError("STKEngine.StartApplication() must be called before using the STK Engine controls")
+            raise RuntimeError("STKEngine.StartApplication() must be called before using the STK Engine controls")
 
         if os.name != "nt":
             return "libagjnicore.so"
@@ -73,7 +72,7 @@ class NativeContainerMethods:
 
             stkx_module_handle = kernel32.GetModuleHandleW("stkx.dll")
             if stkx_module_handle is None:
-                raise STKRuntimeError(f"Error getting stkx.dll module handle ({WinError(get_last_error())})")
+                raise RuntimeError(f"Error getting stkx.dll module handle ({WinError(get_last_error())})")
 
             kernel32.GetModuleFileNameA.restype = DWORD
             kernel32.GetModuleFileNameA.argtypes = [LPVOID, c_char_p, DWORD]
@@ -85,7 +84,7 @@ class NativeContainerMethods:
                 errormsg = "Failed to get STKX module file name"
                 if err != 0:
                     errormsg += f" ({WinError(err)})"
-                raise STKRuntimeError(errormsg)
+                raise RuntimeError(errormsg)
             stkx_dll_path = pathlib.Path(c_path.value).resolve()
 
             jni_core_dll_path = stkx_dll_path.parent / "AgJNICore.dll"
@@ -159,7 +158,7 @@ class ControlBase(Frame):
     def __setattr__(self, attrname, value):
         try:
             self._interface.__setattr__(self, attrname, value)
-        except STKAttributeError:
+        except AttributeError:
             Frame.__setattr__(self, attrname, value)
 
     def _configure(self, event):
@@ -213,7 +212,7 @@ class ControlBase(Frame):
 class GlobeControl(Graphics3DControlBase, ControlBase):
     """The 3D Globe control for Tkinter."""
 
-    _progid = "STKX12.VOControl.1"
+    _progid = "STKX13.VOControl.1"
     _interface = Graphics3DControlBase
 
     def __init__(self, parent, *args, **kwargs):
@@ -228,7 +227,7 @@ class GlobeControl(Graphics3DControlBase, ControlBase):
 class MapControl(Graphics2DControlBase, ControlBase):
     """The 2D Map control for Tkinter."""
 
-    _progid = "STKX12.2DControl.1"
+    _progid = "STKX13.2DControl.1"
     _interface = Graphics2DControlBase
 
     def __init__(self, parent, *args, **kwargs):
@@ -243,7 +242,7 @@ class MapControl(Graphics2DControlBase, ControlBase):
 class GfxAnalysisControl(GraphicsAnalysisControlBase, ControlBase):
     """The Graphics Analysis control for Tkinter."""
 
-    _progid = "STKX12.GfxAnalysisControl.1"
+    _progid = "STKX13.GfxAnalysisControl.1"
     _interface = GraphicsAnalysisControlBase
 
     def __init__(self, parent, *args, **kwargs):
