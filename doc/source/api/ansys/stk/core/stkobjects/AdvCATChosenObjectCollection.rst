@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.item`
-              - Given an index, returns a chosen object in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_at`
-              - Remove an object from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.add`
               - Add a new chosen object to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.item`
+              - Given an index, returns a chosen object in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_at`
+              - Remove an object from the collection using specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.count`
-              - Return the number of chosen objects in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.count`
+              - Return the number of chosen objects in a collection.
 
 
 
@@ -51,21 +51,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.count
-    :type: int
-
-    Return the number of chosen objects in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.count
+    :type: int
+
+    Return the number of chosen objects in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, object: str) -> AdvCATChosenObject
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.add
+
+    Add a new chosen object to the collection.
+
+    :Parameters:
+
+        **object** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~AdvCATChosenObject`
 
 
 .. py:method:: item(self, index: int) -> AdvCATChosenObject
@@ -75,25 +89,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~AdvCATChosenObject`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_at
-
-    Remove an object from the collection using specified index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_all
@@ -104,16 +105,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, object: str) -> AdvCATChosenObject
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection.remove_at
 
-    Add a new chosen object to the collection.
+    Remove an object from the collection using specified index.
 
     :Parameters:
 
-    **object** : :obj:`~str`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~AdvCATChosenObject`
+        :obj:`~None`
+
 

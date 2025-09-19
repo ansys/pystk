@@ -15,18 +15,18 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.get_segments_from_online`
-              - Return an array with all segments related to the supplied SSC number.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.add_segments_from_online`
               - Accept an array of segments to add.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.get_segments_from_online`
+              - Return an array with all segments related to the supplied SSC number.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -73,11 +73,19 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: add_segments_from_online(self, segments: list) -> None
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.add_segments_from_online
+
+    Accept an array of segments to add.
+
+    :Parameters:
+
+        **segments** : :obj:`~list`
 
 
+    :Returns:
 
-
-
+        :obj:`~None`
 
 .. py:method:: get_segments_from_online(self, ssc_num: str) -> list
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.get_segments_from_online
@@ -86,22 +94,16 @@ Method detail
 
     :Parameters:
 
-    **ssc_num** : :obj:`~str`
+        **ssc_num** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: add_segments_from_online(self, segments: list) -> None
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.add_segments_from_online
 
-    Accept an array of segments to add.
 
-    :Parameters:
 
-    **segments** : :obj:`~list`
 
-    :Returns:
 
-        :obj:`~None`
 

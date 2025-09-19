@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **ssc_number** : :obj:`~str`
+        **ssc_number** : :obj:`~str`
+
 
     :Returns:
 

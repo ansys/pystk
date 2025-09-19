@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -54,7 +54,8 @@ Method detail
 
     :Parameters:
 
-    **raster_band** : :obj:`~RasterBand`
+        **raster_band** : :obj:`~RasterBand`
+
 
     :Returns:
 
@@ -67,7 +68,8 @@ Method detail
 
     :Parameters:
 
-    **raster_format** : :obj:`~RasterFormat`
+        **raster_format** : :obj:`~RasterFormat`
+
 
     :Returns:
 

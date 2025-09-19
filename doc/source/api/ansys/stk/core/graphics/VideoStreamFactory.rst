@@ -13,16 +13,16 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.VideoStreamFactory.initialize_audio_video_with_string_uri`
+              - Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
             * - :py:attr:`~ansys.stk.core.graphics.VideoStreamFactory.initialize_with_string_uri`
               - Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
             * - :py:attr:`~ansys.stk.core.graphics.VideoStreamFactory.initialize_with_string_uri_and_audio`
-              - Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
-            * - :py:attr:`~ansys.stk.core.graphics.VideoStreamFactory.initialize_audio_video_with_string_uri`
               - Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
 
@@ -38,6 +38,22 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: initialize_audio_video_with_string_uri(self, uri: str, audio_uri: str) -> VideoStream
+    :canonical: ansys.stk.core.graphics.VideoStreamFactory.initialize_audio_video_with_string_uri
+
+    Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
+
+    :Parameters:
+
+        **uri** : :obj:`~str`
+
+        **audio_uri** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~VideoStream`
+
 .. py:method:: initialize_with_string_uri(self, uri: str) -> VideoStream
     :canonical: ansys.stk.core.graphics.VideoStreamFactory.initialize_with_string_uri
 
@@ -45,7 +61,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -58,22 +75,10 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **load_audio** : :obj:`~bool`
+        **uri** : :obj:`~str`
 
-    :Returns:
+        **load_audio** : :obj:`~bool`
 
-        :obj:`~VideoStream`
-
-.. py:method:: initialize_audio_video_with_string_uri(self, uri: str, audio_uri: str) -> VideoStream
-    :canonical: ansys.stk.core.graphics.VideoStreamFactory.initialize_audio_video_with_string_uri
-
-    Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
-
-    :Parameters:
-
-    **uri** : :obj:`~str`
-    **audio_uri** : :obj:`~str`
 
     :Returns:
 

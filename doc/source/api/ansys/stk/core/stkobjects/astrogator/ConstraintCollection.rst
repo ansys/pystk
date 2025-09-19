@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.add`
               - Add a constraint to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.item`
-              - Iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.remove`
-              - Remove a specified constraint from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.cut`
               - Copy the constraint into the clipboard and removes the constraint from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.paste`
-              - Pastes the constraint from the clipboard and inserts into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.insert_copy`
-              - Copy the constraint and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.get_item_by_index`
               - Retrieve a constraint from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.get_item_by_name`
               - Retrieve a constraint from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.insert_copy`
+              - Copy the constraint and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.item`
+              - Iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.paste`
+              - Pastes the constraint from the clipboard and inserts into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.remove`
+              - Remove a specified constraint from the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -82,38 +82,12 @@ Method detail
 
     :Parameters:
 
-    **result_name** : :obj:`~str`
+        **result_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~AsTriggerCondition`
-
-.. py:method:: item(self, index_or_name: typing.Any) -> AsTriggerCondition
-    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.item
-
-    Iterate through the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~AsTriggerCondition`
-
-.. py:method:: remove(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.remove
-
-    Remove a specified constraint from the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~None`
-
 
 
 .. py:method:: cut(self, index_or_name: typing.Any) -> None
@@ -123,33 +97,12 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: paste(self) -> AsTriggerCondition
-    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.paste
-
-    Pastes the constraint from the clipboard and inserts into the list.
-
-    :Returns:
-
-        :obj:`~AsTriggerCondition`
-
-.. py:method:: insert_copy(self, cond: AsTriggerCondition) -> AsTriggerCondition
-    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.insert_copy
-
-    Copy the constraint and inserts the copy into the list.
-
-    :Parameters:
-
-    **cond** : :obj:`~AsTriggerCondition`
-
-    :Returns:
-
-        :obj:`~AsTriggerCondition`
 
 .. py:method:: get_item_by_index(self, index: int) -> AsTriggerCondition
     :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.get_item_by_index
@@ -158,7 +111,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -171,9 +125,62 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~AsTriggerCondition`
+
+.. py:method:: insert_copy(self, cond: AsTriggerCondition) -> AsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.insert_copy
+
+    Copy the constraint and inserts the copy into the list.
+
+    :Parameters:
+
+        **cond** : :obj:`~AsTriggerCondition`
+
+
+    :Returns:
+
+        :obj:`~AsTriggerCondition`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> AsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.item
+
+    Iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~AsTriggerCondition`
+
+.. py:method:: paste(self) -> AsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.paste
+
+    Pastes the constraint from the clipboard and inserts into the list.
+
+    :Returns:
+
+        :obj:`~AsTriggerCondition`
+
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.remove
+
+    Remove a specified constraint from the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

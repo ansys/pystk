@@ -13,32 +13,32 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.add`
               - Add a new element to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_at`
+              - Remove an element from the collection using specified index.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.sort`
               - Re-orders pointable elements.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -53,58 +53,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> Graphics3DPointableElementsElement
-    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~Graphics3DPointableElementsElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_all
-
-    Remove all elements from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: add(self) -> Graphics3DPointableElementsElement
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.add
@@ -115,6 +78,44 @@ Method detail
 
         :obj:`~Graphics3DPointableElementsElement`
 
+
+.. py:method:: item(self, index: int) -> Graphics3DPointableElementsElement
+    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~Graphics3DPointableElementsElement`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_all
+
+    Remove all elements from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.remove_at
+
+    Remove an element from the collection using specified index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 .. py:method:: sort(self) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection.sort
 
@@ -123,4 +124,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

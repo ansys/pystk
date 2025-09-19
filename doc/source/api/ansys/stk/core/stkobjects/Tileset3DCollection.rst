@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.item`
-              - Given an index, returns an Tileset3D interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.add`
               - Add a 3DTileset item to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.item`
+              - Given an index, returns an Tileset3D interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.remove`
               - Remove a given index from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.remove_all`
               - Remove all items from the collections.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.count`
-              - Get the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection._new_enum`
               - Enumerates through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.count`
+              - Get the number of items in the collection.
 
 
 
@@ -51,22 +51,41 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.count
-    :type: int
-
-    Get the number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Tileset3DCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.count
+    :type: int
+
+    Get the number of items in the collection.
+
 
 Method detail
 -------------
 
+.. py:method:: add(self, name: str, uri: str, source_type: Tileset3DSourceType, reference_frame: str) -> Tileset3D
+    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.add
+
+    Add a 3DTileset item to the collection.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+        **uri** : :obj:`~str`
+
+        **source_type** : :obj:`~Tileset3DSourceType`
+
+        **reference_frame** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~Tileset3D`
 
 
 .. py:method:: item(self, index: int) -> Tileset3D
@@ -76,23 +95,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
 
-    :Returns:
-
-        :obj:`~Tileset3D`
-
-.. py:method:: add(self, name: str, uri: str, source_type: Tileset3DSourceType, reference_frame: str) -> Tileset3D
-    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.add
-
-    Add a 3DTileset item to the collection.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-    **uri** : :obj:`~str`
-    **source_type** : :obj:`~Tileset3DSourceType`
-    **reference_frame** : :obj:`~str`
 
     :Returns:
 
@@ -105,7 +109,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -119,4 +124,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

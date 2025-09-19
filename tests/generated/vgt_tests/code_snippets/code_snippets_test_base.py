@@ -24,14 +24,14 @@ from test_util import *
 from ansys.stk.core.graphics import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 class CodeSnippetsTestBase(TestBase):
     def __init__(self, *args, **kwargs):
         super(CodeSnippetsTestBase, self).__init__(*args, **kwargs)
 
-    m_Root: "StkObjectRoot" = None
+    m_Root: "STKObjectRoot" = None
 
     @staticmethod
     def Initialize():

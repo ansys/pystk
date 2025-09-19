@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Return target times scheme by name or at a specified position.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTargetTimesCollection.count`
-              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTargetTimesCollection._new_enum`
               - Enumerates the elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessTargetTimesCollection.count`
+              - Return a number of elements in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.AccessTargetTimesCollection.count
-    :type: int
-
-    Return a number of elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AccessTargetTimesCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the elements in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.AccessTargetTimesCollection.count
+    :type: int
+
+    Return a number of elements in the collection.
 
 
 Method detail
@@ -69,7 +69,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

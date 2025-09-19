@@ -116,8 +116,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(StarReferenceFrame.J2000, EarlyBoundTests.AG_SR.reference_frame)
 
         # Radial velocity
-        unit: str = (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.get_current_unit_abbrv("Distance")
-        (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", "m")
+        unit: str = (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.get_current_unit_abbrv("Distance")
+        (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", "m")
         try:
             EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10  # in meters
             Assert.assertEqual(10, EarlyBoundTests.AG_SR.proper_motion_radial_velocity)
@@ -135,7 +135,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 20000000000.0
 
         finally:
-            (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", unit)
+            (ISTKObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", unit)
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
@@ -145,7 +145,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        starObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SR, IStkObject)
+        starObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_SR, ISTKObject)
         oHelper.Run(starObject)
         oHelper.TestObjectFilesArray(starObject.object_files)
 
@@ -285,7 +285,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_SR.access_constraints, IStkObject(EarlyBoundTests.AG_SR), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_SR.access_constraints, ISTKObject(EarlyBoundTests.AG_SR), TestBase.TemporaryDirectory
         )
 
     # endregion

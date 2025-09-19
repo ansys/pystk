@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -54,9 +54,12 @@ Method detail
 
     :Parameters:
 
-    **position** : :obj:`~list`
-    **minimum_distance** : :obj:`~float`
-    **maximum_distance** : :obj:`~float`
+        **position** : :obj:`~list`
+
+        **minimum_distance** : :obj:`~float`
+
+        **maximum_distance** : :obj:`~float`
+
 
     :Returns:
 
@@ -69,10 +72,14 @@ Method detail
 
     :Parameters:
 
-    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
-    **position** : :obj:`~list`
-    **minimum_distance** : :obj:`~float`
-    **maximum_distance** : :obj:`~float`
+        **reference_frame** : :obj:`~IVectorGeometryToolSystem`
+
+        **position** : :obj:`~list`
+
+        **minimum_distance** : :obj:`~float`
+
+        **maximum_distance** : :obj:`~float`
+
 
     :Returns:
 

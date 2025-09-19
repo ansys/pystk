@@ -15,22 +15,22 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.set_position`
-              - Set the payload station's parent relative position.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.remove_sub_item`
-              - Remove any sub item that may be attached to the payload station.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.add_external_fuel_tank`
               - Add an external fuel tank to the payload station.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.get_external_fuel_tank`
               - Get the external fuel tank attached to the payload station.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.remove_sub_item`
+              - Remove any sub item that may be attached to the payload station.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.set_position`
+              - Set the payload station's parent relative position.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -123,35 +123,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
-
-.. py:method:: set_position(self, x: float, y: float, z: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.set_position
-
-    Set the payload station's parent relative position.
-
-    :Parameters:
-
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_sub_item(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.remove_sub_item
-
-    Remove any sub item that may be attached to the payload station.
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: add_external_fuel_tank(self) -> FuelTankExternal
     :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.add_external_fuel_tank
 
@@ -169,4 +140,36 @@ Method detail
     :Returns:
 
         :obj:`~FuelTankExternal`
+
+
+
+
+
+
+.. py:method:: remove_sub_item(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.remove_sub_item
+
+    Remove any sub item that may be attached to the payload station.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_position(self, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.set_position
+
+    Set the payload station's parent relative position.
+
+    :Parameters:
+
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
 

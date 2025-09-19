@@ -13,20 +13,20 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection.item`
-              - Allow the user to iterate through the properties.
             * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection.get_item_by_index`
               - Retrieve a property from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection.get_item_by_name`
               - Retrieve a property from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection.item`
+              - Allow the user to iterate through the properties.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -65,20 +65,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> PropertyInfo
-    :canonical: ansys.stk.core.stkutil.PropertyInfoCollection.item
-
-    Allow the user to iterate through the properties.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~PropertyInfo`
-
-
 
 .. py:method:: get_item_by_index(self, index: int) -> PropertyInfo
     :canonical: ansys.stk.core.stkutil.PropertyInfoCollection.get_item_by_index
@@ -87,7 +73,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -100,9 +87,25 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~PropertyInfo`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> PropertyInfo
+    :canonical: ansys.stk.core.stkutil.PropertyInfoCollection.item
+
+    Allow the user to iterate through the properties.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~PropertyInfo`
+
 

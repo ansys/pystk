@@ -1,9 +1,13 @@
 2D
 3D
+AER
 apoapsis
 application
 (?i)Ansys
 Astrogator
+boresight
+directivity
+dBsm
 Dockerfiles
 [Dd]ata[Ff]rame[s]?
 documentarians
@@ -25,6 +29,7 @@ namespace
 Nemo
 [Nn]um[Pp]y
 Pandas
+PDet
 PySTK
 periapsis
 prograde
@@ -32,6 +37,7 @@ Precessing
 precessing
 PySTK
 Python
+sidelobe
 STK
 STK Desktop
 STKEngine

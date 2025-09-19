@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Given an index, returns the item in the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PriorityCollection.count`
-              - Return the number of priorities in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PriorityCollection._new_enum`
               - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PriorityCollection.count`
+              - Return the number of priorities in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.PriorityCollection.count
-    :type: int
-
-    Return the number of priorities in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.PriorityCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.PriorityCollection.count
+    :type: int
+
+    Return the number of priorities in the collection.
 
 
 Method detail
@@ -69,7 +69,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

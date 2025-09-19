@@ -15,7 +15,7 @@ Contributing as a documentarian
         :link: write-examples
         :link-type: ref
 
-        Showcase the capabilities of PySTK by adding a new example. 
+        Showcase the capabilities of PySTK by adding a new example.
 
     .. grid-item-card:: :fa:`clone` Add a new code snippet
         :padding: 2 2 2 2
@@ -39,7 +39,7 @@ Write documentation
 The documentation generator used in PySTK is `Sphinx`_. Most of the documents
 are written in `reStructuredText`_. Some parts of the documentation, like the
 :ref:`examples <Examples>`, use mix of `markdown`_ and Python. If
-you are interested in writing examples, see the :ref:`writing examples <write-examples>` 
+you are interested in writing examples, see the :ref:`writing examples <write-examples>`
 section.
 
 The documentation is located in the ``doc/source`` directory. The landing page
@@ -51,7 +51,7 @@ files.
 The layout of the ``doc/source`` directory is reflected in the slug of the
 online documentation. For example, the
 ``doc/source/contribute/documentarian.rst`` renders as
-``https://docs.pystk.com/contribute/documentarian``. 
+``https://docs.pystk.com/contribute/documentarian``.
 
 Thus, if you create a new file, it important to follow these rules:
 
@@ -129,20 +129,20 @@ Write a new code snippet
 ========================
 
 The :ref:`code snippets <PySTK code snippets>` demonstrate how to perform
-common tasks in PySTK. Code snippets are written in `pytest`_ test functions 
-in the `code snippet directory`_ and are run as part of the 
-tests. They are also included in the documentation, providing PySTK users 
-useful templates for the building blocks of PySTK scenario design. This 
+common tasks in PySTK. Code snippets are written in `pytest`_ test functions
+in the `code snippet directory`_ and are run as part of the
+tests. They are also included in the documentation, providing PySTK users
+useful templates for the building blocks of PySTK scenario design. This
 enables the snippets to appear:
 
 - On the API reference pages for the elements used in the snippet
 - On the :ref:`code snippets <PySTK code snippets>` landing page
 - In the quick info provided by code completion tools such as `IntelliSense`_
 
-To contribute your own code snippet, first identify the critical API element 
-or elements used in the snippet. In the following example, the primary element 
-of interest is the :py:class:`~ansys.stk.core.stkobjects.Scenario` object. 
-Additionally, for instructional purposes, this example demonstrates the 
+To contribute your own code snippet, first identify the critical API element
+or elements used in the snippet. In the following example, the primary element
+of interest is the :py:class:`~ansys.stk.core.stkobjects.Scenario` object.
+Additionally, for instructional purposes, this example demonstrates the
 process of attaching this snippet to its
 :py:meth:`~ansys.stk.core.stkobjects.Scenario.set_time_period()` method.
 
@@ -153,16 +153,16 @@ process of attaching this snippet to its
   :end-at: # Use scenario.start_time, scenario.stop_time to get time period
   :dedent:
 
-Next, wrap the snippet in a method with a descriptive name ending with 
-``Snippet``. If the method consumes a non-self parameter, add a comment to the 
-first line of the method describing its type to orient the user to the 
-snippet's assumed configuration. Decorate this method with PySTK's 
+Next, wrap the snippet in a method with a descriptive name ending with
+``Snippet``. If the method consumes a non-self parameter, add a comment to the
+first line of the method describing its type to orient the user to the
+snippet's assumed configuration. Decorate this method with PySTK's
 ``@code_snippet`` decorator:
 
 .. list-table::
     :header-rows: 1
     :widths: auto
-    
+
     * - **Attribute**
       - **Description**
     * - **name**
@@ -185,9 +185,9 @@ Here is an example of a decorated method for the preceding code snippet:
   :dedent:
 
 Next, add a pytest-discoverable method (beginning with ``test``) that calls
-the decorated method. This new method should perform any configuration that 
-the decorated method assumes upon entry. When automating this configuration, 
-you may assume that an STK application is started and a basic STK scenario is 
+the decorated method. This new method should perform any configuration that
+the decorated method assumes upon entry. When automating this configuration,
+you may assume that an STK application is started and a basic STK scenario is
 open. You may access the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
 for this application using ``self.get_root()``.
 
@@ -198,19 +198,19 @@ for this application using ``self.get_root()``.
   :end-at: # Use scenario.start_time, scenario.stop_time to get time period
   :dedent:
 
-Copy these methods into the file corresponding to the value provided for the 
-``@code_snippet`` decorator's ``category`` attribute. 
+Copy these methods into the file corresponding to the value provided for the
+``@code_snippet`` decorator's ``category`` attribute.
 
-.. note:: 
+.. note::
 
-    If you created a new category for this attribute, you may also need to 
-    create a new test file. If this is the case, create a copy of 
-    ``template_snippets.py`` in the `code snippet directory`_ and rename the copy 
-    ``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. 
-    If necessary, create directories matching the category organization up to 
+    If you created a new category for this attribute, you may also need to
+    create a new test file. If this is the case, create a copy of
+    ``template_snippets.py`` in the `code snippet directory`_ and rename the copy
+    ``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory.
+    If necessary, create directories matching the category organization up to
     ``doc_snippets_tests``.
 
-Run the tests defined in the `code snippet directory`_ and make sure 
+Run the tests defined in the `code snippet directory`_ and make sure
 your new snippet runs and passes.
 
 .. vale off
@@ -221,9 +221,9 @@ your new snippet runs and passes.
 
 .. vale on
 
-To ensure properly formatted changes (including additions, deletions, and 
-modifications) to the snippets in the `code snippet directory`_ are 
-propagated to the corresponding documentation and source files, PySTK provides 
+To ensure properly formatted changes (including additions, deletions, and
+modifications) to the snippets in the `code snippet directory`_ are
+propagated to the corresponding documentation and source files, PySTK provides
 a snippet updater tool.
 
 .. vale off
@@ -234,7 +234,7 @@ a snippet updater tool.
 
 .. vale on
 
-View the changes using a diff application to ensure the process completed 
+View the changes using a diff application to ensure the process completed
 smoothly. Once you have verified these changes, you are ready to open a PR on
 the `PySTK pull requests`_ page.
 

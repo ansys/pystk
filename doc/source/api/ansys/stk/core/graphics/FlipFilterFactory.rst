@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,7 +52,8 @@ Method detail
 
     :Parameters:
 
-    **flip_axis** : :obj:`~RasterFlipAxis`
+        **flip_axis** : :obj:`~RasterFlipAxis`
+
 
     :Returns:
 

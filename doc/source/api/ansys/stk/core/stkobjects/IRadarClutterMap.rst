@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Set the current clutter map model by name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.supported_models`
-              - Get an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.model`
               - Get the current clutter map model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.supported_models`
+              - Get an array of supported model names.
 
 
 Import detail
@@ -44,17 +44,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.supported_models
-    :type: list
-
-    Get an array of supported model names.
-
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.model
     :type: IRadarClutterMapModel
 
     Get the current clutter map model.
+
+.. py:property:: supported_models
+    :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.supported_models
+    :type: list
+
+    Get an array of supported model names.
 
 
 Method detail
@@ -68,7 +68,8 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 

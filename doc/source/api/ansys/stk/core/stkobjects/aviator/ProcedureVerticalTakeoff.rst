@@ -15,36 +15,36 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.set_heading`
-              - Set the heading and heading reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.get_as_procedure`
               - Get the procedure interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.set_heading`
+              - Set the heading and heading reference.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.altitude_above_point`
               - Get or set the altitude the aircraft will takeoff to.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.final_altitude_rate`
-              - Get or set the altitude rate at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.altitude_offset`
               - Get or set the altitude offset from the site to begin the vertical takeoff.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.final_altitude_rate`
+              - Get or set the altitude rate at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.heading`
               - Get the heading for the procedure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.use_magnetic_heading`
-              - Get the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.heading_into_wind`
               - Get or set the option to define the heading according to the wind direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.hold_on_deck`
               - Get or set the duration the aircraft will wait before beginning the takeoff.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.use_magnetic_heading`
+              - Get the option to use a magnetic heading.
 
 
 
@@ -65,29 +65,23 @@ Property detail
 
     Get or set the altitude the aircraft will takeoff to.
 
-.. py:property:: final_altitude_rate
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.final_altitude_rate
-    :type: VTOLRateMode
-
-    Get or set the altitude rate at the end of the procedure.
-
 .. py:property:: altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.altitude_offset
     :type: float
 
     Get or set the altitude offset from the site to begin the vertical takeoff.
 
+.. py:property:: final_altitude_rate
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.final_altitude_rate
+    :type: VTOLRateMode
+
+    Get or set the altitude rate at the end of the procedure.
+
 .. py:property:: heading
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.heading
     :type: typing.Any
 
     Get the heading for the procedure.
-
-.. py:property:: use_magnetic_heading
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.use_magnetic_heading
-    :type: bool
-
-    Get the option to use a magnetic heading.
 
 .. py:property:: heading_into_wind
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.heading_into_wind
@@ -101,29 +95,15 @@ Property detail
 
     Get or set the duration the aircraft will wait before beginning the takeoff.
 
+.. py:property:: use_magnetic_heading
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.use_magnetic_heading
+    :type: bool
+
+    Get the option to use a magnetic heading.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-.. py:method:: set_heading(self, heading: typing.Any, is_magnetic: bool) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.set_heading
-
-    Set the heading and heading reference.
-
-    :Parameters:
-
-    **heading** : :obj:`~typing.Any`
-    **is_magnetic** : :obj:`~bool`
-
-    :Returns:
-
-        :obj:`~None`
 
 
 
@@ -139,4 +119,26 @@ Method detail
     :Returns:
 
         :obj:`~IProcedure`
+
+
+
+
+
+
+.. py:method:: set_heading(self, heading: typing.Any, is_magnetic: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.set_heading
+
+    Set the heading and heading reference.
+
+    :Parameters:
+
+        **heading** : :obj:`~typing.Any`
+
+        **is_magnetic** : :obj:`~bool`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

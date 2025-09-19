@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Return coordinates as an array.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -72,12 +72,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
-
-
 .. py:method:: get(self) -> typing.Tuple[float, float, float]
     :canonical: ansys.stk.core.stkutil.ICartesian3Vector.get
 
@@ -94,9 +88,12 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
@@ -110,4 +107,10 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
+
+
+
+
 

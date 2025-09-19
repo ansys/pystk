@@ -36,13 +36,19 @@ def test_renaming_simple_enumeration():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value1" NewName="VALUE1" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value2" NewName="VALUE2" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value3" NewName="VALUE3" Category="enum_value" />
-            <Mapping OldName="XyMyEnum" NewName="MyEnum" Category="enum_type" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumValueMappings": [
+                { "ParentScope": "XyMyEnum", "OldName": "Value1", "NewName": "VALUE1" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value2", "NewName": "VALUE2" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value3", "NewName": "VALUE3" }
+            ],
+            "EnumTypeMappings": [
+                { "OldName": "XyMyEnum", "NewName": "MyEnum" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -75,10 +81,14 @@ def test_renaming_simple_enumeration_type_only():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="XyMyEnum" NewName="MyEnum" Category="enum_type" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumTypeMappings": [
+                { "OldName": "XyMyEnum", "NewName": "MyEnum" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -111,12 +121,16 @@ def test_renaming_simple_enumeration_value_only():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value1" NewName="VALUE1" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value2" NewName="VALUE2" Category="enum_value" />
-            <Mapping ParentScope="XyMyEnum" OldName="Value3" NewName="VALUE3" Category="enum_value" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ],
+            "EnumValueMappings": [
+                { "ParentScope": "XyMyEnum", "OldName": "Value1", "NewName": "VALUE1" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value2", "NewName": "VALUE2" },
+                { "ParentScope": "XyMyEnum", "OldName": "Value3", "NewName": "VALUE3" }
+            ]
+        }
         """,
         """
         from product.core.api import *

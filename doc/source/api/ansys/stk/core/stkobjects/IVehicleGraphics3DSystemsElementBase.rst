@@ -13,19 +13,19 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.inherit`
-              - Inherit color from 2D graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.available_graphics_3d_windows`
+              - 3D Graphics Windows available to display the reference system.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.color`
               - Specify a custom color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.graphics_3d_window`
               - Get or set the selected 3D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.available_graphics_3d_windows`
-              - 3D Graphics Windows available to display the reference system.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.inherit`
+              - Inherit color from 2D graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.persist_for_all_passes`
               - Persistent the reference system when all passes are displayed.
 
@@ -41,15 +41,15 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: inherit
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.inherit
-    :type: bool
+.. py:property:: available_graphics_3d_windows
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.available_graphics_3d_windows
+    :type: list
 
-    Inherit color from 2D graphics.
+    3D Graphics Windows available to display the reference system.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.color
-    :type: agcolor.Color
+    :type: Color
 
     Specify a custom color.
 
@@ -59,11 +59,11 @@ Property detail
 
     Get or set the selected 3D Graphics window.
 
-.. py:property:: available_graphics_3d_windows
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.available_graphics_3d_windows
-    :type: list
+.. py:property:: inherit
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.inherit
+    :type: bool
 
-    3D Graphics Windows available to display the reference system.
+    Inherit color from 2D graphics.
 
 .. py:property:: persist_for_all_passes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.persist_for_all_passes

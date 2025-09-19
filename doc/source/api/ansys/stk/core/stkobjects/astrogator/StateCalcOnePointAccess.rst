@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,17 +24,17 @@ Overview
               - Set the base selection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.aberration_type`
               - Get or set the type of aberration to use, if light time delay is applied.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type`
-              - Get the base selection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection`
               - Get the base selection object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type`
+              - Get the base selection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.clock_host`
               - Get or set the object whose location is associated with time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.signal_sense`
@@ -65,17 +65,17 @@ Property detail
 
     Get or set the type of aberration to use, if light time delay is applied.
 
-.. py:property:: base_selection_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type
-    :type: BaseSelection
-
-    Get the base selection type.
-
 .. py:property:: base_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection
     :type: ILinkToObject
 
     Get the base selection object.
+
+.. py:property:: base_selection_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type
+    :type: BaseSelection
+
+    Get the base selection type.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.clock_host
@@ -113,6 +113,10 @@ Method detail
 
 
 
+
+
+
+
 .. py:method:: set_base_selection(self, selection: BaseSelection) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.set_base_selection
 
@@ -120,15 +124,12 @@ Method detail
 
     :Parameters:
 
-    **selection** : :obj:`~BaseSelection`
+        **selection** : :obj:`~BaseSelection`
+
 
     :Returns:
 
         :obj:`~None`
-
-
-
-
 
 
 

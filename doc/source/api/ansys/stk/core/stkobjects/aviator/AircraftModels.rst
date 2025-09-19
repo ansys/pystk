@@ -15,15 +15,15 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft`
-              - Get the aircraft with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft`
               - Create a new aircraft with the given name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft`
+              - Get the aircraft with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModels.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
@@ -62,19 +62,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_aircraft(self, aircraft_name: str) -> AircraftModel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft
-
-    Get the aircraft with the given name.
-
-    :Parameters:
-
-    **aircraft_name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~AircraftModel`
-
 .. py:method:: add_aircraft(self, aircraft_name: str) -> AircraftModel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft
 
@@ -82,7 +69,22 @@ Method detail
 
     :Parameters:
 
-    **aircraft_name** : :obj:`~str`
+        **aircraft_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~AircraftModel`
+
+.. py:method:: get_aircraft(self, aircraft_name: str) -> AircraftModel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft
+
+    Get the aircraft with the given name.
+
+    :Parameters:
+
+        **aircraft_name** : :obj:`~str`
+
 
     :Returns:
 

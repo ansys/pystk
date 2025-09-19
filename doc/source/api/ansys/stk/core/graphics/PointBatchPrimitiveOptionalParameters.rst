@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **pixel_sizes** : :obj:`~list`
+        **pixel_sizes** : :obj:`~list`
+
 
     :Returns:
 

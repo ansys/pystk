@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,25 +24,25 @@ Overview
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.step`
-              - Step size. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.initial_state`
-              - Get the satellite's initial state.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.force_model`
-              - Get the force model parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.integrator`
-              - Get the integrator parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.covariance`
               - Get the covariance parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval`
-              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type`
               - The propagator's display coordinate type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.force_model`
+              - Get the force model parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.initial_state`
+              - Get the satellite's initial state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.integrator`
+              - Get the integrator parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.step`
+              - Step size. Uses Time Dimension.
 
 
 
@@ -61,10 +61,12 @@ Set satellite propagator to HPOP and set force model properties
     )
 
     forceModel = satellite.propagator.force_model
-    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    forceModel.central_body_gravity.file = os.path.join(
-        installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
-    )
+    if os.name == "nt":
+        installPath = r"C:\Program Files\AGI\STK 12"
+    else:
+        installPath = os.environ["STK_INSTALL_DIR"]
+    grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
+    forceModel.central_body_gravity.file = os.path.join(installPath, *grv_path)
     forceModel.central_body_gravity.maximum_degree = 21
     forceModel.central_body_gravity.maximum_order = 21
     forceModel.drag.use = True
@@ -96,41 +98,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: step
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.step
-    :type: float
-
-    Step size. Uses Time Dimension.
-
-.. py:property:: initial_state
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.initial_state
-    :type: VehicleInitialState
-
-    Get the satellite's initial state.
-
-.. py:property:: force_model
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.force_model
-    :type: VehicleHPOPForceModel
-
-    Get the force model parameters.
-
-.. py:property:: integrator
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.integrator
-    :type: VehicleIntegrator
-
-    Get the integrator parameters.
-
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.covariance
     :type: VehicleCovariance
 
     Get the covariance parameters.
-
-.. py:property:: ephemeris_interval
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval
-    :type: ITimeToolTimeIntervalSmartInterval
-
-    Get the propagator's ephemeris interval.
 
 .. py:property:: display_coordinate_type
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type
@@ -138,9 +110,46 @@ Property detail
 
     The propagator's display coordinate type.
 
+.. py:property:: ephemeris_interval
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval
+    :type: ITimeToolTimeIntervalSmartInterval
+
+    Get the propagator's ephemeris interval.
+
+.. py:property:: force_model
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.force_model
+    :type: VehicleHPOPForceModel
+
+    Get the force model parameters.
+
+.. py:property:: initial_state
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.initial_state
+    :type: VehicleInitialState
+
+    Get the satellite's initial state.
+
+.. py:property:: integrator
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.integrator
+    :type: VehicleIntegrator
+
+    Get the integrator parameters.
+
+.. py:property:: step
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.step
+    :type: float
+
+    Step size. Uses Time Dimension.
+
 
 Method detail
 -------------
+
+
+
+
+
+
+
 
 .. py:method:: propagate(self) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.propagate
@@ -150,13 +159,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
 
 
 

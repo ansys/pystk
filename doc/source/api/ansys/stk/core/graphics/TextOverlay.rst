@@ -15,17 +15,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.text`
-              - Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
-            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.outline_color`
-              - Get or set the text's outline color.
             * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.font`
               - Get the graphics font used to style the text.
+            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.outline_color`
+              - Get or set the text's outline color.
+            * - :py:attr:`~ansys.stk.core.graphics.TextOverlay.text`
+              - Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
 
 
 
@@ -40,22 +40,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: text
-    :canonical: ansys.stk.core.graphics.TextOverlay.text
-    :type: str
-
-    Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
-
-.. py:property:: outline_color
-    :canonical: ansys.stk.core.graphics.TextOverlay.outline_color
-    :type: agcolor.Color
-
-    Get or set the text's outline color.
-
 .. py:property:: font
     :canonical: ansys.stk.core.graphics.TextOverlay.font
     :type: GraphicsFont
 
     Get the graphics font used to style the text.
+
+.. py:property:: outline_color
+    :canonical: ansys.stk.core.graphics.TextOverlay.outline_color
+    :type: Color
+
+    Get or set the text's outline color.
+
+.. py:property:: text
+    :canonical: ansys.stk.core.graphics.TextOverlay.text
+    :type: str
+
+    Set the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
 
 

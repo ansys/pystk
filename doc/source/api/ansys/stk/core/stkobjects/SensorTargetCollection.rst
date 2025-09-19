@@ -13,36 +13,36 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.item`
-              - Given an index, returns an SensorTarget interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.add`
               - Add a target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove`
-              - Remove a target given an index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove_target`
-              - Remove a target given the target's name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove_all`
-              - Remove all targets in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.add_object`
               - Add a target to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.item`
+              - Given an index, returns an SensorTarget interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove`
+              - Remove a target given an index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove_all`
+              - Remove all targets in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove_object`
               - Remove a target from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.remove_target`
+              - Remove a target given the target's name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.count`
-              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection._new_enum`
               - Enumerates through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorTargetCollection.count`
+              - The number of items in the collection.
 
 
 
@@ -57,22 +57,49 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.count
-    :type: int
-
-    The number of items in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.count
+    :type: int
+
+    The number of items in the collection.
+
 
 Method detail
 -------------
 
+.. py:method:: add(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.add
+
+    Add a target.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: add_object(self, object: ISTKObject) -> None
+    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.add_object
+
+    Add a target to the collection.
+
+    :Parameters:
+
+        **object** : :obj:`~ISTKObject`
+
+
+    :Returns:
+
+        :obj:`~None`
 
 
 .. py:method:: item(self, index: int) -> SensorTarget
@@ -82,24 +109,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~SensorTarget`
-
-.. py:method:: add(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.add
-
-    Add a target.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.remove
@@ -108,20 +123,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
 
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_target(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.remove_target
-
-    Remove a target given the target's name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
 
     :Returns:
 
@@ -136,29 +139,32 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_object(self, object: IStkObject) -> None
-    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.add_object
-
-    Add a target to the collection.
-
-    :Parameters:
-
-    **object** : :obj:`~IStkObject`
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove_object(self, object: IStkObject) -> None
+.. py:method:: remove_object(self, object: ISTKObject) -> None
     :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.remove_object
 
     Remove a target from the collection.
 
     :Parameters:
 
-    **object** : :obj:`~IStkObject`
+        **object** : :obj:`~ISTKObject`
+
 
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: remove_target(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.SensorTargetCollection.remove_target
+
+    Remove a target given the target's name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

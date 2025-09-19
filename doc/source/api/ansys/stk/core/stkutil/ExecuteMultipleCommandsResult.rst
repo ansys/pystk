@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Get the element at the specified index (0-based).
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult.count`
-              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._new_enum`
               - Return an object that can be used to iterate through all the objects in the collection.
+            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult.count`
+              - Number of elements contained in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkutil.ExecuteMultipleCommandsResult.count
-    :type: int
-
-    Number of elements contained in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._new_enum
     :type: EnumeratorProxy
 
     Return an object that can be used to iterate through all the objects in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkutil.ExecuteMultipleCommandsResult.count
+    :type: int
+
+    Number of elements contained in the collection.
 
 
 Method detail
@@ -69,7 +69,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

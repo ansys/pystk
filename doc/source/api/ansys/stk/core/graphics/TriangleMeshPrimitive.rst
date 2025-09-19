@@ -15,46 +15,46 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set`
               - Define the triangle mesh using an indexed triangle list specified by positions, normals, and indices. The mesh is rendered in the primitive's reference frame.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_with_optional_parameters`
-              - Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_triangulator`
               - Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_with_optional_parameters`
+              - Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe`
-              - Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces`
-              - Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.lighting`
-              - Get or set whether the primitive is lit.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order`
-              - Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped`
+              - Get or set whether individual points will be clipped by the central body.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face`
               - Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.lighting`
+              - Get or set whether the primitive is lit.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces`
+              - Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint`
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model`
               - Get or set the shading model for the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.texture`
               - Get or set the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.texture_filter`
               - Get or set the filter used for the texture associated with this triangle mesh.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint`
-              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped`
-              - Get or set whether individual points will be clipped by the central body.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order`
+              - Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.two_sided_lighting`
               - Get or set whether the primitive's translucent geometry will be lit from both sides of the surface.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe`
+              - Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
 
 
 
@@ -69,17 +69,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: wireframe
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe
+.. py:property:: central_body_clipped
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped
     :type: bool
 
-    Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
+    Get or set whether individual points will be clipped by the central body.
 
-.. py:property:: render_back_then_front_faces
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces
-    :type: bool
+.. py:property:: cull_face
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
+    :type: FaceCullingMode
 
-    Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
+    Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.lighting
@@ -87,17 +87,17 @@ Property detail
 
     Get or set whether the primitive is lit.
 
-.. py:property:: triangle_winding_order
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order
-    :type: WindingOrder
+.. py:property:: render_back_then_front_faces
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces
+    :type: bool
 
-    Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
+    Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
 
-.. py:property:: cull_face
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
-    :type: FaceCullingMode
+.. py:property:: set_hint
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint
+    :type: SetHint
 
-    Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model
@@ -117,17 +117,11 @@ Property detail
 
     Get or set the filter used for the texture associated with this triangle mesh.
 
-.. py:property:: set_hint
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint
-    :type: SetHint
+.. py:property:: triangle_winding_order
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order
+    :type: WindingOrder
 
-    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
-
-.. py:property:: central_body_clipped
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped
-    :type: bool
-
-    Get or set whether individual points will be clipped by the central body.
+    Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
 
 .. py:property:: two_sided_lighting
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.two_sided_lighting
@@ -135,18 +129,15 @@ Property detail
 
     Get or set whether the primitive's translucent geometry will be lit from both sides of the surface.
 
+.. py:property:: wireframe
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe
+    :type: bool
+
+    Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
+
 
 Method detail
 -------------
-
-
-
-
-
-
-
-
-
 
 
 
@@ -163,9 +154,27 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **normals** : :obj:`~list`
-    **indices** : :obj:`~list`
+        **positions** : :obj:`~list`
+
+        **normals** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: set_triangulator(self, triangulator: ITriangulatorResult) -> None
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_triangulator
+
+    Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame.
+
+    :Parameters:
+
+        **triangulator** : :obj:`~ITriangulatorResult`
+
 
     :Returns:
 
@@ -178,27 +187,26 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
-    **normals** : :obj:`~list`
-    **indices** : :obj:`~list`
-    **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+        **positions** : :obj:`~list`
+
+        **normals** : :obj:`~list`
+
+        **indices** : :obj:`~list`
+
+        **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_triangulator(self, triangulator: ITriangulatorResult) -> None
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_triangulator
 
-    Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame.
 
-    :Parameters:
 
-    **triangulator** : :obj:`~ITriangulatorResult`
 
-    :Returns:
 
-        :obj:`~None`
+
+
 
 
 

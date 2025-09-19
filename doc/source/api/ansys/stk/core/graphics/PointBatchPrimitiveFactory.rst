@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,15 +24,15 @@ Overview
               - Initialize a new instance of a point batch primitive with the specified set hint.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported`
-              - Get the minimum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitiveFactory.maximum_pixel_size_supported`
               - Get the maximum pixel size supported by the video card.
+            * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported`
+              - Get the minimum pixel size supported by the video card.
 
 
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_pixel_size_supported
-    :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported
-    :type: float
-
-    Get the minimum pixel size supported by the video card.
-
 .. py:property:: maximum_pixel_size_supported
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.maximum_pixel_size_supported
     :type: float
 
     Get the maximum pixel size supported by the video card.
+
+.. py:property:: minimum_pixel_size_supported
+    :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported
+    :type: float
+
+    Get the minimum pixel size supported by the video card.
 
 
 Method detail
@@ -79,7 +79,8 @@ Method detail
 
     :Parameters:
 
-    **set_hint** : :obj:`~SetHint`
+        **set_hint** : :obj:`~SetHint`
+
 
     :Returns:
 

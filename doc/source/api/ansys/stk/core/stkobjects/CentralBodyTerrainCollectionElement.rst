@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Return the highest resolution for any terrain that overlaps the specified rectangle.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -68,7 +68,6 @@ Method detail
 -------------
 
 
-
 .. py:method:: get_altitude(self, lat: typing.Any, lon: typing.Any, alt_ref: AltitudeReferenceType) -> float
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitude
 
@@ -76,9 +75,12 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
-    **alt_ref** : :obj:`~AltitudeReferenceType`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
+        **alt_ref** : :obj:`~AltitudeReferenceType`
+
 
     :Returns:
 
@@ -91,8 +93,10 @@ Method detail
 
     :Parameters:
 
-    **lat_lons** : :obj:`~list`
-    **alt_ref** : :obj:`~AltitudeReferenceType`
+        **lat_lons** : :obj:`~list`
+
+        **alt_ref** : :obj:`~AltitudeReferenceType`
+
 
     :Returns:
 
@@ -105,13 +109,20 @@ Method detail
 
     :Parameters:
 
-    **southwest_latitude** : :obj:`~typing.Any`
-    **southwest_longitude** : :obj:`~typing.Any`
-    **northeast_latitude** : :obj:`~typing.Any`
-    **northeast_longitude** : :obj:`~typing.Any`
-    **step_size** : :obj:`~typing.Any`
-    **distance_type** : :obj:`~DistanceOnSphere`
-    **alt_ref** : :obj:`~AltitudeReferenceType`
+        **southwest_latitude** : :obj:`~typing.Any`
+
+        **southwest_longitude** : :obj:`~typing.Any`
+
+        **northeast_latitude** : :obj:`~typing.Any`
+
+        **northeast_longitude** : :obj:`~typing.Any`
+
+        **step_size** : :obj:`~typing.Any`
+
+        **distance_type** : :obj:`~DistanceOnSphere`
+
+        **alt_ref** : :obj:`~AltitudeReferenceType`
+
 
     :Returns:
 
@@ -124,12 +135,17 @@ Method detail
 
     :Parameters:
 
-    **southwest_latitude** : :obj:`~typing.Any`
-    **southwest_longitude** : :obj:`~typing.Any`
-    **northeast_latitude** : :obj:`~typing.Any`
-    **northeast_longitude** : :obj:`~typing.Any`
+        **southwest_latitude** : :obj:`~typing.Any`
+
+        **southwest_longitude** : :obj:`~typing.Any`
+
+        **northeast_latitude** : :obj:`~typing.Any`
+
+        **northeast_longitude** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~float`
+
 

@@ -39,16 +39,24 @@ def test_merging_multiple_recordings():
         """,
         [
             """
-            <Mappings>
-                <Mapping OldName="MyClass1" NewName="MyNewClass1" Category="class" />
-                <Mapping ParentScope="MyClass1" OldName="MyMethod1" NewName="MyMethod1Renamed" Category="method" />
-            </Mappings>
+            {
+                "MemberMappings": [
+                    { "ParentScope": "MyClass1", "OldName": "MyMethod1", "NewName": "MyMethod1Renamed" }
+                ],
+                "ClassMappings": [
+                    { "OldName": "MyClass1", "NewName": "MyNewClass1" }
+                ]
+            }
             """,
             """
-            <Mappings>
-                <Mapping ParentScope="MyClass2" OldName="MyMethod2" NewName="MyMethod2Renamed" Category="method" />
-                <Mapping OldName="MyClass2" NewName="MyNewClass2" Category="class" />
-            </Mappings>
+            {
+                "MemberMappings": [
+                    { "ParentScope": "MyClass2", "OldName": "MyMethod2", "NewName": "MyMethod2Renamed" }
+                ],
+                "ClassMappings": [
+                    { "OldName": "MyClass2", "NewName": "MyNewClass2" }
+                ]
+            }
             """,
         ],
         [

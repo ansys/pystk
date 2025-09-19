@@ -27,7 +27,7 @@ from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.stkobjects.astrogator import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 class EarlyBoundTests(TestBase):
@@ -122,13 +122,13 @@ class EarlyBoundTests(TestBase):
         refColl.remove_by_name(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngVelocity Vector")
 
     def test_BUG62983_BUG67662_StkExternalOverride(self):
-        # Improper default value of false for PropagatorStkExternal.Override
+        # Improper default value of false for PropagatorSTKExternal.Override
         satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "StkExternalSatellite1"),
             Satellite,
         )
         satellite.set_propagator_type(PropagatorType.STK_EXTERNAL)
-        prop: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
+        prop: "PropagatorSTKExternal" = clr.CastAs(satellite.propagator, PropagatorSTKExternal)
         prop.filename = TestBase.GetScenarioFile("External", "Satellite1.e")
         prop.propagate()
         Assert.assertEqual("9 Sep 2009 16:00:00.000", prop.start_time)

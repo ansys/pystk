@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -61,6 +61,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: item(self, index: int) -> ManeuverOptimalFiniteSteeringNodeElement
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.item
 
@@ -68,11 +69,11 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~ManeuverOptimalFiniteSteeringNodeElement`
-
 
 

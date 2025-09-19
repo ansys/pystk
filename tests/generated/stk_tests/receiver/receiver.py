@@ -48,15 +48,15 @@ class EarlyBoundTests(TestBase):
     ANTENNA2_NAME: str = "Antenna2Test"
 
     # Use a receiver on a Satellite in order to test receiver models other than the Cable Receiver Model (for Earth loss properties, etc.)
-    oSat: "IStkObject" = None
-    oReceiver: "IStkObject" = None
-    oAntenna1: "IStkObject" = None
-    oAntenna2: "IStkObject" = None
+    oSat: "ISTKObject" = None
+    oReceiver: "ISTKObject" = None
+    oAntenna1: "ISTKObject" = None
+    oAntenna2: "ISTKObject" = None
     receiver: "Receiver" = None
 
     # Use a receiver on a Facility in order to test the Cable Receiver Model
-    oFacForCableModel: "IStkObject" = None
-    oReceiverForCableModel: "IStkObject" = None
+    oFacForCableModel: "ISTKObject" = None
+    oReceiverForCableModel: "ISTKObject" = None
     receiverForCableModel: "Receiver" = None
 
     # 2D
@@ -2808,8 +2808,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oReceiver: "IStkObject" = oFac.children.new(STKObjectType.RECEIVER, "Receiver1")
+        oFac: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oReceiver: "ISTKObject" = oFac.children.new(STKObjectType.RECEIVER, "Receiver1")
         Assert.assertIsNotNone(oReceiver)
         Assert.assertEqual(STKObjectType.RECEIVER, oReceiver.class_type)
 

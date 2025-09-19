@@ -479,7 +479,7 @@ class AccessConstraintHelper(object):
     # endregion
 
     # region TestPluginConstraints
-    def TestPluginConstraints(self, oCollection: "AccessConstraintCollection", oObject: "IStkObject"):
+    def TestPluginConstraints(self, oCollection: "AccessConstraintCollection", oObject: "ISTKObject"):
         # IsNamedConstraintSupported
         Assert.assertFalse(oCollection.is_named_constraint_supported("InvalidConstraintName"))
         if oObject.class_name == "Facility":
@@ -618,7 +618,7 @@ class AccessConstraintHelper(object):
 
     # region DoTest
     # ////////////////////////////////////////////////////////////////////////
-    def DoTest(self, oCollection: "AccessConstraintCollection", oObject: "IStkObject", temporaryDirectory: str):
+    def DoTest(self, oCollection: "AccessConstraintCollection", oObject: "ISTKObject", temporaryDirectory: str):
         self.m_logger.WriteLine("----- THE ACCESS CONSTRAINTS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oObject)

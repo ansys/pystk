@@ -57,7 +57,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (IStkObject(VehicleSnippets.m_Object)).unload()
+        (ISTKObject(VehicleSnippets.m_Object)).unload()
 
     # endregion
 

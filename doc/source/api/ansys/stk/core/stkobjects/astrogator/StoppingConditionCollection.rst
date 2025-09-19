@@ -15,30 +15,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.add`
               - Add a stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.remove`
-              - Remove a stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.cut`
               - Copy the stopping condition into the clipboard and removes the stopping condition from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.paste`
-              - Pastes the stopping condition from the clipboard and inserts into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.insert_copy`
-              - Copy the stopping condition and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.get_item_by_index`
               - Retrieve a stopping condition in the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.get_item_by_name`
               - Retrieve a stopping condition in the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.insert_copy`
+              - Copy the stopping condition and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.paste`
+              - Pastes the stopping condition from the clipboard and inserts into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.remove`
+              - Remove a stopping condition.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -77,19 +77,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> StoppingConditionElement
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~StoppingConditionElement`
-
 .. py:method:: add(self, condition_name: str) -> StoppingConditionElement
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.add
 
@@ -97,25 +84,12 @@ Method detail
 
     :Parameters:
 
-    **condition_name** : :obj:`~str`
+        **condition_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~StoppingConditionElement`
-
-.. py:method:: remove(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.remove
-
-    Remove a stopping condition.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~None`
-
 
 
 .. py:method:: cut(self, index_or_name: typing.Any) -> None
@@ -125,33 +99,12 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: paste(self) -> StoppingConditionElement
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.paste
-
-    Pastes the stopping condition from the clipboard and inserts into the list.
-
-    :Returns:
-
-        :obj:`~StoppingConditionElement`
-
-.. py:method:: insert_copy(self, stop_cond: StoppingConditionElement) -> StoppingConditionElement
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.insert_copy
-
-    Copy the stopping condition and inserts the copy into the list.
-
-    :Parameters:
-
-    **stop_cond** : :obj:`~StoppingConditionElement`
-
-    :Returns:
-
-        :obj:`~StoppingConditionElement`
 
 .. py:method:: get_item_by_index(self, index: int) -> StoppingConditionElement
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.get_item_by_index
@@ -160,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -173,9 +127,62 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~StoppingConditionElement`
+
+.. py:method:: insert_copy(self, stop_cond: StoppingConditionElement) -> StoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.insert_copy
+
+    Copy the stopping condition and inserts the copy into the list.
+
+    :Parameters:
+
+        **stop_cond** : :obj:`~StoppingConditionElement`
+
+
+    :Returns:
+
+        :obj:`~StoppingConditionElement`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> StoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~StoppingConditionElement`
+
+.. py:method:: paste(self) -> StoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.paste
+
+    Pastes the stopping condition from the clipboard and inserts into the list.
+
+    :Returns:
+
+        :obj:`~StoppingConditionElement`
+
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.remove
+
+    Remove a stopping condition.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

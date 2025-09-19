@@ -69,7 +69,7 @@ class TargetSnippets(CodeSnippetsTestBase):
     def test_CreateTargetOnCurrentScenarioCentralBody(self):
         self.CreateTargetOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateTargetOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateTargetOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "Target" = clr.CastAs(

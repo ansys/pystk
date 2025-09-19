@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -71,6 +71,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: item(self, index: int) -> TargeterGraphResult
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphResultCollection.item
 
@@ -78,12 +79,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~TargeterGraphResult`
-
 
 
 

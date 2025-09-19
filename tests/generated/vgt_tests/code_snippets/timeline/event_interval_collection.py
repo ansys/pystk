@@ -23,7 +23,7 @@
 from test_util import *
 from code_snippets.timeline.timeline_code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
-from ansys.stk.core.vgt import *
+from ansys.stk.core.analysis_workbench import *
 
 
 class EventIntervalCollection(TimelineCodeSnippetsTestBase):
@@ -93,7 +93,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         # so this will differ from the convention for nessecity
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
-    def CreateSignaledEventIntervalCollection(self, stkRoot: "StkObjectRoot"):
+    def CreateSignaledEventIntervalCollection(self, stkRoot: "STKObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
             "Satellite/LEO"
         ).analysis_workbench_components

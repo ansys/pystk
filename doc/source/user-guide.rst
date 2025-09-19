@@ -9,7 +9,7 @@ User guide
         :padding: 2 2 2 2
 
         Learn how to establish a connection and prepare PySTK for usage with the STK application.
-        
+
     .. grid-item-card:: :fa:`square-plus` Create and load scenarios
         :link: user-guide/create-load-scenarios
         :link-type: doc
@@ -37,7 +37,7 @@ User guide
         :padding: 2 2 2 2
 
         Leverage NumPy and Pandas data types to enhance your PySTK workflows.
-        
+
     .. grid-item-card:: :fa:`long-arrow-right` Migrate
         :link: user-guide/migration
         :link-type: doc

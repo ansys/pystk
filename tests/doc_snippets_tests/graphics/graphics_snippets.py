@@ -51,7 +51,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     def get_scenario(self):
         return CodeSnippetsTestBase.m_Root.current_scenario
-    
+
     def test_CylinderFillEnumerationSnippet(self):
         self.CylinderFillEnumerationSnippet()
 

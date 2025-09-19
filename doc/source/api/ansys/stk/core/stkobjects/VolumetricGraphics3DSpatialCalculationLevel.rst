@@ -13,17 +13,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.value`
-              - Set the value for a Spatial Calculation Boundary/Fill Level.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.color`
               - Set the color of a Spatial Calculation Boundary/Fill Level.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.translucency`
               - Set the percent Translucency for a Spatial Calculation Boundary/Fill Level.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.value`
+              - Set the value for a Spatial Calculation Boundary/Fill Level.
 
 
 
@@ -38,15 +38,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: value
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.value
-    :type: float
-
-    Set the value for a Spatial Calculation Boundary/Fill Level.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.color
-    :type: agcolor.Color
+    :type: Color
 
     Set the color of a Spatial Calculation Boundary/Fill Level.
 
@@ -55,5 +49,11 @@ Property detail
     :type: float
 
     Set the percent Translucency for a Spatial Calculation Boundary/Fill Level.
+
+.. py:property:: value
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel.value
+    :type: float
+
+    Set the value for a Spatial Calculation Boundary/Fill Level.
 
 

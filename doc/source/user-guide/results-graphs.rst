@@ -11,7 +11,7 @@ About STK data providers
 
 Data providers in STK are essential for accessing detailed, time-dependent data from objects and systems in a scenario. They are part of STK's object model and are key to extracting and manipulating information, such as satellite positions, sensor coverage, communication links, and more. By using the STK object model, PySTK can automate the retrieval of this data for processing, visualization, or reporting.
 
-The content of a report or graph is generated from the selected data providers for the report or graph style. 
+The content of a report or graph is generated from the selected data providers for the report or graph style.
 
 Report styles
 =============
@@ -21,15 +21,15 @@ To browse the various report styles available for a particular object in STK, an
 .. image:: img/report-styles-expand.png
 
 .. |prop-icon| image:: img/properties-button.png
-    
-To view the data providers being used by a particular report style, click a report style, and click the `Properties` button |prop-icon| to display the `Report Style` window. 
+
+To view the data providers being used by a particular report style, click a report style, and click the `Properties` button |prop-icon| to display the `Report Style` window.
 
 .. image:: img/report-style-window.png
 
 Report contents
 ===============
 
-In the `Report Contents` section of the `Report Style` window, the various data providers that are used to derive the particular report are listed. These data providers provide the actual data content to the report. 
+In the `Report Contents` section of the `Report Style` window, the various data providers that are used to derive the particular report are listed. These data providers provide the actual data content to the report.
 
 .. image:: img/report-contents.png
 
@@ -38,10 +38,10 @@ In the `Report Contents` section of the `Report Style` window, the various data 
 Data providers
 ==============
 
-In the `Data Providers` section of the `Report Style` window, the data providers available for a particular object are listed. Expand a particular group to view the nested data providers associated with that group. Expanding a particular data provider further to display the data Elements that are associated with it. 
+In the `Data Providers` section of the `Report Style` window, the data providers available for a particular object are listed. Expand a particular group to view the nested data providers associated with that group. Expanding a particular data provider further to display the data Elements that are associated with it.
 
 .. image:: img/data-providers.png
 
-Groups, data providers, and elements are the organizing principles of the data provider capability provided by the STK object model. 
+Groups, data providers, and elements are the organizing principles of the data provider capability provided by the STK object model.
 
 To learn more about data providers, their results, and STK graphs and reports, explore `this example <../examples/results-graphs>`_.

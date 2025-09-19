@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,17 +22,17 @@ Overview
               - Deconflict intervals.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times`
-              - Opt whether to use access times as target times; otherwise, scheduled times are used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.access_times`
               - Get the access times.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.schedule_times`
               - Get the scheduled times.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times`
+              - Opt whether to use access times as target times; otherwise, scheduled times are used.
 
 
 
@@ -47,12 +47,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_access_times
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times
-    :type: bool
-
-    Opt whether to use access times as target times; otherwise, scheduled times are used.
-
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.access_times
     :type: AccessTargetTimesCollection
@@ -65,12 +59,15 @@ Property detail
 
     Get the scheduled times.
 
+.. py:property:: use_access_times
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times
+    :type: bool
+
+    Opt whether to use access times as target times; otherwise, scheduled times are used.
+
 
 Method detail
 -------------
-
-
-
 
 
 .. py:method:: deconflict(self) -> None
@@ -81,4 +78,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
 

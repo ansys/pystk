@@ -80,14 +80,9 @@ class ColorSnippets(CodeSnippetsTestBase):
 
         manager = root.current_scenario.scene_manager
         point = manager.initializers.point_batch_primitive.initialize()
-        
-        lla_pts = [ 39.88, -75.25, 0,
-                    38.85, -77.04, 0,
-                    37.37, -121.92, 0 ]
 
-        colors = [ Colors.Red,
-                ColorRGBA(Colors.Blue, 127),
-                Colors.from_rgba(0, 255, 0, 127) ]
+        lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
 
-        point.set_cartographic_with_colors('Earth', lla_pts, colors)
+        colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
 
+        point.set_cartographic_with_colors("Earth", lla_pts, colors)

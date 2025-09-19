@@ -13,32 +13,32 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.add`
               - Add a new element to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.available_targets`
               - Return a list of available targets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -53,12 +53,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._new_enum
     :type: EnumeratorProxy
@@ -71,9 +65,30 @@ Property detail
 
     Return a list of available targets.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, target_path: str) -> AttitudeScheduleTimesElement
+    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.add
+
+    Add a new element to the collection.
+
+    :Parameters:
+
+        **target_path** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~AttitudeScheduleTimesElement`
+
 
 
 .. py:method:: item(self, index: int) -> AttitudeScheduleTimesElement
@@ -83,25 +98,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~AttitudeScheduleTimesElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_all
@@ -112,17 +114,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, target_path: str) -> AttitudeScheduleTimesElement
-    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.remove_at
 
-    Add a new element to the collection.
+    Remove an element from the collection using specified index.
 
     :Parameters:
 
-    **target_path** : :obj:`~str`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~AttitudeScheduleTimesElement`
+        :obj:`~None`
 
 

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Set maximum degree and maximum order of geopotential coefficients to be included for Central Body gravity computations. An exception is raised if MaximumDegree is less than MaximumOrder. Both values are dimensionless.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -33,10 +33,10 @@ Overview
               - Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order`
               - Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
-              - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type`
               - Solid Tide Type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
+              - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_secular_variations`
               - Opt whether to include or ignore secular variations defined by the gravity field model.
 
@@ -71,17 +71,17 @@ Property detail
 
     Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
 
-.. py:property:: use_ocean_tides
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides
-    :type: bool
-
-    Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
-
 .. py:property:: solid_tide_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type
     :type: SolidTide
 
     Solid Tide Type.
+
+.. py:property:: use_ocean_tides
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides
+    :type: bool
+
+    Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
 
 .. py:property:: use_secular_variations
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_secular_variations
@@ -99,12 +99,6 @@ Method detail
 
 
 
-
-
-
-
-
-
 .. py:method:: set_maximum_degree_and_order(self, maximum_degree: int, maximum_order: int) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.set_maximum_degree_and_order
 
@@ -112,10 +106,18 @@ Method detail
 
     :Parameters:
 
-    **maximum_degree** : :obj:`~int`
-    **maximum_order** : :obj:`~int`
+        **maximum_degree** : :obj:`~int`
+
+        **maximum_order** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 

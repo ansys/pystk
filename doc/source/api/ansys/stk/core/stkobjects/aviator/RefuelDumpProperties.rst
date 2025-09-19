@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,11 +22,13 @@ Overview
               - Set RefuelDumpMode and RefuelDumpModeValue if applicable.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch`
+              - Can use end of enroute segment as the epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_mode`
               - Get the RefuelDumpMode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_mode_value`
@@ -35,8 +37,6 @@ Overview
               - Get or set the RefuelDump rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_time_offset`
               - Get or set the RefuelDump time offset.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch`
-              - Can use end of enroute segment as the epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.use_end_of_enroute_segment_as_epoch`
               - Use end of enroute segment as the epoch.
 
@@ -52,6 +52,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: can_use_end_of_enroute_segment_as_epoch
+    :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch
+    :type: bool
+
+    Can use end of enroute segment as the epoch.
 
 .. py:property:: refuel_dump_mode
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_mode
@@ -77,12 +83,6 @@ Property detail
 
     Get or set the RefuelDump time offset.
 
-.. py:property:: can_use_end_of_enroute_segment_as_epoch
-    :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch
-    :type: bool
-
-    Can use end of enroute segment as the epoch.
-
 .. py:property:: use_end_of_enroute_segment_as_epoch
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.use_end_of_enroute_segment_as_epoch
     :type: bool
@@ -95,6 +95,11 @@ Method detail
 
 
 
+
+
+
+
+
 .. py:method:: set_refuel_dump_mode(self, mode: RefuelDumpMode, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.set_refuel_dump_mode
 
@@ -102,17 +107,14 @@ Method detail
 
     :Parameters:
 
-    **mode** : :obj:`~RefuelDumpMode`
-    **value** : :obj:`~float`
+        **mode** : :obj:`~RefuelDumpMode`
+
+        **value** : :obj:`~float`
+
 
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
 
 
 

@@ -13,32 +13,32 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.item`
-              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.add`
               - Add a phase at the end of the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.add_at_index`
               - Add a phase at the given index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.item`
+              - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.remove`
               - Remove given phase.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.remove_at_index`
               - Remove phase at the given index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -70,36 +70,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
-
-
-.. py:method:: item(self, index: int) -> Phase
-    :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.item
-
-    Given an index, returns an element in the collection.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~Phase`
-
 
 .. py:method:: add(self) -> Phase
     :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.add
@@ -117,7 +102,23 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~Phase`
+
+
+.. py:method:: item(self, index: int) -> Phase
+    :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -130,7 +131,8 @@ Method detail
 
     :Parameters:
 
-    **phase** : :obj:`~Phase`
+        **phase** : :obj:`~Phase`
+
 
     :Returns:
 
@@ -143,9 +145,11 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~None`
+
 

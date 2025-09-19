@@ -23,12 +23,12 @@
 import os
 import sys
 
-from ansys.stk.core.stkobjects import STKObjectType
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
 from code_snippet_decorator import code_snippet
 from code_snippets_test_base import CodeSnippetsTestBase, Scenario, TestBase
+
 
 class DataAnalysisSnippets(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
@@ -44,10 +44,10 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
     def get_scenario(self):
         return CodeSnippetsTestBase.m_Root.current_scenario
-    
+
     def get_root(self):
         return CodeSnippetsTestBase.m_Root
-    
+
     def reset_to_default_scenario(self):
         # See CodeSnippetsTestBase.Initialize()
         if TestBase.Application.current_scenario != None:
@@ -61,13 +61,24 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root.close_scenario()
 
         from ansys.stk.core.stkobjects import Scenario
+
         root.new_scenario(r"CoverageDataAnalysisSnippets")
         scenario: Scenario = root.current_scenario
 
         scenario.start_time = r"15 Mar 2024 16:00:00.000"
         scenario.stop_time = r"16 Mar 2024 16:00:00.000"
 
-        from ansys.stk.core.stkobjects import Satellite, STKObjectType, PropagatorType, ClassicalLocation, OrientationAscNode, ClassicalSizeShape, PropagatorJ4Perturbation, OrbitStateClassical, CoordinateSystem
+        from ansys.stk.core.stkobjects import (
+            Satellite,
+            STKObjectType,
+            PropagatorType,
+            ClassicalLocation,
+            OrientationAscNode,
+            ClassicalSizeShape,
+            PropagatorJ4Perturbation,
+            OrbitStateClassical,
+            CoordinateSystem,
+        )
         from ansys.stk.core.stkutil import OrbitStateType
 
         # SATELLITES
@@ -77,7 +88,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         sun_sat = scenario.children.new(STKObjectType.SATELLITE, "Sun_Sat")
 
         orbit_states = {
-        #   "instance_name": [semi_major_axis, eccentricity, inclination, argument_of_periapsis, raan, true_anomaly] 
+            #   "instance_name": [semi_major_axis, eccentricity, inclination, argument_of_periapsis, raan, true_anomaly]
             "Circ_Sat": [7078.14, 0, 55, 0, -105, 0],
             "Repeat_Sat": [6853.45, 0, 98, 0, 53.7464, 0],
             "Sun_Sat": [6778.14, 0, 97.0346, 0, 173.746, 0],
@@ -85,14 +96,15 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         satellite: Satellite
         for satellite in [circ_sat, repeat_sat, sun_sat]:
-
             satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
 
             propagator: PropagatorJ4Perturbation = satellite.propagator
             circ_sat_orbit: OrbitStateClassical = propagator.initial_state.representation.convert_to(
                 OrbitStateType.CLASSICAL
             )
-            orbit_state: OrbitStateClassical = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
+            orbit_state: OrbitStateClassical = propagator.initial_state.representation.convert_to(
+                OrbitStateType.CLASSICAL
+            )
             orbit_state.coordinate_system_type = CoordinateSystem.TRUE_OF_DATE
             orbit_state.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
             orbit_state.location_type = ClassicalLocation.TRUE_ANOMALY
@@ -108,7 +120,6 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
             propagator.initial_state.representation.assign(orbit_state)
             propagator.initial_state.representation.epoch = scenario.start_time
             propagator.propagate()
-
 
         # SENSORS
         from ansys.stk.core.stkobjects import Sensor, SensorPattern
@@ -141,6 +152,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root.close_scenario()
 
         from ansys.stk.core.stkobjects import Scenario
+
         root.new_scenario(r"AccessDataAnalysisSnippets")
 
         scenario: Scenario = root.current_scenario
@@ -155,6 +167,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         facility.position.assign_geodetic(39.2768, -104.807, 2071)
 
         from ansys.stk.core.stkobjects import Sensor, SensorPattern, IAccessConstraint
+
         sensor: Sensor = facility.children.new(STKObjectType.SENSOR, "CR_FOV")
 
         sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
@@ -180,12 +193,13 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         ksu_cubesat_propagator.propagate()
 
         return root
-    
+
     def _create_aviator_scenario(self):
         root = self.get_root()
         root.close_scenario()
 
         from ansys.stk.core.stkobjects import Scenario
+
         root.new_scenario(r"Aviator")
 
         scenario: Scenario = root.current_scenario
@@ -212,7 +226,17 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         target.position.assign_geodetic(34.8979, -117.6857, 1)
 
         from ansys.stk.core.stkobjects import Aircraft, PropagatorType
-        from ansys.stk.core.stkobjects.aviator import AviatorPropagator, SiteType, ProcedureType, ProcedureTakeoff, RunwayHeadingOptions, RunwayHighLowEnd, TakeoffNormal, Catalog, RunwayCategory
+        from ansys.stk.core.stkobjects.aviator import (
+            AviatorPropagator,
+            SiteType,
+            ProcedureType,
+            ProcedureTakeoff,
+            RunwayHeadingOptions,
+            RunwayHighLowEnd,
+            TakeoffNormal,
+            Catalog,
+            RunwayCategory,
+        )
 
         aircraft: Aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "TestFlight")
         aircraft.set_route_type(PropagatorType.AVIATOR)
@@ -236,7 +260,9 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         phase1 = aviator_propagator.aviator_mission.phases[0]
         phase1.name = "Phase 1"
 
-        takeoff: ProcedureTakeoff = phase1.procedures.add(SiteType.SITE_RUNWAY_FROM_CATALOG, ProcedureType.PROCEDURE_TAKEOFF)
+        takeoff: ProcedureTakeoff = phase1.procedures.add(
+            SiteType.SITE_RUNWAY_FROM_CATALOG, ProcedureType.PROCEDURE_TAKEOFF
+        )
         takeoff.name = "Takeoff"
         takeoff.site.set_catalog_runway(runway)
 
@@ -248,7 +274,15 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         normal_takeoff.use_runway_terrain = True
         normal_takeoff.departure_altitude = 48.6464
 
-        from ansys.stk.core.stkobjects.aviator import FuelTankInternal, StationCollection, WindAtmosphereModelSource, WindModelType, AtmosphereModel, AtmosphereModelBasic, AtmosphereModelType
+        from ansys.stk.core.stkobjects.aviator import (
+            FuelTankInternal,
+            StationCollection,
+            WindAtmosphereModelSource,
+            WindModelType,
+            AtmosphereModel,
+            AtmosphereModelBasic,
+            AtmosphereModelType,
+        )
 
         wind_model = aviator_propagator.aviator_mission.wind_model
         wind_model.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
@@ -271,9 +305,17 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         fuel_tank.initial_fuel_state = 20000
         fuel_tank.capacity = 60000
 
-        from ansys.stk.core.stkobjects.aviator import SiteSTKObjectWaypoint, ProcedureHoldingCircular, CruiseSpeed, HoldingDirection, AirspeedType
+        from ansys.stk.core.stkobjects.aviator import (
+            SiteSTKObjectWaypoint,
+            ProcedureHoldingCircular,
+            CruiseSpeed,
+            HoldingDirection,
+            AirspeedType,
+        )
 
-        holding: ProcedureHoldingCircular = phase1.procedures.add(SiteType.SITE_STK_OBJECT_WAYPOINT, ProcedureType.PROCEDURE_HOLDING_CIRCULAR)
+        holding: ProcedureHoldingCircular = phase1.procedures.add(
+            SiteType.SITE_STK_OBJECT_WAYPOINT, ProcedureType.PROCEDURE_HOLDING_CIRCULAR
+        )
         site_as_waypoint = SiteSTKObjectWaypoint(holding.site)
         site_as_waypoint.object_name = "Place/NavPoint"
         holding.hold_cruise_airspeed_options.cruise_speed_type = CruiseSpeed.MIN_AIRSPEED
@@ -287,7 +329,9 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         from ansys.stk.core.stkobjects.aviator import ProcedureLanding, ApproachMode
 
-        landing: ProcedureLanding = phase1.procedures.add(SiteType.SITE_RUNWAY_FROM_CATALOG, ProcedureType.PROCEDURE_LANDING)
+        landing: ProcedureLanding = phase1.procedures.add(
+            SiteType.SITE_RUNWAY_FROM_CATALOG, ProcedureType.PROCEDURE_LANDING
+        )
         landing.site.set_catalog_runway(runway)
 
         landing.approach_mode = ApproachMode.INTERCEPT_GLIDESLOPE
@@ -299,7 +343,6 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         aviator_propagator.propagate()
 
         return root
-
 
     def test_FlightProfileNumpyArraySnippet(self):
         root = self._create_aviator_scenario()
@@ -319,11 +362,13 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         import matplotlib.pyplot as plt
 
         # compute data provider results for an aircraft's Flight Profile By Time
-        field_names = ['Mach #', 'Altitude']
+        field_names = ["Mach #", "Altitude"]
         time_step_sec = 1.0
 
-        flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
-        flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+        flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
+        flight_profile_data = flight_profile_data_provider.execute_elements(
+            self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+        )
 
         # convert dataset collection in a row format as a Numpy array
         flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
@@ -335,14 +380,14 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         for simplex in hull.simplices:
             plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
 
-        plt.title('Estimated Flight Envelope', fontsize=15)
-        plt.xlabel('Mach Number', fontsize=15)
-        plt.ylabel('Altitude', fontsize=15)
+        plt.title("Estimated Flight Envelope", fontsize=15)
+        plt.xlabel("Mach Number", fontsize=15)
+        plt.ylabel("Altitude", fontsize=15)
 
-        plt.tick_params(axis='x', labelsize=15)
-        plt.tick_params(axis='y', labelsize=15)
+        plt.tick_params(axis="x", labelsize=15)
+        plt.tick_params(axis="y", labelsize=15)
         plt.grid(visible=True)
-    
+
     def test_CoverageDefinitionResultsToPandasDataFrameSnippet(self):
         root = self._create_coverage_scenario()
         coverage = root.current_scenario.children.item("World_Cov")
@@ -358,7 +403,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
     def CoverageDefinitionResultsToPandasDataFrameSnippet(self, coverage):
         # CoverageDefinition coverage: Coverage object
         # compute data provider results for All Regions by Pass coverage
-        coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+        coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
         coverage_data = coverage_data_provider.execute()
 
         # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
@@ -368,7 +413,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         root = self._create_access_scenario()
         cube_sat_obj = root.current_scenario.children.item("KSU-CUBESAT_47954")
         facility_sensor_obj = root.current_scenario.children.item("Castle_Rock_Teleport").children.item("CR_FOV")
-        
+
         facility_sensor_satellite_access = facility_sensor_obj.get_access_to_object(cube_sat_obj)
         facility_sensor_satellite_access.compute_access()
 
@@ -383,14 +428,14 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
     def AccessResultsToPandasDataFrameSnippet(self, facility_sensor_satellite_access):
         # Access facility_sensor_satellite_access: Access calculation
         # compute data provider results for basic Access
-        field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+        field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
 
-        access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+        access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
             self.get_scenario().start_time, self.get_scenario().stop_time, field_names
         )
 
         # convert dataset collection in a row format as a Pandas DataFrame
-        index_column = 'Access Number'
+        index_column = "Access Number"
         access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
 
     def test_DescriptiveStatisticsPandasDataFrameSnippet(self):
@@ -410,14 +455,14 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         import pandas as pd
 
         # compute data provider results for All Regions by Pass coverage
-        coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+        coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
         coverage_data = coverage_data_provider.execute()
 
         # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
         all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
         # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-        all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+        all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
 
     def test_CoverageDefinitionResultsPandasDataFrameHeatMapSnippet(self):
         root = self._create_coverage_scenario()
@@ -437,22 +482,24 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         import numpy as np
 
         # compute data provider results for All Regions by Pass coverage
-        coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+        coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
         coverage_data = coverage_data_provider.execute()
 
         # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
         coverage_all_regions_elements = coverage_data_provider.elements
-        all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+        all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(
+            data_provider_elements=coverage_all_regions_elements
+        )
 
         # reshape the DataFrame based on column values
-        pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+        pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
 
         # plot heat map that shows duration by asset name by region
-        plt.xlabel('Duration by Asset', fontsize=20)
+        plt.xlabel("Duration by Asset", fontsize=20)
         plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
 
-        plt.ylabel('Region Name', fontsize=20)
+        plt.ylabel("Region Name", fontsize=20)
         plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
 
-        im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
-        plt.colorbar(orientation='vertical')
+        im = plt.imshow(pivot, cmap="YlGnBu", aspect="auto", interpolation="none")
+        plt.colorbar(orientation="vertical")

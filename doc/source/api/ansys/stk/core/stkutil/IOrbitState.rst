@@ -13,42 +13,42 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.convert_to`
-              - Change the coordinate type to the type specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign`
               - Assign a new coordinate type.
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_classical`
-              - Assign a new orbit state using Classical representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_cartesian`
               - Assign a new orbit state using Cartesian representation.
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_geodetic`
-              - Assign a new orbit state using Geodetic representation.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_classical`
+              - Assign a new orbit state using Classical representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_posigrade`
               - Assign a new orbit state using Equinoctial representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_retrograde`
               - Assign a new orbit state using Equinoctial representation.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_geodetic`
+              - Assign a new orbit state using Geodetic representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_mixed_spherical`
               - Assign a new orbit state using Mixed Spherical representation.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_spherical`
               - Assign a new orbit state using Spherical representation.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.convert_to`
+              - Change the coordinate type to the type specified.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.orbit_state_type`
-              - Return the coordinate type currently being used.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.central_body_name`
               - Get the central body.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.epoch`
               - Get or set the state epoch.
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.orbit_state_type`
+              - Return the coordinate type currently being used.
 
 
 Import detail
@@ -62,12 +62,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: orbit_state_type
-    :canonical: ansys.stk.core.stkutil.IOrbitState.orbit_state_type
-    :type: OrbitStateType
-
-    Return the coordinate type currently being used.
-
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkutil.IOrbitState.central_body_name
     :type: str
@@ -80,23 +74,15 @@ Property detail
 
     Get or set the state epoch.
 
+.. py:property:: orbit_state_type
+    :canonical: ansys.stk.core.stkutil.IOrbitState.orbit_state_type
+    :type: OrbitStateType
+
+    Return the coordinate type currently being used.
+
 
 Method detail
 -------------
-
-.. py:method:: convert_to(self, type: OrbitStateType) -> IOrbitState
-    :canonical: ansys.stk.core.stkutil.IOrbitState.convert_to
-
-    Change the coordinate type to the type specified.
-
-    :Parameters:
-
-    **type** : :obj:`~OrbitStateType`
-
-    :Returns:
-
-        :obj:`~IOrbitState`
-
 
 .. py:method:: assign(self, orbit_state: IOrbitState) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign
@@ -105,26 +91,8 @@ Method detail
 
     :Parameters:
 
-    **orbit_state** : :obj:`~IOrbitState`
+        **orbit_state** : :obj:`~IOrbitState`
 
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: assign_classical(self, coordinate_system: CoordinateSystem, semi_major_axis: float, eccentricity: float, inclination: float, arg_of_perigee: float, raan: float, mean_anomaly: float) -> None
-    :canonical: ansys.stk.core.stkutil.IOrbitState.assign_classical
-
-    Assign a new orbit state using Classical representation.
-
-    :Parameters:
-
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **eccentricity** : :obj:`~float`
-    **inclination** : :obj:`~float`
-    **arg_of_perigee** : :obj:`~float`
-    **raan** : :obj:`~float`
-    **mean_anomaly** : :obj:`~float`
 
     :Returns:
 
@@ -137,32 +105,46 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **x_position** : :obj:`~float`
-    **y_position** : :obj:`~float`
-    **z_position** : :obj:`~float`
-    **x_velocity** : :obj:`~float`
-    **y_velocity** : :obj:`~float`
-    **z_velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **x_position** : :obj:`~float`
+
+        **y_position** : :obj:`~float`
+
+        **z_position** : :obj:`~float`
+
+        **x_velocity** : :obj:`~float`
+
+        **y_velocity** : :obj:`~float`
+
+        **z_velocity** : :obj:`~float`
+
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_geodetic(self, coordinate_system: CoordinateSystem, latitude: float, longitude: float, altitude: float, latitude_rate: float, longitude_rate: float, altitude_rate: float) -> None
-    :canonical: ansys.stk.core.stkutil.IOrbitState.assign_geodetic
+.. py:method:: assign_classical(self, coordinate_system: CoordinateSystem, semi_major_axis: float, eccentricity: float, inclination: float, arg_of_perigee: float, raan: float, mean_anomaly: float) -> None
+    :canonical: ansys.stk.core.stkutil.IOrbitState.assign_classical
 
-    Assign a new orbit state using Geodetic representation.
+    Assign a new orbit state using Classical representation.
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
-    **latitude_rate** : :obj:`~float`
-    **longitude_rate** : :obj:`~float`
-    **altitude_rate** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **eccentricity** : :obj:`~float`
+
+        **inclination** : :obj:`~float`
+
+        **arg_of_perigee** : :obj:`~float`
+
+        **raan** : :obj:`~float`
+
+        **mean_anomaly** : :obj:`~float`
+
 
     :Returns:
 
@@ -175,13 +157,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **h** : :obj:`~float`
-    **k** : :obj:`~float`
-    **p** : :obj:`~float`
-    **q** : :obj:`~float`
-    **mean_lon** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **h** : :obj:`~float`
+
+        **k** : :obj:`~float`
+
+        **p** : :obj:`~float`
+
+        **q** : :obj:`~float`
+
+        **mean_lon** : :obj:`~float`
+
 
     :Returns:
 
@@ -194,13 +183,46 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **semi_major_axis** : :obj:`~float`
-    **h** : :obj:`~float`
-    **k** : :obj:`~float`
-    **p** : :obj:`~float`
-    **q** : :obj:`~float`
-    **mean_lon** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **semi_major_axis** : :obj:`~float`
+
+        **h** : :obj:`~float`
+
+        **k** : :obj:`~float`
+
+        **p** : :obj:`~float`
+
+        **q** : :obj:`~float`
+
+        **mean_lon** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: assign_geodetic(self, coordinate_system: CoordinateSystem, latitude: float, longitude: float, altitude: float, latitude_rate: float, longitude_rate: float, altitude_rate: float) -> None
+    :canonical: ansys.stk.core.stkutil.IOrbitState.assign_geodetic
+
+    Assign a new orbit state using Geodetic representation.
+
+    :Parameters:
+
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
+        **latitude_rate** : :obj:`~float`
+
+        **longitude_rate** : :obj:`~float`
+
+        **altitude_rate** : :obj:`~float`
+
 
     :Returns:
 
@@ -213,13 +235,20 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **latitude** : :obj:`~float`
-    **longitude** : :obj:`~float`
-    **altitude** : :obj:`~float`
-    **horizontal_flight_path_angle** : :obj:`~float`
-    **flight_path_azimuth** : :obj:`~float`
-    **velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **latitude** : :obj:`~float`
+
+        **longitude** : :obj:`~float`
+
+        **altitude** : :obj:`~float`
+
+        **horizontal_flight_path_angle** : :obj:`~float`
+
+        **flight_path_azimuth** : :obj:`~float`
+
+        **velocity** : :obj:`~float`
+
 
     :Returns:
 
@@ -232,17 +261,39 @@ Method detail
 
     :Parameters:
 
-    **coordinate_system** : :obj:`~CoordinateSystem`
-    **right_ascension** : :obj:`~float`
-    **declination** : :obj:`~float`
-    **radius** : :obj:`~float`
-    **horizontal_flight_path_angle** : :obj:`~float`
-    **flight_path_azimuth** : :obj:`~float`
-    **velocity** : :obj:`~float`
+        **coordinate_system** : :obj:`~CoordinateSystem`
+
+        **right_ascension** : :obj:`~float`
+
+        **declination** : :obj:`~float`
+
+        **radius** : :obj:`~float`
+
+        **horizontal_flight_path_angle** : :obj:`~float`
+
+        **flight_path_azimuth** : :obj:`~float`
+
+        **velocity** : :obj:`~float`
+
 
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: convert_to(self, type: OrbitStateType) -> IOrbitState
+    :canonical: ansys.stk.core.stkutil.IOrbitState.convert_to
+
+    Change the coordinate type to the type specified.
+
+    :Parameters:
+
+        **type** : :obj:`~OrbitStateType`
+
+
+    :Returns:
+
+        :obj:`~IOrbitState`
 
 
 

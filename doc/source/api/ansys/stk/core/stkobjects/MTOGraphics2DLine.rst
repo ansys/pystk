@@ -13,23 +13,23 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.show_graphics`
-              - Opt whether to display a line between all track points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.color`
-              - Select the color in which the track line will be displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.style`
-              - Select the style of the line between track points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.width`
-              - Select the width of the line between track points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.translucency`
-              - Select the translucency of the line between track points.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.alway_show_entire_line`
               - Opt whether to always show the entire line independent of the animation time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.color`
+              - Select the color in which the track line will be displayed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.show_graphics`
+              - Opt whether to display a line between all track points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.style`
+              - Select the style of the line between track points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.translucency`
+              - Select the translucency of the line between track points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLine.width`
+              - Select the width of the line between track points.
 
 
 
@@ -44,17 +44,23 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: alway_show_entire_line
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.alway_show_entire_line
+    :type: bool
+
+    Opt whether to always show the entire line independent of the animation time.
+
+.. py:property:: color
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.color
+    :type: Color
+
+    Select the color in which the track line will be displayed.
+
 .. py:property:: show_graphics
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.show_graphics
     :type: bool
 
     Opt whether to display a line between all track points.
-
-.. py:property:: color
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.color
-    :type: agcolor.Color
-
-    Select the color in which the track line will be displayed.
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.style
@@ -62,22 +68,16 @@ Property detail
 
     Select the style of the line between track points.
 
-.. py:property:: width
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.width
-    :type: LineWidth
-
-    Select the width of the line between track points.
-
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.translucency
     :type: int
 
     Select the translucency of the line between track points.
 
-.. py:property:: alway_show_entire_line
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.alway_show_entire_line
-    :type: bool
+.. py:property:: width
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLine.width
+    :type: LineWidth
 
-    Opt whether to always show the entire line independent of the animation time.
+    Select the width of the line between track points.
 
 

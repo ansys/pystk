@@ -64,7 +64,7 @@ class InterfacesSnippets(CodeSnippetsTestBase):
             "",
         )
 
-    def LoadVDF(self, root: "StkObjectRoot", vdfPath: str, vdfPassword: str):
+    def LoadVDF(self, root: "STKObjectRoot", vdfPath: str, vdfPassword: str):
         # Pass an empty string if there is no password to the VDF.
         root.load_vdf(vdfPath, vdfPassword)
 

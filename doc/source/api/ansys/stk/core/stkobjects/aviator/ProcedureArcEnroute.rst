@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,21 +24,21 @@ Overview
               - Get the procedure interface.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.altitude_options`
               - Get the altitude options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_options`
-              - Get the arc options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_cruise_airspeed_options`
               - Get the arc cruise airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_options`
-              - Get the enroute options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_options`
+              - Get the arc options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_turn_direction_options`
               - Get the enroute turn direction options.
 
@@ -61,29 +61,29 @@ Property detail
 
     Get the altitude options.
 
-.. py:property:: arc_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_options
-    :type: ArcOptions
-
-    Get the arc options.
-
 .. py:property:: arc_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_cruise_airspeed_options
     :type: CruiseAirspeedOptions
 
     Get the arc cruise airspeed options.
 
-.. py:property:: enroute_options
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_options
-    :type: IEnrouteAndDelayOptions
+.. py:property:: arc_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.arc_options
+    :type: ArcOptions
 
-    Get the enroute options.
+    Get the arc options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_cruise_airspeed_options
     :type: CruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
+
+.. py:property:: enroute_options
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_options
+    :type: IEnrouteAndDelayOptions
+
+    Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute.enroute_turn_direction_options

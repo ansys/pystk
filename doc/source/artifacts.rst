@@ -44,7 +44,7 @@ features:
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}
@@ -54,6 +54,31 @@ features:
        :fab:`{{ platform }}` {{ platform | capitalize }},
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        `Download wheelhouse <{{ wheelhouse[platform][python]["all"] }}/{{ wheelhouse[platform][python]["all"].name }}.zip>`__
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% endfor %}
+
+Extensions
+----------
+
+These extra artifacts provide a set of high-level workflows for automating
+common tasks with PySTK.
+
+.. jinja:: wheelhouse
+
+    .. csv-table::
+       :header-rows: 1
+       :widths: 16, 28, 28, 28
+
+       :fas:`laptop` Platform,
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       :fab:`python` Python {{ python }}
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% for platform in SUPPORTED_PLATFORMS -%}
+       :fab:`{{ platform }}` {{ platform | capitalize }},
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       `Download wheelhouse <{{ wheelhouse[platform][python]["extensions"] }}/{{ wheelhouse[platform][python]["extensions"].name }}.zip>`__
        {%- if not loop.last -%},{%- endif -%}
        {% endfor %}
        {% endfor %}
@@ -68,7 +93,7 @@ These extra artifacts include all the dependencies for using gRPC connections.
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}
@@ -93,7 +118,7 @@ visualization widgets within IPython environments, such as Jupyter Lab.
     .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
-    
+
        :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        :fab:`python` Python {{ python }}
@@ -103,6 +128,31 @@ visualization widgets within IPython environments, such as Jupyter Lab.
        :fab:`{{ platform }}` {{ platform | capitalize }},
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
        `Download wheelhouse <{{ wheelhouse[platform][python]["jupyter"] }}/{{ wheelhouse[platform][python]["jupyter"].name }}.zip>`__
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% endfor %}
+
+Migration
+---------
+
+These extra artifacts include all the dependencies for migrating your existing
+Python code to PySTK. See the :ref:`migration guide <Migrate to PySTK>`.
+
+.. jinja:: wheelhouse
+
+    .. csv-table::
+       :header-rows: 1
+       :widths: 16, 28, 28, 28
+
+       :fas:`laptop` Platform,
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       :fab:`python` Python {{ python }}
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% for platform in SUPPORTED_PLATFORMS -%}
+       :fab:`{{ platform }}` {{ platform | capitalize }},
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       `Download wheelhouse <{{ wheelhouse[platform][python]["migration"] }}/{{ wheelhouse[platform][python]["migration"].name }}.zip>`__
        {%- if not loop.last -%},{%- endif -%}
        {% endfor %}
        {% endfor %}

@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.item`
-              - Retrieve a toolbar object.
-            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id`
-              - Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
             * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_item_by_index`
               - Retrieve a toolbar object based on the index in the collection.
             * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_item_by_name`
               - Retrieve a toolbar object based on the name of the Toolbar in the collection.
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id`
+              - Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.item`
+              - Retrieve a toolbar object.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.count`
-              - Return a total number of toolbars in the collection.
             * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection._new_enum`
               - Enumerates the toolbars in the collection.
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.count`
+              - Return a total number of toolbars in the collection.
 
 
 
@@ -51,49 +51,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.uicore.ToolbarCollection.count
-    :type: int
-
-    Return a total number of toolbars in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.uicore.ToolbarCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the toolbars in the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.count
+    :type: int
+
+    Return a total number of toolbars in the collection.
+
 
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_caption: typing.Any) -> Toolbar
-    :canonical: ansys.stk.core.uicore.ToolbarCollection.item
-
-    Retrieve a toolbar object.
-
-    :Parameters:
-
-    **index_or_caption** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~Toolbar`
-
-
-
-.. py:method:: get_toolbar_by_id(self, id: int) -> Toolbar
-    :canonical: ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id
-
-    Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
-
-    :Parameters:
-
-    **id** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~Toolbar`
 
 .. py:method:: get_item_by_index(self, index: int) -> Toolbar
     :canonical: ansys.stk.core.uicore.ToolbarCollection.get_item_by_index
@@ -102,7 +75,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -115,9 +89,39 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~Toolbar`
+
+.. py:method:: get_toolbar_by_id(self, id: int) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id
+
+    Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
+
+    :Parameters:
+
+        **id** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~Toolbar`
+
+.. py:method:: item(self, index_or_caption: typing.Any) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.item
+
+    Retrieve a toolbar object.
+
+    :Parameters:
+
+        **index_or_caption** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~Toolbar`
+
 

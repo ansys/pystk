@@ -72,17 +72,27 @@ class Recorder:
             new_sys_argv += self.program_args
         sys.argv = new_sys_argv
 
+        if sys.version_info >= (3, 11):
+            exec_entry_point = "\n".join([
+                f"import {module_to_import} as this_module",
+                f"this_module.{self.entry_point}()"
+            ])
+        else:
+            exec_entry_point = "\n".join([
+                f"import {module_to_import}",
+                f"{module_to_import}.{self.entry_point}()"
+            ])
+
         bootstrap = [
             "exec('import sys')",
             f'exec("{sys_path_append_cmd}")',
-            f"exec('import {module_to_import}')",
-            f"exec('{module_to_import}.{self.entry_point}()')",
+            f'exec("""{exec_entry_point}""")',
             f"exec('del sys.modules[\"{module_to_import}\"]')",
         ]
 
         sys.setprofile(self._trace_call)
 
-        [eval(cmd) for cmd in bootstrap]
+        [eval(cmd) for cmd in bootstrap] # nosec: B307
 
         sys.setprofile(None)
 
@@ -186,12 +196,25 @@ class Recorder:
 
                 frameinfo = inspect.getframeinfo(client_frame)
 
+                if sys.version_info >= (3, 11):
+                    lineno = frameinfo.positions.lineno
+                    end_lineno = frameinfo.positions.end_lineno
+                    col_offset = frameinfo.positions.col_offset
+                    end_col_offset = frameinfo.positions.end_col_offset
+                else:
+                    # Traceback in Python < 3.11 does not provide
+                    # end line nor column information
+                    lineno = frameinfo.lineno
+                    end_lineno = lineno
+                    col_offset = 0
+                    end_col_offset = sys.maxsize
+
                 self.recording.add(
                     client_frame.f_code.co_filename,
                     type_name,
                     member,
-                    frameinfo.positions.lineno,
-                    frameinfo.positions.end_lineno,
-                    frameinfo.positions.col_offset,
-                    frameinfo.positions.end_col_offset,
+                    lineno,
+                    end_lineno,
+                    col_offset,
+                    end_col_offset,
                 )

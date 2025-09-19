@@ -13,15 +13,15 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_texture_coordinates`
-              - Define a collection of texture coordinates.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_per_vertex_colors`
               - Define a collection of colors.
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_texture_coordinates`
+              - Define a collection of texture coordinates.
 
 
 Import detail
@@ -36,19 +36,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_texture_coordinates(self, texture_coordinates: list) -> None
-    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_texture_coordinates
-
-    Define a collection of texture coordinates.
-
-    :Parameters:
-
-    **texture_coordinates** : :obj:`~list`
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: set_per_vertex_colors(self, colors: list) -> None
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_per_vertex_colors
 
@@ -56,7 +43,22 @@ Method detail
 
     :Parameters:
 
-    **colors** : :obj:`~list`
+        **colors** : :obj:`~list`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_texture_coordinates(self, texture_coordinates: list) -> None
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_texture_coordinates
+
+    Define a collection of texture coordinates.
+
+    :Parameters:
+
+        **texture_coordinates** : :obj:`~list`
+
 
     :Returns:
 

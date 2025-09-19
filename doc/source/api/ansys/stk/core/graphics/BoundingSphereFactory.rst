@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Create instances of BoundingSphere.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -60,8 +60,10 @@ Method detail
 
     :Parameters:
 
-    **center** : :obj:`~list`
-    **radius** : :obj:`~float`
+        **center** : :obj:`~list`
+
+        **radius** : :obj:`~float`
+
 
     :Returns:
 

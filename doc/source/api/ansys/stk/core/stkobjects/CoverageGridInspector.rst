@@ -13,26 +13,28 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.select_point`
-              - Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.select_region`
-              - Select a region.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.clear_selection`
               - Clear the selected point or region.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.get_grid_point_selection`
               - Return a collection of grid points that allows the user to select points into the grid inspector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.select_point`
+              - Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.select_region`
+              - Select a region.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.message`
+              - Retrieve the message when a point or region is selected.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.point_coverage`
               - Access for the point selected in the graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.point_daily_coverage`
@@ -45,8 +47,6 @@ Overview
               - Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.region_pass_coverage`
               - Detailed information about the intervals of time when each asset can provide coverage to the selected region.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.message`
-              - Retrieve the message when a point or region is selected.
 
 
 
@@ -60,6 +60,12 @@ Import detail
 
 Property detail
 ---------------
+
+.. py:property:: message
+    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.message
+    :type: str
+
+    Retrieve the message when a point or region is selected.
 
 .. py:property:: point_coverage
     :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.point_coverage
@@ -97,15 +103,34 @@ Property detail
 
     Detailed information about the intervals of time when each asset can provide coverage to the selected region.
 
-.. py:property:: message
-    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.message
-    :type: str
-
-    Retrieve the message when a point or region is selected.
-
 
 Method detail
 -------------
+
+.. py:method:: clear_selection(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.clear_selection
+
+    Clear the selected point or region.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: get_grid_point_selection(self) -> CoverageGridPointSelection
+    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.get_grid_point_selection
+
+    Return a collection of grid points that allows the user to select points into the grid inspector.
+
+    :Returns:
+
+        :obj:`~CoverageGridPointSelection`
+
+
+
+
+
+
+
 
 .. py:method:: select_point(self, lat: typing.Any, lon: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.select_point
@@ -114,8 +139,10 @@ Method detail
 
     :Parameters:
 
-    **lat** : :obj:`~typing.Any`
-    **lon** : :obj:`~typing.Any`
+        **lat** : :obj:`~typing.Any`
+
+        **lon** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -128,34 +155,10 @@ Method detail
 
     :Parameters:
 
-    **region_name** : :obj:`~str`
+        **region_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
-
-
-
-
-
-
-
-.. py:method:: clear_selection(self) -> None
-    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.clear_selection
-
-    Clear the selected point or region.
-
-    :Returns:
-
-        :obj:`~None`
-
-
-.. py:method:: get_grid_point_selection(self) -> CoverageGridPointSelection
-    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.get_grid_point_selection
-
-    Return a collection of grid points that allows the user to select points into the grid inspector.
-
-    :Returns:
-
-        :obj:`~CoverageGridPointSelection`
 

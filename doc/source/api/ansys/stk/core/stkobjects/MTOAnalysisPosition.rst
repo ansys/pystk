@@ -13,20 +13,20 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_all_tracks`
               - Compute the position of all tracks at the given time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks`
-              - Compute the position of all track of given Id at the given time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_track`
               - Compute the position of the track Id at the given time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks`
+              - Compute the position of all track of given Id at the given time.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -66,21 +66,8 @@ Method detail
 
     :Parameters:
 
-    **time** : :obj:`~typing.Any`
+        **time** : :obj:`~typing.Any`
 
-    :Returns:
-
-        :obj:`~MTOTrackPointCollection`
-
-.. py:method:: compute_tracks(self, track_ids: list, time: typing.Any) -> MTOTrackPointCollection
-    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks
-
-    Compute the position of all track of given Id at the given time.
-
-    :Parameters:
-
-    **track_ids** : :obj:`~list`
-    **time** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -93,10 +80,28 @@ Method detail
 
     :Parameters:
 
-    **track_id** : :obj:`~int`
-    **time** : :obj:`~typing.Any`
+        **track_id** : :obj:`~int`
+
+        **time** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~MTOTrackPoint`
+
+.. py:method:: compute_tracks(self, track_ids: list, time: typing.Any) -> MTOTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks
+
+    Compute the position of all track of given Id at the given time.
+
+    :Parameters:
+
+        **track_ids** : :obj:`~list`
+
+        **time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~MTOTrackPointCollection`
 

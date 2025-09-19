@@ -44,7 +44,7 @@ class EarlyBoundTests(TestBase):
                     STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1"
                 )
             )
-            covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+            covObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_COV, ISTKObject)
             EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
 
         except Exception as e:
@@ -210,8 +210,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_FOM, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_FOM)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_FOM, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_FOM)).object_files)
 
     # endregion
 
@@ -518,7 +518,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oCovDef)
 
         oFOMerit: "FigureOfMerit" = clr.CastAs(
-            (IStkObject(oCovDef)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOM_2352353"), FigureOfMerit
+            (ISTKObject(oCovDef)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOM_2352353"), FigureOfMerit
         )
         Assert.assertIsNotNone(oFOMerit)
 
@@ -549,11 +549,11 @@ class EarlyBoundTests(TestBase):
                 self.TestFOMGfxContours(oFOMerit, True)
 
         finally:
-            (IStkObject(oCovDef)).children.unload(
-                (IStkObject(oFOMerit)).class_type, (IStkObject(oFOMerit)).instance_name
+            (ISTKObject(oCovDef)).children.unload(
+                (ISTKObject(oFOMerit)).class_type, (ISTKObject(oFOMerit)).instance_name
             )
             TestBase.Application.current_scenario.children.unload(
-                (IStkObject(oCovDef)).class_type, (IStkObject(oCovDef)).instance_name
+                (ISTKObject(oCovDef)).class_type, (ISTKObject(oCovDef)).instance_name
             )
 
         TestBase.logger.WriteLine("----- GRAPHICS SMOOTH CONTOURS ----- END -----")
@@ -613,13 +613,13 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario("Bug44875")
 
         # create facility
-        facobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        facobj: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.FACILITY, "Fac1Bug44875"
         )
-        recobj: "IStkObject" = facobj.children.new(STKObjectType.RECEIVER, "Rcv1Bug44875")
+        recobj: "ISTKObject" = facobj.children.new(STKObjectType.RECEIVER, "Rcv1Bug44875")
 
         # Create cov def
-        covdefobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        covdefobj: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.COVERAGE_DEFINITION, "CD1Bug44875"
         )
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
@@ -627,9 +627,9 @@ class EarlyBoundTests(TestBase):
         covdef.point_definition.use_object_as_seed = True
         covdef.point_definition.grid_class = CoverageGridClass.RECEIVER
         covdef.point_definition.seed_instance = "Facility/Fac1Bug44875/Receiver/Rcv1Bug44875"
-        covchilds: "IStkObjectCollection" = covdefobj.children
+        covchilds: "ISTKObjectCollection" = covdefobj.children
 
-        fomobj1: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM1Bug44875")
+        fomobj1: "ISTKObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM1Bug44875")
         fom1: "FigureOfMerit" = clr.CastAs(fomobj1, FigureOfMerit)
         fomcs1: "FigureOfMeritDefinitionAccessConstraint" = None
         fomcs1 = fom1.set_access_constraint_definition_name("C/No")
@@ -652,7 +652,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 fomc1: "IFigureOfMeritGraphics2DContours" = fom1.graphics.static.contours
 
-        fomobj2: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM2Bug44875")
+        fomobj2: "ISTKObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM2Bug44875")
         fom2: "FigureOfMerit" = clr.CastAs(fomobj2, FigureOfMerit)
         fomcs2: "FigureOfMeritDefinitionAccessConstraint" = None
         fomcs2 = fom2.set_access_constraint_definition_name("PowerFluxDensity")
@@ -680,7 +680,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_COV = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1")
         )
-        covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        covObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_COV, ISTKObject)
         EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  NON LINEAR CONTOUR LEVELS ----- END -----")
 
@@ -696,11 +696,11 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario(bugNum)
 
         # create facility
-        facobj: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1X45332")
-        recobj: "IStkObject" = facobj.children.new(STKObjectType.RECEIVER, ("Rcv1" + bugNum))
+        facobj: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1X45332")
+        recobj: "ISTKObject" = facobj.children.new(STKObjectType.RECEIVER, ("Rcv1" + bugNum))
 
         # Create cov def
-        covdefobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
+        covdefobj: "ISTKObject" = TestBase.Application.current_scenario.children.new(
             STKObjectType.COVERAGE_DEFINITION, ("CD1" + bugNum)
         )
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
@@ -708,9 +708,9 @@ class EarlyBoundTests(TestBase):
         covdef.point_definition.use_object_as_seed = True
         covdef.point_definition.grid_class = CoverageGridClass.RECEIVER
         covdef.point_definition.seed_instance = (("Facility/Fac1" + bugNum) + "/Receiver/Rcv1") + bugNum
-        covchilds: "IStkObjectCollection" = covdefobj.children
+        covchilds: "ISTKObjectCollection" = covdefobj.children
 
-        fomobj: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, ("FM1" + bugNum))
+        fomobj: "ISTKObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, ("FM1" + bugNum))
         fom: "FigureOfMerit" = clr.CastAs(fomobj, FigureOfMerit)
         fomcs: "FigureOfMeritDefinitionAccessConstraint" = None
 
@@ -839,7 +839,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_COV = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1")
         )
-        covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        covObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_COV, ISTKObject)
         EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  ACCESS CONSTRAINT DEFINITION ----- END -----")
 
@@ -854,11 +854,11 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
-            coverageDefinitionObj: "IStkObject" = clr.CastAs(
+            coverageDefinitionObj: "ISTKObject" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(
                     STKObjectType.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
                 ),
-                IStkObject,
+                ISTKObject,
             )
             coverageDefinition: "CoverageDefinition" = clr.CastAs(coverageDefinitionObj, CoverageDefinition)
             coverageDefinition.compute_accesses()
@@ -868,7 +868,7 @@ class EarlyBoundTests(TestBase):
             )
 
             dp: "IDataProvider" = clr.CastAs(
-                (clr.CastAs(figureOfMerit, IStkObject)).data_providers["Time Value By Point"], IDataProvider
+                (clr.CastAs(figureOfMerit, ISTKObject)).data_providers["Time Value By Point"], IDataProvider
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
@@ -879,22 +879,22 @@ class EarlyBoundTests(TestBase):
             result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
-            satelliteObj: "IStkObject" = clr.CastAs(
+            satelliteObj: "ISTKObject" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
-                IStkObject,
+                ISTKObject,
             )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(PropagatorType.TWO_BODY)
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             satelliteProp.propagate()
-            attitudeCoverageObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoveragePreDataTest"), IStkObject
+            attitudeCoverageObj: "ISTKObject" = clr.CastAs(
+                satelliteObj.children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoveragePreDataTest"), ISTKObject
             )
-            attitudeFigureOfMeritObj: "IStkObject" = clr.CastAs(
+            attitudeFigureOfMeritObj: "ISTKObject" = clr.CastAs(
                 attitudeCoverageObj.children.new(
                     STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFigureOfMeritPreDataTest"
                 ),
-                IStkObject,
+                ISTKObject,
             )
             TestBase.Application.execute_command((("AttCov " + attitudeCoverageObj.path) + " Access Compute"))
 

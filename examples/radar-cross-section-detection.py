@@ -107,7 +107,9 @@ aircraft.radar_cross_section.inherit = False
 
 # Get the model's first frequency band:
 
-band1 = aircraft.radar_cross_section.model.frequency_bands[0]
+band1 = aircraft.radar_cross_section.model_component_linking.component.frequency_bands[
+    0
+]
 
 # Configure the band to use a constant frequency:
 
@@ -130,11 +132,17 @@ globe_widget.show()
 
 # The radar site is modeled by a place object. Insert the site:
 
-radar_site = root.current_scenario.children.new(STKObjectType.PLACE, "RadarSite")
+# +
+from ansys.stk.core.stkobjects import Place
+
+
+radar_site = Place(root.current_scenario.children.new(STKObjectType.PLACE, "RadarSite"))
+# -
 
 # The site is located at latitude $35.75174^\circ$ and longitude $139.35621^\circ$. The site's antenna is located $50$ ft above the ground. Assign the site's position:
 
-radar_site.position.assign_geodetic(35.75174, 139.35621, 50)
+radar_site.use_terrain = False
+radar_site.position.assign_geodetic(35.75174, 139.35621, 0.01524)
 
 # ## Insert the antenna servo system
 
@@ -276,7 +284,13 @@ airport_radar = antenna_sensor.children.new(STKObjectType.RADAR, "Radar")
 
 # Pulse width is the width of the transmitted pulse (the uncompressed RF bandwidth can also be taken as the inverse of the pulse width). Set the pulse width to one microsecond:
 
-airport_radar.model.mode.waveform.pulse_definition.pulse_width = 1e-6
+# +
+from ansys.stk.core.stkobjects import RadarModelMonostatic
+
+
+monostatic = RadarModelMonostatic(airport_radar.model_component_linking.component)
+monostatic.mode_component_linking.component.waveform.pulse_definition.pulse_width = 1e-6
+# -
 
 # ## Define the antenna model
 
@@ -284,9 +298,18 @@ airport_radar.model.mode.waveform.pulse_definition.pulse_width = 1e-6
 
 # First, set the radar's antenna model to the cosine squared aperture rectangular antenna pattern:
 
-airport_radar.model.antenna_control.set_embedded_model(
+# +
+from ansys.stk.core.stkobjects import AntennaModelApertureRectangularCosineSquared
+
+
+antenna_control = airport_radar.model_component_linking.component.antenna_control
+antenna_control.embedded_model_component_linking.set_component(
     "Cosine Squared Aperture Rectangular"
 )
+antenna_model = AntennaModelApertureRectangularCosineSquared(
+    antenna_control.embedded_model_component_linking.component
+)
+# -
 
 # Next, configure the antenna model to use beamwidth:
 
@@ -294,31 +317,29 @@ airport_radar.model.antenna_control.set_embedded_model(
 from ansys.stk.core.stkobjects import RectangularApertureInputType
 
 
-airport_radar.model.antenna_control.embedded_model.input_type = (
-    RectangularApertureInputType.BEAMWIDTHS
-)
+antenna_model.input_type = RectangularApertureInputType.BEAMWIDTHS
 # -
 
 # Set the X beamwidth to $5^\circ$:
 
-airport_radar.model.antenna_control.embedded_model.x_beamwidth = 5
+antenna_model.x_beamwidth = 5
 
 # Set the Y beamwidth to $1.4^\circ$
 
-airport_radar.model.antenna_control.embedded_model.y_beamwidth = 1.4
+antenna_model.y_beamwidth = 1.4
 
 # Then, set the antenna's design frequency to $2.8$ GHz.
 
-airport_radar.model.antenna_control.embedded_model.design_frequency = 2.8
+antenna_model.design_frequency = 2.8
 
 # Disable the automatic computation of main-lobe gain for the antenna. When the `compute_mainlobe_gain` property is set to `True`, the main-lobe gain is automatically calculated based on beamwidth or diameter, efficiency, and design frequency. In this case, disable the computation of main-lobe gain, and instead set the value to $34$ dB:
 
-airport_radar.model.antenna_control.embedded_model.compute_mainlobe_gain = False
-airport_radar.model.antenna_control.embedded_model.mainlobe_gain = 34
+antenna_model.compute_mainlobe_gain = False
+antenna_model.mainlobe_gain = 34
 
 # Finally, set the antenna's efficiency to $55$%:
 
-airport_radar.model.antenna_control.embedded_model.efficiency = 55
+antenna_model.efficiency = 55
 
 # ## Define the radar transmitter
 
@@ -330,24 +351,23 @@ airport_radar.model.antenna_control.embedded_model.efficiency = 55
 from ansys.stk.core.stkobjects import RadarFrequencySpecificationType
 
 
-airport_radar.model.transmitter.frequency_specification = (
-    RadarFrequencySpecificationType.FREQUENCY
-)
+radar_transmitter = airport_radar.model_component_linking.component.transmitter
+radar_transmitter.frequency_specification = RadarFrequencySpecificationType.FREQUENCY
 # -
 
 # Then, set the transmitter's frequency to $2.8$ GHz:
 
-airport_radar.model.transmitter.frequency = 2.8
+radar_transmitter.frequency = 2.8
 
 # Finally, set the transmitter's power to $20$ kW ($43.01$ dBW):
 
-airport_radar.model.transmitter.power = 43.01
+radar_transmitter.power = 43.01
 
 # Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna's orientation. An aircraft surveillance radar system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.
 
 # Enable the use of polarization on the transmitter:
 
-airport_radar.model.transmitter.enable_polarization = True
+radar_transmitter.enable_polarization = True
 
 # Linear polarization is the default value for transmitters, so there is no need to change the polarization type.
 
@@ -357,7 +377,8 @@ airport_radar.model.transmitter.enable_polarization = True
 
 # First, enable polarization on the radar receiver:
 
-airport_radar.model.receiver.enable_polarization = True
+radar_receiver = airport_radar.model_component_linking.component.receiver
+radar_receiver.enable_polarization = True
 
 # Linear polarization is the default polarization type, so the default type can be used directly.
 
@@ -369,16 +390,18 @@ airport_radar.model.receiver.enable_polarization = True
 from ansys.stk.core.stkobjects import NoiseTemperatureComputeType
 
 
-airport_radar.model.receiver.system_noise_temperature.compute_type = (
+radar_receiver.system_noise_temperature.compute_type = (
     NoiseTemperatureComputeType.CALCULATE
 )
 # -
 
 # Then, use the receiver's system noise temperature's `antenna_noise_temperature` property to access an `AntennaNoiseTemperature` object, through which it is possible to set the antenna noise temperature parameters. Set the compute type to calculate and then enable the use of Sun and cosmic background in antenna noise temperature calculations:
 
-airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = NoiseTemperatureComputeType.CALCULATE
-airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.use_sun = True
-airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.use_cosmic_background = True
+radar_receiver.system_noise_temperature.antenna_noise_temperature.compute_type = (
+    NoiseTemperatureComputeType.CALCULATE
+)
+radar_receiver.system_noise_temperature.antenna_noise_temperature.use_sun = True
+radar_receiver.system_noise_temperature.antenna_noise_temperature.use_cosmic_background = True
 
 # ## Determine the probability of detection
 

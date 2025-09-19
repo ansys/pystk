@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Set the targeted stopping condition.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -82,13 +82,12 @@ Method detail
 
     :Parameters:
 
-    **mcs_segment** : :obj:`~IMCSSegment`
+        **mcs_segment** : :obj:`~IMCSSegment`
+
 
     :Returns:
 
         :obj:`~None`
-
-
 
 .. py:method:: set_trigger(self, stopping_condition: StoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.set_trigger
@@ -97,11 +96,14 @@ Method detail
 
     :Parameters:
 
-    **stopping_condition** : :obj:`~StoppingCondition`
+        **stopping_condition** : :obj:`~StoppingCondition`
+
 
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

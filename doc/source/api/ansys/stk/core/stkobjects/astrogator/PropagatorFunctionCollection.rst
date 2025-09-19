@@ -13,32 +13,32 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.add`
               - Add a function to the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.item`
-              - Allow you to iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove`
-              - Remove the specified function from the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove_all`
-              - Remove all functions from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.cut`
               - Copy a propagator function to the clipboard and removes the propagator function from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.paste`
-              - Pastes a propagator function from the clipboard into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.insert_copy`
-              - Copy a propagator function and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.get_item_by_index`
               - Retrieve a propagator function from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.get_item_by_name`
               - Retrieve a propagator function from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.insert_copy`
+              - Copy a propagator function and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.paste`
+              - Pastes a propagator function from the clipboard into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove`
+              - Remove the specified function from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove_all`
+              - Remove all functions from the collection.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -84,48 +84,13 @@ Method detail
 
     :Parameters:
 
-    **result_name** : :obj:`~str`
+        **result_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~IComponentInfo`
 
-.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
-
-.. py:method:: remove(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove
-
-    Remove the specified function from the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~None`
-
-
-
-.. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove_all
-
-    Remove all functions from the collection.
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.cut
@@ -134,33 +99,12 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: paste(self) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.paste
-
-    Pastes a propagator function from the clipboard into the list.
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
-
-.. py:method:: insert_copy(self, prop_func: IComponentInfo) -> IComponentInfo
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.insert_copy
-
-    Copy a propagator function and inserts the copy into the list.
-
-    :Parameters:
-
-    **prop_func** : :obj:`~IComponentInfo`
-
-    :Returns:
-
-        :obj:`~IComponentInfo`
 
 .. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.get_item_by_index
@@ -169,7 +113,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -182,9 +127,71 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~IComponentInfo`
+
+.. py:method:: insert_copy(self, prop_func: IComponentInfo) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.insert_copy
+
+    Copy a propagator function and inserts the copy into the list.
+
+    :Parameters:
+
+        **prop_func** : :obj:`~IComponentInfo`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: paste(self) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.paste
+
+    Pastes a propagator function from the clipboard into the list.
+
+    :Returns:
+
+        :obj:`~IComponentInfo`
+
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove
+
+    Remove the specified function from the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove_all
+
+    Remove all functions from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
 

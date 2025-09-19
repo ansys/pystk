@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -41,7 +41,8 @@ Method detail
 
     :Parameters:
 
-    **time_intervals** : :obj:`~list`
+        **time_intervals** : :obj:`~list`
+
 
     :Returns:
 

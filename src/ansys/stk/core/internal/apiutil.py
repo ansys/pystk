@@ -137,7 +137,7 @@ def _unquoted(s:str) -> str:
             s = s[1:]
         if len(s) > 0 and s[-1] == "\"":
             s = s[:-1]
-    return s 
+    return s
 
 def read_registry_key(key, value=None, root=None, silent_exception=False):
     try:

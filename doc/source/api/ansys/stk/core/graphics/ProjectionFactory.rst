@@ -13,17 +13,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionFactory.initialize`
               - Initialize a new instance.
-            * - :py:attr:`~ansys.stk.core.graphics.ProjectionFactory.initialize_with_data`
-              - Initialize a new instance.
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionFactory.initialize_from_projection`
               - Initialize a new instance from another projection.
+            * - :py:attr:`~ansys.stk.core.graphics.ProjectionFactory.initialize_with_data`
+              - Initialize a new instance.
 
 
 Import detail
@@ -47,24 +47,6 @@ Method detail
 
         :obj:`~IProjection`
 
-.. py:method:: initialize_with_data(self, position: list, orientation: IOrientation, field_of_view_horizontal: float, field_of_view_vertical: float, near_plane: float, far_plane: float) -> IProjection
-    :canonical: ansys.stk.core.graphics.ProjectionFactory.initialize_with_data
-
-    Initialize a new instance.
-
-    :Parameters:
-
-    **position** : :obj:`~list`
-    **orientation** : :obj:`~IOrientation`
-    **field_of_view_horizontal** : :obj:`~float`
-    **field_of_view_vertical** : :obj:`~float`
-    **near_plane** : :obj:`~float`
-    **far_plane** : :obj:`~float`
-
-    :Returns:
-
-        :obj:`~IProjection`
-
 .. py:method:: initialize_from_projection(self, projection: IProjection) -> IProjection
     :canonical: ansys.stk.core.graphics.ProjectionFactory.initialize_from_projection
 
@@ -72,7 +54,32 @@ Method detail
 
     :Parameters:
 
-    **projection** : :obj:`~IProjection`
+        **projection** : :obj:`~IProjection`
+
+
+    :Returns:
+
+        :obj:`~IProjection`
+
+.. py:method:: initialize_with_data(self, position: list, orientation: IOrientation, field_of_view_horizontal: float, field_of_view_vertical: float, near_plane: float, far_plane: float) -> IProjection
+    :canonical: ansys.stk.core.graphics.ProjectionFactory.initialize_with_data
+
+    Initialize a new instance.
+
+    :Parameters:
+
+        **position** : :obj:`~list`
+
+        **orientation** : :obj:`~IOrientation`
+
+        **field_of_view_horizontal** : :obj:`~float`
+
+        **field_of_view_vertical** : :obj:`~float`
+
+        **near_plane** : :obj:`~float`
+
+        **far_plane** : :obj:`~float`
+
 
     :Returns:
 

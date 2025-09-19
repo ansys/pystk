@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Get the file at the specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count`
-              - Get the total count of files in the collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum`
               - Enumerates through the file collection.
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count`
+              - Get the total count of files in the collection.
 
 
 
@@ -45,22 +45,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count
-    :type: int
-
-    Get the total count of files in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the file collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count
+    :type: int
+
+    Get the total count of files in the collection.
+
 
 Method detail
 -------------
-
 
 
 .. py:method:: item(self, n_index: int) -> str
@@ -70,9 +69,11 @@ Method detail
 
     :Parameters:
 
-    **n_index** : :obj:`~int`
+        **n_index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~str`
+
 

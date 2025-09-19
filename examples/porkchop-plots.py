@@ -138,13 +138,13 @@ def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
 
 
 def get_object_pos_vel_at_epoch(
-    stk_object: "StkObject", epoch: str, frame_name: str
+    stk_object: "STKObject", epoch: str, frame_name: str
 ) -> tuple:
     """Compute the position and velocity vectors of an object in the desired reference frame.
 
     Parameters
     ----------
-    stk_object : ~ansys.stkcore.stkobjects.StkObject
+    stk_object : ~ansys.stkcore.stkobjects.STKObject
         Name of the object.
     epoch : ~ansys.stk.core.stkutil.Date
         Epoch date.

@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,21 +26,21 @@ Overview
               - Set both the inner and outer cone half angles.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.inner_cone_half_angle`
-              - Inner half angle to define the angular radius of the cone measured from the boresight. When an inner cone is specified, the inner region is considered to be a region of exclusion. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.outer_cone_half_angle`
-              - Outer half angle to define the angular radius of the cone measured from the boresight. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.minimum_clock_angle`
-              - Minimum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.maximum_clock_angle`
-              - Maximum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.angular_resolution`
               - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.inner_cone_half_angle`
+              - Inner half angle to define the angular radius of the cone measured from the boresight. When an inner cone is specified, the inner region is considered to be a region of exclusion. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.maximum_clock_angle`
+              - Maximum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.minimum_clock_angle`
+              - Minimum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.outer_cone_half_angle`
+              - Outer half angle to define the angular radius of the cone measured from the boresight. Uses Angle Dimension.
 
 
 
@@ -55,23 +55,17 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: angular_resolution
+    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.angular_resolution
+    :type: typing.Any
+
+    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+
 .. py:property:: inner_cone_half_angle
     :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.inner_cone_half_angle
     :type: typing.Any
 
     Inner half angle to define the angular radius of the cone measured from the boresight. When an inner cone is specified, the inner region is considered to be a region of exclusion. Uses Angle Dimension.
-
-.. py:property:: outer_cone_half_angle
-    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.outer_cone_half_angle
-    :type: typing.Any
-
-    Outer half angle to define the angular radius of the cone measured from the boresight. Uses Angle Dimension.
-
-.. py:property:: minimum_clock_angle
-    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.minimum_clock_angle
-    :type: typing.Any
-
-    Minimum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
 
 .. py:property:: maximum_clock_angle
     :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.maximum_clock_angle
@@ -79,15 +73,23 @@ Property detail
 
     Maximum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
 
-.. py:property:: angular_resolution
-    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.angular_resolution
+.. py:property:: minimum_clock_angle
+    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.minimum_clock_angle
     :type: typing.Any
 
-    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+    Minimum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
+
+.. py:property:: outer_cone_half_angle
+    :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.outer_cone_half_angle
+    :type: typing.Any
+
+    Outer half angle to define the angular radius of the cone measured from the boresight. Uses Angle Dimension.
 
 
 Method detail
 -------------
+
+
 
 
 
@@ -104,14 +106,14 @@ Method detail
 
     :Parameters:
 
-    **min** : :obj:`~typing.Any`
-    **max** : :obj:`~typing.Any`
+        **min** : :obj:`~typing.Any`
+
+        **max** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
-
 
 .. py:method:: set_cone_half_angles(self, inner: typing.Any, outer: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.set_cone_half_angles
@@ -120,8 +122,10 @@ Method detail
 
     :Parameters:
 
-    **inner** : :obj:`~typing.Any`
-    **outer** : :obj:`~typing.Any`
+        **inner** : :obj:`~typing.Any`
+
+        **outer** : :obj:`~typing.Any`
+
 
     :Returns:
 

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,21 +24,21 @@ Overview
               - Do not use this method, as it is deprecated. Use TroposphericScintillationLossModelComponentLinking on ILaserPropagationChannel instead. Sets the current tropospheric scintillation loss model by name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_atmospheric_loss_model`
-              - Get or set the option for computing atmospheric absorption propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model`
               - Do not use this property, as it is deprecated. Use AtmosphericLossModelComponentLinking on ILaserPropagationChannel instead. Gets the laser atmospheric absorption loss model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model_component_linking`
+              - Get the link/embed controller for managing the atmospheric loss model component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_atmospheric_loss_model`
+              - Get or set the option for computing atmospheric absorption propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_tropospheric_scintillation_loss_model`
               - Get or set the option for computing tropospheric scintillation propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.tropospheric_scintillation_loss_model`
               - Do not use this property, as it is deprecated. Use TroposphericScintillationLossModelComponentLinking on ILaserPropagationChannel instead. Gets the laser propagation loss model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model_component_linking`
-              - Get the link/embed controller for managing the atmospheric loss model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.tropospheric_scintillation_loss_model_component_linking`
               - Get the link/embed controller for managing the tropospheric scintillation loss model component.
 
@@ -54,17 +54,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable_atmospheric_loss_model
-    :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_atmospheric_loss_model
-    :type: bool
-
-    Get or set the option for computing atmospheric absorption propagation loss.
-
 .. py:property:: atmospheric_loss_model
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model
     :type: ILaserAtmosphericLossModel
 
     Do not use this property, as it is deprecated. Use AtmosphericLossModelComponentLinking on ILaserPropagationChannel instead. Gets the laser atmospheric absorption loss model.
+
+.. py:property:: atmospheric_loss_model_component_linking
+    :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the atmospheric loss model component.
+
+.. py:property:: enable_atmospheric_loss_model
+    :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_atmospheric_loss_model
+    :type: bool
+
+    Get or set the option for computing atmospheric absorption propagation loss.
 
 .. py:property:: enable_tropospheric_scintillation_loss_model
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_tropospheric_scintillation_loss_model
@@ -78,12 +84,6 @@ Property detail
 
     Do not use this property, as it is deprecated. Use TroposphericScintillationLossModelComponentLinking on ILaserPropagationChannel instead. Gets the laser propagation loss model.
 
-.. py:property:: atmospheric_loss_model_component_linking
-    :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model_component_linking
-    :type: IComponentLinkEmbedControl
-
-    Get the link/embed controller for managing the atmospheric loss model component.
-
 .. py:property:: tropospheric_scintillation_loss_model_component_linking
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.tropospheric_scintillation_loss_model_component_linking
     :type: IComponentLinkEmbedControl
@@ -96,6 +96,10 @@ Method detail
 
 
 
+
+
+
+
 .. py:method:: set_atmospheric_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.set_atmospheric_loss_model
 
@@ -103,14 +107,12 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
-
-
-
 
 .. py:method:: set_tropospheric_scintillation_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.set_tropospheric_scintillation_loss_model
@@ -119,12 +121,12 @@ Method detail
 
     :Parameters:
 
-    **model_name** : :obj:`~str`
+        **model_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
-
 
 
 

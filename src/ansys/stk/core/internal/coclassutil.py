@@ -25,7 +25,7 @@ import os
 import typing
 import copy
 
-from ctypes import byref, cast, pointer, POINTER, Structure 
+from ctypes import byref, cast, pointer, POINTER, Structure
 
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
 from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded
@@ -73,11 +73,11 @@ class _CreateAgClassCatalog(object):
 AgClassCatalog = _CreateAgClassCatalog()
 
 AgTypeNameMap = {}
-        
+
 ###############################################################################
 #   Querying error information
 ###############################################################################
-        
+
 class _IErrorInfo(object):
     guid = "{1CF2B120-547D-101B-8E65-08002B2BD119}"
     def __init__(self, pUnk):
@@ -98,7 +98,7 @@ class _IErrorInfo(object):
             desc = p.value
             OLEAut32Lib.SysFreeString(p)
             return desc
-            
+
 def evaluate_hresult(hr:HRESULT) -> None:
     """Get error info and raise an exception if an HRESULT value is failing."""
     if not Succeeded(hr):
@@ -116,12 +116,12 @@ def evaluate_hresult(hr:HRESULT) -> None:
             msg = "Data size exceeds memory limit. Try chunking the data request."
         hresult_val = "(HRESULT = 0x%x)" % (hr & 0xFFFFFFFF)
         raise STKRuntimeError(msg if msg is not None else hresult_val)
-            
-            
+
+
 ###############################################################################
 #   Querying class information
 ###############################################################################
-            
+
 class _IProvideClassId(object):
     guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
     def __init__(self, pUnk):
@@ -145,7 +145,7 @@ class _IProvideClassId(object):
             if Succeeded(self._GetClsid(byref(coclass_clsid))):
                 return coclass_clsid
         return None
-            
+
 class _TypeAttr(Structure):
     LCID = DWORD
     MEMBERID = LONG
@@ -159,8 +159,8 @@ class _TypeAttr(Structure):
                 ("lpstrSchema", LPOLESTR), \
                 ("cbSizeInstance", ULONG), \
                 ("typekind", TYPEKIND), \
-               ]  
-        
+               ]
+
 class _ITypeInfo(object):
     guid = "{00020401-0000-0000-C000-000000000046}"
     def __init__(self, pUnk):
@@ -195,7 +195,7 @@ class _ITypeInfo(object):
             return ta
     def release_type_attr(self, ta):
         self._ReleaseTypeAttr(byref(ta))
-            
+
 class _IProvideClassInfo(object):
     guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
@@ -230,7 +230,7 @@ class _IProvideClassInfo(object):
                 del(pUnk)
                 return guid
         return None
-        
+
 def get_concrete_class(punk:IUnknown) -> typing.Any:
     """Convert an interface pointer to the concrete class it belongs to."""
     coclass = COMObject()
@@ -248,7 +248,7 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
                 coclass = AgClassCatalog.get_class(guid_data)()
                 coclass._private_init(punk)
     return coclass
-    
+
 def compare_com_objects(first, second) -> bool:
     """Compare whether the given interfaces point to the same COM object."""
     if first is None and second is None:
@@ -264,7 +264,7 @@ def compare_com_objects(first, second) -> bool:
         return result
     else:
         return False
-        
+
 ###############################################################################
 #   Events related classes
 ###############################################################################
@@ -273,10 +273,10 @@ class IConnectionPoint(object):
     def __init__(self, pUnk):
         IID_IConnectionPoint = GUID.from_registry_format(IConnectionPoint.guid)
         vtable_offset = IUnknown._num_methods - 1
-        GetConnectionInterfaceIndex         = 1 
+        GetConnectionInterfaceIndex         = 1
         #GetConnectionPointContainerIndex   = 2 (skipping GetConnectionPointContainer as it is not needed)
-        AdviseIndex                         = 3 
-        UnadviseIndex                       = 4 
+        AdviseIndex                         = 3
+        UnadviseIndex                       = 4
         #EnumConnectionsIndex               = 5 (skipping EnumConnections as it is not needed)
         self._GetConnectionInterface = IFuncType(pUnk, IID_IConnectionPoint, vtable_offset + GetConnectionInterfaceIndex, POINTER(GUID))
         self._Advise                 = IFuncType(pUnk, IID_IConnectionPoint, vtable_offset + AdviseIndex, PVOID, POINTER(DWORD))
@@ -293,7 +293,7 @@ class IConnectionPoint(object):
             return cookie
     def unadvise(self, cookie:DWORD):
         self._Unadvise(cookie)
-            
+
 class IConnectionPointContainer(object):
     guid = "{B196B284-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
@@ -310,8 +310,8 @@ class IConnectionPointContainer(object):
             conn_point = IConnectionPoint(pUnk)
             del(pUnk)
             return conn_point
-        
-        
+
+
 ###############################################################################
 #   attach_to_stk_by_pid (Windows-only)
 ###############################################################################
@@ -327,16 +327,16 @@ class _IRunningObjectTable(object):
         #RegisterIndex              = 1 (skipping Register as it is not needed)
         #RevokeIndex                = 2 (skipping Revoke as it is not needed)
         #IsRunningIndex             = 3 (skipping IsRunning as it is not needed)
-        GetObjectIndex              = 4 
+        GetObjectIndex              = 4
         #NoteChangeTimeIndex        = 5 (skipping NoteChangeTime as it is not needed)
         #GetTimeOfLastChangeIndex   = 6 (skipping GetTimeOfLastChange as it is not needed)
-        EnumRunningIndex            = 7 
+        EnumRunningIndex            = 7
         self._GetObject   = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
         self._EnumRunning = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
     def get_object(self, pmkObjectName: "_IMoniker") -> "IUnknown":
         ppunkObject = IUnknown()
         self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
-        ppunkObject.take_ownership(isApplication=self.gettingAnApplication) 
+        ppunkObject.take_ownership(isApplication=self.gettingAnApplication)
         return ppunkObject
     def enum_running(self) -> "_IEnumMoniker":
         ppenumMoniker = IUnknown()
@@ -345,7 +345,7 @@ class _IRunningObjectTable(object):
         iEnumMon = _IEnumMoniker(ppenumMoniker)
         del(ppenumMoniker)
         return iEnumMon
-    
+
 class _IEnumMoniker(object):
     guid = "{00000102-0000-0000-C000-000000000046}"
     def __init__(self, pUnk: "IUnknown"):
@@ -353,7 +353,7 @@ class _IEnumMoniker(object):
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         IID__IEnumMoniker = GUID.from_registry_format(_IEnumMoniker.guid)
         vtable_offset = IUnknown._num_methods - 1
-        NextIndex   = 1 
+        NextIndex   = 1
         #SkipIndex  = 2 (skipping Skip as it is not needed)
         ResetIndex  = 3
         #CloneIndex = 4 (skipping Clone as it is not needed)
@@ -374,7 +374,7 @@ class _IEnumMoniker(object):
             return iMon
     def reset(self):
         self._Reset()
-    
+
 class _IMalloc(object):
     guid = "{00000002-0000-0000-C000-000000000046}"
     def __init__(self, pUnk: "IUnknown"):
@@ -384,14 +384,14 @@ class _IMalloc(object):
         vtable_offset = IUnknown._num_methods - 1
         #AllocIndex          = 1 (skipping Alloc as it is not needed)
         #ReallocIndex        = 2 (skipping Realloc as it is not needed)
-        FreeIndex            = 3 
+        FreeIndex            = 3
         #GetSizeIndex        = 4 (skipping GetSize as it is not needed)
         #DidAllocIndex       = 5 (skipping DidAlloc as it is not needed)
         #HeapMinimizeIndex   = 6 (skipping HeapMinimize as it is not needed)
         self._Free = IFuncType(pUnk, IID__IMalloc, vtable_offset + FreeIndex, PVOID)
     def free(self, pv):
         self._Free(pv)
-    
+
 class _IMoniker(object):
     guid = "{0000000f-0000-0000-C000-000000000046}"
     def __init__(self, pUnk: "IUnknown"):
@@ -414,7 +414,7 @@ class _IMoniker(object):
         #InverseIndex                = 10 (skipping Inverse as it is not needed)
         #CommonPrefixWithIndex       = 11 (skipping CommonPrefixWith as it is not needed)
         #RelativePathToIndex         = 12 (skipping RelativePathTo as it is not needed)
-        GetDisplayNameIndex          = 13 
+        GetDisplayNameIndex          = 13
         #ParseDisplayNameIndex       = 14 (skipping ParseDisplayName as it is not needed)
         #IsSystemMonikerIndex        = 15 (skipping IsSystemMoniker as it is not needed)
         self._GetDisplayName = IFuncType(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
@@ -438,7 +438,7 @@ class _IMoniker(object):
         del(pmkToLeft)
         del(pbc)
         return display_name
-    
+
 def attach_to_stk_by_pid(pid:int) -> IUnknown:
     if os.name != "nt":
         raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")

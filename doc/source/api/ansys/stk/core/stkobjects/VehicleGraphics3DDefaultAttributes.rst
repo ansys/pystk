@@ -13,17 +13,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics`
-              - Opt whether to show the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.color`
               - Get or set the line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.line_width`
               - Get or set the line width.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics`
+              - Opt whether to show the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.translucency`
               - Get or set the translucency. Dimensionless.
 
@@ -40,15 +40,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_graphics
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics
-    :type: bool
-
-    Opt whether to show the graphics attributes.
-
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.color
-    :type: agcolor.Color
+    :type: Color
 
     Get or set the line color.
 
@@ -57,6 +51,12 @@ Property detail
     :type: LineWidth
 
     Get or set the line width.
+
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics
+    :type: bool
+
+    Opt whether to show the graphics attributes.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.translucency

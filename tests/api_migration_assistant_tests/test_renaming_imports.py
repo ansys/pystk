@@ -33,10 +33,18 @@ def test_renaming_module_in_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         import product.core.api
@@ -66,10 +74,18 @@ def test_renaming_module_and_type_in_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from product.core.api import MyClass
@@ -100,10 +116,18 @@ def test_renaming_module_and_enum_type_in_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping OldName="MyEnum" NewName="MyNewEnum" Category="enum_type" />
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "EnumTypeMappings": [
+                { "OldName": "MyEnum", "NewName": "MyNewEnum" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from product.core.api import MyEnum, MyClass
@@ -133,9 +157,15 @@ def test_renaming_module_only_in_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from product.core.api import MyClass
@@ -165,10 +195,18 @@ def test_renaming_type_only_in_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="product.core.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "product.core.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from product.core.api import MyClass
@@ -198,10 +236,18 @@ def test_renaming_deep_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="a.b.c.d.e.f.api" NewRootScope="x.y.z">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "a.b.c.d.e.f.api",
+                "NewRootScope": "x.y.z"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from a.b.c.d.e.f.api import MyClass
@@ -231,10 +277,18 @@ def test_renaming_shallow_from_import():
                 pass
         """,
         """
-        <Mappings OldRootScope="api" NewRootScope="xyz">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "api",
+                "NewRootScope": "xyz"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -263,10 +317,18 @@ def test_renaming_module_in_import_as():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         import product.core.api as prod
@@ -296,10 +358,18 @@ def test_renaming_module_in_from_import_as():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from product.core.api import MyClass as MyKlass
@@ -329,10 +399,18 @@ def test_renaming_module_in_import_with_explicit_use():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility.api">
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ],
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         import product.core.api

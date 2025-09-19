@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set a property.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -55,6 +55,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: get_property(self, path: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.VehiclePluginSettings.get_property
 
@@ -62,7 +63,8 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
+        **path** : :obj:`~str`
+
 
     :Returns:
 
@@ -75,11 +77,12 @@ Method detail
 
     :Parameters:
 
-    **path** : :obj:`~str`
-    **value** : :obj:`~typing.Any`
+        **path** : :obj:`~str`
+
+        **value** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
 

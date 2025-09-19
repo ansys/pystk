@@ -13,32 +13,32 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.item`
-              - Iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.add`
               - Add a new thruster.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.remove`
-              - Remove a specified thruster.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.remove_all`
-              - Remove all thrusters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.cut`
               - Copy a thruster to the clipboard and removes the thruster from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.paste`
-              - Pastes a thruster from the clipboard into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.insert_copy`
-              - Copy a thruster and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_index`
               - Retrieve a thruster from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_name`
               - Retrieve a thruster from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.insert_copy`
+              - Copy a thruster and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.item`
+              - Iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.paste`
+              - Pastes a thruster from the clipboard into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.remove`
+              - Remove a specified thruster.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.remove_all`
+              - Remove all thrusters.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -77,21 +77,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> Thruster
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.item
-
-    Iterate through the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~Thruster`
-
-
-
 .. py:method:: add(self, thruster_name: str) -> Thruster
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.add
 
@@ -99,7 +84,88 @@ Method detail
 
     :Parameters:
 
-    **thruster_name** : :obj:`~str`
+        **thruster_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~Thruster`
+
+
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.cut
+
+    Copy a thruster to the clipboard and removes the thruster from the list.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: get_item_by_index(self, index: int) -> Thruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_index
+
+    Retrieve a thruster from the collection by index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~Thruster`
+
+.. py:method:: get_item_by_name(self, name: str) -> Thruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_name
+
+    Retrieve a thruster from the collection by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~Thruster`
+
+.. py:method:: insert_copy(self, thruster: Thruster) -> Thruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.insert_copy
+
+    Copy a thruster and inserts the copy into the list.
+
+    :Parameters:
+
+        **thruster** : :obj:`~Thruster`
+
+
+    :Returns:
+
+        :obj:`~Thruster`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> Thruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.item
+
+    Iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~Thruster`
+
+.. py:method:: paste(self) -> Thruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.paste
+
+    Pastes a thruster from the clipboard into the list.
 
     :Returns:
 
@@ -112,7 +178,8 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -127,64 +194,4 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.cut
-
-    Copy a thruster to the clipboard and removes the thruster from the list.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: paste(self) -> Thruster
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.paste
-
-    Pastes a thruster from the clipboard into the list.
-
-    :Returns:
-
-        :obj:`~Thruster`
-
-.. py:method:: insert_copy(self, thruster: Thruster) -> Thruster
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.insert_copy
-
-    Copy a thruster and inserts the copy into the list.
-
-    :Parameters:
-
-    **thruster** : :obj:`~Thruster`
-
-    :Returns:
-
-        :obj:`~Thruster`
-
-.. py:method:: get_item_by_index(self, index: int) -> Thruster
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_index
-
-    Retrieve a thruster from the collection by index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~Thruster`
-
-.. py:method:: get_item_by_name(self, name: str) -> Thruster
-    :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.get_item_by_name
-
-    Retrieve a thruster from the collection by name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~Thruster`
 

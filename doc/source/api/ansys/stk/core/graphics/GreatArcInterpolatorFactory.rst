@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -72,7 +72,8 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
+        **central_body** : :obj:`~str`
+
 
     :Returns:
 
@@ -85,8 +86,10 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
-    **granularity** : :obj:`~float`
+        **central_body** : :obj:`~str`
+
+        **granularity** : :obj:`~float`
+
 
     :Returns:
 

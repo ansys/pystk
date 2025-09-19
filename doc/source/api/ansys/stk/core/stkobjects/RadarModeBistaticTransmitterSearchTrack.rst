@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set the waveform type.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -62,7 +62,8 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~RadarWaveformSearchTrackType`
+        **value** : :obj:`~RadarWaveformSearchTrackType`
+
 
     :Returns:
 

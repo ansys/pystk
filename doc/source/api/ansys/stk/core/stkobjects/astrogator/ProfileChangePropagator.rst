@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,15 +24,15 @@ Overview
               - Set the targeted segment.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.segment_name`
-              - Get or set the name of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.propagator_name`
               - Get or set the new propagator's name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.segment_name`
+              - Get or set the name of the profile.
 
 
 
@@ -47,21 +47,23 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: segment_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.segment_name
-    :type: str
-
-    Get or set the name of the profile.
-
 .. py:property:: propagator_name
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.propagator_name
     :type: str
 
     Get or set the new propagator's name.
 
+.. py:property:: segment_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.segment_name
+    :type: str
+
+    Get or set the name of the profile.
+
 
 Method detail
 -------------
+
+
 
 
 
@@ -72,11 +74,10 @@ Method detail
 
     :Parameters:
 
-    **mcs_segment** : :obj:`~IMCSSegment`
+        **mcs_segment** : :obj:`~IMCSSegment`
+
 
     :Returns:
 
         :obj:`~None`
-
-
 

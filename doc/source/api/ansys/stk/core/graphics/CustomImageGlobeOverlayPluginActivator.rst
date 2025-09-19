@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -43,7 +43,8 @@ Method detail
 
     :Parameters:
 
-    **display_name** : :obj:`~str`
+        **display_name** : :obj:`~str`
+
 
     :Returns:
 

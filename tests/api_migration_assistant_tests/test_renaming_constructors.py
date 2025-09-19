@@ -31,9 +31,11 @@ def test_rename_constructor_no_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -59,9 +61,11 @@ def test_rename_constructor_with_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -93,11 +97,13 @@ def test_rename_nested_constructor():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping OldName="MyClass1" NewName="MyNewClassA" Category="class" />
-            <Mapping OldName="MyClass2" NewName="MyNewClassB" Category="class" />
-            <Mapping OldName="MyClass3" NewName="MyNewClassC" Category="class" />
-        </Mappings>
+        {
+            "ClassMappings": [
+                { "OldName": "MyClass1", "NewName": "MyNewClassA" },
+                { "OldName": "MyClass2", "NewName": "MyNewClassB" },
+                { "OldName": "MyClass3", "NewName": "MyNewClassC" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -123,9 +129,11 @@ def test_rename_constructor_no_arguments_fully_qualified():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         import product.core.api

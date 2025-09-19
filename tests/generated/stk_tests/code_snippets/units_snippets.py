@@ -61,7 +61,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_GetCurrentUnitPreference(self):
         self.GetCurrentUnitPreference(CodeSnippetsTestBase.m_Root)
 
-    def GetCurrentUnitPreference(self, root: "StkObjectRoot"):
+    def GetCurrentUnitPreference(self, root: "STKObjectRoot"):
         # DistanceUnit
         dimensionName: str = "Distance"
         unitAbbreviation: str = root.units_preferences.get_current_unit_abbrv(dimensionName)
@@ -75,7 +75,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
         # reverse any changes we made to Unit Preferences
         CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
-    def SetCurrentUnitPreference(self, root: "StkObjectRoot"):
+    def SetCurrentUnitPreference(self, root: "STKObjectRoot"):
         # DistanceUnit
         root.units_preferences.set_current_unit("Distance", "m")
 
@@ -85,7 +85,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_ResetCurrentUnitPreferences(self):
         self.ResetCurrentUnitPreferences(CodeSnippetsTestBase.m_Root)
 
-    def ResetCurrentUnitPreferences(self, root: "StkObjectRoot"):
+    def ResetCurrentUnitPreferences(self, root: "STKObjectRoot"):
         # Reset Units
         root.units_preferences.reset_units()
 
@@ -95,7 +95,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_ConvertSingleQuantityUnit(self):
         self.ConvertSingleQuantityUnit(CodeSnippetsTestBase.m_Root)
 
-    def ConvertSingleQuantityUnit(self, root: "StkObjectRoot"):
+    def ConvertSingleQuantityUnit(self, root: "STKObjectRoot"):
         converter: "ConversionUtility" = root.conversion_utility
 
         # Old value in miles, new value in km
@@ -107,7 +107,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_ConvertMultipleQuantityUnits(self):
         self.ConvertMultipleQuantityUnits(CodeSnippetsTestBase.m_Root)
 
-    def ConvertMultipleQuantityUnits(self, root: "StkObjectRoot"):
+    def ConvertMultipleQuantityUnits(self, root: "STKObjectRoot"):
         converter: "ConversionUtility" = root.conversion_utility
 
         # ConvertQuantityArray expects a one dimensional array of values to be converted
@@ -124,7 +124,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_ConvertSingleDateFormat(self):
         self.ConvertSingleDateFormat(CodeSnippetsTestBase.m_Root)
 
-    def ConvertSingleDateFormat(self, root: "StkObjectRoot"):
+    def ConvertSingleDateFormat(self, root: "STKObjectRoot"):
         converter: "ConversionUtility" = root.conversion_utility
 
         # Individually
@@ -137,7 +137,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_ConvertMulitpleDateFormats(self):
         self.ConvertMulitpleDateFormats(CodeSnippetsTestBase.m_Root)
 
-    def ConvertMulitpleDateFormats(self, root: "StkObjectRoot"):
+    def ConvertMulitpleDateFormats(self, root: "STKObjectRoot"):
         converter: "ConversionUtility" = root.conversion_utility
 
         # In batches
@@ -161,7 +161,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_CalculateDateSubtraction(self):
         self.CalculateDateSubtraction(CodeSnippetsTestBase.m_Root)
 
-    def CalculateDateSubtraction(self, root: "StkObjectRoot"):
+    def CalculateDateSubtraction(self, root: "STKObjectRoot"):
         # Create a date representing now
         nowDate: "Date" = root.conversion_utility.new_date(
             "DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff")
@@ -185,7 +185,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_CalculateDateAddition(self):
         self.CalculateDateAddition(CodeSnippetsTestBase.m_Root)
 
-    def CalculateDateAddition(self, root: "StkObjectRoot"):
+    def CalculateDateAddition(self, root: "STKObjectRoot"):
         # Create a date representing now
         nowDate: "Date" = root.conversion_utility.new_date(
             "DD/MM/YYYY", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff")
@@ -209,7 +209,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def test_CalculateQuantityAddition(self):
         self.CalculateQuantityAddition(CodeSnippetsTestBase.m_Root)
 
-    def CalculateQuantityAddition(self, root: "StkObjectRoot"):
+    def CalculateQuantityAddition(self, root: "STKObjectRoot"):
         # Create a quantity representing a 3.1 mile/ 5 km fun run race
         race3mi: "Quantity" = root.conversion_utility.new_quantity("Distance", "mi", 3.1)
         race5km: "Quantity" = root.conversion_utility.new_quantity("Distance", "km", 5)

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Export the ephemeris file.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -69,10 +69,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.export
 
@@ -80,9 +76,14 @@ Method detail
 
     :Parameters:
 
-    **file_name** : :obj:`~str`
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
+
+
+
+
 

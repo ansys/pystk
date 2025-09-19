@@ -67,7 +67,7 @@ class StarSnippets(CodeSnippetsTestBase):
     def test_CreateStarOnCurrentScenarioCentralBody(self):
         self.CreateStarOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateStarOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateStarOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the Star
         star: "Star" = clr.CastAs(root.current_scenario.children.new(STKObjectType.STAR, "MyStar"), Star)
 
@@ -101,7 +101,7 @@ class StarSnippets(CodeSnippetsTestBase):
         StarSnippets.CreateStarFromStarDatabase(CodeSnippetsTestBase.m_Root)
 
     @staticmethod
-    def CreateStarFromStarDatabase(root: "StkObjectRoot"):
+    def CreateStarFromStarDatabase(root: "STKObjectRoot"):
         # Import object from database using Connect
         command: str = "ImportFromDB * Star ScenarioCollection VisualMagnitude 0 1.0 RightAsc 200.0 230.0 Constellation ImportedFromStarDB"
         root.execute_command(command)

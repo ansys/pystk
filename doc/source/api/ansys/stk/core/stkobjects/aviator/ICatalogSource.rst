@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Save the catalog item.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -64,7 +64,8 @@ Method detail
 
     :Parameters:
 
-    **aircraft_name** : :obj:`~str`
+        **aircraft_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -77,7 +78,8 @@ Method detail
 
     :Parameters:
 
-    **child_name** : :obj:`~str`
+        **child_name** : :obj:`~str`
+
 
     :Returns:
 

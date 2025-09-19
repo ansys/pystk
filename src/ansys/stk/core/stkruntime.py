@@ -29,13 +29,17 @@ import os
 import pathlib
 import socket
 
-# The subprocess module is needed to start the backend. 
+# The subprocess module is needed to start the backend.
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
 import subprocess  # nosec B404
+import typing
+
+if typing.TYPE_CHECKING:
+    import grpc
 
 from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 from .internal.grpcutil import GrpcClient
-from .stkobjects import StkObjectModelContext, StkObjectRoot
+from .stkobjects import STKObjectModelContext, STKObjectRoot
 from .stkx import STKXApplication
 from .utilities.exceptions import STKInitializationError
 from .utilities.grpcutilities import GrpcCallBatcher
@@ -45,7 +49,7 @@ class STKRuntimeApplication(STKXApplication):
     """
     Interact with STK Runtime.
 
-    Use STKRuntime.StartApplication() or STKRuntime.AttachToApplication() 
+    Use STKRuntime.StartApplication() or STKRuntime.AttachToApplication()
     to obtain an initialized STKRuntimeApplication object.
     """
 
@@ -54,32 +58,32 @@ class STKRuntimeApplication(STKXApplication):
         self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
-        
+
     def _private_init(self, intf: InterfaceProxy):
         STKXApplication._private_init(self, intf)
-        
+
     def __del__(self):
         """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
             client: GrpcClient = self._intf.client
             client.terminate_connection(False)
-        
-    def new_object_root(self) -> StkObjectRoot:
+
+    def new_object_root(self) -> STKObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
         if self._intf:
             client: GrpcClient = self._intf.client
             root_unk = client.new_object_root()
-            root = StkObjectRoot()
+            root = STKObjectRoot()
             root._private_init(root_unk)
             return root
         raise STKInitializationError("Not connected to the gRPC server.")
-            
-    def new_object_model_context(self) -> StkObjectModelContext:
+
+    def new_object_model_context(self) -> STKObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
         if self._intf:
             client: GrpcClient = self._intf.client
             context_unk = client.new_object_model_context()
-            context = StkObjectModelContext()
+            context = STKObjectModelContext()
             context._private_init(context_unk)
             return context
         raise STKInitializationError("Not connected to the gRPC server.")
@@ -92,17 +96,17 @@ class STKRuntimeApplication(STKXApplication):
         { "collection iteration batch size" : int }. Number of items to preload while iterating
         through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
         { "disable batching" : bool }. Disable all batching operations.
-        { "release batch size" : int }. Number of interfaces to be garbage collected before 
+        { "release batch size" : int }. Number of interfaces to be garbage collected before
         sending the entire batch to STK to be released. Default value is 12.
         """
         if self._intf:
             client: GrpcClient = self._intf.client
             client.set_grpc_options(options)
-            
+
     def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
-        
+
         max_batch is the maximum number of calls to batch together.
         Set disable_batching=True to disable batching operations for this batcher.
         See grpcutilities module for more information.
@@ -129,21 +133,25 @@ class STKRuntime(object):
     """Connect to STKRuntime using gRPC."""
 
     @staticmethod
-    def start_application(grpc_host:str="localhost", \
-                         grpc_port:int=40704, \
-                         grpc_timeout_sec:int=60, \
-                         grpc_max_message_size:int=0, \
-                         user_control:bool=False, \
-                         no_graphics:bool=True) -> STKRuntimeApplication:
+    def start_application(grpc_host:str="localhost",
+                         grpc_port:int=40704,
+                         grpc_timeout_sec:int=60,
+                         grpc_max_message_size:int=0,
+                         user_control:bool=False,
+                         no_graphics:bool=True,
+                         grpc_channel_credentials:"grpc.ChannelCredentials|None"=None) -> STKRuntimeApplication:
         """
-        Create a new STK Runtime instance and attach to the remote host.  
+        Create a new STK Runtime instance and attach to the remote host.
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-        Specify user_control = True to return the application to the user's control 
+        user_control specifies if the application returns to the user's control
         (the application remains open) after terminating the Python API connection.
+        no_graphics controls if runtime is started with or without graphics.
+        grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+        see https://grpc.io/docs/guides/auth/ for more information).
         """
         if grpc_port < 0 or grpc_port > 65535:
             raise STKInitializationError(f"{grpc_port} is not a valid port number for the gRPC server.")
@@ -181,7 +189,7 @@ class STKRuntime(object):
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
-        # Calling subprocess.Popen (without shell equals true) to start the backend. 
+        # Calling subprocess.Popen (without shell equals true) to start the backend.
         # Excluding low severity bandit check as the validity of the inputs has been ensured.
         subprocess.Popen(cmd_line) # nosec B603
         host = grpc_host
@@ -189,16 +197,17 @@ class STKRuntime(object):
         # to ensure that it is not used.
         if grpc_host=="0.0.0.0": # nosec B104
             host = "localhost"
-        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
+        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec, grpc_max_message_size, grpc_channel_credentials)
         app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
-        
+
     @staticmethod
-    def attach_to_application(grpc_host:str="localhost", \
-                            grpc_port:int=40704, \
+    def attach_to_application(grpc_host:str="localhost",
+                            grpc_port:int=40704,
                             grpc_timeout_sec:int=60,
-                            grpc_max_message_size:int=0) -> STKRuntimeApplication:
+                            grpc_max_message_size:int=0,
+                            grpc_channel_credentials:"grpc.ChannelCredentials|None"=None) -> STKRuntimeApplication:
         """
         Attach to STKRuntime.
 
@@ -206,8 +215,10 @@ class STKRuntime(object):
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
+        grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
+        see https://grpc.io/docs/guides/auth/ for more information).
         """
-        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
+        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size, grpc_channel_credentials)
         if client is not None:
             app_intf = client.get_stk_application_interface()
             app = STKRuntimeApplication()
@@ -215,5 +226,3 @@ class STKRuntime(object):
             atexit.register(app._disconnect)
             return app
         raise STKInitializationError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")
-        
-       

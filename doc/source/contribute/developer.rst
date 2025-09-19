@@ -56,7 +56,7 @@ allows you to have your own copy of the project so you can make changes without
 affection the main project. Once you have made your changes, you can submit a
 pull-request to the main project to have your changes reviewed and merged.
 
-.. button-link:: https://github.com/ansys-internal/pystk/fork
+.. button-link:: https://github.com/ansys/pystk/fork
     :color: primary
     :align: center
 
@@ -79,12 +79,12 @@ To clone the repository using SSH, run:
 
 .. code-block:: bash
 
-    git clone git@github.com:ansys-internal/pystk
+    git clone git@github.com:ansys/pystk
 
 .. note::
 
     If you are not an Ansys employee, you need to :ref:`fork the repository <Fork the repository>` and
-    replace ``ansys-internal`` with your GitHub user name in the ``git clone``
+    replace ``ansys`` with your GitHub user name in the ``git clone``
     command.
 
 .. _install-for-developers:

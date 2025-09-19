@@ -15,20 +15,20 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.is_obstruction_assigned`
-              - Check whether a central body is already assigned.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.add_obstruction`
               - Add a Central Body Obstruction by Name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.is_obstruction_assigned`
+              - Check whether a central body is already assigned.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.remove_obstruction`
               - Remove a Central Body Obstruction by Name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -67,6 +67,21 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: add_obstruction(self, obstruction: str) -> None
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.add_obstruction
+
+    Add a Central Body Obstruction by Name.
+
+    :Parameters:
+
+        **obstruction** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+
 
 .. py:method:: is_obstruction_assigned(self, obstruction: str) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.is_obstruction_assigned
@@ -75,24 +90,12 @@ Method detail
 
     :Parameters:
 
-    **obstruction** : :obj:`~str`
+        **obstruction** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~bool`
-
-.. py:method:: add_obstruction(self, obstruction: str) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.add_obstruction
-
-    Add a Central Body Obstruction by Name.
-
-    :Parameters:
-
-    **obstruction** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove_obstruction(self, obstruction: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction.remove_obstruction
@@ -101,10 +104,10 @@ Method detail
 
     :Parameters:
 
-    **obstruction** : :obj:`~str`
+        **obstruction** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
-
 

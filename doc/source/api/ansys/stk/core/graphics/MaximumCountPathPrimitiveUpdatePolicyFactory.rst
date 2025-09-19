@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,8 +52,10 @@ Method detail
 
     :Parameters:
 
-    **maximum_count** : :obj:`~int`
-    **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+        **maximum_count** : :obj:`~int`
+
+        **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+
 
     :Returns:
 

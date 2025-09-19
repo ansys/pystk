@@ -59,7 +59,7 @@ class ChainSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Chain",
     )
     def CreateChainSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # Create the Chain on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")

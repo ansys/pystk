@@ -68,7 +68,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
 
     # region ConfigureRealtimePropagator
     def test_ConfigureRealtimePropagator(self):
-        scenarioObject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
+        scenarioObject: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario
         scenario: "Scenario" = clr.CastAs(scenarioObject, Scenario)
 
         scenAnim: "ScenarioAnimation" = None
@@ -92,7 +92,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
             # Cleanup
             scenAnim.animation_step_type = holdTimeStepType
 
-    def ConfigureRealtimePropagator(self, root: "StkObjectRoot", propagator: "PropagatorRealtime"):
+    def ConfigureRealtimePropagator(self, root: "STKObjectRoot", propagator: "PropagatorRealtime"):
         # Set Realtime Propagator settings if they should be other than
         # the defaults.
         propagator.interpolation_order = 1

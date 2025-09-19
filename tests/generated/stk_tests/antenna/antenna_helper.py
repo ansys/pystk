@@ -34,8 +34,8 @@ from ansys.stk.core.stkobjects import *
 
 # region AntennaHelper
 class AntennaHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -4228,8 +4228,8 @@ class AntennaHelper(object):
 
 # region RFFilterModelHelper
 class RFFilterModelHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -4713,8 +4713,8 @@ class RFFilterModelHelper(object):
 
 # region AntennaControlHelper
 class AntennaControlHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -4808,8 +4808,8 @@ class AntennaControlHelper(object):
 
 # region AdditionalGainLossCollectionHelper
 class AdditionalGainLossCollectionHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -4861,8 +4861,8 @@ class AdditionalGainLossCollectionHelper(object):
 
 # region PolarizationHelper
 class PolarizationHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -4945,8 +4945,8 @@ class PolarizationHelper(object):
 
 # region SystemNoiseTemperatureHelper
 class SystemNoiseTemperatureHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -5175,8 +5175,8 @@ class SystemNoiseTemperatureHelper(object):
 
 # region STCHelper
 class STCHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -5384,8 +5384,8 @@ class STCHelper(object):
 
 # region AntennaBeamSelectionStrategyScriptPluginHelper
 class AntennaBeamSelectionStrategyScriptPluginHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -5407,8 +5407,8 @@ class AntennaBeamSelectionStrategyScriptPluginHelper(object):
 
 # region AntennaBeamHelper
 class AntennaBeamHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -5518,8 +5518,8 @@ class AntennaBeamHelper(object):
 
 # region AntennaBeamCollectionHelper
 class AntennaBeamCollectionHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -6183,7 +6183,7 @@ class IAgAntennaContourSpectralFluxDensity_Helper(object):
 # region AtmosphereLocalRainDataHelper
 class AtmosphereLocalRainDataHelper(object):
     # region Run
-    def Run(self, atmosphere: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, atmosphere: "Atmosphere", root: "STKObjectRoot"):
         abbr: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
 
@@ -6235,8 +6235,8 @@ class AtmosphereLocalRainDataHelper(object):
 
 # region AtmosphereHelper
 class AtmosphereHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self.m_root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self.m_root: "STKObjectRoot" = root
 
     # endregion
 
@@ -6901,7 +6901,7 @@ class RF_Environment_EnvironmentalDataHelper(object):
 
 # region RF_Environment_RainCloudFog_RainModelHelper
 class RF_Environment_RainCloudFog_RainModelHelper(object):
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
+    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
 
@@ -6938,7 +6938,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
         root.units_preferences.set_current_unit("Temperature", holdUnit)
 
     # region Run
-    def Run(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
 
@@ -7109,7 +7109,7 @@ class RF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region RF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
+    def RunDeprecatedModelInterface(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
         root.units_preferences.set_current_unit("MassUnit", "g")
@@ -7138,7 +7138,7 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
         root.units_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Run(self, rfEnv: "ObjectRFEnvironment", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "ObjectRFEnvironment", root: "STKObjectRoot"):
         holdUnit: str = root.units_preferences.get_current_unit_abbrv("Temperature")
         root.units_preferences.set_current_unit("Temperature", "degC")
         root.units_preferences.set_current_unit("MassUnit", "g")
@@ -7383,8 +7383,8 @@ class RF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
 
 # region RF_Environment_AtmosphericAbsorptionHelper
 class RF_Environment_AtmosphericAbsorptionHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -7637,8 +7637,8 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
 # region RF_Environment_UrbanAndTerrestrialHelper
 class RF_Environment_UrbanAndTerrestrialHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -7844,8 +7844,8 @@ class RF_Environment_UrbanAndTerrestrialHelper(object):
 
 # region RF_Environment_TropoScintillationHelper
 class RF_Environment_TropoScintillationHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 
@@ -8017,8 +8017,8 @@ class RF_Environment_TropoScintillationHelper(object):
 
 # region RF_Environment_CustomModelsHelper
 class RF_Environment_CustomModelsHelper(object):
-    def __init__(self, root: "StkObjectRoot"):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot"):
+        self._root: "STKObjectRoot" = root
 
     # endregion
 

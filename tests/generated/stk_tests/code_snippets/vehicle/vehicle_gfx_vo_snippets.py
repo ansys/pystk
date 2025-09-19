@@ -65,7 +65,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.SetVehicleGfxToCustomIntervals(gv.graphics)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def SetVehicleGfxToCustomIntervals(self, graphics: "IGreatArcGraphics"):
         if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.CUSTOM):
@@ -90,7 +90,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             gv.graphics.attributes, VehicleGraphics2DAttributesCustom
         )
         self.ConfigureVehicleGfxCustomIntervals(customAttributes)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def ConfigureVehicleGfxCustomIntervals(self, customAttributes: "VehicleGraphics2DAttributesCustom"):
         customIntervals: "VehicleGraphics2DIntervalsCollection" = customAttributes.intervals
@@ -111,7 +111,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.SetVehicleGfxToBasic(gv.graphics)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def SetVehicleGfxToBasic(self, graphics: "IGreatArcGraphics"):
         if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.BASIC):
@@ -136,7 +136,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             gv.graphics.attributes, IVehicleGraphics2DAttributesBasic
         )
         self.ConfigureVehicleGfxBasic(basicAttributes)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def ConfigureVehicleGfxBasic(self, basicAttributes: "IVehicleGraphics2DAttributesBasic"):
         # Change display
@@ -158,8 +158,8 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
         self.SetVehicleGfxToAccessIntervals(gv.graphics)
-        (IStkObject(sat)).unload()
-        (IStkObject(gv)).unload()
+        (ISTKObject(sat)).unload()
+        (ISTKObject(gv)).unload()
 
     def SetVehicleGfxToAccessIntervals(self, graphics: "IGreatArcGraphics"):
         if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.ACCESS):
@@ -187,8 +187,8 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             gv.graphics.attributes, VehicleGraphics2DAttributesAccess
         )
         self.ConfigureVehicleGfxAccessIntervals(accessAttributes)
-        (IStkObject(sat)).unload()
-        (IStkObject(gv)).unload()
+        (ISTKObject(sat)).unload()
+        (ISTKObject(gv)).unload()
 
     def ConfigureVehicleGfxAccessIntervals(self, accessAttributes: "VehicleGraphics2DAttributesAccess"):
         accessAttributes.access_objects.add("Satellite/sat1")
@@ -242,7 +242,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
         self.ConfigureVehicleGfxVOSunLighting(sat.graphics.lighting)
-        (IStkObject(sat)).unload()
+        (ISTKObject(sat)).unload()
 
     def ConfigureVehicleGfxVOSunLighting(self, lighting: "VehicleGraphics2DLighting"):
         sunlight: "VehicleGraphics2DLightingElement" = lighting.sunlight

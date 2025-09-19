@@ -13,18 +13,18 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleSpatialInformation.get_state`
-              - Return a spatial state of the vehicle at specified time.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleSpatialInformation.get_available_times`
               - Return a collection of available intervals.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleSpatialInformation.get_state`
+              - Return a spatial state of the vehicle at specified time.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -55,20 +55,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_state(self, time: typing.Any) -> SpatialState
-    :canonical: ansys.stk.core.stkobjects.VehicleSpatialInformation.get_state
-
-    Return a spatial state of the vehicle at specified time.
-
-    :Parameters:
-
-    **time** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~SpatialState`
-
-
 .. py:method:: get_available_times(self) -> TimeIntervalCollectionReadOnly
     :canonical: ansys.stk.core.stkobjects.VehicleSpatialInformation.get_available_times
 
@@ -77,4 +63,19 @@ Method detail
     :Returns:
 
         :obj:`~TimeIntervalCollectionReadOnly`
+
+.. py:method:: get_state(self, time: typing.Any) -> SpatialState
+    :canonical: ansys.stk.core.stkobjects.VehicleSpatialInformation.get_state
+
+    Return a spatial state of the vehicle at specified time.
+
+    :Parameters:
+
+        **time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~SpatialState`
+
 

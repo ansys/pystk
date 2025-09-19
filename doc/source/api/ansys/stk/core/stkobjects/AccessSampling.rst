@@ -13,28 +13,28 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.set_type`
-              - Set the type of sampling method.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.is_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.set_type`
+              - Set the type of sampling method.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.type`
-              - Type of sampling method used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.strategy`
               - Sampling method strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.type`
+              - Type of sampling method used.
 
 
 
@@ -49,11 +49,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.AccessSampling.type
-    :type: SamplingMethod
+.. py:property:: strategy
+    :canonical: ansys.stk.core.stkobjects.AccessSampling.strategy
+    :type: ISamplingMethodStrategy
 
-    Type of sampling method used.
+    Sampling method strategy.
 
 .. py:property:: supported_types
     :canonical: ansys.stk.core.stkobjects.AccessSampling.supported_types
@@ -61,29 +61,15 @@ Property detail
 
     Return an array of valid choices.
 
-.. py:property:: strategy
-    :canonical: ansys.stk.core.stkobjects.AccessSampling.strategy
-    :type: ISamplingMethodStrategy
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.AccessSampling.type
+    :type: SamplingMethod
 
-    Sampling method strategy.
+    Type of sampling method used.
 
 
 Method detail
 -------------
-
-
-.. py:method:: set_type(self, sampling_method: SamplingMethod) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessSampling.set_type
-
-    Set the type of sampling method.
-
-    :Parameters:
-
-    **sampling_method** : :obj:`~SamplingMethod`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: is_type_supported(self, sampling_method: SamplingMethod) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessSampling.is_type_supported
@@ -92,11 +78,27 @@ Method detail
 
     :Parameters:
 
-    **sampling_method** : :obj:`~SamplingMethod`
+        **sampling_method** : :obj:`~SamplingMethod`
+
 
     :Returns:
 
         :obj:`~bool`
+
+.. py:method:: set_type(self, sampling_method: SamplingMethod) -> None
+    :canonical: ansys.stk.core.stkobjects.AccessSampling.set_type
+
+    Set the type of sampling method.
+
+    :Parameters:
+
+        **sampling_method** : :obj:`~SamplingMethod`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 

@@ -117,7 +117,7 @@ class ArgumentParser:
             dest="mappings_directory",
             metavar="<directory>",
             default=default_mappings_directory,
-            help=f"directory containing the XML API mappings (default: {default_mappings_directory})",
+            help=f"directory containing the JSON API mappings (default: {default_mappings_directory})",
         )
         parser.add_argument(
             "--recordings-directory",
@@ -125,5 +125,5 @@ class ArgumentParser:
             dest="recordings_directory",
             metavar="<directory>",
             default=default_recordings_directory,
-            help=f"directory receiving the XML recordings (default: {default_recordings_directory})",
+            help=f"directory receiving the JSON recordings (default: {default_recordings_directory})",
         )

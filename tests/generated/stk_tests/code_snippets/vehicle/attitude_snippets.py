@@ -105,7 +105,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
         )
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
-        self, root: "StkObjectRoot", satellite: "Satellite", cpfQuaternion
+        self, root: "STKObjectRoot", satellite: "Satellite", cpfQuaternion
     ):
         satellite.set_attitude_type(VehicleAttitude.REAL_TIME)
         realtime: "VehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, VehicleAttitudeRealTime)

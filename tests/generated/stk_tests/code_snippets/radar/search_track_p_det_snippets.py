@@ -31,7 +31,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         super(SearchTrackPDetSnippets, self).__init__(*args, **kwargs)
 
     m_DefaultFacilityName: str = "Facility1"
-    m_Facility: "IStkObject" = None
+    m_Facility: "ISTKObject" = None
     m_DefaultRadarName: str = "Radar1"
     m_Radar: "Radar" = None
     m_DefaultTargetName: str = "TargetAircraft"
@@ -57,7 +57,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
+        scenario: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario
         SearchTrackPDetSnippets.m_Facility = scenario.children.new(
             STKObjectType.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
         )
@@ -133,8 +133,8 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
     def ComputeMonostaticSearchTrackProbabilityOfDetection(
         self, radar: "Radar", targetAircraft: "Aircraft", scenarioRFEnv: "RFEnvironment"
     ):
-        rdrAsStkObject: "IStkObject" = clr.CastAs(radar, IStkObject)
-        tgtAsStkObject: "IStkObject" = clr.CastAs(targetAircraft, IStkObject)
+        rdrAsStkObject: "ISTKObject" = clr.CastAs(radar, ISTKObject)
+        tgtAsStkObject: "ISTKObject" = clr.CastAs(targetAircraft, ISTKObject)
 
         # Enable the rain loss computation on the scenario RF environment
         scenarioRFEnv.propagation_channel.enable_rain_loss = True

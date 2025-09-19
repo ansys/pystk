@@ -3,7 +3,7 @@ MTO
 
 .. py:class:: ansys.stk.core.stkobjects.MTO
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Multi-Track Object (MTO).
 
@@ -15,13 +15,13 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTO.tracks`
-              - Get the collection of MTO tracks.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTO.analysis`
+              - Get the MTO's spatial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTO.default_track`
               - Get the default MTO track.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTO.global_track_options`
@@ -30,8 +30,8 @@ Overview
               - Get the MTO's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTO.graphics_3d`
               - Get the MTO's 3D Graphics properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTO.analysis`
-              - Get the MTO's spatial state.
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTO.tracks`
+              - Get the collection of MTO tracks.
 
 
 
@@ -83,11 +83,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: tracks
-    :canonical: ansys.stk.core.stkobjects.MTO.tracks
-    :type: MTOTrackCollection
+.. py:property:: analysis
+    :canonical: ansys.stk.core.stkobjects.MTO.analysis
+    :type: MTOAnalysis
 
-    Get the collection of MTO tracks.
+    Get the MTO's spatial state.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.MTO.default_track
@@ -113,10 +113,10 @@ Property detail
 
     Get the MTO's 3D Graphics properties.
 
-.. py:property:: analysis
-    :canonical: ansys.stk.core.stkobjects.MTO.analysis
-    :type: MTOAnalysis
+.. py:property:: tracks
+    :canonical: ansys.stk.core.stkobjects.MTO.tracks
+    :type: MTOTrackCollection
 
-    Get the MTO's spatial state.
+    Get the collection of MTO tracks.
 
 

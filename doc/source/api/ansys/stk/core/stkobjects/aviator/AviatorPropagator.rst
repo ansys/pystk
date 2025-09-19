@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,17 +22,17 @@ Overview
               - Apply All Change.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission`
-              - Get the Aviator mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.auto_recalculate`
               - Opt whether to have the propagator auto recalculate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_catalog`
               - Get the Aviator catalog.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission`
+              - Get the Aviator mission.
 
 
 
@@ -71,12 +71,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: aviator_mission
-    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission
-    :type: Mission
-
-    Get the Aviator mission.
-
 .. py:property:: auto_recalculate
     :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.auto_recalculate
     :type: bool
@@ -89,9 +83,18 @@ Property detail
 
     Get the Aviator catalog.
 
+.. py:property:: aviator_mission
+    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission
+    :type: Mission
+
+    Get the Aviator mission.
+
 
 Method detail
 -------------
+
+
+
 
 
 .. py:method:: propagate(self) -> None
@@ -102,7 +105,4 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
-
 

@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.item`
-              - Get the element at the specified index (0-based).
-            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.clear`
-              - Clear the contents of the collection and updates the display.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.add`
               - Create and add a new element to the end of the sequence.
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.clear`
+              - Clear the contents of the collection and updates the display.
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.item`
+              - Get the element at the specified index (0-based).
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.remove`
               - Remove the specified element.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.count`
-              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection._new_enum`
               - Return an object that can be used to iterate through all the strings in the collection.
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.visible`
               - Show or hide all the elements.
 
@@ -52,17 +52,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkx.IDrawElementCollection.count
-    :type: int
-
-    Number of elements contained in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkx.IDrawElementCollection._new_enum
     :type: EnumeratorProxy
 
     Return an object that can be used to iterate through all the strings in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkx.IDrawElementCollection.count
+    :type: int
+
+    Number of elements contained in the collection.
 
 .. py:property:: visible
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.visible
@@ -74,20 +74,19 @@ Property detail
 Method detail
 -------------
 
+.. py:method:: add(self, elem_type: str) -> IDrawElement
+    :canonical: ansys.stk.core.stkx.IDrawElementCollection.add
 
-.. py:method:: item(self, index: int) -> IDrawElement
-    :canonical: ansys.stk.core.stkx.IDrawElementCollection.item
-
-    Get the element at the specified index (0-based).
+    Create and add a new element to the end of the sequence.
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **elem_type** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~IDrawElement`
-
 
 .. py:method:: clear(self) -> None
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.clear
@@ -98,14 +97,16 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, elem_type: str) -> IDrawElement
-    :canonical: ansys.stk.core.stkx.IDrawElementCollection.add
 
-    Create and add a new element to the end of the sequence.
+.. py:method:: item(self, index: int) -> IDrawElement
+    :canonical: ansys.stk.core.stkx.IDrawElementCollection.item
+
+    Get the element at the specified index (0-based).
 
     :Parameters:
 
-    **elem_type** : :obj:`~str`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -118,11 +119,13 @@ Method detail
 
     :Parameters:
 
-    **draw_elem** : :obj:`~IDrawElement`
+        **draw_elem** : :obj:`~IDrawElement`
+
 
     :Returns:
 
         :obj:`~None`
+
 
 
 

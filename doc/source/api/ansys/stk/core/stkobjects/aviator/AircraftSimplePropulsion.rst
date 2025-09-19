@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,19 +22,19 @@ Overview
               - Set the option to use density scaling and set the density ratio exponent.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.density_ratio_exponent`
+              - Get the relative impace of atmospheric density on the aircraft's performance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.max_thrust_acceleration`
               - Get or set the rate at which the aircraft speeds up at max throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.min_thrust_deceleration`
               - Get or set the rate at which the aircraft slows down at minimum throttle setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.use_density_scaling`
               - Opt whether to scale the accel/decel performance by the density ratio.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.density_ratio_exponent`
-              - Get the relative impace of atmospheric density on the aircraft's performance.
 
 
 
@@ -99,6 +99,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: density_ratio_exponent
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.density_ratio_exponent
+    :type: float
+
+    Get the relative impace of atmospheric density on the aircraft's performance.
+
 .. py:property:: max_thrust_acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.max_thrust_acceleration
     :type: float
@@ -117,16 +123,9 @@ Property detail
 
     Opt whether to scale the accel/decel performance by the density ratio.
 
-.. py:property:: density_ratio_exponent
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion.density_ratio_exponent
-    :type: float
-
-    Get the relative impace of atmospheric density on the aircraft's performance.
-
 
 Method detail
 -------------
-
 
 
 
@@ -140,10 +139,13 @@ Method detail
 
     :Parameters:
 
-    **use_scaling** : :obj:`~bool`
-    **exponent** : :obj:`~float`
+        **use_scaling** : :obj:`~bool`
+
+        **exponent** : :obj:`~float`
+
 
     :Returns:
 
         :obj:`~None`
+
 

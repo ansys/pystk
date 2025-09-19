@@ -74,8 +74,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_01(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -96,8 +96,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_02(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -129,8 +129,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_03(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -167,8 +167,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_04(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -199,8 +199,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_05(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -227,8 +227,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_06(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -256,8 +256,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_07(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -283,8 +283,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_08(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -306,8 +306,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_09(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
@@ -343,8 +343,8 @@ class TimePeriodTests(TestBase):
     def test_TimePeriod_10(self):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Spy"]
-        oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
+        oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["Spy"]
+        oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 

@@ -25,7 +25,7 @@
 #
 # - A takeoff from Colorado Springs, using a low runway heading and a runway altitude offset of $7$ ft
 # - A basic maneuver consisting of a $20$ nm flight straight ahead, with an altitude increase of $10000$ ft
-# - A basic point to point procedure flying the aircraft directly from the end of the last proceure to the Blue Mesa radio beacon, with a turn factor of $5$
+# - A basic point to point procedure flying the aircraft directly from the end of the last procedure to the Blue Mesa radio beacon, with a turn factor of $5$
 # - A basic point to point procedure flying the aircraft from Blue Mesa to the Cones radio beacon, with a constant altitude of $15000$ ft, a turn factor of $5$, and a cruise airspeed of $250$ nm/hr
 # - A landing from Cones to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of $7$ ft
 
@@ -255,7 +255,7 @@ acceleration_performance_model.aerodynamics.aerodynamic_strategy = (
 )
 # -
 
-# Then, set the aircraft's propulstion to also use a basic fixed wing strategy by accessing the performance model's `propulsion` property, which contains an `IAircraftProp` object:
+# Then, set the aircraft's propulsion to also use a basic fixed wing strategy by accessing the performance model's `propulsion` property, which contains an `IAircraftProp` object:
 
 # +
 from ansys.stk.core.stkobjects.aviator import AircraftPropulsionStrategy

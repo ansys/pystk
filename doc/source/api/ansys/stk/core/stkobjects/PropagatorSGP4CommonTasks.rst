@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -43,8 +43,10 @@ Method detail
 
     :Parameters:
 
-    **ssc_number** : :obj:`~str`
-    **file_name** : :obj:`~str`
+        **ssc_number** : :obj:`~str`
+
+        **file_name** : :obj:`~str`
+
 
     :Returns:
 
@@ -57,7 +59,8 @@ Method detail
 
     :Parameters:
 
-    **ssc_num** : :obj:`~str`
+        **ssc_num** : :obj:`~str`
+
 
     :Returns:
 

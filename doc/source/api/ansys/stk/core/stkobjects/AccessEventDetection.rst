@@ -13,28 +13,28 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.set_type`
-              - Set the event detection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.is_type_supported`
               - Get a value indicating whether the specified type can be used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.set_type`
+              - Set the event detection type.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.type`
-              - Get the type of event detection (e.g., with or without subsampling).
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.supported_types`
-              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.strategy`
               - Get the selected event detection strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.supported_types`
+              - Return an array of valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.type`
+              - Get the type of event detection (e.g., with or without subsampling).
 
 
 
@@ -49,11 +49,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.type
-    :type: EventDetection
+.. py:property:: strategy
+    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.strategy
+    :type: IEventDetectionStrategy
 
-    Get the type of event detection (e.g., with or without subsampling).
+    Get the selected event detection strategy.
 
 .. py:property:: supported_types
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.supported_types
@@ -61,29 +61,15 @@ Property detail
 
     Return an array of valid choices.
 
-.. py:property:: strategy
-    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.strategy
-    :type: IEventDetectionStrategy
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.type
+    :type: EventDetection
 
-    Get the selected event detection strategy.
+    Get the type of event detection (e.g., with or without subsampling).
 
 
 Method detail
 -------------
-
-
-.. py:method:: set_type(self, event_detection: EventDetection) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.set_type
-
-    Set the event detection type.
-
-    :Parameters:
-
-    **event_detection** : :obj:`~EventDetection`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: is_type_supported(self, event_detection: EventDetection) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.is_type_supported
@@ -92,11 +78,27 @@ Method detail
 
     :Parameters:
 
-    **event_detection** : :obj:`~EventDetection`
+        **event_detection** : :obj:`~EventDetection`
+
 
     :Returns:
 
         :obj:`~bool`
+
+.. py:method:: set_type(self, event_detection: EventDetection) -> None
+    :canonical: ansys.stk.core.stkobjects.AccessEventDetection.set_type
+
+    Set the event detection type.
+
+    :Parameters:
+
+        **event_detection** : :obj:`~EventDetection`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 
 
 

@@ -172,11 +172,24 @@ sat_grave_coverage = scenario.children.new(
 
 # The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition has a latitude/longitude point granularity of $2^\circ$.
 
-# To set the coverage definition's bounds to the elliptical area around Point Nemo, use a Connect command:
+# To set the coverage definition's bounds to the elliptical area around Point Nemo, first set the bounds type to use custom regions:
 
-root.execute_command(
-    "Cov */CoverageDefinition/SatelliteGraveyard Grid AreaOfInterest Custom ObjectCenteredEllipse Place/PointNemo Bearing 45.0 SemiMajorAxis 2688000 SemiMinorAxis 2688000"
-)
+# +
+from ansys.stk.core.stkobjects import CoverageBounds
+
+
+sat_grave_coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
+# -
+
+# Then, assign Point Nemo as the center of the ellipse used to calculate the coverage:
+
+ellipse = sat_grave_coverage.grid.bounds.ellipses.add(point_nemo.path)
+
+# Next, set the ellipse's semi-major axis to $2688$ km, semi-minor axis to $2688$ km, and bearing to $45^\circ$:
+
+ellipse.semi_major_axis = 2688
+ellipse.semi_minor_axis = 2688
+ellipse.bearing = 45
 
 # Finally, configure the coverage definition's grid point granularity. The grid point granularity presents a trade-off between computational workload and accuracy of results. A higher granularity provides higher accuracy at the cost of a higher workload. For this example, set the resolution to $2^\circ$ latitude/longitude.
 

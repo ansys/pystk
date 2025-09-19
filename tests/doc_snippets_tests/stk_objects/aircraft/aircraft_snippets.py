@@ -65,7 +65,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Aircraft",
     )
     def CreateAircraftSnippet(self, root):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
 
     def test_AddAircraftPointsSnippet(self):

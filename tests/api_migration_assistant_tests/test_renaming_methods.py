@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import sys
+import pytest
 from runner import run
 
 
@@ -31,9 +33,11 @@ def test_rename_single_method_no_argument():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -60,9 +64,11 @@ def test_rename_single_method_with_arguments():
                 pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -89,9 +95,11 @@ def test_rename_single_repeated_method_no_argument():
                 return self
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -118,9 +126,11 @@ def test_rename_single_repeated_method_with_arguments():
                 return self
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod" NewName="MyMethodRenamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod", "NewName": "MyMethodRenamed" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -149,10 +159,12 @@ def test_rename_multiple_methods_with_arguments():
                 return self
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass" OldName="MyMethod1" NewName="MyMethodRenamed1" Category="method" />
-            <Mapping ParentScope="MyClass" OldName="MyMethod2" NewName="MyMethodRenamed2" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass", "OldName": "MyMethod1", "NewName": "MyMethodRenamed1" },
+                { "ParentScope": "MyClass", "OldName": "MyMethod2", "NewName": "MyMethodRenamed2" }
+            ]
+        }
         """,
         """
         from api import MyClass
@@ -171,6 +183,7 @@ def test_rename_multiple_methods_with_arguments():
     )
 
 
+@pytest.mark.skipif(sys.version_info < (3, 11), reason="Requires Python 3.11 or higher for Traceback.positions")
 def test_rename_correct_method_when_two_methods_with_same_name():
     run(
         """
@@ -182,10 +195,12 @@ def test_rename_correct_method_when_two_methods_with_same_name():
                 return MyClass1()
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyClass1" OldName="MyMethod" NewName="MyMethodRenamed1" Category="method" />
-            <Mapping ParentScope="MyClass2" OldName="MyMethod" NewName="MyMethodRenamed2" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyClass1", "OldName": "MyMethod", "NewName": "MyMethodRenamed1" },
+                { "ParentScope": "MyClass2", "OldName": "MyMethod", "NewName": "MyMethodRenamed2" }
+            ]
+        }
         """,
         """
         from api import MyClass2
@@ -217,10 +232,12 @@ def test_rename_method_with_mro():
             pass
         """,
         """
-        <Mappings>
-            <Mapping ParentScope="MyBaseClass1" OldName="MyMethod1" NewName="MyMethod1Renamed" Category="method" />
-            <Mapping ParentScope="MyBaseClass2" OldName="MyMethod2" NewName="MyMethod2Renamed" Category="method" />
-        </Mappings>
+        {
+            "MemberMappings": [
+                { "ParentScope": "MyBaseClass1", "OldName": "MyMethod1", "NewName": "MyMethod1Renamed" },
+                { "ParentScope": "MyBaseClass2", "OldName": "MyMethod2", "NewName": "MyMethod2Renamed" }
+            ]
+        }
         """,
         """
         from api import MyClass

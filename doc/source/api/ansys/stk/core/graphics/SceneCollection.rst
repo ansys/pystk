@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,15 +22,15 @@ Overview
               - Return a scene in the collection at a specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.SceneCollection.count`
-              - Total number of scenes in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.SceneCollection._new_enum`
               - Return an enumerator that iterates through the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneCollection.count`
+              - Total number of scenes in the collection.
 
 
 
@@ -45,17 +45,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.graphics.SceneCollection.count
-    :type: int
-
-    Total number of scenes in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.SceneCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that iterates through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.SceneCollection.count
+    :type: int
+
+    Total number of scenes in the collection.
 
 
 Method detail
@@ -69,7 +69,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 

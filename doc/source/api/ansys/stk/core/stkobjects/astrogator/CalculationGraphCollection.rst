@@ -13,22 +13,22 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add`
               - Add a calculation graph.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item`
+              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove`
               - Remove a parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove_all`
               - Remove all parameters.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -67,20 +67,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index: int) -> str
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~str`
-
-
 .. py:method:: add(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add
 
@@ -88,11 +74,27 @@ Method detail
 
     :Parameters:
 
-    **graph_name** : :obj:`~str`
+        **graph_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
+
+
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~str`
 
 .. py:method:: remove(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove
@@ -101,7 +103,8 @@ Method detail
 
     :Parameters:
 
-    **graph_name** : :obj:`~str`
+        **graph_name** : :obj:`~str`
+
 
     :Returns:
 

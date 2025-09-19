@@ -13,15 +13,15 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.start_color`
-              - Start color for color ramp method.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.end_color`
               - End color for color ramp method.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.start_color`
+              - Start color for color ramp method.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: start_color
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.start_color
-    :type: agcolor.Color
-
-    Start color for color ramp method.
-
 .. py:property:: end_color
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.end_color
-    :type: agcolor.Color
+    :type: Color
 
     End color for color ramp method.
+
+.. py:property:: start_color
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor.start_color
+    :type: Color
+
+    Start color for color ramp method.
 
 

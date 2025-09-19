@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Get the site interface.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -63,9 +63,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
 .. py:method:: get_as_site(self) -> ISite
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKVehicle.get_as_site
 
@@ -74,4 +71,7 @@ Method detail
     :Returns:
 
         :obj:`~ISite`
+
+
+
 

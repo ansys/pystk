@@ -31,7 +31,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         super(AviatorCodeSnippets, self).__init__(*args, **kwargs)
 
     # region Static DataMembers
-    AG_Scenario: "IStkObject" = None
+    AG_Scenario: "ISTKObject" = None
     AG_AC: "Aircraft" = None
     AG_AvtrProp: "AviatorPropagator" = None
     AG_AvtrCatalog: "Catalog" = None
@@ -58,7 +58,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
+        scenario: "ISTKObject" = clr.CastAs(TestBase.Application.current_scenario, ISTKObject)
         AviatorCodeSnippets.AG_Scenario = scenario
         AviatorCodeSnippets.AG_AC = Aircraft((scenario.children.new(STKObjectType.AIRCRAFT, "AviatorAC")))
         # Set to Propagator to Aviator
@@ -89,7 +89,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (IStkObject(AviatorCodeSnippets.AG_AC)).unload()
+        (ISTKObject(AviatorCodeSnippets.AG_AC)).unload()
         AviatorCodeSnippets.AG_AC = None
         AviatorCodeSnippets.AG_AvtrAircraft.get_as_catalog_item().remove()
 

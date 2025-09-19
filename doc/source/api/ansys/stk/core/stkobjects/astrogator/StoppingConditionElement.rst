@@ -15,20 +15,20 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter`
-              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter`
               - Disables the specified control parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter`
+              - Enable or disables the specified control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -77,18 +77,6 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: ControlStoppingCondition) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter
-
-    Enable or disables the specified control parameter.
-
-    :Parameters:
-
-    **param** : :obj:`~ControlStoppingCondition`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: disable_control_parameter(self, param: ControlStoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter
@@ -97,7 +85,22 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlStoppingCondition`
+        **param** : :obj:`~ControlStoppingCondition`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: enable_control_parameter(self, param: ControlStoppingCondition) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter
+
+    Enable or disables the specified control parameter.
+
+    :Parameters:
+
+        **param** : :obj:`~ControlStoppingCondition`
+
 
     :Returns:
 
@@ -110,11 +113,11 @@ Method detail
 
     :Parameters:
 
-    **param** : :obj:`~ControlStoppingCondition`
+        **param** : :obj:`~ControlStoppingCondition`
+
 
     :Returns:
 
         :obj:`~bool`
-
 
 

@@ -3,7 +3,7 @@ AreaTarget
 
 .. py:class:: ansys.stk.core.stkobjects.AreaTarget
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISTKObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the AreaTarget object.
 
@@ -15,35 +15,35 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_local_time_offset`
-              - Opt whether to use a local time offset from GMT.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.local_time_offset`
-              - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid`
-              - Opt whether to have the centroid automatically computed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.position`
-              - Get the position of the area target centroid.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.access_constraints`
               - Get the constraints imposed on the area target. Basic constraints for area targets apply to all points within or along the area target. If the constraint is satisfied for at least one point, access to the area target is considered valid.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics`
-              - Get the area target's 2D Graphics properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics_3d`
-              - Get the area target's 3D Graphics properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.allow_object_access`
+              - Opt whether access to the object is constrained with respect to the entire object, as opposed to any part of it.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type`
               - The method for defining the area target boundary. A member of the AreaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.area_type_data`
               - Get the data defining the boundary with the selected method.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_terrain_data`
-              - Opt whether to use terrain data for altitude updates.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.allow_object_access`
-              - Opt whether access to the object is constrained with respect to the entire object, as opposed to any part of it.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid`
+              - Opt whether to have the centroid automatically computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.common_tasks`
               - Common tasks associated with AreaTargets.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics`
+              - Get the area target's 2D Graphics properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.graphics_3d`
+              - Get the area target's 3D Graphics properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.local_time_offset`
+              - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.position`
+              - Get the position of the area target centroid.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_local_time_offset`
+              - Opt whether to use a local time offset from GMT.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.use_terrain_data`
+              - Opt whether to use terrain data for altitude updates.
 
 
 
@@ -87,7 +87,7 @@ Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -106,7 +106,7 @@ Set an elliptical area target (using common tasks)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the CommonTasks interface
@@ -117,7 +117,7 @@ Set an elliptical area target
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -135,7 +135,7 @@ Create an area target (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
@@ -153,47 +153,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_local_time_offset
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.use_local_time_offset
-    :type: bool
-
-    Opt whether to use a local time offset from GMT.
-
-.. py:property:: local_time_offset
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.local_time_offset
-    :type: float
-
-    The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
-
-.. py:property:: automatic_computation_of_centroid
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid
-    :type: bool
-
-    Opt whether to have the centroid automatically computed.
-
-.. py:property:: position
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.position
-    :type: IPosition
-
-    Get the position of the area target centroid.
-
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.AreaTarget.access_constraints
     :type: AccessConstraintCollection
 
     Get the constraints imposed on the area target. Basic constraints for area targets apply to all points within or along the area target. If the constraint is satisfied for at least one point, access to the area target is considered valid.
 
-.. py:property:: graphics
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics
-    :type: AreaTargetGraphics
+.. py:property:: allow_object_access
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.allow_object_access
+    :type: bool
 
-    Get the area target's 2D Graphics properties.
-
-.. py:property:: graphics_3d
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics_3d
-    :type: AreaTargetGraphics3D
-
-    Get the area target's 3D Graphics properties.
+    Opt whether access to the object is constrained with respect to the entire object, as opposed to any part of it.
 
 .. py:property:: area_type
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type
@@ -207,22 +177,52 @@ Property detail
 
     Get the data defining the boundary with the selected method.
 
-.. py:property:: use_terrain_data
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.use_terrain_data
+.. py:property:: automatic_computation_of_centroid
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid
     :type: bool
 
-    Opt whether to use terrain data for altitude updates.
-
-.. py:property:: allow_object_access
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.allow_object_access
-    :type: bool
-
-    Opt whether access to the object is constrained with respect to the entire object, as opposed to any part of it.
+    Opt whether to have the centroid automatically computed.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.AreaTarget.common_tasks
     :type: AreaTargetCommonTasks
 
     Common tasks associated with AreaTargets.
+
+.. py:property:: graphics
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics
+    :type: AreaTargetGraphics
+
+    Get the area target's 2D Graphics properties.
+
+.. py:property:: graphics_3d
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics_3d
+    :type: AreaTargetGraphics3D
+
+    Get the area target's 3D Graphics properties.
+
+.. py:property:: local_time_offset
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.local_time_offset
+    :type: float
+
+    The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.position
+    :type: IPosition
+
+    Get the position of the area target centroid.
+
+.. py:property:: use_local_time_offset
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.use_local_time_offset
+    :type: bool
+
+    Opt whether to use a local time offset from GMT.
+
+.. py:property:: use_terrain_data
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.use_terrain_data
+    :type: bool
+
+    Opt whether to use terrain data for altitude updates.
 
 

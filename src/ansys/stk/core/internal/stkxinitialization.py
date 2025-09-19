@@ -28,7 +28,7 @@ from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
-from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
+from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property,
     set_class_attribute, SupportsDeleteCallback)
 from ..utilities.exceptions import STKRuntimeError
 
@@ -52,7 +52,7 @@ class STKXInitialize(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXInitialize)
-    
+
     _initialize_activation_context_metadata = { "offset" : _initialize_activation_context_method_offset,
             "arg_types" : (),
             "marshallers" : () }

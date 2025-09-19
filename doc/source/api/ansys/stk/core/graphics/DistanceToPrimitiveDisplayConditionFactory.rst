@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,9 +52,12 @@ Method detail
 
     :Parameters:
 
-    **primitive** : :obj:`~IPrimitive`
-    **minimum_distance** : :obj:`~float`
-    **maximum_distance** : :obj:`~float`
+        **primitive** : :obj:`~IPrimitive`
+
+        **minimum_distance** : :obj:`~float`
+
+        **maximum_distance** : :obj:`~float`
+
 
     :Returns:
 

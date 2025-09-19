@@ -15,22 +15,22 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.add`
               - Add a filter to the sequence.
-            * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.remove`
-              - Remove a filter from the sequence.
             * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.clear`
               - Clear all filters from the sequence.
             * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.contains`
               - Return true if the sequence contains the filter.
+            * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.remove`
+              - Remove a filter from the sequence.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -69,9 +69,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
 .. py:method:: add(self, filter: IRasterFilter) -> None
     :canonical: ansys.stk.core.graphics.SequenceFilter.add
 
@@ -79,20 +76,8 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
 
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: remove(self, filter: IRasterFilter) -> None
-    :canonical: ansys.stk.core.graphics.SequenceFilter.remove
-
-    Remove a filter from the sequence.
-
-    :Parameters:
-
-    **filter** : :obj:`~IRasterFilter`
 
     :Returns:
 
@@ -114,9 +99,27 @@ Method detail
 
     :Parameters:
 
-    **filter** : :obj:`~IRasterFilter`
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 
         :obj:`~bool`
+
+
+
+
+.. py:method:: remove(self, filter: IRasterFilter) -> None
+    :canonical: ansys.stk.core.graphics.SequenceFilter.remove
+
+    Remove a filter from the sequence.
+
+    :Parameters:
+
+        **filter** : :obj:`~IRasterFilter`
+
+
+    :Returns:
+
+        :obj:`~None`
 

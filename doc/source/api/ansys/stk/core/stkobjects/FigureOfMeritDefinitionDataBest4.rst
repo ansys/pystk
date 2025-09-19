@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Is the type of Best 4 metric supported?
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -65,6 +65,7 @@ Method detail
 
 
 
+
 .. py:method:: is_best_4_metric_supported(self, best_4_metric: FigureOfMeritMethod) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best_4_metric_supported
 
@@ -72,10 +73,10 @@ Method detail
 
     :Parameters:
 
-    **best_4_metric** : :obj:`~FigureOfMeritMethod`
+        **best_4_metric** : :obj:`~FigureOfMeritMethod`
+
 
     :Returns:
 
         :obj:`~bool`
-
 

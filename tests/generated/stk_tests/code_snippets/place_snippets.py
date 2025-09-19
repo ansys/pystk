@@ -68,7 +68,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreateDefaultPlaceOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create a place on current scenario central body
         place: "Place" = clr.CastAs(root.current_scenario.children.new(STKObjectType.PLACE, "MyPlace"), Place)
 
@@ -79,7 +79,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreatePlaceOnEarth(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceOnEarth(self, root: "StkObjectRoot"):
+    def CreatePlaceOnEarth(self, root: "STKObjectRoot"):
         place: "Place" = clr.CastAs(
             root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "MyPlace", "Earth"), Place
         )
@@ -93,7 +93,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
     def test_CreatePlaceOnOtherPlanet(self):
         self.CreatePlaceOnOtherPlanet(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceOnOtherPlanet(self, root: "StkObjectRoot"):
+    def CreatePlaceOnOtherPlanet(self, root: "STKObjectRoot"):
         placeObject: "Place" = clr.CastAs(
             root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "Place1", "Mars"), Place
         )
@@ -107,7 +107,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
     def test_CreatePlaceFromFacilityDatabase(self):
         self.CreatePlaceFromFacilityDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreatePlaceFromFacilityDatabase(self, root: "StkObjectRoot"):
+    def CreatePlaceFromFacilityDatabase(self, root: "STKObjectRoot"):
         # Get STK database location using Connect
         result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]

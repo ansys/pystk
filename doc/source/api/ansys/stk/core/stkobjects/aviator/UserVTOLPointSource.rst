@@ -15,17 +15,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.get_user_vtol_point`
-              - Get the user VTOL Point with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.add_user_vtol_point`
               - Create a new user VTOL Point with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.get_user_vtol_point`
+              - Get the user VTOL Point with the given name.
 
 
 Import detail
@@ -40,19 +40,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_user_vtol_point(self, name: str) -> UserVTOLPoint
-    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.get_user_vtol_point
-
-    Get the user VTOL Point with the given name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~UserVTOLPoint`
-
 .. py:method:: add_user_vtol_point(self, name: str) -> UserVTOLPoint
     :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.add_user_vtol_point
 
@@ -60,7 +47,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -74,4 +62,18 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogSource`
+
+.. py:method:: get_user_vtol_point(self, name: str) -> UserVTOLPoint
+    :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPointSource.get_user_vtol_point
+
+    Get the user VTOL Point with the given name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~UserVTOLPoint`
 

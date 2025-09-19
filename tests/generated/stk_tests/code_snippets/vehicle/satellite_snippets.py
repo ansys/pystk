@@ -76,7 +76,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         )
         self.CreateSatelliteOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the Satellite
         satellite: "Satellite" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite"), Satellite
@@ -88,7 +88,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     def test_CreateSatelliteFromDatabase(self):
         self.CreateSatelliteFromDatabase(CodeSnippetsTestBase.m_Root)
 
-    def CreateSatelliteFromDatabase(self, root: "StkObjectRoot"):
+    def CreateSatelliteFromDatabase(self, root: "STKObjectRoot"):
         # Get STK database location using Connect
         result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Satellite")
         satDataDir: str = result[0]
@@ -140,7 +140,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         satellite.set_propagator_type(PropagatorType.STK_EXTERNAL)
 
         # Get the STK External propagator
-        propagator: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
+        propagator: "PropagatorSTKExternal" = clr.CastAs(satellite.propagator, PropagatorSTKExternal)
 
     # endregion
 

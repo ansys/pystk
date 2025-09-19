@@ -15,15 +15,15 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.filename`
-              - Name of file used to import a table of elevation-dependent uncertainty data.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.file_path`
               - Full file name and path used to import a table of elevation-dependent uncertainty data.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.filename`
+              - Name of file used to import a table of elevation-dependent uncertainty data.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.filename
-    :type: str
-
-    Name of file used to import a table of elevation-dependent uncertainty data.
-
 .. py:property:: file_path
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.file_path
     :type: str
 
     Full file name and path used to import a table of elevation-dependent uncertainty data.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle.filename
+    :type: str
+
+    Name of file used to import a table of elevation-dependent uncertainty data.
 
 

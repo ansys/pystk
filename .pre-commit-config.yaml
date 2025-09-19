@@ -11,16 +11,37 @@ ci:
 repos:
 
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.5.5
+  rev: v0.12.1
   hooks:
-    - id: ruff
+    - id: ruff-check
       args: [ --fix ]
       exclude: "^examples/.*_.*"
     - id: ruff-format
       exclude: "^src|^tests|^examples/.*_.*"
 
+- repo: https://github.com/zizmorcore/zizmor-pre-commit
+  rev: v1.12.1
+  hooks:
+    - id: zizmor
+
+# NOTE: Ruff does not check for python code in some part of the documentation,
+# e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
+- repo: https://github.com/adamchainz/blacken-docs
+  rev: 1.19.1
+  hooks:
+    - id: blacken-docs
+      additional_dependencies: [black==25.1.0]
+      args: ["--line-length=120"]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: "^tests/generated/data"
+
+
 - repo: https://github.com/codespell-project/codespell
-  rev: v2.3.0
+  rev: v2.4.1
   hooks:
   - id: codespell
     # HACK: pre-commit is used during the code-style job in CI/CD. This job
@@ -37,7 +58,7 @@ repos:
     #   - tomli
 
 - repo: https://github.com/ansys/pre-commit-hooks
-  rev: v0.5.1
+  rev: v0.5.2
   hooks:
     - id: add-license-headers
       # Having a license on the examples causes it to render as Markdown in the

@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,7 +26,7 @@ Overview
               - Select the 3D Graphics window ids.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -65,9 +65,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
 .. py:method:: get_graphics_3d_window_identifiers(self) -> list
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement.get_graphics_3d_window_identifiers
 
@@ -77,6 +74,9 @@ Method detail
 
         :obj:`~list`
 
+
+
+
 .. py:method:: set_graphics_3d_window_identifiers(self, window_ids: list) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement.set_graphics_3d_window_identifiers
 
@@ -84,7 +84,8 @@ Method detail
 
     :Parameters:
 
-    **window_ids** : :obj:`~list`
+        **window_ids** : :obj:`~list`
+
 
     :Returns:
 

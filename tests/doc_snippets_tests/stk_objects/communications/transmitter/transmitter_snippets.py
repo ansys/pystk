@@ -65,7 +65,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Transmitter",
     )
     def CreateTransmitterSnippet(self, satellite):
-        # IStkObject satellite: STK object
+        # ISTKObject satellite: STK object
         transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
 
     def test_ModifyTransmitterSnippet(self):

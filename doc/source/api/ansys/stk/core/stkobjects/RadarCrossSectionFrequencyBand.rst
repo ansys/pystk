@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,21 +22,21 @@ Overview
               - Set the current compute strategy by name.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency`
-              - Get or set the frequency band minimum frequency.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.maximum_frequency`
-              - Get or set the frequency band maximum frequency.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case`
-              - Get or set the band Swerling case.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.supported_compute_strategies`
-              - Get an array of supported compute strategy names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.compute_strategy`
               - Get the current compute strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.maximum_frequency`
+              - Get or set the frequency band maximum frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency`
+              - Get or set the frequency band minimum frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.supported_compute_strategies`
+              - Get an array of supported compute strategy names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case`
+              - Get or set the band Swerling case.
 
 
 
@@ -51,11 +51,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: minimum_frequency
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency
-    :type: float
+.. py:property:: compute_strategy
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.compute_strategy
+    :type: IRadarCrossSectionComputeStrategy
 
-    Get or set the frequency band minimum frequency.
+    Get the current compute strategy.
 
 .. py:property:: maximum_frequency
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.maximum_frequency
@@ -63,11 +63,11 @@ Property detail
 
     Get or set the frequency band maximum frequency.
 
-.. py:property:: swerling_case
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case
-    :type: RadarSwerlingCase
+.. py:property:: minimum_frequency
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency
+    :type: float
 
-    Get or set the band Swerling case.
+    Get or set the frequency band minimum frequency.
 
 .. py:property:: supported_compute_strategies
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.supported_compute_strategies
@@ -75,17 +75,15 @@ Property detail
 
     Get an array of supported compute strategy names.
 
-.. py:property:: compute_strategy
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.compute_strategy
-    :type: IRadarCrossSectionComputeStrategy
+.. py:property:: swerling_case
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case
+    :type: RadarSwerlingCase
 
-    Get the current compute strategy.
+    Get or set the band Swerling case.
 
 
 Method detail
 -------------
-
-
 
 
 
@@ -98,10 +96,13 @@ Method detail
 
     :Parameters:
 
-    **compute_strategy_name** : :obj:`~str`
+        **compute_strategy_name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
+
+
 
 

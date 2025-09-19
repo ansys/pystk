@@ -31,9 +31,15 @@ def test_rename_simple_type_hint():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="product.core.api">
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "product.core.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -59,9 +65,15 @@ def test_rename_simple_double_quoted_type_hint():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="product.core.api">
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "product.core.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         from product.core.api import *
@@ -87,9 +99,15 @@ def test_rename_type_only_in_fully_qualified_type_hint():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="product.core.api">
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "product.core.api"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         import product.core.api
@@ -115,9 +133,15 @@ def test_rename_fully_qualified_type_hint():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility">
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         import product.core.api
@@ -143,9 +167,15 @@ def test_rename_fully_qualified_quoted_type_hint():
                 pass
         """,
         """
-        <Mappings OldRootScope="product.core.api" NewRootScope="other.utility">
-            <Mapping OldName="MyClass" NewName="MyNewClass" Category="class" />
-        </Mappings>
+        {
+            "RootMapping": {
+                "OldRootScope": "product.core.api",
+                "NewRootScope": "other.utility"
+            },
+            "ClassMappings": [
+                { "OldName": "MyClass", "NewName": "MyNewClass" }
+            ]
+        }
         """,
         """
         import product.core.api

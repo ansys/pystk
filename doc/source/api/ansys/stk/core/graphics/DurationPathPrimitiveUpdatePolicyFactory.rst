@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,8 +52,10 @@ Method detail
 
     :Parameters:
 
-    **duration** : :obj:`~float`
-    **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+        **duration** : :obj:`~float`
+
+        **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
+
 
     :Returns:
 

@@ -1,0 +1,161 @@
+SpatialAnalysisToolVolumeGridGroup
+==================================
+
+.. py:class:: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup
+
+   Access or create VGT volume grids associated with an object or a central body.
+
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridGroup
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.contains`
+              - Search for a an element with a given name. Returns false if the specified element does not exist.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.get_item_by_index`
+              - Retrieve a volume grid from the collection by index.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.get_item_by_name`
+              - Retrieve a volume grid from the collection by name.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.item`
+              - Return an element by name or at a specified position.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.remove`
+              - Remove a specified element.
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup._new_enum`
+              - Return a COM enumerator.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.context`
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.count`
+              - Return a number of elements in the group.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.factory`
+              - Return a factory object used to create volume grid components.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.analysis_workbench import SpatialAnalysisToolVolumeGridGroup
+
+
+Property detail
+---------------
+
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup._new_enum
+    :type: EnumeratorProxy
+
+    Return a COM enumerator.
+
+.. py:property:: context
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.context
+    :type: IAnalysisWorkbenchComponentContext
+
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.count
+    :type: int
+
+    Return a number of elements in the group.
+
+.. py:property:: factory
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.factory
+    :type: SpatialAnalysisToolVolumeGridFactory
+
+    Return a factory object used to create volume grid components.
+
+
+Method detail
+-------------
+
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.contains
+
+    Search for a an element with a given name. Returns false if the specified element does not exist.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+
+
+.. py:method:: get_item_by_index(self, index: int) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.get_item_by_index
+
+    Retrieve a volume grid from the collection by index.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolumeGrid`
+
+.. py:method:: get_item_by_name(self, name: str) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.get_item_by_name
+
+    Retrieve a volume grid from the collection by name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolumeGrid`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> ISpatialAnalysisToolVolumeGrid
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.item
+
+    Return an element by name or at a specified position.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~ISpatialAnalysisToolVolumeGrid`
+
+.. py:method:: remove(self, event_name: str) -> None
+    :canonical: ansys.stk.core.analysis_workbench.SpatialAnalysisToolVolumeGridGroup.remove
+
+    Remove a specified element.
+
+    :Parameters:
+
+        **event_name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
+

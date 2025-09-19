@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -28,7 +28,7 @@ Overview
               - Return proton energies used for the NASA models as an array of doubles. Uses ParticleEnergy Dimension.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -87,7 +87,6 @@ Method detail
 
 
 
-
 .. py:method:: get_crres_electron_energies(self) -> list
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.get_crres_electron_energies
 
@@ -123,6 +122,7 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
 
 
 

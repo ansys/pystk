@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Return the underlying Flight Mission object.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -55,6 +55,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: get_flight_mission(self) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.PropagatorAviator.get_flight_mission
 
@@ -63,5 +64,4 @@ Method detail
     :Returns:
 
         :obj:`~typing.Any`
-
 

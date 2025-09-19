@@ -60,7 +60,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
     def test_ExecuteConnectCommand(self):
         self.ExecuteConnectCommand(CodeSnippetsTestBase.m_Root)
 
-    def ExecuteConnectCommand(self, root: "StkObjectRoot"):
+    def ExecuteConnectCommand(self, root: "STKObjectRoot"):
         result: "ExecuteCommandResult" = root.execute_command("New / */Satellite JeffSAT")
 
     # endregion
@@ -70,7 +70,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
     def test_ExecuteMultipleConnectCommands(self):
         self.ExecuteMultipleConnectCommands(CodeSnippetsTestBase.m_Root)
 
-    def ExecuteMultipleConnectCommands(self, root: "StkObjectRoot"):
+    def ExecuteMultipleConnectCommands(self, root: "STKObjectRoot"):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands

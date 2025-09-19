@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Set the filepath for the external aero file.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -62,6 +62,7 @@ Method detail
 -------------
 
 
+
 .. py:method:: set_filepath(self, filepath: str) -> str
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalAerodynamic.set_filepath
 
@@ -69,10 +70,10 @@ Method detail
 
     :Parameters:
 
-    **filepath** : :obj:`~str`
+        **filepath** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~str`
-
 

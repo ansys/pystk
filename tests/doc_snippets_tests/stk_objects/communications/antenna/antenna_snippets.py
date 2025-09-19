@@ -66,7 +66,7 @@ class AntennaSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Antenna",
     )
     def CreateAntennaSnippet(self, satellite):
-        # IStkObject satellite: STK object
+        # ISTKObject satellite: STK object
         antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
 
     def test_ModifyAntennaSnippet(self):

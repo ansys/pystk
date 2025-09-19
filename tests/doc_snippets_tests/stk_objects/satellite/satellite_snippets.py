@@ -78,7 +78,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Satellite",
     )
     def CreateSatelliteSnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
     def test_SatelliteInitialStateSnippet(self):
@@ -136,9 +136,8 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         # Satellite satellite: Satellite object
         satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
         propagator = satellite.propagator
-        propagator.initial_state.representation.assign_cartesian(
-            CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641
-        )
+        icrfCoordinates = [6678.14, 0, 0, 0, 6.78953, 3.68641]
+        propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, *icrfCoordinates)
         propagator.propagate()
 
     def test_HPOPSatelliteSnippet(self):
@@ -165,10 +164,12 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         )
 
         forceModel = satellite.propagator.force_model
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        forceModel.central_body_gravity.file = os.path.join(
-            installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
-        )
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
+        grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
+        forceModel.central_body_gravity.file = os.path.join(installPath, *grv_path)
         forceModel.central_body_gravity.maximum_degree = 21
         forceModel.central_body_gravity.maximum_order = 21
         forceModel.drag.use = True
@@ -227,18 +228,19 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     )
     def SPICESatelliteSnippet(self, root, satellite):
         # Satellite satellite: Satellite object
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         satellite.set_propagator_type(PropagatorType.SPICE)
         propagator = satellite.propagator
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        propagator.spice = os.path.join(
-            installPath, "STKData", "Spice", "planets.bsp"
-        )  # Make sure this is a valid path
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
+        bspPath = ["STKData", "Spice", "planets.bsp"]
+        propagator.spice = os.path.join(installPath, *bspPath)  # Make sure this is a valid path
         propagator.body_name = "MARS"
 
-        propagator.ephemeris_interval.set_implicit_interval(
-            root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
-        )  # Link to scenario period
+        intvl = root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+        propagator.ephemeris_interval.set_implicit_interval(intvl)  # Link to scenario period
         propagator.step = 60.0
         propagator.propagate()
 
@@ -284,7 +286,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~SatelliteExportTools",
     )
     def ExportEphemerisFileSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         # Satellite satellite: Satellite object
         scenPath = root.execute_command("GetDirectory / Scenario").item(0)
         satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
@@ -356,7 +358,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     )
     def SatelliteAttitudeExternalSnippet(self, satellite):
         # Satellite satellite: Satellite object
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
         satellite.attitude.external.load(
             os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
         )
@@ -399,7 +404,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~IVehicleGraphics2DAttributesBasic",
     )
     def BasicGraphics2DSnippet(self, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         # Change the line width, style, color and marker
 
@@ -410,7 +415,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         attributes.line.width = LineWidth.WIDTH4
         attributes.line.style = LineStyle.LONG_DASH
         attributes.color = Colors.Lime
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
         attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
 
     @category("Graphics Tests")
@@ -430,7 +438,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         eid="stkobjects~VehicleGraphics2DAttributesCustom",
     )
     def CustomGraphics2DSnippet(self, root, satellite):
-        # StkObjectRoot root: STK Object Model root
+        # STKObjectRoot root: STK Object Model root
         # Satellite satellite: Satellite object
         root.units_preferences.item("DateFormat").set_current_unit("EpSec")
         graphics = satellite.graphics
@@ -698,7 +706,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         model = satellite.graphics_3d.model
         model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
         orbitmarker = model.orbit_marker
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
         orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
         orbitmarker.marker_data.is_transparent = True
         orbitmarker.pixel_size = 18

@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set the azimuth and elevation resolution as well as the maximum elevation angle.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -81,9 +81,12 @@ Method detail
 
     :Parameters:
 
-    **azimuth_resolution** : :obj:`~float`
-    **elevation_resolution** : :obj:`~float`
-    **max_elevation** : :obj:`~float`
+        **azimuth_resolution** : :obj:`~float`
+
+        **elevation_resolution** : :obj:`~float`
+
+        **max_elevation** : :obj:`~float`
+
 
     :Returns:
 

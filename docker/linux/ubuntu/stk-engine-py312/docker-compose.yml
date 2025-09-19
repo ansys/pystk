@@ -2,7 +2,7 @@ services:
   stk-python3.12:
     image: ansys/stk-12.10:dev-ubuntu22.04-python3.12
     container_name: stk-python3.12
-    build: 
+    build:
       context: .
       args:
         baseImage: ansys/stk-12.10:dev-ubuntu22.04

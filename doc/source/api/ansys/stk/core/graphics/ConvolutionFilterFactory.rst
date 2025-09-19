@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -56,7 +56,8 @@ Method detail
 
     :Parameters:
 
-    **kernel** : :obj:`~list`
+        **kernel** : :obj:`~list`
+
 
     :Returns:
 
@@ -69,8 +70,10 @@ Method detail
 
     :Parameters:
 
-    **kernel** : :obj:`~list`
-    **divisor** : :obj:`~float`
+        **kernel** : :obj:`~list`
+
+        **divisor** : :obj:`~float`
+
 
     :Returns:
 
@@ -83,9 +86,12 @@ Method detail
 
     :Parameters:
 
-    **kernel** : :obj:`~list`
-    **divisor** : :obj:`~float`
-    **offset** : :obj:`~float`
+        **kernel** : :obj:`~list`
+
+        **divisor** : :obj:`~float`
+
+        **offset** : :obj:`~float`
+
 
     :Returns:
 

@@ -15,15 +15,15 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.GeospatialImageGlobeOverlay.use_transparent_color`
-              - Get or set whether transparent color should be used.
             * - :py:attr:`~ansys.stk.core.graphics.GeospatialImageGlobeOverlay.transparent_color`
               - Get or set the color that will become transparent.
+            * - :py:attr:`~ansys.stk.core.graphics.GeospatialImageGlobeOverlay.use_transparent_color`
+              - Get or set whether transparent color should be used.
 
 
 
@@ -38,16 +38,16 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: transparent_color
+    :canonical: ansys.stk.core.graphics.GeospatialImageGlobeOverlay.transparent_color
+    :type: Color
+
+    Get or set the color that will become transparent.
+
 .. py:property:: use_transparent_color
     :canonical: ansys.stk.core.graphics.GeospatialImageGlobeOverlay.use_transparent_color
     :type: bool
 
     Get or set whether transparent color should be used.
-
-.. py:property:: transparent_color
-    :canonical: ansys.stk.core.graphics.GeospatialImageGlobeOverlay.transparent_color
-    :type: agcolor.Color
-
-    Get or set the color that will become transparent.
 
 

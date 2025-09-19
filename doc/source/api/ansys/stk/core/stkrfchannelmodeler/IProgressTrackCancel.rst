@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Update progress.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -60,8 +60,10 @@ Method detail
 
     :Parameters:
 
-    **progress** : :obj:`~int`
-    **message** : :obj:`~str`
+        **progress** : :obj:`~int`
+
+        **message** : :obj:`~str`
+
 
     :Returns:
 

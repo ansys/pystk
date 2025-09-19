@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,19 +22,19 @@ Overview
               - Given an index, returns a string in the collection at the given position.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.count`
-              - Return a number of strings in the message.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum`
               - Return a string enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages`
-              - Return an array of strings in the message.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.count`
+              - Return a number of strings in the message.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.is_failure`
               - Determine if the message represents a failure notification.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages`
+              - Return an array of strings in the message.
 
 
 
@@ -49,23 +49,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.count
-    :type: int
-
-    Return a number of strings in the message.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum
     :type: EnumeratorProxy
 
     Return a string enumeration.
 
-.. py:property:: messages
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages
-    :type: list
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.count
+    :type: int
 
-    Return an array of strings in the message.
+    Return a number of strings in the message.
 
 .. py:property:: is_failure
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.is_failure
@@ -73,9 +67,16 @@ Property detail
 
     Determine if the message represents a failure notification.
 
+.. py:property:: messages
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages
+    :type: list
+
+    Return an array of strings in the message.
+
 
 Method detail
 -------------
+
 
 
 .. py:method:: item(self, index: int) -> str
@@ -85,12 +86,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~str`
-
 
 
 

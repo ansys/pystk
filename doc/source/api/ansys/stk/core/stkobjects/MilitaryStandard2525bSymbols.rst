@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Generate a 2525b symbol. Image will be saved to the file specified by SaveImageFilePath.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -61,10 +61,6 @@ Property detail
 Method detail
 -------------
 
-
-
-
-
 .. py:method:: create_symbol(self, symbol_id: str, save_image_file_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.create_symbol
 
@@ -72,10 +68,16 @@ Method detail
 
     :Parameters:
 
-    **symbol_id** : :obj:`~str`
-    **save_image_file_path** : :obj:`~str`
+        **symbol_id** : :obj:`~str`
+
+        **save_image_file_path** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~None`
+
+
+
+
 

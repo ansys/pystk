@@ -2,7 +2,7 @@ services:
   stk-pybase:
     image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-pybase
     container_name: stk-pybase
-    build: 
+    build:
       context: .
       args:
         baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019

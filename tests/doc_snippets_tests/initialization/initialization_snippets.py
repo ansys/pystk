@@ -57,7 +57,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="StartSTKEngineWithGfx",
         description="Initialize STK Engine with graphics and get a reference to the STK object root",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def StartSTKEngineWithGfxSnippet(self):
         # Initialize STK Engine with graphics in the current process
@@ -76,7 +76,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="StartSTKEngineSnippetWithoutGfx",
         description="Initialize STK Engine in no graphics mode and get a reference to the STK object root",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def StartSTKEngineWithoutGfxSnippet(self):
         # Initialize STK Engine without graphics in the current process
@@ -96,7 +96,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="AttachSTK",
         description="Get a reference to the STK object root using a running STK desktop application instance",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def AttachSTKSnippet(self):
         # Get reference to running STK Desktop instance
@@ -115,7 +115,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="CreateSTKNew",
         description="Start STK Desktop and get a reference to the STK object root",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def CreateSTKNewSnippet(self):
         # Start new instance of STK Desktop
@@ -138,7 +138,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="CreateSTKRuntimeNewSnippet",
         description="Start STK Runtime and get a reference to the STK object root",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def CreateSTKRuntimeNewSnippet(self):
         # Start new instance of STK Runtime
@@ -157,7 +157,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
         name="AttachSTKRuntimeSnippet",
         description="Attach to an already running STK Runtime instance and get a reference to the STK object root",
         category="Initialization",
-        eid="stkobjects~StkObjectRoot",
+        eid="stkobjects~STKObjectRoot",
     )
     def AttachSTKRuntimeSnippet(self):
         # Attach to already running instance of STK Runtime

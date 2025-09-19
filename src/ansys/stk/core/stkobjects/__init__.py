@@ -22,382 +22,492 @@
 
 """The following is an overview of the classes, interfaces and enumerations of the STK Object Model."""
 
-__all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedTimeIntervals", "AccessConstraint", "AccessConstraintAnalysisWorkbench", 
-"AccessConstraintAnalysisWorkbenchCollection", "AccessConstraintAnalysisWorkbenchComponent", "AccessConstraintAngle", "AccessConstraintBackground", 
-"AccessConstraintCentralBodyObstruction", "AccessConstraintCollection", "AccessConstraintCondition", "AccessConstraintExclZonesCollection", 
-"AccessConstraintGrazingAltitude", "AccessConstraintGroundTrack", "AccessConstraintIntervals", "AccessConstraintLatitudeLongitudeZone", 
-"AccessConstraintMinMaxBase", "AccessConstraintObjExAngle", "AccessConstraintPluginMinMax", "AccessConstraintThirdBody", 
-"AccessConstraintTimeSlipRange", "AccessConstraintType", "AccessEventDetection", "AccessGraphics", "AccessSampling", "AccessTargetTime", 
-"AccessTargetTimesCollection", "AccessTimePeriod", "AccessTimeType", "ActionType", "AdditionalGainLoss", "AdditionalGainLossCollection", 
-"AdvCAT", "AdvCATAdvancedEllipsoid", "AdvCATAdvancedSettings", "AdvCATAvailableObjectCollection", "AdvCATChosenObject", 
-"AdvCATChosenObjectCollection", "AdvCATConjunctionType", "AdvCATEllipsoidClassType", "AdvCATGraphics3D", "AdvCATPreFilters", 
-"AdvCATSecondaryEllipsoidsVisibilityType", "Aircraft", "AircraftExportTools", "AircraftGraphics", "AircraftGraphics3D", 
-"AircraftWGS84WarningType", "AltitudeReferenceType", "AnalysisWorkbenchAccessConstraintType", "AnimationActionType", "AnimationDirectionType", 
-"AnimationEndTimeMode", "AnimationOptionType", "Antenna", "AntennaBeam", "AntennaBeamCollection", "AntennaBeamSelectionStrategy", 
-"AntennaBeamSelectionStrategyAggregate", "AntennaBeamSelectionStrategyMaximumGain", "AntennaBeamSelectionStrategyMinimumBoresightAngle", 
-"AntennaBeamSelectionStrategyScriptPlugin", "AntennaBeamTransmit", "AntennaContourEIRP", "AntennaContourFluxDensity", "AntennaContourGain", 
-"AntennaContourGraphics", "AntennaContourLevel", "AntennaContourLevelCollection", "AntennaContourRIP", "AntennaContourSpectralFluxDensity", 
-"AntennaContourType", "AntennaControl", "AntennaControlReferenceType", "AntennaGraphics", "AntennaGraphics3D", "AntennaGraphicsCoordinateSystem", 
-"AntennaModel", "AntennaModelANSYSffdFormat", "AntennaModelApertureCircularBessel", "AntennaModelApertureCircularBesselEnvelope", 
-"AntennaModelApertureCircularCosine", "AntennaModelApertureCircularCosinePedestal", "AntennaModelApertureCircularCosineSquared", 
-"AntennaModelApertureCircularCosineSquaredPedestal", "AntennaModelApertureCircularSincIntegerPower", "AntennaModelApertureCircularSincRealPower", 
-"AntennaModelApertureCircularUniform", "AntennaModelApertureRectangularCosine", "AntennaModelApertureRectangularCosinePedestal", 
-"AntennaModelApertureRectangularCosineSquared", "AntennaModelApertureRectangularCosineSquaredPedestal", "AntennaModelApertureRectangularSincIntegerPower", 
-"AntennaModelApertureRectangularSincRealPower", "AntennaModelApertureRectangularUniform", "AntennaModelCosecantSquared", 
-"AntennaModelCosecantSquaredSidelobeType", "AntennaModelDipole", "AntennaModelElevationAzimuthCuts", "AntennaModelExternal", 
-"AntennaModelGIMROC", "AntennaModelGPSFRPA", "AntennaModelGPSGlobal", "AntennaModelGaussian", "AntennaModelHelix", "AntennaModelHemispherical", 
-"AntennaModelHfssEepArray", "AntennaModelIEEE1979", "AntennaModelITUBO1213CoPolar", "AntennaModelITUBO1213CrossPolar", "AntennaModelITUF1245", 
-"AntennaModelITUS1528R12Circular", "AntennaModelITUS1528R12Rectangular", "AntennaModelITUS1528R13", "AntennaModelITUS465", 
-"AntennaModelITUS580", "AntennaModelITUS672Circular", "AntennaModelITUS672Rectangular", "AntennaModelITUS731", "AntennaModelInputType", 
-"AntennaModelIntelSat", "AntennaModelIsotropic", "AntennaModelOpticalGaussian", "AntennaModelOpticalSimple", "AntennaModelParabolic", 
-"AntennaModelPencilBeam", "AntennaModelPhasedArray", "AntennaModelRectangularPattern", "AntennaModelRemcomUanFormat", "AntennaModelScriptPlugin", 
-"AntennaModelSquareHorn", "AntennaModelTicraGRASPFormat", "AntennaModelType", "AntennaNoiseTemperature", "AntennaSystem", 
-"AntennaVolumeGraphics", "AntennaVolumeLevel", "AntennaVolumeLevelCollection", "AreaTarget", "AreaTargetCommonTasks", "AreaTargetGraphics", 
-"AreaTargetGraphics3D", "AreaType", "AreaTypeEllipse", "AreaTypePattern", "AreaTypePatternCollection", "Atmosphere", "AtmosphericAbsorptionModel", 
-"AtmosphericAbsorptionModelCOMPlugin", "AtmosphericAbsorptionModelGraphics3DACAP", "AtmosphericAbsorptionModelITURP676Version13", 
-"AtmosphericAbsorptionModelITURP676Version9", "AtmosphericAbsorptionModelScriptPlugin", "AtmosphericAbsorptionModelSimpleSatcom", 
-"AtmosphericAbsorptionModelTIREM320", "AtmosphericAbsorptionModelTIREM331", "AtmosphericAbsorptionModelTIREM550", "AtmosphericAbsorptionModelType", 
-"AtmosphericDensityModel", "AtmosphericTurbulenceModel", "AtmosphericTurbulenceModelConstant", "AtmosphericTurbulenceModelHufnagelValley", 
-"AtmosphericTurbulenceModelType", "AttitudeCoordinateAxes", "AttitudeInclude", "AttitudeProfile", "AttitudeProfileAlignedAndConstrained", 
-"AttitudeProfileAlignmentOffset", "AttitudeProfileAviator", "AttitudeProfileConstraintOffset", "AttitudeProfileCoordinatedTurn", 
-"AttitudeProfileFixedInAxes", "AttitudeProfileGPS", "AttitudeProfileInertial", "AttitudeProfilePrecessingSpin", "AttitudeProfileSpinAboutSettings", 
-"AttitudeProfileSpinning", "AttitudeProfileYawToNadir", "AttitudeScheduleTimesCollection", "AttitudeScheduleTimesElement", 
-"AttitudeStandardBasic", "AttitudeStandardOrbit", "AttitudeStandardRoute", "AttitudeStandardTrajectory", "AttitudeStandardType", 
-"AttitudeTorque", "AvailableFeatures", "AxisOffset", "AzElMaskType", "BasicAzElMask", "BeamSelectionStrategyType", "Beamformer", 
-"BeamformerASCIIFile", "BeamformerBlackmanHarris", "BeamformerCosine", "BeamformerCosineX", "BeamformerCustomTaperFile", 
-"BeamformerDolphChebyshev", "BeamformerHamming", "BeamformerHann", "BeamformerMVDR", "BeamformerRaisedCosine", "BeamformerRaisedCosineSquared", 
-"BeamformerScript", "BeamformerTaylor", "BeamformerType", "BeamformerUniform", "BeerBouguerLambertLawLayer", "BeerBouguerLambertLawLayerCollection", 
-"BorderWallUpperLowerEdgeAltitudeReference", "BoresightType", "BuildHeightReferenceMethod", "BuildingHeightUnit", "CCSDSDateFormat", 
-"CCSDSEphemerisFormatType", "CCSDSReferenceFrame", "CCSDSTimeSystem", "CentralBody", "CentralBodyCollection", "CentralBodyEllipsoid", 
-"CentralBodyTerrainCollection", "CentralBodyTerrainCollectionElement", "Chain", "ChainConnection", "ChainConnectionCollection", 
-"ChainConstellationConstraintsMode", "ChainConstraints", "ChainCoverageAssetMode", "ChainGraphics", "ChainGraphics2DAnimation", 
-"ChainGraphics2DStatic", "ChainGraphics3D", "ChainOptimalStrandCalculationScalarMetricType", "ChainOptimalStrandCompareStrandsType", 
-"ChainOptimalStrandLinkCompareType", "ChainOptimalStrandMetricType", "ChainOptimalStrandOpts", "ChainParentPlatformRestriction", 
-"ChainTimePeriod", "ChainTimePeriodType", "ChainUserSpecifiedTimePeriod", "CircularApertureInputType", "ClassicalLocation", 
-"ClassicalLocationArgumentOfLatitude", "ClassicalLocationEccentricAnomaly", "ClassicalLocationMeanAnomaly", "ClassicalLocationTimePastAscendingNode", 
-"ClassicalLocationTimePastPerigee", "ClassicalLocationTrueAnomaly", "ClassicalOrientation", "ClassicalSizeShape", "ClassicalSizeShapeAltitude", 
-"ClassicalSizeShapeMeanMotion", "ClassicalSizeShapePeriod", "ClassicalSizeShapeRadius", "ClassicalSizeShapeSemimajorAxis", 
-"CloudsAndFogFadingLossModel", "CloudsAndFogFadingLossModelP840Version6", "CloudsAndFogFadingLossModelP840Version7", "CloudsAndFogFadingLossModelType", 
-"CloudsAndFogLiquidWaterChoiceType", "CommRadCartesianLocation", "CommRadComplexNumber", "CommRadComplexNumberCollection", 
-"CommRadPluginConfiguration", "CommSystem", "CommSystemAccessEventDetection", "CommSystemAccessEventDetectionSamplesOnly", 
-"CommSystemAccessEventDetectionSubsample", "CommSystemAccessEventDetectionType", "CommSystemAccessOptions", "CommSystemAccessSamplingMethod", 
-"CommSystemAccessSamplingMethodAdaptive", "CommSystemAccessSamplingMethodFixed", "CommSystemAccessSamplingMethodType", "CommSystemConstrainingRole", 
-"CommSystemGraphics", "CommSystemGraphics3D", "CommSystemLinkSelectionCriteria", "CommSystemLinkSelectionCriteriaMaximumElevation", 
-"CommSystemLinkSelectionCriteriaMinimumRange", "CommSystemLinkSelectionCriteriaScriptPlugin", "CommSystemLinkSelectionCriteriaType", 
-"CommSystemReferenceBandwidth", "CommSystemSaveMode", "Component", "ComponentAttrLinkEmbedControl", "ComponentDirectory", 
-"ComponentInfo", "ComponentInfoCollection", "ComponentLinkEmbedControlReferenceType", "Constants", "Constellation", "ConstellationConstraintObjectRestriction", 
-"ConstellationConstraintRestriction", "ConstellationConstraintRestrictionType", "ConstellationConstraints", "ConstellationFromToParentConstraint", 
-"ConstellationGraphics", "ConstellationRouting", "ConstraintBackground", "ConstraintGroundTrack", "ConstraintLighting", 
-"Coverage3dDrawAtAltitudeMode", "CoverageAdvancedSettings", "CoverageAltitudeMethod", "CoverageAreaTargetsCollection", "CoverageAssetGrouping", 
-"CoverageAssetListCollection", "CoverageAssetListElement", "CoverageAssetStatus", "CoverageBounds", "CoverageBoundsCustomBoundary", 
-"CoverageBoundsCustomRegions", "CoverageBoundsGlobal", "CoverageBoundsLatitude", "CoverageBoundsLatitudeLine", "CoverageBoundsLatitudeLongitudeRegion", 
-"CoverageBoundsLongitudeLine", "CoverageCustomRegionAlgorithm", "CoverageDataRetention", "CoverageDefinition", "CoverageEllipse", 
-"CoverageEllipseCollection", "CoverageGraphics", "CoverageGraphics2DAnimation", "CoverageGraphics2DProgress", "CoverageGraphics2DStatic", 
-"CoverageGraphics3D", "CoverageGraphics3DAttributes", "CoverageGrid", "CoverageGridClass", "CoverageGridInspector", "CoverageGridPointSelection", 
-"CoverageGroundAltitudeMethod", "CoverageInterval", "CoverageLatLonBox", "CoverageLatLonBoxCollection", "CoveragePointAltitudeMethod", 
-"CoveragePointDefinition", "CoveragePointFileListCollection", "CoveragePointLocationMethod", "CoverageRegionAccessAccelerationType", 
-"CoverageRegionFilesCollection", "CoverageResolution", "CoverageResolutionArea", "CoverageResolutionDistance", "CoverageResolutionLatLon", 
-"CoverageSatisfactionType", "CoverageSelectedGridPoint", "CustomPropagationModel", "DataProviderCollection", "DataProviderElement", 
-"DataProviderElementType", "DataProviderElements", "DataProviderFixed", "DataProviderGroup", "DataProviderInterval", "DataProviderResult", 
-"DataProviderResultCategory", "DataProviderResultDataSet", "DataProviderResultDataSetCollection", "DataProviderResultInterval", 
-"DataProviderResultIntervalCollection", "DataProviderResultStatisticResult", "DataProviderResultStatistics", "DataProviderResultSubSection", 
-"DataProviderResultSubSectionCollection", "DataProviderResultTextMessage", "DataProviderResultTimeArrayElements", "DataProviderResultTimeVaryingExtremumResult", 
-"DataProviderTimeVarying", "DataProviderType", "DataProviders", "DataSaveMode", "DelaunayG", "DelaunayGOverSQRTmu", "DelaunayGType", 
-"DelaunayH", "DelaunayHOverSQRTmu", "DelaunayHType", "DelaunayL", "DelaunayLOverSQRTmu", "DelaunayLType", "DemodulatorModel", 
-"DemodulatorModel16PSK", "DemodulatorModel8PSK", "DemodulatorModelBOC", "DemodulatorModelBPSK", "DemodulatorModelDPSK", 
-"DemodulatorModelExternal", "DemodulatorModelExternalSource", "DemodulatorModelFSK", "DemodulatorModelMSK", "DemodulatorModelNFSK", 
-"DemodulatorModelNarrowbandUniform", "DemodulatorModelOQPSK", "DemodulatorModelPulsedSignal", "DemodulatorModelQAM1024", 
-"DemodulatorModelQAM128", "DemodulatorModelQAM16", "DemodulatorModelQAM256", "DemodulatorModelQAM32", "DemodulatorModelQAM64", 
-"DemodulatorModelQPSK", "DemodulatorModelScriptPlugin", "DemodulatorModelType", "DemodulatorModelWidebandGaussian", "DemodulatorModelWidebandUniform", 
-"DeticPositionType", "DeticSizeAltitude", "DeticSizeRadius", "DirectionProvider", "DirectionProviderASCIIFile", "DirectionProviderLink", 
-"DirectionProviderObject", "DirectionProviderScript", "DirectionProviderType", "DisplayTimesDuringAccess", "DisplayTimesTimeComponent", 
-"DisplayTimesType", "DistanceOnSphere", "DragModel", "EOIR", "EOIRFlightType", "EOIRMaterialElement", "EOIRMaterialElementCollection", 
-"EOIRShape", "EOIRShapeBox", "EOIRShapeCollection", "EOIRShapeCone", "EOIRShapeCoupler", "EOIRShapeCustomMesh", "EOIRShapeCylinder", 
-"EOIRShapeGEOComm", "EOIRShapeLEOComm", "EOIRShapeLEOImaging", "EOIRShapeMaterialSpecificationType", "EOIRShapeNone", "EOIRShapeObject", 
-"EOIRShapePlate", "EOIRShapeSphere", "EOIRShapeTargetSignature", "EOIRShapeType", "EOIRStage", "EOIRStagePlume", "EOIRThermalModelType", 
-"Element", "ElementCollection", "ElementConfiguration", "ElementConfigurationASCIIFile", "ElementConfigurationCircular", 
-"ElementConfigurationHexagon", "ElementConfigurationHfssEepFile", "ElementConfigurationLinear", "ElementConfigurationPolygon", 
-"ElementConfigurationType", "EphemExportToolFileFormat", "EphemSourceType", "EphemerisCoordinateSystemType", "EphemerisCovarianceType", 
-"EquinoctialFormulation", "EquinoctialSizeShape", "EquinoctialSizeShapeMeanMotion", "EquinoctialSizeShapeSemimajorAxis", 
-"ErrorCode", "EventDetection", "EventDetectionNoSubSampling", "EventDetectionSubSampling", "ExportToolStepSize", "ExportToolStepSizeType", 
-"ExportToolTimePeriod", "ExportToolTimePeriodType", "ExportToolVersionFormat", "ExternalEphemerisFormatType", "ExternalFileMessageLevelType", 
-"Facility", "FacilityGraphics", "FacilityGraphics3D", "FigureOfMerit", "FigureOfMeritAcrossAssets", "FigureOfMeritAssetListCollection", 
-"FigureOfMeritAssetListElement", "FigureOfMeritCompute", "FigureOfMeritConstraintName", "FigureOfMeritDefinitionAccessConstraint", 
-"FigureOfMeritDefinitionAccessSeparation", "FigureOfMeritDefinitionAgeOfData", "FigureOfMeritDefinitionCompute", "FigureOfMeritDefinitionDataBest4", 
-"FigureOfMeritDefinitionDataBestN", "FigureOfMeritDefinitionDataMinimumMaximum", "FigureOfMeritDefinitionDataMinimumNumberOfAssets", 
-"FigureOfMeritDefinitionDataPercentLevel", "FigureOfMeritDefinitionDilutionOfPrecision", "FigureOfMeritDefinitionNavigationAccuracy", 
-"FigureOfMeritDefinitionResponseTime", "FigureOfMeritDefinitionRevisitTime", "FigureOfMeritDefinitionScalarCalculation", 
-"FigureOfMeritDefinitionSimpleCoverage", "FigureOfMeritDefinitionSystemAgeOfData", "FigureOfMeritDefinitionSystemResponseTime", 
-"FigureOfMeritDefinitionTimeAverageGap", "FigureOfMeritDefinitionType", "FigureOfMeritEndGapOption", "FigureOfMeritGraphics", 
-"FigureOfMeritGraphics2DAccumulation", "FigureOfMeritGraphics2DAttributes", "FigureOfMeritGraphics2DAttributesAnimation", 
-"FigureOfMeritGraphics2DColorMethod", "FigureOfMeritGraphics2DColorOptions", "FigureOfMeritGraphics2DContourType", "FigureOfMeritGraphics2DContours", 
-"FigureOfMeritGraphics2DContoursAnimation", "FigureOfMeritGraphics2DDirection", "FigureOfMeritGraphics2DFloatingPointFormat", 
-"FigureOfMeritGraphics2DLegend", "FigureOfMeritGraphics2DLegendWindow", "FigureOfMeritGraphics2DLevelAttributesCollection", 
-"FigureOfMeritGraphics2DLevelAttributesElement", "FigureOfMeritGraphics2DPositionOnMap", "FigureOfMeritGraphics2DRampColor", 
-"FigureOfMeritGraphics2DRangeColorOptions", "FigureOfMeritGraphics2DTextOptions", "FigureOfMeritGraphics3D", "FigureOfMeritGraphics3DAttributes", 
-"FigureOfMeritGraphics3DLegendWindow", "FigureOfMeritGridInspector", "FigureOfMeritInvalidValueActionType", "FigureOfMeritMethod", 
-"FigureOfMeritNavigationAccuracyMethod", "FigureOfMeritNavigationAccuracyMethodConstant", "FigureOfMeritNavigationAccuracyMethodElevationAngle", 
-"FigureOfMeritNavigationComputeType", "FigureOfMeritSatisfaction", "FigureOfMeritSatisfactionType", "FigureOfMeritUncertainties", 
-"FrequencySpecificationType", "GPSAttitudeModelType", "GPSReferenceWeek", "GeodeticSize", "GeometricElementType", "Graphics2DRangeContours", 
-"Graphics3DACAPCoefficientDataType", "Graphics3DACAPSolarActivityConfigurationType", "Graphics3DArticulationFile", "Graphics3DAzElMask", 
-"Graphics3DBorderWall", "Graphics3DDataDisplayCollection", "Graphics3DDataDisplayElement", "Graphics3DDetailThreshold", 
-"Graphics3DFontSize", "Graphics3DFormat", "Graphics3DLabelSwapDistance", "Graphics3DLabelSwapDistanceType", "Graphics3DLocation", 
-"Graphics3DMarker", "Graphics3DMarkerFile", "Graphics3DMarkerOrientation", "Graphics3DMarkerOriginType", "Graphics3DMarkerShape", 
-"Graphics3DModelArticulation", "Graphics3DModelCollection", "Graphics3DModelFile", "Graphics3DModelItem", "Graphics3DModelPointing", 
-"Graphics3DModelTransformation", "Graphics3DModelTransformationCollection", "Graphics3DModelglTFImageBased", "Graphics3DOffset", 
-"Graphics3DOffsetAttachment", "Graphics3DOffsetLabel", "Graphics3DOffsetRotate", "Graphics3DOffsetTransformation", "Graphics3DPointableElementsCollection", 
-"Graphics3DPointableElementsElement", "Graphics3DRangeContours", "Graphics3DReferenceAngle", "Graphics3DReferenceAxes", 
-"Graphics3DReferencePlane", "Graphics3DReferencePoint", "Graphics3DReferenceVector", "Graphics3DReferenceVectorGeometryToolComponentCollection", 
-"Graphics3DVaporTrail", "Graphics3DVector", "Graphics3DXOrigin", "Graphics3DYOrigin", "GroundVehicle", "GroundVehicleExportTools", 
-"GroundVehicleGraphics", "GroundVehicleGraphics3D", "HFSSFarFieldDataGainType", "HelpContextIdentifierType", "IAccessAdvanced", 
-"IAccessConstraint", "IAccessConstraintMinMaxBase", "IAccessInterval", "IAnimation", "IAntennaBeam", "IAntennaBeamSelectionStrategy", 
-"IAntennaContour", "IAntennaModel", "IAntennaModelOpticalSimple", "IAreaTypeData", "IAtmosphericAbsorptionModel", "IAtmosphericAbsorptionModelITURP676", 
-"IAtmosphericAbsorptionModelTIREM", "IAtmosphericTurbulenceModel", "IAzElMaskData", "IBeamformer", "ICelestialBodyInformation", 
-"ICelestialBodyInformationCollection", "IChainTimePeriod", "IClassicalLocation", "IClassicalSizeShape", "ICloneable", "ICloudsAndFogFadingLossModel", 
-"ICommSystemAccessEventDetection", "ICommSystemAccessSamplingMethod", "ICommSystemLinkSelectionCriteria", "IComponentInfo", 
-"IComponentLinkEmbedControl", "IConstellationConstraintRestriction", "ICoverageBounds", "ICoverageResolution", "IDataProvider", 
-"IDataProviderInfo", "IDelaunayActionVariable", "IDemodulatorModel", "IDirectionProvider", "IDisplayDistance", "IDisplayTime", 
-"IDisplayTimesData", "IEOIR", "IEOIRShapeObject", "IElementConfiguration", "IElementConfigurationPolygon", "IEventDetectionStrategy", 
-"IFigureOfMeritDefinition", "IFigureOfMeritDefinitionCompute", "IFigureOfMeritDefinitionData", "IFigureOfMeritDefinitionDilutionOfPrecision", 
-"IFigureOfMeritDefinitionResponseTime", "IFigureOfMeritGraphics2DAttributes", "IFigureOfMeritGraphics2DContours", "IFigureOfMeritNavigationAccuracyMethod", 
-"IFlightPathAngle", "IGeodeticSize", "IGraphics3DMarkerData", "IGraphics3DModel", "IGraphics3DModelData", "IGraphics3DReferenceAnalysisWorkbenchComponent", 
-"IGreatArcGraphics", "IGreatArcGraphics3D", "IGreatArcVehicle", "IIonosphericFadingLossModel", "ILaserAtmosphericLossModel", 
-"ILaserPropagationChannel", "ILaserTroposphericScintillationLossModel", "ILatitudeLongitudeAltitudePosition", "ILifetimeInformation", 
-"IModulatorModel", "IModulatorModelScriptPlugin", "IOrbitDisplayData", "IOrientationAscNode", "IPlatformRFEnvironment", 
-"IPointingStrategy", "IPolarization", "IPolarizationCrossPolLeakage", "IPolarizationElliptical", "IPolarizationHorizontal", 
-"IPolarizationLinear", "IPolarizationVertical", "IPositionSourceData", "IPropagator", "IPropagatorSGP4LoadData", "IProvideSpatialInfo", 
-"IRFFilterModel", "IRadarActivity", "IRadarClutterGeometryModel", "IRadarClutterGeometryModelPlugin", "IRadarClutterMap", 
-"IRadarClutterMapInheritable", "IRadarClutterMapModel", "IRadarClutterMapModelConstantCoefficient", "IRadarClutterMapModelPlugin", 
-"IRadarContinuousWaveAnalysisMode", "IRadarCrossSectionComputeStrategy", "IRadarModeBistaticReceiver", "IRadarModeBistaticTransmitter", 
-"IRadarModeMonostatic", "IRadarModel", "IRadarProbabilityOfDetection", "IRadarProbabilityOfDetectionCFAR", "IRadarPulseIntegration", 
-"IRadarSTCAttenuation", "IRadarSTCAttenuationMap", "IRadarWaveformSearchTrack", "IRainLossModel", "IReTransmitterModel", 
-"IReceiverModel", "IReceiverModelScriptPlugin", "IRefractionModelBase", "ISRPModelBase", "ISamplingMethodStrategy", "IScatteringPointModel", 
-"IScatteringPointProvider", "ISensorPattern", "ISensorPointing", "ISensorPointingTargetedBoresight", "ISensorProjectionDisplayDistance", 
-"ISolarActivityConfiguration", "IStkObject", "IStkObjectCollection", "IStkObjectElementCollection", "ITargetSelectionMethod", 
-"ITerrainNormData", "ITimePeriod", "ITransmitterModel", "ITransmitterModelScriptPlugin", "ITroposphericScintillationFadingLossModel", 
-"IUrbanTerrestrialLossModel", "IVehicleAttitude", "IVehicleAttitudeProfile", "IVehicleAttitudeSlewBase", "IVehicleAttitudeStandard", 
-"IVehicleBreakAngle", "IVehicleCoordinateAxes", "IVehicleGPSAlmanacProperties", "IVehicleGraphics2DAttributes", "IVehicleGraphics2DAttributesBasic", 
-"IVehicleGraphics2DAttributesDisplayState", "IVehicleGraphics2DElevation", "IVehicleGraphics2DPass", "IVehicleGraphics2DTimeComponentsElement", 
-"IVehicleGraphics2DTimeEventType", "IVehicleGraphics3DAttributes", "IVehicleGraphics3DBPlaneTargetPointPosition", "IVehicleGraphics3DProximity", 
-"IVehicleGraphics3DProximityAreaObject", "IVehicleGraphics3DSigmaScale", "IVehicleGraphics3DSystemsElementBase", "IVehicleGraphics3DTickData", 
-"IVehicleHPOPDragModel", "IVehicleImpact", "IVehicleImpactLocation", "IVehicleLaunch", "IVehicleLaunchControl", "IVehicleLeadTrailData", 
-"IVehicleLeadTrailDataFraction", "IVehicleLeadTrailDataTime", "IVehiclePassNumbering", "IVehiclePointing", "IVehicleSolarFluxGeoMagnitude", 
-"IVehicleWaypointAltitudeReference", "IVolumetricGridDefinition", "IWaveform", "IWaveformSelectionStrategy", "IntegratorStepSizeControl", 
-"IntegratorTimeRegularization", "IntersectionType", "IonosphericFadingLossModel", "IonosphericFadingLossModelP531Version13", 
-"IonosphericFadingLossModelType", "IvClockHost", "IvTimeSense", "KeyValueCollection", "LOPAtmosphericDensityModel", "LabelNote", 
-"LabelNoteCollection", "LaserAtmosphericLossModel", "LaserAtmosphericLossModelBeerBouguerLambertLaw", "LaserEnvironment", 
-"LaserPropagationLossModelType", "LaserPropagationLossModels", "LaserTroposphericScintillationLossModel", "LaserTroposphericScintillationLossModelITURP1814", 
-"LaserTroposphericScintillationLossModelType", "LatitudeLongitudeAltitudeCentric", "LatitudeLongitudeAltitudeDetic", "LatitudeLongitudeAltitudePosition", 
-"LatticeType", "LaunchVehicle", "LaunchVehicleControlFixedApogeeAltitude", "LaunchVehicleControlFixedDeltaV", "LaunchVehicleControlFixedDeltaVMinimumEccentricity", 
-"LaunchVehicleControlFixedTimeOfFlight", "LaunchVehicleExportTools", "LaunchVehicleGraphics", "LaunchVehicleGraphics3D", 
-"LaunchVehicleInitialState", "LaunchVehicleLocationCentric", "LaunchVehicleLocationDetic", "LeadTrailData", "LevelAttribute", 
-"LevelAttributeCollection", "LightingObstructionModelType", "LimitsExceededBehaviorType", "LineTarget", "LineTargetGraphics", 
-"LineTargetGraphics3D", "LineTargetPoint", "LineTargetPointCollection", "LineWidth", "LinkMargin", "LinkMarginType", "LinkToObject", 
-"LoadMethod", "LocationVectorGeometryToolPoint", "LookAheadPropagator", "LowAltitudeAtmosphericDensityModel", "MODTRANLookupTablePropagationModel", 
-"MODTRANPropagationModel", "MTO", "MTOAnalysis", "MTOAnalysisFieldOfView", "MTOAnalysisPosition", "MTOAnalysisRange", "MTOAnalysisVisibility", 
-"MTODefaultGraphics2DTrack", "MTODefaultGraphics3DTrack", "MTODefaultTrack", "MTOEntirety", "MTOGlobalTrackOptions", "MTOGraphics", 
-"MTOGraphics2DFadeTimes", "MTOGraphics2DGlobalTrackOptions", "MTOGraphics2DLeadTrailTimes", "MTOGraphics2DLine", "MTOGraphics2DMarker", 
-"MTOGraphics2DTrack", "MTOGraphics2DTrackCollection", "MTOGraphics3D", "MTOGraphics3DDropLines", "MTOGraphics3DGlobalTrackOptions", 
-"MTOGraphics3DMarker", "MTOGraphics3DModel", "MTOGraphics3DModelArticulation", "MTOGraphics3DPoint", "MTOGraphics3DSwapDistances", 
-"MTOGraphics3DTrack", "MTOGraphics3DTrackCollection", "MTOInputDataType", "MTOObjectInterval", "MTORangeMode", "MTOTrack", 
-"MTOTrackCollection", "MTOTrackEvaluationType", "MTOTrackPoint", "MTOTrackPointCollection", "MTOVisibilityMode", "MarkerShape3d", 
-"MarkerType", "MethodToComputeSunPosition", "MilitaryStandard2525bSymbols", "Missile", "MissileEOIR", "MissileExportTools", 
-"MissileGraphics", "MissileGraphics3D", "MixedSphericalFlightPathAngleHorizontal", "MixedSphericalFlightPathAngleType", 
-"MixedSphericalFlightPathAngleVertical", "ModelGltfReflectionMapType", "ModelType", "ModtranAerosolModelType", "ModtranCloudModelType", 
-"ModulatorModel", "ModulatorModel16PSK", "ModulatorModel8PSK", "ModulatorModelBOC", "ModulatorModelBPSK", "ModulatorModelDPSK", 
-"ModulatorModelExternal", "ModulatorModelExternalSource", "ModulatorModelFSK", "ModulatorModelMSK", "ModulatorModelNFSK", 
-"ModulatorModelNarrowbandUniform", "ModulatorModelOQPSK", "ModulatorModelPulsedSignal", "ModulatorModelQAM1024", "ModulatorModelQAM128", 
-"ModulatorModelQAM16", "ModulatorModelQAM256", "ModulatorModelQAM32", "ModulatorModelQAM64", "ModulatorModelQPSK", "ModulatorModelScriptPluginCustomPSD", 
-"ModulatorModelScriptPluginIdealPSD", "ModulatorModelType", "ModulatorModelWidebandGaussian", "ModulatorModelWidebandUniform", 
-"NoiseTemperatureComputeType", "NoteShowType", "NotificationFilterMask", "ObjectCoverage", "ObjectCoverageFigureOfMerit", 
-"ObjectLaserEnvironment", "ObjectLink", "ObjectLinkCollection", "ObjectRFEnvironment", "OceanTides", "OffsetFrameType", 
-"OnePointAccess", "OnePointAccessConstraint", "OnePointAccessConstraintCollection", "OnePointAccessResult", "OnePointAccessResultCollection", 
-"OnePointAccessStatus", "OnePointAccessSummary", "OrbitState", "OrbitStateCartesian", "OrbitStateClassical", "OrbitStateCoordinateSystem", 
-"OrbitStateDelaunay", "OrbitStateDetic", "OrbitStateEquinoctial", "OrbitStateMixedSpherical", "OrbitStateSpherical", "OrientationAscNode", 
-"OrientationLongitudeOfAscending", "OrientationRightAscensionOfAscendingNode", "PRFMode", "PassBreak", "PassBreakNumberingDateOfFirstPass", 
-"PassBreakNumberingFirstPassNumber", "PathCollection", "Place", "PlaceGraphics", "PlaceGraphics3D", "Planet", "PlanetCommonTasks", 
-"PlanetGraphics", "PlanetGraphics3D", "PlanetOrbitDisplayTime", "PlanetOrbitDisplayType", "PlanetPositionCentralBody", "PlanetPositionFile", 
-"PlanetPositionSourceType", "PlatformLaserEnvironment", "PointTargetGraphics3DModel", "PointingStrategy", "PointingStrategyFixed", 
-"PointingStrategySpinning", "PointingStrategyTargeted", "PointingStrategyType", "Polarization", "PolarizationElliptical", 
-"PolarizationHorizontal", "PolarizationLeftHandCircular", "PolarizationLinear", "PolarizationReferenceAxis", "PolarizationRightHandCircular", 
-"PolarizationType", "PolarizationVertical", "Preferences", "PreferencesConnect", "PreferencesPythonPlugins", "PreferencesVDF", 
-"Priority", "PriorityCollection", "ProgressBarEventArguments", "ProjectionHorizontalDatumType", "PropagationChannel", "Propagator11Parameters", 
-"Propagator11ParametersDescriptor", "Propagator11ParametersDescriptorCollection", "PropagatorAviator", "PropagatorBallistic", 
-"PropagatorDefinitionExportTool", "PropagatorDisplayCoordinateType", "PropagatorGPS", "PropagatorGreatArc", "PropagatorHPOP", 
-"PropagatorHPOPStaticForceModelSettings", "PropagatorHPOPThirdBodyGravityCollection", "PropagatorHPOPThirdBodyGravityElement", 
-"PropagatorJ2Perturbation", "PropagatorJ4Perturbation", "PropagatorLOP", "PropagatorLOPThirdBodyGravity", "PropagatorRealtime", 
-"PropagatorRealtimeCartesianPoints", "PropagatorRealtimeDeticPoints", "PropagatorRealtimeHeadingPitch", "PropagatorRealtimePointBuilder", 
-"PropagatorRealtimeUTMPoints", "PropagatorSGP4", "PropagatorSGP4AutoUpdate", "PropagatorSGP4AutoUpdateFileSource", "PropagatorSGP4AutoUpdateOnlineSource", 
-"PropagatorSGP4AutoUpdateProperties", "PropagatorSGP4CommonTasks", "PropagatorSGP4LoadFile", "PropagatorSGP4OnlineAutoLoad", 
-"PropagatorSGP4OnlineLoad", "PropagatorSGP4PropagatorSettings", "PropagatorSGP4Segment", "PropagatorSGP4SegmentCollection", 
-"PropagatorSGP4SwitchMethod", "PropagatorSP3", "PropagatorSP3File", "PropagatorSP3FileCollection", "PropagatorSPICE", "PropagatorSPICESegment", 
-"PropagatorSPICESegmentsCollection", "PropagatorSimpleAscent", "PropagatorStkExternal", "PropagatorTwoBody", "PropagatorType", 
-"PropagatorUserExternal", "PulseWidthMode", "RCSComputeStrategy", "RFEnvironment", "RFFilterModel", "RFFilterModelBessel", 
-"RFFilterModelButterworth", "RFFilterModelChebyshev", "RFFilterModelCosineWindow", "RFFilterModelElliptic", "RFFilterModelExternal", 
-"RFFilterModelFIR", "RFFilterModelFIRBoxCar", "RFFilterModelGaussianWindow", "RFFilterModelHammingWindow", "RFFilterModelIIR", 
-"RFFilterModelRCLowPass", "RFFilterModelRaisedCosine", "RFFilterModelRectangular", "RFFilterModelRootRaisedCosine", "RFFilterModelScriptPlugin", 
-"RFFilterModelSinc", "RFFilterModelSincEnvelopeSinc", "RFFilterModelType", "RFInterference", "Radar", "RadarAccessGraphics", 
-"RadarActivity", "RadarActivityAlwaysActive", "RadarActivityAlwaysInactive", "RadarActivityTimeComponentList", "RadarActivityTimeComponentListCollection", 
-"RadarActivityTimeComponentListElement", "RadarActivityTimeIntervalList", "RadarActivityTimeIntervalListCollection", "RadarActivityTimeIntervalListElement", 
-"RadarActivityType", "RadarAntennaBeam", "RadarAntennaBeamCollection", "RadarClutter", "RadarClutterGeometry", "RadarClutterGeometryModelType", 
-"RadarClutterMapModelType", "RadarContinuousWaveAnalysisMode", "RadarContinuousWaveAnalysisModeFixedTime", "RadarContinuousWaveAnalysisModeGoalSNR", 
-"RadarCrossSection", "RadarCrossSectionComputeStrategy", "RadarCrossSectionComputeStrategyAnsysCSVFile", "RadarCrossSectionComputeStrategyConstantValue", 
-"RadarCrossSectionComputeStrategyExternalFile", "RadarCrossSectionComputeStrategyPlugin", "RadarCrossSectionComputeStrategyScriptPlugin", 
-"RadarCrossSectionContourGraphicsPolarization", "RadarCrossSectionContourLevel", "RadarCrossSectionContourLevelCollection", 
-"RadarCrossSectionFrequencyBand", "RadarCrossSectionFrequencyBandCollection", "RadarCrossSectionGraphics", "RadarCrossSectionGraphics3D", 
-"RadarCrossSectionInheritable", "RadarCrossSectionModel", "RadarCrossSectionVolumeGraphics", "RadarCrossSectionVolumeLevel", 
-"RadarCrossSectionVolumeLevelCollection", "RadarDopplerClutterFilters", "RadarFrequencySpecificationType", "RadarGraphics", 
-"RadarGraphics3D", "RadarJamming", "RadarMode", "RadarModeBistaticReceiver", "RadarModeBistaticReceiverSAR", "RadarModeBistaticReceiverSearchTrack", 
-"RadarModeBistaticTransmitter", "RadarModeBistaticTransmitterSAR", "RadarModeBistaticTransmitterSearchTrack", "RadarModeMonostatic", 
-"RadarModeMonostaticSAR", "RadarModeMonostaticSearchTrack", "RadarModel", "RadarModelBistaticReceiver", "RadarModelBistaticTransmitter", 
-"RadarModelMonostatic", "RadarModelMultifunction", "RadarModelType", "RadarModulator", "RadarMultifunctionDetectionProcessing", 
-"RadarMultifunctionWaveformStrategySettings", "RadarMultipathGraphics", "RadarProbabilityOfDetection", "RadarProbabilityOfDetectionCFAR", 
-"RadarProbabilityOfDetectionCFARCellAveraging", "RadarProbabilityOfDetectionCFAROrderedStatistics", "RadarProbabilityOfDetectionNonCFAR", 
-"RadarProbabilityOfDetectionPlugin", "RadarProbabilityOfDetectionType", "RadarPulseIntegrationFixedNumberOfPulses", "RadarPulseIntegrationGoalSNR", 
-"RadarPulseIntegrationType", "RadarPulseIntegratorType", "RadarReceiver", "RadarSARPulseIntegrationAnalysisMode", "RadarSNRContourType", 
-"RadarSTCAttenuation", "RadarSTCAttenuationDecayFactor", "RadarSTCAttenuationDecaySlope", "RadarSTCAttenuationMapAzimuthRange", 
-"RadarSTCAttenuationMapElevationRange", "RadarSTCAttenuationMapRange", "RadarSTCAttenuationPlugin", "RadarSTCAttenuationType", 
-"RadarSarPRFMode", "RadarSarPcrMode", "RadarSarRangeResolutionMode", "RadarSearchTrackPRFMode", "RadarSearchTrackPulseWidthMode", 
-"RadarSwerlingCase", "RadarTransmitter", "RadarTransmitterMultifunction", "RadarWaveformBistaticReceiverSearchTrackContinuous", 
-"RadarWaveformBistaticReceiverSearchTrackFixedPRF", "RadarWaveformBistaticTransmitterSearchTrackContinuous", "RadarWaveformBistaticTransmitterSearchTrackFixedPRF", 
-"RadarWaveformMonostaticSearchTrackContinuous", "RadarWaveformMonostaticSearchTrackFixedPRF", "RadarWaveformSarPulseDefinition", 
-"RadarWaveformSarPulseIntegration", "RadarWaveformSearchTrackPulseDefinition", "RadarWaveformSearchTrackType", "RadiationPressure", 
-"RainLossModel", "RainLossModelCCIR1983", "RainLossModelCrane1982", "RainLossModelCrane1985", "RainLossModelITURP618Version10", 
-"RainLossModelITURP618Version12", "RainLossModelITURP618Version13", "RainLossModelScriptPlugin", "RainLossModelType", "ReTransmitterModelComplex", 
-"ReTransmitterModelMedium", "ReTransmitterModelSimple", "ReTransmitterOpMode", "ReceivePolarizationElliptical", "ReceivePolarizationHorizontal", 
-"ReceivePolarizationLeftHandCircular", "ReceivePolarizationLinear", "ReceivePolarizationRightHandCircular", "ReceivePolarizationVertical", 
-"Receiver", "ReceiverGraphics", "ReceiverGraphics3D", "ReceiverModel", "ReceiverModelCable", "ReceiverModelComplex", "ReceiverModelLaser", 
-"ReceiverModelMedium", "ReceiverModelMultibeam", "ReceiverModelScriptPluginLaser", "ReceiverModelScriptPluginRF", "ReceiverModelSimple", 
-"ReceiverModelType", "RectangularApertureInputType", "RefractionCoefficients", "RefractionModelEffectiveRadiusMethod", "RefractionModelITURP8344", 
-"RefractionModelSCFMethod", "RepeatGroundTrackNumbering", "RotationRateAndOffset", "RouteGraphics3DMarkerType", "STKObjectType", 
-"SamplingMethod", "SamplingMethodAdaptive", "SamplingMethodFixedStep", "Satellite", "SatelliteCollection", "SatelliteExportTools", 
-"SatelliteGraphics", "SatelliteGraphics3D", "SatelliteGraphics3DModel", "ScatteringPointCollection", "ScatteringPointCollectionElement", 
-"ScatteringPointModel", "ScatteringPointModelConstantCoefficient", "ScatteringPointModelPlugin", "ScatteringPointModelType", 
-"ScatteringPointModelWindTurbine", "ScatteringPointProvider", "ScatteringPointProviderCollection", "ScatteringPointProviderCollectionElement", 
-"ScatteringPointProviderList", "ScatteringPointProviderListType", "ScatteringPointProviderPlugin", "ScatteringPointProviderPointsFile", 
-"ScatteringPointProviderRangeOverCFARCells", "ScatteringPointProviderSinglePoint", "ScatteringPointProviderSmoothOblateEarth", 
-"ScatteringPointProviderType", "Scenario", "Scenario3dFont", "Scenario3dPointSize", "ScenarioAnimation", "ScenarioAnimationTimePeriod", 
-"ScenarioBeforeSaveEventArguments", "ScenarioDatabase", "ScenarioDatabaseCollection", "ScenarioEarthData", "ScenarioEndLoopType", 
-"ScenarioGraphics", "ScenarioGraphics3D", "ScenarioRefreshDeltaType", "ScenarioSpaceEnvironment", "ScenarioTimeStepType", 
-"ScheduleTime", "ScheduleTimeCollection", "Sensor", "SensorAccessAdvancedSettings", "SensorAltitudeCrossingDirection", "SensorAltitudeCrossingSideType", 
-"SensorAzElBoresightAxisType", "SensorAzElMaskFile", "SensorCommonTasks", "SensorComplexConicPattern", "SensorCustomPattern", 
-"SensorEOIRBand", "SensorEOIRBandCollection", "SensorEOIRBandImageQuality", "SensorEOIRBandOpticalInputMode", "SensorEOIRBandOpticalTransmissionMode", 
-"SensorEOIRBandQuantizationMode", "SensorEOIRBandQuantumEfficiencyMode", "SensorEOIRBandRadiometricParameterLevelType", 
-"SensorEOIRBandSaturationMode", "SensorEOIRBandSpatialInputMode", "SensorEOIRBandSpectralRelativeSystemResponseUnitsType", 
-"SensorEOIRBandSpectralShape", "SensorEOIRBandWavelengthType", "SensorEOIRJitterType", "SensorEOIRPattern", "SensorEOIRProcessingLevelType", 
-"SensorEOIRRadiometricPair", "SensorEOIRSaturationCollection", "SensorEOIRScanMode", "SensorEOIRSensitivityCollection", 
-"SensorGraphics", "SensorGraphics3D", "SensorGraphics3DInheritFrom2D", "SensorGraphics3DOffset", "SensorGraphics3DProjectionElement", 
-"SensorGraphics3DProjectionTimeDependencyType", "SensorGraphics3DProjectionType", "SensorGraphics3DPulse", "SensorGraphics3DPulseFrequencyPreset", 
-"SensorGraphics3DPulseStyle", "SensorGraphics3DSpaceProjectionCollection", "SensorGraphics3DTargetProjectionCollection", 
-"SensorGraphics3DVisualAppearance", "SensorHalfPowerPattern", "SensorLocation", "SensorPattern", "SensorPointing", "SensorPointing3DModel", 
-"SensorPointingAlongVector", "SensorPointingExternal", "SensorPointingFixed", "SensorPointingFixedInAxes", "SensorPointingGrazingAltitude", 
-"SensorPointingSchedule", "SensorPointingSpinning", "SensorPointingTargeted", "SensorPointingTargetedBoresightFixed", "SensorPointingTargetedBoresightTrack", 
-"SensorPointingTargetedBoresightType", "SensorProjection", "SensorProjectionConstantAltitude", "SensorProjectionDisplayDistance", 
-"SensorProjectionDistanceType", "SensorProjectionObjectAltitude", "SensorRectangularPattern", "SensorRefractionType", "SensorSARPattern", 
-"SensorScanMode", "SensorSimpleConicPattern", "SensorTarget", "SensorTargetCollection", "SensorUnknownPattern", "Ship", 
-"ShipExportTools", "ShipGraphics", "ShipGraphics3D", "SolarActivityConfiguration", "SolarActivityConfigurationSolarFlux", 
-"SolarActivityConfigurationSunspotNumber", "SolarFluxGeoMagneticFileSettings", "SolarFluxGeoMagneticValueSettings", "SolarRadiationPressureModelGPS", 
-"SolarRadiationPressureModelPlugin", "SolarRadiationPressureModelPluginSettings", "SolarRadiationPressureModelSpherical", 
-"SolarRadiationPressureModelType", "SolarRadiationPressureShadowModelType", "SolidTide", "SolidTides", "SpaceEnvironment", 
-"SpaceEnvironmentCrresProtonActivity", "SpaceEnvironmentCrresRadiationActivity", "SpaceEnvironmentGraphics", "SpaceEnvironmentMagneticExternalField", 
-"SpaceEnvironmentMagneticField", "SpaceEnvironmentMagneticFieldColorMode", "SpaceEnvironmentMagneticFieldColorScaleType", 
-"SpaceEnvironmentMagneticMainField", "SpaceEnvironmentMagnitudeFieldGraphics2D", "SpaceEnvironmentMagnitudeFieldLine", "SpaceEnvironmentNasaModelsActivity", 
-"SpaceEnvironmentParticleFlux", "SpaceEnvironmentRadiation", "SpaceEnvironmentRadiationDoseRateCollection", "SpaceEnvironmentRadiationDoseRateElement", 
-"SpaceEnvironmentRadiationEnergyMethodEnergies", "SpaceEnvironmentRadiationEnergyValues", "SpaceEnvironmentRadiationEnvironment", 
-"SpaceEnvironmentSAAChannel", "SpaceEnvironmentSAAContour", "SpaceEnvironmentSAAFluxLevel", "SpaceEnvironmentScenarioGraphics3D", 
-"SpaceEnvironmentVehicleTemperature", "SpacingUnit", "SpatialState", "SphericalFlightPathAngleHorizontal", "SphericalFlightPathAngleVertical", 
-"SphericalFlightPathAzimuthType", "SpiceInterpolation", "Star", "StarCollection", "StarGraphics", "StarGraphics3D", "StarInformation", 
-"StarReferenceFrame", "StatisticType", "StkObject", "StkObjectChangedEventArguments", "StkObjectCutCopyPasteEventArguments", 
-"StkObjectModelContext", "StkObjectPreDeleteEventArguments", "StkObjectRoot", "Subset", "SurfaceReference", "Swath", "SwathComputationalMethod", 
-"SystemNoiseTemperature", "TIREMPolarizationType", "Target", "TargetGraphics", "TargetGraphics3D", "TargetSelectionMethod", 
-"TargetSelectionMethod", "TargetSelectionMethodClosingVelocity", "TargetSelectionMethodPriority", "TargetSelectionMethodRange", 
-"Terrain", "TerrainCollection", "TerrainFileType", "TerrainNormalSlopeAzimuth", "TerrainNormalType", "TextOutlineStyle", 
-"ThirdBodyGravitySourceType", "TickData", "Tileset3D", "Tileset3DCollection", "Tileset3DSourceType", "TimeIntervalCollection", 
-"TimeIntervalCollectionReadOnly", "TimePeriod", "TimePeriodValue", "TimePeriodValueType", "TimeVaryingExtremum", "TrackMode", 
-"TrajectoryType", "TransferFunctionInputBackOffOutputBackOffTable", "TransferFunctionInputBackOffOutputBackOffTableRow", 
-"TransferFunctionInputBackOffVsCOverImTable", "TransferFunctionInputBackOffVsCOverImTableRow", "TransferFunctionPolynomialCollection", 
-"TransferFunctionType", "Transmitter", "TransmitterGraphics", "TransmitterGraphics3D", "TransmitterModel", "TransmitterModelCable", 
-"TransmitterModelComplex", "TransmitterModelLaser", "TransmitterModelMedium", "TransmitterModelMultibeam", "TransmitterModelScriptPluginLaser", 
-"TransmitterModelScriptPluginRF", "TransmitterModelSimple", "TransmitterModelType", "TroposphericScintillationAverageTimeChoiceType", 
-"TroposphericScintillationFadingLossModel", "TroposphericScintillationFadingLossModelP618Version12", "TroposphericScintillationFadingLossModelP618Version8", 
-"TroposphericScintillationFadingLossModelType", "UrbanTerrestrialLossModel", "UrbanTerrestrialLossModelTwoRay", "UrbanTerrestrialLossModelType", 
-"UrbanTerrestrialLossModelWirelessInSite64", "VectorAxesConnectType", "VehicleAccessAdvancedSettings", "VehicleAltitudeReference", 
-"VehicleAttitude", "VehicleAttitudeExportTool", "VehicleAttitudeExternal", "VehicleAttitudeMaximumSlewAcceleration", "VehicleAttitudeMaximumSlewRate", 
-"VehicleAttitudePointing", "VehicleAttitudeRealTime", "VehicleAttitudeRealTimeDataReference", "VehicleAttitudeSlewConstrained", 
-"VehicleAttitudeSlewFixedRate", "VehicleAttitudeSlewFixedTime", "VehicleAttitudeTargetSlew", "VehicleAttitudeTrendingControlAviator", 
-"VehicleBreakAngleBreakByLatitude", "VehicleBreakAngleBreakByLongitude", "VehicleBreakAngleType", "VehicleCentralBodies", 
-"VehicleConsiderAnalysisCollection", "VehicleConsiderAnalysisCollectionElement", "VehicleConsiderAnalysisType", "VehicleCoordinateAxesCustom", 
-"VehicleCoordinateSystem", "VehicleCorrelationListCollection", "VehicleCorrelationListElement", "VehicleCorrelationListType", 
-"VehicleCovariance", "VehicleDefinition", "VehicleDirection", "VehicleDuration", "VehicleEOIR", "VehicleEclipseBodies", 
-"VehicleEclipsingBodies", "VehicleEllipseDataCollection", "VehicleEllipseDataElement", "VehicleEllipseOptionType", "VehicleEphemerisBinaryExportTool", 
-"VehicleEphemerisCCSDSExportTool", "VehicleEphemerisCCSDSv2ExportTool", "VehicleEphemerisCode500ExportTool", "VehicleEphemerisExportTool", 
-"VehicleEphemerisSPICEExportTool", "VehicleExponentialDensityModelParameters", "VehicleFrame", "VehicleGPSAlmanacProperties", 
-"VehicleGPSAlmanacPropertiesSEM", "VehicleGPSAlmanacPropertiesSP3", "VehicleGPSAlmanacPropertiesYUMA", "VehicleGPSAlmanacType", 
-"VehicleGPSAutoUpdate", "VehicleGPSAutoUpdateFileSource", "VehicleGPSAutoUpdateOnlineSource", "VehicleGPSAutoUpdateProperties", 
-"VehicleGPSAutomaticUpdateSourceType", "VehicleGPSElement", "VehicleGPSElementCollection", "VehicleGPSElementSelectionType", 
-"VehicleGPSSpecifyAlmanac", "VehicleGPSSwitchMethod", "VehicleGeomagneticFluxSourceType", "VehicleGeomagneticFluxUpdateRateType", 
-"VehicleGraphics2DAttributeType", "VehicleGraphics2DAttributesAccess", "VehicleGraphics2DAttributesCustom", "VehicleGraphics2DAttributesOrbit", 
-"VehicleGraphics2DAttributesRealtime", "VehicleGraphics2DAttributesRoute", "VehicleGraphics2DAttributesTimeComponents", 
-"VehicleGraphics2DAttributesTrajectory", "VehicleGraphics2DElevation", "VehicleGraphics2DElevationContours", "VehicleGraphics2DElevationGroundElevation", 
-"VehicleGraphics2DElevationSwathHalfWidth", "VehicleGraphics2DElevationVehicleHalfAngle", "VehicleGraphics2DElevationsCollection", 
-"VehicleGraphics2DElevationsElement", "VehicleGraphics2DGroundEllipsesCollection", "VehicleGraphics2DGroundEllipsesElement", 
-"VehicleGraphics2DInterval", "VehicleGraphics2DIntervalsCollection", "VehicleGraphics2DLeadDataFraction", "VehicleGraphics2DLeadDataTime", 
-"VehicleGraphics2DLeadTrailData", "VehicleGraphics2DLighting", "VehicleGraphics2DLightingElement", "VehicleGraphics2DLine", 
-"VehicleGraphics2DOffset", "VehicleGraphics2DOptionType", "VehicleGraphics2DOrbitPassData", "VehicleGraphics2DPass", "VehicleGraphics2DPassResolution", 
-"VehicleGraphics2DPassShowPasses", "VehicleGraphics2DPasses", "VehicleGraphics2DRoutePassData", "VehicleGraphics2DRouteResolution", 
-"VehicleGraphics2DSAA", "VehicleGraphics2DSwath", "VehicleGraphics2DTimeComponentsCollection", "VehicleGraphics2DTimeComponentsEventCollectionElement", 
-"VehicleGraphics2DTimeComponentsEventElement", "VehicleGraphics2DTimeEventType", "VehicleGraphics2DTimeEventTypeLine", "VehicleGraphics2DTimeEventTypeMarker", 
-"VehicleGraphics2DTimeEventTypeText", "VehicleGraphics2DTimeEventsCollection", "VehicleGraphics2DTimeEventsElement", "VehicleGraphics2DTrailDataFraction", 
-"VehicleGraphics2DTrailDataTime", "VehicleGraphics2DTrajectoryPassData", "VehicleGraphics2DTrajectoryResolution", "VehicleGraphics2DVisibleSideType", 
-"VehicleGraphics2DWaypointMarker", "VehicleGraphics2DWaypointMarkersCollection", "VehicleGraphics2DWaypointMarkersElement", 
-"VehicleGraphics3DAttributeType", "VehicleGraphics3DAttributesBasic", "VehicleGraphics3DAttributesIntervals", "VehicleGraphics3DBPlaneEvent", 
-"VehicleGraphics3DBPlaneInstance", "VehicleGraphics3DBPlaneInstancesCollection", "VehicleGraphics3DBPlanePoint", "VehicleGraphics3DBPlanePointCollection", 
-"VehicleGraphics3DBPlaneTargetPoint", "VehicleGraphics3DBPlaneTargetPointPosition", "VehicleGraphics3DBPlaneTargetPointPositionCartesian", 
-"VehicleGraphics3DBPlaneTargetPointPositionPolar", "VehicleGraphics3DBPlaneTemplate", "VehicleGraphics3DBPlaneTemplateDisplayCollection", 
-"VehicleGraphics3DBPlaneTemplateDisplayElement", "VehicleGraphics3DBPlaneTemplatesCollection", "VehicleGraphics3DBPlanes", 
-"VehicleGraphics3DBearingBox", "VehicleGraphics3DBearingEllipse", "VehicleGraphics3DControlBox", "VehicleGraphics3DCovariance", 
-"VehicleGraphics3DCovariancePointingContour", "VehicleGraphics3DDataFraction", "VehicleGraphics3DDataTime", "VehicleGraphics3DDefaultAttributes", 
-"VehicleGraphics3DDropLinePathItem", "VehicleGraphics3DDropLinePathItemCollection", "VehicleGraphics3DDropLinePositionItem", 
-"VehicleGraphics3DDropLinePositionItemCollection", "VehicleGraphics3DDropLineType", "VehicleGraphics3DElevationContours", 
-"VehicleGraphics3DEllipsoid", "VehicleGraphics3DGeoBox", "VehicleGraphics3DIntervalsCollection", "VehicleGraphics3DIntervalsElement", 
-"VehicleGraphics3DLeadTrailData", "VehicleGraphics3DLineOfBearing", "VehicleGraphics3DModelRoute", "VehicleGraphics3DModelTrajectory", 
-"VehicleGraphics3DOrbitDropLines", "VehicleGraphics3DOrbitPassData", "VehicleGraphics3DOrbitProximity", "VehicleGraphics3DOrbitTickMarks", 
-"VehicleGraphics3DOrbitTrackData", "VehicleGraphics3DPass", "VehicleGraphics3DPathTickMarks", "VehicleGraphics3DRoute", 
-"VehicleGraphics3DRouteDropLines", "VehicleGraphics3DRouteProximity", "VehicleGraphics3DSAA", "VehicleGraphics3DSigmaScale", 
-"VehicleGraphics3DSigmaScaleProbability", "VehicleGraphics3DSigmaScaleScale", "VehicleGraphics3DSize", "VehicleGraphics3DSystemsCollection", 
-"VehicleGraphics3DSystemsElement", "VehicleGraphics3DSystemsSpecialElement", "VehicleGraphics3DTickDataLine", "VehicleGraphics3DTickDataPoint", 
-"VehicleGraphics3DTrajectory", "VehicleGraphics3DTrajectoryDropLines", "VehicleGraphics3DTrajectoryPassData", "VehicleGraphics3DTrajectoryProximity", 
-"VehicleGraphics3DTrajectoryTickMarks", "VehicleGraphics3DTrajectoryTrackData", "VehicleGraphics3DVelocityCovariance", "VehicleGraphics3DWaypointMarkersCollection", 
-"VehicleGraphics3DWaypointMarkersElement", "VehicleGravity", "VehicleGroundEllipseElement", "VehicleGroundEllipsesCollection", 
-"VehicleHPOPCentralBodyGravity", "VehicleHPOPDragModel", "VehicleHPOPDragModelPlugin", "VehicleHPOPDragModelPluginSettings", 
-"VehicleHPOPDragModelSpherical", "VehicleHPOPForceModel", "VehicleHPOPForceModelDrag", "VehicleHPOPForceModelDragOptions", 
-"VehicleHPOPForceModelMoreOptions", "VehicleHPOPSolarRadiationPressure", "VehicleHPOPSolarRadiationPressureModel", "VehicleHPOPSolarRadiationPressureOptions", 
-"VehicleImpact", "VehicleImpactLocation", "VehicleImpactLocationCentric", "VehicleImpactLocationDetic", "VehicleImpactLocationLaunchAzEl", 
-"VehicleImpactLocationPoint", "VehicleInertia", "VehicleInitialState", "VehicleIntegratedAttitude", "VehicleIntegrationModel", 
-"VehicleIntegrator", "VehicleInterpolation", "VehicleInterpolationMethod", "VehicleLOPCentralBodyGravity", "VehicleLOPDragSettings", 
-"VehicleLOPForceModel", "VehicleLOPForceModelDrag", "VehicleLOPSolarRadiationPressure", "VehicleLaunch", "VehicleLaunchControl", 
-"VehicleLookAheadMethod", "VehicleMassProperties", "VehicleMethod", "VehiclePartialPassMeasurement", "VehiclePassNumbering", 
-"VehiclePhysicalData", "VehiclePluginPropagator", "VehiclePluginSettings", "VehiclePositionVelocityCollection", "VehiclePositionVelocityElement", 
-"VehiclePredictorCorrectorScheme", "VehiclePropagationFrame", "VehicleSGP4AutomaticUpdateSourceType", "VehicleSGP4TLESelectionType", 
-"VehicleSlewMode", "VehicleSlewTimingBetweenTargetType", "VehicleSolarFluxGeomagneticType", "VehicleSpaceEnvironmentApSource", 
-"VehicleSpaceEnvironmentComputationMode", "VehicleSpaceEnvironmentDetectorGeometry", "VehicleSpaceEnvironmentDetectorType", 
-"VehicleSpaceEnvironmentDoseChannel", "VehicleSpaceEnvironmentF10P7SourceType", "VehicleSpaceEnvironmentMaterial", "VehicleSpaceEnvironmentShapeModel", 
-"VehicleSpatialInformation", "VehicleTargetPointingCollection", "VehicleTargetPointingElement", "VehicleTargetPointingIntervalCollection", 
-"VehicleTargetTimes", "VehicleVector", "VehicleWaypointAltitudeReference", "VehicleWaypointAltitudeReferenceTerrain", "VehicleWaypointComputationMethod", 
-"VehicleWaypointInterpolationMethod", "VehicleWaypointsCollection", "VehicleWaypointsElement", "VehicleZonalPropagatorInitialState", 
-"Volumetric", "VolumetricAdvancedSettings", "VolumetricAnalysisInterval", "VolumetricDataExportFormatType", "VolumetricDefinitionType", 
-"VolumetricDisplayQualityType", "VolumetricDisplayVolumeType", "VolumetricExportTool", "VolumetricExternalFile", "VolumetricGraphics3D", 
-"VolumetricGraphics3DActiveGridPoints", "VolumetricGraphics3DCrossSection", "VolumetricGraphics3DCrossSectionPlane", "VolumetricGraphics3DCrossSectionPlaneCollection", 
-"VolumetricGraphics3DGrid", "VolumetricGraphics3DLegend", "VolumetricGraphics3DSpatialCalculationLevel", "VolumetricGraphics3DSpatialCalculationLevelCollection", 
-"VolumetricGraphics3DSpatialCalculationLevels", "VolumetricGraphics3DVolume", "VolumetricGridSpatialCalculation", "VolumetricLegendNumericNotationType", 
-"VolumetricLevelOrder", "VolumetricSaveComputedDataType", "VolumetricSpatialCalculationEvaluationType", "VolumetricVolumeGridExportType", 
-"Waveform", "WaveformPulseDefinition", "WaveformRectangular", "WaveformSelectionStrategy", "WaveformSelectionStrategyFixed", 
-"WaveformSelectionStrategyRangeLimits", "WaveformSelectionStrategyType", "WaveformType", "WirelessInSite64GeometryData"]
+__all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedTimeIntervals", "AccessConstraint",
+"AccessConstraintAnalysisWorkbench", "AccessConstraintAnalysisWorkbenchCollection",
+"AccessConstraintAnalysisWorkbenchComponent", "AccessConstraintAngle", "AccessConstraintBackground",
+"AccessConstraintCentralBodyObstruction", "AccessConstraintCollection", "AccessConstraintCondition",
+"AccessConstraintExclZonesCollection", "AccessConstraintGrazingAltitude", "AccessConstraintGroundTrack",
+"AccessConstraintIntervals", "AccessConstraintLatitudeLongitudeZone", "AccessConstraintMinMaxBase",
+"AccessConstraintObjExAngle", "AccessConstraintPluginMinMax", "AccessConstraintThirdBody",
+"AccessConstraintTimeSlipRange", "AccessConstraintType", "AccessEventDetection", "AccessGraphics", "AccessSampling",
+"AccessTargetTime", "AccessTargetTimesCollection", "AccessTimePeriod", "AccessTimeType", "ActionType",
+"AdditionalGainLoss", "AdditionalGainLossCollection", "AdvCAT", "AdvCATAdvancedEllipsoid", "AdvCATAdvancedSettings",
+"AdvCATAvailableObjectCollection", "AdvCATChosenObject", "AdvCATChosenObjectCollection", "AdvCATConjunctionType",
+"AdvCATEllipsoidClassType", "AdvCATGraphics3D", "AdvCATPreFilters", "AdvCATSecondaryEllipsoidsVisibilityType",
+"Aircraft", "AircraftExportTools", "AircraftGraphics", "AircraftGraphics3D", "AircraftWGS84WarningType",
+"AltitudeReferenceType", "AnalysisWorkbenchAccessConstraintType", "AnimationActionType", "AnimationDirectionType",
+"AnimationEndTimeMode", "AnimationOptionType", "Antenna", "AntennaBeam", "AntennaBeamCollection",
+"AntennaBeamSelectionStrategy", "AntennaBeamSelectionStrategyAggregate", "AntennaBeamSelectionStrategyMaximumGain",
+"AntennaBeamSelectionStrategyMinimumBoresightAngle", "AntennaBeamSelectionStrategyScriptPlugin", "AntennaBeamTransmit",
+"AntennaContourEIRP", "AntennaContourFluxDensity", "AntennaContourGain", "AntennaContourGraphics",
+"AntennaContourLevel", "AntennaContourLevelCollection", "AntennaContourRIP", "AntennaContourSpectralFluxDensity",
+"AntennaContourType", "AntennaControl", "AntennaControlReferenceType", "AntennaGraphics", "AntennaGraphics3D",
+"AntennaGraphicsCoordinateSystem", "AntennaModel", "AntennaModelANSYSffdFormat", "AntennaModelApertureCircularBessel",
+"AntennaModelApertureCircularBesselEnvelope", "AntennaModelApertureCircularCosine",
+"AntennaModelApertureCircularCosinePedestal", "AntennaModelApertureCircularCosineSquared",
+"AntennaModelApertureCircularCosineSquaredPedestal", "AntennaModelApertureCircularSincIntegerPower",
+"AntennaModelApertureCircularSincRealPower", "AntennaModelApertureCircularUniform",
+"AntennaModelApertureRectangularCosine", "AntennaModelApertureRectangularCosinePedestal",
+"AntennaModelApertureRectangularCosineSquared", "AntennaModelApertureRectangularCosineSquaredPedestal",
+"AntennaModelApertureRectangularSincIntegerPower", "AntennaModelApertureRectangularSincRealPower",
+"AntennaModelApertureRectangularUniform", "AntennaModelCosecantSquared", "AntennaModelCosecantSquaredSidelobeType",
+"AntennaModelDipole", "AntennaModelElevationAzimuthCuts", "AntennaModelExternal", "AntennaModelGIMROC",
+"AntennaModelGPSFRPA", "AntennaModelGPSGlobal", "AntennaModelGaussian", "AntennaModelHelix",
+"AntennaModelHemispherical", "AntennaModelHfssEepArray", "AntennaModelIEEE1979", "AntennaModelITUBO1213CoPolar",
+"AntennaModelITUBO1213CrossPolar", "AntennaModelITUF1245", "AntennaModelITUS1528R12Circular",
+"AntennaModelITUS1528R12Rectangular", "AntennaModelITUS1528R13", "AntennaModelITUS465", "AntennaModelITUS580",
+"AntennaModelITUS672Circular", "AntennaModelITUS672Rectangular", "AntennaModelITUS731", "AntennaModelInputType",
+"AntennaModelIntelSat", "AntennaModelIsotropic", "AntennaModelOpticalGaussian", "AntennaModelOpticalSimple",
+"AntennaModelParabolic", "AntennaModelPencilBeam", "AntennaModelPhasedArray", "AntennaModelRectangularPattern",
+"AntennaModelRemcomUanFormat", "AntennaModelScriptPlugin", "AntennaModelSquareHorn", "AntennaModelTicraGRASPFormat",
+"AntennaModelType", "AntennaNoiseTemperature", "AntennaSystem", "AntennaVolumeGraphics", "AntennaVolumeLevel",
+"AntennaVolumeLevelCollection", "AreaTarget", "AreaTargetCommonTasks", "AreaTargetGraphics", "AreaTargetGraphics3D",
+"AreaType", "AreaTypeEllipse", "AreaTypePattern", "AreaTypePatternCollection", "Atmosphere",
+"AtmosphericAbsorptionModel", "AtmosphericAbsorptionModelCOMPlugin", "AtmosphericAbsorptionModelGraphics3DACAP",
+"AtmosphericAbsorptionModelITURP676Version13", "AtmosphericAbsorptionModelITURP676Version9",
+"AtmosphericAbsorptionModelScriptPlugin", "AtmosphericAbsorptionModelSimpleSatcom",
+"AtmosphericAbsorptionModelTIREM320", "AtmosphericAbsorptionModelTIREM331", "AtmosphericAbsorptionModelTIREM550",
+"AtmosphericAbsorptionModelType", "AtmosphericDensityModel", "AtmosphericTurbulenceModel",
+"AtmosphericTurbulenceModelConstant", "AtmosphericTurbulenceModelHufnagelValley", "AtmosphericTurbulenceModelType",
+"AttitudeCoordinateAxes", "AttitudeInclude", "AttitudeProfile", "AttitudeProfileAlignedAndConstrained",
+"AttitudeProfileAlignmentOffset", "AttitudeProfileAviator", "AttitudeProfileConstraintOffset",
+"AttitudeProfileCoordinatedTurn", "AttitudeProfileFixedInAxes", "AttitudeProfileGPS", "AttitudeProfileInertial",
+"AttitudeProfilePrecessingSpin", "AttitudeProfileSpinAboutSettings", "AttitudeProfileSpinning",
+"AttitudeProfileYawToNadir", "AttitudeScheduleTimesCollection", "AttitudeScheduleTimesElement", "AttitudeStandardBasic",
+"AttitudeStandardOrbit", "AttitudeStandardRoute", "AttitudeStandardTrajectory", "AttitudeStandardType",
+"AttitudeTorque", "AvailableFeatures", "AxisOffset", "AzElMaskType", "BasicAzElMask", "BeamSelectionStrategyType",
+"Beamformer", "BeamformerASCIIFile", "BeamformerBlackmanHarris", "BeamformerCosine", "BeamformerCosineX",
+"BeamformerCustomTaperFile", "BeamformerDolphChebyshev", "BeamformerHamming", "BeamformerHann", "BeamformerMVDR",
+"BeamformerRaisedCosine", "BeamformerRaisedCosineSquared", "BeamformerScript", "BeamformerTaylor", "BeamformerType",
+"BeamformerUniform", "BeerBouguerLambertLawLayer", "BeerBouguerLambertLawLayerCollection",
+"BorderWallUpperLowerEdgeAltitudeReference", "BoresightType", "BuildHeightReferenceMethod", "BuildingHeightUnit",
+"CCSDSDateFormat", "CCSDSEphemerisFormatType", "CCSDSReferenceFrame", "CCSDSTimeSystem", "CentralBody",
+"CentralBodyCollection", "CentralBodyEllipsoid", "CentralBodyTerrainCollection", "CentralBodyTerrainCollectionElement",
+"Chain", "ChainConnection", "ChainConnectionCollection", "ChainConstellationConstraintsMode", "ChainConstraints",
+"ChainCoverageAssetMode", "ChainGraphics", "ChainGraphics2DAnimation", "ChainGraphics2DStatic", "ChainGraphics3D",
+"ChainOptimalStrandCalculationScalarMetricType", "ChainOptimalStrandCompareStrandsType",
+"ChainOptimalStrandLinkCompareType", "ChainOptimalStrandMetricType", "ChainOptimalStrandOpts",
+"ChainParentPlatformRestriction", "ChainTimePeriod", "ChainTimePeriodType", "ChainUserSpecifiedTimePeriod",
+"CircularApertureInputType", "ClassicalLocation", "ClassicalLocationArgumentOfLatitude",
+"ClassicalLocationEccentricAnomaly", "ClassicalLocationMeanAnomaly", "ClassicalLocationTimePastAscendingNode",
+"ClassicalLocationTimePastPerigee", "ClassicalLocationTrueAnomaly", "ClassicalOrientation", "ClassicalSizeShape",
+"ClassicalSizeShapeAltitude", "ClassicalSizeShapeMeanMotion", "ClassicalSizeShapePeriod", "ClassicalSizeShapeRadius",
+"ClassicalSizeShapeSemimajorAxis", "CloudsAndFogFadingLossModel", "CloudsAndFogFadingLossModelP840Version6",
+"CloudsAndFogFadingLossModelP840Version7", "CloudsAndFogFadingLossModelType", "CloudsAndFogLiquidWaterChoiceType",
+"CommRadCartesianLocation", "CommRadComplexNumber", "CommRadComplexNumberCollection", "CommRadPluginConfiguration",
+"CommSystem", "CommSystemAccessEventDetection", "CommSystemAccessEventDetectionSamplesOnly",
+"CommSystemAccessEventDetectionSubsample", "CommSystemAccessEventDetectionType", "CommSystemAccessOptions",
+"CommSystemAccessSamplingMethod", "CommSystemAccessSamplingMethodAdaptive", "CommSystemAccessSamplingMethodFixed",
+"CommSystemAccessSamplingMethodType", "CommSystemConstrainingRole", "CommSystemGraphics", "CommSystemGraphics3D",
+"CommSystemLinkSelectionCriteria", "CommSystemLinkSelectionCriteriaMaximumElevation",
+"CommSystemLinkSelectionCriteriaMinimumRange", "CommSystemLinkSelectionCriteriaScriptPlugin",
+"CommSystemLinkSelectionCriteriaType", "CommSystemReferenceBandwidth", "CommSystemSaveMode", "Component",
+"ComponentAttrLinkEmbedControl", "ComponentDirectory", "ComponentInfo", "ComponentInfoCollection",
+"ComponentLinkEmbedControlReferenceType", "Constants", "Constellation", "ConstellationConstraintObjectRestriction",
+"ConstellationConstraintRestriction", "ConstellationConstraintRestrictionType", "ConstellationConstraints",
+"ConstellationFromToParentConstraint", "ConstellationGraphics", "ConstellationRouting", "ConstraintBackground",
+"ConstraintGroundTrack", "ConstraintLighting", "Coverage3dDrawAtAltitudeMode", "CoverageAdvancedSettings",
+"CoverageAltitudeMethod", "CoverageAreaTargetsCollection", "CoverageAssetGrouping", "CoverageAssetListCollection",
+"CoverageAssetListElement", "CoverageAssetStatus", "CoverageBounds", "CoverageBoundsCustomBoundary",
+"CoverageBoundsCustomRegions", "CoverageBoundsGlobal", "CoverageBoundsLatitude", "CoverageBoundsLatitudeLine",
+"CoverageBoundsLatitudeLongitudeRegion", "CoverageBoundsLongitudeLine", "CoverageCustomRegionAlgorithm",
+"CoverageDataRetention", "CoverageDefinition", "CoverageEllipse", "CoverageEllipseCollection", "CoverageGraphics",
+"CoverageGraphics2DAnimation", "CoverageGraphics2DProgress", "CoverageGraphics2DStatic", "CoverageGraphics3D",
+"CoverageGraphics3DAttributes", "CoverageGrid", "CoverageGridClass", "CoverageGridInspector",
+"CoverageGridPointSelection", "CoverageGroundAltitudeMethod", "CoverageInterval", "CoverageLatLonBox",
+"CoverageLatLonBoxCollection", "CoveragePointAltitudeMethod", "CoveragePointDefinition",
+"CoveragePointFileListCollection", "CoveragePointLocationMethod", "CoverageRegionAccessAccelerationType",
+"CoverageRegionFilesCollection", "CoverageResolution", "CoverageResolutionArea", "CoverageResolutionDistance",
+"CoverageResolutionLatLon", "CoverageSatisfactionType", "CoverageSelectedGridPoint", "CustomPropagationModel",
+"DataProviderCollection", "DataProviderElement", "DataProviderElementType", "DataProviderElements", "DataProviderFixed",
+"DataProviderGroup", "DataProviderInterval", "DataProviderResult", "DataProviderResultCategory",
+"DataProviderResultDataSet", "DataProviderResultDataSetCollection", "DataProviderResultInterval",
+"DataProviderResultIntervalCollection", "DataProviderResultStatisticResult", "DataProviderResultStatistics",
+"DataProviderResultSubSection", "DataProviderResultSubSectionCollection", "DataProviderResultTextMessage",
+"DataProviderResultTimeArrayElements", "DataProviderResultTimeVaryingExtremumResult", "DataProviderTimeVarying",
+"DataProviderType", "DataProviders", "DataSaveMode", "DelaunayG", "DelaunayGOverSQRTmu", "DelaunayGType", "DelaunayH",
+"DelaunayHOverSQRTmu", "DelaunayHType", "DelaunayL", "DelaunayLOverSQRTmu", "DelaunayLType", "DemodulatorModel",
+"DemodulatorModel16PSK", "DemodulatorModel8PSK", "DemodulatorModelBOC", "DemodulatorModelBPSK", "DemodulatorModelDPSK",
+"DemodulatorModelExternal", "DemodulatorModelExternalSource", "DemodulatorModelFSK", "DemodulatorModelMSK",
+"DemodulatorModelNFSK", "DemodulatorModelNarrowbandUniform", "DemodulatorModelOQPSK", "DemodulatorModelPulsedSignal",
+"DemodulatorModelQAM1024", "DemodulatorModelQAM128", "DemodulatorModelQAM16", "DemodulatorModelQAM256",
+"DemodulatorModelQAM32", "DemodulatorModelQAM64", "DemodulatorModelQPSK", "DemodulatorModelScriptPlugin",
+"DemodulatorModelType", "DemodulatorModelWidebandGaussian", "DemodulatorModelWidebandUniform", "DeticPositionType",
+"DeticSizeAltitude", "DeticSizeRadius", "DirectionProvider", "DirectionProviderASCIIFile", "DirectionProviderLink",
+"DirectionProviderObject", "DirectionProviderScript", "DirectionProviderType", "DisplayTimesDuringAccess",
+"DisplayTimesTimeComponent", "DisplayTimesType", "DistanceOnSphere", "DragModel", "EOIR", "EOIRFlightType",
+"EOIRMaterialElement", "EOIRMaterialElementCollection", "EOIRShape", "EOIRShapeBox", "EOIRShapeCollection",
+"EOIRShapeCone", "EOIRShapeCoupler", "EOIRShapeCustomMesh", "EOIRShapeCylinder", "EOIRShapeGEOComm", "EOIRShapeLEOComm",
+"EOIRShapeLEOImaging", "EOIRShapeMaterialSpecificationType", "EOIRShapeNone", "EOIRShapeObject", "EOIRShapePlate",
+"EOIRShapeSphere", "EOIRShapeTargetSignature", "EOIRShapeType", "EOIRStage", "EOIRStagePlume", "EOIRThermalModelType",
+"Element", "ElementCollection", "ElementConfiguration", "ElementConfigurationASCIIFile", "ElementConfigurationCircular",
+"ElementConfigurationHexagon", "ElementConfigurationHfssEepFile", "ElementConfigurationLinear",
+"ElementConfigurationPolygon", "ElementConfigurationType", "EphemExportToolFileFormat", "EphemSourceType",
+"EphemerisCoordinateSystemType", "EphemerisCovarianceType", "EquinoctialFormulation", "EquinoctialSizeShape",
+"EquinoctialSizeShapeMeanMotion", "EquinoctialSizeShapeSemimajorAxis", "ErrorCode", "EventDetection",
+"EventDetectionNoSubSampling", "EventDetectionSubSampling", "ExportToolStepSize", "ExportToolStepSizeType",
+"ExportToolTimePeriod", "ExportToolTimePeriodType", "ExportToolVersionFormat", "ExternalEphemerisFormatType",
+"ExternalFileMessageLevelType", "Facility", "FacilityGraphics", "FacilityGraphics3D", "FigureOfMerit",
+"FigureOfMeritAcrossAssets", "FigureOfMeritAssetListCollection", "FigureOfMeritAssetListElement",
+"FigureOfMeritCompute", "FigureOfMeritConstraintName", "FigureOfMeritDefinitionAccessConstraint",
+"FigureOfMeritDefinitionAccessSeparation", "FigureOfMeritDefinitionAgeOfData", "FigureOfMeritDefinitionCompute",
+"FigureOfMeritDefinitionDataBest4", "FigureOfMeritDefinitionDataBestN", "FigureOfMeritDefinitionDataMinimumMaximum",
+"FigureOfMeritDefinitionDataMinimumNumberOfAssets", "FigureOfMeritDefinitionDataPercentLevel",
+"FigureOfMeritDefinitionDilutionOfPrecision", "FigureOfMeritDefinitionNavigationAccuracy",
+"FigureOfMeritDefinitionResponseTime", "FigureOfMeritDefinitionRevisitTime", "FigureOfMeritDefinitionScalarCalculation",
+"FigureOfMeritDefinitionSimpleCoverage", "FigureOfMeritDefinitionSystemAgeOfData",
+"FigureOfMeritDefinitionSystemResponseTime", "FigureOfMeritDefinitionTimeAverageGap", "FigureOfMeritDefinitionType",
+"FigureOfMeritEndGapOption", "FigureOfMeritGraphics", "FigureOfMeritGraphics2DAccumulation",
+"FigureOfMeritGraphics2DAttributes", "FigureOfMeritGraphics2DAttributesAnimation", "FigureOfMeritGraphics2DColorMethod",
+"FigureOfMeritGraphics2DColorOptions", "FigureOfMeritGraphics2DContourType", "FigureOfMeritGraphics2DContours",
+"FigureOfMeritGraphics2DContoursAnimation", "FigureOfMeritGraphics2DDirection",
+"FigureOfMeritGraphics2DFloatingPointFormat", "FigureOfMeritGraphics2DLegend", "FigureOfMeritGraphics2DLegendWindow",
+"FigureOfMeritGraphics2DLevelAttributesCollection", "FigureOfMeritGraphics2DLevelAttributesElement",
+"FigureOfMeritGraphics2DPositionOnMap", "FigureOfMeritGraphics2DRampColor", "FigureOfMeritGraphics2DRangeColorOptions",
+"FigureOfMeritGraphics2DTextOptions", "FigureOfMeritGraphics3D", "FigureOfMeritGraphics3DAttributes",
+"FigureOfMeritGraphics3DLegendWindow", "FigureOfMeritGridInspector", "FigureOfMeritInvalidValueActionType",
+"FigureOfMeritMethod", "FigureOfMeritNavigationAccuracyMethod", "FigureOfMeritNavigationAccuracyMethodConstant",
+"FigureOfMeritNavigationAccuracyMethodElevationAngle", "FigureOfMeritNavigationComputeType",
+"FigureOfMeritSatisfaction", "FigureOfMeritSatisfactionType", "FigureOfMeritUncertainties",
+"FrequencySpecificationType", "GPSAttitudeModelType", "GPSReferenceWeek", "GeodeticSize", "GeometricElementType",
+"Graphics2DRangeContours", "Graphics3DACAPCoefficientDataType", "Graphics3DACAPSolarActivityConfigurationType",
+"Graphics3DArticulationFile", "Graphics3DAzElMask", "Graphics3DBorderWall", "Graphics3DDataDisplayCollection",
+"Graphics3DDataDisplayElement", "Graphics3DDetailThreshold", "Graphics3DFontSize", "Graphics3DFormat",
+"Graphics3DLabelSwapDistance", "Graphics3DLabelSwapDistanceType", "Graphics3DLocation", "Graphics3DMarker",
+"Graphics3DMarkerFile", "Graphics3DMarkerOrientation", "Graphics3DMarkerOriginType", "Graphics3DMarkerShape",
+"Graphics3DModelArticulation", "Graphics3DModelCollection", "Graphics3DModelFile", "Graphics3DModelItem",
+"Graphics3DModelPointing", "Graphics3DModelTransformation", "Graphics3DModelTransformationCollection",
+"Graphics3DModelglTFImageBased", "Graphics3DOffset", "Graphics3DOffsetAttachment", "Graphics3DOffsetLabel",
+"Graphics3DOffsetRotate", "Graphics3DOffsetTransformation", "Graphics3DPointableElementsCollection",
+"Graphics3DPointableElementsElement", "Graphics3DRangeContours", "Graphics3DReferenceAngle", "Graphics3DReferenceAxes",
+"Graphics3DReferencePlane", "Graphics3DReferencePoint", "Graphics3DReferenceVector",
+"Graphics3DReferenceVectorGeometryToolComponentCollection", "Graphics3DVaporTrail", "Graphics3DVector",
+"Graphics3DXOrigin", "Graphics3DYOrigin", "GroundVehicle", "GroundVehicleExportTools", "GroundVehicleGraphics",
+"GroundVehicleGraphics3D", "HFSSFarFieldDataGainType", "HelpContextIdentifierType", "IAccessAdvanced",
+"IAccessConstraint", "IAccessConstraintMinMaxBase", "IAccessInterval", "IAnimation", "IAntennaBeam",
+"IAntennaBeamSelectionStrategy", "IAntennaContour", "IAntennaModel", "IAntennaModelOpticalSimple", "IAreaTypeData",
+"IAtmosphericAbsorptionModel", "IAtmosphericAbsorptionModelITURP676", "IAtmosphericAbsorptionModelTIREM",
+"IAtmosphericTurbulenceModel", "IAzElMaskData", "IBeamformer", "ICelestialBodyInformation",
+"ICelestialBodyInformationCollection", "IChainTimePeriod", "IClassicalLocation", "IClassicalSizeShape", "ICloneable",
+"ICloudsAndFogFadingLossModel", "ICommSystemAccessEventDetection", "ICommSystemAccessSamplingMethod",
+"ICommSystemLinkSelectionCriteria", "IComponentInfo", "IComponentLinkEmbedControl",
+"IConstellationConstraintRestriction", "ICoverageBounds", "ICoverageResolution", "IDataProvider", "IDataProviderInfo",
+"IDelaunayActionVariable", "IDemodulatorModel", "IDirectionProvider", "IDisplayDistance", "IDisplayTime",
+"IDisplayTimesData", "IEOIR", "IEOIRShapeObject", "IElementConfiguration", "IElementConfigurationPolygon",
+"IEventDetectionStrategy", "IFigureOfMeritDefinition", "IFigureOfMeritDefinitionCompute",
+"IFigureOfMeritDefinitionData", "IFigureOfMeritDefinitionDilutionOfPrecision", "IFigureOfMeritDefinitionResponseTime",
+"IFigureOfMeritGraphics2DAttributes", "IFigureOfMeritGraphics2DContours", "IFigureOfMeritNavigationAccuracyMethod",
+"IFlightPathAngle", "IGeodeticSize", "IGraphics3DMarkerData", "IGraphics3DModel", "IGraphics3DModelData",
+"IGraphics3DReferenceAnalysisWorkbenchComponent", "IGreatArcGraphics", "IGreatArcGraphics3D", "IGreatArcVehicle",
+"IIonosphericFadingLossModel", "ILaserAtmosphericLossModel", "ILaserPropagationChannel",
+"ILaserTroposphericScintillationLossModel", "ILatitudeLongitudeAltitudePosition", "ILifetimeInformation",
+"IModulatorModel", "IModulatorModelScriptPlugin", "IOrbitDisplayData", "IOrientationAscNode", "IPlatformRFEnvironment",
+"IPointingStrategy", "IPolarization", "IPolarizationCrossPolLeakage", "IPolarizationElliptical",
+"IPolarizationHorizontal", "IPolarizationLinear", "IPolarizationVertical", "IPositionSourceData", "IPropagator",
+"IPropagatorSGP4LoadData", "IProvideSpatialInfo", "IRFFilterModel", "IRadarActivity", "IRadarClutterGeometryModel",
+"IRadarClutterGeometryModelPlugin", "IRadarClutterMap", "IRadarClutterMapInheritable", "IRadarClutterMapModel",
+"IRadarClutterMapModelConstantCoefficient", "IRadarClutterMapModelPlugin", "IRadarContinuousWaveAnalysisMode",
+"IRadarCrossSectionComputeStrategy", "IRadarModeBistaticReceiver", "IRadarModeBistaticTransmitter",
+"IRadarModeMonostatic", "IRadarModel", "IRadarProbabilityOfDetection", "IRadarProbabilityOfDetectionCFAR",
+"IRadarPulseIntegration", "IRadarSTCAttenuation", "IRadarSTCAttenuationMap", "IRadarWaveformSearchTrack",
+"IRainLossModel", "IReTransmitterModel", "IReceiverModel", "IReceiverModelScriptPlugin", "IRefractionModelBase",
+"ISRPModelBase", "ISTKObject", "ISTKObjectCollection", "ISTKObjectElementCollection", "ISamplingMethodStrategy",
+"IScatteringPointModel", "IScatteringPointProvider", "ISensorPattern", "ISensorPointing",
+"ISensorPointingTargetedBoresight", "ISensorProjectionDisplayDistance", "ISolarActivityConfiguration",
+"ITargetSelectionMethod", "ITerrainNormData", "ITimePeriod", "ITransmitterModel", "ITransmitterModelScriptPlugin",
+"ITroposphericScintillationFadingLossModel", "IUrbanTerrestrialLossModel", "IVehicleAttitude",
+"IVehicleAttitudeProfile", "IVehicleAttitudeSlewBase", "IVehicleAttitudeStandard", "IVehicleBreakAngle",
+"IVehicleCoordinateAxes", "IVehicleGPSAlmanacProperties", "IVehicleGraphics2DAttributes",
+"IVehicleGraphics2DAttributesBasic", "IVehicleGraphics2DAttributesDisplayState", "IVehicleGraphics2DElevation",
+"IVehicleGraphics2DPass", "IVehicleGraphics2DTimeComponentsElement", "IVehicleGraphics2DTimeEventType",
+"IVehicleGraphics3DAttributes", "IVehicleGraphics3DBPlaneTargetPointPosition", "IVehicleGraphics3DProximity",
+"IVehicleGraphics3DProximityAreaObject", "IVehicleGraphics3DSigmaScale", "IVehicleGraphics3DSystemsElementBase",
+"IVehicleGraphics3DTickData", "IVehicleHPOPDragModel", "IVehicleImpact", "IVehicleImpactLocation", "IVehicleLaunch",
+"IVehicleLaunchControl", "IVehicleLeadTrailData", "IVehicleLeadTrailDataFraction", "IVehicleLeadTrailDataTime",
+"IVehiclePassNumbering", "IVehiclePointing", "IVehicleSolarFluxGeoMagnitude", "IVehicleWaypointAltitudeReference",
+"IVolumetricGridDefinition", "IWaveform", "IWaveformSelectionStrategy", "IntegratorStepSizeControl",
+"IntegratorTimeRegularization", "IntersectionType", "IonosphericFadingLossModel",
+"IonosphericFadingLossModelP531Version13", "IonosphericFadingLossModelType", "IvClockHost", "IvTimeSense",
+"KeyValueCollection", "LOPAtmosphericDensityModel", "LabelNote", "LabelNoteCollection", "LaserAtmosphericLossModel",
+"LaserAtmosphericLossModelBeerBouguerLambertLaw", "LaserEnvironment", "LaserPropagationLossModelType",
+"LaserPropagationLossModels", "LaserTroposphericScintillationLossModel",
+"LaserTroposphericScintillationLossModelITURP1814", "LaserTroposphericScintillationLossModelType",
+"LatitudeLongitudeAltitudeCentric", "LatitudeLongitudeAltitudeDetic", "LatitudeLongitudeAltitudePosition",
+"LatticeType", "LaunchVehicle", "LaunchVehicleControlFixedApogeeAltitude", "LaunchVehicleControlFixedDeltaV",
+"LaunchVehicleControlFixedDeltaVMinimumEccentricity", "LaunchVehicleControlFixedTimeOfFlight",
+"LaunchVehicleExportTools", "LaunchVehicleGraphics", "LaunchVehicleGraphics3D", "LaunchVehicleInitialState",
+"LaunchVehicleLocationCentric", "LaunchVehicleLocationDetic", "LeadTrailData", "LevelAttribute",
+"LevelAttributeCollection", "LightingObstructionModelType", "LimitsExceededBehaviorType", "LineTarget",
+"LineTargetGraphics", "LineTargetGraphics3D", "LineTargetPoint", "LineTargetPointCollection", "LineWidth", "LinkMargin",
+"LinkMarginType", "LinkToObject", "LoadMethod", "LocationVectorGeometryToolPoint", "LookAheadPropagator",
+"LowAltitudeAtmosphericDensityModel", "MODTRANLookupTablePropagationModel", "MODTRANPropagationModel", "MTO",
+"MTOAnalysis", "MTOAnalysisFieldOfView", "MTOAnalysisPosition", "MTOAnalysisRange", "MTOAnalysisVisibility",
+"MTODefaultGraphics2DTrack", "MTODefaultGraphics3DTrack", "MTODefaultTrack", "MTOEntirety", "MTOGlobalTrackOptions",
+"MTOGraphics", "MTOGraphics2DFadeTimes", "MTOGraphics2DGlobalTrackOptions", "MTOGraphics2DLeadTrailTimes",
+"MTOGraphics2DLine", "MTOGraphics2DMarker", "MTOGraphics2DTrack", "MTOGraphics2DTrackCollection", "MTOGraphics3D",
+"MTOGraphics3DDropLines", "MTOGraphics3DGlobalTrackOptions", "MTOGraphics3DMarker", "MTOGraphics3DModel",
+"MTOGraphics3DModelArticulation", "MTOGraphics3DPoint", "MTOGraphics3DSwapDistances", "MTOGraphics3DTrack",
+"MTOGraphics3DTrackCollection", "MTOInputDataType", "MTOObjectInterval", "MTORangeMode", "MTOTrack",
+"MTOTrackCollection", "MTOTrackEvaluationType", "MTOTrackPoint", "MTOTrackPointCollection", "MTOVisibilityMode",
+"MarkerShape3d", "MarkerType", "MethodToComputeSunPosition", "MilitaryStandard2525bSymbols", "Missile", "MissileEOIR",
+"MissileExportTools", "MissileGraphics", "MissileGraphics3D", "MixedSphericalFlightPathAngleHorizontal",
+"MixedSphericalFlightPathAngleType", "MixedSphericalFlightPathAngleVertical", "ModelGltfReflectionMapType", "ModelType",
+"ModtranAerosolModelType", "ModtranCloudModelType", "ModulatorModel", "ModulatorModel16PSK", "ModulatorModel8PSK",
+"ModulatorModelBOC", "ModulatorModelBPSK", "ModulatorModelDPSK", "ModulatorModelExternal",
+"ModulatorModelExternalSource", "ModulatorModelFSK", "ModulatorModelMSK", "ModulatorModelNFSK",
+"ModulatorModelNarrowbandUniform", "ModulatorModelOQPSK", "ModulatorModelPulsedSignal", "ModulatorModelQAM1024",
+"ModulatorModelQAM128", "ModulatorModelQAM16", "ModulatorModelQAM256", "ModulatorModelQAM32", "ModulatorModelQAM64",
+"ModulatorModelQPSK", "ModulatorModelScriptPluginCustomPSD", "ModulatorModelScriptPluginIdealPSD", "ModulatorModelType",
+"ModulatorModelWidebandGaussian", "ModulatorModelWidebandUniform", "NoiseTemperatureComputeType", "NoteShowType",
+"NotificationFilterMask", "ObjectCoverage", "ObjectCoverageFigureOfMerit", "ObjectLaserEnvironment", "ObjectLink",
+"ObjectLinkCollection", "ObjectRFEnvironment", "OceanTides", "OffsetFrameType", "OnePointAccess",
+"OnePointAccessConstraint", "OnePointAccessConstraintCollection", "OnePointAccessResult",
+"OnePointAccessResultCollection", "OnePointAccessStatus", "OnePointAccessSummary", "OrbitState", "OrbitStateCartesian",
+"OrbitStateClassical", "OrbitStateCoordinateSystem", "OrbitStateDelaunay", "OrbitStateDetic", "OrbitStateEquinoctial",
+"OrbitStateMixedSpherical", "OrbitStateSpherical", "OrientationAscNode", "OrientationLongitudeOfAscending",
+"OrientationRightAscensionOfAscendingNode", "PRFMode", "PassBreak", "PassBreakNumberingDateOfFirstPass",
+"PassBreakNumberingFirstPassNumber", "PathCollection", "Place", "PlaceGraphics", "PlaceGraphics3D", "Planet",
+"PlanetCommonTasks", "PlanetGraphics", "PlanetGraphics3D", "PlanetOrbitDisplayTime", "PlanetOrbitDisplayType",
+"PlanetPositionCentralBody", "PlanetPositionFile", "PlanetPositionSourceType", "PlatformLaserEnvironment",
+"PointTargetGraphics3DModel", "PointingStrategy", "PointingStrategyFixed", "PointingStrategySpinning",
+"PointingStrategyTargeted", "PointingStrategyType", "Polarization", "PolarizationElliptical", "PolarizationHorizontal",
+"PolarizationLeftHandCircular", "PolarizationLinear", "PolarizationReferenceAxis", "PolarizationRightHandCircular",
+"PolarizationType", "PolarizationVertical", "Preferences", "PreferencesConnect", "PreferencesPythonPlugins",
+"PreferencesVDF", "Priority", "PriorityCollection", "ProgressBarEventArguments", "ProjectionHorizontalDatumType",
+"PropagationChannel", "Propagator11Parameters", "Propagator11ParametersDescriptor",
+"Propagator11ParametersDescriptorCollection", "PropagatorAviator", "PropagatorBallistic",
+"PropagatorDefinitionExportTool", "PropagatorDisplayCoordinateType", "PropagatorGPS", "PropagatorGreatArc",
+"PropagatorHPOP", "PropagatorHPOPStaticForceModelSettings", "PropagatorHPOPThirdBodyGravityCollection",
+"PropagatorHPOPThirdBodyGravityElement", "PropagatorJ2Perturbation", "PropagatorJ4Perturbation", "PropagatorLOP",
+"PropagatorLOPThirdBodyGravity", "PropagatorRealtime", "PropagatorRealtimeCartesianPoints",
+"PropagatorRealtimeDeticPoints", "PropagatorRealtimeHeadingPitch", "PropagatorRealtimePointBuilder",
+"PropagatorRealtimeUTMPoints", "PropagatorSGP4", "PropagatorSGP4AutoUpdate", "PropagatorSGP4AutoUpdateFileSource",
+"PropagatorSGP4AutoUpdateOnlineSource", "PropagatorSGP4AutoUpdateProperties", "PropagatorSGP4CommonTasks",
+"PropagatorSGP4LoadFile", "PropagatorSGP4OnlineAutoLoad", "PropagatorSGP4OnlineLoad",
+"PropagatorSGP4PropagatorSettings", "PropagatorSGP4Segment", "PropagatorSGP4SegmentCollection",
+"PropagatorSGP4SwitchMethod", "PropagatorSP3", "PropagatorSP3File", "PropagatorSP3FileCollection", "PropagatorSPICE",
+"PropagatorSPICESegment", "PropagatorSPICESegmentsCollection", "PropagatorSTKExternal", "PropagatorSimpleAscent",
+"PropagatorTwoBody", "PropagatorType", "PropagatorUserExternal", "PulseWidthMode", "RCSComputeStrategy",
+"RFEnvironment", "RFFilterModel", "RFFilterModelBessel", "RFFilterModelButterworth", "RFFilterModelChebyshev",
+"RFFilterModelCosineWindow", "RFFilterModelElliptic", "RFFilterModelExternal", "RFFilterModelFIR",
+"RFFilterModelFIRBoxCar", "RFFilterModelGaussianWindow", "RFFilterModelHammingWindow", "RFFilterModelIIR",
+"RFFilterModelRCLowPass", "RFFilterModelRaisedCosine", "RFFilterModelRectangular", "RFFilterModelRootRaisedCosine",
+"RFFilterModelScriptPlugin", "RFFilterModelSinc", "RFFilterModelSincEnvelopeSinc", "RFFilterModelType",
+"RFInterference", "Radar", "RadarAccessGraphics", "RadarActivity", "RadarActivityAlwaysActive",
+"RadarActivityAlwaysInactive", "RadarActivityTimeComponentList", "RadarActivityTimeComponentListCollection",
+"RadarActivityTimeComponentListElement", "RadarActivityTimeIntervalList", "RadarActivityTimeIntervalListCollection",
+"RadarActivityTimeIntervalListElement", "RadarActivityType", "RadarAntennaBeam", "RadarAntennaBeamCollection",
+"RadarClutter", "RadarClutterGeometry", "RadarClutterGeometryModelType", "RadarClutterMapModelType",
+"RadarContinuousWaveAnalysisMode", "RadarContinuousWaveAnalysisModeFixedTime", "RadarContinuousWaveAnalysisModeGoalSNR",
+"RadarCrossSection", "RadarCrossSectionComputeStrategy", "RadarCrossSectionComputeStrategyAnsysCSVFile",
+"RadarCrossSectionComputeStrategyConstantValue", "RadarCrossSectionComputeStrategyExternalFile",
+"RadarCrossSectionComputeStrategyPlugin", "RadarCrossSectionComputeStrategyScriptPlugin",
+"RadarCrossSectionContourGraphicsPolarization", "RadarCrossSectionContourLevel",
+"RadarCrossSectionContourLevelCollection", "RadarCrossSectionFrequencyBand", "RadarCrossSectionFrequencyBandCollection",
+"RadarCrossSectionGraphics", "RadarCrossSectionGraphics3D", "RadarCrossSectionInheritable", "RadarCrossSectionModel",
+"RadarCrossSectionVolumeGraphics", "RadarCrossSectionVolumeLevel", "RadarCrossSectionVolumeLevelCollection",
+"RadarDopplerClutterFilters", "RadarFrequencySpecificationType", "RadarGraphics", "RadarGraphics3D", "RadarJamming",
+"RadarMode", "RadarModeBistaticReceiver", "RadarModeBistaticReceiverSAR", "RadarModeBistaticReceiverSearchTrack",
+"RadarModeBistaticTransmitter", "RadarModeBistaticTransmitterSAR", "RadarModeBistaticTransmitterSearchTrack",
+"RadarModeMonostatic", "RadarModeMonostaticSAR", "RadarModeMonostaticSearchTrack", "RadarModel",
+"RadarModelBistaticReceiver", "RadarModelBistaticTransmitter", "RadarModelMonostatic", "RadarModelMultifunction",
+"RadarModelType", "RadarModulator", "RadarMultifunctionDetectionProcessing",
+"RadarMultifunctionWaveformStrategySettings", "RadarMultipathGraphics", "RadarProbabilityOfDetection",
+"RadarProbabilityOfDetectionCFAR", "RadarProbabilityOfDetectionCFARCellAveraging",
+"RadarProbabilityOfDetectionCFAROrderedStatistics", "RadarProbabilityOfDetectionNonCFAR",
+"RadarProbabilityOfDetectionPlugin", "RadarProbabilityOfDetectionType", "RadarPulseIntegrationFixedNumberOfPulses",
+"RadarPulseIntegrationGoalSNR", "RadarPulseIntegrationType", "RadarPulseIntegratorType", "RadarReceiver",
+"RadarSARPulseIntegrationAnalysisMode", "RadarSNRContourType", "RadarSTCAttenuation", "RadarSTCAttenuationDecayFactor",
+"RadarSTCAttenuationDecaySlope", "RadarSTCAttenuationMapAzimuthRange", "RadarSTCAttenuationMapElevationRange",
+"RadarSTCAttenuationMapRange", "RadarSTCAttenuationPlugin", "RadarSTCAttenuationType", "RadarSarPRFMode",
+"RadarSarPcrMode", "RadarSarRangeResolutionMode", "RadarSearchTrackPRFMode", "RadarSearchTrackPulseWidthMode",
+"RadarSwerlingCase", "RadarTransmitter", "RadarTransmitterMultifunction",
+"RadarWaveformBistaticReceiverSearchTrackContinuous", "RadarWaveformBistaticReceiverSearchTrackFixedPRF",
+"RadarWaveformBistaticTransmitterSearchTrackContinuous", "RadarWaveformBistaticTransmitterSearchTrackFixedPRF",
+"RadarWaveformMonostaticSearchTrackContinuous", "RadarWaveformMonostaticSearchTrackFixedPRF",
+"RadarWaveformSarPulseDefinition", "RadarWaveformSarPulseIntegration", "RadarWaveformSearchTrackPulseDefinition",
+"RadarWaveformSearchTrackType", "RadiationPressure", "RainLossModel", "RainLossModelCCIR1983", "RainLossModelCrane1982",
+"RainLossModelCrane1985", "RainLossModelITURP618Version10", "RainLossModelITURP618Version12",
+"RainLossModelITURP618Version13", "RainLossModelScriptPlugin", "RainLossModelType", "ReTransmitterModelComplex",
+"ReTransmitterModelMedium", "ReTransmitterModelSimple", "ReTransmitterOpMode", "ReceivePolarizationElliptical",
+"ReceivePolarizationHorizontal", "ReceivePolarizationLeftHandCircular", "ReceivePolarizationLinear",
+"ReceivePolarizationRightHandCircular", "ReceivePolarizationVertical", "Receiver", "ReceiverGraphics",
+"ReceiverGraphics3D", "ReceiverModel", "ReceiverModelCable", "ReceiverModelComplex", "ReceiverModelLaser",
+"ReceiverModelMedium", "ReceiverModelMultibeam", "ReceiverModelScriptPluginLaser", "ReceiverModelScriptPluginRF",
+"ReceiverModelSimple", "ReceiverModelType", "RectangularApertureInputType", "RefractionCoefficients",
+"RefractionModelEffectiveRadiusMethod", "RefractionModelITURP8344", "RefractionModelSCFMethod",
+"RepeatGroundTrackNumbering", "RotationRateAndOffset", "RouteGraphics3DMarkerType", "STKObject",
+"STKObjectChangedEventArguments", "STKObjectCutCopyPasteEventArguments", "STKObjectModelContext",
+"STKObjectPreDeleteEventArguments", "STKObjectRoot", "STKObjectType", "SamplingMethod", "SamplingMethodAdaptive",
+"SamplingMethodFixedStep", "Satellite", "SatelliteCollection", "SatelliteExportTools", "SatelliteGraphics",
+"SatelliteGraphics3D", "SatelliteGraphics3DModel", "ScatteringPointCollection", "ScatteringPointCollectionElement",
+"ScatteringPointModel", "ScatteringPointModelConstantCoefficient", "ScatteringPointModelPlugin",
+"ScatteringPointModelType", "ScatteringPointModelWindTurbine", "ScatteringPointProvider",
+"ScatteringPointProviderCollection", "ScatteringPointProviderCollectionElement", "ScatteringPointProviderList",
+"ScatteringPointProviderListType", "ScatteringPointProviderPlugin", "ScatteringPointProviderPointsFile",
+"ScatteringPointProviderRangeOverCFARCells", "ScatteringPointProviderSinglePoint",
+"ScatteringPointProviderSmoothOblateEarth", "ScatteringPointProviderType", "Scenario", "Scenario3dFont",
+"Scenario3dPointSize", "ScenarioAnimation", "ScenarioAnimationTimePeriod", "ScenarioBeforeSaveEventArguments",
+"ScenarioDatabase", "ScenarioDatabaseCollection", "ScenarioEarthData", "ScenarioEndLoopType", "ScenarioGraphics",
+"ScenarioGraphics3D", "ScenarioRefreshDeltaType", "ScenarioSpaceEnvironment", "ScenarioTimeStepType", "ScheduleTime",
+"ScheduleTimeCollection", "Sensor", "SensorAccessAdvancedSettings", "SensorAltitudeCrossingDirection",
+"SensorAltitudeCrossingSideType", "SensorAzElBoresightAxisType", "SensorAzElMaskFile", "SensorCommonTasks",
+"SensorComplexConicPattern", "SensorCustomPattern", "SensorEOIRBand", "SensorEOIRBandCollection",
+"SensorEOIRBandImageQuality", "SensorEOIRBandOpticalInputMode", "SensorEOIRBandOpticalTransmissionMode",
+"SensorEOIRBandQuantizationMode", "SensorEOIRBandQuantumEfficiencyMode", "SensorEOIRBandRadiometricParameterLevelType",
+"SensorEOIRBandSaturationMode", "SensorEOIRBandSpatialInputMode",
+"SensorEOIRBandSpectralRelativeSystemResponseUnitsType", "SensorEOIRBandSpectralShape", "SensorEOIRBandWavelengthType",
+"SensorEOIRJitterType", "SensorEOIRPattern", "SensorEOIRProcessingLevelType", "SensorEOIRRadiometricPair",
+"SensorEOIRSaturationCollection", "SensorEOIRScanMode", "SensorEOIRSensitivityCollection", "SensorGraphics",
+"SensorGraphics3D", "SensorGraphics3DInheritFrom2D", "SensorGraphics3DOffset", "SensorGraphics3DProjectionElement",
+"SensorGraphics3DProjectionTimeDependencyType", "SensorGraphics3DProjectionType", "SensorGraphics3DPulse",
+"SensorGraphics3DPulseFrequencyPreset", "SensorGraphics3DPulseStyle", "SensorGraphics3DSpaceProjectionCollection",
+"SensorGraphics3DTargetProjectionCollection", "SensorGraphics3DVisualAppearance", "SensorHalfPowerPattern",
+"SensorLocation", "SensorPattern", "SensorPointing", "SensorPointing3DModel", "SensorPointingAlongVector",
+"SensorPointingExternal", "SensorPointingFixed", "SensorPointingFixedInAxes", "SensorPointingGrazingAltitude",
+"SensorPointingSchedule", "SensorPointingSpinning", "SensorPointingTargeted", "SensorPointingTargetedBoresightFixed",
+"SensorPointingTargetedBoresightTrack", "SensorPointingTargetedBoresightType", "SensorProjection",
+"SensorProjectionConstantAltitude", "SensorProjectionDisplayDistance", "SensorProjectionDistanceType",
+"SensorProjectionObjectAltitude", "SensorRectangularPattern", "SensorRefractionType", "SensorSARPattern",
+"SensorScanMode", "SensorSimpleConicPattern", "SensorTarget", "SensorTargetCollection", "SensorUnknownPattern", "Ship",
+"ShipExportTools", "ShipGraphics", "ShipGraphics3D", "SolarActivityConfiguration",
+"SolarActivityConfigurationSolarFlux", "SolarActivityConfigurationSunspotNumber", "SolarFluxGeoMagneticFileSettings",
+"SolarFluxGeoMagneticValueSettings", "SolarRadiationPressureModelGPS", "SolarRadiationPressureModelPlugin",
+"SolarRadiationPressureModelPluginSettings", "SolarRadiationPressureModelSpherical", "SolarRadiationPressureModelType",
+"SolarRadiationPressureShadowModelType", "SolidTide", "SolidTides", "SpaceEnvironment",
+"SpaceEnvironmentCrresProtonActivity", "SpaceEnvironmentCrresRadiationActivity", "SpaceEnvironmentGraphics",
+"SpaceEnvironmentMagneticExternalField", "SpaceEnvironmentMagneticField", "SpaceEnvironmentMagneticFieldColorMode",
+"SpaceEnvironmentMagneticFieldColorScaleType", "SpaceEnvironmentMagneticMainField",
+"SpaceEnvironmentMagnitudeFieldGraphics2D", "SpaceEnvironmentMagnitudeFieldLine", "SpaceEnvironmentNasaModelsActivity",
+"SpaceEnvironmentParticleFlux", "SpaceEnvironmentRadiation", "SpaceEnvironmentRadiationDoseRateCollection",
+"SpaceEnvironmentRadiationDoseRateElement", "SpaceEnvironmentRadiationEnergyMethodEnergies",
+"SpaceEnvironmentRadiationEnergyValues", "SpaceEnvironmentRadiationEnvironment", "SpaceEnvironmentSAAChannel",
+"SpaceEnvironmentSAAContour", "SpaceEnvironmentSAAFluxLevel", "SpaceEnvironmentScenarioGraphics3D",
+"SpaceEnvironmentVehicleTemperature", "SpacingUnit", "SpatialState", "SphericalFlightPathAngleHorizontal",
+"SphericalFlightPathAngleVertical", "SphericalFlightPathAzimuthType", "SpiceInterpolation", "Star", "StarCollection",
+"StarGraphics", "StarGraphics3D", "StarInformation", "StarReferenceFrame", "StatisticType", "Subset",
+"SurfaceReference", "Swath", "SwathComputationalMethod", "SystemNoiseTemperature", "TIREMPolarizationType", "Target",
+"TargetGraphics", "TargetGraphics3D", "TargetSelectionMethod", "TargetSelectionMethod",
+"TargetSelectionMethodClosingVelocity", "TargetSelectionMethodPriority", "TargetSelectionMethodRange", "Terrain",
+"TerrainCollection", "TerrainFileType", "TerrainNormalSlopeAzimuth", "TerrainNormalType", "TextOutlineStyle",
+"ThirdBodyGravitySourceType", "TickData", "Tileset3D", "Tileset3DCollection", "Tileset3DSourceType",
+"TimeIntervalCollection", "TimeIntervalCollectionReadOnly", "TimePeriod", "TimePeriodValue", "TimePeriodValueType",
+"TimeVaryingExtremum", "TrackMode", "TrajectoryType", "TransferFunctionInputBackOffOutputBackOffTable",
+"TransferFunctionInputBackOffOutputBackOffTableRow", "TransferFunctionInputBackOffVsCOverImTable",
+"TransferFunctionInputBackOffVsCOverImTableRow", "TransferFunctionPolynomialCollection", "TransferFunctionType",
+"Transmitter", "TransmitterGraphics", "TransmitterGraphics3D", "TransmitterModel", "TransmitterModelCable",
+"TransmitterModelComplex", "TransmitterModelLaser", "TransmitterModelMedium", "TransmitterModelMultibeam",
+"TransmitterModelScriptPluginLaser", "TransmitterModelScriptPluginRF", "TransmitterModelSimple", "TransmitterModelType",
+"TroposphericScintillationAverageTimeChoiceType", "TroposphericScintillationFadingLossModel",
+"TroposphericScintillationFadingLossModelP618Version12", "TroposphericScintillationFadingLossModelP618Version8",
+"TroposphericScintillationFadingLossModelType", "UrbanTerrestrialLossModel", "UrbanTerrestrialLossModelTwoRay",
+"UrbanTerrestrialLossModelType", "UrbanTerrestrialLossModelWirelessInSite64", "VectorAxesConnectType",
+"VehicleAccessAdvancedSettings", "VehicleAltitudeReference", "VehicleAttitude", "VehicleAttitudeExportTool",
+"VehicleAttitudeExternal", "VehicleAttitudeMaximumSlewAcceleration", "VehicleAttitudeMaximumSlewRate",
+"VehicleAttitudePointing", "VehicleAttitudeRealTime", "VehicleAttitudeRealTimeDataReference",
+"VehicleAttitudeSlewConstrained", "VehicleAttitudeSlewFixedRate", "VehicleAttitudeSlewFixedTime",
+"VehicleAttitudeTargetSlew", "VehicleAttitudeTrendingControlAviator", "VehicleBreakAngleBreakByLatitude",
+"VehicleBreakAngleBreakByLongitude", "VehicleBreakAngleType", "VehicleCentralBodies",
+"VehicleConsiderAnalysisCollection", "VehicleConsiderAnalysisCollectionElement", "VehicleConsiderAnalysisType",
+"VehicleCoordinateAxesCustom", "VehicleCoordinateSystem", "VehicleCorrelationListCollection",
+"VehicleCorrelationListElement", "VehicleCorrelationListType", "VehicleCovariance", "VehicleDefinition",
+"VehicleDirection", "VehicleDuration", "VehicleEOIR", "VehicleEclipseBodies", "VehicleEclipsingBodies",
+"VehicleEllipseDataCollection", "VehicleEllipseDataElement", "VehicleEllipseOptionType",
+"VehicleEphemerisBinaryExportTool", "VehicleEphemerisCCSDSExportTool", "VehicleEphemerisCCSDSv2ExportTool",
+"VehicleEphemerisCode500ExportTool", "VehicleEphemerisExportTool", "VehicleEphemerisSPICEExportTool",
+"VehicleExponentialDensityModelParameters", "VehicleFrame", "VehicleGPSAlmanacProperties",
+"VehicleGPSAlmanacPropertiesSEM", "VehicleGPSAlmanacPropertiesSP3", "VehicleGPSAlmanacPropertiesYUMA",
+"VehicleGPSAlmanacType", "VehicleGPSAutoUpdate", "VehicleGPSAutoUpdateFileSource", "VehicleGPSAutoUpdateOnlineSource",
+"VehicleGPSAutoUpdateProperties", "VehicleGPSAutomaticUpdateSourceType", "VehicleGPSElement",
+"VehicleGPSElementCollection", "VehicleGPSElementSelectionType", "VehicleGPSSpecifyAlmanac", "VehicleGPSSwitchMethod",
+"VehicleGeomagneticFluxSourceType", "VehicleGeomagneticFluxUpdateRateType", "VehicleGraphics2DAttributeType",
+"VehicleGraphics2DAttributesAccess", "VehicleGraphics2DAttributesCustom", "VehicleGraphics2DAttributesOrbit",
+"VehicleGraphics2DAttributesRealtime", "VehicleGraphics2DAttributesRoute", "VehicleGraphics2DAttributesTimeComponents",
+"VehicleGraphics2DAttributesTrajectory", "VehicleGraphics2DElevation", "VehicleGraphics2DElevationContours",
+"VehicleGraphics2DElevationGroundElevation", "VehicleGraphics2DElevationSwathHalfWidth",
+"VehicleGraphics2DElevationVehicleHalfAngle", "VehicleGraphics2DElevationsCollection",
+"VehicleGraphics2DElevationsElement", "VehicleGraphics2DGroundEllipsesCollection",
+"VehicleGraphics2DGroundEllipsesElement", "VehicleGraphics2DInterval", "VehicleGraphics2DIntervalsCollection",
+"VehicleGraphics2DLeadDataFraction", "VehicleGraphics2DLeadDataTime", "VehicleGraphics2DLeadTrailData",
+"VehicleGraphics2DLighting", "VehicleGraphics2DLightingElement", "VehicleGraphics2DLine", "VehicleGraphics2DOffset",
+"VehicleGraphics2DOptionType", "VehicleGraphics2DOrbitPassData", "VehicleGraphics2DPass",
+"VehicleGraphics2DPassResolution", "VehicleGraphics2DPassShowPasses", "VehicleGraphics2DPasses",
+"VehicleGraphics2DRoutePassData", "VehicleGraphics2DRouteResolution", "VehicleGraphics2DSAA", "VehicleGraphics2DSwath",
+"VehicleGraphics2DTimeComponentsCollection", "VehicleGraphics2DTimeComponentsEventCollectionElement",
+"VehicleGraphics2DTimeComponentsEventElement", "VehicleGraphics2DTimeEventType", "VehicleGraphics2DTimeEventTypeLine",
+"VehicleGraphics2DTimeEventTypeMarker", "VehicleGraphics2DTimeEventTypeText", "VehicleGraphics2DTimeEventsCollection",
+"VehicleGraphics2DTimeEventsElement", "VehicleGraphics2DTrailDataFraction", "VehicleGraphics2DTrailDataTime",
+"VehicleGraphics2DTrajectoryPassData", "VehicleGraphics2DTrajectoryResolution", "VehicleGraphics2DVisibleSideType",
+"VehicleGraphics2DWaypointMarker", "VehicleGraphics2DWaypointMarkersCollection",
+"VehicleGraphics2DWaypointMarkersElement", "VehicleGraphics3DAttributeType", "VehicleGraphics3DAttributesBasic",
+"VehicleGraphics3DAttributesIntervals", "VehicleGraphics3DBPlaneEvent", "VehicleGraphics3DBPlaneInstance",
+"VehicleGraphics3DBPlaneInstancesCollection", "VehicleGraphics3DBPlanePoint", "VehicleGraphics3DBPlanePointCollection",
+"VehicleGraphics3DBPlaneTargetPoint", "VehicleGraphics3DBPlaneTargetPointPosition",
+"VehicleGraphics3DBPlaneTargetPointPositionCartesian", "VehicleGraphics3DBPlaneTargetPointPositionPolar",
+"VehicleGraphics3DBPlaneTemplate", "VehicleGraphics3DBPlaneTemplateDisplayCollection",
+"VehicleGraphics3DBPlaneTemplateDisplayElement", "VehicleGraphics3DBPlaneTemplatesCollection",
+"VehicleGraphics3DBPlanes", "VehicleGraphics3DBearingBox", "VehicleGraphics3DBearingEllipse",
+"VehicleGraphics3DControlBox", "VehicleGraphics3DCovariance", "VehicleGraphics3DCovariancePointingContour",
+"VehicleGraphics3DDataFraction", "VehicleGraphics3DDataTime", "VehicleGraphics3DDefaultAttributes",
+"VehicleGraphics3DDropLinePathItem", "VehicleGraphics3DDropLinePathItemCollection",
+"VehicleGraphics3DDropLinePositionItem", "VehicleGraphics3DDropLinePositionItemCollection",
+"VehicleGraphics3DDropLineType", "VehicleGraphics3DElevationContours", "VehicleGraphics3DEllipsoid",
+"VehicleGraphics3DGeoBox", "VehicleGraphics3DIntervalsCollection", "VehicleGraphics3DIntervalsElement",
+"VehicleGraphics3DLeadTrailData", "VehicleGraphics3DLineOfBearing", "VehicleGraphics3DModelRoute",
+"VehicleGraphics3DModelTrajectory", "VehicleGraphics3DOrbitDropLines", "VehicleGraphics3DOrbitPassData",
+"VehicleGraphics3DOrbitProximity", "VehicleGraphics3DOrbitTickMarks", "VehicleGraphics3DOrbitTrackData",
+"VehicleGraphics3DPass", "VehicleGraphics3DPathTickMarks", "VehicleGraphics3DRoute", "VehicleGraphics3DRouteDropLines",
+"VehicleGraphics3DRouteProximity", "VehicleGraphics3DSAA", "VehicleGraphics3DSigmaScale",
+"VehicleGraphics3DSigmaScaleProbability", "VehicleGraphics3DSigmaScaleScale", "VehicleGraphics3DSize",
+"VehicleGraphics3DSystemsCollection", "VehicleGraphics3DSystemsElement", "VehicleGraphics3DSystemsSpecialElement",
+"VehicleGraphics3DTickDataLine", "VehicleGraphics3DTickDataPoint", "VehicleGraphics3DTrajectory",
+"VehicleGraphics3DTrajectoryDropLines", "VehicleGraphics3DTrajectoryPassData", "VehicleGraphics3DTrajectoryProximity",
+"VehicleGraphics3DTrajectoryTickMarks", "VehicleGraphics3DTrajectoryTrackData", "VehicleGraphics3DVelocityCovariance",
+"VehicleGraphics3DWaypointMarkersCollection", "VehicleGraphics3DWaypointMarkersElement", "VehicleGravity",
+"VehicleGroundEllipseElement", "VehicleGroundEllipsesCollection", "VehicleHPOPCentralBodyGravity",
+"VehicleHPOPDragModel", "VehicleHPOPDragModelPlugin", "VehicleHPOPDragModelPluginSettings",
+"VehicleHPOPDragModelSpherical", "VehicleHPOPForceModel", "VehicleHPOPForceModelDrag",
+"VehicleHPOPForceModelDragOptions", "VehicleHPOPForceModelMoreOptions", "VehicleHPOPSolarRadiationPressure",
+"VehicleHPOPSolarRadiationPressureModel", "VehicleHPOPSolarRadiationPressureOptions", "VehicleImpact",
+"VehicleImpactLocation", "VehicleImpactLocationCentric", "VehicleImpactLocationDetic",
+"VehicleImpactLocationLaunchAzEl", "VehicleImpactLocationPoint", "VehicleInertia", "VehicleInitialState",
+"VehicleIntegratedAttitude", "VehicleIntegrationModel", "VehicleIntegrator", "VehicleInterpolation",
+"VehicleInterpolationMethod", "VehicleLOPCentralBodyGravity", "VehicleLOPDragSettings", "VehicleLOPForceModel",
+"VehicleLOPForceModelDrag", "VehicleLOPSolarRadiationPressure", "VehicleLaunch", "VehicleLaunchControl",
+"VehicleLookAheadMethod", "VehicleMassProperties", "VehicleMethod", "VehiclePartialPassMeasurement",
+"VehiclePassNumbering", "VehiclePhysicalData", "VehiclePluginPropagator", "VehiclePluginSettings",
+"VehiclePositionVelocityCollection", "VehiclePositionVelocityElement", "VehiclePredictorCorrectorScheme",
+"VehiclePropagationFrame", "VehicleSGP4AutomaticUpdateSourceType", "VehicleSGP4TLESelectionType", "VehicleSlewMode",
+"VehicleSlewTimingBetweenTargetType", "VehicleSolarFluxGeomagneticType", "VehicleSpaceEnvironmentApSource",
+"VehicleSpaceEnvironmentComputationMode", "VehicleSpaceEnvironmentDetectorGeometry",
+"VehicleSpaceEnvironmentDetectorType", "VehicleSpaceEnvironmentDoseChannel", "VehicleSpaceEnvironmentF10P7SourceType",
+"VehicleSpaceEnvironmentMaterial", "VehicleSpaceEnvironmentShapeModel", "VehicleSpatialInformation",
+"VehicleTargetPointingCollection", "VehicleTargetPointingElement", "VehicleTargetPointingIntervalCollection",
+"VehicleTargetTimes", "VehicleVector", "VehicleWaypointAltitudeReference", "VehicleWaypointAltitudeReferenceTerrain",
+"VehicleWaypointComputationMethod", "VehicleWaypointInterpolationMethod", "VehicleWaypointsCollection",
+"VehicleWaypointsElement", "VehicleZonalPropagatorInitialState", "Volumetric", "VolumetricAdvancedSettings",
+"VolumetricAnalysisInterval", "VolumetricDataExportFormatType", "VolumetricDefinitionType",
+"VolumetricDisplayQualityType", "VolumetricDisplayVolumeType", "VolumetricExportTool", "VolumetricExternalFile",
+"VolumetricGraphics3D", "VolumetricGraphics3DActiveGridPoints", "VolumetricGraphics3DCrossSection",
+"VolumetricGraphics3DCrossSectionPlane", "VolumetricGraphics3DCrossSectionPlaneCollection", "VolumetricGraphics3DGrid",
+"VolumetricGraphics3DLegend", "VolumetricGraphics3DSpatialCalculationLevel",
+"VolumetricGraphics3DSpatialCalculationLevelCollection", "VolumetricGraphics3DSpatialCalculationLevels",
+"VolumetricGraphics3DVolume", "VolumetricGridSpatialCalculation", "VolumetricLegendNumericNotationType",
+"VolumetricLevelOrder", "VolumetricSaveComputedDataType", "VolumetricSpatialCalculationEvaluationType",
+"VolumetricVolumeGridExportType", "Waveform", "WaveformPulseDefinition", "WaveformRectangular",
+"WaveformSelectionStrategy", "WaveformSelectionStrategyFixed", "WaveformSelectionStrategyRangeLimits",
+"WaveformSelectionStrategyType", "WaveformType", "WirelessInSite64GeometryData"]
 
 from ctypes import POINTER
 from enum import IntEnum, IntFlag
 import typing
 
+from ..analysis_workbench import (
+    IAnalysisWorkbenchComponent,
+    ITimeToolTimeArray,
+    ITimeToolTimeIntervalList,
+    IVectorGeometryToolAxes,
+)
 from ..internal import coclassutil as agcls, comutil as agcom, dataanalysisutil as agdata, marshall as agmarshall
 from ..internal.apiutil import (
     EnumeratorProxy,
@@ -410,7 +520,7 @@ from ..internal.apiutil import (
     set_interface_attribute,
 )
 from ..internal.comutil import IDispatch, IUnknown
-from ..internal.eventutil import IStkObjectRootEventHandler
+from ..internal.eventutil import ISTKObjectRootEventHandler
 from ..stkutil import (
     AzElAboutBoresight,
     ConversionUtility,
@@ -433,7 +543,6 @@ from ..stkutil import (
 )
 from ..utilities import colors as agcolor
 from ..utilities.exceptions import STKRuntimeError
-from ..vgt import IAnalysisWorkbenchComponent, ITimeToolTimeArray, ITimeToolTimeIntervalList, IVectorGeometryToolAxes
 
 
 def _raise_uninitialized_error(*args):
@@ -441,7 +550,7 @@ def _raise_uninitialized_error(*args):
 
 class Constants(IntEnum):
     """Constants contains base IDs for various structures."""
-   
+
     ERROR_BASE = 0x200
     """Error base."""
     HELP_CONTEXT_BASE = 0x1000
@@ -454,57 +563,57 @@ agcls.AgTypeNameMap["Constants"] = Constants
 
 class HelpContextIdentifierType(IntEnum):
     """Help context IDs."""
-   
+
     STK_OBJECT_COLLECTION = (Constants.HELP_CONTEXT_BASE + 1)
-    
+
     STK_OBJECT = (Constants.HELP_CONTEXT_BASE + 2)
-    
+
     APPLICATION = (Constants.HELP_CONTEXT_BASE + 3)
-    
+
     CO_STK_OBJECT = (Constants.HELP_CONTEXT_BASE + 4)
-    
+
     CO_APPLICATION = (Constants.HELP_CONTEXT_BASE + 5)
-    
+
     CO_STK_OBJECT_COLLECTION = (Constants.HELP_CONTEXT_BASE + 6)
-    
+
     EXECUTE_CMD_RESULT = (Constants.HELP_CONTEXT_BASE + 7)
-    
+
     STK_OBJECT_ROOT_EVENTS = (Constants.HELP_CONTEXT_BASE + 8)
-    
+
     LIFETIME_INFORMATION = (Constants.HELP_CONTEXT_BASE + 11)
-    
+
     DATA_PROVIDER_RESULT_SUB_SECTION = (Constants.HELP_CONTEXT_BASE + 12)
-    
+
     DATA_PROVIDER_RESULT_INTERVAL_COLLECTION = (Constants.HELP_CONTEXT_BASE + 13)
-    
+
     DATA_PROVIDER_RESULT_INTERVAL = (Constants.HELP_CONTEXT_BASE + 14)
-    
+
     DATA_PROVIDER_RESULT_DATA_SET_COLLECTION = (Constants.HELP_CONTEXT_BASE + 15)
-    
+
     DATA_PROVIDER_RESULT_DATA_SET = (Constants.HELP_CONTEXT_BASE + 16)
-    
+
     DATA_PROVIDER_RESULT_RESULT = (Constants.HELP_CONTEXT_BASE + 17)
-    
+
     DATA_PROVIDER_RESULT_SUB_SECTION_COLLECTION = (Constants.HELP_CONTEXT_BASE + 18)
-    
+
     DATA_PROVIDER_RESULT_TEXT_MESSAGE = (Constants.HELP_CONTEXT_BASE + 19)
-    
+
     SUPPORT_BATCH_UPDATES = (Constants.HELP_CONTEXT_BASE + 20)
-    
+
     XML_SERIALIZABLE = (Constants.HELP_CONTEXT_BASE + 21)
-    
+
     STK_OBJECT_ELEMENT_COLLECTION = (Constants.HELP_CONTEXT_BASE + 22)
-    
+
     ANIMATION = (Constants.HELP_CONTEXT_BASE + 23)
-    
+
     STK_OBJECT_XPATH_NAVIGATOR = (Constants.HELP_CONTEXT_BASE + 24)
-    
+
 
 agcls.AgTypeNameMap["HelpContextIdentifierType"] = HelpContextIdentifierType
 
 class ErrorCode(IntEnum):
     """Error codes."""
-   
+
     OBJECT_NOT_FOUND = (((1 << 31) | (4 << 16)) | (Constants.ERROR_BASE + 1))
     """Object not found."""
     INDEX_OUT_OF_RANGE = (((1 << 31) | (4 << 16)) | (Constants.ERROR_BASE + 2))
@@ -577,7 +686,7 @@ agcls.AgTypeNameMap["ErrorCode"] = ErrorCode
 
 class AberrationType(IntEnum):
     """The model of aberration to be used in access computations."""
-   
+
     UNKNOWN = -1
     """Not supported type."""
     TOTAL = 0
@@ -596,7 +705,7 @@ agcls.AgTypeNameMap["AberrationType"] = AberrationType
 
 class AnimationEndTimeMode(IntEnum):
     """Animation modes."""
-   
+
     UNKNOWN = 0
     """Unknown animation mode."""
     NORMAL = 1
@@ -618,7 +727,7 @@ agcls.AgTypeNameMap["AnimationEndTimeMode"] = AnimationEndTimeMode
 
 class AnimationOptionType(IntEnum):
     """Animation Options."""
-   
+
     CONTINUE = 0
     """Continue animating after the end time is reached."""
     LOOP = 1
@@ -634,7 +743,7 @@ agcls.AgTypeNameMap["AnimationOptionType"] = AnimationOptionType
 
 class AnimationActionType(IntEnum):
     """Animation action options."""
-   
+
     ACTION_PLAY = 0
     """Play."""
     ACTION_START = 1
@@ -647,7 +756,7 @@ agcls.AgTypeNameMap["AnimationActionType"] = AnimationActionType
 
 class AnimationDirectionType(IntEnum):
     """Animation direction options."""
-   
+
     NOT_AVAILABLE = 0
     """Not available."""
     FORWARD = 1
@@ -663,7 +772,7 @@ agcls.AgTypeNameMap["AnimationDirectionType"] = AnimationDirectionType
 
 class AzElMaskType(IntEnum):
     """Obscura types of the facility, place or target for AzElMask definition."""
-   
+
     MASK_FILE = 0x0
     """Use data in an external azimuth-elevation mask (.aem) file."""
     TERRAIN_DATA = 0x1
@@ -679,7 +788,7 @@ agcls.AgTypeNameMap["AzElMaskType"] = AzElMaskType
 
 class ActionType(IntEnum):
     """Specify the action type for the Interval Access Constraint."""
-   
+
     INCLUDE = 0
     """Include time intervals during which the constraint is satisfied."""
     EXCLUDE = 1
@@ -692,7 +801,7 @@ agcls.AgTypeNameMap["ActionType"] = ActionType
 
 class AxisOffset(IntEnum):
     """Specify the axis offset for the sensor 3D Vertex Offset."""
-   
+
     SENSOR_RADIUS = 0
     """Sensor Radius: offset along the axis of the boresight by a distance calculated by STK using the radius entered."""
     BORESIGHT_OFFSET = 1
@@ -705,7 +814,7 @@ agcls.AgTypeNameMap["AxisOffset"] = AxisOffset
 
 class DataProviderResultCategory(IntEnum):
     """Specify the category of results returned by the data providers."""
-   
+
     INTERVAL_LIST = 0x0
     """Interval list."""
     SUB_SECTION_LIST = 0x1
@@ -724,7 +833,7 @@ agcls.AgTypeNameMap["DataProviderResultCategory"] = DataProviderResultCategory
 
 class DataProviderType(IntEnum):
     """Specify the type of the result returned by data providers."""
-   
+
     FIXED = 1
     """Not time dependent, e.g. facility position."""
     TIME_VARYING = 2
@@ -752,7 +861,7 @@ agcls.AgTypeNameMap["DataProviderType"] = DataProviderType
 
 class DataProviderElementType(IntEnum):
     """Specify the type of data returned by data providers."""
-   
+
     REAL = 0
     """Real number."""
     INTEGER = 1
@@ -771,7 +880,7 @@ agcls.AgTypeNameMap["DataProviderElementType"] = DataProviderElementType
 
 class AccessTimeType(IntEnum):
     """The time period to use for the access computation."""
-   
+
     OBJECT_ACCESS_TIME = 0
     """Use the start and stop time set for the objects involved in the access calculations as a time period for the access computation."""
     SCENARIO_INTERVAL = 1
@@ -793,7 +902,7 @@ agcls.AgTypeNameMap["AccessTimeType"] = AccessTimeType
 
 class AltitudeReferenceType(IntEnum):
     """Altitude reference options."""
-   
+
     MEAN_SEA_LEVEL = 0x0
     """Reference the altitude to Mean Sea Level."""
     TERRAIN = 0x1
@@ -812,7 +921,7 @@ agcls.AgTypeNameMap["AltitudeReferenceType"] = AltitudeReferenceType
 
 class TerrainNormalType(IntEnum):
     """Methods of defining the slope of the local terrain for the facility, place or target."""
-   
+
     SURFACE_NORMAL = 0x0
     """Surface normal: the normal to the terrain is along the local surface normal. This is equivalent to having a slope of zero."""
     SLOPE_AZIMUTH = 0x1
@@ -825,7 +934,7 @@ agcls.AgTypeNameMap["TerrainNormalType"] = TerrainNormalType
 
 class LightingObstructionModelType(IntEnum):
     """Obstruction model used in lighting computations."""
-   
+
     CENTRAL_BODY_SHAPE = 0x0
     """The lighting obstruction model is the surface of the central body ellipsoid."""
     AZ_EL_MASK = 0x1
@@ -844,7 +953,7 @@ agcls.AgTypeNameMap["LightingObstructionModelType"] = LightingObstructionModelTy
 
 class DisplayTimesType(IntEnum):
     """Display times options for the object."""
-   
+
     UNKNOWN = -1
     """Unknown display type."""
     ALWAYS_OFF = 0x0
@@ -872,7 +981,7 @@ agcls.AgTypeNameMap["DisplayTimesType"] = DisplayTimesType
 
 class AreaType(IntEnum):
     """Methods of defining the area target's boundaries."""
-   
+
     ELLIPSE = 0x0
     """Define the an elliptical area boundary using semimajor axis, semiminor axis and bearing."""
     PATTERN = 0x1
@@ -885,7 +994,7 @@ agcls.AgTypeNameMap["AreaType"] = AreaType
 
 class TrajectoryType(IntEnum):
     """Trajectory type for a point."""
-   
+
     POINT = 0x0
     """Displays a point at the current animation time."""
     TRACE = 0x1
@@ -901,7 +1010,7 @@ agcls.AgTypeNameMap["TrajectoryType"] = TrajectoryType
 
 class OffsetFrameType(IntEnum):
     """Frame options for label offset."""
-   
+
     CARTESIAN = 0x0
     """Use cartesian values to offset the label."""
     PIXEL = 0x1
@@ -914,7 +1023,7 @@ agcls.AgTypeNameMap["OffsetFrameType"] = OffsetFrameType
 
 class Scenario3dPointSize(IntEnum):
     """Font size in points."""
-   
+
     FONT_SIZE_8 = 8
     """Font size: 8 points."""
     FONT_SIZE_9 = 9
@@ -969,7 +1078,7 @@ agcls.AgTypeNameMap["Scenario3dPointSize"] = Scenario3dPointSize
 
 class TerrainFileType(IntEnum):
     """Terrain file type options."""
-   
+
     USGS_DEM = 0
     """U.S. Geological Survey Digital Elevation Model. Moderate resolution."""
     GTOPO30 = 1
@@ -1033,7 +1142,7 @@ agcls.AgTypeNameMap["TerrainFileType"] = TerrainFileType
 
 class Tileset3DSourceType(IntEnum):
     """3DTileset source type options."""
-   
+
     LOCAL_FILE = 0
     """Local File."""
     GCS = 1
@@ -1052,7 +1161,7 @@ agcls.AgTypeNameMap["Tileset3DSourceType"] = Tileset3DSourceType
 
 class MarkerType(IntEnum):
     """Marker style options for a waypoint."""
-   
+
     SHAPE = 0x0
     """Marker style is a shape (point, star, circle, etc.)."""
     IMAGE_FILE = 0x1
@@ -1065,7 +1174,7 @@ agcls.AgTypeNameMap["MarkerType"] = MarkerType
 
 class VectorAxesConnectType(IntEnum):
     """Methods for connecting geometric elements."""
-   
+
     TRACE = 0x0
     """Trace: a single-line arc represents the path of the element."""
     SWEEP = 0x1
@@ -1081,7 +1190,7 @@ agcls.AgTypeNameMap["VectorAxesConnectType"] = VectorAxesConnectType
 
 class Graphics3DMarkerOriginType(IntEnum):
     """Options for the Graphics3DMarker X or Y Origin property."""
-   
+
     LEFT = 0x0
     """X origin: left."""
     RIGHT = 0x1
@@ -1103,7 +1212,7 @@ agcls.AgTypeNameMap["Graphics3DMarkerOriginType"] = Graphics3DMarkerOriginType
 
 class Graphics3DLabelSwapDistanceType(IntEnum):
     """Label swap distance options."""
-   
+
     UNKNOWN = -1
     """Unknown label swap distance option."""
     ALL = 0
@@ -1131,7 +1240,7 @@ agcls.AgTypeNameMap["Graphics3DLabelSwapDistanceType"] = Graphics3DLabelSwapDist
 
 class PlanetPositionSourceType(IntEnum):
     """Options for defining a planet."""
-   
+
     FILE = 0x0
     """Use a planetary ephemeris (.pe) file to define the planet."""
     CENTRAL_BODY = 0x1
@@ -1144,7 +1253,7 @@ agcls.AgTypeNameMap["PlanetPositionSourceType"] = PlanetPositionSourceType
 
 class EphemSourceType(IntEnum):
     """Central body ephemeris sources."""
-   
+
     ANALYTIC = 0x0
     """Analytic ephemeris: use an analytic propagator. Available when orbital elements are known for the Central Body about its parent."""
     DEFAULT = 0x2
@@ -1163,7 +1272,7 @@ agcls.AgTypeNameMap["EphemSourceType"] = EphemSourceType
 
 class PlanetOrbitDisplayType(IntEnum):
     """Orbit display options for a planet."""
-   
+
     ONE_ORBIT = 0x0
     """Display one full orbit."""
     ORBIT_DISPLAY_TIME = 0x1
@@ -1176,7 +1285,7 @@ agcls.AgTypeNameMap["PlanetOrbitDisplayType"] = PlanetOrbitDisplayType
 
 class ScenarioEndLoopType(IntEnum):
     """Scenario animation cycle options."""
-   
+
     END_TIME = 0x0
     """Stop animation at the specified time."""
     LOOP_AT_TIME = 0x1
@@ -1189,7 +1298,7 @@ agcls.AgTypeNameMap["ScenarioEndLoopType"] = ScenarioEndLoopType
 
 class ScenarioRefreshDeltaType(IntEnum):
     """Scenario animation refresh update options."""
-   
+
     HIGH_SPEED = 0x0
     """High speed: STK refreshes the screen as fast as the system is able."""
     REFRESH_DELTA = 0x1
@@ -1202,7 +1311,7 @@ agcls.AgTypeNameMap["ScenarioRefreshDeltaType"] = ScenarioRefreshDeltaType
 
 class SensorPattern(IntEnum):
     """Sensor patterns."""
-   
+
     COMPLEX_CONIC = 0x0
     """Complex conic: defined by specified inner and outer half angles and minimum and maximum clock angles."""
     CUSTOM = 0x1
@@ -1233,7 +1342,7 @@ agcls.AgTypeNameMap["SensorPattern"] = SensorPattern
 
 class SensorPointing(IntEnum):
     """Sensor pointing options."""
-   
+
     ELEMENT_OF_3D_MODEL = 0x0
     """3D model: point a sensor along one of the available elements of the selected 3D Model."""
     FILE = 0x1
@@ -1267,7 +1376,7 @@ agcls.AgTypeNameMap["SensorPointing"] = SensorPointing
 
 class SensorPointingTargetedBoresightType(IntEnum):
     """Boresight types for sensors of targeted pointing type."""
-   
+
     TRACKING = 0x0
     """Tracking: the sensor is aimed at one or more selected targets."""
     FIXED = 0x1
@@ -1280,7 +1389,7 @@ agcls.AgTypeNameMap["SensorPointingTargetedBoresightType"] = SensorPointingTarge
 
 class BoresightType(IntEnum):
     """About boresight options for sensors of targeted pointing type."""
-   
+
     HOLD = 0x0
     """Hold: rotation about the Y axis followed by rotation about the new X-axis."""
     LEVEL = 0x1
@@ -1299,7 +1408,7 @@ agcls.AgTypeNameMap["BoresightType"] = BoresightType
 
 class TrackMode(IntEnum):
     """Track mode options for tracking boresights."""
-   
+
     RECEIVE = 0x0
     """Receive: the antenna is oriented slightly behind the current location of the other object."""
     TRANSMIT = 0x1
@@ -1315,7 +1424,7 @@ agcls.AgTypeNameMap["TrackMode"] = TrackMode
 
 class SensorAzElBoresightAxisType(IntEnum):
     """Primary boresight axis for Sensor Az-El mask."""
-   
+
     X_AXIS = 0x0
     """+/-X: calculate the primary boresight axis using the parent's body-fixed X axis."""
     Y_AXIS = 0x1
@@ -1331,7 +1440,7 @@ agcls.AgTypeNameMap["SensorAzElBoresightAxisType"] = SensorAzElBoresightAxisType
 
 class SensorRefractionType(IntEnum):
     """Sensor refraction models."""
-   
+
     EARTH_FOUR_THIRDS_RADIUS_METHOD = 0x0
     """4/3 Earth Radius: computes the apparent elevation due to refraction by assuming an Earth radius 4/3 of its actual value."""
     SCF_METHOD = 0x2
@@ -1347,7 +1456,7 @@ agcls.AgTypeNameMap["SensorRefractionType"] = SensorRefractionType
 
 class SensorProjectionDistanceType(IntEnum):
     """Sensor 2D Graphics Projection 'Project To' options."""
-   
+
     CONSTANT_ALTITUDE = 0x0
     """Constant altitude: projects the sensor to one or more altitudes above the facility/place/target, measured along the normal to the surface of the parent."""
     CONSTANT_RANGE_FROM_PARENT = 0x1
@@ -1366,7 +1475,7 @@ agcls.AgTypeNameMap["SensorProjectionDistanceType"] = SensorProjectionDistanceTy
 
 class SensorLocation(IntEnum):
     """Sensor Location Type options."""
-   
+
     FIXED = 0x0
     """Fixed: the location of the sensor is defined using a fixed displacement vector with respect to the parent objects body frame."""
     MODEL_3D = 0x1
@@ -1388,7 +1497,7 @@ agcls.AgTypeNameMap["SensorLocation"] = SensorLocation
 
 class ScenarioTimeStepType(IntEnum):
     """Scenario animation time step options."""
-   
+
     REAL_TIME = 0x0
     """Real time: the scenario animates in real time in accordance with the computer's internal clock."""
     STEP = 0x1
@@ -1407,7 +1516,7 @@ agcls.AgTypeNameMap["ScenarioTimeStepType"] = ScenarioTimeStepType
 
 class NoteShowType(IntEnum):
     """Options for specifying when a label note displays."""
-   
+
     ON = 0x0
     """The label notes display."""
     OFF = 0x1
@@ -1423,7 +1532,7 @@ agcls.AgTypeNameMap["NoteShowType"] = NoteShowType
 
 class GeometricElementType(IntEnum):
     """Options for the VORefCrdn Type."""
-   
+
     VECTOR_ELEMENT = 0
     """Vector geometric element."""
     AXES_ELEMENT = 1
@@ -1445,7 +1554,7 @@ agcls.AgTypeNameMap["GeometricElementType"] = GeometricElementType
 
 class SensorScanMode(IntEnum):
     """Options for the Sensor Spinning Scan Mode."""
-   
+
     UNIDIRECTIONAL = 0
     """Unidirectional: scan from a specified start angle to a specified stop angle, and then begin again at the start angle."""
     BIDIRECTIONAL = 1
@@ -1461,7 +1570,7 @@ agcls.AgTypeNameMap["SensorScanMode"] = SensorScanMode
 
 class ConstraintBackground(IntEnum):
     """Options for the Background constraint, and Advanced vehicle constraint."""
-   
+
     GROUND = 0
     """Ground only: constrains accesses when only the ground is in the background."""
     SPACE = 1
@@ -1474,7 +1583,7 @@ agcls.AgTypeNameMap["ConstraintBackground"] = ConstraintBackground
 
 class ConstraintGroundTrack(IntEnum):
     """Options for the Ground Track constraint, an Advanced vehicle constraint."""
-   
+
     ASCENDING = 0
     """Ascending: constrain access to the ascending side of the satellite's ground track, defined as the portions of the ground track where the Earth-fixed latitude increases."""
     DESCENDING = 1
@@ -1487,7 +1596,7 @@ agcls.AgTypeNameMap["ConstraintGroundTrack"] = ConstraintGroundTrack
 
 class IntersectionType(IntEnum):
     """Intersection display options for sensor projection."""
-   
+
     CENTRAL_BODY = 0
     """Central body: modifies the field of view of the sensor to account for its intersections with the central body."""
     NONE = 1
@@ -1503,7 +1612,7 @@ agcls.AgTypeNameMap["IntersectionType"] = IntersectionType
 
 class ConstraintLighting(IntEnum):
     """Options for the Lighting access constraint."""
-   
+
     DIRECT_SUN = 0
     """Direct sun."""
     PENUMBRA = 1
@@ -1528,7 +1637,7 @@ agcls.AgTypeNameMap["ConstraintLighting"] = ConstraintLighting
 
 class SensorGraphics3DProjectionType(IntEnum):
     """Options for a sensor's 3D Graphics Projection Type."""
-   
+
     ALL_INTERSECTIONS = 0
     """All intersections: the entire sensor projection is displayed."""
     CENTRAL_BODY_INTERSECTIONS = 1
@@ -1544,7 +1653,7 @@ agcls.AgTypeNameMap["SensorGraphics3DProjectionType"] = SensorGraphics3DProjecti
 
 class SensorGraphics3DPulseStyle(IntEnum):
     """Options for a sensor's 3D Graphics Pulse Style."""
-   
+
     BOX = 0
     """Box style."""
     NEGATIVE_BOX = 1
@@ -1569,7 +1678,7 @@ agcls.AgTypeNameMap["SensorGraphics3DPulseStyle"] = SensorGraphics3DPulseStyle
 
 class SensorGraphics3DPulseFrequencyPreset(IntEnum):
     """Options for a sensor's 3D Graphics Pulse Frequency presets."""
-   
+
     FAST = 0
     """Fast: 0.333 Hz."""
     MEDIUM = 1
@@ -1588,7 +1697,7 @@ agcls.AgTypeNameMap["SensorGraphics3DPulseFrequencyPreset"] = SensorGraphics3DPu
 
 class LineWidth(IntEnum):
     """Line widths."""
-   
+
     WIDTH1 = 0
     """Line width: 1."""
     WIDTH2 = 1
@@ -1625,7 +1734,7 @@ agcls.AgTypeNameMap["LineWidth"] = LineWidth
 
 class STKObjectType(IntEnum):
     """STK objects."""
-   
+
     ADVCAT = 0
     """AdvCAT."""
     AIRCRAFT = 1
@@ -1740,7 +1849,7 @@ agcls.AgTypeNameMap["STKObjectType"] = STKObjectType
 
 class AccessConstraintType(IntEnum):
     """Available Access Constraint."""
-   
+
     NONE = 0
     """None. Use interface IAccessConstraint."""
     IMAGE_QUALITY = 1
@@ -2407,7 +2516,7 @@ agcls.AgTypeNameMap["AccessConstraintType"] = AccessConstraintType
 
 class BorderWallUpperLowerEdgeAltitudeReference(IntEnum):
     """Border Wall upper and lower edge altitude references."""
-   
+
     MEAN_SEA_LEVEL = 0
     """Altitude reference: Mean Sea Level."""
     OBJECT = 1
@@ -2426,7 +2535,7 @@ agcls.AgTypeNameMap["BorderWallUpperLowerEdgeAltitudeReference"] = BorderWallUpp
 
 class SolarRadiationPressureShadowModelType(IntEnum):
     """Shadow model options for solar radiation pressure."""
-   
+
     CYLINDRICAL = 0
     """Cylindrical: assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."""
     DUAL_CONE = 1
@@ -2442,7 +2551,7 @@ agcls.AgTypeNameMap["SolarRadiationPressureShadowModelType"] = SolarRadiationPre
 
 class MethodToComputeSunPosition(IntEnum):
     """Methods to compute sun position."""
-   
+
     APPARENT = 0
     """Apparent: takes into account the time required for light to travel from the sun to the position of the spacecraft."""
     APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION = 1
@@ -2458,7 +2567,7 @@ agcls.AgTypeNameMap["MethodToComputeSunPosition"] = MethodToComputeSunPosition
 
 class AtmosphericDensityModel(IntEnum):
     """Atmospheric density models."""
-   
+
     STANDARD_ATMOSPHERE_MODEL_1976 = 0
     """1976 Standard Atmosphere: look-up model based on the satellite's altitude, with a valid range of 86km - 1000 km."""
     CIRA72 = 1
@@ -2510,7 +2619,7 @@ agcls.AgTypeNameMap["AtmosphericDensityModel"] = AtmosphericDensityModel
 
 class MarkerShape3d(IntEnum):
     """3D marker shapes."""
-   
+
     SHAPE_CIRCLE = 0
     """Marker shape: circle."""
     SHAPE_PLUS = 1
@@ -2538,7 +2647,7 @@ agcls.AgTypeNameMap["MarkerShape3d"] = MarkerShape3d
 
 class LeadTrailData(IntEnum):
     """Lead and trail types for track display."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     NONE = 0
@@ -2575,7 +2684,7 @@ agcls.AgTypeNameMap["LeadTrailData"] = LeadTrailData
 
 class TickData(IntEnum):
     """Tick mark options. Tick marks represent milestones at specified intervals along a vehicle's track in the 3D Graphics window."""
-   
+
     UNKNOWN = -1
     """Tick mark option: unknown."""
     CROSS_TRACK = 0
@@ -2597,7 +2706,7 @@ agcls.AgTypeNameMap["TickData"] = TickData
 
 class LoadMethod(IntEnum):
     """TLE load options."""
-   
+
     AUTOMATIC_LOAD = 0
     """Auto load: STK automatically loads the TLE sets corresponding to the SSC number of the satellite when the satellite is loaded."""
     FILE_INSERT = 1
@@ -2619,7 +2728,7 @@ agcls.AgTypeNameMap["LoadMethod"] = LoadMethod
 
 class DeticPositionType(IntEnum):
     """LLA Position Types."""
-   
+
     UNKNOWN = -1
     """Unknown position type."""
     CENTRIC = 0
@@ -2635,7 +2744,7 @@ agcls.AgTypeNameMap["DeticPositionType"] = DeticPositionType
 
 class VehicleGraphics2DPass(IntEnum):
     """Pass display options."""
-   
+
     UNKNOWN = -1
     """Unknown pass."""
     SHOW_ALL = 0
@@ -2651,7 +2760,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DPass"] = VehicleGraphics2DPass
 
 class VehicleGraphics2DVisibleSideType(IntEnum):
     """Pass display direction options."""
-   
+
     ASCENDING = 0
     """Display only the ascending side of each pass."""
     BOTH = 1
@@ -2670,7 +2779,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DVisibleSideType"] = VehicleGraphics2DVisib
 
 class VehicleGraphics2DOffset(IntEnum):
     """Options for offset direction for 2D time events graphics."""
-   
+
     UNKNOWN = -1
     """Unknown Offset."""
     OFFSET_LEFT = 0
@@ -2686,7 +2795,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DOffset"] = VehicleGraphics2DOffset
 
 class VehicleGraphics2DTimeEventType(IntEnum):
     """2D Graphics time event graphics options."""
-   
+
     UNKNOWN = -1
     """Unknown Time Event Type."""
     LINE = 0
@@ -2705,7 +2814,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DTimeEventType"] = VehicleGraphics2DTimeEve
 
 class VehicleGraphics2DAttributeType(IntEnum):
     """Criteria for displaying a vehicle's 2D Graphics attributes."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     ACCESS = 0
@@ -2730,7 +2839,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DAttributeType"] = VehicleGraphics2DAttribu
 
 class VehicleGraphics2DElevation(IntEnum):
     """Options for vehicle swath."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     ELEVATION_GROUND_ELEVATION = 0
@@ -2755,7 +2864,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DElevation"] = VehicleGraphics2DElevation
 
 class VehicleGraphics2DOptionType(IntEnum):
     """Display options for vehicle swath."""
-   
+
     OPTIONS_EDGE_LIMITS = 0
     """Edge limits: displays the swath limits to either side of a center ground track."""
     OPTIONS_FILLED_LIMITS = 1
@@ -2771,7 +2880,7 @@ agcls.AgTypeNameMap["VehicleGraphics2DOptionType"] = VehicleGraphics2DOptionType
 
 class ModelType(IntEnum):
     """Display options 3D model."""
-   
+
     LIST = 0x0
     """Model list: display several models at different times during the animation."""
     FILE = 0x1
@@ -2784,7 +2893,7 @@ agcls.AgTypeNameMap["ModelType"] = ModelType
 
 class VehicleGraphics3DDropLineType(IntEnum):
     """Options for where to end drop lines."""
-   
+
     MEAN_SEA_LEVEL = 0
     """Drop lines to Mean Sea Level."""
     TERRAIN = 1
@@ -2800,7 +2909,7 @@ agcls.AgTypeNameMap["VehicleGraphics3DDropLineType"] = VehicleGraphics3DDropLine
 
 class VehicleGraphics3DSigmaScale(IntEnum):
     """Sigma scale options for sizing covariance pointing contours."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     PROBABILITY = 0
@@ -2816,7 +2925,7 @@ agcls.AgTypeNameMap["VehicleGraphics3DSigmaScale"] = VehicleGraphics3DSigmaScale
 
 class VehicleGraphics3DAttributeType(IntEnum):
     """Options for 3D graphics for covariance pointing contours."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BASIC = 0
@@ -2832,7 +2941,7 @@ agcls.AgTypeNameMap["VehicleGraphics3DAttributeType"] = VehicleGraphics3DAttribu
 
 class RouteGraphics3DMarkerType(IntEnum):
     """Waypoint marker options."""
-   
+
     IMAGE = 0
     """Use image file."""
     MARKER = 1
@@ -2845,7 +2954,7 @@ agcls.AgTypeNameMap["RouteGraphics3DMarkerType"] = RouteGraphics3DMarkerType
 
 class VehicleEllipseOptionType(IntEnum):
     """Elliptical motion modeling options."""
-   
+
     OSCULATING = 0
     """Osculating: representative of the particular point on a satellite trajectory, but the actual trajectory differs from its two-body counterpart at other points in time."""
     SECULARLY_PRECESSING = 1
@@ -2858,7 +2967,7 @@ agcls.AgTypeNameMap["VehicleEllipseOptionType"] = VehicleEllipseOptionType
 
 class PropagatorType(IntEnum):
     """Vehicle propagators (available for vehicle types listed in parentheses)."""
-   
+
     UNKNOWN = -1
     """Unknown propagator (all vehicles)."""
     HPOP = 0
@@ -2922,7 +3031,7 @@ agcls.AgTypeNameMap["PropagatorType"] = PropagatorType
 
 class PropagatorSGP4SwitchMethod(IntEnum):
     """TLE Switch method for the SGP4 propagator."""
-   
+
     EPOCH = 0
     """Epoch: switch between TLE sets based on the epoch of the TLE."""
     MIDPOINT = 1
@@ -2944,7 +3053,7 @@ agcls.AgTypeNameMap["PropagatorSGP4SwitchMethod"] = PropagatorSGP4SwitchMethod
 
 class VehicleSGP4TLESelectionType(IntEnum):
     """TLE Selection method for the SGP4 propagator."""
-   
+
     USE_ALL = 0
     """Use all relevant TLEs."""
     USE_FIRST = 1
@@ -2957,7 +3066,7 @@ agcls.AgTypeNameMap["VehicleSGP4TLESelectionType"] = VehicleSGP4TLESelectionType
 
 class VehicleSGP4AutomaticUpdateSourceType(IntEnum):
     """The TLE sources where the SGP4 propagator retrieves TLEs from automatically upon propagation."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported TLE source."""
     ONLINE = 0
@@ -2979,7 +3088,7 @@ agcls.AgTypeNameMap["VehicleSGP4AutomaticUpdateSourceType"] = VehicleSGP4Automat
 
 class ThirdBodyGravitySourceType(IntEnum):
     """Sources for 3rd body gravitation data."""
-   
+
     CENTRAL_BODY_FILE = 0
     """Central body file (all bodies): gravitational value from editable central body file shipped with STK."""
     HPOP_HISTORICAL = 1
@@ -2998,7 +3107,7 @@ agcls.AgTypeNameMap["ThirdBodyGravitySourceType"] = ThirdBodyGravitySourceType
 
 class VehicleGeomagneticFluxSourceType(IntEnum):
     """GeomagFluxSrc."""
-   
+
     READ_KP_FROM_FILE = 0
     """Read Kp from file."""
     READ_AP_FROM_FILE = 1
@@ -3011,7 +3120,7 @@ agcls.AgTypeNameMap["VehicleGeomagneticFluxSourceType"] = VehicleGeomagneticFlux
 
 class VehicleGeomagneticFluxUpdateRateType(IntEnum):
     """Geomagnetic flux update rate options."""
-   
+
     EVERY_3_HOURS = 0
     """3-Hourly: updates using the eight values measured at three-hour intervals."""
     INTERPOLATE_3_HOURLY_DATA = 1
@@ -3030,7 +3139,7 @@ agcls.AgTypeNameMap["VehicleGeomagneticFluxUpdateRateType"] = VehicleGeomagnetic
 
 class VehicleSolarFluxGeomagneticType(IntEnum):
     """Options for specifying solar and geomagnetic flux."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     MANUAL_ENTRY = 0
@@ -3046,7 +3155,7 @@ agcls.AgTypeNameMap["VehicleSolarFluxGeomagneticType"] = VehicleSolarFluxGeomagn
 
 class VehicleIntegrationModel(IntEnum):
     """Integration methods."""
-   
+
     BULIRSCH_STOER = 0
     """Bulirsch-Stoer: integration method based on Richardson extrapolation with automatic step size control."""
     GAUSS_JACKSON = 1
@@ -3068,7 +3177,7 @@ agcls.AgTypeNameMap["VehicleIntegrationModel"] = VehicleIntegrationModel
 
 class VehiclePredictorCorrectorScheme(IntEnum):
     """Predictor Corrector schemes."""
-   
+
     FULL_CORRECTION = 0
     """Full correction: use a full evaluation of the acceleration model at the end of a Gauss-Jackson integration step."""
     PSEUDOCORRECTION = 1
@@ -3081,7 +3190,7 @@ agcls.AgTypeNameMap["VehiclePredictorCorrectorScheme"] = VehiclePredictorCorrect
 
 class VehicleMethod(IntEnum):
     """Step size control options."""
-   
+
     FIXED_STEP = 0
     """Fixed step: step size will remain constant throughout the integration of the orbit."""
     RELATIVE_ERROR = 1
@@ -3094,7 +3203,7 @@ agcls.AgTypeNameMap["VehicleMethod"] = VehicleMethod
 
 class VehicleInterpolationMethod(IntEnum):
     """Interpolation methods."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported interpolation method."""
     HERMITIAN = 0
@@ -3113,7 +3222,7 @@ agcls.AgTypeNameMap["VehicleInterpolationMethod"] = VehicleInterpolationMethod
 
 class VehicleFrame(IntEnum):
     """Frame options for covariance matrix."""
-   
+
     FRENET = 0
     """Frenet."""
     J2000 = 1
@@ -3132,7 +3241,7 @@ agcls.AgTypeNameMap["VehicleFrame"] = VehicleFrame
 
 class VehicleCorrelationListType(IntEnum):
     """Correlation List row and column values."""
-   
+
     DRAG = 0
     """Drag parameter."""
     NONE = 1
@@ -3148,7 +3257,7 @@ agcls.AgTypeNameMap["VehicleCorrelationListType"] = VehicleCorrelationListType
 
 class VehicleConsiderAnalysisType(IntEnum):
     """Consider parameters for HPOP covariance."""
-   
+
     DRAG = 1
     """Drag: the consider parameter is the ballistic coefficient B, where B = Cd * DragArea/Mass."""
     SOLAR_RADIATION_PRESSURE = 2
@@ -3161,7 +3270,7 @@ agcls.AgTypeNameMap["VehicleConsiderAnalysisType"] = VehicleConsiderAnalysisType
 
 class VehicleWaypointComputationMethod(IntEnum):
     """Methods for computing waypoints."""
-   
+
     DETERMINE_TIME_ACCELERATION_FROM_VELOCITY = 0
     """Derive time and acceleration from velocity (smooth rate)."""
     DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION = 1
@@ -3177,7 +3286,7 @@ agcls.AgTypeNameMap["VehicleWaypointComputationMethod"] = VehicleWaypointComputa
 
 class VehicleAltitudeReference(IntEnum):
     """Reference altitude options for waypoints."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     MEAN_SEA_LEVEL = 0
@@ -3199,7 +3308,7 @@ agcls.AgTypeNameMap["VehicleAltitudeReference"] = VehicleAltitudeReference
 
 class VehicleWaypointInterpolationMethod(IntEnum):
     """Interpolation methods."""
-   
+
     ELLIPSOID_HEIGHT = 0
     """Ellipsoid height: interpolate using the greatArc interpolator without considering terrain."""
     TERRAIN_HEIGHT = 1
@@ -3212,7 +3321,7 @@ agcls.AgTypeNameMap["VehicleWaypointInterpolationMethod"] = VehicleWaypointInter
 
 class VehicleLaunch(IntEnum):
     """Options for launch coordinates."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     DETIC = 0
@@ -3228,7 +3337,7 @@ agcls.AgTypeNameMap["VehicleLaunch"] = VehicleLaunch
 
 class VehicleImpact(IntEnum):
     """Impact location options."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     IMPACT_LOCATION_DETIC = 0
@@ -3244,7 +3353,7 @@ agcls.AgTypeNameMap["VehicleImpact"] = VehicleImpact
 
 class VehicleLaunchControl(IntEnum):
     """Flight parameters for a missile."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     FIXED_APOGEE_ALTITUDE = 0
@@ -3266,7 +3375,7 @@ agcls.AgTypeNameMap["VehicleLaunchControl"] = VehicleLaunchControl
 
 class VehicleImpactLocation(IntEnum):
     """Options for specifying missile impact point."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     LAUNCH_AZ_EL = 0
@@ -3282,7 +3391,7 @@ agcls.AgTypeNameMap["VehicleImpactLocation"] = VehicleImpactLocation
 
 class VehiclePassNumbering(IntEnum):
     """Pass numbering options."""
-   
+
     UNKNOWN = -1
     """Represents pass numbering currently not supported by the Object Model."""
     DATE_OF_FIRST_PASS = 0
@@ -3304,7 +3413,7 @@ agcls.AgTypeNameMap["VehiclePassNumbering"] = VehiclePassNumbering
 
 class VehiclePartialPassMeasurement(IntEnum):
     """Partial Pass Measurement methods (typically used for reporting data)."""
-   
+
     ANGLE = 0
     """By Angle: angles are used to measure partial passes."""
     MEAN_ARGUMENT_OF_LATITUDE = 1
@@ -3320,7 +3429,7 @@ agcls.AgTypeNameMap["VehiclePartialPassMeasurement"] = VehiclePartialPassMeasure
 
 class VehicleCoordinateSystem(IntEnum):
     """Coordinate system used for measurement of latitude and longitude."""
-   
+
     CENTRAL_BODY_FIXED = 0
     """Use a Central Body Fixed coordinate system."""
     INERTIAL = 1
@@ -3339,7 +3448,7 @@ agcls.AgTypeNameMap["VehicleCoordinateSystem"] = VehicleCoordinateSystem
 
 class VehicleBreakAngleType(IntEnum):
     """Definition options for setting pass breaks:."""
-   
+
     UNKNOWN = -1
     """Represents a type of break angle not supported by the Object Model."""
     BY_LATITUDE = 0
@@ -3355,7 +3464,7 @@ agcls.AgTypeNameMap["VehicleBreakAngleType"] = VehicleBreakAngleType
 
 class VehicleDirection(IntEnum):
     """Direction of latitude crossing at the beginning of a pass."""
-   
+
     ASCENDING = 0
     """Ascending: crossing the specified latitude from south to north."""
     DESCENDING = 1
@@ -3368,7 +3477,7 @@ agcls.AgTypeNameMap["VehicleDirection"] = VehicleDirection
 
 class Graphics3DLocation(IntEnum):
     """Location options for the display of textual data in the 3D Graphics window."""
-   
+
     WINDOW_3D = 0
     """Display in the 3D window."""
     DISPLAY_AREA = 1
@@ -3387,7 +3496,7 @@ agcls.AgTypeNameMap["Graphics3DLocation"] = Graphics3DLocation
 
 class Graphics3DXOrigin(IntEnum):
     """X origin options for positioning data display."""
-   
+
     X_ORIGIN_LEFT = 0
     """X position offset from the left."""
     X_ORIGIN_RIGHT = 1
@@ -3400,7 +3509,7 @@ agcls.AgTypeNameMap["Graphics3DXOrigin"] = Graphics3DXOrigin
 
 class Graphics3DYOrigin(IntEnum):
     """Y origin options for positioning data display."""
-   
+
     Y_ORIGIN_BOTTOM = 0
     """Y position offset from the bottom."""
     Y_ORIGIN_TOP = 1
@@ -3413,7 +3522,7 @@ agcls.AgTypeNameMap["Graphics3DYOrigin"] = Graphics3DYOrigin
 
 class Graphics3DFontSize(IntEnum):
     """Font size for data display."""
-   
+
     LARGE = 0
     """Large font."""
     MEDIUM = 1
@@ -3429,7 +3538,7 @@ agcls.AgTypeNameMap["Graphics3DFontSize"] = Graphics3DFontSize
 
 class AircraftWGS84WarningType(IntEnum):
     """Display mode options for aircraft mission modeler WGS84 warning."""
-   
+
     ALWAYS = 0x0
     """Always display warning."""
     ONLY_ONCE = 0x1
@@ -3445,7 +3554,7 @@ agcls.AgTypeNameMap["AircraftWGS84WarningType"] = AircraftWGS84WarningType
 
 class SurfaceReference(IntEnum):
     """Options for surface reference of earth globes."""
-   
+
     WGS84_ELLIPSOID = 0x0
     """WGS84 Ellipsoid."""
     MEAN_SEA_LEVEL = 0x1
@@ -3458,7 +3567,7 @@ agcls.AgTypeNameMap["SurfaceReference"] = SurfaceReference
 
 class Graphics3DFormat(IntEnum):
     """Font format for data display."""
-   
+
     HORIZONTAL = 0
     """Horizontal layout."""
     NO_LABELS = 1
@@ -3474,7 +3583,7 @@ agcls.AgTypeNameMap["Graphics3DFormat"] = Graphics3DFormat
 
 class AttitudeStandardType(IntEnum):
     """AttitudeStandardType tells the user which interface to cast to. eRouteAttitudeStandard -> AttitudeStandardRoute, eTrajectoryAttitudeStandard -> AttitudeStandardTrajectory, eOrbitAttitudeStanard -> IAttitudeStandardOrbit."""
-   
+
     ROUTE_ATTITUDE_STANDARD = 0
     """Cast to AttitudeStandardRoute interface."""
     TRAJECTORY_ATTITUDE_STANDARD = 1
@@ -3490,7 +3599,7 @@ agcls.AgTypeNameMap["AttitudeStandardType"] = AttitudeStandardType
 
 class VehicleAttitude(IntEnum):
     """Available attitude types."""
-   
+
     UNKNOWN = -1
     """Unsupported attitude option."""
     REAL_TIME = 1
@@ -3506,7 +3615,7 @@ agcls.AgTypeNameMap["VehicleAttitude"] = VehicleAttitude
 
 class AttitudeProfile(IntEnum):
     """Predefined attitude profiles."""
-   
+
     UNKNOWN = -1
     """Non-supported profile."""
     ALIGNED_AND_CONSTRAINED = 0
@@ -3597,7 +3706,7 @@ agcls.AgTypeNameMap["AttitudeProfile"] = AttitudeProfile
 
 class VehicleLookAheadMethod(IntEnum):
     """Look ahead duration methods."""
-   
+
     EXTRAPOLATE = 0
     """Extrapolate: STK uses the last two history points to extrapolate attitude into the Look Ahead window. This method is best if attitude changes slightly over time."""
     HOLD = 1
@@ -3610,7 +3719,7 @@ agcls.AgTypeNameMap["VehicleLookAheadMethod"] = VehicleLookAheadMethod
 
 class VehicleGraphics3DBPlaneTargetPointPosition(IntEnum):
     """Values of the enumeration represent polymorphic object types."""
-   
+
     CARTESIAN = 0
     """Cartesian Position."""
     POLAR = 1
@@ -3623,7 +3732,7 @@ agcls.AgTypeNameMap["VehicleGraphics3DBPlaneTargetPointPosition"] = VehicleGraph
 
 class SensorAltitudeCrossingSideType(IntEnum):
     """Options for specifying which crossings are computed and displayed in the 2D Graphics window."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BOTH_SIDES = 0
@@ -3639,7 +3748,7 @@ agcls.AgTypeNameMap["SensorAltitudeCrossingSideType"] = SensorAltitudeCrossingSi
 
 class SensorAltitudeCrossingDirection(IntEnum):
     """Options for specifying the direction in which the sensor's field of view crosses the specified altitude."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     EITHER = 0
@@ -3658,7 +3767,7 @@ agcls.AgTypeNameMap["SensorAltitudeCrossingDirection"] = SensorAltitudeCrossingD
 
 class SensorGraphics3DInheritFrom2D(IntEnum):
     """Options for how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     NO = 0
@@ -3677,7 +3786,7 @@ agcls.AgTypeNameMap["SensorGraphics3DInheritFrom2D"] = SensorGraphics3DInheritFr
 
 class SensorGraphics3DVisualAppearance(IntEnum):
     """Options optimizing the visual appearance of projections."""
-   
+
     UNKNOWN = -1
     """Unsupported visual appearance option."""
     ORIGIN = 0
@@ -3696,7 +3805,7 @@ agcls.AgTypeNameMap["SensorGraphics3DVisualAppearance"] = SensorGraphics3DVisual
 
 class ChainTimePeriodType(IntEnum):
     """Compute Time Period Type."""
-   
+
     UNKNOWN = -1
     """Unsupported time period type."""
     OBJECT_TIME_PERIODS = 0
@@ -3715,7 +3824,7 @@ agcls.AgTypeNameMap["ChainTimePeriodType"] = ChainTimePeriodType
 
 class ChainConstellationConstraintsMode(IntEnum):
     """Constellation Constraints Mode."""
-   
+
     UNKNOWN = -1
     """Unsupported Constellation Constraints mode."""
     STRANDS = 0
@@ -3731,7 +3840,7 @@ agcls.AgTypeNameMap["ChainConstellationConstraintsMode"] = ChainConstellationCon
 
 class ChainCoverageAssetMode(IntEnum):
     """Chain Cov Asset Mode."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain Cov Asset mode."""
     APPEND = 0
@@ -3747,7 +3856,7 @@ agcls.AgTypeNameMap["ChainCoverageAssetMode"] = ChainCoverageAssetMode
 
 class ChainParentPlatformRestriction(IntEnum):
     """Options for a chain's From and To Parent Platform Restriction."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain parent platform restriction."""
     NONE = 0
@@ -3766,7 +3875,7 @@ agcls.AgTypeNameMap["ChainParentPlatformRestriction"] = ChainParentPlatformRestr
 
 class ChainOptimalStrandMetricType(IntEnum):
     """Chain optimal strand metric type."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain optimal strand metric type."""
     STRAND_METRIC_DISTANCE = 0
@@ -3788,7 +3897,7 @@ agcls.AgTypeNameMap["ChainOptimalStrandMetricType"] = ChainOptimalStrandMetricTy
 
 class ChainOptimalStrandCalculationScalarMetricType(IntEnum):
     """Chain optimal strand calculation scalar type."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain optimal strand calculation scalar metric type."""
     STRAND_CALCULATION_SCALAR_METRIC_FILE = 0
@@ -3804,7 +3913,7 @@ agcls.AgTypeNameMap["ChainOptimalStrandCalculationScalarMetricType"] = ChainOpti
 
 class ChainOptimalStrandLinkCompareType(IntEnum):
     """Chain optimal strand link comparison type."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain optimal strand link comparison type."""
     STRAND_LINK_COMPARE_TYPE_MIN = 0
@@ -3823,7 +3932,7 @@ agcls.AgTypeNameMap["ChainOptimalStrandLinkCompareType"] = ChainOptimalStrandLin
 
 class ChainOptimalStrandCompareStrandsType(IntEnum):
     """Chain optimal strand link comparison type."""
-   
+
     UNKNOWN = -1
     """Unsupported Chain optimal strand comparison type used to compare strands."""
     STRAND_COMPARE_TYPE_MIN = 0
@@ -3839,7 +3948,7 @@ agcls.AgTypeNameMap["ChainOptimalStrandCompareStrandsType"] = ChainOptimalStrand
 
 class DataSaveMode(IntEnum):
     """Access Save Mode."""
-   
+
     UNKNOWN = -1
     """Unsupported mode."""
     DONT_SAVE_ACCESSES = 0
@@ -3858,7 +3967,7 @@ agcls.AgTypeNameMap["DataSaveMode"] = DataSaveMode
 
 class CoverageBounds(IntEnum):
     """Coverage bounds options: values of the enumeration represent polymorphic object types."""
-   
+
     CUSTOM_REGIONS = 0
     """Create a grid within regions specified by a combination of user-selected area targets, region list files (.rl) and/or ArcView shapefiles (.shp)."""
     GLOBAL = 1
@@ -3886,7 +3995,7 @@ agcls.AgTypeNameMap["CoverageBounds"] = CoverageBounds
 
 class CoveragePointLocationMethod(IntEnum):
     """Point location method."""
-   
+
     UNKNOWN = -1
     """Unknown method."""
     COMPUTE_BASED_ON_RESOLUTION = 0
@@ -3902,7 +4011,7 @@ agcls.AgTypeNameMap["CoveragePointLocationMethod"] = CoveragePointLocationMethod
 
 class CoveragePointAltitudeMethod(IntEnum):
     """Custom point altitude method."""
-   
+
     UNKNOWN = -1
     """Unknown method."""
     FILE_VALUES = 0
@@ -3918,7 +4027,7 @@ agcls.AgTypeNameMap["CoveragePointAltitudeMethod"] = CoveragePointAltitudeMethod
 
 class CoverageGridClass(IntEnum):
     """Classes of objects that can be used as templates to associate access constraints, basic object properties and, in some cases, altitude with points in the grid."""
-   
+
     UNKNOWN = -1
     """Unknown template class."""
     AIRCRAFT = 0
@@ -3964,7 +4073,7 @@ agcls.AgTypeNameMap["CoverageGridClass"] = CoverageGridClass
 
 class CoverageAltitudeMethod(IntEnum):
     """Method for specifying the altitude of a grid point."""
-   
+
     UNKNOWN = -1
     """Unknown altitude method."""
     ABOVE_TERRAIN = 0
@@ -3989,7 +4098,7 @@ agcls.AgTypeNameMap["CoverageAltitudeMethod"] = CoverageAltitudeMethod
 
 class CoverageGroundAltitudeMethod(IntEnum):
     """Method for specifying the ground altitude of a grid point."""
-   
+
     UNKNOWN = -1
     """Unknown ground altitude method."""
     DEPTH = 0
@@ -4014,7 +4123,7 @@ agcls.AgTypeNameMap["CoverageGroundAltitudeMethod"] = CoverageGroundAltitudeMeth
 
 class CoverageDataRetention(IntEnum):
     """Data retention options."""
-   
+
     UNKNOWN = -1
     """Unknown data retention method."""
     ALL_DATA = 0
@@ -4030,7 +4139,7 @@ agcls.AgTypeNameMap["CoverageDataRetention"] = CoverageDataRetention
 
 class CoverageRegionAccessAccelerationType(IntEnum):
     """Regional acceleration options."""
-   
+
     UNKNOWN = -1
     """Unknown regional acceleration option."""
     AUTOMATIC = 0
@@ -4046,7 +4155,7 @@ agcls.AgTypeNameMap["CoverageRegionAccessAccelerationType"] = CoverageRegionAcce
 
 class CoverageResolution(IntEnum):
     """Coverage grid resolution options: values of the enumeration represent polymorphic object types."""
-   
+
     RESOLUTION_AREA = 0
     """Define the location of grid coordinates by using the specified area to determine a latitude/longitude spacing scheme at the equator."""
     RESOLUTION_DISTANCE = 1
@@ -4062,7 +4171,7 @@ agcls.AgTypeNameMap["CoverageResolution"] = CoverageResolution
 
 class CoverageAssetStatus(IntEnum):
     """Coverage asset status."""
-   
+
     ACTIVE = 0
     """Coverage asset is active."""
     INACTIVE = 1
@@ -4075,7 +4184,7 @@ agcls.AgTypeNameMap["CoverageAssetStatus"] = CoverageAssetStatus
 
 class CoverageAssetGrouping(IntEnum):
     """Coverage asset grouping options."""
-   
+
     SEPARATE = 0
     """Assets in a chain are treated separately for access purposes."""
     GROUPED = 1
@@ -4088,7 +4197,7 @@ agcls.AgTypeNameMap["CoverageAssetGrouping"] = CoverageAssetGrouping
 
 class FigureOfMeritDefinitionType(IntEnum):
     """Figure of Merit types: values of the enumeration represent polymorphic object types."""
-   
+
     ACCESS_CONSTRAINT = 0
     """Access Constraint Figure of Merit."""
     ACCESS_DURATION = 1
@@ -4146,7 +4255,7 @@ agcls.AgTypeNameMap["FigureOfMeritDefinitionType"] = FigureOfMeritDefinitionType
 
 class FigureOfMeritSatisfactionType(IntEnum):
     """Satisfaction options: determine whether satisfaction is achieved based on the value of the figure of merit."""
-   
+
     AT_LEAST = 0
     """The figure of merit is greater than or equal to the threshold."""
     AT_MOST = 1
@@ -4168,7 +4277,7 @@ agcls.AgTypeNameMap["FigureOfMeritSatisfactionType"] = FigureOfMeritSatisfaction
 
 class FigureOfMeritConstraintName(IntEnum):
     """Available constraints to use for the Access Constraint Figure of Merit."""
-   
+
     UNKNOWN = -1
     """Unknown constraint."""
     ALTITUDE = 0
@@ -4694,7 +4803,7 @@ agcls.AgTypeNameMap["FigureOfMeritConstraintName"] = FigureOfMeritConstraintName
 
 class FigureOfMeritCompute(IntEnum):
     """Figure of Merit compute options."""
-   
+
     UNKNOWN = -1
     """Unknown compute option."""
     AVERAGE = 0
@@ -4779,7 +4888,7 @@ agcls.AgTypeNameMap["FigureOfMeritCompute"] = FigureOfMeritCompute
 
 class FigureOfMeritAcrossAssets(IntEnum):
     """Across Assets options: specify which value of the constraint is to be selected based on all currently available assets."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     AVERAGE = 0
@@ -4801,7 +4910,7 @@ agcls.AgTypeNameMap["FigureOfMeritAcrossAssets"] = FigureOfMeritAcrossAssets
 
 class FigureOfMeritNavigationComputeType(IntEnum):
     """Allowed number of assets for the navigation solution."""
-   
+
     BEST_4 = 0
     """Compute the navigation accuracy based on the set of four satellites that yields the minimum GDOP."""
     BEST_N = 1
@@ -4823,7 +4932,7 @@ agcls.AgTypeNameMap["FigureOfMeritNavigationComputeType"] = FigureOfMeritNavigat
 
 class FigureOfMeritMethod(IntEnum):
     """Dilution of Precision method."""
-   
+
     GDOP = 0
     """Geometric Dilution of Precision: Measures the dilution of precision for the entire navigation solution."""
     HDOP = 1
@@ -4902,7 +5011,7 @@ agcls.AgTypeNameMap["FigureOfMeritMethod"] = FigureOfMeritMethod
 
 class FigureOfMeritEndGapOption(IntEnum):
     """End gap options: control consideration of gaps at ends of analysis intervals."""
-   
+
     IGNORE = 0
     """Ignore: eliminate gaps at the ends of the analysis interval from the revisit time computations."""
     INCLUDE = 1
@@ -4915,7 +5024,7 @@ agcls.AgTypeNameMap["FigureOfMeritEndGapOption"] = FigureOfMeritEndGapOption
 
 class FigureOfMeritGraphics2DContourType(IntEnum):
     """Contour fill options."""
-   
+
     BLOCK_FILL = 0
     """Block Fill: color is applied to a region that contains points of a certain contour level."""
     SMOOTH_FILL = 1
@@ -4928,7 +5037,7 @@ agcls.AgTypeNameMap["FigureOfMeritGraphics2DContourType"] = FigureOfMeritGraphic
 
 class FigureOfMeritGraphics2DColorMethod(IntEnum):
     """Methods for assigning colors to contour levels."""
-   
+
     COLOR_RAMP = 0
     """Color Ramp: apply a spectrum pattern with selected start and end colors."""
     EXPLICIT = 1
@@ -4941,7 +5050,7 @@ agcls.AgTypeNameMap["FigureOfMeritGraphics2DColorMethod"] = FigureOfMeritGraphic
 
 class FigureOfMeritGraphics2DFloatingPointFormat(IntEnum):
     """Format options for floating point numbers."""
-   
+
     FLOATING_POINT = 0
     """Floating point format."""
     SCIENTIFIC_UPPERCASE_E = 1
@@ -4957,7 +5066,7 @@ agcls.AgTypeNameMap["FigureOfMeritGraphics2DFloatingPointFormat"] = FigureOfMeri
 
 class FigureOfMeritGraphics2DDirection(IntEnum):
     """Level order display options for the contour legend."""
-   
+
     HORIZONTAL_MAXIMUM_TO_MINIMUM = 0
     """Levels are displayed horizontally, in descending order."""
     HORIZONTAL_MINIMUM_TO_MAXIMUM = 1
@@ -4976,7 +5085,7 @@ agcls.AgTypeNameMap["FigureOfMeritGraphics2DDirection"] = FigureOfMeritGraphics2
 
 class FigureOfMeritGraphics2DAccumulation(IntEnum):
     """Accumulation options: control the sense and persistence of animation graphics for a Figure of Merit."""
-   
+
     CURRENT_TIME = 0
     """When animating, grid points that currently meet the satisfaction criterion are highlighted."""
     NOT_CURRENT = 1
@@ -4995,7 +5104,7 @@ agcls.AgTypeNameMap["FigureOfMeritGraphics2DAccumulation"] = FigureOfMeritGraphi
 
 class FigureOfMeritNavigationAccuracyMethod(IntEnum):
     """Options for uncertainty in one-way range measurements for the Navigation Accuracy Figure of Merit."""
-   
+
     CONSTANT = 0
     """The uncertainty in the one-way range measurements is specified as a constant value."""
     ELEVATION_ANGLE = 1
@@ -5008,7 +5117,7 @@ agcls.AgTypeNameMap["FigureOfMeritNavigationAccuracyMethod"] = FigureOfMeritNavi
 
 class IvClockHost(IntEnum):
     """Clock host options for access. Time values are reported with a clock colocated with the clock host object."""
-   
+
     BASE = 0
     """Base: Refers to the object from which access is being computed."""
     TARGET = 1
@@ -5021,7 +5130,7 @@ agcls.AgTypeNameMap["IvClockHost"] = IvClockHost
 
 class IvTimeSense(IntEnum):
     """Mode of signal transmission of the designated clock host."""
-   
+
     UNKNOWN = -1
     """Unknown time sense option."""
     TRANSMIT = 0
@@ -5037,7 +5146,7 @@ agcls.AgTypeNameMap["IvTimeSense"] = IvTimeSense
 
 class GPSAttitudeModelType(IntEnum):
     """GPS attitude profile model types."""
-   
+
     UNKNOWN = -1
     """Unknown GPS attitude model."""
     GYM95 = 0
@@ -5056,7 +5165,7 @@ agcls.AgTypeNameMap["GPSAttitudeModelType"] = GPSAttitudeModelType
 
 class ConstellationConstraintRestrictionType(IntEnum):
     """The values of the enumeration are used to define constellation constraints that allow you to specify the criteria to be used when constellations are combined with other objects in a chain."""
-   
+
     UNKNOWN = -1
     """Unknown or not supported criterion."""
     ALL_OF = 0
@@ -5081,7 +5190,7 @@ agcls.AgTypeNameMap["ConstellationConstraintRestrictionType"] = ConstellationCon
 
 class EventDetection(IntEnum):
     """Available event detection strategies."""
-   
+
     UNKNOWN = -1
     """Unknown event detection strategy."""
     NO_SUB_SAMPLING = 0
@@ -5097,7 +5206,7 @@ agcls.AgTypeNameMap["EventDetection"] = EventDetection
 
 class SamplingMethod(IntEnum):
     """Available sampling methods."""
-   
+
     UNKNOWN = -1
     """Unknown sampling method."""
     ADAPTIVE = 0
@@ -5113,7 +5222,7 @@ agcls.AgTypeNameMap["SamplingMethod"] = SamplingMethod
 
 class CoverageSatisfactionType(IntEnum):
     """The condition on the number of assets covering a grid point that must be satisfied for a valid access."""
-   
+
     UNKNOWN = -1
     """Unknown satisfaction type."""
     AT_LEAST = 0
@@ -5129,7 +5238,7 @@ agcls.AgTypeNameMap["CoverageSatisfactionType"] = CoverageSatisfactionType
 
 class CCSDSReferenceFrame(IntEnum):
     """Reference Frame."""
-   
+
     EME2000 = 0
     """EME2000 reference frame."""
     FIXED = 1
@@ -5175,7 +5284,7 @@ agcls.AgTypeNameMap["CCSDSReferenceFrame"] = CCSDSReferenceFrame
 
 class CCSDSDateFormat(IntEnum):
     """The date format of the file."""
-   
+
     YDOY = 0
     """(YDOY Date format:  YYYY-DDD:THH:mm:SS.SSS)."""
     YMD = 1
@@ -5188,7 +5297,7 @@ agcls.AgTypeNameMap["CCSDSDateFormat"] = CCSDSDateFormat
 
 class CCSDSEphemerisFormatType(IntEnum):
     """The ephemeris format of the file."""
-   
+
     FLOATING_POINT = 0
     """Floating point notation format for representing the position and velocity information."""
     SCIENTIFIC_NOTATION = 1
@@ -5201,7 +5310,7 @@ agcls.AgTypeNameMap["CCSDSEphemerisFormatType"] = CCSDSEphemerisFormatType
 
 class CCSDSTimeSystem(IntEnum):
     """Time System."""
-   
+
     UTC = 0
     """UTC time system."""
     TAI = 1
@@ -5223,7 +5332,7 @@ agcls.AgTypeNameMap["CCSDSTimeSystem"] = CCSDSTimeSystem
 
 class EphemerisCoordinateSystemType(IntEnum):
     """The Coordinate System of the file."""
-   
+
     FIXED = 0
     """Fixed reference frame."""
     INERTIAL = 1
@@ -5266,7 +5375,7 @@ agcls.AgTypeNameMap["EphemerisCoordinateSystemType"] = EphemerisCoordinateSystem
 
 class EphemerisCovarianceType(IntEnum):
     """The covariance data export type."""
-   
+
     NONE = 0
     """No covariance data."""
     POSITION_3_BY_3 = 1
@@ -5282,7 +5391,7 @@ agcls.AgTypeNameMap["EphemerisCovarianceType"] = EphemerisCovarianceType
 
 class ExportToolVersionFormat(IntEnum):
     """The version format of the file."""
-   
+
     FORMAT410 = 0
     """STK 4.1 format."""
     FORMAT420 = 1
@@ -5310,7 +5419,7 @@ agcls.AgTypeNameMap["ExportToolVersionFormat"] = ExportToolVersionFormat
 
 class ExportToolTimePeriodType(IntEnum):
     """Values of the enumeration represent polymorphic object types."""
-   
+
     SPECIFY = 0
     """Create a data file using specified Start and Stop Times."""
     USE_ENTIRE_EPHEMERIS = 1
@@ -5323,7 +5432,7 @@ agcls.AgTypeNameMap["ExportToolTimePeriodType"] = ExportToolTimePeriodType
 
 class SpiceInterpolation(IntEnum):
     """The SPICE interpolation type."""
-   
+
     LAGRANGE_9TH_ORDER = 0
     """Type 9 (LaGrangian)."""
     HERMITE_13TH_ORDER = 1
@@ -5336,7 +5445,7 @@ agcls.AgTypeNameMap["SpiceInterpolation"] = SpiceInterpolation
 
 class AttitudeCoordinateAxes(IntEnum):
     """Attitude export options."""
-   
+
     CUSTOM = 0
     """Custom reference axes."""
     FIXED = 1
@@ -5358,7 +5467,7 @@ agcls.AgTypeNameMap["AttitudeCoordinateAxes"] = AttitudeCoordinateAxes
 
 class AttitudeInclude(IntEnum):
     """Details to include in an exported Attitude file."""
-   
+
     QUATERNIONS = 0
     """Include quaternions with the exported data."""
     QUATERNIONS_AND_ANGULAR_VELOCITY = 1
@@ -5371,7 +5480,7 @@ agcls.AgTypeNameMap["AttitudeInclude"] = AttitudeInclude
 
 class ExportToolStepSizeType(IntEnum):
     """The Step Size type for an attitude file."""
-   
+
     EPHEMERIS = 0
     """The Step Size specified in the vehicle's Basic properties."""
     SPECIFY = 1
@@ -5390,7 +5499,7 @@ agcls.AgTypeNameMap["ExportToolStepSizeType"] = ExportToolStepSizeType
 
 class TextOutlineStyle(IntEnum):
     """The text outline style for 2D graphics display."""
-   
+
     UNKNOWN = -1
     """Unknown text outline for 2D graphics display."""
     NONE = 0
@@ -5409,7 +5518,7 @@ agcls.AgTypeNameMap["TextOutlineStyle"] = TextOutlineStyle
 
 class MTORangeMode(IntEnum):
     """MTO Range Mode."""
-   
+
     EACH = 2
     """For every track, returns the track id, 1 (within range) or 0 (not in range), and the range value in Connect distance units."""
     EACH_IN_RANGE = 3
@@ -5425,7 +5534,7 @@ agcls.AgTypeNameMap["MTORangeMode"] = MTORangeMode
 
 class MTOTrackEvaluationType(IntEnum):
     """MTO Track Eval Mode."""
-   
+
     ALL = 0
     """Return 1 if every track is within range otherwise it returns 0."""
     ANY = 1
@@ -5438,7 +5547,7 @@ agcls.AgTypeNameMap["MTOTrackEvaluationType"] = MTOTrackEvaluationType
 
 class MTOEntirety(IntEnum):
     """MTO Entirety Mode."""
-   
+
     ALL = 0
     """Return 1 if every track is within field of view otherwise it returns 0."""
     PARTIAL = 1
@@ -5451,7 +5560,7 @@ agcls.AgTypeNameMap["MTOEntirety"] = MTOEntirety
 
 class MTOVisibilityMode(IntEnum):
     """MTO Visibility Mode."""
-   
+
     EACH = 2
     """Return the Track_id and 1 or 0 for every track; where 1 indicates the track is visible and 0 indicates it is not."""
     EACH_VISIBLE = 3
@@ -5467,7 +5576,7 @@ agcls.AgTypeNameMap["MTOVisibilityMode"] = MTOVisibilityMode
 
 class MTOObjectInterval(IntEnum):
     """MTO object interval type."""
-   
+
     NORMAL = 0
     """Default visibility interval."""
     EXTENDED = 1
@@ -5480,7 +5589,7 @@ agcls.AgTypeNameMap["MTOObjectInterval"] = MTOObjectInterval
 
 class MTOInputDataType(IntEnum):
     """MTO Input Data Type."""
-   
+
     DETIC = 0
     """Input position data arrays are lat, lon, alt."""
     CARTESIAN_IN_CENTRAL_BODY_FIXED = 1
@@ -5496,7 +5605,7 @@ agcls.AgTypeNameMap["MTOInputDataType"] = MTOInputDataType
 
 class SolidTide(IntEnum):
     """The Solid Tide Type for force modeling."""
-   
+
     FULL = 0
     """Include both time-dependent and time-independent contributions. This option is only available for gravity field models that support a tide model."""
     PERMANENT_ONLY = 1
@@ -5512,7 +5621,7 @@ agcls.AgTypeNameMap["SolidTide"] = SolidTide
 
 class TimePeriodValueType(IntEnum):
     """Time value types."""
-   
+
     TODAY = 1
     """The current day."""
     TOMORROW = 2
@@ -5537,7 +5646,7 @@ agcls.AgTypeNameMap["TimePeriodValueType"] = TimePeriodValueType
 
 class OnePointAccessStatus(IntEnum):
     """One point access status."""
-   
+
     MAXIMUM = -10
     """Constraint value violates max limit of the min-max constraint."""
     MINIMUM = -11
@@ -5568,7 +5677,7 @@ agcls.AgTypeNameMap["OnePointAccessStatus"] = OnePointAccessStatus
 
 class OnePointAccessSummary(IntEnum):
     """One point access summary type."""
-   
+
     DETAILED = 0
     """Set Compute to return detailed information about each constraint that is evaluated in addition to the access result."""
     FAST = 1
@@ -5584,7 +5693,7 @@ agcls.AgTypeNameMap["OnePointAccessSummary"] = OnePointAccessSummary
 
 class LookAheadPropagator(IntEnum):
     """Propagators used for calculating ephemeris for look ahead purposes. The enumeration is used with realtime propagators."""
-   
+
     UNKNOWN = -1
     """Reserved for look ahead propagators that are not currently supported."""
     HOLD_CENTRAL_BODY_INERTIAL_POSITION = 0
@@ -5615,7 +5724,7 @@ agcls.AgTypeNameMap["LookAheadPropagator"] = LookAheadPropagator
 
 class Graphics3DMarkerOrientation(IntEnum):
     """3D graphics marker orientations."""
-   
+
     NONE = 0
     """Marker does not rotate."""
     ANGLE = 1
@@ -5631,7 +5740,7 @@ agcls.AgTypeNameMap["Graphics3DMarkerOrientation"] = Graphics3DMarkerOrientation
 
 class SolarRadiationPressureModelType(IntEnum):
     """Solar radiation pressure model types."""
-   
+
     UNKNOWN = -1
     """Unsupported model."""
     GPS_BLKIIA_AEROSPACE_T20 = 0
@@ -5665,7 +5774,7 @@ agcls.AgTypeNameMap["SolarRadiationPressureModelType"] = SolarRadiationPressureM
 
 class DragModel(IntEnum):
     """Drag model types."""
-   
+
     UNKNOWN = -1
     """Unsupported model."""
     SPHERICAL = 0
@@ -5681,7 +5790,7 @@ agcls.AgTypeNameMap["DragModel"] = DragModel
 
 class VehiclePropagationFrame(IntEnum):
     """Propagation frames used by J2/J4/TwoBody propagators."""
-   
+
     UNKNOWN = -1
     """Unknown propagation frame."""
     INERTIAL = 0
@@ -5700,7 +5809,7 @@ agcls.AgTypeNameMap["VehiclePropagationFrame"] = VehiclePropagationFrame
 
 class StarReferenceFrame(IntEnum):
     """Star reference frame types."""
-   
+
     ICRF = 0
     """ICRF reference frame."""
     J2000 = 1
@@ -5713,7 +5822,7 @@ agcls.AgTypeNameMap["StarReferenceFrame"] = StarReferenceFrame
 
 class GPSReferenceWeek(IntEnum):
     """GPS almanac reference week."""
-   
+
     UNKNOWN = -1
     """Unknown week reference."""
     WEEK22_AUG1999 = 0
@@ -5732,7 +5841,7 @@ agcls.AgTypeNameMap["GPSReferenceWeek"] = GPSReferenceWeek
 
 class CoverageCustomRegionAlgorithm(IntEnum):
     """The enumerations are used to enable/disable the special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg)."""
-   
+
     UNKNOWN = -1
     """Unsupported algorithm."""
     DISABLED = 0
@@ -5751,7 +5860,7 @@ agcls.AgTypeNameMap["CoverageCustomRegionAlgorithm"] = CoverageCustomRegionAlgor
 
 class VehicleGPSSwitchMethod(IntEnum):
     """GPS Switch method for the GPS propagator."""
-   
+
     EPOCH = 0
     """Switch between TLE sets based on the epoch of the TLE."""
     MIDPOINT = 1
@@ -5767,7 +5876,7 @@ agcls.AgTypeNameMap["VehicleGPSSwitchMethod"] = VehicleGPSSwitchMethod
 
 class VehicleGPSElementSelectionType(IntEnum):
     """GPS Selection method for the GPS propagator."""
-   
+
     USE_ALL = 0
     """Use all relevant TLEs."""
     USE_FIRST = 1
@@ -5780,7 +5889,7 @@ agcls.AgTypeNameMap["VehicleGPSElementSelectionType"] = VehicleGPSElementSelecti
 
 class VehicleGPSAutomaticUpdateSourceType(IntEnum):
     """The sources to retrieve GPS elements from upon propagation."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported TLE source."""
     ONLINE = 0
@@ -5799,7 +5908,7 @@ agcls.AgTypeNameMap["VehicleGPSAutomaticUpdateSourceType"] = VehicleGPSAutomatic
 
 class VehicleGPSAlmanacType(IntEnum):
     """GPS Almanac types."""
-   
+
     NONE = -1
     """Almanac is not selected."""
     YUMA = 0
@@ -5818,7 +5927,7 @@ agcls.AgTypeNameMap["VehicleGPSAlmanacType"] = VehicleGPSAlmanacType
 
 class ExternalEphemerisFormatType(IntEnum):
     """Ephemeris file formats supported by the Stk external propagator."""
-   
+
     UNKNOWN = -1
     """Unsupported ephemeris format."""
     STK = 0
@@ -5846,7 +5955,7 @@ agcls.AgTypeNameMap["ExternalEphemerisFormatType"] = ExternalEphemerisFormatType
 
 class ExternalFileMessageLevelType(IntEnum):
     """Ephemeris file message level used by the Stk external propagator."""
-   
+
     UNKNOWN = -1
     """Unsupported message level."""
     ERRORS = 0
@@ -5865,7 +5974,7 @@ agcls.AgTypeNameMap["ExternalFileMessageLevelType"] = ExternalFileMessageLevelTy
 
 class Coverage3dDrawAtAltitudeMode(IntEnum):
     """Coverage definition drawing modes for filled graphics when showing at altitude in 3D Graphics window."""
-   
+
     FRONT_FACING = 0
     """Draw front facing only."""
     BACK_FACING = 1
@@ -5881,7 +5990,7 @@ agcls.AgTypeNameMap["Coverage3dDrawAtAltitudeMode"] = Coverage3dDrawAtAltitudeMo
 
 class DistanceOnSphere(IntEnum):
     """Type of line which connects the two points."""
-   
+
     GREAT_CIRCLE = 0
     """Shortest distance between two points on the globe."""
     RHUMB_LINE = 1
@@ -5894,7 +6003,7 @@ agcls.AgTypeNameMap["DistanceOnSphere"] = DistanceOnSphere
 
 class FigureOfMeritInvalidValueActionType(IntEnum):
     """Invalid Value Action: Controls consideration of time samples usage for computing navigation solution when insufficient number of assets are available at one or more of the time samples used."""
-   
+
     IGNORE = 0
     """Ignore: Time samples are ignored and not included in the computation of navigation solution."""
     INCLUDE = 1
@@ -5907,7 +6016,7 @@ agcls.AgTypeNameMap["FigureOfMeritInvalidValueActionType"] = FigureOfMeritInvali
 
 class VehicleSlewTimingBetweenTargetType(IntEnum):
     """Choose an event within the window of opportunity to trigger each slew, or select Optimal to change attitude whenever the slew can be performed most efficiently."""
-   
+
     UNKNOWN = -1
     """Unsupported or unknown slew option."""
     OPTIMAL = 0
@@ -5932,7 +6041,7 @@ agcls.AgTypeNameMap["VehicleSlewTimingBetweenTargetType"] = VehicleSlewTimingBet
 
 class VehicleSlewMode(IntEnum):
     """Target slew modes."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported slew mode."""
     CONSTRAINED_2ND_ORDER_SPLINE = 0
@@ -5954,7 +6063,7 @@ agcls.AgTypeNameMap["VehicleSlewMode"] = VehicleSlewMode
 
 class Component(IntEnum):
     """The different types of components in the component browser."""
-   
+
     ALL = 0
     """Return all components. Currently not implemented."""
     COMMUNICATION = 1
@@ -5976,7 +6085,7 @@ agcls.AgTypeNameMap["Component"] = Component
 
 class VolumetricDefinitionType(IntEnum):
     """Volume grid definition types."""
-   
+
     UNKNOWN = -1
     """Unknown volumetirc grid option."""
     GRID_SPATIAL_CALCULATION = 0
@@ -5992,7 +6101,7 @@ agcls.AgTypeNameMap["VolumetricDefinitionType"] = VolumetricDefinitionType
 
 class VolumetricSpatialCalculationEvaluationType(IntEnum):
     """Evaluation of Spatial Calculation types."""
-   
+
     UNKNOWN = -1
     """Unknown Spatial Calculation evaluation type option."""
     AT_INSTANT_IN_TIME = 0
@@ -6011,7 +6120,7 @@ agcls.AgTypeNameMap["VolumetricSpatialCalculationEvaluationType"] = VolumetricSp
 
 class VolumetricSaveComputedDataType(IntEnum):
     """Save Computed Data types."""
-   
+
     UNKNOWN = -1
     """Unknown Save Computed Data type option."""
     NO_SAVE = 0
@@ -6030,7 +6139,7 @@ agcls.AgTypeNameMap["VolumetricSaveComputedDataType"] = VolumetricSaveComputedDa
 
 class VolumetricDisplayVolumeType(IntEnum):
     """Graphics volume display type."""
-   
+
     ACTIVE_GRID_POINTS = 0
     """Active Grid Points Volume."""
     SPATIAL_CALCULATION_VALUE_LEVELS = 1
@@ -6043,7 +6152,7 @@ agcls.AgTypeNameMap["VolumetricDisplayVolumeType"] = VolumetricDisplayVolumeType
 
 class VolumetricDisplayQualityType(IntEnum):
     """Quality of the graphics display types."""
-   
+
     QUALITY_LOW = 0
     """Low graphics display quality."""
     QUALITY_MEDIUM = 1
@@ -6062,7 +6171,7 @@ agcls.AgTypeNameMap["VolumetricDisplayQualityType"] = VolumetricDisplayQualityTy
 
 class VolumetricLegendNumericNotationType(IntEnum):
     """Legend numeric notation types."""
-   
+
     FLOATING_POINT = 0
     """Floating point notation."""
     SCIENTIFIC_LOWERCASE_E = 1
@@ -6078,7 +6187,7 @@ agcls.AgTypeNameMap["VolumetricLegendNumericNotationType"] = VolumetricLegendNum
 
 class VolumetricLevelOrder(IntEnum):
     """Legend level display order."""
-   
+
     HORIZONTAL_MINIMUM_TO_MAXIMUM = 0
     """Horizontal Min To Max."""
     HORIZONTAL_MAXIMUM_TO_MINIMUM = 1
@@ -6097,7 +6206,7 @@ agcls.AgTypeNameMap["VolumetricLevelOrder"] = VolumetricLevelOrder
 
 class SensorEOIRProcessingLevelType(IntEnum):
     """EOIR processing levels."""
-   
+
     GEOMETRIC_INPUT = 0
     """EOIR : Geometric input processing level."""
     RADIOMETRIC_INPUT = 1
@@ -6116,7 +6225,7 @@ agcls.AgTypeNameMap["SensorEOIRProcessingLevelType"] = SensorEOIRProcessingLevel
 
 class SensorEOIRJitterType(IntEnum):
     """EOIR jitter type."""
-   
+
     LOS_GAUSSIAN = 0
     """EOIR : LOS Gaussian jitter type specification."""
     POWER_SPECTRUM_DENSITY_FILE = 1
@@ -6135,7 +6244,7 @@ agcls.AgTypeNameMap["SensorEOIRJitterType"] = SensorEOIRJitterType
 
 class SensorEOIRScanMode(IntEnum):
     """EOIR sensor scan mode."""
-   
+
     FRAMING_ARRAY = 0
     """EOIR : 2D framing array sensor."""
 
@@ -6145,7 +6254,7 @@ agcls.AgTypeNameMap["SensorEOIRScanMode"] = SensorEOIRScanMode
 
 class SensorEOIRBandImageQuality(IntEnum):
     """EOIR band image quality levels."""
-   
+
     DIFFRACTION_LIMITED = 0
     """EOIR : Use diffraction limited model."""
     NEGLIGIBLE_ABERRATIONS = 1
@@ -6176,7 +6285,7 @@ agcls.AgTypeNameMap["SensorEOIRBandImageQuality"] = SensorEOIRBandImageQuality
 
 class SensorEOIRBandSpectralShape(IntEnum):
     """EOIR overall system spectral shape determination."""
-   
+
     DEFAULT = 0
     """EOIR : Use spectral shape determined by optical and radiometric parameters."""
     SPECIFIED_SYSTEM_RELATIVE_SPECTRAL_RESPONSE = 1
@@ -6189,7 +6298,7 @@ agcls.AgTypeNameMap["SensorEOIRBandSpectralShape"] = SensorEOIRBandSpectralShape
 
 class SensorEOIRBandSpatialInputMode(IntEnum):
     """EOIR spatial input parameter specification."""
-   
+
     FIELD_OF_VIEW_AND_NUMBER_OF_PIXELS = 0
     """EOIR: Use the field-of-view and number of pixels to specify the spatial properties."""
     FIELD_OF_VIEW_AND_PIXEL_PITCH = 1
@@ -6205,7 +6314,7 @@ agcls.AgTypeNameMap["SensorEOIRBandSpatialInputMode"] = SensorEOIRBandSpatialInp
 
 class SensorEOIRBandSpectralRelativeSystemResponseUnitsType(IntEnum):
     """EOIR spectral relative system response units specification."""
-   
+
     ENERGY_UNITS = 0
     """EOIR: Treat the custom RSR function as energy units."""
     QUANTIZED_PARTICLE_UNITS = 1
@@ -6218,7 +6327,7 @@ agcls.AgTypeNameMap["SensorEOIRBandSpectralRelativeSystemResponseUnitsType"] = S
 
 class SensorEOIRBandOpticalInputMode(IntEnum):
     """EOIR optical input parameter specification."""
-   
+
     F_NUMBER_AND_FOCAL_LENGTH = 0
     """EOIR: Use the f-number and focal length to specify the optical properties."""
     F_NUMBER_AND_APERTURE_DIAMETER = 1
@@ -6234,7 +6343,7 @@ agcls.AgTypeNameMap["SensorEOIRBandOpticalInputMode"] = SensorEOIRBandOpticalInp
 
 class SensorEOIRBandOpticalTransmissionMode(IntEnum):
     """EOIR optical transmission parameter specification mode."""
-   
+
     BAND_EFFECTIVE_TRANSMISSION = 0
     """EOIR: Use band effective transmission value."""
     TRANSMISSION_DATA_FILE = 1
@@ -6247,7 +6356,7 @@ agcls.AgTypeNameMap["SensorEOIRBandOpticalTransmissionMode"] = SensorEOIRBandOpt
 
 class SensorEOIRBandRadiometricParameterLevelType(IntEnum):
     """EOIR radiometric detector parameter level of specification."""
-   
+
     HIGH_LEVEL = 0
     """EOIR: Use high level detector parameters."""
     LOW_LEVEL = 1
@@ -6260,7 +6369,7 @@ agcls.AgTypeNameMap["SensorEOIRBandRadiometricParameterLevelType"] = SensorEOIRB
 
 class SensorEOIRBandQuantumEfficiencyMode(IntEnum):
     """EOIR quantum efficiency specification mode."""
-   
+
     BAND_EFFECTIVE_QUANTUM_EFFICIENCY = 0
     """EOIR: Use band effective quantum efficiency for detector."""
     SPECTRAL_QUANTUM_EFFICIENCY_DATA_FILE = 1
@@ -6273,7 +6382,7 @@ agcls.AgTypeNameMap["SensorEOIRBandQuantumEfficiencyMode"] = SensorEOIRBandQuant
 
 class SensorEOIRBandQuantizationMode(IntEnum):
     """EOIR mode of determining quantization step size."""
-   
+
     FULL_WELL_AND_NOISE = 0
     """EOIR: Use full-well capacity and system level noise for analog-to-digital signal conversion."""
     FULL_WELL_AND_QSS = 1
@@ -6292,7 +6401,7 @@ agcls.AgTypeNameMap["SensorEOIRBandQuantizationMode"] = SensorEOIRBandQuantizati
 
 class SensorEOIRBandWavelengthType(IntEnum):
     """EOIR band diffraction wavelength reference type."""
-   
+
     LOW_BAND_EDGE = 0
     """EOIR : Low Band Edge."""
     BAND_CENTER = 1
@@ -6311,7 +6420,7 @@ agcls.AgTypeNameMap["SensorEOIRBandWavelengthType"] = SensorEOIRBandWavelengthTy
 
 class SensorEOIRBandSaturationMode(IntEnum):
     """EOIR band irradiance or radiance reference mode."""
-   
+
     IRRADIANCE = 0
     """EOIR : Irrandiance Sensitivities Mode."""
     RADIANCE = 1
@@ -6324,7 +6433,7 @@ agcls.AgTypeNameMap["SensorEOIRBandSaturationMode"] = SensorEOIRBandSaturationMo
 
 class VolumetricVolumeGridExportType(IntEnum):
     """Volumetric data export types."""
-   
+
     INCLUDE_LINK_TO_VOLUME_GRID = 0
     """Volumetric data export : Include Link To VolumeGrid."""
     EMBED_VOLUME_GRID_DEFINITION = 1
@@ -6337,7 +6446,7 @@ agcls.AgTypeNameMap["VolumetricVolumeGridExportType"] = VolumetricVolumeGridExpo
 
 class VolumetricDataExportFormatType(IntEnum):
     """Volumetric data export format types."""
-   
+
     HDF5 = 0
     """HDF5 Volumetric data export type."""
 
@@ -6347,7 +6456,7 @@ agcls.AgTypeNameMap["VolumetricDataExportFormatType"] = VolumetricDataExportForm
 
 class ConstellationFromToParentConstraint(IntEnum):
     """Options for a chain's From and To Parent Constraints."""
-   
+
     ANY = 0
     """Constellation constraint: Parent objects can be the same or different."""
     SAME_PARENT = 1
@@ -6363,7 +6472,7 @@ agcls.AgTypeNameMap["ConstellationFromToParentConstraint"] = ConstellationFromTo
 
 class AnalysisWorkbenchAccessConstraintType(IntEnum):
     """Available Analysis Workbench Access Constraints."""
-   
+
     ANGLE = 9
     """Angle. Use interface AccessConstraintAnalysisWorkbench."""
     VECTOR_MAGNITUDE = 10
@@ -6382,7 +6491,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchAccessConstraintType"] = AnalysisWorkbench
 
 class StatisticType(IntEnum):
     """The different statistics that might be available for a data set."""
-   
+
     MEAN = 0
     """Mean."""
     PERCENT_INTERVAL = 1
@@ -6404,7 +6513,7 @@ agcls.AgTypeNameMap["StatisticType"] = StatisticType
 
 class TimeVaryingExtremum(IntEnum):
     """The different time varying extremum that might be available for a data set."""
-   
+
     MAXIMUM = 0
     """Max."""
     MAXIMUM_OF_SAMPLES = 1
@@ -6423,7 +6532,7 @@ agcls.AgTypeNameMap["TimeVaryingExtremum"] = TimeVaryingExtremum
 
 class ModelGltfReflectionMapType(IntEnum):
     """Settings for glTF Reflection."""
-   
+
     PROCEDURAL_ENVIRONMENT = 0x0
     """Procedural environment glTF Reflection."""
     IMAGE_BASED = 0x1
@@ -6436,7 +6545,7 @@ agcls.AgTypeNameMap["ModelGltfReflectionMapType"] = ModelGltfReflectionMapType
 
 class SensorGraphics3DProjectionTimeDependencyType(IntEnum):
     """The different ways to determine the sensor's space projection distance in the 3D window."""
-   
+
     CONSTANT = 0
     """Use a constant length at all times. This length can be set with the SpaceProjection or Targeting property on the SensorGraphics3D interface depending on the sensor's pointing settings."""
     TIME_VARYING = 1
@@ -6449,7 +6558,7 @@ agcls.AgTypeNameMap["SensorGraphics3DProjectionTimeDependencyType"] = SensorGrap
 
 class LOPAtmosphericDensityModel(IntEnum):
     """LOP Atmospheric density models."""
-   
+
     UNKNOWN = -1
     """Unsupported or unknown atmospheric density model."""
     STANDARD_ATMOSPHERE_MODEL_1976 = 0
@@ -6465,7 +6574,7 @@ agcls.AgTypeNameMap["LOPAtmosphericDensityModel"] = LOPAtmosphericDensityModel
 
 class LowAltitudeAtmosphericDensityModel(IntEnum):
     """Low Altitude Atmospheric density models."""
-   
+
     UNKNOWN = -1
     """Unsupported or unknown low altitude atmospheric density model."""
     NONE = 0
@@ -6484,7 +6593,7 @@ agcls.AgTypeNameMap["LowAltitudeAtmosphericDensityModel"] = LowAltitudeAtmospher
 
 class EphemExportToolFileFormat(IntEnum):
     """Ephemeris Export Tool file formats."""
-   
+
     ORBIT_EPHEMERIS_MESSAGE = 0
     """The Ephemeris Export tool will generate an Orbit Ephemeris Message (.oem) file following the CCSDS Ephemeris v2.0 standard."""
     XML = 1
@@ -6497,7 +6606,7 @@ agcls.AgTypeNameMap["EphemExportToolFileFormat"] = EphemExportToolFileFormat
 
 class AdvCATEllipsoidClassType(IntEnum):
     """Method for determining Ellipsoid Sizing method (class)."""
-   
+
     CLASS_FIXED = 0
     """AdvCAT class type Fixed."""
     CLASS_ORBIT_CLASS = 1
@@ -6522,7 +6631,7 @@ agcls.AgTypeNameMap["AdvCATEllipsoidClassType"] = AdvCATEllipsoidClassType
 
 class AdvCATConjunctionType(IntEnum):
     """Mode for computing events involving conjunction TCA."""
-   
+
     GLOBAL_ONLY = 0
     """conjunction TCA type Global Only."""
     LOCAL_ONLY = 1
@@ -6541,7 +6650,7 @@ agcls.AgTypeNameMap["AdvCATConjunctionType"] = AdvCATConjunctionType
 
 class AdvCATSecondaryEllipsoidsVisibilityType(IntEnum):
     """Type of visible Secondary Ellipsoids."""
-   
+
     SHOW_ALL_SECONDARY_ELLIPSOIDS = 0
     """Show all Secondary Ellipsoids."""
     SHOW_SECONDARY_ELLIPSOIDS_WITH_CONJUNCTIONS = 1
@@ -6554,7 +6663,7 @@ agcls.AgTypeNameMap["AdvCATSecondaryEllipsoidsVisibilityType"] = AdvCATSecondary
 
 class EOIRShapeType(IntEnum):
     """The object geometry which will be rendered in the synthetic scene window."""
-   
+
     BOX = 0
     """Shape is defined as a Box."""
     CONE = 1
@@ -6597,7 +6706,7 @@ agcls.AgTypeNameMap["EOIRShapeType"] = EOIRShapeType
 
 class EOIRShapeMaterialSpecificationType(IntEnum):
     """Designation of how material properties are specified."""
-   
+
     SINGLE = 0
     """Materials specified by a single element."""
     GEOMETRIC_GROUP = 1
@@ -6610,7 +6719,7 @@ agcls.AgTypeNameMap["EOIRShapeMaterialSpecificationType"] = EOIRShapeMaterialSpe
 
 class EOIRThermalModelType(IntEnum):
     """EOIR thermal models."""
-   
+
     STATIC = 0
     """Thermal model, Constant."""
     TIME_PROFILE = 1
@@ -6626,7 +6735,7 @@ agcls.AgTypeNameMap["EOIRThermalModelType"] = EOIRThermalModelType
 
 class EOIRFlightType(IntEnum):
     """EOIR Flight Types."""
-   
+
     NONE = 0
     """EOIR Flight Type : None."""
     POWERED = 1
@@ -6642,7 +6751,7 @@ agcls.AgTypeNameMap["EOIRFlightType"] = EOIRFlightType
 
 class PropagatorDisplayCoordinateType(IntEnum):
     """Propagator Display Coordinate Types."""
-   
+
     CARTESIAN = 0
     """Cartesian Coordinates."""
     CLASSICAL = 1
@@ -6667,7 +6776,7 @@ agcls.AgTypeNameMap["PropagatorDisplayCoordinateType"] = PropagatorDisplayCoordi
 
 class ComponentLinkEmbedControlReferenceType(IntEnum):
     """Component link/embed control reference type."""
-   
+
     UNLINKED = 0
     """Unlink."""
     LINKED = 1
@@ -6680,7 +6789,7 @@ agcls.AgTypeNameMap["ComponentLinkEmbedControlReferenceType"] = ComponentLinkEmb
 
 class SwathComputationalMethod(IntEnum):
     """Computationals methods for generating swaths."""
-   
+
     UNKNOWN = -1
     """Unknown or unsupported computational method."""
     ANALYTIC = 0
@@ -6696,7 +6805,7 @@ agcls.AgTypeNameMap["SwathComputationalMethod"] = SwathComputationalMethod
 
 class ClassicalLocation(IntEnum):
     """Classical (Keplerian) element used to specify the spacecraft's location within its orbit at epoch."""
-   
+
     UNKNOWN = -1
     """Represents unsupported spacecraft location."""
     ARGUMENT_OF_LATITUDE = 0
@@ -6724,7 +6833,7 @@ agcls.AgTypeNameMap["ClassicalLocation"] = ClassicalLocation
 
 class OrientationAscNode(IntEnum):
     """Ascending node-related options for use in specifying orbit orientation."""
-   
+
     UNKNOWN = -1
     """Represents ascending node value not supported by the Object Model."""
     LONGITUDE_ASCENDING_NODE = 0
@@ -6740,7 +6849,7 @@ agcls.AgTypeNameMap["OrientationAscNode"] = OrientationAscNode
 
 class GeodeticSize(IntEnum):
     """Size options for the Geodetic coordinate type."""
-   
+
     UNKNOWN = -1
     """Represents a value not supported by the Object Model."""
     ALTITUDE = 0
@@ -6756,7 +6865,7 @@ agcls.AgTypeNameMap["GeodeticSize"] = GeodeticSize
 
 class DelaunayLType(IntEnum):
     """Select whether to use the default representation of Delaunay L or L/SQRT(mu)."""
-   
+
     UNKNOWN = -1
     """Represents a value not supported by the Object Model."""
     L = 0
@@ -6772,7 +6881,7 @@ agcls.AgTypeNameMap["DelaunayLType"] = DelaunayLType
 
 class DelaunayHType(IntEnum):
     """Select whether to use the default representation of Delaunay H or H/SQRT(mu)."""
-   
+
     UNKNOWN = -1
     """Represents a value not supported by the Object Model."""
     H = 0
@@ -6788,7 +6897,7 @@ agcls.AgTypeNameMap["DelaunayHType"] = DelaunayHType
 
 class DelaunayGType(IntEnum):
     """Select whether to use the default representation of Delaunay G or G/SQRT(mu)."""
-   
+
     UNKNOWN = -1
     """Represents a value not supported by the Object Model."""
     G = 0
@@ -6804,7 +6913,7 @@ agcls.AgTypeNameMap["DelaunayGType"] = DelaunayGType
 
 class EquinoctialSizeShape(IntEnum):
     """Opt whether to use Mean Motion or Semimajor Axis to specify the orbit size (Equinoctial coordinate type)."""
-   
+
     UNKNOWN = -1
     """Represents a value not supported by the Object Model."""
     MEAN_MOTION = 0
@@ -6820,7 +6929,7 @@ agcls.AgTypeNameMap["EquinoctialSizeShape"] = EquinoctialSizeShape
 
 class MixedSphericalFlightPathAngleType(IntEnum):
     """Opt whether to use Horizontal or Vertical Flight Path Angle."""
-   
+
     UNKNOWN = -1
     """Represents a flight path angle not supported by the Object Model."""
     HORIZONTAL = 0
@@ -6836,7 +6945,7 @@ agcls.AgTypeNameMap["MixedSphericalFlightPathAngleType"] = MixedSphericalFlightP
 
 class SphericalFlightPathAzimuthType(IntEnum):
     """Opt whether to use Horizontal or Vertical Flight Path Angle."""
-   
+
     UNKNOWN = -1
     """Represents unsupported angle type."""
     HORIZONTAL = 0
@@ -6852,7 +6961,7 @@ agcls.AgTypeNameMap["SphericalFlightPathAzimuthType"] = SphericalFlightPathAzimu
 
 class ClassicalSizeShape(IntEnum):
     """Pairs of Classical (Keplerian) elements used to specify orbit size and shape."""
-   
+
     UNKNOWN = -1
     """Represents a value unsupported by the Object Model."""
     ALTITUDE = 0
@@ -6877,7 +6986,7 @@ agcls.AgTypeNameMap["ClassicalSizeShape"] = ClassicalSizeShape
 
 class EquinoctialFormulation(IntEnum):
     """Formulation: retrograde or posigrade."""
-   
+
     POSIGRADE = 0
     """Posigrade, which has its singularity at an inclination of 180 deg."""
     RETROGRADE = 1
@@ -6890,7 +6999,7 @@ agcls.AgTypeNameMap["EquinoctialFormulation"] = EquinoctialFormulation
 
 class ScatteringPointProviderType(IntEnum):
     """Scattering point provider type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     SINGLE_POINT = 0
@@ -6915,7 +7024,7 @@ agcls.AgTypeNameMap["ScatteringPointProviderType"] = ScatteringPointProviderType
 
 class ScatteringPointModelType(IntEnum):
     """Scattering point model type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     PLUGIN = 0
@@ -6934,7 +7043,7 @@ agcls.AgTypeNameMap["ScatteringPointModelType"] = ScatteringPointModelType
 
 class ScatteringPointProviderListType(IntEnum):
     """Scattering Point Provider List Type."""
-   
+
     SCATTERING_POINT_PROVIDER_LIST = 0
     """Scattering point provider list."""
 
@@ -6944,7 +7053,7 @@ agcls.AgTypeNameMap["ScatteringPointProviderListType"] = ScatteringPointProvider
 
 class PolarizationType(IntEnum):
     """Polarization Type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     ELLIPTICAL = 0
@@ -6972,7 +7081,7 @@ agcls.AgTypeNameMap["PolarizationType"] = PolarizationType
 
 class PolarizationReferenceAxis(IntEnum):
     """Polarization reference axis."""
-   
+
     X = 0
     """X."""
     Y = 1
@@ -6988,7 +7097,7 @@ agcls.AgTypeNameMap["PolarizationReferenceAxis"] = PolarizationReferenceAxis
 
 class NoiseTemperatureComputeType(IntEnum):
     """System noise temperature compute type."""
-   
+
     CONSTANT = 0
     """Constant."""
     CALCULATE = 1
@@ -7001,7 +7110,7 @@ agcls.AgTypeNameMap["NoiseTemperatureComputeType"] = NoiseTemperatureComputeType
 
 class PointingStrategyType(IntEnum):
     """Pointing strategy type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     FIXED = 0
@@ -7020,7 +7129,7 @@ agcls.AgTypeNameMap["PointingStrategyType"] = PointingStrategyType
 
 class WaveformType(IntEnum):
     """Waveform types."""
-   
+
     UNKNOWN = -1
     """Unknown waveform type."""
     RECTANGULAR = 0
@@ -7033,7 +7142,7 @@ agcls.AgTypeNameMap["WaveformType"] = WaveformType
 
 class FrequencySpecificationType(IntEnum):
     """Frequency Specification Type."""
-   
+
     FREQUENCY = 0
     """Frequency."""
     WAVELENGTH = 1
@@ -7046,7 +7155,7 @@ agcls.AgTypeNameMap["FrequencySpecificationType"] = FrequencySpecificationType
 
 class PRFMode(IntEnum):
     """Radar search/track prf modes."""
-   
+
     PRF = 0
     """PRF."""
     UNAMBIGUOUS_RANGE = 1
@@ -7062,7 +7171,7 @@ agcls.AgTypeNameMap["PRFMode"] = PRFMode
 
 class PulseWidthMode(IntEnum):
     """Radar search/track pulse width modes."""
-   
+
     PULSE_WIDTH = 0
     """Pulse Width."""
     DUTY_FACTOR = 1
@@ -7075,7 +7184,7 @@ agcls.AgTypeNameMap["PulseWidthMode"] = PulseWidthMode
 
 class WaveformSelectionStrategyType(IntEnum):
     """Waveform selection strategy type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     FIXED = 0
@@ -7091,7 +7200,7 @@ agcls.AgTypeNameMap["WaveformSelectionStrategyType"] = WaveformSelectionStrategy
 
 class AntennaControlReferenceType(IntEnum):
     """Antenna control reference type."""
-   
+
     LINK = 0
     """Link to an Antenna object."""
     EMBED = 1
@@ -7104,7 +7213,7 @@ agcls.AgTypeNameMap["AntennaControlReferenceType"] = AntennaControlReferenceType
 
 class AntennaModelType(IntEnum):
     """Antenna model types."""
-   
+
     UNKNOWN = -1
     """Unknown antenna model type."""
     GAUSSIAN = 0
@@ -7270,7 +7379,7 @@ agcls.AgTypeNameMap["AntennaModelType"] = AntennaModelType
 
 class AntennaContourType(IntEnum):
     """Antenna contour types."""
-   
+
     GAIN = 0
     """Gain."""
     EIRP = 1
@@ -7292,7 +7401,7 @@ agcls.AgTypeNameMap["AntennaContourType"] = AntennaContourType
 
 class CircularApertureInputType(IntEnum):
     """Circular aperture antenna input type."""
-   
+
     BEAMWIDTH = 0
     """Beamwidth."""
     DIAMETER = 1
@@ -7305,7 +7414,7 @@ agcls.AgTypeNameMap["CircularApertureInputType"] = CircularApertureInputType
 
 class RectangularApertureInputType(IntEnum):
     """Rectangular aperture antenna input type."""
-   
+
     BEAMWIDTHS = 0
     """Beamwidth."""
     DIMENSIONS = 1
@@ -7318,7 +7427,7 @@ agcls.AgTypeNameMap["RectangularApertureInputType"] = RectangularApertureInputTy
 
 class DirectionProviderType(IntEnum):
     """Direction Provider types."""
-   
+
     UNKNOWN = -1
     """Unknown direction provider type."""
     ASCII_FILE = 0
@@ -7340,7 +7449,7 @@ agcls.AgTypeNameMap["DirectionProviderType"] = DirectionProviderType
 
 class BeamformerType(IntEnum):
     """Beamformer types."""
-   
+
     UNKNOWN = -1
     """Unknown beamformer type."""
     MVDR = 0
@@ -7392,7 +7501,7 @@ agcls.AgTypeNameMap["BeamformerType"] = BeamformerType
 
 class ElementConfigurationType(IntEnum):
     """Element configuration types."""
-   
+
     UNKNOWN = -1
     """Unknown element configuration type."""
     CIRCULAR = 0
@@ -7420,7 +7529,7 @@ agcls.AgTypeNameMap["ElementConfigurationType"] = ElementConfigurationType
 
 class LatticeType(IntEnum):
     """Lattice types."""
-   
+
     TRIANGULAR = 0
     """Triangular lattice type."""
     RECTANGULAR = 1
@@ -7433,7 +7542,7 @@ agcls.AgTypeNameMap["LatticeType"] = LatticeType
 
 class SpacingUnit(IntEnum):
     """Spacing Units."""
-   
+
     WAVELENGTH_RATIO = 0
     """Specify element spacing as a Wavelength Ratio."""
     DISTANCE = 1
@@ -7446,7 +7555,7 @@ agcls.AgTypeNameMap["SpacingUnit"] = SpacingUnit
 
 class LimitsExceededBehaviorType(IntEnum):
     """Limits Exceeded Behavior types."""
-   
+
     CLAMP_TO_LIMIT = 0
     """Clamp-To-Limit limits exceeded behavior type."""
     IGNORE_OBJECT = 1
@@ -7459,7 +7568,7 @@ agcls.AgTypeNameMap["LimitsExceededBehaviorType"] = LimitsExceededBehaviorType
 
 class TargetSelectionMethod(IntEnum):
     """Target Selection Method types."""
-   
+
     RANGE = 0
     """Select a target based on the minimum range."""
     CLOSING_VELOCITY = 1
@@ -7475,7 +7584,7 @@ agcls.AgTypeNameMap["TargetSelectionMethod"] = TargetSelectionMethod
 
 class AntennaGraphicsCoordinateSystem(IntEnum):
     """Coordinate system for defining antenna graphics resolution."""
-   
+
     POLAR = 0
     """Polar."""
     RECTANGULAR = 1
@@ -7491,7 +7600,7 @@ agcls.AgTypeNameMap["AntennaGraphicsCoordinateSystem"] = AntennaGraphicsCoordina
 
 class AntennaModelInputType(IntEnum):
     """Diameter computation input type."""
-   
+
     BEAMWIDTH = 0
     """Beamwidth input type."""
     DIAMETER = 1
@@ -7507,7 +7616,7 @@ agcls.AgTypeNameMap["AntennaModelInputType"] = AntennaModelInputType
 
 class HFSSFarFieldDataGainType(IntEnum):
     """Gain type."""
-   
+
     TOTAL_GAIN = 0
     """Total Gain."""
     REALIZED_GAIN = 1
@@ -7520,7 +7629,7 @@ agcls.AgTypeNameMap["HFSSFarFieldDataGainType"] = HFSSFarFieldDataGainType
 
 class AntennaModelCosecantSquaredSidelobeType(IntEnum):
     """Cosecant Squared antenna sidelobe selection types."""
-   
+
     CONSTANT = 0
     """Cosecant Squared Sidelobe Value Constant."""
     SINC = 1
@@ -7542,7 +7651,7 @@ agcls.AgTypeNameMap["AntennaModelCosecantSquaredSidelobeType"] = AntennaModelCos
 
 class BeamSelectionStrategyType(IntEnum):
     """Beam selection strategy types."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     AGGREGATE = 0
@@ -7564,7 +7673,7 @@ agcls.AgTypeNameMap["BeamSelectionStrategyType"] = BeamSelectionStrategyType
 
 class TransmitterModelType(IntEnum):
     """Transmitter model types."""
-   
+
     UNKNOWN = -1
     """Unknown transmitter model type."""
     SIMPLE = 0
@@ -7607,7 +7716,7 @@ agcls.AgTypeNameMap["TransmitterModelType"] = TransmitterModelType
 
 class TransferFunctionType(IntEnum):
     """Transmitter model types."""
-   
+
     POLYNOMIAL = 0
     """Polynomial."""
     TABLE_DATA = 1
@@ -7620,7 +7729,7 @@ agcls.AgTypeNameMap["TransferFunctionType"] = TransferFunctionType
 
 class ReTransmitterOpMode(IntEnum):
     """Re-Transmitter operational mode."""
-   
+
     UNADJUSTED_RECEIVE_FLUX_DENSITY = 0
     """Use unadjusted receive flux density."""
     RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY = 1
@@ -7636,7 +7745,7 @@ agcls.AgTypeNameMap["ReTransmitterOpMode"] = ReTransmitterOpMode
 
 class ReceiverModelType(IntEnum):
     """Receiver model types."""
-   
+
     UNKNOWN = -1
     """Unknown receiver model type."""
     SIMPLE = 0
@@ -7670,7 +7779,7 @@ agcls.AgTypeNameMap["ReceiverModelType"] = ReceiverModelType
 
 class LinkMarginType(IntEnum):
     """Link margin types."""
-   
+
     BIT_ERROR_RATE = 0
     """BER."""
     EB_OVER_N0 = 1
@@ -7698,7 +7807,7 @@ agcls.AgTypeNameMap["LinkMarginType"] = LinkMarginType
 
 class RadarSTCAttenuationType(IntEnum):
     """Stc Attenuation Type."""
-   
+
     UNKNOWN = -1
     """Unknown STC type."""
     DECAY_FACTOR = 0
@@ -7726,7 +7835,7 @@ agcls.AgTypeNameMap["RadarSTCAttenuationType"] = RadarSTCAttenuationType
 
 class RadarFrequencySpecificationType(IntEnum):
     """SNR Contour Type."""
-   
+
     FREQUENCY = 0
     """Frequency."""
     WAVELENGTH = 1
@@ -7739,7 +7848,7 @@ agcls.AgTypeNameMap["RadarFrequencySpecificationType"] = RadarFrequencySpecifica
 
 class RadarSNRContourType(IntEnum):
     """SNR Contour Type."""
-   
+
     SINGLE_PULSE = 0
     """Single Pulse SNR."""
     INTEGRATED = 1
@@ -7752,7 +7861,7 @@ agcls.AgTypeNameMap["RadarSNRContourType"] = RadarSNRContourType
 
 class RadarModelType(IntEnum):
     """Radar system types."""
-   
+
     UNKNOWN = -1
     """Unknown radar system type."""
     MONOSTATIC = 0
@@ -7774,7 +7883,7 @@ agcls.AgTypeNameMap["RadarModelType"] = RadarModelType
 
 class RadarMode(IntEnum):
     """Radar mode types."""
-   
+
     UNKNOWN = -1
     """Unknown radar mode type."""
     SEARCH_TRACK = 0
@@ -7790,7 +7899,7 @@ agcls.AgTypeNameMap["RadarMode"] = RadarMode
 
 class RadarWaveformSearchTrackType(IntEnum):
     """Radar search/track waveform types."""
-   
+
     FIXED_PRF = 0
     """Fixed PRF."""
     CONTINUOUS = 1
@@ -7803,7 +7912,7 @@ agcls.AgTypeNameMap["RadarWaveformSearchTrackType"] = RadarWaveformSearchTrackTy
 
 class RadarSearchTrackPRFMode(IntEnum):
     """Radar search/track prf modes."""
-   
+
     PRF = 0
     """PRF."""
     UNAMBIGUOUS_RANGE = 1
@@ -7819,7 +7928,7 @@ agcls.AgTypeNameMap["RadarSearchTrackPRFMode"] = RadarSearchTrackPRFMode
 
 class RadarSearchTrackPulseWidthMode(IntEnum):
     """Radar search/track pulse width modes."""
-   
+
     PULSE_WIDTH = 0
     """Pulse Width."""
     DUTY_FACTOR = 1
@@ -7832,7 +7941,7 @@ agcls.AgTypeNameMap["RadarSearchTrackPulseWidthMode"] = RadarSearchTrackPulseWid
 
 class RadarSarPRFMode(IntEnum):
     """Radar SAR prf modes."""
-   
+
     PRF = 0
     """PRF."""
     UNAMBIGUOUS_RANGE = 1
@@ -7845,7 +7954,7 @@ agcls.AgTypeNameMap["RadarSarPRFMode"] = RadarSarPRFMode
 
 class RadarSarRangeResolutionMode(IntEnum):
     """Radar SAR range resolution modes."""
-   
+
     RANGE_RESOLUTION = 0
     """Range Resolution."""
     BANDWIDTH = 1
@@ -7858,7 +7967,7 @@ agcls.AgTypeNameMap["RadarSarRangeResolutionMode"] = RadarSarRangeResolutionMode
 
 class RadarSarPcrMode(IntEnum):
     """Radar SAR pulse compression ratio modes."""
-   
+
     PULSE_COMPRESSION_RATIO = 0
     """Pulse compression ratio."""
     PULSE_WIDTH = 1
@@ -7877,7 +7986,7 @@ agcls.AgTypeNameMap["RadarSarPcrMode"] = RadarSarPcrMode
 
 class RadarSARPulseIntegrationAnalysisMode(IntEnum):
     """Radar sar pulse integration mode."""
-   
+
     FIXED_AZIMUTH_RESOLUTION = 0
     """Fixed azimuth resolution."""
     FIXED_INTEGRATION_TIME = 1
@@ -7890,7 +7999,7 @@ agcls.AgTypeNameMap["RadarSARPulseIntegrationAnalysisMode"] = RadarSARPulseInteg
 
 class RadarProbabilityOfDetectionType(IntEnum):
     """Radar probability of detection type."""
-   
+
     UNKNOWN = -1
     """Unknown radar mode type."""
     CFAR = 0
@@ -7915,7 +8024,7 @@ agcls.AgTypeNameMap["RadarProbabilityOfDetectionType"] = RadarProbabilityOfDetec
 
 class RadarPulseIntegrationType(IntEnum):
     """Radar pulse integration type."""
-   
+
     GOAL_SNR = 0
     """Goal SNR."""
     FIXED_NUMBER_OF_PULSES = 1
@@ -7928,7 +8037,7 @@ agcls.AgTypeNameMap["RadarPulseIntegrationType"] = RadarPulseIntegrationType
 
 class RadarPulseIntegratorType(IntEnum):
     """Radar pulse integrator type."""
-   
+
     PERFECT = 0
     """Perfect."""
     CONSTANT_EFFICIENCY = 1
@@ -7947,7 +8056,7 @@ agcls.AgTypeNameMap["RadarPulseIntegratorType"] = RadarPulseIntegratorType
 
 class RadarContinuousWaveAnalysisMode(IntEnum):
     """Radar continuous wave analysis mode."""
-   
+
     GOAL_SNR = 0
     """Goal SNR."""
     FIXED_TIME = 1
@@ -7960,7 +8069,7 @@ agcls.AgTypeNameMap["RadarContinuousWaveAnalysisMode"] = RadarContinuousWaveAnal
 
 class RadarClutterGeometryModelType(IntEnum):
     """Radar clutter geometry model type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     SINGLE_POINT = 0
@@ -7982,7 +8091,7 @@ agcls.AgTypeNameMap["RadarClutterGeometryModelType"] = RadarClutterGeometryModel
 
 class RadarClutterMapModelType(IntEnum):
     """Radar clutter map model type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     PLUGIN = 0
@@ -7998,7 +8107,7 @@ agcls.AgTypeNameMap["RadarClutterMapModelType"] = RadarClutterMapModelType
 
 class RadarSwerlingCase(IntEnum):
     """Radar swerling case."""
-   
+
     CASE_0 = 0
     """0."""
     CASE_I = 1
@@ -8020,7 +8129,7 @@ agcls.AgTypeNameMap["RadarSwerlingCase"] = RadarSwerlingCase
 
 class RCSComputeStrategy(IntEnum):
     """Radar cross section compute strategy."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     PLUGIN = 0
@@ -8045,7 +8154,7 @@ agcls.AgTypeNameMap["RCSComputeStrategy"] = RCSComputeStrategy
 
 class RadarActivityType(IntEnum):
     """Radar activity times strategy."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     ALWAYS_ACTIVE = 0
@@ -8067,7 +8176,7 @@ agcls.AgTypeNameMap["RadarActivityType"] = RadarActivityType
 
 class RadarCrossSectionContourGraphicsPolarization(IntEnum):
     """Radar cross section contour graphics polarization."""
-   
+
     PRIMARY = 0
     """Primary Polarization."""
     ORTHOGONAL = 1
@@ -8080,7 +8189,7 @@ agcls.AgTypeNameMap["RadarCrossSectionContourGraphicsPolarization"] = RadarCross
 
 class RFFilterModelType(IntEnum):
     """RF filter model types."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BESSEL = 0
@@ -8144,7 +8253,7 @@ agcls.AgTypeNameMap["RFFilterModelType"] = RFFilterModelType
 
 class ModulatorModelType(IntEnum):
     """Modulator model types."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BPSK = 0
@@ -8226,7 +8335,7 @@ agcls.AgTypeNameMap["ModulatorModelType"] = ModulatorModelType
 
 class DemodulatorModelType(IntEnum):
     """Demodulator model types."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     BPSK = 0
@@ -8305,7 +8414,7 @@ agcls.AgTypeNameMap["DemodulatorModelType"] = DemodulatorModelType
 
 class RainLossModelType(IntEnum):
     """Rain loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown rain loss model type."""
     ITU_R_P618_10 = 0
@@ -8336,7 +8445,7 @@ agcls.AgTypeNameMap["RainLossModelType"] = RainLossModelType
 
 class AtmosphericAbsorptionModelType(IntEnum):
     """Atmospheric absorption model types."""
-   
+
     UNKNOWN = -1
     """Unknown atmospheric absorption model type."""
     ITURP676_9 = 0
@@ -8373,7 +8482,7 @@ agcls.AgTypeNameMap["AtmosphericAbsorptionModelType"] = AtmosphericAbsorptionMod
 
 class UrbanTerrestrialLossModelType(IntEnum):
     """urban/terrestrial loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown urban/terrestrial loss model type."""
     TWO_RAY = 0
@@ -8392,7 +8501,7 @@ agcls.AgTypeNameMap["UrbanTerrestrialLossModelType"] = UrbanTerrestrialLossModel
 
 class CloudsAndFogFadingLossModelType(IntEnum):
     """Clouds and Fog loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown Clouds and Fog loss model type."""
     P_840_6_TYPE = 0
@@ -8408,7 +8517,7 @@ agcls.AgTypeNameMap["CloudsAndFogFadingLossModelType"] = CloudsAndFogFadingLossM
 
 class CloudsAndFogLiquidWaterChoiceType(IntEnum):
     """Clouds and Fog loss model liquid water content choices."""
-   
+
     UNKNOWN = -1
     """Unknown Clouds and Fog liquid water choice."""
     DENSITY_VALUE = 0
@@ -8427,7 +8536,7 @@ agcls.AgTypeNameMap["CloudsAndFogLiquidWaterChoiceType"] = CloudsAndFogLiquidWat
 
 class IonosphericFadingLossModelType(IntEnum):
     """Ionospheric loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown Ionospheric loss model type."""
     P_531_13 = 1
@@ -8440,7 +8549,7 @@ agcls.AgTypeNameMap["IonosphericFadingLossModelType"] = IonosphericFadingLossMod
 
 class TroposphericScintillationFadingLossModelType(IntEnum):
     """TropoScintillation loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown TropoScintillation loss model type."""
     P_618_8 = 0
@@ -8456,7 +8565,7 @@ agcls.AgTypeNameMap["TroposphericScintillationFadingLossModelType"] = Tropospher
 
 class TroposphericScintillationAverageTimeChoiceType(IntEnum):
     """TroposphericScintillation loss model average time choices."""
-   
+
     UNKNOWN = -1
     """Unknown TropoScintillation average time choice."""
     YEAR = 0
@@ -8472,7 +8581,7 @@ agcls.AgTypeNameMap["TroposphericScintillationAverageTimeChoiceType"] = Troposph
 
 class ProjectionHorizontalDatumType(IntEnum):
     """REMCOM Wireless InSite RT project/horizontal datum type."""
-   
+
     WGS84_LATITUDE_LONGITUDE = 0
     """Lat/Lon WGS84."""
     WGS84_UTM = 1
@@ -8485,7 +8594,7 @@ agcls.AgTypeNameMap["ProjectionHorizontalDatumType"] = ProjectionHorizontalDatum
 
 class BuildHeightReferenceMethod(IntEnum):
     """REMCOM Wireless InSite RT building height reference method."""
-   
+
     HEIGHT_ABOVE_TERRAIN = 0
     """Height above terrain."""
     HEIGHT_ABOVE_SEA_LEVEL = 1
@@ -8498,7 +8607,7 @@ agcls.AgTypeNameMap["BuildHeightReferenceMethod"] = BuildHeightReferenceMethod
 
 class BuildingHeightUnit(IntEnum):
     """REMCOM Wireless InSite RT building height unit."""
-   
+
     FEET = 0
     """Feet."""
     METERS = 1
@@ -8511,7 +8620,7 @@ agcls.AgTypeNameMap["BuildingHeightUnit"] = BuildingHeightUnit
 
 class TIREMPolarizationType(IntEnum):
     """TIREM polarization type."""
-   
+
     VERTICAL = 0
     """V."""
     HORIZONTAL = 1
@@ -8524,7 +8633,7 @@ agcls.AgTypeNameMap["TIREMPolarizationType"] = TIREMPolarizationType
 
 class Graphics3DACAPSolarActivityConfigurationType(IntEnum):
     """VOACAP solar activity configuration type."""
-   
+
     UNKNOWN = -1
     """Unknown solar activity configuration type."""
     SUNSPOT_NUMBER = 0
@@ -8540,7 +8649,7 @@ agcls.AgTypeNameMap["Graphics3DACAPSolarActivityConfigurationType"] = Graphics3D
 
 class Graphics3DACAPCoefficientDataType(IntEnum):
     """VOACAP coefficient data type."""
-   
+
     CCIR = 0
     """CCIR."""
     URSI = 1
@@ -8553,7 +8662,7 @@ agcls.AgTypeNameMap["Graphics3DACAPCoefficientDataType"] = Graphics3DACAPCoeffic
 
 class LaserPropagationLossModelType(IntEnum):
     """Laser propagation loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown laser propagation loss model type."""
     BEER_BOUGUER_LAMBERT_LAW = 0
@@ -8572,7 +8681,7 @@ agcls.AgTypeNameMap["LaserPropagationLossModelType"] = LaserPropagationLossModel
 
 class LaserTroposphericScintillationLossModelType(IntEnum):
     """Laser tropospheric scintillation loss model types."""
-   
+
     UNKNOWN = -1
     """Unknown laser tropospheric scintillation loss model type."""
     ITURP_1814 = 0
@@ -8585,7 +8694,7 @@ agcls.AgTypeNameMap["LaserTroposphericScintillationLossModelType"] = LaserTropos
 
 class AtmosphericTurbulenceModelType(IntEnum):
     """Refractive index structure parameter model types."""
-   
+
     UNKNOWN = -1
     """Unknown atmospheric turbulence model type."""
     CONSTANT = 0
@@ -8601,7 +8710,7 @@ agcls.AgTypeNameMap["AtmosphericTurbulenceModelType"] = AtmosphericTurbulenceMod
 
 class ModtranAerosolModelType(IntEnum):
     """MODTRAN-derived lookup table aerosol model extinction types."""
-   
+
     RURAL_HIGH_VISIBILITY = 1
     """Rural High Visibility."""
     RURAL_LOW_VISIBILITY = 2
@@ -8635,7 +8744,7 @@ agcls.AgTypeNameMap["ModtranAerosolModelType"] = ModtranAerosolModelType
 
 class ModtranCloudModelType(IntEnum):
     """MODTRAN Cloud model types."""
-   
+
     NONE = 0
     """None."""
     CUMULUS = 1
@@ -8678,7 +8787,7 @@ agcls.AgTypeNameMap["ModtranCloudModelType"] = ModtranCloudModelType
 
 class CommSystemReferenceBandwidth(IntEnum):
     """CommSystem reference bandwidth."""
-   
+
     BANDWIDTH_1_HZ = 0
     """1 Hz."""
     BANDWIDTH_4_KHZ = 1
@@ -8706,7 +8815,7 @@ agcls.AgTypeNameMap["CommSystemReferenceBandwidth"] = CommSystemReferenceBandwid
 
 class CommSystemConstrainingRole(IntEnum):
     """CommSystem constraining role."""
-   
+
     TRANSMIT = 0
     """Transmit."""
     RECEIVE = 1
@@ -8719,7 +8828,7 @@ agcls.AgTypeNameMap["CommSystemConstrainingRole"] = CommSystemConstrainingRole
 
 class CommSystemSaveMode(IntEnum):
     """CommSystem save mode."""
-   
+
     DO_NOT_SAVE_COMPUTED_DATA = 0
     """Don't save compute data."""
     COMPUTE_DATA_ON_LOAD = 1
@@ -8735,7 +8844,7 @@ agcls.AgTypeNameMap["CommSystemSaveMode"] = CommSystemSaveMode
 
 class CommSystemAccessEventDetectionType(IntEnum):
     """CommSystem access options event detection type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     SUB_SAMPLE = 0
@@ -8751,7 +8860,7 @@ agcls.AgTypeNameMap["CommSystemAccessEventDetectionType"] = CommSystemAccessEven
 
 class CommSystemAccessSamplingMethodType(IntEnum):
     """CommSystem access options sampling method type."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     FIXED = 0
@@ -8767,7 +8876,7 @@ agcls.AgTypeNameMap["CommSystemAccessSamplingMethodType"] = CommSystemAccessSamp
 
 class CommSystemLinkSelectionCriteriaType(IntEnum):
     """Link selection strategy types."""
-   
+
     UNKNOWN = -1
     """Unknown."""
     MINIMUM_RANGE = 0
@@ -8786,7 +8895,7 @@ agcls.AgTypeNameMap["CommSystemLinkSelectionCriteriaType"] = CommSystemLinkSelec
 
 class SpaceEnvironmentNasaModelsActivity(IntEnum):
     """Activity level for the NASA models NASAELE and NASAPRO."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentNasaModelsActivity value."""
     SOLAR_MINIMUM = 0
@@ -8802,7 +8911,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentNasaModelsActivity"] = SpaceEnvironmentNasa
 
 class SpaceEnvironmentCrresProtonActivity(IntEnum):
     """Activity level for CRRESPRO model."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentCrresProtonActivity value."""
     ACTIVE = 0
@@ -8818,7 +8927,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentCrresProtonActivity"] = SpaceEnvironmentCrr
 
 class SpaceEnvironmentCrresRadiationActivity(IntEnum):
     """Activity level for CRRESRAD model."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentCrresProtonActivity value."""
     ACTIVE = 0
@@ -8837,7 +8946,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentCrresRadiationActivity"] = SpaceEnvironment
 
 class SpaceEnvironmentMagneticFieldColorMode(IntEnum):
     """Mode by which color is assigned."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentMagneticFieldColorMode value."""
     FIELD_MAGNITUDE = 0
@@ -8853,7 +8962,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentMagneticFieldColorMode"] = SpaceEnvironment
 
 class SpaceEnvironmentMagneticFieldColorScaleType(IntEnum):
     """Scaling of magnetic field to use when assigning color/translucency."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentMagneticFieldColorScaleType value."""
     LINEAR = 0
@@ -8869,7 +8978,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentMagneticFieldColorScaleType"] = SpaceEnviro
 
 class SpaceEnvironmentMagneticMainField(IntEnum):
     """Main magnetic field."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentMagneticMainField value."""
     IGRF = 1
@@ -8891,7 +9000,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentMagneticMainField"] = SpaceEnvironmentMagne
 
 class SpaceEnvironmentMagneticExternalField(IntEnum):
     """External magnetic field."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentMagneticExternalField value."""
     NONE = 0
@@ -8907,7 +9016,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentMagneticExternalField"] = SpaceEnvironmentM
 
 class SpaceEnvironmentSAAChannel(IntEnum):
     """Energy level for SAA protons."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentSAAChannel value."""
     CHANNEL_23_MEV = 0
@@ -8929,7 +9038,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentSAAChannel"] = SpaceEnvironmentSAAChannel
 
 class SpaceEnvironmentSAAFluxLevel(IntEnum):
     """Flux level for SAA contour."""
-   
+
     UNKNOWN = -1
     """An invalid SpaceEnvironmentSAAFluxLevel value."""
     GREATER_THAN_BACKGROUND_BY_3_SIGMA = 0
@@ -8948,7 +9057,7 @@ agcls.AgTypeNameMap["SpaceEnvironmentSAAFluxLevel"] = SpaceEnvironmentSAAFluxLev
 
 class VehicleSpaceEnvironmentShapeModel(IntEnum):
     """Thermal shape model."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentShapeModel value."""
     PLATE = 0
@@ -8964,7 +9073,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentShapeModel"] = VehicleSpaceEnvironme
 
 class VehicleSpaceEnvironmentF10P7SourceType(IntEnum):
     """Mode for computing 13-month average F10.7."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentF10P7SourceType value."""
     FILE = 0
@@ -8980,7 +9089,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentF10P7SourceType"] = VehicleSpaceEnvi
 
 class VehicleSpaceEnvironmentMaterial(IntEnum):
     """Material."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentMaterial value."""
     ALUMINUM = 0
@@ -9026,7 +9135,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentMaterial"] = VehicleSpaceEnvironment
 
 class VehicleSpaceEnvironmentComputationMode(IntEnum):
     """Models that are to be included when modeling radiation."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentComputationMode value."""
     NASA = 0
@@ -9051,7 +9160,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentComputationMode"] = VehicleSpaceEnvi
 
 class VehicleSpaceEnvironmentDoseChannel(IntEnum):
     """Dose channel."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentDoseChannel value."""
     HIGH_LINEAR_ENERGY_TRANSPORT = 0
@@ -9070,7 +9179,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentDoseChannel"] = VehicleSpaceEnvironm
 
 class VehicleSpaceEnvironmentDetectorGeometry(IntEnum):
     """Detector geometry."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentDetectorGeometry value."""
     SEMI_INFINITE_SLAB = 0
@@ -9089,7 +9198,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentDetectorGeometry"] = VehicleSpaceEnv
 
 class VehicleSpaceEnvironmentDetectorType(IntEnum):
     """Detector material."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentDetectorType value."""
     AIR = 0
@@ -9132,7 +9241,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentDetectorType"] = VehicleSpaceEnviron
 
 class VehicleSpaceEnvironmentApSource(IntEnum):
     """Mode for computing 15 day average Ap."""
-   
+
     UNKNOWN = -1
     """An invalid VehicleSpaceEnvironmentApSource value."""
     FILE = 0
@@ -9148,7 +9257,7 @@ agcls.AgTypeNameMap["VehicleSpaceEnvironmentApSource"] = VehicleSpaceEnvironment
 
 class NotificationFilterMask(IntFlag):
     """The notification flags are used to enable/disable STK Object Model event notifications."""
-   
+
     NO_EVENTS = 0x0000
     """Disable all events."""
     ANIMATION_EVENTS = 0x0001
@@ -9213,7 +9322,7 @@ class IDataProviderInfo(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDataProviderInfo, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -9277,7 +9386,7 @@ class IDataProvider(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDataProvider, None)
-    
+
     _get_elements_metadata = { "offset" : _get_elements_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9365,7 +9474,7 @@ class IDataProvider(object):
 agcls.AgClassCatalog.add_catalog_entry((5155632021552283324, 2376779169503638968), IDataProvider)
 agcls.AgTypeNameMap["IDataProvider"] = IDataProvider
 
-class IStkObject(object):
+class ISTKObject(object):
     """
     Represents the instance of STK object.
 
@@ -9413,26 +9522,26 @@ class IStkObject(object):
     }
     _property_names = {}
     def __init__(self, source_object=None):
-        """Construct an object of type IStkObject."""
-        initialize_from_source_object(self, source_object, IStkObject)
+        """Construct an object of type ISTKObject."""
+        initialize_from_source_object(self, source_object, ISTKObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IStkObject)
+        return get_interface_property(attrname, ISTKObject)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IStkObject, None)
-    
+        set_interface_attribute(self, attrname, value, ISTKObject, None)
+
     _get_parent_metadata = { "offset" : _get_parent_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def parent(self) -> "IStkObject":
-        """Return the parent object or null if the object has become orphaned. The exception is StkObjectRoot object which is a topmost element and does not have a parent."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_parent_metadata)
+    def parent(self) -> "ISTKObject":
+        """Return the parent object or null if the object has become orphaned. The exception is STKObjectRoot object which is a topmost element and does not have a parent."""
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_parent_metadata)
 
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9440,7 +9549,7 @@ class IStkObject(object):
     @property
     def path(self) -> str:
         """Return the object path."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_path_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_path_metadata)
 
     _get_instance_name_metadata = { "offset" : _get_instance_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9448,14 +9557,14 @@ class IStkObject(object):
     @property
     def instance_name(self) -> str:
         """A name of the object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_instance_name_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_instance_name_metadata)
 
     _set_instance_name_metadata = { "offset" : _set_instance_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @instance_name.setter
     def instance_name(self, value:str) -> None:
-        return self._intf.set_property(IStkObject._metadata, IStkObject._set_instance_name_metadata, value)
+        return self._intf.set_property(ISTKObject._metadata, ISTKObject._set_instance_name_metadata, value)
 
     _get_class_type_metadata = { "offset" : _get_class_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9463,7 +9572,7 @@ class IStkObject(object):
     @property
     def class_type(self) -> "STKObjectType":
         """Return a class type of the object (i.e. eAircraft, eFacility etc.)."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_class_type_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_class_type_metadata)
 
     _get_class_name_metadata = { "offset" : _get_class_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9471,30 +9580,30 @@ class IStkObject(object):
     @property
     def class_name(self) -> str:
         """Return a class name of the object (i.e. Aircraft, Facility.)."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_class_name_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_class_name_metadata)
 
     _get_children_metadata = { "offset" : _get_children_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def children(self) -> "IStkObjectCollection":
+    def children(self) -> "ISTKObjectCollection":
         """Return a collection of direct descendants of the current object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_children_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_children_metadata)
 
     _export_metadata = { "offset" : _export_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def export(self, filename:str) -> None:
         """Export the object to a file."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._export_metadata, filename)
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._export_metadata, filename)
 
     _get_root_metadata = { "offset" : _get_root_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def root(self) -> "StkObjectRoot":
+    def root(self) -> "STKObjectRoot":
         """Return the Root object or null."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_root_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_root_metadata)
 
     _get_data_providers_metadata = { "offset" : _get_data_providers_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9502,7 +9611,7 @@ class IStkObject(object):
     @property
     def data_providers(self) -> "DataProviderCollection":
         """Return the object representing a list of available data providers for the object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_data_providers_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_data_providers_metadata)
 
     _get_short_description_metadata = { "offset" : _get_short_description_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9510,14 +9619,14 @@ class IStkObject(object):
     @property
     def short_description(self) -> str:
         """The short description of the object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_short_description_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_short_description_metadata)
 
     _set_short_description_metadata = { "offset" : _set_short_description_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @short_description.setter
     def short_description(self, short_desc:str) -> None:
-        return self._intf.set_property(IStkObject._metadata, IStkObject._set_short_description_metadata, short_desc)
+        return self._intf.set_property(ISTKObject._metadata, ISTKObject._set_short_description_metadata, short_desc)
 
     _get_long_description_metadata = { "offset" : _get_long_description_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9525,14 +9634,14 @@ class IStkObject(object):
     @property
     def long_description(self) -> str:
         """A long description of the object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_long_description_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_long_description_metadata)
 
     _set_long_description_metadata = { "offset" : _set_long_description_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @long_description.setter
     def long_description(self, long_desc:str) -> None:
-        return self._intf.set_property(IStkObject._metadata, IStkObject._set_long_description_metadata, long_desc)
+        return self._intf.set_property(ISTKObject._metadata, ISTKObject._set_long_description_metadata, long_desc)
 
     _get_has_children_metadata = { "offset" : _get_has_children_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9540,14 +9649,14 @@ class IStkObject(object):
     @property
     def has_children(self) -> bool:
         """Return true if the object has direct descendants."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_has_children_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_has_children_metadata)
 
     _is_object_coverage_supported_metadata = { "offset" : _is_object_coverage_supported_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_object_coverage_supported(self) -> bool:
         """Determine whether or not the object supports ObjectCoverage."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._is_object_coverage_supported_metadata, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._is_object_coverage_supported_metadata, OutArg())
 
     _get_object_coverage_metadata = { "offset" : _get_object_coverage_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9555,28 +9664,28 @@ class IStkObject(object):
     @property
     def object_coverage(self) -> "ObjectCoverage":
         """Return an ObjectCoverage object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_object_coverage_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_object_coverage_metadata)
 
     _is_access_supported_metadata = { "offset" : _is_access_supported_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_access_supported(self) -> bool:
         """Determine whether or not the object supports Access."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._is_access_supported_metadata, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._is_access_supported_metadata, OutArg())
 
     _get_access_metadata = { "offset" : _get_access_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_access(self, object_path:str) -> "Access":
         """Return an Access object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._get_access_metadata, object_path, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._get_access_metadata, object_path, OutArg())
 
     _get_access_to_object_metadata = { "offset" : _get_access_to_object_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceOutArg,) }
-    def get_access_to_object(self, object:"IStkObject") -> "Access":
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceOutArg,) }
+    def get_access_to_object(self, object:"ISTKObject") -> "Access":
         """Return an Access object associated with this STK object and another STK object."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._get_access_to_object_metadata, object, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._get_access_to_object_metadata, object, OutArg())
 
     _get_access_constraints_metadata = { "offset" : _get_access_constraints_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9584,14 +9693,14 @@ class IStkObject(object):
     @property
     def access_constraints(self) -> "AccessConstraintCollection":
         """Get the constraints imposed on the object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_access_constraints_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_access_constraints_metadata)
 
     _create_one_point_access_metadata = { "offset" : _create_one_point_access_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def create_one_point_access(self, path_to_object:str) -> "OnePointAccess":
         """Create one point access to the supplied object name. The Remove method in OnePointAccess should be called when you are done with the data."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._create_one_point_access_metadata, path_to_object, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._create_one_point_access_metadata, path_to_object, OutArg())
 
     _get_object_files_metadata = { "offset" : _get_object_files_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -9599,21 +9708,21 @@ class IStkObject(object):
     @property
     def object_files(self) -> list:
         """Return the list of files that constitute an object."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_object_files_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_object_files_metadata)
 
     _unload_metadata = { "offset" : _unload_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def unload(self) -> None:
         """Remove the object from the scenario."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._unload_metadata, )
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._unload_metadata, )
 
     _supports_analysis_workbench_metadata = { "offset" : _supports_analysis_workbench_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def supports_analysis_workbench(self) -> bool:
         """Return whether the object supports Vector Geometry."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._supports_analysis_workbench_metadata, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._supports_analysis_workbench_metadata, OutArg())
 
     _get_analysis_workbench_components_metadata = { "offset" : _get_analysis_workbench_components_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9621,14 +9730,14 @@ class IStkObject(object):
     @property
     def analysis_workbench_components(self) -> "IAnalysisWorkbenchComponentProvider":
         """Return an instance of Vector Geometry Tool provider."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_analysis_workbench_components_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_analysis_workbench_components_metadata)
 
     _copy_object_metadata = { "offset" : _copy_object_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def copy_object(self, new_object_name:str) -> "IStkObject":
+    def copy_object(self, new_object_name:str) -> "ISTKObject":
         """Copy and paste the current instance of STK Object. The copied object will be pasted as the sibling of the instance being copied."""
-        return self._intf.invoke(IStkObject._metadata, IStkObject._copy_object_metadata, new_object_name, OutArg())
+        return self._intf.invoke(ISTKObject._metadata, ISTKObject._copy_object_metadata, new_object_name, OutArg())
 
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -9636,7 +9745,7 @@ class IStkObject(object):
     @property
     def central_body_name(self) -> str:
         """The object's central body."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_central_body_name_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_central_body_name_metadata)
 
     _get_metadata_metadata = { "offset" : _get_metadata_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9644,7 +9753,7 @@ class IStkObject(object):
     @property
     def metadata(self) -> "KeyValueCollection":
         """Get the object's metadata. Metadata is a collection of keys and their associated values."""
-        return self._intf.get_property(IStkObject._metadata, IStkObject._get_metadata_metadata)
+        return self._intf.get_property(ISTKObject._metadata, ISTKObject._get_metadata_metadata)
 
     _property_names[parent] = "parent"
     _property_names[path] = "path"
@@ -9665,8 +9774,8 @@ class IStkObject(object):
     _property_names[metadata] = "metadata"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5684331285240064776, 682992631032012709), IStkObject)
-agcls.AgTypeNameMap["IStkObject"] = IStkObject
+agcls.AgClassCatalog.add_catalog_entry((5684331285240064776, 682992631032012709), ISTKObject)
+agcls.AgTypeNameMap["ISTKObject"] = ISTKObject
 
 class IAccessInterval(object):
     """Base interface for ITimePeriod and TimeIntervalCollection."""
@@ -9691,7 +9800,7 @@ class IAccessInterval(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAccessInterval, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4978520745393007291, 368973114715273407), IAccessInterval)
@@ -9721,7 +9830,7 @@ class IFigureOfMeritDefinition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritDefinition, None)
-    
+
     _get_satisfaction_metadata = { "offset" : _get_satisfaction_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -9765,7 +9874,7 @@ class IFigureOfMeritDefinitionCompute(IFigureOfMeritDefinition):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition)
-    
+
     _get_compute_type_metadata = { "offset" : _get_compute_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritCompute),) }
@@ -9812,7 +9921,7 @@ class IFigureOfMeritDefinitionCompute(IFigureOfMeritDefinition):
 agcls.AgClassCatalog.add_catalog_entry((5466845781897018838, 3334443694100846508), IFigureOfMeritDefinitionCompute)
 agcls.AgTypeNameMap["IFigureOfMeritDefinitionCompute"] = IFigureOfMeritDefinitionCompute
 
-class IStkObjectElementCollection(object):
+class ISTKObjectElementCollection(object):
     """Represents a collection of STK objects."""
 
     _num_methods = 6
@@ -9829,8 +9938,8 @@ class IStkObjectElementCollection(object):
     }
     _property_names = {}
     def __init__(self, source_object=None):
-        """Construct an object of type IStkObjectElementCollection."""
-        initialize_from_source_object(self, source_object, IStkObjectElementCollection)
+        """Construct an object of type ISTKObjectElementCollection."""
+        initialize_from_source_object(self, source_object, ISTKObjectElementCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9838,16 +9947,16 @@ class IStkObjectElementCollection(object):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IStkObjectElementCollection)
+        return get_interface_property(attrname, ISTKObjectElementCollection)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IStkObjectElementCollection, None)
+        set_interface_attribute(self, attrname, value, ISTKObjectElementCollection, None)
     def __iter__(self):
-        """Create an iterator for the IStkObjectElementCollection object."""
+        """Create an iterator for the ISTKObjectElementCollection object."""
         self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "IStkObject":
+    def __next__(self) -> "ISTKObject":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -9855,21 +9964,21 @@ class IStkObjectElementCollection(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Return the number of elements in a collection."""
-        return self._intf.get_property(IStkObjectElementCollection._metadata, IStkObjectElementCollection._get_count_metadata)
+        return self._intf.get_property(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, index_or_name:typing.Any) -> "IStkObject":
+    def item(self, index_or_name:typing.Any) -> "ISTKObject":
         """Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name."""
-        return self._intf.invoke(IStkObjectElementCollection._metadata, IStkObjectElementCollection._item_metadata, index_or_name, OutArg())
+        return self._intf.invoke(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._item_metadata, index_or_name, OutArg())
 
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9877,28 +9986,28 @@ class IStkObjectElementCollection(object):
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that can iterate through the collection."""
-        return self._intf.get_property(IStkObjectElementCollection._metadata, IStkObjectElementCollection._get__new_enum_metadata)
+        return self._intf.get_property(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._get__new_enum_metadata)
 
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def contains(self, inst_name:str) -> bool:
         """Check whether an object with the given name exists."""
-        return self._intf.invoke(IStkObjectElementCollection._metadata, IStkObjectElementCollection._contains_metadata, inst_name, OutArg())
+        return self._intf.invoke(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._contains_metadata, inst_name, OutArg())
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "IStkObject":
+    def get_item_by_index(self, index:int) -> "ISTKObject":
         """Retrieve an Stk object element from the collection by index."""
-        return self._intf.invoke(IStkObjectElementCollection._metadata, IStkObjectElementCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, name:str) -> "IStkObject":
+    def get_item_by_name(self, name:str) -> "ISTKObject":
         """Retrieve an Stk object element from the collection by name."""
-        return self._intf.invoke(IStkObjectElementCollection._metadata, IStkObjectElementCollection._get_item_by_name_metadata, name, OutArg())
+        return self._intf.invoke(ISTKObjectElementCollection._metadata, ISTKObjectElementCollection._get_item_by_name_metadata, name, OutArg())
 
     __getitem__ = item
 
@@ -9907,10 +10016,10 @@ class IStkObjectElementCollection(object):
     _property_names[_new_enum] = "_new_enum"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5096702068244902831, 8096268259154586774), IStkObjectElementCollection)
-agcls.AgTypeNameMap["IStkObjectElementCollection"] = IStkObjectElementCollection
+agcls.AgClassCatalog.add_catalog_entry((5096702068244902831, 8096268259154586774), ISTKObjectElementCollection)
+agcls.AgTypeNameMap["ISTKObjectElementCollection"] = ISTKObjectElementCollection
 
-class IStkObjectCollection(object):
+class ISTKObjectCollection(object):
     """Represents a collection of STK objects."""
 
     _num_methods = 13
@@ -9934,8 +10043,8 @@ class IStkObjectCollection(object):
     }
     _property_names = {}
     def __init__(self, source_object=None):
-        """Construct an object of type IStkObjectCollection."""
-        initialize_from_source_object(self, source_object, IStkObjectCollection)
+        """Construct an object of type ISTKObjectCollection."""
+        initialize_from_source_object(self, source_object, ISTKObjectCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9943,16 +10052,16 @@ class IStkObjectCollection(object):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IStkObjectCollection)
+        return get_interface_property(attrname, ISTKObjectCollection)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IStkObjectCollection, None)
+        set_interface_attribute(self, attrname, value, ISTKObjectCollection, None)
     def __iter__(self):
-        """Create an iterator for the IStkObjectCollection object."""
+        """Create an iterator for the ISTKObjectCollection object."""
         self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "IStkObject":
+    def __next__(self) -> "ISTKObject":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -9960,21 +10069,21 @@ class IStkObjectCollection(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Return the number of elements in the collection."""
-        return self._intf.get_property(IStkObjectCollection._metadata, IStkObjectCollection._get_count_metadata)
+        return self._intf.get_property(ISTKObjectCollection._metadata, ISTKObjectCollection._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, index_or_name:typing.Any) -> "IStkObject":
+    def item(self, index_or_name:typing.Any) -> "ISTKObject":
         """Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._item_metadata, index_or_name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._item_metadata, index_or_name, OutArg())
 
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9982,35 +10091,35 @@ class IStkObjectCollection(object):
     @property
     def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator for the collection."""
-        return self._intf.get_property(IStkObjectCollection._metadata, IStkObjectCollection._get__new_enum_metadata)
+        return self._intf.get_property(ISTKObjectCollection._metadata, ISTKObjectCollection._get__new_enum_metadata)
 
     _new_metadata = { "offset" : _new_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(STKObjectType), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def new(self, class_type:"STKObjectType", inst_name:str) -> "IStkObject":
+    def new(self, class_type:"STKObjectType", inst_name:str) -> "ISTKObject":
         """Create an STK object using specified class and instance name."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._new_metadata, class_type, inst_name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._new_metadata, class_type, inst_name, OutArg())
 
     _unload_metadata = { "offset" : _unload_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR,),
             "marshallers" : (agmarshall.EnumArg(STKObjectType), agmarshall.BStrArg,) }
     def unload(self, class_type:"STKObjectType", inst_name:str) -> None:
         """Remove an STK object using specified object's type and name."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._unload_metadata, class_type, inst_name)
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._unload_metadata, class_type, inst_name)
 
     _get_elements_metadata = { "offset" : _get_elements_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(STKObjectType), agmarshall.InterfaceOutArg,) }
-    def get_elements(self, class_type:"STKObjectType") -> "IStkObjectElementCollection":
+    def get_elements(self, class_type:"STKObjectType") -> "ISTKObjectElementCollection":
         """Return a collection of objects of specified type."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._get_elements_metadata, class_type, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._get_elements_metadata, class_type, OutArg())
 
     _new_on_central_body_metadata = { "offset" : _new_on_central_body_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(STKObjectType), agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def new_on_central_body(self, class_type:"STKObjectType", inst_name:str, central_body_name:str) -> "IStkObject":
+    def new_on_central_body(self, class_type:"STKObjectType", inst_name:str, central_body_name:str) -> "ISTKObject":
         """Create an STK object using specified class, instance name and the central body."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._new_on_central_body_metadata, class_type, inst_name, central_body_name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._new_on_central_body_metadata, class_type, inst_name, central_body_name, OutArg())
 
     _get_supported_child_types_metadata = { "offset" : _get_supported_child_types_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -10018,42 +10127,42 @@ class IStkObjectCollection(object):
     @property
     def supported_child_types(self) -> list:
         """Return the available objects that can be added to this object."""
-        return self._intf.get_property(IStkObjectCollection._metadata, IStkObjectCollection._get_supported_child_types_metadata)
+        return self._intf.get_property(ISTKObjectCollection._metadata, ISTKObjectCollection._get_supported_child_types_metadata)
 
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(STKObjectType), agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def contains(self, class_type:"STKObjectType", inst_name:str) -> bool:
         """Check whether the collection contains an object with the given type and name."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._contains_metadata, class_type, inst_name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._contains_metadata, class_type, inst_name, OutArg())
 
     _import_object_metadata = { "offset" : _import_object_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def import_object(self, file_path:str) -> "IStkObject":
+    def import_object(self, file_path:str) -> "ISTKObject":
         """Import object from external file and returns the pointer to the object."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._import_object_metadata, file_path, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._import_object_metadata, file_path, OutArg())
 
     _copy_object_metadata = { "offset" : _copy_object_method_offset,
             "arg_types" : (agcom.PVOID, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def copy_object(self, object_to_clone:"IStkObject", new_object_name:str) -> "IStkObject":
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def copy_object(self, object_to_clone:"ISTKObject", new_object_name:str) -> "ISTKObject":
         """Copy and paste the specified object."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._copy_object_metadata, object_to_clone, new_object_name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._copy_object_metadata, object_to_clone, new_object_name, OutArg())
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "IStkObject":
+    def get_item_by_index(self, index:int) -> "ISTKObject":
         """Retrieve an Stk object from the collection by index."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, name:str) -> "IStkObject":
+    def get_item_by_name(self, name:str) -> "ISTKObject":
         """Retrieve an Stk object from the collection by name."""
-        return self._intf.invoke(IStkObjectCollection._metadata, IStkObjectCollection._get_item_by_name_metadata, name, OutArg())
+        return self._intf.invoke(ISTKObjectCollection._metadata, ISTKObjectCollection._get_item_by_name_metadata, name, OutArg())
 
     __getitem__ = item
 
@@ -10063,8 +10172,8 @@ class IStkObjectCollection(object):
     _property_names[supported_child_types] = "supported_child_types"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5198092366622301019, 13565157834551497125), IStkObjectCollection)
-agcls.AgTypeNameMap["IStkObjectCollection"] = IStkObjectCollection
+agcls.AgClassCatalog.add_catalog_entry((5198092366622301019, 13565157834551497125), ISTKObjectCollection)
+agcls.AgTypeNameMap["ISTKObjectCollection"] = ISTKObjectCollection
 
 class IAnimation(object):
     """
@@ -10073,11 +10182,11 @@ class IAnimation(object):
     Examples
     --------
     Reset the scenario time:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> root.rewind()
 
     Change animation mode:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> scenario = root.current_scenario
     >>> root.animation_options = AnimationOptionType.STOP
     >>> root.mode = AnimationEndTimeMode.X_REAL_TIME
@@ -10122,7 +10231,7 @@ class IAnimation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnimation, None)
-    
+
     _play_forward_metadata = { "offset" : _play_forward_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -10288,7 +10397,7 @@ class IComponentInfo(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IComponentInfo, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -10380,7 +10489,7 @@ class ICloneable(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICloneable, None)
-    
+
     _clone_object_metadata = { "offset" : _clone_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -10421,7 +10530,7 @@ class IComponentLinkEmbedControl(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IComponentLinkEmbedControl, None)
-    
+
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ComponentLinkEmbedControlReferenceType),) }
@@ -10491,7 +10600,7 @@ class IDisplayTimesData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplayTimesData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5237363789436860483, 10153003140195176627), IDisplayTimesData)
@@ -10525,7 +10634,7 @@ class IDisplayTime(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplayTime, None)
-    
+
     _get_display_status_type_metadata = { "offset" : _get_display_status_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DisplayTimesType),) }
@@ -10595,7 +10704,7 @@ class ITerrainNormData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainNormData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4710761608362925757, 5921492890169715082), ITerrainNormData)
@@ -10625,7 +10734,7 @@ class ILifetimeInformation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILifetimeInformation, None)
-    
+
     _get_has_been_deleted_metadata = { "offset" : _get_has_been_deleted_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -10663,7 +10772,7 @@ class IVehicleLeadTrailData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleLeadTrailData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5133290017253705720, 1818322219394130334), IVehicleLeadTrailData)
@@ -10694,7 +10803,7 @@ class IVehicleLeadTrailDataFraction(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleLeadTrailDataFraction, None)
-    
+
     _get_fraction_metadata = { "offset" : _get_fraction_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10741,7 +10850,7 @@ class IVehicleLeadTrailDataTime(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleLeadTrailDataTime, None)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -10770,28 +10879,28 @@ class IAccessConstraint(object):
     Examples
     --------
     Get access between objects by path using the existing accesses:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> scenario = root.current_scenario
     >>> accesses = scenario.get_existing_accesses()
-    >>> 
+    >>>
     >>> size = len(accesses)  # number of accesses
-    >>> 
+    >>>
     >>> object1 = accesses[0][0]  # e.g. "Satellite/MySatellite"
     >>> object2 = accesses[0][1]  # e.g.  "Facility/MyFacility"
     >>> computed = accesses[0][2]  # e.g. True  (if access has been computed)
-    >>> 
+    >>>
     >>> access = scenario.get_access_between_objects_by_path(object1, object2)
 
     Configure the access interval to the availability time span of the object where access is being computed to:
-    >>> # StkObjectRoot root: STK Object Model root
-    >>> 
+    >>> # STKObjectRoot root: STK Object Model root
+    >>>
     >>> satellite = root.get_object_from_path("Satellite/MySatellite")
     >>> facility = root.get_object_from_path("Facility/MyFacility")
     >>> access = satellite.get_access_to_object(facility)
-    >>> 
+    >>>
     >>> access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
     >>> accessTimePeriod = access.access_time_period_data
-    >>> 
+    >>>
     >>> if satellite.analysis_workbench_components.time_intervals.contains("AvailabilityTimeSpan"):
     >>>     availabilityTimeSpan = satellite.analysis_workbench_components.time_intervals.item("AvailabilityTimeSpan")
     >>>     accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
@@ -10800,18 +10909,18 @@ class IAccessConstraint(object):
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
     >>> for i in range(accessConstraints.count - 1, 0, -1):
     >>>     constraint = accessConstraints.Item(i).ConstraintName
-    >>> 
+    >>>
     >>>     if (constraint == "LineOfSight") is False:
     >>>         if constraint == "ThirdBodyObstruction":
     >>>             thirdBodyConstraint = accessConstraints.GetActiveNamedConstraint("ThirdBodyObstruction")
     >>>             assignedArray = thirdBodyConstraint.AssignedObstructions
-    >>> 
+    >>>
     >>>             for j in range(0, len(assignedArray)):
     >>>                 thirdBodyConstraint.RemoveObstruction(assignedArray[j])
-    >>> 
+    >>>
     >>>         elif constraint == "ExclusionZone":
     >>>             accessConstraints.GetActiveNamedConstraint("ExclusionZone").RemoveAll()
-    >>> 
+    >>>
     >>>         else:
     >>>             accessConstraints.RemoveNamedConstraint(constraint)
 
@@ -10825,7 +10934,7 @@ class IAccessConstraint(object):
 
     Add multiple access constraints of the same type to an STK Object:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # Add constraints
     >>> # Only the eCstrApparentTime (4), eCstrDuration (13), eCstrGMT (16), eCstrIntervals (22), eCstrLocalTime (27) constraint
     >>> # types can be added multiple times to the constraint collection.
@@ -10835,7 +10944,7 @@ class IAccessConstraint(object):
 
     Add and configure an altitude access constraint:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
     >>> # Attitude constraint
     >>> altitude = accessConstraints.add_constraint(AccessConstraintType.ALTITUDE)
@@ -10846,27 +10955,27 @@ class IAccessConstraint(object):
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
     >>> # Get IAgAccessCnstrCbObstruction interface
     >>> cbObstrConstraint = accessConstraints.add_constraint(AccessConstraintType.CENTRAL_BODY_OBSTRUCTION)
-    >>> 
+    >>>
     >>> # AvailableObstructions returns a one dimensional array of obstruction paths
     >>> availableArray = cbObstrConstraint.available_obstructions
-    >>> 
+    >>>
     >>> # In this example add all available obstructions
     >>> print("Available obstructions")
     >>> for i in range(0, len(availableArray)):
     >>>     print(availableArray[i])
     >>>     if availableArray[i] != "Sun":  # Sun is enabled by default
     >>>         cbObstrConstraint.add_obstruction(availableArray[i])
-    >>> 
+    >>>
     >>> # AssignedObstructions returns a one dimensional array of obstruction paths
     >>> assignedArray = cbObstrConstraint.assigned_obstructions
-    >>> 
+    >>>
     >>> print("Assigned obstructions")
     >>> for i in range(0, len(assignedArray)):
     >>>     print(assignedArray[i])
 
     Add and configure a sun elevation angle access constraint:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
     >>> minmax = accessConstraints.add_constraint(AccessConstraintType.SUN_ELEVATION_ANGLE)
     >>> minmax.enable_minimum = True
@@ -10876,7 +10985,7 @@ class IAccessConstraint(object):
 
     Add and configure a lunar elevation angle access constraint:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # To make this more efficient, wrap this method between calls to root.BeginUpdate() and root.EndUpdate()
     >>> minmax = accessConstraints.add_constraint(AccessConstraintType.LUNAR_ELEVATION_ANGLE)
     >>> minmax.enable_minimum = True
@@ -10886,14 +10995,14 @@ class IAccessConstraint(object):
 
     Add and configure a Line Of Sight sun exclusion access constraint:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # Angle constraint
     >>> cnstrAngle = accessConstraints.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
     >>> cnstrAngle.angle = 176.0
 
     Add and configure a lighting condition access constraint:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
-    >>> 
+    >>>
     >>> # Condition constraint
     >>> light = accessConstraints.add_constraint(AccessConstraintType.LIGHTING)
     >>> light.condition = ConstraintLighting.DIRECT_SUN
@@ -10901,7 +11010,7 @@ class IAccessConstraint(object):
     Return a list of available constraints:
     >>> # AccessConstraintCollection accessConstraints: Access Constraint collection
     >>> constraintArray = accessConstraints.available_constraints()
-    >>> 
+    >>>
     >>> print("List of Available Constraints:")
     >>> for i in range(0, len(constraintArray)):
     >>>     print(constraintArray[i])
@@ -10936,7 +11045,7 @@ class IAccessConstraint(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAccessConstraint, None)
-    
+
     _get_constraint_name_metadata = { "offset" : _get_constraint_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11049,7 +11158,7 @@ class IAccessConstraintMinMaxBase(IAccessConstraint):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAccessConstraintMinMaxBase, IAccessConstraint)
-    
+
     _get_enable_minimum_metadata = { "offset" : _get_enable_minimum_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -11142,7 +11251,7 @@ class IGraphics3DMarkerData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphics3DMarkerData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4717643828216549729, 6823134375722684837), IGraphics3DMarkerData)
@@ -11171,7 +11280,7 @@ class IGraphics3DModelData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphics3DModelData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4666640754645996290, 15571154125827486100), IGraphics3DModelData)
@@ -11209,7 +11318,7 @@ class IGraphics3DModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphics3DModel, None)
-    
+
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -11321,7 +11430,7 @@ class IGraphics3DReferenceAnalysisWorkbenchComponent(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphics3DReferenceAnalysisWorkbenchComponent, None)
-    
+
     _get_type_identifier_metadata = { "offset" : _get_type_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeometricElementType),) }
@@ -11421,7 +11530,7 @@ class ILatitudeLongitudeAltitudePosition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILatitudeLongitudeAltitudePosition, None)
-    
+
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(DeticPositionType), agmarshall.InterfaceOutArg,) }
@@ -11487,7 +11596,7 @@ class IClassicalSizeShape(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IClassicalSizeShape, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4730643798439028108, 12397902977405054860), IClassicalSizeShape)
@@ -11516,7 +11625,7 @@ class IOrientationAscNode(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationAscNode, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5241219906470719617, 6656593870488189359), IOrientationAscNode)
@@ -11545,7 +11654,7 @@ class IClassicalLocation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IClassicalLocation, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5574855203244913327, 960360588506921877), IClassicalLocation)
@@ -11574,7 +11683,7 @@ class IGeodeticSize(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeodeticSize, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4669588592286829500, 12590540741910118846), IGeodeticSize)
@@ -11603,7 +11712,7 @@ class IDelaunayActionVariable(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDelaunayActionVariable, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5170299042433857379, 18005220533706112395), IDelaunayActionVariable)
@@ -11632,7 +11741,7 @@ class IFlightPathAngle(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFlightPathAngle, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5260724130063239265, 3447438162362475703), IFlightPathAngle)
@@ -11662,7 +11771,7 @@ class IProvideSpatialInfo(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProvideSpatialInfo, None)
-    
+
     _get_spatial_information_metadata = { "offset" : _get_spatial_information_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
@@ -11701,7 +11810,7 @@ class IRadarClutterMap(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterMap, None)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -11759,7 +11868,7 @@ class ITimePeriod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimePeriod, None)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -11833,7 +11942,7 @@ class ICelestialBodyInformation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICelestialBodyInformation, None)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -11978,7 +12087,7 @@ class ICelestialBodyInformationCollection(object):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -12057,7 +12166,7 @@ class IAccessAdvanced(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAccessAdvanced, None)
-    
+
     _get_aberration_type_metadata = { "offset" : _get_aberration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AberrationType),) }
@@ -12136,7 +12245,7 @@ class IRefractionModelBase(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRefractionModelBase, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5518298169939898931, 11346666359500385188), IRefractionModelBase)
@@ -12165,7 +12274,7 @@ class IDisplayDistance(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplayDistance, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5408704985411414065, 6891047350164697747), IDisplayDistance)
@@ -12206,7 +12315,7 @@ class ISensorProjectionDisplayDistance(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISensorProjectionDisplayDistance, None)
-    
+
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -12331,7 +12440,7 @@ class ISensorPattern(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISensorPattern, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4822074903610663257, 670794337477858212), ISensorPattern)
@@ -12360,14 +12469,14 @@ class ISensorPointingTargetedBoresight(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISensorPointingTargetedBoresight, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5520308939413169285, 2414484971931353535), ISensorPointingTargetedBoresight)
 agcls.AgTypeNameMap["ISensorPointingTargetedBoresight"] = ISensorPointingTargetedBoresight
 
 class ISensorPointing(object):
-    """Base interface ISensorPointing. SensorPointing3DModel, SensorPointingExternal, ISensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, IAgSnPtTargeted, SensorPointingAlongVector and IAgSnPtSchedule implement this interface."""
+    """Base interface ISensorPointing. ISensorPointing3DModel, SensorPointingExternal, ISensorPointingFixed, SensorPointingFixedInAxes, SensorPointingGrazingAltitude, IAgSnPtTargeted, SensorPointingAlongVector and IAgSnPtSchedule implement this interface."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -12389,7 +12498,7 @@ class ISensorPointing(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISensorPointing, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4916161629126725326, 4167207342323185846), ISensorPointing)
@@ -12418,7 +12527,7 @@ class IAzElMaskData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAzElMaskData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5484583649368958181, 10363226351646093733), IAzElMaskData)
@@ -12450,7 +12559,7 @@ class IRadarClutterMapInheritable(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterMapInheritable, None)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -12513,7 +12622,7 @@ class IPlatformRFEnvironment(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPlatformRFEnvironment, None)
-    
+
     _get_enable_local_rain_data_metadata = { "offset" : _get_enable_local_rain_data_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -12615,7 +12724,7 @@ class IAreaTypeData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAreaTypeData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5664566626614236498, 14474624381359299515), IAreaTypeData)
@@ -12644,7 +12753,7 @@ class IPositionSourceData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPositionSourceData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4944781973044139013, 9561431264782681733), IPositionSourceData)
@@ -12673,7 +12782,7 @@ class IOrbitDisplayData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrbitDisplayData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5221333333925059073, 1713820497602169998), IOrbitDisplayData)
@@ -12703,7 +12812,7 @@ class IPolarization(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarization, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationType),) }
@@ -12747,7 +12856,7 @@ class IPolarizationElliptical(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarizationElliptical, None)
-    
+
     _get_reference_axis_metadata = { "offset" : _get_reference_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
@@ -12826,7 +12935,7 @@ class IPolarizationCrossPolLeakage(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarizationCrossPolLeakage, None)
-    
+
     _get_cross_polarization_leakage_metadata = { "offset" : _get_cross_polarization_leakage_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -12875,7 +12984,7 @@ class IPolarizationLinear(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarizationLinear, None)
-    
+
     _get_reference_axis_metadata = { "offset" : _get_reference_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
@@ -12939,7 +13048,7 @@ class IPolarizationHorizontal(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarizationHorizontal, None)
-    
+
     _get_reference_axis_metadata = { "offset" : _get_reference_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
@@ -12996,7 +13105,7 @@ class IPolarizationVertical(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolarizationVertical, None)
-    
+
     _get_reference_axis_metadata = { "offset" : _get_reference_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PolarizationReferenceAxis),) }
@@ -13051,7 +13160,7 @@ class IPointingStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPointingStrategy, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PointingStrategyType),) }
@@ -13099,7 +13208,7 @@ class IWaveform(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWaveform, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13212,7 +13321,7 @@ class IWaveformSelectionStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWaveformSelectionStrategy, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(WaveformSelectionStrategyType),) }
@@ -13252,7 +13361,7 @@ class IScatteringPointProvider(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScatteringPointProvider, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13301,7 +13410,7 @@ class IScatteringPointModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScatteringPointModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13352,7 +13461,7 @@ class IAntennaModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntennaModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -13417,7 +13526,7 @@ class IElementConfiguration(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IElementConfiguration, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ElementConfigurationType),) }
@@ -13473,7 +13582,7 @@ class IElementConfigurationPolygon(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IElementConfigurationPolygon, None)
-    
+
     _get_lattice_type_metadata = { "offset" : _get_lattice_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(LatticeType),) }
@@ -13649,7 +13758,7 @@ class IBeamformer(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBeamformer, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(BeamformerType),) }
@@ -13688,7 +13797,7 @@ class ITargetSelectionMethod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITargetSelectionMethod, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TargetSelectionMethod),) }
@@ -13727,7 +13836,7 @@ class IDirectionProvider(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionProvider, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DirectionProviderType),) }
@@ -13773,7 +13882,7 @@ class IAntennaModelOpticalSimple(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntennaModelOpticalSimple, None)
-    
+
     _get_compute_gain_metadata = { "offset" : _get_compute_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -13886,7 +13995,7 @@ class IAntennaContour(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntennaContour, None)
-    
+
     _get_show_at_altitude_metadata = { "offset" : _get_show_at_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -14078,7 +14187,7 @@ class IAntennaBeamSelectionStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntennaBeamSelectionStrategy, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(BeamSelectionStrategyType),) }
@@ -14132,7 +14241,7 @@ class IAntennaBeam(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAntennaBeam, None)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14301,7 +14410,7 @@ class IRFFilterModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRFFilterModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14426,7 +14535,7 @@ class IModulatorModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModulatorModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14628,7 +14737,7 @@ class ITransmitterModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITransmitterModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14677,7 +14786,7 @@ class ITransmitterModelScriptPlugin(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITransmitterModelScriptPlugin, None)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14741,7 +14850,7 @@ class IReTransmitterModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReTransmitterModel, None)
-    
+
     _get_frequency_transfer_function_polynomial_metadata = { "offset" : _get_frequency_transfer_function_polynomial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -14929,7 +15038,7 @@ class IDemodulatorModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDemodulatorModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -14978,7 +15087,7 @@ class IReceiverModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReceiverModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15028,7 +15137,7 @@ class IReceiverModelScriptPlugin(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReceiverModelScriptPlugin, None)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15083,7 +15192,7 @@ class IRadarActivity(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarActivity, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarActivityType),) }
@@ -15123,7 +15232,7 @@ class IRadarSTCAttenuation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarSTCAttenuation, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarSTCAttenuationType),) }
@@ -15172,7 +15281,7 @@ class IRadarSTCAttenuationMap(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarSTCAttenuationMap, None)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15219,7 +15328,7 @@ class IRadarClutterGeometryModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterGeometryModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15268,7 +15377,7 @@ class IRadarClutterGeometryModelPlugin(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterGeometryModelPlugin, None)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -15316,7 +15425,7 @@ class IRadarContinuousWaveAnalysisMode(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarContinuousWaveAnalysisMode, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarContinuousWaveAnalysisMode),) }
@@ -15355,7 +15464,7 @@ class IRadarPulseIntegration(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarPulseIntegration, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarPulseIntegrationType),) }
@@ -15394,7 +15503,7 @@ class IRadarWaveformSearchTrack(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarWaveformSearchTrack, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarWaveformSearchTrackType),) }
@@ -15434,7 +15543,7 @@ class IRadarProbabilityOfDetection(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarProbabilityOfDetection, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15485,7 +15594,7 @@ class IRadarProbabilityOfDetectionCFAR(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarProbabilityOfDetectionCFAR, None)
-    
+
     _get_probability_of_false_alarm_metadata = { "offset" : _get_probability_of_false_alarm_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -15548,7 +15657,7 @@ class IRadarModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15597,7 +15706,7 @@ class IRadarModeMonostatic(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarModeMonostatic, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15646,7 +15755,7 @@ class IRadarModeBistaticTransmitter(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarModeBistaticTransmitter, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15695,7 +15804,7 @@ class IRadarModeBistaticReceiver(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarModeBistaticReceiver, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15744,7 +15853,7 @@ class IRadarClutterMapModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterMapModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15793,7 +15902,7 @@ class IRadarClutterMapModelPlugin(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterMapModelPlugin, None)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -15842,7 +15951,7 @@ class IRadarClutterMapModelConstantCoefficient(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarClutterMapModelConstantCoefficient, None)
-    
+
     _get_constant_coefficient_metadata = { "offset" : _get_constant_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -15889,7 +15998,7 @@ class IRadarCrossSectionComputeStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRadarCrossSectionComputeStrategy, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15938,7 +16047,7 @@ class IModulatorModelScriptPlugin(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModulatorModelScriptPlugin, None)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -15985,7 +16094,7 @@ class IRainLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRainLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16034,7 +16143,7 @@ class IUrbanTerrestrialLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUrbanTerrestrialLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16083,7 +16192,7 @@ class ITroposphericScintillationFadingLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITroposphericScintillationFadingLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16132,7 +16241,7 @@ class IIonosphericFadingLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IIonosphericFadingLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16181,7 +16290,7 @@ class ICloudsAndFogFadingLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICloudsAndFogFadingLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16230,7 +16339,7 @@ class IAtmosphericAbsorptionModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphericAbsorptionModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16281,7 +16390,7 @@ class IAtmosphericAbsorptionModelITURP676(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphericAbsorptionModelITURP676, None)
-    
+
     _get_fast_approximation_method_metadata = { "offset" : _get_fast_approximation_method_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -16358,7 +16467,7 @@ class IAtmosphericAbsorptionModelTIREM(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphericAbsorptionModelTIREM, None)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -16516,7 +16625,7 @@ class ISolarActivityConfiguration(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISolarActivityConfiguration, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(Graphics3DACAPSolarActivityConfigurationType),) }
@@ -16556,7 +16665,7 @@ class ILaserAtmosphericLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILaserAtmosphericLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16605,7 +16714,7 @@ class ILaserTroposphericScintillationLossModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILaserTroposphericScintillationLossModel, None)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -16653,7 +16762,7 @@ class IAtmosphericTurbulenceModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphericTurbulenceModel, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AtmosphericTurbulenceModelType),) }
@@ -16701,7 +16810,7 @@ class ILaserPropagationChannel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILaserPropagationChannel, None)
-    
+
     _get_enable_atmospheric_loss_model_metadata = { "offset" : _get_enable_atmospheric_loss_model_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -16813,7 +16922,7 @@ class ICommSystemLinkSelectionCriteria(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICommSystemLinkSelectionCriteria, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CommSystemLinkSelectionCriteriaType),) }
@@ -16852,7 +16961,7 @@ class ICommSystemAccessEventDetection(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICommSystemAccessEventDetection, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CommSystemAccessEventDetectionType),) }
@@ -16891,7 +17000,7 @@ class ICommSystemAccessSamplingMethod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICommSystemAccessSamplingMethod, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CommSystemAccessSamplingMethodType),) }
@@ -16930,7 +17039,7 @@ class ISRPModelBase(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISRPModelBase, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SolarRadiationPressureModelType),) }
@@ -16968,7 +17077,7 @@ class IVehicleHPOPDragModel(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleHPOPDragModel, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5150607289378482806, 3589177186674435468), IVehicleHPOPDragModel)
@@ -16997,7 +17106,7 @@ class IPropagatorSGP4LoadData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropagatorSGP4LoadData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5657081851075772385, 5899130106963592070), IPropagatorSGP4LoadData)
@@ -17026,7 +17135,7 @@ class IVehicleSolarFluxGeoMagnitude(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleSolarFluxGeoMagnitude, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5663764114058169289, 5585639902224213913), IVehicleSolarFluxGeoMagnitude)
@@ -17055,7 +17164,7 @@ class IPropagator(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropagator, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5504648384907297615, 12129420499141611952), IPropagator)
@@ -17085,7 +17194,7 @@ class IVehicleWaypointAltitudeReference(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleWaypointAltitudeReference, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleAltitudeReference),) }
@@ -17123,7 +17232,7 @@ class IVehicleImpact(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleImpact, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4832445116390211078, 7809417337291873412), IVehicleImpact)
@@ -17152,7 +17261,7 @@ class IVehicleLaunchControl(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleLaunchControl, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5180842658582628008, 3423034990240912026), IVehicleLaunchControl)
@@ -17181,7 +17290,7 @@ class IVehicleLaunch(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleLaunch, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5351964125400055779, 4055263661803858079), IVehicleLaunch)
@@ -17210,7 +17319,7 @@ class IVehicleImpactLocation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleImpactLocation, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5574567871368957423, 5632221821773033149), IVehicleImpactLocation)
@@ -17240,7 +17349,7 @@ class IVehicleGPSAlmanacProperties(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGPSAlmanacProperties, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGPSAlmanacType),) }
@@ -17279,7 +17388,7 @@ class IVehicleAttitudeProfile(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleAttitudeProfile, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17321,7 +17430,7 @@ class IVehiclePointing(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehiclePointing, None)
-    
+
     _get_use_target_pointing_metadata = { "offset" : _get_use_target_pointing_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -17384,7 +17493,7 @@ class IVehicleAttitude(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleAttitude, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5037685547370727970, 17771839035887661243), IVehicleAttitude)
@@ -17415,7 +17524,7 @@ class IVehicleAttitudeStandard(IVehicleAttitude):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleAttitudeStandard, IVehicleAttitude)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeStandardType),) }
@@ -17453,7 +17562,7 @@ class IVehicleGraphics2DPass(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DPass, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5311915477281129694, 9226485923864577470), IVehicleGraphics2DPass)
@@ -17482,7 +17591,7 @@ class IVehicleGraphics2DTimeEventType(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DTimeEventType, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5025294780258769292, 9041894382540971193), IVehicleGraphics2DTimeEventType)
@@ -17511,7 +17620,7 @@ class IVehicleGraphics2DAttributes(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DAttributes, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5630724632594214322, 3054352712622501550), IVehicleGraphics2DAttributes)
@@ -17524,10 +17633,10 @@ class IVehicleGraphics2DAttributesBasic(IVehicleGraphics2DAttributes):
     Examples
     --------
     Set 2D Graphics display properties:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Change the line width, style, color and marker
-    >>> 
+    >>>
     >>> graphics = satellite.graphics
     >>> graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
     >>> attributes = graphics.attributes
@@ -17535,7 +17644,10 @@ class IVehicleGraphics2DAttributesBasic(IVehicleGraphics2DAttributes):
     >>> attributes.line.width = LineWidth.WIDTH4
     >>> attributes.line.style = LineStyle.LONG_DASH
     >>> attributes.color = Colors.Lime
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
     >>> attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
     """
 
@@ -17571,7 +17683,7 @@ class IVehicleGraphics2DAttributesBasic(IVehicleGraphics2DAttributes):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DAttributesBasic, IVehicleGraphics2DAttributes)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -17690,7 +17802,7 @@ class IVehicleGraphics2DAttributesDisplayState(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DAttributesDisplayState, None)
-    
+
     _get_display_intervals_metadata = { "offset" : _get_display_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -17726,7 +17838,7 @@ class IVehicleGraphics2DElevation(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DElevation, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4992558730722716931, 16770144538786824586), IVehicleGraphics2DElevation)
@@ -17761,7 +17873,7 @@ class IVehicleGraphics2DTimeComponentsElement(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics2DTimeComponentsElement, None)
-    
+
     _get_qualified_path_metadata = { "offset" : _get_qualified_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -17845,7 +17957,7 @@ class IVehicleGraphics3DSystemsElementBase(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DSystemsElementBase, None)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -17961,7 +18073,7 @@ class IVehicleGraphics3DProximityAreaObject(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DProximityAreaObject, None)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -18102,7 +18214,7 @@ class IVehicleGraphics3DProximity(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DProximity, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5490361507773927852, 8106375085866449845), IVehicleGraphics3DProximity)
@@ -18131,7 +18243,7 @@ class IVehicleGraphics3DSigmaScale(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DSigmaScale, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5196941435489636404, 13597946803055151802), IVehicleGraphics3DSigmaScale)
@@ -18160,7 +18272,7 @@ class IVehicleGraphics3DAttributes(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DAttributes, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5620786374833848697, 2758767996263707820), IVehicleGraphics3DAttributes)
@@ -18189,7 +18301,7 @@ class IVehicleGraphics3DTickData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DTickData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5621580583188411286, 864090969697721496), IVehicleGraphics3DTickData)
@@ -18236,7 +18348,7 @@ class IGreatArcGraphics(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGreatArcGraphics, None)
-    
+
     _get_attributes_type_metadata = { "offset" : _get_attributes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DAttributeType),) }
@@ -18426,7 +18538,7 @@ class IGreatArcGraphics3D(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGreatArcGraphics3D, None)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -18553,7 +18665,7 @@ class IGreatArcVehicle(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGreatArcVehicle, None)
-    
+
     _get_route_type_metadata = { "offset" : _get_route_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PropagatorType),) }
@@ -18723,7 +18835,7 @@ class IVehicleGraphics3DBPlaneTargetPointPosition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleGraphics3DBPlaneTargetPointPosition, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4945646807221379868, 9716763658900496770), IVehicleGraphics3DBPlaneTargetPointPosition)
@@ -18752,7 +18864,7 @@ class IEOIR(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEOIR, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4997054115735588989, 10978269664136040866), IEOIR)
@@ -18781,7 +18893,7 @@ class IVehicleBreakAngle(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleBreakAngle, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4988134996306585048, 9407320597422388622), IVehicleBreakAngle)
@@ -18810,7 +18922,7 @@ class IVehiclePassNumbering(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehiclePassNumbering, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5398552838798370779, 18042157829268078765), IVehiclePassNumbering)
@@ -18839,7 +18951,7 @@ class IVehicleCoordinateAxes(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleCoordinateAxes, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5572439643719372335, 9216755239166683788), IVehicleCoordinateAxes)
@@ -18869,7 +18981,7 @@ class IChainTimePeriod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IChainTimePeriod, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ChainTimePeriodType),) }
@@ -18907,7 +19019,7 @@ class ICoverageBounds(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICoverageBounds, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5367377918736334076, 11585881449721349005), ICoverageBounds)
@@ -18936,7 +19048,7 @@ class ICoverageResolution(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICoverageResolution, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5117993917188865935, 4486992342774042278), ICoverageResolution)
@@ -18984,7 +19096,7 @@ class IFigureOfMeritGraphics2DContours(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritGraphics2DContours, None)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -19179,7 +19291,7 @@ class IFigureOfMeritGraphics2DAttributes(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritGraphics2DAttributes, None)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -19297,7 +19409,7 @@ class IFigureOfMeritNavigationAccuracyMethod(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritNavigationAccuracyMethod, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5439536752531767955, 6895029694432350080), IFigureOfMeritNavigationAccuracyMethod)
@@ -19326,7 +19438,7 @@ class IFigureOfMeritDefinitionData(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritDefinitionData, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5762472793711328176, 1648658281617051277), IFigureOfMeritDefinitionData)
@@ -19358,7 +19470,7 @@ class IFigureOfMeritDefinitionResponseTime(IFigureOfMeritDefinitionCompute):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritDefinitionResponseTime, IFigureOfMeritDefinitionCompute)
-    
+
     _get_minimum_assets_metadata = { "offset" : _get_minimum_assets_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -19417,7 +19529,7 @@ class IFigureOfMeritDefinitionDilutionOfPrecision(IFigureOfMeritDefinitionComput
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFigureOfMeritDefinitionDilutionOfPrecision, IFigureOfMeritDefinitionCompute)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritMethod),) }
@@ -19551,7 +19663,7 @@ class IConstellationConstraintRestriction(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConstellationConstraintRestriction, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5507327946078615820, 9804071551691362187), IConstellationConstraintRestriction)
@@ -19580,7 +19692,7 @@ class IEventDetectionStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEventDetectionStrategy, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5208890756423031065, 17931748581538634144), IEventDetectionStrategy)
@@ -19609,7 +19721,7 @@ class ISamplingMethodStrategy(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISamplingMethodStrategy, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((5272298299360289261, 5797151039106251421), ISamplingMethodStrategy)
@@ -19639,7 +19751,7 @@ class IVehicleAttitudeSlewBase(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVehicleAttitudeSlewBase, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSlewMode),) }
@@ -19677,7 +19789,7 @@ class IVolumetricGridDefinition(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVolumetricGridDefinition, None)
-    
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4647386605621383105, 8728166008586900153), IVolumetricGridDefinition)
@@ -19707,7 +19819,7 @@ class IEOIRShapeObject(object):
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEOIRShapeObject, None)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EOIRShapeType),) }
@@ -19724,28 +19836,28 @@ agcls.AgTypeNameMap["IEOIRShapeObject"] = IEOIRShapeObject
 
 
 
-class StkObject(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class STKObject(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Represents a generic STK object."""
     def __init__(self, source_object=None):
-        """Construct an object of type StkObject."""
+        """Construct an object of type STKObject."""
         SupportsDeleteCallback.__init__(self)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObject, [IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, STKObject, [ISTKObject, ILifetimeInformation])
 
-agcls.AgClassCatalog.add_catalog_entry((5125385608468594096, 179815710070104704), StkObject)
-agcls.AgTypeNameMap["StkObject"] = StkObject
+agcls.AgClassCatalog.add_catalog_entry((5125385608468594096, 179815710070104704), STKObject)
+agcls.AgTypeNameMap["STKObject"] = STKObject
 
-class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDeleteCallback):
+class STKObjectRoot(ISTKObject, ILifetimeInformation, IAnimation, SupportsDeleteCallback):
     r"""
     Represents the automation interface supported by the root object of the Automation Object Model.
 
@@ -19753,21 +19865,21 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     --------
     Extract data from Connect results:
     >>> result = root.execute_command('Report_RM */Place/MyPlace Style "Cartesian Position"')
-    >>> 
+    >>>
     >>> for i in range(0, result.count):
     >>>     cmdRes = result.item(i)
     >>>     print(cmdRes)
 
     Use arrays to send and retrieve data with Connect:
     >>> from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
-    >>> 
-    >>> connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
-    >>> command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
-    >>> 
-    >>> first_message = command_results.item(0)
-    >>> also_first_message = command_results[0]
-    >>> 
-    >>> for message in command_results:
+    >>>
+    >>> connect_cmds = ["GetStkVersion /", "New / Scenario ExampleScenario"]
+    >>> results = root.execute_multiple_commands(connect_cmds, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+    >>>
+    >>> first_message = results.item(0)
+    >>> also_first_message = results[0]
+    >>>
+    >>> for message in results:
     >>>     print(message.count)
 
     Execute multiple Connect commands:
@@ -19780,122 +19892,126 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     Attach to an already running STK Runtime instance and get a reference to the STK object root:
     >>> # Attach to already running instance of STK Runtime
     >>> from ansys.stk.core.stkruntime import STKRuntime
-    >>> 
+    >>>
     >>> stk = STKRuntime.attach_to_application()
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.new_object_root()
 
     Start STK Runtime and get a reference to the STK object root:
     >>> # Start new instance of STK Runtime
     >>> from ansys.stk.core.stkruntime import STKRuntime
-    >>> 
+    >>>
     >>> stk = STKRuntime.start_application()
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.new_object_root()
 
     Start STK Desktop and get a reference to the STK object root:
     >>> # Start new instance of STK Desktop
     >>> from ansys.stk.core.stkdesktop import STKDesktop
-    >>> 
+    >>>
     >>> stk = STKDesktop.start_application(visible=True)  # using optional visible argument
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.root
-    >>> 
+    >>>
     >>> # ...
-    >>> 
+    >>>
     >>> # Clean-up when done
     >>> stk.shutdown()
 
     Get a reference to the STK object root using a running STK desktop application instance:
     >>> # Get reference to running STK Desktop instance
     >>> from ansys.stk.core.stkdesktop import STKDesktop
-    >>> 
+    >>>
     >>> stk = STKDesktop.attach_to_application()
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.root
 
     Initialize STK Engine in no graphics mode and get a reference to the STK object root:
     >>> # Initialize STK Engine without graphics in the current process
     >>> from ansys.stk.core.stkengine import STKEngine
-    >>> 
+    >>>
     >>> stk = STKEngine.start_application(no_graphics=True)
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.new_object_root()
 
     Initialize STK Engine with graphics and get a reference to the STK object root:
     >>> # Initialize STK Engine with graphics in the current process
     >>> from ansys.stk.core.stkengine import STKEngine
-    >>> 
+    >>>
     >>> stk = STKEngine.start_application(no_graphics=False)
-    >>> 
+    >>>
     >>> # Get the STK Object Root interface
     >>> root = stk.new_object_root()
 
     Set unit preferences for the Object Model:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> root.units_preferences.item("DateFormat").set_current_unit("UTCG")
     >>> root.units_preferences.item("Distance").set_current_unit("km")
 
     Create a new Scenario:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> root.new_scenario("Example_Scenario")
 
     Manage STK Desktop application events:
     >>> from ansys.stk.core.stkdesktop import STKDesktop
     >>> from ansys.stk.core.stkobjects import STKObjectType
-    >>> 
-    >>> def on_stk_object_added_custom_callback(path:str):
-    >>>     print(f'{path} has been added.')
-    >>> 
+    >>>
+    >>> def on_stk_object_added_custom_callback(path: str):
+    >>>     print(f"{path} has been added.")
+    >>>
     >>> stk = STKDesktop.start_application(visible=True)
     >>> root = stk.root
-    >>> root.new_scenario('ExampleScenario')
-    >>> skt_object_root_events = root.subscribe()
-    >>> skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    >>> root.new_scenario("ExampleScenario")
+    >>> stk_object_root_events = root.subscribe()
+    >>> stk_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
     >>> scenario = root.current_scenario
-    >>> 
+    >>>
     >>> # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    >>> facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
-    >>> 
+    >>> facility = scenario.children.new(STKObjectType.FACILITY, "Exton")
+    >>>
     >>> # Now switch control to the desktop application and create another facility.
     >>> # The user interface becomes unresponsive.
-    >>> 
+    >>>
     >>> # Now open a tkinter window that processing Windows messages.
     >>> from tkinter import Tk
-    >>> 
+    >>>
     >>> window = Tk()
     >>> window.mainloop()
 
     Manage STK Engine events:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> def on_scenario_new_custom_callback(path: str):
-    >>>     print(f'Scenario {path} has been created.')
-    >>> 
-    >>> skt_object_root_events = root.subscribe()
-    >>> skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
-    >>> 
-    >>> root.new_scenario('ExampleScenario')
+    >>>     print(f"Scenario {path} has been created.")
+    >>>
+    >>> stk_object_root_events = root.subscribe()
+    >>> stk_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+    >>>
+    >>> root.new_scenario("ExampleScenario")
     >>> # callback should be executed now
-    >>> 
+    >>>
     >>> # remove the callback from the handler
-    >>> skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
-    >>> 
+    >>> stk_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+    >>>
     >>> # all finished with events, unsubscribe
-    >>> skt_object_root_events.unsubscribe()
+    >>> stk_object_root_events.unsubscribe()
 
     Close an open Scenario:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> root.close_scenario()
 
     Open a Viewer Data File:
-    >>> # StkObjectRoot root: STK Object Model Root
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    >>> root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+    >>> # STKObjectRoot root: STK Object Model Root
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
+    >>> vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+    >>> root.load_vdf(os.path.join(installPath, *vdfPath), "")
     """
 
     _num_methods = 35
@@ -19941,24 +20057,24 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkObjectRoot)
-    def subscribe(self) -> IStkObjectRootEventHandler:
-        """Return an IStkObjectRootEventHandler that is subscribed to handle events associated with this instance of StkObjectRoot."""
-        return IStkObjectRootEventHandler(self._intf)
-    
+        return get_interface_property(attrname, STKObjectRoot)
+    def subscribe(self) -> ISTKObjectRootEventHandler:
+        """Return an ISTKObjectRootEventHandler that is subscribed to handle events associated with this instance of STKObjectRoot."""
+        return ISTKObjectRootEventHandler(self._intf)
+
     _execute_command_metadata = { "offset" : _execute_command_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def execute_command(self, connect_command:str) -> "ExecuteCommandResult":
         """Execute a custom CONNECT action. The method throws an exception if the command has failed."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._execute_command_metadata, connect_command, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._execute_command_metadata, connect_command, OutArg())
 
     _load_scenario_metadata = { "offset" : _load_scenario_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def load_scenario(self, path:str) -> None:
         """Use Load method. Loads a scenario using the specified path. The method throws an exception if there is a scenario already loaded."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_scenario_metadata, path)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_scenario_metadata, path)
 
     _close_scenario_metadata = { "offset" : _close_scenario_method_offset,
             "arg_types" : (),
@@ -19970,10 +20086,10 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
         Examples
         --------
         Close an open Scenario:
-        >>> # StkObjectRoot root: STK Object Model Root
+        >>> # STKObjectRoot root: STK Object Model Root
         >>> root.close_scenario()
         """
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._close_scenario_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._close_scenario_metadata, )
 
     _new_scenario_metadata = { "offset" : _new_scenario_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -19985,24 +20101,24 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
         Examples
         --------
         Create a new Scenario:
-        >>> # StkObjectRoot root: STK Object Model Root
+        >>> # STKObjectRoot root: STK Object Model Root
         >>> root.new_scenario("Example_Scenario")
         """
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._new_scenario_metadata, scenario_name)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._new_scenario_metadata, scenario_name)
 
     _save_scenario_metadata = { "offset" : _save_scenario_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def save_scenario(self) -> None:
         """Use Save method. Saves the changes made to the scenario."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_scenario_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_scenario_metadata, )
 
     _save_scenario_as_metadata = { "offset" : _save_scenario_as_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def save_scenario_as(self, sc_file_name:str) -> None:
         """Use SaveAs method. Saves the changes made to the scenario to a specified path and file name."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_scenario_as_metadata, sc_file_name)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_scenario_as_metadata, sc_file_name)
 
     _get_units_preferences_metadata = { "offset" : _get_units_preferences_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20015,68 +20131,68 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
         Examples
         --------
         Set unit preferences for the Object Model:
-        >>> # StkObjectRoot root: STK Object Model Root
+        >>> # STKObjectRoot root: STK Object Model Root
         >>> root.units_preferences.item("DateFormat").set_current_unit("UTCG")
         >>> root.units_preferences.item("Distance").set_current_unit("km")
         """
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_units_preferences_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_units_preferences_metadata)
 
     _get_current_scenario_metadata = { "offset" : _get_current_scenario_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def current_scenario(self) -> "IStkObject":
+    def current_scenario(self) -> "ISTKObject":
         """Return a Scenario object or null if no scenario has been loaded yet."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_current_scenario_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_current_scenario_metadata)
 
     _load_custom_marker_metadata = { "offset" : _load_custom_marker_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def load_custom_marker(self, filename:str) -> None:
         """Add a custom marker to Application."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_custom_marker_metadata, filename)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_custom_marker_metadata, filename)
 
     _get_object_from_path_metadata = { "offset" : _get_object_from_path_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_object_from_path(self, object_path:str) -> "IStkObject":
+    def get_object_from_path(self, object_path:str) -> "ISTKObject":
         """Get the object instance that matches the path provided."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._get_object_from_path_metadata, object_path, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._get_object_from_path_metadata, object_path, OutArg())
 
     _all_instance_names_in_xml_metadata = { "offset" : _all_instance_names_in_xml_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def all_instance_names_in_xml(self) -> str:
         """Return an XML representation of AllInstanceNames."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._all_instance_names_in_xml_metadata, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._all_instance_names_in_xml_metadata, OutArg())
 
     _begin_update_metadata = { "offset" : _begin_update_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def begin_update(self) -> None:
         """Signals the object that the batch update is starting."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._begin_update_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._begin_update_metadata, )
 
     _end_update_metadata = { "offset" : _end_update_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def end_update(self) -> None:
         """Signals the object that the batch update is complete."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._end_update_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._end_update_metadata, )
 
     _execute_multiple_commands_metadata = { "offset" : _execute_multiple_commands_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(ExecuteMultipleCommandsMode), agmarshall.InterfaceOutArg,) }
     def execute_multiple_commands(self, connect_commands:list, action:"ExecuteMultipleCommandsMode") -> "ExecuteMultipleCommandsResult":
         """Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for ExecuteMultipleCommandsMode."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._execute_multiple_commands_metadata, connect_commands, action, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._execute_multiple_commands_metadata, connect_commands, action, OutArg())
 
     _isolate_metadata = { "offset" : _isolate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def isolate(self) -> None:
         """Make the unit preferences of the current instance isolated."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._isolate_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._isolate_metadata, )
 
     _get_isolated_metadata = { "offset" : _get_isolated_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20084,7 +20200,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def isolated(self) -> bool:
         """Return whether the instance is isolated."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_isolated_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_isolated_metadata)
 
     _get_conversion_utility_metadata = { "offset" : _get_conversion_utility_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20092,7 +20208,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def conversion_utility(self) -> "ConversionUtility":
         """Return the conversion utility interface."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_conversion_utility_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_conversion_utility_metadata)
 
     _get_military_standard_2525b_symbols_metadata = { "offset" : _get_military_standard_2525b_symbols_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20100,7 +20216,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def military_standard_2525b_symbols(self) -> "MilitaryStandard2525bSymbols":
         """Return the interface that enables creating 2525b symbols."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_military_standard_2525b_symbols_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_military_standard_2525b_symbols_metadata)
 
     _load_vdf_metadata = { "offset" : _load_vdf_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
@@ -20112,11 +20228,15 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
         Examples
         --------
         Open a Viewer Data File:
-        >>> # StkObjectRoot root: STK Object Model Root
-        >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        >>> root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+        >>> # STKObjectRoot root: STK Object Model Root
+        >>> if os.name == "nt":
+        >>>     installPath = r"C:\Program Files\AGI\STK 12"
+        >>> else:
+        >>>     installPath = os.environ["STK_INSTALL_DIR"]
+        >>> vdfPath = "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"
+        >>> root.load_vdf(os.path.join(installPath, *vdfPath), "")
         """
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_vdf_metadata, path, password)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_vdf_metadata, path, password)
 
     _get_available_features_metadata = { "offset" : _get_available_features_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20124,14 +20244,14 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def available_features(self) -> "AvailableFeatures":
         """Allow the user to inquiry about the available features."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_available_features_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_available_features_metadata)
 
     _object_exists_metadata = { "offset" : _object_exists_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def object_exists(self, object_path:str) -> bool:
         """Check whether a currently loaded scenario contains an object with the given path."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._object_exists_metadata, object_path, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._object_exists_metadata, object_path, OutArg())
 
     _get_analysis_workbench_components_root_metadata = { "offset" : _get_analysis_workbench_components_root_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20139,7 +20259,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def analysis_workbench_components_root(self) -> "IAnalysisWorkbenchRoot":
         """Return an instance of VGT root object."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_analysis_workbench_components_root_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_analysis_workbench_components_root_metadata)
 
     _get_central_bodies_metadata = { "offset" : _get_central_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20147,14 +20267,14 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def central_bodies(self) -> "CentralBodyCollection":
         """Return a collection of available central bodies."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_central_bodies_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_central_bodies_metadata)
 
     _get_licensing_report_metadata = { "offset" : _get_licensing_report_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def get_licensing_report(self) -> str:
         """Return a formatted string that contains the license names and their states. The string is formatted as an XML document."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._get_licensing_report_metadata, OutArg())
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._get_licensing_report_metadata, OutArg())
 
     _get_notification_filter_metadata = { "offset" : _get_notification_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -20162,7 +20282,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def notification_filter(self) -> "NotificationFilterMask":
         """Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_notification_filter_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_notification_filter_metadata)
 
     _set_notification_filter_metadata = { "offset" : _set_notification_filter_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -20170,14 +20290,14 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @notification_filter.setter
     def notification_filter(self, bit_mask:"NotificationFilterMask") -> None:
         """Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance."""
-        return self._intf.set_property(StkObjectRoot._metadata, StkObjectRoot._set_notification_filter_metadata, bit_mask)
+        return self._intf.set_property(STKObjectRoot._metadata, STKObjectRoot._set_notification_filter_metadata, bit_mask)
 
     _save_vdf_as_metadata = { "offset" : _save_vdf_as_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def save_vdf_as(self, vdf_file_name:str, password:str, description:str, window_id:str) -> None:
         """Save the changes made to the scenario to a specified path and file name as a vdf file."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_vdf_as_metadata, vdf_file_name, password, description, window_id)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_vdf_as_metadata, vdf_file_name, password, description, window_id)
 
     _get_preferences_metadata = { "offset" : _get_preferences_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20185,49 +20305,49 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def preferences(self) -> "Preferences":
         """Configures STK preferences."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_preferences_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_preferences_metadata)
 
     _load_metadata = { "offset" : _load_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def load(self, path:str) -> None:
         """Load a scenario/vdf using the specified path. The method throws an exception if there is a scenario already loaded."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_metadata, path)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_metadata, path)
 
     _save_metadata = { "offset" : _save_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def save(self) -> None:
         """Save the changes made to the scenario/vdf."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_metadata, )
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_metadata, )
 
     _save_as_metadata = { "offset" : _save_as_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def save_as(self, file_name:str) -> None:
         """Save the changes made to the scenario/vdf to a specified path and file name."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_as_metadata, file_name)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_as_metadata, file_name)
 
     _load_vdf_from_sdf_metadata = { "offset" : _load_vdf_from_sdf_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def load_vdf_from_sdf(self, vdf_path:str, password:str) -> None:
         """Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_vdf_from_sdf_metadata, vdf_path, password)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_vdf_from_sdf_metadata, vdf_path, password)
 
     _load_vdf_from_sdf_with_version_metadata = { "offset" : _load_vdf_from_sdf_with_version_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.DOUBLE,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg,) }
     def load_vdf_from_sdf_with_version(self, vdf_path:str, password:str, version:float) -> None:
         """Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._load_vdf_from_sdf_with_version_metadata, vdf_path, password, version)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._load_vdf_from_sdf_with_version_metadata, vdf_path, password, version)
 
     _save_vdf_to_sdf_metadata = { "offset" : _save_vdf_to_sdf_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def save_vdf_to_sdf(self, sdf_path:str) -> None:
         """Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails."""
-        return self._intf.invoke(StkObjectRoot._metadata, StkObjectRoot._save_vdf_to_sdf_metadata, sdf_path)
+        return self._intf.invoke(STKObjectRoot._metadata, STKObjectRoot._save_vdf_to_sdf_metadata, sdf_path)
 
     _get_rf_channel_modeler_metadata = { "offset" : _get_rf_channel_modeler_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20235,7 +20355,7 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     @property
     def rf_channel_modeler(self) -> typing.Any:
         """Return an RF Channel Modeler object."""
-        return self._intf.get_property(StkObjectRoot._metadata, StkObjectRoot._get_rf_channel_modeler_metadata)
+        return self._intf.get_property(STKObjectRoot._metadata, STKObjectRoot._get_rf_channel_modeler_metadata)
 
     _property_names[units_preferences] = "units_preferences"
     _property_names[current_scenario] = "current_scenario"
@@ -20250,15 +20370,15 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
     _property_names[rf_channel_modeler] = "rf_channel_modeler"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkObjectRoot."""
+        """Construct an object of type STKObjectRoot."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkObjectRoot)
-        IStkObject.__init__(self, source_object)
+        initialize_from_source_object(self, source_object, STKObjectRoot)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IAnimation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IAnimation._private_init(self, intf)
     def __eq__(self, other):
@@ -20266,10 +20386,10 @@ class StkObjectRoot(IStkObject, ILifetimeInformation, IAnimation, SupportsDelete
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObjectRoot, [StkObjectRoot, IStkObject, ILifetimeInformation, IAnimation])
+        set_class_attribute(self, attrname, value, STKObjectRoot, [STKObjectRoot, ISTKObject, ILifetimeInformation, IAnimation])
 
-agcls.AgClassCatalog.add_catalog_entry((5068737736014417486, 18344048457192688537), StkObjectRoot)
-agcls.AgTypeNameMap["StkObjectRoot"] = StkObjectRoot
+agcls.AgClassCatalog.add_catalog_entry((5068737736014417486, 18344048457192688537), STKObjectRoot)
+agcls.AgTypeNameMap["STKObjectRoot"] = STKObjectRoot
 
 class LevelAttribute(SupportsDeleteCallback):
     """LevelAttribute used to access individual contour level attributes."""
@@ -20299,7 +20419,7 @@ class LevelAttribute(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LevelAttribute)
-    
+
     _get_level_metadata = { "offset" : _get_level_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -20477,7 +20597,7 @@ class LevelAttributeCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -20601,7 +20721,7 @@ class BasicAzElMask(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BasicAzElMask)
-    
+
     _get_display_mask_over_altitude_range_metadata = { "offset" : _get_display_mask_over_altitude_range_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -20652,7 +20772,7 @@ class BasicAzElMask(SupportsDeleteCallback):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def number_of_range_steps(self) -> int:
-        """The relative intervals at which the terrain mask is displayed, e.g. if this value is 3 steps, and the minimum and maximum ranges are 500 abd 1500 km, respectively, then the terrain mask is displayed at ranges of 500, 1000 and 1500 km."""
+        """The relative intervals at which the terrain mask is displayed, e.g. if this value is 3 steps, and the minimum and maximum ranges are 500 and 1500 km, respectively, then the terrain mask is displayed at ranges of 500, 1000 and 1500 km."""
         return self._intf.get_property(BasicAzElMask._metadata, BasicAzElMask._get_number_of_range_steps_metadata)
 
     _set_number_of_range_steps_metadata = { "offset" : _set_number_of_range_steps_method_offset,
@@ -20845,7 +20965,7 @@ class FacilityGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FacilityGraphics)
-    
+
     _get_inherit_from_scenario_metadata = { "offset" : _get_inherit_from_scenario_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21077,7 +21197,7 @@ class PlaceGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlaceGraphics)
-    
+
     _get_inherit_from_scenario_metadata = { "offset" : _get_inherit_from_scenario_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21319,7 +21439,7 @@ class Graphics2DRangeContours(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics2DRangeContours)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21523,7 +21643,7 @@ class AccessConstraintCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -21714,7 +21834,7 @@ class Graphics3DRangeContours(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DRangeContours)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21818,7 +21938,7 @@ class Graphics3DOffsetRotate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DOffsetRotate)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -21920,7 +22040,7 @@ class Graphics3DOffsetTransformation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DOffsetTransformation)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -22019,7 +22139,7 @@ class Graphics3DOffsetAttachment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DOffsetAttachment)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -22100,7 +22220,7 @@ class Graphics3DOffsetLabel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DOffsetLabel)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -22214,7 +22334,7 @@ class Graphics3DOffset(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DOffset)
-    
+
     _get_rotational_metadata = { "offset" : _get_rotational_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -22282,7 +22402,7 @@ class Graphics3DMarkerShape(IGraphics3DMarkerData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DMarkerShape)
-    
+
     _get_style_metadata = { "offset" : _get_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(MarkerShape3d),) }
@@ -22337,7 +22457,7 @@ class Graphics3DMarkerFile(IGraphics3DMarkerData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DMarkerFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -22442,7 +22562,7 @@ class Graphics3DMarker(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DMarker)
-    
+
     _get_pixel_size_metadata = { "offset" : _get_pixel_size_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -22626,7 +22746,7 @@ class Graphics3DDetailThreshold(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DDetailThreshold)
-    
+
     _get_enable_detail_threshold_metadata = { "offset" : _get_enable_detail_threshold_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -22755,7 +22875,7 @@ class Graphics3DModelItem(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelItem)
-    
+
     _get_switch_time_metadata = { "offset" : _get_switch_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -22828,7 +22948,7 @@ class Graphics3DModelCollection(IGraphics3DModelData, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -22909,7 +23029,7 @@ class LabelNote(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LabelNote)
-    
+
     _get_note_metadata = { "offset" : _get_note_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -23014,7 +23134,7 @@ class LabelNoteCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -23103,7 +23223,7 @@ class Graphics3DVector(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DVector)
-    
+
     _get_vector_geometry_tool_components_metadata = { "offset" : _get_vector_geometry_tool_components_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23200,7 +23320,7 @@ class FacilityGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FacilityGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23330,7 +23450,7 @@ class PlaceGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlaceGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23454,7 +23574,7 @@ class TerrainNormalSlopeAzimuth(ITerrainNormData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TerrainNormalSlopeAzimuth)
-    
+
     _get_slope_metadata = { "offset" : _get_slope_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -23528,7 +23648,7 @@ class TimeIntervalCollection(IDisplayTimesData, IAccessInterval, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeIntervalCollection)
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -23637,7 +23757,7 @@ class TimeIntervalCollectionReadOnly(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimeIntervalCollectionReadOnly)
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -23692,7 +23812,7 @@ class DisplayTimesDuringAccess(IDisplayTimesData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DisplayTimesDuringAccess)
-    
+
     _get_display_intervals_metadata = { "offset" : _get_display_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -23747,7 +23867,7 @@ class DisplayTimesTimeComponent(IDisplayTimesData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DisplayTimesTimeComponent)
-    
+
     _set_time_component_metadata = { "offset" : _set_time_component_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchComponent"),) }
@@ -23824,7 +23944,7 @@ class StarGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StarGraphics3D)
-    
+
     _get_show_inertial_position_metadata = { "offset" : _get_show_inertial_position_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -23944,7 +24064,7 @@ class StarGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, StarGraphics)
-    
+
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -24066,7 +24186,7 @@ class PlanetGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetGraphics3D)
-    
+
     _get_inherit_from_2d_graphics_2d_metadata = { "offset" : _get_inherit_from_2d_graphics_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -24217,7 +24337,7 @@ class PlanetGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetGraphics)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -24452,7 +24572,7 @@ class AreaTypePattern(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTypePattern)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -24509,9 +24629,9 @@ class AreaTypePatternCollection(IAreaTypeData, SupportsDeleteCallback):
     Examples
     --------
     Define an area target boundary and position from a list of lat/lon/alt:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AreaTarget areaTarget: AreaTarget object
-    >>> 
+    >>>
     >>> # By using the fine grained interfaces,
     >>> # BeginUpdate/EndUpdate prevent intermediate redraws
     >>> root.begin_update()
@@ -24554,7 +24674,7 @@ class AreaTypePatternCollection(IAreaTypeData, SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
@@ -24655,7 +24775,7 @@ class AreaTypeEllipse(IAreaTypeData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTypeEllipse)
-    
+
     _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -24747,7 +24867,7 @@ class AreaTargetGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTargetGraphics3D)
-    
+
     _get_enable_label_max_viewing_dist_metadata = { "offset" : _get_enable_label_max_viewing_dist_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -24912,7 +25032,7 @@ class AreaTargetGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTargetGraphics)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -25250,7 +25370,7 @@ class Graphics3DAzElMask(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DAzElMask)
-    
+
     _get_show_compass_directions_metadata = { "offset" : _get_show_compass_directions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -25383,7 +25503,7 @@ class Graphics3DModelArticulation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelArticulation)
-    
+
     _get_enable_default_save_metadata = { "offset" : _get_enable_default_save_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -25540,7 +25660,7 @@ class Graphics3DModelTransformationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -25612,7 +25732,7 @@ class Graphics3DModelTransformation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelTransformation)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25688,7 +25808,7 @@ class Graphics3DModelFile(IGraphics3DModelData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25748,7 +25868,7 @@ class PlanetPositionFile(IPositionSourceData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetPositionFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25815,7 +25935,7 @@ class PlanetPositionCentralBody(IPositionSourceData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetPositionCentralBody)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -25933,7 +26053,7 @@ class PlanetOrbitDisplayTime(IOrbitDisplayData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetOrbitDisplayTime)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -25969,19 +26089,16 @@ class PlanetOrbitDisplayTime(IOrbitDisplayData, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5157299259496775144, 710712331664079768), PlanetOrbitDisplayTime)
 agcls.AgTypeNameMap["PlanetOrbitDisplayTime"] = PlanetOrbitDisplayTime
 
-class Scenario(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Scenario(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Scenario Interface for Scenario-level properties.
 
     Examples
     --------
     Set the current scenario's time period:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> scenario = root.current_scenario
-    >>> scenario.set_time_period(
-    >>>     start_time="1 Jan 2012 12:00:00.000",
-    >>>     stop_time="2 Jan 2012 12:00:00.000"
-    >>> )
+    >>> scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
     """
 
     _num_methods = 38
@@ -26031,7 +26148,7 @@ class Scenario(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Scenario)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -26072,12 +26189,9 @@ class Scenario(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         Examples
         --------
         Set the current scenario's time period:
-        >>> # StkObjectRoot root: STK Object Model Root
+        >>> # STKObjectRoot root: STK Object Model Root
         >>> scenario = root.current_scenario
-        >>> scenario.set_time_period(
-        >>>     start_time="1 Jan 2012 12:00:00.000",
-        >>>     stop_time="2 Jan 2012 12:00:00.000"
-        >>> )
+        >>> scenario.set_time_period(start_time="1 Jan 2012 12:00:00.000", stop_time="2 Jan 2012 12:00:00.000")
         """
         return self._intf.invoke(Scenario._metadata, Scenario._set_time_period_metadata, start_time, stop_time)
 
@@ -26367,18 +26481,18 @@ class Scenario(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Scenario."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Scenario)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Scenario, [Scenario, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Scenario, [Scenario, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5717903642267803247, 3419633595515061152), Scenario)
 agcls.AgTypeNameMap["Scenario"] = Scenario
@@ -26421,7 +26535,7 @@ class ScenarioAnimation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioAnimation)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -26660,7 +26774,7 @@ class ScenarioEarthData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioEarthData)
-    
+
     _get_eop_filename_metadata = { "offset" : _get_eop_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -26777,7 +26891,7 @@ class ScenarioGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioGraphics)
-    
+
     _get_show_label_metadata = { "offset" : _get_show_label_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -27190,7 +27304,7 @@ class TerrainCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -27279,7 +27393,7 @@ class Terrain(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Terrain)
-    
+
     _get_location_metadata = { "offset" : _get_location_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27414,7 +27528,7 @@ class Tileset3DCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -27497,7 +27611,7 @@ class Tileset3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Tileset3D)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27579,7 +27693,7 @@ class ScenarioDatabaseCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -27646,7 +27760,7 @@ class ScenarioDatabase(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioDatabase)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -27744,7 +27858,7 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     Examples
     --------
     Change the scenario font:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> scenario = root.current_scenario
     >>> scenario.graphics_3d.medium_font.name = "Arial"
     >>> scenario.graphics_3d.medium_font.point_size = 18
@@ -27785,7 +27899,7 @@ class ScenarioGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioGraphics3D)
-    
+
     _get_chunk_image_cache_size_metadata = { "offset" : _get_chunk_image_cache_size_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -28017,7 +28131,7 @@ class SensorComplexConicPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorComplexConicPattern)
-    
+
     _get_inner_cone_half_angle_metadata = { "offset" : _get_inner_cone_half_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -28164,7 +28278,7 @@ class SensorEOIRPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorEOIRPattern)
-    
+
     _get_line_of_site_jitter_metadata = { "offset" : _get_line_of_site_jitter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -28403,7 +28517,7 @@ class SensorEOIRBandCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -28585,7 +28699,7 @@ class SensorEOIRBand(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorEOIRBand)
-    
+
     _get_band_name_metadata = { "offset" : _get_band_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29450,7 +29564,7 @@ class SensorEOIRRadiometricPair(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorEOIRRadiometricPair)
-    
+
     _get_integration_time_metadata = { "offset" : _get_integration_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -29530,7 +29644,7 @@ class SensorEOIRSensitivityCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -29620,7 +29734,7 @@ class SensorEOIRSaturationCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -29698,7 +29812,7 @@ class SensorCustomPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorCustomPattern)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -29785,7 +29899,7 @@ class SensorHalfPowerPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorHalfPowerPattern)
-    
+
     _get_frequency_metadata = { "offset" : _get_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -29880,7 +29994,7 @@ class SensorRectangularPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorRectangularPattern)
-    
+
     _get_vertical_half_angle_metadata = { "offset" : _get_vertical_half_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -29975,7 +30089,7 @@ class SensorSARPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorSARPattern)
-    
+
     _get_parent_altitude_metadata = { "offset" : _get_parent_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -30130,7 +30244,7 @@ class SensorSimpleConicPattern(ISensorPattern, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorSimpleConicPattern)
-    
+
     _get_cone_angle_metadata = { "offset" : _get_cone_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -30219,7 +30333,7 @@ class SensorPointingFixed(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingFixed)
-    
+
     _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -30292,7 +30406,7 @@ class SensorPointingFixedInAxes(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingFixedInAxes)
-    
+
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -30377,7 +30491,7 @@ class SensorPointing3DModel(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointing3DModel)
-    
+
     _get_attachment_name_metadata = { "offset" : _get_attachment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -30451,7 +30565,7 @@ class SensorPointingSpinning(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingSpinning)
-    
+
     _get_spin_axis_azimuth_metadata = { "offset" : _get_spin_axis_azimuth_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -30630,7 +30744,7 @@ class SensorPointingTargeted(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingTargeted)
-    
+
     _get_boresight_metadata = { "offset" : _get_boresight_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SensorPointingTargetedBoresightType),) }
@@ -30766,7 +30880,7 @@ class SensorPointingExternal(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingExternal)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -30823,7 +30937,7 @@ class SensorPointingTargetedBoresightTrack(ISensorPointingTargetedBoresight, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingTargetedBoresightTrack)
-    
+
     _get_about_boresight_metadata = { "offset" : _get_about_boresight_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(BoresightType),) }
@@ -30929,7 +31043,7 @@ class SensorPointingTargetedBoresightFixed(ISensorPointingTargetedBoresight, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingTargetedBoresightFixed)
-    
+
     _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -30992,7 +31106,7 @@ class SensorTargetCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -31046,15 +31160,15 @@ class SensorTargetCollection(SupportsDeleteCallback):
 
     _add_object_metadata = { "offset" : _add_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
-    def add_object(self, object:"IStkObject") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
+    def add_object(self, object:"ISTKObject") -> None:
         """Add a target to the collection."""
         return self._intf.invoke(SensorTargetCollection._metadata, SensorTargetCollection._add_object_metadata, object)
 
     _remove_object_metadata = { "offset" : _remove_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
-    def remove_object(self, object:"IStkObject") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
+    def remove_object(self, object:"ISTKObject") -> None:
         """Remove a target from the collection."""
         return self._intf.invoke(SensorTargetCollection._metadata, SensorTargetCollection._remove_object_metadata, object)
 
@@ -31093,7 +31207,7 @@ class SensorTarget(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorTarget)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -31135,7 +31249,7 @@ class AccessTargetTime(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessTargetTime)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -31198,7 +31312,7 @@ class ScheduleTime(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScheduleTime)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -31279,7 +31393,7 @@ class SensorAzElMaskFile(IAzElMaskData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorAzElMaskFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -31359,7 +31473,7 @@ class SensorGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorGraphics)
-    
+
     _get_inherit_from_scenario_metadata = { "offset" : _get_inherit_from_scenario_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -31613,7 +31727,7 @@ class SensorProjection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorProjection)
-    
+
     _get_persistence_metadata = { "offset" : _get_persistence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -31907,7 +32021,7 @@ class SensorGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorGraphics3D)
-    
+
     _get_show_boresight_marker_metadata = { "offset" : _get_show_boresight_marker_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32273,7 +32387,7 @@ class SensorGraphics3DPulse(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorGraphics3DPulse)
-    
+
     _get_show_pulses_metadata = { "offset" : _get_show_pulses_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32455,7 +32569,7 @@ class SensorGraphics3DOffset(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorGraphics3DOffset)
-    
+
     _get_inherit_from_parent_obj_metadata = { "offset" : _get_inherit_from_parent_obj_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32623,7 +32737,7 @@ class AccessConstraintTimeSlipRange(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintTimeSlipRange)
-    
+
     _get_launch_window_start_metadata = { "offset" : _get_launch_window_start_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -32684,7 +32798,7 @@ class AccessConstraintBackground(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintBackground)
-    
+
     _get_background_metadata = { "offset" : _get_background_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConstraintBackground),) }
@@ -32734,7 +32848,7 @@ class AccessConstraintGroundTrack(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintGroundTrack)
-    
+
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConstraintGroundTrack),) }
@@ -32814,7 +32928,7 @@ class AccessConstraintAnalysisWorkbenchComponent(IAccessConstraint, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintAnalysisWorkbenchComponent)
-    
+
     _get_enable_minimum_metadata = { "offset" : _get_enable_minimum_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -32940,7 +33054,7 @@ class AccessConstraintCentralBodyObstruction(IAccessConstraint, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintCentralBodyObstruction)
-    
+
     _get_assigned_obstructions_metadata = { "offset" : _get_assigned_obstructions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -33013,7 +33127,7 @@ class AccessConstraintAngle(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintAngle)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -33063,7 +33177,7 @@ class AccessConstraintCondition(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintCondition)
-    
+
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConstraintLighting),) }
@@ -33127,7 +33241,7 @@ class AccessTargetTimesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -33206,7 +33320,7 @@ class ScheduleTimeCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -33305,7 +33419,7 @@ class AccessConstraintIntervals(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintIntervals)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -33394,7 +33508,7 @@ class AccessConstraintObjExAngle(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintObjExAngle)
-    
+
     _get_exclusion_angle_metadata = { "offset" : _get_exclusion_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -33489,7 +33603,7 @@ class AccessConstraintLatitudeLongitudeZone(IAccessConstraint, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintLatitudeLongitudeZone)
-    
+
     _get_minimum_longitude_metadata = { "offset" : _get_minimum_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -33590,7 +33704,7 @@ class AccessConstraintThirdBody(IAccessConstraint, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintThirdBody)
-    
+
     _get_assigned_obstructions_metadata = { "offset" : _get_assigned_obstructions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -33692,7 +33806,7 @@ class AccessConstraintExclZonesCollection(IAccessConstraint, SupportsDeleteCallb
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -33871,7 +33985,7 @@ class AccessConstraintGrazingAltitude(IAccessConstraintMinMaxBase, IAccessConstr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintGrazingAltitude)
-    
+
     _get_compute_beyond_target_metadata = { "offset" : _get_compute_beyond_target_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -33925,7 +34039,7 @@ class SensorPointingGrazingAltitude(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingGrazingAltitude)
-    
+
     _get_azimuth_offset_metadata = { "offset" : _get_azimuth_offset_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -33977,7 +34091,7 @@ class SensorPointingGrazingAltitude(ISensorPointing, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4753139891164764300, 17354521187142643087), SensorPointingGrazingAltitude)
 agcls.AgTypeNameMap["SensorPointingGrazingAltitude"] = SensorPointingGrazingAltitude
 
-class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class AreaTarget(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods defining an AreaTarget object.
 
@@ -33988,10 +34102,10 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     >>> if areaTarget.area_type == AreaType.PATTERN:
     >>>     # Get IAgAreaTypePatternCollection interface from AreaTypeData
     >>>     patternPoints = areaTarget.area_type_data
-    >>> 
+    >>>
     >>>     # ToArray returns a two dimensional array of latitude and longitude points
     >>>     areaTargetPoints = patternPoints.to_array()
-    >>> 
+    >>>
     >>>     print("All points in Area Target")
     >>>     for i in range(0, len(areaTargetPoints)):
     >>>         print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
@@ -34000,18 +34114,18 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     >>> # AreaTarget areaTarget: AreaTarget object
     >>> # Remove all points in the area target
     >>> areaTarget.area_type_data.remove_all()
-    >>> 
+    >>>
     >>> # By using the CommonTasks interface,
     >>> # make an array of latitude and longitude boundary points
     >>> boundary = [[29, -12], [29, 34], [6, 34], [6, -12]]
-    >>> 
+    >>>
     >>> # SetAreaTypePattern expects a two dimensional array of latitude and longitude values
     >>> areaTarget.common_tasks.set_area_type_pattern(boundary)
 
     Define an area target boundary and position from a list of lat/lon/alt:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AreaTarget areaTarget: AreaTarget object
-    >>> 
+    >>>
     >>> # By using the fine grained interfaces,
     >>> # BeginUpdate/EndUpdate prevent intermediate redraws
     >>> root.begin_update()
@@ -34024,16 +34138,16 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     >>> areaTarget.automatic_computation_of_centroid = True
 
     Set an elliptical area target (using common tasks):
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AreaTarget areaTarget: AreaTarget object
-    >>> 
+    >>>
     >>> # By using the CommonTasks interface
     >>> areaTarget.common_tasks.set_area_type_ellipse(85.25, 80.75, 44)
 
     Set an elliptical area target:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # AreaTarget areaTarget: AreaTarget object
-    >>> 
+    >>>
     >>> # By using the fine grained interfaces,
     >>> # BeginUpdate/EndUpdate prevent intermediate redraws
     >>> root.begin_update()
@@ -34045,8 +34159,8 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     >>> root.end_update()
 
     Create an area target (on the current scenario central body):
-    >>> # StkObjectRoot root: STK Object Model Root
-    >>> 
+    >>> # STKObjectRoot root: STK Object Model Root
+    >>>
     >>> # Create the AreaTarget on the current scenario central body (use
     >>> # NewOnCentralBody to specify explicitly the central body)
     >>> areaTarget = root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget")
@@ -34079,7 +34193,7 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTarget)
-    
+
     _get_use_local_time_offset_metadata = { "offset" : _get_use_local_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34235,12 +34349,12 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
         """Construct an object of type AreaTarget."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, AreaTarget)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -34248,12 +34362,12 @@ class AreaTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AreaTarget, [AreaTarget, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, AreaTarget, [AreaTarget, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5444663313834108516, 962392495836953255), AreaTarget)
 agcls.AgTypeNameMap["AreaTarget"] = AreaTarget
 
-class Facility(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Facility(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods used in defining a facility object.
 
@@ -34270,22 +34384,22 @@ class Facility(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
     Set the geodetic position of a facility:
     >>> # Facility facility: Facility Object
     >>> facility.position.assign_geodetic(41.9849, 21.4039, 0)  # Latitude, Longitude, Altitude
-    >>> 
+    >>>
     >>> # Set altitude to height of terrain
     >>> facility.use_terrain = True
-    >>> 
+    >>>
     >>> # Set altitude to a distance above the ground
     >>> facility.height_above_ground = 0.05  # km
 
     Create a facility and set its height relative to ground level:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> from ansys.stk.core.stkobjects import Facility, STKObjectType
-    >>> 
+    >>>
     >>> facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
     >>> facility.height_above_ground = 123.4
 
     Create a facility (on the current scenario central body):
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
     """
 
@@ -34332,7 +34446,7 @@ class Facility(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Facility)
-    
+
     _get_use_local_time_offset_metadata = { "offset" : _get_use_local_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34619,12 +34733,12 @@ class Facility(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         """Construct an object of type Facility."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Facility)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -34632,12 +34746,12 @@ class Facility(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Facility, [Facility, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Facility, [Facility, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5603048958870938289, 10257063247646200200), Facility)
 agcls.AgTypeNameMap["Facility"] = Facility
 
-class Target(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Target(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """Provide access to the properties and methods used in defining a target object."""
 
     _num_methods = 34
@@ -34683,7 +34797,7 @@ class Target(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Target)
-    
+
     _get_use_local_time_offset_metadata = { "offset" : _get_use_local_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -34970,12 +35084,12 @@ class Target(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallb
         """Construct an object of type Target."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Target)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -34983,12 +35097,12 @@ class Target(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallb
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Target, [Target, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Target, [Target, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((4718899831496382439, 1349970112787637171), Target)
 agcls.AgTypeNameMap["Target"] = Target
 
-class Place(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Place(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """Provide access to the properties and methods used in defining a place object."""
 
     _num_methods = 34
@@ -35034,7 +35148,7 @@ class Place(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Place)
-    
+
     _get_use_local_time_offset_metadata = { "offset" : _get_use_local_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -35321,12 +35435,12 @@ class Place(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallba
         """Construct an object of type Place."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Place)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -35334,12 +35448,12 @@ class Place(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallba
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Place, [Place, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Place, [Place, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((4676066808156923506, 1655977574171784065), Place)
 agcls.AgTypeNameMap["Place"] = Place
 
-class Planet(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Planet(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Provide access to the properties and methods used in defining a planet object.
 
@@ -35376,7 +35490,7 @@ class Planet(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Planet)
-    
+
     _get_graphics_metadata = { "offset" : _get_graphics_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -35443,23 +35557,23 @@ class Planet(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Planet."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Planet)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Planet, [Planet, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Planet, [Planet, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5588820568255522568, 10390724185762651817), Planet)
 agcls.AgTypeNameMap["Planet"] = Planet
 
-class Sensor(IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo, SupportsDeleteCallback):
+class Sensor(ISTKObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo, SupportsDeleteCallback):
     r"""
     Provide access to the properties and methods used in defining a sensor object.
 
@@ -35467,10 +35581,12 @@ class Sensor(IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo
     --------
     Sensor Body Mask:
     >>> # Sensor sensor: Sensor object
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    >>> sensor.set_az_el_mask_file(
-    >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
-    >>> )
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
+    >>> bmskPath = ["Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"]
+    >>> sensor.set_az_el_mask_file(os.path.join(installPath, *bmskPath))
 
     Set Sensor Properties:
     >>> # Sensor sensor: Sensor object
@@ -35528,7 +35644,7 @@ class Sensor(IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Sensor)
-    
+
     _get_pattern_type_metadata = { "offset" : _get_pattern_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SensorPattern),) }
@@ -35796,13 +35912,13 @@ class Sensor(IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo
         """Construct an object of type Sensor."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Sensor)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
@@ -35811,7 +35927,7 @@ class Sensor(IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Sensor, [Sensor, IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, Sensor, [Sensor, ISTKObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((5098506245346487393, 651681986479087018), Sensor)
 agcls.AgTypeNameMap["Sensor"] = Sensor
@@ -35894,7 +36010,7 @@ class SensorCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorCommonTasks)
-    
+
     _set_pattern_simple_conic_metadata = { "offset" : _set_pattern_simple_conic_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -36140,7 +36256,7 @@ class AreaTargetCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AreaTargetCommonTasks)
-    
+
     _set_area_type_ellipse_metadata = { "offset" : _set_area_type_ellipse_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -36186,7 +36302,7 @@ class PlanetCommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlanetCommonTasks)
-    
+
     _set_position_source_file_metadata = { "offset" : _set_position_source_file_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
@@ -36258,7 +36374,7 @@ class Swath(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Swath)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -36494,7 +36610,7 @@ class Swath(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5420689223650134489, 5103980326220087184), Swath)
 agcls.AgTypeNameMap["Swath"] = Swath
 
-class Star(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Star(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Provide access to the properties and methods used in defining a star object."""
 
     _num_methods = 19
@@ -36525,7 +36641,7 @@ class Star(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Star)
-    
+
     _get_location_right_ascension_metadata = { "offset" : _get_location_right_ascension_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -36688,18 +36804,18 @@ class Star(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Star."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Star)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Star, [Star, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Star, [Star, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5686130963924770811, 17803120372197994891), Star)
 agcls.AgTypeNameMap["Star"] = Star
@@ -36711,7 +36827,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     Examples
     --------
     Get Data for Specific Points and Elements:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     >>> # Python
@@ -36722,7 +36838,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> passes = satPassesDP.get_array(1)
 
     Get Data for a Single Point in Time:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     >>> # Python
@@ -36731,7 +36847,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> passes = satPassDP.data_sets.get_data_set_by_name("Precision Pass Number").get_values()
 
     Extract Elements from Data Providers with pre-data:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Facility facility: Facility object
     >>> # Scenario scenario: Scenario object
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -36750,7 +36866,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> facTODz = datasets.get_data_set_by_name("z").get_values()
 
     Extract Elements from Data Providers with Groups:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Scenario scenario: Scenario object
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -36764,7 +36880,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> satx = satPosDP.data_sets.get_data_set_by_name("x").get_values()
     >>> saty = satPosDP.data_sets.get_data_set_by_name("y").get_values()
     >>> satz = satPosDP.data_sets.get_data_set_by_name("z").get_values()
-    >>> 
+    >>>
     >>> satVelDP = satellite.data_providers.get_data_provider_time_varying_from_path("Cartesian Velocity/ICRF").execute(
     >>>     scenario.start_time, scenario.stop_time, 60
     >>> )
@@ -36778,7 +36894,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> satvz = satVelDP.data_sets.get_data_set_by_name("z").get_values()
 
     Use a Time Dependent Data Provider and requesting only specified elements:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Scenario scenario: Scenario object
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -36797,10 +36913,10 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> satq4 = satDP.data_sets.item(4).get_values()
 
     Use an interval Data Provider:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> # Facility facility: Facility object
-    >>> 
+    >>>
     >>> # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     >>> # Python
     >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -36811,7 +36927,7 @@ class DataProviderCollection(SupportsDeleteCallback):
     >>> access.compute_access()
     >>> # Get the Access AER Data Provider
     >>> accessDP = access.data_providers.item("Access Data").execute(scenario.start_time, scenario.stop_time)
-    >>> 
+    >>>
     >>> accessStartTimes = accessDP.data_sets.get_data_set_by_name("Start Time").get_values()
     >>> accessStopTimes = accessDP.data_sets.get_data_set_by_name("Stop Time").get_values()
     """
@@ -36848,7 +36964,7 @@ class DataProviderCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_schema_metadata = { "offset" : _get_schema_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -36958,7 +37074,7 @@ class DataProviderResultTimeArrayElements(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultTimeArrayElements)
-    
+
     _get_array_metadata = { "offset" : _get_array_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.LPSafearrayArg,) }
@@ -37019,7 +37135,7 @@ class DataProviderResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResult)
-    
+
     _get_category_metadata = { "offset" : _get_category_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DataProviderResultCategory),) }
@@ -37119,7 +37235,7 @@ class DataProviderResultSubSectionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -37179,7 +37295,7 @@ class DataProviderResultSubSection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultSubSection)
-    
+
     _get_title_metadata = { "offset" : _get_title_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -37243,7 +37359,7 @@ class DataProviderResultIntervalCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -37306,7 +37422,7 @@ class DataProviderResultInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultInterval)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -37375,61 +37491,63 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     >>> # CoverageDefinition coverage: Coverage object
     >>> from matplotlib import pyplot as plt
     >>> import numpy as np
-    >>> 
+    >>>
     >>> # compute data provider results for All Regions by Pass coverage
-    >>> coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    >>> coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     >>> coverage_data = coverage_data_provider.execute()
-    >>> 
+    >>>
     >>> # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     >>> coverage_all_regions_elements = coverage_data_provider.elements
-    >>> all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
-    >>> 
+    >>> all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(
+    >>>     data_provider_elements=coverage_all_regions_elements
+    >>> )
+    >>>
     >>> # reshape the DataFrame based on column values
-    >>> pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
-    >>> 
+    >>> pivot = all_regions_coverage_df.pivot_table(index="region name", columns="asset name", values="duration")
+    >>>
     >>> # plot heat map that shows duration by asset name by region
-    >>> plt.xlabel('Duration by Asset', fontsize=20)
+    >>> plt.xlabel("Duration by Asset", fontsize=20)
     >>> plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
-    >>> 
-    >>> plt.ylabel('Region Name', fontsize=20)
+    >>>
+    >>> plt.ylabel("Region Name", fontsize=20)
     >>> plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
-    >>> 
-    >>> im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
-    >>> plt.colorbar(orientation='vertical')
+    >>>
+    >>> im = plt.imshow(pivot, cmap="YlGnBu", aspect="auto", interpolation="none")
+    >>> plt.colorbar(orientation="vertical")
 
     Compute descriptive statistics for access measurements using a Pandas DataFrame:
     >>> # CoverageDefinition coverage: Coverage object
     >>> import pandas as pd
-    >>> 
+    >>>
     >>> # compute data provider results for All Regions by Pass coverage
-    >>> coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    >>> coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     >>> coverage_data = coverage_data_provider.execute()
-    >>> 
+    >>>
     >>> # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     >>> all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
-    >>> 
+    >>>
     >>> # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
-    >>> all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+    >>> all_regions_coverage_df[["duration", "percent coverage", "area coverage"]].apply(pd.to_numeric).describe()
 
     Convert access data provider results to a Pandas DataFrame:
     >>> # Access facility_sensor_satellite_access: Access calculation
     >>> # compute data provider results for basic Access
-    >>> field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
-    >>> 
-    >>> access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+    >>> field_names = ["Access Number", "Start Time", "Stop Time", "Duration"]
+    >>>
+    >>> access_data = facility_sensor_satellite_access.data_providers["Access Data"].execute_elements(
     >>>     self.get_scenario().start_time, self.get_scenario().stop_time, field_names
     >>> )
-    >>> 
+    >>>
     >>> # convert dataset collection in a row format as a Pandas DataFrame
-    >>> index_column = 'Access Number'
+    >>> index_column = "Access Number"
     >>> access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
 
     Convert coverage definition data provider results to a Pandas DataFrame:
     >>> # CoverageDefinition coverage: Coverage object
     >>> # compute data provider results for All Regions by Pass coverage
-    >>> coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    >>> coverage_data_provider = coverage.data_providers.item("All Regions By Pass")
     >>> coverage_data = coverage_data_provider.execute()
-    >>> 
+    >>>
     >>> # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     >>> coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
@@ -37437,30 +37555,32 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
     >>> # Aircraft aircraft: Aircraft object
     >>> from scipy.spatial import ConvexHull
     >>> import matplotlib.pyplot as plt
-    >>> 
+    >>>
     >>> # compute data provider results for an aircraft's Flight Profile By Time
-    >>> field_names = ['Mach #', 'Altitude']
+    >>> field_names = ["Mach #", "Altitude"]
     >>> time_step_sec = 1.0
-    >>> 
-    >>> flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
-    >>> flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
-    >>> 
+    >>>
+    >>> flight_profile_data_provider = aircraft.data_providers.item("Flight Profile By Time")
+    >>> flight_profile_data = flight_profile_data_provider.execute_elements(
+    >>>     self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names
+    >>> )
+    >>>
     >>> # convert dataset collection in a row format as a Numpy array
     >>> flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
-    >>> 
+    >>>
     >>> # plot estimated fligth envelope as a convex hull
     >>> hull = ConvexHull(flight_profile_data_arr)
-    >>> 
+    >>>
     >>> plt.figure(figsize=(15, 10))
     >>> for simplex in hull.simplices:
     >>>     plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
-    >>> 
-    >>> plt.title('Estimated Flight Envelope', fontsize=15)
-    >>> plt.xlabel('Mach Number', fontsize=15)
-    >>> plt.ylabel('Altitude', fontsize=15)
-    >>> 
-    >>> plt.tick_params(axis='x', labelsize=15)
-    >>> plt.tick_params(axis='y', labelsize=15)
+    >>>
+    >>> plt.title("Estimated Flight Envelope", fontsize=15)
+    >>> plt.xlabel("Mach Number", fontsize=15)
+    >>> plt.ylabel("Altitude", fontsize=15)
+    >>>
+    >>> plt.tick_params(axis="x", labelsize=15)
+    >>> plt.tick_params(axis="y", labelsize=15)
     >>> plt.grid(visible=True)
     """
 
@@ -37494,7 +37614,7 @@ class DataProviderResultDataSetCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -37621,7 +37741,7 @@ class DataProviderResultDataSet(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultDataSet)
-    
+
     _get_element_name_metadata = { "offset" : _get_element_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -37712,7 +37832,7 @@ class DataProviderFixed(IDataProvider, IDataProviderInfo, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderFixed)
-    
+
     _execute_metadata = { "offset" : _execute_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -37770,7 +37890,7 @@ class DataProviderTimeVarying(IDataProvider, IDataProviderInfo, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderTimeVarying)
-    
+
     _execute_metadata = { "offset" : _execute_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
@@ -37878,7 +37998,7 @@ class DataProviderInterval(IDataProvider, IDataProviderInfo, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderInterval)
-    
+
     _execute_metadata = { "offset" : _execute_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -37958,7 +38078,7 @@ class DataProviderResultTextMessage(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -38035,7 +38155,7 @@ class DataProviderGroup(IDataProviderInfo, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderGroup)
-    
+
     _get_group_metadata = { "offset" : _get_group_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -38094,7 +38214,7 @@ class DataProviderElements(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -38169,7 +38289,7 @@ class DataProviderElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderElement)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -38245,7 +38365,7 @@ class DataProviders(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -38319,11 +38439,11 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
     Examples
     --------
     Configure the access analysis time period to specified time instants:
-    >>> # StkObjectRoot root: STK Object Model root
-    >>> 
+    >>> # STKObjectRoot root: STK Object Model root
+    >>>
     >>> satellite = root.get_object_from_path("Satellite/MySatellite")
     >>> facility = root.get_object_from_path("Facility/MyFacility")
-    >>> 
+    >>>
     >>> # For this code snippet, let's use the time interval when the satellite reached min and max altitude values.
     >>> # Note, this assumes time at min happens before time at max.
     >>> timeOfAltMin = satellite.analysis_workbench_components.time_instants.item(
@@ -38332,18 +38452,18 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
     >>> timeOfAltMax = satellite.analysis_workbench_components.time_instants.item(
     >>>     "GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"
     >>> )
-    >>> 
+    >>>
     >>> # Set the access time period with the times we figured out above.
     >>> access = satellite.get_access_to_object(facility)
     >>> access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
     >>> accessTimePeriod = access.access_time_period_data
-    >>> 
+    >>>
     >>> accessTimePeriod.access_interval.state = SmartIntervalState.START_STOP
-    >>> 
+    >>>
     >>> accessStartEpoch = accessTimePeriod.access_interval.get_start_epoch()
     >>> accessStartEpoch.set_implicit_time(timeOfAltMin)
     >>> accessTimePeriod.access_interval.set_start_epoch(accessStartEpoch)
-    >>> 
+    >>>
     >>> accessStopEpoch = accessTimePeriod.access_interval.get_stop_epoch()
     >>> accessStopEpoch.set_implicit_time(timeOfAltMax)
     >>> accessTimePeriod.access_interval.set_stop_epoch(accessStopEpoch)
@@ -38352,14 +38472,14 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
     >>> # Access access: Access calculation
     >>> # Get and display the Computed Access Intervals
     >>> intervalCollection = access.computed_access_interval_times
-    >>> 
+    >>>
     >>> # Set the intervals to use to the Computed Access Intervals
     >>> computedIntervals = intervalCollection.to_array(0, -1)
     >>> access.specify_access_intervals(computedIntervals)
 
     Compute an Access with Advanced Settings:
     >>> # Access access: Access object
-    >>> 
+    >>>
     >>> access.advanced.enable_light_time_delay = True
     >>> access.advanced.time_light_delay_convergence = 0.00005
     >>> access.advanced.aberration_type = AberrationType.ANNUAL
@@ -38370,20 +38490,20 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
 
     Compute an access between two STK Objects (using object path):
     >>> # Satellite satellite: Satellite object
-    >>> 
+    >>>
     >>> # Get access by object path
     >>> access = satellite.get_access("Facility/MyFacility")
-    >>> 
+    >>>
     >>> # Compute access
     >>> access.compute_access()
 
-    Compute an access between two STK Objects (using IStkObject interface):
+    Compute an access between two STK Objects (using ISTKObject interface):
     >>> # Satellite satellite: Satellite object
     >>> # Facility facility: Facility object
-    >>> 
+    >>>
     >>> # Get access by STK Object
     >>> access = satellite.get_access_to_object(facility)
-    >>> 
+    >>>
     >>> # Compute access
     >>> access.compute_access()
     """
@@ -38417,7 +38537,7 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Access)
-    
+
     _get_data_providers_metadata = { "offset" : _get_data_providers_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -38550,7 +38670,7 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def base(self) -> "IStkObject":
+    def base(self) -> "ISTKObject":
         """Base object used in the access."""
         return self._intf.get_property(Access._metadata, Access._get_base_metadata)
 
@@ -38558,7 +38678,7 @@ class Access(ILifetimeInformation, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def target(self) -> "IStkObject":
+    def target(self) -> "ISTKObject":
         """Target object used in the access."""
         return self._intf.get_property(Access._metadata, Access._get_target_metadata)
 
@@ -38625,7 +38745,7 @@ class AccessGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessGraphics)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -38781,7 +38901,7 @@ class AccessAdvancedSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessAdvancedSettings)
-    
+
     _get_enable_light_time_delay_metadata = { "offset" : _get_enable_light_time_delay_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -39056,7 +39176,7 @@ class AccessTimePeriod(ITimePeriod, IAccessInterval, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessTimePeriod)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -39135,7 +39255,7 @@ class AccessAllowedTimeIntervals(IAccessInterval, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessAllowedTimeIntervals)
-    
+
     _get_list_of_intervals_metadata = { "offset" : _get_list_of_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -39184,7 +39304,7 @@ class ObjectCoverage(SupportsDeleteCallback):
     >>> objCoverage.assets.add("Satellite/MySatellite")
     >>> objCoverage.use_object_times = True
     >>> objCoverage.compute()
-    >>> 
+    >>>
     >>> objCoverageFOM = objCoverage.figure_of_merit
     >>> objCoverageFOM.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
     >>> objCoverageFOM.definition.set_compute_type(FigureOfMeritCompute.TOTAL)
@@ -39214,7 +39334,7 @@ class ObjectCoverage(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ObjectCoverage)
-    
+
     _get_data_providers_metadata = { "offset" : _get_data_providers_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -39373,7 +39493,7 @@ class ObjectCoverageFigureOfMerit(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ObjectCoverageFigureOfMerit)
-    
+
     _get_definition_type_metadata = { "offset" : _get_definition_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritDefinitionType),) }
@@ -39477,7 +39597,7 @@ class Scenario3dFont(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Scenario3dFont)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -39606,7 +39726,7 @@ class Graphics3DBorderWall(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DBorderWall)
-    
+
     _get_use_border_wall_metadata = { "offset" : _get_use_border_wall_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -39809,7 +39929,7 @@ class Graphics3DReferenceVectorGeometryToolComponentCollection(SupportsDeleteCal
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -39942,7 +40062,7 @@ class Graphics3DReferenceVector(IGraphics3DReferenceAnalysisWorkbenchComponent, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DReferenceVector)
-    
+
     _get_draw_at_central_body_metadata = { "offset" : _get_draw_at_central_body_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -40247,7 +40367,7 @@ class Graphics3DReferenceAxes(IGraphics3DReferenceAnalysisWorkbenchComponent, ID
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DReferenceAxes)
-    
+
     _get_draw_at_central_body_metadata = { "offset" : _get_draw_at_central_body_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -40449,7 +40569,7 @@ class Graphics3DReferenceAngle(IGraphics3DReferenceAnalysisWorkbenchComponent, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DReferenceAngle)
-    
+
     _get_show_angle_value_metadata = { "offset" : _get_show_angle_value_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -40547,7 +40667,7 @@ class Graphics3DReferencePlane(IGraphics3DReferenceAnalysisWorkbenchComponent, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DReferencePlane)
-    
+
     _get_show_axis_labels_metadata = { "offset" : _get_show_axis_labels_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -40728,7 +40848,7 @@ class Graphics3DReferencePoint(IGraphics3DReferenceAnalysisWorkbenchComponent, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DReferencePoint)
-    
+
     _get_trajectory_type_metadata = { "offset" : _get_trajectory_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TrajectoryType),) }
@@ -40937,7 +41057,7 @@ class TargetGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargetGraphics)
-    
+
     _get_inherit_from_scenario_metadata = { "offset" : _get_inherit_from_scenario_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -41157,7 +41277,7 @@ class TargetGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargetGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -41285,7 +41405,7 @@ class PointTargetGraphics3DModel(IGraphics3DModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointTargetGraphics3DModel)
-    
+
     _get_marker_metadata = { "offset" : _get_marker_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -41408,7 +41528,7 @@ class ObjectLinkCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -41470,15 +41590,15 @@ class ObjectLinkCollection(SupportsDeleteCallback):
 
     _add_object_metadata = { "offset" : _add_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
-    def add_object(self, object:"IStkObject") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
+    def add_object(self, object:"ISTKObject") -> None:
         """Add to the collection a link to the given STK object."""
         return self._intf.invoke(ObjectLinkCollection._metadata, ObjectLinkCollection._add_object_metadata, object)
 
     _remove_object_metadata = { "offset" : _remove_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
-    def remove_object(self, object:"IStkObject") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
+    def remove_object(self, object:"ISTKObject") -> None:
         """Remove from the collection a link to the given STK object."""
         return self._intf.invoke(ObjectLinkCollection._metadata, ObjectLinkCollection._remove_object_metadata, object)
 
@@ -41535,7 +41655,7 @@ class ObjectLink(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ObjectLink)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -41564,7 +41684,7 @@ class ObjectLink(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def linked_object(self) -> "IStkObject":
+    def linked_object(self) -> "ISTKObject":
         """Return the STK object associated with the instance."""
         return self._intf.get_property(ObjectLink._metadata, ObjectLink._get_linked_object_metadata)
 
@@ -41606,7 +41726,7 @@ class LinkToObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LinkToObject)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -41619,14 +41739,14 @@ class LinkToObject(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def linked_object(self) -> "IStkObject":
+    def linked_object(self) -> "ISTKObject":
         """Dereferences the link and returns the linked object."""
         return self._intf.get_property(LinkToObject._metadata, LinkToObject._get_linked_object_metadata)
 
     _bind_to_object_metadata = { "offset" : _bind_to_object_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def bind_to_object(self, path:str) -> "IStkObject":
+    def bind_to_object(self, path:str) -> "ISTKObject":
         """Binds to existing object instance using the specified object path."""
         return self._intf.invoke(LinkToObject._metadata, LinkToObject._bind_to_object_metadata, path, OutArg())
 
@@ -41768,7 +41888,7 @@ class Graphics3DDataDisplayElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DDataDisplayElement)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42250,7 +42370,7 @@ class Graphics3DDataDisplayCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -42357,7 +42477,7 @@ class VehicleInitialState(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleInitialState)
-    
+
     _get_representation_metadata = { "offset" : _get_representation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -42444,7 +42564,7 @@ class VehicleHPOPCentralBodyGravity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPCentralBodyGravity)
-    
+
     _get_file_metadata = { "offset" : _get_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42587,7 +42707,7 @@ class RadiationPressure(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadiationPressure)
-    
+
     _get_file_metadata = { "offset" : _get_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42704,7 +42824,7 @@ class VehicleHPOPSolarRadiationPressure(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPSolarRadiationPressure)
-    
+
     _get_use_metadata = { "offset" : _get_use_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -42797,7 +42917,7 @@ class SolarFluxGeoMagneticValueSettings(IVehicleSolarFluxGeoMagnitude, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarFluxGeoMagneticValueSettings)
-    
+
     _get_daily_f107_metadata = { "offset" : _get_daily_f107_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -42883,7 +43003,7 @@ class SolarFluxGeoMagneticFileSettings(IVehicleSolarFluxGeoMagnitude, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarFluxGeoMagneticFileSettings)
-    
+
     _get_file_metadata = { "offset" : _get_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -42981,7 +43101,7 @@ class VehicleHPOPForceModelDrag(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPForceModelDrag)
-    
+
     _get_use_metadata = { "offset" : _get_use_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -43161,7 +43281,7 @@ class VehicleHPOPForceModelDragOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPForceModelDragOptions)
-    
+
     _get_use_approx_altitude_metadata = { "offset" : _get_use_approx_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -43227,7 +43347,7 @@ class VehicleHPOPSolarRadiationPressureOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPSolarRadiationPressureOptions)
-    
+
     _get_method_to_compute_sun_position_metadata = { "offset" : _get_method_to_compute_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(MethodToComputeSunPosition),) }
@@ -43293,7 +43413,7 @@ class PropagatorHPOPStaticForceModelSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorHPOPStaticForceModelSettings)
-    
+
     _get_satellite_mass_metadata = { "offset" : _get_satellite_mass_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -43361,7 +43481,7 @@ class SolidTides(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolidTides)
-    
+
     _get_include_time_dependent_solid_tides_metadata = { "offset" : _get_include_time_dependent_solid_tides_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -43445,7 +43565,7 @@ class OceanTides(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OceanTides)
-    
+
     _get_maximum_degree_metadata = { "offset" : _get_maximum_degree_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -43526,7 +43646,7 @@ class VehiclePluginSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehiclePluginSettings)
-    
+
     _get_property_metadata = { "offset" : _get_property_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
@@ -43587,7 +43707,7 @@ class VehiclePluginPropagator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehiclePluginPropagator)
-    
+
     _get_use_plugin_metadata = { "offset" : _get_use_plugin_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -43688,7 +43808,7 @@ class VehicleHPOPForceModelMoreOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPForceModelMoreOptions)
-    
+
     _get_drag_metadata = { "offset" : _get_drag_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -43787,7 +43907,7 @@ class VehicleHPOPForceModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPForceModel)
-    
+
     _get_central_body_gravity_metadata = { "offset" : _get_central_body_gravity_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -43879,7 +43999,7 @@ class IntegratorStepSizeControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, IntegratorStepSizeControl)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleMethod),) }
@@ -43979,7 +44099,7 @@ class IntegratorTimeRegularization(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, IntegratorTimeRegularization)
-    
+
     _get_use_metadata = { "offset" : _get_use_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -44063,7 +44183,7 @@ class VehicleInterpolation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleInterpolation)
-    
+
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleInterpolationMethod),) }
@@ -44156,7 +44276,7 @@ class VehicleIntegrator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleIntegrator)
-    
+
     _get_integration_model_metadata = { "offset" : _get_integration_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleIntegrationModel),) }
@@ -44313,7 +44433,7 @@ class VehicleGravity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGravity)
-    
+
     _get_maximum_degree_metadata = { "offset" : _get_maximum_degree_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -44387,7 +44507,7 @@ class VehiclePositionVelocityElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehiclePositionVelocityElement)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -44529,7 +44649,7 @@ class VehiclePositionVelocityCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -44606,7 +44726,7 @@ class VehicleCorrelationListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -44691,7 +44811,7 @@ class VehicleCorrelationListElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleCorrelationListElement)
-    
+
     _get_row_metadata = { "offset" : _get_row_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleCorrelationListType),) }
@@ -44783,7 +44903,7 @@ class VehicleCovariance(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleCovariance)
-    
+
     _get_compute_covariance_metadata = { "offset" : _get_compute_covariance_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -44936,7 +45056,7 @@ class VehicleZonalPropagatorInitialState(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleZonalPropagatorInitialState)
-    
+
     _get_ellipse_options_metadata = { "offset" : _get_ellipse_options_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleEllipseOptionType),) }
@@ -45029,7 +45149,7 @@ class VehicleLOPCentralBodyGravity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleLOPCentralBodyGravity)
-    
+
     _get_maximum_degree_metadata = { "offset" : _get_maximum_degree_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -45096,7 +45216,7 @@ class PropagatorHPOPThirdBodyGravityElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorHPOPThirdBodyGravityElement)
-    
+
     _get_source_metadata = { "offset" : _get_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ThirdBodyGravitySourceType),) }
@@ -45188,7 +45308,7 @@ class PropagatorHPOPThirdBodyGravityCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -45289,7 +45409,7 @@ class VehicleExponentialDensityModelParameters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleExponentialDensityModelParameters)
-    
+
     _get_reference_density_metadata = { "offset" : _get_reference_density_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -45378,7 +45498,7 @@ class VehicleLOPDragSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleLOPDragSettings)
-    
+
     _get_atmospheric_density_model_metadata = { "offset" : _get_atmospheric_density_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AtmosphericDensityModel),) }
@@ -45502,7 +45622,7 @@ class VehicleLOPForceModelDrag(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleLOPForceModelDrag)
-    
+
     _get_use_metadata = { "offset" : _get_use_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -45579,7 +45699,7 @@ class VehicleLOPSolarRadiationPressure(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleLOPSolarRadiationPressure)
-    
+
     _get_use_metadata = { "offset" : _get_use_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -45663,7 +45783,7 @@ class VehiclePhysicalData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehiclePhysicalData)
-    
+
     _get_drag_cross_sectional_area_metadata = { "offset" : _get_drag_cross_sectional_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -45746,7 +45866,7 @@ class VehicleLOPForceModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleLOPForceModel)
-    
+
     _get_central_body_gravity_metadata = { "offset" : _get_central_body_gravity_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -45837,7 +45957,7 @@ class PropagatorSPICESegmentsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -45896,19 +46016,21 @@ class PropagatorHPOP(IPropagator, SupportsDeleteCallback):
     >>> satellite.propagator.initial_state.representation.assign_cartesian(
     >>>     CoordinateSystem.FIXED, 6406.92, -1787.59, -506.422, 2.10185, 6.48871, 3.64041
     >>> )
-    >>> 
+    >>>
     >>> forceModel = satellite.propagator.force_model
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    >>> forceModel.central_body_gravity.file = os.path.join(
-    >>>     installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
-    >>> )
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
+    >>> grv_path = ["STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"]
+    >>> forceModel.central_body_gravity.file = os.path.join(installPath, *grv_path)
     >>> forceModel.central_body_gravity.maximum_degree = 21
     >>> forceModel.central_body_gravity.maximum_order = 21
     >>> forceModel.drag.use = True
     >>> forceModel.drag.drag_model.cd = 0.01
     >>> forceModel.drag.drag_model.area_mass_ratio = 0.01
     >>> forceModel.solar_radiation_pressure.use = False
-    >>> 
+    >>>
     >>> integrator = satellite.propagator.integrator
     >>> integrator.do_not_propagate_below_altitude = -1e6
     >>> integrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_FEHLBERG_78
@@ -45918,7 +46040,7 @@ class PropagatorHPOP(IPropagator, SupportsDeleteCallback):
     >>> integrator.step_size_control.maximum_step_size = 30
     >>> integrator.interpolation.method = VehicleInterpolationMethod.LAGRANGE
     >>> integrator.interpolation.order = 7
-    >>> 
+    >>>
     >>> satellite.propagator.propagate()
     """
 
@@ -45941,7 +46063,7 @@ class PropagatorHPOP(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorHPOP)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46067,7 +46189,7 @@ class PropagatorJ2Perturbation(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorJ2Perturbation)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46179,9 +46301,8 @@ class PropagatorJ4Perturbation(IPropagator, SupportsDeleteCallback):
     >>> # Satellite satellite: Satellite object
     >>> satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     >>> propagator = satellite.propagator
-    >>> propagator.initial_state.representation.assign_cartesian(
-    >>>     CoordinateSystem.ICRF, 6678.14, 0, 0, 0, 6.78953, 3.68641
-    >>> )
+    >>> icrfCoordinates = [6678.14, 0, 0, 0, 6.78953, 3.68641]
+    >>> propagator.initial_state.representation.assign_cartesian(CoordinateSystem.ICRF, *icrfCoordinates)
     >>> propagator.propagate()
     """
 
@@ -46204,7 +46325,7 @@ class PropagatorJ4Perturbation(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorJ4Perturbation)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46326,7 +46447,7 @@ class PropagatorLOP(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorLOP)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46451,7 +46572,7 @@ class PropagatorSGP4(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46579,18 +46700,19 @@ class PropagatorSPICE(IPropagator, SupportsDeleteCallback):
     --------
     Set satellite propagator to SPICE and propagate:
     >>> # Satellite satellite: Satellite object
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> satellite.set_propagator_type(PropagatorType.SPICE)
     >>> propagator = satellite.propagator
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-    >>> propagator.spice = os.path.join(
-    >>>     installPath, "STKData", "Spice", "planets.bsp"
-    >>> )  # Make sure this is a valid path
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
+    >>> bspPath = ["STKData", "Spice", "planets.bsp"]
+    >>> propagator.spice = os.path.join(installPath, *bspPath)  # Make sure this is a valid path
     >>> propagator.body_name = "MARS"
-    >>> 
-    >>> propagator.ephemeris_interval.set_implicit_interval(
-    >>>     root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
-    >>> )  # Link to scenario period
+    >>>
+    >>> intvl = root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+    >>> propagator.ephemeris_interval.set_implicit_interval(intvl)  # Link to scenario period
     >>> propagator.step = 60.0
     >>> propagator.propagate()
     """
@@ -46614,7 +46736,7 @@ class PropagatorSPICE(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSPICE)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -46716,7 +46838,7 @@ class PropagatorSPICE(IPropagator, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5709088581719726310, 10480182384597456043), PropagatorSPICE)
 agcls.AgTypeNameMap["PropagatorSPICE"] = PropagatorSPICE
 
-class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
+class PropagatorSTKExternal(IPropagator, SupportsDeleteCallback):
     """StkExternal propagator interface."""
 
     _num_methods = 15
@@ -46742,14 +46864,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, PropagatorStkExternal)
-    
+        return get_interface_property(attrname, PropagatorSTKExternal)
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def propagate(self) -> None:
         """Propagates the satellite's path using the specified time interval."""
-        return self._intf.invoke(PropagatorStkExternal._metadata, PropagatorStkExternal._propagate_metadata, )
+        return self._intf.invoke(PropagatorSTKExternal._metadata, PropagatorSTKExternal._propagate_metadata, )
 
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -46757,7 +46879,7 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def start_time(self) -> typing.Any:
         """Get the start time of ephemeris interval. Uses DateFormat Dimension."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_start_time_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_start_time_metadata)
 
     _get_stop_time_metadata = { "offset" : _get_stop_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -46765,7 +46887,7 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def stop_time(self) -> typing.Any:
         """Get the stop time of ephemeris interval. Uses DateFormat Dimension."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_stop_time_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_stop_time_metadata)
 
     _get_step_metadata = { "offset" : _get_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -46773,7 +46895,7 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def step(self) -> float:
         """Step size. Uses Time Dimension."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_step_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_step_metadata)
 
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -46781,14 +46903,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def filename(self) -> str:
         """Name of external file."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_filename_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_filename_metadata)
 
     _set_filename_metadata = { "offset" : _set_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @filename.setter
     def filename(self, value:str) -> None:
-        return self._intf.set_property(PropagatorStkExternal._metadata, PropagatorStkExternal._set_filename_metadata, value)
+        return self._intf.set_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._set_filename_metadata, value)
 
     _get_override_metadata = { "offset" : _get_override_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -46796,14 +46918,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def override(self) -> bool:
         """Opt whether to override times contained in the external file."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_override_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_override_metadata)
 
     _set_override_metadata = { "offset" : _set_override_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @override.setter
     def override(self, override:bool) -> None:
-        return self._intf.set_property(PropagatorStkExternal._metadata, PropagatorStkExternal._set_override_metadata, override)
+        return self._intf.set_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._set_override_metadata, override)
 
     _get_file_format_metadata = { "offset" : _get_file_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46811,14 +46933,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def file_format(self) -> "ExternalEphemerisFormatType":
         """Ephemeris file format."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_file_format_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_file_format_metadata)
 
     _set_file_format_metadata = { "offset" : _set_file_format_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(ExternalEphemerisFormatType),) }
     @file_format.setter
     def file_format(self, file_format:"ExternalEphemerisFormatType") -> None:
-        return self._intf.set_property(PropagatorStkExternal._metadata, PropagatorStkExternal._set_file_format_metadata, file_format)
+        return self._intf.set_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._set_file_format_metadata, file_format)
 
     _get_ephemeris_start_epoch_metadata = { "offset" : _get_ephemeris_start_epoch_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -46826,7 +46948,7 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def ephemeris_start_epoch(self) -> "ITimeToolInstantSmartEpoch":
         """If overriding the times contained in the external file, specify the time of the first ephemeris point."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_ephemeris_start_epoch_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_ephemeris_start_epoch_metadata)
 
     _get_limit_ephemeris_to_scenario_interval_metadata = { "offset" : _get_limit_ephemeris_to_scenario_interval_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -46834,14 +46956,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def limit_ephemeris_to_scenario_interval(self) -> bool:
         """Limit ephemeris for analysis to the Scenario Interval."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_limit_ephemeris_to_scenario_interval_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_limit_ephemeris_to_scenario_interval_metadata)
 
     _set_limit_ephemeris_to_scenario_interval_metadata = { "offset" : _set_limit_ephemeris_to_scenario_interval_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @limit_ephemeris_to_scenario_interval.setter
     def limit_ephemeris_to_scenario_interval(self, limit_ephem_witnin_scen_int:bool) -> None:
-        return self._intf.set_property(PropagatorStkExternal._metadata, PropagatorStkExternal._set_limit_ephemeris_to_scenario_interval_metadata, limit_ephem_witnin_scen_int)
+        return self._intf.set_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._set_limit_ephemeris_to_scenario_interval_metadata, limit_ephem_witnin_scen_int)
 
     _get_message_level_metadata = { "offset" : _get_message_level_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46849,14 +46971,14 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     @property
     def message_level(self) -> "ExternalFileMessageLevelType":
         """Message level used to report messages during file loading."""
-        return self._intf.get_property(PropagatorStkExternal._metadata, PropagatorStkExternal._get_message_level_metadata)
+        return self._intf.get_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._get_message_level_metadata)
 
     _set_message_level_metadata = { "offset" : _set_message_level_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(ExternalFileMessageLevelType),) }
     @message_level.setter
     def message_level(self, msg_level:"ExternalFileMessageLevelType") -> None:
-        return self._intf.set_property(PropagatorStkExternal._metadata, PropagatorStkExternal._set_message_level_metadata, msg_level)
+        return self._intf.set_property(PropagatorSTKExternal._metadata, PropagatorSTKExternal._set_message_level_metadata, msg_level)
 
     _property_names[start_time] = "start_time"
     _property_names[stop_time] = "stop_time"
@@ -46869,9 +46991,9 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
     _property_names[message_level] = "message_level"
 
     def __init__(self, source_object=None):
-        """Construct an object of type PropagatorStkExternal."""
+        """Construct an object of type PropagatorSTKExternal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, PropagatorStkExternal)
+        initialize_from_source_object(self, source_object, PropagatorSTKExternal)
         IPropagator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -46881,10 +47003,10 @@ class PropagatorStkExternal(IPropagator, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, PropagatorStkExternal, [PropagatorStkExternal, IPropagator])
+        set_class_attribute(self, attrname, value, PropagatorSTKExternal, [PropagatorSTKExternal, IPropagator])
 
-agcls.AgClassCatalog.add_catalog_entry((5265884709931486530, 9870109827576315030), PropagatorStkExternal)
-agcls.AgTypeNameMap["PropagatorStkExternal"] = PropagatorStkExternal
+agcls.AgClassCatalog.add_catalog_entry((5265884709931486530, 9870109827576315030), PropagatorSTKExternal)
+agcls.AgTypeNameMap["PropagatorSTKExternal"] = PropagatorSTKExternal
 
 class PropagatorTwoBody(IPropagator, SupportsDeleteCallback):
     """Two-body propagator interface."""
@@ -46908,7 +47030,7 @@ class PropagatorTwoBody(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorTwoBody)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -47039,7 +47161,7 @@ class PropagatorUserExternal(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorUserExternal)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -47215,7 +47337,7 @@ class LaunchVehicleInitialState(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleInitialState)
-    
+
     _get_launch_metadata = { "offset" : _get_launch_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -47293,7 +47415,7 @@ class PropagatorSimpleAscent(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSimpleAscent)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -47380,7 +47502,7 @@ class VehicleWaypointsElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleWaypointsElement)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -47544,7 +47666,7 @@ class VehicleWaypointsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -47650,7 +47772,7 @@ class LaunchVehicleLocationDetic(IVehicleLaunch, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleLocationDetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -47736,7 +47858,7 @@ class LaunchVehicleLocationCentric(IVehicleLaunch, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleLocationCentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -47822,7 +47944,7 @@ class VehicleImpactLocationDetic(IVehicleImpact, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleImpactLocationDetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -47908,7 +48030,7 @@ class VehicleImpactLocationCentric(IVehicleImpact, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleImpactLocationCentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -47990,7 +48112,7 @@ class LaunchVehicleControlFixedApogeeAltitude(IVehicleLaunchControl, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleControlFixedApogeeAltitude)
-    
+
     _get_apogee_altitude_metadata = { "offset" : _get_apogee_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -48040,7 +48162,7 @@ class LaunchVehicleControlFixedDeltaV(IVehicleLaunchControl, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleControlFixedDeltaV)
-    
+
     _get_delta_v_metadata = { "offset" : _get_delta_v_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -48090,7 +48212,7 @@ class LaunchVehicleControlFixedDeltaVMinimumEccentricity(IVehicleLaunchControl, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleControlFixedDeltaVMinimumEccentricity)
-    
+
     _get_delta_v_min_metadata = { "offset" : _get_delta_v_min_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -48140,7 +48262,7 @@ class LaunchVehicleControlFixedTimeOfFlight(IVehicleLaunchControl, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleControlFixedTimeOfFlight)
-    
+
     _get_time_of_flight_metadata = { "offset" : _get_time_of_flight_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -48194,7 +48316,7 @@ class VehicleImpactLocationLaunchAzEl(IVehicleImpactLocation, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleImpactLocationLaunchAzEl)
-    
+
     _get_delta_v_metadata = { "offset" : _get_delta_v_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -48284,7 +48406,7 @@ class VehicleImpactLocationPoint(IVehicleImpactLocation, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleImpactLocationPoint)
-    
+
     _get_impact_type_metadata = { "offset" : _get_impact_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleImpact),) }
@@ -48412,7 +48534,7 @@ class PropagatorBallistic(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorBallistic)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -48580,7 +48702,7 @@ class PropagatorGreatArc(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorGreatArc)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -48815,7 +48937,7 @@ class PropagatorSGP4SegmentCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -49008,7 +49130,7 @@ class PropagatorSGP4Segment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4Segment)
-    
+
     _get_ssc_number_metadata = { "offset" : _get_ssc_number_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -49302,7 +49424,7 @@ class PropagatorLOPThirdBodyGravity(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorLOPThirdBodyGravity)
-    
+
     _get_use_solar_gravity_metadata = { "offset" : _get_use_solar_gravity_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -49380,7 +49502,7 @@ class VehicleConsiderAnalysisCollectionElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleConsiderAnalysisCollectionElement)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleConsiderAnalysisType),) }
@@ -49560,7 +49682,7 @@ class VehicleConsiderAnalysisCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -49652,7 +49774,7 @@ class PropagatorSPICESegment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSPICESegment)
-    
+
     _get_segment_name_metadata = { "offset" : _get_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -49740,7 +49862,7 @@ class VehicleWaypointAltitudeReferenceTerrain(IVehicleWaypointAltitudeReference,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleWaypointAltitudeReferenceTerrain)
-    
+
     _get_granularity_metadata = { "offset" : _get_granularity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -49828,7 +49950,7 @@ class PropagatorSGP4LoadFile(IPropagatorSGP4LoadData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4LoadFile)
-    
+
     _get_file_metadata = { "offset" : _get_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -49905,7 +50027,7 @@ class PropagatorSGP4OnlineLoad(IPropagatorSGP4LoadData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4OnlineLoad)
-    
+
     _get_load_newest_metadata = { "offset" : _get_load_newest_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -50000,7 +50122,7 @@ class PropagatorSGP4OnlineAutoLoad(IPropagatorSGP4LoadData, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4OnlineAutoLoad)
-    
+
     _add_latest_segment_from_online_metadata = { "offset" : _add_latest_segment_from_online_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -50060,7 +50182,7 @@ class VehicleGroundEllipsesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -50141,7 +50263,7 @@ class VehicleGroundEllipsesCollection(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5536652972483659493, 14749338659371248274), VehicleGroundEllipsesCollection)
 agcls.AgTypeNameMap["VehicleGroundEllipsesCollection"] = VehicleGroundEllipsesCollection
 
-class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
+class Satellite(ISTKObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
     r"""
     Satellite properties.
 
@@ -50149,7 +50271,10 @@ class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsD
     --------
     Set satellite attitude external:
     >>> # Satellite satellite: Satellite object
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
     >>> satellite.attitude.external.load(
     >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
     >>> )
@@ -50171,7 +50296,7 @@ class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsD
     >>> basic.profile.rate = 6  # rev/sec
 
     Create a satellite (on the current scenario central body):
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
     """
 
@@ -50215,7 +50340,7 @@ class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Satellite)
-    
+
     _get_propagator_type_metadata = { "offset" : _get_propagator_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PropagatorType),) }
@@ -50484,12 +50609,12 @@ class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsD
         """Construct an object of type Satellite."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Satellite)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
     def __eq__(self, other):
@@ -50497,7 +50622,7 @@ class Satellite(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsD
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Satellite, [Satellite, IStkObject, ILifetimeInformation, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, Satellite, [Satellite, ISTKObject, ILifetimeInformation, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((5026068117036217179, 15727230682905955736), Satellite)
 agcls.AgTypeNameMap["Satellite"] = Satellite
@@ -50526,7 +50651,7 @@ class VehicleInertia(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleInertia)
-    
+
     _get_ixx_metadata = { "offset" : _get_ixx_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -50655,7 +50780,7 @@ class VehicleMassProperties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleMassProperties)
-    
+
     _get_mass_metadata = { "offset" : _get_mass_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -50712,7 +50837,7 @@ class VehicleBreakAngleBreakByLatitude(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleBreakAngleBreakByLatitude)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -50760,7 +50885,7 @@ class VehicleBreakAngleBreakByLongitude(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleBreakAngleBreakByLongitude)
-    
+
     _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -50811,7 +50936,7 @@ class VehicleDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleDefinition)
-    
+
     _get_break_angle_type_metadata = { "offset" : _get_break_angle_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleBreakAngleType),) }
@@ -50886,7 +51011,7 @@ class RepeatGroundTrackNumbering(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RepeatGroundTrackNumbering)
-    
+
     _get_first_pass_number_metadata = { "offset" : _get_first_pass_number_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -50951,7 +51076,7 @@ class PassBreakNumberingDateOfFirstPass(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PassBreakNumberingDateOfFirstPass)
-    
+
     _get_first_pass_number_metadata = { "offset" : _get_first_pass_number_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -51008,7 +51133,7 @@ class PassBreakNumberingFirstPassNumber(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PassBreakNumberingFirstPassNumber)
-    
+
     _get_first_pass_number_metadata = { "offset" : _get_first_pass_number_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -51064,7 +51189,7 @@ class PassBreak(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PassBreak)
-    
+
     _get_definition_metadata = { "offset" : _get_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -51184,7 +51309,7 @@ class VehicleCentralBodies(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleCentralBodies)
-    
+
     _get_available_central_bodies_metadata = { "offset" : _get_available_central_bodies_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -51293,7 +51418,7 @@ class SatelliteGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SatelliteGraphics)
-    
+
     _get_attributes_type_metadata = { "offset" : _get_attributes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DAttributeType),) }
@@ -51547,7 +51672,7 @@ class SatelliteGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SatelliteGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -51753,7 +51878,7 @@ class VehicleEllipseDataElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEllipseDataElement)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -51914,7 +52039,7 @@ class VehicleEllipseDataCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -51996,7 +52121,7 @@ class VehicleGroundEllipseElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGroundEllipseElement)
-    
+
     _get_ellipse_name_metadata = { "offset" : _get_ellipse_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -52050,7 +52175,10 @@ class SatelliteGraphics3DModel(IGraphics3DModel, SupportsDeleteCallback):
     >>> model = satellite.graphics_3d.model
     >>> model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     >>> orbitmarker = model.orbit_marker
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
     >>> orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
     >>> orbitmarker.marker_data.is_transparent = True
     >>> orbitmarker.pixel_size = 18
@@ -52077,7 +52205,7 @@ class SatelliteGraphics3DModel(IGraphics3DModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SatelliteGraphics3DModel)
-    
+
     _get_orbit_marker_metadata = { "offset" : _get_orbit_marker_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52208,7 +52336,7 @@ class VehicleEclipseBodies(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEclipseBodies)
-    
+
     _get_use_customized_list_metadata = { "offset" : _get_use_customized_list_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -52304,7 +52432,7 @@ class VehicleVector(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleVector)
-    
+
     _get_body_metadata = { "offset" : _get_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52372,7 +52500,7 @@ class RotationRateAndOffset(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RotationRateAndOffset)
-    
+
     _get_rate_metadata = { "offset" : _get_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -52438,7 +52566,7 @@ class AttitudeProfileAlignedAndConstrained(IVehicleAttitudeProfile, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileAlignedAndConstrained)
-    
+
     _get_aligned_vector_metadata = { "offset" : _get_aligned_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52507,7 +52635,7 @@ class AttitudeProfileInertial(IVehicleAttitudeProfile, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileInertial)
-    
+
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52550,7 +52678,7 @@ class AttitudeProfileConstraintOffset(IVehicleAttitudeProfile, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileConstraintOffset)
-    
+
     _get_constraint_offset_metadata = { "offset" : _get_constraint_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -52602,7 +52730,7 @@ class AttitudeProfileFixedInAxes(IVehicleAttitudeProfile, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileFixedInAxes)
-    
+
     _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52677,7 +52805,7 @@ class AttitudeProfilePrecessingSpin(IVehicleAttitudeProfile, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfilePrecessingSpin)
-    
+
     _get_body_metadata = { "offset" : _get_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52791,7 +52919,7 @@ class AttitudeProfileSpinAboutSettings(IVehicleAttitudeProfile, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileSpinAboutSettings)
-    
+
     _get_rate_metadata = { "offset" : _get_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -52871,7 +52999,7 @@ class AttitudeProfileSpinning(IVehicleAttitudeProfile, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileSpinning)
-    
+
     _get_body_metadata = { "offset" : _get_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -52964,7 +53092,7 @@ class AttitudeProfileAlignmentOffset(IVehicleAttitudeProfile, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileAlignmentOffset)
-    
+
     _get_alignment_offset_metadata = { "offset" : _get_alignment_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -53032,7 +53160,7 @@ class AttitudeScheduleTimesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -53125,7 +53253,7 @@ class VehicleTargetTimes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleTargetTimes)
-    
+
     _get_use_access_times_metadata = { "offset" : _get_use_access_times_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -53198,7 +53326,7 @@ class VehicleAttitudePointing(IVehiclePointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudePointing)
-    
+
     _get_advanced_metadata = { "offset" : _get_advanced_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -53252,7 +53380,7 @@ class VehicleDuration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleDuration)
-    
+
     _get_look_ahead_metadata = { "offset" : _get_look_ahead_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -53319,7 +53447,7 @@ class AttitudeStandardBasic(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeStandardBasic)
-    
+
     _get_profile_type_metadata = { "offset" : _get_profile_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeProfile),) }
@@ -53403,7 +53531,7 @@ class VehicleAttitudeExternal(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeExternal)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -53552,7 +53680,7 @@ class VehicleAttitudeRealTime(IVehicleAttitude, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeRealTime)
-    
+
     _get_look_ahead_method_metadata = { "offset" : _get_look_ahead_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleLookAheadMethod),) }
@@ -53678,7 +53806,7 @@ class AttitudeProfileCoordinatedTurn(IVehicleAttitudeProfile, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileCoordinatedTurn)
-    
+
     _get_time_offset_metadata = { "offset" : _get_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -53727,7 +53855,7 @@ class AttitudeProfileYawToNadir(IVehicleAttitudeProfile, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileYawToNadir)
-    
+
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -53782,7 +53910,7 @@ class VehicleAttitudeTrendingControlAviator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeTrendingControlAviator)
-    
+
     _get_compute_trends_metadata = { "offset" : _get_compute_trends_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -53925,7 +54053,7 @@ class AttitudeProfileAviator(IVehicleAttitudeProfile, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileAviator)
-    
+
     _get_trending_controls_metadata = { "offset" : _get_trending_controls_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -53977,7 +54105,7 @@ class VehicleTargetPointingElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleTargetPointingElement)
-    
+
     _get_target_metadata = { "offset" : _get_target_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -54125,7 +54253,7 @@ class VehicleTargetPointingCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -54238,7 +54366,7 @@ class AttitudeTorque(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeTorque)
-    
+
     _get_use_torque_file_metadata = { "offset" : _get_use_torque_file_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -54316,7 +54444,7 @@ class VehicleIntegratedAttitude(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleIntegratedAttitude)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -54479,7 +54607,7 @@ class AttitudeScheduleTimesElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeScheduleTimesElement)
-    
+
     _get_start_metadata = { "offset" : _get_start_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -54553,7 +54681,7 @@ class AttitudeStandardTrajectory(IVehicleAttitudeStandard, IVehicleAttitude, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeStandardTrajectory)
-    
+
     _get_basic_metadata = { "offset" : _get_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -54610,7 +54738,10 @@ class AttitudeStandardOrbit(IVehicleAttitudeStandard, IVehicleAttitude, Supports
     --------
     Set satellite attitude external:
     >>> # Satellite satellite: Satellite object
-    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> if os.name == "nt":
+    >>>     installPath = r"C:\Program Files\AGI\STK 12"
+    >>> else:
+    >>>     installPath = os.environ["STK_INSTALL_DIR"]
     >>> satellite.attitude.external.load(
     >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
     >>> )
@@ -54645,7 +54776,7 @@ class AttitudeStandardOrbit(IVehicleAttitudeStandard, IVehicleAttitude, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeStandardOrbit)
-    
+
     _get_basic_metadata = { "offset" : _get_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -54717,7 +54848,7 @@ class AttitudeStandardRoute(IVehicleAttitudeStandard, IVehicleAttitude, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeStandardRoute)
-    
+
     _get_basic_metadata = { "offset" : _get_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -54773,7 +54904,7 @@ class VehicleGraphics2DLine(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DLine)
-    
+
     _get_style_metadata = { "offset" : _get_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(LineStyle),) }
@@ -54854,7 +54985,7 @@ class VehicleGraphics2DIntervalsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -54936,7 +55067,7 @@ class VehicleGraphics2DAttributesAccess(IVehicleGraphics2DAttributes, IVehicleGr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesAccess)
-    
+
     _get_access_objects_metadata = { "offset" : _get_access_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -54992,13 +55123,13 @@ class VehicleGraphics2DAttributesCustom(IVehicleGraphics2DAttributes, IVehicleGr
     Examples
     --------
     Set 2D Display times to Custom and add intervals:
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> # Satellite satellite: Satellite object
     >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     >>> graphics = satellite.graphics
     >>> graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
     >>> graphics.attributes.default.show_graphics = False
-    >>> 
+    >>>
     >>> interval1 = graphics.attributes.intervals.add(0, 3600)
     >>> interval1.graphics_2d_attributes.show_graphics = True
     >>> interval1.graphics_2d_attributes.inherit = False
@@ -55006,7 +55137,7 @@ class VehicleGraphics2DAttributesCustom(IVehicleGraphics2DAttributes, IVehicleGr
     >>> interval1.graphics_2d_attributes.line.style = LineStyle.LONG_DASH
     >>> interval1.graphics_2d_attributes.color = Colors.Fuchsia
     >>> interval1.graphics_2d_attributes.marker_style = "X"
-    >>> 
+    >>>
     >>> interval2 = satellite.graphics.attributes.intervals.add(7200, 86400)
     >>> interval2.graphics_2d_attributes.show_graphics = True
     >>> interval2.graphics_2d_attributes.inherit = False
@@ -55030,7 +55161,7 @@ class VehicleGraphics2DAttributesCustom(IVehicleGraphics2DAttributes, IVehicleGr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesCustom)
-    
+
     _get_default_metadata = { "offset" : _get_default_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -55109,7 +55240,7 @@ class VehicleGraphics2DAttributesRealtime(IVehicleGraphics2DAttributes, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesRealtime)
-    
+
     _get_history_metadata = { "offset" : _get_history_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -55187,7 +55318,7 @@ class VehicleGraphics2DLightingElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DLightingElement)
-    
+
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -55306,7 +55437,7 @@ class VehicleGraphics2DLighting(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DLighting)
-    
+
     _get_sunlight_metadata = { "offset" : _get_sunlight_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -55413,7 +55544,7 @@ class VehicleGraphics2DElevationGroundElevation(IVehicleGraphics2DElevation, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DElevationGroundElevation)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -55463,7 +55594,7 @@ class VehicleGraphics2DElevationSwathHalfWidth(IVehicleGraphics2DElevation, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DElevationSwathHalfWidth)
-    
+
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -55513,7 +55644,7 @@ class VehicleGraphics2DElevationVehicleHalfAngle(IVehicleGraphics2DElevation, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DElevationVehicleHalfAngle)
-    
+
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -55580,7 +55711,7 @@ class VehicleGraphics2DSwath(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DSwath)
-    
+
     _get_elevation_type_metadata = { "offset" : _get_elevation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DElevation),) }
@@ -55752,7 +55883,7 @@ class VehicleGraphics2DRoutePassData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DRoutePassData)
-    
+
     _get_route_metadata = { "offset" : _get_route_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -55804,7 +55935,7 @@ class VehicleGraphics2DLeadTrailData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DLeadTrailData)
-    
+
     _get_lead_data_type_metadata = { "offset" : _get_lead_data_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(LeadTrailData),) }
@@ -55966,7 +56097,7 @@ class VehicleGraphics2DOrbitPassData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DOrbitPassData)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -56016,7 +56147,7 @@ class VehicleGraphics2DTrajectoryPassData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTrajectoryPassData)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -56072,7 +56203,7 @@ class VehicleGraphics2DTrajectoryResolution(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTrajectoryResolution)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -56182,7 +56313,7 @@ class VehicleGraphics2DGroundEllipsesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -56255,7 +56386,7 @@ class VehicleGraphics2DTimeEventTypeLine(IVehicleGraphics2DTimeEventType, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeEventTypeLine)
-    
+
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -56415,7 +56546,7 @@ class VehicleGraphics2DTimeEventTypeMarker(IVehicleGraphics2DTimeEventType, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeEventTypeMarker)
-    
+
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -56517,7 +56648,7 @@ class VehicleGraphics2DTimeEventTypeText(IVehicleGraphics2DTimeEventType, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeEventTypeText)
-    
+
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -56661,7 +56792,7 @@ class VehicleGraphics2DTimeEventsElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeEventsElement)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -56767,7 +56898,7 @@ class VehicleGraphics2DTimeEventsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -56850,7 +56981,7 @@ class VehicleGraphics2DPassShowPasses(IVehicleGraphics2DPass, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DPassShowPasses)
-    
+
     _get_first_pass_metadata = { "offset" : _get_first_pass_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -56925,7 +57056,7 @@ class VehicleGraphics2DPasses(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DPasses)
-    
+
     _get_pass_type_metadata = { "offset" : _get_pass_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DPass),) }
@@ -57054,7 +57185,7 @@ class VehicleGraphics2DSAA(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DSAA)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -57180,7 +57311,7 @@ class VehicleGraphics2DElevationsElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DElevationsElement)
-    
+
     _get_elevation_metadata = { "offset" : _get_elevation_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -57358,7 +57489,7 @@ class VehicleGraphics2DElevationsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -57469,7 +57600,7 @@ class VehicleGraphics2DElevationContours(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DElevationContours)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -57592,7 +57723,7 @@ class VehicleGraphics2DRouteResolution(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DRouteResolution)
-    
+
     _get_route_metadata = { "offset" : _get_route_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -57667,7 +57798,7 @@ class VehicleGraphics2DWaypointMarkersElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DWaypointMarkersElement)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -57818,7 +57949,7 @@ class VehicleGraphics2DWaypointMarkersCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -57881,7 +58012,7 @@ class VehicleGraphics2DWaypointMarker(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DWaypointMarker)
-    
+
     _get_show_waypoint_markers_metadata = { "offset" : _get_show_waypoint_markers_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -57957,7 +58088,7 @@ class VehicleGraphics2DInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DInterval)
-    
+
     _get_graphics_2d_attributes_metadata = { "offset" : _get_graphics_2d_attributes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -58045,7 +58176,7 @@ class VehicleGraphics2DPassResolution(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DPassResolution)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -58154,7 +58285,7 @@ class VehicleGraphics2DGroundEllipsesElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DGroundEllipsesElement)
-    
+
     _get_ellipse_set_name_metadata = { "offset" : _get_ellipse_set_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -58311,7 +58442,7 @@ class VehicleGraphics2DAttributesRoute(IVehicleGraphics2DAttributesBasic, IVehic
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesRoute)
-    
+
     _get_show_route_metadata = { "offset" : _get_show_route_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -58403,7 +58534,7 @@ class VehicleGraphics2DAttributesTrajectory(IVehicleGraphics2DAttributesBasic, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesTrajectory)
-    
+
     _get_show_ground_track_metadata = { "offset" : _get_show_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -58527,7 +58658,7 @@ class VehicleGraphics2DAttributesOrbit(IVehicleGraphics2DAttributesBasic, IVehic
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesOrbit)
-    
+
     _get_show_ground_track_metadata = { "offset" : _get_show_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -58645,7 +58776,7 @@ class Graphics3DPointableElementsElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DPointableElementsElement)
-    
+
     _get_pointing_name_metadata = { "offset" : _get_pointing_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -58729,7 +58860,7 @@ class Graphics3DPointableElementsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -58820,7 +58951,7 @@ class VehicleGraphics3DSystemsElement(IVehicleGraphics3DSystemsElementBase, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSystemsElement)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -58895,7 +59026,7 @@ class VehicleGraphics3DSystemsSpecialElement(IVehicleGraphics3DSystemsElementBas
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSystemsSpecialElement)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -58992,7 +59123,7 @@ class VehicleGraphics3DSystemsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -59132,7 +59263,7 @@ class VehicleGraphics3DEllipsoid(IVehicleGraphics3DProximityAreaObject, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DEllipsoid)
-    
+
     _get_x_semiaxis_length_metadata = { "offset" : _get_x_semiaxis_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -59352,7 +59483,7 @@ class VehicleGraphics3DControlBox(IVehicleGraphics3DProximityAreaObject, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DControlBox)
-    
+
     _get_use_translucency_metadata = { "offset" : _get_use_translucency_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -59547,7 +59678,7 @@ class VehicleGraphics3DBearingBox(IVehicleGraphics3DProximityAreaObject, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBearingBox)
-    
+
     _get_bearing_metadata = { "offset" : _get_bearing_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -59735,7 +59866,7 @@ class VehicleGraphics3DBearingEllipse(IVehicleGraphics3DProximityAreaObject, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBearingEllipse)
-    
+
     _get_bearing_metadata = { "offset" : _get_bearing_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -59879,7 +60010,7 @@ class VehicleGraphics3DLineOfBearing(IVehicleGraphics3DProximityAreaObject, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DLineOfBearing)
-    
+
     _get_bearing_metadata = { "offset" : _get_bearing_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -60052,7 +60183,7 @@ class VehicleGraphics3DGeoBox(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DGeoBox)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -60191,7 +60322,7 @@ class VehicleGraphics3DRouteProximity(IVehicleGraphics3DProximity, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DRouteProximity)
-    
+
     _get_control_box_metadata = { "offset" : _get_control_box_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -60284,7 +60415,7 @@ class VehicleGraphics3DOrbitProximity(IVehicleGraphics3DProximity, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DOrbitProximity)
-    
+
     _get_geo_box_metadata = { "offset" : _get_geo_box_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -60389,7 +60520,7 @@ class VehicleGraphics3DElevationContours(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DElevationContours)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -60501,7 +60632,7 @@ class VehicleGraphics3DSAA(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSAA)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -60549,7 +60680,7 @@ class VehicleGraphics3DSigmaScaleProbability(IVehicleGraphics3DSigmaScale, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSigmaScaleProbability)
-    
+
     _get_probability_metadata = { "offset" : _get_probability_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -60599,7 +60730,7 @@ class VehicleGraphics3DSigmaScaleScale(IVehicleGraphics3DSigmaScale, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSigmaScaleScale)
-    
+
     _get_scale_value_metadata = { "offset" : _get_scale_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -60655,7 +60786,7 @@ class VehicleGraphics3DDefaultAttributes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DDefaultAttributes)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -60761,7 +60892,7 @@ class VehicleGraphics3DIntervalsElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DIntervalsElement)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -60906,7 +61037,7 @@ class VehicleGraphics3DIntervalsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -60995,7 +61126,7 @@ class VehicleGraphics3DAttributesBasic(IVehicleGraphics3DAttributes, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DAttributesBasic)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -61109,7 +61240,7 @@ class VehicleGraphics3DAttributesIntervals(IVehicleGraphics3DAttributes, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DAttributesIntervals)
-    
+
     _get_default_attributes_metadata = { "offset" : _get_default_attributes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -61163,7 +61294,7 @@ class VehicleGraphics3DSize(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DSize)
-    
+
     _get_scale_to_attitude_sphere_metadata = { "offset" : _get_scale_to_attitude_sphere_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -61239,7 +61370,7 @@ class VehicleGraphics3DCovariancePointingContour(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DCovariancePointingContour)
-    
+
     _get_sigma_scale_type_metadata = { "offset" : _get_sigma_scale_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics3DSigmaScale),) }
@@ -61429,7 +61560,7 @@ class VehicleGraphics3DOrbitPassData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DOrbitPassData)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -61480,7 +61611,7 @@ class VehicleGraphics3DOrbitTrackData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DOrbitTrackData)
-    
+
     _get_inherit_from_2d_metadata = { "offset" : _get_inherit_from_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -61539,7 +61670,7 @@ class VehicleGraphics3DTickDataLine(IVehicleGraphics3DTickData, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTickDataLine)
-    
+
     _get_length_metadata = { "offset" : _get_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -61605,7 +61736,7 @@ class VehicleGraphics3DTickDataPoint(IVehicleGraphics3DTickData, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTickDataPoint)
-    
+
     _get_size_metadata = { "offset" : _get_size_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -61657,7 +61788,7 @@ class VehicleGraphics3DOrbitTickMarks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DOrbitTickMarks)
-    
+
     _get_time_between_ticks_metadata = { "offset" : _get_time_between_ticks_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -61723,7 +61854,7 @@ class VehicleGraphics3DPass(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DPass)
-    
+
     _get_track_data_metadata = { "offset" : _get_track_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -61781,7 +61912,7 @@ class VehicleGraphics3DCovariance(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DCovariance)
-    
+
     _get_sigma_scale_type_metadata = { "offset" : _get_sigma_scale_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics3DSigmaScale),) }
@@ -61900,7 +62031,7 @@ class VehicleGraphics3DVelocityCovariance(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DVelocityCovariance)
-    
+
     _get_scale_metadata = { "offset" : _get_scale_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -61993,7 +62124,7 @@ class VehicleGraphics3DTrajectoryProximity(IVehicleGraphics3DProximity, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectoryProximity)
-    
+
     _get_control_box_metadata = { "offset" : _get_control_box_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -62081,7 +62212,7 @@ class VehicleGraphics3DTrajectory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectory)
-    
+
     _get_track_data_metadata = { "offset" : _get_track_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -62132,7 +62263,7 @@ class VehicleGraphics3DTrajectoryTrackData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectoryTrackData)
-    
+
     _get_inherit_from_2d_metadata = { "offset" : _get_inherit_from_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -62189,7 +62320,7 @@ class VehicleGraphics3DTrajectoryPassData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectoryPassData)
-    
+
     _get_ground_track_metadata = { "offset" : _get_ground_track_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -62248,7 +62379,7 @@ class VehicleGraphics3DLeadTrailData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DLeadTrailData)
-    
+
     _get_lead_data_type_metadata = { "offset" : _get_lead_data_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(LeadTrailData),) }
@@ -62373,7 +62504,7 @@ class VehicleGraphics3DTrajectoryTickMarks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectoryTickMarks)
-    
+
     _get_time_between_ticks_metadata = { "offset" : _get_time_between_ticks_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -62444,7 +62575,7 @@ class VehicleGraphics3DPathTickMarks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DPathTickMarks)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -62543,7 +62674,7 @@ class VehicleGraphics3DWaypointMarkersElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DWaypointMarkersElement)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -62685,7 +62816,7 @@ class VehicleGraphics3DWaypointMarkersCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -62747,7 +62878,7 @@ class VehicleGraphics3DRoute(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DRoute)
-    
+
     _get_inherit_track_data_from_2d_metadata = { "offset" : _get_inherit_track_data_from_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -62815,7 +62946,7 @@ class Graphics3DModelPointing(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelPointing)
-    
+
     _get_pointable_elements_metadata = { "offset" : _get_pointable_elements_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -62879,7 +63010,7 @@ class Graphics3DLabelSwapDistance(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DLabelSwapDistance)
-    
+
     _get_distance_value_metadata = { "offset" : _get_distance_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -62952,7 +63083,7 @@ class VehicleGraphics3DDropLinePositionItem(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DDropLinePositionItem)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics3DDropLineType),) }
@@ -63087,7 +63218,7 @@ class VehicleGraphics3DDropLinePositionItemCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -63158,7 +63289,7 @@ class VehicleGraphics3DDropLinePathItem(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DDropLinePathItem)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics3DDropLineType),) }
@@ -63322,7 +63453,7 @@ class VehicleGraphics3DDropLinePathItemCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -63382,7 +63513,7 @@ class VehicleGraphics3DOrbitDropLines(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DOrbitDropLines)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -63432,7 +63563,7 @@ class VehicleGraphics3DRouteDropLines(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DRouteDropLines)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -63482,7 +63613,7 @@ class VehicleGraphics3DTrajectoryDropLines(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DTrajectoryDropLines)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -63539,7 +63670,7 @@ class VehicleGraphics3DModelTrajectory(IGraphics3DModel, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DModelTrajectory)
-    
+
     _get_trajectory_marker_metadata = { "offset" : _get_trajectory_marker_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -63654,7 +63785,7 @@ class VehicleGraphics3DModelRoute(IGraphics3DModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DModelRoute)
-    
+
     _get_route_marker_metadata = { "offset" : _get_route_marker_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -63761,7 +63892,7 @@ class VehicleGraphics3DBPlaneTemplateDisplayElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneTemplateDisplayElement)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -63880,7 +64011,7 @@ class VehicleGraphics3DBPlaneTemplateDisplayCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -63955,7 +64086,7 @@ class VehicleGraphics3DBPlaneTemplate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneTemplate)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -64143,7 +64274,7 @@ class VehicleGraphics3DBPlaneTemplatesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -64230,7 +64361,7 @@ class VehicleGraphics3DBPlaneEvent(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneEvent)
-    
+
     _get_event_epoch_metadata = { "offset" : _get_event_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -64334,7 +64465,7 @@ class VehicleGraphics3DBPlanePoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlanePoint)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -64448,7 +64579,7 @@ class VehicleGraphics3DBPlaneTargetPointPositionCartesian(SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneTargetPointPositionCartesian)
-    
+
     _get_b_dot_t_metadata = { "offset" : _get_b_dot_t_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -64514,7 +64645,7 @@ class VehicleGraphics3DBPlaneTargetPointPositionPolar(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneTargetPointPositionPolar)
-    
+
     _get_b_magnitude_metadata = { "offset" : _get_b_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -64585,7 +64716,7 @@ class VehicleGraphics3DBPlaneTargetPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneTargetPoint)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -64713,7 +64844,7 @@ class VehicleGraphics3DBPlaneInstance(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlaneInstance)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -64967,7 +65098,7 @@ class VehicleGraphics3DBPlaneInstancesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -65069,7 +65200,7 @@ class VehicleGraphics3DBPlanePointCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -65182,7 +65313,7 @@ class VehicleGraphics3DBPlanes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics3DBPlanes)
-    
+
     _get_templates_metadata = { "offset" : _get_templates_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -65218,7 +65349,7 @@ class VehicleGraphics3DBPlanes(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5422204468896534106, 5666005448485290428), VehicleGraphics3DBPlanes)
 agcls.AgTypeNameMap["VehicleGraphics3DBPlanes"] = VehicleGraphics3DBPlanes
 
-class LaunchVehicle(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
+class LaunchVehicle(ISTKObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
     """Interface for a launch vehicle object."""
 
     _num_methods = 30
@@ -65260,7 +65391,7 @@ class LaunchVehicle(IStkObject, ILifetimeInformation, IProvideSpatialInfo, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicle)
-    
+
     _get_trajectory_type_metadata = { "offset" : _get_trajectory_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PropagatorType),) }
@@ -65520,12 +65651,12 @@ class LaunchVehicle(IStkObject, ILifetimeInformation, IProvideSpatialInfo, Suppo
         """Construct an object of type LaunchVehicle."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, LaunchVehicle)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
     def __eq__(self, other):
@@ -65533,7 +65664,7 @@ class LaunchVehicle(IStkObject, ILifetimeInformation, IProvideSpatialInfo, Suppo
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, LaunchVehicle, [LaunchVehicle, IStkObject, ILifetimeInformation, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, LaunchVehicle, [LaunchVehicle, ISTKObject, ILifetimeInformation, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((4691626790856323690, 7325369952176734885), LaunchVehicle)
 agcls.AgTypeNameMap["LaunchVehicle"] = LaunchVehicle
@@ -65573,7 +65704,7 @@ class LaunchVehicleGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleGraphics)
-    
+
     _get_attributes_type_metadata = { "offset" : _get_attributes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DAttributeType),) }
@@ -65815,7 +65946,7 @@ class LaunchVehicleGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -65986,7 +66117,7 @@ class LaunchVehicleGraphics3D(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5752845032800491566, 13963708048607924653), LaunchVehicleGraphics3D)
 agcls.AgTypeNameMap["LaunchVehicleGraphics3D"] = LaunchVehicleGraphics3D
 
-class GroundVehicle(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
+class GroundVehicle(ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
     """
     Interface for a ground vehicle object.
 
@@ -66057,7 +66188,7 @@ class GroundVehicle(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvide
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GroundVehicle)
-    
+
     _get_graphics_metadata = { "offset" : _get_graphics_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -66176,13 +66307,13 @@ class GroundVehicle(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvide
         """Construct an object of type GroundVehicle."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, GroundVehicle)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IGreatArcVehicle.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IGreatArcVehicle._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
@@ -66191,7 +66322,7 @@ class GroundVehicle(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvide
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, GroundVehicle, [GroundVehicle, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, GroundVehicle, [GroundVehicle, ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((4752542261445465196, 4193037391687631031), GroundVehicle)
 agcls.AgTypeNameMap["GroundVehicle"] = GroundVehicle
@@ -66209,7 +66340,7 @@ class GroundVehicleGraphics(IGreatArcGraphics, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GroundVehicleGraphics)
-    
+
     _get_radar_cross_section_metadata = { "offset" : _get_radar_cross_section_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -66252,7 +66383,7 @@ class GroundVehicleGraphics3D(IGreatArcGraphics3D, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GroundVehicleGraphics3D)
-    
+
     _get_vapor_trail_metadata = { "offset" : _get_vapor_trail_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -66290,7 +66421,7 @@ class GroundVehicleGraphics3D(IGreatArcGraphics3D, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4702857147994747329, 7718913021377763758), GroundVehicleGraphics3D)
 agcls.AgTypeNameMap["GroundVehicleGraphics3D"] = GroundVehicleGraphics3D
 
-class Missile(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
+class Missile(ISTKObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback):
     """
     Interface for a missile object.
 
@@ -66352,7 +66483,7 @@ class Missile(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Missile)
-    
+
     _get_trajectory_type_metadata = { "offset" : _get_trajectory_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PropagatorType),) }
@@ -66621,12 +66752,12 @@ class Missile(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDel
         """Construct an object of type Missile."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Missile)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
     def __eq__(self, other):
@@ -66634,7 +66765,7 @@ class Missile(IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDel
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Missile, [Missile, IStkObject, ILifetimeInformation, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, Missile, [Missile, ISTKObject, ILifetimeInformation, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((4766074596194277032, 2020058068808268728), Missile)
 agcls.AgTypeNameMap["Missile"] = Missile
@@ -66672,7 +66803,7 @@ class MissileGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MissileGraphics)
-    
+
     _get_attributes_type_metadata = { "offset" : _get_attributes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGraphics2DAttributeType),) }
@@ -66898,7 +67029,7 @@ class MissileGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MissileGraphics3D)
-    
+
     _get_model_metadata = { "offset" : _get_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67069,7 +67200,7 @@ class MissileGraphics3D(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4710858342373905347, 199183409367128718), MissileGraphics3D)
 agcls.AgTypeNameMap["MissileGraphics3D"] = MissileGraphics3D
 
-class Aircraft(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
+class Aircraft(ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
     """
     Interface for aircraft object.
 
@@ -67110,7 +67241,7 @@ class Aircraft(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpati
     >>> route.propagate()
 
     Create a New Aircraft (on the current scenario central body):
-    >>> # StkObjectRoot root: STK Object Model root
+    >>> # STKObjectRoot root: STK Object Model root
     >>> aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
     """
 
@@ -67136,7 +67267,7 @@ class Aircraft(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpati
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Aircraft)
-    
+
     _get_graphics_metadata = { "offset" : _get_graphics_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67255,13 +67386,13 @@ class Aircraft(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpati
         """Construct an object of type Aircraft."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Aircraft)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IGreatArcVehicle.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IGreatArcVehicle._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
@@ -67270,7 +67401,7 @@ class Aircraft(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpati
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Aircraft, [Aircraft, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, Aircraft, [Aircraft, ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((5598803082448801060, 4622941036067221656), Aircraft)
 agcls.AgTypeNameMap["Aircraft"] = Aircraft
@@ -67290,7 +67421,7 @@ class AircraftGraphics(IGreatArcGraphics, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AircraftGraphics)
-    
+
     _get_elevation_contours_metadata = { "offset" : _get_elevation_contours_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67355,7 +67486,7 @@ class AircraftGraphics3D(IGreatArcGraphics3D, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AircraftGraphics3D)
-    
+
     _get_proximity_metadata = { "offset" : _get_proximity_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67429,7 +67560,7 @@ class AircraftGraphics3D(IGreatArcGraphics3D, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5736545164130287225, 5559785758759827386), AircraftGraphics3D)
 agcls.AgTypeNameMap["AircraftGraphics3D"] = AircraftGraphics3D
 
-class Ship(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
+class Ship(ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback):
     """Interface for a ship object."""
 
     _num_methods = 13
@@ -67454,7 +67585,7 @@ class Ship(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialIn
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Ship)
-    
+
     _get_graphics_metadata = { "offset" : _get_graphics_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67573,13 +67704,13 @@ class Ship(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialIn
         """Construct an object of type Ship."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Ship)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IGreatArcVehicle.__init__(self, source_object)
         IProvideSpatialInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IGreatArcVehicle._private_init(self, intf)
         IProvideSpatialInfo._private_init(self, intf)
@@ -67588,7 +67719,7 @@ class Ship(IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialIn
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Ship, [Ship, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
+        set_class_attribute(self, attrname, value, Ship, [Ship, ISTKObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo])
 
 agcls.AgClassCatalog.add_catalog_entry((4723299326596551303, 17883237041117346177), Ship)
 agcls.AgTypeNameMap["Ship"] = Ship
@@ -67606,7 +67737,7 @@ class ShipGraphics(IGreatArcGraphics, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ShipGraphics)
-    
+
     _get_radar_cross_section_metadata = { "offset" : _get_radar_cross_section_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67651,7 +67782,7 @@ class ShipGraphics3D(IGreatArcGraphics3D, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ShipGraphics3D)
-    
+
     _get_proximity_metadata = { "offset" : _get_proximity_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -67728,7 +67859,7 @@ class MTOTrackPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOTrackPoint)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -67858,7 +67989,7 @@ class MTOTrackPointCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -67987,7 +68118,7 @@ class MTOTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOTrack)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -68100,7 +68231,7 @@ class MTOTrackCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -68283,7 +68414,7 @@ class MTODefaultTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTODefaultTrack)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -68357,7 +68488,7 @@ class MTOGlobalTrackOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGlobalTrackOptions)
-    
+
     _get_save_track_data_metadata = { "offset" : _get_save_track_data_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -68471,7 +68602,7 @@ class MTOGlobalTrackOptions(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5175384918120152988, 8666662479702656650), MTOGlobalTrackOptions)
 agcls.AgTypeNameMap["MTOGlobalTrackOptions"] = MTOGlobalTrackOptions
 
-class MTO(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class MTO(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     r"""
     Multi-Track Object (MTO) interface.
 
@@ -68490,14 +68621,14 @@ class MTO(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     Create a New MTO (on the current scenario central body):
     >>> # Scenario scenario: Scenario object
     >>> mto = scenario.children.new(STKObjectType.MTO, "MyMTO")
-    >>> 
+    >>>
     >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
-    >>> 
+    >>>
     >>> mtoTimes = [[0], [7200]]
     >>> mtoLats = [[36.77], [34.80]]
     >>> mtoLons = [[-77.25], [-78.37]]
     >>> mtoAlts = [[5], [5]]
-    >>> 
+    >>>
     >>> track1 = mto.tracks.add_track(1, mtoTimes, mtoLats, mtoLons, mtoAlts)
     >>> track1.interpolate = True
     >>> # Change the color of the track
@@ -68519,7 +68650,7 @@ class MTO(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTO)
-    
+
     _get_tracks_metadata = { "offset" : _get_tracks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -68579,18 +68710,18 @@ class MTO(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type MTO."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, MTO)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MTO, [MTO, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, MTO, [MTO, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((4911213523710209637, 15651180728512624556), MTO)
 agcls.AgTypeNameMap["MTO"] = MTO
@@ -68613,7 +68744,7 @@ class MTOGraphics2DMarker(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DMarker)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -68703,7 +68834,7 @@ class MTOGraphics2DLine(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DLine)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -68837,7 +68968,7 @@ class MTOGraphics2DFadeTimes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DFadeTimes)
-    
+
     _get_use_pre_fade_metadata = { "offset" : _get_use_pre_fade_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -68937,7 +69068,7 @@ class MTOGraphics2DLeadTrailTimes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DLeadTrailTimes)
-    
+
     _get_use_lead_trail_metadata = { "offset" : _get_use_lead_trail_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69029,7 +69160,7 @@ class MTOGraphics2DTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DTrack)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69196,7 +69327,7 @@ class MTOGraphics2DTrackCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -69290,7 +69421,7 @@ class MTODefaultGraphics2DTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTODefaultGraphics2DTrack)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69431,7 +69562,7 @@ class MTOGraphics2DGlobalTrackOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics2DGlobalTrackOptions)
-    
+
     _get_show_tracks_metadata = { "offset" : _get_show_tracks_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69482,7 +69613,7 @@ class MTOGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics)
-    
+
     _get_tracks_metadata = { "offset" : _get_tracks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -69571,7 +69702,7 @@ class MTOGraphics3DMarker(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DMarker)
-    
+
     _get_pixel_size_metadata = { "offset" : _get_pixel_size_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -69733,7 +69864,7 @@ class MTOGraphics3DPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DPoint)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69807,7 +69938,7 @@ class MTOGraphics3DModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DModel)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -69953,7 +70084,7 @@ class MTOGraphics3DSwapDistances(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DSwapDistances)
-    
+
     _get_use_swap_distances_metadata = { "offset" : _get_use_swap_distances_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -70129,7 +70260,7 @@ class MTOGraphics3DDropLines(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DDropLines)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -70189,7 +70320,7 @@ class MTOGraphics3DTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DTrack)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -70342,7 +70473,7 @@ class MTOGraphics3DTrackCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -70434,7 +70565,7 @@ class MTODefaultGraphics3DTrack(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTODefaultGraphics3DTrack)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -70571,7 +70702,7 @@ class MTOGraphics3DGlobalTrackOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DGlobalTrackOptions)
-    
+
     _get_show_tracks_metadata = { "offset" : _get_show_tracks_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -70700,7 +70831,7 @@ class MTOGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3D)
-    
+
     _get_tracks_metadata = { "offset" : _get_tracks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -70763,7 +70894,7 @@ class LatitudeLongitudeAltitudeCentric(ILatitudeLongitudeAltitudePosition, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LatitudeLongitudeAltitudeCentric)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -70849,7 +70980,7 @@ class LatitudeLongitudeAltitudeDetic(ILatitudeLongitudeAltitudePosition, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LatitudeLongitudeAltitudeDetic)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -70933,7 +71064,7 @@ class LineTargetPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LineTargetPoint)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -71016,7 +71147,7 @@ class LineTargetPointCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
@@ -71099,7 +71230,7 @@ class LineTargetPointCollection(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4854750783884093405, 8895235442674770835), LineTargetPointCollection)
 agcls.AgTypeNameMap["LineTargetPointCollection"] = LineTargetPointCollection
 
-class LineTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class LineTarget(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Line Target Path properties.
 
@@ -71127,7 +71258,7 @@ class LineTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LineTarget)
-    
+
     _get_points_metadata = { "offset" : _get_points_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -71185,12 +71316,12 @@ class LineTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
         """Construct an object of type LineTarget."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, LineTarget)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -71198,7 +71329,7 @@ class LineTarget(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteC
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, LineTarget, [LineTarget, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, LineTarget, [LineTarget, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5067889483577199103, 7082124603251270807), LineTarget)
 agcls.AgTypeNameMap["LineTarget"] = LineTarget
@@ -71240,7 +71371,7 @@ class LineTargetGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LineTargetGraphics)
-    
+
     _get_label_name_metadata = { "offset" : _get_label_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -71477,7 +71608,7 @@ class LineTargetGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LineTargetGraphics3D)
-    
+
     _get_enable_label_max_viewing_dist_metadata = { "offset" : _get_enable_label_max_viewing_dist_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -71545,7 +71676,7 @@ class LineTargetGraphics3D(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4930310644787000875, 5363000971999462290), LineTargetGraphics3D)
 agcls.AgTypeNameMap["LineTargetGraphics3D"] = LineTargetGraphics3D
 
-class CoverageDefinition(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class CoverageDefinition(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Coverage definition properties.
 
@@ -71583,7 +71714,7 @@ class CoverageDefinition(IStkObject, ILifetimeInformation, SupportsDeleteCallbac
     >>> Res.latitude_longitude = 0.5  # deg
     >>> # Set the satellite as the Asset
     >>> coverage.asset_list.add("Satellite/MySatellite")
-    >>> 
+    >>>
     >>> # Turn off Show Grid Points
     >>> coverage.graphics.static.show_points = False
     """
@@ -71609,7 +71740,7 @@ class CoverageDefinition(IStkObject, ILifetimeInformation, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageDefinition)
-    
+
     _get_grid_metadata = { "offset" : _get_grid_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -71715,18 +71846,18 @@ class CoverageDefinition(IStkObject, ILifetimeInformation, SupportsDeleteCallbac
         """Construct an object of type CoverageDefinition."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, CoverageDefinition)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CoverageDefinition, [CoverageDefinition, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, CoverageDefinition, [CoverageDefinition, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5684703833078156536, 14188198625474049678), CoverageDefinition)
 agcls.AgTypeNameMap["CoverageDefinition"] = CoverageDefinition
@@ -71751,7 +71882,7 @@ class CoverageBoundsCustomRegions(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsCustomRegions)
-    
+
     _get_region_files_metadata = { "offset" : _get_region_files_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -71853,7 +71984,7 @@ class CoverageBoundsCustomBoundary(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsCustomBoundary)
-    
+
     _get_region_files_metadata = { "offset" : _get_region_files_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -71903,7 +72034,7 @@ class CoverageBoundsGlobal(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsGlobal)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type CoverageBoundsGlobal."""
@@ -71939,7 +72070,7 @@ class CoverageBoundsLatitude(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsLatitude)
-    
+
     _get_minimum_latitude_metadata = { "offset" : _get_minimum_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -72009,7 +72140,7 @@ class CoverageBoundsLatitudeLine(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsLatitudeLine)
-    
+
     _get_start_longitude_metadata = { "offset" : _get_start_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -72095,7 +72226,7 @@ class CoverageBoundsLongitudeLine(ICoverageBounds, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsLongitudeLine)
-    
+
     _get_minimum_latitude_metadata = { "offset" : _get_minimum_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -72183,7 +72314,7 @@ class CoverageBoundsLatitudeLongitudeRegion(ICoverageBounds, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageBoundsLatitudeLongitudeRegion)
-    
+
     _get_minimum_latitude_metadata = { "offset" : _get_minimum_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -72285,7 +72416,7 @@ class CoverageGrid(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGrid)
-    
+
     _get_bounds_type_metadata = { "offset" : _get_bounds_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoverageBounds),) }
@@ -72376,7 +72507,7 @@ class CoverageAssetListElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageAssetListElement)
-    
+
     _get_asset_status_metadata = { "offset" : _get_asset_status_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoverageAssetStatus),) }
@@ -72519,7 +72650,7 @@ class CoverageAssetListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -72655,7 +72786,7 @@ class CoverageRegionFilesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -72762,7 +72893,7 @@ class CoverageAreaTargetsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -72876,7 +73007,7 @@ class CoverageEllipseCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -72962,7 +73093,7 @@ class CoverageEllipse(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageEllipse)
-    
+
     _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -73012,7 +73143,7 @@ class CoverageEllipse(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def center(self) -> "IStkObject":
+    def center(self) -> "ISTKObject":
         """Center object."""
         return self._intf.get_property(CoverageEllipse._metadata, CoverageEllipse._get_center_metadata)
 
@@ -73068,7 +73199,7 @@ class CoverageLatLonBoxCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -73152,7 +73283,7 @@ class CoverageLatLonBox(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageLatLonBox)
-    
+
     _get_longitude_span_metadata = { "offset" : _get_longitude_span_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -73187,7 +73318,7 @@ class CoverageLatLonBox(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def center(self) -> "IStkObject":
+    def center(self) -> "ISTKObject":
         """Center object."""
         return self._intf.get_property(CoverageLatLonBox._metadata, CoverageLatLonBox._get_center_metadata)
 
@@ -73246,7 +73377,7 @@ class CoveragePointDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoveragePointDefinition)
-    
+
     _get_point_location_method_metadata = { "offset" : _get_point_location_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoveragePointLocationMethod),) }
@@ -73481,7 +73612,7 @@ class CoveragePointFileListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -73583,7 +73714,7 @@ class CoverageAdvancedSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageAdvancedSettings)
-    
+
     _get_data_retention_metadata = { "offset" : _get_data_retention_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoverageDataRetention),) }
@@ -73746,7 +73877,7 @@ class CoverageInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageInterval)
-    
+
     _get_use_scenario_interval_metadata = { "offset" : _get_use_scenario_interval_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -73803,7 +73934,7 @@ class CoverageResolutionArea(ICoverageResolution, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageResolutionArea)
-    
+
     _get_area_metadata = { "offset" : _get_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -73853,7 +73984,7 @@ class CoverageResolutionDistance(ICoverageResolution, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageResolutionDistance)
-    
+
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -73903,7 +74034,7 @@ class CoverageResolutionLatLon(ICoverageResolution, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageResolutionLatLon)
-    
+
     _get_latitude_longitude_metadata = { "offset" : _get_latitude_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -73965,7 +74096,7 @@ class CoverageGraphics2DStatic(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics2DStatic)
-    
+
     _get_show_region_metadata = { "offset" : _get_show_region_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -74113,7 +74244,7 @@ class CoverageGraphics2DAnimation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics2DAnimation)
-    
+
     _get_show_satisfaction_metadata = { "offset" : _get_show_satisfaction_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -74195,7 +74326,7 @@ class CoverageGraphics2DProgress(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics2DProgress)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -74262,7 +74393,7 @@ class CoverageGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics)
-    
+
     _get_static_metadata = { "offset" : _get_static_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -74345,7 +74476,7 @@ class CoverageGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics3D)
-    
+
     _get_static_metadata = { "offset" : _get_static_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -74463,7 +74594,7 @@ class CoverageGraphics3DAttributes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGraphics3DAttributes)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -74561,7 +74692,7 @@ class ChainUserSpecifiedTimePeriod(IChainTimePeriod, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainUserSpecifiedTimePeriod)
-    
+
     _get_time_interval_metadata = { "offset" : _get_time_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -74618,7 +74749,7 @@ class ChainConstraints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainConstraints)
-    
+
     _get_use_minimum_angle_metadata = { "offset" : _get_use_minimum_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -74764,7 +74895,7 @@ class ChainConstraints(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5147499005971640303, 4961582862323625371), ChainConstraints)
 agcls.AgTypeNameMap["ChainConstraints"] = ChainConstraints
 
-class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Chain(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Configuration options for chains.
 
@@ -74774,7 +74905,7 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     >>> # Chain chain: Chain Object
     >>> # Compute the chain access if not done already.
     >>> chain.compute_access()
-    >>> 
+    >>>
     >>> # Considered Start and Stop time
     >>> print(
     >>>     "Chain considered start time: %s"
@@ -74784,12 +74915,12 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     >>>     "Chain considered stop time: %s"
     >>>     % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime").find_occurrence().epoch
     >>> )
-    >>> 
+    >>>
     >>> objectParticipationIntervals = chain.analysis_workbench_components.time_interval_collections.item(
     >>>     "StrandAccessIntervals"
     >>> )
     >>> intervalListResult = objectParticipationIntervals.find_interval_collection()
-    >>> 
+    >>>
     >>> for i in range(0, intervalListResult.interval_collections.count):
     >>>     if intervalListResult.IsValid:
     >>>         print("Link Name: %s" % objectParticipationIntervals.Labels(i + 1))
@@ -74802,45 +74933,45 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     Define and compute a chain (advanced):
     >>> # Chain chain: Chain object
     >>> # Satellite satellite: Satellite object
-    >>> 
+    >>>
     >>> # Remove all previous accesses
     >>> chain.clear_access()
-    >>> 
+    >>>
     >>> # Add some objects to chain
     >>> chain.objects.add("Facility/MyFacility")
     >>> chain.objects.add_object(satellite)
-    >>> 
+    >>>
     >>> # Configure chain parameters
     >>> chain.recompute_automatically = False
     >>> chain.enable_light_time_delay = False
     >>> chain.time_convergence = 0.001
     >>> chain.data_save_mode = DataSaveMode.SAVE_ACCESSES
-    >>> 
+    >>>
     >>> # Specify our own time period
     >>> chain.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
-    >>> 
+    >>>
     >>> # Get chain time period interface
     >>> chainUserTimePeriod = chain.time_period
     >>> chainUserTimePeriod.time_interval.set_explicit_interval(
     >>>     root.current_scenario.analysis_interval.find_start_time(),
     >>>     root.current_scenario.analysis_interval.find_stop_time(),
     >>> )  # Set to scenario period
-    >>> 
+    >>>
     >>> # Compute the chain
     >>> chain.compute_access()
 
     Define and compute a chain (basic):
     >>> # Chain chain: Chain object
-    >>> 
+    >>>
     >>> # Add some objects to chain (using STK path)
     >>> chain.objects.add("Facility/MyFacility")
     >>> chain.objects.add("Satellite/MySatellite")
-    >>> 
+    >>>
     >>> # Compute the chain
     >>> chain.compute_access()
 
     Create a chain (on the current scenario central body):
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # Create the Chain on the current scenario central body (use
     >>> # NewOnCentralBody to specify explicitly the central body)
     >>> chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
@@ -74897,7 +75028,7 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Chain)
-    
+
     _get_objects_metadata = { "offset" : _get_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -75159,30 +75290,30 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def start_object(self) -> "IStkObject":
+    def start_object(self) -> "ISTKObject":
         """Start object for the Chain."""
         return self._intf.get_property(Chain._metadata, Chain._get_start_object_metadata)
 
     _set_start_object_metadata = { "offset" : _set_start_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
     @start_object.setter
-    def start_object(self, start_object:"IStkObject") -> None:
+    def start_object(self, start_object:"ISTKObject") -> None:
         return self._intf.set_property(Chain._metadata, Chain._set_start_object_metadata, start_object)
 
     _get_end_object_metadata = { "offset" : _get_end_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def end_object(self) -> "IStkObject":
+    def end_object(self) -> "ISTKObject":
         """End object for the Chain."""
         return self._intf.get_property(Chain._metadata, Chain._get_end_object_metadata)
 
     _set_end_object_metadata = { "offset" : _set_end_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
     @end_object.setter
-    def end_object(self, end_object:"IStkObject") -> None:
+    def end_object(self, end_object:"ISTKObject") -> None:
         return self._intf.set_property(Chain._metadata, Chain._set_end_object_metadata, end_object)
 
     _get_max_strand_depth_metadata = { "offset" : _get_max_strand_depth_method_offset,
@@ -75245,18 +75376,18 @@ class Chain(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Chain."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Chain)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Chain, [Chain, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Chain, [Chain, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((4973029539315306677, 12672617378872209795), Chain)
 agcls.AgTypeNameMap["Chain"] = Chain
@@ -75283,35 +75414,35 @@ class ChainConnection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainConnection)
-    
+
     _get_from_object_metadata = { "offset" : _get_from_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_object(self) -> "IStkObject":
+    def from_object(self) -> "ISTKObject":
         """From object for a connection."""
         return self._intf.get_property(ChainConnection._metadata, ChainConnection._get_from_object_metadata)
 
     _set_from_object_metadata = { "offset" : _set_from_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
     @from_object.setter
-    def from_object(self, from_object:"IStkObject") -> None:
+    def from_object(self, from_object:"ISTKObject") -> None:
         return self._intf.set_property(ChainConnection._metadata, ChainConnection._set_from_object_metadata, from_object)
 
     _get_to_object_metadata = { "offset" : _get_to_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to_object(self) -> "IStkObject":
+    def to_object(self) -> "ISTKObject":
         """To object for a connection."""
         return self._intf.get_property(ChainConnection._metadata, ChainConnection._get_to_object_metadata)
 
     _set_to_object_metadata = { "offset" : _set_to_object_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"),) }
     @to_object.setter
-    def to_object(self, to_object:"IStkObject") -> None:
+    def to_object(self, to_object:"ISTKObject") -> None:
         return self._intf.set_property(ChainConnection._metadata, ChainConnection._set_to_object_metadata, to_object)
 
     _get_min_num_uses_metadata = { "offset" : _get_min_num_uses_method_offset,
@@ -75415,7 +75546,7 @@ class ChainConnectionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -75441,8 +75572,8 @@ class ChainConnectionCollection(SupportsDeleteCallback):
 
     _item_by_from_to_objects_metadata = { "offset" : _item_by_from_to_objects_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceOutArg,) }
-    def item_by_from_to_objects(self, from_object:"IStkObject", to_object:"IStkObject") -> "ChainConnection":
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceOutArg,) }
+    def item_by_from_to_objects(self, from_object:"ISTKObject", to_object:"ISTKObject") -> "ChainConnection":
         """Given the From and To objects of a connection, returns the element in the collection."""
         return self._intf.invoke(ChainConnectionCollection._metadata, ChainConnectionCollection._item_by_from_to_objects_metadata, from_object, to_object, OutArg())
 
@@ -75455,22 +75586,22 @@ class ChainConnectionCollection(SupportsDeleteCallback):
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceInArg("IStkObject"),) }
-    def remove(self, from_object:"IStkObject", to_object:"IStkObject") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceInArg("ISTKObject"),) }
+    def remove(self, from_object:"ISTKObject", to_object:"ISTKObject") -> None:
         """Remove the connection for the input from-to object pair."""
         return self._intf.invoke(ChainConnectionCollection._metadata, ChainConnectionCollection._remove_metadata, from_object, to_object)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, agcom.INT, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceInArg("IStkObject"), agmarshall.IntArg, agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def add(self, from_object:"IStkObject", to_object:"IStkObject", min_num_uses:int, max_num_uses:int) -> "ChainConnection":
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceInArg("ISTKObject"), agmarshall.IntArg, agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def add(self, from_object:"ISTKObject", to_object:"ISTKObject", min_num_uses:int, max_num_uses:int) -> "ChainConnection":
         """Add and returns a new connection with the corresponding values."""
         return self._intf.invoke(ChainConnectionCollection._metadata, ChainConnectionCollection._add_metadata, from_object, to_object, min_num_uses, max_num_uses, OutArg())
 
     _add_with_parent_restriction_metadata = { "offset" : _add_with_parent_restriction_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IStkObject"), agmarshall.InterfaceInArg("IStkObject"), agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(ChainParentPlatformRestriction), agmarshall.InterfaceOutArg,) }
-    def add_with_parent_restriction(self, from_object:"IStkObject", to_object:"IStkObject", min_num_uses:int, max_num_uses:int, parent_restriction:"ChainParentPlatformRestriction") -> "ChainConnection":
+            "marshallers" : (agmarshall.InterfaceInArg("ISTKObject"), agmarshall.InterfaceInArg("ISTKObject"), agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(ChainParentPlatformRestriction), agmarshall.InterfaceOutArg,) }
+    def add_with_parent_restriction(self, from_object:"ISTKObject", to_object:"ISTKObject", min_num_uses:int, max_num_uses:int, parent_restriction:"ChainParentPlatformRestriction") -> "ChainConnection":
         """Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects."""
         return self._intf.invoke(ChainConnectionCollection._metadata, ChainConnectionCollection._add_with_parent_restriction_metadata, from_object, to_object, min_num_uses, max_num_uses, parent_restriction, OutArg())
 
@@ -75535,7 +75666,7 @@ class ChainOptimalStrandOpts(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainOptimalStrandOpts)
-    
+
     _get_compute_metadata = { "offset" : _get_compute_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -75731,7 +75862,7 @@ class ChainGraphics2DStatic(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainGraphics2DStatic)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -75835,7 +75966,7 @@ class ChainGraphics2DAnimation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainGraphics2DAnimation)
-    
+
     _get_show_highlight_metadata = { "offset" : _get_show_highlight_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -76079,7 +76210,7 @@ class ChainGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainGraphics)
-    
+
     _get_static_metadata = { "offset" : _get_static_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -76160,7 +76291,7 @@ class ChainGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ChainGraphics3D)
-    
+
     _get_data_display_metadata = { "offset" : _get_data_display_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -76221,7 +76352,7 @@ class RefractionCoefficients(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RefractionCoefficients)
-    
+
     _get_c0_metadata = { "offset" : _get_c0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76435,7 +76566,7 @@ class RefractionModelEffectiveRadiusMethod(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RefractionModelEffectiveRadiusMethod)
-    
+
     _get_effective_radius_metadata = { "offset" : _get_effective_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76535,7 +76666,7 @@ class RefractionModelITURP8344(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RefractionModelITURP8344)
-    
+
     _get_ceiling_metadata = { "offset" : _get_ceiling_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76628,7 +76759,7 @@ class RefractionModelSCFMethod(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RefractionModelSCFMethod)
-    
+
     _get_minimum_target_altitude_metadata = { "offset" : _get_minimum_target_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76804,7 +76935,7 @@ class FigureOfMeritDefinitionDataMinimumMaximum(IFigureOfMeritDefinitionData, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionDataMinimumMaximum)
-    
+
     _get_minimum_value_metadata = { "offset" : _get_minimum_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76870,7 +77001,7 @@ class FigureOfMeritDefinitionDataMinimumNumberOfAssets(IFigureOfMeritDefinitionD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionDataMinimumNumberOfAssets)
-    
+
     _get_minimum_assets_metadata = { "offset" : _get_minimum_assets_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -76920,7 +77051,7 @@ class FigureOfMeritDefinitionDataPercentLevel(IFigureOfMeritDefinitionData, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionDataPercentLevel)
-    
+
     _get_percent_level_metadata = { "offset" : _get_percent_level_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -76974,7 +77105,7 @@ class FigureOfMeritDefinitionDataBestN(IFigureOfMeritDefinitionData, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionDataBestN)
-    
+
     _get_best_n_metadata = { "offset" : _get_best_n_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -77058,7 +77189,7 @@ class FigureOfMeritDefinitionDataBest4(IFigureOfMeritDefinitionData, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionDataBest4)
-    
+
     _get_best_4_metric_metadata = { "offset" : _get_best_4_metric_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritMethod),) }
@@ -77130,7 +77261,7 @@ class FigureOfMeritDefinitionAccessConstraint(IFigureOfMeritDefinitionCompute, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionAccessConstraint)
-    
+
     _get_across_assets_metadata = { "offset" : _get_across_assets_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritAcrossAssets),) }
@@ -77244,7 +77375,7 @@ class FigureOfMeritSatisfaction(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritSatisfaction)
-    
+
     _get_enable_satisfaction_metadata = { "offset" : _get_enable_satisfaction_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -77390,7 +77521,7 @@ class FigureOfMeritSatisfaction(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5714723963885066939, 8738334924340735402), FigureOfMeritSatisfaction)
 agcls.AgTypeNameMap["FigureOfMeritSatisfaction"] = FigureOfMeritSatisfaction
 
-class FigureOfMerit(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class FigureOfMerit(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Figure of Merit properties.
 
@@ -77410,7 +77541,7 @@ class FigureOfMerit(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     >>> contours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
     >>> contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
     >>> contours.level_attributes.remove_all()
-    >>> 
+    >>>
     >>> contours.level_attributes.add_level_range(590, 660, 10)  # Start, Start, Step
     >>> contours.ramp_color.start_color = Colors.Red
     >>> contours.ramp_color.end_color = Colors.Blue
@@ -77442,7 +77573,7 @@ class FigureOfMerit(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMerit)
-    
+
     _get_definition_type_metadata = { "offset" : _get_definition_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritDefinitionType),) }
@@ -77537,18 +77668,18 @@ class FigureOfMerit(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type FigureOfMerit."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, FigureOfMerit)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, FigureOfMerit, [FigureOfMerit, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, FigureOfMerit, [FigureOfMerit, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5637489314275856665, 15047614264368808355), FigureOfMerit)
 agcls.AgTypeNameMap["FigureOfMerit"] = FigureOfMerit
@@ -77566,7 +77697,7 @@ class FigureOfMeritDefinitionAccessSeparation(IFigureOfMeritDefinition, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionAccessSeparation)
-    
+
     _get_minimum_maximum_data_metadata = { "offset" : _get_minimum_maximum_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -77631,7 +77762,7 @@ class FigureOfMeritDefinitionNavigationAccuracy(IFigureOfMeritDefinitionDilution
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionNavigationAccuracy)
-    
+
     _get_uncertainties_metadata = { "offset" : _get_uncertainties_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -77680,7 +77811,7 @@ class FigureOfMeritAssetListElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritAssetListElement)
-    
+
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritNavigationAccuracyMethod),) }
@@ -77760,7 +77891,7 @@ class FigureOfMeritAssetListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -77821,7 +77952,7 @@ class FigureOfMeritUncertainties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritUncertainties)
-    
+
     _get_receiver_range_metadata = { "offset" : _get_receiver_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -77901,7 +78032,7 @@ class FigureOfMeritDefinitionRevisitTime(IFigureOfMeritDefinitionResponseTime, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionRevisitTime)
-    
+
     _get_end_gap_option_metadata = { "offset" : _get_end_gap_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritEndGapOption),) }
@@ -77953,7 +78084,7 @@ class FigureOfMeritDefinitionSimpleCoverage(IFigureOfMeritDefinition, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionSimpleCoverage)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type FigureOfMeritDefinitionSimpleCoverage."""
@@ -77985,7 +78116,7 @@ class FigureOfMeritDefinitionTimeAverageGap(IFigureOfMeritDefinition, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionTimeAverageGap)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type FigureOfMeritDefinitionTimeAverageGap."""
@@ -78037,7 +78168,7 @@ class FigureOfMeritDefinitionSystemAgeOfData(IFigureOfMeritDefinitionCompute, IF
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionSystemAgeOfData)
-    
+
     _get_command_station_path_metadata = { "offset" : _get_command_station_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -78269,7 +78400,7 @@ class FigureOfMeritGraphics2DContoursAnimation(IFigureOfMeritGraphics2DContours,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DContoursAnimation)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type FigureOfMeritGraphics2DContoursAnimation."""
@@ -78303,7 +78434,7 @@ class FigureOfMeritGraphics2DAttributesAnimation(IFigureOfMeritGraphics2DAttribu
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DAttributesAnimation)
-    
+
     _get_accumulation_metadata = { "offset" : _get_accumulation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritGraphics2DAccumulation),) }
@@ -78355,7 +78486,7 @@ class FigureOfMeritGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics)
-    
+
     _get_static_metadata = { "offset" : _get_static_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -78423,7 +78554,7 @@ class FigureOfMeritGraphics2DRampColor(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DRampColor)
-    
+
     _get_start_color_metadata = { "offset" : _get_start_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -78489,7 +78620,7 @@ class FigureOfMeritGraphics2DLevelAttributesElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DLevelAttributesElement)
-    
+
     _get_level_metadata = { "offset" : _get_level_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -78571,7 +78702,7 @@ class FigureOfMeritGraphics2DLevelAttributesCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -78661,7 +78792,7 @@ class FigureOfMeritGraphics2DPositionOnMap(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DPositionOnMap)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -78731,7 +78862,7 @@ class FigureOfMeritGraphics2DColorOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DColorOptions)
-    
+
     _get_background_metadata = { "offset" : _get_background_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
             "marshallers" : (agmarshall.OLEColorArg,) }
@@ -78828,7 +78959,7 @@ class FigureOfMeritGraphics2DLegendWindow(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DLegendWindow)
-    
+
     _get_show_on_map_metadata = { "offset" : _get_show_on_map_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -78888,7 +79019,7 @@ class FigureOfMeritGraphics3DLegendWindow(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics3DLegendWindow)
-    
+
     _get_show_on_map_metadata = { "offset" : _get_show_on_map_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -78965,7 +79096,7 @@ class FigureOfMeritGraphics2DTextOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DTextOptions)
-    
+
     _get_title_metadata = { "offset" : _get_title_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -79053,7 +79184,7 @@ class FigureOfMeritGraphics2DRangeColorOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DRangeColorOptions)
-    
+
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(FigureOfMeritGraphics2DDirection),) }
@@ -79168,7 +79299,7 @@ class FigureOfMeritGraphics2DLegend(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics2DLegend)
-    
+
     _get_color_options_metadata = { "offset" : _get_color_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -79246,7 +79377,7 @@ class FigureOfMeritNavigationAccuracyMethodElevationAngle(IFigureOfMeritNavigati
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritNavigationAccuracyMethodElevationAngle)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -79305,7 +79436,7 @@ class FigureOfMeritNavigationAccuracyMethodConstant(IFigureOfMeritNavigationAccu
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritNavigationAccuracyMethodConstant)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -79359,7 +79490,7 @@ class FigureOfMeritGraphics3DAttributes(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics3DAttributes)
-    
+
     _get_show_graphics_metadata = { "offset" : _get_show_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -79443,7 +79574,7 @@ class FigureOfMeritGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGraphics3D)
-    
+
     _get_static_metadata = { "offset" : _get_static_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -79525,7 +79656,7 @@ class AttitudeProfileGPS(IVehicleAttitudeProfile, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AttitudeProfileGPS)
-    
+
     _get_model_type_metadata = { "offset" : _get_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GPSAttitudeModelType),) }
@@ -79561,8 +79692,8 @@ class AttitudeProfileGPS(IVehicleAttitudeProfile, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5720510923509811731, 10922085899185409196), AttitudeProfileGPS)
 agcls.AgTypeNameMap["AttitudeProfileGPS"] = AttitudeProfileGPS
 
-class StkObjectModelContext(SupportsDeleteCallback):
-    """Represents a factory class to create instances of the StkObjectRoot class."""
+class STKObjectModelContext(SupportsDeleteCallback):
+    """Represents a factory class to create instances of the STKObjectRoot class."""
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -79574,27 +79705,27 @@ class StkObjectModelContext(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkObjectModelContext)
-    
+        return get_interface_property(attrname, STKObjectModelContext)
+
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def create(self) -> "StkObjectRoot":
+    def create(self) -> "STKObjectRoot":
         """Create a non-restrictive root object."""
-        return self._intf.invoke(StkObjectModelContext._metadata, StkObjectModelContext._create_metadata, OutArg())
+        return self._intf.invoke(STKObjectModelContext._metadata, STKObjectModelContext._create_metadata, OutArg())
 
     _create_restrictive_metadata = { "offset" : _create_restrictive_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def create_restrictive(self) -> "StkObjectRoot":
+    def create_restrictive(self) -> "STKObjectRoot":
         """Create a restrictive root object."""
-        return self._intf.invoke(StkObjectModelContext._metadata, StkObjectModelContext._create_restrictive_metadata, OutArg())
+        return self._intf.invoke(STKObjectModelContext._metadata, STKObjectModelContext._create_restrictive_metadata, OutArg())
 
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkObjectModelContext."""
+        """Construct an object of type STKObjectModelContext."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkObjectModelContext)
+        initialize_from_source_object(self, source_object, STKObjectModelContext)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -79602,10 +79733,10 @@ class StkObjectModelContext(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObjectModelContext, [StkObjectModelContext, ])
+        set_class_attribute(self, attrname, value, STKObjectModelContext, [STKObjectModelContext, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4914359684448815004, 17994888022236927364), StkObjectModelContext)
-agcls.AgTypeNameMap["StkObjectModelContext"] = StkObjectModelContext
+agcls.AgClassCatalog.add_catalog_entry((4914359684448815004, 17994888022236927364), STKObjectModelContext)
+agcls.AgTypeNameMap["STKObjectModelContext"] = STKObjectModelContext
 
 class MilitaryStandard2525bSymbols(SupportsDeleteCallback):
     """Represents the automation interface to generate 2525b symbology markers (military standard)."""
@@ -79624,7 +79755,7 @@ class MilitaryStandard2525bSymbols(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MilitaryStandard2525bSymbols)
-    
+
     _get_fill_enabled_metadata = { "offset" : _get_fill_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -79704,7 +79835,7 @@ class CoverageGridInspector(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageGridInspector)
-    
+
     _select_point_metadata = { "offset" : _select_point_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
@@ -79833,7 +79964,7 @@ class FigureOfMeritGridInspector(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritGridInspector)
-    
+
     _select_point_metadata = { "offset" : _select_point_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
@@ -79947,7 +80078,7 @@ class Graphics3DVaporTrail(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DVaporTrail)
-    
+
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -80142,7 +80273,7 @@ class VehicleTargetPointingIntervalCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -80225,7 +80356,7 @@ class AccessConstraintPluginMinMax(IAccessConstraintMinMaxBase, IAccessConstrain
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintPluginMinMax)
-    
+
     _get_raw_plugin_object_metadata = { "offset" : _get_raw_plugin_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -80299,7 +80430,7 @@ class ConstellationConstraints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstellationConstraints)
-    
+
     _get_from_parent_constraint_metadata = { "offset" : _get_from_parent_constraint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ConstellationFromToParentConstraint),) }
@@ -80413,7 +80544,7 @@ class ConstellationConstraintObjectRestriction(IConstellationConstraintRestricti
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstellationConstraintObjectRestriction)
-    
+
     _get_number_of_objects_metadata = { "offset" : _get_number_of_objects_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -80468,14 +80599,14 @@ class ConstellationConstraintRestriction(IConstellationConstraintRestriction, Su
 agcls.AgClassCatalog.add_catalog_entry((5153171094762290387, 5640805191281733016), ConstellationConstraintRestriction)
 agcls.AgTypeNameMap["ConstellationConstraintRestriction"] = ConstellationConstraintRestriction
 
-class Constellation(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Constellation(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """
     Configuration options for constellations.
 
     Examples
     --------
     Define a constellation:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # Satellite satellite: Satellite object
     >>> constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
     >>> constellation.objects.add_object(satellite)
@@ -80495,7 +80626,7 @@ class Constellation(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Constellation)
-    
+
     _get_objects_metadata = { "offset" : _get_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -80537,18 +80668,18 @@ class Constellation(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Constellation."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Constellation)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Constellation, [Constellation, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Constellation, [Constellation, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5113395961354841851, 15146281456980998531), Constellation)
 agcls.AgTypeNameMap["Constellation"] = Constellation
@@ -80567,7 +80698,7 @@ class ConstellationGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstellationGraphics)
-    
+
     _hide_graphics_metadata = { "offset" : _hide_graphics_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -80615,7 +80746,7 @@ class ConstellationRouting(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ConstellationRouting)
-    
+
     _get_use_routing_file_metadata = { "offset" : _get_use_routing_file_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -80677,7 +80808,7 @@ class EventDetectionNoSubSampling(IEventDetectionStrategy, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EventDetectionNoSubSampling)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EventDetectionNoSubSampling."""
@@ -80715,7 +80846,7 @@ class EventDetectionSubSampling(IEventDetectionStrategy, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EventDetectionSubSampling)
-    
+
     _get_time_convergence_metadata = { "offset" : _get_time_convergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -80799,7 +80930,7 @@ class SamplingMethodAdaptive(ISamplingMethodStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SamplingMethodAdaptive)
-    
+
     _get_maximum_time_step_metadata = { "offset" : _get_maximum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -80867,7 +80998,7 @@ class SamplingMethodFixedStep(ISamplingMethodStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SamplingMethodFixedStep)
-    
+
     _get_fixed_time_step_metadata = { "offset" : _get_fixed_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -80931,7 +81062,7 @@ class SensorAccessAdvancedSettings(IAccessAdvanced, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorAccessAdvancedSettings)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type SensorAccessAdvancedSettings."""
@@ -80967,7 +81098,7 @@ class VehicleAccessAdvancedSettings(IAccessAdvanced, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAccessAdvancedSettings)
-    
+
     _get_use_light_time_delay_metadata = { "offset" : _get_use_light_time_delay_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -81036,7 +81167,7 @@ class AccessSampling(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessSampling)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SamplingMethod),) }
@@ -81112,7 +81243,7 @@ class AccessEventDetection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessEventDetection)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EventDetection),) }
@@ -81187,7 +81318,7 @@ class SensorGraphics3DProjectionElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorGraphics3DProjectionElement)
-    
+
     _get_time_metadata = { "offset" : _get_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -81268,7 +81399,7 @@ class SensorGraphics3DSpaceProjectionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -81366,7 +81497,7 @@ class SensorGraphics3DTargetProjectionCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -81451,7 +81582,7 @@ class CentralBodyTerrainCollectionElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyTerrainCollectionElement)
-    
+
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -81547,7 +81678,7 @@ class CentralBodyTerrainCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -81630,7 +81761,7 @@ class SatelliteExportTools(SupportsDeleteCallback):
     Examples
     --------
     Export an ephemeris file to a scenario folder:
-    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # STKObjectRoot root: STK Object Model Root
     >>> # Satellite satellite: Satellite object
     >>> scenPath = root.execute_command("GetDirectory / Scenario").item(0)
     >>> satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
@@ -81655,7 +81786,7 @@ class SatelliteExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SatelliteExportTools)
-    
+
     _get_ephemeris_ccsds_export_tool_metadata = { "offset" : _get_ephemeris_ccsds_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -81745,7 +81876,7 @@ class LaunchVehicleExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaunchVehicleExportTools)
-    
+
     _get_ephemeris_stk_export_tool_metadata = { "offset" : _get_ephemeris_stk_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -81807,7 +81938,7 @@ class GroundVehicleExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, GroundVehicleExportTools)
-    
+
     _get_ephemeris_stk_export_tool_metadata = { "offset" : _get_ephemeris_stk_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -81869,7 +82000,7 @@ class MissileExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MissileExportTools)
-    
+
     _get_ephemeris_stk_export_tool_metadata = { "offset" : _get_ephemeris_stk_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -81931,7 +82062,7 @@ class AircraftExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AircraftExportTools)
-    
+
     _get_ephemeris_stk_export_tool_metadata = { "offset" : _get_ephemeris_stk_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -81993,7 +82124,7 @@ class ShipExportTools(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ShipExportTools)
-    
+
     _get_ephemeris_stk_export_tool_metadata = { "offset" : _get_ephemeris_stk_export_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -82056,7 +82187,7 @@ class VehicleEphemerisCode500ExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisCode500ExportTool)
-    
+
     _get_satellite_identifer_metadata = { "offset" : _get_satellite_identifer_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -82151,7 +82282,7 @@ class VehicleEphemerisCCSDSExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisCCSDSExportTool)
-    
+
     _get_originator_metadata = { "offset" : _get_originator_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -82390,7 +82521,7 @@ class VehicleEphemerisExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisExportTool)
-    
+
     _get_coordinate_system_metadata = { "offset" : _get_coordinate_system_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EphemerisCoordinateSystemType),) }
@@ -82555,7 +82686,7 @@ class VehicleEphemerisSPICEExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisSPICEExportTool)
-    
+
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -82696,7 +82827,7 @@ class ExportToolTimePeriod(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ExportToolTimePeriod)
-    
+
     _get_start_metadata = { "offset" : _get_start_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -82787,7 +82918,7 @@ class VehicleAttitudeExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeExportTool)
-    
+
     _get_coordinate_axes_type_metadata = { "offset" : _get_coordinate_axes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeCoordinateAxes),) }
@@ -82918,7 +83049,7 @@ class PropagatorDefinitionExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorDefinitionExportTool)
-    
+
     _export_metadata = { "offset" : _export_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -82957,7 +83088,7 @@ class VehicleCoordinateAxesCustom(IVehicleCoordinateAxes, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleCoordinateAxesCustom)
-    
+
     _get_reference_axes_name_metadata = { "offset" : _get_reference_axes_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -83011,7 +83142,7 @@ class ExportToolStepSize(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ExportToolStepSize)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -83095,7 +83226,7 @@ class ProgressBarEventArguments(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ProgressBarEventArguments)
-    
+
     _cancel_metadata = { "offset" : _cancel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -83156,7 +83287,7 @@ class ProgressBarEventArguments(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4710475999205124228, 12540471324031298739), ProgressBarEventArguments)
 agcls.AgTypeNameMap["ProgressBarEventArguments"] = ProgressBarEventArguments
 
-class StkObjectChangedEventArguments(SupportsDeleteCallback):
+class STKObjectChangedEventArguments(SupportsDeleteCallback):
     """Contains information about the changes in the object's state."""
 
     _num_methods = 1
@@ -83168,22 +83299,22 @@ class StkObjectChangedEventArguments(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkObjectChangedEventArguments)
-    
+        return get_interface_property(attrname, STKObjectChangedEventArguments)
+
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def path(self) -> str:
         """Object file path."""
-        return self._intf.get_property(StkObjectChangedEventArguments._metadata, StkObjectChangedEventArguments._get_path_metadata)
+        return self._intf.get_property(STKObjectChangedEventArguments._metadata, STKObjectChangedEventArguments._get_path_metadata)
 
     _property_names[path] = "path"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkObjectChangedEventArguments."""
+        """Construct an object of type STKObjectChangedEventArguments."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkObjectChangedEventArguments)
+        initialize_from_source_object(self, source_object, STKObjectChangedEventArguments)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -83191,10 +83322,10 @@ class StkObjectChangedEventArguments(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObjectChangedEventArguments, [StkObjectChangedEventArguments, ])
+        set_class_attribute(self, attrname, value, STKObjectChangedEventArguments, [STKObjectChangedEventArguments, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5666857765644611896, 11945424201685098392), StkObjectChangedEventArguments)
-agcls.AgTypeNameMap["StkObjectChangedEventArguments"] = StkObjectChangedEventArguments
+agcls.AgClassCatalog.add_catalog_entry((5666857765644611896, 11945424201685098392), STKObjectChangedEventArguments)
+agcls.AgTypeNameMap["STKObjectChangedEventArguments"] = STKObjectChangedEventArguments
 
 class VehicleEclipsingBodies(SupportsDeleteCallback):
     """Interface for eclipsing bodies."""
@@ -83214,7 +83345,7 @@ class VehicleEclipsingBodies(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEclipsingBodies)
-    
+
     _get_available_eclipsing_bodies_metadata = { "offset" : _get_available_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -83292,7 +83423,7 @@ class LocationVectorGeometryToolPoint(ILocationData, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LocationVectorGeometryToolPoint)
-    
+
     _get_point_path_metadata = { "offset" : _get_point_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -83365,7 +83496,7 @@ class TimePeriodValue(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TimePeriodValue)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -83438,7 +83569,7 @@ class SpatialState(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpatialState)
-    
+
     _get_fixed_position_metadata = { "offset" : _get_fixed_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -83566,7 +83697,7 @@ class VehicleSpatialInformation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleSpatialInformation)
-    
+
     _get_state_metadata = { "offset" : _get_state_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -83614,23 +83745,23 @@ class OnePointAccess(SupportsDeleteCallback):
     Examples
     --------
     Compute an access for one point:
-    >>> # IStkObject facility: Facility object
+    >>> # ISTKObject facility: Facility object
     >>> onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
-    >>> 
+    >>>
     >>> # Configure properties (if necessary)
     >>> onePtAccess.start_time = root.current_scenario.start_time
     >>> onePtAccess.stop_time = root.current_scenario.stop_time
     >>> onePtAccess.step_size = 600
     >>> onePtAccess.summary_option = OnePointAccessSummary.DETAILED
-    >>> 
+    >>>
     >>> # Compute results
     >>> results = onePtAccess.compute()
-    >>> 
+    >>>
     >>> # Print results
     >>> for i in range(0, results.count):
     >>>     result = results.item(i)
     >>>     print("Time: %s HasAccess: %s" % (result.time, str(result.access_is_satisfied)))
-    >>> 
+    >>>
     >>>     for j in range(0, result.constraints.count):
     >>>         constraint = result.constraints.item(j)
     >>>         print(
@@ -83663,7 +83794,7 @@ class OnePointAccess(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OnePointAccess)
-    
+
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -83826,7 +83957,7 @@ class OnePointAccessResultCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -83887,7 +84018,7 @@ class OnePointAccessResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OnePointAccessResult)
-    
+
     _get_access_is_satisfied_metadata = { "offset" : _get_access_is_satisfied_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -83960,7 +84091,7 @@ class OnePointAccessConstraintCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -84022,7 +84153,7 @@ class OnePointAccessConstraint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OnePointAccessConstraint)
-    
+
     _get_status_metadata = { "offset" : _get_status_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(OnePointAccessStatus),) }
@@ -84101,7 +84232,7 @@ class PropagatorRealtime(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtime)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -84248,7 +84379,7 @@ class PropagatorRealtimePointBuilder(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtimePointBuilder)
-    
+
     _get_ephemeris_in_b1950_frame_metadata = { "offset" : _get_ephemeris_in_b1950_frame_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -84366,7 +84497,7 @@ class PropagatorRealtimeCartesianPoints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtimeCartesianPoints)
-    
+
     _add_position_metadata = { "offset" : _add_position_method_offset,
             "arg_types" : (agcom.Variant, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
@@ -84411,7 +84542,7 @@ class PropagatorRealtimeHeadingPitch(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtimeHeadingPitch)
-    
+
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.Variant, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
@@ -84452,7 +84583,7 @@ class PropagatorRealtimeDeticPoints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtimeDeticPoints)
-    
+
     _add_position_metadata = { "offset" : _add_position_method_offset,
             "arg_types" : (agcom.Variant, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
@@ -84512,7 +84643,7 @@ class PropagatorRealtimeUTMPoints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorRealtimeUTMPoints)
-    
+
     _add_position_metadata = { "offset" : _add_position_method_offset,
             "arg_types" : (agcom.Variant, agcom.BSTR, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
@@ -84560,7 +84691,7 @@ class SolarRadiationPressureModelGPS(ISRPModelBase, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarRadiationPressureModelGPS)
-    
+
     _get_scale_metadata = { "offset" : _get_scale_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -84628,7 +84759,7 @@ class SolarRadiationPressureModelSpherical(ISRPModelBase, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarRadiationPressureModelSpherical)
-    
+
     _get_cr_metadata = { "offset" : _get_cr_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -84696,7 +84827,7 @@ class SolarRadiationPressureModelPlugin(ISRPModelBase, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarRadiationPressureModelPlugin)
-    
+
     _get_plugin_name_metadata = { "offset" : _get_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -84765,7 +84896,7 @@ class SolarRadiationPressureModelPluginSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarRadiationPressureModelPluginSettings)
-    
+
     _get_property_metadata = { "offset" : _get_property_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
@@ -84823,7 +84954,7 @@ class VehicleHPOPSolarRadiationPressureModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPSolarRadiationPressureModel)
-    
+
     _get_model_type_metadata = { "offset" : _get_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SolarRadiationPressureModelType),) }
@@ -84898,7 +85029,7 @@ class VehicleHPOPDragModelSpherical(IVehicleHPOPDragModel, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPDragModelSpherical)
-    
+
     _get_cd_metadata = { "offset" : _get_cd_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -84966,7 +85097,7 @@ class VehicleHPOPDragModelPlugin(IVehicleHPOPDragModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPDragModelPlugin)
-    
+
     _get_plugin_name_metadata = { "offset" : _get_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -85035,7 +85166,7 @@ class VehicleHPOPDragModelPluginSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleHPOPDragModelPluginSettings)
-    
+
     _get_property_metadata = { "offset" : _get_property_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
@@ -85115,7 +85246,7 @@ class ScenarioAnimationTimePeriod(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioAnimationTimePeriod)
-    
+
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -85225,7 +85356,7 @@ class SensorProjectionConstantAltitude(IDisplayDistance, ISensorProjectionDispla
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorProjectionConstantAltitude)
-    
+
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -85373,7 +85504,7 @@ class SensorProjectionObjectAltitude(IDisplayDistance, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorProjectionObjectAltitude)
-    
+
     _get_exclude_horizon_arcs_metadata = { "offset" : _get_exclude_horizon_arcs_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -85426,7 +85557,7 @@ class VehicleAttitudeRealTimeDataReference(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeRealTimeDataReference)
-    
+
     _get_profile_type_metadata = { "offset" : _get_profile_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AttitudeProfile),) }
@@ -85501,7 +85632,7 @@ class MTOAnalysis(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOAnalysis)
-    
+
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -85572,7 +85703,7 @@ class MTOAnalysisPosition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOAnalysisPosition)
-    
+
     _get_altitude_reference_metadata = { "offset" : _get_altitude_reference_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AltitudeReferenceType),) }
@@ -85657,7 +85788,7 @@ class MTOAnalysisRange(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOAnalysisRange)
-    
+
     _get_lower_limit_metadata = { "offset" : _get_lower_limit_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -85836,7 +85967,7 @@ class MTOAnalysisFieldOfView(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOAnalysisFieldOfView)
-    
+
     _is_any_track_in_field_of_view_metadata = { "offset" : _is_any_track_in_field_of_view_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
@@ -85957,7 +86088,7 @@ class MTOAnalysisVisibility(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOAnalysisVisibility)
-    
+
     _show_any_track_metadata = { "offset" : _show_any_track_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
@@ -86121,7 +86252,7 @@ class PropagatorGPS(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorGPS)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -86244,7 +86375,7 @@ class AvailableFeatures(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AvailableFeatures)
-    
+
     _is_propagator_type_available_metadata = { "offset" : _is_propagator_type_available_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(PropagatorType), agmarshall.VariantBoolArg,) }
@@ -86294,7 +86425,7 @@ class ScenarioBeforeSaveEventArguments(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioBeforeSaveEventArguments)
-    
+
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -86364,7 +86495,7 @@ class ScenarioBeforeSaveEventArguments(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5377184606199805683, 13253424112542434708), ScenarioBeforeSaveEventArguments)
 agcls.AgTypeNameMap["ScenarioBeforeSaveEventArguments"] = ScenarioBeforeSaveEventArguments
 
-class StkObjectPreDeleteEventArguments(SupportsDeleteCallback):
+class STKObjectPreDeleteEventArguments(SupportsDeleteCallback):
     """Arguments for the OnStkObjectPreDelete event."""
 
     _num_methods = 3
@@ -86378,15 +86509,15 @@ class StkObjectPreDeleteEventArguments(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkObjectPreDeleteEventArguments)
-    
+        return get_interface_property(attrname, STKObjectPreDeleteEventArguments)
+
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def path(self) -> str:
         """Object path."""
-        return self._intf.get_property(StkObjectPreDeleteEventArguments._metadata, StkObjectPreDeleteEventArguments._get_path_metadata)
+        return self._intf.get_property(STKObjectPreDeleteEventArguments._metadata, STKObjectPreDeleteEventArguments._get_path_metadata)
 
     _get_continue_object_deletion_metadata = { "offset" : _get_continue_object_deletion_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -86394,22 +86525,22 @@ class StkObjectPreDeleteEventArguments(SupportsDeleteCallback):
     @property
     def continue_object_deletion(self) -> bool:
         """The status to continue or stop the object deletion."""
-        return self._intf.get_property(StkObjectPreDeleteEventArguments._metadata, StkObjectPreDeleteEventArguments._get_continue_object_deletion_metadata)
+        return self._intf.get_property(STKObjectPreDeleteEventArguments._metadata, STKObjectPreDeleteEventArguments._get_continue_object_deletion_metadata)
 
     _set_continue_object_deletion_metadata = { "offset" : _set_continue_object_deletion_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @continue_object_deletion.setter
     def continue_object_deletion(self, value:bool) -> None:
-        return self._intf.set_property(StkObjectPreDeleteEventArguments._metadata, StkObjectPreDeleteEventArguments._set_continue_object_deletion_metadata, value)
+        return self._intf.set_property(STKObjectPreDeleteEventArguments._metadata, STKObjectPreDeleteEventArguments._set_continue_object_deletion_metadata, value)
 
     _property_names[path] = "path"
     _property_names[continue_object_deletion] = "continue_object_deletion"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkObjectPreDeleteEventArguments."""
+        """Construct an object of type STKObjectPreDeleteEventArguments."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkObjectPreDeleteEventArguments)
+        initialize_from_source_object(self, source_object, STKObjectPreDeleteEventArguments)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -86417,10 +86548,10 @@ class StkObjectPreDeleteEventArguments(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObjectPreDeleteEventArguments, [StkObjectPreDeleteEventArguments, ])
+        set_class_attribute(self, attrname, value, STKObjectPreDeleteEventArguments, [STKObjectPreDeleteEventArguments, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5749382137989619393, 306569601394430881), StkObjectPreDeleteEventArguments)
-agcls.AgTypeNameMap["StkObjectPreDeleteEventArguments"] = StkObjectPreDeleteEventArguments
+agcls.AgClassCatalog.add_catalog_entry((5749382137989619393, 306569601394430881), STKObjectPreDeleteEventArguments)
+agcls.AgTypeNameMap["STKObjectPreDeleteEventArguments"] = STKObjectPreDeleteEventArguments
 
 class PropagatorSGP4CommonTasks(SupportsDeleteCallback):
     """Interface provides methods encapsulating most commonly used functionality when working with SGP4 propagator."""
@@ -86436,7 +86567,7 @@ class PropagatorSGP4CommonTasks(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4CommonTasks)
-    
+
     _add_segments_from_file_metadata = { "offset" : _add_segments_from_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
@@ -86484,7 +86615,7 @@ class PropagatorSGP4AutoUpdateProperties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4AutoUpdateProperties)
-    
+
     _get_selection_metadata = { "offset" : _get_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSGP4TLESelectionType),) }
@@ -86549,7 +86680,7 @@ class PropagatorSGP4AutoUpdateFileSource(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4AutoUpdateFileSource)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -86603,7 +86734,7 @@ class PropagatorSGP4AutoUpdateOnlineSource(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4AutoUpdateOnlineSource)
-    
+
     _preview_metadata = { "offset" : _preview_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -86645,7 +86776,7 @@ class PropagatorSGP4AutoUpdate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4AutoUpdate)
-    
+
     _get_selected_source_metadata = { "offset" : _get_selected_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSGP4AutomaticUpdateSourceType),) }
@@ -86724,7 +86855,7 @@ class PropagatorSGP4PropagatorSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSGP4PropagatorSettings)
-    
+
     _get_use_sgp4_one_point_interpolation_metadata = { "offset" : _get_use_sgp4_one_point_interpolation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -86808,7 +86939,7 @@ class VehicleGPSAutoUpdateProperties(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAutoUpdateProperties)
-    
+
     _get_selection_metadata = { "offset" : _get_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGPSElementSelectionType),) }
@@ -86889,7 +87020,7 @@ class VehicleGPSAutoUpdateFileSource(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAutoUpdateFileSource)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -86943,7 +87074,7 @@ class VehicleGPSAutoUpdateOnlineSource(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAutoUpdateOnlineSource)
-    
+
     _preview_metadata = { "offset" : _preview_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -86985,7 +87116,7 @@ class VehicleGPSAutoUpdate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAutoUpdate)
-    
+
     _get_selected_source_metadata = { "offset" : _get_selected_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleGPSAutomaticUpdateSourceType),) }
@@ -87061,7 +87192,7 @@ class VehicleGPSSpecifyAlmanac(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSSpecifyAlmanac)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -87142,7 +87273,7 @@ class VehicleGPSAlmanacPropertiesSEM(IVehicleGPSAlmanacProperties, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAlmanacPropertiesSEM)
-    
+
     _get_avg_ura_metadata = { "offset" : _get_avg_ura_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -87242,7 +87373,7 @@ class VehicleGPSAlmanacPropertiesYUMA(IVehicleGPSAlmanacProperties, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAlmanacPropertiesYUMA)
-    
+
     _get_week_number_metadata = { "offset" : _get_week_number_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -87338,7 +87469,7 @@ class VehicleGPSAlmanacPropertiesSP3(IVehicleGPSAlmanacProperties, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSAlmanacPropertiesSP3)
-    
+
     _get_almanac_week_metadata = { "offset" : _get_almanac_week_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -87413,7 +87544,7 @@ class VehicleGPSElementCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -87475,7 +87606,7 @@ class VehicleGPSElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGPSElement)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -87543,7 +87674,7 @@ class SpaceEnvironmentRadiationEnergyMethodEnergies(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentRadiationEnergyMethodEnergies)
-    
+
     _get_electron_energies_metadata = { "offset" : _get_electron_energies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -87594,7 +87725,7 @@ class SpaceEnvironmentRadiationEnergyValues(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentRadiationEnergyValues)
-    
+
     _get_use_default_metadata = { "offset" : _get_use_default_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -87661,7 +87792,7 @@ class SpaceEnvironmentRadiationEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentRadiationEnvironment)
-    
+
     _get_crres_proton_activity_metadata = { "offset" : _get_crres_proton_activity_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SpaceEnvironmentCrresProtonActivity),) }
@@ -87822,7 +87953,7 @@ class SpaceEnvironmentMagnitudeFieldGraphics2D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentMagnitudeFieldGraphics2D)
-    
+
     _get_show_magnetic_field_metadata = { "offset" : _get_show_magnetic_field_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -88204,7 +88335,7 @@ class SpaceEnvironmentScenarioGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentScenarioGraphics3D)
-    
+
     _get_magnetic_field_metadata = { "offset" : _get_magnetic_field_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -88246,7 +88377,7 @@ class ScenarioSpaceEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScenarioSpaceEnvironment)
-    
+
     _get_radiation_environment_metadata = { "offset" : _get_radiation_environment_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -88310,7 +88441,7 @@ class SpaceEnvironmentRadiationDoseRateElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentRadiationDoseRateElement)
-    
+
     _get_shielding_thickness_metadata = { "offset" : _get_shielding_thickness_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -88429,7 +88560,7 @@ class SpaceEnvironmentRadiationDoseRateCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -88492,7 +88623,7 @@ class SpaceEnvironmentSAAContour(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentSAAContour)
-    
+
     _get_channel_metadata = { "offset" : _get_channel_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SpaceEnvironmentSAAChannel),) }
@@ -88578,7 +88709,7 @@ class SpaceEnvironmentVehicleTemperature(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentVehicleTemperature)
-    
+
     _get_earth_albedo_metadata = { "offset" : _get_earth_albedo_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -88757,7 +88888,7 @@ class SpaceEnvironmentParticleFlux(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentParticleFlux)
-    
+
     _get_f10p7_source_metadata = { "offset" : _get_f10p7_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSpaceEnvironmentF10P7SourceType),) }
@@ -89014,7 +89145,7 @@ class SpaceEnvironmentMagneticField(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentMagneticField)
-    
+
     _get_main_field_metadata = { "offset" : _get_main_field_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(SpaceEnvironmentMagneticMainField),) }
@@ -89158,7 +89289,7 @@ class SpaceEnvironmentRadiation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentRadiation)
-    
+
     _get_computation_mode_metadata = { "offset" : _get_computation_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSpaceEnvironmentComputationMode),) }
@@ -89488,7 +89619,7 @@ class SpaceEnvironmentMagnitudeFieldLine(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentMagnitudeFieldLine)
-    
+
     _get_show_graphics_2d_metadata = { "offset" : _get_show_graphics_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -89621,7 +89752,7 @@ class SpaceEnvironmentGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironmentGraphics)
-    
+
     _get_magnetic_field_line_metadata = { "offset" : _get_magnetic_field_line_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -89666,7 +89797,7 @@ class SpaceEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SpaceEnvironment)
-    
+
     _get_saa_contour_metadata = { "offset" : _get_saa_contour_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -89753,7 +89884,7 @@ class CoverageSelectedGridPoint(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CoverageSelectedGridPoint)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -89827,7 +89958,7 @@ class CoverageGridPointSelection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
@@ -89936,7 +90067,7 @@ class CentralBodyEllipsoid(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBodyEllipsoid)
-    
+
     _get_radius_a_metadata = { "offset" : _get_radius_a_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -90022,7 +90153,7 @@ class CentralBody(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CentralBody)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -90110,7 +90241,7 @@ class CentralBodyCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
@@ -90236,7 +90367,7 @@ class FigureOfMeritDefinitionSystemResponseTime(IFigureOfMeritDefinitionCompute,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionSystemResponseTime)
-    
+
     _get_command_station_path_metadata = { "offset" : _get_command_station_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -90432,7 +90563,7 @@ class FigureOfMeritDefinitionAgeOfData(IFigureOfMeritDefinitionCompute, IFigureO
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionAgeOfData)
-    
+
     _get_minimum_assets_metadata = { "offset" : _get_minimum_assets_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -90488,7 +90619,7 @@ class FigureOfMeritDefinitionScalarCalculation(IFigureOfMeritDefinitionCompute, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, FigureOfMeritDefinitionScalarCalculation)
-    
+
     _get_time_step_metadata = { "offset" : _get_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -90585,7 +90716,7 @@ class Propagator11ParametersDescriptor(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Propagator11ParametersDescriptor)
-    
+
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -90770,7 +90901,7 @@ class Propagator11ParametersDescriptorCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -90861,7 +90992,7 @@ class Propagator11Parameters(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Propagator11Parameters)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -90942,7 +91073,7 @@ class PropagatorSP3File(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSP3File)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -91063,7 +91194,7 @@ class PropagatorSP3FileCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -91155,7 +91286,7 @@ class PropagatorSP3(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorSP3)
-    
+
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -91309,7 +91440,7 @@ class VehicleEphemerisBinaryExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisBinaryExportTool)
-    
+
     _get_coordinate_system_metadata = { "offset" : _get_coordinate_system_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EphemerisCoordinateSystemType),) }
@@ -91482,7 +91613,7 @@ class OrbitStateCoordinateSystem(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateCoordinateSystem)
-    
+
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -91547,7 +91678,7 @@ class OrbitStateCartesian(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateCartesian)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -91722,7 +91853,7 @@ class ClassicalSizeShapeAltitude(IClassicalSizeShape, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalSizeShapeAltitude)
-    
+
     _get_apogee_altitude_metadata = { "offset" : _get_apogee_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -91790,7 +91921,7 @@ class ClassicalSizeShapeMeanMotion(IClassicalSizeShape, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalSizeShapeMeanMotion)
-    
+
     _get_mean_motion_metadata = { "offset" : _get_mean_motion_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -91858,7 +91989,7 @@ class ClassicalSizeShapePeriod(IClassicalSizeShape, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalSizeShapePeriod)
-    
+
     _get_period_metadata = { "offset" : _get_period_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -91927,7 +92058,7 @@ class ClassicalSizeShapeRadius(IClassicalSizeShape, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalSizeShapeRadius)
-    
+
     _get_apogee_radius_metadata = { "offset" : _get_apogee_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92002,7 +92133,7 @@ class ClassicalSizeShapeSemimajorAxis(IClassicalSizeShape, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalSizeShapeSemimajorAxis)
-    
+
     _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92068,7 +92199,7 @@ class OrientationLongitudeOfAscending(IOrientationAscNode, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrientationLongitudeOfAscending)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92118,7 +92249,7 @@ class OrientationRightAscensionOfAscendingNode(IOrientationAscNode, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrientationRightAscensionOfAscendingNode)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92173,7 +92304,7 @@ class ClassicalOrientation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalOrientation)
-    
+
     _get_inclination_metadata = { "offset" : _get_inclination_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92262,7 +92393,7 @@ class ClassicalLocationArgumentOfLatitude(IClassicalLocation, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationArgumentOfLatitude)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92312,7 +92443,7 @@ class ClassicalLocationEccentricAnomaly(IClassicalLocation, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationEccentricAnomaly)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92362,7 +92493,7 @@ class ClassicalLocationMeanAnomaly(IClassicalLocation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationMeanAnomaly)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92412,7 +92543,7 @@ class ClassicalLocationTimePastAscendingNode(IClassicalLocation, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationTimePastAscendingNode)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92462,7 +92593,7 @@ class ClassicalLocationTimePastPerigee(IClassicalLocation, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationTimePastPerigee)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92512,7 +92643,7 @@ class ClassicalLocationTrueAnomaly(IClassicalLocation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ClassicalLocationTrueAnomaly)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92560,17 +92691,17 @@ class OrbitStateClassical(IOrbitState, SupportsDeleteCallback):
     >>> keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
     >>> keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
     >>> keplerian.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
-    >>> 
+    >>>
     >>> # Assign the perigee and apogee altitude values:
     >>> keplerian.size_shape.perigee_altitude = 500  # km
     >>> keplerian.size_shape.apogee_altitude = 600  # km
-    >>> 
+    >>>
     >>> # Assign the other desired orbital parameters:
     >>> keplerian.orientation.inclination = 90  # deg
     >>> keplerian.orientation.argument_of_periapsis = 12  # deg
     >>> keplerian.orientation.ascending_node.value = 24  # deg
     >>> keplerian.location.value = 180  # deg
-    >>> 
+    >>>
     >>> # Apply the changes made to the satellite's state and propagate:
     >>> satellite.propagator.initial_state.representation.assign(keplerian)
     >>> satellite.propagator.propagate()
@@ -92597,7 +92728,7 @@ class OrbitStateClassical(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateClassical)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -92735,7 +92866,7 @@ class DeticSizeAltitude(IGeodeticSize, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DeticSizeAltitude)
-    
+
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92803,7 +92934,7 @@ class DeticSizeRadius(IGeodeticSize, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DeticSizeRadius)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -92883,7 +93014,7 @@ class OrbitStateDetic(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateDetic)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -93049,7 +93180,7 @@ class DelaunayL(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayL)
-    
+
     _get_l_metadata = { "offset" : _get_l_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93099,7 +93230,7 @@ class DelaunayLOverSQRTmu(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayLOverSQRTmu)
-    
+
     _get_l_over_sqrt_mu_metadata = { "offset" : _get_l_over_sqrt_mu_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93149,7 +93280,7 @@ class DelaunayH(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayH)
-    
+
     _get_h_metadata = { "offset" : _get_h_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93199,7 +93330,7 @@ class DelaunayHOverSQRTmu(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayHOverSQRTmu)
-    
+
     _get_h_over_sqrt_mu_metadata = { "offset" : _get_h_over_sqrt_mu_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93249,7 +93380,7 @@ class DelaunayG(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayG)
-    
+
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93299,7 +93430,7 @@ class DelaunayGOverSQRTmu(IDelaunayActionVariable, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DelaunayGOverSQRTmu)
-    
+
     _get_g_over_sqrt_mu_metadata = { "offset" : _get_g_over_sqrt_mu_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93367,7 +93498,7 @@ class OrbitStateDelaunay(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateDelaunay)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -93567,7 +93698,7 @@ class EquinoctialSizeShapeMeanMotion(IClassicalSizeShape, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EquinoctialSizeShapeMeanMotion)
-    
+
     _get_mean_motion_metadata = { "offset" : _get_mean_motion_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93617,7 +93748,7 @@ class EquinoctialSizeShapeSemimajorAxis(IClassicalSizeShape, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EquinoctialSizeShapeSemimajorAxis)
-    
+
     _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93685,7 +93816,7 @@ class OrbitStateEquinoctial(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateEquinoctial)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -93883,7 +94014,7 @@ class MixedSphericalFlightPathAngleHorizontal(IFlightPathAngle, SupportsDeleteCa
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MixedSphericalFlightPathAngleHorizontal)
-    
+
     _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93933,7 +94064,7 @@ class MixedSphericalFlightPathAngleVertical(IFlightPathAngle, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MixedSphericalFlightPathAngleVertical)
-    
+
     _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -93999,7 +94130,7 @@ class OrbitStateMixedSpherical(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateMixedSpherical)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -94181,7 +94312,7 @@ class SphericalFlightPathAngleHorizontal(IFlightPathAngle, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SphericalFlightPathAngleHorizontal)
-    
+
     _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -94231,7 +94362,7 @@ class SphericalFlightPathAngleVertical(IFlightPathAngle, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SphericalFlightPathAngleVertical)
-    
+
     _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -94297,7 +94428,7 @@ class OrbitStateSpherical(IOrbitState, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, OrbitStateSpherical)
-    
+
     _get_coordinate_system_type_metadata = { "offset" : _get_coordinate_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CoordinateSystem),) }
@@ -94479,7 +94610,7 @@ class VehicleGraphics2DTimeComponentsEventElement(IVehicleGraphics2DTimeComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeComponentsEventElement)
-    
+
     _get_attributes_metadata = { "offset" : _get_attributes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -94537,7 +94668,7 @@ class VehicleGraphics2DTimeComponentsEventCollectionElement(IVehicleGraphics2DTi
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DTimeComponentsEventCollectionElement)
-    
+
     _get_use_color_ramp_metadata = { "offset" : _get_use_color_ramp_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -94670,7 +94801,7 @@ class VehicleGraphics2DTimeComponentsCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -94751,7 +94882,7 @@ class VehicleGraphics2DAttributesTimeComponents(IVehicleGraphics2DAttributes, IV
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleGraphics2DAttributesTimeComponents)
-    
+
     _get_default_metadata = { "offset" : _get_default_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -94806,7 +94937,7 @@ class Preferences(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Preferences)
-    
+
     _get_vdf_preferences_metadata = { "offset" : _get_vdf_preferences_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -94867,7 +94998,7 @@ class PreferencesVDF(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PreferencesVDF)
-    
+
     _get_save_scenario_as_vdf_metadata = { "offset" : _get_save_scenario_as_vdf_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -94945,7 +95076,7 @@ class VehicleAttitudeMaximumSlewRate(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeMaximumSlewRate)
-    
+
     _get_magnitude_metadata = { "offset" : _get_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -95108,7 +95239,7 @@ class VehicleAttitudeMaximumSlewAcceleration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeMaximumSlewAcceleration)
-    
+
     _get_magnitude_metadata = { "offset" : _get_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -95263,7 +95394,7 @@ class VehicleAttitudeSlewConstrained(IVehicleAttitudeSlewBase, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeSlewConstrained)
-    
+
     _get_maximum_slew_time_metadata = { "offset" : _get_maximum_slew_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -95352,7 +95483,7 @@ class VehicleAttitudeSlewFixedRate(IVehicleAttitudeSlewBase, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeSlewFixedRate)
-    
+
     _get_maximum_slew_time_metadata = { "offset" : _get_maximum_slew_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -95431,7 +95562,7 @@ class VehicleAttitudeSlewFixedTime(IVehicleAttitudeSlewBase, SupportsDeleteCallb
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeSlewFixedTime)
-    
+
     _get_slew_time_metadata = { "offset" : _get_slew_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -95502,7 +95633,7 @@ class VehicleAttitudeTargetSlew(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleAttitudeTargetSlew)
-    
+
     _get_slew_mode_type_metadata = { "offset" : _get_slew_mode_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VehicleSlewMode),) }
@@ -95584,7 +95715,7 @@ class MTOGraphics3DModelArticulation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MTOGraphics3DModelArticulation)
-    
+
     _get_enable_default_save_metadata = { "offset" : _get_enable_default_save_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -95701,7 +95832,7 @@ class PropagatorAviator(IPropagator, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagatorAviator)
-    
+
     _get_flight_mission_metadata = { "offset" : _get_flight_mission_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -95780,7 +95911,7 @@ class VehicleEphemerisCCSDSv2ExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEphemerisCCSDSv2ExportTool)
-    
+
     _get_originator_metadata = { "offset" : _get_originator_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -96085,7 +96216,7 @@ class PreferencesConnect(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PreferencesConnect)
-    
+
     _get_allow_connect_metadata = { "offset" : _get_allow_connect_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -96307,7 +96438,7 @@ class PreferencesConnect(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4747446301397134364, 8625519428360849599), PreferencesConnect)
 agcls.AgTypeNameMap["PreferencesConnect"] = PreferencesConnect
 
-class Antenna(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Antenna(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods defining an Antenna object.
 
@@ -96350,7 +96481,7 @@ class Antenna(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCall
     >>> antennaModel.efficiency = 85  # Percent
 
     Create a New Antenna Object:
-    >>> # IStkObject satellite: STK object
+    >>> # ISTKObject satellite: STK object
     >>> antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
     """
 
@@ -96380,7 +96511,7 @@ class Antenna(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Antenna)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -96530,12 +96661,12 @@ class Antenna(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCall
         """Construct an object of type Antenna."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Antenna)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -96543,7 +96674,7 @@ class Antenna(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCall
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Antenna, [Antenna, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Antenna, [Antenna, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5224182868093434573, 6264634714113845636), Antenna)
 agcls.AgTypeNameMap["Antenna"] = Antenna
@@ -96647,7 +96778,7 @@ class AntennaModelGaussian(IAntennaModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelGaussian)
-    
+
     _get_input_type_metadata = { "offset" : _get_input_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AntennaModelInputType),) }
@@ -96809,7 +96940,7 @@ class AntennaModelParabolic(IAntennaModel, IComponentInfo, ICloneable, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelParabolic)
-    
+
     _get_input_type_metadata = { "offset" : _get_input_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AntennaModelInputType),) }
@@ -96971,7 +97102,7 @@ class AntennaModelSquareHorn(IAntennaModel, IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelSquareHorn)
-    
+
     _get_input_type_metadata = { "offset" : _get_input_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AntennaModelInputType),) }
@@ -97121,7 +97252,7 @@ class AntennaModelScriptPlugin(IAntennaModel, IComponentInfo, ICloneable, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97175,7 +97306,7 @@ class AntennaModelExternal(IAntennaModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelExternal)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97229,7 +97360,7 @@ class AntennaModelGIMROC(IAntennaModel, IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelGIMROC)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97283,7 +97414,7 @@ class AntennaModelRemcomUanFormat(IAntennaModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelRemcomUanFormat)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97343,7 +97474,7 @@ class AntennaModelANSYSffdFormat(IAntennaModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelANSYSffdFormat)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97447,7 +97578,7 @@ class AntennaModelTicraGRASPFormat(IAntennaModel, IComponentInfo, ICloneable, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelTicraGRASPFormat)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97501,7 +97632,7 @@ class AntennaModelElevationAzimuthCuts(IAntennaModel, IComponentInfo, ICloneable
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelElevationAzimuthCuts)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97555,7 +97686,7 @@ class AntennaModelIEEE1979(IAntennaModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelIEEE1979)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -97613,7 +97744,7 @@ class AntennaModelDipole(IAntennaModel, IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelDipole)
-    
+
     _get_length_metadata = { "offset" : _get_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -97709,7 +97840,7 @@ class AntennaModelHelix(IAntennaModel, IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelHelix)
-    
+
     _get_diameter_metadata = { "offset" : _get_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -97853,7 +97984,7 @@ class AntennaModelCosecantSquared(IAntennaModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelCosecantSquared)
-    
+
     _get_sidelobe_type_metadata = { "offset" : _get_sidelobe_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AntennaModelCosecantSquaredSidelobeType),) }
@@ -97989,7 +98120,7 @@ class AntennaModelHemispherical(IAntennaModel, IComponentInfo, ICloneable, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelHemispherical)
-    
+
     _get_efficiency_metadata = { "offset" : _get_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98055,7 +98186,7 @@ class AntennaModelPencilBeam(IAntennaModel, IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelPencilBeam)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98160,7 +98291,7 @@ class AntennaModelPhasedArray(IAntennaModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelPhasedArray)
-    
+
     _get_backlobe_suppression_metadata = { "offset" : _get_backlobe_suppression_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98442,7 +98573,7 @@ class AntennaModelHfssEepArray(IAntennaModel, IComponentInfo, ICloneable, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelHfssEepArray)
-    
+
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98585,7 +98716,7 @@ class AntennaModelIsotropic(IAntennaModel, IComponentInfo, ICloneable, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelIsotropic)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98648,7 +98779,7 @@ class AntennaModelIntelSat(IAntennaModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelIntelSat)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -98707,7 +98838,7 @@ class AntennaModelGPSGlobal(IAntennaModel, IComponentInfo, ICloneable, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelGPSGlobal)
-    
+
     _get_supported_block_types_metadata = { "offset" : _get_supported_block_types_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -98804,7 +98935,7 @@ class AntennaModelGPSFRPA(IAntennaModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelGPSFRPA)
-    
+
     _get_efficiency_metadata = { "offset" : _get_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98862,7 +98993,7 @@ class AntennaModelITUBO1213CoPolar(IAntennaModel, IComponentInfo, ICloneable, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUBO1213CoPolar)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -98952,7 +99083,7 @@ class AntennaModelITUBO1213CrossPolar(IAntennaModel, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUBO1213CrossPolar)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99044,7 +99175,7 @@ class AntennaModelITUF1245(IAntennaModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUF1245)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99156,7 +99287,7 @@ class AntennaModelITUS580(IAntennaModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS580)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99302,7 +99433,7 @@ class AntennaModelITUS465(IAntennaModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS465)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99462,7 +99593,7 @@ class AntennaModelITUS731(IAntennaModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS731)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99610,7 +99741,7 @@ class AntennaModelITUS1528R12Circular(IAntennaModel, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS1528R12Circular)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99790,7 +99921,7 @@ class AntennaModelITUS1528R13(IAntennaModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS1528R13)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -99970,7 +100101,7 @@ class AntennaModelITUS672Circular(IAntennaModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS672Circular)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -100152,7 +100283,7 @@ class AntennaModelITUS1528R12Rectangular(IAntennaModel, IComponentInfo, ICloneab
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS1528R12Rectangular)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -100350,7 +100481,7 @@ class AntennaModelITUS672Rectangular(IAntennaModel, IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelITUS672Rectangular)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -100546,7 +100677,7 @@ class AntennaModelApertureCircularCosine(IAntennaModel, IComponentInfo, ICloneab
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularCosine)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -100726,7 +100857,7 @@ class AntennaModelApertureCircularUniform(IAntennaModel, IComponentInfo, IClonea
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularUniform)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -100906,7 +101037,7 @@ class AntennaModelApertureCircularCosineSquared(IAntennaModel, IComponentInfo, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularCosineSquared)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -101090,7 +101221,7 @@ class AntennaModelApertureCircularBessel(IAntennaModel, IComponentInfo, ICloneab
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularBessel)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -101306,7 +101437,7 @@ class AntennaModelApertureCircularBesselEnvelope(IAntennaModel, IComponentInfo, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularBesselEnvelope)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -101520,7 +101651,7 @@ class AntennaModelApertureCircularCosinePedestal(IAntennaModel, IComponentInfo, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularCosinePedestal)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -101718,7 +101849,7 @@ class AntennaModelApertureCircularCosineSquaredPedestal(IAntennaModel, IComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularCosineSquaredPedestal)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -101916,7 +102047,7 @@ class AntennaModelApertureCircularSincIntegerPower(IAntennaModel, IComponentInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularSincIntegerPower)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -102114,7 +102245,7 @@ class AntennaModelApertureCircularSincRealPower(IAntennaModel, IComponentInfo, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureCircularSincRealPower)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -102314,7 +102445,7 @@ class AntennaModelApertureRectangularCosine(IAntennaModel, IComponentInfo, IClon
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularCosine)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -102532,7 +102663,7 @@ class AntennaModelApertureRectangularCosinePedestal(IAntennaModel, IComponentInf
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularCosinePedestal)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -102766,7 +102897,7 @@ class AntennaModelApertureRectangularCosineSquaredPedestal(IAntennaModel, ICompo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularCosineSquaredPedestal)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -103000,7 +103131,7 @@ class AntennaModelApertureRectangularSincIntegerPower(IAntennaModel, IComponentI
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularSincIntegerPower)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -103234,7 +103365,7 @@ class AntennaModelApertureRectangularSincRealPower(IAntennaModel, IComponentInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularSincRealPower)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -103466,7 +103597,7 @@ class AntennaModelApertureRectangularCosineSquared(IAntennaModel, IComponentInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularCosineSquared)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -103682,7 +103813,7 @@ class AntennaModelApertureRectangularUniform(IAntennaModel, IComponentInfo, IClo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelApertureRectangularUniform)
-    
+
     _get_compute_mainlobe_gain_metadata = { "offset" : _get_compute_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -103885,7 +104016,7 @@ class AntennaModelRectangularPattern(IAntennaModel, IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaModelRectangularPattern)
-    
+
     _get_mainlobe_gain_metadata = { "offset" : _get_mainlobe_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -103989,7 +104120,7 @@ class AntennaControl(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaControl)
-    
+
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AntennaControlReferenceType),) }
@@ -104116,7 +104247,7 @@ class AntennaGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaGraphics3D)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -104223,7 +104354,7 @@ class RadarCrossSectionVolumeGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionVolumeGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -104479,7 +104610,7 @@ class RadarCrossSectionGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionGraphics3D)
-    
+
     _get_show_contours_metadata = { "offset" : _get_show_contours_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -104569,7 +104700,7 @@ class RadarCrossSectionGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -104917,7 +105048,7 @@ class AntennaVolumeGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaVolumeGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -105208,7 +105339,7 @@ class AntennaContourGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -105295,7 +105426,7 @@ class AntennaGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -105420,7 +105551,7 @@ class RadarCrossSectionContourLevelCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -105525,7 +105656,7 @@ class RadarCrossSectionContourLevel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionContourLevel)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -105618,7 +105749,7 @@ class RadarCrossSectionVolumeLevelCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -105721,7 +105852,7 @@ class RadarCrossSectionVolumeLevel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionVolumeLevel)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -105798,7 +105929,7 @@ class AntennaVolumeLevelCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -105901,7 +106032,7 @@ class AntennaVolumeLevel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaVolumeLevel)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -105978,7 +106109,7 @@ class AntennaContourLevelCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -106083,7 +106214,7 @@ class AntennaContourLevel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourLevel)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -106166,7 +106297,7 @@ class AntennaContourGain(IAntennaContour, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourGain)
-    
+
     _get_azimuth_start_metadata = { "offset" : _get_azimuth_start_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -106312,7 +106443,7 @@ class AntennaContourEIRP(IAntennaContour, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourEIRP)
-    
+
     _get_azimuth_start_metadata = { "offset" : _get_azimuth_start_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -106450,7 +106581,7 @@ class AntennaContourRIP(IAntennaContour, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourRIP)
-    
+
     _get_azimuth_resolution_metadata = { "offset" : _get_azimuth_resolution_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -106520,7 +106651,7 @@ class AntennaContourFluxDensity(IAntennaContour, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourFluxDensity)
-    
+
     _get_azimuth_resolution_metadata = { "offset" : _get_azimuth_resolution_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -106590,7 +106721,7 @@ class AntennaContourSpectralFluxDensity(IAntennaContour, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaContourSpectralFluxDensity)
-    
+
     _get_azimuth_resolution_metadata = { "offset" : _get_azimuth_resolution_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
@@ -106644,7 +106775,7 @@ class AntennaContourSpectralFluxDensity(IAntennaContour, SupportsDeleteCallback)
 agcls.AgClassCatalog.add_catalog_entry((5610299359768653460, 7269448124683883430), AntennaContourSpectralFluxDensity)
 agcls.AgTypeNameMap["AntennaContourSpectralFluxDensity"] = AntennaContourSpectralFluxDensity
 
-class Transmitter(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Transmitter(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods defining an Transmitter object.
 
@@ -106710,7 +106841,7 @@ class Transmitter(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDelete
     >>> txModel.data_rate = 15  # Mb/sec
 
     Create a New Transmitter Object:
-    >>> # IStkObject satellite: STK object
+    >>> # ISTKObject satellite: STK object
     >>> transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
     """
 
@@ -106738,7 +106869,7 @@ class Transmitter(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Transmitter)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -106871,12 +107002,12 @@ class Transmitter(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDelete
         """Construct an object of type Transmitter."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Transmitter)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -106884,7 +107015,7 @@ class Transmitter(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDelete
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Transmitter, [Transmitter, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Transmitter, [Transmitter, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((4961067084536870229, 2551906430169295028), Transmitter)
 agcls.AgTypeNameMap["Transmitter"] = Transmitter
@@ -106979,7 +107110,7 @@ class TransmitterModelCable(ITransmitterModel, IComponentInfo, ICloneable, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelCable)
-    
+
     _get_data_rate_metadata = { "offset" : _get_data_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -107076,7 +107207,7 @@ class TransmitterModelSimple(ITransmitterModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelSimple)
-    
+
     _get_frequency_metadata = { "offset" : _get_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -107298,7 +107429,7 @@ class TransmitterModelMedium(ITransmitterModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelMedium)
-    
+
     _get_frequency_metadata = { "offset" : _get_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -107535,7 +107666,7 @@ class TransmitterModelComplex(ITransmitterModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelComplex)
-    
+
     _get_frequency_metadata = { "offset" : _get_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -107757,7 +107888,7 @@ class TransmitterModelMultibeam(ITransmitterModel, IComponentInfo, ICloneable, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelMultibeam)
-    
+
     _get_data_rate_metadata = { "offset" : _get_data_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -107923,7 +108054,7 @@ class TransmitterModelLaser(ITransmitterModel, IComponentInfo, ICloneable, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterModelLaser)
-    
+
     _get_frequency_metadata = { "offset" : _get_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -108145,7 +108276,7 @@ class ReTransmitterModelSimple(IReTransmitterModel, ITransmitterModel, IComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReTransmitterModelSimple)
-    
+
     _get_enable_polarization_metadata = { "offset" : _get_enable_polarization_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -108305,7 +108436,7 @@ class ReTransmitterModelMedium(IReTransmitterModel, ITransmitterModel, IComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReTransmitterModelMedium)
-    
+
     _get_enable_polarization_metadata = { "offset" : _get_enable_polarization_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -108480,7 +108611,7 @@ class ReTransmitterModelComplex(IReTransmitterModel, ITransmitterModel, ICompone
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReTransmitterModelComplex)
-    
+
     _get_enable_polarization_metadata = { "offset" : _get_enable_polarization_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -108640,7 +108771,7 @@ class TransmitterGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterGraphics3D)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -108729,7 +108860,7 @@ class TransmitterGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransmitterGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -108820,7 +108951,7 @@ class TransmitterGraphics(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5707074763382922027, 11747913419258209197), TransmitterGraphics)
 agcls.AgTypeNameMap["TransmitterGraphics"] = TransmitterGraphics
 
-class Receiver(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
+class Receiver(ISTKObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback):
     """
     Provide access to the properties and methods defining an Receiver object.
 
@@ -108891,7 +109022,7 @@ class Receiver(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
     >>> recModel.frequency = 11.81
 
     Create a New Receiver Object:
-    >>> # IStkObject satellite: STK object
+    >>> # ISTKObject satellite: STK object
     >>> receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
     """
 
@@ -108919,7 +109050,7 @@ class Receiver(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Receiver)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -109052,12 +109183,12 @@ class Receiver(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         """Construct an object of type Receiver."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Receiver)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
         IDisplayTime.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
         IDisplayTime._private_init(self, intf)
     def __eq__(self, other):
@@ -109065,7 +109196,7 @@ class Receiver(IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Receiver, [Receiver, IStkObject, ILifetimeInformation, IDisplayTime])
+        set_class_attribute(self, attrname, value, Receiver, [Receiver, ISTKObject, ILifetimeInformation, IDisplayTime])
 
 agcls.AgClassCatalog.add_catalog_entry((5564326481420370552, 2128777629457706923), Receiver)
 agcls.AgTypeNameMap["Receiver"] = Receiver
@@ -109111,7 +109242,7 @@ class ReceiverModelCable(IReceiverModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelCable)
-    
+
     _get_bit_error_rate_metadata = { "offset" : _get_bit_error_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -109229,7 +109360,7 @@ class ReceiverModelSimple(IReceiverModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelSimple)
-    
+
     _get_enable_filter_metadata = { "offset" : _get_enable_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -109586,7 +109717,7 @@ class ReceiverModelMedium(IReceiverModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelMedium)
-    
+
     _get_enable_filter_metadata = { "offset" : _get_enable_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -109999,7 +110130,7 @@ class ReceiverModelComplex(IReceiverModel, IComponentInfo, ICloneable, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelComplex)
-    
+
     _get_enable_filter_metadata = { "offset" : _get_enable_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -110399,7 +110530,7 @@ class ReceiverModelMultibeam(IReceiverModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelMultibeam)
-    
+
     _get_enable_filter_metadata = { "offset" : _get_enable_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -110759,7 +110890,7 @@ class ReceiverModelLaser(IReceiverModel, IComponentInfo, ICloneable, SupportsDel
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelLaser)
-    
+
     _get_enable_filter_metadata = { "offset" : _get_enable_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -111140,7 +111271,7 @@ class ReceiverModelScriptPluginRF(IReceiverModelScriptPlugin, IReceiverModel, IC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverModelScriptPluginRF)
-    
+
     _get_interference_metadata = { "offset" : _get_interference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -111218,7 +111349,7 @@ class ReceiverGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverGraphics3D)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -111307,7 +111438,7 @@ class ReceiverGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ReceiverGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -111418,7 +111549,7 @@ class RadarDopplerClutterFilters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarDopplerClutterFilters)
-    
+
     _get_enable_mainlobe_clutter_metadata = { "offset" : _get_enable_mainlobe_clutter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -111536,7 +111667,7 @@ class WaveformRectangular(IWaveform, IComponentInfo, ICloneable, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WaveformRectangular)
-    
+
     _get_pulse_definition_metadata = { "offset" : _get_pulse_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -111597,7 +111728,7 @@ class WaveformPulseDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WaveformPulseDefinition)
-    
+
     _get_pulse_repetition_frequency_mode_metadata = { "offset" : _get_pulse_repetition_frequency_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PRFMode),) }
@@ -111773,7 +111904,7 @@ class RadarMultifunctionWaveformStrategySettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarMultifunctionWaveformStrategySettings)
-    
+
     _get_short_range_limit_metadata = { "offset" : _get_short_range_limit_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -111977,7 +112108,7 @@ class WaveformSelectionStrategyFixed(IWaveformSelectionStrategy, SupportsDeleteC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WaveformSelectionStrategyFixed)
-    
+
     _get_supported_waveforms_metadata = { "offset" : _get_supported_waveforms_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -112058,7 +112189,7 @@ class WaveformSelectionStrategyRangeLimits(IWaveformSelectionStrategy, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WaveformSelectionStrategyRangeLimits)
-    
+
     _get_short_range_limit_metadata = { "offset" : _get_short_range_limit_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -112277,7 +112408,7 @@ class WaveformSelectionStrategyRangeLimits(IWaveformSelectionStrategy, SupportsD
 agcls.AgClassCatalog.add_catalog_entry((4657068144368146598, 7860101329468214407), WaveformSelectionStrategyRangeLimits)
 agcls.AgTypeNameMap["WaveformSelectionStrategyRangeLimits"] = WaveformSelectionStrategyRangeLimits
 
-class Radar(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Radar(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Provide access to the properties and methods defining an Radar object."""
 
     _num_methods = 14
@@ -112303,7 +112434,7 @@ class Radar(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Radar)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -112427,18 +112558,18 @@ class Radar(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Radar."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Radar)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Radar, [Radar, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Radar, [Radar, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((4613714985234168403, 15116091825176422803), Radar)
 agcls.AgTypeNameMap["Radar"] = Radar
@@ -112488,7 +112619,7 @@ class RadarModelMonostatic(IRadarModel, IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModelMonostatic)
-    
+
     _get_supported_modes_metadata = { "offset" : _get_supported_modes_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -112623,7 +112754,7 @@ class RadarModelMultifunction(IRadarModel, IComponentInfo, ICloneable, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModelMultifunction)
-    
+
     _get_transmitter_metadata = { "offset" : _get_transmitter_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -112763,7 +112894,7 @@ class RadarModelBistaticTransmitter(IRadarModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModelBistaticTransmitter)
-    
+
     _get_supported_modes_metadata = { "offset" : _get_supported_modes_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -112870,7 +113001,7 @@ class RadarModelBistaticReceiver(IRadarModel, IComponentInfo, ICloneable, Suppor
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModelBistaticReceiver)
-    
+
     _get_supported_modes_metadata = { "offset" : _get_supported_modes_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -113000,7 +113131,7 @@ class RadarGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarGraphics3D)
-    
+
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -113091,7 +113222,7 @@ class RadarGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -113240,7 +113371,7 @@ class RadarAccessGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarAccessGraphics)
-    
+
     _get_show_snr_contour_metadata = { "offset" : _get_show_snr_contour_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -113512,7 +113643,7 @@ class RadarMultipathGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarMultipathGraphics)
-    
+
     _get_show_transmitter_to_target_ground_reflection_point_metadata = { "offset" : _get_show_transmitter_to_target_ground_reflection_point_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -113712,7 +113843,7 @@ class RadarModeMonostaticSearchTrack(IRadarModeMonostatic, IComponentInfo, IClon
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeMonostaticSearchTrack)
-    
+
     _set_waveform_type_metadata = { "offset" : _set_waveform_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(RadarWaveformSearchTrackType),) }
@@ -113776,7 +113907,7 @@ class RadarModeMonostaticSAR(IRadarModeMonostatic, IComponentInfo, ICloneable, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeMonostaticSAR)
-    
+
     _get_pulse_definition_metadata = { "offset" : _get_pulse_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -113864,7 +113995,7 @@ class RadarModeBistaticTransmitterSearchTrack(IRadarModeBistaticTransmitter, ICo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeBistaticTransmitterSearchTrack)
-    
+
     _set_waveform_type_metadata = { "offset" : _set_waveform_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(RadarWaveformSearchTrackType),) }
@@ -113918,7 +114049,7 @@ class RadarModeBistaticTransmitterSAR(IRadarModeBistaticTransmitter, IComponentI
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeBistaticTransmitterSAR)
-    
+
     _get_pulse_definition_metadata = { "offset" : _get_pulse_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -113998,7 +114129,7 @@ class RadarModeBistaticReceiverSearchTrack(IRadarModeBistaticReceiver, IComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeBistaticReceiverSearchTrack)
-    
+
     _set_waveform_type_metadata = { "offset" : _set_waveform_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(RadarWaveformSearchTrackType),) }
@@ -114060,7 +114191,7 @@ class RadarModeBistaticReceiverSAR(IRadarModeBistaticReceiver, IComponentInfo, I
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModeBistaticReceiverSAR)
-    
+
     _get_pulse_integration_metadata = { "offset" : _get_pulse_integration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -114111,7 +114242,7 @@ class RadarWaveformMonostaticSearchTrackContinuous(IRadarWaveformSearchTrack, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformMonostaticSearchTrackContinuous)
-    
+
     _get_analysis_mode_type_metadata = { "offset" : _get_analysis_mode_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarContinuousWaveAnalysisMode),) }
@@ -114213,7 +114344,7 @@ class RadarWaveformMonostaticSearchTrackFixedPRF(IRadarWaveformSearchTrack, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformMonostaticSearchTrackFixedPRF)
-    
+
     _get_pulse_definition_metadata = { "offset" : _get_pulse_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -114427,7 +114558,7 @@ class RadarMultifunctionDetectionProcessing(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarMultifunctionDetectionProcessing)
-    
+
     _get_supported_probability_of_detection_metadata = { "offset" : _get_supported_probability_of_detection_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -114604,7 +114735,7 @@ class RadarWaveformBistaticTransmitterSearchTrackContinuous(IRadarWaveformSearch
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformBistaticTransmitterSearchTrackContinuous)
-    
+
     _get_modulator_metadata = { "offset" : _get_modulator_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -114647,7 +114778,7 @@ class RadarWaveformBistaticTransmitterSearchTrackFixedPRF(IRadarWaveformSearchTr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformBistaticTransmitterSearchTrackFixedPRF)
-    
+
     _get_pulse_definition_metadata = { "offset" : _get_pulse_definition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -114702,7 +114833,7 @@ class RadarWaveformBistaticReceiverSearchTrackContinuous(IRadarWaveformSearchTra
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformBistaticReceiverSearchTrackContinuous)
-    
+
     _get_analysis_mode_type_metadata = { "offset" : _get_analysis_mode_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarContinuousWaveAnalysisMode),) }
@@ -114793,7 +114924,7 @@ class RadarWaveformBistaticReceiverSearchTrackFixedPRF(IRadarWaveformSearchTrack
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformBistaticReceiverSearchTrackFixedPRF)
-    
+
     _get_supported_probability_of_detection_metadata = { "offset" : _get_supported_probability_of_detection_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -114987,7 +115118,7 @@ class RadarWaveformSearchTrackPulseDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformSearchTrackPulseDefinition)
-    
+
     _get_pulse_repetition_frequency_mode_metadata = { "offset" : _get_pulse_repetition_frequency_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarSearchTrackPRFMode),) }
@@ -115149,7 +115280,7 @@ class RadarModulator(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarModulator)
-    
+
     _get_use_signal_psd_metadata = { "offset" : _get_use_signal_psd_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -115253,7 +115384,7 @@ class RadarProbabilityOfDetectionNonCFAR(IRadarProbabilityOfDetection, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarProbabilityOfDetectionNonCFAR)
-    
+
     _get_probability_of_false_alarm_metadata = { "offset" : _get_probability_of_false_alarm_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -115303,7 +115434,7 @@ class RadarProbabilityOfDetectionPlugin(IRadarProbabilityOfDetection, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarProbabilityOfDetectionPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -115409,7 +115540,7 @@ class RadarPulseIntegrationGoalSNR(IRadarPulseIntegration, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarPulseIntegrationGoalSNR)
-    
+
     _get_snr_metadata = { "offset" : _get_snr_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -115563,7 +115694,7 @@ class RadarPulseIntegrationFixedNumberOfPulses(IRadarPulseIntegration, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarPulseIntegrationFixedNumberOfPulses)
-    
+
     _get_pulse_number_metadata = { "offset" : _get_pulse_number_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -115677,7 +115808,7 @@ class RadarContinuousWaveAnalysisModeGoalSNR(IRadarContinuousWaveAnalysisMode, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarContinuousWaveAnalysisModeGoalSNR)
-    
+
     _get_snr_metadata = { "offset" : _get_snr_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -115727,7 +115858,7 @@ class RadarContinuousWaveAnalysisModeFixedTime(IRadarContinuousWaveAnalysisMode,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarContinuousWaveAnalysisModeFixedTime)
-    
+
     _get_fixed_time_metadata = { "offset" : _get_fixed_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -115803,7 +115934,7 @@ class RadarWaveformSarPulseDefinition(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformSarPulseDefinition)
-    
+
     _get_pulse_repetition_frequency_mode_metadata = { "offset" : _get_pulse_repetition_frequency_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarSarPRFMode),) }
@@ -116069,7 +116200,7 @@ class RadarWaveformSarPulseIntegration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarWaveformSarPulseIntegration)
-    
+
     _get_azimuth_broadening_factor_metadata = { "offset" : _get_azimuth_broadening_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -116218,7 +116349,7 @@ class RadarTransmitter(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarTransmitter)
-    
+
     _get_frequency_specification_metadata = { "offset" : _get_frequency_specification_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RadarFrequencySpecificationType),) }
@@ -116452,7 +116583,7 @@ class RadarTransmitterMultifunction(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarTransmitterMultifunction)
-    
+
     _get_post_transmit_gains_losses_metadata = { "offset" : _get_post_transmit_gains_losses_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -116660,7 +116791,7 @@ class RadarReceiver(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarReceiver)
-    
+
     _get_antenna_to_lna_line_loss_metadata = { "offset" : _get_antenna_to_lna_line_loss_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -117013,7 +117144,7 @@ class AdditionalGainLoss(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdditionalGainLoss)
-    
+
     _get_gain_metadata = { "offset" : _get_gain_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -117094,7 +117225,7 @@ class AdditionalGainLossCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -117451,7 +117582,7 @@ class RadarClutter(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarClutter)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -117511,7 +117642,7 @@ class RadarClutterGeometry(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarClutterGeometry)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -117585,7 +117716,7 @@ class ScatteringPointProviderCollectionElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderCollectionElement)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -117661,7 +117792,7 @@ class ScatteringPointProviderCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -117750,7 +117881,7 @@ class ScatteringPointProviderList(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderList)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -117837,7 +117968,7 @@ class ScatteringPointProviderSinglePoint(IScatteringPointProvider, IRadarClutter
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderSinglePoint)
-    
+
     _get_scattering_point_model_metadata = { "offset" : _get_scattering_point_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -117888,7 +118019,7 @@ class ScatteringPointCollectionElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointCollectionElement)
-    
+
     _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -117970,7 +118101,7 @@ class ScatteringPointCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -118032,7 +118163,7 @@ class ScatteringPointProviderPointsFile(IScatteringPointProvider, IComponentInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderPointsFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -118103,7 +118234,7 @@ class ScatteringPointProviderRangeOverCFARCells(IScatteringPointProvider, IRadar
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderRangeOverCFARCells)
-    
+
     _get_scattering_point_model_metadata = { "offset" : _get_scattering_point_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -118151,7 +118282,7 @@ class ScatteringPointProviderSmoothOblateEarth(IScatteringPointProvider, IRadarC
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderSmoothOblateEarth)
-    
+
     _get_scattering_point_model_metadata = { "offset" : _get_scattering_point_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -118201,7 +118332,7 @@ class ScatteringPointProviderPlugin(IScatteringPointProvider, IRadarClutterGeome
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointProviderPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -118271,7 +118402,7 @@ class CommRadPluginConfiguration(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommRadPluginConfiguration)
-    
+
     _get_property_metadata = { "offset" : _get_property_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
@@ -118327,7 +118458,7 @@ class RadarJamming(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarJamming)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -118387,7 +118518,7 @@ class RFInterference(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFInterference)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -118485,7 +118616,7 @@ class RFFilterModelBessel(IRFFilterModel, IComponentInfo, ICloneable, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelBessel)
-    
+
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -118559,7 +118690,7 @@ class RFFilterModelSincEnvelopeSinc(IRFFilterModel, IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelSincEnvelopeSinc)
-    
+
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -118649,7 +118780,7 @@ class RFFilterModelElliptic(IRFFilterModel, IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelElliptic)
-    
+
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -118739,7 +118870,7 @@ class RFFilterModelChebyshev(IRFFilterModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelChebyshev)
-    
+
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -118825,7 +118956,7 @@ class RFFilterModelCosineWindow(IRFFilterModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelCosineWindow)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -118881,7 +119012,7 @@ class RFFilterModelGaussianWindow(IRFFilterModel, IComponentInfo, ICloneable, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelGaussianWindow)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -118953,7 +119084,7 @@ class RFFilterModelHammingWindow(IRFFilterModel, IComponentInfo, ICloneable, Sup
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelHammingWindow)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119025,7 +119156,7 @@ class RFFilterModelButterworth(IRFFilterModel, IComponentInfo, ICloneable, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelButterworth)
-    
+
     _get_order_metadata = { "offset" : _get_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -119097,7 +119228,7 @@ class RFFilterModelExternal(IRFFilterModel, IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelExternal)
-    
+
     _get_override_bandwidth_limits_metadata = { "offset" : _get_override_bandwidth_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -119167,7 +119298,7 @@ class RFFilterModelScriptPlugin(IRFFilterModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -119221,7 +119352,7 @@ class RFFilterModelSinc(IRFFilterModel, IComponentInfo, ICloneable, SupportsDele
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelSinc)
-    
+
     _get_cut_off_frequency_metadata = { "offset" : _get_cut_off_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119277,7 +119408,7 @@ class RFFilterModelRaisedCosine(IRFFilterModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelRaisedCosine)
-    
+
     _get_roll_off_factor_metadata = { "offset" : _get_roll_off_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119349,7 +119480,7 @@ class RFFilterModelRootRaisedCosine(IRFFilterModel, IComponentInfo, ICloneable, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelRootRaisedCosine)
-    
+
     _get_roll_off_factor_metadata = { "offset" : _get_roll_off_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119419,7 +119550,7 @@ class RFFilterModelRCLowPass(IRFFilterModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelRCLowPass)
-    
+
     _get_cut_off_frequency_metadata = { "offset" : _get_cut_off_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119498,7 +119629,7 @@ class RFFilterModelFIRBoxCar(IRFFilterModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelFIRBoxCar)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119570,7 +119701,7 @@ class RFFilterModelIIR(IRFFilterModel, IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelIIR)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119643,7 +119774,7 @@ class RFFilterModelFIR(IRFFilterModel, IComponentInfo, ICloneable, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFFilterModelFIR)
-    
+
     _get_sampling_frequency_metadata = { "offset" : _get_sampling_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -119717,7 +119848,7 @@ class SystemNoiseTemperature(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SystemNoiseTemperature)
-    
+
     _get_compute_type_metadata = { "offset" : _get_compute_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(NoiseTemperatureComputeType),) }
@@ -119884,7 +120015,7 @@ class AntennaNoiseTemperature(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaNoiseTemperature)
-    
+
     _get_compute_type_metadata = { "offset" : _get_compute_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(NoiseTemperatureComputeType),) }
@@ -120184,7 +120315,7 @@ class Atmosphere(IPlatformRFEnvironment, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Atmosphere)
-    
+
     _get_inherit_atmospheric_absorption_model_metadata = { "offset" : _get_inherit_atmospheric_absorption_model_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -120338,7 +120469,7 @@ class LaserPropagationLossModels(ILaserPropagationChannel, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaserPropagationLossModels)
-    
+
     _get_enable_atmospheric_loss_model_metadata = { "offset" : _get_enable_atmospheric_loss_model_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -120462,7 +120593,7 @@ class LaserAtmosphericLossModelBeerBouguerLambertLaw(ILaserAtmosphericLossModel,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaserAtmosphericLossModelBeerBouguerLambertLaw)
-    
+
     _get_enable_evenly_spaced_heights_metadata = { "offset" : _get_enable_evenly_spaced_heights_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -120549,7 +120680,7 @@ class MODTRANLookupTablePropagationModel(ILaserAtmosphericLossModel, IComponentI
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MODTRANLookupTablePropagationModel)
-    
+
     _get_aerosol_model_type_metadata = { "offset" : _get_aerosol_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ModtranAerosolModelType),) }
@@ -120689,7 +120820,7 @@ class MODTRANPropagationModel(ILaserAtmosphericLossModel, IComponentInfo, IClone
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MODTRANPropagationModel)
-    
+
     _get_supported_aerosol_models_metadata = { "offset" : _get_supported_aerosol_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -120961,7 +121092,7 @@ class AtmosphericTurbulenceModelConstant(IAtmosphericTurbulenceModel, SupportsDe
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericTurbulenceModelConstant)
-    
+
     _get_constant_refractive_index_structure_parameter_metadata = { "offset" : _get_constant_refractive_index_structure_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -121013,7 +121144,7 @@ class AtmosphericTurbulenceModelHufnagelValley(IAtmosphericTurbulenceModel, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericTurbulenceModelHufnagelValley)
-    
+
     _get_nominal_ground_refractive_index_structure_parameter_metadata = { "offset" : _get_nominal_ground_refractive_index_structure_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -121079,7 +121210,7 @@ class LaserTroposphericScintillationLossModelITURP1814(ILaserTroposphericScintil
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaserTroposphericScintillationLossModelITURP1814)
-    
+
     _set_atmospheric_turbulence_model_type_metadata = { "offset" : _set_atmospheric_turbulence_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosphericTurbulenceModelType),) }
@@ -121219,7 +121350,7 @@ class AtmosphericAbsorptionModelGraphics3DACAP(IAtmosphericAbsorptionModel, ICom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericAbsorptionModelGraphics3DACAP)
-    
+
     _get_sunspot_number_metadata = { "offset" : _get_sunspot_number_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -121456,7 +121587,7 @@ class AtmosphericAbsorptionModelSimpleSatcom(IAtmosphericAbsorptionModel, ICompo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericAbsorptionModelSimpleSatcom)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -121526,7 +121657,7 @@ class AtmosphericAbsorptionModelScriptPlugin(IAtmosphericAbsorptionModel, ICompo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericAbsorptionModelScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -121580,7 +121711,7 @@ class AtmosphericAbsorptionModelCOMPlugin(IAtmosphericAbsorptionModel, IComponen
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AtmosphericAbsorptionModelCOMPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -121659,7 +121790,7 @@ class ScatteringPointModelPlugin(IScatteringPointModel, IComponentInfo, ICloneab
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointModelPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -121717,7 +121848,7 @@ class ScatteringPointModelConstantCoefficient(IScatteringPointModel, IComponentI
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointModelConstantCoefficient)
-    
+
     _get_constant_coefficient_metadata = { "offset" : _get_constant_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -121781,7 +121912,7 @@ class ScatteringPointModelWindTurbine(IScatteringPointModel, IComponentInfo, ICl
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ScatteringPointModelWindTurbine)
-    
+
     _get_blade_length_metadata = { "offset" : _get_blade_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -121901,7 +122032,7 @@ class RadarCrossSection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSection)
-    
+
     _get_supported_models_metadata = { "offset" : _get_supported_models_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
@@ -121967,7 +122098,7 @@ class RadarCrossSectionModel(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionModel)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -122025,7 +122156,7 @@ class RadarCrossSectionInheritable(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionInheritable)
-    
+
     _get_inherit_metadata = { "offset" : _get_inherit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -122113,7 +122244,7 @@ class RadarCrossSectionFrequencyBand(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionFrequencyBand)
-    
+
     _get_minimum_frequency_metadata = { "offset" : _get_minimum_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -122227,7 +122358,7 @@ class RadarCrossSectionFrequencyBandCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -122320,7 +122451,7 @@ class RadarCrossSectionComputeStrategyConstantValue(IRadarCrossSectionComputeStr
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionComputeStrategyConstantValue)
-    
+
     _get_constant_value_metadata = { "offset" : _get_constant_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -122370,7 +122501,7 @@ class RadarCrossSectionComputeStrategyScriptPlugin(IRadarCrossSectionComputeStra
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionComputeStrategyScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -122420,7 +122551,7 @@ class RadarCrossSectionComputeStrategyExternalFile(IRadarCrossSectionComputeStra
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionComputeStrategyExternalFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -122472,7 +122603,7 @@ class RadarCrossSectionComputeStrategyAnsysCSVFile(IRadarCrossSectionComputeStra
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionComputeStrategyAnsysCSVFile)
-    
+
     _get_primary_polarization_data_filename_metadata = { "offset" : _get_primary_polarization_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -122538,7 +122669,7 @@ class RadarCrossSectionComputeStrategyPlugin(IRadarCrossSectionComputeStrategy, 
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarCrossSectionComputeStrategyPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -122592,7 +122723,7 @@ class CustomPropagationModel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CustomPropagationModel)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -122695,7 +122826,7 @@ class PropagationChannel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PropagationChannel)
-    
+
     _get_enable_atmospheric_absorption_metadata = { "offset" : _get_enable_atmospheric_absorption_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -123081,7 +123212,7 @@ class RFEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RFEnvironment)
-    
+
     _get_propagation_channel_metadata = { "offset" : _get_propagation_channel_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -123219,7 +123350,7 @@ class LaserEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LaserEnvironment)
-    
+
     _get_propagation_channel_metadata = { "offset" : _get_propagation_channel_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -123259,7 +123390,7 @@ class ObjectRFEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ObjectRFEnvironment)
-    
+
     _get_propagation_channel_metadata = { "offset" : _get_propagation_channel_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -123299,7 +123430,7 @@ class ObjectLaserEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ObjectLaserEnvironment)
-    
+
     _get_propagation_channel_metadata = { "offset" : _get_propagation_channel_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -123339,7 +123470,7 @@ class PlatformLaserEnvironment(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PlatformLaserEnvironment)
-    
+
     _get_propagation_channel_metadata = { "offset" : _get_propagation_channel_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -123405,7 +123536,7 @@ class RainLossModelITURP618Version12(IRainLossModel, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelITURP618Version12)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123483,7 +123614,7 @@ class RainLossModelITURP618Version13(IRainLossModel, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelITURP618Version13)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123603,7 +123734,7 @@ class RainLossModelITURP618Version10(IRainLossModel, IComponentInfo, ICloneable,
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelITURP618Version10)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123673,7 +123804,7 @@ class RainLossModelCrane1985(IRainLossModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelCrane1985)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123727,7 +123858,7 @@ class RainLossModelCrane1982(IRainLossModel, IComponentInfo, ICloneable, Support
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelCrane1982)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123781,7 +123912,7 @@ class RainLossModelCCIR1983(IRainLossModel, IComponentInfo, ICloneable, Supports
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelCCIR1983)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -123835,7 +123966,7 @@ class RainLossModelScriptPlugin(IRainLossModel, IComponentInfo, ICloneable, Supp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RainLossModelScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -123926,7 +124057,7 @@ class CloudsAndFogFadingLossModelP840Version6(ICloudsAndFogFadingLossModel, ICom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CloudsAndFogFadingLossModelP840Version6)
-    
+
     _get_cloud_ceiling_metadata = { "offset" : _get_cloud_ceiling_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -124108,7 +124239,7 @@ class CloudsAndFogFadingLossModelP840Version7(ICloudsAndFogFadingLossModel, ICom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CloudsAndFogFadingLossModelP840Version7)
-    
+
     _get_cloud_ceiling_metadata = { "offset" : _get_cloud_ceiling_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -124319,7 +124450,7 @@ class TroposphericScintillationFadingLossModelP618Version8(ITroposphericScintill
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TroposphericScintillationFadingLossModelP618Version8)
-    
+
     _get_compute_deep_fade_metadata = { "offset" : _get_compute_deep_fade_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -124431,7 +124562,7 @@ class TroposphericScintillationFadingLossModelP618Version12(ITroposphericScintil
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TroposphericScintillationFadingLossModelP618Version12)
-    
+
     _get_average_time_choice_metadata = { "offset" : _get_average_time_choice_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(TroposphericScintillationAverageTimeChoiceType),) }
@@ -124590,7 +124721,7 @@ class IonosphericFadingLossModelP531Version13(IIonosphericFadingLossModel, IComp
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, IonosphericFadingLossModelP531Version13)
-    
+
     _get_use_alternate_ap_file_metadata = { "offset" : _get_use_alternate_ap_file_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -124685,7 +124816,7 @@ class UrbanTerrestrialLossModelTwoRay(IUrbanTerrestrialLossModel, IComponentInfo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UrbanTerrestrialLossModelTwoRay)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -124761,7 +124892,7 @@ class UrbanTerrestrialLossModelWirelessInSite64(IUrbanTerrestrialLossModel, ICom
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, UrbanTerrestrialLossModelWirelessInSite64)
-    
+
     _get_surface_temperature_metadata = { "offset" : _get_surface_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -124886,7 +125017,7 @@ class WirelessInSite64GeometryData(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, WirelessInSite64GeometryData)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -125126,7 +125257,7 @@ class PointingStrategyFixed(IPointingStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointingStrategyFixed)
-    
+
     _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -125183,7 +125314,7 @@ class PointingStrategySpinning(IPointingStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointingStrategySpinning)
-    
+
     _get_spin_axes_orientation_metadata = { "offset" : _get_spin_axes_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -125286,7 +125417,7 @@ class PointingStrategyTargeted(IPointingStrategy, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointingStrategyTargeted)
-    
+
     _get_target_object_metadata = { "offset" : _get_target_object_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -125350,7 +125481,7 @@ class CommRadCartesianLocation(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommRadCartesianLocation)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -125435,7 +125566,7 @@ class CommRadComplexNumber(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommRadComplexNumber)
-    
+
     _get_real_metadata = { "offset" : _get_real_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -125517,7 +125648,7 @@ class CommRadComplexNumberCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -125681,7 +125812,7 @@ class ModulatorModelExternal(IModulatorModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModulatorModelExternal)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -125902,7 +126033,7 @@ class ModulatorModelBOC(IModulatorModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModulatorModelBOC)
-    
+
     _get_subcarrier_frequency_metadata = { "offset" : _get_subcarrier_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -126089,7 +126220,7 @@ class ModulatorModelPulsedSignal(IModulatorModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ModulatorModelPulsedSignal)
-    
+
     _get_pulse_width_metadata = { "offset" : _get_pulse_width_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -126217,7 +126348,7 @@ class LinkMargin(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, LinkMargin)
-    
+
     _get_enable_metadata = { "offset" : _get_enable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -126373,7 +126504,7 @@ class DemodulatorModelExternal(IDemodulatorModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DemodulatorModelExternal)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -126765,7 +126896,7 @@ class DemodulatorModelScriptPlugin(IDemodulatorModel, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DemodulatorModelScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -126832,7 +126963,7 @@ class TransferFunctionPolynomialCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -126915,7 +127046,7 @@ class TransferFunctionInputBackOffVsCOverImTableRow(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransferFunctionInputBackOffVsCOverImTableRow)
-    
+
     _get_input_back_off_metadata = { "offset" : _get_input_back_off_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -126996,7 +127127,7 @@ class TransferFunctionInputBackOffVsCOverImTable(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -127079,7 +127210,7 @@ class TransferFunctionInputBackOffOutputBackOffTableRow(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TransferFunctionInputBackOffOutputBackOffTableRow)
-    
+
     _get_input_back_off_metadata = { "offset" : _get_input_back_off_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -127160,7 +127291,7 @@ class TransferFunctionInputBackOffOutputBackOffTable(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -127243,7 +127374,7 @@ class BeerBouguerLambertLawLayer(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeerBouguerLambertLawLayer)
-    
+
     _get_top_height_metadata = { "offset" : _get_top_height_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -127322,7 +127453,7 @@ class BeerBouguerLambertLawLayerCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -127448,7 +127579,7 @@ class RadarActivityTimeComponentListElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarActivityTimeComponentListElement)
-    
+
     _get_is_active_metadata = { "offset" : _get_is_active_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -127532,7 +127663,7 @@ class RadarActivityTimeComponentListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -127619,7 +127750,7 @@ class RadarActivityTimeComponentList(IRadarActivity, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarActivityTimeComponentList)
-    
+
     _get_time_components_metadata = { "offset" : _get_time_components_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -127666,7 +127797,7 @@ class RadarActivityTimeIntervalListElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarActivityTimeIntervalListElement)
-    
+
     _get_is_active_metadata = { "offset" : _get_is_active_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -127769,7 +127900,7 @@ class RadarActivityTimeIntervalListCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -127870,7 +128001,7 @@ class RadarActivityTimeIntervalList(IRadarActivity, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarActivityTimeIntervalList)
-    
+
     _get_time_intervals_metadata = { "offset" : _get_time_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -127923,7 +128054,7 @@ class RadarAntennaBeam(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarAntennaBeam)
-    
+
     _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -128069,7 +128200,7 @@ class RadarAntennaBeamCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -128158,7 +128289,7 @@ class AntennaSystem(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaSystem)
-    
+
     _get_antenna_beams_metadata = { "offset" : _get_antenna_beams_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -128234,7 +128365,7 @@ class AntennaBeamTransmit(IAntennaBeam, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaBeamTransmit)
-    
+
     _get_power_metadata = { "offset" : _get_power_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -128301,7 +128432,7 @@ class AntennaBeamCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -128458,7 +128589,7 @@ class AntennaBeamSelectionStrategyScriptPlugin(IAntennaBeamSelectionStrategy, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AntennaBeamSelectionStrategyScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -128494,7 +128625,7 @@ class AntennaBeamSelectionStrategyScriptPlugin(IAntennaBeamSelectionStrategy, Su
 agcls.AgClassCatalog.add_catalog_entry((5163716519952654814, 2477260774832828863), AntennaBeamSelectionStrategyScriptPlugin)
 agcls.AgTypeNameMap["AntennaBeamSelectionStrategyScriptPlugin"] = AntennaBeamSelectionStrategyScriptPlugin
 
-class CommSystem(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class CommSystem(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Provide access to the properties and methods defining an CommSystem object."""
 
     _num_methods = 23
@@ -128529,7 +128660,7 @@ class CommSystem(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystem)
-    
+
     _get_transmitters_metadata = { "offset" : _get_transmitters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -128724,18 +128855,18 @@ class CommSystem(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type CommSystem."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, CommSystem)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CommSystem, [CommSystem, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, CommSystem, [CommSystem, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((4805665330422676279, 8097241134957647537), CommSystem)
 agcls.AgTypeNameMap["CommSystem"] = CommSystem
@@ -128778,7 +128909,7 @@ class CommSystemGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemGraphics)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -129022,7 +129153,7 @@ class CommSystemGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemGraphics3D)
-    
+
     _get_show_desired_links_metadata = { "offset" : _get_show_desired_links_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -129112,7 +129243,7 @@ class CommSystemAccessOptions(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemAccessOptions)
-    
+
     _get_enable_light_time_delay_metadata = { "offset" : _get_enable_light_time_delay_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -129265,7 +129396,7 @@ class CommSystemAccessEventDetectionSubsample(ICommSystemAccessEventDetection, S
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemAccessEventDetectionSubsample)
-    
+
     _get_time_convergence_metadata = { "offset" : _get_time_convergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -129387,7 +129518,7 @@ class CommSystemAccessSamplingMethodFixed(ICommSystemAccessSamplingMethod, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemAccessSamplingMethodFixed)
-    
+
     _get_fixed_time_step_metadata = { "offset" : _get_fixed_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -129455,7 +129586,7 @@ class CommSystemAccessSamplingMethodAdaptive(ICommSystemAccessSamplingMethod, Su
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemAccessSamplingMethodAdaptive)
-    
+
     _get_maximum_time_step_metadata = { "offset" : _get_maximum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -129578,7 +129709,7 @@ class CommSystemLinkSelectionCriteriaScriptPlugin(ICommSystemLinkSelectionCriter
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, CommSystemLinkSelectionCriteriaScriptPlugin)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -129627,7 +129758,7 @@ class ComponentDirectory(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ComponentDirectory)
-    
+
     _get_components_metadata = { "offset" : _get_components_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(Component), agmarshall.InterfaceOutArg,) }
@@ -129710,7 +129841,7 @@ class ComponentInfoCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
@@ -129844,7 +129975,7 @@ class ComponentAttrLinkEmbedControl(IComponentLinkEmbedControl, SupportsDeleteCa
 agcls.AgClassCatalog.add_catalog_entry((5234767659008670170, 10483292385726866843), ComponentAttrLinkEmbedControl)
 agcls.AgTypeNameMap["ComponentAttrLinkEmbedControl"] = ComponentAttrLinkEmbedControl
 
-class Volumetric(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Volumetric(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Volumetric properties."""
 
     _num_methods = 10
@@ -129866,7 +129997,7 @@ class Volumetric(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Volumetric)
-    
+
     _get_volume_grid_definition_type_metadata = { "offset" : _get_volume_grid_definition_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VolumetricDefinitionType),) }
@@ -129952,18 +130083,18 @@ class Volumetric(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type Volumetric."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Volumetric)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Volumetric, [Volumetric, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Volumetric, [Volumetric, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5118758700762695835, 14703343423010200503), Volumetric)
 agcls.AgTypeNameMap["Volumetric"] = Volumetric
@@ -129988,7 +130119,7 @@ class VolumetricGridSpatialCalculation(IVolumetricGridDefinition, SupportsDelete
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGridSpatialCalculation)
-    
+
     _get_volume_grid_metadata = { "offset" : _get_volume_grid_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -130089,7 +130220,7 @@ class VolumetricExternalFile(IVolumetricGridDefinition, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricExternalFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -130154,7 +130285,7 @@ class VolumetricAnalysisInterval(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricAnalysisInterval)
-    
+
     _get_analysis_interval_metadata = { "offset" : _get_analysis_interval_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -130270,7 +130401,7 @@ class VolumetricAdvancedSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricAdvancedSettings)
-    
+
     _get_recompute_automatically_metadata = { "offset" : _get_recompute_automatically_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -130351,7 +130482,7 @@ class VolumetricGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3D)
-    
+
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -130550,7 +130681,7 @@ class VolumetricGraphics3DGrid(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DGrid)
-    
+
     _get_show_grid_metadata = { "offset" : _get_show_grid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -130681,7 +130812,7 @@ class VolumetricGraphics3DCrossSection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DCrossSection)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -130753,7 +130884,7 @@ class VolumetricGraphics3DCrossSectionPlane(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DCrossSectionPlane)
-    
+
     _get_plane_metadata = { "offset" : _get_plane_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -130811,7 +130942,7 @@ class VolumetricGraphics3DCrossSectionPlaneCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -130892,7 +131023,7 @@ class VolumetricGraphics3DVolume(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DVolume)
-    
+
     _get_active_grid_points_metadata = { "offset" : _get_active_grid_points_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -130956,7 +131087,7 @@ class VolumetricGraphics3DActiveGridPoints(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DActiveGridPoints)
-    
+
     _get_show_active_inactive_boundary_metadata = { "offset" : _get_show_active_inactive_boundary_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -131122,7 +131253,7 @@ class VolumetricGraphics3DSpatialCalculationLevels(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DSpatialCalculationLevels)
-    
+
     _get_show_boundary_levels_metadata = { "offset" : _get_show_boundary_levels_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -131221,7 +131352,7 @@ class VolumetricGraphics3DSpatialCalculationLevel(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DSpatialCalculationLevel)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -131297,7 +131428,7 @@ class VolumetricGraphics3DSpatialCalculationLevelCollection(SupportsDeleteCallba
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -131400,7 +131531,7 @@ class VolumetricGraphics3DLegend(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricGraphics3DLegend)
-    
+
     _get_position_x_metadata = { "offset" : _get_position_x_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -131633,7 +131764,7 @@ class VolumetricExportTool(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VolumetricExportTool)
-    
+
     _get_export_data_format_type_metadata = { "offset" : _get_export_data_format_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(VolumetricDataExportFormatType),) }
@@ -131738,7 +131869,7 @@ class VolumetricExportTool(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5127524723036995299, 395309663767936959), VolumetricExportTool)
 agcls.AgTypeNameMap["VolumetricExportTool"] = VolumetricExportTool
 
-class SatelliteCollection(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class SatelliteCollection(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """SatelliteCollection properties."""
 
     _num_methods = 1
@@ -131751,7 +131882,7 @@ class SatelliteCollection(IStkObject, ILifetimeInformation, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SatelliteCollection)
-    
+
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (),
             "marshallers" : () }
@@ -131764,23 +131895,23 @@ class SatelliteCollection(IStkObject, ILifetimeInformation, SupportsDeleteCallba
         """Construct an object of type SatelliteCollection."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, SatelliteCollection)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SatelliteCollection, [SatelliteCollection, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, SatelliteCollection, [SatelliteCollection, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((4667632369911776493, 11823697244967376264), SatelliteCollection)
 agcls.AgTypeNameMap["SatelliteCollection"] = SatelliteCollection
 
-class Subset(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class Subset(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """Subset properties."""
 
     _num_methods = 0
@@ -131792,24 +131923,24 @@ class Subset(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Subset)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type Subset."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, Subset)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Subset, [Subset, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, Subset, [Subset, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5024985719200363134, 2470772045508780447), Subset)
 agcls.AgTypeNameMap["Subset"] = Subset
@@ -131849,7 +131980,7 @@ class ElementConfigurationCircular(IElementConfiguration, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementConfigurationCircular)
-    
+
     _get_number_of_elements_metadata = { "offset" : _get_number_of_elements_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -131920,7 +132051,7 @@ class ElementConfigurationLinear(IElementConfiguration, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementConfigurationLinear)
-    
+
     _get_number_of_elements_metadata = { "offset" : _get_number_of_elements_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -132011,7 +132142,7 @@ class ElementConfigurationASCIIFile(IElementConfiguration, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementConfigurationASCIIFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -132067,7 +132198,7 @@ class ElementConfigurationHfssEepFile(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementConfigurationHfssEepFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -132226,7 +132357,7 @@ class SolarActivityConfigurationSunspotNumber(ISolarActivityConfiguration, Suppo
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarActivityConfigurationSunspotNumber)
-    
+
     _get_sunspot_number_metadata = { "offset" : _get_sunspot_number_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
             "marshallers" : (agmarshall.IntArg,) }
@@ -132276,7 +132407,7 @@ class SolarActivityConfigurationSolarFlux(ISolarActivityConfiguration, SupportsD
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SolarActivityConfigurationSolarFlux)
-    
+
     _get_solar_flux_metadata = { "offset" : _get_solar_flux_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132345,7 +132476,7 @@ class BeamformerASCIIFile(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerASCIIFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -132395,7 +132526,7 @@ class BeamformerMVDR(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerMVDR)
-    
+
     _get_constraint_metadata = { "offset" : _get_constraint_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132443,7 +132574,7 @@ class BeamformerUniform(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerUniform)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type BeamformerUniform."""
@@ -132475,7 +132606,7 @@ class BeamformerBlackmanHarris(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerBlackmanHarris)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type BeamformerBlackmanHarris."""
@@ -132507,7 +132638,7 @@ class BeamformerCosine(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerCosine)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type BeamformerCosine."""
@@ -132541,7 +132672,7 @@ class BeamformerCosineX(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerCosineX)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132591,7 +132722,7 @@ class BeamformerCustomTaperFile(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerCustomTaperFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -132641,7 +132772,7 @@ class BeamformerDolphChebyshev(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerDolphChebyshev)
-    
+
     _get_sidelobe_level_metadata = { "offset" : _get_sidelobe_level_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132693,7 +132824,7 @@ class BeamformerTaylor(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerTaylor)
-    
+
     _get_sidelobe_level_metadata = { "offset" : _get_sidelobe_level_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132757,7 +132888,7 @@ class BeamformerHamming(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerHamming)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type BeamformerHamming."""
@@ -132789,7 +132920,7 @@ class BeamformerHann(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerHann)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type BeamformerHann."""
@@ -132823,7 +132954,7 @@ class BeamformerRaisedCosine(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerRaisedCosine)
-    
+
     _get_p_metadata = { "offset" : _get_p_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132873,7 +133004,7 @@ class BeamformerRaisedCosineSquared(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerRaisedCosineSquared)
-    
+
     _get_p_metadata = { "offset" : _get_p_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -132923,7 +133054,7 @@ class BeamformerScript(IBeamformer, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, BeamformerScript)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -132974,7 +133105,7 @@ class Priority(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Priority)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -133045,7 +133176,7 @@ class PriorityCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -133123,7 +133254,7 @@ class TargetSelectionMethodPriority(ITargetSelectionMethod, SupportsDeleteCallba
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargetSelectionMethodPriority)
-    
+
     _get_priorities_metadata = { "offset" : _get_priorities_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -133164,7 +133295,7 @@ class TargetSelectionMethodRange(ITargetSelectionMethod, SupportsDeleteCallback)
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargetSelectionMethodRange)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type TargetSelectionMethodRange."""
@@ -133196,7 +133327,7 @@ class TargetSelectionMethodClosingVelocity(ITargetSelectionMethod, SupportsDelet
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, TargetSelectionMethodClosingVelocity)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type TargetSelectionMethodClosingVelocity."""
@@ -133251,7 +133382,7 @@ class DirectionProviderASCIIFile(IDirectionProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionProviderASCIIFile)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -133335,7 +133466,7 @@ class DirectionProviderObject(IDirectionProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionProviderObject)
-    
+
     _get_directions_metadata = { "offset" : _get_directions_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -133539,7 +133670,7 @@ class DirectionProviderLink(IDirectionProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionProviderLink)
-    
+
     _get_limits_exceeded_behavior_type_metadata = { "offset" : _get_limits_exceeded_behavior_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(LimitsExceededBehaviorType),) }
@@ -133654,7 +133785,7 @@ class DirectionProviderScript(IDirectionProvider, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DirectionProviderScript)
-    
+
     _get_members_metadata = { "offset" : _get_members_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -133716,7 +133847,7 @@ class Element(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Element)
-    
+
     _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -133805,7 +133936,7 @@ class ElementCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -133886,7 +134017,7 @@ class KeyValueCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -134026,7 +134157,7 @@ class RadarSTCAttenuationDecayFactor(IRadarSTCAttenuation, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSTCAttenuationDecayFactor)
-    
+
     _get_maximum_value_metadata = { "offset" : _get_maximum_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -134166,7 +134297,7 @@ class RadarSTCAttenuationDecaySlope(IRadarSTCAttenuation, SupportsDeleteCallback
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSTCAttenuationDecaySlope)
-    
+
     _get_maximum_value_metadata = { "offset" : _get_maximum_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -134359,7 +134490,7 @@ class RadarSTCAttenuationPlugin(IRadarSTCAttenuation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, RadarSTCAttenuationPlugin)
-    
+
     _get_plugin_configuration_metadata = { "offset" : _get_plugin_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -134417,7 +134548,7 @@ class SensorPointingAlongVector(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingAlongVector)
-    
+
     _get_alignment_vector_metadata = { "offset" : _get_alignment_vector_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -134516,7 +134647,7 @@ class SensorPointingSchedule(ISensorPointing, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, SensorPointingSchedule)
-    
+
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -134578,7 +134709,7 @@ class AccessConstraintAnalysisWorkbenchCollection(IAccessConstraint, SupportsDel
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -134682,7 +134813,7 @@ class AccessConstraintAnalysisWorkbench(IAccessConstraint, SupportsDeleteCallbac
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AccessConstraintAnalysisWorkbench)
-    
+
     _get_enable_minimum_metadata = { "offset" : _get_enable_minimum_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -134790,7 +134921,7 @@ class Graphics3DArticulationFile(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DArticulationFile)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -134844,7 +134975,7 @@ class DataProviderResultStatisticResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultStatisticResult)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -134885,7 +135016,7 @@ class DataProviderResultTimeVaryingExtremumResult(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultTimeVaryingExtremumResult)
-    
+
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -134937,7 +135068,7 @@ class DataProviderResultStatistics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, DataProviderResultStatistics)
-    
+
     _compute_statistic_metadata = { "offset" : _compute_statistic_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(StatisticType), agmarshall.InterfaceOutArg,) }
@@ -135000,7 +135131,7 @@ class Graphics3DModelglTFImageBased(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DModelglTFImageBased)
-    
+
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -135059,7 +135190,7 @@ class Graphics3DModelglTFImageBased(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4969941172518099960, 10971625228847638684), Graphics3DModelglTFImageBased)
 agcls.AgTypeNameMap["Graphics3DModelglTFImageBased"] = Graphics3DModelglTFImageBased
 
-class StkObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
+class STKObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
     """Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events."""
 
     _num_methods = 3
@@ -135073,15 +135204,15 @@ class StkObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StkObjectCutCopyPasteEventArguments)
-    
+        return get_interface_property(attrname, STKObjectCutCopyPasteEventArguments)
+
     _get_selected_object_path_metadata = { "offset" : _get_selected_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def selected_object_path(self) -> str:
         """Selected Object path that is being cut, copied or pasted."""
-        return self._intf.get_property(StkObjectCutCopyPasteEventArguments._metadata, StkObjectCutCopyPasteEventArguments._get_selected_object_path_metadata)
+        return self._intf.get_property(STKObjectCutCopyPasteEventArguments._metadata, STKObjectCutCopyPasteEventArguments._get_selected_object_path_metadata)
 
     _get_object_paths_metadata = { "offset" : _get_object_paths_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -135089,7 +135220,7 @@ class StkObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
     @property
     def object_paths(self) -> list:
         """Return an array of object paths that are cut, copied or pasted."""
-        return self._intf.get_property(StkObjectCutCopyPasteEventArguments._metadata, StkObjectCutCopyPasteEventArguments._get_object_paths_metadata)
+        return self._intf.get_property(STKObjectCutCopyPasteEventArguments._metadata, STKObjectCutCopyPasteEventArguments._get_object_paths_metadata)
 
     _get_pasted_object_paths_metadata = { "offset" : _get_pasted_object_paths_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -135097,16 +135228,16 @@ class StkObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
     @property
     def pasted_object_paths(self) -> list:
         """Return an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array."""
-        return self._intf.get_property(StkObjectCutCopyPasteEventArguments._metadata, StkObjectCutCopyPasteEventArguments._get_pasted_object_paths_metadata)
+        return self._intf.get_property(STKObjectCutCopyPasteEventArguments._metadata, STKObjectCutCopyPasteEventArguments._get_pasted_object_paths_metadata)
 
     _property_names[selected_object_path] = "selected_object_path"
     _property_names[object_paths] = "object_paths"
     _property_names[pasted_object_paths] = "pasted_object_paths"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StkObjectCutCopyPasteEventArguments."""
+        """Construct an object of type STKObjectCutCopyPasteEventArguments."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StkObjectCutCopyPasteEventArguments)
+        initialize_from_source_object(self, source_object, STKObjectCutCopyPasteEventArguments)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -135114,10 +135245,10 @@ class StkObjectCutCopyPasteEventArguments(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StkObjectCutCopyPasteEventArguments, [StkObjectCutCopyPasteEventArguments, ])
+        set_class_attribute(self, attrname, value, STKObjectCutCopyPasteEventArguments, [STKObjectCutCopyPasteEventArguments, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5598165820007439831, 1634687943240035974), StkObjectCutCopyPasteEventArguments)
-agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"] = StkObjectCutCopyPasteEventArguments
+agcls.AgClassCatalog.add_catalog_entry((5598165820007439831, 1634687943240035974), STKObjectCutCopyPasteEventArguments)
+agcls.AgTypeNameMap["STKObjectCutCopyPasteEventArguments"] = STKObjectCutCopyPasteEventArguments
 
 class PreferencesPythonPlugins(SupportsDeleteCallback):
     """Python plugin settings."""
@@ -135133,7 +135264,7 @@ class PreferencesPythonPlugins(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, PreferencesPythonPlugins)
-    
+
     _get_access_constraint_paths_metadata = { "offset" : _get_access_constraint_paths_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -135201,7 +135332,7 @@ class PathCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -135275,7 +135406,7 @@ class PathCollection(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5381925190988005438, 16474786558132462758), PathCollection)
 agcls.AgTypeNameMap["PathCollection"] = PathCollection
 
-class AdvCAT(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
+class AdvCAT(ISTKObject, ILifetimeInformation, SupportsDeleteCallback):
     """AdvCAT properties."""
 
     _num_methods = 29
@@ -135316,7 +135447,7 @@ class AdvCAT(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCAT)
-    
+
     _get_time_period_metadata = { "offset" : _get_time_period_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -135553,18 +135684,18 @@ class AdvCAT(IStkObject, ILifetimeInformation, SupportsDeleteCallback):
         """Construct an object of type AdvCAT."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, source_object, AdvCAT)
-        IStkObject.__init__(self, source_object)
+        ISTKObject.__init__(self, source_object)
         ILifetimeInformation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IStkObject._private_init(self, intf)
+        ISTKObject._private_init(self, intf)
         ILifetimeInformation._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvCAT, [AdvCAT, IStkObject, ILifetimeInformation])
+        set_class_attribute(self, attrname, value, AdvCAT, [AdvCAT, ISTKObject, ILifetimeInformation])
 
 agcls.AgClassCatalog.add_catalog_entry((5546587474577404889, 13625713137302390443), AdvCAT)
 agcls.AgTypeNameMap["AdvCAT"] = AdvCAT
@@ -135584,7 +135715,7 @@ class AdvCATAvailableObjectCollection(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATAvailableObjectCollection)
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -135653,7 +135784,7 @@ class AdvCATChosenObject(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATChosenObject)
-    
+
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -135832,7 +135963,7 @@ class AdvCATChosenObjectCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -135927,7 +136058,7 @@ class AdvCATPreFilters(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATPreFilters)
-    
+
     _get_use_out_of_date_filter_metadata = { "offset" : _get_use_out_of_date_filter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -136093,7 +136224,7 @@ class AdvCATAdvancedEllipsoid(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATAdvancedEllipsoid)
-    
+
     _get_scale_factor_metadata = { "offset" : _get_scale_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136221,7 +136352,7 @@ class AdvCATAdvancedSettings(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATAdvancedSettings)
-    
+
     _get_ellipsoid_advanced_settings_metadata = { "offset" : _get_ellipsoid_advanced_settings_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -136533,7 +136664,7 @@ class AdvCATGraphics3D(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, AdvCATGraphics3D)
-    
+
     _get_show_metadata = { "offset" : _get_show_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
@@ -136652,7 +136783,7 @@ class EOIRShapeBox(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeBox)
-    
+
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136736,7 +136867,7 @@ class EOIRShapeCone(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeCone)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136804,7 +136935,7 @@ class EOIRShapeCylinder(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeCylinder)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136872,7 +137003,7 @@ class EOIRShapePlate(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapePlate)
-    
+
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136938,7 +137069,7 @@ class EOIRShapeSphere(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeSphere)
-    
+
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -136992,7 +137123,7 @@ class EOIRShapeCoupler(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeCoupler)
-    
+
     _get_radius_1_metadata = { "offset" : _get_radius_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -137072,7 +137203,7 @@ class EOIRShapeNone(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeNone)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EOIRShapeNone."""
@@ -137104,7 +137235,7 @@ class EOIRShapeGEOComm(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeGEOComm)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EOIRShapeGEOComm."""
@@ -137136,7 +137267,7 @@ class EOIRShapeLEOComm(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeLEOComm)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EOIRShapeLEOComm."""
@@ -137168,7 +137299,7 @@ class EOIRShapeLEOImaging(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeLEOImaging)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EOIRShapeLEOImaging."""
@@ -137202,7 +137333,7 @@ class EOIRShapeCustomMesh(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeCustomMesh)
-    
+
     _get_maximum_dimension_metadata = { "offset" : _get_maximum_dimension_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -137250,7 +137381,7 @@ class EOIRShapeTargetSignature(IEOIRShapeObject, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShapeTargetSignature)
-    
+
 
     def __init__(self, source_object=None):
         """Construct an object of type EOIRShapeTargetSignature."""
@@ -137292,7 +137423,7 @@ class EOIRStagePlume(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRStagePlume)
-    
+
     _get_on_time_delta_metadata = { "offset" : _get_on_time_delta_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
@@ -137423,7 +137554,7 @@ class EOIRShape(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRShape)
-    
+
     _get_shape_type_metadata = { "offset" : _get_shape_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EOIRShapeType),) }
@@ -137642,7 +137773,7 @@ class EOIRShapeCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
@@ -137731,7 +137862,7 @@ class EOIRMaterialElement(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRMaterialElement)
-    
+
     _get_temperature_model_metadata = { "offset" : _get_temperature_model_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
@@ -137916,7 +138047,7 @@ class EOIRMaterialElementCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    
+
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
@@ -137977,7 +138108,7 @@ class EOIRStage(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, EOIRStage)
-    
+
     _get_flight_type_metadata = { "offset" : _get_flight_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EOIRFlightType),) }
@@ -138053,7 +138184,7 @@ class MissileEOIR(IEOIR, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, MissileEOIR)
-    
+
     _get_shapes_metadata = { "offset" : _get_shapes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
@@ -138104,7 +138235,7 @@ class VehicleEOIR(IEOIR, SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, VehicleEOIR)
-    
+
     _get_shape_metadata = { "offset" : _get_shape_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }

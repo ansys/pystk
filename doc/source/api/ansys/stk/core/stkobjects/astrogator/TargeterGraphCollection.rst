@@ -15,30 +15,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.item`
-              - Allow you to iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.add_graph`
               - Add a new targeter graph.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.remove_graph`
-              - Remove a targeter graph.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.cut`
               - Copy a targeter graph to the clipboard and removes the targeter graph from the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.paste`
-              - Pastes a targeter graph from the clipboard into the list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.insert_copy`
-              - Copy a targeter graph and inserts the copy into the list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.get_item_by_index`
               - Retrieve a targeter graph from the collection by index.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.get_item_by_name`
               - Retrieve a targeter graph from the collection by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.insert_copy`
+              - Copy a targeter graph and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.paste`
+              - Pastes a targeter graph from the clipboard into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.remove_graph`
+              - Remove a targeter graph.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -85,21 +85,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index_or_name: typing.Any) -> TargeterGraph
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.item
-
-    Allow you to iterate through the collection.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~TargeterGraph`
-
-
-
 .. py:method:: add_graph(self) -> TargeterGraph
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.add_graph
 
@@ -109,19 +94,6 @@ Method detail
 
         :obj:`~TargeterGraph`
 
-.. py:method:: remove_graph(self, index_or_name: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.remove_graph
-
-    Remove a targeter graph.
-
-    :Parameters:
-
-    **index_or_name** : :obj:`~typing.Any`
-
-    :Returns:
-
-        :obj:`~None`
-
 
 .. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.cut
@@ -130,33 +102,12 @@ Method detail
 
     :Parameters:
 
-    **index_or_name** : :obj:`~typing.Any`
+        **index_or_name** : :obj:`~typing.Any`
+
 
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: paste(self) -> TargeterGraph
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.paste
-
-    Pastes a targeter graph from the clipboard into the list.
-
-    :Returns:
-
-        :obj:`~TargeterGraph`
-
-.. py:method:: insert_copy(self, graph: TargeterGraph) -> TargeterGraph
-    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.insert_copy
-
-    Copy a targeter graph and inserts the copy into the list.
-
-    :Parameters:
-
-    **graph** : :obj:`~TargeterGraph`
-
-    :Returns:
-
-        :obj:`~TargeterGraph`
 
 .. py:method:: get_item_by_index(self, index: int) -> TargeterGraph
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.get_item_by_index
@@ -165,7 +116,8 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
@@ -178,9 +130,63 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~TargeterGraph`
+
+.. py:method:: insert_copy(self, graph: TargeterGraph) -> TargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.insert_copy
+
+    Copy a targeter graph and inserts the copy into the list.
+
+    :Parameters:
+
+        **graph** : :obj:`~TargeterGraph`
+
+
+    :Returns:
+
+        :obj:`~TargeterGraph`
+
+.. py:method:: item(self, index_or_name: typing.Any) -> TargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~TargeterGraph`
+
+.. py:method:: paste(self) -> TargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.paste
+
+    Pastes a targeter graph from the clipboard into the list.
+
+    :Returns:
+
+        :obj:`~TargeterGraph`
+
+
+.. py:method:: remove_graph(self, index_or_name: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.remove_graph
+
+    Remove a targeter graph.
+
+    :Parameters:
+
+        **index_or_name** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

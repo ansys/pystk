@@ -77,7 +77,7 @@ class EarlyBoundTests(TestBase):
         self.OnePtAccessStartStop("1 Jul 2007 00:00:00.000", "1 Jul 2007 01:00:00.000")
 
     def OnePtAccessStartStop(self, startTime: str, stopTime: str):
-        oObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
+        oObj: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_FA, ISTKObject)
         onePtAccess: "OnePointAccess" = oObj.create_one_point_access("Satellite/Satellite1")
         onePtAccess.start_time = startTime
         Assert.assertEqual(startTime, onePtAccess.start_time)
@@ -140,7 +140,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine2(constraint.value)
 
     def test_StartTime2StopTime2(self):
-        fac1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "BUG56961")
+        fac1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "BUG56961")
         interval: "DataProviderInterval" = clr.CastAs(fac1.data_providers["Eclipse Times"], DataProviderInterval)
         result: "DataProviderResult" = interval.execute(
             (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time,
@@ -214,7 +214,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        facObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_FA, IStkObject)
+        facObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_FA, ISTKObject)
         oHelper.Run(facObject)
         oHelper.TestObjectFilesArray(facObject.object_files)
 
@@ -369,7 +369,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_FA.graphics_3d.model)
 
     # endregion
@@ -460,7 +460,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_FA.access_constraints, IStkObject(EarlyBoundTests.AG_FA), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_FA.access_constraints, ISTKObject(EarlyBoundTests.AG_FA), TestBase.TemporaryDirectory
         )
 
     # endregion

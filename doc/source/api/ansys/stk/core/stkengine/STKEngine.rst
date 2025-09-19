@@ -23,7 +23,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkengine.STKEngine.start_application`
               - Initialize STK Engine in-process and return the instance.
-                
+
                 Must only be used once per Python process.
 
 Import detail
@@ -41,12 +41,13 @@ Method detail
     :canonical: ansys.stk.core.stkengine.STKEngine.start_application
 
     Initialize STK Engine in-process and return the instance.
-    
+
     Must only be used once per Python process.
 
     :Parameters:
 
-    **no_graphics** : :obj:`~bool`
+        **no_graphics** : :obj:`~bool`
+
 
     :Returns:
 

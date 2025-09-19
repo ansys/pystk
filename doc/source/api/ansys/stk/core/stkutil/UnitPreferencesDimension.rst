@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,19 +22,19 @@ Overview
               - Set the Unit for this simple dimension.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.identifier`
-              - Return the ID of the dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.name`
-              - Return the current Dimension's full name.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.available_units`
               - Return collection of Units.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.current_unit`
               - Return the current unit for this dimension.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.identifier`
+              - Return the ID of the dimension.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.name`
+              - Return the current Dimension's full name.
 
 
 
@@ -49,18 +49,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: identifier
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.identifier
-    :type: int
-
-    Return the ID of the dimension.
-
-.. py:property:: name
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.name
-    :type: str
-
-    Return the current Dimension's full name.
-
 .. py:property:: available_units
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.available_units
     :type: UnitPreferencesUnitCollection
@@ -72,6 +60,18 @@ Property detail
     :type: UnitPreferencesUnit
 
     Return the current unit for this dimension.
+
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.identifier
+    :type: int
+
+    Return the ID of the dimension.
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.name
+    :type: str
+
+    Return the current Dimension's full name.
 
 
 Method detail
@@ -88,7 +88,8 @@ Method detail
 
     :Parameters:
 
-    **unit_abbrv** : :obj:`~str`
+        **unit_abbrv** : :obj:`~str`
+
 
     :Returns:
 

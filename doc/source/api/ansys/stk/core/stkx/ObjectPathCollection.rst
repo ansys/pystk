@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,15 +24,15 @@ Overview
               - Return the elements within the specified range.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection.count`
-              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection._new_enum`
               - Return an object that can be used to iterate through all the object paths in the collection.
+            * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection.count`
+              - Number of elements contained in the collection.
 
 
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkx.ObjectPathCollection.count
-    :type: int
-
-    Number of elements contained in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkx.ObjectPathCollection._new_enum
     :type: EnumeratorProxy
 
     Return an object that can be used to iterate through all the object paths in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkx.ObjectPathCollection.count
+    :type: int
+
+    Number of elements contained in the collection.
 
 
 Method detail
@@ -71,12 +71,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~str`
-
 
 .. py:method:: range(self, start_index: int, stop_index: int) -> list
     :canonical: ansys.stk.core.stkx.ObjectPathCollection.range
@@ -85,10 +85,13 @@ Method detail
 
     :Parameters:
 
-    **start_index** : :obj:`~int`
-    **stop_index** : :obj:`~int`
+        **start_index** : :obj:`~int`
+
+        **stop_index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~list`
+
 

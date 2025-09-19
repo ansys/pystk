@@ -218,7 +218,7 @@ class EarlyBoundTests(TestBase):
 
     def HeapCorruption(self):
         sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
-        oSatOnMars: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
+        oSatOnMars: "ISTKObject" = TestBase.Application.current_scenario.children.new_on_central_body(
             STKObjectType.SATELLITE, "SatelliteOnMars", "Mars"
         )
         Assert.assertIsNotNone(oSatOnMars)

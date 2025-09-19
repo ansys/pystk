@@ -32,11 +32,11 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~ansys.stk.core.stkengine.STKEngineApplication`
-              - Interact with STK Engine.
-
             * - :py:class:`~ansys.stk.core.stkengine.STKEngine`
               - Initialize and manage the STK Engine application.
+
+            * - :py:class:`~ansys.stk.core.stkengine.STKEngineApplication`
+              - Interact with STK Engine.
 
 
     .. tab-item:: Enums
@@ -80,8 +80,8 @@ Starts STK Engine and provides access to the Object Model root.
     :maxdepth: 1
     :hidden:
 
-     STKEngineApplication<stkengine/STKEngineApplication>
      STKEngine<stkengine/STKEngine>
+     STKEngineApplication<stkengine/STKEngineApplication>
 
 .. toctree::
     :titlesonly:

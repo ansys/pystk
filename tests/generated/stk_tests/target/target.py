@@ -119,7 +119,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        targetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_TG, IStkObject)
+        targetObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_TG, ISTKObject)
         oHelper.Run(targetObject)
         oHelper.TestObjectFilesArray(targetObject.object_files)
 
@@ -272,7 +272,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VOTargetModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.model)
 
     # endregion
@@ -321,7 +321,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_TG.access_constraints, IStkObject(EarlyBoundTests.AG_TG), TestBase.TemporaryDirectory
+            EarlyBoundTests.AG_TG.access_constraints, ISTKObject(EarlyBoundTests.AG_TG), TestBase.TemporaryDirectory
         )
 
     # endregion

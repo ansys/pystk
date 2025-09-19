@@ -40,7 +40,7 @@ class TryCatchAssertBlock(object):
             finalizer()
 
     @staticmethod
-    def DoActionRunFinalize2(root: "StkObjectRoot", action, finalizer, *units):
+    def DoActionRunFinalize2(root: "STKObjectRoot", action, finalizer, *units):
         try:
             runner = CodeRunner(root)
             runner.DoWithUnits2(action, Enumerable.ToList(units))
@@ -50,8 +50,8 @@ class TryCatchAssertBlock(object):
 
 
 class CodeRunner(object):
-    def __init__(self, root: "StkObjectRoot", bBeginEndUpdate: bool = False):
-        self._root: "StkObjectRoot" = root
+    def __init__(self, root: "STKObjectRoot", bBeginEndUpdate: bool = False):
+        self._root: "STKObjectRoot" = root
         self._bBeginEndUpdate: bool = bBeginEndUpdate
 
     def DoWithUnits(self, action, *units):

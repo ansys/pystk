@@ -13,25 +13,25 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.magnitude`
               - Get or set the maximum overall magnitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis_enabled`
-              - Whether to constrain the slew rate along the direction of X axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis_enabled`
-              - Whether to constrain the slew rate along the direction of Y axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis_enabled`
-              - Whether to constrain the slew rate along the direction of Z axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis`
               - Constraint the slew rate along the direction of X axis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis_enabled`
+              - Whether to constrain the slew rate along the direction of X axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis`
               - Constraint the slew rate along the direction of Y axis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis_enabled`
+              - Whether to constrain the slew rate along the direction of Y axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis`
               - Constraint the slew rate along the direction of Z axis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis_enabled`
+              - Whether to constrain the slew rate along the direction of Z axis.
 
 
 
@@ -52,29 +52,17 @@ Property detail
 
     Get or set the maximum overall magnitude.
 
-.. py:property:: slew_rate_along_x_axis_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis_enabled
-    :type: bool
-
-    Whether to constrain the slew rate along the direction of X axis.
-
-.. py:property:: slew_rate_along_y_axis_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis_enabled
-    :type: bool
-
-    Whether to constrain the slew rate along the direction of Y axis.
-
-.. py:property:: slew_rate_along_z_axis_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis_enabled
-    :type: bool
-
-    Whether to constrain the slew rate along the direction of Z axis.
-
 .. py:property:: slew_rate_along_x_axis
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis
     :type: float
 
     Constraint the slew rate along the direction of X axis.
+
+.. py:property:: slew_rate_along_x_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_x_axis_enabled
+    :type: bool
+
+    Whether to constrain the slew rate along the direction of X axis.
 
 .. py:property:: slew_rate_along_y_axis
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis
@@ -82,10 +70,22 @@ Property detail
 
     Constraint the slew rate along the direction of Y axis.
 
+.. py:property:: slew_rate_along_y_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_y_axis_enabled
+    :type: bool
+
+    Whether to constrain the slew rate along the direction of Y axis.
+
 .. py:property:: slew_rate_along_z_axis
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis
     :type: float
 
     Constraint the slew rate along the direction of Z axis.
+
+.. py:property:: slew_rate_along_z_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate.slew_rate_along_z_axis_enabled
+    :type: bool
+
+    Whether to constrain the slew rate along the direction of Z axis.
 
 

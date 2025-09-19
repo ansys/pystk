@@ -15,17 +15,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunwaySource.get_user_runway`
-              - Get the user runway with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunwaySource.add_user_runway`
               - Create a new user runway with the given name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunwaySource.get_as_catalog_source`
               - Get the catalog source interface for this object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunwaySource.get_user_runway`
+              - Get the user runway with the given name.
 
 
 Examples
@@ -59,19 +59,6 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_user_runway(self, name: str) -> UserRunway
-    :canonical: ansys.stk.core.stkobjects.aviator.UserRunwaySource.get_user_runway
-
-    Get the user runway with the given name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~UserRunway`
-
 .. py:method:: add_user_runway(self, name: str) -> UserRunway
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunwaySource.add_user_runway
 
@@ -79,7 +66,8 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
@@ -93,4 +81,18 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogSource`
+
+.. py:method:: get_user_runway(self, name: str) -> UserRunway
+    :canonical: ansys.stk.core.stkobjects.aviator.UserRunwaySource.get_user_runway
+
+    Get the user runway with the given name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~UserRunway`
 

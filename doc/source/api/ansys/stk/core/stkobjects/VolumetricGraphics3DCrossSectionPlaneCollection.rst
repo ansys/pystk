@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.add`
               - Add a new plane to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -51,21 +51,35 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, plane: str) -> VolumetricGraphics3DCrossSectionPlane
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.add
+
+    Add a new plane to the collection.
+
+    :Parameters:
+
+        **plane** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~VolumetricGraphics3DCrossSectionPlane`
 
 
 .. py:method:: item(self, index: int) -> VolumetricGraphics3DCrossSectionPlane
@@ -75,25 +89,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~VolumetricGraphics3DCrossSectionPlane`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_all
@@ -104,16 +105,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, plane: str) -> VolumetricGraphics3DCrossSectionPlane
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection.remove_at
 
-    Add a new plane to the collection.
+    Remove an element from the collection using specified index.
 
     :Parameters:
 
-    **plane** : :obj:`~str`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~VolumetricGraphics3DCrossSectionPlane`
+        :obj:`~None`
+
 

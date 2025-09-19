@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Set the beam selection strategy type.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -62,6 +62,7 @@ Method detail
 -------------
 
 
+
 .. py:method:: set_beam_selection_strategy_type(self, value: BeamSelectionStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaSystem.set_beam_selection_strategy_type
 
@@ -69,10 +70,10 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~BeamSelectionStrategyType`
+        **value** : :obj:`~BeamSelectionStrategyType`
+
 
     :Returns:
 
         :obj:`~None`
-
 

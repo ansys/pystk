@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Determine if the data provider represents a group.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -60,8 +60,6 @@ Property detail
 Method detail
 -------------
 
-
-
 .. py:method:: is_group(self) -> bool
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.is_group
 
@@ -70,4 +68,6 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
 

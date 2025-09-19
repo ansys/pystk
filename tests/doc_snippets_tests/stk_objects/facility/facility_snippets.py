@@ -60,7 +60,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         eid="stkobjects~Facility",
     )
     def CreateFacilitySnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
     def test_GetValidFacilitySnippet(self):
@@ -77,7 +77,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         eid="",
     )
     def GetValidFacilitySnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         from ansys.stk.core.utilities.exceptions import STKRuntimeError
         from ansys.stk.core.stkobjects import Facility, STKObjectType
 
@@ -106,7 +106,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         eid="stkobjects~Facility",
     )
     def SetHeightFacilitySnippet(self, root):
-        # StkObjectRoot root: STK Object Model Root
+        # STKObjectRoot root: STK Object Model Root
         from ansys.stk.core.stkobjects import Facility, STKObjectType
 
         facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))

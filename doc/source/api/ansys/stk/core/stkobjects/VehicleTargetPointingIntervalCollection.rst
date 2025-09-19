@@ -13,30 +13,30 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.item`
-              - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at`
-              - Remove an element from the collection using specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_all`
-              - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add`
               - Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_all`
+              - Remove all elements from the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at`
+              - Remove an element from the collection using specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.count`
-              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum`
               - Return an enumerator that can iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.count`
+              - Return the number of elements in a collection.
 
 
 
@@ -51,21 +51,37 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.count
-    :type: int
-
-    Return the number of elements in a collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that can iterate through the collection.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.count
+    :type: int
+
+    Return the number of elements in a collection.
+
 
 Method detail
 -------------
+
+.. py:method:: add(self, start_time: typing.Any, stop_time: typing.Any) -> AttitudeScheduleTimesElement
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add
+
+    Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
+
+    :Parameters:
+
+        **start_time** : :obj:`~typing.Any`
+
+        **stop_time** : :obj:`~typing.Any`
+
+
+    :Returns:
+
+        :obj:`~AttitudeScheduleTimesElement`
 
 
 .. py:method:: item(self, index: int) -> AttitudeScheduleTimesElement
@@ -75,25 +91,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~AttitudeScheduleTimesElement`
-
-
-.. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at
-
-    Remove an element from the collection using specified index.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_all
@@ -104,17 +107,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, start_time: typing.Any, stop_time: typing.Any) -> AttitudeScheduleTimesElement
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.remove_at
 
-    Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
+    Remove an element from the collection using specified index.
 
     :Parameters:
 
-    **start_time** : :obj:`~typing.Any`
-    **stop_time** : :obj:`~typing.Any`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~AttitudeScheduleTimesElement`
+        :obj:`~None`
+
 

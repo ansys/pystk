@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,17 +22,17 @@ Overview
               - Make a copy of the sequence.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.name`
               - Get or set the name of the sequence.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment`
-              - Get or set the user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence`
               - Return the segment collection of the sequence.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment`
+              - Get or set the user comment.
 
 
 
@@ -53,17 +53,17 @@ Property detail
 
     Get or set the name of the sequence.
 
-.. py:property:: user_comment
-    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment
-    :type: str
-
-    Get or set the user comment.
-
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence
     :type: MCSSegmentCollection
 
     Return the segment collection of the sequence.
+
+.. py:property:: user_comment
+    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.user_comment
+    :type: str
+
+    Get or set the user comment.
 
 
 Method detail
@@ -76,7 +76,8 @@ Method detail
 
     :Parameters:
 
-    **unique_name** : :obj:`~str`
+        **unique_name** : :obj:`~str`
+
 
     :Returns:
 

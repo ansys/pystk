@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -41,8 +41,10 @@ Method detail
 
     :Parameters:
 
-    **raster_stream** : :obj:`~IRasterStream`
-    **filter** : :obj:`~IRasterFilter`
+        **raster_stream** : :obj:`~IRasterStream`
+
+        **filter** : :obj:`~IRasterFilter`
+
 
     :Returns:
 

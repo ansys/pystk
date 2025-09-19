@@ -13,13 +13,11 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.convert_to`
-              - Change the direction to the type specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign`
               - Assign a new direction.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_euler`
@@ -30,25 +28,27 @@ Overview
               - Set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_xyz`
               - Set direction using the Cartesian representation. Params X, Y and Z are dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.convert_to`
+              - Change the direction to the type specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_euler`
               - Get direction using the Euler representation. Params B and C use Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_pr`
-              - Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_ra_dec`
-              - Get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
-            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_xyz`
-              - Get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_euler_array`
               - Return the Euler elements in an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_pr`
+              - Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_pr_array`
               - Return the PR elements in an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_ra_dec`
+              - Get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_ra_dec_array`
               - Return the RADec elements in an array.
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_xyz`
+              - Get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_xyz_array`
               - Return the XYZ elements in an array.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -78,20 +78,6 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type: DirectionType) -> IDirection
-    :canonical: ansys.stk.core.stkutil.IDirection.convert_to
-
-    Change the direction to the type specified.
-
-    :Parameters:
-
-    **type** : :obj:`~DirectionType`
-
-    :Returns:
-
-        :obj:`~IDirection`
-
-
 .. py:method:: assign(self, direction: IDirection) -> None
     :canonical: ansys.stk.core.stkutil.IDirection.assign
 
@@ -99,7 +85,8 @@ Method detail
 
     :Parameters:
 
-    **direction** : :obj:`~IDirection`
+        **direction** : :obj:`~IDirection`
+
 
     :Returns:
 
@@ -112,9 +99,12 @@ Method detail
 
     :Parameters:
 
-    **b** : :obj:`~typing.Any`
-    **c** : :obj:`~typing.Any`
-    **sequence** : :obj:`~EulerDirectionSequence`
+        **b** : :obj:`~typing.Any`
+
+        **c** : :obj:`~typing.Any`
+
+        **sequence** : :obj:`~EulerDirectionSequence`
+
 
     :Returns:
 
@@ -127,8 +117,10 @@ Method detail
 
     :Parameters:
 
-    **pitch** : :obj:`~typing.Any`
-    **roll** : :obj:`~typing.Any`
+        **pitch** : :obj:`~typing.Any`
+
+        **roll** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -141,8 +133,10 @@ Method detail
 
     :Parameters:
 
-    **ra** : :obj:`~typing.Any`
-    **dec** : :obj:`~typing.Any`
+        **ra** : :obj:`~typing.Any`
+
+        **dec** : :obj:`~typing.Any`
+
 
     :Returns:
 
@@ -155,13 +149,31 @@ Method detail
 
     :Parameters:
 
-    **x** : :obj:`~float`
-    **y** : :obj:`~float`
-    **z** : :obj:`~float`
+        **x** : :obj:`~float`
+
+        **y** : :obj:`~float`
+
+        **z** : :obj:`~float`
+
 
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: convert_to(self, type: DirectionType) -> IDirection
+    :canonical: ansys.stk.core.stkutil.IDirection.convert_to
+
+    Change the direction to the type specified.
+
+    :Parameters:
+
+        **type** : :obj:`~DirectionType`
+
+
+    :Returns:
+
+        :obj:`~IDirection`
+
 
 .. py:method:: query_euler(self, sequence: EulerDirectionSequence) -> typing.Tuple[typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IDirection.query_euler
@@ -170,11 +182,26 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~EulerDirectionSequence`
+        **sequence** : :obj:`~EulerDirectionSequence`
+
 
     :Returns:
 
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
+
+.. py:method:: query_euler_array(self, sequence: EulerDirectionSequence) -> list
+    :canonical: ansys.stk.core.stkutil.IDirection.query_euler_array
+
+    Return the Euler elements in an array.
+
+    :Parameters:
+
+        **sequence** : :obj:`~EulerDirectionSequence`
+
+
+    :Returns:
+
+        :obj:`~list`
 
 .. py:method:: query_pr(self, sequence: PRSequence) -> typing.Tuple[typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IDirection.query_pr
@@ -183,11 +210,26 @@ Method detail
 
     :Parameters:
 
-    **sequence** : :obj:`~PRSequence`
+        **sequence** : :obj:`~PRSequence`
+
 
     :Returns:
 
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
+
+.. py:method:: query_pr_array(self, sequence: PRSequence) -> list
+    :canonical: ansys.stk.core.stkutil.IDirection.query_pr_array
+
+    Return the PR elements in an array.
+
+    :Parameters:
+
+        **sequence** : :obj:`~PRSequence`
+
+
+    :Returns:
+
+        :obj:`~list`
 
 .. py:method:: query_ra_dec(self) -> typing.Tuple[typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IDirection.query_ra_dec
@@ -198,41 +240,6 @@ Method detail
 
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
 
-.. py:method:: query_xyz(self) -> typing.Tuple[float, float, float]
-    :canonical: ansys.stk.core.stkutil.IDirection.query_xyz
-
-    Get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
-
-    :Returns:
-
-        :obj:`~typing.Tuple[float, float, float]`
-
-.. py:method:: query_euler_array(self, sequence: EulerDirectionSequence) -> list
-    :canonical: ansys.stk.core.stkutil.IDirection.query_euler_array
-
-    Return the Euler elements in an array.
-
-    :Parameters:
-
-    **sequence** : :obj:`~EulerDirectionSequence`
-
-    :Returns:
-
-        :obj:`~list`
-
-.. py:method:: query_pr_array(self, sequence: PRSequence) -> list
-    :canonical: ansys.stk.core.stkutil.IDirection.query_pr_array
-
-    Return the PR elements in an array.
-
-    :Parameters:
-
-    **sequence** : :obj:`~PRSequence`
-
-    :Returns:
-
-        :obj:`~list`
-
 .. py:method:: query_ra_dec_array(self) -> list
     :canonical: ansys.stk.core.stkutil.IDirection.query_ra_dec_array
 
@@ -241,6 +248,15 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+.. py:method:: query_xyz(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkutil.IDirection.query_xyz
+
+    Get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
+
+    :Returns:
+
+        :obj:`~typing.Tuple[float, float, float]`
 
 .. py:method:: query_xyz_array(self) -> list
     :canonical: ansys.stk.core.stkutil.IDirection.query_xyz_array

@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,7 +24,7 @@ Overview
               - Set the atmospheric turbulence model type.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -55,6 +55,7 @@ Property detail
 Method detail
 -------------
 
+
 .. py:method:: set_atmospheric_turbulence_model_type(self, value: AtmosphericTurbulenceModelType) -> None
     :canonical: ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelITURP1814.set_atmospheric_turbulence_model_type
 
@@ -62,10 +63,10 @@ Method detail
 
     :Parameters:
 
-    **value** : :obj:`~AtmosphericTurbulenceModelType`
+        **value** : :obj:`~AtmosphericTurbulenceModelType`
+
 
     :Returns:
 
         :obj:`~None`
-
 

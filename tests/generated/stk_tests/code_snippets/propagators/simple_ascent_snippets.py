@@ -59,7 +59,7 @@ class SimpleAscentSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (IStkObject(self.m_Object)).unload()
+        (ISTKObject(self.m_Object)).unload()
         self.m_Object = None
 
     # endregion

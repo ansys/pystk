@@ -13,17 +13,17 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_raster`
+              - Initialize a raster from another raster.
             * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri`
               - Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
             * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri_xy_width_and_height`
               - Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
-            * - :py:attr:`~ansys.stk.core.graphics.RasterFactory.initialize_with_raster`
-              - Initialize a raster from another raster.
 
 
 Import detail
@@ -38,6 +38,20 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
+    :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_raster
+
+    Initialize a raster from another raster.
+
+    :Parameters:
+
+        **raster** : :obj:`~IRaster`
+
+
+    :Returns:
+
+        :obj:`~IRaster`
+
 .. py:method:: initialize_with_string_uri(self, uri: str) -> IRaster
     :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_string_uri
 
@@ -45,7 +59,8 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
+        **uri** : :obj:`~str`
+
 
     :Returns:
 
@@ -58,24 +73,16 @@ Method detail
 
     :Parameters:
 
-    **uri** : :obj:`~str`
-    **x** : :obj:`~int`
-    **y** : :obj:`~int`
-    **width** : :obj:`~int`
-    **height** : :obj:`~int`
+        **uri** : :obj:`~str`
 
-    :Returns:
+        **x** : :obj:`~int`
 
-        :obj:`~IRaster`
+        **y** : :obj:`~int`
 
-.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
-    :canonical: ansys.stk.core.graphics.RasterFactory.initialize_with_raster
+        **width** : :obj:`~int`
 
-    Initialize a raster from another raster.
+        **height** : :obj:`~int`
 
-    :Parameters:
-
-    **raster** : :obj:`~IRaster`
 
     :Returns:
 

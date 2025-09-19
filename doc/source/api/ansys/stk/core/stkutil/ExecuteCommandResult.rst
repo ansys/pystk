@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,15 +24,15 @@ Overview
               - Return the elements within the specified range.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteCommandResult.count`
-              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.ExecuteCommandResult._new_enum`
               - Return an object that can be used to iterate through all the strings in the collection.
+            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteCommandResult.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.ExecuteCommandResult.is_succeeded`
               - Indicate whether the object contains valid results.
 
@@ -49,17 +49,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.count
-    :type: int
-
-    Number of elements contained in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkutil.ExecuteCommandResult._new_enum
     :type: EnumeratorProxy
 
     Return an object that can be used to iterate through all the strings in the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.count
+    :type: int
+
+    Number of elements contained in the collection.
 
 .. py:property:: is_succeeded
     :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.is_succeeded
@@ -72,6 +72,7 @@ Method detail
 -------------
 
 
+
 .. py:method:: item(self, index: int) -> str
     :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.item
 
@@ -79,12 +80,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~str`
-
 
 .. py:method:: range(self, start_index: int, stop_index: int) -> list
     :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.range
@@ -93,8 +94,10 @@ Method detail
 
     :Parameters:
 
-    **start_index** : :obj:`~int`
-    **stop_index** : :obj:`~int`
+        **start_index** : :obj:`~int`
+
+        **stop_index** : :obj:`~int`
+
 
     :Returns:
 

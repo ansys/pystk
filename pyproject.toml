@@ -3,12 +3,13 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "ansys-stk-core"
+name = "ansys-stk"
 dynamic = ["version"]
 description = "The next generation Python API for STK."
 readme = "README.rst"
-requires-python = ">=3.11"
-license = {file = "LICENSE"}
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
@@ -20,8 +21,8 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -30,84 +31,110 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation by default
 ]
 
 [project.scripts]
 pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
 
+# NOTE: The `project.optional-dependencies` section is used to define optional
+# dependencies that users can install to enable additional features.
 [project.optional-dependencies]
-# TODO: split between dependency groups and installation targets with the release of pip v25.1
-# https://github.com/pypa/pip/milestone/78
 all = [
-    "grpcio>=1.71.0",
-    "protobuf>=6.30.2",
-    "jupyter-rfb>=0.5.1",
-    "numpy>=2.2.5",
-    "Pillow>=11.2.1",
+    # Target: extensions
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.1",
+    # Target: grpc
+    "grpcio>=1.73.1",
+    "protobuf>=6.31.1",
+    # Target: jupyter
+    "jupyter-rfb>=0.5.3",
+    "numpy>=2.2.6",
+    "Pillow>=11.3.0",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
-    "libcst>=1.7.0"
+    # Target: migration
+    "libcst>=1.8.2",
+]
+core = [
+    # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
+]
+extensions = [
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.1",
 ]
 grpc = [
-    "grpcio>=1.71.0",
-    "protobuf>=6.30.2",
+    "grpcio>=1.73.1",
+    "protobuf>=6.31.1",
 ]
 jupyter = [
-    "jupyter-rfb>=0.5.1",
-    "numpy>=2.2.4",
-    "Pillow>=11.1.0",
+    "jupyter-rfb>=0.5.3",
+    "numpy>=2.2.6",
+    "Pillow>=11.3.0",
     "simplejpeg>=1.8.2",
     "sidecar>=0.7.0",
 ]
+migration = [
+    "libcst>=1.8.2",
+]
+
+# NOTE: The `dependency-groups` section is used to define groups of dependencies
+# only available when a developer clones the repository and installs the package
+# for local development.
+[dependency-groups]
+vulnerabilities = [
+    "bandit[toml]==1.8.6",
+    "safety==3.6.1",
+    "typer==0.17.4",
+]
 tests = [
-    "libcst==1.7.0",
-    "matplotlib==3.10.1",
-    "numpy==2.2.5",
-    "pytest==8.3.5",
-    "pytest-cov==6.1.1",
+    "numpy==2.2.6",
+    "pytest==8.4.2",
+    "pytest-cov==7.0.0",
+    "pytest-mpl==0.17.0",
     "pytz==2025.2",
     "parameterized==0.9.0",
-    "pandas==2.2.3",
-    "scipy==1.15.2",
+    "scipy==1.15.3",
+    "pytest-mpl==0.17.0",
 ]
 doc = [
-    "ansys-sphinx-theme==1.4.2",
-    "build==1.2.2.post1",
-    "jupyterlab==4.4.1",
-    "jupytext==1.16.7",
-    "jupyter-server==2.15.0",
-    "libcst==1.7.0",
+    "ansys-sphinx-theme==1.6.1",
+    "build==1.3.0",
+    "jupyterlab==4.4.7",
+    "jupytext==1.17.3",
+    "jupyter-server==2.17.0",
+    "libcst==1.8.4",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
-    "numpydoc==1.8.0",
+    "numpydoc==1.9.0",
     "nbconvert==7.16.6",
-    "scipy==1.15.2",
+    "scipy==1.15.3",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "pandas==2.2.3",
-    "matplotlib==3.10.1",
+    "pandas==2.3.2",
+    "matplotlib==3.10.6",
+    "plotly==6.3.0",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
     "toml==0.10.2",
 ]
-# NOTE: Pin marshmallow to avoid safety failure, see https://github.com/ansys/actions/pull/780
-vulnerabilities = [
-    "bandit==1.8.3",
-    "safety==3.3.0",
-    "marshmallow==3.26.1",
+docstyle = [
+    "rst2html==2020.7.4",
+    "vale==3.12.0.2",
 ]
 
 [tool.flit.module]
-name = "ansys.stk.core"
+name = "ansys.stk"
 
 [project.urls]
-Discussions = "https://github.com/ansys/pystk/discussions"
-Documentation = "https://stk.docs.pyansys.com/"
-Homepage = "https://www.ansys.com/products/missions/ansys-stk"
-Issues = "https://github.com/ansys/pystk/issues"
-Source = "https://github.com/ansys/pystk"
+discussions = "https://github.com/ansys/pystk/discussions"
+documentation = "https://stk.docs.pyansys.com/"
+homepage = "https://www.ansys.com/products/missions/ansys-stk"
+issues = "https://github.com/ansys/pystk/issues"
+source = "https://github.com/ansys/pystk"
+changelog = "https://github.com/ansys/pystk/blob/main/doc/source/changelog.rst"
 
 [tool.ruff]
 line-length = 120
@@ -122,7 +149,7 @@ select = [
     "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
     "D",     # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
     "F",     # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
-    "PYI",   # flake8-pyi, see https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi 
+    "PYI",   # flake8-pyi, see https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi
     "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
     "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
     "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
@@ -164,14 +191,59 @@ extend-ignore-names = ["visit_*", "leave_*"]
 # skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
 # ignore-words = "./doc/styles/config/vocabularies/ANSYS/accept.txt"
 
-[tool.coverage.run]
-relative_files = true
-
 [tool.coverage.paths]
 source = [
     "src",
-    "ansys/stk",
 ]
+
+[tool.coverage.run]
+branch = true
+source = ["src/ansys/stk"]
+relative_files = true
 
 [tool.coverage.report]
 show_missing = true
+
+[tool.towncrier]
+package = "ansys.stk.core"
+directory = "doc/source/changelog"
+filename = "doc/source/changelog.rst"
+start_string = ".. towncrier release notes start\n"
+template = "doc/source/changelog/template"
+title_format = "`{version} <https://github.com/ansys/pystk/releases/tag/v{version}>`_ - {project_date}"
+issue_format = "`#{issue} <https://github.com/ansys/pystk/pull/{issue}>`_"
+
+[[tool.towncrier.type]]
+directory = "added"
+name = "Added"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "dependencies"
+name = "Dependencies"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "documentation"
+name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "fixed"
+name = "Fixed"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "maintenance"
+name = "Maintenance"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "miscellaneous"
+name = "Miscellaneous"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "test"
+name = "Test"
+showcontent = true

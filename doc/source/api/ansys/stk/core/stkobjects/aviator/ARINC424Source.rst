@@ -15,7 +15,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -26,17 +26,17 @@ Overview
               - Get the catalog source interface for this object.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.use_master_data_file`
-              - Opt whether to use the master data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.master_data_filepath`
               - Get or set the master data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.override_data_filepath`
               - Get or set the file path to the data overriding the mader data file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.use_master_data_file`
+              - Opt whether to use the master data file.
 
 
 
@@ -51,12 +51,6 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_master_data_file
-    :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.use_master_data_file
-    :type: bool
-
-    Opt whether to use the master data file.
-
 .. py:property:: master_data_filepath
     :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.master_data_filepath
     :type: str
@@ -69,6 +63,12 @@ Property detail
 
     Get or set the file path to the data overriding the mader data file.
 
+.. py:property:: use_master_data_file
+    :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.use_master_data_file
+    :type: bool
+
+    Opt whether to use the master data file.
+
 
 Method detail
 -------------
@@ -80,17 +80,12 @@ Method detail
 
     :Parameters:
 
-    **name** : :obj:`~str`
+        **name** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~IARINC424Item`
-
-
-
-
-
-
 
 .. py:method:: get_as_catalog_source(self) -> ICatalogSource
     :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.get_as_catalog_source
@@ -100,4 +95,10 @@ Method detail
     :Returns:
 
         :obj:`~ICatalogSource`
+
+
+
+
+
+
 

@@ -70,11 +70,11 @@ class ConstellationSnippets(CodeSnippetsTestBase):
 
     # region AddObjectToConstellationUsingIAgStkObjectInterface
     def test_AddObjectToConstellationUsingIAgStkObjectInterface(self):
-        alos: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "Alos")
+        alos: "ISTKObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "Alos")
         self.AddObjectToConstellationUsingIAgStkObjectInterface(ConstellationSnippets.m_Object, alos)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, alos.instance_name)
 
-    def AddObjectToConstellationUsingIAgStkObjectInterface(self, constellation: "Constellation", alos: "IStkObject"):
+    def AddObjectToConstellationUsingIAgStkObjectInterface(self, constellation: "Constellation", alos: "ISTKObject"):
         # Add object to constellation
         constellation.objects.add_object(alos)
 

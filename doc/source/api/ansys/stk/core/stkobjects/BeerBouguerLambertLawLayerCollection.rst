@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -24,15 +24,15 @@ Overview
               - Remove the layer with the specified index.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection.count`
-              - Return the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection._new_enum`
               - Return an enumerator for the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection.count`
+              - Return the number of elements in the collection.
 
 
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection.count
-    :type: int
-
-    Return the number of elements in the collection.
-
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator for the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection.count
+    :type: int
+
+    Return the number of elements in the collection.
 
 
 Method detail
@@ -71,12 +71,12 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~BeerBouguerLambertLawLayer`
-
 
 .. py:method:: remove_at(self, index: int) -> None
     :canonical: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection.remove_at
@@ -85,9 +85,11 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~None`
+
 

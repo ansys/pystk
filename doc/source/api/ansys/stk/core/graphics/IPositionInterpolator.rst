@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -22,7 +22,7 @@ Overview
               - Compute interpolated positions based on the input positions. Returns an array of positions in the order x, y, z.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -52,7 +52,6 @@ Property detail
 Method detail
 -------------
 
-
 .. py:method:: interpolate(self, positions: list) -> list
     :canonical: ansys.stk.core.graphics.IPositionInterpolator.interpolate
 
@@ -60,9 +59,11 @@ Method detail
 
     :Parameters:
 
-    **positions** : :obj:`~list`
+        **positions** : :obj:`~list`
+
 
     :Returns:
 
         :obj:`~list`
+
 

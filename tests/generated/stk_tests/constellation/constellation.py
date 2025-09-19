@@ -212,8 +212,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         oHelper = STKObjectHelper()
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_CN, IStkObject))
-        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_CN)).object_files)
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_CN, ISTKObject))
+        oHelper.TestObjectFilesArray((ISTKObject(EarlyBoundTests.AG_CN)).object_files)
 
     # endregion
 
@@ -240,13 +240,13 @@ class EarlyBoundTests(TestBase):
             try:
                 facility: str
                 for facility in facilities:
-                    o: "IStkObject" = TestBase.Application.current_scenario.children.new(
+                    o: "ISTKObject" = TestBase.Application.current_scenario.children.new(
                         STKObjectType.FACILITY, facility
                     )
                     EarlyBoundTests.AG_CN.objects.add_object(o)
                     del o
 
-                newCn.objects.add_object(clr.CastAs(EarlyBoundTests.AG_CN, IStkObject))
+                newCn.objects.add_object(clr.CastAs(EarlyBoundTests.AG_CN, ISTKObject))
                 Assert.assertEqual(newCn.objects.count, EarlyBoundTests.AG_CN.objects.count)
 
                 # Iterate the collection of objects in the constellation
@@ -256,7 +256,7 @@ class EarlyBoundTests(TestBase):
                 # Iterate the collection of objects in the constellation
                 # to verify the original constellation object is not in it.
                 for o in newCn.objects:
-                    Assert.assertNotEqual(o.linked_object.path, (IStkObject(EarlyBoundTests.AG_CN)).path)
+                    Assert.assertNotEqual(o.linked_object.path, (ISTKObject(EarlyBoundTests.AG_CN)).path)
 
                 # Remove a couple of objects from the temporary
                 # constellation.
@@ -268,7 +268,7 @@ class EarlyBoundTests(TestBase):
                 # back into the temporary to verify that
                 # the objects that are already in the constellation
                 # are not copied twice.
-                newCn.objects.add_object(clr.CastAs(EarlyBoundTests.AG_CN, IStkObject))
+                newCn.objects.add_object(clr.CastAs(EarlyBoundTests.AG_CN, ISTKObject))
                 Assert.assertEqual(newCn.objects.count, EarlyBoundTests.AG_CN.objects.count)
 
             finally:
@@ -278,7 +278,7 @@ class EarlyBoundTests(TestBase):
                     TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, facility)
 
         finally:
-            (clr.CastAs(newCn, IStkObject)).unload()
+            (clr.CastAs(newCn, ISTKObject)).unload()
 
     # endregion
 

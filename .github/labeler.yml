@@ -4,7 +4,7 @@
 # -- Labels based on PR title ------------------------------------------------
 'fix':
   - head-branch: ['fix']
-  
+
 'enhancement':
   - head-branch: ['feat']
 
@@ -61,6 +61,11 @@
           - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']
 
 'tests:skip':
+  - all:
+      - changed-files:
+          - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']
+
+'blocked':
   - all:
       - changed-files:
           - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']

@@ -68,7 +68,7 @@ class EarlyBoundTests(TestBase):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
             EarlyBoundTests.AG_SH.access_constraints,
-            clr.CastAs(EarlyBoundTests.AG_SH, IStkObject),
+            clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject),
             TestBase.TemporaryDirectory,
         )
 
@@ -102,7 +102,7 @@ class EarlyBoundTests(TestBase):
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_SH.attitude))
             elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
-                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_SH, IStkObject)
+                    TestBase.Application, clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject)
                 )
                 oHelper.Run(VehicleAttitudeRealTime(EarlyBoundTests.AG_SH.attitude))
             else:
@@ -118,7 +118,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicAttitudeDifference(self):
         oHelper = BasicAttitudeDifferenceHelper(TestBase.Application)
-        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_SH, IStkObject))
+        oHelper.Run(clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject))
 
     # endregion
 
@@ -126,7 +126,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_SH)
-        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_SH)
+        obj: "ISTKObject" = ISTKObject(EarlyBoundTests.AG_SH)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -202,7 +202,7 @@ class EarlyBoundTests(TestBase):
         TestBase.PropagateGreatArc(clr.CastAs(sh1.route, PropagatorGreatArc))
 
         oHelper = STKObjectHelper()
-        shipObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SH, IStkObject)
+        shipObject: "ISTKObject" = clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject)
         oHelper.Run(shipObject)
         oHelper.TestObjectFilesArray(shipObject.object_files)
 
@@ -220,7 +220,7 @@ class EarlyBoundTests(TestBase):
     @category("SpatialInfo")
     def test_SpatialInfo(self):
         helper = SpatialInfoHelper(TestBase.Application)
-        helper.Run(clr.CastAs(EarlyBoundTests.AG_SH, IStkObject))
+        helper.Run(clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject))
 
     # endregion
 
@@ -250,7 +250,7 @@ class EarlyBoundTests(TestBase):
             # Route
             oHelper = BasicPropagatorHelper(TestBase.Application)
             oHelper.Run(
-                clr.CastAs(EarlyBoundTests.AG_SH, IStkObject), EarlyBoundTests.AG_SH.route, eType, self.EarthGravModel
+                clr.CastAs(EarlyBoundTests.AG_SH, ISTKObject), EarlyBoundTests.AG_SH.route, eType, self.EarthGravModel
             )
 
             iIndex += 1
@@ -266,7 +266,7 @@ class EarlyBoundTests(TestBase):
         sh.set_route_type(PropagatorType.GREAT_ARC)
         ga: "PropagatorGreatArc" = clr.CastAs(sh.route, PropagatorGreatArc)
         ga.import_waypoints_from_file(TestBase.GetScenarioFile("GrArc_DetTimeAccFromVel.ga"))
-        dpFixed: "DataProviderFixed" = clr.CastAs((IStkObject(sh)).data_providers["Waypoints"], DataProviderFixed)
+        dpFixed: "DataProviderFixed" = clr.CastAs((ISTKObject(sh)).data_providers["Waypoints"], DataProviderFixed)
         list = []
         list.append("Time")
         list.append("Latitude")
@@ -318,7 +318,7 @@ class EarlyBoundTests(TestBase):
 
             # Route
             oHelper = BasicPropagatorHelper(TestBase.Application)
-            oHelper.Run(clr.CastAs(oShip, IStkObject), oShip.route, PropagatorType.GREAT_ARC, self.EarthGravModel)
+            oHelper.Run(clr.CastAs(oShip, ISTKObject), oShip.route, PropagatorType.GREAT_ARC, self.EarthGravModel)
 
         except Exception as e:
             raise e
@@ -678,7 +678,7 @@ class EarlyBoundTests(TestBase):
     # region VOModel
     @category("VO Tests")
     def test_VOModel(self):
-        oHelper = VORouteModelHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VORouteModelHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_SH.graphics_3d.model)
 
     # endregion
@@ -723,7 +723,7 @@ class EarlyBoundTests(TestBase):
     # region VOProximity
     @category("VO Tests")
     def test_VOProximity(self):
-        oHelper = VORouteProximityHelper(clr.CastAs(TestBase.Application, StkObjectRoot), self.Units)
+        oHelper = VORouteProximityHelper(clr.CastAs(TestBase.Application, STKObjectRoot), self.Units)
         oHelper.Run(EarlyBoundTests.AG_SH.graphics_3d.proximity)
 
     # endregion
@@ -834,7 +834,7 @@ class EarlyBoundTests(TestBase):
         ga.waypoints.add()
         ga.propagate()
 
-        exportHelper = ExportDataFileHelper(IStkObject(sh), TestBase.Application)
+        exportHelper = ExportDataFileHelper(ISTKObject(sh), TestBase.Application)
         exportHelper.AttitudeExportTool(sh.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(sh.export_tools.get_ephemeris_stk_export_tool(), False)
         exportHelper.PropDefExportTool(sh.export_tools.get_propagator_definition_export_tool())

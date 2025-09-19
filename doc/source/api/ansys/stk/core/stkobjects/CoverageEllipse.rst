@@ -13,19 +13,19 @@ Overview
 .. tab-set::
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.semi_major_axis`
-              - Major axis length.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.semi_minor_axis`
-              - Minor axis length.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.bearing`
               - Bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.center`
               - Center object.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.semi_major_axis`
+              - Major axis length.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageEllipse.semi_minor_axis`
+              - Minor axis length.
 
 
 
@@ -40,6 +40,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: bearing
+    :canonical: ansys.stk.core.stkobjects.CoverageEllipse.bearing
+    :type: float
+
+    Bearing.
+
+.. py:property:: center
+    :canonical: ansys.stk.core.stkobjects.CoverageEllipse.center
+    :type: ISTKObject
+
+    Center object.
+
 .. py:property:: semi_major_axis
     :canonical: ansys.stk.core.stkobjects.CoverageEllipse.semi_major_axis
     :type: float
@@ -51,17 +63,5 @@ Property detail
     :type: float
 
     Minor axis length.
-
-.. py:property:: bearing
-    :canonical: ansys.stk.core.stkobjects.CoverageEllipse.bearing
-    :type: float
-
-    Bearing.
-
-.. py:property:: center
-    :canonical: ansys.stk.core.stkobjects.CoverageEllipse.center
-    :type: IStkObject
-
-    Center object.
 
 

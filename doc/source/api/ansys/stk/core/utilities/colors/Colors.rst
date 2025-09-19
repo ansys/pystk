@@ -23,12 +23,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_argb`
+              - Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
             * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_rgb`
               - Create a new Color from R, G, B values in the range [0, 255].
             * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_rgba`
               - Create a new Color from R, G, B, A values in the range [0, 255].
-            * - :py:attr:`~ansys.stk.core.utilities.colors.Colors.from_argb`
-              - Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
 
 Examples
 --------
@@ -42,15 +42,11 @@ Get and set a four-channel color for the graphics of an STK graphics primitive
     manager = root.current_scenario.scene_manager
     point = manager.initializers.point_batch_primitive.initialize()
 
-    lla_pts = [ 39.88, -75.25, 0,
-                38.85, -77.04, 0,
-                37.37, -121.92, 0 ]
+    lla_pts = [39.88, -75.25, 0, 38.85, -77.04, 0, 37.37, -121.92, 0]
 
-    colors = [ Colors.Red,
-            ColorRGBA(Colors.Blue, 127),
-            Colors.from_rgba(0, 255, 0, 127) ]
+    colors = [Colors.Red, ColorRGBA(Colors.Blue, 127), Colors.from_rgba(0, 255, 0, 127)]
 
-    point.set_cartographic_with_colors('Earth', lla_pts, colors)
+    point.set_cartographic_with_colors("Earth", lla_pts, colors)
 
 
 Get and set a three-channel color for the graphics of an STK graphics primitive
@@ -78,6 +74,11 @@ Import detail
 Method detail
 -------------
 
+.. py:method:: from_argb()
+    :canonical: ansys.stk.core.utilities.colors.Colors.from_argb
+
+    Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
+
 .. py:method:: from_rgb(r: int, g: int, b: int) -> Color
     :canonical: ansys.stk.core.utilities.colors.Colors.from_rgb
 
@@ -85,9 +86,12 @@ Method detail
 
     :Parameters:
 
-    **r** : :obj:`~int`
-    **g** : :obj:`~int`
-    **b** : :obj:`~int`
+        **r** : :obj:`~int`
+
+        **g** : :obj:`~int`
+
+        **b** : :obj:`~int`
+
 
     :Returns:
 
@@ -100,18 +104,17 @@ Method detail
 
     :Parameters:
 
-    **r** : :obj:`~int`
-    **g** : :obj:`~int`
-    **b** : :obj:`~int`
-    **a** : :obj:`~int`
+        **r** : :obj:`~int`
+
+        **g** : :obj:`~int`
+
+        **b** : :obj:`~int`
+
+        **a** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~ColorRGBA`
-
-.. py:method:: from_argb()
-    :canonical: ansys.stk.core.utilities.colors.Colors.from_argb
-
-    Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided.
 
 

@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -40,7 +40,8 @@ Method detail
 
     :Parameters:
 
-    **obj** : :obj:`~IUnknown`
+        **obj** : :obj:`~IUnknown`
+
 
     :Returns:
 

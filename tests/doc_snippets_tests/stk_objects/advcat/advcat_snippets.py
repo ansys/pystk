@@ -60,7 +60,7 @@ class AdvCATSnippets(CodeSnippetsTestBase):
         name="CreateCAT",
         description="Create a New AdvCAT Object",
         category="STK Objects | AdvCAT",
-        eid="stkobjects~IStkObject",
+        eid="stkobjects~ISTKObject",
     )
     def CreateCATSnippet(self, scenario):
         # Scenario scenario: Scenario object

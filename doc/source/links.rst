@@ -1,12 +1,12 @@
 .. PySTK repository links
 
-.. _PySTK repository: https://github.com/ansys-internal/pystk
-.. _PySTK issues: https://github.com/ansys-internal/pystk/issues
-.. _PySTK pull requests: https://github.com/ansys-internal/pystk/pulls
-.. _PySTK discussions: https://github.com/ansys-internal/pystk/discussions
-.. _PySTK labels: https://github.com/ansys-internal/pystk/labels
-.. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
-.. _code snippet directory: https://github.com/ansys-internal/pystk/tree/main/tests/doc_snippets_tests
+.. _PySTK repository: https://github.com/ansys/pystk
+.. _PySTK issues: https://github.com/ansys/pystk/issues
+.. _PySTK pull requests: https://github.com/ansys/pystk/pulls
+.. _PySTK discussions: https://github.com/ansys/pystk/discussions
+.. _PySTK labels: https://github.com/ansys/pystk/labels
+.. _docker/ directory: https://github.com/ansys/pystk/tree/docker/
+.. _code snippet directory: https://github.com/ansys/pystk/tree/main/tests/doc_snippets_tests
 
 .. Ansys products
 
@@ -43,7 +43,7 @@
 .. _Docker images: https://docs.docker.com/engine/reference/commandline/images/
 .. _Docker image: https://docs.docker.com/engine/reference/commandline/images/
 .. _docker-compose.yml: https://docs.docker.com/compose/compose-file/
-.. _Docker Engine: https://docs.docker.com/engine/ 
+.. _Docker Engine: https://docs.docker.com/engine/
 .. _Docker Compose: https://docs.docker.com/compose/
 
 .. GitHub documentation

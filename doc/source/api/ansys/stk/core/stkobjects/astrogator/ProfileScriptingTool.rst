@@ -15,34 +15,34 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.script_text`
-              - Injects the script into the scripting tool.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.copy_to_clipboard`
               - Copy entire scripting tool to clipboard.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.paste_from_clipboard`
               - Replace entire scripting tool with scripting tool in clipboard.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.script_text`
+              - Injects the script into the scripting tool.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.enable`
-              - If true, the scripting tool will be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties`
-              - Return the collection of the segment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.calculation_objects`
               - Return the collection of the calc objects.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters`
-              - Return the collection of parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.enable`
+              - If true, the scripting tool will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.language_type`
               - Get or set the scripting language being used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters`
+              - Return the collection of parameters.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties`
+              - Return the collection of the segment properties.
 
 
 
@@ -57,29 +57,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.enable
-    :type: bool
-
-    If true, the scripting tool will be used.
-
-.. py:property:: segment_properties
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties
-    :type: ScriptingSegmentCollection
-
-    Return the collection of the segment properties.
-
 .. py:property:: calculation_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.calculation_objects
     :type: ScriptingCalculationObjectCollection
 
     Return the collection of the calc objects.
 
-.. py:property:: parameters
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters
-    :type: ScriptingParameterCollection
+.. py:property:: enable
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.enable
+    :type: bool
 
-    Return the collection of parameters.
+    If true, the scripting tool will be used.
 
 .. py:property:: language_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.language_type
@@ -87,29 +75,22 @@ Property detail
 
     Get or set the scripting language being used.
 
+.. py:property:: parameters
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters
+    :type: ScriptingParameterCollection
+
+    Return the collection of parameters.
+
+.. py:property:: segment_properties
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties
+    :type: ScriptingSegmentCollection
+
+    Return the collection of the segment properties.
+
 
 Method detail
 -------------
 
-
-
-
-
-
-
-
-.. py:method:: script_text(self, script: str) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.script_text
-
-    Injects the script into the scripting tool.
-
-    :Parameters:
-
-    **script** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~None`
 
 .. py:method:: copy_to_clipboard(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.copy_to_clipboard
@@ -120,6 +101,11 @@ Method detail
 
         :obj:`~None`
 
+
+
+
+
+
 .. py:method:: paste_from_clipboard(self) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.paste_from_clipboard
 
@@ -128,4 +114,19 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+.. py:method:: script_text(self, script: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.script_text
+
+    Injects the script into the scripting tool.
+
+    :Parameters:
+
+        **script** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~None`
+
 

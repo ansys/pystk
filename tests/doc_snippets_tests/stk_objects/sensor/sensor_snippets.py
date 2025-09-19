@@ -283,10 +283,12 @@ class SensorSnippets(CodeSnippetsTestBase):
     )
     def SensorBodyMaskSnippet(self, sensor):
         # Sensor sensor: Sensor object
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        sensor.set_az_el_mask_file(
-            os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
-        )
+        if os.name == "nt":
+            installPath = r"C:\Program Files\AGI\STK 12"
+        else:
+            installPath = os.environ["STK_INSTALL_DIR"]
+        bmskPath = ["Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk"]
+        sensor.set_az_el_mask_file(os.path.join(installPath, *bmskPath))
 
     @category("Graphics Tests")
     def test_SensorPersistenceSnippet(self):

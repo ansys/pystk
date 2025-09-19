@@ -3,12 +3,13 @@
 from datetime import datetime
 import fnmatch
 import hashlib
+import json
 import os
 import pathlib
 import shutil
 import subprocess
+import sys
 import toml
-import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
@@ -20,10 +21,10 @@ from ansys_sphinx_theme import (
     get_version_match,
 )
 
-from ansys.stk.core import __version__
+from ansys.stk import __version__
 
 # Project information
-project = "ansys-stk-core"
+project = "ansys-stk"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -34,12 +35,12 @@ html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
 html_context = {
-    "github_user": "ansys-internal",
+    "github_user": "ansys",
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
     "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
-    "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
+    "base_url": f"https://github.com/ansys/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
     "page_assets": {
@@ -55,8 +56,8 @@ html_context = {
     },
 }
 html_theme_options = {
-    "header_links_before_dropdown": 6,
-    "github_url": "https://github.com/ansys-internal/pystk",
+    "header_links_before_dropdown": 7,
+    "github_url": "https://github.com/ansys/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
     "use_edit_page_button": True,
@@ -78,6 +79,8 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
+    "css/search.css",
+    "css/datatable.css",
 ]
 html_js_files = []
 
@@ -100,6 +103,8 @@ extensions = [
 # Intersphinx mapping
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
+    "pandas": ("http://pandas.pydata.org/pandas-docs/stable/", None),
+    "matplotlib": ('https://matplotlib.org/stable/', None),
 }
 
 # numpydoc configuration
@@ -131,12 +136,12 @@ templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
 exclude_examples = []
-exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst", "changelog/*.md"]
 
 # Ignore warnings
 suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
-    # https://github.com/ansys-internal/pystk/issues/414
+    # https://github.com/ansys/pystk/issues/414
     "ref.python",
     # Sphinx-design downloads some font-awesome icons that conflict with the
     # ones in pydata-sphinx-theme.
@@ -180,7 +185,7 @@ linkcheck_ignore = [
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
     # TODO: Determine a way to link to examples without breaking the linkcheck
-    # https://github.com/ansys-internal/pystk/issues/657
+    # https://github.com/ansys/pystk/issues/657
     r"../examples/",
 ]
 
@@ -202,16 +207,16 @@ else:
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
-.. grid:: 3 
+.. grid:: 3
     :gutter: 1
 
     .. grid-item::
         :child-align: center
-    
+
         .. button-link:: {cname_pref}/{python_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as Python script :fab:`python`
 
     .. grid-item::
@@ -220,7 +225,7 @@ else:
         .. button-link:: {cname_pref}/{ipynb_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as Jupyter notebook :fas:`book`
 
     .. grid-item::
@@ -229,11 +234,11 @@ else:
         .. button-link:: {cname_pref}/{pdf_file_loc}
            :color: primary
            :shadow:
-        
+
             Download as PDF document :fas:`file-pdf`
 
 ----
-    
+
     """.format(
         cname_pref=f"https://{cname}/version/{get_version_match(version)}",
         python_file_loc="{{ env.docname }}.py",
@@ -243,7 +248,12 @@ else:
 
 
 # -- Jinja context configuration ---------------------------------------------
+PYPROJECT_FILE = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
+if not PYPROJECT_FILE.exists():
+    raise ValueError(f"The file {PYPROJECT_FILE} does not exist.")
 
+PYPROJECT_CONTENT = toml.loads(PYPROJECT_FILE.read_text(encoding="utf-8"))
+OPTIONAL_DEPENDENCIES = PYPROJECT_CONTENT["project"]["optional-dependencies"]
 
 def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
     """Compress a directory using ZIP.
@@ -329,19 +339,12 @@ def get_file_size_in_mb(file_path):
 
 def read_optional_dependencies_from_pyproject():
     """Read the extra dependencies declared in the project file."""
-    pyproject = pathlib.Path(__file__).parent.parent.parent / "pyproject.toml"
-    if not pyproject.exists():
-        raise ValueError(f"The file {pyproject} does not exist.")
-
-    pyproject_content = toml.loads(pyproject.read_text(encoding="utf-8"))
-    exclude_targets = ["doc", "tests", "vulnerabilities"]
     optional_dependencies = {
         target: {
             (pkg.split("==")[0] if "==" in pkg else pkg): (pkg.split("==")[1] if "==" in pkg else "latest")
             for pkg in deps
         }
-        for target, deps in pyproject_content["project"]["optional-dependencies"].items()
-        if target not in exclude_targets
+        for target, deps in OPTIONAL_DEPENDENCIES.items()
     }
 
     return optional_dependencies
@@ -385,7 +388,7 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
-                    for target in ["all", "grpc", "jupyter"]
+                    for target in OPTIONAL_DEPENDENCIES
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
@@ -473,7 +476,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
 
     """
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
-    # https://github.com/ansys-internal/pystk/issues/415
+    # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
     for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
@@ -484,7 +487,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
-    # Copyt the examples
+    # Copy the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
     for file in status_iterator(
@@ -627,6 +630,55 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
             See https://quarto.org/docs/get-started/"
         )
 
+def copy_graph_images_to_source_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the graph test images directory to the source directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    SOURCE_GRAPHS = pathlib.Path(app.srcdir) / "graph_images_temp"
+
+    GRAPH_IMAGES_DIRECTORY = SOURCE_GRAPHS.parent.parent.parent / "tests" / "extensions" / "data_analysis" / "graphs" / "baseline"
+
+    for directory in [SOURCE_GRAPHS]:
+        if not directory.exists():
+            directory.mkdir(parents=True, exist_ok=True)
+
+    # Copy the graph images
+    images = list(GRAPH_IMAGES_DIRECTORY.glob("*.png"))
+    for file in status_iterator(
+        images,
+        "Copying image to doc/source/graph_images_temp",
+        "green",
+        len(images),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_GRAPHS / file.name
+        destination_file.write_bytes(file.read_bytes())
+
+
+def remove_graph_images_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
+    """
+    Remove the graph image files from the documentation source directory.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
+
+    """
+    GRAPHS_DIRECTORY = pathlib.Path(app.srcdir) / "graph_images_temp"
+    logger = logging.getLogger(__name__)
+    logger.info(f"\nRemoving {GRAPHS_DIRECTORY} directory...")
+    shutil.rmtree(GRAPHS_DIRECTORY)
+
 
 def read_migration_tables(app: sphinx.application.Sphinx):
     """Convert an XML migration table to a JSON format.
@@ -656,10 +708,10 @@ def read_migration_tables(app: sphinx.application.Sphinx):
     API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
     if not API_MAPPINGS.exists():
         raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
-    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.json") if "internal" not in file.name]
 
     mappings = {}
-    for xml_file in status_iterator(
+    for json_file in status_iterator(
         TABLE_FILES,
         "Rendering migration table",
         "green",
@@ -667,20 +719,20 @@ def read_migration_tables(app: sphinx.application.Sphinx):
         verbosity=1,
         stringify_func=(lambda x: x.name),
     ):
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
+        with pathlib.Path(json_file).open(mode="r") as f:
+            json_mappings = json.load(f)
 
-        type_categories = ["enum_type", "class", "interface"]
+        type_categories = ["EnumTypeMappings", "ClassMappings", "InterfaceMappings"]
         for type_category in type_categories:
-            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            type_mappings = json_mappings.get(type_category, [])
             for type_mapping in type_mappings:
                 type_old_name = type_mapping.get("OldName")
                 type_new_name = type_mapping.get("NewName")
                 mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
 
-        member_categories = ["enum_value", "method"]
+        member_categories = ["EnumValueMappings", "MemberMappings"]
         for member_category in member_categories:
-            method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
+            method_mappings = json_mappings.get(member_category, [])
             for method_mapping in method_mappings:
                 member_old_name = method_mapping.get("OldName")
                 if member_old_name[0] != "_": # Filter out private methods
@@ -693,6 +745,27 @@ def read_migration_tables(app: sphinx.application.Sphinx):
         jinja_contexts["migration_table"] = {
             "mappings": mappings,
         }
+
+def run_autoapi(app: sphinx.application.Sphinx):
+    """
+    Run the autoapi script to generate API documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    logger = logging.getLogger(__name__)
+    logger.info("\nWriting reST files for API documentation...", color="green")
+
+    scritps_dir = pathlib.Path(app.srcdir).parent.parent / "scripts"
+    sys.path.append(str(scritps_dir.resolve()))
+
+    from autoapi import autodoc_extensions
+    autodoc_extensions()
+
+    logger.info("Done!\n")
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -711,6 +784,11 @@ def setup(app: sphinx.application.Sphinx):
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     app.connect("builder-inited", read_migration_tables)
+
+    if BUILD_API:
+        app.connect("builder-inited", run_autoapi)
+        app.connect("builder-inited", copy_graph_images_to_source_dir)
+        app.connect("build-finished", remove_graph_images_from_source_dir)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)

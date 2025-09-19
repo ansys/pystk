@@ -13,18 +13,18 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.CentralBodyGraphicsIndexer.item`
-              - Get the central body graphics for the specified central body.
             * - :py:attr:`~ansys.stk.core.graphics.CentralBodyGraphicsIndexer.get_by_name`
               - Return the central body graphics for the central body with the given name.
+            * - :py:attr:`~ansys.stk.core.graphics.CentralBodyGraphicsIndexer.item`
+              - Get the central body graphics for the specified central body.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -72,7 +72,19 @@ Method detail
 -------------
 
 
+.. py:method:: get_by_name(self, name: str) -> CentralBodyGraphics
+    :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.get_by_name
 
+    Return the central body graphics for the central body with the given name.
+
+    :Parameters:
+
+        **name** : :obj:`~str`
+
+
+    :Returns:
+
+        :obj:`~CentralBodyGraphics`
 
 .. py:method:: item(self, central_body: str) -> CentralBodyGraphics
     :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.item
@@ -81,22 +93,12 @@ Method detail
 
     :Parameters:
 
-    **central_body** : :obj:`~str`
+        **central_body** : :obj:`~str`
+
 
     :Returns:
 
         :obj:`~CentralBodyGraphics`
 
-.. py:method:: get_by_name(self, name: str) -> CentralBodyGraphics
-    :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.get_by_name
 
-    Return the central body graphics for the central body with the given name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~CentralBodyGraphics`
 

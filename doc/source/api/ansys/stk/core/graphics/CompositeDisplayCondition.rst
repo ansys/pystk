@@ -15,52 +15,52 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.item`
-              - Return the condition at the given zero-based index.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.reserve`
-              - Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.add_with_negate`
-              - Add a display condition to the end of the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.add`
               - Add a display condition to the end of the composite.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.insert_with_negate`
-              - Insert a display condition at the given zero-based index, shifting existing display conditions.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.insert`
-              - Insert a display condition at the given zero-based index, shifting existing display conditions.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.remove`
-              - Remove a display condition from the composite.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.remove_at`
-              - Remove the display condition at the given zero-based index, shifting existing display conditions.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.add_with_negate`
+              - Add a display condition to the end of the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.clear`
               - Remove all display conditions from the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.get_negate`
               - Determine if a logical not operation is applied to a display condition in the composite.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.set_negate`
-              - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.get_negate_at`
               - Determine if a logical not operation is applied to a display condition in the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.insert`
+              - Insert a display condition at the given zero-based index, shifting existing display conditions.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.insert_with_negate`
+              - Insert a display condition at the given zero-based index, shifting existing display conditions.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.item`
+              - Return the condition at the given zero-based index.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.remove`
+              - Remove a display condition from the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.remove_at`
+              - Remove the display condition at the given zero-based index, shifting existing display conditions.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.reserve`
+              - Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.set_negate`
+              - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.set_negate_at`
               - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 
     .. tab-item:: Properties
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.count`
-              - Get the number of display conditions in the composite.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.capacity`
-              - Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
-            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation`
-              - Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition._new_enum`
               - Return an enumerator that iterates through the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.capacity`
+              - Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.count`
+              - Get the number of display conditions in the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation`
+              - Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 
 
 
@@ -94,11 +94,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: count
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.count
-    :type: int
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition._new_enum
+    :type: EnumeratorProxy
 
-    Get the number of display conditions in the composite.
+    Return an enumerator that iterates through the collection.
 
 .. py:property:: capacity
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.capacity
@@ -106,48 +106,31 @@ Property detail
 
     Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
 
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.count
+    :type: int
+
+    Get the number of display conditions in the composite.
+
 .. py:property:: logic_operation
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation
     :type: BinaryLogicOperation
 
     Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 
-.. py:property:: _new_enum
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition._new_enum
-    :type: EnumeratorProxy
-
-    Return an enumerator that iterates through the collection.
-
 
 Method detail
 -------------
 
+.. py:method:: add(self, display_condition: IDisplayCondition) -> None
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.add
 
-
-
-
-.. py:method:: item(self, index: int) -> IDisplayCondition
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.item
-
-    Return the condition at the given zero-based index.
+    Add a display condition to the end of the composite.
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **display_condition** : :obj:`~IDisplayCondition`
 
-    :Returns:
-
-        :obj:`~IDisplayCondition`
-
-
-.. py:method:: reserve(self, count: int) -> None
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.reserve
-
-    Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
-
-    :Parameters:
-
-    **count** : :obj:`~int`
 
     :Returns:
 
@@ -160,21 +143,65 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, display_condition: IDisplayCondition) -> None
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.add
 
-    Add a display condition to the end of the composite.
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.clear
+
+    Remove all display conditions from the composite.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: get_negate(self, display_condition: IDisplayCondition) -> bool
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.get_negate
+
+    Determine if a logical not operation is applied to a display condition in the composite.
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **display_condition** : :obj:`~IDisplayCondition`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: get_negate_at(self, index: int) -> bool
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.get_negate_at
+
+    Determine if a logical not operation is applied to a display condition in the composite.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: insert(self, index: int, display_condition: IDisplayCondition) -> None
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.insert
+
+    Insert a display condition at the given zero-based index, shifting existing display conditions.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -187,27 +214,32 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **index** : :obj:`~int`
+
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: insert(self, index: int, display_condition: IDisplayCondition) -> None
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.insert
+.. py:method:: item(self, index: int) -> IDisplayCondition
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.item
 
-    Insert a display condition at the given zero-based index, shifting existing display conditions.
+    Return the condition at the given zero-based index.
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **display_condition** : :obj:`~IDisplayCondition`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~None`
+        :obj:`~IDisplayCondition`
+
+
 
 .. py:method:: remove(self, display_condition: IDisplayCondition) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.remove
@@ -216,7 +248,8 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **display_condition** : :obj:`~IDisplayCondition`
+
 
     :Returns:
 
@@ -229,33 +262,26 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
+        **index** : :obj:`~int`
+
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: clear(self) -> None
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.clear
+.. py:method:: reserve(self, count: int) -> None
+    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.reserve
 
-    Remove all display conditions from the composite.
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: get_negate(self, display_condition: IDisplayCondition) -> bool
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.get_negate
-
-    Determine if a logical not operation is applied to a display condition in the composite.
+    Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
+        **count** : :obj:`~int`
+
 
     :Returns:
 
-        :obj:`~bool`
+        :obj:`~None`
 
 .. py:method:: set_negate(self, display_condition: IDisplayCondition, negate: bool) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.set_negate
@@ -264,25 +290,14 @@ Method detail
 
     :Parameters:
 
-    **display_condition** : :obj:`~IDisplayCondition`
-    **negate** : :obj:`~bool`
+        **display_condition** : :obj:`~IDisplayCondition`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
         :obj:`~None`
-
-.. py:method:: get_negate_at(self, index: int) -> bool
-    :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.get_negate_at
-
-    Determine if a logical not operation is applied to a display condition in the composite.
-
-    :Parameters:
-
-    **index** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~bool`
 
 .. py:method:: set_negate_at(self, index: int, negate: bool) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.set_negate_at
@@ -291,10 +306,13 @@ Method detail
 
     :Parameters:
 
-    **index** : :obj:`~int`
-    **negate** : :obj:`~bool`
+        **index** : :obj:`~int`
+
+        **negate** : :obj:`~bool`
+
 
     :Returns:
 
         :obj:`~None`
+
 

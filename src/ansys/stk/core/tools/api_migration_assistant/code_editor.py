@@ -51,4 +51,4 @@ class CodeEditor:
 
             migrated_filename = file_to_edit + "-migrated"
             logging.info(f"Writing {migrated_filename}")
-            Path(migrated_filename).write_text(modified_tree.code, encoding="utf-8")    
+            Path(migrated_filename).write_text(modified_tree.code, encoding="utf-8")

@@ -66,7 +66,7 @@ class ReceiverSnippets(CodeSnippetsTestBase):
         eid="stkobjects~Receiver",
     )
     def CreateReceiverSnippet(self, satellite):
-        # IStkObject satellite: STK object
+        # ISTKObject satellite: STK object
         receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
 
     def test_ModifyReceiverModelSnippet(self):

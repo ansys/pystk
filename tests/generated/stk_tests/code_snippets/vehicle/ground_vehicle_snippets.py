@@ -69,10 +69,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     # region CreateGroundVehicleOnCurrentScenarioCentralBody
     def test_CreateGroundVehicleOnCurrentScenarioCentralBody(self):
-        (IStkObject(GroundVehicleSnippets.m_Object)).unload()
+        (ISTKObject(GroundVehicleSnippets.m_Object)).unload()
         self.CreateGroundVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
-    def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
+    def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "STKObjectRoot"):
         # Create the ground vehicle
         launchVehicle: "GroundVehicle" = clr.CastAs(
             root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "MyGroundVehicle"), GroundVehicle
@@ -102,7 +102,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
         groundVehicle.set_route_type(PropagatorType.STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
-        propagator: "PropagatorStkExternal" = clr.CastAs(groundVehicle.route, PropagatorStkExternal)
+        propagator: "PropagatorSTKExternal" = clr.CastAs(groundVehicle.route, PropagatorSTKExternal)
 
     # endregion
 
@@ -126,7 +126,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportStkEphemerisTool(gv)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def GetExportStkEphemerisTool(self, groundVehicle: "GroundVehicle"):
         stkEphem: "VehicleEphemerisExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
@@ -140,7 +140,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportAttitudeTool(gv)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def GetExportAttitudeTool(self, groundVehicle: "GroundVehicle"):
         attExTool: "VehicleAttitudeExportTool" = groundVehicle.export_tools.get_attitude_export_tool()
@@ -154,7 +154,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportPropDefTool(gv)
-        (IStkObject(gv)).unload()
+        (ISTKObject(gv)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "GroundVehicle"):
         attExTool: "PropagatorDefinitionExportTool" = groundVehicle.export_tools.get_propagator_definition_export_tool()

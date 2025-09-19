@@ -13,7 +13,7 @@ Overview
 .. tab-set::
 
     .. tab-item:: Methods
-        
+
         .. list-table::
             :header-rows: 0
             :widths: auto
@@ -41,9 +41,12 @@ Method detail
 
     :Parameters:
 
-    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
-    **axes** : :obj:`~IVectorGeometryToolAxes`
-    **font** : :obj:`~GraphicsFont`
+        **reference_frame** : :obj:`~IVectorGeometryToolSystem`
+
+        **axes** : :obj:`~IVectorGeometryToolAxes`
+
+        **font** : :obj:`~GraphicsFont`
+
 
     :Returns:
 
