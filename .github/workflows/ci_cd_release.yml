@@ -116,7 +116,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     needs: build-wheelhouse
-    timeout-minutes: 120
+    timeout-minutes: 360
     permissions:
       contents: read
     steps:

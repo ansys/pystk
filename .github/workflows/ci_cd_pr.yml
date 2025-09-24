@@ -194,7 +194,7 @@ jobs:
             runner: [self-hosted, pystk]
           - needs-self-hosted-runner: true
             runner: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 360
     permissions:
       contents: read
     steps:
