@@ -304,7 +304,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -312,7 +312,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
-            python -m tox -e doc-links,doc-html
+            python -m tox -e doc-clean,doc-links,doc-html
         env:
           BUILD_API: true
           BUILD_EXAMPLES: false
@@ -322,7 +322,7 @@ jobs:
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
         run: |
-          python -m tox -e doc-links,doc-html
+          python -m tox -e doc-clean,doc-links,doc-html
         env:
           BUILD_API: false
           BUILD_EXAMPLES: false
@@ -338,7 +338,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
