@@ -35,11 +35,11 @@ def basic_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType, ConstraintLighting, AccessConstraintType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
     facility = scenario.children.new(STKObjectType.FACILITY, "Facility")
-    facility.use_terrain = False
     facility.position.assign_planetodetic(39.95, -75.16, 0)
 
     satellite = scenario.children.new(STKObjectType.SATELLITE, "Satellite")
@@ -63,11 +63,11 @@ def leap_second_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType, PropagatorType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("30 Jun 2015 16:00:00.000", "1 Jul 2015 16:00:00.000")
 
     place = scenario.children.new(STKObjectType.PLACE, "Place")
-    place.use_terrain = False
     place.position.assign_planetodetic(-43.0076, -11.2231, 0)
 
     satellite = scenario.children.new(STKObjectType.SATELLITE, "Satellite")
@@ -86,6 +86,7 @@ def basic_radar_access(stk_root):
     from ansys.stk.core.stkobjects import STKObjectType
 
     stk_root.new_scenario("GraphTest")
+    stk_root.execute_command("Terrain * TerrainServer UseTerrainForAnalysis No")
     scenario = stk_root.current_scenario
     scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
 
@@ -103,7 +104,6 @@ def basic_radar_access(stk_root):
     aircraft.route.propagate()
 
     radar_site = stk_root.current_scenario.children.new(STKObjectType.PLACE, "RadarSite")
-    radar_site.use_terrain = False
     radar_site.position.assign_geodetic(35.75174, 139.35621, 0.01524)
 
     sensor = radar_site.children.new(STKObjectType.SENSOR, "Sensor")
