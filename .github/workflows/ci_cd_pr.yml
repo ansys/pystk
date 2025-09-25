@@ -64,5 +64,6 @@ jobs:
           python -m pip install tox
 
       - name: "Build docs"
+        working-directory: '/home/stk/pystk'
         run: |
           python -m tox -e doc-clean,doc-links,doc-html
