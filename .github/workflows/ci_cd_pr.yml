@@ -31,8 +31,10 @@ jobs:
         ANSYSLMD_LICENSE_FILE: '1055@${{ secrets.LICENSE_SERVER }}'
     permissions:
       contents: read
-    env:
-      HOME: '/home/stk'
+    defaults:
+      run:
+        shell: bash
+        working-directory: '/home/stk'
     steps:
 
       - name: "List ${{ env.HOME }} directory"
