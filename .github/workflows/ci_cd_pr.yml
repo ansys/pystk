@@ -35,7 +35,7 @@ jobs:
 
       - name: "List directory"
         run: |
-          ls -a
+          ls -a /
 
       - name: "Check STK version"
         run: |
