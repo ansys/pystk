@@ -39,14 +39,10 @@ jobs:
         run: |
           ls -a ${HOME}
 
-      - name: "List /home directory"
+      - name: "List PWD"
         run: |
-          ls -a /home
-
-      - name: "List root directory"
-        run: |
-          ls -a /
+          ls -a $(pwd)
 
       - name: "Check STK version"
         run: |
-          /bin/connectconsole -i --noGraphics
+          bin/connectconsole -i --noGraphics
