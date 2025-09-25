@@ -47,17 +47,10 @@ jobs:
         run: |
           mv ${GITHUB_WORKSPACE} /home/stk
 
-      - name: "List pwd"
-        run: |
-          ls -a
-
-      - name: "Install Tox"
-        run: |
-          python -m pip install tox
-
       - name: "Build docs"
         run: |
           cd pystk && \
             python -m venv .venv && \
             source .venv/bin/activate && \
+            python -m pip install tox && \
             tox -e doc-clean,doc-links,doc-html
