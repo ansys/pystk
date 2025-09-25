@@ -31,6 +31,8 @@ jobs:
         ANSYSLMD_LICENSE_FILE: '1055@${{ secrets.LICENSE_SERVER }}'
     permissions:
       contents: read
+    env:
+      GITHUB_WORKSPACE: '/home/stk'
     defaults:
       run:
         shell: bash
