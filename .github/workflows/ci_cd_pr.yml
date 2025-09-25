@@ -29,14 +29,18 @@ jobs:
       image: localhost:5000/ansys/stk-13.0:dev-ubuntu22.04-python3.13
       env:
         ANSYSLMD_LICENSE_FILE: '1055@${{ secrets.LICENSE_SERVER }}'
-        HOME: /home/stk
+        HOME: '/home/stk'
     permissions:
       contents: read
     steps:
 
-      - name: "List home directory"
+      - name: "List ${{ env.HOME }} directory"
         run: |
           ls -a ${HOME}
+
+      - name: "List /home directory"
+        run: |
+          ls -a /home
 
       - name: "List root directory"
         run: |
