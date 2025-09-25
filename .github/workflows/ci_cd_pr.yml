@@ -47,10 +47,16 @@ jobs:
         run: |
           mv ${GITHUB_WORKSPACE} /home/stk
 
-      - name: "Build docs"
+      - name: "Create virtual environment and install Tox"
         run: |
           cd pystk && \
             python -m venv .venv && \
             source .venv/bin/activate && \
-            python -m pip install tox && \
-            tox -e doc-clean,doc-links,doc-html
+            python -m pip install tox
+
+      - name: "Build docs"
+        run: |
+          cd pystk && source .venv/bin/activate \
+            tox -e doc-clean && \
+              tox -e doc-links && \
+              tox -e doc-html
