@@ -31,8 +31,6 @@ jobs:
         ANSYSLMD_LICENSE_FILE: '1055@${{ secrets.LICENSE_SERVER }}'
     permissions:
       contents: read
-    env:
-      GITHUB_WORKSPACE: '/home/stk'
     defaults:
       run:
         shell: bash
@@ -49,11 +47,13 @@ jobs:
 
       - name: "Checkout the project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-        env:
-          GITHUB_WORKSPACE: '/home/stk'
         with:
           clean: true
           persist-credentials: false
+
+      - name: "Move repository location"
+        run: |
+          mv ${GITHUB_WORKSPACE} /home/stk
 
       - name: "List pwd"
         run: |
