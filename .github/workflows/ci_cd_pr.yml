@@ -37,14 +37,6 @@ jobs:
         working-directory: '/home/stk'
     steps:
 
-      - name: "Full path to GITHUB_WORKSPACE"
-        run: |
-          echo "GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}"
-
-      - name: "Root directory"
-        run: |
-          ls /
-
       - name: "Checkout the project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
@@ -65,4 +57,7 @@ jobs:
 
       - name: "Build docs"
         run: |
-          cd pystk && python -m tox -e doc-clean,doc-links,doc-html
+          cd pystk && \
+            python -m venv .venv && \
+            source .venv/bin/activate && \
+            tox -e doc-clean,doc-links,doc-html
