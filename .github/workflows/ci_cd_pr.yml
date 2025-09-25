@@ -37,14 +37,16 @@ jobs:
         working-directory: '/home/stk'
     steps:
 
-      - name: "List ${{ env.HOME }} directory"
-        run: |
-          ls -a ${HOME}
+      - name: "Checkout the project"
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          clean: true
+          persist-credentials: false
 
-      - name: "List PWD"
+      - name: "Install Tox"
         run: |
-          ls -a $(pwd)
+          python -m pip install tox
 
-      - name: "Check STK version"
+      - name: "Build docs"
         run: |
-          bin/connectconsole -i --noGraphics
+          tox -e doc-clean,doc-links,doc-html
