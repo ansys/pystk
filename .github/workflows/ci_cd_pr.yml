@@ -28,7 +28,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     container:
-      image: ansys/stk:dev-ubuntu22.04-python3.13
+      image: ansys/stk-13.0:dev-ubuntu22.04-python3.13
       env:
         ANSYSLMD_LICENSE_FILE: '1055@${{ secrets.LICENSE_SERVER }}'
     permissions:
