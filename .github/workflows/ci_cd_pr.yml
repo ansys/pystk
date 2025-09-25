@@ -35,6 +35,10 @@ jobs:
       contents: read
     steps:
 
+      - name: "List directory"
+        run: |
+          ls -a
+
       - name: "Check STK version"
         run: |
           bin/connectconsole -i --noGraphics
