@@ -33,7 +33,11 @@ jobs:
       contents: read
     steps:
 
-      - name: "List directory"
+      - name: "List home directory"
+        run: |
+          ls -a ${HOME}
+
+      - name: "List root directory"
         run: |
           ls -a /
 
