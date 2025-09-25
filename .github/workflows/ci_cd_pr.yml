@@ -10,8 +10,6 @@ env:
   MAIN_PYTHON_VERSION: '3.13'
   MINIMUM_PYTHON_VERSION: '3.10'
   PYSTK_DIR: '/home/stk/pystk'
-  QUARTO_VERSION: '1.5.55'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -41,4 +39,4 @@ jobs:
 
       - name: "Check STK version"
         run: |
-          bin/connectconsole -i --noGraphics
+          /bin/connectconsole -i --noGraphics
