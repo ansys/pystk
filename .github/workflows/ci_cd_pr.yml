@@ -41,7 +41,11 @@ jobs:
 
       - name: "Full path to GITHUB_WORKSPACE"
         run: |
-          echo "${GITHUB_WORKSPACE}"
+          echo "GITHUB_WORKSPACE is ${GITHUB_WORKSPACE}"
+
+      - name: "Root directory"
+        run: |
+          ls /
 
       - name: "Checkout the project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
