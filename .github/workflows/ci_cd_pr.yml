@@ -464,10 +464,6 @@ jobs:
 
       # -- Tests
 
-      - name: "Sleep for debugging"
-        run: |
-          sleep 3600
-
       - name: "Run the extensions tests"
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
