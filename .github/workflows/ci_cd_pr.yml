@@ -462,12 +462,6 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
-      # - name: "Sleep for debugging"
-      #   run: |
-      #     sleep 7200
-
       - name: "Run the extensions tests"
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
