@@ -464,9 +464,9 @@ jobs:
 
       # -- Tests
 
-      - name: "Sleep for debugging"
-        run: |
-          sleep 7200
+      # - name: "Sleep for debugging"
+      #   run: |
+      #     sleep 7200
 
       - name: "Run the extensions tests"
         env:
