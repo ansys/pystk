@@ -1,0 +1,2051 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkutil",
+        "NewRootScope": "ansys.stk.core.stkutil"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "ConvertTo",
+            "NewName": "convert_to"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "PosType",
+            "NewName": "position_type"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "Assign",
+            "NewName": "assign"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignGeocentric",
+            "NewName": "assign_geocentric"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignGeodetic",
+            "NewName": "assign_geodetic"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignSpherical",
+            "NewName": "assign_spherical"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignCylindrical",
+            "NewName": "assign_cylindrical"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignCartesian",
+            "NewName": "assign_cartesian"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignPlanetocentric",
+            "NewName": "assign_planetocentric"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "AssignPlanetodetic",
+            "NewName": "assign_planetodetic"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryPlanetocentric",
+            "NewName": "query_planetocentric"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryPlanetodetic",
+            "NewName": "query_planetodetic"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QuerySpherical",
+            "NewName": "query_spherical"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryCylindrical",
+            "NewName": "query_cylindrical"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryCartesian",
+            "NewName": "query_cartesian"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryPlanetocentricArray",
+            "NewName": "query_planetocentric_array"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryPlanetodeticArray",
+            "NewName": "query_planetodetic_array"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QuerySphericalArray",
+            "NewName": "query_spherical_array"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryCylindricalArray",
+            "NewName": "query_cylindrical_array"
+        },
+        {
+            "ParentScope": "IAgPosition",
+            "OldName": "QueryCartesianArray",
+            "NewName": "query_cartesian_array"
+        },
+        {
+            "ParentScope": "IAgPlanetocentric",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgPlanetocentric",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgPlanetocentric",
+            "OldName": "Alt",
+            "NewName": "altitude"
+        },
+        {
+            "ParentScope": "IAgGeocentric",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgGeocentric",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgGeocentric",
+            "OldName": "Alt",
+            "NewName": "altitude"
+        },
+        {
+            "ParentScope": "IAgSpherical",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgSpherical",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgSpherical",
+            "OldName": "Radius",
+            "NewName": "radius"
+        },
+        {
+            "ParentScope": "IAgCylindrical",
+            "OldName": "Radius",
+            "NewName": "radius"
+        },
+        {
+            "ParentScope": "IAgCylindrical",
+            "OldName": "Z",
+            "NewName": "z"
+        },
+        {
+            "ParentScope": "IAgCylindrical",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgCartesian",
+            "OldName": "X",
+            "NewName": "x"
+        },
+        {
+            "ParentScope": "IAgCartesian",
+            "OldName": "Y",
+            "NewName": "y"
+        },
+        {
+            "ParentScope": "IAgCartesian",
+            "OldName": "Z",
+            "NewName": "z"
+        },
+        {
+            "ParentScope": "IAgGeodetic",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgGeodetic",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgGeodetic",
+            "OldName": "Alt",
+            "NewName": "altitude"
+        },
+        {
+            "ParentScope": "IAgPlanetodetic",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgPlanetodetic",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgPlanetodetic",
+            "OldName": "Alt",
+            "NewName": "altitude"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "ConvertTo",
+            "NewName": "convert_to"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "DirectionType",
+            "NewName": "direction_type"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "Assign",
+            "NewName": "assign"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "AssignEuler",
+            "NewName": "assign_euler"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "AssignPR",
+            "NewName": "assign_pr"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "AssignRADec",
+            "NewName": "assign_ra_dec"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "AssignXYZ",
+            "NewName": "assign_xyz"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryEuler",
+            "NewName": "query_euler"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryPR",
+            "NewName": "query_pr"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryRADec",
+            "NewName": "query_ra_dec"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryXYZ",
+            "NewName": "query_xyz"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryEulerArray",
+            "NewName": "query_euler_array"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryPRArray",
+            "NewName": "query_pr_array"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryRADecArray",
+            "NewName": "query_ra_dec_array"
+        },
+        {
+            "ParentScope": "IAgDirection",
+            "OldName": "QueryXYZArray",
+            "NewName": "query_xyz_array"
+        },
+        {
+            "ParentScope": "IAgDirectionEuler",
+            "OldName": "B",
+            "NewName": "b"
+        },
+        {
+            "ParentScope": "IAgDirectionEuler",
+            "OldName": "C",
+            "NewName": "c"
+        },
+        {
+            "ParentScope": "IAgDirectionEuler",
+            "OldName": "Sequence",
+            "NewName": "sequence"
+        },
+        {
+            "ParentScope": "IAgDirectionPR",
+            "OldName": "Pitch",
+            "NewName": "pitch"
+        },
+        {
+            "ParentScope": "IAgDirectionPR",
+            "OldName": "Roll",
+            "NewName": "roll"
+        },
+        {
+            "ParentScope": "IAgDirectionPR",
+            "OldName": "Sequence",
+            "NewName": "sequence"
+        },
+        {
+            "ParentScope": "IAgDirectionRADec",
+            "OldName": "Dec",
+            "NewName": "dec"
+        },
+        {
+            "ParentScope": "IAgDirectionRADec",
+            "OldName": "RA",
+            "NewName": "ra"
+        },
+        {
+            "ParentScope": "IAgDirectionRADec",
+            "OldName": "Magnitude",
+            "NewName": "magnitude"
+        },
+        {
+            "ParentScope": "IAgDirectionXYZ",
+            "OldName": "X",
+            "NewName": "x"
+        },
+        {
+            "ParentScope": "IAgDirectionXYZ",
+            "OldName": "Y",
+            "NewName": "y"
+        },
+        {
+            "ParentScope": "IAgDirectionXYZ",
+            "OldName": "Z",
+            "NewName": "z"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "X",
+            "NewName": "x"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "Y",
+            "NewName": "y"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "Z",
+            "NewName": "z"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "Get",
+            "NewName": "get"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "Set",
+            "NewName": "set"
+        },
+        {
+            "ParentScope": "IAgCartesian3Vector",
+            "OldName": "ToArray",
+            "NewName": "to_array"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "ConvertTo",
+            "NewName": "convert_to"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "OrientationType",
+            "NewName": "orientation_type"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "Assign",
+            "NewName": "assign"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "AssignAzEl",
+            "NewName": "assign_az_el"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "AssignEulerAngles",
+            "NewName": "assign_euler_angles"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "AssignQuaternion",
+            "NewName": "assign_quaternion"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "AssignYPRAngles",
+            "NewName": "assign_ypr_angles"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryAzEl",
+            "NewName": "query_az_el"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryEulerAngles",
+            "NewName": "query_euler_angles"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryQuaternion",
+            "NewName": "query_quaternion"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryYPRAngles",
+            "NewName": "query_ypr_angles"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryAzElArray",
+            "NewName": "query_az_el_array"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryEulerAnglesArray",
+            "NewName": "query_euler_angles_array"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryQuaternionArray",
+            "NewName": "query_quaternion_array"
+        },
+        {
+            "ParentScope": "IAgOrientation",
+            "OldName": "QueryYPRAnglesArray",
+            "NewName": "query_ypr_angles_array"
+        },
+        {
+            "ParentScope": "IAgOrientationAzEl",
+            "OldName": "Azimuth",
+            "NewName": "azimuth"
+        },
+        {
+            "ParentScope": "IAgOrientationAzEl",
+            "OldName": "Elevation",
+            "NewName": "elevation"
+        },
+        {
+            "ParentScope": "IAgOrientationAzEl",
+            "OldName": "AboutBoresight",
+            "NewName": "about_boresight"
+        },
+        {
+            "ParentScope": "IAgOrientationEulerAngles",
+            "OldName": "Sequence",
+            "NewName": "sequence"
+        },
+        {
+            "ParentScope": "IAgOrientationEulerAngles",
+            "OldName": "A",
+            "NewName": "a"
+        },
+        {
+            "ParentScope": "IAgOrientationEulerAngles",
+            "OldName": "B",
+            "NewName": "b"
+        },
+        {
+            "ParentScope": "IAgOrientationEulerAngles",
+            "OldName": "C",
+            "NewName": "c"
+        },
+        {
+            "ParentScope": "IAgOrientationQuaternion",
+            "OldName": "QX",
+            "NewName": "qx"
+        },
+        {
+            "ParentScope": "IAgOrientationQuaternion",
+            "OldName": "QY",
+            "NewName": "qy"
+        },
+        {
+            "ParentScope": "IAgOrientationQuaternion",
+            "OldName": "QZ",
+            "NewName": "qz"
+        },
+        {
+            "ParentScope": "IAgOrientationQuaternion",
+            "OldName": "QS",
+            "NewName": "qs"
+        },
+        {
+            "ParentScope": "IAgOrientationYPRAngles",
+            "OldName": "Sequence",
+            "NewName": "sequence"
+        },
+        {
+            "ParentScope": "IAgOrientationYPRAngles",
+            "OldName": "Yaw",
+            "NewName": "yaw"
+        },
+        {
+            "ParentScope": "IAgOrientationYPRAngles",
+            "OldName": "Pitch",
+            "NewName": "pitch"
+        },
+        {
+            "ParentScope": "IAgOrientationYPRAngles",
+            "OldName": "Roll",
+            "NewName": "roll"
+        },
+        {
+            "ParentScope": "IAgOrientationPositionOffset",
+            "OldName": "PositionOffset",
+            "NewName": "position_offset"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "ConvertTo",
+            "NewName": "convert_to"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "OrbitStateType",
+            "NewName": "orbit_state_type"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "Assign",
+            "NewName": "assign"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignClassical",
+            "NewName": "assign_classical"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignCartesian",
+            "NewName": "assign_cartesian"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignGeodetic",
+            "NewName": "assign_geodetic"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignEquinoctialPosigrade",
+            "NewName": "assign_equinoctial_posigrade"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignEquinoctialRetrograde",
+            "NewName": "assign_equinoctial_retrograde"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignMixedSpherical",
+            "NewName": "assign_mixed_spherical"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "AssignSpherical",
+            "NewName": "assign_spherical"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgOrbitState",
+            "OldName": "Epoch",
+            "NewName": "epoch"
+        },
+        {
+            "ParentScope": "IAgCartesian2Vector",
+            "OldName": "X",
+            "NewName": "x"
+        },
+        {
+            "ParentScope": "IAgCartesian2Vector",
+            "OldName": "Y",
+            "NewName": "y"
+        },
+        {
+            "ParentScope": "IAgCartesian2Vector",
+            "OldName": "Get",
+            "NewName": "get"
+        },
+        {
+            "ParentScope": "IAgCartesian2Vector",
+            "OldName": "Set",
+            "NewName": "set"
+        },
+        {
+            "ParentScope": "IAgCartesian2Vector",
+            "OldName": "ToArray",
+            "NewName": "to_array"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDim",
+            "OldName": "Id",
+            "NewName": "identifier"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDim",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDim",
+            "OldName": "AvailableUnits",
+            "NewName": "available_units"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDim",
+            "OldName": "CurrentUnit",
+            "NewName": "current_unit"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDim",
+            "OldName": "SetCurrentUnit",
+            "NewName": "set_current_unit"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "PropertyType",
+            "NewName": "property_type"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "GetValue",
+            "NewName": "get_value"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "SetValue",
+            "NewName": "set_value"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "HasMin",
+            "NewName": "has_min"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "HasMax",
+            "NewName": "has_max"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "Min",
+            "NewName": "min"
+        },
+        {
+            "ParentScope": "IAgPropertyInfo",
+            "OldName": "Max",
+            "NewName": "max"
+        },
+        {
+            "ParentScope": "IAgPropertyInfoCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgPropertyInfoCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgPropertyInfoCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgPropertyInfoCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgPropertyInfoCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgRuntimeTypeInfo",
+            "OldName": "Properties",
+            "NewName": "properties"
+        },
+        {
+            "ParentScope": "IAgRuntimeTypeInfo",
+            "OldName": "IsCollection",
+            "NewName": "is_collection"
+        },
+        {
+            "ParentScope": "IAgRuntimeTypeInfo",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgRuntimeTypeInfo",
+            "OldName": "GetItem",
+            "NewName": "get_item"
+        },
+        {
+            "ParentScope": "IAgRuntimeTypeInfoProvider",
+            "OldName": "ProvideRuntimeTypeInfo",
+            "NewName": "provide_runtime_type_info"
+        },
+        {
+            "ParentScope": "IAgExecCmdResult",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgExecCmdResult",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgExecCmdResult",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgExecCmdResult",
+            "OldName": "Range",
+            "NewName": "range"
+        },
+        {
+            "ParentScope": "IAgExecCmdResult",
+            "OldName": "IsSucceeded",
+            "NewName": "is_succeeded"
+        },
+        {
+            "ParentScope": "IAgExecMultiCmdResult",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgExecMultiCmdResult",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgExecMultiCmdResult",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnit",
+            "OldName": "FullName",
+            "NewName": "full_name"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnit",
+            "OldName": "Abbrv",
+            "NewName": "abbrv"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnit",
+            "OldName": "Id",
+            "NewName": "identifier"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnit",
+            "OldName": "Dimension",
+            "NewName": "dimension"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnitCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnitCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnitCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnitCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsUnitCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "SetCurrentUnit",
+            "NewName": "set_current_unit"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "GetCurrentUnitAbbrv",
+            "NewName": "get_current_unit_abbrv"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "MissionElapsedTime",
+            "NewName": "mission_elapsed_time"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "JulianDateOffset",
+            "NewName": "julian_date_offset"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "ResetUnits",
+            "NewName": "reset_units"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgUnitPrefsDimCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "Dimension",
+            "NewName": "dimension"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "Unit",
+            "NewName": "unit"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "ConvertToUnit",
+            "NewName": "convert_to_unit"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "Value",
+            "NewName": "value"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "Subtract",
+            "NewName": "subtract"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "MultiplyQty",
+            "NewName": "multiply_qty"
+        },
+        {
+            "ParentScope": "IAgQuantity",
+            "OldName": "DivideQty",
+            "NewName": "divide_qty"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "Format",
+            "NewName": "format"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "SetDate",
+            "NewName": "set_date"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "OLEDate",
+            "NewName": "ole_date"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "WholeDays",
+            "NewName": "whole_days"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "SecIntoDay",
+            "NewName": "sec_into_day"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "WholeDaysUTC",
+            "NewName": "whole_days_utc"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "SecIntoDayUTC",
+            "NewName": "sec_into_day_utc"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "Subtract",
+            "NewName": "subtract"
+        },
+        {
+            "ParentScope": "IAgDate",
+            "OldName": "Span",
+            "NewName": "span"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertQuantity",
+            "NewName": "convert_quantity"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertDate",
+            "NewName": "convert_date"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertQuantityArray",
+            "NewName": "convert_quantity_array"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertDateArray",
+            "NewName": "convert_date_array"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewQuantity",
+            "NewName": "new_quantity"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewDate",
+            "NewName": "new_date"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewPositionOnEarth",
+            "NewName": "new_position_on_earth"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "ConvertPositionArray",
+            "NewName": "convert_position_array"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewDirection",
+            "NewName": "new_direction"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewOrientation",
+            "NewName": "new_orientation"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewOrbitStateOnEarth",
+            "NewName": "new_orbit_state_on_earth"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewPositionOnCB",
+            "NewName": "new_position_on_cb"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewOrbitStateOnCB",
+            "NewName": "new_orbit_state_on_cb"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "QueryDirectionCosineMatrix",
+            "NewName": "query_direction_cosine_matrix"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "QueryDirectionCosineMatrixArray",
+            "NewName": "query_direction_cosine_matrix_array"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewCartesian3Vector",
+            "NewName": "new_cartesian3_vector"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewCartesian3VectorFromDirection",
+            "NewName": "new_cartesian3_vector_from_direction"
+        },
+        {
+            "ParentScope": "IAgConversionUtility",
+            "OldName": "NewCartesian3VectorFromPosition",
+            "NewName": "new_cartesian3_vector_from_position"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "ToArray",
+            "NewName": "to_array"
+        },
+        {
+            "ParentScope": "IAgDoublesCollection",
+            "OldName": "SetAt",
+            "NewName": "set_at"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgLocationData",
+            "NewName": "ILocationData"
+        },
+        {
+            "OldName": "IAgPosition",
+            "NewName": "IPosition"
+        },
+        {
+            "OldName": "IAgPlanetocentric",
+            "NewName": "Planetocentric"
+        },
+        {
+            "OldName": "IAgGeocentric",
+            "NewName": "Geocentric"
+        },
+        {
+            "OldName": "IAgSpherical",
+            "NewName": "Spherical"
+        },
+        {
+            "OldName": "IAgCylindrical",
+            "NewName": "Cylindrical"
+        },
+        {
+            "OldName": "IAgCartesian",
+            "NewName": "Cartesian"
+        },
+        {
+            "OldName": "IAgGeodetic",
+            "NewName": "Geodetic"
+        },
+        {
+            "OldName": "IAgPlanetodetic",
+            "NewName": "Planetodetic"
+        },
+        {
+            "OldName": "IAgDirection",
+            "NewName": "IDirection"
+        },
+        {
+            "OldName": "IAgDirectionEuler",
+            "NewName": "DirectionEuler"
+        },
+        {
+            "OldName": "IAgDirectionPR",
+            "NewName": "DirectionPR"
+        },
+        {
+            "OldName": "IAgDirectionRADec",
+            "NewName": "DirectionRADec"
+        },
+        {
+            "OldName": "IAgDirectionXYZ",
+            "NewName": "DirectionXYZ"
+        },
+        {
+            "OldName": "IAgCartesian3Vector",
+            "NewName": "ICartesian3Vector"
+        },
+        {
+            "OldName": "IAgOrientation",
+            "NewName": "IOrientation"
+        },
+        {
+            "OldName": "IAgOrientationAzEl",
+            "NewName": "IOrientationAzEl"
+        },
+        {
+            "OldName": "IAgOrientationEulerAngles",
+            "NewName": "IOrientationEulerAngles"
+        },
+        {
+            "OldName": "IAgOrientationQuaternion",
+            "NewName": "IOrientationQuaternion"
+        },
+        {
+            "OldName": "IAgOrientationYPRAngles",
+            "NewName": "IOrientationYPRAngles"
+        },
+        {
+            "OldName": "IAgOrientationPositionOffset",
+            "NewName": "IOrientationPositionOffset"
+        },
+        {
+            "OldName": "IAgOrbitState",
+            "NewName": "IOrbitState"
+        },
+        {
+            "OldName": "IAgCartesian2Vector",
+            "NewName": "Cartesian2Vector"
+        },
+        {
+            "OldName": "IAgUnitPrefsDim",
+            "NewName": "UnitPreferencesDimension"
+        },
+        {
+            "OldName": "IAgPropertyInfo",
+            "NewName": "PropertyInfo"
+        },
+        {
+            "OldName": "IAgPropertyInfoCollection",
+            "NewName": "PropertyInfoCollection"
+        },
+        {
+            "OldName": "IAgRuntimeTypeInfo",
+            "NewName": "RuntimeTypeInfo"
+        },
+        {
+            "OldName": "IAgRuntimeTypeInfoProvider",
+            "NewName": "IRuntimeTypeInfoProvider"
+        },
+        {
+            "OldName": "IAgExecCmdResult",
+            "NewName": "ExecuteCommandResult"
+        },
+        {
+            "OldName": "IAgExecMultiCmdResult",
+            "NewName": "ExecuteMultipleCommandsResult"
+        },
+        {
+            "OldName": "IAgUnitPrefsUnit",
+            "NewName": "UnitPreferencesUnit"
+        },
+        {
+            "OldName": "IAgUnitPrefsUnitCollection",
+            "NewName": "UnitPreferencesUnitCollection"
+        },
+        {
+            "OldName": "IAgUnitPrefsDimCollection",
+            "NewName": "UnitPreferencesDimensionCollection"
+        },
+        {
+            "OldName": "IAgQuantity",
+            "NewName": "Quantity"
+        },
+        {
+            "OldName": "IAgDate",
+            "NewName": "Date"
+        },
+        {
+            "OldName": "IAgConversionUtility",
+            "NewName": "ConversionUtility"
+        },
+        {
+            "OldName": "IAgDoublesCollection",
+            "NewName": "DoublesCollection"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgExecCmdResult",
+            "NewName": "ExecuteCommandResult"
+        },
+        {
+            "OldName": "AgExecMultiCmdResult",
+            "NewName": "ExecuteMultipleCommandsResult"
+        },
+        {
+            "OldName": "AgUnitPrefsUnit",
+            "NewName": "UnitPreferencesUnit"
+        },
+        {
+            "OldName": "AgUnitPrefsUnitCollection",
+            "NewName": "UnitPreferencesUnitCollection"
+        },
+        {
+            "OldName": "AgUnitPrefsDim",
+            "NewName": "UnitPreferencesDimension"
+        },
+        {
+            "OldName": "AgUnitPrefsDimCollection",
+            "NewName": "UnitPreferencesDimensionCollection"
+        },
+        {
+            "OldName": "AgConversionUtility",
+            "NewName": "ConversionUtility"
+        },
+        {
+            "OldName": "AgQuantity",
+            "NewName": "Quantity"
+        },
+        {
+            "OldName": "AgDate",
+            "NewName": "Date"
+        },
+        {
+            "OldName": "AgPosition",
+            "NewName": "Position"
+        },
+        {
+            "OldName": "AgCartesian",
+            "NewName": "Cartesian"
+        },
+        {
+            "OldName": "AgGeodetic",
+            "NewName": "Geodetic"
+        },
+        {
+            "OldName": "AgGeocentric",
+            "NewName": "Geocentric"
+        },
+        {
+            "OldName": "AgPlanetodetic",
+            "NewName": "Planetodetic"
+        },
+        {
+            "OldName": "AgPlanetocentric",
+            "NewName": "Planetocentric"
+        },
+        {
+            "OldName": "AgSpherical",
+            "NewName": "Spherical"
+        },
+        {
+            "OldName": "AgCylindrical",
+            "NewName": "Cylindrical"
+        },
+        {
+            "OldName": "AgDirection",
+            "NewName": "Direction"
+        },
+        {
+            "OldName": "AgDirectionEuler",
+            "NewName": "DirectionEuler"
+        },
+        {
+            "OldName": "AgDirectionPR",
+            "NewName": "DirectionPR"
+        },
+        {
+            "OldName": "AgDirectionRADec",
+            "NewName": "DirectionRADec"
+        },
+        {
+            "OldName": "AgDirectionXYZ",
+            "NewName": "DirectionXYZ"
+        },
+        {
+            "OldName": "AgOrientation",
+            "NewName": "Orientation"
+        },
+        {
+            "OldName": "AgOrientationAzEl",
+            "NewName": "OrientationAzEl"
+        },
+        {
+            "OldName": "AgOrientationEulerAngles",
+            "NewName": "OrientationEulerAngles"
+        },
+        {
+            "OldName": "AgOrientationQuaternion",
+            "NewName": "OrientationQuaternion"
+        },
+        {
+            "OldName": "AgOrientationYPRAngles",
+            "NewName": "OrientationYPRAngles"
+        },
+        {
+            "OldName": "AgDoublesCollection",
+            "NewName": "DoublesCollection"
+        },
+        {
+            "OldName": "AgCartesian3Vector",
+            "NewName": "Cartesian3Vector"
+        },
+        {
+            "OldName": "AgCartesian2Vector",
+            "NewName": "Cartesian2Vector"
+        },
+        {
+            "OldName": "AgPropertyInfo",
+            "NewName": "PropertyInfo"
+        },
+        {
+            "OldName": "AgPropertyInfoCollection",
+            "NewName": "PropertyInfoCollection"
+        },
+        {
+            "OldName": "AgRuntimeTypeInfo",
+            "NewName": "RuntimeTypeInfo"
+        },
+        {
+            "OldName": "AgCROrientationAzEl",
+            "NewName": "CommRadOrientationAzEl"
+        },
+        {
+            "OldName": "AgCROrientationEulerAngles",
+            "NewName": "CommRadOrientationEulerAngles"
+        },
+        {
+            "OldName": "AgCROrientationQuaternion",
+            "NewName": "CommRadOrientationQuaternion"
+        },
+        {
+            "OldName": "AgCROrientationYPRAngles",
+            "NewName": "CommRadOrientationYPRAngles"
+        },
+        {
+            "OldName": "AgCROrientationOffsetCart",
+            "NewName": "CommRadOrientationOffsetCart"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgEPositionType",
+            "NewName": "PositionType"
+        },
+        {
+            "OldName": "AgEEulerDirectionSequence",
+            "NewName": "EulerDirectionSequence"
+        },
+        {
+            "OldName": "AgEDirectionType",
+            "NewName": "DirectionType"
+        },
+        {
+            "OldName": "AgEPRSequence",
+            "NewName": "PRSequence"
+        },
+        {
+            "OldName": "AgEOrientationType",
+            "NewName": "OrientationType"
+        },
+        {
+            "OldName": "AgEAzElAboutBoresight",
+            "NewName": "AzElAboutBoresight"
+        },
+        {
+            "OldName": "AgEEulerOrientationSequence",
+            "NewName": "EulerOrientationSequenceType"
+        },
+        {
+            "OldName": "AgEYPRAnglesSequence",
+            "NewName": "YPRAnglesSequence"
+        },
+        {
+            "OldName": "AgEOrbitStateType",
+            "NewName": "OrbitStateType"
+        },
+        {
+            "OldName": "AgECoordinateSystem",
+            "NewName": "CoordinateSystem"
+        },
+        {
+            "OldName": "AgELogMsgType",
+            "NewName": "LogMessageType"
+        },
+        {
+            "OldName": "AgELogMsgDispID",
+            "NewName": "LogMessageDisplayID"
+        },
+        {
+            "OldName": "AgELineStyle",
+            "NewName": "LineStyle"
+        },
+        {
+            "OldName": "AgEExecMultiCmdResultAction",
+            "NewName": "ExecuteMultipleCommandsMode"
+        },
+        {
+            "OldName": "AgEFillStyle",
+            "NewName": "FillStyle"
+        },
+        {
+            "OldName": "AgEPropertyInfoValueType",
+            "NewName": "PropertyInfoValueType"
+        }
+    ],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eCartesian",
+            "NewName": "CARTESIAN"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eCylindrical",
+            "NewName": "CYLINDRICAL"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eGeocentric",
+            "NewName": "GEOCENTRIC"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eGeodetic",
+            "NewName": "GEODETIC"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "eSpherical",
+            "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "ePlanetocentric",
+            "NewName": "PLANETOCENTRIC"
+        },
+        {
+            "ParentScope": "AgEPositionType",
+            "OldName": "ePlanetodetic",
+            "NewName": "PLANETODETIC"
+        },
+        {
+            "ParentScope": "AgEEulerDirectionSequence",
+            "OldName": "e12",
+            "NewName": "SEQUENCE_12"
+        },
+        {
+            "ParentScope": "AgEEulerDirectionSequence",
+            "OldName": "e21",
+            "NewName": "SEQUENCE_21"
+        },
+        {
+            "ParentScope": "AgEEulerDirectionSequence",
+            "OldName": "e31",
+            "NewName": "SEQUENCE_31"
+        },
+        {
+            "ParentScope": "AgEEulerDirectionSequence",
+            "OldName": "e32",
+            "NewName": "SEQUENCE_32"
+        },
+        {
+            "ParentScope": "AgEDirectionType",
+            "OldName": "eDirEuler",
+            "NewName": "EULER"
+        },
+        {
+            "ParentScope": "AgEDirectionType",
+            "OldName": "eDirPR",
+            "NewName": "PR"
+        },
+        {
+            "ParentScope": "AgEDirectionType",
+            "OldName": "eDirRADec",
+            "NewName": "RA_DEC"
+        },
+        {
+            "ParentScope": "AgEDirectionType",
+            "OldName": "eDirXYZ",
+            "NewName": "XYZ"
+        },
+        {
+            "ParentScope": "AgEPRSequence",
+            "OldName": "ePR",
+            "NewName": "PR"
+        },
+        {
+            "ParentScope": "AgEOrientationType",
+            "OldName": "eAzEl",
+            "NewName": "AZ_EL"
+        },
+        {
+            "ParentScope": "AgEOrientationType",
+            "OldName": "eEulerAngles",
+            "NewName": "EULER_ANGLES"
+        },
+        {
+            "ParentScope": "AgEOrientationType",
+            "OldName": "eQuaternion",
+            "NewName": "QUATERNION"
+        },
+        {
+            "ParentScope": "AgEOrientationType",
+            "OldName": "eYPRAngles",
+            "NewName": "YPR_ANGLES"
+        },
+        {
+            "ParentScope": "AgEAzElAboutBoresight",
+            "OldName": "eAzElAboutBoresightHold",
+            "NewName": "HOLD"
+        },
+        {
+            "ParentScope": "AgEAzElAboutBoresight",
+            "OldName": "eAzElAboutBoresightRotate",
+            "NewName": "ROTATE"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e121",
+            "NewName": "SEQUENCE_121"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e123",
+            "NewName": "SEQUENCE_123"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e131",
+            "NewName": "SEQUENCE_131"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e132",
+            "NewName": "SEQUENCE_132"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e212",
+            "NewName": "SEQUENCE_212"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e213",
+            "NewName": "SEQUENCE_213"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e231",
+            "NewName": "SEQUENCE_231"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e232",
+            "NewName": "SEQUENCE_232"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e312",
+            "NewName": "SEQUENCE_312"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e313",
+            "NewName": "SEQUENCE_313"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e321",
+            "NewName": "SEQUENCE_321"
+        },
+        {
+            "ParentScope": "AgEEulerOrientationSequence",
+            "OldName": "e323",
+            "NewName": "SEQUENCE_323"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "ePRY",
+            "NewName": "PRY"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "ePYR",
+            "NewName": "PYR"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "eRPY",
+            "NewName": "RPY"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "eRYP",
+            "NewName": "RYP"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "eYPR",
+            "NewName": "YPR"
+        },
+        {
+            "ParentScope": "AgEYPRAnglesSequence",
+            "OldName": "eYRP",
+            "NewName": "YRP"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateCartesian",
+            "NewName": "CARTESIAN"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateClassical",
+            "NewName": "CLASSICAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateEquinoctial",
+            "NewName": "EQUINOCTIAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateDelaunay",
+            "NewName": "DELAUNAY"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateSpherical",
+            "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateMixedSpherical",
+            "NewName": "MIXED_SPHERICAL"
+        },
+        {
+            "ParentScope": "AgEOrbitStateType",
+            "OldName": "eOrbitStateGeodetic",
+            "NewName": "GEODETIC"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemUnknown",
+            "NewName": "UNKNOWN"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemAlignmentAtEpoch",
+            "NewName": "ALIGNMENT_AT_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemB1950",
+            "NewName": "B1950"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixed",
+            "NewName": "FIXED"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemJ2000",
+            "NewName": "J2000"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanOfDate",
+            "NewName": "MEAN_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanOfEpoch",
+            "NewName": "MEAN_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTEMEOfDate",
+            "NewName": "TEME_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTEMEOfEpoch",
+            "NewName": "TEME_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfDate",
+            "NewName": "TRUE_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfEpoch",
+            "NewName": "TRUE_OF_EPOCH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfRefDate",
+            "NewName": "TRUE_OF_REFERENCE_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemICRF",
+            "NewName": "ICRF"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemMeanEarth",
+            "NewName": "MEAN_EARTH"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixedNoLibration",
+            "NewName": "FIXED_NO_LIBRATION"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemFixedIAU2003",
+            "NewName": "FIXED_IAU2003"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemPrincipalAxes421",
+            "NewName": "PRINCIPAL_AXES421"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemPrincipalAxes403",
+            "NewName": "PRINCIPAL_AXES403"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemInertial",
+            "NewName": "INERTIAL"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemJ2000Ecliptic",
+            "NewName": "J2000_ECLIPTIC"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueEclipticOfDate",
+            "NewName": "TRUE_ECLIPTIC_OF_DATE"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemPrincipalAxes430",
+            "NewName": "PRINCIPAL_AXES430"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemTrueOfDateRotating",
+            "NewName": "TRUE_OF_DATE_ROTATING"
+        },
+        {
+            "ParentScope": "AgECoordinateSystem",
+            "OldName": "eCoordinateSystemEclipticJ2000ICRF",
+            "NewName": "ECLIPTIC_J2000ICRF"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgDebug",
+            "NewName": "DEBUG"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgInfo",
+            "NewName": "INFO"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgForceInfo",
+            "NewName": "FORCE_INFO"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgWarning",
+            "NewName": "WARNING"
+        },
+        {
+            "ParentScope": "AgELogMsgType",
+            "OldName": "eLogMsgAlarm",
+            "NewName": "ALARM"
+        },
+        {
+            "ParentScope": "AgELogMsgDispID",
+            "OldName": "eLogMsgDispAll",
+            "NewName": "ALL"
+        },
+        {
+            "ParentScope": "AgELogMsgDispID",
+            "OldName": "eLogMsgDispDefault",
+            "NewName": "DEFAULT"
+        },
+        {
+            "ParentScope": "AgELogMsgDispID",
+            "OldName": "eLogMsgDispMsgWin",
+            "NewName": "MESSAGE_WINDOW"
+        },
+        {
+            "ParentScope": "AgELogMsgDispID",
+            "OldName": "eLogMsgDispStatusBar",
+            "NewName": "STATUS_BAR"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eSolid",
+            "NewName": "SOLID"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDashed",
+            "NewName": "DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDotted",
+            "NewName": "DOTTED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDotDashed",
+            "NewName": "DOT_DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLongDashed",
+            "NewName": "LONG_DASHED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDashDotDotted",
+            "NewName": "DASH_DOT_DOTTED"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMDash",
+            "NewName": "M_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLDash",
+            "NewName": "L_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eSDashDot",
+            "NewName": "S_DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMDashDot",
+            "NewName": "M_DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLDashDot",
+            "NewName": "DASH_DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eMSDash",
+            "NewName": "MS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLSDash",
+            "NewName": "LS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLMDash",
+            "NewName": "LM_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLMSDash",
+            "NewName": "LMS_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eDot",
+            "NewName": "DOT"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eLongDash",
+            "NewName": "LONG_DASH"
+        },
+        {
+            "ParentScope": "AgELineStyle",
+            "OldName": "eSDash",
+            "NewName": "S_DASH"
+        },
+        {
+            "ParentScope": "AgEExecMultiCmdResultAction",
+            "OldName": "eContinueOnError",
+            "NewName": "CONTINUE_ON_ERROR"
+        },
+        {
+            "ParentScope": "AgEExecMultiCmdResultAction",
+            "OldName": "eStopOnError",
+            "NewName": "STOP_ON_ERROR"
+        },
+        {
+            "ParentScope": "AgEExecMultiCmdResultAction",
+            "OldName": "eExceptionOnError",
+            "NewName": "EXCEPTION_ON_ERROR"
+        },
+        {
+            "ParentScope": "AgEExecMultiCmdResultAction",
+            "OldName": "eIgnoreExecCmdResult",
+            "NewName": "DISCARD_RESULTS"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleSolid",
+            "NewName": "SOLID"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleHorizontalStripe",
+            "NewName": "HORIZONTAL_STRIPE"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleDiagonalStripe1",
+            "NewName": "DIAGONAL_STRIPE1"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleDiagonalStripe2",
+            "NewName": "DIAGONAL_STRIPE2"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleHatch",
+            "NewName": "HATCH"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleDiagonalHatch",
+            "NewName": "DIAGONAL_HATCH"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleScreen",
+            "NewName": "SCREEN"
+        },
+        {
+            "ParentScope": "AgEFillStyle",
+            "OldName": "eFillStyleVerticalStripe",
+            "NewName": "VERTICAL_STRIPE"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeInt",
+            "NewName": "INT"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeReal",
+            "NewName": "REAL"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeQuantity",
+            "NewName": "QUANTITY"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeDate",
+            "NewName": "DATE"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeString",
+            "NewName": "STRING"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeBool",
+            "NewName": "BOOL"
+        },
+        {
+            "ParentScope": "AgEPropertyInfoValueType",
+            "OldName": "ePropertyInfoValueTypeInterface",
+            "NewName": "INTERFACE"
+        }
+    ],
+    "NamedArgumentMappings": []
+}

@@ -157,7 +157,6 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
             areaTargetPoints = patternPoints.to_array()
 
             Console.WriteLine("All points in Area Target")
-
             i: int = 0
             while i < len(areaTargetPoints):
                 Console.WriteLine(

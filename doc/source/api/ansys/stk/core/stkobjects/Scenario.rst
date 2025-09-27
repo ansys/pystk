@@ -61,8 +61,6 @@ Overview
               - Specify whether scenario needs to be saved.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.laser_environment`
               - Return the laser environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_clutter_map`
-              - Return the global radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_cross_section`
               - Return the global radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.rf_environment`
@@ -191,12 +189,6 @@ Property detail
 
     Return the laser environment.
 
-.. py:property:: radar_clutter_map
-    :canonical: ansys.stk.core.stkobjects.Scenario.radar_clutter_map
-    :type: IRadarClutterMap
-
-    Return the global radar clutter map.
-
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Scenario.radar_cross_section
     :type: RadarCrossSection
@@ -307,7 +299,6 @@ Method detail
     :Returns:
 
         :obj:`~list`
-
 
 
 

@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Ship.atmosphere`
-              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Ship.chain_analysis_options`
+              - Get the ship's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.export_tools`
               - Return the ShipExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.get_eoir_settings`
@@ -36,8 +36,6 @@ Overview
               - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.lighting_maximum_step_terrain`
               - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Ship.radar_clutter_map`
-              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.radar_cross_section`
               - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Ship.rf_environment`
@@ -56,11 +54,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: atmosphere
-    :canonical: ansys.stk.core.stkobjects.Ship.atmosphere
-    :type: Atmosphere
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Ship.chain_analysis_options
+    :type: ChainAnalysisOptions
 
-    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Get the ship's chain analysis options.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.Ship.export_tools
@@ -104,12 +102,6 @@ Property detail
 
     Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
-.. py:property:: radar_clutter_map
-    :canonical: ansys.stk.core.stkobjects.Ship.radar_clutter_map
-    :type: IRadarClutterMapInheritable
-
-    Return the radar clutter map.
-
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Ship.radar_cross_section
     :type: RadarCrossSectionInheritable
@@ -118,7 +110,7 @@ Property detail
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Ship.rf_environment
-    :type: IPlatformRFEnvironment
+    :type: PlatformRFEnvironment
 
     Get the RF environment.
 

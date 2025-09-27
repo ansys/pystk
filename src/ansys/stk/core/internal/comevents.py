@@ -123,9 +123,9 @@ class _STKObjectRootRawEvents2UnkSink(Structure):
                  ("on_stk_object_paste",           c_void_p) ]
 
 class ISTKObjectRootEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgStkObjectRootEvents     = GUID.from_registry_format("{4A25888C-BF0A-4B79-816B-2623D16042B0}")
-    _IID_IAgStkObjectRootRawEvents  = GUID.from_registry_format("{A381FC71-ACBF-4034-B732-2A36B0CFA2E4}")
-    _IID_IAgStkObjectRootRawEvents2 = GUID.from_registry_format("{F607E46E-A49F-4B9B-BE24-F29F63709FB0}")
+    _IID_IAgStkObjectRootEvents     = GUID.from_registry_format("{3151628E-C9EC-43F8-B111-05705D64AB7A}")
+    _IID_IAgStkObjectRootRawEvents  = GUID.from_registry_format("{250F722D-C0FF-44D4-8B4E-EC09499D5345}")
+    _IID_IAgStkObjectRootRawEvents2 = GUID.from_registry_format("{02EE4178-1311-4BF7-B547-1DA906D8393F}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         self._events = events
@@ -388,8 +388,8 @@ class _STKXApplicationEventsUnkSink(Structure):
                  ("on_con_control_quit_received",    c_void_p) ]
 
 class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgSTKXApplicationRawEvents = GUID.from_registry_format("{78C74BAF-7845-40BA-9EBE-C10FD081BC60}")
-    _IID_IAgSTKXApplicationEvents    = GUID.from_registry_format("{3787DAB9-9A91-414B-B4EF-2339E0FBA96C}")
+    _IID_IAgSTKXApplicationRawEvents = GUID.from_registry_format("{9CC75BA6-DA22-4C2E-B05D-C460C71C6ACD}")
+    _IID_IAgSTKXApplicationEvents    = GUID.from_registry_format("{5A049BEE-0D35-45DE-AA40-9898AA7314BF}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         self._events = events
@@ -553,7 +553,7 @@ class _Graphics3DControlEventsUnkSink(Structure):
                  ("on_object_editing_stop",   c_void_p)]
 
 class IUiAxStockEventCOMHandler(object):
-    _IID_IAgUiAxStockRawEvents   = GUID.from_registry_format("{32A1F220-C90C-4FC6-B2BF-DF06DB89B72E}")
+    _IID_IAgUiAxStockRawEvents   = GUID.from_registry_format("{00C151C5-3214-452A-B88A-9DB558F5A746}")
 
     def __init__(self, events:dict):
         self._events = events
@@ -570,7 +570,7 @@ class IUiAxStockEventCOMHandler(object):
 
     def _mouse_wheel(self, pThis:PVOID, Button:int, Shift:int, Delta:int, X:int, Y:int) -> int:
         for callback in self._events["MouseWheel"]._callbacks:
-            callback(KeyCode, Shift, Delta, X, Y)
+            callback(Button, Shift, Delta, X, Y)
         return S_OK
 
     def _key_down(self, pThis:PVOID, KeyCode:POINTER(SHORT), Shift:int) -> int:
@@ -600,27 +600,27 @@ class IUiAxStockEventCOMHandler(object):
 
     def _mouse_down(self, pThis:PVOID, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._events["MouseDown"]._callbacks:
-            callback(KeyCode, Shift, X, Y)
+            callback(Button, Shift, X, Y)
         return S_OK
 
     def _mouse_move(self, pThis:PVOID, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._events["MouseMove"]._callbacks:
-            callback(KeyCode, Shift, X, Y)
+            callback(Button, Shift, X, Y)
         return S_OK
 
     def _mouse_up(self, pThis:PVOID, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._events["MouseUp"]._callbacks:
-            callback(KeyCode, Shift, X, Y)
+            callback(Button, Shift, X, Y)
         return S_OK
 
     def _ole_drag_drop(self, pThis:PVOID, Data:PVOID, Effect:int, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._events["OLEDragDrop"]._callbacks:
             with agmarshall.InterfaceEventCallbackArg(Data, agcls.AgTypeNameMap["DataObject"]) as arg_Data:
-                callback(arg_Data.python_val, Effect, KeyCode, Shift, X, Y)
+                callback(arg_Data.python_val, Effect, Button, Shift, X, Y)
         return S_OK
 
 class IGraphics2DControlEventCOMHandler(COMEventHandlerImpl, IUiAxStockEventCOMHandler):
-    _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
+    _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{A9B940DC-EA25-4488-A3E4-1F854B1DAF44}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         IUiAxStockEventCOMHandler.__init__(self, events)
@@ -668,8 +668,8 @@ class IGraphics2DControlEventCOMHandler(COMEventHandlerImpl, IUiAxStockEventCOMH
             return E_NOINTERFACE
 
 class IGraphics3DControlEventCOMHandler(COMEventHandlerImpl, IUiAxStockEventCOMHandler):
-    _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
-    _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
+    _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{3ED83DF9-2536-47E4-A953-7BDE61DB4CC6}")
+    _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{6A7FD24F-8E58-43C3-A7DB-9432DFB5B4B9}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         IUiAxStockEventCOMHandler.__init__(self, events)
@@ -763,7 +763,7 @@ class _STKGraphicsSceneEventsUnkSink(Structure):
                  ("rendering",        c_void_p)]
 
 class ISceneEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgStkGraphicsSceneEvents = GUID.from_registry_format("{FACA0112-848C-415D-B38C-0ED3F121D906}")
+    _IID_IAgStkGraphicsSceneEvents = GUID.from_registry_format("{87350BE6-236F-4130-8B4D-BA542EEDDA1E}")
     _DISPID_Rendering = 13901
 
     def __init__(self, pUnk:IUnknown, events:dict):
@@ -842,7 +842,7 @@ class _STKGraphicsKmlGraphicsEventsUnkSink(Structure):
                  ("document_loaded",   c_void_p)]
 
 class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgStkGraphicsKmlGraphicsEvents = GUID.from_registry_format("{0B64622D-307A-4549-9692-7F15F4D9AC94}")
+    _IID_IAgStkGraphicsKmlGraphicsEvents = GUID.from_registry_format("{5247C199-8DBC-4ABA-910E-074171EEE97E}")
     _DISPID_DocumentLoaded = 27101
 
     def __init__(self, pUnk:IUnknown, events:dict):
@@ -921,7 +921,7 @@ class _STKGraphicsImageCollectionEventsUnkSink(Structure):
                  ("add_complete",      c_void_p)]
 
 class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgStkGraphicsImageCollectionEvents = GUID.from_registry_format("{150DFFDA-DD8C-4227-9B7D-F813277BCB8E}")
+    _IID_IAgStkGraphicsImageCollectionEvents = GUID.from_registry_format("{2F8954AA-10E1-4ACD-8FD3-439A80AAF835}")
     _DISPID_AddComplete = 13301
 
     def __init__(self, pUnk:IUnknown, events:dict):
@@ -1000,7 +1000,7 @@ class _STKGraphicsTerrainCollectionEventsUnkSink(Structure):
                  ("add_complete",      c_void_p)]
 
 class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):
-    _IID_IAgStkGraphicsTerrainCollectionEvents = GUID.from_registry_format("{0744D80B-C88B-4F1D-BF3F-78A5C3AB69BA}")
+    _IID_IAgStkGraphicsTerrainCollectionEvents = GUID.from_registry_format("{854C2737-45FF-4867-A31C-0465E0E12BA2}")
     _DISPID_AddComplete = 13401
 
     def __init__(self, pUnk:IUnknown, events:dict):

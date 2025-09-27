@@ -62,6 +62,16 @@ class AccessConstraintHelper(object):
         Assert.assertEqual(30, oConstraint.maximum_time_step)
         oConstraint.maximum_time_step = 60
         Assert.assertEqual(60, oConstraint.maximum_time_step)
+        if (
+            (oConstraint.constraint_type != AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
+            and (oConstraint.constraint_type != AccessConstraintType.EXCLUSION_ZONE)
+        ) and (oConstraint.constraint_type != AccessConstraintType.INCLUSION_ZONE):
+            enabled: bool = oConstraint.enabled
+            oConstraint.enabled = True
+            Assert.assertTrue(oConstraint.enabled)
+            oConstraint.enabled = False
+            Assert.assertFalse(oConstraint.enabled)
+            oConstraint.enabled = enabled
 
     # endregion
 
@@ -81,14 +91,10 @@ class AccessConstraintHelper(object):
                 )
                 or (eType == AccessConstraintType.GMT)
             ) or (eType == AccessConstraintType.INTERVALS):
-                oConstraint = oCollection.add_constraint(eType)
+                with pytest.raises(Exception, match=RegexSubstringMatch("Constraint already active")):
+                    oConstraint = oCollection.add_constraint(eType)
 
             Assert.assertIsNotNone(oConstraint)
-            if eType == AccessConstraintType.THIRD_BODY_OBSTRUCTION:
-                # Third Body
-                self.TestConstraintThirdBody(oConstraint)
-                return
-
             if eType == AccessConstraintType.OBJECT_EXCLUSION_ANGLE:
                 # Object Exclusion Angle
                 self.TestConstraintObjectExclusion(oConstraint)
@@ -122,7 +128,6 @@ class AccessConstraintHelper(object):
         typesNoFieldsToTest.append(AccessConstraintType.SEET_MAGNETIC_FIELD_L_SHELL)
 
         typesMinMaxSetSeparate = []
-        typesMinMaxSetSeparate.append(AccessConstraintType.AREA_TARGET_CENTROID_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.BETA_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.DOPPLER_CONE_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.GRAZING_ANGLE)
@@ -136,7 +141,6 @@ class AccessConstraintHelper(object):
         typesMinMaxSetSeparate.append(AccessConstraintType.LUNAR_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.SUN_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.TERRAIN_GRAZING_ANGLE)
-        typesMinMaxSetSeparate.append(AccessConstraintType.CENTROID_SUN_ELEVATION_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.COLLECTION_ANGLE)
         typesMinMaxSetSeparate.append(AccessConstraintType.CENTRAL_ANGLE)
 
@@ -178,7 +182,6 @@ class AccessConstraintHelper(object):
         typesMinMaxDistance.append(AccessConstraintType.CROSS_TRACK_RANGE)
         typesMinMaxDistance.append(AccessConstraintType.IN_TRACK_RANGE)
         typesMinMaxDistance.append(AccessConstraintType.RANGE)
-        typesMinMaxDistance.append(AccessConstraintType.CENTROID_RANGE)
         typesMinMaxDistance.append(AccessConstraintType.HEIGHT_ABOVE_HORIZON)
         typesMinMaxDistance.append(AccessConstraintType.CENTRAL_DISTANCE)
         typesMinMaxDistance.append(AccessConstraintType.DISTANCE_FROM_AREA_TARGET_BOUNDARY)
@@ -382,9 +385,7 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle(oMinMax)
 
-        elif (eType == AccessConstraintType.SUN_ILLUMINATION_ANGLE) or (
-            eType == AccessConstraintType.CENTROID_AZIMUTH_ANGLE
-        ):
+        elif eType == AccessConstraintType.SUN_ILLUMINATION_ANGLE:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle_SetTogether(oMinMax)
@@ -408,6 +409,7 @@ class AccessConstraintHelper(object):
             self.TestConstraintMinMaxUnitLess(oMinMax, 1, 2)
 
         elif eType in typesMinMaxDistance:
+
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
@@ -484,7 +486,7 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(oCollection.is_named_constraint_supported("InvalidConstraintName"))
         if oObject.class_name == "Facility":
             namedConstraint: str = "CSharp.NIIRS"
-            if not OSHelper.IsLinux():
+            if OSHelper.SupportsCSharpPlugins():
                 if oCollection.is_named_constraint_supported(namedConstraint):
                     # System.Windows.Forms.MessageBox.Show("NIIRS");
                     # IsNamedConstraintActive
@@ -623,13 +625,14 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oCollection)
         Assert.assertIsNotNone(oObject)
         arAvailable = oCollection.available_constraints()
-
+        # available constraints loop
         iIndex: int = 0
         while iIndex < len(arAvailable):
             constraintName: str = str(arAvailable[iIndex][0])
             eType: "AccessConstraintType" = AccessConstraintType(int(arAvailable[iIndex][1]))
             if not oCollection.is_constraint_supported(eType):
                 if AccessConstraintType.NONE == eType:
+                    # Plugin
                     iIndex += 1
                     continue
 
@@ -649,11 +652,8 @@ class AccessConstraintHelper(object):
             oConstraint: "IAccessConstraint" = oCollection.get_active_constraint(eType)
             Assert.assertIsNotNone(oConstraint)
             if (
-                (
-                    (eType != AccessConstraintType.EXCLUSION_ZONE)
-                    and (eType != AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
-                )
-                and (eType != AccessConstraintType.THIRD_BODY_OBSTRUCTION)
+                (eType != AccessConstraintType.EXCLUSION_ZONE)
+                and (eType != AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
             ) and (eType != AccessConstraintType.LINE_OF_SIGHT):
                 oCollection.remove_constraint(eType)
 
@@ -1595,12 +1595,6 @@ class AccessConstraintHelper(object):
             # FilePath
             Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.file_path)
 
-            # ActionType
-            oIntervals.action_type = ActionType.EXCLUDE
-            Assert.assertEqual(ActionType.EXCLUDE, oIntervals.action_type)
-            oIntervals.action_type = ActionType.INCLUDE
-            Assert.assertEqual(ActionType.INCLUDE, oIntervals.action_type)
-
             # Interval collection
             oHelper = IntervalCollectionHelper(self.m_oUnits)
             oHelper.SetReadOnly(True)
@@ -1685,6 +1679,13 @@ class AccessConstraintHelper(object):
             oObject.exclusion_angle = 1234
         self.m_oUnits.set_current_unit("AngleUnit", strUnit)
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
+
+        # Enabled test
+        with pytest.raises(Exception, match=RegexSubstringMatch("interface does not support the 'Enabled' property.")):
+            enabled: bool = oObject.enabled
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("interface does not support the 'Enabled' property.")):
+            enabled: bool = oObject.enabled
         if Array.Length(arAssigned) > 0:
             strObject: str = str(arAssigned[0])
             if oObject.is_object_assigned(strObject):
@@ -1722,38 +1723,6 @@ class AccessConstraintHelper(object):
         # UMBRA_OR_DIRECT_SUN
         oCondition.condition = ConstraintLighting.UMBRA_OR_DIRECT_SUN
         Assert.assertEqual(ConstraintLighting.UMBRA_OR_DIRECT_SUN, oCondition.condition)
-
-    # endregion
-
-    # region TestConstraintThirdBody
-    # ////////////////////////////////////////////////////////////////////////
-    def TestConstraintThirdBody(self, oConstraint: "IAccessConstraint"):
-        Assert.assertIsNotNone(oConstraint)
-        oThirdBody: "AccessConstraintThirdBody" = AccessConstraintThirdBody(oConstraint)
-        Assert.assertIsNotNone(oThirdBody)
-        arAvailable = oThirdBody.available_obstructions
-        arAssigned = oThirdBody.assigned_obstructions
-
-        iIndex: int = 0
-        while iIndex < Array.Length(arAvailable):
-            strObstruction: str = str(arAvailable[iIndex])
-            if not oThirdBody.is_obstruction_assigned(strObstruction):
-                oThirdBody.add_obstruction(strObstruction)
-
-            iIndex += 1
-
-        # Base properties
-        self.BasePropertiesTest(oThirdBody)
-        arAssigned = oThirdBody.assigned_obstructions
-
-        iIndex: int = 0
-        while iIndex < Array.Length(arAssigned):
-            strObstruction: str = str(arAssigned[iIndex])
-            oThirdBody.remove_obstruction(strObstruction)
-
-            iIndex += 1
-
-        arAssigned = oThirdBody.assigned_obstructions
 
     # endregion
 
@@ -1958,7 +1927,6 @@ class AccessConstraintHelper(object):
         Assert.assertTrue(found)
 
         found = False
-
         i: int = 0
         while i < awbCol.count:
             if (awbCol[i]).reference == reference:
@@ -2164,6 +2132,7 @@ class AccessConstraintHelper(object):
         iIndex: int = 0
         while iIndex < oZones.count:
             zone: "AccessConstraintLatitudeLongitudeZone" = oZones[iIndex]
+            self.TestConstraintZone(zone)
 
             iIndex += 1
 
@@ -2171,19 +2140,20 @@ class AccessConstraintHelper(object):
             # ToArray test
             arZone = oZones.to_array(0, 1)
             Assert.assertEqual(1, len(arZone))
+
             # RemoveIndex test
             oZones.remove_index(0)
 
-        if oZones.count > 0:
             # LatitudeUnit
             strLatitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LatitudeUnit")
             self.m_oUnits.set_current_unit("LatitudeUnit", "deg")
             Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
+
             # LongitudeUnit
             strLongitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
             self.m_oUnits.set_current_unit("LongitudeUnit", "deg")
             Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
-
+            # GetExclZone test
             oMinLon: typing.Any = None
             oMinLat: typing.Any = None
             oMaxLon: typing.Any = None
@@ -2194,19 +2164,30 @@ class AccessConstraintHelper(object):
             oMinLat = (float(oMinLat)) + 12.0
             oMaxLon = (float(oMaxLon)) + 13.0
             oMaxLat = (float(oMaxLat)) + 14.0
+
             # ChangeExclZone test
             oZones.change_exclusion_zone(0, oMinLat, oMinLon, oMaxLat, oMaxLon)
+
             # RemoveExclZone test
             oZones.remove_exclusion_zone(oMinLat, oMinLon, oMaxLat, oMaxLon)
             # Restore LatitudeUnit units
             self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
             Assert.assertEqual(strLatitudeUnit, self.m_oUnits.get_current_unit_abbrv("LatitudeUnit"))
+
             # Restore LongitudeUnit units
             self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
             Assert.assertEqual(strLongitudeUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
 
+        # Enabled test
+        with pytest.raises(Exception, match=RegexSubstringMatch("interface does not support the 'Enabled' property")):
+            isEnabled: bool = oZones.enabled
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("interface does not support the 'Enabled' property")):
+            oZones.enabled = False
+
         # RemoveAll test
         oZones.remove_all()
+        Assert.assertEqual(0, oZones.count)
 
     # endregion
 
@@ -2241,15 +2222,20 @@ class AccessConstraintHelper(object):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.minimum_latitude = 380
-
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.maximum_latitude = 380
-
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.minimum_longitude = 380
-
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             oZone.maximum_longitude = -380
+
+        # Enabled test
+        enabled: bool = oZone.enabled
+        oZone.enabled = True
+        Assert.assertTrue(oZone.enabled)
+        oZone.enabled = False
+        Assert.assertFalse(oZone.enabled)
+        oZone.enabled = enabled
 
         # Restore LatitudeUnit units
         self.m_oUnits.set_current_unit("LatitudeUnit", strLatitudeUnit)
@@ -2327,7 +2313,6 @@ class AccessConstraintHelper(object):
             activeConstraint = collection.get_active_constraint(AccessConstraintType.ALTITUDE)
 
         arAvailable = collection.available_constraints()
-
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
@@ -2354,13 +2339,11 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(collection.is_named_constraint_active("Altitude"))
         Assert.assertFalse(collection.is_named_constraint_supported("None"))
 
-        collection.remove_named_constraint("Bogus")  # no exception.  See RemoveNamedConstraintEx below.
-
         collection.add_named_constraint("Altitude")
-        collection.remove_named_constraint_ex("Altitude")
+        collection.remove_named_constraint("Altitude")
         Assert.assertEqual(origCount, collection.count)
         with pytest.raises(Exception, match=RegexSubstringMatch("was not found")):
-            collection.remove_named_constraint_ex("Bogus")
+            collection.remove_named_constraint("Bogus")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             activeConstraint = collection.get_active_named_constraint("Altitude")

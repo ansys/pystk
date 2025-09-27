@@ -41,7 +41,6 @@ from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_bina
 from .internal.grpcutil import GrpcClient
 from .stkobjects import STKObjectModelContext, STKObjectRoot
 from .stkx import STKXApplication
-from .utilities.exceptions import STKInitializationError
 from .utilities.grpcutilities import GrpcCallBatcher
 
 
@@ -58,6 +57,7 @@ class STKRuntimeApplication(STKXApplication):
         self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
+        self.__dict__["_shutdown"] = False
 
     def _private_init(self, intf: InterfaceProxy):
         STKXApplication._private_init(self, intf)
@@ -66,7 +66,7 @@ class STKRuntimeApplication(STKXApplication):
         """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
             client: GrpcClient = self._intf.client
-            client.terminate_connection(False)
+            client.terminate_connection(call_shutdown=self._shutdown)
 
     def new_object_root(self) -> STKObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
@@ -76,7 +76,7 @@ class STKRuntimeApplication(STKXApplication):
             root = STKObjectRoot()
             root._private_init(root_unk)
             return root
-        raise STKInitializationError("Not connected to the gRPC server.")
+        raise RuntimeError("Not connected to the gRPC server.")
 
     def new_object_model_context(self) -> STKObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
@@ -86,7 +86,7 @@ class STKRuntimeApplication(STKXApplication):
             context = STKObjectModelContext()
             context._private_init(context_unk)
             return context
-        raise STKInitializationError("Not connected to the gRPC server.")
+        raise RuntimeError("Not connected to the gRPC server.")
 
     def set_grpc_options(self, options:dict) -> None:
         """
@@ -117,16 +117,14 @@ class STKRuntimeApplication(STKXApplication):
 
     def shutdown(self) -> None:
         """Shut down the STKRuntime application."""
-        if self._intf:
-            client: GrpcClient = self._intf.client
-            client.set_shutdown_stkruntime(True)
+        self.__dict__["_shutdown"] = True
         self._disconnect()
 
     def _disconnect(self) -> None:
         """Safely disconnect from STKRuntime."""
         if self._intf:
             client: GrpcClient = self._intf.client
-            client.terminate_connection()
+            client.terminate_connection(call_shutdown=self._shutdown)
             self.__dict__["_intf"] = InterfaceProxy()
 
 class STKRuntime(object):
@@ -154,7 +152,7 @@ class STKRuntime(object):
         see https://grpc.io/docs/guides/auth/ for more information).
         """
         if grpc_port < 0 or grpc_port > 65535:
-            raise STKInitializationError(f"{grpc_port} is not a valid port number for the gRPC server.")
+            raise RuntimeError(f"{grpc_port} is not a valid port number for the gRPC server.")
         if grpc_host != "localhost":
             try:
                 socket.inet_pton(socket.AF_INET, grpc_host)
@@ -162,7 +160,7 @@ class STKRuntime(object):
                 try:
                     socket.inet_pton(socket.AF_INET6, grpc_host)
                 except OSError:
-                    raise STKInitializationError(f"Could not resolve host \"{grpc_host}\" for the gRPC server.")
+                    raise RuntimeError(f"Could not resolve host \"{grpc_host}\" for the gRPC server.")
 
         cmd_line = []
         if os.name != "nt":
@@ -176,15 +174,19 @@ class STKRuntime(object):
                             cmd_line.append("--noGraphics")
                         break
             else:
-                raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
+                raise RuntimeError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
-            clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
-            stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
-            if stkruntime_path is None or not stkruntime_path.exists():
-                stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
-                if not stkruntime_path.exists():
-                    raise STKInitializationError("Could not find STKRuntime.exe. Verify STK installation.")
+            from .internal.comutil import OLE32Lib
+            if OLE32Lib.xcom_bin_dir is not None:
+                stkruntime_path = pathlib.Path(OLE32Lib.xcom_bin_dir) / "STKRuntime.exe"
+            else:
+                clsid_stkxapplication = "{5F1B7A77-663D-44E9-99A9-2367B4F9AF6F}"
+                stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+                stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
+                if stkruntime_path is None or not stkruntime_path.exists():
+                    stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
+                    if not stkruntime_path.exists():
+                        raise RuntimeError("Could not find STKRuntime.exe. Verify STK installation.")
             cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if no_graphics:
                 cmd_line.append("/noGraphics")
@@ -198,7 +200,7 @@ class STKRuntime(object):
         if grpc_host=="0.0.0.0": # nosec B104
             host = "localhost"
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec, grpc_max_message_size, grpc_channel_credentials)
-        app._intf.client.set_shutdown_stkruntime(not user_control)
+        app.__dict__["_shutdown"] = not user_control
         return app
 
 
@@ -225,4 +227,4 @@ class STKRuntime(object):
             app._private_init(app_intf)
             atexit.register(app._disconnect)
             return app
-        raise STKInitializationError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")
+        raise RuntimeError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")

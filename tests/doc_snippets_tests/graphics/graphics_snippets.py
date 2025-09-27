@@ -134,7 +134,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
     def SurfaceExtentTriangulatorSnippet(self, scenario):
         # Scenario scenario: Scenario object
         manager = scenario.scene_manager
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
         texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
         texture = manager.textures.load_from_string_uri(texture_path)
         mesh = manager.initializers.surface_mesh_primitive.initialize()
@@ -190,7 +190,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         manager = scenario.scene_manager
         overlays = manager.screen_overlays.overlays
         textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
         textureOverlay.texture = manager.textures.load_from_string_uri(
             os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
         )

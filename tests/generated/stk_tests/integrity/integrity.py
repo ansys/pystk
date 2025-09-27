@@ -887,7 +887,7 @@ class Propagation(TestBase):
         lop.force_model.drag.use = True
         lop.force_model.drag.cd = 3.5
         lop.force_model.physical_data.drag_cross_sectional_area = 20
-        lop.force_model.drag.advanced.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
+        lop.force_model.drag.advanced.atmosphere_density_model = LOPAtmosphericDensityModel.EXPONENTIAL
         lop.force_model.drag.advanced.exponential_density_model_parameters.reference_density = 0.003
         lop.force_model.drag.advanced.exponential_density_model_parameters.reference_height = 123.0
         lop.force_model.drag.advanced.exponential_density_model_parameters.scale_height = 234.0
@@ -959,6 +959,8 @@ class Propagation(TestBase):
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
         ComparisionUtility.CompareReportSnapshots()
 
+        # ////////////////////////////////////////////////////////////////
+
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, ISTKObject), '"LLA Position"')
@@ -1021,6 +1023,8 @@ class Propagation(TestBase):
 
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
         ComparisionUtility.CompareReportSnapshots()
+
+        # ////////////////////////////////////////////////////////////////
 
         # Report initialization
         ComparisionUtility = ReportComparison(self.Units)
@@ -5753,17 +5757,18 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Compute /Scenario/ChainTest/Chain/AngBtwn")
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-
         TestBase.Application.close_scenario()
-        TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainTest", "ChainTest.sc"))
 
+        # OM
+        TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainTest", "ChainTest.sc"))
         TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "MolnyaChain")
         oJeffChain: "Chain" = Chain(
             TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "JeffChain")
         )
-        TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "JeffSAT")
-
-        oJeffChain.objects.add("Satellite/JeffSAT")
+        objJeffSAT: "ISTKObject" = TestBase.Application.current_scenario.children.new(
+            STKObjectType.SATELLITE, "JeffSAT"
+        )
+        oJeffChain.start_object = objJeffSAT
         oJeffChain.recompute_automatically = True
         oJeffChain.recompute_automatically = False
         oJeffChain.set_time_period_type(ChainTimePeriodType.OBJECT_TIME_PERIODS)
@@ -5771,28 +5776,68 @@ class Definition(TestBase):
         oJeffChain.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         oUser: "ChainUserSpecifiedTimePeriod" = ChainUserSpecifiedTimePeriod(oJeffChain.time_period)
         oUser.time_interval.set_explicit_interval("1 Jun 2002 12:00:00.00", "2 Jun 2002 12:00:00.00")
-        oJeffChain.objects.remove_name("Satellite/JeffSAT")
-
         oJeffCon: "Constellation" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "JeffCon"), Constellation
         )
         oJeffCon.objects.add("Planet/Jupiter")
         oJeffCon.objects.add("Satellite/Molnya")
         oJeffCon.objects.add("Facility/North")
-
         oMolynaChain: "Chain" = Chain(TestBase.Application.current_scenario.children["MolnyaChain"])
-
-        oMolynaChain.objects.add("Planet/Jupiter")
-        oMolynaChain.objects.add("Satellite/Molnya")
-        oMolynaChain.objects.add("Facility/North")
-        oMolynaChain.objects.remove_name("Satellite/Molnya")
-        oMolynaChain.objects.remove_name("Facility/North")
-        oMolynaChain.objects.add("Satellite/Molnya")
-        oMolynaChain.objects.add("Facility/North")
-        oMolynaChain.objects.remove_name("Satellite/Molnya")
-        oMolynaChain.objects.remove_name("Facility/North")
-        oMolynaChain.objects.add("Satellite/Molnya")
-        oMolynaChain.objects.add("Facility/North")
+        oMolynaChain.start_object = TestBase.Application.current_scenario.children["Jupiter"]
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["Molnya"],
+            1,
+            1,
+        )
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["North"],
+            1,
+            1,
+        )
+        oMolynaChain.connections.remove(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["Molnya"],
+        )
+        oMolynaChain.connections.remove(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["North"],
+        )
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["Molnya"],
+            1,
+            1,
+        )
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["North"],
+            1,
+            1,
+        )
+        oMolynaChain.connections.remove(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["Molnya"],
+        )
+        oMolynaChain.connections.remove(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["North"],
+        )
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Jupiter"],
+            TestBase.Application.current_scenario.children["Molnya"],
+            1,
+            1,
+        )
+        oMolynaChain.end_object = TestBase.Application.current_scenario.children["Molnya"]
+        oMolynaChain.connections.add(
+            TestBase.Application.current_scenario.children["Molnya"],
+            TestBase.Application.current_scenario.children["North"],
+            1,
+            1,
+        )
+        oMolynaChain.end_object = TestBase.Application.current_scenario.children["North"]
 
         TestBase.Application.execute_command("Chains_R */Constellation/JeffCon Operator")  # Not currently supported
         TestBase.Application.execute_command("Chains_R */Chain/MolnyaChain SubObjects")
@@ -5819,8 +5864,8 @@ class Definition(TestBase):
         angBetween.constraints.maximum_angle = 60.0
         angBetween.constraints.minimum_angle = 40.0
 
-        # oMolynaChain.AutoRecompute = true;
-        # Application.ExecuteCommand("Compute /Scenario/ChainTest/Chain/AngBtwn");
+        oMolynaChain.recompute_automatically = True
+        TestBase.Application.execute_command("Compute /Scenario/ChainTest/Chain/AngBtwn")
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -8605,9 +8650,9 @@ class Definition(TestBase):
     def test_MTO(self):
         self.Visibility()
         self.Visibility2()
-        (
-            IAnimation(TestBase.Application)
-        ).current_time = 0  # Set back to original because this gets changed in NoGfx case.
+        (IAnimation(TestBase.Application)).current_time = (
+            0  # Set back to original because this gets changed in NoGfx case.
+        )
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("MTO_Integrity", "MTO_Test.sc"))
         self.Range()
@@ -8800,7 +8845,6 @@ class Definition(TestBase):
 
     def CompareFOVResults(self, MasterMap, tracksVisibility):
         Assert.assertEqual(len(MasterMap), len(tracksVisibility))
-
         i: int = 0
         while i < len(tracksVisibility):
             values = Definition.FOVValues()
@@ -8933,7 +8977,6 @@ class Definition(TestBase):
         mto: "MTO" = clr.CastAs(TestBase.Application.current_scenario.children["A_MTO"], MTO)
         position: "MTOAnalysisPosition" = mto.analysis.position
         points: "MTOTrackPointCollection" = position.compute_all_tracks(date.format("UTCG"))
-
         x: float = 0
         y: float = 0
         z: float = 0
@@ -8971,7 +9014,6 @@ class Definition(TestBase):
             i += 1
 
         Assert.assertEqual(len(connect), len(om))
-
         i: int = 0
         while i < len(om):
             Assert.assertTrue((om[i] in connect))
@@ -8987,7 +9029,6 @@ class Definition(TestBase):
         points = position.compute_tracks(refTracks, date.format("UTCG"))
         om.clear()
         connect.clear()
-
         i: int = 0
         while i < results.count:
             result: str = results[i]
@@ -9017,7 +9058,6 @@ class Definition(TestBase):
             i += 1
 
         Assert.assertEqual(len(connect), len(om))
-
         i: int = 0
         while i < len(om):
             Assert.assertTrue((om[i] in connect))
@@ -9235,7 +9275,6 @@ class Definition(TestBase):
 
     def CompareRangeResults(self, MasterList, tracksRange):
         Assert.assertEqual(len(MasterList), len(tracksRange))
-
         i: int = 0
         while i < len(tracksRange):
             rv = Definition.RangeValues()
@@ -9432,7 +9471,6 @@ class Definition(TestBase):
 
     def CompareVisibilityResults(self, MasterMap, tracksVisibility):
         Assert.assertEqual(len(MasterMap), len(tracksVisibility))
-
         i: int = 0
         while i < len(tracksVisibility):
             Assert.assertTrue((int(tracksVisibility[i][0]) in MasterMap))
@@ -9766,7 +9804,6 @@ class Constraints(TestBase):
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 SunGroundElevAngle Max 87.6")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 SunExclusion 176.0")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 LunarExclusion 111.1")
-        TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 ThirdBodyObstruction on")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 Lighting DirectSun")
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
@@ -9779,7 +9816,6 @@ class Constraints(TestBase):
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 SunGroundElevAngle Max off")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 SunExclusion off")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 LunarExclusion off")
-        TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 ThirdBodyObstruction off")
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
@@ -9837,14 +9873,6 @@ class Constraints(TestBase):
         angle = AccessConstraintAngle(acc.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE))
         angle.angle = 111.1
 
-        thirdbody: "AccessConstraintThirdBody" = AccessConstraintThirdBody(
-            acc.add_constraint(AccessConstraintType.THIRD_BODY_OBSTRUCTION)
-        )
-        availableThirdBodies = thirdbody.available_obstructions
-        body: str
-        for body in availableThirdBodies:
-            thirdbody.add_obstruction(body)
-
         light: "AccessConstraintCondition" = AccessConstraintCondition(
             acc.add_constraint(AccessConstraintType.LIGHTING)
         )
@@ -9857,9 +9885,6 @@ class Constraints(TestBase):
         acc.remove_constraint(AccessConstraintType.SUN_GROUND_ELEVATION_ANGLE)
         acc.remove_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
         acc.remove_constraint(AccessConstraintType.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE)
-        body: str
-        for body in availableThirdBodies:
-            thirdbody.remove_obstruction(body)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -9957,7 +9982,6 @@ class Constraints(TestBase):
         intervals: "AccessConstraintIntervals" = AccessConstraintIntervals(
             acc.add_constraint(AccessConstraintType.INTERVALS)
         )
-        intervals.action_type = ActionType.EXCLUDE
         intervals.filename = strPath
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -9970,8 +9994,7 @@ class Constraints(TestBase):
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        intervals = AccessConstraintIntervals(acc.add_constraint(AccessConstraintType.INTERVALS))
-        intervals.action_type = ActionType.INCLUDE
+        intervals = AccessConstraintIntervals(acc.add_constraint(AccessConstraintType.INTERVALS))  #
         intervals.filename = strPath
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -10168,7 +10191,6 @@ class Access(TestBase):
 
         arStartTimes = drResult.data_sets[0].get_values()
         arStopTimes = drResult.data_sets[1].get_values()
-
         i: int = 0
         while i < Array.Length(arStartTimes):
             Console.WriteLine(((str(arStartTimes[i]) + "  ") + str(arStopTimes[i])))

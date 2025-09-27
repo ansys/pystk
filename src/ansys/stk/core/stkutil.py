@@ -59,11 +59,7 @@ from .internal.apiutil import (
     set_interface_attribute,
 )
 from .internal.comutil import IDispatch, IUnknown
-from .utilities.exceptions import STKRuntimeError
 
-
-def _raise_uninitialized_error(*args):
-    raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class PositionType(IntEnum):
     """Facility/place/target position types."""
@@ -535,7 +531,7 @@ class ILocationData(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "iid_data" : (5292229181779320538, 5946016819874812079),
+        "iid_data" : (5072494462713693543, 17287417281374770098),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -555,7 +551,7 @@ class ILocationData(object):
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((5292229181779320538, 5946016819874812079), ILocationData)
+agcls.AgClassCatalog.add_catalog_entry((5072494462713693543, 17287417281374770098), ILocationData)
 agcls.AgTypeNameMap["ILocationData"] = ILocationData
 
 class IPosition(object):
@@ -585,7 +581,7 @@ class IPosition(object):
     _query_cylindrical_array_method_offset = 20
     _query_cartesian_array_method_offset = 21
     _metadata = {
-        "iid_data" : (5449387932942688462, 15999276090360342948),
+        "iid_data" : (4915275008665419291, 11705930105741336507),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -756,7 +752,7 @@ class IPosition(object):
     _property_names[central_body_name] = "central_body_name"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5449387932942688462, 15999276090360342948), IPosition)
+agcls.AgClassCatalog.add_catalog_entry((4915275008665419291, 11705930105741336507), IPosition)
 agcls.AgTypeNameMap["IPosition"] = IPosition
 
 class IDirection(object):
@@ -780,7 +776,7 @@ class IDirection(object):
     _query_ra_dec_array_method_offset = 14
     _query_xyz_array_method_offset = 15
     _metadata = {
-        "iid_data" : (4989224318937616506, 6269745591008380041),
+        "iid_data" : (4665164470270701823, 18073961302852259771),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -907,7 +903,7 @@ class IDirection(object):
     _property_names[direction_type] = "direction_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4989224318937616506, 6269745591008380041), IDirection)
+agcls.AgClassCatalog.add_catalog_entry((4665164470270701823, 18073961302852259771), IDirection)
 agcls.AgTypeNameMap["IDirection"] = IDirection
 
 class ICartesian3Vector(object):
@@ -925,7 +921,7 @@ class ICartesian3Vector(object):
     _set_method_offset = 8
     _to_array_method_offset = 9
     _metadata = {
-        "iid_data" : (4689779903308240950, 14404026751257344151),
+        "iid_data" : (5655437622738394688, 13912570415437090448),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1014,7 +1010,7 @@ class ICartesian3Vector(object):
     _property_names[z] = "z"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4689779903308240950, 14404026751257344151), ICartesian3Vector)
+agcls.AgClassCatalog.add_catalog_entry((5655437622738394688, 13912570415437090448), ICartesian3Vector)
 agcls.AgTypeNameMap["ICartesian3Vector"] = ICartesian3Vector
 
 class IOrientation(object):
@@ -1038,7 +1034,7 @@ class IOrientation(object):
     _query_quaternion_array_method_offset = 14
     _query_ypr_angles_array_method_offset = 15
     _metadata = {
-        "iid_data" : (4942731207787353951, 2364797108030602640),
+        "iid_data" : (5527531896719355797, 5509404503921157029),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1165,7 +1161,7 @@ class IOrientation(object):
     _property_names[orientation_type] = "orientation_type"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4942731207787353951, 2364797108030602640), IOrientation)
+agcls.AgClassCatalog.add_catalog_entry((5527531896719355797, 5509404503921157029), IOrientation)
 agcls.AgTypeNameMap["IOrientation"] = IOrientation
 
 class IOrientationAzEl(IOrientation):
@@ -1180,7 +1176,7 @@ class IOrientationAzEl(IOrientation):
     _get_about_boresight_method_offset = 5
     _set_about_boresight_method_offset = 6
     _metadata = {
-        "iid_data" : (5238647887040814461, 18345805215225203352),
+        "iid_data" : (5380876048439019019, 3075237744116676795),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
@@ -1249,7 +1245,7 @@ class IOrientationAzEl(IOrientation):
     _property_names[about_boresight] = "about_boresight"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5238647887040814461, 18345805215225203352), IOrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry((5380876048439019019, 3075237744116676795), IOrientationAzEl)
 agcls.AgTypeNameMap["IOrientationAzEl"] = IOrientationAzEl
 
 class IOrientationEulerAngles(IOrientation):
@@ -1266,7 +1262,7 @@ class IOrientationEulerAngles(IOrientation):
     _get_c_method_offset = 7
     _set_c_method_offset = 8
     _metadata = {
-        "iid_data" : (4660640816984016865, 13688688469838857641),
+        "iid_data" : (5157329419772963673, 3459874081805935802),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
@@ -1351,7 +1347,7 @@ class IOrientationEulerAngles(IOrientation):
     _property_names[c] = "c"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4660640816984016865, 13688688469838857641), IOrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry((5157329419772963673, 3459874081805935802), IOrientationEulerAngles)
 agcls.AgTypeNameMap["IOrientationEulerAngles"] = IOrientationEulerAngles
 
 class IOrientationQuaternion(IOrientation):
@@ -1368,7 +1364,7 @@ class IOrientationQuaternion(IOrientation):
     _get_qs_method_offset = 7
     _set_qs_method_offset = 8
     _metadata = {
-        "iid_data" : (5570827236088458332, 138389395716207516),
+        "iid_data" : (5021744214173578956, 16583656354618992062),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
@@ -1453,7 +1449,7 @@ class IOrientationQuaternion(IOrientation):
     _property_names[qs] = "qs"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5570827236088458332, 138389395716207516), IOrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry((5021744214173578956, 16583656354618992062), IOrientationQuaternion)
 agcls.AgTypeNameMap["IOrientationQuaternion"] = IOrientationQuaternion
 
 class IOrientationYPRAngles(IOrientation):
@@ -1470,7 +1466,7 @@ class IOrientationYPRAngles(IOrientation):
     _get_roll_method_offset = 7
     _set_roll_method_offset = 8
     _metadata = {
-        "iid_data" : (4754929399406122077, 1946068441090675372),
+        "iid_data" : (5036279671908239678, 3907031560372993438),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
@@ -1555,7 +1551,7 @@ class IOrientationYPRAngles(IOrientation):
     _property_names[roll] = "roll"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4754929399406122077, 1946068441090675372), IOrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry((5036279671908239678, 3907031560372993438), IOrientationYPRAngles)
 agcls.AgTypeNameMap["IOrientationYPRAngles"] = IOrientationYPRAngles
 
 class IOrientationPositionOffset(object):
@@ -1565,7 +1561,7 @@ class IOrientationPositionOffset(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_position_offset_method_offset = 1
     _metadata = {
-        "iid_data" : (5470278826130565228, 13133202882000034710),
+        "iid_data" : (5742937774821171935, 3792791559970519990),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1594,7 +1590,7 @@ class IOrientationPositionOffset(object):
     _property_names[position_offset] = "position_offset"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5470278826130565228, 13133202882000034710), IOrientationPositionOffset)
+agcls.AgClassCatalog.add_catalog_entry((5742937774821171935, 3792791559970519990), IOrientationPositionOffset)
 agcls.AgTypeNameMap["IOrientationPositionOffset"] = IOrientationPositionOffset
 
 class IOrbitState(object):
@@ -1616,7 +1612,7 @@ class IOrbitState(object):
     _get_epoch_method_offset = 12
     _set_epoch_method_offset = 13
     _metadata = {
-        "iid_data" : (4786190356090989266, 14434973523195079339),
+        "iid_data" : (4661309965933595946, 13542321643039239316),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1733,7 +1729,7 @@ class IOrbitState(object):
     _property_names[epoch] = "epoch"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4786190356090989266, 14434973523195079339), IOrbitState)
+agcls.AgClassCatalog.add_catalog_entry((4661309965933595946, 13542321643039239316), IOrbitState)
 agcls.AgTypeNameMap["IOrbitState"] = IOrbitState
 
 class IRuntimeTypeInfoProvider(object):
@@ -1743,7 +1739,7 @@ class IRuntimeTypeInfoProvider(object):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_provide_runtime_type_info_method_offset = 1
     _metadata = {
-        "iid_data" : (4856983295523357109, 1229146414855014286),
+        "iid_data" : (5674705672689382170, 17933926892286240679),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -1772,7 +1768,7 @@ class IRuntimeTypeInfoProvider(object):
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4856983295523357109, 1229146414855014286), IRuntimeTypeInfoProvider)
+agcls.AgClassCatalog.add_catalog_entry((5674705672689382170, 17933926892286240679), IRuntimeTypeInfoProvider)
 agcls.AgTypeNameMap["IRuntimeTypeInfoProvider"] = IRuntimeTypeInfoProvider
 
 
@@ -1788,7 +1784,7 @@ class ExecuteCommandResult(SupportsDeleteCallback):
     _range_method_offset = 4
     _get_is_succeeded_method_offset = 5
     _metadata = {
-        "iid_data" : (5532952564068017084, 6961682191463635117),
+        "iid_data" : (5116368304795373993, 3944362883220586125),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1866,10 +1862,10 @@ class ExecuteCommandResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecuteCommandResult, [ExecuteCommandResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecuteCommandResult)
-agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}').as_data_pair(), ExecuteCommandResult)
+agcls.AgClassCatalog.add_catalog_entry((5325039016176067736, 10330533696176440711), ExecuteCommandResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{760B3E9D-004F-451B-ABEE-C9B725E168CA}').as_data_pair(), ExecuteCommandResult)
 # mapping for ExecuteCommandResult
-agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}').as_data_pair(), agcom.GUID.from_registry_format('{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}').as_data_pair())
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{936551A9-FDDD-4700-8D3E-99E72431BD36}').as_data_pair(), agcom.GUID.from_registry_format('{DE68E2F7-30CF-40FE-A6CD-E883AE3D43B6}').as_data_pair())
 agcls.AgTypeNameMap["ExecuteCommandResult"] = ExecuteCommandResult
 
 class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
@@ -1881,7 +1877,7 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
     _item_method_offset = 2
     _get__new_enum_method_offset = 3
     _metadata = {
-        "iid_data" : (5271171048043179548, 17166981793534785703),
+        "iid_data" : (4800451087513012265, 17131709637358464434),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -1943,10 +1939,10 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecuteMultipleCommandsResult, [ExecuteMultipleCommandsResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecuteMultipleCommandsResult)
-agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecuteMultipleCommandsResult)
+agcls.AgClassCatalog.add_catalog_entry((5725886502310958038, 3372349005439043232), ExecuteMultipleCommandsResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{CF0ED205-6ABE-4665-BB1B-E4793082893E}').as_data_pair(), ExecuteMultipleCommandsResult)
 # mapping for ExecuteMultipleCommandsResult
-agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}').as_data_pair(), agcom.GUID.from_registry_format('{0558BE8E-AF66-4F52-9C6D-76962FC52577}').as_data_pair())
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{88D9C829-A0D4-429E-B22D-E3C1250FC0ED}').as_data_pair(), agcom.GUID.from_registry_format('{6F7CA447-CD92-4860-BF55-B034D88D317E}').as_data_pair())
 agcls.AgTypeNameMap["ExecuteMultipleCommandsResult"] = ExecuteMultipleCommandsResult
 
 class UnitPreferencesUnit(SupportsDeleteCallback):
@@ -1959,7 +1955,7 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
     _get_identifier_method_offset = 3
     _get_dimension_method_offset = 4
     _metadata = {
-        "iid_data" : (5635454554877079377, 14141992965915125166),
+        "iid_data" : (4844437149658170964, 6264569844926471836),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2016,7 +2012,7 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnit, [UnitPreferencesUnit, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5140380005508462669, 10852272987728314258), UnitPreferencesUnit)
+agcls.AgClassCatalog.add_catalog_entry((5605834986361923886, 2839872590025622964), UnitPreferencesUnit)
 agcls.AgTypeNameMap["UnitPreferencesUnit"] = UnitPreferencesUnit
 
 class UnitPreferencesUnitCollection(SupportsDeleteCallback):
@@ -2030,7 +2026,7 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (5470923714325537781, 12978283017277731717),
+        "iid_data" : (5320669267766174731, 17033319525141121451),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2106,7 +2102,7 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnitCollection, [UnitPreferencesUnitCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4997790097000541348, 8910467701735531661), UnitPreferencesUnitCollection)
+agcls.AgClassCatalog.add_catalog_entry((5749538487087641148, 11168942521363040385), UnitPreferencesUnitCollection)
 agcls.AgTypeNameMap["UnitPreferencesUnitCollection"] = UnitPreferencesUnitCollection
 
 class UnitPreferencesDimension(SupportsDeleteCallback):
@@ -2120,7 +2116,7 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
     _get_current_unit_method_offset = 4
     _set_current_unit_method_offset = 5
     _metadata = {
-        "iid_data" : (5032801830880833533, 18057669493672743825),
+        "iid_data" : (4776818722171872996, 4798204912498317700),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2184,7 +2180,7 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimension, [UnitPreferencesDimension, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5271764906473484718, 16965070245430951351), UnitPreferencesDimension)
+agcls.AgClassCatalog.add_catalog_entry((4679286811697929572, 9862317536618453903), UnitPreferencesDimension)
 agcls.AgTypeNameMap["UnitPreferencesDimension"] = UnitPreferencesDimension
 
 class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
@@ -2205,7 +2201,7 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 11
     _get_item_by_name_method_offset = 12
     _metadata = {
-        "iid_data" : (4785890395549473833, 4361686517023815598),
+        "iid_data" : (4991061726184554424, 12406965035632193459),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -2334,7 +2330,7 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimensionCollection, [UnitPreferencesDimensionCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5428558532974093061, 4002212422146042015), UnitPreferencesDimensionCollection)
+agcls.AgClassCatalog.add_catalog_entry((5550056258024923394, 1513114167815356310), UnitPreferencesDimensionCollection)
 agcls.AgTypeNameMap["UnitPreferencesDimensionCollection"] = UnitPreferencesDimensionCollection
 
 class ConversionUtility(SupportsDeleteCallback):
@@ -2361,7 +2357,7 @@ class ConversionUtility(SupportsDeleteCallback):
     _new_cartesian3_vector_from_direction_method_offset = 17
     _new_cartesian3_vector_from_position_method_offset = 18
     _metadata = {
-        "iid_data" : (5269429572990182626, 2030319770630291336),
+        "iid_data" : (5542071105973083214, 3736498381011271868),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2508,7 +2504,7 @@ class ConversionUtility(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConversionUtility, [ConversionUtility, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5181743311813148101, 15770197442584964502), ConversionUtility)
+agcls.AgClassCatalog.add_catalog_entry((5539894848391888927, 9267881117088044206), ConversionUtility)
 agcls.AgTypeNameMap["ConversionUtility"] = ConversionUtility
 
 class Quantity(SupportsDeleteCallback):
@@ -2526,7 +2522,7 @@ class Quantity(SupportsDeleteCallback):
     _multiply_qty_method_offset = 8
     _divide_qty_method_offset = 9
     _metadata = {
-        "iid_data" : (4847092431830365084, 7729483638506016434),
+        "iid_data" : (4839776343014410790, 5745116756208999326),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2616,7 +2612,7 @@ class Quantity(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Quantity, [Quantity, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5675535125497015062, 16555349346851492745), Quantity)
+agcls.AgClassCatalog.add_catalog_entry((4969259561547526744, 4189472907173738428), Quantity)
 agcls.AgTypeNameMap["Quantity"] = Quantity
 
 class Date(SupportsDeleteCallback):
@@ -2640,7 +2636,7 @@ class Date(SupportsDeleteCallback):
     _subtract_method_offset = 14
     _span_method_offset = 15
     _metadata = {
-        "iid_data" : (4839709052320147977, 10626775382734749074),
+        "iid_data" : (5143062082172252718, 16663391782392029362),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -2776,7 +2772,7 @@ class Date(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Date, [Date, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5102923649362142973, 17408233547208630458), Date)
+agcls.AgClassCatalog.add_catalog_entry((5679847419525019692, 5770745202026769536), Date)
 agcls.AgTypeNameMap["Date"] = Date
 
 class Position(ILocationData, IPosition, SupportsDeleteCallback):
@@ -2797,7 +2793,7 @@ class Position(ILocationData, IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Position, [ILocationData, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((4783790566498273220, 15051755396967356547), Position)
+agcls.AgClassCatalog.add_catalog_entry((4903267763032508190, 8061043874875400886), Position)
 agcls.AgTypeNameMap["Position"] = Position
 
 class Cartesian(IPosition, SupportsDeleteCallback):
@@ -2812,7 +2808,7 @@ class Cartesian(IPosition, SupportsDeleteCallback):
     _get_z_method_offset = 5
     _set_z_method_offset = 6
     _metadata = {
-        "iid_data" : (5065991857659686292, 12086713184993056139),
+        "iid_data" : (4664677019618527909, 4016879878245765533),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -2883,7 +2879,7 @@ class Cartesian(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian, [Cartesian, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((4886785515660981294, 13482715367352507267), Cartesian)
+agcls.AgClassCatalog.add_catalog_entry((5476007582665385228, 1380540108325311903), Cartesian)
 agcls.AgTypeNameMap["Cartesian"] = Cartesian
 
 class Geodetic(IPosition, SupportsDeleteCallback):
@@ -2898,7 +2894,7 @@ class Geodetic(IPosition, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5247476704113537579, 10282454301074575279),
+        "iid_data" : (5755180572778472763, 8873003113985691520),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -2969,7 +2965,7 @@ class Geodetic(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geodetic, [Geodetic, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((5002206469410366585, 7585413342857336456), Geodetic)
+agcls.AgClassCatalog.add_catalog_entry((5077970453785586462, 13280626410757950117), Geodetic)
 agcls.AgTypeNameMap["Geodetic"] = Geodetic
 
 class Geocentric(IPosition, SupportsDeleteCallback):
@@ -2984,7 +2980,7 @@ class Geocentric(IPosition, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4985064436854354632, 18010173850499286698),
+        "iid_data" : (5321660841076291992, 12202118420183971209),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -3055,7 +3051,7 @@ class Geocentric(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geocentric, [Geocentric, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((5536768708250821380, 6212014438723660453), Geocentric)
+agcls.AgClassCatalog.add_catalog_entry((4926694488194314560, 14984931694156885123), Geocentric)
 agcls.AgTypeNameMap["Geocentric"] = Geocentric
 
 class Planetodetic(IPosition, SupportsDeleteCallback):
@@ -3070,7 +3066,7 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4681345680163832497, 5523404160351816630),
+        "iid_data" : (4995327019235292843, 11578217686482779582),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -3141,7 +3137,7 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetodetic, [Planetodetic, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((4865275958093293023, 17880122858575839921), Planetodetic)
+agcls.AgClassCatalog.add_catalog_entry((4789625949537807248, 4321240179333893275), Planetodetic)
 agcls.AgTypeNameMap["Planetodetic"] = Planetodetic
 
 class Planetocentric(IPosition, SupportsDeleteCallback):
@@ -3156,7 +3152,7 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5442694245436645843, 11671904789978155692),
+        "iid_data" : (5231220175109486764, 11935839591636368564),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -3227,7 +3223,7 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetocentric, [Planetocentric, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((4774131885783686972, 215975021935693194), Planetocentric)
+agcls.AgClassCatalog.add_catalog_entry((5020504029532171928, 12730859081806240444), Planetocentric)
 agcls.AgTypeNameMap["Planetocentric"] = Planetocentric
 
 class Spherical(IPosition, SupportsDeleteCallback):
@@ -3242,7 +3238,7 @@ class Spherical(IPosition, SupportsDeleteCallback):
     _get_radius_method_offset = 5
     _set_radius_method_offset = 6
     _metadata = {
-        "iid_data" : (4855942618388446705, 316067453481966004),
+        "iid_data" : (4843995526478015953, 2468654405511808670),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -3313,7 +3309,7 @@ class Spherical(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Spherical, [Spherical, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((5092243929735143340, 16629405832577163939), Spherical)
+agcls.AgClassCatalog.add_catalog_entry((5145632099031410238, 4654345009365226685), Spherical)
 agcls.AgTypeNameMap["Spherical"] = Spherical
 
 class Cylindrical(IPosition, SupportsDeleteCallback):
@@ -3328,7 +3324,7 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
     _get_longitude_method_offset = 5
     _set_longitude_method_offset = 6
     _metadata = {
-        "iid_data" : (4746503479402464409, 7300718477734136235),
+        "iid_data" : (4890168943673034718, 7924545433188815245),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
     }
     _property_names = {}
@@ -3399,7 +3395,7 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cylindrical, [Cylindrical, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry((5727435697763876994, 5872019145677976212), Cylindrical)
+agcls.AgClassCatalog.add_catalog_entry((4618344560482090476, 3818300535688770476), Cylindrical)
 agcls.AgTypeNameMap["Cylindrical"] = Cylindrical
 
 class Direction(IDirection, SupportsDeleteCallback):
@@ -3418,7 +3414,7 @@ class Direction(IDirection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Direction, [IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry((4972622844825001264, 259476629588993709), Direction)
+agcls.AgClassCatalog.add_catalog_entry((5543184440989437028, 15687242444519207338), Direction)
 agcls.AgTypeNameMap["Direction"] = Direction
 
 class DirectionEuler(IDirection, SupportsDeleteCallback):
@@ -3433,7 +3429,7 @@ class DirectionEuler(IDirection, SupportsDeleteCallback):
     _get_sequence_method_offset = 5
     _set_sequence_method_offset = 6
     _metadata = {
-        "iid_data" : (5130852120085250360, 13058025655636170127),
+        "iid_data" : (5120067861098403612, 16675157910874070404),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
     }
     _property_names = {}
@@ -3504,7 +3500,7 @@ class DirectionEuler(IDirection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionEuler, [DirectionEuler, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry((5743426898815331373, 1690930472100015514), DirectionEuler)
+agcls.AgClassCatalog.add_catalog_entry((4656326325412983050, 17465710618493224627), DirectionEuler)
 agcls.AgTypeNameMap["DirectionEuler"] = DirectionEuler
 
 class DirectionPR(IDirection, SupportsDeleteCallback):
@@ -3519,7 +3515,7 @@ class DirectionPR(IDirection, SupportsDeleteCallback):
     _get_sequence_method_offset = 5
     _set_sequence_method_offset = 6
     _metadata = {
-        "iid_data" : (5481773091912686577, 1023308621448571275),
+        "iid_data" : (4656718276851111407, 5112873649160444078),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
     }
     _property_names = {}
@@ -3590,7 +3586,7 @@ class DirectionPR(IDirection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionPR, [DirectionPR, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry((4912859073423007117, 12018351089291632522), DirectionPR)
+agcls.AgClassCatalog.add_catalog_entry((4765442014194737078, 3575547082610573999), DirectionPR)
 agcls.AgTypeNameMap["DirectionPR"] = DirectionPR
 
 class DirectionRADec(IDirection, SupportsDeleteCallback):
@@ -3605,7 +3601,7 @@ class DirectionRADec(IDirection, SupportsDeleteCallback):
     _get_magnitude_method_offset = 5
     _set_magnitude_method_offset = 6
     _metadata = {
-        "iid_data" : (5701254258584839559, 16705505474005351321),
+        "iid_data" : (5255513060882853966, 7426472758042126763),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
     }
     _property_names = {}
@@ -3676,7 +3672,7 @@ class DirectionRADec(IDirection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionRADec, [DirectionRADec, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry((4755265490592473487, 7365114835293023376), DirectionRADec)
+agcls.AgClassCatalog.add_catalog_entry((5029533422370176750, 13677593222416528541), DirectionRADec)
 agcls.AgTypeNameMap["DirectionRADec"] = DirectionRADec
 
 class DirectionXYZ(IDirection, SupportsDeleteCallback):
@@ -3691,7 +3687,7 @@ class DirectionXYZ(IDirection, SupportsDeleteCallback):
     _get_z_method_offset = 5
     _set_z_method_offset = 6
     _metadata = {
-        "iid_data" : (5701669700070119970, 11855669950262444683),
+        "iid_data" : (5271633318387734883, 7251070032551109279),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
     }
     _property_names = {}
@@ -3762,7 +3758,7 @@ class DirectionXYZ(IDirection, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionXYZ, [DirectionXYZ, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry((5084327274554819417, 10955510114470564541), DirectionXYZ)
+agcls.AgClassCatalog.add_catalog_entry((5522619834884476326, 212967685867618494), DirectionXYZ)
 agcls.AgTypeNameMap["DirectionXYZ"] = DirectionXYZ
 
 class Orientation(IOrientation, SupportsDeleteCallback):
@@ -3781,7 +3777,7 @@ class Orientation(IOrientation, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Orientation, [IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry((5094091112665004814, 12552931884794694536), Orientation)
+agcls.AgClassCatalog.add_catalog_entry((4657791083284412214, 446798242243343514), Orientation)
 agcls.AgTypeNameMap["Orientation"] = Orientation
 
 class OrientationAzEl(IOrientationAzEl, IOrientation, SupportsDeleteCallback):
@@ -3802,7 +3798,7 @@ class OrientationAzEl(IOrientationAzEl, IOrientation, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationAzEl, [IOrientationAzEl, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry((5436578645205542340, 2051705821180885412), OrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry((4943993280998572960, 9219980346145398932), OrientationAzEl)
 agcls.AgTypeNameMap["OrientationAzEl"] = OrientationAzEl
 
 class OrientationEulerAngles(IOrientationEulerAngles, IOrientation, SupportsDeleteCallback):
@@ -3823,7 +3819,7 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation, SupportsDele
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationEulerAngles, [IOrientationEulerAngles, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry((5485499845388799498, 4642618011140109457), OrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry((5323505186834167241, 15446891256313371564), OrientationEulerAngles)
 agcls.AgTypeNameMap["OrientationEulerAngles"] = OrientationEulerAngles
 
 class OrientationQuaternion(IOrientationQuaternion, IOrientation, SupportsDeleteCallback):
@@ -3844,7 +3840,7 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation, SupportsDelete
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationQuaternion, [IOrientationQuaternion, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry((5478004044167740338, 15661663069987288478), OrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry((5129641859492381649, 14851164480077184942), OrientationQuaternion)
 agcls.AgTypeNameMap["OrientationQuaternion"] = OrientationQuaternion
 
 class OrientationYPRAngles(IOrientationYPRAngles, IOrientation, SupportsDeleteCallback):
@@ -3865,7 +3861,7 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation, SupportsDeleteCa
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationYPRAngles, [IOrientationYPRAngles, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry((5216062330205998232, 2431040311449851776), OrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry((5144566701309896761, 2495531606460782228), OrientationYPRAngles)
 agcls.AgTypeNameMap["OrientationYPRAngles"] = OrientationYPRAngles
 
 class DoublesCollection(SupportsDeleteCallback):
@@ -3882,7 +3878,7 @@ class DoublesCollection(SupportsDeleteCallback):
     _to_array_method_offset = 7
     _set_at_method_offset = 8
     _metadata = {
-        "iid_data" : (4956705744396413812, 13718121738100352392),
+        "iid_data" : (5159166046074231158, 4676395751707776654),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -3979,7 +3975,7 @@ class DoublesCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DoublesCollection, [DoublesCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4961001141423142595, 1632769765904225949), DoublesCollection)
+agcls.AgClassCatalog.add_catalog_entry((5518211324354631135, 2324476080933736880), DoublesCollection)
 agcls.AgTypeNameMap["DoublesCollection"] = DoublesCollection
 
 class Cartesian3Vector(ICartesian3Vector, SupportsDeleteCallback):
@@ -3998,7 +3994,7 @@ class Cartesian3Vector(ICartesian3Vector, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian3Vector, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry((5016372381064673909, 162334041874476445), Cartesian3Vector)
+agcls.AgClassCatalog.add_catalog_entry((4999830393484217834, 4471742921241496718), Cartesian3Vector)
 agcls.AgTypeNameMap["Cartesian3Vector"] = Cartesian3Vector
 
 class Cartesian2Vector(SupportsDeleteCallback):
@@ -4014,7 +4010,7 @@ class Cartesian2Vector(SupportsDeleteCallback):
     _set_method_offset = 6
     _to_array_method_offset = 7
     _metadata = {
-        "iid_data" : (5417927181131422679, 3111395435573516163),
+        "iid_data" : (5272910570004807503, 10054311596169292473),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4088,7 +4084,7 @@ class Cartesian2Vector(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian2Vector, [Cartesian2Vector, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4694100951548749791, 16355409252312132778), Cartesian2Vector)
+agcls.AgClassCatalog.add_catalog_entry((5020079430311867935, 9173204252285117336), Cartesian2Vector)
 agcls.AgTypeNameMap["Cartesian2Vector"] = Cartesian2Vector
 
 class PropertyInfo(SupportsDeleteCallback):
@@ -4105,7 +4101,7 @@ class PropertyInfo(SupportsDeleteCallback):
     _get_min_method_offset = 7
     _get_max_method_offset = 8
     _metadata = {
-        "iid_data" : (5736951962975636299, 3080140686805457046),
+        "iid_data" : (5709449963146046365, 5862416140085874335),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4194,7 +4190,7 @@ class PropertyInfo(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfo, [PropertyInfo, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5286236984342840384, 14433295702405332392), PropertyInfo)
+agcls.AgClassCatalog.add_catalog_entry((5624653087871619118, 4148759758090164110), PropertyInfo)
 agcls.AgTypeNameMap["PropertyInfo"] = PropertyInfo
 
 class PropertyInfoCollection(SupportsDeleteCallback):
@@ -4208,7 +4204,7 @@ class PropertyInfoCollection(SupportsDeleteCallback):
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
-        "iid_data" : (5399003801100116608, 9751059917458695069),
+        "iid_data" : (5183620403292925645, 11703217979470873482),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
@@ -4284,7 +4280,7 @@ class PropertyInfoCollection(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfoCollection, [PropertyInfoCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5266200912497155233, 9631256143026290573), PropertyInfoCollection)
+agcls.AgClassCatalog.add_catalog_entry((5239823179109569743, 18033180869792707228), PropertyInfoCollection)
 agcls.AgTypeNameMap["PropertyInfoCollection"] = PropertyInfoCollection
 
 class RuntimeTypeInfo(SupportsDeleteCallback):
@@ -4297,7 +4293,7 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
     _get_count_method_offset = 3
     _get_item_method_offset = 4
     _metadata = {
-        "iid_data" : (4697700289115359020, 4542123673636119719),
+        "iid_data" : (5445061941216308710, 10476542387161536171),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
@@ -4352,7 +4348,7 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RuntimeTypeInfo, [RuntimeTypeInfo, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5310750197822733971, 15113477984957915526), RuntimeTypeInfo)
+agcls.AgClassCatalog.add_catalog_entry((5085516699645273237, 15111374025420939179), RuntimeTypeInfo)
 agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
 class CommRadOrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
@@ -4375,7 +4371,7 @@ class CommRadOrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositio
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommRadOrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), CommRadOrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry((5496216944672659152, 12932999778863326882), CommRadOrientationAzEl)
 agcls.AgTypeNameMap["CommRadOrientationAzEl"] = CommRadOrientationAzEl
 
 class CommRadOrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
@@ -4398,7 +4394,7 @@ class CommRadOrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrie
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommRadOrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), CommRadOrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry((5587391684415620486, 8349151267853573270), CommRadOrientationEulerAngles)
 agcls.AgTypeNameMap["CommRadOrientationEulerAngles"] = CommRadOrientationEulerAngles
 
 class CommRadOrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
@@ -4421,7 +4417,7 @@ class CommRadOrientationQuaternion(IOrientationQuaternion, IOrientation, IOrient
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommRadOrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), CommRadOrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry((5498453980279883775, 11762246145700755869), CommRadOrientationQuaternion)
 agcls.AgTypeNameMap["CommRadOrientationQuaternion"] = CommRadOrientationQuaternion
 
 class CommRadOrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
@@ -4444,7 +4440,7 @@ class CommRadOrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientat
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommRadOrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), CommRadOrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry((4971420367151630190, 4339807439705369485), CommRadOrientationYPRAngles)
 agcls.AgTypeNameMap["CommRadOrientationYPRAngles"] = CommRadOrientationYPRAngles
 
 class CommRadOrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
@@ -4463,5 +4459,5 @@ class CommRadOrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CommRadOrientationOffsetCart, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), CommRadOrientationOffsetCart)
+agcls.AgClassCatalog.add_catalog_entry((5035051098943192979, 5602065750200574353), CommRadOrientationOffsetCart)
 agcls.AgTypeNameMap["CommRadOrientationOffsetCart"] = CommRadOrientationOffsetCart

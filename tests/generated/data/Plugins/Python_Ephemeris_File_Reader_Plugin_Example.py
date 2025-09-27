@@ -21,9 +21,9 @@
 # SOFTWARE.
 
 from datetime import datetime
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
-from agi.stk12.plugins.asplugin import (
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType, AgEUtTimeScale
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.asplugin import (
     AgEAsEphemInterpolationMethod,
     AgEAsCovRep,
     AgEAsEphemFileDistanceUnit,

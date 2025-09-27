@@ -22,8 +22,6 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Sets the current transmitter model by name.
 
     .. tab-item:: Properties
 
@@ -31,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.chain_analysis_options`
+              - Get the transmitter's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.graphics`
               - Get the 2D Graphics properties for the transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.graphics_3d`
               - Get the 3D Graphics properties for the transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.laser_environment`
               - Get the object laser environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets the current transmitter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.model_component_linking`
               - Get the link/embed controller for managing the transmitter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.refraction`
@@ -49,8 +47,6 @@ Overview
               - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.rf_environment`
               - Get the object RF environment settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Transmitter.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
 
@@ -64,7 +60,7 @@ Transmitter additional Gain
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
+    txModel = transmitter.model_component_linking.component
     gain = txModel.post_transmit_gains_losses.add(-5)  # dB
     gain.identifier = "Example Loss"
 
@@ -74,10 +70,10 @@ Modify a Transmitter Filter
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
+    txModel = transmitter.model_component_linking.component
     txModel.enable_filter = True
-    txModel.set_filter("Butterworth")
-    recFilter = txModel.filter
+    txModel.filter_component_linking.set_component("Butterworth")
+    recFilter = txModel.filter_component_linking.component
     recFilter.lower_bandwidth_limit = -20
     recFilter.upper_bandwidth_limit = 20
     recFilter.cut_off_frequency = 10
@@ -88,7 +84,7 @@ Modify a Transmitter's Modulator Properties
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    txModel = transmitter.model
+    txModel = transmitter.model_component_linking.component
     txModel.set_modulator("BPSK")
     txModel.modulator.scale_bandwidth_automatically = True
 
@@ -98,8 +94,8 @@ Modify a Transmitter's Orientation and Position
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
+    transmitter.model_component_linking.set_component("Complex Transmitter Model")
+    txModel = transmitter.model_component_linking.component
     antennaControl = txModel.antenna_control
     antOrientation = antennaControl.embedded_model_orientation
     antOrientation.assign_az_el(0, 90, 1)  # 1 represents Rotate About Boresight
@@ -113,8 +109,8 @@ Modify a Transmitter's Polarization Properties
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
+    transmitter.model_component_linking.set_component("Complex Transmitter Model")
+    txModel = transmitter.model_component_linking.component
     txModel.enable_polarization = True
     txModel.set_polarization_type(PolarizationType.LINEAR)
     polarization = txModel.polarization
@@ -127,11 +123,11 @@ Modify a Transmitter's Embedded Antenna
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
+    transmitter.model_component_linking.set_component("Complex Transmitter Model")
+    txModel = transmitter.model_component_linking.component
     antennaControl = txModel.antenna_control
-    antennaControl.set_embedded_model("Isotropic")
-    antennaControl.embedded_model.efficiency = 85  # Percent
+    antennaControl.embedded_model_component_linking.set_component("Isotropic")
+    antennaControl.embedded_model_component_linking.component.efficiency = 85  # Percent
 
 
 Modify a Transmitter's Model Type
@@ -139,8 +135,8 @@ Modify a Transmitter's Model Type
 .. code-block:: python
 
     # Transmitter transmitter: Transmitter object
-    transmitter.set_model("Complex Transmitter Model")
-    txModel = transmitter.model
+    transmitter.model_component_linking.set_component("Complex Transmitter Model")
+    txModel = transmitter.model_component_linking.component
     txModel.frequency = 14  # GHz
     txModel.power = 25  # dBW
     txModel.data_rate = 15  # Mb/sec
@@ -165,6 +161,12 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.Transmitter.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the transmitter's chain analysis options.
+
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Transmitter.graphics
     :type: TransmitterGraphics
@@ -182,12 +184,6 @@ Property detail
     :type: ObjectLaserEnvironment
 
     Get the object laser environment settings.
-
-.. py:property:: model
-    :canonical: ansys.stk.core.stkobjects.Transmitter.model
-    :type: ITransmitterModel
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets the current transmitter model.
 
 .. py:property:: model_component_linking
     :canonical: ansys.stk.core.stkobjects.Transmitter.model_component_linking
@@ -219,12 +215,6 @@ Property detail
 
     Get the object RF environment settings.
 
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.Transmitter.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Gets an array of supported model names.
-
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Transmitter.use_refraction_in_access
     :type: bool
@@ -234,6 +224,7 @@ Property detail
 
 Method detail
 -------------
+
 
 
 .. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
@@ -255,22 +246,6 @@ Method detail
 
 
 
-
-
-
-.. py:method:: set_model(self, model_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Transmitter.set_model
-
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on Transmitter instead. Sets the current transmitter model by name.
-
-    :Parameters:
-
-        **model_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 
 

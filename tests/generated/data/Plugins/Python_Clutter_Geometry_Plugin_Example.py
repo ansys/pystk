@@ -21,9 +21,9 @@
 # SOFTWARE.
 
 import typing, math
-from agi.stk12.plugins.utplugin import AgEUtLogMsgType
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.utplugin import AgEUtLogMsgType
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgStkRadarClutterGeometryPlugin(object):

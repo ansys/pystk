@@ -20,8 +20,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintIntervals.action_type`
-              - Do not use this property, as it is deprecated. Use ExclIntvl instead to determine whether intervals are to be excluded or not. The action type (include or exclude).
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintIntervals.file_path`
               - Full path and name of file containing the intervals data.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintIntervals.filename`
@@ -41,12 +39,6 @@ Import detail
 
 Property detail
 ---------------
-
-.. py:property:: action_type
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintIntervals.action_type
-    :type: ActionType
-
-    Do not use this property, as it is deprecated. Use ExclIntvl instead to determine whether intervals are to be excluded or not. The action type (include or exclude).
 
 .. py:property:: file_path
     :canonical: ansys.stk.core.stkobjects.AccessConstraintIntervals.file_path

@@ -25,7 +25,6 @@ from __future__ import annotations
 
 import os
 import typing
-import copy
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
 from ctypes import POINTER, Structure, Union, byref, cast, pointer
@@ -172,10 +171,18 @@ class GUID(Structure):
         return guid
 
     @staticmethod
+    def from_guid(src:"GUID") -> "GUID":
+        guid = GUID()
+        guid.Data1 = src.Data1
+        guid.Data2 = src.Data2
+        guid.Data3 = src.Data3
+        guid.Data4 = src.Data4
+        return guid
+
+    @staticmethod
     def from_data_pair(data:tuple) -> "GUID":
         guid_union = _guid_union(data)
-        guid = copy.deepcopy(guid_union.guid)
-        return guid
+        return GUID.from_guid(guid_union.guid)
 
     def as_data_pair(self) -> tuple:
         guid_union = _guid_union(self)
@@ -324,12 +331,19 @@ class OLE32Lib:
     CoUninitialize      = None
     StringFromCLSID     = None
 
-    if os.name=="nt":
+    use_xcom_registry = False
+    xcom_bin_dir = None
+    if os.name != "nt":
+        use_xcom_registry = True
+    elif os.getenv("STK_USE_XCOM_REGISTRY") is not None:
+        use_xcom_registry = True
+        if os.getenv("STK_BIN_DIR") is not None:
+            xcom_bin_dir = os.path.normpath(os.getenv("STK_BIN_DIR"))
 
+    if not use_xcom_registry:
         CoMarshalInterThreadInterfaceInStream = None
         CoGetInterfaceAndReleaseStream        = None
         CoReleaseMarshalData                  = None
-
         CreateClassMoniker    = None
         GetRunningObjectTable = None
         CreateBindCtx         = None
@@ -340,23 +354,39 @@ class OLE32Lib:
         if OLE32Lib._handle is not None:
             return
 
-        if os.name == "nt":
+        if os.name == "nt" and not OLE32Lib.use_xcom_registry:
             from ctypes import windll
             OLE32Lib._handle = windll.ole32
         else:
             from ctypes import cdll
-            OLE32Lib._handle = cdll.LoadLibrary("libagxcom.so")
+            if os.name == "nt":
+                try:
+                    if OLE32Lib.xcom_bin_dir is not None:
+                        OLE32Lib._handle = cdll.LoadLibrary(os.path.join(OLE32Lib.xcom_bin_dir, "AgXCom.dll"))
+                    else:
+                        raise RuntimeError("Error loading STK libraries. Ensure STK libraries can be found from the STK_BIN_DIR environment variable.")
+                except FileNotFoundError as e:
+                    raise RuntimeError(f"Error loading STK libraries. Ensure STK libraries can be found from the STK_BIN_DIR environment variable.") from e
+            else:
+                OLE32Lib._handle = cdll.LoadLibrary("libagxcom.so")
 
-        OLE32Lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", OLE32Lib._handle), ((1, "lpsz"), (1, "pclsid")))
-        OLE32Lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", OLE32Lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
-        OLE32Lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", OLE32Lib._handle),
+        xcom_prefix = "AgXCom" if OLE32Lib.use_xcom_registry else ""
+
+        OLE32Lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))((f"{xcom_prefix}CLSIDFromString", OLE32Lib._handle), ((1, "lpsz"), (1, "pclsid")))
+        OLE32Lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))((f"{xcom_prefix}CLSIDFromProgID", OLE32Lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
+        OLE32Lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))((f"{xcom_prefix}CoCreateInstance", OLE32Lib._handle),
                                        ((1, "rclsid"), (1, "pUnkOuter"), (1, "dwClsContext"), (1, "riid"), (1, "ppv")))
-        OLE32Lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", OLE32Lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
-        OLE32Lib.CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", OLE32Lib._handle), ((1, "pv"),))
-        OLE32Lib.CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", OLE32Lib._handle))
-        OLE32Lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", OLE32Lib._handle), ((1, "rclsid"), (1, "lplpsz")))
+        OLE32Lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)((f"{xcom_prefix}CoInitializeEx", OLE32Lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
+        OLE32Lib.CoUninitialize      = WINFUNCTYPE(None)((f"{xcom_prefix}CoUninitialize", OLE32Lib._handle))
+        OLE32Lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))((f"{xcom_prefix}StringFromCLSID", OLE32Lib._handle), ((1, "rclsid"), (1, "lplpsz")))
 
-        if os.name=="nt":
+        if os.name == "nt":
+            from ctypes import windll
+            OLE32Lib.CoTaskMemFree = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", windll.ole32), ((1, "pv"),))
+        else:
+            OLE32Lib.CoTaskMemFree = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", OLE32Lib._handle), ((1, "pv"),))
+
+        if os.name == "nt" and not OLE32Lib.use_xcom_registry:
 
             OLE32Lib.CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", OLE32Lib._handle), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
             OLE32Lib.CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", OLE32Lib._handle), ((1, "pStm"), (1, "iid"), (1, "ppv")))
@@ -441,17 +471,22 @@ class _CreateAgObjectLifetimeManager(object):
 
     @staticmethod
     def _release_impl(pUnk:"IUnknown"):
-        """Call Release in STK."""
+        """Call Release."""
         _CreateAgObjectLifetimeManager._Release(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
 
     @staticmethod
     def _add_ref_impl(pUnk:"IUnknown"):
-        """Call AddRef in STK."""
+        """Call AddRef."""
         _CreateAgObjectLifetimeManager._AddRef(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
+
+    def set_as_application(self, pUnk:"IUnknown"):
+        """Add pUnk to the list of applications."""
+        ptraddress = pUnk.p.value
+        self._applications.append(ptraddress)
 
     def create_ownership(self, pUnk:"IUnknown"):
         """
-        Add pUnk to the reference manager and call AddRef in STK.
+        Add pUnk to the reference manager and call AddRef.
 
         Use if pUnk has a ref-count of 0.
         """
@@ -462,7 +497,7 @@ class _CreateAgObjectLifetimeManager(object):
 
     def take_ownership(self, pUnk:"IUnknown", isApplication=False):
         """
-        Add pUnk to the reference manager; does not call AddRef in STK.
+        Add pUnk to the reference manager; does not call AddRef.
 
         Use if pUnk has a ref-count of 1.
         """
@@ -470,7 +505,7 @@ class _CreateAgObjectLifetimeManager(object):
         if ptraddress is not None:
             with GcDisabler():
                 if isApplication:
-                    self._applications.append(ptraddress)
+                    self.set_as_application(pUnk)
                 if ptraddress in self._ref_counts:
                     _CreateAgObjectLifetimeManager._release_impl(pUnk)
                     self.internal_add_ref(pUnk)
@@ -488,7 +523,7 @@ class _CreateAgObjectLifetimeManager(object):
         """
         Decrements the internal reference count of pUnk.
 
-        If the internal reference count reaches zero, calls Release in STK.
+        If the internal reference count reaches zero, calls Release.
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
@@ -519,25 +554,27 @@ ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
 
 
 class _CreateCoInitializeManager(object):
-    def __init__(self):
+    def __init__(self, ole32lib, oleaut32lib):
         self.init_count = 0
+        self.ole32lib = ole32lib
+        self.oleaut32lib = oleaut32lib
 
     def initialize(self):
         if self.init_count == 0:
-            OLE32Lib._initialize()
-            OLEAut32Lib._initialize()
-            OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+            self.ole32lib._initialize()
+            self.oleaut32lib._initialize()
+            self.ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         self.init_count = self.init_count + 1
 
     def uninitialize(self):
         self.init_count = self.init_count - 1
         if self.init_count == 0:
-            OLE32Lib.CoUninitialize()
+            self.ole32lib.CoUninitialize()
 
-CoInitializeManager = _CreateCoInitializeManager()
+CoInitializeManager = _CreateCoInitializeManager(OLE32Lib, OLEAut32Lib)
 
 def _initialize_embedded():
-    """Initialize OLE libraries for STK plugin initialization."""
+    """Initialize OLE libraries for plugin initialization."""
     OLE32Lib._initialize()
     OLEAut32Lib._initialize()
 
@@ -557,6 +594,8 @@ class IUnknown(object):
     else:
         _QIIndex = 2
     def __init__(self, pUnk=None):
+        self._vtbl = None
+        self._vtbl_p_value = -1
         if pUnk is not None:
             self.p = pUnk.p
             self.add_ref()
@@ -572,9 +611,10 @@ class IUnknown(object):
     def __bool__(self):
         return self.p.value is not None and self.p.value > 0
     def _get_vtbl_entry(self, index):
-        vptr = cast(self.p, POINTER(c_void_p))
-        vtbl = cast(vptr.contents, POINTER(c_void_p))
-        return vtbl[index]
+        if self.p.value != self._vtbl_p_value:
+            self._vtbl_p_value = self.p.value
+            self._vtbl = cast(self.p, POINTER(POINTER(c_void_p)))[0]
+        return self._vtbl[index]
     def _query_backwards_compatability_interface(self, iid):
         from .coclassutil import AgBackwardsCompatabilityMapping
         iid_tuple = iid.as_data_pair()
@@ -593,6 +633,9 @@ class IUnknown(object):
             return self._query_backwards_compatability_interface(iid)
         pIntf.take_ownership()
         return pIntf
+    def set_as_application(self):
+        """Add pUnk to the list of applications."""
+        ObjectLifetimeManager.set_as_application(self)
     def create_ownership(self):
         """Call AddRef on the pointer, and register the pointer to be Released when the ref count goes to zero."""
         ObjectLifetimeManager.create_ownership(self)
@@ -610,7 +653,8 @@ class IUnknown(object):
 
         Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.release(self)
+        if ObjectLifetimeManager is not None:
+            ObjectLifetimeManager.release(self)
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         return self._invoke_impl(intf_metadata, method_metadata, *args)
@@ -665,7 +709,7 @@ class IDispatch(IUnknown):
 
 class IPictureDisp(IUnknown):
     def __init__(self):
-        raise STKRuntimeError("IPictureDisp not supported.")
+        raise RuntimeError("IPictureDisp not supported.")
 
 class IEnumVariant(object):
     guid = "{00020404-0000-0000-C000-000000000046}"
@@ -702,3 +746,13 @@ class IFuncType(object):
         ret = self.method(pIntf._get_vtbl_entry(self.index))(pIntf.p, *args)
         del(pIntf)
         return ret
+
+def create_instance(guid:str) -> IUnknown:
+    """Uses CoCreateInstance to instantiate the coclass associated with the provided guid."""
+    clsid = GUID()
+    pUnk = IUnknown()
+    if Succeeded(OLE32Lib.CLSIDFromString(guid, clsid)):
+        IID_IUnknown = GUID(IUnknown._guid)
+        if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+            pUnk.take_ownership()
+    return pUnk

@@ -36,6 +36,7 @@ except:
 
 
 class DataAnalysisUtilTests(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         TestBase.Initialize()
@@ -48,6 +49,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_numpy(self):
+
         world_coverage_def = "CoverageDefinition/World_Coverage"
         world_coverage_def = TestBase.root.get_object_from_path(world_coverage_def)
 
@@ -66,6 +68,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_numpy_results_not_reshaped(self):
+
         num_access_coverage = "*/CoverageDefinition/World_Coverage/FigureOfMerit/Num_Access_Coverage"
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
@@ -84,6 +87,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_numpy_empty_results_collection(self):
+
         world_coverage_def = "CoverageDefinition/World_Coverage"
         world_coverage_def = TestBase.root.get_object_from_path(world_coverage_def)
 
@@ -102,6 +106,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe(self):
+
         world_coverage_def = "CoverageDefinition/World_Coverage"
         world_coverage_def = TestBase.root.get_object_from_path(world_coverage_def)
 
@@ -119,6 +124,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_results_not_reshaped(self):
+
         num_access_coverage = "*/CoverageDefinition/World_Coverage/FigureOfMerit/Num_Access_Coverage"
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
@@ -136,6 +142,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_empty_results_collection(self):
+
         world_coverage_def = "CoverageDefinition/World_Coverage"
         world_coverage_def = TestBase.root.get_object_from_path(world_coverage_def)
 
@@ -154,6 +161,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_set_index_column(self):
+
         num_access_coverage = "*/CoverageDefinition/World_Coverage/FigureOfMerit/Num_Access_Coverage"
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
@@ -172,6 +180,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_raise_value_error_invalid_index_element_name(self):
+
         num_access_coverage = "*/CoverageDefinition/World_Coverage/FigureOfMerit/Num_Access_Coverage"
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
@@ -186,6 +195,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_map_types_to_dtypes(self):
+
         world_coverage_def = "CoverageDefinition/World_Coverage"
         world_coverage_def = TestBase.root.get_object_from_path(world_coverage_def)
 

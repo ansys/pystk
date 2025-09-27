@@ -140,7 +140,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         scenarioRFEnv.propagation_channel.enable_rain_loss = True
 
         # Configure the radar object as a monostatic model.
-        radar.set_model("Monostatic")
+        radar.model_component_linking.set_component("Monostatic")
         monostaticModel: "RadarModelMonostatic" = clr.CastAs(
             radar.model_component_linking.component, RadarModelMonostatic
         )
@@ -159,9 +159,9 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         parabolic.beamwidth = 2.0
 
         # Put the monostatic radar model in Search/Track mode
-        monostaticModel.set_mode("Search Track")
+        monostaticModel.mode_component_linking.set_component("Search Track")
         searchTrackMode: "RadarModeMonostaticSearchTrack" = clr.CastAs(
-            monostaticModel.mode, RadarModeMonostaticSearchTrack
+            monostaticModel.mode_component_linking.component, RadarModeMonostaticSearchTrack
         )
 
         # Set the waveform type to fixed prf

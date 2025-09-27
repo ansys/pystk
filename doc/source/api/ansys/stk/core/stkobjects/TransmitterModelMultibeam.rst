@@ -20,8 +20,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.set_filter`
-              - Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.set_modulator`
               - Set the current modulator model by name.
 
@@ -37,16 +35,12 @@ Overview
               - Get or set the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.enable_filter`
               - Get or set the flag determines whether or not to enable the Filter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.filter`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.filter_component_linking`
               - Get the link/embed controller for managing the filter model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.modulator`
               - Get the current modulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.post_transmit_gains_losses`
               - Get the collection of additional post transmit gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.supported_filters`
-              - Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam.supported_modulators`
               - Get an array of supported modulator model names.
 
@@ -81,12 +75,6 @@ Property detail
 
     Get or set the flag determines whether or not to enable the Filter.
 
-.. py:property:: filter
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.filter
-    :type: IRFFilterModel
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Gets the current filter model.
-
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.filter_component_linking
     :type: IComponentLinkEmbedControl
@@ -104,12 +92,6 @@ Property detail
     :type: AdditionalGainLossCollection
 
     Get the collection of additional post transmit gains and losses.
-
-.. py:property:: supported_filters
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.supported_filters
-    :type: list
-
-    Do not use this property, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Gets an array of supported filter model names.
 
 .. py:property:: supported_modulators
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.supported_modulators
@@ -129,21 +111,6 @@ Method detail
 
 
 
-
-.. py:method:: set_filter(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.set_filter
-
-    Do not use this method, as it is deprecated. Use FilterComponentLinking on TransmitterModelMultibeam instead. Sets the current filter model by name.
-
-    :Parameters:
-
-        **name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
-
 .. py:method:: set_modulator(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.set_modulator
 
@@ -157,6 +124,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
 
 

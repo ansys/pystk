@@ -77,7 +77,6 @@ class EarlyBoundTests(TestBase):
         # DefinitionSupportedTypes
         arTypes = EarlyBoundTests.AG_FOM.definition_supported_types
         TestBase.logger.WriteLine3("\tThe FigureOfMerit supports: {0} definition types", len(arTypes))
-
         iIndex: int = 0
         while iIndex < len(arTypes):
             eType: "FigureOfMeritDefinitionType" = FigureOfMeritDefinitionType(int(arTypes[iIndex][0]))
@@ -849,6 +848,7 @@ class EarlyBoundTests(TestBase):
 
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
+
         holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
 
         try:

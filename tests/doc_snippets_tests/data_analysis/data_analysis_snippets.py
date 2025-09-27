@@ -96,6 +96,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         satellite: Satellite
         for satellite in [circ_sat, repeat_sat, sun_sat]:
+
             satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
 
             propagator: PropagatorJ4Perturbation = satellite.propagator

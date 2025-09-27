@@ -360,6 +360,15 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Exponential`
               - Exponential atmospheric propagator function.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FlightDynamicsRecord`
+              - Flight Dynamics Records.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FlightDynamicsRecordCreator`
+              - Flight dynamics record creator.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FlightDynamicsRecordPreview`
+              - Flight dynamics record preview.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FuelTank`
               - Fuel Tank parameters.
 
@@ -537,6 +546,18 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MSISE1990`
               - MSISE 1990 atmospheric propagator function.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NPlateStochasticCorrectionParameter`
+              - NPlate Stochastic Correction Parameter definition.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NPlateStochasticCorrectionParametersCollection`
+              - NPlate Stochastic Correction Parameter Collection.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NPlateStochasticParameter`
+              - NPlate Stochastic Parameter definition.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NPlateStochasticParametersCollection`
+              - NPlate Stochastic Parameter Collection.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NRLMSISE2000`
               - NRLMSISE 2000 atmospheric propagator function.
 
@@ -621,17 +642,11 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction`
               - Radiation Pressure Propagator Function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RungeKutta2nd3rd`
-              - RK2nd3rd Numerical Integrator.
-
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RungeKutta4th`
               - RK4th Numerical Integrator.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RungeKutta4th5th`
               - RK4th5th Numerical Integrator.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RungeKutta4thAdapt`
-              - RK4thAdapt Numerical Integrator.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaF7th8th`
               - RKF7th8th Numerical Integrator.
@@ -891,7 +906,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcGeodeticTrueLongitudeAtTimeOfPerigee`
               - GeodeticTrueLongitudeAtTimeOfPerigee Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoefficient`
               - Gravity Coefficient Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter`
@@ -1218,8 +1233,23 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVMagnitude`
               - VMag Calc objects.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateConfig`
+              - State config. property.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateConfigCollection`
+              - State config. properties Collection.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateTransformationFunction`
               - State Transition Propagator Function.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StochasticDensityCorrection`
+              - Properties for Stochastic Density Correction.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StochasticModelParameters`
+              - Properties for Stochastic Model Parameters.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StochasticParameters`
+              - Stochastic Parameters.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition`
               - A stopping condition.
@@ -1373,7 +1403,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ClearEphemerisDirection`
               - Direction in which to clear ephemeris.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CoeffRungeKuttaV8th9th`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CoefficientRungeKuttaV8th9th`
               - Coefficient sets for RKV8th(9th) integrator.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ComplexNumber`
@@ -1460,6 +1490,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorScalingMethod`
               - The Scaling Method types for a Differential Corrector profile.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DragCorrectionType`
+              - Interpretation of the Gauss Markov used for spherical drag accelerations.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DragModelType`
               - Type of Drag Model.
 
@@ -1483,6 +1516,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ErrorControl`
               - Error Control for the numerical integrator.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FlightDynamicsRecordEpochType`
+              - The types for Desired Epoch Type for Vector Selection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.FollowJoin`
               - Joining options for the Follow segment.
@@ -1518,12 +1554,12 @@ Summary
               - The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravityCoefficientNormalizationType`
-              - The normalization type for the CStateCalcGravCoeff calculation object.
+              - The normalization type for the CStateCalcGravCoefficient calculation object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravityCoefficientType`
-              - The coefficient type for the CStateCalcGravCoeff calculation object.
+              - The coefficient type for the CStateCalcGravCoefficient calculation object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravParamSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GravParameterSource`
               - The gravity parameter source.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GridSearchDesiredOperation`
@@ -1661,6 +1697,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SquaredType`
               - Whether to calculate the value as the square of the sum of each component or the sum of the squares.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPCorrectionType`
+              - Interpretation of the Gauss Markov used for spherical SRP accelerations.
+
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateType`
               - The Stop segment state types.
 
@@ -1669,6 +1708,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.STMPerturbationVariables`
               - The initial and final Cartesian variational variables that describe an STM element.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StochasticModel`
+              - Interpretation of the Gauss Markov used for spherical SRP accelerations.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionType`
               - Type of stopping condition.
@@ -1697,7 +1739,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.UpdateAction`
               - Actions for the Update segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.UpdateParam`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.UpdateParameter`
               - Spacecraft parameters that can be modified by an Update segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.VenusGRAMDensityType`
@@ -1838,6 +1880,9 @@ Object Model components specifically designed to support STK Astrogator.
      EOMFuncPluginFunction<astrogator/EOMFuncPluginFunction>
      ER3BPFunc<astrogator/ER3BPFunc>
      Exponential<astrogator/Exponential>
+     FlightDynamicsRecord<astrogator/FlightDynamicsRecord>
+     FlightDynamicsRecordCreator<astrogator/FlightDynamicsRecordCreator>
+     FlightDynamicsRecordPreview<astrogator/FlightDynamicsRecordPreview>
      FuelTank<astrogator/FuelTank>
      GaussJacksonIntegrator<astrogator/GaussJacksonIntegrator>
      GeneralRelativityFunction<astrogator/GeneralRelativityFunction>
@@ -1897,6 +1942,10 @@ Object Model components specifically designed to support STK Astrogator.
      MCSUpdate<astrogator/MCSUpdate>
      MSIS1986<astrogator/MSIS1986>
      MSISE1990<astrogator/MSISE1990>
+     NPlateStochasticCorrectionParameter<astrogator/NPlateStochasticCorrectionParameter>
+     NPlateStochasticCorrectionParametersCollection<astrogator/NPlateStochasticCorrectionParametersCollection>
+     NPlateStochasticParameter<astrogator/NPlateStochasticParameter>
+     NPlateStochasticParametersCollection<astrogator/NPlateStochasticParametersCollection>
      NRLMSISE2000<astrogator/NRLMSISE2000>
      NumericalPropagatorWrapper<astrogator/NumericalPropagatorWrapper>
      NumericalPropagatorWrapperCR3BP<astrogator/NumericalPropagatorWrapperCR3BP>
@@ -1925,10 +1974,8 @@ Object Model components specifically designed to support STK Astrogator.
      ProfileSNOPTOptimizer<astrogator/ProfileSNOPTOptimizer>
      PropagatorFunctionCollection<astrogator/PropagatorFunctionCollection>
      RadiationPressureFunction<astrogator/RadiationPressureFunction>
-     RungeKutta2nd3rd<astrogator/RungeKutta2nd3rd>
      RungeKutta4th<astrogator/RungeKutta4th>
      RungeKutta4th5th<astrogator/RungeKutta4th5th>
-     RungeKutta4thAdapt<astrogator/RungeKutta4thAdapt>
      RungeKuttaF7th8th<astrogator/RungeKuttaF7th8th>
      RungeKuttaV8th9th<astrogator/RungeKuttaV8th9th>
      ScriptingCalculationObject<astrogator/ScriptingCalculationObject>
@@ -2015,7 +2062,7 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcGeodeticMeanRightAscension<astrogator/StateCalcGeodeticMeanRightAscension>
      StateCalcGeodeticTrueLongitude<astrogator/StateCalcGeodeticTrueLongitude>
      StateCalcGeodeticTrueLongitudeAtTimeOfPerigee<astrogator/StateCalcGeodeticTrueLongitudeAtTimeOfPerigee>
-     StateCalcGravCoeff<astrogator/StateCalcGravCoeff>
+     StateCalcGravCoefficient<astrogator/StateCalcGravCoefficient>
      StateCalcGravitationalParameter<astrogator/StateCalcGravitationalParameter>
      StateCalcHeightAboveTerrain<astrogator/StateCalcHeightAboveTerrain>
      StateCalcImpactFlux<astrogator/StateCalcImpactFlux>
@@ -2124,7 +2171,12 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcVelocityAz<astrogator/StateCalcVelocityAz>
      StateCalcVelocityDifferenceOtherSegment<astrogator/StateCalcVelocityDifferenceOtherSegment>
      StateCalcVMagnitude<astrogator/StateCalcVMagnitude>
+     StateConfig<astrogator/StateConfig>
+     StateConfigCollection<astrogator/StateConfigCollection>
      StateTransformationFunction<astrogator/StateTransformationFunction>
+     StochasticDensityCorrection<astrogator/StochasticDensityCorrection>
+     StochasticModelParameters<astrogator/StochasticModelParameters>
+     StochasticParameters<astrogator/StochasticParameters>
      StoppingCondition<astrogator/StoppingCondition>
      StoppingConditionCollection<astrogator/StoppingConditionCollection>
      StoppingConditionElement<astrogator/StoppingConditionElement>
@@ -2179,7 +2231,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ CentralBodyGravityModel<astrogator/CentralBodyGravityModel>
     ≔ CentralBodyShape<astrogator/CentralBodyShape>
     ≔ ClearEphemerisDirection<astrogator/ClearEphemerisDirection>
-    ≔ CoeffRungeKuttaV8th9th<astrogator/CoeffRungeKuttaV8th9th>
+    ≔ CoefficientRungeKuttaV8th9th<astrogator/CoefficientRungeKuttaV8th9th>
     ≔ ComplexNumber<astrogator/ComplexNumber>
     ≔ ConstraintSign<astrogator/ConstraintSign>
     ≔ ControlAdvanced<astrogator/ControlAdvanced>
@@ -2208,6 +2260,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ DerivativeCalculationMethod<astrogator/DerivativeCalculationMethod>
     ≔ DifferenceOrder<astrogator/DifferenceOrder>
     ≔ DifferentialCorrectorScalingMethod<astrogator/DifferentialCorrectorScalingMethod>
+    ≔ DragCorrectionType<astrogator/DragCorrectionType>
     ≔ DragModelType<astrogator/DragModelType>
     ≔ DrawPerturbation<astrogator/DrawPerturbation>
     ≔ EclipsingBodiesSource<astrogator/EclipsingBodiesSource>
@@ -2216,6 +2269,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ EngineModelFunction<astrogator/EngineModelFunction>
     ≔ EphemerisSource<astrogator/EphemerisSource>
     ≔ ErrorControl<astrogator/ErrorControl>
+    ≔ FlightDynamicsRecordEpochType<astrogator/FlightDynamicsRecordEpochType>
     ≔ FollowJoin<astrogator/FollowJoin>
     ≔ FollowSeparation<astrogator/FollowSeparation>
     ≔ FollowSpacecraftAndFuelTank<astrogator/FollowSpacecraftAndFuelTank>
@@ -2229,7 +2283,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ GravitationalParameterSource<astrogator/GravitationalParameterSource>
     ≔ GravityCoefficientNormalizationType<astrogator/GravityCoefficientNormalizationType>
     ≔ GravityCoefficientType<astrogator/GravityCoefficientType>
-    ≔ GravParamSource<astrogator/GravParamSource>
+    ≔ GravParameterSource<astrogator/GravParameterSource>
     ≔ GridSearchDesiredOperation<astrogator/GridSearchDesiredOperation>
     ≔ IdealOrbitRadius<astrogator/IdealOrbitRadius>
     ≔ ImpulsiveDeltaVRepresentation<astrogator/ImpulsiveDeltaVRepresentation>
@@ -2275,9 +2329,11 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ SNOPTGoal<astrogator/SNOPTGoal>
     ≔ SolarForceMethod<astrogator/SolarForceMethod>
     ≔ SquaredType<astrogator/SquaredType>
+    ≔ SRPCorrectionType<astrogator/SRPCorrectionType>
     ≔ StateType<astrogator/StateType>
     ≔ STMEigenNumber<astrogator/STMEigenNumber>
     ≔ STMPerturbationVariables<astrogator/STMPerturbationVariables>
+    ≔ StochasticModel<astrogator/StochasticModel>
     ≔ StoppingConditionType<astrogator/StoppingConditionType>
     ≔ SunPosition<astrogator/SunPosition>
     ≔ TabVecInterpolationMethod<astrogator/TabVecInterpolationMethod>
@@ -2287,6 +2343,6 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ ThrusterDirection<astrogator/ThrusterDirection>
     ≔ ThrustType<astrogator/ThrustType>
     ≔ UpdateAction<astrogator/UpdateAction>
-    ≔ UpdateParam<astrogator/UpdateParam>
+    ≔ UpdateParameter<astrogator/UpdateParameter>
     ≔ VenusGRAMDensityType<astrogator/VenusGRAMDensityType>
 

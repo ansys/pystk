@@ -24,7 +24,6 @@ import pytest
 from test_util import *
 from assert_extension import *
 from assertion_harness import *
-from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_basic import *
@@ -90,15 +89,22 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region Definition
-    @category("Basic Tests")
-    def test_Definition(self):
-        TestBase.logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- BEGIN -----")
-        oHelper = ObjectLinkCollectionHelper(True)
-        oHelper.Run(EarlyBoundTests.AG_CH.objects, TestBase.Application)
-        TestBase.logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- END -----")
+    ##region Definition
+    # [Test]
+    # [Category("Basic Tests")]
+    # public void Definition()
+    # {
+    #    logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- BEGIN -----");
 
-    # endregion
+    #    //ObjectLinkCollectionHelper oHelper = new ObjectLinkCollectionHelper(true);
+    #    //oHelper.Run(AG_CH.Objects, Application);
+
+    #    // The "Objects" property was removed, and replaced by the StartObject, EndObject, and Connections properties.
+    #    // These properties are fully tested in these tests:  AdvancedRoutingIndividualObjs and AdvancedRoutingSatCollection
+
+    #    logger.WriteLine("----- THE CHAIN DEFINITION TEST ----- END -----");
+    # }
+    ##endregion
 
     # region Advanced
     @category("Basic Tests")
@@ -264,12 +270,12 @@ class EarlyBoundTests(TestBase):
 
         newChain.max_strand_depth = 2
         Assert.assertEqual(2, newChain.max_strand_depth)
-        newChain.max_strand_depth = 20
-        Assert.assertEqual(20, newChain.max_strand_depth)
+        newChain.max_strand_depth = 50
+        Assert.assertEqual(50, newChain.max_strand_depth)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             newChain.max_strand_depth = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            newChain.max_strand_depth = 21
+            newChain.max_strand_depth = 51
 
         self.Test_IAgChConnectionCollection(newChain.connections)
 
@@ -320,9 +326,15 @@ class EarlyBoundTests(TestBase):
         newChainObj: "ISTKObject" = clr.CastAs(newChain, ISTKObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
         resInfo: "DataProviderResult" = dpInfo.execute()
-        Assert.assertEqual(resInfo.data_sets.count, 2)
-        Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
-        Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 3)
+        Assert.assertEqual(2, resInfo.data_sets.count)
+        Assert.assertEqual(1, Array.Length(resInfo.data_sets[0].get_values()))
+        Assert.assertEqual(3, Array.Length(resInfo.data_sets[1].get_values()))
+
+        newChain.clear_access()
+        resInfo = dpInfo.execute()
+        Assert.assertEqual(2, resInfo.data_sets.count)
+        Assert.assertAlmostEqual(1, Array.Length(resInfo.data_sets[0].get_values()), delta=1)
+        Assert.assertEqual(1, Array.Length(resInfo.data_sets[1].get_values()))
 
         # Optimal Strands
 
@@ -405,6 +417,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
         )
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE, newChain.optimal_strand_opts.type)
 
         # Optimal Strands Calculation Scalar Name Type
         newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
@@ -567,12 +581,12 @@ class EarlyBoundTests(TestBase):
             newChain.connections.item_by_from_to_objects(allXmtrsSubset, place2Rcvr2).parent_platform_restriction,
         )
 
-        newChain.connections.item_by_from_to_objects(
-            allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
-        newChain.connections.item_by_from_to_objects(
-            allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
+        newChain.connections.item_by_from_to_objects(allRcvrsSubset, allXmtrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.NONE
+        )
+        newChain.connections.item_by_from_to_objects(allXmtrsSubset, allRcvrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.NONE
+        )
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -580,12 +594,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 2077)
 
-        newChain.connections.item_by_from_to_objects(
-            allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.SAME
-        newChain.connections.item_by_from_to_objects(
-            allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = ChainParentPlatformRestriction.DIFFERENT
+        newChain.connections.item_by_from_to_objects(allRcvrsSubset, allXmtrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.SAME
+        )
+        newChain.connections.item_by_from_to_objects(allXmtrsSubset, allRcvrsSubset).parent_platform_restriction = (
+            ChainParentPlatformRestriction.DIFFERENT
+        )
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -742,7 +756,6 @@ class EarlyBoundTests(TestBase):
     def Test_IAgChOptimalStrandOpts(self, optStrandOpts: "ChainOptimalStrandOpts"):
         optStrandOpts.compute = False
         Assert.assertFalse(optStrandOpts.compute)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -766,13 +779,11 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.compute = True
         Assert.assertTrue(optStrandOpts.compute)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             optStrandOpts.type = ChainOptimalStrandMetricType.UNKNOWN
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -786,7 +797,6 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -800,7 +810,19 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, optStrandOpts.type)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
 
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DATA_RATE, optStrandOpts.type)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
                 ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -814,10 +836,8 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             optStrandOpts.calc_scalar_type = ChainOptimalStrandCalculationScalarMetricType.UNKNOWN
-
         optStrandOpts.calc_scalar_type = (
             ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
         )
@@ -961,11 +981,6 @@ class EarlyBoundTests(TestBase):
         oAnimation.color = Colors.from_argb(14544639)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAnimation.color)
         AssertEx.AreEqual(Colors.from_argb(14544639), oAnimation.color)
-
-        TestBase.logger.WriteLine6("\tThe current OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        oAnimation.optimal_path_color = Colors.from_argb(16772829)
-        TestBase.logger.WriteLine6("\tThe new OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        AssertEx.AreEqual(Colors.from_argb(16772829), oAnimation.optimal_path_color)
 
         TestBase.logger.WriteLine6(
             "\tThe current OptimalPathColorRampStartColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_start_color
@@ -1187,32 +1202,5 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oConstraints.load_interval_file = ""
         TestBase.logger.WriteLine("----- THE CHAIN CONSTRAINTS TEST ----- END -----")
-
-    # endregion
-
-    # region ComputeAccess
-    def test_ComputeAccess(self):
-        EarlyBoundTests.AG_CH.objects.remove_all()
-        EarlyBoundTests.AG_CH.objects.add("Facility/Facility1")
-        EarlyBoundTests.AG_CH.objects.add("Satellite/Satellite1")
-        EarlyBoundTests.AG_CH.objects.add("AreaTarget/AreaTarget1")
-        Assert.assertEqual(3, EarlyBoundTests.AG_CH.objects.count)
-
-        EarlyBoundTests.AG_CH.compute_access()
-
-    # endregion
-
-    # region ClearAccess
-    def test_ClearAccess(self):
-        EarlyBoundTests.AG_CH.objects.remove_all()
-        EarlyBoundTests.AG_CH.objects.add("Facility/Facility1")
-        EarlyBoundTests.AG_CH.objects.add("Satellite/Satellite1")
-        EarlyBoundTests.AG_CH.objects.add("AreaTarget/AreaTarget1")
-        Assert.assertEqual(3, EarlyBoundTests.AG_CH.objects.count)
-
-        EarlyBoundTests.AG_CH.compute_access()
-
-        # Make sure the access lines are cleared
-        EarlyBoundTests.AG_CH.clear_access()
 
     # endregion

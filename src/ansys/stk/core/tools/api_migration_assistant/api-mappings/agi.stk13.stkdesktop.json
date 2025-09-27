@@ -1,0 +1,79 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkdesktop",
+        "NewRootScope": "ansys.stk.core.stkdesktop"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "ThreadMarshaller",
+            "OldName": "GetMarshalledToCurrentThread",
+            "NewName": "get_marshalled_to_current_thread"
+        },
+        {
+            "ParentScope": "ThreadMarshaller",
+            "OldName": "InitializeThread",
+            "NewName": "initialize_thread"
+        },
+        {
+            "ParentScope": "ThreadMarshaller",
+            "OldName": "ReleaseThread",
+            "NewName": "release_thread"
+        },
+        {
+            "ParentScope": "STKDesktopApplication",
+            "OldName": "Root",
+            "NewName": "root"
+        },
+        {
+            "ParentScope": "STKDesktopApplication",
+            "OldName": "NewObjectModelContext",
+            "NewName": "new_object_model_context"
+        },
+        {
+            "ParentScope": "STKDesktopApplication",
+            "OldName": "SetGrpcOptions",
+            "NewName": "set_grpc_options"
+        },
+        {
+            "ParentScope": "STKDesktopApplication",
+            "OldName": "NewGrpcCallBatcher",
+            "NewName": "new_grpc_call_batcher"
+        },
+        {
+            "ParentScope": "STKDesktopApplication",
+            "OldName": "ShutDown",
+            "NewName": "shutdown"
+        },
+        {
+            "ParentScope": "STKDesktop",
+            "OldName": "StartApplication",
+            "NewName": "start_application"
+        },
+        {
+            "ParentScope": "STKDesktop",
+            "OldName": "AttachToApplication",
+            "NewName": "attach_to_application"
+        },
+        {
+            "ParentScope": "STKDesktop",
+            "OldName": "ReleaseAll",
+            "NewName": "release_all"
+        },
+        {
+            "ParentScope": "STKDesktop",
+            "OldName": "CreateThreadMarshaller",
+            "NewName": "create_thread_marshaller"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": [
+        {
+            "ParentScope": "STKDesktop.StartApplication",
+            "OldName": "userControl",
+            "NewName": "user_control"
+        }
+    ]
+}

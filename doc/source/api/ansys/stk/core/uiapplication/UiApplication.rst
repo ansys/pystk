@@ -69,6 +69,8 @@ Overview
               - Return a reference to the currently loaded personality.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.personality2`
               - Return an new instance of the root object of the STK Object Model.
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.preferences_files_mode`
+              - Get or set whether to use saved user preference files.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.process_id`
               - Get process id for the current instance.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.top`
@@ -167,6 +169,12 @@ Property detail
     :type: typing.Any
 
     Return an new instance of the root object of the STK Object Model.
+
+.. py:property:: preferences_files_mode
+    :canonical: ansys.stk.core.uiapplication.UiApplication.preferences_files_mode
+    :type: PreferencesFilesMode
+
+    Get or set whether to use saved user preference files.
 
 .. py:property:: process_id
     :canonical: ansys.stk.core.uiapplication.UiApplication.process_id
@@ -376,6 +384,8 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
+
 
 
 

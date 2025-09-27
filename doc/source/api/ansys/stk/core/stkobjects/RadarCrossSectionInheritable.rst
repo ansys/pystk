@@ -12,15 +12,6 @@ Overview
 
 .. tab-set::
 
-    .. tab-item:: Methods
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.set_model`
-              - Do not use this method, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Sets the current RCS model by name.
-
     .. tab-item:: Properties
 
         .. list-table::
@@ -29,12 +20,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.inherit`
               - Get or set the option to inherit the radar cross section from the scenario object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets the current RCS model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model_component_linking`
               - Get the link/embed controller for managing the radar cross section model component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models`
-              - Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
 
 
 
@@ -55,44 +42,10 @@ Property detail
 
     Get or set the option to inherit the radar cross section from the scenario object.
 
-.. py:property:: model
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model
-    :type: RadarCrossSectionModel
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets the current RCS model.
-
 .. py:property:: model_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model_component_linking
     :type: IComponentLinkEmbedControl
 
     Get the link/embed controller for managing the radar cross section model component.
-
-.. py:property:: supported_models
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models
-    :type: list
-
-    Do not use this property, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Gets an array of supported model names.
-
-
-Method detail
--------------
-
-
-
-
-
-.. py:method:: set_model(self, model_name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.set_model
-
-    Do not use this method, as it is deprecated. Use ModelComponentLinking on RadarCrossSectionInheritable instead. Sets the current RCS model by name.
-
-    :Parameters:
-
-        **model_name** : :obj:`~str`
-
-
-    :Returns:
-
-        :obj:`~None`
 
 

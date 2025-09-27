@@ -1,0 +1,1648 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkrfchannelmodeler",
+        "NewRootScope": "ansys.stk.core.stkrfchannelmodeler"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgStkRfcmProgressTrackCancel",
+            "OldName": "CancelRequested",
+            "NewName": "cancel_requested"
+        },
+        {
+            "ParentScope": "IAgStkRfcmProgressTrackCancel",
+            "OldName": "UpdateProgress",
+            "NewName": "update_progress"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "FrequencySamplesPerSounding",
+            "NewName": "frequency_samples_per_sounding"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "ChannelBandwidth",
+            "NewName": "channel_bandwidth"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "RFChannelFrequency",
+            "NewName": "rf_channel_frequency"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "SoundingInterval",
+            "NewName": "sounding_interval"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "SoundingsPerAnalysisTimeStep",
+            "NewName": "soundings_per_analysis_time_step"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "CompleteSimulationInterval",
+            "NewName": "complete_simulation_interval"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "UnambiguousChannelDelay",
+            "NewName": "unambiguous_channel_delay"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsWaveform",
+            "OldName": "UnambiguousChannelDistance",
+            "NewName": "unambiguous_channel_distance"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarWaveform",
+            "OldName": "RFChannelFrequency",
+            "NewName": "rf_channel_frequency"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarWaveform",
+            "OldName": "PulseRepetitionFrequency",
+            "NewName": "pulse_repetition_frequency"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarWaveform",
+            "OldName": "Bandwidth",
+            "NewName": "bandwidth"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAntenna",
+            "OldName": "Type",
+            "NewName": "type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmElementExportPatternAntenna",
+            "OldName": "HfssElementExportPatternFile",
+            "NewName": "hfss_element_export_pattern_file"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFarFieldDataPatternAntenna",
+            "OldName": "HfssFarFieldDataPatternFile",
+            "NewName": "hfss_far_field_data_pattern_file"
+        },
+        {
+            "ParentScope": "IAgStkRfcmParametricBeamAntenna",
+            "OldName": "PolarizationType",
+            "NewName": "polarization_type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmParametricBeamAntenna",
+            "OldName": "VerticalBeamwidth",
+            "NewName": "vertical_beamwidth"
+        },
+        {
+            "ParentScope": "IAgStkRfcmParametricBeamAntenna",
+            "OldName": "HorizontalBeamwidth",
+            "NewName": "horizontal_beamwidth"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverModel",
+            "OldName": "Type",
+            "NewName": "type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverModel",
+            "OldName": "SetAntennaType",
+            "NewName": "set_antenna_type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverModel",
+            "OldName": "SupportedAntennaTypes",
+            "NewName": "supported_antenna_types"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverModel",
+            "OldName": "Antenna",
+            "NewName": "antenna"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverModel",
+            "OldName": "Waveform",
+            "NewName": "waveform"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverModel",
+            "OldName": "Waveform",
+            "NewName": "waveform"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiver",
+            "OldName": "Identifier",
+            "NewName": "identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiver",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiver",
+            "OldName": "ParentObjectPath",
+            "NewName": "parent_object_path"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiver",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiver",
+            "OldName": "Model",
+            "NewName": "model"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmTransceiverCollection",
+            "OldName": "FindByIdentifier",
+            "NewName": "find_by_identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfiguration",
+            "OldName": "SupportedTransceivers",
+            "NewName": "supported_transceivers"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfiguration",
+            "OldName": "Transceiver",
+            "NewName": "transceiver"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfiguration",
+            "OldName": "Mode",
+            "NewName": "mode"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfiguration",
+            "OldName": "IncludeParentObjectFacets",
+            "NewName": "include_parent_object_facets"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfiguration",
+            "OldName": "SupportedTransceivers",
+            "NewName": "supported_transceivers"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfiguration",
+            "OldName": "Transceiver",
+            "NewName": "transceiver"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfiguration",
+            "OldName": "Mode",
+            "NewName": "mode"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributor",
+            "OldName": "StkObjectPath",
+            "NewName": "stk_object_path"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributor",
+            "OldName": "Material",
+            "NewName": "material"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributor",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributor",
+            "OldName": "FocusedRayDensity",
+            "NewName": "focused_ray_density"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmSceneContributorCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmValidationResponse",
+            "OldName": "Value",
+            "NewName": "value"
+        },
+        {
+            "ParentScope": "IAgStkRfcmValidationResponse",
+            "OldName": "Message",
+            "NewName": "message"
+        },
+        {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "NorthLatitude",
+            "NewName": "north_latitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "SouthLatitude",
+            "NewName": "south_latitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "EastLongitude",
+            "NewName": "east_longitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "WestLongitude",
+            "NewName": "west_longitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmExtent",
+            "OldName": "SetExtentValues",
+            "NewName": "set_extent_values"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "Type",
+            "NewName": "type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "Properties",
+            "NewName": "properties"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "HeightStandardDeviation",
+            "NewName": "height_standard_deviation"
+        },
+        {
+            "ParentScope": "IAgStkRfcmMaterial",
+            "OldName": "Roughness",
+            "NewName": "roughness"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTileset",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTileset",
+            "OldName": "Uri",
+            "NewName": "uri"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTileset",
+            "OldName": "Material",
+            "NewName": "material"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTileset",
+            "OldName": "ReferenceFrame",
+            "NewName": "reference_frame"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTileset",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFacetTilesetCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocation",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocation",
+            "OldName": "Latitude",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocation",
+            "OldName": "Longitude",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarImageLocationCollection",
+            "OldName": "Find",
+            "NewName": "find"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "RangeValues",
+            "NewName": "range_values"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "RangeCount",
+            "NewName": "range_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "VelocityValues",
+            "NewName": "velocity_values"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "VelocityCount",
+            "NewName": "velocity_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "PulseCount",
+            "NewName": "pulse_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "AngularVelocity",
+            "NewName": "angular_velocity"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRangeDopplerResponse",
+            "OldName": "DataDimensions",
+            "NewName": "data_dimensions"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
+            "OldName": "PulseCount",
+            "NewName": "pulse_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
+            "OldName": "FrequencySampleCount",
+            "NewName": "frequency_sample_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmFrequencyPulseResponse",
+            "OldName": "DataDimensions",
+            "NewName": "data_dimensions"
+        },
+        {
+            "ParentScope": "IAgStkRfcmResponse",
+            "OldName": "Type",
+            "NewName": "type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmResponse",
+            "OldName": "Data",
+            "NewName": "data"
+        },
+        {
+            "ParentScope": "IAgStkRfcmResponse",
+            "OldName": "TransmitAntennaCount",
+            "NewName": "transmit_antenna_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmResponse",
+            "OldName": "ReceiveAntennaCount",
+            "NewName": "receive_antenna_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "TransmitTransceiverIdentifier",
+            "NewName": "transmit_transceiver_identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "TransmitTransceiverName",
+            "NewName": "transmit_transceiver_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "ReceiveTransceiverIdentifier",
+            "NewName": "receive_transceiver_identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "ReceiveTransceiverName",
+            "NewName": "receive_transceiver_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "TransmitAntennaCount",
+            "NewName": "transmit_antenna_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "ReceiveAntennaCount",
+            "NewName": "receive_antenna_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "AnalysisIntervals",
+            "NewName": "analysis_intervals"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLink",
+            "OldName": "Compute",
+            "NewName": "compute"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarAnalysisLink",
+            "OldName": "ImageLocationName",
+            "NewName": "image_location_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarISarAnalysisLink",
+            "OldName": "TargetObjectPath",
+            "NewName": "target_object_path"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLinkCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLinkCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisLinkCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysis",
+            "OldName": "AnalysisLinkCollection",
+            "NewName": "analysis_link_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "Type",
+            "NewName": "type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "SceneContributorCollection",
+            "NewName": "scene_contributor_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "LinkCount",
+            "NewName": "link_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "ValidateConfiguration",
+            "NewName": "validate_configuration"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "ValidatePlatformFacets",
+            "NewName": "validate_platform_facets"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "IntervalStart",
+            "NewName": "interval_start"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "IntervalStop",
+            "NewName": "interval_stop"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "ComputeStepMode",
+            "NewName": "compute_step_mode"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "FixedStepCount",
+            "NewName": "fixed_step_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "FixedStepSize",
+            "NewName": "fixed_step_size"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "ResultsFileMode",
+            "NewName": "results_file_mode"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "UseScenarioAnalysisInterval",
+            "NewName": "use_scenario_analysis_interval"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "HideIncompatibleTilesets",
+            "NewName": "hide_incompatible_tilesets"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "SupportedFacetTilesets",
+            "NewName": "supported_facet_tilesets"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "FacetTilesetCollection",
+            "NewName": "facet_tileset_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationModel",
+            "OldName": "AnalysisExtent",
+            "NewName": "analysis_extent"
+        },
+        {
+            "ParentScope": "IAgStkRfcmCommunicationsAnalysisConfigurationModel",
+            "OldName": "TransceiverConfigurationCollection",
+            "NewName": "transceiver_configuration_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "EnableSensorFixedDistance",
+            "NewName": "enable_sensor_fixed_distance"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "DesiredSensorFixedDistance",
+            "NewName": "desired_sensor_fixed_distance"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "DistanceToRangeWindowStart",
+            "NewName": "distance_to_range_window_start"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "DistanceToRangeWindowCenter",
+            "NewName": "distance_to_range_window_center"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "CenterImageInRangeWindow",
+            "NewName": "center_image_in_range_window"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "EnableRangeDopplerImaging",
+            "NewName": "enable_range_doppler_imaging"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RangePixelCount",
+            "NewName": "range_pixel_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "VelocityPixelCount",
+            "NewName": "velocity_pixel_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RangeWindowType",
+            "NewName": "range_window_type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RangeWindowSideLobeLevel",
+            "NewName": "range_window_side_lobe_level"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "VelocityWindowType",
+            "NewName": "velocity_window_type"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "VelocityWindowSideLobeLevel",
+            "NewName": "velocity_window_side_lobe_level"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RangeResolution",
+            "NewName": "range_resolution"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RangeWindowSize",
+            "NewName": "range_window_size"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "CrossRangeResolution",
+            "NewName": "cross_range_resolution"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "CrossRangeWindowSize",
+            "NewName": "cross_range_window_size"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "RequiredBandwidth",
+            "NewName": "required_bandwidth"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "CollectionAngle",
+            "NewName": "collection_angle"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "FrequencySamplesPerPulse",
+            "NewName": "frequency_samples_per_pulse"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "MinimumPulseCount",
+            "NewName": "minimum_pulse_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProduct",
+            "OldName": "Identifier",
+            "NewName": "identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProductCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProductCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProductCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProductCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarImagingDataProductCollection",
+            "OldName": "FindByIdentifier",
+            "NewName": "find_by_identifier"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarAnalysisConfigurationModel",
+            "OldName": "TransceiverConfigurationCollection",
+            "NewName": "transceiver_configuration_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarAnalysisConfigurationModel",
+            "OldName": "ImagingDataProductList",
+            "NewName": "imaging_data_product_list"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarISarAnalysisConfigurationModel",
+            "OldName": "RadarTargetCollection",
+            "NewName": "radar_target_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmRadarSarAnalysisConfigurationModel",
+            "OldName": "ImageLocationCollection",
+            "NewName": "image_location_collection"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfiguration",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfiguration",
+            "OldName": "Description",
+            "NewName": "description"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfiguration",
+            "OldName": "SupportedCentralBodies",
+            "NewName": "supported_central_bodies"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfiguration",
+            "OldName": "CentralBodyName",
+            "NewName": "central_body_name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfiguration",
+            "OldName": "Model",
+            "NewName": "model"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "RemoveAt",
+            "NewName": "remove_at"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "AddNew",
+            "NewName": "add_new"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "RemoveAll",
+            "NewName": "remove_all"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Contains",
+            "NewName": "contains"
+        },
+        {
+            "ParentScope": "IAgStkRfcmAnalysisConfigurationCollection",
+            "OldName": "Find",
+            "NewName": "find"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "RayDensity",
+            "NewName": "ray_density"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "GeometricalOpticsBlockage",
+            "NewName": "geometrical_optics_blockage"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "GeometricalOpticsBlockageStartingBounce",
+            "NewName": "geometrical_optics_blockage_starting_bounce"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "MaximumReflections",
+            "NewName": "maximum_reflections"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "MaximumTransmissions",
+            "NewName": "maximum_transmissions"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "BoundingBoxMode",
+            "NewName": "bounding_box_mode"
+        },
+        {
+            "ParentScope": "IAgStkRfcmComputeOptions",
+            "OldName": "BoundingBoxSideLength",
+            "NewName": "bounding_box_side_length"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "Name",
+            "NewName": "name"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "ComputeCapability",
+            "NewName": "compute_capability"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "DeviceId",
+            "NewName": "device_id"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "ProcessorCount",
+            "NewName": "processor_count"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "SpeedMHz",
+            "NewName": "speed_mhz"
+        },
+        {
+            "ParentScope": "IAgStkRfcmGpuProperties",
+            "OldName": "MemoryGB",
+            "NewName": "memory_gb"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "TransceiverCollection",
+            "NewName": "transceiver_collection"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "AnalysisConfigurationCollection",
+            "NewName": "analysis_configuration_collection"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "DuplicateTransceiver",
+            "NewName": "duplicate_transceiver"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "DuplicateAnalysisConfiguration",
+            "NewName": "duplicate_analysis_configuration"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "SupportedMaterials",
+            "NewName": "supported_materials"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "DefaultMaterials",
+            "NewName": "default_materials"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "ComputeOptions",
+            "NewName": "compute_options"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "SupportedGpuPropertiesList",
+            "NewName": "supported_gpu_properties_list"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "SetGpuDevices",
+            "NewName": "set_gpu_devices"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "ConstructAnalysis",
+            "NewName": "construct_analysis"
+        },
+        {
+            "ParentScope": "IAgStkRFChannelModeler",
+            "OldName": "ValidateAnalysis",
+            "NewName": "validate_analysis"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgStkRfcmProgressTrackCancel",
+            "NewName": "IProgressTrackCancel"
+        },
+        {
+            "OldName": "IAgStkRfcmCommunicationsWaveform",
+            "NewName": "CommunicationsWaveform"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarWaveform",
+            "NewName": "RadarWaveform"
+        },
+        {
+            "OldName": "IAgStkRfcmAntenna",
+            "NewName": "IAntenna"
+        },
+        {
+            "OldName": "IAgStkRfcmElementExportPatternAntenna",
+            "NewName": "ElementExportPatternAntenna"
+        },
+        {
+            "OldName": "IAgStkRfcmFarFieldDataPatternAntenna",
+            "NewName": "FarFieldDataPatternAntenna"
+        },
+        {
+            "OldName": "IAgStkRfcmParametricBeamAntenna",
+            "NewName": "ParametricBeamAntenna"
+        },
+        {
+            "OldName": "IAgStkRfcmTransceiverModel",
+            "NewName": "ITransceiverModel"
+        },
+        {
+            "OldName": "IAgStkRfcmCommunicationsTransceiverModel",
+            "NewName": "CommunicationsTransceiverModel"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarTransceiverModel",
+            "NewName": "RadarTransceiverModel"
+        },
+        {
+            "OldName": "IAgStkRfcmTransceiver",
+            "NewName": "Transceiver"
+        },
+        {
+            "OldName": "IAgStkRfcmTransceiverCollection",
+            "NewName": "TransceiverCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmCommunicationsTransceiverConfiguration",
+            "NewName": "CommunicationsTransceiverConfiguration"
+        },
+        {
+            "OldName": "IAgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "NewName": "CommunicationsTransceiverConfigurationCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarTransceiverConfiguration",
+            "NewName": "RadarTransceiverConfiguration"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarTransceiverConfigurationCollection",
+            "NewName": "RadarTransceiverConfigurationCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmSceneContributor",
+            "NewName": "SceneContributor"
+        },
+        {
+            "OldName": "IAgStkRfcmSceneContributorCollection",
+            "NewName": "ISceneContributorCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmValidationResponse",
+            "NewName": "ValidationResponse"
+        },
+        {
+            "OldName": "IAgStkRfcmExtent",
+            "NewName": "Extent"
+        },
+        {
+            "OldName": "IAgStkRfcmMaterial",
+            "NewName": "Material"
+        },
+        {
+            "OldName": "IAgStkRfcmFacetTileset",
+            "NewName": "FacetTileset"
+        },
+        {
+            "OldName": "IAgStkRfcmFacetTilesetCollection",
+            "NewName": "FacetTilesetCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarSarImageLocation",
+            "NewName": "RadarSarImageLocation"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarSarImageLocationCollection",
+            "NewName": "RadarSarImageLocationCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmRangeDopplerResponse",
+            "NewName": "RangeDopplerResponse"
+        },
+        {
+            "OldName": "IAgStkRfcmFrequencyPulseResponse",
+            "NewName": "FrequencyPulseResponse"
+        },
+        {
+            "OldName": "IAgStkRfcmResponse",
+            "NewName": "IResponse"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysisLink",
+            "NewName": "IAnalysisLink"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarSarAnalysisLink",
+            "NewName": "RadarSarAnalysisLink"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarISarAnalysisLink",
+            "NewName": "RadarISarAnalysisLink"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysisLinkCollection",
+            "NewName": "AnalysisLinkCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysis",
+            "NewName": "Analysis"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysisConfigurationModel",
+            "NewName": "IAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "IAgStkRfcmCommunicationsAnalysisConfigurationModel",
+            "NewName": "CommunicationsAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarImagingDataProduct",
+            "NewName": "RadarImagingDataProduct"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarImagingDataProductCollection",
+            "NewName": "RadarImagingDataProductCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarAnalysisConfigurationModel",
+            "NewName": "IRadarAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarISarAnalysisConfigurationModel",
+            "NewName": "RadarISarAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "IAgStkRfcmRadarSarAnalysisConfigurationModel",
+            "NewName": "RadarSarAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysisConfiguration",
+            "NewName": "AnalysisConfiguration"
+        },
+        {
+            "OldName": "IAgStkRfcmAnalysisConfigurationCollection",
+            "NewName": "AnalysisConfigurationCollection"
+        },
+        {
+            "OldName": "IAgStkRfcmComputeOptions",
+            "NewName": "ComputeOptions"
+        },
+        {
+            "OldName": "IAgStkRfcmGpuProperties",
+            "NewName": "GpuProperties"
+        },
+        {
+            "OldName": "IAgStkRFChannelModeler",
+            "NewName": "STKRFChannelModeler"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgStkRfcmRadarImagingDataProduct",
+            "NewName": "RadarImagingDataProduct"
+        },
+        {
+            "OldName": "AgStkRfcmMaterial",
+            "NewName": "Material"
+        },
+        {
+            "OldName": "AgStkRfcmFacetTileset",
+            "NewName": "FacetTileset"
+        },
+        {
+            "OldName": "AgStkRfcmValidationResponse",
+            "NewName": "ValidationResponse"
+        },
+        {
+            "OldName": "AgStkRfcmExtent",
+            "NewName": "Extent"
+        },
+        {
+            "OldName": "AgStkRfcmCommunicationsWaveform",
+            "NewName": "CommunicationsWaveform"
+        },
+        {
+            "OldName": "AgStkRfcmRadarWaveform",
+            "NewName": "RadarWaveform"
+        },
+        {
+            "OldName": "AgStkRfcmParametricBeamAntenna",
+            "NewName": "ParametricBeamAntenna"
+        },
+        {
+            "OldName": "AgStkRfcmElementExportPatternAntenna",
+            "NewName": "ElementExportPatternAntenna"
+        },
+        {
+            "OldName": "AgStkRfcmFarFieldDataPatternAntenna",
+            "NewName": "FarFieldDataPatternAntenna"
+        },
+        {
+            "OldName": "AgStkRfcmTransceiver",
+            "NewName": "Transceiver"
+        },
+        {
+            "OldName": "AgStkRfcmCommunicationsTransceiverConfiguration",
+            "NewName": "CommunicationsTransceiverConfiguration"
+        },
+        {
+            "OldName": "AgStkRfcmRadarTransceiverConfiguration",
+            "NewName": "RadarTransceiverConfiguration"
+        },
+        {
+            "OldName": "AgStkRfcmRadarImagingDataProductCollection",
+            "NewName": "RadarImagingDataProductCollection"
+        },
+        {
+            "OldName": "AgStkRfcmRadarTransceiverConfigurationCollection",
+            "NewName": "RadarTransceiverConfigurationCollection"
+        },
+        {
+            "OldName": "AgStkRfcmAnalysisConfiguration",
+            "NewName": "AnalysisConfiguration"
+        },
+        {
+            "OldName": "AgStkRfcmCommunicationsAnalysisConfigurationModel",
+            "NewName": "CommunicationsAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "AgStkRfcmRadarISarAnalysisConfigurationModel",
+            "NewName": "RadarISarAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "AgStkRfcmRadarSarAnalysisConfigurationModel",
+            "NewName": "RadarSarAnalysisConfigurationModel"
+        },
+        {
+            "OldName": "AgStkRfcmTransceiverCollection",
+            "NewName": "TransceiverCollection"
+        },
+        {
+            "OldName": "AgStkRfcmFacetTilesetCollection",
+            "NewName": "FacetTilesetCollection"
+        },
+        {
+            "OldName": "AgStkRfcmSceneContributor",
+            "NewName": "SceneContributor"
+        },
+        {
+            "OldName": "AgStkRfcmSceneContributorCollection",
+            "NewName": "SceneContributorCollection"
+        },
+        {
+            "OldName": "AgStkRfcmRadarTargetCollection",
+            "NewName": "RadarTargetCollection"
+        },
+        {
+            "OldName": "AgStkRfcmRadarSarImageLocation",
+            "NewName": "RadarSarImageLocation"
+        },
+        {
+            "OldName": "AgStkRfcmRadarSarImageLocationCollection",
+            "NewName": "RadarSarImageLocationCollection"
+        },
+        {
+            "OldName": "AgStkRfcmCommunicationsTransceiverConfigurationCollection",
+            "NewName": "CommunicationsTransceiverConfigurationCollection"
+        },
+        {
+            "OldName": "AgStkRfcmAnalysisConfigurationCollection",
+            "NewName": "AnalysisConfigurationCollection"
+        },
+        {
+            "OldName": "AgStkRfcmComputeOptions",
+            "NewName": "ComputeOptions"
+        },
+        {
+            "OldName": "AgStkRFChannelModeler",
+            "NewName": "STKRFChannelModeler"
+        },
+        {
+            "OldName": "AgStkRfcmCommunicationsTransceiverModel",
+            "NewName": "CommunicationsTransceiverModel"
+        },
+        {
+            "OldName": "AgStkRfcmRadarTransceiverModel",
+            "NewName": "RadarTransceiverModel"
+        },
+        {
+            "OldName": "AgStkRfcmRangeDopplerResponse",
+            "NewName": "RangeDopplerResponse"
+        },
+        {
+            "OldName": "AgStkRfcmFrequencyPulseResponse",
+            "NewName": "FrequencyPulseResponse"
+        },
+        {
+            "OldName": "AgStkRfcmAnalysisLink",
+            "NewName": "AnalysisLink"
+        },
+        {
+            "OldName": "AgStkRfcmRadarSarAnalysisLink",
+            "NewName": "RadarSarAnalysisLink"
+        },
+        {
+            "OldName": "AgStkRfcmRadarISarAnalysisLink",
+            "NewName": "RadarISarAnalysisLink"
+        },
+        {
+            "OldName": "AgStkRfcmAnalysisLinkCollection",
+            "NewName": "AnalysisLinkCollection"
+        },
+        {
+            "OldName": "AgStkRfcmAnalysis",
+            "NewName": "Analysis"
+        },
+        {
+            "OldName": "AgStkRfcmGpuProperties",
+            "NewName": "GpuProperties"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgERfcmChannelResponseType",
+            "NewName": "ChannelResponseType"
+        },
+        {
+            "OldName": "AgERfcmAnalysisConfigurationModelType",
+            "NewName": "AnalysisConfigurationModelType"
+        },
+        {
+            "OldName": "AgERfcmTransceiverMode",
+            "NewName": "TransceiverMode"
+        },
+        {
+            "OldName": "AgERfcmAnalysisConfigurationComputeStepMode",
+            "NewName": "AnalysisConfigurationComputeStepMode"
+        },
+        {
+            "OldName": "AgERfcmAnalysisResultsFileMode",
+            "NewName": "AnalysisResultsFileMode"
+        },
+        {
+            "OldName": "AgERfcmAnalysisSolverBoundingBoxMode",
+            "NewName": "AnalysisSolverBoundingBoxMode"
+        },
+        {
+            "OldName": "AgERfcmTransceiverModelType",
+            "NewName": "TransceiverModelType"
+        },
+        {
+            "OldName": "AgERfcmPolarizationType",
+            "NewName": "PolarizationType"
+        },
+        {
+            "OldName": "AgERfcmImageWindowType",
+            "NewName": "ImageWindowType"
+        }
+    ],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "AgERfcmChannelResponseType",
+            "OldName": "eRfcmChannelResponseTypeFrequencyPulse",
+            "NewName": "FREQUENCY_PULSE"
+        },
+        {
+            "ParentScope": "AgERfcmChannelResponseType",
+            "OldName": "eRfcmChannelResponseTypeRangeDoppler",
+            "NewName": "RANGE_DOPPLER"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationModelType",
+            "OldName": "eRfcmAnalysisConfigurationModelTypeCommunications",
+            "NewName": "COMMUNICATIONS"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationModelType",
+            "OldName": "eRfcmAnalysisConfigurationModelTypeRadarISar",
+            "NewName": "RADAR_I_SAR"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationModelType",
+            "OldName": "eRfcmAnalysisConfigurationModelTypeRadarSar",
+            "NewName": "RADAR_SAR"
+        },
+        {
+            "ParentScope": "AgERfcmTransceiverMode",
+            "OldName": "eRfcmTransceiverModeTransceive",
+            "NewName": "TRANSCEIVE"
+        },
+        {
+            "ParentScope": "AgERfcmTransceiverMode",
+            "OldName": "eRfcmTransceiverModeTransmitOnly",
+            "NewName": "TRANSMIT_ONLY"
+        },
+        {
+            "ParentScope": "AgERfcmTransceiverMode",
+            "OldName": "eRfcmTransceiverModeReceiveOnly",
+            "NewName": "RECEIVE_ONLY"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
+            "OldName": "eRfcmAnalysisConfigurationComputeStepModeFixedStepSize",
+            "NewName": "FIXED_STEP_SIZE"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
+            "OldName": "eRfcmAnalysisConfigurationComputeStepModeFixedStepCount",
+            "NewName": "FIXED_STEP_COUNT"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisConfigurationComputeStepMode",
+            "OldName": "eRfcmAnalysisConfigurationComputeStepModeContinuousChannelSoundings",
+            "NewName": "CONTINUOUS_CHANNEL_SOUNDINGS"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisResultsFileMode",
+            "OldName": "eRfcmAnalysisResultsFileModeSingleFile",
+            "NewName": "SINGLE_FILE"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisResultsFileMode",
+            "OldName": "eRfcmAnalysisResultsFileModeOneFilePerLink",
+            "NewName": "ONE_FILE_PER_LINK"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
+            "OldName": "eRfcmAnalysisSolverBoundingBoxModeDefault",
+            "NewName": "DEFAULT"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
+            "OldName": "eRfcmAnalysisSolverBoundingBoxModeFullScene",
+            "NewName": "FULL_SCENE"
+        },
+        {
+            "ParentScope": "AgERfcmAnalysisSolverBoundingBoxMode",
+            "OldName": "eRfcmAnalysisSolverBoundingBoxModeCustom",
+            "NewName": "CUSTOM"
+        },
+        {
+            "ParentScope": "AgERfcmTransceiverModelType",
+            "OldName": "eRfcmTransceiverModelTypeCommunications",
+            "NewName": "COMMUNICATIONS"
+        },
+        {
+            "ParentScope": "AgERfcmTransceiverModelType",
+            "OldName": "eRfcmTransceiverModelTypeRadar",
+            "NewName": "RADAR"
+        },
+        {
+            "ParentScope": "AgERfcmPolarizationType",
+            "OldName": "eRfcmPolarizationTypeVertical",
+            "NewName": "VERTICAL"
+        },
+        {
+            "ParentScope": "AgERfcmPolarizationType",
+            "OldName": "eRfcmPolarizationTypeHorizontal",
+            "NewName": "HORIZONTAL"
+        },
+        {
+            "ParentScope": "AgERfcmPolarizationType",
+            "OldName": "eRfcmPolarizationTypeRHCP",
+            "NewName": "RIGHT_HAND_CIRCULAR_POLARIZATION"
+        },
+        {
+            "ParentScope": "AgERfcmPolarizationType",
+            "OldName": "eRfcmPolarizationTypeLHCP",
+            "NewName": "LEFT_HAND_CIRCULAR_POLARIZATION"
+        },
+        {
+            "ParentScope": "AgERfcmImageWindowType",
+            "OldName": "eRfcmImageWindowTypeFlat",
+            "NewName": "FLAT"
+        },
+        {
+            "ParentScope": "AgERfcmImageWindowType",
+            "OldName": "eRfcmImageWindowTypeHann",
+            "NewName": "HANN"
+        },
+        {
+            "ParentScope": "AgERfcmImageWindowType",
+            "OldName": "eRfcmImageWindowTypeHamming",
+            "NewName": "HAMMING"
+        },
+        {
+            "ParentScope": "AgERfcmImageWindowType",
+            "OldName": "eRfcmImageWindowTypeTaylor",
+            "NewName": "TAYLOR"
+        }
+    ],
+    "NamedArgumentMappings": []
+}

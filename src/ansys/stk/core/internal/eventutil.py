@@ -41,7 +41,6 @@ from .comevents import (COMEventHandlerImpl, ISTKXApplicationEventCOMHandler,
                         ITerrainOverlayCollectionEventCOMHandler,
                         ISTKObjectRootEventCOMHandler, IGraphics2DControlEventCOMHandler,
                         IGraphics3DControlEventCOMHandler)
-from ..utilities.exceptions import STKAttributeError, STKEventsAPIError, STKRuntimeError
 
 try:
     from .grpcutil   import GrpcInterface
@@ -55,7 +54,7 @@ except:
         def __init__(self):
             pass
 
-invalid_use_exception = STKEventsAPIError("Use operator += to register an event callback or operator -= to unregister the callback.")
+invalid_use_exception = SyntaxError("Use operator += to register an event callback or operator -= to unregister the callback.")
 
 class _EventSubscriptionManagerImpl(object):
     def __init__(self):
@@ -191,7 +190,7 @@ class ISTKObjectRootEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = ISTKObjectRootEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKObjectRootEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKObjectRootEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -201,7 +200,7 @@ class ISTKObjectRootEventHandler(STKEventSubscriber):
         if attrname in ISTKObjectRootEventHandler.__dict__ and type(ISTKObjectRootEventHandler.__dict__[attrname]) == property:
             ISTKObjectRootEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in STKObjectRootEvents.")
+            raise AttributeError(attrname + " is not a recognized event in STKObjectRootEvents.")
 
     @property
     def on_scenario_new(self):
@@ -500,7 +499,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = ISTKXApplicationEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKXApplicationEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKXApplicationEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -510,7 +509,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         if attrname in ISTKXApplicationEventHandler.__dict__ and type(ISTKXApplicationEventHandler.__dict__[attrname]) == property:
             ISTKXApplicationEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in STKXApplicationEvents.")
+            raise AttributeError(attrname + " is not a recognized event in STKXApplicationEvents.")
 
     @property
     def on_scenario_new(self):
@@ -660,7 +659,7 @@ class IUiAxStockEventHandler(object):
         if attrname in IUiAxStockEventHandler.__dict__ and type(IUiAxStockEventHandler.__dict__[attrname]) == property:
             IUiAxStockEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in IAgUiAxStockEvents.")
+            raise AttributeError(attrname + " is not a recognized event in IAgUiAxStockEvents.")
 
     @property
     def key_down(self):
@@ -760,9 +759,9 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandle
         if type(interface)==IUnknown:
             impl = IGraphics2DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
+            raise RuntimeError(f"Active X Control events are not available with gRPC.")
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics2DCntrlEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics2DCntrlEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -775,22 +774,23 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandle
             if attrname in IUiAxGraphics2DCntrlEventHandler.__dict__ and type(IUiAxGraphics2DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in Graphics2DControlBaseEvents.")
+                raise AttributeError(attrname + " is not a recognized event in Graphics2DControlBaseEvents.")
 
 
 class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandler):
     def __init__(self, interface):
         self.__dict__["_events"] = {}
-        self._events["_OnObjectEditingStart"]     = _STKEvent()
-        self._events["_OnObjectEditingApply"]     = _STKEvent()
-        self._events["_OnObjectEditingCancel"]    = _STKEvent()
-        self._events["_OnObjectEditingStop"]      = _STKEvent()
+        self._events["OnObjectEditingStart"]     = _STKEvent()
+        self._events["OnObjectEditingApply"]     = _STKEvent()
+        self._events["OnObjectEditingCancel"]    = _STKEvent()
+        self._events["OnObjectEditingStop"]      = _STKEvent()
+        IUiAxStockEventHandler.__init__(self)
         if type(interface)==IUnknown:
             impl = IGraphics3DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
-            raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
+            raise RuntimeError(f"Active X Control events are not available with gRPC.")
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics3DCntrlEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics3DCntrlEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -803,7 +803,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IUiAxStockEventHandle
             if attrname in IUiAxGraphics3DCntrlEventHandler.__dict__ and type(IUiAxGraphics3DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics3DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in Graphics3DControlBaseEvents.")
+                raise AttributeError(attrname + " is not a recognized event in Graphics3DControlBaseEvents.")
 
     @property
     def on_object_editing_start(self):
@@ -855,7 +855,7 @@ class ISceneEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = ISceneEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISceneEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create ISceneEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -865,7 +865,7 @@ class ISceneEventHandler(STKEventSubscriber):
         if attrname in ISceneEventHandler.__dict__ and type(ISceneEventHandler.__dict__[attrname]) == property:
             ISceneEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in SceneEvents.")
+            raise AttributeError(attrname + " is not a recognized event in SceneEvents.")
 
     @property
     def rendering(self):
@@ -890,7 +890,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = IKmlGraphicsEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IKmlGraphicsEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create IKmlGraphicsEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -900,7 +900,7 @@ class IKmlGraphicsEventHandler(STKEventSubscriber):
         if attrname in IKmlGraphicsEventHandler.__dict__ and type(IKmlGraphicsEventHandler.__dict__[attrname]) == property:
             IKmlGraphicsEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in KmlGraphicsEvents.")
+            raise AttributeError(attrname + " is not a recognized event in KmlGraphicsEvents.")
 
     @property
     def document_loaded(self):
@@ -925,7 +925,7 @@ class IImageCollectionEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = IImageCollectionEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IImageCollectionEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create IImageCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -935,7 +935,7 @@ class IImageCollectionEventHandler(STKEventSubscriber):
         if attrname in IImageCollectionEventHandler.__dict__ and type(IImageCollectionEventHandler.__dict__[attrname]) == property:
             IImageCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in ImageCollectionEvents.")
+            raise AttributeError(attrname + " is not a recognized event in ImageCollectionEvents.")
 
     @property
     def add_complete(self):
@@ -960,7 +960,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
         elif type(interface)==GrpcInterface:
             impl = ITerrainOverlayCollectionEventGrpcHandler(interface, self._events)
         else:
-            raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ITerrainOverlayCollectionEventHandler.")
+            raise RuntimeError(f"Unexpected type {type(interface)}, cannot create ITerrainOverlayCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)
 
     def __del__(self):
@@ -970,7 +970,7 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
         if attrname in ITerrainOverlayCollectionEventHandler.__dict__ and type(ITerrainOverlayCollectionEventHandler.__dict__[attrname]) == property:
             ITerrainOverlayCollectionEventHandler.__dict__[attrname].__set__(self, value)
         else:
-            raise STKAttributeError(attrname + " is not a recognized event in TerrainOverlayCollectionEvents.")
+            raise AttributeError(attrname + " is not a recognized event in TerrainOverlayCollectionEvents.")
 
     @property
     def add_complete(self):

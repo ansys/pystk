@@ -87,8 +87,8 @@ class AntennaSnippets(CodeSnippetsTestBase):
     )
     def ModifyAntennaSnippet(self, antenna):
         # Antenna antenna: Antenna object
-        antenna.set_model("Dipole")
-        antennaModel = antenna.model
+        antenna.model_component_linking.set_component("Dipole")
+        antennaModel = antenna.model_component_linking.component
         antennaModel.design_frequency = 15  # GHz
         antennaModel.length = 1.5  # m
         antennaModel.length_to_wavelength_ratio = 45

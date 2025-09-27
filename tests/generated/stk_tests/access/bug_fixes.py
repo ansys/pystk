@@ -85,7 +85,6 @@ class BugFixes(TestBase):
 
         intColl: "TimeIntervalCollection" = myAccess.computed_access_interval_times
         Assert.assertEqual(1, intColl.count)
-
         pStart: typing.Any = None
         pStop: typing.Any = None
 
@@ -361,7 +360,6 @@ class BugFixes(TestBase):
         # /////////////////////////////////////////////////////////////////////////////////////////////////////
         # /////////////////////////////////////////////////////////////////////////////////////////////////////
         agAssert = None
-
         accStart: typing.Any = None
         accStop: typing.Any = None
 
@@ -420,7 +418,6 @@ class BugFixes(TestBase):
         try:
             oReceiver: "ISTKObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
             oTransmitter: "ISTKObject" = oSatellite.children.new(STKObjectType.TRANSMITTER, "TestTransmitter")
-
             accStart: typing.Any = None
             accStop: typing.Any = None
 
@@ -799,7 +796,6 @@ class BugFixes(TestBase):
 
         oFacility: "ISTKObject" = TestBase.Application.current_scenario.children["Facility1"]
         oSatellite: "ISTKObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
-
         accStart: typing.Any = None
         accStop: typing.Any = None
 

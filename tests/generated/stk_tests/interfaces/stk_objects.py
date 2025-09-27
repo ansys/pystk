@@ -258,13 +258,11 @@ class STKObjectHelper(object):
         Assert.assertEqual(OnePointAccessSummary.DETAILED, onePtAccess.summary_option)
         result: "OnePointAccessResult" = None
         results: "OnePointAccessResultCollection" = onePtAccess.compute()
-
         i: int = 0
         while i < results.count:
             result = results[i]
             self.m_logger.WriteLine2(result.time)
             self.m_logger.WriteLine2(result.access_is_satisfied)
-
             j: int = 0
             while j < result.constraints.count:
                 constraint: "OnePointAccessConstraint" = result.constraints[j]
@@ -373,7 +371,6 @@ class STKObjectHelper(object):
             or (oObject.class_type == STKObjectType.TARGET)
         ) or (oObject.class_type == STKObjectType.SUBMARINE):
             found: bool = False
-
             j: int = 0
             while j < Array.Length(SupportedChildTypes):
                 objType: "STKObjectType" = STKObjectType(int(SupportedChildTypes[j]))
@@ -477,7 +474,6 @@ class STKObjectHelper(object):
         # Testing the keys property
         keys = metadata.keys
         Assert.assertEqual(metadata.count, Array.Length(keys))
-
         i: int = 0
         while i < Array.Length(keys):
             key: str = str(keys[i])
@@ -534,6 +530,7 @@ class DataProviderCollectionHelper(object):
 
             Assert.assertNotEqual(0, int(oDPInfo.type))
 
+        # Item
         iIndex: int = 0
         while iIndex < oCollection.count:
             if oCollection[iIndex].is_group():
@@ -593,6 +590,7 @@ class DataProviderCollectionHelper(object):
                 "\t\tElement: Name = {0}, Type = {1}, IsGroup = {2}", oDPInfo.name, oDPInfo.type, oDPInfo.is_group()
             )
 
+        # Item
         iIndex: int = 0
         while iIndex < oProviders.count:
             if oProviders[iIndex].is_group():
@@ -639,6 +637,7 @@ class DataProviderCollectionHelper(object):
                 dataPrvElement.dimension_name,
             )
 
+        # Item
         iIndex: int = 0
         while iIndex < oElements.count:
             strElementName: str = oElements[iIndex].name
@@ -665,7 +664,6 @@ class DataProviderCollectionHelper(object):
             self.m_logger.WriteLine("\tExec:")
             self.DrResult(oResult)
             arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
-
             i: int = 0
             while i < oResult.data_sets.count:
                 arCols[i] = oResult.data_sets[i].element_name
@@ -723,6 +721,7 @@ class DataProviderCollectionHelper(object):
             # Title
             self.m_logger.WriteLine5("\t\t\tElement: Title = {0}", oSection.title)
 
+        # Item
         iIndex: int = 0
         while iIndex < oCollection.count:
             # Intervals
@@ -822,7 +821,6 @@ class DataProviderCollectionHelper(object):
             self.m_logger.WriteLine("\tExec:")
             self.DrResult(oResult)
             arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
-
             i: int = 0
             while i < oResult.data_sets.count:
                 arCols[i] = oResult.data_sets[i].element_name
@@ -860,7 +858,6 @@ class DataProviderCollectionHelper(object):
                 self.m_logger.WriteLine("\tExec:")
                 self.DrResult(oResult)
                 arCols = Array.CreateInstance(Type.GetType("System.Object"), oResult.data_sets.count)
-
                 i: int = 0
                 while i < oResult.data_sets.count:
                     arCols[i] = oResult.data_sets[i].element_name
@@ -1183,7 +1180,6 @@ class VODataDisplayHelper(object):
         # Count
         iSize: int = oDataCollection.count
         self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", iSize)
-
         iIndex: int = 0
         while iIndex < iSize:
             self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].name)
@@ -1195,7 +1191,6 @@ class VODataDisplayHelper(object):
             self.m_logger.WriteLine3(
                 "After Remove(0) the Data Display collection contains: {0} elements.", oDataCollection.count
             )
-
             iIndex: int = 0
             while iIndex < oDataCollection.count:
                 self.m_logger.WriteLine7("\tElement {0} is: {1}", iIndex, oDataCollection[iIndex].name)
@@ -1212,7 +1207,6 @@ class VODataDisplayHelper(object):
 
         arAvailable = oDataCollection.available_data
         self.m_logger.WriteLine3("Available Data list contains: {0} elements", Array.Length(arAvailable))
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             self.m_logger.WriteLine7("\tAvailable element {0} is: {1}", iIndex, arAvailable[iIndex])
@@ -1221,7 +1215,6 @@ class VODataDisplayHelper(object):
 
         self.m_oRoot.begin_update()
         self.m_logger.WriteLine3("The current Data Display collection contains: {0} elements.", oDataCollection.count)
-
         iIndex: int = 0
         while iIndex < Array.Length(arAvailable):
             oDataDisp: "Graphics3DDataDisplayElement" = None
@@ -1349,7 +1342,6 @@ class VODataDisplayHelper(object):
 
         arAvailableWindows = oVODataDisplayElement.available_windows
         self.m_logger.WriteLine3("\t\tAvailable {0} Windows:", Array.Length(arAvailableWindows))
-
         i: int = 0
         while i < Array.Length(arAvailableWindows):
             self.m_logger.WriteLine6("\t\t\tWindow: {0}", arAvailableWindows[i])
@@ -1672,6 +1664,7 @@ class VODataDisplayHelper(object):
 
     # region NotUseAutoSizeCheck
     def NotUseAutoSizeCheck(self, oDataDisplayElement: "Graphics3DDataDisplayElement"):
+
         Assert.assertIsNotNone(oDataDisplayElement)
         # BgWidth
         self.m_logger.WriteLine3("\t\t\tThe current BgWidth is: {0}", oDataDisplayElement.background_width)

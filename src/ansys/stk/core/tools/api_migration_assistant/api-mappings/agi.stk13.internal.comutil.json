@@ -1,0 +1,90 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.comutil",
+        "NewRootScope": "ansys.stk.core.internal.comutil"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "_CreateAgObjectLifetimeManager",
+            "OldName": "_ReleaseImpl",
+            "NewName": "_release_impl"
+        },
+        {
+            "ParentScope": "_CreateAgObjectLifetimeManager",
+            "OldName": "_AddRefImpl",
+            "NewName": "_add_ref_impl"
+        },
+        {
+            "ParentScope": "_CreateAgObjectLifetimeManager",
+            "OldName": "InternalAddRef",
+            "NewName": "internal_add_ref"
+        },
+        {
+            "ParentScope": "_CreateAgObjectLifetimeManager",
+            "OldName": "Release",
+            "NewName": "release"
+        },
+        {
+            "ParentScope": "_CreateAgObjectLifetimeManager",
+            "OldName": "ReleaseAll",
+            "NewName": "release_all"
+        },
+        {
+            "ParentScope": "IUnknown",
+            "OldName": "_getVtblEntry",
+            "NewName": "_get_vtbl_entry"
+        },
+        {
+            "ParentScope": "IUnknown",
+            "OldName": "AddRef",
+            "NewName": "add_ref"
+        },
+        {
+            "ParentScope": "IUnknown",
+            "OldName": "Release",
+            "NewName": "release"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [
+        {
+            "OldName": "VARIANT",
+            "NewName": "Variant"
+        },
+        {
+            "OldName": "SAFEARRAYBOUND",
+            "NewName": "SafearrayBound"
+        },
+        {
+            "OldName": "DISPPARAMS",
+            "NewName": "DispParams"
+        },
+        {
+            "OldName": "EXCEPINFO",
+            "NewName": "ExcepInfo"
+        },
+        {
+            "OldName": "ole32lib",
+            "NewName": "OLE32Lib"
+        },
+        {
+            "OldName": "oleaut32lib",
+            "NewName": "OLEAut32Lib"
+        },
+        {
+            "OldName": "_gc_disabler",
+            "NewName": "_GCDisabler"
+        },
+        {
+            "OldName": "IEnumVARIANT",
+            "NewName": "IEnumVariant"
+        },
+        {
+            "OldName": "IAGFUNCTYPE",
+            "NewName": "IFuncType"
+        }
+    ],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

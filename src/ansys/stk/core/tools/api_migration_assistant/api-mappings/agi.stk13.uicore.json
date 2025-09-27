@@ -1,0 +1,335 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.uicore",
+        "NewRootScope": "ansys.stk.core.uicore"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgUiToolbar",
+            "OldName": "Id",
+            "NewName": "identifier"
+        },
+        {
+            "ParentScope": "IAgUiToolbar",
+            "OldName": "Caption",
+            "NewName": "caption"
+        },
+        {
+            "ParentScope": "IAgUiToolbar",
+            "OldName": "Visible",
+            "NewName": "visible"
+        },
+        {
+            "ParentScope": "IAgUiToolbar",
+            "OldName": "FloatState",
+            "NewName": "float_state"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "GetToolbarByID",
+            "NewName": "get_toolbar_by_id"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgUiToolbarCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Caption",
+            "NewName": "caption"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Activate",
+            "NewName": "activate"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "WindowState",
+            "NewName": "window_state"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Close",
+            "NewName": "close"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Height",
+            "NewName": "height"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Width",
+            "NewName": "width"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Left",
+            "NewName": "left"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Top",
+            "NewName": "top"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "DockStyle",
+            "NewName": "dock_style"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "NoWBClose",
+            "NewName": "no_workbook_close"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "UnPinned",
+            "NewName": "unpinned"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "SupportsPinning",
+            "NewName": "can_pin"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "Toolbars",
+            "NewName": "toolbars"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "GetServiceByName",
+            "NewName": "get_service_by_name"
+        },
+        {
+            "ParentScope": "IAgUiWindow",
+            "OldName": "GetServiceByType",
+            "NewName": "get_service_by_type"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "Arrange",
+            "NewName": "arrange"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "GetItemByIndex",
+            "NewName": "get_item_by_index"
+        },
+        {
+            "ParentScope": "IAgUiWindowsCollection",
+            "OldName": "GetItemByName",
+            "NewName": "get_item_by_name"
+        },
+        {
+            "ParentScope": "IAgUiWindowMapObject",
+            "OldName": "MapID",
+            "NewName": "map_id"
+        },
+        {
+            "ParentScope": "IAgUiWindowGlobeObject",
+            "OldName": "SceneID",
+            "NewName": "scene_id"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgUiToolbar",
+            "NewName": "Toolbar"
+        },
+        {
+            "OldName": "IAgUiToolbarCollection",
+            "NewName": "ToolbarCollection"
+        },
+        {
+            "OldName": "IAgUiWindow",
+            "NewName": "Window"
+        },
+        {
+            "OldName": "IAgUiWindowsCollection",
+            "NewName": "WindowsCollection"
+        },
+        {
+            "OldName": "IAgUiWindowMapObject",
+            "NewName": "WindowMapObject"
+        },
+        {
+            "OldName": "IAgUiWindowGlobeObject",
+            "NewName": "WindowGlobeObject"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgUiWindowsCollection",
+            "NewName": "WindowsCollection"
+        },
+        {
+            "OldName": "AgUiWindow",
+            "NewName": "Window"
+        },
+        {
+            "OldName": "AgUiToolbar",
+            "NewName": "Toolbar"
+        },
+        {
+            "OldName": "AgUiToolbarCollection",
+            "NewName": "ToolbarCollection"
+        },
+        {
+            "OldName": "AgUiWindowMapObject",
+            "NewName": "WindowMapObject"
+        },
+        {
+            "OldName": "AgUiWindowGlobeObject",
+            "NewName": "WindowGlobeObject"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgEWindowService",
+            "NewName": "WindowServiceType"
+        },
+        {
+            "OldName": "AgEWindowState",
+            "NewName": "ApplicationWindowState"
+        },
+        {
+            "OldName": "AgEArrangeStyle",
+            "NewName": "WindowArrangeStyle"
+        },
+        {
+            "OldName": "AgEDockStyle",
+            "NewName": "WindowDockStyle"
+        },
+        {
+            "OldName": "AgEFloatState",
+            "NewName": "WindowArrangeState"
+        }
+    ],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "AgEWindowService",
+            "OldName": "eWindowService2DWindow",
+            "NewName": "WINDOW_2D"
+        },
+        {
+            "ParentScope": "AgEWindowService",
+            "OldName": "eWindowService3DWindow",
+            "NewName": "WINDOW_3D"
+        },
+        {
+            "ParentScope": "AgEWindowState",
+            "OldName": "eWindowStateMaximized",
+            "NewName": "MAXIMIZED"
+        },
+        {
+            "ParentScope": "AgEWindowState",
+            "OldName": "eWindowStateMinimized",
+            "NewName": "MINIMIZED"
+        },
+        {
+            "ParentScope": "AgEWindowState",
+            "OldName": "eWindowStateNormal",
+            "NewName": "NORMAL"
+        },
+        {
+            "ParentScope": "AgEArrangeStyle",
+            "OldName": "eArrangeStyleCascade",
+            "NewName": "CASCADE"
+        },
+        {
+            "ParentScope": "AgEArrangeStyle",
+            "OldName": "eArrangeStyleTiledHorizontal",
+            "NewName": "TILED_HORIZONTAL"
+        },
+        {
+            "ParentScope": "AgEArrangeStyle",
+            "OldName": "eArrangeStyleTiledVertical",
+            "NewName": "TILED_VERTICAL"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleIntegrated",
+            "NewName": "INTEGRATED"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedLeft",
+            "NewName": "DOCKED_LEFT"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedRight",
+            "NewName": "DOCKED_RIGHT"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedTop",
+            "NewName": "DOCKED_TOP"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedBottom",
+            "NewName": "DOCKED_BOTTOM"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleFloating",
+            "NewName": "FLOATING"
+        },
+        {
+            "ParentScope": "AgEFloatState",
+            "OldName": "eFloatStateFloated",
+            "NewName": "FLOATED"
+        },
+        {
+            "ParentScope": "AgEFloatState",
+            "OldName": "eFloatStateDocked",
+            "NewName": "DOCKED"
+        }
+    ],
+    "NamedArgumentMappings": []
+}

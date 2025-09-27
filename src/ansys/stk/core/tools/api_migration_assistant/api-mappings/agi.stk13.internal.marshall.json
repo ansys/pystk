@@ -1,0 +1,129 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.marshall",
+        "NewRootScope": "ansys.stk.core.internal.marshall"
+    },
+    "MemberMappings": [],
+    "InterfaceMappings": [],
+    "ClassMappings": [
+        {
+            "OldName": "LONG_arg",
+            "NewName": "LongArg"
+        },
+        {
+            "OldName": "ULONG_arg",
+            "NewName": "ULongArg"
+        },
+        {
+            "OldName": "LONGLONG_arg",
+            "NewName": "LongLongArg"
+        },
+        {
+            "OldName": "ULONGLONG_arg",
+            "NewName": "ULongLongArg"
+        },
+        {
+            "OldName": "INT_arg",
+            "NewName": "IntArg"
+        },
+        {
+            "OldName": "UINT_arg",
+            "NewName": "UIntArg"
+        },
+        {
+            "OldName": "SHORT_arg",
+            "NewName": "ShortArg"
+        },
+        {
+            "OldName": "USHORT_arg",
+            "NewName": "UShortArg"
+        },
+        {
+            "OldName": "HRESULT_arg",
+            "NewName": "HResultArg"
+        },
+        {
+            "OldName": "OLE_COLOR_arg",
+            "NewName": "OLEColorArg"
+        },
+        {
+            "OldName": "VARIANT_BOOL_arg",
+            "NewName": "VariantBoolArg"
+        },
+        {
+            "OldName": "DOUBLE_arg",
+            "NewName": "DoubleArg"
+        },
+        {
+            "OldName": "FLOAT_arg",
+            "NewName": "FloatArg"
+        },
+        {
+            "OldName": "BSTR_arg",
+            "NewName": "BStrArg"
+        },
+        {
+            "OldName": "BYTE_arg",
+            "NewName": "ByteArg"
+        },
+        {
+            "OldName": "CHAR_arg",
+            "NewName": "CharArg"
+        },
+        {
+            "OldName": "VARIANT_arg",
+            "NewName": "VariantArg"
+        },
+        {
+            "OldName": "AgInterface_in_arg",
+            "NewName": "InterfaceInArg"
+        },
+        {
+            "OldName": "AgInterface_out_arg",
+            "NewName": "InterfaceOutArg"
+        },
+        {
+            "OldName": "PVOID_arg",
+            "NewName": "PVoidArg"
+        },
+        {
+            "OldName": "AgInterface_event_callback_arg",
+            "NewName": "InterfaceEventCallbackArg"
+        },
+        {
+            "OldName": "IEnumVARIANT_arg",
+            "NewName": "IEnumVariantArg"
+        },
+        {
+            "OldName": "AgEnum_arg",
+            "NewName": "EnumArg"
+        },
+        {
+            "OldName": "LPSAFEARRAY_arg",
+            "NewName": "LPSafearrayArg"
+        },
+        {
+            "OldName": "IPictureDisp_arg",
+            "NewName": "IPictureDispArg"
+        },
+        {
+            "OldName": "DATE_arg",
+            "NewName": "DateArg"
+        },
+        {
+            "OldName": "OLE_HANDLE_arg",
+            "NewName": "OLEHandleArg"
+        },
+        {
+            "OldName": "OLE_XPOS_PIXELS_arg",
+            "NewName": "OLEXPosPixelsArg"
+        },
+        {
+            "OldName": "OLE_YPOS_PIXELS_arg",
+            "NewName": "OLEYPosPixelsArg"
+        }
+    ],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

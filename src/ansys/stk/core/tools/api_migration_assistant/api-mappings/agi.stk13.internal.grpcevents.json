@@ -1,0 +1,263 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.grpcevents",
+        "NewRootScope": "ansys.stk.core.internal.grpcevents"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "GrpcEventHandlerImpl",
+            "OldName": "Subscribe",
+            "NewName": "subscribe"
+        },
+        {
+            "ParentScope": "GrpcEventHandlerImpl",
+            "OldName": "Unsubscribe",
+            "NewName": "unsubscribe"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioNew",
+            "NewName": "_on_scenario_new"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioLoad",
+            "NewName": "_on_scenario_load"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioClose",
+            "NewName": "_on_scenario_close"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioSave",
+            "NewName": "_on_scenario_save"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnLogMessage",
+            "NewName": "_on_log_message"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimUpdate",
+            "NewName": "_on_anim_update"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectAdded",
+            "NewName": "_on_stk_object_added"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectDeleted",
+            "NewName": "_on_stk_object_deleted"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectRenamed",
+            "NewName": "_on_stk_object_renamed"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationPlayback",
+            "NewName": "_on_animation_playback"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationRewind",
+            "NewName": "_on_animation_rewind"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationPause",
+            "NewName": "_on_animation_pause"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioBeforeSave",
+            "NewName": "_on_scenario_before_save"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationStep",
+            "NewName": "_on_animation_step"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationStepBack",
+            "NewName": "_on_animation_step_back"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationSlower",
+            "NewName": "_on_animation_slower"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnAnimationFaster",
+            "NewName": "_on_animation_faster"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnPercentCompleteUpdate",
+            "NewName": "_on_percent_complete_update"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnPercentCompleteEnd",
+            "NewName": "_on_percent_complete_end"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnPercentCompleteBegin",
+            "NewName": "_on_percent_complete_begin"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectChanged",
+            "NewName": "_on_stk_object_changed"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnScenarioBeforeClose",
+            "NewName": "_on_scenario_before_close"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectPreDelete",
+            "NewName": "_on_stk_object_pre_delete"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectStart3dEditing",
+            "NewName": "_on_stk_object_start_3d_editing"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectStop3dEditing",
+            "NewName": "_on_stk_object_stop_3d_editing"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectApply3dEditing",
+            "NewName": "_on_stk_object_apply_3d_editing"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectCancel3dEditing",
+            "NewName": "_on_stk_object_cancel_3d_editing"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectPreCut",
+            "NewName": "_on_stk_object_pre_cut"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectCopy",
+            "NewName": "_on_stk_object_copy"
+        },
+        {
+            "ParentScope": "ISTKObjectRootEventGrpcHandler",
+            "OldName": "_OnStkObjectPaste",
+            "NewName": "_on_stk_object_paste"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnScenarioNew",
+            "NewName": "_on_scenario_new"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnScenarioLoad",
+            "NewName": "_on_scenario_load"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnScenarioClose",
+            "NewName": "_on_scenario_close"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnScenarioSave",
+            "NewName": "_on_scenario_save"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnLogMessage",
+            "NewName": "_on_log_message"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnAnimUpdate",
+            "NewName": "_on_anim_update"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnNewGlobeCtrlRequest",
+            "NewName": "_on_new_globe_ctrl_request"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnNewMapCtrlRequest",
+            "NewName": "_on_new_map_ctrl_request"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnBeforeNewScenario",
+            "NewName": "_on_before_new_scenario"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnBeforeLoadScenario",
+            "NewName": "_on_before_load_scenario"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnBeginScenarioClose",
+            "NewName": "_on_begin_scenario_close"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnNewGfxAnalysisCtrlRequest",
+            "NewName": "_on_new_gfx_analysis_ctrl_request"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnSSLCertificateServerError",
+            "NewName": "_on_ssl_certificate_server_error"
+        },
+        {
+            "ParentScope": "ISTKXApplicationEventGrpcHandler",
+            "OldName": "_OnConControlQuitReceived",
+            "NewName": "_on_con_control_quit_received"
+        },
+        {
+            "ParentScope": "ISceneEventGrpcHandler",
+            "OldName": "_Rendering",
+            "NewName": "_rendering"
+        },
+        {
+            "ParentScope": "IKmlGraphicsEventGrpcHandler",
+            "OldName": "_DocumentLoaded",
+            "NewName": "_document_loaded"
+        },
+        {
+            "ParentScope": "IImageCollectionEventGrpcHandler",
+            "OldName": "_AddComplete",
+            "NewName": "_add_complete"
+        },
+        {
+            "ParentScope": "ITerrainOverlayCollectionEventGrpcHandler",
+            "OldName": "_AddComplete",
+            "NewName": "_add_complete"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

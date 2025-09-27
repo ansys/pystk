@@ -342,8 +342,17 @@ class EarlyBoundTests(TestBase):
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
 
         # Some file extensions are added to the search by CSharp plugins. These are not yet supported on all platforms for PySTK.
-        Assert.assertTrue(availObjColl.count, [29, 35])
+        Assert.assertTrue(availObjColl.count, [29, 37])
         numAvailObjs: int = availObjColl.count
+
+        # DEBUG
+        # Console.WriteLine("Number of available objects: " + availObjColl.Count.ToString());
+        # Array arAvailObjsX = availObjColl.ToArray();
+        # for (int j = 0; j < arAvailObjsX.GetLength(0); j++)
+        # {
+        #    Console.WriteLine(arAvailObjsX.GetValue(j, 0).ToString() + "\t\t\t" + arAvailObjsX.GetValue(j, 1).ToString() + "\t\t\t" + arAvailObjsX.GetValue(j, 2).ToString());
+        # }
+        # System.Windows.Forms.MessageBox.Show("break to look at list");
 
         name: typing.Any = None
         date: typing.Any = None
@@ -373,7 +382,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, primaryChosenObjColl.count)
 
         s: str = ""
-
         i: int = 0
         while i < 3:
             chosenObj: "AdvCATChosenObject" = primaryChosenObjColl[i]
@@ -478,7 +486,7 @@ class EarlyBoundTests(TestBase):
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
 
         # Some file extensions are added to the search by CSharp plugins. These are not yet supported on all platforms for PySTK.
-        Assert.assertTrue(availObjColl.count, [29, 35])
+        Assert.assertTrue(availObjColl.count, [29, 37])
         numAvailObjs: int = availObjColl.count
 
         name: typing.Any = None
@@ -509,7 +517,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, secondaryChosenObjColl.count)
 
         s: str = ""
-
         i: int = 0
         while i < 3:
             chosenObj: "AdvCATChosenObject" = secondaryChosenObjColl[i]
@@ -705,6 +712,70 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, advEllipsoid.scale_factor)
         advEllipsoid.scale_factor = 1000
         Assert.assertEqual(1000, advEllipsoid.scale_factor)
+
+    # endregion
+
+    # region Advanced_PartialCov
+    def test_Advanced_PartialCov(self):
+        partialCov: "AdvCAT" = EarlyBoundTests.AG_ACAT
+        eventIntSmartInterval: "TimeToolTimeIntervalSmartInterval" = partialCov.time_period
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", eventIntSmartInterval.find_start_time())
+        Assert.assertEqual("2 Jul 1999 00:00:00.000", eventIntSmartInterval.find_stop_time())
+
+        partialCov.primary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE
+        partialCov.secondary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE
+
+        primaryChosenObjColl: "AdvCATChosenObjectCollection" = partialCov.get_primary_chosen_objects()
+        Assert.assertEqual(0, primaryChosenObjColl.count)
+        primaryChosenObjColl.add("TestEphMisalignedCovPrim.e")
+
+        secondaryChosenObjColl: "AdvCATChosenObjectCollection" = partialCov.get_secondary_chosen_objects()
+        Assert.assertEqual(0, secondaryChosenObjColl.count)
+        secondaryChosenObjColl.add("TestEphMisalignedCovSec.e")
+
+        # Set advanced properties
+        partialCovAdv: "AdvCATAdvancedSettings" = partialCov.advanced
+        partialCovAdv.use_log_file = False
+        partialCovAdv.use_correlation_file = False
+        partialCovAdv.show_message_in_message_viewer = False
+        partialCovAdv.force_repropagation_on_load = False
+        partialCovAdv.compute_on_load = False
+        partialCovAdv.remove_secondary_by_ssc = False
+        partialCovAdv.use_cross_reference_database = False
+        partialCovAdv.use_ssc_hard_body_radius_file = False
+        partialCovAdv.maximum_sample_step_size = 300
+        partialCovAdv.minimum_sample_step_size = 1
+        partialCovAdv.conjunction_type = AdvCATConjunctionType.GLOBAL_ONLY
+        partialCovAdv.ellipsoid_advanced_settings.scale_factor = 1.0
+        partialCovAdv.allow_partial_ephemeris = True
+
+        # Compute the CAT
+        partialCov.compute()
+
+        # Use data providers to check CAT intervals
+        partialCovObj: "ISTKObject" = clr.CastAs(partialCov, ISTKObject)
+        intvl: "DataProviderInterval" = clr.CastAs(
+            partialCovObj.data_providers["Events by Min Range"], DataProviderInterval
+        )
+        dataPrvElements = ["Time In", "Time Out"]
+        result: "DataProviderResult" = intvl.execute_elements(
+            eventIntSmartInterval.find_start_time(), eventIntSmartInterval.find_stop_time(), dataPrvElements
+        )
+
+        Assert.assertEqual(2, result.data_sets.count)
+
+        Assert.assertEqual("Time In", result.data_sets[0].element_name)
+        Assert.assertEqual(1, result.data_sets[0].count)
+        dataSet = result.data_sets[0].get_values()
+        Assert.assertEqual("1 Jul 1999 12:00:00.000000000", dataSet[0])
+
+        Assert.assertEqual("Time Out", result.data_sets[1].element_name)
+        Assert.assertEqual(1, result.data_sets[1].count)
+        dataSet = result.data_sets[1].get_values()
+        Assert.assertEqual("1 Jul 1999 13:00:00.000000000", dataSet[0])
+
+        primaryChosenObjColl.remove_all()
+        secondaryChosenObjColl.remove_all()
 
     # endregion
 

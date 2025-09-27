@@ -83,14 +83,12 @@ class ReportComparison(object):
                 and (len(self._omsnapshots) == len(self._cnsnapshots))
             )
         )
-
         i: int = 0
         while i < len(self._omsnapshots):
             # logger.WriteLine("Report {0}", i+1);
             omreps = self._omsnapshots[i]
             cnreps = self._cnsnapshots[i]
             Assert.assertTrue((((len(omreps) > 0) and (len(cnreps) > 0)) and (len(omreps) == len(cnreps))))
-
             j: int = 0
             while j < len(omreps):
                 omrep = omreps[j]
@@ -209,7 +207,6 @@ class ReportComparison(object):
                 lhsrow = self._report[i]
                 rhsrow = rhs._report[i]
                 Assert.assertEqual(len(lhsrow), len(rhsrow))
-
                 j: int = 0
                 while j < len(rhsrow):
                     lhscol: str = lhsrow[j]
@@ -218,7 +215,6 @@ class ReportComparison(object):
                     lhschr = Regex.Matches(lhscol, r"[^\d\s\-\+\.]+")
                     rhschr = Regex.Matches(rhscol, r"[^\d\s\-\+\.]+")
                     Assert.assertEqual(lhschr.Count, rhschr.Count)
-
                     c: int = 0
                     while c < rhschr.Count:
                         Assert.assertEqual(lhschr[c].Value.replace("\\", "/"), rhschr[c].Value.replace("\\", "/"))
@@ -229,7 +225,6 @@ class ReportComparison(object):
                         lhsnum = Regex.Matches(lhscol, r"[-+]?[\d]*\.?[\d]+")
                         rhsnum = Regex.Matches(rhscol, r"[-+]?[\d]*\.?[\d]+")
                         Assert.assertEqual(lhsnum.Count, rhsnum.Count)
-
                         n: int = 0
                         while n < rhsnum.Count:
                             Assert.assertAlmostEqual(
@@ -260,7 +255,6 @@ class ReportComparison(object):
 
             for row in self._report:
                 rowstr: str = ""
-
                 i: int = 0
                 while i < len(row):
                     if rowstr != None:
@@ -281,7 +275,6 @@ class ReportComparison(object):
 
         def Indent(self, n: int):
             str: str = ""
-
             i: int = 0
             while i < n:
                 str += " "

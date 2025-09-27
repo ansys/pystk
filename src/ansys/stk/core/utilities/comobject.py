@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Contains a wrapper for a raw COM object that is not part of the STK Object Model."""
+"""Contains a wrapper for a raw COM object that is not part of the Object Model."""
 
 from ctypes import c_void_p
 
@@ -29,7 +29,7 @@ class COMObject(object):
     """
     Holds a raw COM pointer.
 
-    May be returned from STK if the return argument is not part of the STK Object Model.
+    May be returned from if the return argument is not part of the Object Model.
     """
 
     def __init__(self):

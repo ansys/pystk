@@ -106,28 +106,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_action(self, parameter_type: UpdateParam) -> UpdateAction
+.. py:method:: get_action(self, parameter_type: UpdateParameter) -> UpdateAction
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.get_action
 
     Get the action type for a parameter.
 
     :Parameters:
 
-        **parameter_type** : :obj:`~UpdateParam`
+        **parameter_type** : :obj:`~UpdateParameter`
 
 
     :Returns:
 
         :obj:`~UpdateAction`
 
-.. py:method:: get_value(self, parameter_type: UpdateParam) -> float
+.. py:method:: get_value(self, parameter_type: UpdateParameter) -> float
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.get_value
 
     Get the value type for a parameter.
 
     :Parameters:
 
-        **parameter_type** : :obj:`~UpdateParam`
+        **parameter_type** : :obj:`~UpdateParameter`
 
 
     :Returns:
@@ -148,14 +148,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set_action(self, parameter_name: UpdateParam, action_type: UpdateAction) -> None
+.. py:method:: set_action(self, parameter_name: UpdateParameter, action_type: UpdateAction) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.set_action
 
     Set the update action type.
 
     :Parameters:
 
-        **parameter_name** : :obj:`~UpdateParam`
+        **parameter_name** : :obj:`~UpdateParameter`
 
         **action_type** : :obj:`~UpdateAction`
 
@@ -164,14 +164,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_action_and_value(self, parameter_type: UpdateParam, action_type: UpdateAction, value: float) -> None
+.. py:method:: set_action_and_value(self, parameter_type: UpdateParameter, action_type: UpdateAction, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.set_action_and_value
 
     Set an action and the new value.
 
     :Parameters:
 
-        **parameter_type** : :obj:`~UpdateParam`
+        **parameter_type** : :obj:`~UpdateParameter`
 
         **action_type** : :obj:`~UpdateAction`
 
@@ -182,14 +182,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_value(self, parameter_name: UpdateParam, value: float) -> None
+.. py:method:: set_value(self, parameter_name: UpdateParameter, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.set_value
 
     Set the update value.
 
     :Parameters:
 
-        **parameter_name** : :obj:`~UpdateParam`
+        **parameter_name** : :obj:`~UpdateParameter`
 
         **value** : :obj:`~float`
 

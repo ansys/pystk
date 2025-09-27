@@ -1,0 +1,1097 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkx",
+        "NewRootScope": "ansys.stk.core.stkx"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "SetIgnoreError",
+            "NewName": "set_ignore_error"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "IsErrorIgnored",
+            "NewName": "is_error_ignored"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "SetIgnoreErrorPermanently",
+            "NewName": "set_ignore_error_permanently"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "SerialNumber",
+            "NewName": "serial_number"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "Issuer",
+            "NewName": "issuer"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "Subject",
+            "NewName": "subject"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "ValidDate",
+            "NewName": "valid_date"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "ExpirationDate",
+            "NewName": "expiration_date"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "IsExpired",
+            "NewName": "is_expired"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "PEMData",
+            "NewName": "pem_data"
+        },
+        {
+            "ParentScope": "IAgSTKXSSLCertificateErrorEventArgs",
+            "OldName": "Handled",
+            "NewName": "handled"
+        },
+        {
+            "ParentScope": "IAgSTKXConControlQuitReceivedEventArgs",
+            "OldName": "Acknowledge",
+            "NewName": "acknowledge"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "ObjPath",
+            "NewName": "object_path"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "Lat",
+            "NewName": "latitude"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "Lon",
+            "NewName": "longitude"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "Alt",
+            "NewName": "altitude"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "IsObjPathValid",
+            "NewName": "is_object_path_valid"
+        },
+        {
+            "ParentScope": "IAgPickInfoData",
+            "OldName": "IsLatLonAltValid",
+            "NewName": "is_lat_lon_altitude_valid"
+        },
+        {
+            "ParentScope": "IAgRubberBandPickInfoData",
+            "OldName": "ObjPaths",
+            "NewName": "object_paths"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ExecuteCommand",
+            "NewName": "execute_command"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "EnableConnect",
+            "NewName": "enable_connect"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectPort",
+            "NewName": "connect_port"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "HostID",
+            "NewName": "host_id"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "RegistrationID",
+            "NewName": "registration_id"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "Version",
+            "NewName": "version"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "SetOnlineOptions",
+            "NewName": "set_online_options"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "GetOnlineOptions",
+            "NewName": "get_online_options"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "SetConnectHandler",
+            "NewName": "set_connect_handler"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "LogFileFullName",
+            "NewName": "log_file_full_name"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "LoggingMode",
+            "NewName": "logging_mode"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectMaxConnections",
+            "NewName": "connect_max_connections"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ExecuteMultipleCommands",
+            "NewName": "execute_multiple_commands"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "IsFeatureAvailable",
+            "NewName": "is_feature_available"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "NoGraphics",
+            "NewName": "no_graphics"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "Terminate",
+            "NewName": "terminate"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ShowSLAIfNotAccepted",
+            "NewName": "show_sla_if_not_accepted"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "UseHook",
+            "NewName": "use_hook"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "UseSoftwareRenderer",
+            "NewName": "use_software_renderer"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "Subscribe",
+            "NewName": "subscribe"
+        },
+        {
+            "ParentScope": "IAgDataObject",
+            "OldName": "Files",
+            "NewName": "files"
+        },
+        {
+            "ParentScope": "IAgObjPathCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgObjPathCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgObjPathCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgObjPathCollection",
+            "OldName": "Range",
+            "NewName": "range"
+        },
+        {
+            "ParentScope": "IAgDrawElem",
+            "OldName": "Visible",
+            "NewName": "visible"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Left",
+            "NewName": "left"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Right",
+            "NewName": "right"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Top",
+            "NewName": "top"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Bottom",
+            "NewName": "bottom"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Set",
+            "NewName": "set"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "Color",
+            "NewName": "color"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "LineWidth",
+            "NewName": "line_width"
+        },
+        {
+            "ParentScope": "IAgDrawElemRect",
+            "OldName": "LineStyle",
+            "NewName": "line_style"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Clear",
+            "NewName": "clear"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Add",
+            "NewName": "add"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Remove",
+            "NewName": "remove"
+        },
+        {
+            "ParentScope": "IAgDrawElemCollection",
+            "OldName": "Visible",
+            "NewName": "visible"
+        },
+        {
+            "ParentScope": "IAgWinProjPos",
+            "OldName": "XPos",
+            "NewName": "x_position"
+        },
+        {
+            "ParentScope": "IAgWinProjPos",
+            "OldName": "YPos",
+            "NewName": "y_position"
+        },
+        {
+            "ParentScope": "IAgWinProjPos",
+            "OldName": "IsWinProjPosValid",
+            "NewName": "is_window_projection_position_valid"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Left",
+            "NewName": "left"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Right",
+            "NewName": "right"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Top",
+            "NewName": "top"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Bottom",
+            "NewName": "bottom"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Set",
+            "NewName": "set"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "Color",
+            "NewName": "color"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "LineWidth",
+            "NewName": "line_width"
+        },
+        {
+            "ParentScope": "IAgDrawElemLine",
+            "OldName": "LineStyle",
+            "NewName": "line_style"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "BackColor",
+            "NewName": "back_color"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "Picture",
+            "NewName": "picture"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "PicturePutRef",
+            "NewName": "picture_put_reference"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "PickInfo",
+            "NewName": "pick_info"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "WinID",
+            "NewName": "window_id"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "Application",
+            "NewName": "application"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ZoomIn",
+            "NewName": "zoom_in"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "NoLogo",
+            "NewName": "no_logo"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "OLEDropMode",
+            "NewName": "ole_drop_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "RubberBandPickInfo",
+            "NewName": "rubber_band_pick_info"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "MouseMode",
+            "NewName": "mouse_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "DrawElements",
+            "NewName": "draw_elements"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ReadyState",
+            "NewName": "ready_state"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "PptPreloadMode",
+            "NewName": "ppt_preload_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "AdvancedPickMode",
+            "NewName": "advanced_pick_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "CopyFromWinID",
+            "NewName": "copy_from_window_id"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "StartObjectEditing",
+            "NewName": "start_object_editing"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ApplyObjectEditing",
+            "NewName": "apply_object_editing"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "StopObjectEditing",
+            "NewName": "stop_object_editing"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "IsObjectEditing",
+            "NewName": "is_object_editing"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "InZoomMode",
+            "NewName": "in_zoom_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "SetMouseCursorFromFile",
+            "NewName": "set_mouse_cursor_from_file"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "RestoreMouseCursor",
+            "NewName": "restore_mouse_cursor"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "SetMouseCursorFromHandle",
+            "NewName": "set_mouse_cursor_from_handle"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ShowProgressImage",
+            "NewName": "show_progress_image"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ProgressImageXOffset",
+            "NewName": "progress_image_x_offset"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ProgressImageYOffset",
+            "NewName": "progress_image_y_offset"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ProgressImageFile",
+            "NewName": "progress_image_file"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ProgressImageXOrigin",
+            "NewName": "progress_image_x_origin"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "ProgressImageYOrigin",
+            "NewName": "progress_image_y_origin"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "PictureFromFile",
+            "NewName": "picture_from_file"
+        },
+        {
+            "ParentScope": "IAgUiAxVOCntrl",
+            "OldName": "Subscribe",
+            "NewName": "subscribe"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "BackColor",
+            "NewName": "back_color"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "Picture",
+            "NewName": "picture"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "PicturePutRef",
+            "NewName": "picture_put_reference"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "WinID",
+            "NewName": "window_id"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ZoomIn",
+            "NewName": "zoom_in"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ZoomOut",
+            "NewName": "zoom_out"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "PickInfo",
+            "NewName": "pick_info"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "Application",
+            "NewName": "application"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "NoLogo",
+            "NewName": "no_logo"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "OLEDropMode",
+            "NewName": "ole_drop_mode"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "MouseMode",
+            "NewName": "mouse_mode"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ReadyState",
+            "NewName": "ready_state"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "CopyFromWinID",
+            "NewName": "copy_from_window_id"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "RubberBandPickInfo",
+            "NewName": "rubber_band_pick_info"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "AdvancedPickMode",
+            "NewName": "advanced_pick_mode"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "GetWindowProjectedPosition",
+            "NewName": "get_window_projected_position"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "InZoomMode",
+            "NewName": "in_zoom_mode"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "SetMouseCursorFromFile",
+            "NewName": "set_mouse_cursor_from_file"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "RestoreMouseCursor",
+            "NewName": "restore_mouse_cursor"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "SetMouseCursorFromHandle",
+            "NewName": "set_mouse_cursor_from_handle"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ShowProgressImage",
+            "NewName": "show_progress_image"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ProgressImageXOffset",
+            "NewName": "progress_image_x_offset"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ProgressImageYOffset",
+            "NewName": "progress_image_y_offset"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ProgressImageFile",
+            "NewName": "progress_image_file"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ProgressImageXOrigin",
+            "NewName": "progress_image_x_origin"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "ProgressImageYOrigin",
+            "NewName": "progress_image_y_origin"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "PictureFromFile",
+            "NewName": "picture_from_file"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "PanModeEnabled",
+            "NewName": "pan_mode_enabled"
+        },
+        {
+            "ParentScope": "IAgUiAx2DCntrl",
+            "OldName": "Subscribe",
+            "NewName": "subscribe"
+        },
+        {
+            "ParentScope": "IAgSTKXApplicationPartnerAccess",
+            "OldName": "GrantPartnerAccess",
+            "NewName": "grant_partner_access"
+        },
+        {
+            "ParentScope": "IAgDataObjectFiles",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgDataObjectFiles",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgDataObjectFiles",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "BackColor",
+            "NewName": "back_color"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "Picture",
+            "NewName": "picture"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "PicturePutRef",
+            "NewName": "picture_put_reference"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "NoLogo",
+            "NewName": "no_logo"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "ReadyState",
+            "NewName": "ready_state"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "Application",
+            "NewName": "application"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "ControlMode",
+            "NewName": "control_mode"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "PictureFromFile",
+            "NewName": "picture_from_file"
+        },
+        {
+            "ParentScope": "IAgUiAxGfxAnalysisCntrl",
+            "OldName": "WinID",
+            "NewName": "window_id"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgSTKXSSLCertificateErrorEventArgs",
+            "NewName": "STKXSSLCertificateErrorEventArgs"
+        },
+        {
+            "OldName": "IAgSTKXConControlQuitReceivedEventArgs",
+            "NewName": "STKXConControlQuitReceivedEventArgs"
+        },
+        {
+            "OldName": "IAgPickInfoData",
+            "NewName": "PickInfoData"
+        },
+        {
+            "OldName": "IAgRubberBandPickInfoData",
+            "NewName": "RubberBandPickInfoData"
+        },
+        {
+            "OldName": "IAgSTKXApplication",
+            "NewName": "STKXApplication"
+        },
+        {
+            "OldName": "IAgDataObject",
+            "NewName": "DataObject"
+        },
+        {
+            "OldName": "IAgObjPathCollection",
+            "NewName": "ObjectPathCollection"
+        },
+        {
+            "OldName": "IAgDrawElem",
+            "NewName": "IDrawElement"
+        },
+        {
+            "OldName": "IAgDrawElemRect",
+            "NewName": "IDrawElementRect"
+        },
+        {
+            "OldName": "IAgDrawElemCollection",
+            "NewName": "IDrawElementCollection"
+        },
+        {
+            "OldName": "IAgWinProjPos",
+            "NewName": "WindowProjectionPosition"
+        },
+        {
+            "OldName": "IAgDrawElemLine",
+            "NewName": "DrawElementLine"
+        },
+        {
+            "OldName": "IAgUiAxVOCntrl",
+            "NewName": "Graphics3DControlBase"
+        },
+        {
+            "OldName": "IAgUiAx2DCntrl",
+            "NewName": "Graphics2DControlBase"
+        },
+        {
+            "OldName": "IAgSTKXApplicationPartnerAccess",
+            "NewName": "STKXApplicationPartnerAccess"
+        },
+        {
+            "OldName": "IAgDataObjectFiles",
+            "NewName": "DataObjectFiles"
+        },
+        {
+            "OldName": "IAgUiAxGfxAnalysisCntrl",
+            "NewName": "GraphicsAnalysisControlBase"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgUiAxVOCntrl",
+            "NewName": "Graphics3DControlBase"
+        },
+        {
+            "OldName": "AgUiAx2DCntrl",
+            "NewName": "Graphics2DControlBase"
+        },
+        {
+            "OldName": "AgPickInfoData",
+            "NewName": "PickInfoData"
+        },
+        {
+            "OldName": "AgSTKXApplication",
+            "NewName": "STKXApplication"
+        },
+        {
+            "OldName": "AgSTKXApplicationPartnerAccess",
+            "NewName": "STKXApplicationPartnerAccess"
+        },
+        {
+            "OldName": "AgDataObject",
+            "NewName": "DataObject"
+        },
+        {
+            "OldName": "AgDataObjectFiles",
+            "NewName": "DataObjectFiles"
+        },
+        {
+            "OldName": "AgRubberBandPickInfoData",
+            "NewName": "RubberBandPickInfoData"
+        },
+        {
+            "OldName": "AgObjPathCollection",
+            "NewName": "ObjectPathCollection"
+        },
+        {
+            "OldName": "AgDrawElemRect",
+            "NewName": "DrawElementRect"
+        },
+        {
+            "OldName": "AgDrawElemCollection",
+            "NewName": "DrawElementCollection"
+        },
+        {
+            "OldName": "AgDraw2DElemRect",
+            "NewName": "Draw2DElemRect"
+        },
+        {
+            "OldName": "AgDraw2DElemCollection",
+            "NewName": "Draw2DElemCollection"
+        },
+        {
+            "OldName": "AgUiAxGfxAnalysisCntrl",
+            "NewName": "GraphicsAnalysisControlBase"
+        },
+        {
+            "OldName": "AgWinProjPos",
+            "NewName": "WindowProjectionPosition"
+        },
+        {
+            "OldName": "AgDrawElemLine",
+            "NewName": "DrawElementLine"
+        },
+        {
+            "OldName": "AgSTKXSSLCertificateErrorEventArgs",
+            "NewName": "STKXSSLCertificateErrorEventArgs"
+        },
+        {
+            "OldName": "AgSTKXConControlQuitReceivedEventArgs",
+            "NewName": "STKXConControlQuitReceivedEventArgs"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgEShiftValues",
+            "NewName": "ShiftValues"
+        },
+        {
+            "OldName": "AgEButtonValues",
+            "NewName": "ButtonValues"
+        },
+        {
+            "OldName": "AgEOLEDropMode",
+            "NewName": "OLEDropMode"
+        },
+        {
+            "OldName": "AgEMouseMode",
+            "NewName": "MouseMode"
+        },
+        {
+            "OldName": "AgELoggingMode",
+            "NewName": "LoggingMode"
+        },
+        {
+            "OldName": "AgEGfxAnalysisMode",
+            "NewName": "Graphics2DAnalysisMode"
+        },
+        {
+            "OldName": "AgEGfxDrawCoords",
+            "NewName": "Graphics2DDrawCoordinates"
+        },
+        {
+            "OldName": "AgEShowProgressImage",
+            "NewName": "ShowProgressImage"
+        },
+        {
+            "OldName": "AgEFeatureCodes",
+            "NewName": "FeatureCodes"
+        },
+        {
+            "OldName": "AgEProgressImageXOrigin",
+            "NewName": "ProgressImageXOrigin"
+        },
+        {
+            "OldName": "AgEProgressImageYOrigin",
+            "NewName": "ProgressImageYOrigin"
+        },
+        {
+            "OldName": "AgELogMsgType",
+            "NewName": "LogMessageType"
+        },
+        {
+            "OldName": "AgELogMsgDispID",
+            "NewName": "LogMessageDisplayID"
+        },
+        {
+            "OldName": "AgEExecMultiCmdResultAction",
+            "NewName": "ExecuteMultipleCommandsMode"
+        },
+        {
+            "OldName": "AgELineStyle",
+            "NewName": "LineStyle"
+        }
+    ],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "AgEShiftValues",
+            "OldName": "eShiftPressed",
+            "NewName": "PRESSED"
+        },
+        {
+            "ParentScope": "AgEShiftValues",
+            "OldName": "eCtrlPressed",
+            "NewName": "CTRL_PRESSED"
+        },
+        {
+            "ParentScope": "AgEShiftValues",
+            "OldName": "eAltPressed",
+            "NewName": "ALT_PRESSED"
+        },
+        {
+            "ParentScope": "AgEButtonValues",
+            "OldName": "eLeftPressed",
+            "NewName": "LEFT_PRESSED"
+        },
+        {
+            "ParentScope": "AgEButtonValues",
+            "OldName": "eRightPressed",
+            "NewName": "RIGHT_PRESSED"
+        },
+        {
+            "ParentScope": "AgEButtonValues",
+            "OldName": "eMiddlePressed",
+            "NewName": "MIDDLE_PRESSED"
+        },
+        {
+            "ParentScope": "AgEOLEDropMode",
+            "OldName": "eNone",
+            "NewName": "NONE"
+        },
+        {
+            "ParentScope": "AgEOLEDropMode",
+            "OldName": "eManual",
+            "NewName": "MANUAL"
+        },
+        {
+            "ParentScope": "AgEOLEDropMode",
+            "OldName": "eAutomatic",
+            "NewName": "AUTOMATIC"
+        },
+        {
+            "ParentScope": "AgEMouseMode",
+            "OldName": "eMouseModeAutomatic",
+            "NewName": "AUTOMATIC"
+        },
+        {
+            "ParentScope": "AgEMouseMode",
+            "OldName": "eMouseModeManual",
+            "NewName": "MANUAL"
+        },
+        {
+            "ParentScope": "AgELoggingMode",
+            "OldName": "eLogInactive",
+            "NewName": "INACTIVE"
+        },
+        {
+            "ParentScope": "AgELoggingMode",
+            "OldName": "eLogActive",
+            "NewName": "ACTIVE"
+        },
+        {
+            "ParentScope": "AgELoggingMode",
+            "OldName": "eLogActiveKeepFile",
+            "NewName": "ACTIVE_KEEP_FILE"
+        },
+        {
+            "ParentScope": "AgEGfxAnalysisMode",
+            "OldName": "eSolarPanelTool",
+            "NewName": "SOLAR_PANEL_TOOL"
+        },
+        {
+            "ParentScope": "AgEGfxAnalysisMode",
+            "OldName": "eAreaTool",
+            "NewName": "AREA_TOOL"
+        },
+        {
+            "ParentScope": "AgEGfxAnalysisMode",
+            "OldName": "eObscurationTool",
+            "NewName": "OBSCURATION_TOOL"
+        },
+        {
+            "ParentScope": "AgEGfxAnalysisMode",
+            "OldName": "eAzElMaskTool",
+            "NewName": "AZ_EL_MASK_TOOL"
+        },
+        {
+            "ParentScope": "AgEGfxDrawCoords",
+            "OldName": "ePixelDrawCoords",
+            "NewName": "PIXEL_DRAW_COORDINATES"
+        },
+        {
+            "ParentScope": "AgEGfxDrawCoords",
+            "OldName": "eScreenDrawCoords",
+            "NewName": "SCREEN_DRAW_COORDINATES"
+        },
+        {
+            "ParentScope": "AgEShowProgressImage",
+            "OldName": "eShowProgressImageNone",
+            "NewName": "NONE"
+        },
+        {
+            "ParentScope": "AgEShowProgressImage",
+            "OldName": "eShowProgressImageDefault",
+            "NewName": "DEFAULT"
+        },
+        {
+            "ParentScope": "AgEShowProgressImage",
+            "OldName": "eShowProgressImageUser",
+            "NewName": "USER"
+        },
+        {
+            "ParentScope": "AgEFeatureCodes",
+            "OldName": "eFeatureCodeEngineRuntime",
+            "NewName": "ENGINE_RUNTIME"
+        },
+        {
+            "ParentScope": "AgEFeatureCodes",
+            "OldName": "eFeatureCodeGlobeControl",
+            "NewName": "GLOBE_CONTROL"
+        },
+        {
+            "ParentScope": "AgEProgressImageXOrigin",
+            "OldName": "eProgressImageXLeft",
+            "NewName": "LEFT"
+        },
+        {
+            "ParentScope": "AgEProgressImageXOrigin",
+            "OldName": "eProgressImageXRight",
+            "NewName": "RIGHT"
+        },
+        {
+            "ParentScope": "AgEProgressImageXOrigin",
+            "OldName": "eProgressImageXCenter",
+            "NewName": "CENTER"
+        },
+        {
+            "ParentScope": "AgEProgressImageYOrigin",
+            "OldName": "eProgressImageYTop",
+            "NewName": "TOP"
+        },
+        {
+            "ParentScope": "AgEProgressImageYOrigin",
+            "OldName": "eProgressImageYBottom",
+            "NewName": "BOTTOM"
+        },
+        {
+            "ParentScope": "AgEProgressImageYOrigin",
+            "OldName": "eProgressImageYCenter",
+            "NewName": "CENTER"
+        }
+    ],
+    "NamedArgumentMappings": []
+}

@@ -11,7 +11,7 @@ env:
   MINIMUM_PYTHON_VERSION: '3.10'
   PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
+  STK_DOCKER_IMAGE: 'ansys/stk-13.0:dev-ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -37,6 +37,7 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          clean: true
           persist-credentials: false
 
       - name: "Update labels"
@@ -121,6 +122,7 @@ jobs:
       - name: "Checkout project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          clean: true
           persist-credentials: false
 
       - name: "Install jq"
@@ -194,7 +196,7 @@ jobs:
             runner: [self-hosted, pystk]
           - needs-self-hosted-runner: true
             runner: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
     permissions:
       contents: read
     steps:
@@ -202,6 +204,7 @@ jobs:
       - name: "Checkout the project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          clean: true
           persist-credentials: false
 
       - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
@@ -304,7 +307,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -312,7 +315,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
-            python -m tox -e doc-links,doc-html
+            python -m tox -e doc-clean,doc-links,doc-html
         env:
           BUILD_API: true
           BUILD_EXAMPLES: false
@@ -322,7 +325,7 @@ jobs:
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
         run: |
-          python -m tox -e doc-links,doc-html
+          python -m tox -e doc-clean,doc-links,doc-html
         env:
           BUILD_API: false
           BUILD_EXAMPLES: false
@@ -338,7 +341,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-clean,doc-links,doc-html"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
@@ -416,6 +419,7 @@ jobs:
       - name: "Checkout the project"
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          clean: true
           persist-credentials: false
 
       - name: "Generate the name of the Docker image and the container"
@@ -457,8 +461,6 @@ jobs:
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
-
-      # -- Tests
 
       - name: "Run the extensions tests"
         env:

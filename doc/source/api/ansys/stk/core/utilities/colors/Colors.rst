@@ -5,7 +5,7 @@ Colors
 
    object
 
-   A factory for creating Color objects that may be used with the STK object model.
+   A factory for creating Color objects that may be used with the Object Model.
 
    Contains factory methods and named colors.
 

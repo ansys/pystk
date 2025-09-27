@@ -1,0 +1,352 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.uiapplication",
+        "NewRootScope": "ansys.stk.core.uiapplication"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgMRUCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        },
+        {
+            "ParentScope": "IAgMRUCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgMRUCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExt",
+            "OldName": "FileName",
+            "NewName": "file_name"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExt",
+            "OldName": "FilterDescription",
+            "NewName": "filter_description"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExt",
+            "OldName": "FilterPattern",
+            "NewName": "filter_pattern"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "LoadPersonality",
+            "NewName": "load_personality"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Personality",
+            "NewName": "personality"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Visible",
+            "NewName": "visible"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "UserControl",
+            "NewName": "user_control"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Windows",
+            "NewName": "windows"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Height",
+            "NewName": "height"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Width",
+            "NewName": "width"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Left",
+            "NewName": "left"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Top",
+            "NewName": "top"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "WindowState",
+            "NewName": "window_state"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Activate",
+            "NewName": "activate"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "MRUList",
+            "NewName": "most_recently_used_list"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "FileOpenDialog",
+            "NewName": "file_open_dialog"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Path",
+            "NewName": "path"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "CreateObject",
+            "NewName": "create_object"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "FileSaveAsDialog",
+            "NewName": "file_save_as_dialog"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Quit",
+            "NewName": "quit"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "FileOpenDialogExt",
+            "NewName": "file_open_dialog_extension"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "HWND",
+            "NewName": "hwnd"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "DirectoryPickerDialog",
+            "NewName": "directory_picker_dialog"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "MessagePendingDelay",
+            "NewName": "message_pending_delay"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "Personality2",
+            "NewName": "personality2"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "OpenLogFile",
+            "NewName": "open_log_file"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "LogMsg",
+            "NewName": "log_message"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "LogFile",
+            "NewName": "log_file"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "DisplayAlerts",
+            "NewName": "display_alerts"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "CreateApplication",
+            "NewName": "create_application"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "ProcessID",
+            "NewName": "process_id"
+        },
+        {
+            "ParentScope": "IAgUiApplication",
+            "OldName": "PrefFilesMode",
+            "NewName": "preferences_files_mode"
+        },
+        {
+            "ParentScope": "IAgUiApplicationPartnerAccess",
+            "OldName": "GrantPartnerAccess",
+            "NewName": "grant_partner_access"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExtCollection",
+            "OldName": "Count",
+            "NewName": "count"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExtCollection",
+            "OldName": "_NewEnum",
+            "NewName": "_new_enum"
+        },
+        {
+            "ParentScope": "IAgUiFileOpenExtCollection",
+            "OldName": "Item",
+            "NewName": "item"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgMRUCollection",
+            "NewName": "MostRecentlyUsedCollection"
+        },
+        {
+            "OldName": "IAgUiFileOpenExt",
+            "NewName": "UiFileOpenDialogExtension"
+        },
+        {
+            "OldName": "IAgUiApplication",
+            "NewName": "UiApplication"
+        },
+        {
+            "OldName": "IAgUiApplicationPartnerAccess",
+            "NewName": "IUiApplicationPartnerAccess"
+        },
+        {
+            "OldName": "IAgUiFileOpenExtCollection",
+            "NewName": "UiFileOpenDialogExtensionCollection"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "AgUiApplication",
+            "NewName": "UiApplication"
+        },
+        {
+            "OldName": "AgMRUCollection",
+            "NewName": "MostRecentlyUsedCollection"
+        },
+        {
+            "OldName": "AgUiFileOpenExtCollection",
+            "NewName": "UiFileOpenDialogExtensionCollection"
+        },
+        {
+            "OldName": "AgUiFileOpenExt",
+            "NewName": "UiFileOpenDialogExtension"
+        }
+    ],
+    "EnumTypeMappings": [
+        {
+            "OldName": "AgEOpenLogFileMode",
+            "NewName": "ApplicationOpenLogFileMode"
+        },
+        {
+            "OldName": "AgEUiLogMsgType",
+            "NewName": "ApplicationLogMessageType"
+        },
+        {
+            "OldName": "AgEPrefFilesMode",
+            "NewName": "PreferencesFilesMode"
+        },
+        {
+            "OldName": "AgEAppConstants",
+            "NewName": "ApplicationConstants"
+        },
+        {
+            "OldName": "AgEAppErrorCodes",
+            "NewName": "ApplicationErrorCodes"
+        },
+        {
+            "OldName": "AgEWindowState",
+            "NewName": "ApplicationWindowState"
+        }
+    ],
+    "EnumValueMappings": [
+        {
+            "ParentScope": "AgEOpenLogFileMode",
+            "OldName": "eOpenLogFileForWriting",
+            "NewName": "FOR_WRITING"
+        },
+        {
+            "ParentScope": "AgEOpenLogFileMode",
+            "OldName": "eOpenLogFileForAppending",
+            "NewName": "FOR_APPENDING"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgDebug",
+            "NewName": "DEBUG"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgInfo",
+            "NewName": "INFO"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgForceInfo",
+            "NewName": "FORCE_INFO"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgWarning",
+            "NewName": "WARNING"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgAlarm",
+            "NewName": "ALARM"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_NoLoad_NoSave",
+            "NewName": "_NO_LOAD_NO_SAVE"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_Load_No_Save",
+            "NewName": "_LOAD_NO_SAVE"
+        },
+        {
+            "ParentScope": "AgEPrefFilesMode",
+            "OldName": "ePrefFiles_Load_And_Save",
+            "NewName": "_LOAD_AND_SAVE"
+        },
+        {
+            "ParentScope": "AgEAppConstants",
+            "OldName": "eAppErrorBase",
+            "NewName": "APPLICATION_ERROR_BASE"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorPersLoadFail",
+            "NewName": "PERSONALITY_LOAD_FAILED"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorAlreadyLoadFail",
+            "NewName": "PERSONALITY_ALREADY_LOADED"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorPersLoadFirst",
+            "NewName": "PERSONALITY_NOT_LOADED"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorPersLicenseError",
+            "NewName": "PERSONALITY_LICENSE_ERROR"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorNoLicenseError",
+            "NewName": "NO_LICENSE_ERROR"
+        }
+    ],
+    "NamedArgumentMappings": []
+}

@@ -7,7 +7,7 @@ COMObject
 
    Holds a raw COM pointer.
 
-   May be returned from STK if the return argument is not part of the STK Object Model.
+   May be returned from if the return argument is not part of the Object Model.
 
 .. py:currentmodule:: COMObject
 

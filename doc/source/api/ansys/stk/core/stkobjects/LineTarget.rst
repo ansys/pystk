@@ -24,6 +24,8 @@ Overview
               - Return the constraints for the line target.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.allow_object_access`
               - Opt to have access to the object constrained to when it applies to the entire object,rather than any part of it.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.chain_analysis_options`
+              - Get the line target's chain analysis options.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics`
               - Return the 2D graphics properties of the line target.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTarget.graphics_3d`
@@ -68,6 +70,12 @@ Property detail
     :type: bool
 
     Opt to have access to the object constrained to when it applies to the entire object,rather than any part of it.
+
+.. py:property:: chain_analysis_options
+    :canonical: ansys.stk.core.stkobjects.LineTarget.chain_analysis_options
+    :type: ChainAnalysisOptions
+
+    Get the line target's chain analysis options.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.LineTarget.graphics

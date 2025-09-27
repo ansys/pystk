@@ -21,9 +21,9 @@
 # SOFTWARE.
 
 import typing, math
-from agi.stk12.plugins.commrdrplugin import IAgStkCommRdrAbsorptionLossPropagateSignalParams
-from agi.stk12.plugins.attrautomation import AgEAttrAddFlags
-from agi.stk12.plugins.stkplugin import AgStkPluginSite
+from agi.stk13.plugins.commrdrplugin import IAgStkCommRdrAbsorptionLossPropagateSignalParams
+from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
+from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
 
 class CAgStkCommRdrAbsorpLossPlugin(object):

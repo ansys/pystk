@@ -12,7 +12,7 @@ env:
   MINIMUM_PYTHON_VERSION: '3.10'
   PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
+  STK_DOCKER_IMAGE: 'ansys/stk-13.0:dev-ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -116,7 +116,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     needs: build-wheelhouse
-    timeout-minutes: 90
+    timeout-minutes: 360
     permissions:
       contents: read
     steps:

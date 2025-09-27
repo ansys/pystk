@@ -31,7 +31,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.analysis_workbench import *
 
 
-@category("Excluded From RegFree")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -80,6 +79,7 @@ class EarlyBoundTests(TestBase):
             dataset: "DataProviderResultDataSet"
 
             for dataset in resInfo.data_sets:
+
                 TestBase.logger.WriteLine5("ElementName: {0}", dataset.element_name)
                 TestBase.logger.WriteLine3("Count: {0}", dataset.count)
                 TestBase.logger.WriteLine3("ElementType: {0}", dataset.element_type)
@@ -237,7 +237,6 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(set.count, result.data_sets.row_count)
             Assert.assertEqual(set.element_name, str(ElementNames[i]))
             setValues = set.get_values()
-
             j: int = 0
             while j < Array.Length(setValues):
                 Assert.assertEqual(setValues[j], result.data_sets.get_row(j)[i])
@@ -247,7 +246,8 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         rows = result.data_sets.to_array()
-
+        # logger.WriteLine(result.DataSets.ToArray().GetLength(0));
+        # logger.WriteLine(result.DataSets.ToArray().GetLength(1));
         i: int = 0
         while i < len(rows):
             j: int = 0
@@ -442,7 +442,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oResult.sections.count)
         # logger.WriteLine("\tIntervals count: {0}", oResult.Intervals.Count);
         Assert.assertEqual(1, oResult.intervals.count)
-
         iIndex: int = 0
         while iIndex < oResult.intervals.count:
             start: typing.Any = oResult.intervals[iIndex].start_time
@@ -452,7 +451,6 @@ class EarlyBoundTests(TestBase):
 
         # logger.WriteLine("\tDataSets count: {0}", oResult.DataSets.Count);
         Assert.assertEqual(4, oResult.data_sets.count)
-
         iIndex: int = 0
         while iIndex < oResult.data_sets.count:
             elem: typing.Any = oResult.data_sets[iIndex].element_name
@@ -469,7 +467,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Time", oDataSet.element_name)
         Assert.assertEqual("1 Jun 2004 12:04:00.000000000", str(arValues[1]))
         Assert.assertEqual("1 Jun 2004 12:16:00.000000000", str(arValues[4]))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -484,7 +481,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("y", oDataSet.element_name)
         Assert.assertEqual(-6285.353143, Math.Round(float(arValues[0]), 6))
         Assert.assertEqual(5609.665723, Math.Round(float(arValues[13]), 6))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -533,7 +529,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oResult.sections.count)
         # logger.WriteLine("\tIntervals count: {0}", oResult.Intervals.Count);
         Assert.assertEqual(1, oResult.intervals.count)
-
         iIndex: int = 0
         while iIndex < oResult.intervals.count:
             start: typing.Any = oResult.intervals[iIndex].start_time
@@ -543,7 +538,6 @@ class EarlyBoundTests(TestBase):
 
         # logger.WriteLine("\tDataSets count: {0}", oResult.DataSets.Count);
         Assert.assertEqual(4, oResult.data_sets.count)
-
         iIndex: int = 0
         while iIndex < oResult.data_sets.count:
             elem: typing.Any = oResult.data_sets[iIndex].element_name
@@ -560,7 +554,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Time", oDataSet.element_name)
         Assert.assertEqual("1 Jun 2004 12:01:00.000000000", str(arValues[1]))
         Assert.assertEqual("1 Jun 2004 12:04:00.000000000", str(arValues[4]))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -575,7 +568,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("y", oDataSet.element_name)
         Assert.assertEqual(-6285.353143, Math.Round(float(arValues[0]), 6))
         Assert.assertEqual(-2660.314094, Math.Round(float(arValues[13]), 6))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -622,7 +614,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oResult.sections.count)
         # logger.WriteLine("\tIntervals count: {0}", oResult.Intervals.Count);
         Assert.assertEqual(1, oResult.intervals.count)
-
         iIndex: int = 0
         while iIndex < oResult.intervals.count:
             start: typing.Any = oResult.intervals[iIndex].start_time
@@ -632,7 +623,6 @@ class EarlyBoundTests(TestBase):
 
         # logger.WriteLine("\tDataSets count: {0}", oResult.DataSets.Count);
         Assert.assertEqual(4, oResult.data_sets.count)
-
         iIndex: int = 0
         while iIndex < oResult.data_sets.count:
             elem: typing.Any = oResult.data_sets[iIndex].element_name
@@ -655,7 +645,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("1 Jun 2004 12:01:30.188313568", str(arValues[8]))
         Assert.assertEqual("1 Jun 2004 12:01:35.887349506", str(arValues[9]))
         Assert.assertEqual("1 Jun 2004 12:05:01.726211163", str(arValues[19]))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -670,7 +659,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("y", oDataSet.element_name)
         Assert.assertEqual(24.44683, Math.Round(float(arValues[0]), 6))
         Assert.assertEqual(40.338076, Math.Round(float(arValues[13]), 6))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             stuff: typing.Any = arValues[iIndex]
@@ -811,7 +799,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oResult.sections.count)
         # logger.WriteLine("\tIntervals count: {0}", oResult.Intervals.Count);
         Assert.assertEqual(1, oResult.intervals.count)
-
         iIndex: int = 0
         while iIndex < oResult.intervals.count:
             pass
@@ -820,7 +807,6 @@ class EarlyBoundTests(TestBase):
 
         # logger.WriteLine("\tDataSets count: {0}", oResult.DataSets.Count);
         Assert.assertEqual(4, oResult.data_sets.count)
-
         iIndex: int = 0
         while iIndex < oResult.data_sets.count:
             pass
@@ -836,7 +822,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Time", oDataSet.element_name)
         Assert.assertEqual("1 Jun 2004 12:04:00.000000000", str(arValues[1]))
         Assert.assertEqual("1 Jun 2004 12:16:00.000000000", str(arValues[4]))
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             pass
@@ -851,7 +836,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Elevation", oDataSet.element_name)
         Assert.assertAlmostEqual(23.702, float(arValues[0]), delta=0.001)
         Assert.assertAlmostEqual(24.479, float(arValues[1]), delta=0.001)
-
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
             pass
@@ -871,7 +855,6 @@ class EarlyBoundTests(TestBase):
         # string sInstanceName = o.InstanceName;
         sAllNames: str = ""
         count: int = o.data_providers.count
-
         i: int = 1
         while i < o.data_providers.count:
             sName: str = o.data_providers[i].name
@@ -2210,7 +2193,6 @@ class EarlyBoundTests(TestBase):
     def test_DPEnumerateConstraints(self):
         o: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         count: int = o.data_providers.count
-
         i: int = 0
         while i < count:
             dp: "IDataProviderInfo" = o.data_providers[i]
@@ -2225,7 +2207,6 @@ class EarlyBoundTests(TestBase):
     def test_DPEnumProviders(self):
         o: "ISTKObject" = (ISTKObject(TestBase.Application)).children[0].children["Satellite1"]
         count: int = o.data_providers.count
-
         i: int = 0
         while i < count:
             dp: "IDataProviderInfo" = o.data_providers[i]
@@ -3372,15 +3353,20 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(oInfo.is_group())
         oProvider: "IDataProvider" = IDataProvider(oInfo)
         Assert.assertIsNotNone(oProvider)
-        Assert.assertEqual(8, oProvider.elements.count)
+        Assert.assertEqual(13, oProvider.elements.count)
         Assert.assertEqual("Constraint", oProvider.elements[0].name)
         Assert.assertEqual("Value", oProvider.elements[1].name)
         Assert.assertEqual("Display Name", oProvider.elements[2].name)
-        Assert.assertEqual("Value with Units", oProvider.elements[3].name)
-        Assert.assertEqual("Action", oProvider.elements[4].name)
-        Assert.assertEqual("Max Time Step", oProvider.elements[5].name)
-        Assert.assertEqual("Max Relative Motion", oProvider.elements[6].name)
-        Assert.assertEqual("To Classes", oProvider.elements[7].name)
+        Assert.assertEqual("Dimension", oProvider.elements[3].name)
+        Assert.assertEqual("Units for Min/Max", oProvider.elements[4].name)
+        Assert.assertEqual("Min", oProvider.elements[5].name)
+        Assert.assertEqual("Max", oProvider.elements[6].name)
+        Assert.assertEqual("Data Value with Units", oProvider.elements[7].name)
+        Assert.assertEqual("Value with Units", oProvider.elements[8].name)
+        Assert.assertEqual("Action", oProvider.elements[9].name)
+        Assert.assertEqual("Max Time Step", oProvider.elements[10].name)
+        Assert.assertEqual("Max Relative Motion", oProvider.elements[11].name)
+        Assert.assertEqual("To Classes", oProvider.elements[12].name)
 
         iIndex: int = 0
         while iIndex < oProvider.elements.count:
@@ -3402,6 +3388,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Elevation", oProvider.elements[2].name)
         Assert.assertEqual("Range", oProvider.elements[3].name)
 
+        # logger.WriteLine("\t\tNumber of elements: {0}", oProvider.Elements.Count);
         iIndex: int = 0
         while iIndex < oProvider.elements.count:
             pass
@@ -3415,14 +3402,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oInfo.is_group())
         oGroup: "DataProviderGroup" = DataProviderGroup(oInfo)
         Assert.assertEqual(6, oGroup.group.count)
-
+        # logger.WriteLine("\t\tNumber of groups: {0}", oGroup.Group.Count);
         iIndex: int = 0
         while iIndex < oGroup.group.count:
             # logger.WriteLine("\t\t\tGroup {0}: Name = {1}, Type = {2}, IsGroup = {3}", iIndex,
             # 	oGroup.Group[iIndex].Name, oGroup.Group[iIndex].Type, oGroup.Group[iIndex].IsGroup() );
             oProvider = IDataProvider(oGroup.group[iIndex])
             Assert.assertIsNotNone(oProvider)
-
+            # logger.WriteLine("\t\t\t\tNumber of elements: {0}", oProvider.Elements.Count);
             i: int = 0
             while i < oProvider.elements.count:
                 pass
@@ -3557,14 +3544,12 @@ class EarlyBoundTests(TestBase):
             arBoundaries = [1.0, 2.0, 3.0, 4.0, 5.0]
             arRanges = oInterval.multiple_threshold_crossings("FOM Value", arBoundaries)
             outStr: str = ""
-
             iRange: int = 0
             while iRange < len(arRanges):
                 TestBase.logger.Write3("\nRange: {0}\n", iRange)
                 outStr += str(iRange) + "#"
 
                 arTimeSpans = arRanges[iRange]
-
                 iSpan: int = 0
                 while iSpan < len(arTimeSpans):
                     strStart: str = str(arTimeSpans[iSpan][0])
@@ -3689,9 +3674,10 @@ class EarlyBoundTests(TestBase):
         self.RunAllDataProviders(attCov)
         self.RunAllDataProviders(attCov.children.new(STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
         chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "Chain1"))
-        chain.objects.add_object(ISTKObject(sat))
-        chain.objects.add_object(ISTKObject(ac))
+        chain.start_object = ISTKObject(sat)
+        chain.end_object = ISTKObject(ac)
         self.RunAllDataProviders(ISTKObject(chain))
+
         constellation: "Constellation" = Constellation(
             TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "Constellation1")
         )
@@ -3770,11 +3756,15 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
-            startTime
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                startTime
+            )
         )
-        stopEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
-            stopTime
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                stopTime
+            )
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -3918,11 +3908,15 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
-            startTime
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                startTime
+            )
         )
-        stopEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
-            stopTime
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                stopTime
+            )
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -4069,6 +4063,7 @@ class EarlyBoundTests(TestBase):
 
         # logger.WriteLine("Crossings of value: {0}", dThreshold);
         outStr = Double.ToString(dThreshold)
+        # logger.WriteLine("Crossings array size: {0}", arCrossings.GetLength(0));
 
         iIndex: int = 0
         while iIndex < len(arCrossings):
@@ -4288,7 +4283,6 @@ class EarlyBoundTests(TestBase):
         res: "DataProviderResult" = acc.data_providers.get_data_provider_time_varying_from_path(
             "AER Data/Default"
         ).execute("1 Jun 2004 12:00:00.00", "2 Jun 2004 12:00:00.00", 60.0)
-
         i: int = 0
         while i < res.intervals.count:
             statRes: "DataProviderResultTimeVaryingExtremumResult" = (

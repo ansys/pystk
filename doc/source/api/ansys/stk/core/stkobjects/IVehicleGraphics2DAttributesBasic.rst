@@ -53,7 +53,7 @@ Set 2D Graphics display properties
     attributes.line.style = LineStyle.LONG_DASH
     attributes.color = Colors.Lime
     if os.name == "nt":
-        installPath = r"C:\Program Files\AGI\STK 12"
+        installPath = r"C:\Program Files\AGI\STK_ODTK 13"
     else:
         installPath = os.environ["STK_INSTALL_DIR"]
     attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")

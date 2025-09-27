@@ -38,7 +38,6 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         self._filterEcho: bool = filterEcho
         self._counter: int = 0
         self._root: "STKObjectRoot" = root
-
         self.csToPy_OnLogMessageSubscription = (self._root).subscribe()
         self.csToPy_OnLogMessageSubscription.on_log_message += self._root_OnLogMessage
 

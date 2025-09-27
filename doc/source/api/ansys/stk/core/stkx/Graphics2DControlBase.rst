@@ -81,8 +81,6 @@ Overview
               - Return/sets the background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.show_progress_image`
               - The animated progress image type.
-            * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.vendor_id`
-              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.window_id`
               - Window identifier (for Connect commands).
 
@@ -200,12 +198,6 @@ Property detail
     :type: ShowProgressImage
 
     The animated progress image type.
-
-.. py:property:: vendor_id
-    :canonical: ansys.stk.core.stkx.Graphics2DControlBase.vendor_id
-    :type: str
-
-    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: window_id
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.window_id
@@ -366,8 +358,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
-
-
 
 
 

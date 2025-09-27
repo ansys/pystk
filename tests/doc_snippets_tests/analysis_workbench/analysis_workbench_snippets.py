@@ -204,14 +204,14 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
         # Initialization script if needed
         # customScript.InitializationScriptFile = ''
-        trainingSamplesDir = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples"
+        trainingSamplesDir = r"C:\Program Files\AGI\STK_ODTK 13\Data\Resources\stktraining\samples"
         scriptFilePath = r"\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
         customScript.script_file = trainingSamplesDir + scriptFilePath
         if customScript.is_valid is False:
             print("Script component not valid!")
             from os import getenv
 
-            customScriptingDir = r"C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool" % getenv("USERNAME")
+            customScriptingDir = r"C:\Users\%s\Documents\STK_ODTK 13\Config\Scripting\VectorTool" % getenv("USERNAME")
             print(r"Copy vbs file from " + trainingSamplesDir + scriptFilePath + r" to " + customScriptingDir)
 
     def test_CreateProjectionVectorSnippet(self):

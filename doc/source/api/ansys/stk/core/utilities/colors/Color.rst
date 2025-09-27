@@ -5,7 +5,7 @@ Color
 
    object
 
-   An opaque color representation that can be used with the STK Object Model.
+   An opaque color representation that can be used with the Object Model.
 
 .. py:currentmodule:: Color
 

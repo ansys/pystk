@@ -26,6 +26,7 @@ from access_constraints.access_constraint_helper import *
 from antenna.antenna_helper import *
 from assert_extension import *
 from assertion_harness import *
+from chain_analysis_options_helper import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
@@ -81,13 +82,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(OnePointAccessSummary.DETAILED, onePtAccess.summary_option)
         result: "OnePointAccessResult" = None
         results: "OnePointAccessResultCollection" = onePtAccess.compute()
-
         i: int = 0
         while i < results.count:
             result = results[i]
             TestBase.logger.WriteLine2(result.time)
             TestBase.logger.WriteLine2(result.access_is_satisfied)
-
             j: int = 0
             while j < result.constraints.count:
                 constraint: "OnePointAccessConstraint" = result.constraints[j]
@@ -417,6 +416,14 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region ChainAnalysisOptions
+    @category("ChainAnalysisOptions Tests")
+    def test_ChainAnalysisOptions(self):
+        helper = ChainAnalysisOptionsHelper()
+        helper.Run(EarlyBoundTests.AG_PLC.chain_analysis_options, False)
+
+    # endregion
+
     # region Position
     @category("Basic Tests")
     def test_Position(self):
@@ -426,33 +433,10 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region RF_Atmosphere_AtmosphericAbsorptionModel
-    def test_RF_Atmosphere_AtmosphericAbsorptionModel(self):
-        helper = AtmosphereHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.atmosphere)
-
-    # endregion
-
-    # region RF_Atmosphere_LocalRainData
-    def test_RF_Atmosphere_LocalRainData(self):
-        helper = AtmosphereLocalRainDataHelper()
-        helper.Run(EarlyBoundTests.AG_PLC.atmosphere, TestBase.Application)
-
-    # endregion
-
-    # region RF_Radar_Clutter
-    def test_RF_Radar_Clutter(self):
-        helper = RadarClutterMapInheritableHelper()
-        with pytest.raises(Exception, match=RegexSubstringMatch("obsolete")):
-            helper.Run(EarlyBoundTests.AG_PLC.radar_clutter_map)
-
-    # endregion
-
     # region RF_RadarCrossSection
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_PLC.radar_cross_section)
-        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_PLC.radar_cross_section)
 
     # endregion
 
@@ -477,51 +461,72 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region RF_Environment_LocalRainData
+    def test_RF_Environment_LocalRainData(self):
+        helper = AtmosphereLocalRainDataHelper()
+        helper.Run(EarlyBoundTests.AG_PLC.rf_environment, TestBase.Application)
+
+    # endregion
+
     # region RF_Environment_EnvironmentalData
     def test_RF_Environment_EnvironmentalData(self):
-        helper = PlatformRF_Environment_EnvironmentalDataHelper()
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunITU618Section2p5()
 
     # endregion
 
     # region RF_Environment_RainCloudFog_RainModel
     def test_RF_Environment_RainCloudFog_RainModel(self):
-        helper = PlatformRF_Environment_RainCloudFog_RainModelHelper()
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment, TestBase.Application)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunRain()
 
     # endregion
 
     # region RF_Environment_RainCloudFog_CloudsAndFogModel
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
-        helper = PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper()
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment, TestBase.Application)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunCloudsFog()
 
     # endregion
 
     # region RF_Environment_AtmosphericAbsorption
     def test_RF_Environment_AtmosphericAbsorption(self):
-        helper = PlatformRF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunAtmosphericAbsorption()
 
     # endregion
 
     # region RF_Environment_UrbanAndTerrestrial
     def test_RF_Environment_UrbanAndTerrestrial(self):
-        helper = PlatformRF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment, False)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunUrbanTerrestrial(False)
 
     # endregion
 
     # region RF_Environment_TropoScintillation
     def test_RF_Environment_TropoScintillation(self):
-        helper = PlatformRF_Environment_TropoScintillationHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunTroposphericScintillation()
 
     # endregion
 
     # region RF_Environment_CustomModels
     def test_RF_Environment_CustomModels(self):
-        helper = PlatformRF_Environment_CustomModelsHelper(TestBase.Application)
-        helper.Run(EarlyBoundTests.AG_PLC.rf_environment)
+        helper = RFPropagationChannelHelper(
+            EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
+        )
+        helper.RunCustomModels()
 
     # endregion

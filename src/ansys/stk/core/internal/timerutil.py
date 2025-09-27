@@ -26,8 +26,6 @@ import signal
 
 from ctypes import CFUNCTYPE, cdll, c_size_t, c_int, c_void_p
 
-from ..utilities.exceptions import STKInvalidTimerError
-
 TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
 DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
@@ -104,7 +102,7 @@ if os.name != "nt":
     except:
         class Tcl(object):
             def __init__(self):
-                raise STKInvalidTimerError("Cannot use STKEngineTimerType.TKINTER_MAIN_LOOP nor STKEngineTimerType.INTERACTIVE_PYTHON because tkinter installation is not found.")
+                raise RuntimeError("Cannot use STKEngineTimerType.TKINTER_MAIN_LOOP nor STKEngineTimerType.INTERACTIVE_PYTHON because tkinter installation is not found.")
 
     class TclTimer(object):
         def __init__(self):

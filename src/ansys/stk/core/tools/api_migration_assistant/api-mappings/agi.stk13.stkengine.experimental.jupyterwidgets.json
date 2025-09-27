@@ -1,0 +1,73 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkengine.experimental.jupyterwidgets",
+        "NewRootScope": "ansys.stk.core.stkengine.experimental.jupyterwidgets"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "Terminate",
+            "NewName": "terminate"
+        },
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "__InstallTimer",
+            "NewName": "__install_timer"
+        },
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "__DeleteTimer",
+            "NewName": "__delete_timer"
+        },
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "_FireTimers",
+            "NewName": "_fire_timers"
+        },
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "_NextTimerProc",
+            "NewName": "_next_timer_proc"
+        },
+        {
+            "ParentScope": "AsyncioTimerManager",
+            "OldName": "_SetAlarmForNextTimerProc",
+            "NewName": "_set_alarm_for_next_timer_proc"
+        },
+        {
+            "ParentScope": "RemoteFrameBufferHost",
+            "OldName": "_AddRef",
+            "NewName": "_add_ref"
+        },
+        {
+            "ParentScope": "RemoteFrameBufferHost",
+            "OldName": "_Release",
+            "NewName": "_release"
+        },
+        {
+            "ParentScope": "RemoteFrameBufferHost",
+            "OldName": "_QueryInterface",
+            "NewName": "_query_interface"
+        },
+        {
+            "ParentScope": "RemoteFrameBufferHost",
+            "OldName": "_Refresh",
+            "NewName": "_refresh"
+        },
+        {
+            "ParentScope": "WidgetBase",
+            "OldName": "__CreateFrameBuffer",
+            "NewName": "__create_frame_buffer"
+        },
+        {
+            "ParentScope": "WidgetBase",
+            "OldName": "__CreateInstance",
+            "NewName": "__create_instance"
+        }
+    ],
+    "InterfaceMappings": [],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

@@ -1,0 +1,103 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.internal.coclassutil",
+        "NewRootScope": "ansys.stk.core.internal.coclassutil"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "_IErrorInfo",
+            "OldName": "GetDescription",
+            "NewName": "get_description"
+        },
+        {
+            "ParentScope": "_IAgProvideClassId",
+            "OldName": "GetClsid",
+            "NewName": "get_clsid"
+        },
+        {
+            "ParentScope": "_ITypeInfo",
+            "OldName": "GetTypeAttr",
+            "NewName": "get_type_attr"
+        },
+        {
+            "ParentScope": "_ITypeInfo",
+            "OldName": "ReleaseTypeAttr",
+            "NewName": "release_type_attr"
+        },
+        {
+            "ParentScope": "_IProvideClassInfo",
+            "OldName": "GetClassInfo",
+            "NewName": "get_class_info"
+        },
+        {
+            "ParentScope": "IConnectionPoint",
+            "OldName": "GetConnectionInterface",
+            "NewName": "get_connection_interface"
+        },
+        {
+            "ParentScope": "IConnectionPoint",
+            "OldName": "Advise",
+            "NewName": "advise"
+        },
+        {
+            "ParentScope": "IConnectionPoint",
+            "OldName": "Unadvise",
+            "NewName": "unadvise"
+        },
+        {
+            "ParentScope": "IConnectionPointContainer",
+            "OldName": "FindConnectionPoint",
+            "NewName": "find_connection_point"
+        },
+        {
+            "ParentScope": "_IRunningObjectTable",
+            "OldName": "GetObject",
+            "NewName": "get_object"
+        },
+        {
+            "ParentScope": "_IRunningObjectTable",
+            "OldName": "EnumRunning",
+            "NewName": "enum_running"
+        },
+        {
+            "ParentScope": "_IEnumMoniker",
+            "OldName": "Next",
+            "NewName": "next"
+        },
+        {
+            "ParentScope": "_IEnumMoniker",
+            "OldName": "Reset",
+            "NewName": "reset"
+        },
+        {
+            "ParentScope": "_IMalloc",
+            "OldName": "Free",
+            "NewName": "free"
+        },
+        {
+            "ParentScope": "_IMoniker",
+            "OldName": "_FreeDisplayName",
+            "NewName": "_free_display_name"
+        },
+        {
+            "ParentScope": "_IMoniker",
+            "OldName": "GetDisplayName",
+            "NewName": "get_display_name"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "_IAgProvideClassId",
+            "NewName": "_IProvideClassId"
+        }
+    ],
+    "ClassMappings": [
+        {
+            "OldName": "_TYPEATTR",
+            "NewName": "_TypeAttr"
+        }
+    ],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}

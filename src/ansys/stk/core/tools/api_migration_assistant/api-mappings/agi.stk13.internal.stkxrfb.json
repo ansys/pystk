@@ -1,0 +1,102 @@
+{
+    "RootMapping": {
+        "OldRootScope": "agi.stk13.stkxrfb",
+        "NewRootScope": "ansys.stk.core.stkxrfb"
+    },
+    "MemberMappings": [
+        {
+            "ParentScope": "IAgRemoteFrameBufferHost",
+            "OldName": "Refresh",
+            "NewName": "refresh"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "SnapToRBGRaster",
+            "NewName": "snap_to_rbg_raster"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "SetToOffScreenRendering",
+            "NewName": "set_to_offscreen_rendering"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyResize",
+            "NewName": "notify_resize"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyLButtonUp",
+            "NewName": "notify_left_button_up"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyRButtonUp",
+            "NewName": "notify_right_button_up"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyMButtonUp",
+            "NewName": "notify_middle_button_up"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyLButtonDown",
+            "NewName": "notify_left_button_down"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyRButtonDown",
+            "NewName": "notify_right_button_down"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyMButtonDown",
+            "NewName": "notify_middle_button_down"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyMouseMove",
+            "NewName": "notify_mouse_move"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "NotifyMouseWheel",
+            "NewName": "notify_mouse_wheel"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "SetHost",
+            "NewName": "set_host"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "RenderToDirectXTexture",
+            "NewName": "render_to_directx_texture"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "SetToDirectXRendering",
+            "NewName": "set_to_directx_rendering"
+        },
+        {
+            "ParentScope": "IAgRemoteFrameBuffer",
+            "OldName": "UpdateDirectXRenderingTexture",
+            "NewName": "update_directx_rendering_texture"
+        }
+    ],
+    "InterfaceMappings": [
+        {
+            "OldName": "IAgRemoteFrameBufferHost",
+            "NewName": "IRemoteFrameBufferHost"
+        },
+        {
+            "OldName": "IAgRemoteFrameBuffer",
+            "NewName": "IRemoteFrameBuffer"
+        }
+    ],
+    "ClassMappings": [],
+    "EnumTypeMappings": [],
+    "EnumValueMappings": [],
+    "NamedArgumentMappings": []
+}
