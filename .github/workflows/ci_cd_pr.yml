@@ -424,9 +424,11 @@ jobs:
 
       - name: "Generate the name of the Docker image and the container"
         id: docker
+        env:
+          PYTHON_VERSION: ${{ matrix.python }}
         run: |
-          image_name=${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}
-          container_name=stk-python${MAIN_PYTHON_VERSION}
+          image_name=${STK_DOCKER_IMAGE}-python${PYTHON_VERSION}
+          container_name=stk-python${PYTHON_VERSION}
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
           echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
