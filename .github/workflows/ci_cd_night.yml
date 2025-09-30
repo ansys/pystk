@@ -94,27 +94,27 @@ jobs:
         id: docker
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
-          container_name="stk-python${MAIN_PYTHON_VERSION}"
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
-          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
+        id: container
         env:
           STK_IMAGE: ${{ steps.docker.outputs.image }}
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
           LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
         run: |
           docker run \
             --detach -it \
             --network="host" \
-            --name "${STK_CONTAINER}" \
             --env ANSYSLMD_LICENSE_FILE="${LICENSE_SERVER_PORT}@${LICENSE_SERVER}" \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
 
+          container_name=$(docker ps --latest --format "{{.Names}}")
+          echo "name=${container_name}" >> "${GITHUB_OUTPUT}"
+
       - name: "Install system dependencies required for building examples"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --user root \
@@ -140,7 +140,7 @@ jobs:
 
       - name: "Install Tox"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -149,7 +149,7 @@ jobs:
 
       - name: "Build the full documentation"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -165,7 +165,7 @@ jobs:
       - name: "Stop the container"
         if: always()
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker stop "${STK_CONTAINER}"
           docker logs "${STK_CONTAINER}"
@@ -201,14 +201,11 @@ jobs:
         id: docker
         run: |
           image_name=${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}
-          container_name=stk-python${MAIN_PYTHON_VERSION}
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
-          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
         env:
           STK_IMAGE: ${{ steps.docker.outputs.image }}
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
           LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
         run: |
           docker run \
@@ -221,7 +218,7 @@ jobs:
 
       - name: "Install the project with the testing dependencies"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -230,7 +227,7 @@ jobs:
 
       - name: "Install coverage dependencies"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -241,7 +238,7 @@ jobs:
 
       - name: "Run the extensions tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -250,7 +247,7 @@ jobs:
 
       - name: "Run the API migration assistant tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -259,7 +256,7 @@ jobs:
 
       - name: "Run the aviator tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -268,7 +265,7 @@ jobs:
 
       - name: "Run the non graphics stk tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -277,7 +274,7 @@ jobs:
 
       - name: "Run the graphics only stk tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -286,7 +283,7 @@ jobs:
 
       - name: "Run the vgt tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -295,7 +292,7 @@ jobs:
 
       - name: "Run the doc snippet tests"
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -307,7 +304,7 @@ jobs:
       - name: "Combine all coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR}/.cov \
@@ -317,7 +314,7 @@ jobs:
       - name: "Generate coverage report in XML and HTML"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker exec \
             --workdir ${PYSTK_DIR} \
@@ -345,7 +342,7 @@ jobs:
       - name: "Stop the container"
         if: always()
         env:
-          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          STK_CONTAINER: ${{ steps.container.outputs.name }}
         run: |
           docker stop "${STK_CONTAINER}"
           docker logs "${STK_CONTAINER}"
