@@ -204,6 +204,7 @@ jobs:
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
+        id: container
         env:
           STK_IMAGE: ${{ steps.docker.outputs.image }}
           LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
@@ -215,6 +216,9 @@ jobs:
             --env ANSYSLMD_LICENSE_FILE="${LICENSE_SERVER_PORT}@${LICENSE_SERVER}" \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
+
+          container_name=$(docker ps --latest --format "{{.Names}}")
+          echo "name=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Install the project with the testing dependencies"
         env:
