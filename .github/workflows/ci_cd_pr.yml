@@ -444,7 +444,7 @@ jobs:
           docker run \
             --detach -it \
             --network="host" \
-            --name="${STK_CONTAINER}"
+            --name="${STK_CONTAINER}" \
             --env ANSYSLMD_LICENSE_FILE="${LICENSE_SERVER_PORT}@${LICENSE_SERVER}" \
             --volume ${PWD}:/home/stk/pystk \
             "${STK_IMAGE}"
