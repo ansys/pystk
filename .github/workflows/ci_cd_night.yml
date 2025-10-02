@@ -93,7 +93,7 @@ jobs:
       - name: "Generate the name of the Docker image and the container"
         id: docker
         env:
-          RUNNER: ${{ env.RUNNER_NAME }}
+          RUNNER: ${{ runner.name }}
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
           container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"
@@ -202,7 +202,7 @@ jobs:
       - name: "Generate the name of the Docker image and the container"
         id: docker
         env:
-          RUNNER: ${{ env.RUNNER_NAME }}
+          RUNNER: ${{ runner.name }}
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
           container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"

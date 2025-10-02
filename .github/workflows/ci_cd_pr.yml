@@ -229,7 +229,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:examples')
         id: docker
         env:
-          RUNNER: ${{ env.RUNNER_NAME }}
+          RUNNER: ${{ runner.name }}
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
           container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"
@@ -428,7 +428,7 @@ jobs:
         id: docker
         env:
           PYTHON_VERSION: ${{ matrix.python }}
-          RUNNER: ${{ env.RUNNER_NAME }}
+          RUNNER: ${{ runner.name }}
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${PYTHON_VERSION}"
           container_name="stk-python${PYTHON_VERSION}-${RUNNER}"
