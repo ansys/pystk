@@ -85,7 +85,7 @@ migration = [
 vulnerabilities = [
     "bandit[toml]==1.8.6",
     "safety==3.6.1",
-    "typer==0.19.1",
+    "typer==0.19.2",
 ]
 tests = [
     "numpy==2.2.6",
