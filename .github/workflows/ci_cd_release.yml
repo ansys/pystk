@@ -142,9 +142,9 @@ jobs:
           RUNNER: ${{ runner.name }}
         run: |
           image_name="${STK_DOCKER_IMAGE}-python${MAIN_PYTHON_VERSION}"
-          docker_name="stk-python${MAIN_PYTHON_VERSION}"
           container_name="stk-python${MAIN_PYTHON_VERSION}-${RUNNER}"
           echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
+          echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
         env:
