@@ -137,6 +137,7 @@ jobs:
           tree doc/source/_static/wheelhouse
 
       - name: "Generate the name of the Docker image and the container"
+        id: docker
         env:
           RUNNER: ${{ runner.name }}
         run: |
