@@ -103,7 +103,7 @@ doc = [
     "jupyterlab==4.4.7",
     "jupytext==1.17.3",
     "jupyter-server==2.17.0",
-    "libcst==1.8.4",
+    "libcst==1.8.5",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
     "numpydoc==1.9.0",
