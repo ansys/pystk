@@ -84,7 +84,7 @@ migration = [
 [dependency-groups]
 vulnerabilities = [
     "bandit[toml]==1.8.6",
-    "safety==3.6.1",
+    "safety==3.6.2",
     "typer==0.19.2",
 ]
 tests = [
