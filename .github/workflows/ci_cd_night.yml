@@ -103,7 +103,7 @@ jobs:
       - name: "Start the container from the desired image"
         env:
           STK_IMAGE: ${{ steps.docker.outputs.image }}
-          STK_CONTAINER: ${{ steps.docker.outputs.image }}
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
           LICENSE_SERVER: ${{ secrets.LICENSE_SERVER }}
         run: |
           docker run \
