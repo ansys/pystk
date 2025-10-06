@@ -1,4 +1,4 @@
-.. image:: https://github.com/ansys/pystk/blob/main/doc/source/_static/logo.png
+.. image:: https://raw.githubusercontent.com/ansys/pystk/main/doc/source/_static/logo.png
    :target: https://github.com/ansys/pystk/
    :alt: PySTK
 
