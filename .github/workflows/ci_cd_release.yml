@@ -238,15 +238,15 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: "Generate the name of the docker image and the container"
+      - name: "Generate the name of the Docker image and the container"
         id: docker
         env:
-          PYTHON: python-${{ matrix.python }}
+          PYTHON_VERSION: ${{ matrix.python }}
           RUNNER: ${{ runner.name }}
         run: |
-          python_image_name="${STK_DOCKER_IMAGE}-${PYTHON}"
-          container_name="stk-python${PYTHON}-${RUNNER}"
-          echo "image=${python_image_name}" >> "${GITHUB_OUTPUT}"
+          image_name="${STK_DOCKER_IMAGE}-python${PYTHON_VERSION}"
+          container_name="stk-python${PYTHON_VERSION}-${RUNNER}"
+          echo "image=${image_name}" >> "${GITHUB_OUTPUT}"
           echo "container=${container_name}" >> "${GITHUB_OUTPUT}"
 
       - name: "Start the container from the desired image"
