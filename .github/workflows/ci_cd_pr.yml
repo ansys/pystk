@@ -588,7 +588,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR}/.cov \
             "${STK_CONTAINER}" /bin/bash -c \
-            "for f in /tmp/staging/*; do echo $f && gpg --passphrase $GPG_PASSPHRASE --batch --yes -c $f && rm -f $f && base64 $f.gpg; done"
+            "shopt -s nullglob && for f in /tmp/staging/*; do echo $f && gpg --passphrase $GPG_PASSPHRASE --batch --yes -c $f && rm -f $f && base64 $f.gpg; done"
 
       - name: "Stop the container"
         if: always()
