@@ -9,6 +9,142 @@ This document contains the release notes for the PySTK project.
 
 .. towncrier release notes start
 
+`0.2.0 <https://github.com/ansys/pystk/releases/tag/v0.2.0>`_ - October 09, 2025
+================================================================================
+
+.. tab-set::
+
+
+  .. tab-item:: Added
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Switch the repo to STK 13.0.0
+          - `#837 <https://github.com/ansys/pystk/pull/837>`_
+
+
+  .. tab-item:: Dependencies
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Bump jupytext from 1.17.2 to 1.17.3 in the doc group
+          - `#819 <https://github.com/ansys/pystk/pull/819>`_
+
+        * - Bump matplotlib from 3.10.5 to 3.10.6
+          - `#822 <https://github.com/ansys/pystk/pull/822>`_
+
+        * - Bump typer from 0.16.1 to 0.17.3
+          - `#823 <https://github.com/ansys/pystk/pull/823>`_
+
+        * - Bump jupyterlab from 4.4.6 to 4.4.7 in the doc group
+          - `#825 <https://github.com/ansys/pystk/pull/825>`_
+
+        * - Bump pytest from 8.4.1 to 8.4.2 in the tests group
+          - `#826 <https://github.com/ansys/pystk/pull/826>`_
+
+        * - Bump ansys-sphinx-theme from 1.6.0 to 1.6.1 in the doc group
+          - `#827 <https://github.com/ansys/pystk/pull/827>`_
+
+        * - Bump the actions group across 1 directory with 4 updates
+          - `#829 <https://github.com/ansys/pystk/pull/829>`_
+
+        * - Bump pytest-cov from 6.2.1 to 6.3.0 in the tests group
+          - `#831 <https://github.com/ansys/pystk/pull/831>`_
+
+        * - Bump typer from 0.17.3 to 0.17.4
+          - `#832 <https://github.com/ansys/pystk/pull/832>`_
+
+        * - Bump vale from 3.12.0.1 to 3.12.0.2
+          - `#833 <https://github.com/ansys/pystk/pull/833>`_
+
+        * - Bump pytest-cov from 6.3.0 to 7.0.0 in the tests group
+          - `#834 <https://github.com/ansys/pystk/pull/834>`_
+
+        * - Bump libcst from 1.8.2 to 1.8.4
+          - `#835 <https://github.com/ansys/pystk/pull/835>`_
+
+        * - Bump ansys/actions from 10.0.20 to 10.1.1 in the actions group
+          - `#836 <https://github.com/ansys/pystk/pull/836>`_
+
+        * - Bump ansys/actions from 10.1.1 to 10.1.2 in the actions group
+          - `#838 <https://github.com/ansys/pystk/pull/838>`_
+
+        * - Bump ansys/actions from 10.1.2 to 10.1.3 in the actions group
+          - `#842 <https://github.com/ansys/pystk/pull/842>`_
+
+        * - Bump typer from 0.17.4 to 0.19.1
+          - `#843 <https://github.com/ansys/pystk/pull/843>`_
+
+        * - Bump typer from 0.19.1 to 0.19.2
+          - `#845 <https://github.com/ansys/pystk/pull/845>`_
+
+        * - Bump safety from 3.6.1 to 3.6.2
+          - `#846 <https://github.com/ansys/pystk/pull/846>`_
+
+        * - Bump ansys/actions from 10.1.3 to 10.1.4 in the actions group
+          - `#847 <https://github.com/ansys/pystk/pull/847>`_
+
+        * - Bump jupyterlab from 4.4.7 to 4.4.8 in the doc group
+          - `#849 <https://github.com/ansys/pystk/pull/849>`_
+
+        * - Bump libcst from 1.8.4 to 1.8.5
+          - `#850 <https://github.com/ansys/pystk/pull/850>`_
+
+        * - Bump jupyterlab from 4.4.8 to 4.4.9 in the doc group
+          - `#853 <https://github.com/ansys/pystk/pull/853>`_
+
+
+  .. tab-item:: Fixed
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Fix building the STK docker images with latest docker which uses Bake
+          - `#821 <https://github.com/ansys/pystk/pull/821>`_
+
+        * - Pedantic warnings
+          - `#830 <https://github.com/ansys/pystk/pull/830>`_
+
+        * - Use Python 3.10 for testing
+          - `#840 <https://github.com/ansys/pystk/pull/840>`_
+
+        * - Empty environment variable
+          - `#844 <https://github.com/ansys/pystk/pull/844>`_
+
+        * - Use runner name when starting a new container
+          - `#848 <https://github.com/ansys/pystk/pull/848>`_
+
+        * - Adjust container name in nightly build
+          - `#851 <https://github.com/ansys/pystk/pull/851>`_
+
+        * - Use raw link to display logo
+          - `#852 <https://github.com/ansys/pystk/pull/852>`_
+
+        * - Image name in tests job
+          - `#855 <https://github.com/ansys/pystk/pull/855>`_
+
+        * - Ignore python, jupyter, and PDF artifacts
+          - `#860 <https://github.com/ansys/pystk/pull/860>`_
+
+
+  .. tab-item:: Maintenance
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Update CHANGELOG for v0.1.2
+          - `#816 <https://github.com/ansys/pystk/pull/816>`_
+
+        * - Setup multi-runners strategy
+          - `#841 <https://github.com/ansys/pystk/pull/841>`_
+
+
 `0.1.2 <https://github.com/ansys/pystk/releases/tag/v0.1.2>`_ - September 05, 2025
 ==================================================================================
 
