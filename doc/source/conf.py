@@ -27,7 +27,8 @@ from ansys.stk import __version__
 project = "ansys-stk"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
-release = version = __version__
+version = __version__
+release = get_version_match(version)
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
 # Configure the HTML theme
@@ -39,7 +40,7 @@ html_context = {
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
-    "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
+    "version": "main" if version.endswith("dev0") else f"release/{release}",
     "base_url": f"https://github.com/ansys/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
@@ -66,7 +67,7 @@ html_theme_options = {
     ],
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
-        "version_match": get_version_match(__version__),
+        "version_match": release,
     },
     "check_switcher": False,
     "navigation_with_keys": True,
@@ -178,15 +179,21 @@ autosectionlabel_maxdepth = 6
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
-    "https://www.ansys.com/*",
+    r"https://www.ansys.com/*",
     # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-    "https://www.khronos.org/collada/",
+    r"https://support.agi.com/3d-models",
+    r"https://support.agi.com/downloads",
+    # Spurious failures
+    r"https://www.khronos.org/collada/",
+    r"https://www.khronos.org/gltf/",
     # TODO: Determine a way to link to examples without breaking the linkcheck
     # https://github.com/ansys/pystk/issues/657
     r"../examples/",
+    # Ignore links to the examples pdf/ipynb/py files as they are not
+    # available until documentation is not published
+    rf"https://{cname}/version/{release}/examples/.*\.pdf",
+    rf"https://{cname}/version/{release}/examples/.*\.ipynb",
+    rf"https://{cname}/version/{release}/examples/.*\.py",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
