@@ -92,5 +92,10 @@ scenario = root.load_scenario(str(scenario_path))
 
 # After you're done, you can close the STK application:
 
+# +
+# Close the Jupyter widget to ensure graceful exit
+plotter.close()
+
 # Close the STK application
 stk.shutdown()
+# -
