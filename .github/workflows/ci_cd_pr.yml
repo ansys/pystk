@@ -586,9 +586,9 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           docker exec \
-            --workdir ${PYSTK_DIR}/.cov \
+            --workdir /tmp/staging \
             "${STK_CONTAINER}" /bin/bash -c \
-            "cd /tmp/staging && ls && shopt -s nullglob && for f in /tmp/staging/*.txt; do echo file=$f && gpg --passphrase $GPG_PASSPHRASE --batch --yes -c $f && rm -f $f && base64 $f.gpg; done"
+            "ls && shopt -s nullglob && for f in /tmp/staging/*.txt; do echo file=$f && gpg --passphrase $GPG_PASSPHRASE --batch --yes -c $f && rm -f $f && base64 $f.gpg; done"
 
       - name: "Stop the container"
         if: always()
