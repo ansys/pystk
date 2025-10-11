@@ -588,7 +588,7 @@ jobs:
           docker exec \
             --workdir /tmp/staging \
             "${STK_CONTAINER}" /bin/bash -c \
-            "ls && shopt -s nullglob && for f in /tmp/staging/*.txt; do [ -f \"$f\" ] && echo file=$f && gpg --passphrase $GPG_PASSPHRASE --batch --yes -c $f && rm -f $f && base64 $f.gpg; done"
+            "ls && find . -name *.txt -exec gpg --passphrase $GPG_PASSPHRASE --batch --yes -c {} \; && find . -name *.txt.gpg -exec base64 {} \; && rm -f *.txt && rm -f *.txt.gpg"
 
       - name: "Stop the container"
         if: always()
