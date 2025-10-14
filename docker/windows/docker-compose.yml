@@ -61,4 +61,3 @@ services:
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
-

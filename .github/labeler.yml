@@ -13,7 +13,8 @@
   - all:
       - changed-files:
           - any-glob-to-any-file: ['doc/source/**/*.rst']
-          - all-globs-to-all-files: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst', '!doc/styles/**', '!doc/.vale.ini']
+          - all-globs-to-all-files: ['!doc/source/examples.rst', '!doc/source/api/**/*.rst',
+              '!doc/styles/**', '!doc/.vale.ini']
 
 'docs:api':
   - any:

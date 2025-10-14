@@ -45,9 +45,11 @@ permissions: {}
 jobs:
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+      }}"
     runs-on: ${{ matrix.os }}
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name
+      == 'schedule'
     permissions:
       attestations: write
       contents: read
@@ -176,12 +178,14 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) ||
+      github.event_name == 'schedule'
     strategy:
       matrix:
         python: ['3.10', '3.11', '3.12', '3.13']
         is-weekly-run:
-          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 *
+            * 1-5' }}
         exclude:
           - is-weekly-run: true
             python: "3.10"
