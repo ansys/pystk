@@ -91,7 +91,8 @@ jobs:
           fail-level: "warning"
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+      }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:

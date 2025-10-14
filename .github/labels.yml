@@ -8,11 +8,11 @@
   color: d42a34
 
 - name: 'fix'
-  description:  Pull requests related to resolving problems or errors
+  description: Pull requests related to resolving problems or errors
   color: d42a34
 
 - name: 'vulnerability'
-  description:  Pull requests related to resolving problems or errors
+  description: Pull requests related to resolving problems or errors
   color: d42a34
 
 # -- Style labels ------------------------------------------------------------

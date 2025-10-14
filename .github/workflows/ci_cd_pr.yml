@@ -48,7 +48,7 @@ jobs:
       - name: "Label pull-request"
         uses: actions/labeler@634933edcd8ababfe52f92936142cc22ac488b1b # v6.0.1
         with:
-         repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   changelog-fragment:
     name: "Create changelog fragment"
@@ -155,7 +155,8 @@ jobs:
           fail-level: 'warning'
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+      }}"
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:
@@ -190,7 +191,8 @@ jobs:
       matrix:
         runner: [ubuntu-latest, [self-hosted, pystk]]
         needs-self-hosted-runner:
-          - ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
+          - ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples')
+            }}
         exclude:
           - needs-self-hosted-runner: false
             runner: [self-hosted, pystk]
@@ -283,7 +285,8 @@ jobs:
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
-          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
+          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name,
+            'docs:examples') }}
         run: |
           if [[ "${NEEDS_SELF_HOSTED_RUNNER}" == "true" ]]; then
             docker exec \
@@ -317,7 +320,7 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
-            python -m tox -e doc-clean,doc-links,doc-html
+          python -m tox -e doc-clean,doc-links,doc-html
         env:
           BUILD_API: true
           BUILD_EXAMPLES: false
@@ -379,8 +382,7 @@ jobs:
           steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-with-examples.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
-        run:
-          cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
+        run: cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
 
       - name: "Upload HTML documentation artifacts"
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -392,7 +394,8 @@ jobs:
         if: always()
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
-          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
+          NEEDS_SELF_HOSTED_RUNNER: ${{ contains(github.event.pull_request.labels.*.name,
+            'docs:examples') }}
         run: |
           if [[ "${NEEDS_SELF_HOSTED_RUNNER}" == "true" ]]; then
             docker stop "${STK_CONTAINER}"
@@ -578,7 +581,6 @@ jobs:
           docker stop "${STK_CONTAINER}"
           docker logs "${STK_CONTAINER}"
           docker rm "${STK_CONTAINER}"
-
 
   build-library:
     name: "Build library"
