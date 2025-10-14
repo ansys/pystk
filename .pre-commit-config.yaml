@@ -1,68 +1,81 @@
 ci:
-    autofix_commit_msg: |
-        chore: auto fixes from pre-commit.com hooks
+  autofix_commit_msg: |
+    chore: auto fixes from pre-commit.com hooks
 
-        For more information, see https://pre-commit.ci
-    autofix_prs: true
-    autoupdate_branch: 'chore/pre-commit-autoupdate'
-    autoupdate_commit_msg: 'chore: pre-commit automatic update'
-    autoupdate_schedule: weekly
+    For more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: 'chore/pre-commit-autoupdate'
+  autoupdate_commit_msg: 'chore: pre-commit automatic update'
+  autoupdate_schedule: weekly
 
 repos:
 
-- repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.14.0
-  hooks:
-    - id: ruff-check
-      args: [ --fix ]
-      exclude: "^examples/.*_.*"
-    - id: ruff-format
-      exclude: "^src|^tests|^examples/.*_.*"
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.14.0
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        exclude: "^examples/.*_.*"
+      - id: ruff-format
+        exclude: "^src|^tests|^examples/.*_.*"
 
-- repo: https://github.com/zizmorcore/zizmor-pre-commit
-  rev: v1.15.1
-  hooks:
-    - id: zizmor
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.15.1
+    hooks:
+      - id: zizmor
 
-# NOTE: Ruff does not check for python code in some part of the documentation,
-# e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
-- repo: https://github.com/adamchainz/blacken-docs
-  rev: 1.20.0
-  hooks:
-    - id: blacken-docs
-      additional_dependencies: [black==25.1.0]
-      args: ["--line-length=120"]
+  # NOTE: Ruff does not check for python code in some part of the documentation,
+  # e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
+  - repo: https://github.com/adamchainz/blacken-docs
+    rev: 1.20.0
+    hooks:
+      - id: blacken-docs
+        additional_dependencies: [black==25.1.0]
+        args: ["--line-length=120"]
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v6.0.0
-  hooks:
-    - id: trailing-whitespace
-      exclude: "^tests/generated/data"
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: "^tests/generated/data"
 
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.1
+    hooks:
+      - id: codespell
+        # HACK: pre-commit is used during the code-style job in CI/CD. This job
+        # executes `pre-commit run --all-files --show-diff-on-failure`.
+        # As per this issue https://github.com/pre-commit/pre-commit/issues/2936,
+        # it looks like the `--all-files` only listens for the `exclude` option in a
+        # pre-commit hook, ignoring `pyproject.toml` excludes.
+        exclude: ^(src/ansys/stk/core/internal/|tests/|doc/_build|doc/styles/|doc/source/_static)
+        args: [--ignore-words=./doc/styles/config/vocabularies/ANSYS/accept.txt]
+        # TODO: pre-commit seems to ignore the configuration declared for codespell
+        # in the `pyproject.toml` file. For more details, see `[tool.codespell]` in
+        # the `pyproject.toml` file.
+        # additional_dependencies:
+        #   - tomli
 
-- repo: https://github.com/codespell-project/codespell
-  rev: v2.4.1
-  hooks:
-  - id: codespell
-    # HACK: pre-commit is used during the code-style job in CI/CD. This job
-    # executes `pre-commit run --all-files --show-diff-on-failure`.
-    # As per this issue https://github.com/pre-commit/pre-commit/issues/2936,
-    # it looks like the `--all-files` only listens for the `exclude` option in a
-    # pre-commit hook, ignoring `pyproject.toml` excludes.
-    exclude: ^(src/ansys/stk/core/internal/|tests/|doc/_build|doc/styles/|doc/source/_static)
-    args: [--ignore-words=./doc/styles/config/vocabularies/ANSYS/accept.txt]
-    # TODO: pre-commit seems to ignore the configuration declared for codespell
-    # in the `pyproject.toml` file. For more details, see `[tool.codespell]` in
-    # the `pyproject.toml` file.
-    # additional_dependencies:
-    #   - tomli
+  - repo: https://github.com/ansys/pre-commit-hooks
+    rev: v0.5.2
+    hooks:
+      - id: add-license-headers
+        # Having a license on the examples causes it to render as Markdown in the
+        # documentation of the project.
+        exclude: "^examples/|.*_pb2.*\\.py"
+        args:
+          - --start_year=2022
 
-- repo: https://github.com/ansys/pre-commit-hooks
-  rev: v0.5.2
-  hooks:
-    - id: add-license-headers
-      # Having a license on the examples causes it to render as Markdown in the
-      # documentation of the project.
-      exclude: "^examples/|.*_pb2.*\\.py"
-      args:
-      - --start_year=2022
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.17.2
+    hooks:
+      - id: yamlfmt
+        args:
+          - "-formatter"
+          - "max_line_length=80,retain_line_breaks=true,retain_line_breaks_single=true"
+
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: v2.8.0
+    hooks:
+      - id: pyproject-fmt
+        args: [--keep-full-version]
