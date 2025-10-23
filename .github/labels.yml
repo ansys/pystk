@@ -61,6 +61,14 @@
   description: Related to documentation examples
   color: 0677ba
 
+- name: 'docs:changelog'
+  description: Related to documentation changelog
+  color: 0677ba
+
+- name: 'docs:changelog:skip'
+  description: Skip creation of a documentation fragment
+  color: 0677ba
+
 - name: 'docs:skip'
   description: Skip documentation runs in CI/CD
   color: 0677ba
