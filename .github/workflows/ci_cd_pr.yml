@@ -57,7 +57,7 @@ jobs:
       contents: write
       pull-requests: write
     runs-on: ubuntu-latest
-    if:  |
+    if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'docs:changelog:skip')
     steps:
