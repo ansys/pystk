@@ -107,6 +107,7 @@ doc = [
   "jupyter-server==2.17.0",
   "jupyterlab==4.4.9",
   "jupytext==1.17.3",
+  "ipykernel==6.31.0",
   "libcst==1.8.5",
   "matplotlib==3.10.7",
   "myst-parser==4.0.1",
