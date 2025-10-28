@@ -90,7 +90,7 @@ scripts.pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistan
 vulnerabilities = [
   "bandit[toml]==1.8.6",
   "safety==3.6.2",
-  "typer==0.19.2",
+  "typer==0.20.0",
 ]
 tests = [
   "numpy==2.2.6",
@@ -107,7 +107,7 @@ doc = [
   "ipykernel==6.31.0",
   "jupyter-server==2.17.0",
   "jupyterlab==4.4.9",
-  "jupytext==1.17.3",
+  "jupytext==1.18.1",
   "libcst==1.8.5",
   "matplotlib==3.10.7",
   "myst-parser==4.0.1",
