@@ -10,6 +10,8 @@ improving documentation. Below are the guidelines to follow when contributing.
     This project adheres to the `Contributor Covenant Code of Conduct`_. By
     participating, you agree to uphold this code.
 
+You will need a GitHub account. See [instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) for creating one.
+
 Start by selecting your role in the project:
 
 .. grid:: 1 1 3 3
