@@ -533,12 +533,14 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    SOURCE_DATA = SOURCE_EXAMPLES / "data"
     SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
-    for directory in [SOURCE_EXAMPLES, SOURCE_IMAGES]:
+    for directory in [SOURCE_EXAMPLES, SOURCE_DATA, SOURCE_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DATA_DIRCTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
     # Copy the the examples
@@ -553,6 +555,19 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy data files used in the examples
+    data_files = list(EXAMPLES_DATA_DIRCTORY.glob("*"))
+    for file in status_iterator(
+        data_files,
+        f"Copying image to doc/source/examples/data",
+        "green",
+        len(data_files),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_DATA / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Copy the static images
