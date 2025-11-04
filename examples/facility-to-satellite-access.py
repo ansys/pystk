@@ -136,18 +136,19 @@ access_constraint.maximum = 40
 
 # ### Add a satellite using the SPG4 propagator
 
-# **Note:** this portion requires internet access.
-
-# First, create the satellite using online data for the International Space Station (SSN number $25544$):
+# First, create the satellite using local data for the International Space Station (SSN number $25544$):
 
 # +
+import pathlib
+
 from ansys.stk.core.stkobjects import PropagatorType
 
 
 satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 satellite.set_propagator_type(PropagatorType.SGP4)
 propagator = satellite.propagator
-propagator.common_tasks.add_segments_from_online_source("25544")
+tle_file = pathlib.Path("data") / "iss_5Jun2022.tle"
+propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
 propagator.propagate()
 # -
 
