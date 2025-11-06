@@ -85,6 +85,10 @@ html_css_files = [
 ]
 html_js_files = []
 
+# disable including and linking the reST sources in HTML builds
+html_copy_source = False
+html_show_sourcelink = False
+
 # Sphinx extensions
 extensions = [
     "sphinx_copybutton",
