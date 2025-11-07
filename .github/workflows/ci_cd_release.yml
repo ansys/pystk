@@ -103,7 +103,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
+        target: ['all']
     steps:
       - uses: ansys/actions/build-wheelhouse@21c9de9bee9692173780696d4a39964f20b9cfa3 # v10.1.5
         with:
@@ -282,9 +282,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
       - name: "Run the extensions tests"
+        # -- Tests
+
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
@@ -347,9 +347,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
-      # -- Coverage
-
       - name: "Combine all coverage results"
+        # -- Coverage
+
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
