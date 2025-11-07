@@ -371,7 +371,7 @@ if not WHEELHOUSE_PATH.exists():
 
 
 jinja_globals = {
-    "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
+    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "PYSTK_VERSION": version,
     "STK_VERSION": "13.0.0",
