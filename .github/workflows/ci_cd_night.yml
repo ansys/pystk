@@ -19,10 +19,8 @@ on:
     # From Monday to Friday (both included) at 00:00 UTC. Used for running only
     # the 'MAIN_PYTHON_VERSION'.
     - cron: '0 0 * * 1-5'
-    # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
-    # complete list of Python versions.
     - cron: '0 0 * * 6,0'
-
+      # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
 env:
   ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -58,9 +56,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
+        target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@c2fa7c93f6883114e0e643599431b33d29f0b13f # v10.1.4
+      - uses: ansys/actions/build-wheelhouse@21c9de9bee9692173780696d4a39964f20b9cfa3 # v10.1.5
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -83,7 +81,7 @@ jobs:
           persist-credentials: false
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
@@ -161,7 +159,7 @@ jobs:
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Upload combined artifacts"
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           path: doc/_build/html
           name: documentation-html
@@ -248,9 +246,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
       - name: "Run the extensions tests"
+        # -- Tests
+
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
@@ -313,9 +311,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
-      # -- Coverage
-
       - name: "Combine all coverage results"
+        # -- Coverage
+
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
@@ -341,7 +339,7 @@ jobs:
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           path: .cov/${ANSYS_STK}-coverage
           name: ${ANSYS_STK}-coverage
@@ -369,7 +367,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: ansys/actions/doc-deploy-dev@c2fa7c93f6883114e0e643599431b33d29f0b13f # v10.1.4
+      - uses: ansys/actions/doc-deploy-dev@21c9de9bee9692173780696d4a39964f20b9cfa3 # v10.1.5
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}

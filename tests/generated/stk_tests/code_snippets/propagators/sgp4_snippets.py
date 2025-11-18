@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import pytest
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -83,6 +84,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
         # Propagate
         propagator.propagate()
 
+    @pytest.mark.skip(reason="Temporarily disabled due to connectivity.")
     def ConfigureSGP4WithOnlineSource(self, propagator: "PropagatorSGP4"):
         # Configure time period
         propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
