@@ -700,9 +700,9 @@ class Double:
     @staticmethod
     def TryParse(str):
         try:
-            return (True, float(str))
+            return (float(str), True)
         except:
-            return (False, math.nan)
+            return (math.nan, False)
 
     @staticmethod
     def ToString(value):
@@ -739,7 +739,7 @@ class Int32:
 class Convert:
     @staticmethod
     def ToDouble(value):
-        res, convertedValue = Double.TryParse(value)
+        convertedValue, res = Double.TryParse(value)
         if not res:
             raise Exception(f"Cannot convert [{value}] to double")
         else:
@@ -1013,6 +1013,9 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
 
     def InstantiateStkObjectModelContext(self) -> "STKObjectModelContext":
         return self.stk.new_object_model_context()
+
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
+        return self.stk
 
 
 class TestBase(unittest.TestCase):
