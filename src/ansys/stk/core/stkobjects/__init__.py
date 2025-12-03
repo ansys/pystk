@@ -103,31 +103,32 @@ __all__ = ["AberrationType", "Access", "AccessAdvancedSettings", "AccessAllowedT
 "CommSystemLinkSelectionCriteriaMinimumRange", "CommSystemLinkSelectionCriteriaScriptPlugin",
 "CommSystemLinkSelectionCriteriaType", "CommSystemReferenceBandwidth", "CommSystemSaveMode", "Component",
 "ComponentAttrLinkEmbedControl", "ComponentDirectory", "ComponentInfo", "ComponentInfoCollection",
-"ComponentLinkEmbedControlReferenceType", "Constants", "Constellation", "ConstellationConstraintObjectRestriction",
-"ConstellationConstraintRestriction", "ConstellationConstraintRestrictionType", "ConstellationConstraints",
-"ConstellationFromToParentConstraint", "ConstellationGraphics", "ConstellationRouting", "ConstraintBackground",
-"ConstraintGroundTrack", "ConstraintLighting", "Coverage3dDrawAtAltitudeMode", "CoverageAdvancedSettings",
-"CoverageAltitudeMethod", "CoverageAreaTargetsCollection", "CoverageAssetGrouping", "CoverageAssetListCollection",
-"CoverageAssetListElement", "CoverageAssetStatus", "CoverageBounds", "CoverageBoundsCustomBoundary",
-"CoverageBoundsCustomRegions", "CoverageBoundsGlobal", "CoverageBoundsLatitude", "CoverageBoundsLatitudeLine",
-"CoverageBoundsLatitudeLongitudeRegion", "CoverageBoundsLongitudeLine", "CoverageCustomRegionAlgorithm",
-"CoverageDataRetention", "CoverageDefinition", "CoverageEllipse", "CoverageEllipseCollection", "CoverageGraphics",
-"CoverageGraphics2DAnimation", "CoverageGraphics2DProgress", "CoverageGraphics2DStatic", "CoverageGraphics3D",
-"CoverageGraphics3DAttributes", "CoverageGrid", "CoverageGridClass", "CoverageGridInspector",
-"CoverageGridPointSelection", "CoverageGroundAltitudeMethod", "CoverageInterval", "CoverageLatLonBox",
-"CoverageLatLonBoxCollection", "CoveragePointAltitudeMethod", "CoveragePointDefinition",
-"CoveragePointFileListCollection", "CoveragePointLocationMethod", "CoverageRegionAccessAccelerationType",
-"CoverageRegionFilesCollection", "CoverageResolution", "CoverageResolutionArea", "CoverageResolutionDistance",
-"CoverageResolutionLatLon", "CoverageSatisfactionType", "CoverageSelectedGridPoint", "CustomPropagationModel",
-"DataProviderCollection", "DataProviderElement", "DataProviderElementType", "DataProviderElements", "DataProviderFixed",
-"DataProviderGroup", "DataProviderInterval", "DataProviderResult", "DataProviderResultCategory",
-"DataProviderResultDataSet", "DataProviderResultDataSetCollection", "DataProviderResultInterval",
-"DataProviderResultIntervalCollection", "DataProviderResultStatisticResult", "DataProviderResultStatistics",
-"DataProviderResultSubSection", "DataProviderResultSubSectionCollection", "DataProviderResultTextMessage",
-"DataProviderResultTimeArrayElements", "DataProviderResultTimeVaryingExtremumResult", "DataProviderTimeVarying",
-"DataProviderType", "DataProviders", "DataSaveMode", "DelaunayG", "DelaunayGOverSQRTmu", "DelaunayGType", "DelaunayH",
-"DelaunayHOverSQRTmu", "DelaunayHType", "DelaunayL", "DelaunayLOverSQRTmu", "DelaunayLType", "DemodulatorModel",
-"DemodulatorModel16PSK", "DemodulatorModel8PSK", "DemodulatorModelBOC", "DemodulatorModelBPSK", "DemodulatorModelDPSK",
+"ComponentLinkEmbedControlReferenceType", "ConnectAuthenticationMode", "Constants", "Constellation",
+"ConstellationConstraintObjectRestriction", "ConstellationConstraintRestriction",
+"ConstellationConstraintRestrictionType", "ConstellationConstraints", "ConstellationFromToParentConstraint",
+"ConstellationGraphics", "ConstellationRouting", "ConstraintBackground", "ConstraintGroundTrack", "ConstraintLighting",
+"Coverage3dDrawAtAltitudeMode", "CoverageAdvancedSettings", "CoverageAltitudeMethod", "CoverageAreaTargetsCollection",
+"CoverageAssetGrouping", "CoverageAssetListCollection", "CoverageAssetListElement", "CoverageAssetStatus",
+"CoverageBounds", "CoverageBoundsCustomBoundary", "CoverageBoundsCustomRegions", "CoverageBoundsGlobal",
+"CoverageBoundsLatitude", "CoverageBoundsLatitudeLine", "CoverageBoundsLatitudeLongitudeRegion",
+"CoverageBoundsLongitudeLine", "CoverageCustomRegionAlgorithm", "CoverageDataRetention", "CoverageDefinition",
+"CoverageEllipse", "CoverageEllipseCollection", "CoverageGraphics", "CoverageGraphics2DAnimation",
+"CoverageGraphics2DProgress", "CoverageGraphics2DStatic", "CoverageGraphics3D", "CoverageGraphics3DAttributes",
+"CoverageGrid", "CoverageGridClass", "CoverageGridInspector", "CoverageGridPointSelection",
+"CoverageGroundAltitudeMethod", "CoverageInterval", "CoverageLatLonBox", "CoverageLatLonBoxCollection",
+"CoveragePointAltitudeMethod", "CoveragePointDefinition", "CoveragePointFileListCollection",
+"CoveragePointLocationMethod", "CoverageRegionAccessAccelerationType", "CoverageRegionFilesCollection",
+"CoverageResolution", "CoverageResolutionArea", "CoverageResolutionDistance", "CoverageResolutionLatLon",
+"CoverageSatisfactionType", "CoverageSelectedGridPoint", "CustomPropagationModel", "DataProviderCollection",
+"DataProviderElement", "DataProviderElementType", "DataProviderElements", "DataProviderFixed", "DataProviderGroup",
+"DataProviderInterval", "DataProviderResult", "DataProviderResultCategory", "DataProviderResultDataSet",
+"DataProviderResultDataSetCollection", "DataProviderResultInterval", "DataProviderResultIntervalCollection",
+"DataProviderResultStatisticResult", "DataProviderResultStatistics", "DataProviderResultSubSection",
+"DataProviderResultSubSectionCollection", "DataProviderResultTextMessage", "DataProviderResultTimeArrayElements",
+"DataProviderResultTimeVaryingExtremumResult", "DataProviderTimeVarying", "DataProviderType", "DataProviders",
+"DataSaveMode", "DelaunayG", "DelaunayGOverSQRTmu", "DelaunayGType", "DelaunayH", "DelaunayHOverSQRTmu",
+"DelaunayHType", "DelaunayL", "DelaunayLOverSQRTmu", "DelaunayLType", "DemodulatorModel", "DemodulatorModel16PSK",
+"DemodulatorModel8PSK", "DemodulatorModelBOC", "DemodulatorModelBPSK", "DemodulatorModelDPSK",
 "DemodulatorModelExternal", "DemodulatorModelExternalSource", "DemodulatorModelFSK", "DemodulatorModelMSK",
 "DemodulatorModelNFSK", "DemodulatorModelNarrowbandUniform", "DemodulatorModelOQPSK", "DemodulatorModelPulsedSignal",
 "DemodulatorModelQAM1024", "DemodulatorModelQAM128", "DemodulatorModelQAM16", "DemodulatorModelQAM256",
@@ -6717,6 +6718,22 @@ PropagatorDisplayCoordinateType.MIXED_SPHERICAL.__doc__ = "Mixed Spherical Coord
 PropagatorDisplayCoordinateType.SPHERICAL.__doc__ = "Spherical Coordinates."
 
 agcls.AgTypeNameMap["PropagatorDisplayCoordinateType"] = PropagatorDisplayCoordinateType
+
+class ConnectAuthenticationMode(IntEnum):
+    """Determine the authentication mode for the connect."""
+
+    SINGLE_USER_LOCAL = 0
+    """Enforce local single user authentication."""
+    MUTUAL_TLS = 1
+    """Use MutualTLS for authentication."""
+    INSECURE = 2
+    """Allow connections without user authentication. Not recommended."""
+
+ConnectAuthenticationMode.SINGLE_USER_LOCAL.__doc__ = "Enforce local single user authentication."
+ConnectAuthenticationMode.MUTUAL_TLS.__doc__ = "Use MutualTLS for authentication."
+ConnectAuthenticationMode.INSECURE.__doc__ = "Allow connections without user authentication. Not recommended."
+
+agcls.AgTypeNameMap["ConnectAuthenticationMode"] = ConnectAuthenticationMode
 
 class ComponentLinkEmbedControlReferenceType(IntEnum):
     """Component link/embed control reference type."""
@@ -95396,7 +95413,7 @@ agcls.AgTypeNameMap["VehicleEphemerisCCSDSv3ExportTool"] = VehicleEphemerisCCSDS
 class PreferencesConnect(SupportsDeleteCallback):
     """Connect settings."""
 
-    _num_methods = 24
+    _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_allow_connect_method_offset = 1
     _set_allow_connect_method_offset = 2
@@ -95422,6 +95439,18 @@ class PreferencesConnect(SupportsDeleteCallback):
     _set_log_filename_method_offset = 22
     _get_allow_external_connect_method_offset = 23
     _set_allow_external_connect_method_offset = 24
+    _get_authentication_mode_method_offset = 25
+    _set_authentication_mode_method_offset = 26
+    _get_tls_server_certificate_file_method_offset = 27
+    _set_tls_server_certificate_file_method_offset = 28
+    _get_tls_server_key_file_method_offset = 29
+    _set_tls_server_key_file_method_offset = 30
+    _get_tls_ca_file_method_offset = 31
+    _set_tls_ca_file_method_offset = 32
+    _get_uds_directory_method_offset = 33
+    _set_uds_directory_method_offset = 34
+    _get_uds_identifier_method_offset = 35
+    _set_uds_identifier_method_offset = 36
     _metadata = {
         "iid_data" : (4798152500299470674, 8907242480422192298),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -95622,6 +95651,102 @@ class PreferencesConnect(SupportsDeleteCallback):
         """Allow connections from other machines."""
         return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_allow_external_connect_metadata, value)
 
+    _get_authentication_mode_metadata = { "offset" : _get_authentication_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ConnectAuthenticationMode),) }
+    @property
+    def authentication_mode(self) -> "ConnectAuthenticationMode":
+        """Get or set the authentication mode for the server."""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_authentication_mode_metadata)
+
+    _set_authentication_mode_metadata = { "offset" : _set_authentication_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ConnectAuthenticationMode),) }
+    @authentication_mode.setter
+    def authentication_mode(self, value:"ConnectAuthenticationMode") -> None:
+        """Get or set the authentication mode for the server."""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_authentication_mode_metadata, value)
+
+    _get_tls_server_certificate_file_metadata = { "offset" : _get_tls_server_certificate_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def tls_server_certificate_file(self) -> str:
+        """Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)"""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_tls_server_certificate_file_metadata)
+
+    _set_tls_server_certificate_file_metadata = { "offset" : _set_tls_server_certificate_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @tls_server_certificate_file.setter
+    def tls_server_certificate_file(self, value:str) -> None:
+        """Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)"""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_tls_server_certificate_file_metadata, value)
+
+    _get_tls_server_key_file_metadata = { "offset" : _get_tls_server_key_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def tls_server_key_file(self) -> str:
+        """Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)"""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_tls_server_key_file_metadata)
+
+    _set_tls_server_key_file_metadata = { "offset" : _set_tls_server_key_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @tls_server_key_file.setter
+    def tls_server_key_file(self, value:str) -> None:
+        """Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)"""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_tls_server_key_file_metadata, value)
+
+    _get_tls_ca_file_metadata = { "offset" : _get_tls_ca_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def tls_ca_file(self) -> str:
+        """Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)"""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_tls_ca_file_metadata)
+
+    _set_tls_ca_file_metadata = { "offset" : _set_tls_ca_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @tls_ca_file.setter
+    def tls_ca_file(self, value:str) -> None:
+        """Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)"""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_tls_ca_file_metadata, value)
+
+    _get_uds_directory_metadata = { "offset" : _get_uds_directory_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def uds_directory(self) -> str:
+        """Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only."""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_uds_directory_metadata)
+
+    _set_uds_directory_metadata = { "offset" : _set_uds_directory_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @uds_directory.setter
+    def uds_directory(self, value:str) -> None:
+        """Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only."""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_uds_directory_metadata, value)
+
+    _get_uds_identifier_metadata = { "offset" : _get_uds_identifier_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def uds_identifier(self) -> str:
+        """Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only."""
+        return self._intf.get_property(PreferencesConnect._metadata, PreferencesConnect._get_uds_identifier_metadata)
+
+    _set_uds_identifier_metadata = { "offset" : _set_uds_identifier_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @uds_identifier.setter
+    def uds_identifier(self, value:str) -> None:
+        """Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only."""
+        return self._intf.set_property(PreferencesConnect._metadata, PreferencesConnect._set_uds_identifier_metadata, value)
+
     _property_names[allow_connect] = "allow_connect"
     _property_names[allow_asynchronous_communications] = "allow_asynchronous_communications"
     _property_names[maximum_connections] = "maximum_connections"
@@ -95634,6 +95759,12 @@ class PreferencesConnect(SupportsDeleteCallback):
     _property_names[allow_logging] = "allow_logging"
     _property_names[log_filename] = "log_filename"
     _property_names[allow_external_connect] = "allow_external_connect"
+    _property_names[authentication_mode] = "authentication_mode"
+    _property_names[tls_server_certificate_file] = "tls_server_certificate_file"
+    _property_names[tls_server_key_file] = "tls_server_key_file"
+    _property_names[tls_ca_file] = "tls_ca_file"
+    _property_names[uds_directory] = "uds_directory"
+    _property_names[uds_identifier] = "uds_identifier"
 
     def __init__(self, source_object=None):
         """Construct an object of type PreferencesConnect."""
