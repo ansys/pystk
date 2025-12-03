@@ -30,8 +30,8 @@ jobs:
     if: contains(github.ref, 'refs/tags')
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # Write new content to the changelog file
+      pull-requests: write # Write access to add or remove new tags
     steps:
       - uses: ansys/actions/doc-deploy-changelog@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -43,7 +43,7 @@ jobs:
     name: "Code style checks"
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read # Read source code of the project to evaluate code style
     steps:
       - name: "Run code style checks"
         uses: ansys/actions/code-style@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
@@ -54,7 +54,7 @@ jobs:
     name: "Doc style checks"
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read # Read source code of the project to evaluate doc style
     steps:
       - name: "Checkout project"
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
@@ -96,9 +96,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -119,7 +119,7 @@ jobs:
     needs: build-wheelhouse
     timeout-minutes: 360
     permissions:
-      contents: read
+      contents: read # Read the source code of the project
     steps:
 
       - name: "Checkout the project"
@@ -231,7 +231,7 @@ jobs:
         python: ['3.10', '3.11', '3.12', '3.13']
       fail-fast: false
     permissions:
-      contents: read
+      contents: read # Read the source code for evaluating test suite
     steps:
 
       - name: "Checkout the project"
@@ -401,9 +401,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     steps:
       - uses: ansys/actions/build-library@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -416,8 +416,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: release
     permissions:
-      id-token: write
-      contents: write
+      id-token: write # Required for OIDC authentication with PyPI
+      contents: write # Required for OIDC authentication with PyPI
     steps:
 
       - name: "Download the library artifacts from build-library step"
@@ -440,9 +440,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: release
     permissions:
-      attestations: write
-      contents: write
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: write # Write a new release in the GitHub repository
+      id-token: write # Write access to a temporary token for signing attestations
     steps:
       - uses: ansys/actions/release-github@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -458,7 +458,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: release-github
     permissions:
-      contents: write
+      contents: write # Write to the gh-pages branch of the repository
     steps:
       - uses: ansys/actions/doc-deploy-stable@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:

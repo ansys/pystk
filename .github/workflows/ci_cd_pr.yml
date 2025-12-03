@@ -27,8 +27,8 @@ jobs:
   labeler:
     name: "Labels"
     permissions:
-      contents: read
-      pull-requests: write
+      contents: read # Read access to modified files in pull-request
+      pull-requests: write # Write access to add or remove new tags
     runs-on: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
@@ -54,8 +54,8 @@ jobs:
     name: "Create changelog fragment"
     needs: labeler
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # Read the pull-request title
+      pull-requests: write # Write a fragment file in the pull-request
     runs-on: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: labeler
     permissions:
-      contents: read
+      contents: read # Read the dependencies and source code of the library
     steps:
       - uses: ansys/actions/check-vulnerabilities@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -91,7 +91,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: vulnerabilities
     permissions:
-      contents: read
+      contents: read # Read the workflow files in the project
     steps:
       - uses: ansys/actions/check-actions-security@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -108,7 +108,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: actions-style
     permissions:
-      contents: read
+      contents: read # Read the source code of the project
     steps:
       - uses: ansys/actions/code-style@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
@@ -163,9 +163,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: [code-style, doc-style]
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -203,7 +203,7 @@ jobs:
             runner: ubuntu-latest
     timeout-minutes: 360
     permissions:
-      contents: read
+      contents: read # Read the source code of the project
     steps:
 
       - name: "Checkout the project"
@@ -590,9 +590,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestations for the uploaded artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     steps:
       - uses: ansys/actions/build-library@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
