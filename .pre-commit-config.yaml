@@ -20,9 +20,10 @@ repos:
         exclude: "^src|^tests|^examples/.*_.*"
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: 122d24ec728f140b38330ae8b04e3c5fe8b774c5 # v1.15.2
+    rev: 1e30511413f07e516c1844ba91abce8aca984963 # 1.18.0
     hooks:
       - id: zizmor
+        args: ["--pedantic"]
 
   # NOTE: Ruff does not check for python code in some part of the documentation,
   # e.g. python code block, ..., see https://github.com/astral-sh/ruff/issues/8237
