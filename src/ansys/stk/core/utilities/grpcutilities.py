@@ -27,6 +27,8 @@ GrpcCallBatcher may be used to reduce the number of remote communications
 by batching together API commands that do not require return values.
 """
 
+from enum import Enum
+import os
 import typing
 
 from ..internal.apiutil import SupportsDeleteCallback
@@ -37,6 +39,20 @@ try:
     _DEFAULT_BATCH_DISABLE = False
 except ImportError:
     _DEFAULT_BATCH_DISABLE = True
+
+class GrpcAuthenticationMode(Enum):
+    """Specify the method of client-server authentication to use for gRPC."""
+
+    SINGLE_USER = 0
+    """Ensure client and server user match. Only available on Windows."""
+    UNIX_DOMAIN_SOCKET = 1
+    """Ensure client has permission to access server socket file using Unix domain socket names. Only available on Linux."""
+    MUTUAL_TLS = 2
+    """Perform mutual TLS by providing paths for client and server certificate, key, and certificate authority files."""
+    INSECURE = 3
+    """Disable authentication, not recommended. Before using this method, consider a secure connection."""
+    DEFAULT = UNIX_DOMAIN_SOCKET if os.name != "nt" else SINGLE_USER
+    """The default mode for starting or attaching to an STK application. SINGLE_USER on Windows, UNIX_DOMAIN_SOCKET on Linux."""
 
 class GrpcCallBatcher(object):
     """
@@ -205,3 +221,23 @@ class GrpcCallBatcher(object):
         self._unbound_futures[self._next_future_id] = intf_pimpl
         self._next_future_id += 1
         return future
+
+def _get_authentication_mode_string(authentication_mode:GrpcAuthenticationMode):
+    if authentication_mode == GrpcAuthenticationMode.UNIX_DOMAIN_SOCKET:
+        return "uds"
+    elif authentication_mode == GrpcAuthenticationMode.MUTUAL_TLS:
+        return "mtls"
+    elif authentication_mode == GrpcAuthenticationMode.INSECURE:
+        return "insecure"
+    else:
+        return "uds" if os.name != "nt" else "single-user"
+
+def _validate_authentication_mode(authentication_mode:GrpcAuthenticationMode, grpc_host:str):
+    if authentication_mode == GrpcAuthenticationMode.SINGLE_USER:
+        if os.name != "nt":
+            raise RuntimeError("Single user authentication is not supported on Linux. Choose another authentication method.")
+        if grpc_host not in ["localhost", "127.0.0.1"]:
+            raise RuntimeError("Single user authentication is not supported with remote server. Choose another authentication method.")
+    elif authentication_mode == GrpcAuthenticationMode.UNIX_DOMAIN_SOCKET:
+        if os.name == "nt":
+            raise RuntimeError("UDS is not supported on Windows. Choose another authentication method.")

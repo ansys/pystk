@@ -30,8 +30,11 @@ Overview
                 grpc_port is the integral port number that the gRPC server is using.
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-                grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
-                see https://grpc.io/docs/guides/auth/ for more information).
+                Specify grpc_allow_remote_host = True to allow external connections, not allowed by default. Required when using 0.0.0.0 or other remote address as the grpc_host.
+                grpc_client_cert is the path to the client certificate. Required to perform mTLS authentication.
+                grpc_client_key is the path to the client private encryption key. Required to perform mTLS authentication.
+                grpc_ca is the path to the issuing certificate authority. Required to perform mTLS authentication.
+                grpc_authentication_mode is the method of client-server authentication to use for gRPC. Default is SINGLE_USER.
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
               - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
@@ -52,8 +55,13 @@ Overview
                 grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-                grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
-                see https://grpc.io/docs/guides/auth/ for more information).
+                Specify grpc_allow_remote_host = True to allow external connections, not allowed by default. Required when using 0.0.0.0 or other remote address as the grpc_host.
+                grpc_server_cert is the path to the server certificate file. Required for mTLS authentication.
+                grpc_server_key is the path to the server key file. Required for mTLS authentication.
+                grpc_client_cert is the path to the client certificate file. Required for mTLS authentication.
+                grpc_client_key is the path to the client key file. Required for mTLS authentication.
+                grpc_ca is the path to the issuing certificate authority. Required for mTLS authentication.
+                grpc_authentication_mode is the method of client-server authentication to use for gRPC. Default is SINGLE_USER.
                 Only available on Windows.
 
 Import detail
@@ -67,7 +75,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_channel_credentials) -> STKDesktopApplication
+.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = 127.0.0.1, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_allow_remote_host: bool = False, grpc_client_cert: str = None, grpc_client_key: str = None, grpc_ca: str = None, grpc_authentication_mode: GrpcAuthenticationMode) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
 
     Attach to an existing STK Desktop instance.
@@ -78,8 +86,11 @@ Method detail
     grpc_port is the integral port number that the gRPC server is using.
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
     grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-    grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
-    see https://grpc.io/docs/guides/auth/ for more information).
+    Specify grpc_allow_remote_host = True to allow external connections, not allowed by default. Required when using 0.0.0.0 or other remote address as the grpc_host.
+    grpc_client_cert is the path to the client certificate. Required to perform mTLS authentication.
+    grpc_client_key is the path to the client private encryption key. Required to perform mTLS authentication.
+    grpc_ca is the path to the issuing certificate authority. Required to perform mTLS authentication.
+    grpc_authentication_mode is the method of client-server authentication to use for gRPC. Default is SINGLE_USER.
     Only available on Windows.
 
     :Parameters:
@@ -95,6 +106,16 @@ Method detail
         **grpc_timeout_sec** : :obj:`~int`
 
         **grpc_max_message_size** : :obj:`~int`
+
+        **grpc_allow_remote_host** : :obj:`~bool`
+
+        **grpc_client_cert** : :obj:`~str`
+
+        **grpc_client_key** : :obj:`~str`
+
+        **grpc_ca** : :obj:`~str`
+
+        **grpc_authentication_mode** : :obj:`~GrpcAuthenticationMode`
 
 
     :Returns:
@@ -123,7 +144,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_channel_credentials) -> STKDesktopApplication
+.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = 127.0.0.1, grpc_port: int = 40704, grpc_timeout_sec: int = 60, grpc_max_message_size: int = 0, grpc_allow_remote_host: bool = False, grpc_server_cert: str = None, grpc_server_key: str = None, grpc_client_cert: str = None, grpc_client_key: str = None, grpc_ca: str = None, grpc_authentication_mode: GrpcAuthenticationMode) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
     Create a new STK Desktop application instance.
@@ -136,8 +157,13 @@ Method detail
     grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
     grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
-    grpc_channel_credentials are channel credentials to be attached to the grpc channel (most common use case: SSL credentials,
-    see https://grpc.io/docs/guides/auth/ for more information).
+    Specify grpc_allow_remote_host = True to allow external connections, not allowed by default. Required when using 0.0.0.0 or other remote address as the grpc_host.
+    grpc_server_cert is the path to the server certificate file. Required for mTLS authentication.
+    grpc_server_key is the path to the server key file. Required for mTLS authentication.
+    grpc_client_cert is the path to the client certificate file. Required for mTLS authentication.
+    grpc_client_key is the path to the client key file. Required for mTLS authentication.
+    grpc_ca is the path to the issuing certificate authority. Required for mTLS authentication.
+    grpc_authentication_mode is the method of client-server authentication to use for gRPC. Default is SINGLE_USER.
     Only available on Windows.
 
     :Parameters:
@@ -155,6 +181,20 @@ Method detail
         **grpc_timeout_sec** : :obj:`~int`
 
         **grpc_max_message_size** : :obj:`~int`
+
+        **grpc_allow_remote_host** : :obj:`~bool`
+
+        **grpc_server_cert** : :obj:`~str`
+
+        **grpc_server_key** : :obj:`~str`
+
+        **grpc_client_cert** : :obj:`~str`
+
+        **grpc_client_key** : :obj:`~str`
+
+        **grpc_ca** : :obj:`~str`
+
+        **grpc_authentication_mode** : :obj:`~GrpcAuthenticationMode`
 
 
     :Returns:

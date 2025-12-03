@@ -1167,3 +1167,68 @@ class BugFixes(TestBase):
                 group.remove(compName)
 
         TestBase.logger.WriteLine("----- BUG108208_UseOfDeletedTimeComponent ACCESS TEST ----- END -----")
+
+    def test_ANLY_1263(self):
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat1263")
+        cons: "AccessConstraintCollection" = objSat.access_constraints
+        excl: "AccessConstraintObjExAngle" = clr.CastAs(
+            cons.add_constraint(AccessConstraintType.OBJECT_EXCLUSION_ANGLE), AccessConstraintObjExAngle
+        )
+        # System.Windows.Forms.MessageBox.Show("Sat - ExclAngle constraint was created, but is not shown in GUI");
+
+        objPlace: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place1263")
+        excl.add_exclusion_object("Place/Place1263")
+        # System.Windows.Forms.MessageBox.Show("Sat - ExclAngle constraint is now shown in GUI");
+
+        objPlace2: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place1263_2")
+        pls_cons: "AccessConstraintCollection" = objPlace2.access_constraints
+        plc_excl: "AccessConstraintObjExAngle" = clr.CastAs(
+            pls_cons.add_named_constraint("ObjectExclusionAngle"), AccessConstraintObjExAngle
+        )
+        # System.Windows.Forms.MessageBox.Show("Place2 - ExclAngle constraint was created, but is not shown in GUI");
+
+        plc_excl.add_exclusion_object("Place/Place1263")
+        # System.Windows.Forms.MessageBox.Show("Place2 - ExclAngle constraint is now shown in GUI");
+
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat1263")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.PLACE, "Place1263")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.PLACE, "Place1263_2")
+
+    def test_ANLY_1264(self):
+        scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children["AccessBugFixesSat"]
+        objPlace1: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place1264_1")
+        objPlace2: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place1264_2")
+        place2: "Place" = clr.CastAs(objPlace2, Place)
+        place2.position.assign_geodetic(-10, -75, 0)
+
+        objChain: "ISTKObject" = TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "Chain1264")
+        chain: "Chain" = clr.CastAs(objChain, Chain)
+        chain.start_object = objSat
+        chain.end_object = objPlace2
+        chain.connections.add(objSat, objPlace2, 1, 1)
+        chain.clear_access()
+        chain.compute_access()
+
+        excl: "AccessConstraintObjExAngle" = clr.CastAs(
+            objSat.access_constraints.add_constraint(AccessConstraintType.OBJECT_EXCLUSION_ANGLE),
+            AccessConstraintObjExAngle,
+        )
+        excl.add_exclusion_object("Place/Place1264_1")
+
+        dpInfo: "IDataProviderInfo" = objChain.data_providers["Complete Access"]
+        dpInterval: "DataProviderInterval" = clr.CastAs(dpInfo, DataProviderInterval)
+        result: "DataProviderResult" = dpInterval.execute(scenario.start_time, scenario.stop_time)
+        Assert.assertEqual(8, result.intervals[0].data_sets[0].count)  # 8 access intervals
+
+        place1: "Place" = clr.CastAs(objPlace1, Place)
+        place1.position.assign_geodetic(-9, -75, 0)  # causes the Chain to re-compute
+
+        result = dpInterval.execute(scenario.start_time, scenario.stop_time)
+        Assert.assertEqual(11, result.intervals[0].data_sets[0].count)  # 11 access intervals
+
+        # Cleanup
+        excl.remove_exclusion_object("Place/Place1264_1")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.CHAIN, "Chain1264")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.PLACE, "Place1264_1")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.PLACE, "Place1264_2")
