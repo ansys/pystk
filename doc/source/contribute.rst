@@ -10,6 +10,12 @@ improving documentation. Below are the guidelines to follow when contributing.
     This project adheres to the `Contributor Covenant Code of Conduct`_. By
     participating, you agree to uphold this code.
 
+You need a GitHub account to contribute to PySTK. Read the guidelines on
+`signing up for a new GitHub account`_ so you can participate in the
+project.
+
+.. _signing up for a new GitHub account: https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account
+
 Start by selecting your role in the project:
 
 .. grid:: 1 1 3 3

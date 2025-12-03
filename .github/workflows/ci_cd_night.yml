@@ -19,10 +19,8 @@ on:
     # From Monday to Friday (both included) at 00:00 UTC. Used for running only
     # the 'MAIN_PYTHON_VERSION'.
     - cron: '0 0 * * 1-5'
-    # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
-    # complete list of Python versions.
     - cron: '0 0 * * 6,0'
-
+      # From Saturday to Sunday (both included) at 00:00 UTC. Used for running the
 env:
   ANSYS_STK: 'ansys-stk'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -45,20 +43,22 @@ permissions: {}
 jobs:
 
   build-wheelhouse:
-    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version }}"
+    name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
+      }}"
     runs-on: ${{ matrix.os }}
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-doc == true) || github.event_name
+      == 'schedule'
     permissions:
-      attestations: write
-      contents: read
-      id-token: write
+      attestations: write # Write attestation for uploaded distribution artifacts
+      contents: read # Read the source code of the project
+      id-token: write # Write access to a temporary token for signing attestations
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
+        target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@c2fa7c93f6883114e0e643599431b33d29f0b13f # v10.1.4
+      - uses: ansys/actions/build-wheelhouse@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -76,12 +76,12 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           persist-credentials: false
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
@@ -159,7 +159,7 @@ jobs:
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Upload combined artifacts"
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           path: doc/_build/html
           name: documentation-html
@@ -176,12 +176,14 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) || github.event_name == 'schedule'
+    if: (github.event_name == 'workflow_dispatch' && inputs.run-tests == true) ||
+      github.event_name == 'schedule'
     strategy:
       matrix:
         python: ['3.10', '3.11', '3.12', '3.13']
         is-weekly-run:
-          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
+          - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 *
+            * 1-5' }}
         exclude:
           - is-weekly-run: true
             python: "3.10"
@@ -191,11 +193,11 @@ jobs:
             python: "3.12"
       fail-fast: false
     permissions:
-      contents: read
+      contents: read # Read the source code of the project
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           persist-credentials: false
 
@@ -244,9 +246,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
       - name: "Run the extensions tests"
+        # -- Tests
+
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
@@ -309,9 +311,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
-      # -- Coverage
-
       - name: "Combine all coverage results"
+        # -- Coverage
+
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
@@ -337,7 +339,7 @@ jobs:
 
       - name: "Upload ${{ env.ANSYS_STK }} coverage results"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           path: .cov/${ANSYS_STK}-coverage
           name: ${ANSYS_STK}-coverage
@@ -363,9 +365,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: doc-build
     permissions:
-      contents: write
+      contents: write # Write new content to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-dev@c2fa7c93f6883114e0e643599431b33d29f0b13f # v10.1.4
+      - uses: ansys/actions/doc-deploy-dev@46957117ba42d3d075c6cca0f6bbdc1ac2a9af04 # v10.2.0
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}

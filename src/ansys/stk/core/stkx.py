@@ -62,8 +62,8 @@ __all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollectio
 "Graphics2DDrawCoordinates", "Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement",
 "IDrawElementCollection", "IDrawElementRect", "LoggingMode", "MouseMode", "OLEDropMode", "ObjectPathCollection",
 "PickInfoData", "ProgressImageXOrigin", "ProgressImageYOrigin", "RubberBandPickInfoData", "STKXApplication",
-"STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs",
-"ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
+"STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXConnectAuthenticationMode",
+"STKXSSLCertificateErrorEventArgs", "ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
 from ctypes import POINTER
 from datetime import datetime
@@ -260,6 +260,25 @@ ProgressImageYOrigin.BOTTOM.__doc__ = "Align progress Image from Y bottom."
 ProgressImageYOrigin.CENTER.__doc__ = "Align progress Image from Y center."
 
 agcls.AgTypeNameMap["ProgressImageYOrigin"] = ProgressImageYOrigin
+
+class STKXConnectAuthenticationMode(IntEnum):
+    """Determine the authentication mode for connect."""
+
+    SINGLE_USER_LOCAL = 0x0000
+    """Enforce local single user authentication."""
+    MUTUAL_TLS = 0x0001
+    """Use MutualTLS for authentication."""
+    INSECURE = 0x0002
+    """Allow connections without user authentication. Not recommended."""
+    DEFAULT = 0x0003
+    """Using default authentication mode."""
+
+STKXConnectAuthenticationMode.SINGLE_USER_LOCAL.__doc__ = "Enforce local single user authentication."
+STKXConnectAuthenticationMode.MUTUAL_TLS.__doc__ = "Use MutualTLS for authentication."
+STKXConnectAuthenticationMode.INSECURE.__doc__ = "Allow connections without user authentication. Not recommended."
+STKXConnectAuthenticationMode.DEFAULT.__doc__ = "Using default authentication mode."
+
+agcls.AgTypeNameMap["STKXConnectAuthenticationMode"] = STKXConnectAuthenticationMode
 
 
 class IDrawElement(object):
@@ -1508,7 +1527,7 @@ agcls.AgTypeNameMap["PickInfoData"] = PickInfoData
 class STKXApplication(SupportsDeleteCallback):
     """STK X Application object."""
 
-    _num_methods = 26
+    _num_methods = 40
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _execute_command_method_offset = 1
     _get_enable_connect_method_offset = 2
@@ -1536,6 +1555,20 @@ class STKXApplication(SupportsDeleteCallback):
     _get_use_hook_method_offset = 24
     _set_use_hook_method_offset = 25
     _use_software_renderer_method_offset = 26
+    _get_allow_external_connect_method_offset = 27
+    _set_allow_external_connect_method_offset = 28
+    _get_connect_tls_server_certificate_file_method_offset = 29
+    _set_connect_tls_server_certificate_file_method_offset = 30
+    _get_connect_tls_server_key_file_method_offset = 31
+    _set_connect_tls_server_key_file_method_offset = 32
+    _get_connect_tls_ca_file_method_offset = 33
+    _set_connect_tls_ca_file_method_offset = 34
+    _get_connect_auth_mode_method_offset = 35
+    _set_connect_auth_mode_method_offset = 36
+    _get_connect_uds_directory_method_offset = 37
+    _set_connect_uds_directory_method_offset = 38
+    _get_connect_uds_identifier_method_offset = 39
+    _set_connect_uds_identifier_method_offset = 40
     _metadata = {
         "iid_data" : (5451411510624686901, 5826643244584847294),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -1741,6 +1774,111 @@ class STKXApplication(SupportsDeleteCallback):
         """Configure engine graphics to use a software renderer in order to meet minimum graphics requirements. Enabling this option will result in significant performance impacts."""
         return self._intf.invoke(STKXApplication._metadata, STKXApplication._use_software_renderer_metadata, )
 
+    _get_allow_external_connect_metadata = { "offset" : _get_allow_external_connect_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def allow_external_connect(self) -> bool:
+        """Allow external connections."""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_allow_external_connect_metadata)
+
+    _set_allow_external_connect_metadata = { "offset" : _set_allow_external_connect_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @allow_external_connect.setter
+    def allow_external_connect(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_allow_external_connect_metadata, value)
+
+    _get_connect_tls_server_certificate_file_metadata = { "offset" : _get_connect_tls_server_certificate_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def connect_tls_server_certificate_file(self) -> str:
+        """Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)"""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_tls_server_certificate_file_metadata)
+
+    _set_connect_tls_server_certificate_file_metadata = { "offset" : _set_connect_tls_server_certificate_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @connect_tls_server_certificate_file.setter
+    def connect_tls_server_certificate_file(self, value:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_tls_server_certificate_file_metadata, value)
+
+    _get_connect_tls_server_key_file_metadata = { "offset" : _get_connect_tls_server_key_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def connect_tls_server_key_file(self) -> str:
+        """Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)"""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_tls_server_key_file_metadata)
+
+    _set_connect_tls_server_key_file_metadata = { "offset" : _set_connect_tls_server_key_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @connect_tls_server_key_file.setter
+    def connect_tls_server_key_file(self, value:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_tls_server_key_file_metadata, value)
+
+    _get_connect_tls_ca_file_metadata = { "offset" : _get_connect_tls_ca_file_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def connect_tls_ca_file(self) -> str:
+        """Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)"""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_tls_ca_file_metadata)
+
+    _set_connect_tls_ca_file_metadata = { "offset" : _set_connect_tls_ca_file_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @connect_tls_ca_file.setter
+    def connect_tls_ca_file(self, value:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_tls_ca_file_metadata, value)
+
+    _get_connect_auth_mode_metadata = { "offset" : _get_connect_auth_mode_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(STKXConnectAuthenticationMode),) }
+    @property
+    def connect_auth_mode(self) -> "STKXConnectAuthenticationMode":
+        """Get or set the authentication mode for connect."""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_auth_mode_metadata)
+
+    _set_connect_auth_mode_metadata = { "offset" : _set_connect_auth_mode_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(STKXConnectAuthenticationMode),) }
+    @connect_auth_mode.setter
+    def connect_auth_mode(self, value:"STKXConnectAuthenticationMode") -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_auth_mode_metadata, value)
+
+    _get_connect_uds_directory_metadata = { "offset" : _get_connect_uds_directory_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def connect_uds_directory(self) -> str:
+        """Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only."""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_uds_directory_metadata)
+
+    _set_connect_uds_directory_metadata = { "offset" : _set_connect_uds_directory_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @connect_uds_directory.setter
+    def connect_uds_directory(self, value:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_uds_directory_metadata, value)
+
+    _get_connect_uds_identifier_metadata = { "offset" : _get_connect_uds_identifier_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def connect_uds_identifier(self) -> str:
+        """Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only."""
+        return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_connect_uds_identifier_metadata)
+
+    _set_connect_uds_identifier_metadata = { "offset" : _set_connect_uds_identifier_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @connect_uds_identifier.setter
+    def connect_uds_identifier(self, value:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_uds_identifier_metadata, value)
+
     _property_names[enable_connect] = "enable_connect"
     _property_names[connect_port] = "connect_port"
     _property_names[host_id] = "host_id"
@@ -1752,6 +1890,13 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names[no_graphics] = "no_graphics"
     _property_names[show_sla_if_not_accepted] = "show_sla_if_not_accepted"
     _property_names[use_hook] = "use_hook"
+    _property_names[allow_external_connect] = "allow_external_connect"
+    _property_names[connect_tls_server_certificate_file] = "connect_tls_server_certificate_file"
+    _property_names[connect_tls_server_key_file] = "connect_tls_server_key_file"
+    _property_names[connect_tls_ca_file] = "connect_tls_ca_file"
+    _property_names[connect_auth_mode] = "connect_auth_mode"
+    _property_names[connect_uds_directory] = "connect_uds_directory"
+    _property_names[connect_uds_identifier] = "connect_uds_identifier"
 
     def __init__(self, source_object=None):
         """Construct an object of type STKXApplication."""
