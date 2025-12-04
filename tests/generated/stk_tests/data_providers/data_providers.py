@@ -90,7 +90,7 @@ class EarlyBoundTests(TestBase):
                     dblVal: float = 0
                     value: typing.Any
                     for value in values:
-                        (generated1, dblVal) = Double.TryParse(str(value))
+                        (dblVal, generated1) = Double.TryParse(str(value))
                         # Ensure the values returned are numeric
                         Assert.assertTrue(generated1)
 

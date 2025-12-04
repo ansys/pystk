@@ -45,10 +45,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.allow_external_connect`
+              - Allow external connections.
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_auth_mode`
+              - Get or set the authentication mode for connect.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_max_connections`
               - Specify the maximum number of Connect connections to allow.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_port`
               - Specify TCP/IP port to be used by Connect (default: 5001).
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_tls_ca_file`
+              - Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_tls_server_certificate_file`
+              - Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_tls_server_key_file`
+              - Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_uds_directory`
+              - Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_uds_identifier`
+              - Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.enable_connect`
               - Enable or disable TCP/IP connect command processing (default: disabled).
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.host_id`
@@ -83,6 +97,18 @@ Import detail
 Property detail
 ---------------
 
+.. py:property:: allow_external_connect
+    :canonical: ansys.stk.core.stkx.STKXApplication.allow_external_connect
+    :type: bool
+
+    Allow external connections.
+
+.. py:property:: connect_auth_mode
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_auth_mode
+    :type: STKXConnectAuthenticationMode
+
+    Get or set the authentication mode for connect.
+
 .. py:property:: connect_max_connections
     :canonical: ansys.stk.core.stkx.STKXApplication.connect_max_connections
     :type: int
@@ -94,6 +120,36 @@ Property detail
     :type: int
 
     Specify TCP/IP port to be used by Connect (default: 5001).
+
+.. py:property:: connect_tls_ca_file
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_tls_ca_file
+    :type: str
+
+    Get or set the filepath to the server certificate authentication file for mTLS authentication. (e.g. ca.crt)
+
+.. py:property:: connect_tls_server_certificate_file
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_tls_server_certificate_file
+    :type: str
+
+    Get or set the filepath to the server certificate file for mTLS authentication. (e.g. server.crt)
+
+.. py:property:: connect_tls_server_key_file
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_tls_server_key_file
+    :type: str
+
+    Get or set the filepath to the server key file for mTLS authentication. (e.g. server.key)
+
+.. py:property:: connect_uds_directory
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_uds_directory
+    :type: str
+
+    Get or set the filepath to the directory for the UDS socket file. Supported on Linux platforms only.
+
+.. py:property:: connect_uds_identifier
+    :canonical: ansys.stk.core.stkx.STKXApplication.connect_uds_identifier
+    :type: str
+
+    Get or set an optional UDS ID for multiple connections. Supported on Linux platforms only.
 
 .. py:property:: enable_connect
     :canonical: ansys.stk.core.stkx.STKXApplication.enable_connect
@@ -158,6 +214,20 @@ Property detail
 
 Method detail
 -------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

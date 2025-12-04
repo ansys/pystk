@@ -35,11 +35,17 @@ The STK desktop application or STK Engine must be installed and licensed on your
     :header-rows: 1
 
     * - Ansys Release
-      - 2025.1
+      - 2025r1
     * - STK Release
-      - 12.10
+      - 12.10.0
     * - PySTK Release
-      - 0.1.x
+      - 0.1.2
+    * - Ansys Release
+      - 2025r1.2
+    * - STK Release
+      - 12.10.1
+    * - PySTK Release
+      - 0.1.3
 
 Install the STK Desktop application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

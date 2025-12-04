@@ -206,6 +206,41 @@
         },
         {
             "ParentScope": "IAgSTKXApplication",
+            "OldName": "AllowExternalConnect",
+            "NewName": "allow_external_connect"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectTlsCertFile",
+            "NewName": "connect_tls_server_certificate_file"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectTlsKeyFile",
+            "NewName": "connect_tls_server_key_file"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectTlsCaFile",
+            "NewName": "connect_tls_ca_file"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectAuthMode",
+            "NewName": "connect_auth_mode"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectUdsDir",
+            "NewName": "connect_uds_directory"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
+            "OldName": "ConnectUdsId",
+            "NewName": "connect_uds_identifier"
+        },
+        {
+            "ParentScope": "IAgSTKXApplication",
             "OldName": "Subscribe",
             "NewName": "subscribe"
         },
@@ -953,6 +988,10 @@
             "NewName": "LogMessageDisplayID"
         },
         {
+            "OldName": "AgESTKXApplicationAuthMode",
+            "NewName": "STKXConnectAuthenticationMode"
+        },
+        {
             "OldName": "AgEExecMultiCmdResultAction",
             "NewName": "ExecuteMultipleCommandsMode"
         },
@@ -1116,6 +1155,26 @@
             "ParentScope": "AgEProgressImageYOrigin",
             "OldName": "eProgressImageYCenter",
             "NewName": "CENTER"
+        },
+        {
+            "ParentScope": "AgESTKXApplicationAuthMode",
+            "OldName": "eSTKXApplicationAuthModeEnforceSingleUserLocal",
+            "NewName": "SINGLE_USER_LOCAL"
+        },
+        {
+            "ParentScope": "AgESTKXApplicationAuthMode",
+            "OldName": "eSTKXApplicationAuthModeMutualTLS",
+            "NewName": "MUTUAL_TLS"
+        },
+        {
+            "ParentScope": "AgESTKXApplicationAuthMode",
+            "OldName": "eSTKXApplicationAuthModeInsecure",
+            "NewName": "INSECURE"
+        },
+        {
+            "ParentScope": "AgESTKXApplicationAuthMode",
+            "OldName": "eSTKXApplicationAuthModeDefault",
+            "NewName": "DEFAULT"
         }
     ],
     "NamedArgumentMappings": []
