@@ -24,6 +24,7 @@
 
 from ansys.stk.extensions.data_analysis.graphs.satellite_graphs import beta_angle_line_chart, classical_orbit_elements_line_chart, euler_angles_line_chart, fixed_position_velocity_line_chart, inertial_position_velocity_line_chart, j2000_position_velocity_line_chart, solar_elevation_body_fixed_line_chart, solar_intensity_line_chart, sun_vector_fixed_line_chart, yaw_pitch_roll_line_chart, sunlight_intervals_interval_pie_chart, cumulative_sunlight_cumulative_pie_chart, eclipse_times_interval_graph, lighting_times_interval_graph, solar_az_el_polar_center_0_graph, solar_aer_line_chart, lla_position_line_chart
 import pytest
+from pathlib import Path
 from stk_environment import stk_root
 
 @pytest.fixture()
@@ -37,7 +38,8 @@ def satellite(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     yield satellite

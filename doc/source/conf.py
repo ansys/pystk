@@ -478,13 +478,15 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
     # https://github.com/ansys/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
+    OUTPUT_DATA = OUTPUT_EXAMPLES / "data"
     OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
-    for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
+    for directory in [OUTPUT_EXAMPLES, OUTPUT_DATA, OUTPUT_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
     # Copy the examples
@@ -499,6 +501,20 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the data files
+    all_data_files = list(EXAMPLES_DATA_DIRECTORY.glob("*.tle"))
+    data_files = [file for file in all_data_files]
+    for file in status_iterator(
+        data_files,
+        f"Copying example data to doc/_build/examples/data",
+        "green",
+        len(data_files),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        destination_file = OUTPUT_DATA / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Copy the static images
@@ -526,15 +542,17 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    SOURCE_DATA = SOURCE_EXAMPLES / "data"
     SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
-    for directory in [SOURCE_EXAMPLES, SOURCE_IMAGES]:
+    for directory in [SOURCE_EXAMPLES, SOURCE_DATA, SOURCE_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    EXAMPLES_DATA_DIRECTORY = EXAMPLES_DIRECTORY / "data"
     IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
-    # Copy the the examples
+    # Copy the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
     for file in status_iterator(
@@ -546,6 +564,20 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the data files
+    example_data_files = list(EXAMPLES_DATA_DIRECTORY.glob("*.tle"))
+    data_files = [file for file in example_data_files]
+    for file in status_iterator(
+        data_files,
+        f"Copying example data to doc/source/examples/data/",
+        "green",
+        len(data_files),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_DATA / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Copy the static images

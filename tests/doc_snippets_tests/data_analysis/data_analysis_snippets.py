@@ -23,6 +23,8 @@
 import os
 import sys
 
+from pathlib import Path
+
 
 # Add path to the parent directory to use some common utilities
 sys.path.insert(1, os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
@@ -188,7 +190,8 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         ksu_cubesat_propagator.ephemeris_interval.set_implicit_interval(
             root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
         )
-        ksu_cubesat_propagator.common_tasks.add_segments_from_online_source("47954")
+        tle_file = Path(__file__).parent.parent / "data" / "KSU-CUBESAT_47954_1Jun2020.tle"
+        ksu_cubesat_propagator.common_tasks.add_segments_from_file("47954", str(tle_file.resolve()))
         ksu_cubesat_propagator.automatic_update_enabled = True
         ksu_cubesat_propagator.propagate()
 

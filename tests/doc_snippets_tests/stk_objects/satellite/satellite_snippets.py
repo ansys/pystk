@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import os
+import pytest
 import sys
 
 from ansys.stk.core.stkobjects import (
@@ -244,6 +245,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         propagator.step = 60.0
         propagator.propagate()
 
+    @pytest.mark.skip(reason="Temporarily disabled due to connectivity.")
     def test_SGP4SatelliteSnippet(self):
         try:
             satellite = self.get_scenario().children.new(STKObjectType.SATELLITE, "satellite")
