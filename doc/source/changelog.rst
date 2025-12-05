@@ -9,6 +9,22 @@ This document contains the release notes for the PySTK project.
 
 .. towncrier release notes start
 
+`0.1.3 <https://github.com/ansys/pystk/releases/tag/v0.1.3>`_ - December 05, 2025
+=================================================================================
+
+.. tab-set::
+
+
+  .. tab-item:: Added
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Switch the 0.1 branch to stk12.10.1
+          - `#907 <https://github.com/ansys/pystk/pull/907>`_
+
+
 `0.1.2 <https://github.com/ansys/pystk/releases/tag/v0.1.2>`_ - September 05, 2025
 ==================================================================================
 
