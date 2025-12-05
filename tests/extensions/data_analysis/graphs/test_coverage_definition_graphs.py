@@ -24,6 +24,7 @@
 
 from ansys.stk.extensions.data_analysis.graphs.coverage_definition_graphs import coverage_by_latitude_line_chart, gap_duration_line_chart, gi_point_coverage_interval_graph, gi_point_prob_of_coverage_line_chart, gi_region_coverage_line_chart, gi_region_time_to_cover_line_chart, percent_coverage_line_chart, gi_region_full_coverage_interval_graph
 import pytest
+from pathlib import Path
 from stk_environment import stk_root
 
 @pytest.fixture()
@@ -38,7 +39,8 @@ def coverage_definition(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     coverage.asset_list.add("Satellite/Satellite")
@@ -64,7 +66,8 @@ def coverage_definition_selected_region(stk_root):
     satellite = stk_root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
-    propagator.common_tasks.add_segments_from_online_source("25544")
+    tle_file = Path(__file__).parent / "data" / "iss_5Jun2022.tle"
+    propagator.common_tasks.add_segments_from_file("25544", str(tle_file.resolve()))
     propagator.propagate()
 
     coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS

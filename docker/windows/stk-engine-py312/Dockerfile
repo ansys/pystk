@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
 ARG basePythonImage=ansys/stk-12.10:dev-windowsservercore-ltsc2019-pybase
-FROM ${basePythonImage} as builder
+FROM ${basePythonImage} AS builder
 
 USER ContainerAdministrator
 

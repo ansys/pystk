@@ -12,7 +12,7 @@ env:
   MINIMUM_PYTHON_VERSION: '3.10'
   PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
-  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
+  STK_DOCKER_IMAGE: 'ansys/stk-12.10:ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -102,7 +102,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ['3.10', '3.11', '3.12', '3.13']
-        target: ['core', 'extensions', 'grpc', 'jupyter', 'migration', 'all']
+        target: ['all']
     steps:
       - uses: ansys/actions/build-wheelhouse@f044c670f4ade6e0cc77202c2b1c81f1f7acec2a # v10.0.16
         with:
@@ -274,9 +274,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
 
-      # -- Tests
-
       - name: "Run the extensions tests"
+        # -- Tests
+
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}
         run: |
@@ -339,9 +339,9 @@ jobs:
             "${STK_CONTAINER}" /bin/bash -c \
             "export COVERAGE_FILE=.cov/snippets && tox -e tests-core-snippets-graphics-cov-linux"
 
-      # -- Coverage
-
       - name: "Combine all coverage results"
+        # -- Coverage
+
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         env:
           STK_CONTAINER: ${{ steps.docker.outputs.container }}

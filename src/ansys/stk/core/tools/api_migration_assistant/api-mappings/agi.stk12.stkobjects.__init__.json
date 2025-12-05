@@ -30100,6 +30100,36 @@
             "NewName": "allow_external_connect"
         },
         {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "AuthMode",
+            "NewName": "authentication_mode"
+        },
+        {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "TlsServerCertFile",
+            "NewName": "tls_server_certificate_file"
+        },
+        {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "TlsServerKeyFile",
+            "NewName": "tls_server_key_file"
+        },
+        {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "TlsRootCertFile",
+            "NewName": "tls_ca_file"
+        },
+        {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "UdsDir",
+            "NewName": "uds_directory"
+        },
+        {
+            "ParentScope": "IAgStkPreferencesConnect",
+            "OldName": "UdsId",
+            "NewName": "uds_identifier"
+        },
+        {
             "ParentScope": "IAgStkPreferencesPythonPlugins",
             "OldName": "AccessConstraintPaths",
             "NewName": "access_constraint_paths"
@@ -42001,6 +42031,10 @@
             "NewName": "PropagatorDisplayCoordinateType"
         },
         {
+            "OldName": "AgESTKConnectAuthMode",
+            "NewName": "ConnectAuthenticationMode"
+        },
+        {
             "OldName": "AgEComponentLinkEmbedControlReferenceType",
             "NewName": "ComponentLinkEmbedControlReferenceType"
         },
@@ -50050,6 +50084,21 @@
             "ParentScope": "AgEPropagatorDisplayCoordinateType",
             "OldName": "ePropagatorDisplayCoordinateSpherical",
             "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgESTKConnectAuthMode",
+            "OldName": "eSTKConnectSingleUserLocal",
+            "NewName": "SINGLE_USER_LOCAL"
+        },
+        {
+            "ParentScope": "AgESTKConnectAuthMode",
+            "OldName": "eSTKConnectAuthModeMutualTLS",
+            "NewName": "MUTUAL_TLS"
+        },
+        {
+            "ParentScope": "AgESTKConnectAuthMode",
+            "OldName": "eSTKConnectAuthModeInsecure",
+            "NewName": "INSECURE"
         },
         {
             "ParentScope": "AgEComponentLinkEmbedControlReferenceType",

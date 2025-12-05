@@ -4290,6 +4290,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.ComponentLinkEmbedControlReferenceType`
               - Component link/embed control reference type.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.ConnectAuthenticationMode`
+              - Determine the authentication mode for the connect.
+
             * - :py:class:`~ansys.stk.core.stkobjects.Constants`
               - Constants contains base IDs for various structures.
 
@@ -6647,6 +6650,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ CommSystemSaveMode<stkobjects/CommSystemSaveMode>
     ≔ Component<stkobjects/Component>
     ≔ ComponentLinkEmbedControlReferenceType<stkobjects/ComponentLinkEmbedControlReferenceType>
+    ≔ ConnectAuthenticationMode<stkobjects/ConnectAuthenticationMode>
     ≔ Constants<stkobjects/Constants>
     ≔ ConstellationConstraintRestrictionType<stkobjects/ConstellationConstraintRestrictionType>
     ≔ ConstellationFromToParentConstraint<stkobjects/ConstellationFromToParentConstraint>

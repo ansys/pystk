@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import grpc
 import logging
+import pathlib
 import typing
 from enum import IntEnum, IntFlag
 from concurrent.futures import ThreadPoolExecutor
@@ -33,6 +34,7 @@ from queue import SimpleQueue
 from . import AgGrpcServices_pb2
 from . import AgGrpcServices_pb2_grpc
 
+from .cyberchannel import CertificateFiles, create_channel
 from .marshall import EnumArg, OLEColorArg
 from .apiutil import OutArg, GcDisabler
 from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesError
@@ -512,7 +514,7 @@ class GrpcClient(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "12.10.0"
+        expected_version = "12.10.1"
         if server_version != expected_version:
             raise STKRuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id
@@ -558,21 +560,25 @@ class GrpcClient(object):
         future.reset_impl(bound_intf)
 
     @staticmethod
-    def new_client(host,
-                   port,
-                   timeout_sec:int=60,
-                   max_receive_message_size:int=0,
-                   grpc_channel_credentials:grpc.ChannelCredentials|None=None) -> "GrpcClient":
+    def new_client(host, port, timeout_sec:int=60, max_receive_message_size:int=0, authentication_mode:str="", cert_file:str="", key_file:str="", ca_file:str="", uds_directory:str="", uds_id:str="") -> "GrpcClient":
         addr = f"{host}:{port}"
-        new_grpc_client = GrpcClient()
+        if uds_directory:
+            socket_filename = f"stk-runtime-grpc-{uds_id}.sock" if uds_id != "" else "stk-runtime-grpc.sock"
+            addr = f"unix:{pathlib.Path(uds_directory) / socket_filename}"
+
+        transport_mode = authentication_mode
+        if authentication_mode == "single-user":
+            transport_mode = "wnua"
+
+        service_name = "stk-runtime-grpc"
+        cert_directory = None
+        cert_files = CertificateFiles(cert_file=cert_file, key_file=key_file, ca_file=ca_file)
         channel_args = []
         if max_receive_message_size > 0:
             channel_args.append(("grpc.max_receive_message_length", max_receive_message_size))
 
-        if grpc_channel_credentials == None:
-            new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
-        else:
-            new_grpc_client.channel = grpc.secure_channel(addr, credentials=grpc_channel_credentials, options=channel_args)
+        new_grpc_client = GrpcClient()
+        new_grpc_client.channel = create_channel(transport_mode, host, port, service_name, uds_directory, uds_id, cert_directory, cert_files, channel_args)
 
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
@@ -590,16 +596,17 @@ class GrpcClient(object):
     def set_shutdown_stkruntime(self, shutdown_stkruntime:bool):
         self._shutdown_stkruntime = shutdown_stkruntime
 
-    def terminate_connection(self):
+    def terminate_connection(self, call_shutdown=True):
         if self.active():
             self._execute_batched_invoke()
             self.stop_event_loop()
             self._executor.shutdown(wait=True)
             self._release_all_objects()
-            shutdown_request = AgGrpcServices_pb2.ShutDownRequest()
-            shutdown_request.app_to_release.MergeFrom(self._app)
-            shutdown_request.shutdown_stkruntime = self._shutdown_stkruntime
-            self.stub.ShutDownServer(shutdown_request)
+            if call_shutdown:
+                shutdown_request = AgGrpcServices_pb2.ShutDownRequest()
+                shutdown_request.app_to_release.MergeFrom(self._app)
+                shutdown_request.shutdown_stkruntime = self._shutdown_stkruntime
+                self.stub.ShutDownServer(shutdown_request)
             self.stub = None
             if self.channel is not None:
                 self.channel.close()
