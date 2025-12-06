@@ -58,7 +58,7 @@ where ``<minor>`` is one of the minor versions of Python.
 
 .. note::
 
-    Docker Compose version >= 2.36.2 is required as support for `Bake <https://docs.docker.com/compose/releases/release-notes/#2362>`_
+    Docker Compose version >= 2.36.2 is required as support for `Bake <https://docs.docker.com/compose/releases/prior-releases/#2362>`_
     and the `additional_contexts <https://docs.docker.com/reference/compose-file/build/#additional_contexts>`_ attribute is needed.
 
 
