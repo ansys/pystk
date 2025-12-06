@@ -9,6 +9,144 @@ This document contains the release notes for the PySTK project.
 
 .. towncrier release notes start
 
+`0.2.1 <https://github.com/ansys/pystk/releases/tag/v0.2.1>`_ - December 03, 2025
+=================================================================================
+
+.. tab-set::
+
+
+  .. tab-item:: Added
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Hooks for YAML and pyproject.toml files
+          - `#865 <https://github.com/ansys/pystk/pull/865>`_
+
+        * - Switch the repo to STK 13.0.1
+          - `#900 <https://github.com/ansys/pystk/pull/900>`_
+
+
+  .. tab-item:: Dependencies
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Bump pandas from 2.3.2 to 2.3.3
+          - `#857 <https://github.com/ansys/pystk/pull/857>`_
+
+        * - Bump ansys-sphinx-theme from 1.6.1 to 1.6.3 in the doc group
+          - `#859 <https://github.com/ansys/pystk/pull/859>`_
+
+        * - Bump plotly from 6.3.0 to 6.3.1
+          - `#863 <https://github.com/ansys/pystk/pull/863>`_
+
+        * - Bump matplotlib from 3.10.6 to 3.10.7
+          - `#868 <https://github.com/ansys/pystk/pull/868>`_
+
+        * - Update pre-commit hooks and use hashed versions
+          - `#871 <https://github.com/ansys/pystk/pull/871>`_
+
+        * - Bump jupytext from 1.17.3 to 1.18.1 in the doc group
+          - `#875 <https://github.com/ansys/pystk/pull/875>`_
+
+        * - Bump typer from 0.19.2 to 0.20.0
+          - `#876 <https://github.com/ansys/pystk/pull/876>`_
+
+        * - Bump jupyterlab from 4.4.9 to 4.4.10 in the doc group
+          - `#878 <https://github.com/ansys/pystk/pull/878>`_
+
+        * - Bump the actions group across 1 directory with 3 updates
+          - `#884 <https://github.com/ansys/pystk/pull/884>`_
+
+        * - Bump vale from 3.12.0.2 to 3.13.0.0
+          - `#885 <https://github.com/ansys/pystk/pull/885>`_
+
+        * - Bump libcst from 1.8.5 to 1.8.6
+          - `#888 <https://github.com/ansys/pystk/pull/888>`_
+
+        * - Bump plotly from 6.3.1 to 6.4.0
+          - `#889 <https://github.com/ansys/pystk/pull/889>`_
+
+        * - Bump safety from 3.6.2 to 3.7.0
+          - `#890 <https://github.com/ansys/pystk/pull/890>`_
+
+        * - Bump the tests group across 1 directory with 2 updates
+          - `#892 <https://github.com/ansys/pystk/pull/892>`_
+
+        * - Bump plotly from 6.4.0 to 6.5.0
+          - `#894 <https://github.com/ansys/pystk/pull/894>`_
+
+        * - Bump the doc group across 1 directory with 4 updates
+          - `#897 <https://github.com/ansys/pystk/pull/897>`_
+
+        * - Bump bandit[toml] from 1.8.6 to 1.9.2
+          - `#898 <https://github.com/ansys/pystk/pull/898>`_
+
+        * - Bump the actions group across 1 directory with 2 updates
+          - `#899 <https://github.com/ansys/pystk/pull/899>`_
+
+        * - Build: bump ansys/actions from 10.1.5 to 10.2.0 in the actions group
+          - `#902 <https://github.com/ansys/pystk/pull/902>`_
+
+
+  .. tab-item:: Documentation
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Remove PyPI installation tab for development versions
+          - `#870 <https://github.com/ansys/pystk/pull/870>`_
+
+        * - Add instructions on how to create account
+          - `#880 <https://github.com/ansys/pystk/pull/880>`_
+
+        * - Disable the Show Source link in the sidebar
+          - `#886 <https://github.com/ansys/pystk/pull/886>`_
+
+        * - Only use wheelhouses for all dependencies
+          - `#887 <https://github.com/ansys/pystk/pull/887>`_
+
+
+  .. tab-item:: Fixed
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Close widget before STK shutdown
+          - `#864 <https://github.com/ansys/pystk/pull/864>`_
+
+        * - Fix doc build
+          - `#874 <https://github.com/ansys/pystk/pull/874>`_
+
+
+  .. tab-item:: Maintenance
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Label strategy for changelog fragments
+          - `#872 <https://github.com/ansys/pystk/pull/872>`_
+
+        * - Ci(release): use stable images
+          - `#903 <https://github.com/ansys/pystk/pull/903>`_
+
+
+  .. tab-item:: Test
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Update tests to use local data
+          - `#882 <https://github.com/ansys/pystk/pull/882>`_
+
+
 `0.2.0 <https://github.com/ansys/pystk/releases/tag/v0.2.0>`_ - October 09, 2025
 ================================================================================
 
