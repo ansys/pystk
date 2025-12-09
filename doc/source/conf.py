@@ -51,9 +51,6 @@ html_context = {
         "getting-started/install/linux/local": {
             "needs_datatables": True,
         },
-        "user-guide/migration": {
-            "needs_datatables": True,
-        },
     },
 }
 html_theme_options = {
