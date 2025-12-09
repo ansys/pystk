@@ -122,7 +122,7 @@ doc = [
   "sphinx-design==0.6.1",
   "sphinx-jinja==2.0.2",
   "sphinxcontrib-jquery==4.1",
-  "sphinxcontrib-mermaid==1.1.0",
+  "sphinxcontrib-mermaid==1.2.3",
   "toml==0.10.2",
 ]
 docstyle = [
