@@ -52,11 +52,6 @@ Examples
         examples/bielliptic-transfer
         examples/lambert-transfer
 
-    .. nbgallery::
-        :caption: Mission analysis
-
-        examples/porkchop-plots
-
     Communications and radar
     ========================
 
