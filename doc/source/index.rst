@@ -21,6 +21,13 @@ and payloads in a realistic mission context. You are viewing version |version|.
 
         Learn about PySTK, its prerequisites, and how to install it.
 
+    .. grid-item-card:: :fa:`list-alt` User guide
+        :link: user-guide
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Understand key concepts and the main objects of PySTK.
+
     .. grid-item-card:: :fa:`wrench` API reference
         :link: api
         :link-type: doc
@@ -54,6 +61,7 @@ and payloads in a realistic mission context. You are viewing version |version|.
    :maxdepth: 3
 
    getting-started
+   user-guide
    api
    examples
    contribute
