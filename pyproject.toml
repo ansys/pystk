@@ -44,6 +44,7 @@ optional-dependencies.all = [
   # Target: migration
   "libcst>=1.8.2",
   # Target: extensions
+  "ansys-tools-common>=0.4.0",
   "matplotlib>=3.10.3",
   "numpy>=2.2.6",
   "pandas>=2.3.1",
@@ -56,6 +57,7 @@ optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 optional-dependencies.extensions = [
+  "ansys-tools-common>=0.4.0",
   "matplotlib>=3.10.3",
   "pandas>=2.3.1",
 ]
