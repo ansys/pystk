@@ -32,7 +32,7 @@ from ansys.stk.core.stkruntime import STKRuntime, STKRuntimeApplication
 STKApplication: TypeAlias = STKEngineApplication | STKDesktopApplication | STKRuntimeApplication
 """Type alias for supported STK application instances."""
 
-# TODO: use StrEnum when minimum Python version is 3.11
+# TODO: use StrEnum when minimum Python version is 3.11  # noqa: TD003
 @unique
 class STKApplicationType(str, Enum):
     """Supported STK application types."""
