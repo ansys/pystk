@@ -25,10 +25,9 @@
 from enum import Enum, unique
 from typing import TypeAlias
 
-from ansys.stk.core.stkengine import STKEngine, STKEngineApplication
 from ansys.stk.core.stkdesktop import STKDesktop, STKDesktopApplication
+from ansys.stk.core.stkengine import STKEngine, STKEngineApplication
 from ansys.stk.core.stkruntime import STKRuntime, STKRuntimeApplication
-
 
 STKApplication: TypeAlias = STKEngineApplication | STKDesktopApplication | STKRuntimeApplication
 """Type alias for supported STK application instances."""
