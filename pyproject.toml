@@ -115,7 +115,7 @@ doc = [
   "nbsphinx==0.9.8",
   "numpydoc==1.10.0",
   "pandas==2.3.3",
-  "plotly==6.5.0",
+  "plotly==6.5.1",
   "scipy==1.15.3",
   "sphinx==8.2.3",
   "sphinx-copybutton==0.5.2",
