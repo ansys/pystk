@@ -27,9 +27,9 @@ import pytest
 from ansys.stk.extensions.launcher import launch_stk
 
 mode_and_config = (
-    ("engine", {"no_graphics": True}),
+    #("engine", {"no_graphics": True}),
     #("desktop", {"visible": False, "user_control": False, "grpc_server": False}),
-    #("runtime", {"grpc_host": "127.0.0.1", "grpc_port": "40704"}),
+    ("runtime", {"grpc_host": "127.0.0.1", "grpc_port": 40704}),
 )
 """Launch mode and its corresponding configuration."""
 
