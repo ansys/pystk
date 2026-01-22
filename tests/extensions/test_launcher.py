@@ -171,14 +171,16 @@ def test_attach_to_application_desktop_with_enum(mock_desktop):
 
 def test_attach_to_application_runtime_with_string():
     """Test attaching to STK in RUNTIME mode using string mode."""
-    result = attach_to_application(mode="runtime", grpc_host="localhost", grpc_port=50051)
-    result.shutdown()
+    launch_stk(mode="runtime", grpc_host="localhost", grpc_port=50051)
+    stk = attach_to_application(mode="runtime", grpc_host="localhost", grpc_port=50051)
+    stk.shutdown()
 
 
 def test_attach_to_application_runtime_with_enum():
     """Test attaching to STK in RUNTIME mode using enum mode."""
-    result = attach_to_application(mode=STKApplicationType.RUNTIME, grpc_host="127.0.0.1", grpc_port=40704)
-    result.shutdown()
+    launch_stk(mode=STKApplicationType.RUNTIME, grpc_host="127.0.0.1", grpc_port=40704)
+    stk = attach_to_application(mode=STKApplicationType.RUNTIME, grpc_host="127.0.0.1", grpc_port=40704)
+    stk.shutdown()
 
 
 def test_attach_to_application_engine_not_supported_string():
