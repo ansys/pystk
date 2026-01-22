@@ -124,15 +124,16 @@ def attach_to_application(mode: STKApplicationType | str, **configuration) -> ST
     if isinstance(mode, str):
         try:
             mode = STKApplicationType(mode)
-            if mode == STKApplicationType.ENGINE:
-                raise ValueError(
-                    "STKEngine mode does not support attaching to an existing instance."
-                )
         except ValueError as exc:
             raise ValueError(f"Unsupported STK application type: {mode!r}") from exc
     if not isinstance(mode, STKApplicationType):
         raise ValueError(
             "Mode must be an instance of STKApplicationType or a valid string value."
+        )
+
+    if mode is STKApplicationType.ENGINE:
+        raise NotImplementedError(
+            "STKEngine mode does not support attaching to an existing instance."
         )
 
     # Dispatch to the appropriate attach method

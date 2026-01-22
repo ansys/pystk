@@ -184,8 +184,8 @@ def test_attach_to_application_runtime_with_enum():
 def test_attach_to_application_engine_not_supported_string():
     """Test that ENGINE mode with string raises ValueError."""
     with pytest.raises(
-        ValueError,
-        match="ENGINE mode does not support attaching to an existing instance.",
+        NotImplementedError,
+        match="STKEngine mode does not support attaching to an existing instance."
     ):
         attach_to_application(mode="engine")
 
@@ -193,8 +193,8 @@ def test_attach_to_application_engine_not_supported_string():
 def test_attach_to_application_engine_not_supported_enum():
     """Test that ENGINE mode with enum raises ValueError."""
     with pytest.raises(
-        ValueError,
-        match="ENGINE mode does not support attaching to an existing instance.",
+        NotImplementedError,
+        match="STKEngine mode does not support attaching to an existing instance."
     ):
         attach_to_application(mode=STKApplicationType.ENGINE)
 
