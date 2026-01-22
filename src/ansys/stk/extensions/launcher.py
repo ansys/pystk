@@ -92,3 +92,53 @@ def launch_stk(mode: STKApplicationType | str, **configuration) -> STKApplicatio
         stk = STKRuntime
 
     return stk.start_application(**configuration)
+
+
+def attach_to_application(mode: STKApplicationType | str, **configuration) -> STKApplication:
+    """Attach to an existing STK instance based on the configured application type.
+
+    Parameters
+    ----------
+    mode : STKApplicationType | str
+        The mode in which to attach to STK. ENGINE mode is not supported.
+    **configuration : dict, default: None
+        Supported configuration for the selected attach mode. For allowable
+        keyword arguments, see the corresponding methods for each mode:
+
+        * For ``DESKTOP`` mode, see the :func:`ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` method.
+        * For ``RUNTIME`` mode, see the :func:`ansys.stk.core.stkruntime.STKRuntime.attach_to_application` method.
+
+    Returns
+    -------
+    STKApplication
+        An instance of the attached STK application.
+
+    Raises
+    ------
+    ValueError
+        If an unsupported application type is configured or if ENGINE mode is specified.
+    NotImplementedError
+        If the specified mode does not support attaching to an existing instance.
+    """
+    # Normalize mode to STKApplicationType
+    if isinstance(mode, str):
+        try:
+            mode = STKApplicationType(mode)
+            if mode == STKApplicationType.ENGINE:
+                raise ValueError(
+                    "STKEngine mode does not support attaching to an existing instance."
+                )
+        except ValueError as exc:
+            raise ValueError(f"Unsupported STK application type: {mode!r}") from exc
+    if not isinstance(mode, STKApplicationType):
+        raise ValueError(
+            "Mode must be an instance of STKApplicationType or a valid string value."
+        )
+
+    # Dispatch to the appropriate attach method
+    if mode == STKApplicationType.DESKTOP:
+        stk = STKDesktop
+    elif mode == STKApplicationType.RUNTIME:
+        stk = STKRuntime
+
+    return stk.attach_to_application(**configuration)
