@@ -58,7 +58,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@41f86da4c9ead510db9135e428e33df9cc6f92e1 # v10.2.3
+      - uses: ansys/actions/build-wheelhouse@36cd86710c966963f4dcec56a9670171618cf76a # v10.2.4
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -365,7 +365,7 @@ jobs:
     permissions:
       contents: write # Write new content to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-dev@41f86da4c9ead510db9135e428e33df9cc6f92e1 # v10.2.3
+      - uses: ansys/actions/doc-deploy-dev@36cd86710c966963f4dcec56a9670171618cf76a # v10.2.4
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
