@@ -55,95 +55,89 @@ scen = root.current_scenario
 #
 # Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
-# +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType
 from ansys.stk.core.utilities.colors import Colors
 
 
-targetSat = scen.children.new(STKObjectType.SATELLITE, "Target")
-targetSat.set_propagator_type(PropagatorType.ASTROGATOR)
-tDriver = targetSat.propagator
-tDriver.options.draw_trajectory_in_3d = False
-tInitState = tDriver.main_sequence["Initial State"]
-tInitState.set_element_type(ElementSetType.KEPLERIAN)
-tInitState.initial_state.epoch = scen.start_time
-tPropagator = tDriver.main_sequence["Propagate"]
-tPropagator.propagator_name = "Earth point mass"
-tPropagator.properties.color = Colors.Red
-tKep = tInitState.element
-# -
+target_satellite = scen.children.new(STKObjectType.SATELLITE, "Target")
+target_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+target_propagator = target_satellite.propagator
+target_propagator.options.draw_trajectory_in_3d = False
+target_initial_state = target_propagator.main_sequence["Initial State"]
+target_initial_state.set_element_type(ElementSetType.KEPLERIAN)
+target_initial_state.initial_state.epoch = scen.start_time
+target_propagate_segment = target_propagator.main_sequence["Propagate"]
+target_propagate_segment.propagator_name = "Earth point mass"
+target_propagate_segment.properties.color = Colors.Red
+target_keplerian_elements = target_initial_state.element
 
 # ## Configure the chaser satellite
 #
 # Create the chaser satellite which will perform the phasing maneuver to rendezvous with the target:
 
-# +
-chaserSat = scen.children.new(STKObjectType.SATELLITE, "Chaser")
-chaserSat.set_propagator_type(PropagatorType.ASTROGATOR)
-cDriver = chaserSat.propagator
-cDriver.options.draw_trajectory_in_3d = False
-cInitState = cDriver.main_sequence["Initial State"]
-cInitState.set_element_type(ElementSetType.KEPLERIAN)
-cInitState.initial_state.epoch = scen.start_time
-cPropagator = cDriver.main_sequence["Propagate"]
-cPropagator.propagator_name = "Earth point mass"
-cPropagator.stopping_conditions.add("Periapsis")
-cPropagator.stopping_conditions.remove("Duration")
-cKep = cInitState.element
-# -
+chaser_satellite = scen.children.new(STKObjectType.SATELLITE, "Chaser")
+chaser_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+chaser_propagator = chaser_satellite.propagator
+chaser_propagator.options.draw_trajectory_in_3d = False
+chaser_initial_state = chaser_propagator.main_sequence["Initial State"]
+chaser_initial_state.set_element_type(ElementSetType.KEPLERIAN)
+chaser_initial_state.initial_state.epoch = scen.start_time
+chaser_propagate_segment = chaser_propagator.main_sequence["Propagate"]
+chaser_propagate_segment.propagator_name = "Earth point mass"
+chaser_propagate_segment.stopping_conditions.add("Periapsis")
+chaser_propagate_segment.stopping_conditions.remove("Duration")
+chaser_keplerian_elements = chaser_initial_state.element
 
 # ## Define the input parameters
 #
 # The cell below defines the input parameters for the phasing maneuver analysis:
 
-# +
 import math
 
 
-########################################## INPUT DATA ##########################################################
-true_anom = 70  # deg - chaser true anomaly (between 0 and 360)
-target_ta = 20  # deg - target true anomaly (between 0 and 360)
-nOrbits = 5  # number of phasing orbits
-prop_time = 16  # days - total propagation time
-################################################################################################################
+# Input parameters for phasing maneuver
+chaser_true_anomaly = 70  # deg - chaser true anomaly (between 0 and 360)
+target_true_anomaly = 20  # deg - target true anomaly (between 0 and 360)
+number_of_phasing_orbits = 5  # number of phasing orbits
+propagation_time = 16  # days - total propagation time
 
 # Fixed Keplerian parameters (geostationary orbit)
-sma = 42164  # km
-ecc = 0.0001
-inc = 0.0
-raan = 0.0
-# -
+semi_major_axis = 42164  # km
+eccentricity = 0.0001
+inclination = 0.0
+right_ascension_ascending_node = 0.0
 
 # ## Configure initial orbital states
 #
 # Set the initial orbital elements for both satellites and run an initial propagation:
-# +
+
 # Change the scenario duration
-scen.stop_time = "+" + str(prop_time) + " day"
+scen.stop_time = "+" + str(propagation_time) + " day"
 
 # Set the chaser initial state
-cKep.semimajor_axis = sma
-cKep.eccentricity = ecc
-cKep.inclination = inc
-cKep.raan = raan
-cKep.true_anomaly = true_anom
-cKep.arg_of_periapsis = 0.0
+chaser_keplerian_elements.semimajor_axis = semi_major_axis
+chaser_keplerian_elements.eccentricity = eccentricity
+chaser_keplerian_elements.inclination = inclination
+chaser_keplerian_elements.raan = right_ascension_ascending_node
+chaser_keplerian_elements.true_anomaly = chaser_true_anomaly
+chaser_keplerian_elements.arg_of_periapsis = 0.0
 
 # Set the target initial state
-tKep.semimajor_axis = sma
-tKep.eccentricity = ecc
-tKep.inclination = inc
-tKep.raan = raan
-tKep.true_anomaly = target_ta
-tKep.arg_of_periapsis = 0.0
+target_keplerian_elements.semimajor_axis = semi_major_axis
+target_keplerian_elements.eccentricity = eccentricity
+target_keplerian_elements.inclination = inclination
+target_keplerian_elements.raan = right_ascension_ascending_node
+target_keplerian_elements.true_anomaly = target_true_anomaly
+target_keplerian_elements.arg_of_periapsis = 0.0
 
 # Configure target propagation duration
-tPropagator.stopping_conditions["Duration"].properties.trip = prop_time * 86400
+target_propagate_segment.stopping_conditions["Duration"].properties.trip = (
+    propagation_time * 86400
+)
 
 # Run initial propagation for both satellites
-cDriver.run_mcs()
-tDriver.run_mcs()
-# -
+chaser_propagator.run_mcs()
+target_propagator.run_mcs()
 
 # ## Calculate phasing orbit parameters
 #
@@ -162,64 +156,81 @@ tDriver.run_mcs()
 #
 # $$ T_{phasing}=\frac{T_{chaser}}{2\pi}\left ( E-e \sin E \right )$$
 
-# +
 # Get the mean period and SMA of the initial orbit
-meanKepDp = chaserSat.data_providers["Kozai-Izsak Mean"].group["ICRF"]
-meanKep = meanKepDp.execute(scen.start_time, scen.start_time, 60)
-meanKepDf = meanKep.data_sets.to_pandas_dataframe()
-meanPeriod = float(meanKepDf.at[0, "mean nodal period"])
-meanSma = float(meanKepDf.at[0, "mean semi-major axis"])
+mean_keplerian_data_provider = chaser_satellite.data_providers[
+    "Kozai-Izsak Mean"
+].group["ICRF"]
+mean_keplerian_result = mean_keplerian_data_provider.execute(
+    scen.start_time, scen.start_time, 60
+)
+mean_keplerian_dataframe = mean_keplerian_result.data_sets.to_pandas_dataframe()
+mean_orbital_period = float(mean_keplerian_dataframe.at[0, "mean nodal period"])
+mean_semi_major_axis = float(mean_keplerian_dataframe.at[0, "mean semi-major axis"])
 
 # Calculate the phase angle
-phaseAngle = math.radians(target_ta - true_anom)
+phase_angle = math.radians(target_true_anomaly - chaser_true_anomaly)
 
-if phaseAngle < 0:
-    phaseAngle = 2 * math.pi + phaseAngle
+if phase_angle < 0:
+    phase_angle = 2 * math.pi + phase_angle
 
 print("#################### Initial geometry #####################")
-print("Phase angle      = " + str(math.degrees(phaseAngle)) + " deg")
+print("Phase angle      = " + str(math.degrees(phase_angle)) + " deg")
 print("")
 
 # Recalculate the phase angle accordingly with the number of phasing orbits
-phaseAngle = phaseAngle / nOrbits
+phase_angle = phase_angle / number_of_phasing_orbits
 
 # Calculate the eccentric anomaly
-E = 2 * math.atan(math.sqrt((1 - ecc) / (1 + ecc)) * math.tan(phaseAngle / 2))
+eccentric_anomaly = 2 * math.atan(
+    math.sqrt((1 - eccentricity) / (1 + eccentricity)) * math.tan(phase_angle / 2)
+)
 
 # Calculate the time elapsed to cover phase angle in original orbit (Kepler's equation)
-tPhaseAngle = (meanPeriod / (2 * math.pi)) * (E - ecc * math.sin(E))
+time_to_cover_phase_angle = (mean_orbital_period / (2 * math.pi)) * (
+    eccentric_anomaly - eccentricity * math.sin(eccentric_anomaly)
+)
 
 # Calculate the period of the phasing orbit
-tPhasingOrbit = meanPeriod - tPhaseAngle
+phasing_orbit_period = mean_orbital_period - time_to_cover_phase_angle
 
 # Calculate the SMA of the phasing orbit
-mu = 398600.44
-transferSma = math.pow((tPhasingOrbit * math.sqrt(mu)) / (2 * math.pi), 2 / 3)
+earth_gravitational_parameter = 398600.44
+transfer_semi_major_axis = math.pow(
+    (phasing_orbit_period * math.sqrt(earth_gravitational_parameter)) / (2 * math.pi),
+    2 / 3,
+)
 
 # Calculate eccentricity and radii
-kepDp = chaserSat.data_providers["Astrogator Values"].group["Keplerian Elems"]
-kep = kepDp.execute(scen.start_time, scen.start_time, 60)
-kepDf = kep.data_sets.to_pandas_dataframe()
-initRadius = float(kepDf.at[0, "radius_of_periapsis"])
+keplerian_elements_data_provider = chaser_satellite.data_providers[
+    "Astrogator Values"
+].group["Keplerian Elems"]
+keplerian_result = keplerian_elements_data_provider.execute(
+    scen.start_time, scen.start_time, 60
+)
+keplerian_dataframe = keplerian_result.data_sets.to_pandas_dataframe()
+initial_radius = float(keplerian_dataframe.at[0, "radius_of_periapsis"])
 
-if transferSma > sma:
-    periRadius = initRadius
-    apoRadius = 2 * transferSma - periRadius
+if transfer_semi_major_axis > semi_major_axis:
+    periapsis_radius = initial_radius
+    apoapsis_radius = 2 * transfer_semi_major_axis - periapsis_radius
 else:
-    apoRadius = initRadius
-    periRadius = 2 * transferSma - apoRadius
+    apoapsis_radius = initial_radius
+    periapsis_radius = 2 * transfer_semi_major_axis - apoapsis_radius
 
 # Estimate the needed Delta V for phasing
-vPeriInitial = math.sqrt(mu * ((2 / initRadius) - (1 / meanSma)))
-vPeriFinal = math.sqrt(mu * ((2 / initRadius) - (1 / transferSma)))
-deltaV = vPeriFinal - vPeriInitial
-# -
+velocity_periapsis_initial = math.sqrt(
+    earth_gravitational_parameter * ((2 / initial_radius) - (1 / mean_semi_major_axis))
+)
+velocity_periapsis_final = math.sqrt(
+    earth_gravitational_parameter
+    * ((2 / initial_radius) - (1 / transfer_semi_major_axis))
+)
+delta_v_estimate = velocity_periapsis_final - velocity_periapsis_initial
 
 # ## Set up the phasing maneuver sequence
 #
 # Add a target sequence to perform the first delta-V maneuver and propagate through the phasing orbits:
 
-# +
 from ansys.stk.core.stkobjects.astrogator import (
     AttitudeControl,
     ControlManeuver,
@@ -231,130 +242,151 @@ from ansys.stk.core.stkobjects.astrogator import (
 
 
 # Add the first Target Sequence segment
-ts1 = cDriver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Start Phasing", "-")
-ts1.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+phasing_start_sequence = chaser_propagator.main_sequence.insert(
+    SegmentType.TARGET_SEQUENCE, "Start Phasing", "-"
+)
+phasing_start_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
 # Add a Maneuver segment
-dv1 = ts1.segments.insert(SegmentType.MANEUVER, "DV1", "-")
-dv1.set_maneuver_type(ManeuverType.IMPULSIVE)
-dv1.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
+first_delta_v_maneuver = phasing_start_sequence.segments.insert(
+    SegmentType.MANEUVER, "DV1", "-"
+)
+first_delta_v_maneuver.set_maneuver_type(ManeuverType.IMPULSIVE)
+first_delta_v_maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 
 # Maneuver attitude definition
-dv1.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
-thrustVector = dv1.maneuver.attitude_control
-thrustVector.thrust_axes_name = "Satellite/Chaser VNC(Earth)"
-thrustVector.x = deltaV * 1000
+first_delta_v_maneuver.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
+thrust_vector = first_delta_v_maneuver.maneuver.attitude_control
+thrust_vector.thrust_axes_name = "Satellite/Chaser VNC(Earth)"
+thrust_vector.x = delta_v_estimate * 1000
 
 # Add a Propagate segment
-phasingOrbit = ts1.segments.insert(SegmentType.PROPAGATE, "Phasing Orbit", "-")
-phasingOrbit.properties.color = Colors.Orange
-phasingOrbit.propagator_name = "Earth point mass"
-if transferSma > sma:
-    phasingOrbit.stopping_conditions.add("Periapsis")
+phasing_orbit_propagate = phasing_start_sequence.segments.insert(
+    SegmentType.PROPAGATE, "Phasing Orbit", "-"
+)
+phasing_orbit_propagate.properties.color = Colors.Orange
+phasing_orbit_propagate.propagator_name = "Earth point mass"
+if transfer_semi_major_axis > semi_major_axis:
+    phasing_orbit_propagate.stopping_conditions.add("Periapsis")
 else:
-    phasingOrbit.stopping_conditions.add("Apoapsis")
-phasingOrbit.stopping_conditions.remove("Duration")
-phasingOrbit.stopping_conditions.item(0).properties.repeat_count = nOrbits
-phasingOrbit.results.add("Vector/Angle Between Vectors")
-phasingOrbit.results[0].vector1_name = "Satellite/Chaser Position"
-phasingOrbit.results[0].vector2_name = "Satellite/Target Position"
-# -
+    phasing_orbit_propagate.stopping_conditions.add("Apoapsis")
+phasing_orbit_propagate.stopping_conditions.remove("Duration")
+phasing_orbit_propagate.stopping_conditions.item(
+    0
+).properties.repeat_count = number_of_phasing_orbits
+phasing_orbit_propagate.results.add("Vector/Angle Between Vectors")
+phasing_orbit_propagate.results[0].vector1_name = "Satellite/Chaser Position"
+phasing_orbit_propagate.results[0].vector2_name = "Satellite/Target Position"
 
 # ## Configure the differential corrector for phasing
 #
 # Set up the differential corrector to adjust the first delta-V to achieve zero phase angle at the end of the phasing orbits:
 
-# +
 # Customize the Differential Corrector
-dc1 = ts1.profiles["Differential Corrector"]
-dc1.mode = ProfileMode.ITERATE
-dc1.max_iterations = 50
+phasing_differential_corrector = phasing_start_sequence.profiles[
+    "Differential Corrector"
+]
+phasing_differential_corrector.mode = ProfileMode.ITERATE
+phasing_differential_corrector.max_iterations = 50
 
 # Set Control Parameters and Results
-xControlParam1 = dc1.control_parameters.get_control_by_paths(
-    "DV1", "ImpulsiveMnvr.Cartesian.X"
+phasing_x_control_parameter = (
+    phasing_differential_corrector.control_parameters.get_control_by_paths(
+        "DV1", "ImpulsiveMnvr.Cartesian.X"
+    )
 )
-xControlParam1.enable = True
-xControlParam1.max_step = 0.001
+phasing_x_control_parameter.enable = True
+phasing_x_control_parameter.max_step = 0.001
 
-roaResult = dc1.results.get_result_by_paths("Phasing Orbit", "Angle_Between_Vectors")
-roaResult.enable = True
-roaResult.desired_value = 0.0
-roaResult.tolerance = 0.1
-# -
+phasing_angle_result = phasing_differential_corrector.results.get_result_by_paths(
+    "Phasing Orbit", "Angle_Between_Vectors"
+)
+phasing_angle_result.enable = True
+phasing_angle_result.desired_value = 0.0
+phasing_angle_result.tolerance = 0.1
 
 # ## Set up the circularization maneuver
 #
 # Add a second target sequence to perform the circularization delta-V to return to the original circular orbit:
 
-# +
 # Add the second Target Sequence segment
-ts2 = cDriver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Circularization", "-")
-ts2.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+circularization_sequence = chaser_propagator.main_sequence.insert(
+    SegmentType.TARGET_SEQUENCE, "Circularization", "-"
+)
+circularization_sequence.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
 # Add a Maneuver segment
-dv2 = ts2.segments.insert(SegmentType.MANEUVER, "DV2", "-")
-dv2.set_maneuver_type(ManeuverType.IMPULSIVE)
-dv2.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
+second_delta_v_maneuver = circularization_sequence.segments.insert(
+    SegmentType.MANEUVER, "DV2", "-"
+)
+second_delta_v_maneuver.set_maneuver_type(ManeuverType.IMPULSIVE)
+second_delta_v_maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 
 # Add a Propagate segment
-finalOrbit = ts2.segments.insert(SegmentType.PROPAGATE, "Final Orbit", "-")
-finalOrbit.properties.color = Colors.Yellow
-finalOrbit.propagator_name = "Earth point mass"
-finalOrbit.stopping_conditions["Duration"].properties.trip = 86400
-finalOrbit.results.add("Keplerian Elems/Eccentricity")
-# -
+final_orbit_propagate = circularization_sequence.segments.insert(
+    SegmentType.PROPAGATE, "Final Orbit", "-"
+)
+final_orbit_propagate.properties.color = Colors.Yellow
+final_orbit_propagate.propagator_name = "Earth point mass"
+final_orbit_propagate.stopping_conditions["Duration"].properties.trip = 86400
+final_orbit_propagate.results.add("Keplerian Elems/Eccentricity")
 
 # ## Configure the differential corrector for circularization
 #
 # Set up the differential corrector to achieve a circular orbit with the desired eccentricity:
 
-# +
 # Customize the Differential Corrector
-dc2 = ts2.profiles["Differential Corrector"]
-dc2.mode = ProfileMode.ITERATE
-dc2.max_iterations = 50
+circularization_differential_corrector = circularization_sequence.profiles[
+    "Differential Corrector"
+]
+circularization_differential_corrector.mode = ProfileMode.ITERATE
+circularization_differential_corrector.max_iterations = 50
 
 # Set Control Parameters and Results
-xControlParam2 = dc2.control_parameters.get_control_by_paths(
-    "DV2", "ImpulsiveMnvr.Cartesian.X"
+circularization_x_control_parameter = (
+    circularization_differential_corrector.control_parameters.get_control_by_paths(
+        "DV2", "ImpulsiveMnvr.Cartesian.X"
+    )
 )
-xControlParam2.enable = True
-xControlParam2.max_step = 0.01
+circularization_x_control_parameter.enable = True
+circularization_x_control_parameter.max_step = 0.01
 
-roaResult = dc2.results.get_result_by_paths("Final Orbit", "Eccentricity")
-roaResult.enable = True
-roaResult.desired_value = 0.0001
-roaResult.tolerance = 0.00001
-# -
+circularization_eccentricity_result = (
+    circularization_differential_corrector.results.get_result_by_paths(
+        "Final Orbit", "Eccentricity"
+    )
+)
+circularization_eccentricity_result.enable = True
+circularization_eccentricity_result.desired_value = 0.0001
+circularization_eccentricity_result.tolerance = 0.00001
 
 # ## Run the main control sequence
 #
 # Execute the mission control sequence to solve for the phasing maneuver:
 
-# +
-cDriver.run_mcs()
-tDriver.run_mcs()
+chaser_propagator.run_mcs()
+target_propagator.run_mcs()
 root.rewind()
-# -
 
 # ## Retrieve the results
 #
 # Once the analysis has been performed, retrieve the delta-V values and phasing orbit parameters:
 
-# +
 # Get the maneuver data providers
-manDp = chaserSat.data_providers["Maneuver Summary"]
-man = manDp.execute(scen.start_time, scen.stop_time)
-manDf = man.data_sets.to_pandas_dataframe()
-deltaV = manDf.at[0, "delta v"]
+maneuver_data_provider = chaser_satellite.data_providers["Maneuver Summary"]
+maneuver_result = maneuver_data_provider.execute(scen.start_time, scen.stop_time)
+maneuver_dataframe = maneuver_result.data_sets.to_pandas_dataframe()
+delta_v_actual = maneuver_dataframe.at[0, "delta v"]
 
 print("################### Transfer orbit data ###################")
-print("N phasing orbits = " + str(nOrbits))
-print("Period           = " + str(tPhasingOrbit) + " sec")
-print("SMA              = " + str(transferSma) + " km")
-print("Perigee radius   = " + str(periRadius) + " km")
-print("Apogee radius    = " + str(apoRadius) + " km")
-print("Delta V          = " + str(deltaV) + " m/sec")
-print("Transfer time    = " + str(tPhasingOrbit * nOrbits / 86400) + " days")
-# -
+print("N phasing orbits = " + str(number_of_phasing_orbits))
+print("Period           = " + str(phasing_orbit_period) + " sec")
+print("SMA              = " + str(transfer_semi_major_axis) + " km")
+print("Perigee radius   = " + str(periapsis_radius) + " km")
+print("Apogee radius    = " + str(apoapsis_radius) + " km")
+print("Delta V          = " + str(delta_v_actual) + " m/sec")
+print(
+    "Transfer time    = "
+    + str(phasing_orbit_period * number_of_phasing_orbits / 86400)
+    + " days"
+)
