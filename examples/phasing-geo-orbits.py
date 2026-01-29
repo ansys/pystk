@@ -55,21 +55,44 @@ scen = root.current_scenario
 #
 # Create the target satellite which will remain at a fixed position in geostationary orbit. This satellite serves as the reference point for the phasing maneuver:
 
+# +
+target_satellite = scen.children.new(STKObjectType.SATELLITE, "Target")
+# -
+
+# Then, declare the type of orbit propagator used for the satellite:
+
+# +
+target_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+# -
+
+# Initialize the propagator and configure additional settings:
+
+target_satellite.propagator.options.draw_trajectory_in_3d = False
+
+# ## Set up the initial state of the target satellite
+#
+# Access the existing initial state segment in the main sequence and configure the element type:
+
+# +
 from ansys.stk.core.stkobjects.astrogator import ElementSetType
+
+
+target_initial_state = target_satellite.propagator.main_sequence["Initial State"]
+target_initial_state.set_element_type(ElementSetType.KEPLERIAN)
+target_initial_state.initial_state.epoch = scen.start_time
+target_keplerian_elements = target_initial_state.element
+# -
+
+# Configure the propagation segment:
+
+# +
 from ansys.stk.core.utilities.colors import Colors
 
 
-target_satellite = scen.children.new(STKObjectType.SATELLITE, "Target")
-target_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
-target_propagator = target_satellite.propagator
-target_propagator.options.draw_trajectory_in_3d = False
-target_initial_state = target_propagator.main_sequence["Initial State"]
-target_initial_state.set_element_type(ElementSetType.KEPLERIAN)
-target_initial_state.initial_state.epoch = scen.start_time
-target_propagate_segment = target_propagator.main_sequence["Propagate"]
+target_propagate_segment = target_satellite.propagator.main_sequence["Propagate"]
 target_propagate_segment.propagator_name = "Earth point mass"
 target_propagate_segment.properties.color = Colors.Red
-target_keplerian_elements = target_initial_state.element
+# -
 
 # ## Configure the chaser satellite
 #
@@ -137,7 +160,7 @@ target_propagate_segment.stopping_conditions["Duration"].properties.trip = (
 
 # Run initial propagation for both satellites
 chaser_propagator.run_mcs()
-target_propagator.run_mcs()
+target_satellite.propagator.run_mcs()
 
 # ## Calculate phasing orbit parameters
 #
@@ -365,7 +388,7 @@ circularization_eccentricity_result.tolerance = 0.00001
 # Execute the mission control sequence to solve for the phasing maneuver:
 
 chaser_propagator.run_mcs()
-target_propagator.run_mcs()
+target_satellite.propagator.run_mcs()
 root.rewind()
 
 # ## Retrieve the results
