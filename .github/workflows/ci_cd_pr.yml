@@ -121,6 +121,9 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: actions-style
+    permissions:
+      contents: read # Read the source code of the project
+      pull-requests: write # Allow Vale's bot to make pull-request comments
     steps:
       - name: "Checkout project"
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -412,6 +415,8 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
+    permissions:
+      contents: read # Read the source code of the project
     strategy:
       matrix:
         # Tests run against Python 3.10 to ensure backwards compatibility with
