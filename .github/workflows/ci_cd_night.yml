@@ -72,7 +72,7 @@ jobs:
     timeout-minutes: 360
     needs: build-wheelhouse
     permissions:
-      contents: read
+      contents: read # Read access to modified files in pull-request
     steps:
 
       - name: "Checkout the project"
@@ -192,7 +192,7 @@ jobs:
             python: "3.12"
       fail-fast: false
     permissions:
-      contents: read # Read the source code of the project
+      contents: read # Read the source code of the project
     steps:
 
       - name: "Checkout the project"
