@@ -29,6 +29,6 @@ foreach ($zipFile in $zipFiles) {
     Remove-Item -Path "C:/Users/STK/dist/$dirname" -Force -Recurse
 }
 
-Copy-Item "C:\Program Files\AGI\STK_ODTK13\bin\AgAsCode500.dll" -Destination "C:\Program Files\AGI\STK_ODTK13\Modules"
+Copy-Item "C:\Program Files\AGI\STK_ODTK 13\bin\AgAsCode500.dll" -Destination "C:\Program Files\AGI\STK_ODTK 13\Modules"
 
 Remove-Item -Path C:/Users/STK/dist/ -Force -Recurse
