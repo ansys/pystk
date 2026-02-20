@@ -10,7 +10,7 @@ COPY scripts C:/dist/
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 # Install Python
-RUN Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe" -OutFile C:\dist\python-3.11.9-amd64.exe
+ADD "https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe" "C:\dist\python-3.11.9-amd64.exe"
 
 RUN C:\dist\install.ps1
 

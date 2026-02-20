@@ -32,6 +32,12 @@ Windows platforms from the `https://support.agi.com/downloads
 Place the artifacts inside a directory named ``distributions``. This directory
 must be contained inside of the ``stk-engine`` directory.
 
+.. note::
+
+    If you require the Code500 ephemeris file export option, copy
+    ``AgAsCode500.dll``, found in the ``"C:\Program Files\AGI\STK_ODTK 13\Modules"``
+    directory of an STK Desktop installation, to the ``distributions`` directory.
+
 .. code-block:: dosbatch
 
     windows/
@@ -52,7 +58,9 @@ image of your choice by running:
 
 .. code-block:: dosbatch
 
-    docker compose build stk-engine-py3<minor>
+    docker compose build stk --build-arg agreeToLicense=yes
+    docker compose build stk-pybase
+    docker compose build stk-python3.<minor>
 
 where ``<minor>`` is one of the minor versions of Python.
 
@@ -164,7 +172,7 @@ with the container, it is possible to install the package by running:
 
     docker exec \
       --interactive --tty \
-      stk-python-3.<minor> \
+      stk-python3.<minor> \
       cmd /C "python -m venv .venv && cd pystk && chcp 65001 && call C:\Users\STK\.venv\Scripts\activate.bat && python -m pip install --upgrade pip && python -m pip install -e C:\Users\STK\pystk[tests,doc,visualization]"
 
 
@@ -180,7 +188,7 @@ Save your scripts inside the working directory. Then, execute them by running:
 
     docker exec \
       --interactive --tty \
-      stk-python-3.<minor> \
+      stk-python3.<minor> \
       cmd /C "python /home/stk/pystk/<script>"
 
 Where ``<script>`` is the name of the Python script you want to execute.
