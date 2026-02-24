@@ -146,7 +146,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "python -m pip install --upgrade pip tox && rm -rf .tox"
+            "python -m pip install --upgrade pip tox==4.38.0 && rm -rf .tox"
 
       - name: "Build the full documentation"
         env:
@@ -233,7 +233,7 @@ jobs:
           docker exec \
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
-            "python -m pip install --upgrade pip tox && rm -rf .tox"
+            "python -m pip install --upgrade pip tox==4.38.0 && rm -rf .tox"
 
       - name: "Install coverage dependencies"
         env:
