@@ -33,7 +33,7 @@ jobs:
       contents: write # Write new content to the changelog file
       pull-requests: write # Write access to add or remove new tags
     steps:
-      - uses: ansys/actions/doc-deploy-changelog@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/doc-deploy-changelog@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
@@ -46,7 +46,7 @@ jobs:
       contents: read # Read source code of the project to evaluate code style
     steps:
       - name: "Run code style checks"
-        uses: ansys/actions/code-style@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+        uses: ansys/actions/code-style@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -82,7 +82,7 @@ jobs:
           vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-      - uses: ansys/actions/doc-style@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/doc-style@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           checkout: false
           files: '${{ steps.vale.outputs.files }}'
@@ -105,7 +105,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/build-wheelhouse@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -403,7 +403,7 @@ jobs:
       contents: read # Read the source code of the project
       id-token: write # Write access to a temporary token for signing attestations
     steps:
-      - uses: ansys/actions/build-library@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/build-library@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
@@ -442,7 +442,7 @@ jobs:
       contents: write # Write a new release in the GitHub repository
       id-token: write # Write access to a temporary token for signing attestations
     steps:
-      - uses: ansys/actions/release-github@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/release-github@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           library-name: ${{ env.ANSYS_STK }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -458,7 +458,7 @@ jobs:
     permissions:
       contents: write # Write to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-stable@571fb2b8c7d6ad8c8b18e50bd20fb00f125dcfb6 # v10.2.6
+      - uses: ansys/actions/doc-deploy-stable@1f4f0896a8e49d3aec2f02ced215b04a32c85f28 # v10.2.7
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
