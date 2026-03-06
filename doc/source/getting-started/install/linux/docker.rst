@@ -25,16 +25,15 @@ the latest three stable versions of Python.
 Download STK artifacts
 ======================
 
-Download the ``STK Engine`` and ``STK Engine Deployment Resources`` artifacts for
-Linux platforms from the `https://support.agi.com/downloads
-<https://support.agi.com/downloads>`_ page.
+Download the ``STK Engine on Linux`` and ``STK Engine on Linux Data`` artifacts from
+the `https://support.agi.com/downloads <https://support.agi.com/downloads>`_ page.
 
-Place the artifacts inside a directory named ``distributions``. This directory
-must be contained inside of the ``stk-engine`` directory.
+Extract the contents of the compressed artifacts into a directory named ``distributions``.
+This directory must be contained inside of the ``stk-engine`` directory.
 
 .. code-block:: dosbatch
 
-    linux/
+    linux/ubuntu
     ├── docker-compose.yml
     ├── stk-engine
     │   └── distributions/
@@ -47,12 +46,12 @@ must be contained inside of the ``stk-engine`` directory.
 Build Docker images
 ===================
 
-Navigate to the ``linux`` directory and use `Docker Compose`_ to build the
+Navigate to the ``linux/ubuntu`` directory and use `Docker Compose`_ to build the
 image of your choice by running:
 
 .. code-block:: dosbatch
 
-    docker compose build stk-engine-py3<minor>
+    docker compose build stk-python3.<minor>
 
 where ``<minor>`` is one of the minor versions of Python.
 
@@ -169,7 +168,7 @@ with the container, it is possible to install the package by running:
 
     docker exec \
       --interactive --tty \
-      stk-python-3.<minor> \
+      stk-python3.<minor> \
       /bin/bash -c "cd /home/stk && python -m venv .venv && source .venv/bin/activate && python -m pip install --upgrade pip && python -m pip install -e /home/stk/pystk[tests,doc,visualization]"
 
 where ``<minor>`` is the minor version of Python selected when building the
@@ -184,7 +183,7 @@ Save your scripts inside the working directory. Then, execute them by running:
 
     docker exec \
       --interactive --tty \
-      stk-python-3.<minor> \
+      stk-python3.<minor> \
       /bin/bash -c "python /home/stk/pystk/<script>"
 
 Where ``<script>`` is the name of the Python script you want to execute.
