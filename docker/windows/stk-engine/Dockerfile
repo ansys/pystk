@@ -14,7 +14,7 @@ SHELL ["cmd", "/S", "/C"]
 
 RUN icacls "C:\Users\STK" /grant STK:(OI)(CI)F /T
 USER STK
-RUN [ "C:/Program Files/AGI/STK 12/bin/AgNewUserSetup.exe", "force", "showDlg=Off", "allowOnline" ]
+RUN [ "C:/Program Files/AGI/STK_ODTK 13/bin/AgNewUserSetup.exe", "force", "showDlg=Off", "allowOnline" ]
 
 WORKDIR "C:\Users\STK"
 
