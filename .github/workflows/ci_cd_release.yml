@@ -33,7 +33,7 @@ jobs:
       contents: write # Write new content to the changelog file
       pull-requests: write # Write access to add or remove new tags
     steps:
-      - uses: ansys/actions/doc-deploy-changelog@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/doc-deploy-changelog@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           bot-user: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
@@ -46,7 +46,7 @@ jobs:
       contents: read # Read source code of the project to evaluate code style
     steps:
       - name: "Run code style checks"
-        uses: ansys/actions/code-style@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+        uses: ansys/actions/code-style@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -82,7 +82,7 @@ jobs:
           vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-      - uses: ansys/actions/doc-style@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/doc-style@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           checkout: false
           files: '${{ steps.vale.outputs.files }}'
@@ -105,7 +105,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/build-wheelhouse@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -128,7 +128,7 @@ jobs:
           persist-credentials: false
 
       - name: "Download wheelhouse into static path"
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
@@ -403,7 +403,7 @@ jobs:
       contents: read # Read the source code of the project
       id-token: write # Write access to a temporary token for signing attestations
     steps:
-      - uses: ansys/actions/build-library@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/build-library@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           library-name: ${{ env.ANSYS_STK }}
           attest-provenance: true
@@ -419,7 +419,7 @@ jobs:
     steps:
 
       - name: "Download the library artifacts from build-library step"
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: ${{ env.ANSYS_STK }}-artifacts
           path: ${{ env.ANSYS_STK }}-artifacts
@@ -442,7 +442,7 @@ jobs:
       contents: write # Write a new release in the GitHub repository
       id-token: write # Write access to a temporary token for signing attestations
     steps:
-      - uses: ansys/actions/release-github@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/release-github@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           library-name: ${{ env.ANSYS_STK }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -458,7 +458,7 @@ jobs:
     permissions:
       contents: write # Write to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-stable@22d03f365874cc55ffb84705f5f635f055b6f2b8 # v10.2.8
+      - uses: ansys/actions/doc-deploy-stable@2a2b198b65c63adb69c0d032d180e4dc728d4809 # v10.2.9
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
