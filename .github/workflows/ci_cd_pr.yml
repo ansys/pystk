@@ -182,8 +182,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
           target: ${{ matrix.target }}
           attest-provenance: true
-          whitelist-license-check: 'jupyter-rfb' # jupyter-rfb has unrecognized MIT license 
-                                                 # (https://github.com/vispy/jupyter_rfb/blob/main/LICENSE)
+          whitelist-license-check: 'jupyter-rfb'
+          # jupyter-rfb has unrecognized MIT license (https://github.com/vispy/jupyter_rfb/blob/main/LICENSE)
 
   doc-build:
     name: "Doc build"
