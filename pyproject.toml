@@ -40,7 +40,7 @@ optional-dependencies.all = [
   # Target: grpc
   "grpcio>=1.73.1",
   # Target: jupyter
-  "jupyter-rfb>=0.5.3",
+  "jupyter-rfb>=1.0.2",
   # Target: migration
   "libcst>=1.8.2",
   # Target: extensions
@@ -64,7 +64,7 @@ optional-dependencies.grpc = [
   "protobuf>=6.31.1",
 ]
 optional-dependencies.jupyter = [
-  "jupyter-rfb>=0.5.3",
+  "jupyter-rfb>=1.0.2",
   "numpy>=2.2.6",
   "pillow>=11.3.0",
   "sidecar>=0.7.0",

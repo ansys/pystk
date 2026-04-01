@@ -406,15 +406,27 @@ class WidgetBase(RemoteFrameBuffer):
         the data that should be rendered in that format.
 
         The main goal of this function is to provide the right type of data when
-        renedring different types of documents, including HTML, Notebooks, and
+        rendering different types of documents, including HTML, Notebooks, and
         PDF files.
 
         """
         if not self._building_examples:
             data = super()._repr_mimebundle_(**kwargs)
         else:
+            # There is currently no good way to detect when terrain and
+            # imagery fetched in background threads are finished loading,
+            # so when building the documentation to capture snapshots,
+            # just use an arbitrary delay for now and redraw a few times
+            # before taking the snapshot
+            for _ in range(0, 4):
+                time.sleep(0.25)
+                # Force a redraw
+                w, h = self._get_current_size()
+                self._rfb.notify_resize(0, 0, int(w), int(h))
+
+            array = self.get_frame()
             data = {
-                "image/png": array2png(self.snapshot().data)
+                "image/png": array2png(array)
             }
         return data
 
@@ -426,17 +438,17 @@ class WidgetBase(RemoteFrameBuffer):
         else:
             return self
 
-    def snapshot(self, pixel_ratio=None, _initial=False):
-        if self._building_examples:
-            # There is currently no good way to detect when terrain and
-            # imagery fetched in background threads are finished loading,
-            # so when building the documentation to capture snapshots,
-            # just use an arbitrary delay for now and fetch a few frames
-            # before taking the snapshot
-            for _ in range(0, 4):
-                _ = self.get_frame()
-                time.sleep(0.5)
-        return super().snapshot(pixel_ratio, _initial)
+    def _get_current_size(self):
+        ref_resize_event = self._rfb_last_resize_event
+        if ref_resize_event:
+            w = ref_resize_event["width"]
+            h = ref_resize_event["height"]
+        else:
+            css_width, css_height = self.css_width, self.css_height
+            w = float(css_width[:-2]) if css_width.endswith("px") else 400
+            h = float(css_height[:-2]) if css_height.endswith("px") else 300
+        return w, h
+
 
 class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
