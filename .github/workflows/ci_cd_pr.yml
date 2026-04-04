@@ -427,7 +427,7 @@ jobs:
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.10']
+        python: ['3.10', '3.11', '3.12', '3.13']
       fail-fast: false
     steps:
       - name: "Checkout the project"
@@ -477,6 +477,15 @@ jobs:
             --workdir ${PYSTK_DIR} \
             "${STK_CONTAINER}" /bin/bash -c \
             "python -m pip install --group tests ."
+
+      - name: "Install utilities"
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+        run: |
+          docker exec \
+            -u root --workdir ${PYSTK_DIR} \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "apt-get update && apt-get install --no-install-recommends -y pgp glibc-tools && mkdir -m 777 /tmp/staging"
 
       - name: "Run the extensions tests"
         env:
@@ -580,6 +589,17 @@ jobs:
         with:
           files: .cov/coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: "Output collected backtraces"
+        if: always()
+        env:
+          STK_CONTAINER: ${{ steps.docker.outputs.container }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          docker exec \
+            --workdir /tmp/staging \
+            "${STK_CONTAINER}" /bin/bash -c \
+            "ls && find . -name *.txt -exec gpg --passphrase $GPG_PASSPHRASE --batch --yes -c {} \; && find . -name *.txt.gpg -exec base64 {} \; && rm -f *.txt && rm -f *.txt.gpg"
 
       - name: "Stop the container"
         if: always()
