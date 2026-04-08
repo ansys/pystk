@@ -235,7 +235,6 @@ class AccessConstraintHelper(object):
         typesNoTest.append(AccessConstraintType.ATMOSPHERIC_LOSS)
         typesNoTest.append(AccessConstraintType.CLOUDS_FOG_LOSS)
         typesNoTest.append(AccessConstraintType.FREE_SPACE_LOSS)
-        typesNoTest.append(AccessConstraintType.NOISE_TEMPERATURE)
         typesNoTest.append(AccessConstraintType.PROPAGATION_LOSS)
         typesNoTest.append(AccessConstraintType.RAIN_LOSS)
         typesNoTest.append(AccessConstraintType.RADAR_TRANSMITTER_TARGET_ACCESS)
@@ -419,6 +418,11 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oGrazingAlt)
             self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
 
+        elif eType == AccessConstraintType.NOISE_TEMPERATURE:
+            oNoiseTemp: "AccessConstraintNoiseTemperature" = AccessConstraintNoiseTemperature(oConstraint)
+            Assert.assertIsNotNone(oNoiseTemp)
+            self.TestConstraintNoiseTemperature(oNoiseTemp)
+
         elif eType in typesMinMaxTime:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
@@ -471,6 +475,11 @@ class AccessConstraintHelper(object):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxPower(oMinMax)
+
+        elif eType == AccessConstraintType.ELEVATION_RISE_SET:
+            oElevRiseSet: "AccessConstraintElevationRiseSet" = AccessConstraintElevationRiseSet((oConstraint))
+            Assert.assertIsNotNone(oElevRiseSet)
+            self.TestConstraintElevRiseSet(oElevRiseSet)
 
         elif eType in typesNoTest:
             pass
@@ -1576,6 +1585,263 @@ class AccessConstraintHelper(object):
 
     # endregion
 
+    # region TestConstraintMinMaxNoiseTemperature
+    def TestConstraintNoiseTemperature(self, oNoiseTemp: "AccessConstraintNoiseTemperature"):
+        Assert.assertIsNotNone(oNoiseTemp)
+        Assert.assertEqual(AccessConstraintType.NOISE_TEMPERATURE, oNoiseTemp.constraint_type)
+
+        strUnit: str = self.m_oUnits.get_current_unit_abbrv("Temperature")
+        self.m_oUnits.set_current_unit("Temperature", "K")
+        Assert.assertEqual("K", self.m_oUnits.get_current_unit_abbrv("Temperature"))
+
+        # Min and Max Disabled
+
+        oNoiseTemp.enable_minimum = False
+        Assert.assertFalse(oNoiseTemp.enable_minimum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oNoiseTemp.minimum = 1
+
+        oNoiseTemp.enable_maximum = False
+        Assert.assertFalse(oNoiseTemp.enable_maximum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oNoiseTemp.maximum = 1
+
+        self.TestConstraintNoiseTemperature_Helper(oNoiseTemp, False)
+
+        # Just Min enabled
+
+        oNoiseTemp.enable_minimum = True
+        Assert.assertTrue(oNoiseTemp.enable_minimum)
+        oNoiseTemp.minimum = 0
+        Assert.assertEqual(0, oNoiseTemp.minimum)
+        oNoiseTemp.minimum = 1000000.0
+        Assert.assertEqual(1000000.0, oNoiseTemp.minimum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.minimum = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.minimum = 10000000.0
+
+        oNoiseTemp.enable_maximum = False
+        Assert.assertFalse(oNoiseTemp.enable_maximum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oNoiseTemp.maximum = 1
+
+        self.TestConstraintNoiseTemperature_Helper(oNoiseTemp, True)
+
+        # Just Max enabled
+
+        oNoiseTemp.enable_minimum = False
+        Assert.assertFalse(oNoiseTemp.enable_minimum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oNoiseTemp.minimum = 1
+
+        oNoiseTemp.enable_maximum = True
+        Assert.assertTrue(oNoiseTemp.enable_maximum)
+        oNoiseTemp.maximum = 0
+        Assert.assertEqual(0, oNoiseTemp.maximum)
+        oNoiseTemp.maximum = 1000000.0
+        Assert.assertEqual(1000000.0, oNoiseTemp.maximum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.maximum = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.maximum = 10000000.0
+
+        self.TestConstraintNoiseTemperature_Helper(oNoiseTemp, True)
+
+        # Min and Max Enabled
+
+        oNoiseTemp.enable_maximum = True
+        Assert.assertTrue(oNoiseTemp.enable_maximum)
+        oNoiseTemp.maximum = 0
+        Assert.assertEqual(0, oNoiseTemp.maximum)
+        oNoiseTemp.maximum = 1000000.0
+        Assert.assertEqual(1000000.0, oNoiseTemp.maximum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.maximum = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.maximum = 10000000.0
+
+        oNoiseTemp.enable_minimum = True
+        Assert.assertTrue(oNoiseTemp.enable_minimum)
+        oNoiseTemp.minimum = 0
+        Assert.assertEqual(0, oNoiseTemp.minimum)
+        oNoiseTemp.minimum = 1000000.0
+        Assert.assertEqual(1000000.0, oNoiseTemp.minimum)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oNoiseTemp.minimum = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("min greater than max")):
+            oNoiseTemp.minimum = 10000000.0
+
+        self.TestConstraintNoiseTemperature_Helper(oNoiseTemp, True)
+
+        self.m_oUnits.set_current_unit("Temperature", strUnit)
+        Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("Temperature"))
+
+    # endregion
+
+    # region TestConstraintMinMaxNoiseTemperature_Helper
+    def TestConstraintNoiseTemperature_Helper(
+        self, oNoiseTemp: "AccessConstraintNoiseTemperature", bEnableControls: bool
+    ):
+        if bEnableControls:
+            with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+                oNoiseTemp.method = NoiseTemperatureMethod.UNKNOWN
+
+            oNoiseTemp.method = NoiseTemperatureMethod.USE_TOTAL_SYSTEM_TEMPERATURE
+            Assert.assertEqual(NoiseTemperatureMethod.USE_TOTAL_SYSTEM_TEMPERATURE, oNoiseTemp.method)
+
+            # Same as below
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.earth = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.sun = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.atmosphere = True
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.UrbanTerrestrial = true; });  // Missing property (and should be read-only here)
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.rain = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.cosmic_background = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.clouds_fog = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.tropospheric_scintillation = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.external = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.ionospheric_fading = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.plugin = True
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.ExclIntvl = true; });         // Should be read-only
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.UseMaxTimeStep = true; });    // Missing property (and should be read-only here)
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.MaxTimeStep = 11; });         // Should be read-only
+
+            oNoiseTemp.exclusion_interval = False
+            Assert.assertFalse(oNoiseTemp.exclusion_interval)
+            oNoiseTemp.exclusion_interval = True
+            Assert.assertTrue(oNoiseTemp.exclusion_interval)
+
+            # oNoiseTemp.UseMaxTimeStep = false;
+            # Assert.IsFalse(oNoiseTemp.UseMaxTimeStep);
+
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.MaxTimeStep = 11; });
+
+            # oNoiseTemp.UseMaxTimeStep = true;
+            # Assert.IsTrue(oNoiseTemp.UseMaxTimeStep);
+
+            oNoiseTemp.maximum_time_step = 0
+            Assert.assertEqual(0, oNoiseTemp.maximum_time_step)
+            oNoiseTemp.maximum_time_step = 36525
+            Assert.assertEqual(36525, oNoiseTemp.maximum_time_step)
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                oNoiseTemp.maximum_time_step = -1
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                oNoiseTemp.maximum_time_step = 36526
+
+            oNoiseTemp.method = NoiseTemperatureMethod.USE_SELECTED_COMPONENTS
+            Assert.assertEqual(NoiseTemperatureMethod.USE_SELECTED_COMPONENTS, oNoiseTemp.method)
+
+            oNoiseTemp.earth = False
+            Assert.assertFalse(oNoiseTemp.earth)
+            oNoiseTemp.earth = True
+            Assert.assertTrue(oNoiseTemp.earth)
+
+            oNoiseTemp.sun = False
+            Assert.assertFalse(oNoiseTemp.sun)
+            oNoiseTemp.sun = True
+            Assert.assertTrue(oNoiseTemp.sun)
+
+            oNoiseTemp.atmosphere = False
+            Assert.assertFalse(oNoiseTemp.atmosphere)
+            oNoiseTemp.atmosphere = True
+            Assert.assertTrue(oNoiseTemp.atmosphere)
+
+            # Urban Terrestrial
+
+            oNoiseTemp.rain = False
+            Assert.assertFalse(oNoiseTemp.rain)
+            oNoiseTemp.rain = True
+            Assert.assertTrue(oNoiseTemp.rain)
+
+            oNoiseTemp.cosmic_background = False
+            Assert.assertFalse(oNoiseTemp.cosmic_background)
+            oNoiseTemp.cosmic_background = True
+            Assert.assertTrue(oNoiseTemp.cosmic_background)
+
+            oNoiseTemp.clouds_fog = False
+            Assert.assertFalse(oNoiseTemp.clouds_fog)
+            oNoiseTemp.clouds_fog = True
+            Assert.assertTrue(oNoiseTemp.clouds_fog)
+
+            oNoiseTemp.tropospheric_scintillation = False
+            Assert.assertFalse(oNoiseTemp.tropospheric_scintillation)
+            oNoiseTemp.tropospheric_scintillation = True
+            Assert.assertTrue(oNoiseTemp.tropospheric_scintillation)
+
+            oNoiseTemp.external = False
+            Assert.assertFalse(oNoiseTemp.external)
+            oNoiseTemp.external = True
+            Assert.assertTrue(oNoiseTemp.external)
+
+            oNoiseTemp.ionospheric_fading = False
+            Assert.assertFalse(oNoiseTemp.ionospheric_fading)
+            oNoiseTemp.ionospheric_fading = True
+            Assert.assertTrue(oNoiseTemp.ionospheric_fading)
+
+            oNoiseTemp.plugin = False
+            Assert.assertFalse(oNoiseTemp.plugin)
+            oNoiseTemp.plugin = True
+            Assert.assertTrue(oNoiseTemp.plugin)
+
+            oNoiseTemp.exclusion_interval = False
+            Assert.assertFalse(oNoiseTemp.exclusion_interval)
+            oNoiseTemp.exclusion_interval = True
+            Assert.assertTrue(oNoiseTemp.exclusion_interval)
+
+            # oNoiseTemp.UseMaxTimeStep = false;
+            # Assert.IsFalse(oNoiseTemp.UseMaxTimeStep);
+
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.MaxTimeStep = 11; });
+
+            # oNoiseTemp.UseMaxTimeStep = true;
+            # Assert.IsTrue(oNoiseTemp.UseMaxTimeStep);
+
+            oNoiseTemp.maximum_time_step = 0
+            Assert.assertEqual(0, oNoiseTemp.maximum_time_step)
+            oNoiseTemp.maximum_time_step = 36525
+            Assert.assertEqual(36525, oNoiseTemp.maximum_time_step)
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                oNoiseTemp.maximum_time_step = -1
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+                oNoiseTemp.maximum_time_step = 36526
+
+        else:
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.method = NoiseTemperatureMethod.USE_TOTAL_SYSTEM_TEMPERATURE
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.earth = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.sun = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.atmosphere = True
+            # TryCatchAssertBlock.ExpectedException("read-only", delegate () { oNoiseTemp.UrbanTerrestrial = true; });  // Missing property (and should be read-only here)
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.rain = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.cosmic_background = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.clouds_fog = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.tropospheric_scintillation = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.external = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.ionospheric_fading = True
+            with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+                oNoiseTemp.plugin = True
+
+    # endregion
+
     # region TestConstraintIntervals
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintIntervals(self, oConstraint: "IAccessConstraint", temporaryDirectory: str):
@@ -2272,6 +2538,28 @@ class AccessConstraintHelper(object):
             with pytest.raises(Exception):
                 oCb.remove_obstruction(strName)
             assigned = oCb.assigned_obstructions
+
+    # endregion
+
+    # region TestConstraintElevRiseSet
+    def TestConstraintElevRiseSet(self, oElevRiseSet: "AccessConstraintElevationRiseSet"):
+        oElevRiseSet.elevation_rise = 0
+        Assert.assertAlmostEqual(0, float(oElevRiseSet.elevation_rise), delta=0.001)
+        oElevRiseSet.elevation_rise = 90
+        Assert.assertAlmostEqual(90, float(oElevRiseSet.elevation_rise), delta=0.001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oElevRiseSet.elevation_rise = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oElevRiseSet.elevation_rise = 91
+
+        oElevRiseSet.elevation_set = 0
+        Assert.assertAlmostEqual(0, float(oElevRiseSet.elevation_set), delta=0.001)
+        oElevRiseSet.elevation_set = 90
+        Assert.assertAlmostEqual(90, float(oElevRiseSet.elevation_set), delta=0.001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oElevRiseSet.elevation_set = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oElevRiseSet.elevation_set = 91
 
     # endregion
 

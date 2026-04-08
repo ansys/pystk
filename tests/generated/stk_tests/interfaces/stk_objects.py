@@ -1030,6 +1030,36 @@ class StkAccessHelper(object):
         oGraphics.static_graphics_2d = False
         self.m_logger.WriteLine4("\tThe new StaticGfx is: {0}", oGraphics.static_graphics_2d)
         Assert.assertFalse(oGraphics.static_graphics_2d)
+        if oGraphics.color_mode == IvColorMode.CUSTOM_COLOR:
+            self.m_logger.WriteLine("\tThe current ColorMode is: Custom")
+            oGraphics.color_mode = IvColorMode.OBJECT_COLORS
+            self.m_logger.WriteLine("\tThe new ColorMode is: ObjectColors")
+            Assert.assertTrue((oGraphics.color_mode == IvColorMode.OBJECT_COLORS))
+            oGraphics.color_mode = IvColorMode.CUSTOM_COLOR
+            Assert.assertTrue((oGraphics.color_mode == IvColorMode.CUSTOM_COLOR))
+
+        else:
+            self.m_logger.WriteLine("\tThe current ColorMode is: ObjectColors")
+            oGraphics.color_mode = IvColorMode.CUSTOM_COLOR
+            self.m_logger.WriteLine("\tThe new ColorMode is: Custom")
+            Assert.assertTrue((oGraphics.color_mode == IvColorMode.CUSTOM_COLOR))
+            oGraphics.color_mode = IvColorMode.OBJECT_COLORS
+            Assert.assertTrue((oGraphics.color_mode == IvColorMode.OBJECT_COLORS))
+
+        # Custom Color - requires color mode set to IvColorMode.CUSTOM_COLOR
+        oGraphics.color_mode = IvColorMode.CUSTOM_COLOR
+        self.m_logger.WriteLine6("\tThe current CustomColor is: {0}", oGraphics.custom_color)
+        oGraphics.custom_color = Colors.Red
+        self.m_logger.WriteLine6("\tThe new CustomColor is: {0}", oGraphics.custom_color)
+        Assert.assertEqual(Colors.Red, oGraphics.custom_color)
+        oGraphics.custom_color = Colors.Blue
+        self.m_logger.WriteLine6("\tThe new new CustomColor is: {0}", oGraphics.custom_color)
+        Assert.assertEqual(Colors.Blue, oGraphics.custom_color)
+
+        # Check that you can't set CustomColor in OBJECT_COLORS mode (readonly)
+        oGraphics.color_mode = IvColorMode.OBJECT_COLORS
+        with pytest.raises(Exception):
+            oGraphics.custom_color = Colors.Blue
 
     # endregion
 

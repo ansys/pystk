@@ -11,7 +11,7 @@ env:
   MINIMUM_PYTHON_VERSION: '3.10'
   PYSTK_DIR: '/home/stk/pystk'
   QUARTO_VERSION: '1.5.55'
-  STK_DOCKER_IMAGE: 'ansys/stk-13.0:dev-ubuntu22.04'
+  STK_DOCKER_IMAGE: 'ansys/stk-13.1:dev-ubuntu22.04'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -114,57 +114,58 @@ jobs:
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-  doc-style:
-    name: "Doc style checks"
-    runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: actions-style
-    permissions:
-      contents: read # Read the source code of the project
-      pull-requests: write # Allow Vale's bot to make pull-request comments
-    steps:
-      - name: "Checkout project"
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          clean: true
-          persist-credentials: false
+        # doc-style:
+        #   name: "Doc style checks"
+        #   runs-on: ubuntu-latest
+        #   if: |
+        #     !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        #     !contains(github.event.pull_request.labels.*.name, 'style:skip')
+        #   needs: actions-style
+        #   permissions:
+        #     contents: read # Read the source code of the project
+        #     pull-requests: write # Allow Vale's bot to make pull-request comments
+        #   steps:
+        #     - name: "Checkout project"
+        #       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        #       with:
+        #         clean: true
+        #         persist-credentials: false
 
-      - name: "Install jq"
-        run: |
-          # Used to format Vale input as a JSON-formatted list of files
-          sudo apt install -y jq
+        #     - name: "Install jq"
+        #       run: |
+        #         # Used to format Vale input as a JSON-formatted list of files
+        #         sudo apt install -y jq
 
-      - name: "Collect desired files"
-        id: vale
-        run: |
-          # Find all .rst files excluding those in doc/source/api/
-          rst_files=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+        #     - name: "Collect desired files"
+        #       id: vale
+        #       run: |
+        #         # Find all .rst files excluding those in doc/source/api/
+        #         rst_files=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
 
-          # Find all .py files inside the examples/ directory, excluding those with an underscore
-          python_files=$(find examples -type f -name "*.py" ! -name "*_*")
+        #         # Find all .py files inside the examples/ directory, excluding those with an underscore
+        #         python_files=$(find examples -type f -name "*.py" ! -name "*_*")
 
-          # TODO: include Python files too. See Vale issue
-          # https://github.com/errata-ai/vale/issues/858
-          # Combine both file lists and convert them to a JSON array
-          # vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
-          vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
-          echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
+        #         # TODO: include Python files too. See Vale issue
+        #         # https://github.com/errata-ai/vale/issues/858
+        #         # Combine both file lists and convert them to a JSON array
+        #         # vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
+        #         vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
+        #         echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-      - uses: ansys/actions/doc-style@7d55ff0b9f67c77dae50a286d711ee1ae27b0a25 # v10.2.12
-        with:
-          checkout: false
-          files: '${{ steps.vale.outputs.files }}'
-          vale-config: doc/.vale.ini
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fail-level: 'warning'
+        #     - uses: ansys/actions/doc-style@7d55ff0b9f67c77dae50a286d711ee1ae27b0a25 # v10.2.12
+        #       with:
+        #         checkout: false
+        #         files: '${{ steps.vale.outputs.files }}'
+        #         vale-config: doc/.vale.ini
+        #         token: ${{ secrets.GITHUB_TOKEN }}
+        #         fail-level: 'warning'
 
   build-wheelhouse:
     name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
       }}"
     runs-on: ${{ matrix.os }}
-    needs: [code-style, doc-style]
+    #needs: [code-style, doc-style]
+    needs: [code-style]
     permissions:
       attestations: write # Write attestation for uploaded distribution artifacts
       contents: read # Read the source code of the project

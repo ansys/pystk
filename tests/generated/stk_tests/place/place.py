@@ -28,6 +28,7 @@ from assert_extension import *
 from assertion_harness import *
 from chain_analysis_options_helper import *
 from display_times_helper import *
+from ground_location.ground_location_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from orientation_helper import *
@@ -160,7 +161,7 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
             b: bool = EarlyBoundTests.AG_PLC.save_terrain_mask_data_in_binary
-        with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.AG_PLC.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_PLC.maximum_range_when_computing_az_el_mask = 11.0
@@ -171,7 +172,7 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
             b: bool = EarlyBoundTests.AG_PLC.save_terrain_mask_data_in_binary
-        with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.AG_PLC.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_PLC.maximum_range_when_computing_az_el_mask = 11.0
@@ -292,6 +293,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(20, azel.display_range_maximum)
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
+        azel.display_color_at_altitude = False
+        azel.show_color_at_range = False
         with pytest.raises(Exception):
             azel.altitude_color = Colors.Yellow
         with pytest.raises(Exception):
@@ -528,5 +531,52 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_PLC.rf_environment.propagation_channel, TestBase.Application
         )
         helper.RunCustomModels()
+
+    # endregion
+
+    # region GroundLocation_Basic
+    def test_GroundLocation_Basic(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_Basic(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
+
+    # endregion
+
+    # region GroundLocation_DisplayTimes
+    @category("Graphics Tests")
+    def test_GroundLocation_DisplayTimes(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_DisplayTimes(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
+
+    # endregion
+
+    # region GroundLocation_Graphics
+    @category("Graphics Tests")
+    def test_GroundLocation_Graphics(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_Graphics(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
+
+    # endregion
+
+    # region GroundLocation_GfxRangeContours
+    @category("Graphics Tests")
+    def test_GroundLocation_GfxRangeContours(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_GfxRangeContours(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
+
+    # endregion
+
+    # region GroundLocation_GfxAzElMask
+    @category("Graphics Tests")
+    def test_GroundLocation_GfxAzElMask(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_GfxAzElMask(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
+
+    # endregion
+
+    # region GroundLocation_VO
+    @category("VO Tests")
+    def test_GroundLocation_VO(self):
+        oHelper = GroundLocationHelper(TestBase.Application)
+        oHelper.Run_VO(clr.CastAs(EarlyBoundTests.AG_PLC, IGroundLocation))
 
     # endregion

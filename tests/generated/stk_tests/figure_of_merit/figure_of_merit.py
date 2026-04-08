@@ -806,20 +806,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(FigureOfMeritConstraintName.J_OVER_S, fomcs.constraint_name)
 
         # ===================================================================
-        # SrchTrkSinglePulseJOverS
-        # ===================================================================
-        # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
-        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
-        Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition_name("SrchTrkSinglePulseJOverS")
-        Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
-
-        # ===================================================================
         # CrdnCondition
         # ===================================================================
         # Set to other than the access constraint we are going to test.

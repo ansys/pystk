@@ -31,6 +31,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.available_identifiers`
               - An array of available satellite identifiers.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.ephemeris_start_epoch`
+              - If overriding the times contained in the SP3 file, specify the time of the first ephemeris point.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.extrapolate_one_step_past_end`
               - Extrapolate 1 step beyond last data point. If this option is selected, STK will calculate an additional ephemeris step beyond the last data point provided by the SP3 file(s) assigned to the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.files`
@@ -41,8 +43,14 @@ Overview
               - By default, the SP3 propagator uses the standard Lagrange interpolation scheme, interpolating position and velocity separately. Some files may be configured to allow the Hermitian interpolation.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.interpolation_order`
               - An interpolation order of 1 specifies linear interpolation and is appropriate for closely spaced data or data with significant jitter. Higher interpolation orders yield more accurate interpolation when the data is smooth and continuous.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.override`
+              - Opt whether to override times contained in the SP3 file.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.satellite_identifier`
               - Get or set a selected satellite identifier.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.start_time`
+              - Get the start time of ephemeris interval. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.stop_time`
+              - Get the stop time of ephemeris interval. Uses DateFormat Dimension.
 
 
 
@@ -62,6 +70,12 @@ Property detail
     :type: list
 
     An array of available satellite identifiers.
+
+.. py:property:: ephemeris_start_epoch
+    :canonical: ansys.stk.core.stkobjects.PropagatorSP3.ephemeris_start_epoch
+    :type: ITimeToolInstantSmartEpoch
+
+    If overriding the times contained in the SP3 file, specify the time of the first ephemeris point.
 
 .. py:property:: extrapolate_one_step_past_end
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.extrapolate_one_step_past_end
@@ -93,15 +107,36 @@ Property detail
 
     An interpolation order of 1 specifies linear interpolation and is appropriate for closely spaced data or data with significant jitter. Higher interpolation orders yield more accurate interpolation when the data is smooth and continuous.
 
+.. py:property:: override
+    :canonical: ansys.stk.core.stkobjects.PropagatorSP3.override
+    :type: bool
+
+    Opt whether to override times contained in the SP3 file.
+
 .. py:property:: satellite_identifier
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.satellite_identifier
     :type: str
 
     Get or set a selected satellite identifier.
 
+.. py:property:: start_time
+    :canonical: ansys.stk.core.stkobjects.PropagatorSP3.start_time
+    :type: typing.Any
+
+    Get the start time of ephemeris interval. Uses DateFormat Dimension.
+
+.. py:property:: stop_time
+    :canonical: ansys.stk.core.stkobjects.PropagatorSP3.stop_time
+    :type: typing.Any
+
+    Get the stop time of ephemeris interval. Uses DateFormat Dimension.
+
 
 Method detail
 -------------
+
+
+
 
 
 
@@ -121,6 +156,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

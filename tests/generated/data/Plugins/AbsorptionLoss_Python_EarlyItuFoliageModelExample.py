@@ -21,7 +21,6 @@
 # SOFTWARE.
 
 import typing, math
-from agi.stk13.plugins.commrdrplugin import IAgStkCommRdrAbsorptionLossPropagateSignalParams
 from agi.stk13.plugins.attrautomation import AgEAttrAddFlags
 from agi.stk13.plugins.stkplugin import AgStkPluginSite
 
@@ -41,7 +40,7 @@ class CAgStkCommRdrAbsorpLossPlugin(object):
     def __del__(self):
         pass
 
-    def Initialize(self, site: "IAgUtPluginSite") -> bool:
+    def Initialize(self, site: "IUtPluginSite") -> bool:
         self.site = AgStkPluginSite(site)
         self.root = self.site.StkRootObject
         self.VectorToolProvider = self.site.VectorToolProvider
@@ -51,7 +50,7 @@ class CAgStkCommRdrAbsorpLossPlugin(object):
     def PrePropagateSignal(self) -> bool:
         return True
 
-    def PropagateSignal(self, params: "IAgStkCommRdrAbsorptionLossPropagateSignalParams") -> bool:
+    def PropagateSignal(self, params: "ISTKCommRdrAbsorptionLossPropagateSignalParameters") -> bool:
         xmtrPosCBF = params.XmtrPosCBF
         rcvrPosCBF = params.RcvrPosCBF
         deltaX = rcvrPosCBF[0] - xmtrPosCBF[0]

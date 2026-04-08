@@ -42,7 +42,7 @@ class CAgStkRadarClutterGeometryPlugin(object):
         self.PatchArea = 1.0
         self.OffsetAngle = 0.01745329251994329576923690768489
 
-    def Initialize(self, site: "IAgUtPluginSite") -> bool:
+    def Initialize(self, site: "IUtPluginSite") -> bool:
         self.site = AgStkPluginSite(site)
         self.root = self.site.StkRootObject
         self.VectorToolProvider = self.site.VectorToolProvider
@@ -58,7 +58,7 @@ class CAgStkRadarClutterGeometryPlugin(object):
         )
         return True
 
-    def Compute(self, result: "IAgStkRadarClutterGeometryComputeParams") -> bool:
+    def Compute(self, result: "ISTKRadarClutterGeometryComputeParameters") -> bool:
         radarLink = result.RadarLink
         radarLinkGeom = radarLink.Geometry
         xmtRdrPosVel = radarLinkGeom.TransmitRadarPosVelProvider
@@ -135,7 +135,7 @@ class CAgStkRadarClutterGeometryPlugin(object):
         self.ApplyGrazingMask = None
         self.site.Message(AgEUtLogMsgType.eUtLogMsgInfo, f"{self.display_name} has been freed by {self.site.SiteName}.")
 
-    def GetPluginConfig(self, pAttrBuilder: "IAgAttrBuilder") -> typing.Any:
+    def GetPluginConfig(self, pAttrBuilder: "IAttrBuilder") -> typing.Any:
         if self.scope is None:
             self.scope = pAttrBuilder.NewScope()
             pAttrBuilder.AddQuantityDispatchProperty2(
@@ -153,7 +153,7 @@ class CAgStkRadarClutterGeometryPlugin(object):
             )
         return self.scope
 
-    def VerifyPluginConfig(self, pPluginCfgResult: "IAgUtPluginConfigVerifyResult") -> None:
+    def VerifyPluginConfig(self, pPluginCfgResult: "IUtPluginConfigVerifyResult") -> None:
         pass
 
 

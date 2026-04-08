@@ -24,10 +24,10 @@ Overview
               - Convert the specified dates from a given unit to another unit.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_position_array`
               - Convert the specified position values from a given position type to another position type.
-            * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_quantity`
-              - Convert the specified quantity value from a given unit to another unit.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_quantity_array`
               - Convert the specified quantity values from a given unit to another unit.
+            * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.convert_quantity`
+              - Convert the specified quantity value from a given unit to another unit.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_cartesian3_vector`
               - Create a cartesian vector.
             * - :py:attr:`~ansys.stk.core.stkutil.ConversionUtility.new_cartesian3_vector_from_direction`
@@ -122,25 +122,6 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: convert_quantity(self, dimension_name: str, from_unit: str, to_unit: str, from_value: float) -> float
-    :canonical: ansys.stk.core.stkutil.ConversionUtility.convert_quantity
-
-    Convert the specified quantity value from a given unit to another unit.
-
-    :Parameters:
-
-        **dimension_name** : :obj:`~str`
-
-        **from_unit** : :obj:`~str`
-
-        **to_unit** : :obj:`~str`
-
-        **from_value** : :obj:`~float`
-
-
-    :Returns:
-
-        :obj:`~float`
 
 .. py:method:: convert_quantity_array(self, dimension_name: str, from_unit: str, to_unit: str, quantity_values: list) -> list
     :canonical: ansys.stk.core.stkutil.ConversionUtility.convert_quantity_array
@@ -161,6 +142,26 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+.. py:method:: convert_quantity(self, dimension_name: str, from_unit: str, to_unit: str, from_value: float) -> typing.Any
+    :canonical: ansys.stk.core.stkutil.ConversionUtility.convert_quantity
+
+    Convert the specified quantity value from a given unit to another unit.
+
+    :Parameters:
+
+        **dimension_name** : :obj:`~str`
+
+        **from_unit** : :obj:`~str`
+
+        **to_unit** : :obj:`~str`
+
+        **from_value** : :obj:`~float`
+
+
+    :Returns:
+
+        :obj:`~typing.Any`
 
 .. py:method:: new_cartesian3_vector(self) -> ICartesian3Vector
     :canonical: ansys.stk.core.stkutil.ConversionUtility.new_cartesian3_vector

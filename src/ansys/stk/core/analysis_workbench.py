@@ -56,12 +56,12 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "CalculationToolSamplingBasic", "CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep",
 "CalculationToolSamplingMethod", "CalculationToolSamplingMethodFactory", "CalculationToolSamplingRelativeTolerance",
 "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", "CalculationToolScalarAngle",
-"CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom",
-"CalculationToolScalarCustomInlineScript", "CalculationToolScalarDataElement", "CalculationToolScalarDerivative",
-"CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime", "CalculationToolScalarFactory",
-"CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction",
-"CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral",
-"CalculationToolScalarPlugin", "CalculationToolScalarStandardDeviation",
+"CalculationToolScalarAverage", "CalculationToolScalarCommonTasks", "CalculationToolScalarConstant",
+"CalculationToolScalarCustom", "CalculationToolScalarCustomInlineScript", "CalculationToolScalarDataElement",
+"CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime",
+"CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant",
+"CalculationToolScalarFunction", "CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup",
+"CalculationToolScalarIntegral", "CalculationToolScalarPlugin", "CalculationToolScalarStandardDeviation",
 "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent",
 "CalculationToolScalarVectorMagnitude", "ClockHostType", "ConditionCombinedOperationType", "ConditionSetType",
 "ConditionThresholdType", "ConditionType", "DistanceToLocationType", "EventArrayFilterType", "EventArrayType",
@@ -164,12 +164,12 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector",
 "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled",
 "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement",
-"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration",
-"VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems",
-"VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems",
-"VectorType", "VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType",
-"VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType",
-"VolumeSatisfactionMetricType", "VolumeType"]
+"VectorGeometryToolVectorSurfaceNormal", "VectorGeometryToolVectorTwoPlanesIntersection",
+"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes",
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes",
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType",
+"VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType",
+"VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", "VolumeSatisfactionMetricType", "VolumeType"]
 
 from ctypes import POINTER
 from enum import IntEnum, IntFlag
@@ -1292,13 +1292,13 @@ class TimeSenseType(IntEnum):
     """Define whether object1 or object2 of an Access instance holds the clock for Access times."""
 
     UNKNOWN = -1
-    """Unklnown."""
+    """Unknown."""
     TRANSMIT = 0
     """Position is computed in Time Sense."""
     RECEIVE = 1
     """Position is computed in Receive Sense."""
 
-TimeSenseType.UNKNOWN.__doc__ = "Unklnown."
+TimeSenseType.UNKNOWN.__doc__ = "Unknown."
 TimeSenseType.TRANSMIT.__doc__ = "Position is computed in Time Sense."
 TimeSenseType.RECEIVE.__doc__ = "Position is computed in Receive Sense."
 
@@ -1650,6 +1650,8 @@ class VectorType(IntEnum):
     """Displacement between origin and destination points using surface distance and altitude difference."""
     FILE = 32
     """Vector interpolated from tabulated data from file."""
+    SURFACE_NORMAL = 33
+    """The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."""
 
 VectorType.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
 VectorType.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
@@ -1684,6 +1686,7 @@ VectorType.PLUGIN.__doc__ = "A vector plugin point."
 VectorType.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
 VectorType.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
 VectorType.FILE.__doc__ = "Vector interpolated from tabulated data from file."
+VectorType.SURFACE_NORMAL.__doc__ = "The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."
 
 agcls.AgTypeNameMap["VectorType"] = VectorType
 
@@ -4821,7 +4824,7 @@ agcls.AgTypeNameMap["TimeToolTimeArrayGroup"] = TimeToolTimeArrayGroup
 class CalculationToolScalarGroup(SupportsDeleteCallback):
     """Access or create VGT calculation scalars associated with an object or a central body."""
 
-    _num_methods = 9
+    _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _remove_method_offset = 1
     _get_context_method_offset = 2
@@ -4832,6 +4835,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
+    _get_common_tasks_method_offset = 10
     _metadata = {
         "iid_data" : (4791965666863546684, 13694108883325505215),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -4920,6 +4924,14 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         """Retrieve an element from the collection by name."""
         return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get_item_by_name_metadata, name, OutArg())
 
+    _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def common_tasks(self) -> "CalculationToolScalarCommonTasks":
+        """Calc Scalar common tasks."""
+        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get_common_tasks_metadata)
+
     __getitem__ = item
 
 
@@ -4927,6 +4939,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _property_names[count] = "count"
     _property_names[factory] = "factory"
     _property_names[_new_enum] = "_new_enum"
+    _property_names[common_tasks] = "common_tasks"
 
     def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarGroup."""
@@ -6266,6 +6279,84 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
 
 agcls.AgClassCatalog.add_catalog_entry((4952689778581630283, 6188566819305716358), CalculationToolScalarAverage)
 agcls.AgTypeNameMap["CalculationToolScalarAverage"] = CalculationToolScalarAverage
+
+class CalculationToolScalarCommonTasks(SupportsDeleteCallback):
+    """Common tasks for Calc Scalars."""
+
+    _num_methods = 6
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _quick_evaluate_for_calculation_scalar_array_method_offset = 1
+    _quick_evaluate_with_rate_for_calculation_scalar_array_method_offset = 2
+    _quick_evaluate_array_for_calculation_scalar_array_method_offset = 3
+    _quick_evaluate_with_rate_array_for_calculation_scalar_array_method_offset = 4
+    _quick_evaluate_event_array_for_calculation_scalar_array_method_offset = 5
+    _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_method_offset = 6
+    _metadata = {
+        "iid_data" : (4908168989878354802, 16826982669631162262),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, CalculationToolScalarCommonTasks)
+
+    _quick_evaluate_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_for_calculation_scalar_array(self, epoch:typing.Any, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated at epoch returning results as an array of elements, where each element is itself an array with two elements: 1. success (boolean) 2. value (double-precision)."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_for_calculation_scalar_array_metadata, epoch, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_for_calculation_scalar_array(self, epoch:typing.Any, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated at epoch returning results as an array of elements, where each element is itself an array with three elements: 1. success (boolean) 2. value (double-precision) 3. value rate (double-precision)."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_for_calculation_scalar_array_metadata, epoch, calc_array_vec, OutArg())
+
+    _quick_evaluate_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_array_for_calculation_scalar_array(self, times:list, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of input times returning the results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_array_for_calculation_scalar_array_metadata, times, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_array_for_calculation_scalar_array(self, times:list, calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of input times returning the results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_array_for_calculation_scalar_array_metadata, times, calc_array_vec, OutArg())
+
+    _quick_evaluate_event_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_event_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_event_array_for_calculation_scalar_array(self, ref_array:"ITimeToolTimeArray", calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of times provided by refArray returning results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_event_array_for_calculation_scalar_array_metadata, ref_array, calc_array_vec, OutArg())
+
+    _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_metadata = { "offset" : _quick_evaluate_with_rate_event_array_for_calculation_scalar_array_method_offset,
+            "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
+            "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
+    def quick_evaluate_with_rate_event_array_for_calculation_scalar_array(self, ref_array:"ITimeToolTimeArray", calc_array_vec:list) -> list:
+        """Each calc scalar in calcArrayVec is evaluated over the array of times provided by refArray returning results as an array of elements for each time, each element being an array of results for each calc scalar, results being an array..."""
+        return self._intf.invoke(CalculationToolScalarCommonTasks._metadata, CalculationToolScalarCommonTasks._quick_evaluate_with_rate_event_array_for_calculation_scalar_array_metadata, ref_array, calc_array_vec, OutArg())
+
+
+    def __init__(self, source_object=None):
+        """Construct an object of type CalculationToolScalarCommonTasks."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCommonTasks)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, CalculationToolScalarCommonTasks, [CalculationToolScalarCommonTasks, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5555862726007388911, 17257917051487061693), CalculationToolScalarCommonTasks)
+agcls.AgTypeNameMap["CalculationToolScalarCommonTasks"] = CalculationToolScalarCommonTasks
 
 class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Constant scalar value of specified dimension."""
@@ -9065,7 +9156,7 @@ agcls.AgClassCatalog.add_catalog_entry((5481942064256008089, 1255617811069995817
 agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
 
 class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
-    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
+    """Defined by determining if input trajectory point is within extents of specified volume grid coordinate."""
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18127,7 +18218,7 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def longitude_coordinates(self) -> "SpatialAnalysisToolGridCoordinateDefinition":
-        """Return longtitude Coordinates parameters for the Radius system."""
+        """Return longitude Coordinates parameters for the Radius system."""
         return self._intf.get_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._get_longitude_coordinates_metadata)
 
     _get_altitude_grid_parameters_metadata = { "offset" : _get_altitude_grid_parameters_method_offset,
@@ -25524,6 +25615,80 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
 agcls.AgClassCatalog.add_catalog_entry((5115970952625430054, 17775951564579216783), VectorGeometryToolVectorScalarScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryToolVectorScalarScaled
 
+class VectorGeometryToolVectorSurfaceNormal(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
+    """The normal vector for the surface of a central body at a sub-point obtained using the geodetic projection of the selected point onto the central body."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_central_body_method_offset = 1
+    _get_reference_point_method_offset = 2
+    _get_use_terrain_method_offset = 3
+    _set_use_terrain_method_offset = 4
+    _metadata = {
+        "iid_data" : (4972964301960432228, 7249057416567487911),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, VectorGeometryToolVectorSurfaceNormal)
+
+    _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def central_body(self) -> "AnalysisWorkbenchCentralBodyReference":
+        """Specify the central body."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_central_body_metadata)
+
+    _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def reference_point(self) -> "VectorGeometryToolPointReference":
+        """Specify a reference point."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_reference_point_metadata)
+
+    _get_use_terrain_metadata = { "offset" : _get_use_terrain_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def use_terrain(self) -> bool:
+        """Whether or not to compute the normal using local terrain sources."""
+        return self._intf.get_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._get_use_terrain_metadata)
+
+    _set_use_terrain_metadata = { "offset" : _set_use_terrain_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @use_terrain.setter
+    def use_terrain(self, use_terrain:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceNormal._metadata, VectorGeometryToolVectorSurfaceNormal._set_use_terrain_metadata, use_terrain)
+
+    _property_names[central_body] = "central_body"
+    _property_names[reference_point] = "reference_point"
+    _property_names[use_terrain] = "use_terrain"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type VectorGeometryToolVectorSurfaceNormal."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorSurfaceNormal)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IVectorGeometryToolVector._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceNormal, [VectorGeometryToolVectorSurfaceNormal, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
+
+agcls.AgClassCatalog.add_catalog_entry((5055124222729713986, 12930582000737091234), VectorGeometryToolVectorSurfaceNormal)
+agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceNormal"] = VectorGeometryToolVectorSurfaceNormal
+
 class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Velocity vector of a point in a coordinate system."""
 
@@ -25833,7 +25998,7 @@ class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbench
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """>A path to vector data file."""
+        """A path to vector data file."""
         return self._intf.get_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._get_filename_metadata)
 
     _set_filename_metadata = { "offset" : _set_filename_method_offset,
@@ -28750,7 +28915,7 @@ agcls.AgClassCatalog.add_catalog_entry((5761098629475697076, 1365203469650237533
 agcls.AgTypeNameMap["AnalysisWorkbenchPointLocateInSystemWithRateResult"] = AnalysisWorkbenchPointLocateInSystemWithRateResult
 
 class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IAnalysisWorkbenchComponentSystem.TransformTo methods."""
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -28802,7 +28967,7 @@ agcls.AgClassCatalog.add_catalog_entry((4817842955153372763, 1192737216982411945
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemTransformResult"] = AnalysisWorkbenchSystemTransformResult
 
 class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
+    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IAnalysisWorkbenchComponentSystem.TransformToWithRate methods."""
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods

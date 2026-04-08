@@ -2070,6 +2070,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CalculationObjectElement.OSCULATING, se.element_type)
         otherOrbitElems.remove((clr.CastAs(se, IComponentInfo)).name)
 
+        signedInclination: "StateCalcSignedInclination" = clr.CastAs(
+            (ICloneable(otherOrbitElems["SignedInclination"])).clone_object(), StateCalcSignedInclination
+        )
+        Assert.assertIsNotNone(signedInclination)
+        signedInclination.coord_system_name = "CentralBody/Earth Inertial"
+        Assert.assertEqual("CentralBody/Earth Inertial", signedInclination.coord_system_name)
+        signedInclination.element_type = CalculationObjectElement.OSCULATING
+        Assert.assertEqual(CalculationObjectElement.OSCULATING, signedInclination.element_type)
+        otherOrbitElems.remove((clr.CastAs(signedInclination, IComponentInfo)).name)
+
         trueLong: "StateCalcTrueLon" = clr.CastAs(
             (ICloneable(otherOrbitElems["True Longitude"])).clone_object(), StateCalcTrueLon
         )
@@ -2543,9 +2553,7 @@ class EarlyBoundTests(TestBase):
         compinfo: "IComponentInfo" = calcObjectCollection[0]
 
         s: str = compinfo.name
-
-        compinfo = calcObjectCollection[0]
-        s = compinfo.name
+        Assert.assertEqual(s, "BTheta")
 
         self.TestCalcObjectCollection(calcObjectCollection)
 
@@ -2574,6 +2582,34 @@ class EarlyBoundTests(TestBase):
         mScript.unit_dimension = "AngleUnit"
         Assert.assertEqual("AngleUnit", mScript.unit_dimension)
         scripts.remove((clr.CastAs(mScript, IComponentInfo)).name)
+
+        # Scripts - Python
+
+        pythonScript: "StateCalcPythonScript" = clr.CastAs(
+            (ICloneable(scripts["Python"])).clone_object(), StateCalcPythonScript
+        )
+        Assert.assertIsNotNone(pythonScript)
+
+        pythonCalcObjectCollection: "CalculationObjectCollection" = pythonScript.calculation_object_arguments
+        pythonCalcObjectCollection.add("MultiBody/BTheta")
+
+        pythonCompinfo: "IComponentInfo" = pythonCalcObjectCollection[0]
+
+        sName: str = pythonCompinfo.name
+        Assert.assertEqual(sName, "BTheta")
+
+        self.TestCalcObjectCollection(pythonCalcObjectCollection)
+
+        pythonScript.custom_script = ("Test line 1" + Environment.NewLine) + "Test line 2"
+        Assert.assertEqual(((("Test line 1" + Environment.NewLine) + "Test line 2")), pythonScript.custom_script)
+        pythonScript.return_variable = "TestVar"
+        Assert.assertEqual("TestVar", pythonScript.return_variable)
+        pythonScript.unit_dimension = "AngleUnit"
+        Assert.assertEqual("AngleUnit", pythonScript.unit_dimension)
+
+        self.TestCalcObjectLinkEmbedControlCollection(pythonScript.calculation_object_arguments_link_embed)
+
+        scripts.remove((clr.CastAs(pythonScript, IComponentInfo)).name)
 
         # Segments
 
@@ -4638,8 +4674,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
         pluginProps.set_property("VectorName", "Periapsis")
         Assert.assertEqual("Periapsis", pluginProps.get_property("VectorName"))
-        pluginProps.set_property("AccelRefFrame", "eUtFrameFixed")
-        Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("AccelRefFrame"))
+        pluginProps.set_property("AccelRefFrame", self.GetFrameEnumString("Fixed"))
+        Assert.assertEqual(self.GetFrameEnumString("Fixed"), pluginProps.get_property("AccelRefFrame"))
         pluginProps.set_property("AccelX", 0.01)
         Assert.assertEqual(0.01, pluginProps.get_property("AccelX"))
         pluginProps.set_property("AccelY", 0.08)
@@ -4787,8 +4823,8 @@ class EarlyBoundTests(TestBase):
         # Assert.AreEqual(7, arProps.Length);
         pluginProps.set_property("SRPArea", 1)
         Assert.assertEqual(1, pluginProps.get_property("SRPArea"))
-        pluginProps.set_property("RefFrame", "eUtFrameInertial")
-        Assert.assertEqual("eUtFrameInertial", pluginProps.get_property("RefFrame"))
+        pluginProps.set_property("RefFrame", self.GetFrameEnumString("Inertial"))
+        Assert.assertEqual(self.GetFrameEnumString("Inertial"), pluginProps.get_property("RefFrame"))
         # pluginProps.SetProperty("PluginName", "MyName");          // PluginName property not on JScript plugin
         # Assert.AreEqual("MyName", pluginProps.GetProperty("PluginName"));
         pluginProps.set_property("PluginEnabled", False)
@@ -8173,6 +8209,206 @@ class EarlyBoundTests(TestBase):
 
         components.remove(designCR3BPSetupInfo.name)
 
+        # ER3BP Setup Tool
+
+        designER3BPSetup: "DesignER3BPSetup" = clr.CastAs(
+            (ICloneable(components["ER3BP Setup Tool"])).clone_object(), DesignER3BPSetup
+        )
+        designER3BPSetupInfo: "IComponentInfo" = clr.CastAs(designER3BPSetup, IComponentInfo)
+        self.TestComponent(designER3BPSetupInfo, False)
+
+        # Initial properties
+        Assert.assertEqual("Earth", designER3BPSetup.central_body_name)
+        Assert.assertEqual("Set Secondary Body", designER3BPSetup.secondary_body_name)
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", designER3BPSetup.initial_epoch)
+        Assert.assertEqual(0.0, designER3BPSetup.true_anomaly)
+        Assert.assertEqual("Type a valid name then Tab to continue", designER3BPSetup.ideal_secondary_name)
+        Assert.assertEqual(1, designER3BPSetup.mass_parameter)
+        Assert.assertEqual(0, designER3BPSetup.eccentricity)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_distance)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_time)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_velocity)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_acceleration)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
+            designER3BPSetup.central_body_name = "Bogus"
+        designER3BPSetup.central_body_name = "Mars"
+        Assert.assertEqual("Mars", designER3BPSetup.central_body_name)
+        designER3BPSetup.central_body_name = "Earth"
+        Assert.assertEqual("Earth", designER3BPSetup.central_body_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
+            designER3BPSetup.secondary_body_name = "Bogus"
+        designER3BPSetup.secondary_body_name = "Moon"
+        Assert.assertEqual("Moon", designER3BPSetup.secondary_body_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            designER3BPSetup.initial_epoch = "Bogus"
+        designER3BPSetup.initial_epoch = "1 Jul 1999 10:00:00.000"
+        Assert.assertEqual("1 Jul 1999 10:00:00.000", designER3BPSetup.initial_epoch)
+        designER3BPSetup.initial_epoch = "1 Jul 1999 00:00:00.000"
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", designER3BPSetup.initial_epoch)
+
+        Assert.assertAlmostEqual(245.848, float(designER3BPSetup.true_anomaly), delta=0.001)
+        Assert.assertAlmostEqual(0.0121506, designER3BPSetup.mass_parameter, delta=1e-07)
+        Assert.assertAlmostEqual(0.0391124, designER3BPSetup.eccentricity, delta=1e-07)
+        Assert.assertAlmostEqual(396204000, designER3BPSetup.characteristic_distance, delta=10000)
+        Assert.assertAlmostEqual(392604, designER3BPSetup.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1009.17, designER3BPSetup.characteristic_velocity, delta=0.01)
+        Assert.assertAlmostEqual(0.00257, designER3BPSetup.characteristic_acceleration, delta=1e-05)
+
+        designER3BPSetup.true_anomaly = 300
+        Assert.assertEqual(300, designER3BPSetup.true_anomaly)
+
+        Assert.assertAlmostEqual(300, float(designER3BPSetup.true_anomaly), delta=0.001)
+        Assert.assertAlmostEqual(0.0121506, designER3BPSetup.mass_parameter, delta=1e-07)
+        Assert.assertAlmostEqual(0.0553664, designER3BPSetup.eccentricity, delta=1e-07)
+        Assert.assertAlmostEqual(373714000, designER3BPSetup.characteristic_distance, delta=10000)
+        Assert.assertAlmostEqual(359654, designER3BPSetup.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1039.09, designER3BPSetup.characteristic_velocity, delta=0.01)
+        Assert.assertAlmostEqual(0.00288914, designER3BPSetup.characteristic_acceleration, delta=1e-05)
+
+        designER3BPSetup.ideal_secondary_name = "MyMoon"
+        Assert.assertEqual("MyMoon", designER3BPSetup.ideal_secondary_name)
+
+        # CreateIdealSecondaryCB
+        designER3BPSetup.create_ideal_secondary_cb()
+        objColl2: "DesignER3BPObjectCollection" = designER3BPSetup.associated_objects
+        Assert.assertEqual(1, objColl2.count)
+        obj2: "DesignER3BPObject" = objColl2[0]
+        Assert.assertEqual("MyMoon", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        # ResetIdealSecondaryCB
+        designER3BPSetup.ideal_secondary_name = "MyMoon1"
+        Assert.assertEqual("MyMoon1", designER3BPSetup.ideal_secondary_name)
+        designER3BPSetup.reset_ideal_secondary_cb()
+        Assert.assertEqual("MyMoon", designER3BPSetup.ideal_secondary_name)
+        Assert.assertEqual(1, objColl2.count)
+
+        # UpdateIdealSecondaryCB
+        designER3BPSetup.ideal_secondary_name = "MyMoon2"
+        Assert.assertEqual("MyMoon2", designER3BPSetup.ideal_secondary_name)
+        designER3BPSetup.update_ideal_secondary_cb()
+        Assert.assertEqual(1, objColl2.count)
+        obj2 = objColl2[0]
+        Assert.assertEqual("MyMoon2", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        # CreateRotatingCoordinateSystem
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.L1_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_rotating_coordinate_system()
+        Assert.assertEqual(4, objColl2.count)
+        obj2 = objColl2[3]
+        Assert.assertEqual("EarthMyMoon2L1CenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.SECONDARY_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_rotating_coordinate_system()
+        Assert.assertEqual(5, objColl2.count)
+        obj2 = objColl2[4]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # CreateCalculationObjects
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.L1_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_calculation_objects()
+        Assert.assertEqual(11, objColl2.count)
+        obj2 = objColl2[10]
+        Assert.assertEqual("L1EarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2L1CenteredRotating", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.SECONDARY_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_calculation_objects()
+        Assert.assertEqual(17, objColl2.count)
+        obj2 = objColl2[16]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+
+        # Misc collection tests
+        objByIndex2: "DesignER3BPObject" = objColl2.get_item_by_index(0)
+        Assert.assertEqual("MyMoon2", objByIndex2.object_name)
+
+        objByName2: "DesignER3BPObject" = objColl2.get_item_by_name("MyMoon2")
+        Assert.assertEqual("MyMoon2", objByName2.object_name)
+
+        count = 0
+        objByEnum: "DesignER3BPObject"
+        for objByEnum in objColl2:
+            count += 1
+            if count == 0:
+                Assert.assertEqual("MyMoon2", objByEnum.object_name)
+
+        Assert.assertEqual(17, count)
+
+        # IncludeSTM
+        designER3BPSetup.include_stm = False
+        Assert.assertFalse(designER3BPSetup.include_stm)
+        designER3BPSetup.include_stm = True
+        Assert.assertTrue(designER3BPSetup.include_stm)
+
+        # CreatePropagator
+        designER3BPSetup.create_propagator()
+        Assert.assertEqual(18, objColl2.count)
+        obj2 = objColl2[17]
+        Assert.assertEqual("EarthMyMoon2ER3BP", obj2.object_name)
+        Assert.assertEqual("Propagator", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # DeletePropagator
+        designER3BPSetup.delete_propagator()
+        Assert.assertEqual(17, objColl2.count)
+        obj2 = objColl2[16]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+
+        # DeleteCalculationObjects
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.L1_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_calculation_objects()
+        Assert.assertEqual(11, objColl2.count)
+        obj2 = objColl2[10]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.SECONDARY_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_calculation_objects()
+        Assert.assertEqual(5, objColl2.count)
+        obj2 = objColl2[4]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # DeleteRotatingCoordinateSystem
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.L1_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_rotating_coordinate_system()
+        Assert.assertEqual(3, objColl2.count)
+        obj2 = objColl2[2]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = RotatingCoordinateSystem.SECONDARY_CENTERED
+        Assert.assertEqual(RotatingCoordinateSystem.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_rotating_coordinate_system()
+        Assert.assertEqual(1, objColl2.count)
+        obj2 = objColl2[0]
+        Assert.assertEqual("MyMoon2", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        components.remove(designER3BPSetupInfo.name)
+
     def test_EngineModels(self):
         components: "ComponentInfoCollection" = EarlyBoundTests.AG_COM.get_components(Component.ASTROGATOR).get_folder(
             "Engine Models"
@@ -9760,3 +9996,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             old: "IComponentInfo" = components["NewNewName"]
         TestBase.Application.save_scenario()
+
+    def GetFrameEnumString(self, frame: str):
+        frameEnumString: str = "eUtFrame"
+        return frameEnumString + frame

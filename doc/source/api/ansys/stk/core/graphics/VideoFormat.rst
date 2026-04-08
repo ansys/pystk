@@ -25,6 +25,9 @@ Overview
             * - :py:attr:`~WMV`
               - Windows Media Video (WMV) file format.
 
+            * - :py:attr:`~PRO_RES`
+              - Apple ProRes file format.
+
 
 Import detail
 -------------

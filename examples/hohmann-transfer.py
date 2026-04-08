@@ -39,7 +39,7 @@ root.new_scenario("HohmannTransfer")
 # Once created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)

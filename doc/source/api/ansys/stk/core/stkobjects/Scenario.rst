@@ -85,6 +85,12 @@ Overview
               - Return a list of 3D Tilesets used for Analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_analysis_start_time_for_epoch`
               - Whether the scenario Epoch is the same as the scenario's StartTime.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_analysis`
+              - Whether STK uses the Terrain Server for analysis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask`
+              - Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask`
+              - Whether STK uses the Terrain Server for Line-of-sight terrain mask.
 
 
 
@@ -261,6 +267,24 @@ Property detail
 
     Whether the scenario Epoch is the same as the scenario's StartTime.
 
+.. py:property:: use_terrain_server_for_analysis
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_analysis
+    :type: bool
+
+    Whether STK uses the Terrain Server for analysis.
+
+.. py:property:: use_terrain_server_for_az_el_mask
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_az_el_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Azimuth/Elevation mask.
+
+.. py:property:: use_terrain_server_for_line_of_sight_terrain_mask
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_terrain_server_for_line_of_sight_terrain_mask
+    :type: bool
+
+    Whether STK uses the Terrain Server for Line-of-sight terrain mask.
+
 
 Method detail
 -------------
@@ -337,6 +361,12 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+
+
+
+
 
 
 

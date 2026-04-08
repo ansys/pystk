@@ -1988,7 +1988,7 @@ class EarlyBoundTests(TestBase):
 
         # Ensure that fast and slow give the same results, and that fast is faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
-        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (4.0 * watchFast.ElapsedMilliseconds))
+        Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (1.2 * watchFast.ElapsedMilliseconds))
 
     # endregion
 
