@@ -146,6 +146,8 @@ class AntennaHelper(object):
             return "Uniform Aperture Rectangular"
         elif antennaModelType == AntennaModelType.HFSS_EEP_ARRAY:
             return "HFSS EEP Array"
+        elif antennaModelType == AntennaModelType.HFSS_DESIGN:
+            return "HFSS Design"
         else:
             return "UNKNOWN"
 
@@ -154,7 +156,19 @@ class AntennaHelper(object):
     # region Run
     def Run(self, antennaModel: "IAntennaModel", antennaModelName: str, designFrequencyEnabled: bool):
         Console.WriteLine(antennaModelName)  # Debug
-        if not designFrequencyEnabled:
+
+        # Determine if AEDT is installed
+        aedtInstalled: bool = True
+        if antennaModel.type == AntennaModelType.HFSS_DESIGN:
+            try:
+                (clr.CastAs(antennaModel, AntennaModelHFSSDesign)).set_design_type(
+                    AntennaHFSSDesignType.SLOT_GAP
+                )  # works if AEDT installed
+
+            except:
+                aedtInstalled = False
+
+        if (not designFrequencyEnabled) or (not aedtInstalled):
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 antennaModel.design_frequency = 1.0
 
@@ -264,6 +278,14 @@ class AntennaHelper(object):
         elif antennaModelName == "Hemispherical":
             Assert.assertEqual(AntennaModelType.HEMISPHERICAL, antennaModel.type)
             self.Test_IAgAntennaModelHemispherical(clr.CastAs(antennaModel, AntennaModelHemispherical))
+        elif antennaModelName == "HFSS Design":
+            Assert.assertEqual(AntennaModelType.HFSS_DESIGN, antennaModel.type)
+            if aedtInstalled:
+                self.Test_IAgAntennaModelHFSSDesign(clr.CastAs(antennaModel, AntennaModelHFSSDesign))
+
+            else:
+                self.Test_IAgAntennaModelHFSSDesignNotInstalled(clr.CastAs(antennaModel, AntennaModelHFSSDesign))
+
         elif antennaModelName == "HFSS EEP Array":
             Assert.assertEqual(AntennaModelType.HFSS_EEP_ARRAY, antennaModel.type)
             self.Test_IAgAntennaModelHfssEepArray(clr.CastAs(antennaModel, AntennaModelHfssEepArray))
@@ -3189,6 +3211,105 @@ class AntennaHelper(object):
             script.filename = TestBase.GetScenarioFile("CommRad", "VB_Beamformer.vbs")
             Assert.assertEqual(r"CommRad\VB_Beamformer.vbs", script.filename)
 
+    def Test_IAgAntennaModelHFSSDesignNotInstalled(self, hfssDesign: "AntennaModelHFSSDesign"):
+        Assert.assertEqual(AntennaHFSSDesignStatus.NOT_GENERATED, hfssDesign.status)
+        Assert.assertEqual("HFSS not installed", hfssDesign.availability)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            hfssDesign.set_design_type(AntennaHFSSDesignType.SLOT_GAP)
+
+        designCommon: "IAntennaHFSSDesign" = hfssDesign.design
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_DIPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+
+        designWireDipole: "AntennaHFSSDesignWireDipole" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignWireDipole)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.dipole_length = 111.111
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.feed_gap = 222.222
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            designWireDipole.dipole_radius = 333.333
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid HFSS install detected")):
+            hfssDesign.generate()
+
+    def Test_IAgAntennaModelHFSSDesign(self, hfssDesign: "AntennaModelHFSSDesign"):
+        Assert.assertEqual(AntennaHFSSDesignStatus.NOT_GENERATED, hfssDesign.status)
+        designCommon: "IAntennaHFSSDesign" = hfssDesign.design
+
+        # Wire Dipole
+        hfssDesign.set_design_type(AntennaHFSSDesignType.WIRE_DIPOLE)
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_DIPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designWireDipole: "AntennaHFSSDesignWireDipole" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignWireDipole)
+        designWireDipole.dipole_length = 111.111
+        Assert.assertEqual(111.111, designWireDipole.dipole_length)
+        designWireDipole.dipole_radius = 222.222
+        Assert.assertEqual(222.222, designWireDipole.dipole_radius)
+        designWireDipole.feed_gap = 333.333
+        Assert.assertEqual(333.333, designWireDipole.feed_gap)
+
+        # Slot Gap
+        hfssDesign.set_design_type(AntennaHFSSDesignType.SLOT_GAP)
+        Assert.assertEqual(AntennaHFSSDesignType.SLOT_GAP, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designSlotGap: "AntennaHFSSDesignSlotGap" = clr.CastAs(hfssDesign.design, AntennaHFSSDesignSlotGap)
+        designSlotGap.slot_length = 111.111
+        Assert.assertEqual(111.111, designSlotGap.slot_length)
+        designSlotGap.slot_width = 222.222
+        Assert.assertEqual(222.222, designSlotGap.slot_width)
+        designSlotGap.feed_offset = 333.333
+        Assert.assertEqual(333.333, designSlotGap.feed_offset)
+        designSlotGap.substrate_height = 444.444
+        Assert.assertEqual(444.444, designSlotGap.substrate_height)
+        designSlotGap.substrate_dimension_x = 555.555
+        Assert.assertEqual(555.555, designSlotGap.substrate_dimension_x)
+        designSlotGap.substrate_dimension_y = 666.666
+        Assert.assertEqual(666.666, designSlotGap.substrate_dimension_y)
+
+        # Wire Monopole
+        hfssDesign.set_design_type(AntennaHFSSDesignType.WIRE_MONOPOLE)
+        Assert.assertEqual(AntennaHFSSDesignType.WIRE_MONOPOLE, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designWireMonopole: "AntennaHFSSDesignWireMonopole" = clr.CastAs(
+            hfssDesign.design, AntennaHFSSDesignWireMonopole
+        )
+        designWireMonopole.monopole_length = 111.111
+        Assert.assertEqual(111.111, designWireMonopole.monopole_length)
+        designWireMonopole.monopole_radius = 222.222
+        Assert.assertEqual(222.222, designWireMonopole.monopole_radius)
+        designWireMonopole.feed_gap = 333.333
+        Assert.assertEqual(333.333, designWireMonopole.feed_gap)
+        designWireMonopole.ground_plane_width = 444.444
+        Assert.assertEqual(444.444, designWireMonopole.ground_plane_width)
+
+        # Helix Quadrifilar Short
+        hfssDesign.set_design_type(AntennaHFSSDesignType.HELIX_QUADRIFILAR_SHORT)
+        Assert.assertEqual(AntennaHFSSDesignType.HELIX_QUADRIFILAR_SHORT, hfssDesign.design.type)
+        Assert.assertEqual(PolarizationReferenceAxis.Z, designCommon.polarization_reference_axis)
+        designHelixQuadrifilarShort: "AntennaHFSSDesignHelixQuadrifilarShort" = clr.CastAs(
+            hfssDesign.design, AntennaHFSSDesignHelixQuadrifilarShort
+        )
+        designHelixQuadrifilarShort.helix_diameter = 111.111
+        Assert.assertEqual(111.111, designHelixQuadrifilarShort.helix_diameter)
+        designHelixQuadrifilarShort.helix_spacing = 222.222
+        Assert.assertEqual(222.222, designHelixQuadrifilarShort.helix_spacing)
+        designHelixQuadrifilarShort.wire_diameter = 333.333
+        Assert.assertEqual(333.333, designHelixQuadrifilarShort.wire_diameter)
+        designHelixQuadrifilarShort.number_of_turns = 50
+        Assert.assertEqual(50, designHelixQuadrifilarShort.number_of_turns)
+        designHelixQuadrifilarShort.feed_port_height = 444.444
+        Assert.assertEqual(444.444, designHelixQuadrifilarShort.feed_port_height)
+        designHelixQuadrifilarShort.ground_plane_x = 555.555
+        Assert.assertEqual(555.555, designHelixQuadrifilarShort.ground_plane_x)
+        designHelixQuadrifilarShort.ground_plane_y = 666.666
+        Assert.assertEqual(666.666, designHelixQuadrifilarShort.ground_plane_y)
+        designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.LEFT
+        Assert.assertEqual(AntennaHFSSDesignHelixTurnDirection.LEFT, designHelixQuadrifilarShort.turn_direction)
+        designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.RIGHT
+        Assert.assertEqual(AntennaHFSSDesignHelixTurnDirection.RIGHT, designHelixQuadrifilarShort.turn_direction)
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
+            designHelixQuadrifilarShort.turn_direction = AntennaHFSSDesignHelixTurnDirection.UNKNOWN
+
     def Test_IAgAntennaModelHfssEepArray(self, hfssEepArray: "AntennaModelHfssEepArray"):
         # Initial State
         Assert.assertEqual(0, hfssEepArray.number_of_elements)
@@ -4699,7 +4820,10 @@ class AntennaControlHelper(object):
         antennaControl.reference_type = AntennaControlReferenceType.EMBED
         Assert.assertEqual(AntennaControlReferenceType.EMBED, antennaControl.reference_type)
 
-        numExpectedSupportedEmbeddedModels: int = 53
+        numExpectedSupportedEmbeddedModels: int = 54
+        if OSHelper.IsLinux():
+            # HFSS Design not available for Linux
+            numExpectedSupportedEmbeddedModels -= 1
 
         arSupportedEmbeddedModels = antennaControl.embedded_model_component_linking.supported_components
         Assert.assertEqual(numExpectedSupportedEmbeddedModels, len(arSupportedEmbeddedModels))
@@ -4748,20 +4872,15 @@ class AntennaControlHelper(object):
         for antennaModelType in Enum.GetValues(clr.TypeOf(AntennaModelType)):
             if (
                 (
-                    (
-                        (
-                            (
-                                (AntennaModelType.UNKNOWN != antennaModelType)
-                                and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
-                            )
-                            and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
-                        )
-                        and (AntennaModelType.REMCOM_UAN_FORMAT != antennaModelType)
-                    )
-                    and (AntennaModelType.ANSYS_FFD_FORMAT != antennaModelType)
+                    (AntennaModelType.UNKNOWN != antennaModelType)
+                    and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
                 )
-                and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType)
-            ) and (AntennaModelType.HFSS_EEP_ARRAY != antennaModelType):
+                and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
+            ) and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType):
+                if OSHelper.IsLinux() and (antennaModelType == AntennaModelType.HFSS_DESIGN):
+                    # HFSS Design not available for Linux
+                    continue
+
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 Console.WriteLine(antennaModelType)
                 antennaControl.embedded_model_component_linking.set_component(antennaModelName)
@@ -4770,6 +4889,10 @@ class AntennaControlHelper(object):
                     antennaModelName,
                     designFrequencyEnabled,
                 )
+
+        antennaControl.embedded_model_component_linking.set_component(
+            AntennaHelper.TypeToName(AntennaModelType.GAUSSIAN)
+        )
 
         # Antenna tab - Orientation sub-tab
         antennaControl.reference_type = AntennaControlReferenceType.EMBED  # to make orientation read-write
@@ -5444,23 +5567,20 @@ class AntennaBeamHelper(object):
         for antennaModelType in Enum.GetValues(clr.TypeOf(AntennaModelType)):
             if (
                 (
-                    (
-                        (
-                            (
-                                (AntennaModelType.UNKNOWN != antennaModelType)
-                                and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
-                            )
-                            and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
-                        )
-                        and (AntennaModelType.REMCOM_UAN_FORMAT != antennaModelType)
-                    )
-                    and (AntennaModelType.ANSYS_FFD_FORMAT != antennaModelType)
+                    (AntennaModelType.UNKNOWN != antennaModelType)
+                    and (AntennaModelType.OPTICAL_SIMPLE != antennaModelType)
                 )
-                and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType)
-            ) and (AntennaModelType.HFSS_EEP_ARRAY != antennaModelType):
+                and (AntennaModelType.OPTICAL_GAUSSIAN != antennaModelType)
+            ) and (AntennaModelType.TICRA_GRASP_FORMAT != antennaModelType):
+                if OSHelper.IsLinux() and (antennaModelType == AntennaModelType.HFSS_DESIGN):
+                    # HFSS Design not available for Linux
+                    continue
+
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 beam.antenna_model_name = antennaModelName
                 antennaHelper.Run(beam.antenna_model, antennaModelName, True)
+
+        beam.antenna_model_name = AntennaHelper.TypeToName(AntennaModelType.GAUSSIAN)
 
         # Beams tab, Antenna sub-tab, Polarization sub-tab
 
@@ -6872,14 +6992,11 @@ class RFPropagationChannelHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
-            elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM331, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
-            elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM320, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 5.50":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM550, aaModel.type)
+                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
+            elif aaModelName == "TIREM 6.30":
+                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM630, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP, aaModel.type)
@@ -6947,6 +7064,15 @@ class RFPropagationChannelHelper(object):
         Assert.assertEqual(ITURP676AtmosphereDataType.ANNUAL_GLOBAL, iturp676_13.atmosphere_data_type)
         iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.SEASONAL_REGIONAL
         Assert.assertEqual(ITURP676AtmosphereDataType.SEASONAL_REGIONAL, iturp676_13.atmosphere_data_type)
+
+        iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.USER_SPECIFIED
+        Assert.assertEqual(ITURP676AtmosphereDataType.USER_SPECIFIED, iturp676_13.atmosphere_data_type)
+        userProfileFilename: str = TestBase.PathCombine("CommRad", "vProfile_placeExton_day70.apf")
+        iturp676_13.user_profile_filename = TestBase.GetScenarioFile(userProfileFilename)
+        Assert.assertEqual(userProfileFilename, iturp676_13.user_profile_filename)
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            iturp676_13.user_profile_filename = r"C:\bogus.apf"
+
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             iturp676_13.atmosphere_data_type = ITURP676AtmosphereDataType.UNKNOWN
 
@@ -6992,12 +7118,13 @@ class RFPropagationChannelHelper(object):
             tirem.surface_temperature = 101
 
         self.m_root.units_preferences.set_current_unit("DistanceUnit", "m")
-        tirem.surface_humidity = 0
-        Assert.assertEqual(0, tirem.surface_humidity)
+
+        tirem.surface_humidity = 1e-05
+        Assert.assertEqual(1e-05, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
         Assert.assertEqual(13.25, tirem.surface_humidity)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.surface_humidity = -1
+            tirem.surface_humidity = 1e-06
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_humidity = 14
 
@@ -7019,12 +7146,12 @@ class RFPropagationChannelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_refractivity = 451
 
-        tirem.relative_permittivity = 0
-        Assert.assertEqual(0, tirem.relative_permittivity)
+        tirem.relative_permittivity = 1
+        Assert.assertEqual(1, tirem.relative_permittivity)
         tirem.relative_permittivity = 100
         Assert.assertEqual(100, tirem.relative_permittivity)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            tirem.relative_permittivity = -1
+            tirem.relative_permittivity = 0.5
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.relative_permittivity = 101
 

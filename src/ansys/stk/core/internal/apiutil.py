@@ -100,7 +100,7 @@ def initialize_from_source_object(this, sourceObject, interfaceType):
     if sourceObject is not None and sourceObject._intf is not None:
         intf = sourceObject._intf.query_interface(interfaceType._metadata)
         if intf is not None:
-            this._private_init(intf)
+            this._private_init(sourceObject._intf)
             del(intf)
         else:
             raise RuntimeError(f"Failed to create {interfaceType.__name__} from source object.")

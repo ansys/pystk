@@ -1,20 +1,105 @@
-<!-- STKv4.0 Format="XML" -->
-<STKOBJECT>
-<OBJECT Class = "AtmosphericAbsorptionModel" Name = "MyTIREM">
-    <OBJECT Class = "string" Name = "Category"> &quot;@Top&quot; </OBJECT>
-    <OBJECT Class = "bool" Name = "Clonable"> True </OBJECT>
-    <OBJECT Class = "string" Name = "ComponentName"> &quot;MyTIREM&quot; </OBJECT>
-    <OBJECT Class = "string" Name = "Description"> &quot;TIREM 3.31 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot; </OBJECT>
-    <OBJECT Class = "bool" Name = "OverrideTerrainSampleResolution"> False </OBJECT>
-    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
-    <OBJECT Class = "double" Name = "RelativePermittivity"> 15 &quot;&quot; </OBJECT>
-    <OBJECT Class = "double" Name = "SurfaceConductivity"> 0.005 &quot;&quot; </OBJECT>
-    <OBJECT Class = "double" Name = "SurfaceHumidity"> 64 g*m^-3 </OBJECT>
-    <OBJECT Class = "double" Name = "SurfaceRefractivity"> 310 &quot;&quot; </OBJECT>
-    <OBJECT Class = "double" Name = "Temperature"> 273.15 K </OBJECT>
-    <OBJECT Class = "double" Name = "TerrainSampleResolution"> 100 m </OBJECT>
-    <OBJECT Class = "string" Name = "Type"> &quot;TIREM 3.31&quot; </OBJECT>
-    <OBJECT Class = "string" Name = "UserComment"> &quot;TIREM 3.31 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot; </OBJECT>
-    <OBJECT Class = "string" Name = "Version"> &quot;1.0.1 a&quot; </OBJECT>
-</OBJECT>
-</STKOBJECT>
+<?xml version = "1.0" standalone = "yes"?>
+<Component>
+    <Type>AtmosphericAbsorptionModel</Type>
+    <SpecificType>TIREM 5.50</SpecificType>
+    <Data>
+        <VAR name = "Copy_of_TIREM_5.50">
+            <SCOPE Class = "AtmosphericAbsorptionModel">
+                <VAR name = "Version">
+                    <STRING>&quot;1.0.1 a&quot;</STRING>
+                </VAR>
+                <VAR name = "IdentifierInformation">
+                    <SCOPE>
+                        <VAR name = "Identifier">
+                            <STRING>&quot;{85D02D01-8CDA-43EB-8D28-AFE7A2EE4C64}&quot;</STRING>
+                        </VAR>
+                        <VAR name = "Version">
+                            <STRING>&quot;1&quot;</STRING>
+                        </VAR>
+                        <VAR name = "SdfInformation">
+                            <SCOPE>
+                                <VAR name = "Version">
+                                    <STRING>&quot;0.0&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Url">
+                                    <STRING>&quot;&quot;</STRING>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                        <VAR name = "SourceIdentifierInformation">
+                            <SCOPE>
+                                <VAR name = "Identifier">
+                                    <STRING>&quot;{750DF95B-E86A-4093-8152-1907E87FC1AB}&quot;</STRING>
+                                </VAR>
+                                <VAR name = "Version">
+                                    <STRING>&quot;1&quot;</STRING>
+                                </VAR>
+                                <VAR name = "SdfInformation">
+                                    <SCOPE>
+                                        <VAR name = "Version">
+                                            <STRING>&quot;0.0&quot;</STRING>
+                                        </VAR>
+                                        <VAR name = "Url">
+                                            <STRING>&quot;&quot;</STRING>
+                                        </VAR>
+                                    </SCOPE>
+                                </VAR>
+                            </SCOPE>
+                        </VAR>
+                    </SCOPE>
+                </VAR>
+                <VAR name = "ComponentName">
+                    <STRING>&quot;Copy_of_TIREM_5.50&quot;</STRING>
+                </VAR>
+                <VAR name = "Description">
+                    <STRING>&quot;TIREM 5.50 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot;</STRING>
+                </VAR>
+                <VAR name = "Type">
+                    <STRING>&quot;TIREM 5.50&quot;</STRING>
+                </VAR>
+                <VAR name = "UserComment">
+                    <STRING>&quot;TIREM 5.50 (Terrain Integrated Rough Earth Model) gaseous absorption model&quot;</STRING>
+                </VAR>
+                <VAR name = "ReadOnly">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "Clonable">
+                    <BOOL>true</BOOL>
+                </VAR>
+                <VAR name = "Category">
+                    <STRING>&quot;@Top&quot;</STRING>
+                </VAR>
+                <VAR name = "Temperature">
+                    <QUANTITY Dimension = "Temperature" Unit = "K">
+                        <REAL>273.15</REAL>
+                    </QUANTITY>
+                </VAR>
+                <VAR name = "SurfaceHumidity">
+                    <QUANTITY Dimension = "Density" Unit = "g*m^-3">
+                        <REAL>4.0</REAL>
+                    </QUANTITY>
+                </VAR>
+                <VAR name = "SurfaceConductivity">
+                    <REAL>0.005</REAL>
+                </VAR>
+                <VAR name = "SurfaceRefractivity">
+                    <REAL>310.0</REAL>
+                </VAR>
+                <VAR name = "RelativePermittivity">
+                    <REAL>15.0</REAL>
+                </VAR>
+                <VAR name = "OverrideTerrainSampleResolution">
+                    <BOOL>false</BOOL>
+                </VAR>
+                <VAR name = "TerrainSampleResolution">
+                    <QUANTITY Dimension = "DistanceUnit" Unit = "m">
+                        <REAL>100.0</REAL>
+                    </QUANTITY>
+                </VAR>
+                <VAR name = "Polarization">
+                    <STRING>&quot;Vertical&quot;</STRING>
+                </VAR>
+            </SCOPE>
+        </VAR>
+    </Data>
+</Component>

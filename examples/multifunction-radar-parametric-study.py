@@ -65,7 +65,7 @@ scenario = root.current_scenario
 # Once the scenario is loaded, it is possible to show a 3D graphics window and view the aircraft's route by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)

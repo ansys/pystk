@@ -206,9 +206,9 @@ class STKEngineApplication(STKXApplication):
         if self._initialized:
             EventSubscriptionManager.unsubscribe_all()
             self._timer_impl.terminate()
-            ObjectLifetimeManager.release_all(releaseApplication=False)
+            ObjectLifetimeManager.release_all(release_applications=False)
             self.terminate()
-            ObjectLifetimeManager.release_all(releaseApplication=True)
+            ObjectLifetimeManager.release_all(release_applications=True)
             CoInitializeManager.uninitialize()
             self.__dict__["_initialized"] = False
 
@@ -247,7 +247,7 @@ class STKEngine(object):
             unknown = IUnknown()
             iid_iunknown = GUID(IUnknown._guid)
             if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_agstkxapplication), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(unknown.p))):
-                unknown.take_ownership(isApplication=True)
+                unknown.take_ownership(is_application=True)
                 return STKEngine._new_engine_application(unknown, no_graphics)
         raise RuntimeError("Failed to create STK Engine application. Check for successful install and registration.")
 
@@ -259,7 +259,7 @@ class STKEngine(object):
             unknown = IUnknown()
             iid_iunknown = GUID(IUnknown._guid)
             if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_entry_class), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(unknown.p))):
-                unknown.take_ownership(isApplication=False)
+                unknown.take_ownership(is_application=False)
                 pa = STKXApplicationPartnerAccess()
                 pa._private_init(unknown)
                 stkx_pa_app = pa.grant_partner_access(vendor, product, key)

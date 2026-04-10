@@ -978,8 +978,8 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEShiftValues",
-            "OldName": "eShiftPressed",
-            "NewName": "PRESSED"
+            "OldName": "eAltPressed",
+            "NewName": "ALT_PRESSED"
         },
         {
             "ParentScope": "AgEShiftValues",
@@ -988,13 +988,13 @@
         },
         {
             "ParentScope": "AgEShiftValues",
-            "OldName": "eAltPressed",
-            "NewName": "ALT_PRESSED"
+            "OldName": "eShiftPressed",
+            "NewName": "PRESSED"
         },
         {
             "ParentScope": "AgEButtonValues",
-            "OldName": "eLeftPressed",
-            "NewName": "LEFT_PRESSED"
+            "OldName": "eMiddlePressed",
+            "NewName": "MIDDLE_PRESSED"
         },
         {
             "ParentScope": "AgEButtonValues",
@@ -1003,13 +1003,13 @@
         },
         {
             "ParentScope": "AgEButtonValues",
-            "OldName": "eMiddlePressed",
-            "NewName": "MIDDLE_PRESSED"
+            "OldName": "eLeftPressed",
+            "NewName": "LEFT_PRESSED"
         },
         {
             "ParentScope": "AgEOLEDropMode",
-            "OldName": "eNone",
-            "NewName": "NONE"
+            "OldName": "eAutomatic",
+            "NewName": "AUTOMATIC"
         },
         {
             "ParentScope": "AgEOLEDropMode",
@@ -1018,13 +1018,8 @@
         },
         {
             "ParentScope": "AgEOLEDropMode",
-            "OldName": "eAutomatic",
-            "NewName": "AUTOMATIC"
-        },
-        {
-            "ParentScope": "AgEMouseMode",
-            "OldName": "eMouseModeAutomatic",
-            "NewName": "AUTOMATIC"
+            "OldName": "eNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgEMouseMode",
@@ -1032,9 +1027,14 @@
             "NewName": "MANUAL"
         },
         {
+            "ParentScope": "AgEMouseMode",
+            "OldName": "eMouseModeAutomatic",
+            "NewName": "AUTOMATIC"
+        },
+        {
             "ParentScope": "AgELoggingMode",
-            "OldName": "eLogInactive",
-            "NewName": "INACTIVE"
+            "OldName": "eLogActiveKeepFile",
+            "NewName": "ACTIVE_KEEP_FILE"
         },
         {
             "ParentScope": "AgELoggingMode",
@@ -1043,18 +1043,13 @@
         },
         {
             "ParentScope": "AgELoggingMode",
-            "OldName": "eLogActiveKeepFile",
-            "NewName": "ACTIVE_KEEP_FILE"
+            "OldName": "eLogInactive",
+            "NewName": "INACTIVE"
         },
         {
             "ParentScope": "AgEGfxAnalysisMode",
-            "OldName": "eSolarPanelTool",
-            "NewName": "SOLAR_PANEL_TOOL"
-        },
-        {
-            "ParentScope": "AgEGfxAnalysisMode",
-            "OldName": "eAreaTool",
-            "NewName": "AREA_TOOL"
+            "OldName": "eAzElMaskTool",
+            "NewName": "AZ_EL_MASK_TOOL"
         },
         {
             "ParentScope": "AgEGfxAnalysisMode",
@@ -1063,13 +1058,13 @@
         },
         {
             "ParentScope": "AgEGfxAnalysisMode",
-            "OldName": "eAzElMaskTool",
-            "NewName": "AZ_EL_MASK_TOOL"
+            "OldName": "eAreaTool",
+            "NewName": "AREA_TOOL"
         },
         {
-            "ParentScope": "AgEGfxDrawCoords",
-            "OldName": "ePixelDrawCoords",
-            "NewName": "PIXEL_DRAW_COORDINATES"
+            "ParentScope": "AgEGfxAnalysisMode",
+            "OldName": "eSolarPanelTool",
+            "NewName": "SOLAR_PANEL_TOOL"
         },
         {
             "ParentScope": "AgEGfxDrawCoords",
@@ -1077,9 +1072,14 @@
             "NewName": "SCREEN_DRAW_COORDINATES"
         },
         {
+            "ParentScope": "AgEGfxDrawCoords",
+            "OldName": "ePixelDrawCoords",
+            "NewName": "PIXEL_DRAW_COORDINATES"
+        },
+        {
             "ParentScope": "AgEShowProgressImage",
-            "OldName": "eShowProgressImageNone",
-            "NewName": "NONE"
+            "OldName": "eShowProgressImageUser",
+            "NewName": "USER"
         },
         {
             "ParentScope": "AgEShowProgressImage",
@@ -1088,13 +1088,8 @@
         },
         {
             "ParentScope": "AgEShowProgressImage",
-            "OldName": "eShowProgressImageUser",
-            "NewName": "USER"
-        },
-        {
-            "ParentScope": "AgEFeatureCodes",
-            "OldName": "eFeatureCodeEngineRuntime",
-            "NewName": "ENGINE_RUNTIME"
+            "OldName": "eShowProgressImageNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgEFeatureCodes",
@@ -1102,9 +1097,14 @@
             "NewName": "GLOBE_CONTROL"
         },
         {
+            "ParentScope": "AgEFeatureCodes",
+            "OldName": "eFeatureCodeEngineRuntime",
+            "NewName": "ENGINE_RUNTIME"
+        },
+        {
             "ParentScope": "AgEProgressImageXOrigin",
-            "OldName": "eProgressImageXLeft",
-            "NewName": "LEFT"
+            "OldName": "eProgressImageXCenter",
+            "NewName": "CENTER"
         },
         {
             "ParentScope": "AgEProgressImageXOrigin",
@@ -1113,13 +1113,13 @@
         },
         {
             "ParentScope": "AgEProgressImageXOrigin",
-            "OldName": "eProgressImageXCenter",
-            "NewName": "CENTER"
+            "OldName": "eProgressImageXLeft",
+            "NewName": "LEFT"
         },
         {
             "ParentScope": "AgEProgressImageYOrigin",
-            "OldName": "eProgressImageYTop",
-            "NewName": "TOP"
+            "OldName": "eProgressImageYCenter",
+            "NewName": "CENTER"
         },
         {
             "ParentScope": "AgEProgressImageYOrigin",
@@ -1128,18 +1128,13 @@
         },
         {
             "ParentScope": "AgEProgressImageYOrigin",
-            "OldName": "eProgressImageYCenter",
-            "NewName": "CENTER"
+            "OldName": "eProgressImageYTop",
+            "NewName": "TOP"
         },
         {
             "ParentScope": "AgESTKXApplicationAuthMode",
-            "OldName": "eSTKXApplicationAuthModeEnforceSingleUserLocal",
-            "NewName": "SINGLE_USER_LOCAL"
-        },
-        {
-            "ParentScope": "AgESTKXApplicationAuthMode",
-            "OldName": "eSTKXApplicationAuthModeMutualTLS",
-            "NewName": "MUTUAL_TLS"
+            "OldName": "eSTKXApplicationAuthModeDefault",
+            "NewName": "DEFAULT"
         },
         {
             "ParentScope": "AgESTKXApplicationAuthMode",
@@ -1148,8 +1143,13 @@
         },
         {
             "ParentScope": "AgESTKXApplicationAuthMode",
-            "OldName": "eSTKXApplicationAuthModeDefault",
-            "NewName": "DEFAULT"
+            "OldName": "eSTKXApplicationAuthModeMutualTLS",
+            "NewName": "MUTUAL_TLS"
+        },
+        {
+            "ParentScope": "AgESTKXApplicationAuthMode",
+            "OldName": "eSTKXApplicationAuthModeEnforceSingleUserLocal",
+            "NewName": "SINGLE_USER_LOCAL"
         }
     ],
     "NamedArgumentMappings": []

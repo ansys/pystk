@@ -77,6 +77,8 @@ Overview
               - Sampling method used for access calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.start_object`
               - Start object for the Chain.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.strand_analysis_opts`
+              - Strand analysis settings for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_convergence`
               - Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_period`
@@ -311,6 +313,12 @@ Property detail
 
     Start object for the Chain.
 
+.. py:property:: strand_analysis_opts
+    :canonical: ansys.stk.core.stkobjects.Chain.strand_analysis_opts
+    :type: ChainStrandAnalysisOpts
+
+    Strand analysis settings for the Chain.
+
 .. py:property:: time_convergence
     :canonical: ansys.stk.core.stkobjects.Chain.time_convergence
     :type: float
@@ -416,6 +424,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk-13.0:dev-windowsservercore-ltsc2019
-ARG basePythonImage=ansys/stk-13.0:dev-windowsservercore-ltsc2019-pybase
+ARG baseImage=ansys/stk-13.1:dev-windowsservercore-ltsc2019
+ARG basePythonImage=ansys/stk-13.1:dev-windowsservercore-ltsc2019-pybase
 FROM ${basePythonImage} AS builder
 
 USER ContainerAdministrator

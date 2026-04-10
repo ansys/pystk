@@ -27,9 +27,9 @@ import os
 import typing
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
-from ctypes import POINTER, Structure, Union, byref, cast, pointer
+from ctypes import POINTER, Structure, Union, byref, cast, pointer, addressof
 
-from .apiutil import OutArg, GcDisabler
+from .apiutil import OutArg
 
 ###############################################################################
 #   COM Types
@@ -71,6 +71,7 @@ OLE_XPOS_PIXELS = LONG
 OLE_YPOS_PIXELS = LONG
 LPSAFEARRAY = PVOID
 LPSTREAM = PVOID
+PGRPCBYTES = PVOID
 
 
 ###############################################################################
@@ -170,19 +171,14 @@ class GUID(Structure):
 
         return guid
 
-    @staticmethod
-    def from_guid(src:"GUID") -> "GUID":
-        guid = GUID()
-        guid.Data1 = src.Data1
-        guid.Data2 = src.Data2
-        guid.Data3 = src.Data3
-        guid.Data4 = src.Data4
-        return guid
+    _data_pair_cache = {}
 
     @staticmethod
     def from_data_pair(data:tuple) -> "GUID":
-        guid_union = _guid_union(data)
-        return GUID.from_guid(guid_union.guid)
+        if data not in GUID._data_pair_cache:
+            guid_union = _guid_union(data)
+            GUID._data_pair_cache[data] = guid_union.guid
+        return GUID._data_pair_cache[data]
 
     def as_data_pair(self) -> tuple:
         guid_union = _guid_union(self)
@@ -239,6 +235,13 @@ class _guid_union(Union):
 IID = GUID
 REFIID = POINTER(IID)
 
+class Variant(Structure):
+    # Copy a varUnion into the buffer to get the correct data.
+    _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
+    def __init__(self):
+        # To initialize Variant from python data, use marshall.VARIANT_from_python_data
+        pass
+
 class varUnion(Union):
     # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the Variant class
     # only has a raw buffer that is equivalent in size to the varUnion.
@@ -276,19 +279,12 @@ class varUnion(Union):
                 ("pullVal", POINTER(ULONGLONG)), #VT_UI8|VT_BYREF
                 ("pintVal", POINTER(INT)), #VT_INT|VT_BYREF
                 ("puintVal", POINTER(UINT)), #VT_UINT|VT_BYREF
-                ("pvarVal", POINTER(PVOID)), #VT_VARIANT|VT_BYREF
+                ("pvarVal", POINTER(Variant)), #VT_VARIANT|VT_BYREF
                 ("scode", HRESULT), #VT_ERROR
                 ("pscode", POINTER(HRESULT)), #VT_ERROR|VT_BYREF
                 ("pdispVal", PVOID), #VT_DISPATCH
                 ("ppdispVal", POINTER(PVOID)) #VT_DISPATCH|VT_BYREF
                ]
-
-class Variant(Structure):
-    # Copy a varUnion into the buffer to get the correct data.
-    _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
-    def __init__(self):
-        # To initialize Variant from python data, use marshall.VARIANT_from_python_data
-        pass
 
 class SafearrayBound(Structure):
     _fields_ = [("cElements", ULONG), ("lLbound", LONG)]
@@ -455,100 +451,39 @@ def Succeeded(hr):
     return hr >= S_OK
 
 class _CreateAgObjectLifetimeManager(object):
-    """Singleton class for managing reference counts on COM interfaces."""
-    _AddRef = WINFUNCTYPE(ULONG, LPVOID)
-    _Release = WINFUNCTYPE(ULONG, LPVOID)
-    if os.name == "nt":
-        _AddRefIndex = 1
-        _ReleaseIndex = 2
-    else:
-        _AddRefIndex = 0
-        _ReleaseIndex = 1
+    """Singleton class for managing the lifetime of COM interfaces."""
 
     def __init__(self):
-        self._ref_counts = dict()
-        self._applications = list()
+        self._objects = set()
+        self._applications = set()
+        self._shutting_down = False
 
-    @staticmethod
-    def _release_impl(pUnk:"IUnknown"):
-        """Call Release."""
-        _CreateAgObjectLifetimeManager._Release(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
-
-    @staticmethod
-    def _add_ref_impl(pUnk:"IUnknown"):
-        """Call AddRef."""
-        _CreateAgObjectLifetimeManager._AddRef(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
-
-    def set_as_application(self, pUnk:"IUnknown"):
+    def add_application(self, pUnk:"IUnknown"):
         """Add pUnk to the list of applications."""
-        ptraddress = pUnk.p.value
-        self._applications.append(ptraddress)
+        self._applications.add(pUnk)
 
-    def create_ownership(self, pUnk:"IUnknown"):
-        """
-        Add pUnk to the reference manager and call AddRef.
+    def add_object(self, pUnk:"IUnknown"):
+        """Add pUnk to the reference manager."""
+        self._objects.add(pUnk)
 
-        Use if pUnk has a ref-count of 0.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            _CreateAgObjectLifetimeManager._add_ref_impl(pUnk)
-            self.take_ownership(pUnk, False)
+    def remove_object(self, pUnk:"IUnknown"):
+        """Remove pUnk from the reference manager."""
+        if not self._shutting_down:
+            if pUnk in self._objects:
+                self._objects.remove(pUnk)
+            elif pUnk in self._applications:
+                self._applications.remove(pUnk)
 
-    def take_ownership(self, pUnk:"IUnknown", isApplication=False):
-        """
-        Add pUnk to the reference manager; does not call AddRef.
-
-        Use if pUnk has a ref-count of 1.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            with GcDisabler():
-                if isApplication:
-                    self.set_as_application(pUnk)
-                if ptraddress in self._ref_counts:
-                    _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                    self.internal_add_ref(pUnk)
-                else:
-                    self._ref_counts[ptraddress] = 1
-
-    def internal_add_ref(self, pUnk:"IUnknown"):
-        """Increment the internal reference count of pUnk."""
-        ptraddress = pUnk.p.value
-        with GcDisabler():
-            if ptraddress in self._ref_counts:
-                self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
-
-    def release(self, pUnk:"IUnknown"):
-        """
-        Decrements the internal reference count of pUnk.
-
-        If the internal reference count reaches zero, calls Release.
-        """
-        ptraddress = pUnk.p.value
-        if ptraddress is not None:
-            with GcDisabler():
-                if ptraddress in self._ref_counts:
-                    if self._ref_counts[ptraddress] == 1:
-                        _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                        del(self._ref_counts[ptraddress])
-                    else:
-                        self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
-
-    def release_all(self, releaseApplication=True):
-        with GcDisabler():
-            preserved_app_ref_counts = dict()
-            while len(self._ref_counts) > 0:
-                ref_count = self._ref_counts.popitem()
-                ptraddress = ref_count[0]
-                if not releaseApplication and ptraddress in self._applications:
-                    preserved_app_ref_counts[ptraddress] = ref_count[1]
-                    continue
-                pUnk = IUnknown()
-                pUnk.p = c_void_p(ptraddress)
-                _CreateAgObjectLifetimeManager._release_impl(pUnk)
-                pUnk.p = c_void_p(0)
-            self._ref_counts = preserved_app_ref_counts
+    def release_all(self, release_applications=True):
+        self._shutting_down = True
+        for obj in self._objects:
+            obj.final_release()
+        self._objects = set()
+        if release_applications:
+            for app in self._applications:
+                app.final_release()
+            self._applications = set()
+        self._shutting_down = False
 
 ObjectLifetimeManager = _CreateAgObjectLifetimeManager()
 
@@ -585,76 +520,110 @@ class IUnknown(object):
     _guid = "{00000000-0000-0000-C000-000000000046}"
     _vtable_offset = 0
     _num_methods = 3
+    _AddRef = WINFUNCTYPE(ULONG, LPVOID)
+    _Release = WINFUNCTYPE(ULONG, LPVOID)
     _QueryInterface = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID), POINTER(LPVOID))
+    _ptr_to_vtable = POINTER(POINTER(c_void_p))
     _metadata = {
         "iid_data" : (0, 5044031582654955712),
     }
     if os.name == "nt":
         _QIIndex = 0
+        _AddRefIndex = 1
+        _ReleaseIndex = 2
     else:
+        _AddRefIndex = 0
+        _ReleaseIndex = 1
         _QIIndex = 2
-    def __init__(self, pUnk=None):
+    def __init__(self):
         self._vtbl = None
         self._vtbl_p_value = -1
-        if pUnk is not None:
-            self.p = pUnk.p
-            self.add_ref()
-        else:
-            self.p = c_void_p()
+        self._interfaces = {}
+        self.p = c_void_p()
+        self._skip_release = False
+        self._application = False
+        # Local references needed during shutdown
+        self._ObjectLifetimeManager = ObjectLifetimeManager
+        self._Release = IUnknown._Release
+        self._ReleaseIndex = IUnknown._ReleaseIndex
+    @staticmethod
+    def create_weak_interface(addr:int, prefetch_interface_iids:tuple[tuple[int, int]]=()) -> "IUnknown":
+        """
+        Create a weak Python wrapper around IUnknown without owning the reference.
+
+        addr is the integer value of the IUnknown pointer address.
+        prefetch_interface_iids are a set of interface iids that the wrapped interface implements.
+            Providing these improves performance by bypassing calls to QueryInterface. IUnknown
+            is always prefetched.
+        """
+        pUnk = IUnknown()
+        pUnk.p.value = addr
+        pUnk._interfaces[IUnknown._metadata["iid_data"]] = pUnk
+        for prefetch_iid in prefetch_interface_iids:
+            pUnk._interfaces[prefetch_iid] = pUnk
+        pUnk._skip_release = True
+        return pUnk
     def __del__(self):
-        if self:
-            self.release()
+        self._ObjectLifetimeManager.remove_object(self)
+        self.final_release()
     def __eq__(self, other):
         return self.p.value == other.p.value
     def __hash__(self):
-        return self.p.value
+        return id(self)
     def __bool__(self):
         return self.p.value is not None and self.p.value > 0
-    def _get_vtbl_entry(self, index):
+    def _ensure_vtbl(self):
         if self.p.value != self._vtbl_p_value:
             self._vtbl_p_value = self.p.value
-            self._vtbl = cast(self.p, POINTER(POINTER(c_void_p)))[0]
+            self._vtbl = IUnknown._ptr_to_vtable.from_address(addressof(self.p))[0]
+    def _get_vtbl_entry(self, index):
+        self._ensure_vtbl()
         return self._vtbl[index]
     def _query_backwards_compatability_interface(self, iid):
         from .coclassutil import AgBackwardsCompatabilityMapping
         iid_tuple = iid.as_data_pair()
         if AgBackwardsCompatabilityMapping.check_guid_available(iid_tuple):
             old_iid = GUID.from_data_pair(AgBackwardsCompatabilityMapping.get_old_guid(iid_tuple))
-            return self.query_interface(old_iid)
+            return self.query_interface(intf_metadata=None, iid=old_iid)
         return None
-    def query_interface(self, arg:typing.Union[GUID, dict]) -> "IUnknown":
-        if type(arg) == dict:
-            iid = GUID.from_data_pair(arg["iid_data"])
+    def query_interface(self, intf_metadata:dict=None, iid:GUID=None) -> "IUnknown":
+        if intf_metadata is not None:
+            iid_tuple = intf_metadata["iid_data"]
         else:
-            iid = arg
-        pIntf = IUnknown()
-        hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
+            iid_tuple = iid.as_data_pair()
+        if iid_tuple in self._interfaces:
+            return self._interfaces[iid_tuple]
+        if iid is None:
+            iid = GUID.from_data_pair(intf_metadata["iid_data"])
+        intf = IUnknown()
+        hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(intf.p))
         if not Succeeded(hr):
             return self._query_backwards_compatability_interface(iid)
-        pIntf.take_ownership()
-        return pIntf
-    def set_as_application(self):
-        """Add pUnk to the list of applications."""
-        ObjectLifetimeManager.set_as_application(self)
-    def create_ownership(self):
-        """Call AddRef on the pointer, and register the pointer to be Released when the ref count goes to zero."""
-        ObjectLifetimeManager.create_ownership(self)
-    def take_ownership(self, isApplication=False):
-        """Register the pointer to be Released when the ref count goes to zero but does not call AddRef."""
-        ObjectLifetimeManager.take_ownership(self, isApplication)
+        intf.take_ownership(is_application=self._application)
+        self._interfaces[iid_tuple] = intf
+        return intf
+    def take_ownership(self, is_application:bool=False):
+        """Register the pointer to be Released at exit."""
+        if is_application:
+            self._application = True
+            self._ObjectLifetimeManager.add_application(self)
+        else:
+            self._ObjectLifetimeManager.add_object(self)
     def add_ref(self):
-        """Increment the ref count if the pointer was registered.
-
-        Pointer registration must be done by create_ownership or take_ownership.
-        """
-        ObjectLifetimeManager.internal_add_ref(self)
+        """Call AddRef on the COM interface."""
+        IUnknown._AddRef(self._get_vtbl_entry(IUnknown._AddRefIndex))(self.p)
     def release(self):
-        """Decrement the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
-
-        Pointer registration must be done by create_ownership or take_ownership.
-        """
-        if ObjectLifetimeManager is not None:
-            ObjectLifetimeManager.release(self)
+        """Call Release on the COM interface."""
+        self._Release(self._get_vtbl_entry(self._ReleaseIndex))(self.p)
+    def final_release(self):
+        """Clean up resources and nullify object."""
+        if self:
+            self._interfaces = {}
+            if not self._skip_release:
+                self.release()
+            self._vtbl = None
+            self._vtbl_p_value = -1
+            self.p.value = 0
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         return self._invoke_impl(intf_metadata, method_metadata, *args)
@@ -667,12 +636,11 @@ class IUnknown(object):
 
     def _invoke_impl(self, intf_metadata:dict, method_metadata:dict, *args):
         from .coclassutil import evaluate_hresult
-        guid = GUID.from_data_pair(intf_metadata["iid_data"])
         method_offset = method_metadata["offset"]
         vtable_index = intf_metadata["vtable_reference"] + method_offset
         arg_types = method_metadata["arg_types"]
         marshaller_classes = method_metadata["marshallers"]
-        method = IFuncType(self, guid, vtable_index, *arg_types)
+        method = IFuncType(self, intf_metadata, vtable_index, *arg_types)
         marshallers = []
         for arg, marshaller_class in zip(args, marshaller_classes):
             if type(arg) is OutArg:
@@ -704,6 +672,9 @@ class IDispatch(IUnknown):
     _guid = "{00020400-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
+    _metadata = {
+        "iid_data" : (132096, 5044031582654955712),
+    }
     def __init__(self, pUnk: IUnknown):
         IUnknown.__init__(self, pUnk)
 
@@ -715,34 +686,39 @@ class IEnumVariant(object):
     guid = "{00020404-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
-    def __init__(self, pUnk):
-        self.pUnk = pUnk
-        IID_IEnumVARIANT = GUID(IEnumVariant.guid)
+    _metadata = {
+        "iid_data" : (132100, 5044031582654955712),
+    }
+    def __init__(self, pIntf):
+        self._intf: IUnknown = pIntf.query_interface(IEnumVariant._metadata)
         vtable_offset_local = IEnumVariant._vtable_offset - 1
-        self._Next  = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(Variant), POINTER(ULONG))
-        self._Reset = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
+        self._Next = WINFUNCTYPE(HRESULT, LPVOID, ULONG, POINTER(Variant), POINTER(ULONG))(self._intf._get_vtbl_entry(vtable_offset_local + 1))
+        self._Reset = WINFUNCTYPE(HRESULT, LPVOID)(self._intf._get_vtbl_entry(vtable_offset_local + 3))
     def next(self) -> Variant:
         from .marshall import python_val_from_VARIANT
         one_obj = ULONG(1)
         num_fetched = ULONG()
         obj = Variant()
         OLEAut32Lib.VariantInit(obj)
-        if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
+        if self._Next(self._intf.p, one_obj, byref(obj), byref(num_fetched)) == S_OK:
             return python_val_from_VARIANT(obj, clear_variant=True)
         else:
             return None
     def reset(self) -> None:
-        self._Reset()
+        self._Reset(self._intf.p)
 
 class IFuncType(object):
     """Wrapper for calling methods into COM interface vtables."""
-    def __init__(self, pUnk, iid, method_index, *argtypes):
+    def __init__(self, pUnk, iid:typing.Union[GUID, dict], method_index, *argtypes):
         self.pUnk = pUnk
         self.iid = iid
         self.index = method_index
         self.method = WINFUNCTYPE(HRESULT, LPVOID, *argtypes)
     def __call__(self, *args):
-        pIntf: IUnknown = self.pUnk.query_interface(self.iid)
+        if type(self.iid) == GUID:
+            pIntf: IUnknown = self.pUnk.query_interface(iid=self.iid)
+        else:
+            pIntf: IUnknown = self.pUnk.query_interface(self.iid)
         ret = self.method(pIntf._get_vtbl_entry(self.index))(pIntf.p, *args)
         del(pIntf)
         return ret

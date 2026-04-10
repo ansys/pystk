@@ -26,6 +26,8 @@ Overview
               - Get or set the option for using the fast approximation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version13.use_water_vapor_from_section2_2`
               - Get or set the use of P.676-13 Section 2.2 for water vapor computations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version13.user_profile_filename`
+              - Get or set the atmosphere profile file.
 
 
 
@@ -57,5 +59,11 @@ Property detail
     :type: bool
 
     Get or set the use of P.676-13 Section 2.2 for water vapor computations.
+
+.. py:property:: user_profile_filename
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version13.user_profile_filename
+    :type: str
+
+    Get or set the atmosphere profile file.
 
 

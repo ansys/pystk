@@ -7,8 +7,8 @@
   + [Building the STK container images with Tox](#building-the-stk-container-images-with-tox)
   + [Running an STK container with Tox](#running-an-stk-container-with-tox)
   + [Executing a command inside an STK container with Tox](#executing-a-command-inside-an-stk-container-with-tox)
-    - [Ubuntu](#ubuntu)
-    - [Windows](#windows)
+      - [Ubuntu](#ubuntu)
+      - [Windows](#windows)
   + [Launching Jupyter Lab with Tox](#launching-jupyter-lab-with-tox)
   + [Troubleshooting an STK container in UI mode with Tox](#troubleshooting-an-stk-container-in-ui-mode-with-tox)
   + [Stopping an STK container with Tox](#stopping-an-stk-container-with-tox)
@@ -16,10 +16,11 @@
 * [Contributing examples](#contributing-examples)
   + [General guidelines](#general-guidelines)
   + [Set-up](#set-up)
-    - [Create a branch](#create-a-branch)
-    - [Edit examples.rst](#edit-examplesrst)
-    - [Edit pyproject.toml](#edit-pyprojecttoml)
+      - [Create a branch](#create-a-branch)
+      - [Edit examples.rst](#edit-examplesrst)
+      - [Edit pyproject.toml](#edit-pyprojecttoml)
   + [Style conventions](#style-conventions)
+  + [Code-style check](#code-style-check)
 * [Additional documentation](#additional-documentation)
 
 ## Using Tox for testing and development
@@ -72,12 +73,12 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY        TAG                          IMAGE ID       CREATED        SIZE
-    ansys/stk-13.0    dev-ubuntu22.04-python3.13   9eea14569958   14 minutes ago   5.33GB
-    ansys/stk-13.0    dev-ubuntu22.04-python3.12   edee06182a7a   15 minutes ago   5.32GB
-    ansys/stk-13.0    dev-ubuntu22.04-python3.11   205043fd378b   16 minutes ago   5.32GB
-    ansys/stk-13.0    dev-ubuntu22.04-python3.10   c4ec5d4bd662   22 minutes ago   5.21GB
-    ansys/stk-13.0    dev-ubuntu22.04-pybase       3e620a3bbaad   25 minutes ago   5.5GB
-    ansys/stk-13.0    dev-ubuntu22.04              d57b49b927df   30 minutes ago   4.71GB
+    ansys/stk-13.1    dev-ubuntu22.04-python3.13   9eea14569958   14 minutes ago   5.33GB
+    ansys/stk-13.1    dev-ubuntu22.04-python3.12   edee06182a7a   15 minutes ago   5.32GB
+    ansys/stk-13.1    dev-ubuntu22.04-python3.11   205043fd378b   16 minutes ago   5.32GB
+    ansys/stk-13.1    dev-ubuntu22.04-python3.10   c4ec5d4bd662   22 minutes ago   5.21GB
+    ansys/stk-13.1    dev-ubuntu22.04-pybase       3e620a3bbaad   25 minutes ago   5.5GB
+    ansys/stk-13.1    dev-ubuntu22.04              d57b49b927df   30 minutes ago   4.71GB
     ```
 
 - **Windows**
@@ -248,11 +249,11 @@ tox -f docker-rm-{ubuntu,windows}_container-{py311,py312,py313}
 - The second section of the example should be a problem statement. This statement should include all of the parameters needed in the example, as well as a description of what the example aims to determine. Write this section in an imperative form.
 - Include an explanation with each code cell. In a Jupyter notebook, this entails adding a markdown cell before each code cell. The explanations should be included before, not after, the corresponding code.
 - The examples are built with the documentation and included in the help. As part of the build process, screenshots of the STK Engine 2D and 3D graphics are inserted in the document. You do not need to include the screenshots yourself. However, do include the graphics widgets (2D or 3D) at points in your example. When the documentation is built, a screenshot of the widget will be inserted in its place.
-    - These widgets are included in `ansys.stk.core.stkengine.experimental.jupyterwidgets`
+    - These widgets are included in `ansys.stk.core.experimental.jupyterwidgets`
     - To include a 2D widget run:
 
         ```python
-        from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+        from ansys.stk.core.experimental.jupyterwidgets import MapWidget
 
         map_plotter = MapWidget(root, 640, 480)
 
@@ -262,7 +263,7 @@ tox -f docker-rm-{ubuntu,windows}_container-{py311,py312,py313}
     - To include a 3D widget run:
 
         ```python
-        from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+        from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
         globe_plotter = GlobeWidget(root, 640, 480)
 

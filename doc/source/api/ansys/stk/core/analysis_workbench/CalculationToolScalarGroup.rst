@@ -37,6 +37,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarGroup._new_enum`
               - Return a COM enumerator.
+            * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.common_tasks`
+              - Calc Scalar common tasks.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.context`
               - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.count`
@@ -63,6 +65,12 @@ Property detail
 
     Return a COM enumerator.
 
+.. py:property:: common_tasks
+    :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.common_tasks
+    :type: CalculationToolScalarCommonTasks
+
+    Calc Scalar common tasks.
+
 .. py:property:: context
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.context
     :type: IAnalysisWorkbenchComponentContext
@@ -84,6 +92,7 @@ Property detail
 
 Method detail
 -------------
+
 
 .. py:method:: contains(self, name: str) -> bool
     :canonical: ansys.stk.core.analysis_workbench.CalculationToolScalarGroup.contains

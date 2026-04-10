@@ -219,3 +219,28 @@ class DataAnalysisUtilTests(unittest.TestCase):
         self.assertEqual(expected_results_df["access start"].dtype, "object")
         self.assertEqual(expected_results_df["asset full name"].dtype, "object")
         self.assertEqual(expected_results_df["area coverage"].dtype, "float64")
+
+    @unittest.skipIf(skip_test, test_skipped_msg)
+    def test_large_array_chunking(self):
+        from ansys.stk.core.internal.dataanalysisutil import _module_config
+
+        old_chunk_size = _module_config["TOARRAY_CHUNK_COUNT"]
+        try:
+            # One row at a time
+            _module_config["TOARRAY_CHUNK_COUNT"] = 1
+            self.test_to_numpy()
+
+            # Several rows at a time (but not all). Original array is 2838 items per row, 44 rows.
+            # 15000 / 2838 = 5.28 which rounds to 5 rows chunk size
+            _module_config["TOARRAY_CHUNK_COUNT"] = 15000
+            self.test_to_numpy()
+
+            # Check size of row. Original array is 2838 items per row, 44 rows.
+            _module_config["TOARRAY_CHUNK_COUNT"] = 2838
+            self.test_to_numpy()
+
+            # Check size of array. Original array is 2838 items per row, 44 rows.
+            _module_config["TOARRAY_CHUNK_COUNT"] = 2838 * 44
+            self.test_to_numpy()
+        finally:
+            _module_config["TOARRAY_CHUNK_COUNT"] = old_chunk_size

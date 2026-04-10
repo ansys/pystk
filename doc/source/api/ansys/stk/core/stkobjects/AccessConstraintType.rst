@@ -491,7 +491,7 @@ Overview
               - Link Margin constraint. Use IAccessConstraintMinMaxBase.
 
             * - :py:attr:`~NOISE_TEMPERATURE`
-              - Noise Temperature constraint. Use IAccessConstraintMinMaxBase.
+              - Noise Temperature constraint. Use AccessConstraintNoiseTemperature.
 
             * - :py:attr:`~POLARIZATION_RELATIVE_ANGLE`
               - Polarization Relative Angle constraint. Use IAccessConstraintMinMaxBase.
@@ -663,6 +663,9 @@ Overview
 
             * - :py:attr:`~CALCULATION_SCALAR`
               - Scalar Calculation (Calc Scalar). Use interface AccessConstraintAnalysisWorkbenchComponent.
+
+            * - :py:attr:`~ELEVATION_RISE_SET`
+              - Elevation Rise-Set. Use interface AccessConstraintElevationRiseSet.
 
 
 Import detail

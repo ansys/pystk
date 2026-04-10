@@ -3,6 +3,8 @@ FacilityGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.FacilityGraphics
 
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundLocationGraphics`
+
    2D Graphics properties of a Facility.
 
 .. py:currentmodule:: FacilityGraphics

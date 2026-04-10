@@ -615,6 +615,11 @@
             "NewName": "get_item_by_name"
         },
         {
+            "ParentScope": "IAgCrdnCalcScalarGroup",
+            "OldName": "CommonTasks",
+            "NewName": "common_tasks"
+        },
+        {
             "ParentScope": "IAgCrdnEventIntervalCollectionGroup",
             "OldName": "Remove",
             "NewName": "remove"
@@ -1078,6 +1083,36 @@
             "ParentScope": "IAgCrdnCalcScalarAverage",
             "OldName": "SetOffsets",
             "NewName": "set_offsets"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateForCalcScalarArray",
+            "NewName": "quick_evaluate_for_calculation_scalar_array"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateWithRateForCalcScalarArray",
+            "NewName": "quick_evaluate_with_rate_for_calculation_scalar_array"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateArrayForCalcScalarArray",
+            "NewName": "quick_evaluate_array_for_calculation_scalar_array"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateWithRateArrayForCalcScalarArray",
+            "NewName": "quick_evaluate_with_rate_array_for_calculation_scalar_array"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateEventArrayForCalcScalarArray",
+            "NewName": "quick_evaluate_event_array_for_calculation_scalar_array"
+        },
+        {
+            "ParentScope": "IAgCrdnCalcScalarCommonTasks",
+            "OldName": "QuickEvaluateWithRateEventArrayForCalcScalarArray",
+            "NewName": "quick_evaluate_with_rate_event_array_for_calculation_scalar_array"
         },
         {
             "ParentScope": "IAgCrdnCalcScalarConstant",
@@ -5605,6 +5640,21 @@
             "NewName": "dimension"
         },
         {
+            "ParentScope": "IAgCrdnVectorSurfaceNormal",
+            "OldName": "CentralBody",
+            "NewName": "central_body"
+        },
+        {
+            "ParentScope": "IAgCrdnVectorSurfaceNormal",
+            "OldName": "ReferencePoint",
+            "NewName": "reference_point"
+        },
+        {
+            "ParentScope": "IAgCrdnVectorSurfaceNormal",
+            "OldName": "UseTerrain",
+            "NewName": "use_terrain"
+        },
+        {
             "ParentScope": "IAgCrdnVectorVelocityAcceleration",
             "OldName": "ReferenceSystem",
             "NewName": "reference_system"
@@ -6956,6 +7006,10 @@
             "NewName": "CalculationToolScalarAverage"
         },
         {
+            "OldName": "IAgCrdnCalcScalarCommonTasks",
+            "NewName": "CalculationToolScalarCommonTasks"
+        },
+        {
             "OldName": "IAgCrdnCalcScalarConstant",
             "NewName": "CalculationToolScalarConstant"
         },
@@ -7848,6 +7902,10 @@
             "NewName": "VectorGeometryToolVectorScalarScaled"
         },
         {
+            "OldName": "IAgCrdnVectorSurfaceNormal",
+            "NewName": "VectorGeometryToolVectorSurfaceNormal"
+        },
+        {
             "OldName": "IAgCrdnVectorVelocityAcceleration",
             "NewName": "VectorGeometryToolVectorVelocityAcceleration"
         },
@@ -8168,6 +8226,10 @@
         {
             "OldName": "AgCrdnCalcScalarAverage",
             "NewName": "CalculationToolScalarAverage"
+        },
+        {
+            "OldName": "AgCrdnCalcScalarCommonTasks",
+            "NewName": "CalculationToolScalarCommonTasks"
         },
         {
             "OldName": "AgCrdnCalcScalarConstant",
@@ -9082,6 +9144,10 @@
             "NewName": "VectorGeometryToolVectorScalarScaled"
         },
         {
+            "OldName": "AgCrdnVectorSurfaceNormal",
+            "NewName": "VectorGeometryToolVectorSurfaceNormal"
+        },
+        {
             "OldName": "AgCrdnVectorVelocityAcceleration",
             "NewName": "VectorGeometryToolVectorVelocityAcceleration"
         },
@@ -9607,98 +9673,8 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeAngle",
-            "NewName": "ANGLE"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeFixedAtTimeInstant",
-            "NewName": "FIXED_AT_TIME_INSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeConstant",
-            "NewName": "CONSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeDataElement",
-            "NewName": "DATA_ELEMENT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeDerivative",
-            "NewName": "DERIVATIVE"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeElapsedTime",
-            "NewName": "ELAPSED_TIME"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeFile",
-            "NewName": "FILE"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeFunction",
-            "NewName": "FUNCTION"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeIntegral",
-            "NewName": "INTEGRAL"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeFunction2Var",
-            "NewName": "FUNCTION_OF_2_VARIABLES"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeVectorMagnitude",
-            "NewName": "VECTOR_MAGNITUDE"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypePlugin",
-            "NewName": "PLUGIN"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeCustomScript",
-            "NewName": "CUSTOM_SCRIPT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints",
-            "NewName": "SURFACE_DISTANCE_BETWEEN_POINTS"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeDotProduct",
-            "NewName": "DOT_PRODUCT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeVectorComponent",
-            "NewName": "VECTOR_COMPONENT"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeAverage",
-            "NewName": "AVERAGE"
-        },
-        {
-            "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeStandardDeviation",
-            "NewName": "STANDARD_DEVIATION"
+            "OldName": "eCrdnCalcScalarTypeCustomInlineScript",
+            "NewName": "CUSTOM_INLINE_SCRIPT"
         },
         {
             "ParentScope": "AgECrdnCalcScalarType",
@@ -9707,18 +9683,103 @@
         },
         {
             "ParentScope": "AgECrdnCalcScalarType",
-            "OldName": "eCrdnCalcScalarTypeCustomInlineScript",
-            "NewName": "CUSTOM_INLINE_SCRIPT"
+            "OldName": "eCrdnCalcScalarTypeStandardDeviation",
+            "NewName": "STANDARD_DEVIATION"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeAverage",
+            "NewName": "AVERAGE"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeVectorComponent",
+            "NewName": "VECTOR_COMPONENT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeDotProduct",
+            "NewName": "DOT_PRODUCT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeSurfaceDistanceBetweenPoints",
+            "NewName": "SURFACE_DISTANCE_BETWEEN_POINTS"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeCustomScript",
+            "NewName": "CUSTOM_SCRIPT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypePlugin",
+            "NewName": "PLUGIN"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeVectorMagnitude",
+            "NewName": "VECTOR_MAGNITUDE"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeFunction2Var",
+            "NewName": "FUNCTION_OF_2_VARIABLES"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeIntegral",
+            "NewName": "INTEGRAL"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeFunction",
+            "NewName": "FUNCTION"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeFile",
+            "NewName": "FILE"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeElapsedTime",
+            "NewName": "ELAPSED_TIME"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeDerivative",
+            "NewName": "DERIVATIVE"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeDataElement",
+            "NewName": "DATA_ELEMENT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeConstant",
+            "NewName": "CONSTANT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeFixedAtTimeInstant",
+            "NewName": "FIXED_AT_TIME_INSTANT"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeAngle",
+            "NewName": "ANGLE"
+        },
+        {
+            "ParentScope": "AgECrdnCalcScalarType",
+            "OldName": "eCrdnCalcScalarTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnConditionCombinedOperationType",
-            "OldName": "eCrdnConditionCombinedOperationTypeAND",
-            "NewName": "AND"
-        },
-        {
-            "ParentScope": "AgECrdnConditionCombinedOperationType",
-            "OldName": "eCrdnConditionCombinedOperationTypeOR",
-            "NewName": "OR"
+            "OldName": "eCrdnConditionCombinedOperationTypeMINUS",
+            "NewName": "MINUS"
         },
         {
             "ParentScope": "AgECrdnConditionCombinedOperationType",
@@ -9727,13 +9788,13 @@
         },
         {
             "ParentScope": "AgECrdnConditionCombinedOperationType",
-            "OldName": "eCrdnConditionCombinedOperationTypeMINUS",
-            "NewName": "MINUS"
+            "OldName": "eCrdnConditionCombinedOperationTypeOR",
+            "NewName": "OR"
         },
         {
-            "ParentScope": "AgECrdnConditionSetType",
-            "OldName": "eCrdnConditionSetTypeUnknown",
-            "NewName": "UNKNOWN"
+            "ParentScope": "AgECrdnConditionCombinedOperationType",
+            "OldName": "eCrdnConditionCombinedOperationTypeAND",
+            "NewName": "AND"
         },
         {
             "ParentScope": "AgECrdnConditionSetType",
@@ -9741,14 +9802,14 @@
             "NewName": "SCALAR_THRESHOLDS"
         },
         {
-            "ParentScope": "AgECrdnConditionThresholdOption",
-            "OldName": "eCrdnConditionThresholdOptionAboveMin",
-            "NewName": "ABOVE_MINIMUM"
+            "ParentScope": "AgECrdnConditionSetType",
+            "OldName": "eCrdnConditionSetTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnConditionThresholdOption",
-            "OldName": "eCrdnConditionThresholdOptionBelowMax",
-            "NewName": "BELOW_MAXIMUM"
+            "OldName": "eCrdnConditionThresholdOptionOutsideMinMax",
+            "NewName": "NOT_BETWEEN_MINIMUM_AND_MAXIMUM"
         },
         {
             "ParentScope": "AgECrdnConditionThresholdOption",
@@ -9757,18 +9818,18 @@
         },
         {
             "ParentScope": "AgECrdnConditionThresholdOption",
-            "OldName": "eCrdnConditionThresholdOptionOutsideMinMax",
-            "NewName": "NOT_BETWEEN_MINIMUM_AND_MAXIMUM"
+            "OldName": "eCrdnConditionThresholdOptionBelowMax",
+            "NewName": "BELOW_MAXIMUM"
+        },
+        {
+            "ParentScope": "AgECrdnConditionThresholdOption",
+            "OldName": "eCrdnConditionThresholdOptionAboveMin",
+            "NewName": "ABOVE_MINIMUM"
         },
         {
             "ParentScope": "AgECrdnConditionType",
-            "OldName": "eCrdnConditionTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnConditionType",
-            "OldName": "eCrdnConditionTypeScalarBounds",
-            "NewName": "SCALAR_BOUNDS"
+            "OldName": "eCrdnConditionTypePointInVolume",
+            "NewName": "TRAJECTORY_WITHIN_VOLUME"
         },
         {
             "ParentScope": "AgECrdnConditionType",
@@ -9777,13 +9838,18 @@
         },
         {
             "ParentScope": "AgECrdnConditionType",
-            "OldName": "eCrdnConditionTypePointInVolume",
-            "NewName": "TRAJECTORY_WITHIN_VOLUME"
+            "OldName": "eCrdnConditionTypeScalarBounds",
+            "NewName": "SCALAR_BOUNDS"
+        },
+        {
+            "ParentScope": "AgECrdnConditionType",
+            "OldName": "eCrdnConditionTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnDimensionInheritance",
-            "OldName": "eCrdnDimensionInheritanceNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnDimensionInheritanceFromY",
+            "NewName": "FROM_Y"
         },
         {
             "ParentScope": "AgECrdnDimensionInheritance",
@@ -9792,13 +9858,13 @@
         },
         {
             "ParentScope": "AgECrdnDimensionInheritance",
-            "OldName": "eCrdnDimensionInheritanceFromY",
-            "NewName": "FROM_Y"
+            "OldName": "eCrdnDimensionInheritanceNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgECrdnEventArrayFilterType",
-            "OldName": "eCrdnEventArrayFilterTypeSkipTimeStep",
-            "NewName": "SKIP_TIME_STEP"
+            "OldName": "eCrdnEventArrayFilterTypeIntervals",
+            "NewName": "INTERVALS"
         },
         {
             "ParentScope": "AgECrdnEventArrayFilterType",
@@ -9807,43 +9873,13 @@
         },
         {
             "ParentScope": "AgECrdnEventArrayFilterType",
-            "OldName": "eCrdnEventArrayFilterTypeIntervals",
-            "NewName": "INTERVALS"
+            "OldName": "eCrdnEventArrayFilterTypeSkipTimeStep",
+            "NewName": "SKIP_TIME_STEP"
         },
         {
             "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeExtrema",
-            "NewName": "EXTREMA"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeStartStopTimes",
-            "NewName": "START_STOP_TIMES"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeMerged",
-            "NewName": "MERGED"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeFiltered",
-            "NewName": "FILTERED"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeFixedStep",
-            "NewName": "FIXED_STEP"
-        },
-        {
-            "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeConditionCrossings",
-            "NewName": "CONDITION_CROSSINGS"
+            "OldName": "eCrdnEventArrayTypeFixedTimes",
+            "NewName": "FIXED_TIMES"
         },
         {
             "ParentScope": "AgECrdnEventArrayType",
@@ -9852,18 +9888,43 @@
         },
         {
             "ParentScope": "AgECrdnEventArrayType",
-            "OldName": "eCrdnEventArrayTypeFixedTimes",
-            "NewName": "FIXED_TIMES"
+            "OldName": "eCrdnEventArrayTypeConditionCrossings",
+            "NewName": "CONDITION_CROSSINGS"
         },
         {
-            "ParentScope": "AgECrdnEventIntervalCollectionType",
-            "OldName": "eCrdnEventIntervalCollectionTypeUnknown",
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeFixedStep",
+            "NewName": "FIXED_STEP"
+        },
+        {
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeFiltered",
+            "NewName": "FILTERED"
+        },
+        {
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeMerged",
+            "NewName": "MERGED"
+        },
+        {
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeStartStopTimes",
+            "NewName": "START_STOP_TIMES"
+        },
+        {
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeExtrema",
+            "NewName": "EXTREMA"
+        },
+        {
+            "ParentScope": "AgECrdnEventArrayType",
+            "OldName": "eCrdnEventArrayTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnEventIntervalCollectionType",
-            "OldName": "eCrdnEventIntervalCollectionTypeLighting",
-            "NewName": "LIGHTING"
+            "OldName": "eCrdnEventIntervalCollectionTypeCondition",
+            "NewName": "CONDITION"
         },
         {
             "ParentScope": "AgECrdnEventIntervalCollectionType",
@@ -9872,43 +9933,18 @@
         },
         {
             "ParentScope": "AgECrdnEventIntervalCollectionType",
-            "OldName": "eCrdnEventIntervalCollectionTypeCondition",
-            "NewName": "CONDITION"
+            "OldName": "eCrdnEventIntervalCollectionTypeLighting",
+            "NewName": "LIGHTING"
         },
         {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeUnknown",
+            "ParentScope": "AgECrdnEventIntervalCollectionType",
+            "OldName": "eCrdnEventIntervalCollectionTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeMerged",
-            "NewName": "MERGED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeFiltered",
-            "NewName": "FILTERED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeCondition",
-            "NewName": "CONDITION"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeScaled",
-            "NewName": "SCALED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeSignaled",
-            "NewName": "SIGNALED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeTimeOffset",
-            "NewName": "TIME_OFFSET"
+            "OldName": "eCrdnEventIntervalListTypeFixed",
+            "NewName": "FIXED"
         },
         {
             "ParentScope": "AgECrdnEventIntervalListType",
@@ -9917,43 +9953,43 @@
         },
         {
             "ParentScope": "AgECrdnEventIntervalListType",
-            "OldName": "eCrdnEventIntervalListTypeFixed",
-            "NewName": "FIXED"
+            "OldName": "eCrdnEventIntervalListTypeTimeOffset",
+            "NewName": "TIME_OFFSET"
         },
         {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeUnknown",
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeSignaled",
+            "NewName": "SIGNALED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeScaled",
+            "NewName": "SCALED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeCondition",
+            "NewName": "CONDITION"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeFiltered",
+            "NewName": "FILTERED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeMerged",
+            "NewName": "MERGED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalListType",
+            "OldName": "eCrdnEventIntervalListTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeFixed",
-            "NewName": "FIXED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeFixedDuration",
-            "NewName": "FIXED_DURATION"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeBetweenTimeInstants",
-            "NewName": "BETWEEN_TIME_INSTANTS"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeFromIntervalList",
-            "NewName": "FROM_INTERVAL_LIST"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeScaled",
-            "NewName": "SCALED"
-        },
-        {
-            "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeSignaled",
-            "NewName": "SIGNALED"
+            "OldName": "eCrdnEventIntervalTypeSmartInterval",
+            "NewName": "SMART_INTERVAL"
         },
         {
             "ParentScope": "AgECrdnEventIntervalType",
@@ -9962,18 +9998,43 @@
         },
         {
             "ParentScope": "AgECrdnEventIntervalType",
-            "OldName": "eCrdnEventIntervalTypeSmartInterval",
-            "NewName": "SMART_INTERVAL"
+            "OldName": "eCrdnEventIntervalTypeSignaled",
+            "NewName": "SIGNALED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeScaled",
+            "NewName": "SCALED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeFromIntervalList",
+            "NewName": "FROM_INTERVAL_LIST"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeBetweenTimeInstants",
+            "NewName": "BETWEEN_TIME_INSTANTS"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeFixedDuration",
+            "NewName": "FIXED_DURATION"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeFixed",
+            "NewName": "FIXED"
+        },
+        {
+            "ParentScope": "AgECrdnEventIntervalType",
+            "OldName": "eCrdnEventIntervalTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnEventListMergeOperation",
-            "OldName": "eCrdnEventListMergeOperationAND",
-            "NewName": "AND"
-        },
-        {
-            "ParentScope": "AgECrdnEventListMergeOperation",
-            "OldName": "eCrdnEventListMergeOperationOR",
-            "NewName": "OR"
+            "OldName": "eCrdnEventListMergeOperationMINUS",
+            "NewName": "MINUS"
         },
         {
             "ParentScope": "AgECrdnEventListMergeOperation",
@@ -9982,33 +10043,18 @@
         },
         {
             "ParentScope": "AgECrdnEventListMergeOperation",
-            "OldName": "eCrdnEventListMergeOperationMINUS",
-            "NewName": "MINUS"
+            "OldName": "eCrdnEventListMergeOperationOR",
+            "NewName": "OR"
+        },
+        {
+            "ParentScope": "AgECrdnEventListMergeOperation",
+            "OldName": "eCrdnEventListMergeOperationAND",
+            "NewName": "AND"
         },
         {
             "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeEpoch",
-            "NewName": "EPOCH"
-        },
-        {
-            "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeExtremum",
-            "NewName": "EXTREMUM"
-        },
-        {
-            "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeFromInterval",
-            "NewName": "FROM_INTERVAL"
-        },
-        {
-            "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeSignaled",
-            "NewName": "SIGNALED"
+            "OldName": "eCrdnEventTypeSmartEpoch",
+            "NewName": "SMART_EPOCH"
         },
         {
             "ParentScope": "AgECrdnEventType",
@@ -10017,13 +10063,28 @@
         },
         {
             "ParentScope": "AgECrdnEventType",
-            "OldName": "eCrdnEventTypeSmartEpoch",
-            "NewName": "SMART_EPOCH"
+            "OldName": "eCrdnEventTypeSignaled",
+            "NewName": "SIGNALED"
         },
         {
-            "ParentScope": "AgECrdnExtremumConstants",
-            "OldName": "eCrdnExtremumMinimum",
-            "NewName": "MINIMUM"
+            "ParentScope": "AgECrdnEventType",
+            "OldName": "eCrdnEventTypeFromInterval",
+            "NewName": "FROM_INTERVAL"
+        },
+        {
+            "ParentScope": "AgECrdnEventType",
+            "OldName": "eCrdnEventTypeExtremum",
+            "NewName": "EXTREMUM"
+        },
+        {
+            "ParentScope": "AgECrdnEventType",
+            "OldName": "eCrdnEventTypeEpoch",
+            "NewName": "EPOCH"
+        },
+        {
+            "ParentScope": "AgECrdnEventType",
+            "OldName": "eCrdnEventTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnExtremumConstants",
@@ -10031,24 +10092,14 @@
             "NewName": "MAXIMUM"
         },
         {
-            "ParentScope": "AgECrdnFileInterpolatorType",
-            "OldName": "eCrdnFileInterpolatorInvalid",
-            "NewName": "INVALID"
+            "ParentScope": "AgECrdnExtremumConstants",
+            "OldName": "eCrdnExtremumMinimum",
+            "NewName": "MINIMUM"
         },
         {
             "ParentScope": "AgECrdnFileInterpolatorType",
-            "OldName": "eCrdnFileInterpolatorTypeLagrange",
-            "NewName": "LAGRANGE"
-        },
-        {
-            "ParentScope": "AgECrdnFileInterpolatorType",
-            "OldName": "eCrdnFileInterpolatorTypeHermite",
-            "NewName": "HERMITE"
-        },
-        {
-            "ParentScope": "AgECrdnFileInterpolatorType",
-            "OldName": "eCrdnFileInterpolatorTypeHoldPrevious",
-            "NewName": "HOLD_PREVIOUS"
+            "OldName": "eCrdnFileInterpolatorTypeHoldNearest",
+            "NewName": "HOLD_NEAREST"
         },
         {
             "ParentScope": "AgECrdnFileInterpolatorType",
@@ -10057,13 +10108,28 @@
         },
         {
             "ParentScope": "AgECrdnFileInterpolatorType",
-            "OldName": "eCrdnFileInterpolatorTypeHoldNearest",
-            "NewName": "HOLD_NEAREST"
+            "OldName": "eCrdnFileInterpolatorTypeHoldPrevious",
+            "NewName": "HOLD_PREVIOUS"
+        },
+        {
+            "ParentScope": "AgECrdnFileInterpolatorType",
+            "OldName": "eCrdnFileInterpolatorTypeHermite",
+            "NewName": "HERMITE"
+        },
+        {
+            "ParentScope": "AgECrdnFileInterpolatorType",
+            "OldName": "eCrdnFileInterpolatorTypeLagrange",
+            "NewName": "LAGRANGE"
+        },
+        {
+            "ParentScope": "AgECrdnFileInterpolatorType",
+            "OldName": "eCrdnFileInterpolatorInvalid",
+            "NewName": "INVALID"
         },
         {
             "ParentScope": "AgECrdnIntegralType",
-            "OldName": "eCrdnIntegralTypeFixedStepSimpson",
-            "NewName": "FIXED_STEP_SIMPSON"
+            "OldName": "eCrdnIntegralTypeAdaptiveStep",
+            "NewName": "ADAPTIVE_STEP"
         },
         {
             "ParentScope": "AgECrdnIntegralType",
@@ -10072,18 +10138,13 @@
         },
         {
             "ParentScope": "AgECrdnIntegralType",
-            "OldName": "eCrdnIntegralTypeAdaptiveStep",
-            "NewName": "ADAPTIVE_STEP"
+            "OldName": "eCrdnIntegralTypeFixedStepSimpson",
+            "NewName": "FIXED_STEP_SIMPSON"
         },
         {
             "ParentScope": "AgECrdnIntegrationWindowType",
-            "OldName": "eCrdnIntegrationWindowTypeTotal",
-            "NewName": "TOTAL"
-        },
-        {
-            "ParentScope": "AgECrdnIntegrationWindowType",
-            "OldName": "eCrdnIntegrationWindowTypeCumulativeToCurrent",
-            "NewName": "CUMULATIVE_TO_CURRENT"
+            "OldName": "eCrdnIntegrationWindowTypeSlidingWindow",
+            "NewName": "SLIDING_WINDOW"
         },
         {
             "ParentScope": "AgECrdnIntegrationWindowType",
@@ -10092,13 +10153,18 @@
         },
         {
             "ParentScope": "AgECrdnIntegrationWindowType",
-            "OldName": "eCrdnIntegrationWindowTypeSlidingWindow",
-            "NewName": "SLIDING_WINDOW"
+            "OldName": "eCrdnIntegrationWindowTypeCumulativeToCurrent",
+            "NewName": "CUMULATIVE_TO_CURRENT"
+        },
+        {
+            "ParentScope": "AgECrdnIntegrationWindowType",
+            "OldName": "eCrdnIntegrationWindowTypeTotal",
+            "NewName": "TOTAL"
         },
         {
             "ParentScope": "AgECrdnInterpolatorType",
-            "OldName": "eCrdnInterpolatorInvalid",
-            "NewName": "INVALID"
+            "OldName": "eCrdnInterpolatorTypeHermite",
+            "NewName": "HERMITE"
         },
         {
             "ParentScope": "AgECrdnInterpolatorType",
@@ -10107,13 +10173,8 @@
         },
         {
             "ParentScope": "AgECrdnInterpolatorType",
-            "OldName": "eCrdnInterpolatorTypeHermite",
-            "NewName": "HERMITE"
-        },
-        {
-            "ParentScope": "AgECrdnIntervalDurationKind",
-            "OldName": "eCrdnIntervalDurationKindAtLeast",
-            "NewName": "AT_LEAST"
+            "OldName": "eCrdnInterpolatorInvalid",
+            "NewName": "INVALID"
         },
         {
             "ParentScope": "AgECrdnIntervalDurationKind",
@@ -10121,29 +10182,14 @@
             "NewName": "AT_MOST"
         },
         {
-            "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionFromStart",
-            "NewName": "FROM_START"
+            "ParentScope": "AgECrdnIntervalDurationKind",
+            "OldName": "eCrdnIntervalDurationKindAtLeast",
+            "NewName": "AT_LEAST"
         },
         {
             "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionFromEnd",
-            "NewName": "FROM_END"
-        },
-        {
-            "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionMaxDuration",
-            "NewName": "MAXIMUM_DURATION"
-        },
-        {
-            "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionMinDuration",
-            "NewName": "MINIMUM_DURATION"
-        },
-        {
-            "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionMaxGap",
-            "NewName": "MAXIMUM_GAP"
+            "OldName": "eCrdnIntervalSelectionSpan",
+            "NewName": "SPAN"
         },
         {
             "ParentScope": "AgECrdnIntervalSelection",
@@ -10152,28 +10198,33 @@
         },
         {
             "ParentScope": "AgECrdnIntervalSelection",
-            "OldName": "eCrdnIntervalSelectionSpan",
-            "NewName": "SPAN"
+            "OldName": "eCrdnIntervalSelectionMaxGap",
+            "NewName": "MAXIMUM_GAP"
+        },
+        {
+            "ParentScope": "AgECrdnIntervalSelection",
+            "OldName": "eCrdnIntervalSelectionMinDuration",
+            "NewName": "MINIMUM_DURATION"
+        },
+        {
+            "ParentScope": "AgECrdnIntervalSelection",
+            "OldName": "eCrdnIntervalSelectionMaxDuration",
+            "NewName": "MAXIMUM_DURATION"
+        },
+        {
+            "ParentScope": "AgECrdnIntervalSelection",
+            "OldName": "eCrdnIntervalSelectionFromEnd",
+            "NewName": "FROM_END"
+        },
+        {
+            "ParentScope": "AgECrdnIntervalSelection",
+            "OldName": "eCrdnIntervalSelectionFromStart",
+            "NewName": "FROM_START"
         },
         {
             "ParentScope": "AgECrdnParameterSetType",
-            "OldName": "eCrdnParameterSetTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnParameterSetType",
-            "OldName": "eCrdnParameterSetTypeAttitude",
-            "NewName": "ATTITUDE"
-        },
-        {
-            "ParentScope": "AgECrdnParameterSetType",
-            "OldName": "eCrdnParameterSetTypeGroundTrajectory",
-            "NewName": "GROUND_TRAJECTORY"
-        },
-        {
-            "ParentScope": "AgECrdnParameterSetType",
-            "OldName": "eCrdnParameterSetTypeTrajectory",
-            "NewName": "TRAJECTORY"
+            "OldName": "eCrdnParameterSetTypeVector",
+            "NewName": "VECTOR"
         },
         {
             "ParentScope": "AgECrdnParameterSetType",
@@ -10182,33 +10233,28 @@
         },
         {
             "ParentScope": "AgECrdnParameterSetType",
-            "OldName": "eCrdnParameterSetTypeVector",
-            "NewName": "VECTOR"
+            "OldName": "eCrdnParameterSetTypeTrajectory",
+            "NewName": "TRAJECTORY"
         },
         {
-            "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterUnknown",
+            "ParentScope": "AgECrdnParameterSetType",
+            "OldName": "eCrdnParameterSetTypeGroundTrajectory",
+            "NewName": "GROUND_TRAJECTORY"
+        },
+        {
+            "ParentScope": "AgECrdnParameterSetType",
+            "OldName": "eCrdnParameterSetTypeAttitude",
+            "NewName": "ATTITUDE"
+        },
+        {
+            "ParentScope": "AgECrdnParameterSetType",
+            "OldName": "eCrdnParameterSetTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterFirstIntervals",
-            "NewName": "FIRST_INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterLastIntervals",
-            "NewName": "LAST_INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterIntervals",
-            "NewName": "INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterGaps",
-            "NewName": "GAPS"
+            "OldName": "eCrdnPruneFilterRelativeSatisfactionIntervals",
+            "NewName": "RELATIVE_SATISFACTION_INTERVALS"
         },
         {
             "ParentScope": "AgECrdnPruneFilter",
@@ -10217,23 +10263,33 @@
         },
         {
             "ParentScope": "AgECrdnPruneFilter",
-            "OldName": "eCrdnPruneFilterRelativeSatisfactionIntervals",
-            "NewName": "RELATIVE_SATISFACTION_INTERVALS"
+            "OldName": "eCrdnPruneFilterGaps",
+            "NewName": "GAPS"
+        },
+        {
+            "ParentScope": "AgECrdnPruneFilter",
+            "OldName": "eCrdnPruneFilterIntervals",
+            "NewName": "INTERVALS"
+        },
+        {
+            "ParentScope": "AgECrdnPruneFilter",
+            "OldName": "eCrdnPruneFilterLastIntervals",
+            "NewName": "LAST_INTERVALS"
+        },
+        {
+            "ParentScope": "AgECrdnPruneFilter",
+            "OldName": "eCrdnPruneFilterFirstIntervals",
+            "NewName": "FIRST_INTERVALS"
+        },
+        {
+            "ParentScope": "AgECrdnPruneFilter",
+            "OldName": "eCrdnPruneFilterUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnSampledReferenceTime",
-            "OldName": "eCrdnSampledReferenceTimeReferenceEvent",
-            "NewName": "TIME_INSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnSampledReferenceTime",
-            "OldName": "eCrdnSampledReferenceTimeStartOfEachInterval",
-            "NewName": "START_OF_EACH_INTERVAL"
-        },
-        {
-            "ParentScope": "AgECrdnSampledReferenceTime",
-            "OldName": "eCrdnSampledReferenceTimeStopOfEachInterval",
-            "NewName": "STOP_OF_EACH_INTERVAL"
+            "OldName": "eCrdnSampledReferenceTimeStopOfIntervalList",
+            "NewName": "STOP_OF_INTERVAL_LIST"
         },
         {
             "ParentScope": "AgECrdnSampledReferenceTime",
@@ -10242,18 +10298,23 @@
         },
         {
             "ParentScope": "AgECrdnSampledReferenceTime",
-            "OldName": "eCrdnSampledReferenceTimeStopOfIntervalList",
-            "NewName": "STOP_OF_INTERVAL_LIST"
+            "OldName": "eCrdnSampledReferenceTimeStopOfEachInterval",
+            "NewName": "STOP_OF_EACH_INTERVAL"
+        },
+        {
+            "ParentScope": "AgECrdnSampledReferenceTime",
+            "OldName": "eCrdnSampledReferenceTimeStartOfEachInterval",
+            "NewName": "START_OF_EACH_INTERVAL"
+        },
+        {
+            "ParentScope": "AgECrdnSampledReferenceTime",
+            "OldName": "eCrdnSampledReferenceTimeReferenceEvent",
+            "NewName": "TIME_INSTANT"
         },
         {
             "ParentScope": "AgECrdnSamplingMethod",
-            "OldName": "eCrdnSamplingMethodUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnSamplingMethod",
-            "OldName": "eCrdnSamplingMethodFixedStep",
-            "NewName": "FIXED_STEP"
+            "OldName": "eCrdnSamplingMethodCurvatureTolerance",
+            "NewName": "CURVATURE_TOLERANCE"
         },
         {
             "ParentScope": "AgECrdnSamplingMethod",
@@ -10262,13 +10323,18 @@
         },
         {
             "ParentScope": "AgECrdnSamplingMethod",
-            "OldName": "eCrdnSamplingMethodCurvatureTolerance",
-            "NewName": "CURVATURE_TOLERANCE"
+            "OldName": "eCrdnSamplingMethodFixedStep",
+            "NewName": "FIXED_STEP"
+        },
+        {
+            "ParentScope": "AgECrdnSamplingMethod",
+            "OldName": "eCrdnSamplingMethodUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnSatisfactionCrossing",
-            "OldName": "eCrdnSatisfactionCrossingNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnSatisfactionCrossingOut",
+            "NewName": "OUT"
         },
         {
             "ParentScope": "AgECrdnSatisfactionCrossing",
@@ -10277,13 +10343,13 @@
         },
         {
             "ParentScope": "AgECrdnSatisfactionCrossing",
-            "OldName": "eCrdnSatisfactionCrossingOut",
-            "NewName": "OUT"
+            "OldName": "eCrdnSatisfactionCrossingNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgECrdnSaveDataOption",
-            "OldName": "eCrdnSaveDataOptionApplicationSettings",
-            "NewName": "APPLICATION_SETTINGS"
+            "OldName": "eCrdnSaveDataOptionNo",
+            "NewName": "NO"
         },
         {
             "ParentScope": "AgECrdnSaveDataOption",
@@ -10292,18 +10358,13 @@
         },
         {
             "ParentScope": "AgECrdnSaveDataOption",
-            "OldName": "eCrdnSaveDataOptionNo",
-            "NewName": "NO"
+            "OldName": "eCrdnSaveDataOptionApplicationSettings",
+            "NewName": "APPLICATION_SETTINGS"
         },
         {
             "ParentScope": "AgECrdnSignalPathReferenceSystem",
-            "OldName": "eCrdnSignalPathReferenceSystemUseAccessDefault",
-            "NewName": "USE_ACCESS_DEFAULT"
-        },
-        {
-            "ParentScope": "AgECrdnSignalPathReferenceSystem",
-            "OldName": "eCrdnSignalPathReferenceSystemCentralBodyInertial",
-            "NewName": "CENTRAL_BODY_INERTIAL"
+            "OldName": "eCrdnSignalPathReferenceSystemCustom",
+            "NewName": "CUSTOM"
         },
         {
             "ParentScope": "AgECrdnSignalPathReferenceSystem",
@@ -10312,13 +10373,13 @@
         },
         {
             "ParentScope": "AgECrdnSignalPathReferenceSystem",
-            "OldName": "eCrdnSignalPathReferenceSystemCustom",
-            "NewName": "CUSTOM"
+            "OldName": "eCrdnSignalPathReferenceSystemCentralBodyInertial",
+            "NewName": "CENTRAL_BODY_INERTIAL"
         },
         {
-            "ParentScope": "AgECrdnSmartEpochState",
-            "OldName": "eCrdnSmartEpochStateExplicit",
-            "NewName": "EXPLICIT"
+            "ParentScope": "AgECrdnSignalPathReferenceSystem",
+            "OldName": "eCrdnSignalPathReferenceSystemUseAccessDefault",
+            "NewName": "USE_ACCESS_DEFAULT"
         },
         {
             "ParentScope": "AgECrdnSmartEpochState",
@@ -10326,19 +10387,14 @@
             "NewName": "IMPLICIT"
         },
         {
-            "ParentScope": "AgECrdnSmartIntervalState",
-            "OldName": "eCrdnSmartIntervalStateExplicit",
+            "ParentScope": "AgECrdnSmartEpochState",
+            "OldName": "eCrdnSmartEpochStateExplicit",
             "NewName": "EXPLICIT"
         },
         {
             "ParentScope": "AgECrdnSmartIntervalState",
-            "OldName": "eCrdnSmartIntervalStateImplicit",
-            "NewName": "IMPLICIT"
-        },
-        {
-            "ParentScope": "AgECrdnSmartIntervalState",
-            "OldName": "eCrdnSmartIntervalStateStartStop",
-            "NewName": "START_STOP"
+            "OldName": "eCrdnSmartIntervalStateExplicitDuration",
+            "NewName": "EXPLICIT_DURATION"
         },
         {
             "ParentScope": "AgECrdnSmartIntervalState",
@@ -10347,13 +10403,18 @@
         },
         {
             "ParentScope": "AgECrdnSmartIntervalState",
-            "OldName": "eCrdnSmartIntervalStateExplicitDuration",
-            "NewName": "EXPLICIT_DURATION"
+            "OldName": "eCrdnSmartIntervalStateStartStop",
+            "NewName": "START_STOP"
         },
         {
-            "ParentScope": "AgECrdnSpeedOptions",
-            "OldName": "eCrdnLightTransmissionSpeed",
-            "NewName": "LIGHT_TRANSMISSION_SPEED"
+            "ParentScope": "AgECrdnSmartIntervalState",
+            "OldName": "eCrdnSmartIntervalStateImplicit",
+            "NewName": "IMPLICIT"
+        },
+        {
+            "ParentScope": "AgECrdnSmartIntervalState",
+            "OldName": "eCrdnSmartIntervalStateExplicit",
+            "NewName": "EXPLICIT"
         },
         {
             "ParentScope": "AgECrdnSpeedOptions",
@@ -10361,9 +10422,14 @@
             "NewName": "CUSTOM_TRANSMISSION_SPEED"
         },
         {
+            "ParentScope": "AgECrdnSpeedOptions",
+            "OldName": "eCrdnLightTransmissionSpeed",
+            "NewName": "LIGHT_TRANSMISSION_SPEED"
+        },
+        {
             "ParentScope": "AgECrdnStartStopOption",
-            "OldName": "eCrdnStartStopOptionCountStartOnly",
-            "NewName": "COUNT_START_ONLY"
+            "OldName": "eCrdnStartStopOptionCountStartStop",
+            "NewName": "COUNT_START_STOP"
         },
         {
             "ParentScope": "AgECrdnStartStopOption",
@@ -10372,13 +10438,13 @@
         },
         {
             "ParentScope": "AgECrdnStartStopOption",
-            "OldName": "eCrdnStartStopOptionCountStartStop",
-            "NewName": "COUNT_START_STOP"
+            "OldName": "eCrdnStartStopOptionCountStartOnly",
+            "NewName": "COUNT_START_ONLY"
         },
         {
             "ParentScope": "AgECrdnThreshConvergeSense",
-            "OldName": "eCrdnThreshConvergeSenseSimple",
-            "NewName": "SIMPLE"
+            "OldName": "eCrdnThreshConvergeSenseBelow",
+            "NewName": "BELOW"
         },
         {
             "ParentScope": "AgECrdnThreshConvergeSense",
@@ -10387,28 +10453,13 @@
         },
         {
             "ParentScope": "AgECrdnThreshConvergeSense",
-            "OldName": "eCrdnThreshConvergeSenseBelow",
-            "NewName": "BELOW"
+            "OldName": "eCrdnThreshConvergeSenseSimple",
+            "NewName": "SIMPLE"
         },
         {
             "ParentScope": "AgECrdnVectorComponentType",
-            "OldName": "eCrdnVectorComponentX",
-            "NewName": "X"
-        },
-        {
-            "ParentScope": "AgECrdnVectorComponentType",
-            "OldName": "eCrdnVectorComponentY",
-            "NewName": "Y"
-        },
-        {
-            "ParentScope": "AgECrdnVectorComponentType",
-            "OldName": "eCrdnVectorComponentZ",
-            "NewName": "Z"
-        },
-        {
-            "ParentScope": "AgECrdnVectorComponentType",
-            "OldName": "eCrdnVectorComponentMinusX",
-            "NewName": "NEGATIVE_X"
+            "OldName": "eCrdnVectorComponentMinusZ",
+            "NewName": "NEGATIVE_Z"
         },
         {
             "ParentScope": "AgECrdnVectorComponentType",
@@ -10417,13 +10468,28 @@
         },
         {
             "ParentScope": "AgECrdnVectorComponentType",
-            "OldName": "eCrdnVectorComponentMinusZ",
-            "NewName": "NEGATIVE_Z"
+            "OldName": "eCrdnVectorComponentMinusX",
+            "NewName": "NEGATIVE_X"
+        },
+        {
+            "ParentScope": "AgECrdnVectorComponentType",
+            "OldName": "eCrdnVectorComponentZ",
+            "NewName": "Z"
+        },
+        {
+            "ParentScope": "AgECrdnVectorComponentType",
+            "OldName": "eCrdnVectorComponentY",
+            "NewName": "Y"
+        },
+        {
+            "ParentScope": "AgECrdnVectorComponentType",
+            "OldName": "eCrdnVectorComponentX",
+            "NewName": "X"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAltitudeReferenceType",
-            "OldName": "eCrdnVolumeCalcAltitudeReferenceEllipsoid",
-            "NewName": "ELLIPSOID"
+            "OldName": "eCrdnVolumeCalcAltitudeReferenceMSL",
+            "NewName": "MSL"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAltitudeReferenceType",
@@ -10432,23 +10498,13 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAltitudeReferenceType",
-            "OldName": "eCrdnVolumeCalcAltitudeReferenceMSL",
-            "NewName": "MSL"
+            "OldName": "eCrdnVolumeCalcAltitudeReferenceEllipsoid",
+            "NewName": "ELLIPSOID"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
-            "OldName": "eCrdnVolumeCalcAngleOffPlaneSigned",
-            "NewName": "FROM_PLANE_SIGNED"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
-            "OldName": "eCrdnVolumeCalcAngleOffPlaneUnsigned",
-            "NewName": "FROM_PLANE_UNSIGNED"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
-            "OldName": "eCrdnVolumeCalcAngleAboutVectorSigned",
-            "NewName": "ABOUT_VECTOR_SIGNED"
+            "OldName": "eCrdnVolumeCalcAngleOffVector",
+            "NewName": "FROM_REFERENCE_VECTOR"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
@@ -10457,27 +10513,17 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
-            "OldName": "eCrdnVolumeCalcAngleOffVector",
-            "NewName": "FROM_REFERENCE_VECTOR"
+            "OldName": "eCrdnVolumeCalcAngleAboutVectorSigned",
+            "NewName": "ABOUT_VECTOR_SIGNED"
         },
         {
-            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
-            "OldName": "eCrdnVolumeCalcRangeDistanceFromPoint",
-            "NewName": "FROM_POINT"
+            "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
+            "OldName": "eCrdnVolumeCalcAngleOffPlaneUnsigned",
+            "NewName": "FROM_PLANE_UNSIGNED"
         },
         {
-            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
-            "OldName": "eCrdnVolumeCalcRangeDistanceAlongVectorSigned",
-            "NewName": "ALONG_VECTOR_SIGNED"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
-            "OldName": "eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned",
-            "NewName": "ALONG_VECTOR_UNSIGNED"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
-            "OldName": "eCrdnVolumeCalcRangeDistancePlaneSigned",
+            "ParentScope": "AgECrdnVolumeCalcAngleOffVectorType",
+            "OldName": "eCrdnVolumeCalcAngleOffPlaneSigned",
             "NewName": "FROM_PLANE_SIGNED"
         },
         {
@@ -10486,9 +10532,24 @@
             "NewName": "FROM_PLANE_UNSIGNED"
         },
         {
-            "ParentScope": "AgECrdnVolumeCalcRangeSpeedType",
-            "OldName": "eCrdnVolumeCalcRangeSpeedLight",
-            "NewName": "LIGHT_SPEED"
+            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
+            "OldName": "eCrdnVolumeCalcRangeDistancePlaneSigned",
+            "NewName": "FROM_PLANE_SIGNED"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
+            "OldName": "eCrdnVolumeCalcRangeDistanceAlongVectorUnsigned",
+            "NewName": "ALONG_VECTOR_UNSIGNED"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
+            "OldName": "eCrdnVolumeCalcRangeDistanceAlongVectorSigned",
+            "NewName": "ALONG_VECTOR_SIGNED"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcRangeDistanceType",
+            "OldName": "eCrdnVolumeCalcRangeDistanceFromPoint",
+            "NewName": "FROM_POINT"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcRangeSpeedType",
@@ -10496,39 +10557,14 @@
             "NewName": "CUSTOM"
         },
         {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeUnknown",
-            "NewName": "UNKNOWN"
+            "ParentScope": "AgECrdnVolumeCalcRangeSpeedType",
+            "OldName": "eCrdnVolumeCalcRangeSpeedLight",
+            "NewName": "LIGHT_SPEED"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeAltitude",
-            "NewName": "ALTITUDE_AT_LOCATION"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeAngleOffVector",
-            "NewName": "ANGLE_TO_LOCATION"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeFile",
-            "NewName": "FILE"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeFromScalar",
-            "NewName": "FROM_CALCULATION_SCALAR"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeSolarIntensity",
-            "NewName": "SOLAR_INTENSITY"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeVolumeSatisfactionMetric",
-            "NewName": "SPATIAL_CONDITION_METRIC"
+            "OldName": "eCrdnVolumeCalcTypeDelayRange",
+            "NewName": "PROPAGATION_DELAY_TO_LOCATION"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcType",
@@ -10537,18 +10573,43 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcType",
-            "OldName": "eCrdnVolumeCalcTypeDelayRange",
-            "NewName": "PROPAGATION_DELAY_TO_LOCATION"
+            "OldName": "eCrdnVolumeCalcTypeVolumeSatisfactionMetric",
+            "NewName": "SPATIAL_CONDITION_METRIC"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeSolarIntensity",
+            "NewName": "SOLAR_INTENSITY"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeFromScalar",
+            "NewName": "FROM_CALCULATION_SCALAR"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeFile",
+            "NewName": "FILE"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeAngleOffVector",
+            "NewName": "ANGLE_TO_LOCATION"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeAltitude",
+            "NewName": "ALTITUDE_AT_LOCATION"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcType",
+            "OldName": "eCrdnVolumeCalcTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime",
-            "NewName": "UP_TO_CURRENT_TIME"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime",
-            "NewName": "CURRENT_TIME"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal",
+            "NewName": "TOTAL"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType",
@@ -10557,13 +10618,18 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationTotal",
-            "NewName": "TOTAL"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationCurrentTime",
+            "NewName": "CURRENT_TIME"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionAccumulationType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionAccumulationUpToCurrentTime",
+            "NewName": "UP_TO_CURRENT_TIME"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionDurationType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionDurationMin",
-            "NewName": "MINIMUM"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionDurationMax",
+            "NewName": "MAXIMUM"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionDurationType",
@@ -10572,23 +10638,13 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionDurationType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionDurationMax",
-            "NewName": "MAXIMUM"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionDurationMin",
+            "NewName": "MINIMUM"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals",
-            "NewName": "FIRST_INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals",
-            "NewName": "LAST_INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration",
+            "NewName": "INTERVAL_DURATION"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
@@ -10597,28 +10653,23 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterIntervalDuration",
-            "NewName": "INTERVAL_DURATION"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterNone",
+            "NewName": "NONE"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterLastIntervals",
+            "NewName": "LAST_INTERVALS"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionFilterType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionFilterFirstIntervals",
+            "NewName": "FIRST_INTERVALS"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps",
-            "NewName": "NUMBER_OF_GAPS"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals",
-            "NewName": "NUMBER_OF_INTERVALS"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction",
-            "NewName": "TIME_SINCE_LAST_SATISFACTION"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction",
-            "NewName": "TIME_UNTIL_NEXT_SATISFACTION"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration",
+            "NewName": "GAP_DURATION"
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
@@ -10627,33 +10678,28 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
-            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricGapDuration",
-            "NewName": "GAP_DURATION"
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricTimeUntilNextSatisfaction",
+            "NewName": "TIME_UNTIL_NEXT_SATISFACTION"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricTimeSinceLastSatisfaction",
+            "NewName": "TIME_SINCE_LAST_SATISFACTION"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfIntervals",
+            "NewName": "NUMBER_OF_INTERVALS"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeCalcVolumeSatisfactionMetricType",
+            "OldName": "eCrdnVolumeCalcVolumeSatisfactionMetricNumberOfGaps",
+            "NewName": "NUMBER_OF_GAPS"
         },
         {
             "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeCartesian",
-            "NewName": "CARTESIAN"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeCylindrical",
-            "NewName": "CYLINDRICAL"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeSpherical",
-            "NewName": "SPHERICAL"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeConstrained",
-            "NewName": "CONSTRAINED"
+            "OldName": "eCrdnVolumeGridTypeBearingAlt",
+            "NewName": "BEARING_ALTITUDE"
         },
         {
             "ParentScope": "AgECrdnVolumeGridType",
@@ -10662,23 +10708,33 @@
         },
         {
             "ParentScope": "AgECrdnVolumeGridType",
-            "OldName": "eCrdnVolumeGridTypeBearingAlt",
-            "NewName": "BEARING_ALTITUDE"
+            "OldName": "eCrdnVolumeGridTypeConstrained",
+            "NewName": "CONSTRAINED"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeGridType",
+            "OldName": "eCrdnVolumeGridTypeSpherical",
+            "NewName": "SPHERICAL"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeGridType",
+            "OldName": "eCrdnVolumeGridTypeCylindrical",
+            "NewName": "CYLINDRICAL"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeGridType",
+            "OldName": "eCrdnVolumeGridTypeCartesian",
+            "NewName": "CARTESIAN"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeGridType",
+            "OldName": "eCrdnVolumeGridTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumeResultVectorRequest",
-            "OldName": "eCrdnVolumeResultVectorRequestPos",
-            "NewName": "POSITION"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeResultVectorRequest",
-            "OldName": "eCrdnVolumeResultVectorRequestNativePos",
-            "NewName": "NATIVE_POSITION"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeResultVectorRequest",
-            "OldName": "eCrdnVolumeResultVectorRequestMetric",
-            "NewName": "METRIC"
+            "OldName": "eCrdnVolumeResultVectorRequestGradient",
+            "NewName": "GRADIENT"
         },
         {
             "ParentScope": "AgECrdnVolumeResultVectorRequest",
@@ -10687,43 +10743,23 @@
         },
         {
             "ParentScope": "AgECrdnVolumeResultVectorRequest",
-            "OldName": "eCrdnVolumeResultVectorRequestGradient",
-            "NewName": "GRADIENT"
+            "OldName": "eCrdnVolumeResultVectorRequestMetric",
+            "NewName": "METRIC"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeResultVectorRequest",
+            "OldName": "eCrdnVolumeResultVectorRequestNativePos",
+            "NewName": "NATIVE_POSITION"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeResultVectorRequest",
+            "OldName": "eCrdnVolumeResultVectorRequestPos",
+            "NewName": "POSITION"
         },
         {
             "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeUnknown",
-            "NewName": "UNKNOWN"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeCombined",
-            "NewName": "COMBINED"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeLighting",
-            "NewName": "LIGHTING"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeOverTime",
-            "NewName": "OVER_TIME"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeFromGrid",
-            "NewName": "GRID_BOUNDING_VOLUME"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeFromCalc",
-            "NewName": "SPATIAL_CALCULATION_BOUNDS"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeFromTimeSatisfaction",
-            "NewName": "VALID_TIME_AT_LOCATION"
+            "OldName": "eCrdnVolumeTypeInview",
+            "NewName": "ACCESS_TO_LOCATION"
         },
         {
             "ParentScope": "AgECrdnVolumeType",
@@ -10732,18 +10768,43 @@
         },
         {
             "ParentScope": "AgECrdnVolumeType",
-            "OldName": "eCrdnVolumeTypeInview",
-            "NewName": "ACCESS_TO_LOCATION"
+            "OldName": "eCrdnVolumeTypeFromTimeSatisfaction",
+            "NewName": "VALID_TIME_AT_LOCATION"
         },
         {
-            "ParentScope": "AgECrdnVolumeAberrationType",
-            "OldName": "eCrdnVolumeAberrationUnknown",
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeFromCalc",
+            "NewName": "SPATIAL_CALCULATION_BOUNDS"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeFromGrid",
+            "NewName": "GRID_BOUNDING_VOLUME"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeOverTime",
+            "NewName": "OVER_TIME"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeLighting",
+            "NewName": "LIGHTING"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeCombined",
+            "NewName": "COMBINED"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeType",
+            "OldName": "eCrdnVolumeTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumeAberrationType",
-            "OldName": "eCrdnVolumeAberrationTotal",
-            "NewName": "TOTAL"
+            "OldName": "eCrdnVolumeAberrationNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgECrdnVolumeAberrationType",
@@ -10752,13 +10813,18 @@
         },
         {
             "ParentScope": "AgECrdnVolumeAberrationType",
-            "OldName": "eCrdnVolumeAberrationNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnVolumeAberrationTotal",
+            "NewName": "TOTAL"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeAberrationType",
+            "OldName": "eCrdnVolumeAberrationUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumeClockHostType",
-            "OldName": "eCrdnVolumeClockHostUnknown",
-            "NewName": "UNKNOWN"
+            "OldName": "eCrdnVolumeClockHostTarget",
+            "NewName": "TARGET"
         },
         {
             "ParentScope": "AgECrdnVolumeClockHostType",
@@ -10767,18 +10833,13 @@
         },
         {
             "ParentScope": "AgECrdnVolumeClockHostType",
-            "OldName": "eCrdnVolumeClockHostTarget",
-            "NewName": "TARGET"
+            "OldName": "eCrdnVolumeClockHostUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumeCombinedOperationType",
-            "OldName": "eCrdnVolumeCombinedOperationTypeAND",
-            "NewName": "AND"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeCombinedOperationType",
-            "OldName": "eCrdnVolumeCombinedOperationTypeOR",
-            "NewName": "OR"
+            "OldName": "eCrdnVolumeCombinedOperationTypeMINUS",
+            "NewName": "MINUS"
         },
         {
             "ParentScope": "AgECrdnVolumeCombinedOperationType",
@@ -10787,13 +10848,13 @@
         },
         {
             "ParentScope": "AgECrdnVolumeCombinedOperationType",
-            "OldName": "eCrdnVolumeCombinedOperationTypeMINUS",
-            "NewName": "MINUS"
+            "OldName": "eCrdnVolumeCombinedOperationTypeOR",
+            "NewName": "OR"
         },
         {
-            "ParentScope": "AgECrdnVolumeFromGridEdgeType",
-            "OldName": "eCrdnVolumeFromGridEdgeTypeMaskPoints",
-            "NewName": "MASK_POINTS"
+            "ParentScope": "AgECrdnVolumeCombinedOperationType",
+            "OldName": "eCrdnVolumeCombinedOperationTypeAND",
+            "NewName": "AND"
         },
         {
             "ParentScope": "AgECrdnVolumeFromGridEdgeType",
@@ -10801,14 +10862,14 @@
             "NewName": "MASK_VOXELS"
         },
         {
-            "ParentScope": "AgECrdnVolumeLightingConditionsType",
-            "OldName": "eCrdnVolumeLightingConditionTypeUndefined",
-            "NewName": "UNDEFINED"
+            "ParentScope": "AgECrdnVolumeFromGridEdgeType",
+            "OldName": "eCrdnVolumeFromGridEdgeTypeMaskPoints",
+            "NewName": "MASK_POINTS"
         },
         {
             "ParentScope": "AgECrdnVolumeLightingConditionsType",
-            "OldName": "eCrdnVolumeLightingConditionTypeSunlight",
-            "NewName": "SUNLIGHT"
+            "OldName": "eCrdnVolumeLightingConditionTypeUmbra",
+            "NewName": "TYPE_UMBRA"
         },
         {
             "ParentScope": "AgECrdnVolumeLightingConditionsType",
@@ -10817,18 +10878,18 @@
         },
         {
             "ParentScope": "AgECrdnVolumeLightingConditionsType",
-            "OldName": "eCrdnVolumeLightingConditionTypeUmbra",
-            "NewName": "TYPE_UMBRA"
+            "OldName": "eCrdnVolumeLightingConditionTypeSunlight",
+            "NewName": "SUNLIGHT"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeLightingConditionsType",
+            "OldName": "eCrdnVolumeLightingConditionTypeUndefined",
+            "NewName": "UNDEFINED"
         },
         {
             "ParentScope": "AgECrdnVolumeOverTimeDurationType",
-            "OldName": "eCrdnVolumeOverTimeDurationTypeStatic",
-            "NewName": "STATIC"
-        },
-        {
-            "ParentScope": "AgECrdnVolumeOverTimeDurationType",
-            "OldName": "eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent",
-            "NewName": "CUMULATIVE_TO_CURRENT_TIME"
+            "OldName": "eCrdnVolumeOverTimeDurationTypeSlidingWindow",
+            "NewName": "SLIDING_WINDOW"
         },
         {
             "ParentScope": "AgECrdnVolumeOverTimeDurationType",
@@ -10837,13 +10898,18 @@
         },
         {
             "ParentScope": "AgECrdnVolumeOverTimeDurationType",
-            "OldName": "eCrdnVolumeOverTimeDurationTypeSlidingWindow",
-            "NewName": "SLIDING_WINDOW"
+            "OldName": "eCrdnVolumeOverTimeDurationTypeCumulativeToCurrent",
+            "NewName": "CUMULATIVE_TO_CURRENT_TIME"
+        },
+        {
+            "ParentScope": "AgECrdnVolumeOverTimeDurationType",
+            "OldName": "eCrdnVolumeOverTimeDurationTypeStatic",
+            "NewName": "STATIC"
         },
         {
             "ParentScope": "AgECrdnVolumeTimeSenseType",
-            "OldName": "eCrdnVolumeTimeSenseUnknown",
-            "NewName": "UNKNOWN"
+            "OldName": "eCrdnVolumeTimeSenseReceive",
+            "NewName": "RECEIVE"
         },
         {
             "ParentScope": "AgECrdnVolumeTimeSenseType",
@@ -10852,18 +10918,13 @@
         },
         {
             "ParentScope": "AgECrdnVolumeTimeSenseType",
-            "OldName": "eCrdnVolumeTimeSenseReceive",
-            "NewName": "RECEIVE"
-        },
-        {
-            "ParentScope": "AgECrdnVolumetricGridValuesMethodType",
-            "OldName": "eCrdnVolumetricGridValuesMethodMethodUnknown",
+            "OldName": "eCrdnVolumeTimeSenseUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVolumetricGridValuesMethodType",
-            "OldName": "eCrdnVolumetricGridValuesMethodMethodFixedNumSteps",
-            "NewName": "FIXED_NUMBER_OF_STEPS"
+            "OldName": "eCrdnVolumetricGridValuesMethodMethodCustomValues",
+            "NewName": "CUSTOM_VALUES"
         },
         {
             "ParentScope": "AgECrdnVolumetricGridValuesMethodType",
@@ -10872,98 +10933,18 @@
         },
         {
             "ParentScope": "AgECrdnVolumetricGridValuesMethodType",
-            "OldName": "eCrdnVolumetricGridValuesMethodMethodCustomValues",
-            "NewName": "CUSTOM_VALUES"
+            "OldName": "eCrdnVolumetricGridValuesMethodMethodFixedNumSteps",
+            "NewName": "FIXED_NUMBER_OF_STEPS"
         },
         {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindUnknown",
+            "ParentScope": "AgECrdnVolumetricGridValuesMethodType",
+            "OldName": "eCrdnVolumetricGridValuesMethodMethodUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindInvalid",
-            "NewName": "INVALID"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindAxes",
-            "NewName": "AXES"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindAngle",
-            "NewName": "ANGLE"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindVector",
-            "NewName": "VECTOR"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindPoint",
-            "NewName": "POINT"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindPlane",
-            "NewName": "PLANE"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindSystem",
-            "NewName": "SYSTEM"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindEvent",
-            "NewName": "TIME_INSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindEventArray",
-            "NewName": "TIME_ARRAY"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindEventInterval",
-            "NewName": "TIME_INTERVAL"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindEventIntervalCollection",
-            "NewName": "TIME_INTERVAL_COLLECTION"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindEventIntervalList",
-            "NewName": "TIME_INTERVAL_LIST"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindParameterSet",
-            "NewName": "PARAMETER_SET"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindCalcScalar",
-            "NewName": "CALCULATION_SCALAR"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindCondition",
-            "NewName": "CONDITION"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindConditionSet",
-            "NewName": "CONDITION_SET"
-        },
-        {
-            "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindVolumeGrid",
-            "NewName": "SPATIAL_VOLUME_GRID"
+            "OldName": "eCrdnKindVolumeCalc",
+            "NewName": "SPATIAL_CALCULATION"
         },
         {
             "ParentScope": "AgECrdnKind",
@@ -10972,33 +10953,98 @@
         },
         {
             "ParentScope": "AgECrdnKind",
-            "OldName": "eCrdnKindVolumeCalc",
-            "NewName": "SPATIAL_CALCULATION"
+            "OldName": "eCrdnKindVolumeGrid",
+            "NewName": "SPATIAL_VOLUME_GRID"
         },
         {
-            "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeUnknown",
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindConditionSet",
+            "NewName": "CONDITION_SET"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindCondition",
+            "NewName": "CONDITION"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindCalcScalar",
+            "NewName": "CALCULATION_SCALAR"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindParameterSet",
+            "NewName": "PARAMETER_SET"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindEventIntervalList",
+            "NewName": "TIME_INTERVAL_LIST"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindEventIntervalCollection",
+            "NewName": "TIME_INTERVAL_COLLECTION"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindEventInterval",
+            "NewName": "TIME_INTERVAL"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindEventArray",
+            "NewName": "TIME_ARRAY"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindEvent",
+            "NewName": "TIME_INSTANT"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindSystem",
+            "NewName": "SYSTEM"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindPlane",
+            "NewName": "PLANE"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindPoint",
+            "NewName": "POINT"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindVector",
+            "NewName": "VECTOR"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindAngle",
+            "NewName": "ANGLE"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindAxes",
+            "NewName": "AXES"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindInvalid",
+            "NewName": "INVALID"
+        },
+        {
+            "ParentScope": "AgECrdnKind",
+            "OldName": "eCrdnKindUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeBetweenVectors",
-            "NewName": "BETWEEN_VECTORS"
-        },
-        {
-            "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeBetweenPlanes",
-            "NewName": "BETWEEN_PLANES"
-        },
-        {
-            "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeDihedralAngle",
-            "NewName": "DIHEDRAL_ANGLE"
-        },
-        {
-            "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeRotation",
-            "NewName": "ROTATION_ANGLE"
+            "OldName": "eCrdnAngleTypeTemplate",
+            "NewName": "TEMPLATE"
         },
         {
             "ParentScope": "AgECrdnAngleType",
@@ -11007,78 +11053,33 @@
         },
         {
             "ParentScope": "AgECrdnAngleType",
-            "OldName": "eCrdnAngleTypeTemplate",
-            "NewName": "TEMPLATE"
+            "OldName": "eCrdnAngleTypeRotation",
+            "NewName": "ROTATION_ANGLE"
         },
         {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeUnknown",
+            "ParentScope": "AgECrdnAngleType",
+            "OldName": "eCrdnAngleTypeDihedralAngle",
+            "NewName": "DIHEDRAL_ANGLE"
+        },
+        {
+            "ParentScope": "AgECrdnAngleType",
+            "OldName": "eCrdnAngleTypeBetweenPlanes",
+            "NewName": "BETWEEN_PLANES"
+        },
+        {
+            "ParentScope": "AgECrdnAngleType",
+            "OldName": "eCrdnAngleTypeBetweenVectors",
+            "NewName": "BETWEEN_VECTORS"
+        },
+        {
+            "ParentScope": "AgECrdnAngleType",
+            "OldName": "eCrdnAngleTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeLagrangeLibration",
-            "NewName": "LAGRANGE_LIBRATION"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeAngularOffset",
-            "NewName": "ANGULAR_OFFSET"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeFixedAtEpoch",
-            "NewName": "FIXED_AT_EPOCH"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeBPlane",
-            "NewName": "B_PLANE"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeCustomScript",
-            "NewName": "CUSTOM_SCRIPT"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeFixed",
-            "NewName": "FIXED"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeAlignedAndConstrained",
-            "NewName": "ALIGNED_AND_CONSTRAINED"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeModelAttachment",
-            "NewName": "MODEL_ATTACHMENT"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeSpinning",
-            "NewName": "SPINNING"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeOnSurface",
-            "NewName": "ON_SURFACE"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeTrajectory",
-            "NewName": "TRAJECTORY"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeTemplate",
-            "NewName": "TEMPLATE"
-        },
-        {
-            "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeAtTimeInstant",
-            "NewName": "AT_TIME_INSTANT"
+            "OldName": "eCrdnAxesTypeFile",
+            "NewName": "FILE"
         },
         {
             "ParentScope": "AgECrdnAxesType",
@@ -11087,33 +11088,78 @@
         },
         {
             "ParentScope": "AgECrdnAxesType",
-            "OldName": "eCrdnAxesTypeFile",
-            "NewName": "FILE"
+            "OldName": "eCrdnAxesTypeAtTimeInstant",
+            "NewName": "AT_TIME_INSTANT"
         },
         {
-            "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeUnknown",
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeTemplate",
+            "NewName": "TEMPLATE"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeTrajectory",
+            "NewName": "TRAJECTORY"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeOnSurface",
+            "NewName": "ON_SURFACE"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeSpinning",
+            "NewName": "SPINNING"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeModelAttachment",
+            "NewName": "MODEL_ATTACHMENT"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeAlignedAndConstrained",
+            "NewName": "ALIGNED_AND_CONSTRAINED"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeFixed",
+            "NewName": "FIXED"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeCustomScript",
+            "NewName": "CUSTOM_SCRIPT"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeBPlane",
+            "NewName": "B_PLANE"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeFixedAtEpoch",
+            "NewName": "FIXED_AT_EPOCH"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeAngularOffset",
+            "NewName": "ANGULAR_OFFSET"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeLagrangeLibration",
+            "NewName": "LAGRANGE_LIBRATION"
+        },
+        {
+            "ParentScope": "AgECrdnAxesType",
+            "OldName": "eCrdnAxesTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeNormal",
-            "NewName": "NORMAL"
-        },
-        {
-            "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeQuadrant",
-            "NewName": "QUADRANT"
-        },
-        {
-            "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeTrajectory",
-            "NewName": "TRAJECTORY"
-        },
-        {
-            "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeTriad",
-            "NewName": "TRIAD"
+            "OldName": "eCrdnPlaneTypeTwoVector",
+            "NewName": "TWO_VECTOR"
         },
         {
             "ParentScope": "AgECrdnPlaneType",
@@ -11122,88 +11168,33 @@
         },
         {
             "ParentScope": "AgECrdnPlaneType",
-            "OldName": "eCrdnPlaneTypeTwoVector",
-            "NewName": "TWO_VECTOR"
+            "OldName": "eCrdnPlaneTypeTriad",
+            "NewName": "TRIAD"
         },
         {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeUnknown",
+            "ParentScope": "AgECrdnPlaneType",
+            "OldName": "eCrdnPlaneTypeTrajectory",
+            "NewName": "TRAJECTORY"
+        },
+        {
+            "ParentScope": "AgECrdnPlaneType",
+            "OldName": "eCrdnPlaneTypeQuadrant",
+            "NewName": "QUADRANT"
+        },
+        {
+            "ParentScope": "AgECrdnPlaneType",
+            "OldName": "eCrdnPlaneTypeNormal",
+            "NewName": "NORMAL"
+        },
+        {
+            "ParentScope": "AgECrdnPlaneType",
+            "OldName": "eCrdnPlaneTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeBPlane",
-            "NewName": "B_PLANE"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeGrazing",
-            "NewName": "GRAZING"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeCovarianceGrazing",
-            "NewName": "COVARIANCE_GRAZING"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeFixedInSystem",
-            "NewName": "FIXED_IN_SYSTEM"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeGlint",
-            "NewName": "GLINT"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypePlaneIntersection",
-            "NewName": "PLANE_INTERSECTION"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeModelAttachment",
-            "NewName": "MODEL_ATTACHMENT"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypePlaneProjection",
-            "NewName": "PLANE_PROJECTION"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeOnSurface",
-            "NewName": "ON_SURFACE"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeLagrangeLibration",
-            "NewName": "LAGRANGE_LIBRATION"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeTemplate",
-            "NewName": "TEMPLATE"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeCentralBodyIntersect",
-            "NewName": "CENTRAL_BODY_INTERSECTION"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeAtTimeInstant",
-            "NewName": "AT_TIME_INSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypePlugin",
-            "NewName": "PLUGIN"
-        },
-        {
-            "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeFile",
-            "NewName": "FILE"
+            "OldName": "eCrdnPointTypeSatelliteCollectionEntry",
+            "NewName": "SATELLITE_COLLECTION_ENTRY"
         },
         {
             "ParentScope": "AgECrdnPointType",
@@ -11212,18 +11203,88 @@
         },
         {
             "ParentScope": "AgECrdnPointType",
-            "OldName": "eCrdnPointTypeSatelliteCollectionEntry",
-            "NewName": "SATELLITE_COLLECTION_ENTRY"
+            "OldName": "eCrdnPointTypeFile",
+            "NewName": "FILE"
         },
         {
-            "ParentScope": "AgECrdnSystemType",
-            "OldName": "eCrdnSystemTypeUnknown",
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypePlugin",
+            "NewName": "PLUGIN"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeAtTimeInstant",
+            "NewName": "AT_TIME_INSTANT"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeCentralBodyIntersect",
+            "NewName": "CENTRAL_BODY_INTERSECTION"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeTemplate",
+            "NewName": "TEMPLATE"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeLagrangeLibration",
+            "NewName": "LAGRANGE_LIBRATION"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeOnSurface",
+            "NewName": "ON_SURFACE"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypePlaneProjection",
+            "NewName": "PLANE_PROJECTION"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeModelAttachment",
+            "NewName": "MODEL_ATTACHMENT"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypePlaneIntersection",
+            "NewName": "PLANE_INTERSECTION"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeGlint",
+            "NewName": "GLINT"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeFixedInSystem",
+            "NewName": "FIXED_IN_SYSTEM"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeCovarianceGrazing",
+            "NewName": "COVARIANCE_GRAZING"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeGrazing",
+            "NewName": "GRAZING"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeBPlane",
+            "NewName": "B_PLANE"
+        },
+        {
+            "ParentScope": "AgECrdnPointType",
+            "OldName": "eCrdnPointTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnSystemType",
-            "OldName": "eCrdnSystemTypeAssembled",
-            "NewName": "ASSEMBLED"
+            "OldName": "eCrdnSystemTypeTemplate",
+            "NewName": "TEMPLATE"
         },
         {
             "ParentScope": "AgECrdnSystemType",
@@ -11232,163 +11293,23 @@
         },
         {
             "ParentScope": "AgECrdnSystemType",
-            "OldName": "eCrdnSystemTypeTemplate",
-            "NewName": "TEMPLATE"
+            "OldName": "eCrdnSystemTypeAssembled",
+            "NewName": "ASSEMBLED"
         },
         {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeUnknown",
+            "ParentScope": "AgECrdnSystemType",
+            "OldName": "eCrdnSystemTypeUnknown",
             "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeDisplacement",
-            "NewName": "DISPLACEMENT"
+            "OldName": "eCrdnVectorTypeSurfaceNormal",
+            "NewName": "SURFACE_NORMAL"
         },
         {
             "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeApoapsis",
-            "NewName": "APOAPSIS"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeFixedAtEpoch",
-            "NewName": "FIXED_AT_EPOCH"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeAngularVelocity",
-            "NewName": "ANGULAR_VELOCITY"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeConing",
-            "NewName": "CONING"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeCrossProduct",
-            "NewName": "CROSS_PRODUCT"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeCustomScript",
-            "NewName": "CUSTOM_SCRIPT"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeDerivative",
-            "NewName": "DERIVATIVE"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeAngleRate",
-            "NewName": "ANGLE_RATE"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeEccentricity",
-            "NewName": "ECCENTRICITY"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeFixedInAxes",
-            "NewName": "FIXED_IN_AXES"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeTwoPlanesIntersection",
-            "NewName": "TWO_PLANES_INTERSECTION"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeLineOfNodes",
-            "NewName": "LINE_OF_NODES"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeModelAttachment",
-            "NewName": "MODEL_ATTACHMENT"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeOrbitAngularMomentum",
-            "NewName": "ORBIT_ANGULAR_MOMENTUM"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeOrbitNormal",
-            "NewName": "ORBIT_NORMAL"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypePeriapsis",
-            "NewName": "PERIAPSIS"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeProjection",
-            "NewName": "PROJECTION"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeReflection",
-            "NewName": "REFLECTION"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeScaled",
-            "NewName": "SCALED"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeDirectionToStar",
-            "NewName": "DIRECTION_TO_STAR"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeTemplate",
-            "NewName": "TEMPLATE"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeAtTimeInstant",
-            "NewName": "AT_TIME_INSTANT"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeLinearCombination",
-            "NewName": "LINEAR_COMBINATION"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeProjectAlong",
-            "NewName": "PROJECT_ALONG"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeScalarLinearCombination",
-            "NewName": "SCALAR_LINEAR_COMBINATION"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeScalarScaled",
-            "NewName": "SCALAR_SCALED"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeVelocity",
-            "NewName": "VELOCITY"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypePlugin",
-            "NewName": "PLUGIN"
-        },
-        {
-            "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeRotationVector",
-            "NewName": "ROTATION_VECTOR"
+            "OldName": "eCrdnVectorTypeFile",
+            "NewName": "FILE"
         },
         {
             "ParentScope": "AgECrdnVectorType",
@@ -11397,18 +11318,163 @@
         },
         {
             "ParentScope": "AgECrdnVectorType",
-            "OldName": "eCrdnVectorTypeFile",
-            "NewName": "FILE"
+            "OldName": "eCrdnVectorTypeRotationVector",
+            "NewName": "ROTATION_VECTOR"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypePlugin",
+            "NewName": "PLUGIN"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeVelocity",
+            "NewName": "VELOCITY"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeScalarScaled",
+            "NewName": "SCALAR_SCALED"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeScalarLinearCombination",
+            "NewName": "SCALAR_LINEAR_COMBINATION"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeProjectAlong",
+            "NewName": "PROJECT_ALONG"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeLinearCombination",
+            "NewName": "LINEAR_COMBINATION"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeAtTimeInstant",
+            "NewName": "AT_TIME_INSTANT"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeTemplate",
+            "NewName": "TEMPLATE"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeDirectionToStar",
+            "NewName": "DIRECTION_TO_STAR"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeScaled",
+            "NewName": "SCALED"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeReflection",
+            "NewName": "REFLECTION"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeProjection",
+            "NewName": "PROJECTION"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypePeriapsis",
+            "NewName": "PERIAPSIS"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeOrbitNormal",
+            "NewName": "ORBIT_NORMAL"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeOrbitAngularMomentum",
+            "NewName": "ORBIT_ANGULAR_MOMENTUM"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeModelAttachment",
+            "NewName": "MODEL_ATTACHMENT"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeLineOfNodes",
+            "NewName": "LINE_OF_NODES"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeTwoPlanesIntersection",
+            "NewName": "TWO_PLANES_INTERSECTION"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeFixedInAxes",
+            "NewName": "FIXED_IN_AXES"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeEccentricity",
+            "NewName": "ECCENTRICITY"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeAngleRate",
+            "NewName": "ANGLE_RATE"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeDerivative",
+            "NewName": "DERIVATIVE"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeCustomScript",
+            "NewName": "CUSTOM_SCRIPT"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeCrossProduct",
+            "NewName": "CROSS_PRODUCT"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeConing",
+            "NewName": "CONING"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeAngularVelocity",
+            "NewName": "ANGULAR_VELOCITY"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeFixedAtEpoch",
+            "NewName": "FIXED_AT_EPOCH"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeApoapsis",
+            "NewName": "APOAPSIS"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeDisplacement",
+            "NewName": "DISPLACEMENT"
+        },
+        {
+            "ParentScope": "AgECrdnVectorType",
+            "OldName": "eCrdnVectorTypeUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgECrdnMeanElementTheory",
-            "OldName": "eCrdnMeanElementTheoryOsculating",
-            "NewName": "OSCULATING_ELEMENTS"
-        },
-        {
-            "ParentScope": "AgECrdnMeanElementTheory",
-            "OldName": "eCrdnMeanElementTheoryKozai",
-            "NewName": "KOZAI"
+            "OldName": "eCrdnMeanElementTheoryBrouwerLyddane_Short",
+            "NewName": "BROUWER_LYDDANE_SHORT_PERIODIC_TERMS_ONLY"
         },
         {
             "ParentScope": "AgECrdnMeanElementTheory",
@@ -11417,13 +11483,13 @@
         },
         {
             "ParentScope": "AgECrdnMeanElementTheory",
-            "OldName": "eCrdnMeanElementTheoryBrouwerLyddane_Short",
-            "NewName": "BROUWER_LYDDANE_SHORT_PERIODIC_TERMS_ONLY"
+            "OldName": "eCrdnMeanElementTheoryKozai",
+            "NewName": "KOZAI"
         },
         {
-            "ParentScope": "AgECrdnDirectionType",
-            "OldName": "eCrdnDirectionIncomingAsymptote",
-            "NewName": "INCOMING"
+            "ParentScope": "AgECrdnMeanElementTheory",
+            "OldName": "eCrdnMeanElementTheoryOsculating",
+            "NewName": "OSCULATING_ELEMENTS"
         },
         {
             "ParentScope": "AgECrdnDirectionType",
@@ -11431,19 +11497,14 @@
             "NewName": "OUTGOING"
         },
         {
-            "ParentScope": "AgECrdnLagrangeLibrationPointType",
-            "OldName": "eCrdnLagrangeLibrationPointTypeL1",
-            "NewName": "L1"
+            "ParentScope": "AgECrdnDirectionType",
+            "OldName": "eCrdnDirectionIncomingAsymptote",
+            "NewName": "INCOMING"
         },
         {
             "ParentScope": "AgECrdnLagrangeLibrationPointType",
-            "OldName": "eCrdnLagrangeLibrationPointTypeL2",
-            "NewName": "L2"
-        },
-        {
-            "ParentScope": "AgECrdnLagrangeLibrationPointType",
-            "OldName": "eCrdnLagrangeLibrationPointTypeL3",
-            "NewName": "L3"
+            "OldName": "eCrdnLagrangeLibrationPointTypeL5",
+            "NewName": "L5"
         },
         {
             "ParentScope": "AgECrdnLagrangeLibrationPointType",
@@ -11452,28 +11513,23 @@
         },
         {
             "ParentScope": "AgECrdnLagrangeLibrationPointType",
-            "OldName": "eCrdnLagrangeLibrationPointTypeL5",
-            "NewName": "L5"
+            "OldName": "eCrdnLagrangeLibrationPointTypeL3",
+            "NewName": "L3"
+        },
+        {
+            "ParentScope": "AgECrdnLagrangeLibrationPointType",
+            "OldName": "eCrdnLagrangeLibrationPointTypeL2",
+            "NewName": "L2"
+        },
+        {
+            "ParentScope": "AgECrdnLagrangeLibrationPointType",
+            "OldName": "eCrdnLagrangeLibrationPointTypeL1",
+            "NewName": "L1"
         },
         {
             "ParentScope": "AgECrdnQuadrantType",
-            "OldName": "eCrdnQuadrantXY",
-            "NewName": "XY"
-        },
-        {
-            "ParentScope": "AgECrdnQuadrantType",
-            "OldName": "eCrdnQuadrantYX",
-            "NewName": "YX"
-        },
-        {
-            "ParentScope": "AgECrdnQuadrantType",
-            "OldName": "eCrdnQuadrantXZ",
-            "NewName": "XZ"
-        },
-        {
-            "ParentScope": "AgECrdnQuadrantType",
-            "OldName": "eCrdnQuadrantZX",
-            "NewName": "ZX"
+            "OldName": "eCrdnQuadrantZY",
+            "NewName": "ZY"
         },
         {
             "ParentScope": "AgECrdnQuadrantType",
@@ -11482,38 +11538,28 @@
         },
         {
             "ParentScope": "AgECrdnQuadrantType",
-            "OldName": "eCrdnQuadrantZY",
-            "NewName": "ZY"
+            "OldName": "eCrdnQuadrantZX",
+            "NewName": "ZX"
+        },
+        {
+            "ParentScope": "AgECrdnQuadrantType",
+            "OldName": "eCrdnQuadrantXZ",
+            "NewName": "XZ"
+        },
+        {
+            "ParentScope": "AgECrdnQuadrantType",
+            "OldName": "eCrdnQuadrantYX",
+            "NewName": "YX"
+        },
+        {
+            "ParentScope": "AgECrdnQuadrantType",
+            "OldName": "eCrdnQuadrantXY",
+            "NewName": "XY"
         },
         {
             "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesICR",
-            "NewName": "ICR"
-        },
-        {
-            "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesVNC",
-            "NewName": "VNC"
-        },
-        {
-            "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesRIC",
-            "NewName": "RIC"
-        },
-        {
-            "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesLVLH",
-            "NewName": "LVLH"
-        },
-        {
-            "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesVVLH",
-            "NewName": "VVLH"
-        },
-        {
-            "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesBBR",
-            "NewName": "BODY_BODY_ROTATING"
+            "OldName": "eCrdnTrajectoryAxesNTC",
+            "NewName": "NTC"
         },
         {
             "ParentScope": "AgECrdnTrajectoryAxesType",
@@ -11522,13 +11568,38 @@
         },
         {
             "ParentScope": "AgECrdnTrajectoryAxesType",
-            "OldName": "eCrdnTrajectoryAxesNTC",
-            "NewName": "NTC"
+            "OldName": "eCrdnTrajectoryAxesBBR",
+            "NewName": "BODY_BODY_ROTATING"
+        },
+        {
+            "ParentScope": "AgECrdnTrajectoryAxesType",
+            "OldName": "eCrdnTrajectoryAxesVVLH",
+            "NewName": "VVLH"
+        },
+        {
+            "ParentScope": "AgECrdnTrajectoryAxesType",
+            "OldName": "eCrdnTrajectoryAxesLVLH",
+            "NewName": "LVLH"
+        },
+        {
+            "ParentScope": "AgECrdnTrajectoryAxesType",
+            "OldName": "eCrdnTrajectoryAxesRIC",
+            "NewName": "RIC"
+        },
+        {
+            "ParentScope": "AgECrdnTrajectoryAxesType",
+            "OldName": "eCrdnTrajectoryAxesVNC",
+            "NewName": "VNC"
+        },
+        {
+            "ParentScope": "AgECrdnTrajectoryAxesType",
+            "OldName": "eCrdnTrajectoryAxesICR",
+            "NewName": "ICR"
         },
         {
             "ParentScope": "AgECrdnDisplayAxisSelector",
-            "OldName": "eCrdnDisplayAxisX",
-            "NewName": "X"
+            "OldName": "eCrdnDisplayAxisZ",
+            "NewName": "Z"
         },
         {
             "ParentScope": "AgECrdnDisplayAxisSelector",
@@ -11537,13 +11608,13 @@
         },
         {
             "ParentScope": "AgECrdnDisplayAxisSelector",
-            "OldName": "eCrdnDisplayAxisZ",
-            "NewName": "Z"
+            "OldName": "eCrdnDisplayAxisX",
+            "NewName": "X"
         },
         {
             "ParentScope": "AgECrdnSignedAngleType",
-            "OldName": "eCrdnSignedAngleNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnSignedAngleNegative",
+            "NewName": "NEGATIVE"
         },
         {
             "ParentScope": "AgECrdnSignedAngleType",
@@ -11552,13 +11623,8 @@
         },
         {
             "ParentScope": "AgECrdnSignedAngleType",
-            "OldName": "eCrdnSignedAngleNegative",
-            "NewName": "NEGATIVE"
-        },
-        {
-            "ParentScope": "AgECrdnPointBPlaneType",
-            "OldName": "eCrdnPointBPlaneAsymptote",
-            "NewName": "ASYMPTOTE"
+            "OldName": "eCrdnSignedAngleNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgECrdnPointBPlaneType",
@@ -11566,9 +11632,14 @@
             "NewName": "TWO_BODY"
         },
         {
+            "ParentScope": "AgECrdnPointBPlaneType",
+            "OldName": "eCrdnPointBPlaneAsymptote",
+            "NewName": "ASYMPTOTE"
+        },
+        {
             "ParentScope": "AgECrdnReferenceShapeType",
-            "OldName": "eCrdnReferenceShapeEllipsoid",
-            "NewName": "ELLIPSOID"
+            "OldName": "eCrdnReferenceShapeMSL",
+            "NewName": "MSL"
         },
         {
             "ParentScope": "AgECrdnReferenceShapeType",
@@ -11577,13 +11648,8 @@
         },
         {
             "ParentScope": "AgECrdnReferenceShapeType",
-            "OldName": "eCrdnReferenceShapeMSL",
-            "NewName": "MSL"
-        },
-        {
-            "ParentScope": "AgECrdnSurfaceType",
-            "OldName": "eCrdnSurfaceDetic",
-            "NewName": "DETIC"
+            "OldName": "eCrdnReferenceShapeEllipsoid",
+            "NewName": "ELLIPSOID"
         },
         {
             "ParentScope": "AgECrdnSurfaceType",
@@ -11591,9 +11657,9 @@
             "NewName": "CENTRIC"
         },
         {
-            "ParentScope": "AgECrdnSweepMode",
-            "OldName": "eCrdnSweepModeBidirectional",
-            "NewName": "BIDIRECTIONAL"
+            "ParentScope": "AgECrdnSurfaceType",
+            "OldName": "eCrdnSurfaceDetic",
+            "NewName": "DETIC"
         },
         {
             "ParentScope": "AgECrdnSweepMode",
@@ -11601,9 +11667,9 @@
             "NewName": "UNIDIRECTIONAL"
         },
         {
-            "ParentScope": "AgECrdnSignalSense",
-            "OldName": "eCrdnSignalSenseReceive",
-            "NewName": "RECEIVE"
+            "ParentScope": "AgECrdnSweepMode",
+            "OldName": "eCrdnSweepModeBidirectional",
+            "NewName": "BIDIRECTIONAL"
         },
         {
             "ParentScope": "AgECrdnSignalSense",
@@ -11611,9 +11677,14 @@
             "NewName": "TRANSMIT"
         },
         {
+            "ParentScope": "AgECrdnSignalSense",
+            "OldName": "eCrdnSignalSenseReceive",
+            "NewName": "RECEIVE"
+        },
+        {
             "ParentScope": "AgECrdnIntersectionSurface",
-            "OldName": "eCrdnIntersectionSurfaceAtCentralBodyEllipsoid",
-            "NewName": "ON_CENTRAL_BODY_ELLIPSOID"
+            "OldName": "eCrdnIntersectionSurfaceAtTerrain",
+            "NewName": "AT_TERRAIN"
         },
         {
             "ParentScope": "AgECrdnIntersectionSurface",
@@ -11622,13 +11693,13 @@
         },
         {
             "ParentScope": "AgECrdnIntersectionSurface",
-            "OldName": "eCrdnIntersectionSurfaceAtTerrain",
-            "NewName": "AT_TERRAIN"
+            "OldName": "eCrdnIntersectionSurfaceAtCentralBodyEllipsoid",
+            "NewName": "ON_CENTRAL_BODY_ELLIPSOID"
         },
         {
             "ParentScope": "AgECrdnVectorScaledDimensionInheritance",
-            "OldName": "eCrdnVectorScaledDimensionInheritanceNone",
-            "NewName": "NONE"
+            "OldName": "eCrdnVectorScaledDimensionInheritanceFromVector",
+            "NewName": "FROM_VECTOR"
         },
         {
             "ParentScope": "AgECrdnVectorScaledDimensionInheritance",
@@ -11637,8 +11708,8 @@
         },
         {
             "ParentScope": "AgECrdnVectorScaledDimensionInheritance",
-            "OldName": "eCrdnVectorScaledDimensionInheritanceFromVector",
-            "NewName": "FROM_VECTOR"
+            "OldName": "eCrdnVectorScaledDimensionInheritanceNone",
+            "NewName": "NONE"
         }
     ],
     "NamedArgumentMappings": []

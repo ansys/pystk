@@ -97,7 +97,7 @@ class CAgAccessConstraintPlugin(object):
             AgEUtLogMsgType.eUtLogMsgInfo, f"{self.DisplayName}: Register(Satellite to Aircraft/Facility/GroundVehicle)"
         )
 
-    def Init(self, site: "IAgUtPluginSite") -> bool:
+    def Init(self, site: "IUtPluginSite") -> bool:
         """
         Triggered just before the first computational event trigger.
         """
@@ -240,7 +240,7 @@ class CAgAccessConstraintPlugin(object):
         del self.root
         del self.site
 
-    def GetPluginConfig(self, pAttrBuilder: "IAgAttrBuilder") -> typing.Any:
+    def GetPluginConfig(self, pAttrBuilder: "IAttrBuilder") -> typing.Any:
         """
         Get an attribute container of the configuration settings.
         """
@@ -262,7 +262,7 @@ class CAgAccessConstraintPlugin(object):
             )
         return self.scope
 
-    def VerifyPluginConfig(self, pPluginCfgResult: "IAgUtPluginConfigVerifyResult") -> None:
+    def VerifyPluginConfig(self, pPluginCfgResult: "IUtPluginConfigVerifyResult") -> None:
         """
         Verify the Plugin Config
         """

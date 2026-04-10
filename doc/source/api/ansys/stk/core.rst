@@ -19,6 +19,7 @@ Summary
             * - :py:obj:`~ansys.stk.core.stkobjects`
             * - :py:obj:`~ansys.stk.core.stkrfchannelmodeler`
             * - :py:obj:`~ansys.stk.core.utilities`
+            * - :py:obj:`~ansys.stk.core.experimental`
 
     .. tab-item:: Submodules
 
@@ -58,6 +59,7 @@ Detail
     🖿 stkobjects<core/stkobjects>
     🖿 stkrfchannelmodeler<core/stkrfchannelmodeler>
     🖿 utilities<core/utilities>
+    🖿 experimental<core/experimental>
 
 .. toctree::
     :titlesonly:
