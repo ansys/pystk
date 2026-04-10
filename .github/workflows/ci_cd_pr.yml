@@ -152,13 +152,13 @@ jobs:
           vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
-  # - uses: ansys/actions/doc-style@7d55ff0b9f67c77dae50a286d711ee1ae27b0a25 # v10.2.12
-  #   with:
-  #     checkout: false
-  #     files: '${{ steps.vale.outputs.files }}'
-  #     vale-config: doc/.vale.ini
-  #     token: ${{ secrets.GITHUB_TOKEN }}
-  #     fail-level: 'warning'
+      - uses: ansys/actions/doc-style@7d55ff0b9f67c77dae50a286d711ee1ae27b0a25 # v10.2.12
+        with:
+          checkout: false
+          files: '${{ steps.vale.outputs.files }}'
+          vale-config: doc/.vale.ini
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail-level: 'warning'
 
   build-wheelhouse:
     name: "Wheelhouse ansys-stk[${{ matrix.target }}] / ${{ matrix.os }} / ${{ matrix.python-version
