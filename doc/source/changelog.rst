@@ -9,6 +9,218 @@ This document contains the release notes for the PySTK project.
 
 .. towncrier release notes start
 
+`0.3.0 <https://github.com/ansys/pystk/releases/tag/v0.3.0>`_ - April 17, 2026
+==============================================================================
+
+.. tab-set::
+
+
+  .. tab-item:: Added
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Switch the repo to STK 13.1.0
+          - `#988 <https://github.com/ansys/pystk/pull/988>`_
+
+
+  .. tab-item:: Dependencies
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Build: bump sphinxcontrib-mermaid from 1.1.0 to 1.2.2 in the doc group
+          - `#901 <https://github.com/ansys/pystk/pull/901>`_
+
+        * - Bump ansys/actions from 10.2.0 to 10.2.2 in the actions group
+          - `#905 <https://github.com/ansys/pystk/pull/905>`_
+
+        * - Bump sphinxcontrib-mermaid from 1.2.2 to 1.2.3 in the doc group
+          - `#910 <https://github.com/ansys/pystk/pull/910>`_
+
+        * - Bump the doc group with 2 updates
+          - `#914 <https://github.com/ansys/pystk/pull/914>`_, `#966 <https://github.com/ansys/pystk/pull/966>`_
+
+        * - Bump the actions group with 2 updates
+          - `#915 <https://github.com/ansys/pystk/pull/915>`_, `#921 <https://github.com/ansys/pystk/pull/921>`_
+
+        * - Bump pytest from 9.0.1 to 9.0.2 in the tests group
+          - `#917 <https://github.com/ansys/pystk/pull/917>`_
+
+        * - Bump codecov/codecov-action from 5.5.1 to 5.5.2 in the actions group
+          - `#918 <https://github.com/ansys/pystk/pull/918>`_
+
+        * - Bump matplotlib from 3.10.7 to 3.10.8
+          - `#919 <https://github.com/ansys/pystk/pull/919>`_
+
+        * - Bump jupyterlab from 4.5.0 to 4.5.1 in the doc group
+          - `#920 <https://github.com/ansys/pystk/pull/920>`_
+
+        * - Bump typer from 0.20.0 to 0.20.1
+          - `#922 <https://github.com/ansys/pystk/pull/922>`_
+
+        * - Bump typer from 0.20.1 to 0.21.0
+          - `#923 <https://github.com/ansys/pystk/pull/923>`_
+
+        * - Bump typer from 0.21.0 to 0.21.1
+          - `#929 <https://github.com/ansys/pystk/pull/929>`_
+
+        * - Bump build from 1.3.0 to 1.4.0
+          - `#931 <https://github.com/ansys/pystk/pull/931>`_
+
+        * - Bump plotly from 6.5.0 to 6.5.1
+          - `#932 <https://github.com/ansys/pystk/pull/932>`_
+
+        * - Bump the doc group across 1 directory with 2 updates
+          - `#934 <https://github.com/ansys/pystk/pull/934>`_, `#964 <https://github.com/ansys/pystk/pull/964>`_, `#977 <https://github.com/ansys/pystk/pull/977>`_
+
+        * - Bump plotly from 6.5.1 to 6.5.2
+          - `#936 <https://github.com/ansys/pystk/pull/936>`_
+
+        * - Bump actions/checkout from 6.0.1 to 6.0.2 in the actions group
+          - `#937 <https://github.com/ansys/pystk/pull/937>`_
+
+        * - Bump bandit[toml] from 1.9.2 to 1.9.3
+          - `#939 <https://github.com/ansys/pystk/pull/939>`_
+
+        * - Bump ansys/actions from 10.2.3 to 10.2.4 in the actions group
+          - `#940 <https://github.com/ansys/pystk/pull/940>`_
+
+        * - Bump actions/setup-python from 6.1.0 to 6.2.0 in the actions group
+          - `#942 <https://github.com/ansys/pystk/pull/942>`_
+
+        * - Bump the doc group across 1 directory with 3 updates
+          - `#943 <https://github.com/ansys/pystk/pull/943>`_
+
+        * - Bump nbconvert from 7.16.6 to 7.17.0 in the doc group
+          - `#949 <https://github.com/ansys/pystk/pull/949>`_
+
+        * - Bump ansys/actions from 10.2.4 to 10.2.5 in the actions group
+          - `#953 <https://github.com/ansys/pystk/pull/953>`_
+
+        * - Bump typer from 0.21.1 to 0.23.0
+          - `#956 <https://github.com/ansys/pystk/pull/956>`_
+
+        * - Bump typer from 0.23.0 to 0.24.0
+          - `#962 <https://github.com/ansys/pystk/pull/962>`_
+
+        * - Bump ansys/actions from 10.2.5 to 10.2.6 in the actions group
+          - `#963 <https://github.com/ansys/pystk/pull/963>`_
+
+        * - Bump ansys/actions from 10.2.6 to 10.2.7 in the actions group
+          - `#965 <https://github.com/ansys/pystk/pull/965>`_
+
+        * - Bump typer from 0.24.0 to 0.24.1
+          - `#967 <https://github.com/ansys/pystk/pull/967>`_
+
+        * - Bump bandit[toml] from 1.9.3 to 1.9.4
+          - `#969 <https://github.com/ansys/pystk/pull/969>`_
+
+        * - Bump pytz from 2025.2 to 2026.1.post1 in the tests group
+          - `#971 <https://github.com/ansys/pystk/pull/971>`_
+
+        * - Bump plotly from 6.5.2 to 6.6.0
+          - `#972 <https://github.com/ansys/pystk/pull/972>`_
+
+        * - Bump the actions group across 1 directory with 2 updates
+          - `#973 <https://github.com/ansys/pystk/pull/973>`_, `#976 <https://github.com/ansys/pystk/pull/976>`_
+
+        * - Bump ansys/actions from 10.2.9 to 10.2.10 in the actions group across 1 directory
+          - `#980 <https://github.com/ansys/pystk/pull/980>`_
+
+        * - Bump pytest-cov from 7.0.0 to 7.1.0 in the tests group
+          - `#981 <https://github.com/ansys/pystk/pull/981>`_
+
+        * - Bump ansys/actions from 10.2.10 to 10.2.12 in the actions group
+          - `#982 <https://github.com/ansys/pystk/pull/982>`_
+
+        * - Bump pytest-mpl from 0.18.0 to 0.19.0 in the tests group
+          - `#984 <https://github.com/ansys/pystk/pull/984>`_
+
+        * - Bump build from 1.4.0 to 1.4.2
+          - `#985 <https://github.com/ansys/pystk/pull/985>`_
+
+        * - Bump codecov/codecov-action from 5.5.2 to 6.0.0 in the actions group
+          - `#986 <https://github.com/ansys/pystk/pull/986>`_
+
+        * - Bump pytest from 9.0.2 to 9.0.3 in the tests group
+          - `#990 <https://github.com/ansys/pystk/pull/990>`_
+
+        * - Bump pypa/gh-action-pypi-publish from 1.13.0 to 1.14.0 in the actions group
+          - `#991 <https://github.com/ansys/pystk/pull/991>`_
+
+        * - Bump nbconvert from 7.17.0 to 7.17.1 in the doc group
+          - `#992 <https://github.com/ansys/pystk/pull/992>`_
+
+
+  .. tab-item:: Documentation
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Docs: update broken link
+          - `#908 <https://github.com/ansys/pystk/pull/908>`_
+
+        * - Replaced broken link to RST documentation
+          - `#944 <https://github.com/ansys/pystk/pull/944>`_
+
+        * - Improve docker install documentation
+          - `#958 <https://github.com/ansys/pystk/pull/958>`_
+
+
+  .. tab-item:: Fixed
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Stop using docker network host
+          - `#913 <https://github.com/ansys/pystk/pull/913>`_
+
+        * - Link to docker compose release notes
+          - `#927 <https://github.com/ansys/pystk/pull/927>`_
+
+        * - Missing permissions
+          - `#945 <https://github.com/ansys/pystk/pull/945>`_
+
+        * - Installation path for STK 13.0 in windows containers
+          - `#947 <https://github.com/ansys/pystk/pull/947>`_
+
+        * - Pin tox to 4.38.0
+          - `#960 <https://github.com/ansys/pystk/pull/960>`_
+
+        * - Skip jupyter-rfb license compatibility check
+          - `#979 <https://github.com/ansys/pystk/pull/979>`_
+
+        * - Fix globe/map doc snapshots with latest jupyter_rfb
+          - `#983 <https://github.com/ansys/pystk/pull/983>`_
+
+
+  .. tab-item:: Maintenance
+
+    .. list-table::
+        :header-rows: 0
+        :widths: auto
+
+        * - Update CHANGELOG for v0.2.0
+          - `#862 <https://github.com/ansys/pystk/pull/862>`_
+
+        * - Chore: update CHANGELOG for v0.2.1
+          - `#904 <https://github.com/ansys/pystk/pull/904>`_
+
+        * - Update CHANGELOG for v0.1.3
+          - `#909 <https://github.com/ansys/pystk/pull/909>`_
+
+        * - Update copyright headers to reference 2026.
+          - `#924 <https://github.com/ansys/pystk/pull/924>`_
+
+        * - Re-enable vale for PR workflow
+          - `#989 <https://github.com/ansys/pystk/pull/989>`_
+
+
 `0.2.1 <https://github.com/ansys/pystk/releases/tag/v0.2.1>`_ - December 03, 2025
 =================================================================================
 
