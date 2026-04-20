@@ -103,7 +103,7 @@ tests = [
 ]
 doc = [
   "ansys-sphinx-theme==1.7.2",
-  "build==1.4.2",
+  "build==1.4.3",
   "ipykernel==6.31.0",
   "jupyter-server==2.17.0",
   "jupyterlab==4.5.6",
