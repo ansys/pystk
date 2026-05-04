@@ -198,6 +198,7 @@ linkcheck_ignore = [
     rf"https://{cname}/version/{release}/examples/.*\.pdf",
     rf"https://{cname}/version/{release}/examples/.*\.ipynb",
     rf"https://{cname}/version/{release}/examples/.*\.py",
+    rf"_static/artifacts/*", # Ignore links to wheelhouse for now
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
