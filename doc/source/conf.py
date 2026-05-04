@@ -182,6 +182,7 @@ autosectionlabel_maxdepth = 6
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_exclude_documents = ["_static/artifacts/.*"] # Ignore links to wheelhouses for now
 linkcheck_ignore = [
     r"https://www.ansys.com/*",
     # Requires sign-in
@@ -198,7 +199,6 @@ linkcheck_ignore = [
     rf"https://{cname}/version/{release}/examples/.*\.pdf",
     rf"https://{cname}/version/{release}/examples/.*\.ipynb",
     rf"https://{cname}/version/{release}/examples/.*\.py",
-    rf"_static/artifacts/*", # Ignore links to wheelhouse for now
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
