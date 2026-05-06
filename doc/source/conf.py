@@ -182,7 +182,7 @@ autosectionlabel_maxdepth = 6
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-linkcheck_exclude_documents = ["artifacts"] # Ignore links to wheelhouses for now
+linkcheck_exclude_documents = ["artifacts", "changelog"]
 linkcheck_ignore = [
     r"https://www.ansys.com/*",
     # Requires sign-in
