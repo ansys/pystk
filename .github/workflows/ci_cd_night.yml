@@ -58,7 +58,7 @@ jobs:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         target: ['all']
     steps:
-      - uses: ansys/actions/build-wheelhouse@12ca08fd7f0caa52076cca15c5621482646f8560 # v10.3.1
+      - uses: ansys/actions/build-wheelhouse@d946b24b9a765f4169bcc94afdb27bd1a0533741 # v10.3.2
         with:
           library-name: ${{ env.ANSYS_STK }}
           operating-system: ${{ matrix.os }}
@@ -346,7 +346,7 @@ jobs:
 
       - name: "Upload coverage reports to Codecov"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
-        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
+        uses: codecov/codecov-action@e79a6962e0d4c0c17b229090214935d2e33f8354 # v6.0.1
         with:
           files: .cov/coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -367,7 +367,7 @@ jobs:
     permissions:
       contents: write # Write new content to the gh-pages branch of the repository
     steps:
-      - uses: ansys/actions/doc-deploy-dev@12ca08fd7f0caa52076cca15c5621482646f8560 # v10.3.1
+      - uses: ansys/actions/doc-deploy-dev@d946b24b9a765f4169bcc94afdb27bd1a0533741 # v10.3.2
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
