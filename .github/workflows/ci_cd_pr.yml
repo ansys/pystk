@@ -145,11 +145,8 @@ jobs:
           # Find all .py files inside the examples/ directory, excluding those with an underscore
           python_files=$(find examples -type f -name "*.py" ! -name "*_*")
 
-          # TODO: include Python files too. See Vale issue
-          # https://github.com/errata-ai/vale/issues/858
           # Combine both file lists and convert them to a JSON array
-          # vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
-          vale_files=$(echo -e "${rst_files}" | jq -R . | jq -s .)
+          vale_files=$(echo -e "${rst_files}\n${python_files}" | jq -R . | jq -s .)
           echo "files=$(jq -c <<< "${vale_files}")" >> "${GITHUB_OUTPUT}"
 
       - uses: ansys/actions/doc-style@d946b24b9a765f4169bcc94afdb27bd1a0533741 # v10.3.2
