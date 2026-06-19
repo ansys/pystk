@@ -44,7 +44,7 @@ optional-dependencies.all = [
   # Target: migration
   "libcst>=1.8.2",
   # Target: extensions
-  "matplotlib>=3.10.3",
+  "matplotlib>=3.11.0",
   "numpy>=2.2.6",
   "pandas>=2.3.1",
   "pillow>=11.3.0",
@@ -56,7 +56,7 @@ optional-dependencies.core = [
   # NOTE: no dependencies are installed by default ensuring a dependency-free installation of ansys-stk[core]
 ]
 optional-dependencies.extensions = [
-  "matplotlib>=3.10.3",
+  "matplotlib>=3.11.0",
   "pandas>=2.3.1",
 ]
 optional-dependencies.grpc = [
@@ -109,7 +109,7 @@ doc = [
   "jupyterlab==4.5.8",
   "jupytext==1.19.3",
   "libcst==1.8.6",
-  "matplotlib==3.10.9",
+  "matplotlib>=3.11.0",
   "myst-parser==4.0.1",
   "nbconvert==7.17.1",
   "nbsphinx==0.9.8",
