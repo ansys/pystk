@@ -32,7 +32,10 @@ stk = STKEngine.start_application(no_graphics=False)
 
 # The STK scenario used in this tutorial is included with the STK installation as a VDF file. To open the scenario, first access the STK Root object:
 
-root = stk.new_object_root()
+from ansys.stk.core.stkobjects import STKObjectRoot
+
+
+root: STKObjectRoot = stk.new_object_root()
 
 # Then, load the VDF from the path:
 
@@ -59,7 +62,7 @@ scenario = root.current_scenario
 # Once the scenario is loaded, it is possible to show a 3D graphics window and view the scenario by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -79,19 +82,31 @@ from ansys.stk.core.stkobjects import STKObjectType
 
 # Create the Receiver Constellation and assign the receiver to it
 receiver_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Receiver")
-urgent_receiver = scenario.children.get_item_by_name("Urgent_Comms").children.get_item_by_name("Tgt_Tdrs").children.get_item_by_name("Urgent_Rcv")
-receiver_constellation.objects.add_object(urgent_receiver) 
+urgent_receiver = (
+    scenario.children.get_item_by_name("Urgent_Comms")
+    .children.get_item_by_name("Tgt_Tdrs")
+    .children.get_item_by_name("Urgent_Rcv")
+)
+receiver_constellation.objects.add_object(urgent_receiver)
 
 # Create the Transmitter Constellation and assign the routine transmitter to it
-transmitter_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Transmitter")
+transmitter_constellation = scenario.children.new(
+    STKObjectType.CONSTELLATION, "Transmitter"
+)
 tdrs_satellite = scenario.children.get_item_by_name("Tdrs3_19548")
-routine_transmitter = tdrs_satellite.children.get_item_by_name("Tgt_Rc").children.get_item_by_name("Routine_Xmt")
-transmitter_constellation.objects.add_object(routine_transmitter) 
+urgent_transmitter = tdrs_satellite.children.get_item_by_name(
+    "Tgt_Uc"
+).children.get_item_by_name("Urgent_Xmt")
+transmitter_constellation.objects.add_object(urgent_transmitter)
 
-# Create the Interference Constellation and assign the urgent transmiter to it
-interference_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Interference")
-urgent_transmitter = tdrs_satellite.children.get_item_by_name("Tgt_Uc").children.get_item_by_name("Urgent_Xmt")
-interference_constellation.objects.add_object(urgent_transmitter) 
+# Create the Interference Constellation and assign the urgent transmitter to it
+interference_constellation = scenario.children.new(
+    STKObjectType.CONSTELLATION, "Interference"
+)
+routine_transmitter = tdrs_satellite.children.get_item_by_name(
+    "Tgt_Rc"
+).children.get_item_by_name("Routine_Xmt")
+interference_constellation.objects.add_object(routine_transmitter)
 # -
 
 # ## Build the Comm System
@@ -116,20 +131,67 @@ comm_system.step_size = 60
 
 # +
 import matplotlib.pyplot as plt
+
 from ansys.stk.extensions.data_analysis.graphs.graph_helpers import line_chart
 
 
 start_time = scenario.start_time
 stop_time = scenario.stop_time
-df = comm_system.data_providers.item('Link Information').execute_elements(start_time, stop_time, 60, ['C/N', 'Time', 'C/(N+I)']).data_sets.to_pandas_dataframe()
-axes = [{'use_unit' : True, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': 'Ratio', 'lines': [
-            {'y_name':'c/n', 'label':'C/N', 'use_unit':True, 'unit_squared': None, 'dimension': 'Ratio'},
-            {'y_name':'c/(n+i)', 'label':'C/(N+I)', 'use_unit':True, 'unit_squared': None, 'dimension': 'Ratio'}]}]
-line_chart([df], root, ['c/n','c/(n+i)'], ['time'], axes, 'time', 'Time', 'Carrier to Noise vs Time', colormap=None,  time_unit_abbreviation= 'UTCG', formatter= None)
+df = (
+    comm_system.data_providers.item("Link Information")
+    .execute_elements(start_time, stop_time, 60, ["C/N", "Time", "C/(N+I)"])
+    .data_sets.to_pandas_dataframe()
+)
+axes = [
+    {
+        "use_unit": True,
+        "unit_squared": None,
+        "ylog10": False,
+        "y2log10": False,
+        "label": "Ratio",
+        "lines": [
+            {
+                "y_name": "c/n",
+                "label": "C/N",
+                "use_unit": True,
+                "unit_squared": None,
+                "dimension": "Ratio",
+            },
+            {
+                "y_name": "c/(n+i)",
+                "label": "C/(N+I)",
+                "use_unit": True,
+                "unit_squared": None,
+                "dimension": "Ratio",
+            },
+        ],
+    }
+]
+line_chart(
+    [df],
+    root,
+    ["c/n", "c/(n+i)"],
+    ["time"],
+    axes,
+    "time",
+    "Time",
+    "Carrier to Noise vs Time",
+    colormap=None,
+    time_unit_abbreviation="UTCG",
+    formatter=None,
+)
 plt.show()
 # -
 
 # As you can see the line representing the clean carrier wave (C/N (dB)) and the line representing the wave that is receiving interference (C/N + I (dB)) are different. There is interference against the carrier wave.
+
+# ## Set Correct Units
+
+# Before generating any data tables, the units for "ratio" need to be set correctly. The UI defaults to a linear scale while the Object Model defaults to a logarithmic scale. Setting the units of "ratio" below will make units consistent across platforms.
+# If you would like to use a logarithmic scale, simply change "units" to "dB" in .set_current_unit().
+
+# STKObjectRoot root: STK Object Model Root
+root.units_preferences.item("Ratio").set_current_unit("units")
 
 # ## Calculate Link Budget
 
@@ -139,13 +201,15 @@ plt.show()
 provider = comm_system.data_providers.item("Link Information")
 provider.pre_data = "Facility/Urgent_Comms/Sensor/Tgt_Tdrs/Receiver/Urgent_Rcv"
 
-link_budget_report = provider.execute(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+link_budget_report = provider.execute(
+    scenario.start_time, scenario.stop_time, 60
+).data_sets.to_pandas_dataframe()
 
-print(link_budget_report['bandwidth'].iloc[0])
-print(link_budget_report['bandwidth overlap'].iloc[0])
+print(link_budget_report["bandwidth"].iloc[0])
+print(link_budget_report["bandwidth overlap"].iloc[0])
 
 # Focus on the BER and BER+I columns
-link_budget_report[['ber', 'ber+i']]
+link_budget_report[["ber", "ber+i"]]
 # -
 
 # The BER column shows the link performance without interference while the BER + I shows the link performance with interference. The difference between the BER values with and without interference shows that interference has a major impact on the communications.
@@ -158,7 +222,7 @@ link_budget_report[['ber', 'ber+i']]
 #
 # View the Bandwidth (MHz) and Bandwidth Overlap (units) columns on the link budget report. Note that the Bandwidth Overlap is one (1.0). This shows that all of the energy from the transmitted signal is being captured at the receiver. The bandwidth is 300 MHz, which is what it should be.
 
-link_budget_report[['bandwidth', 'bandwidth overlap']]
+link_budget_report[["bandwidth", "bandwidth overlap"]]
 
 # Before using filters, experiment and change the receiver’s bandwidth to determine the effect that change might have on signal quality. The smaller the bandwidth, the less information that can be sent or received. Set the bandwidth to 150 MHz:
 
@@ -166,7 +230,9 @@ link_budget_report[['bandwidth', 'bandwidth overlap']]
 from ansys.stk.core.stkobjects import ReceiverModelComplex
 
 
-urgent_receiver_model = ReceiverModelComplex(urgent_receiver.model_component_linking.component)
+urgent_receiver_model = ReceiverModelComplex(
+    urgent_receiver.model_component_linking.component
+)
 urgent_receiver_model.scale_bandwidth_automatically = False
 urgent_receiver_model.bandwidth = 150
 # -
@@ -176,10 +242,12 @@ urgent_receiver_model.bandwidth = 150
 # +
 comm_system.clear()
 
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['bandwidth', 'bandwidth overlap']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["bandwidth", "bandwidth overlap"]]
 # -
 
 
@@ -197,9 +265,13 @@ link_budget_report[['bandwidth', 'bandwidth overlap']]
 from ansys.stk.core.stkobjects import TransmitterModelComplex
 
 
-routine_transmitter_model = TransmitterModelComplex(routine_transmitter.model_component_linking.component)
+routine_transmitter_model = TransmitterModelComplex(
+    routine_transmitter.model_component_linking.component
+)
 routine_transmitter_model.modulator.enable_signal_psd = True
-urgent_transmitter_model = TransmitterModelComplex(urgent_transmitter.model_component_linking.component)
+urgent_transmitter_model = TransmitterModelComplex(
+    urgent_transmitter.model_component_linking.component
+)
 urgent_transmitter_model.modulator.enable_signal_psd = True
 # -
 
@@ -208,11 +280,49 @@ urgent_transmitter_model.modulator.enable_signal_psd = True
 # +
 comm_system.clear()
 
-df2 = comm_system.data_providers.item('Link Information').execute_elements(start_time, stop_time, 60, ['C/N', 'Time', 'C/(N+I)']).data_sets.to_pandas_dataframe()
-axes2 = [{'use_unit' : True, 'unit_squared': None, 'ylog10': False, 'y2log10': False, 'label': 'Ratio', 'lines': [
-            {'y_name':'c/n', 'label':'C/N', 'use_unit':True, 'unit_squared': None, 'dimension': 'Ratio'},
-            {'y_name':'c/(n+i)', 'label':'C/(N+I)', 'use_unit':True, 'unit_squared': None, 'dimension': 'Ratio'}]}]
-line_chart([df2], root, ['c/n','c/(n+i)'], ['time'], axes2, 'time', 'Time', 'Carrier to Noise vs Time', colormap=None,  time_unit_abbreviation= 'UTCG', formatter= None)
+df2 = (
+    comm_system.data_providers.item("Link Information")
+    .execute_elements(start_time, stop_time, 60, ["C/N", "Time", "C/(N+I)"])
+    .data_sets.to_pandas_dataframe()
+)
+axes2 = [
+    {
+        "use_unit": True,
+        "unit_squared": None,
+        "ylog10": False,
+        "y2log10": False,
+        "label": "Ratio",
+        "lines": [
+            {
+                "y_name": "c/n",
+                "label": "C/N",
+                "use_unit": True,
+                "unit_squared": None,
+                "dimension": "Ratio",
+            },
+            {
+                "y_name": "c/(n+i)",
+                "label": "C/(N+I)",
+                "use_unit": True,
+                "unit_squared": None,
+                "dimension": "Ratio",
+            },
+        ],
+    }
+]
+line_chart(
+    [df2],
+    root,
+    ["c/n", "c/(n+i)"],
+    ["time"],
+    axes2,
+    "time",
+    "Time",
+    "Carrier to Noise vs Time",
+    colormap=None,
+    time_unit_abbreviation="UTCG",
+    formatter=None,
+)
 
 plt.show()
 # -
@@ -222,10 +332,12 @@ plt.show()
 # +
 comm_system.clear()
 
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['bandwidth', 'bandwidth overlap']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["bandwidth", "bandwidth overlap"]]
 # -
 
 # ## Changing the Modulation Type
@@ -240,10 +352,12 @@ urgent_transmitter_model.modulator.enable_signal_psd = True
 # +
 comm_system.clear()
 
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['bandwidth', 'bandwidth overlap']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["bandwidth", "bandwidth overlap"]]
 # -
 
 # Revert back to the previous modulator and reset the receiver bandwidth to use auto scaling:
@@ -260,7 +374,9 @@ urgent_receiver_model.scale_bandwidth_automatically = True
 # Run a spectrum and filter graph to determine the cutoff frequency of the interference transmitter (Noise_Xmt):
 
 # +
-from ansys.stk.extensions.data_analysis.graphs.transmitter_graphs import transmitter_spectrum_and_filter_line_chart
+from ansys.stk.extensions.data_analysis.graphs.transmitter_graphs import (
+    transmitter_spectrum_and_filter_line_chart,
+)
 
 
 transmitter_spectrum_and_filter_line_chart(urgent_transmitter)
@@ -280,7 +396,9 @@ plt.show()
 
 # +
 urgent_transmitter_model.enable_filter = True
-urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = -2000
+urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = (
+    -2000
+)
 urgent_transmitter_model.filter_component_linking.component.upper_bandwidth_limit = 2000
 transmitter_spectrum_and_filter_line_chart(urgent_transmitter)
 
@@ -288,15 +406,17 @@ plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))
 plt.show()
 # -
 
-# This has removed 500 MHz of bandwidth. Using the default frequency cutoff, the cutoff has been narrowed to ten (10) MHz on both sides of the carrier wave. See on the graph that the bandwidth has been suppressed on both sides of the carrier wave. 
+# This has removed 500 MHz of bandwidth. Using the default frequency cutoff, the cutoff has been narrowed to ten (10) MHz on both sides of the carrier wave. See on the graph that the bandwidth has been suppressed on both sides of the carrier wave.
 
 # Refresh the Link Budget Report to see how this affects the BER:
 
 comm_system.clear()
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['ber', 'ber+i']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["ber", "ber+i"]]
 
 # Although the filter is working, the BER to dropped below acceptable levels during periods of the analysis. The BER with interference has increased as well. This indicates that the communication link is still poor.
 
@@ -315,10 +435,12 @@ plt.show()
 # Refresh the Link Budget Report to see how this affects the BER+I:
 
 comm_system.clear()
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['ber', 'ber+i']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["ber", "ber+i"]]
 
 # The change is minimal but the BER+I is still too high.
 
@@ -337,10 +459,12 @@ plt.show()
 # Refresh the Link Budget Report to see how this affects the BER+I:
 
 comm_system.clear()
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['ber', 'ber+i']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["ber", "ber+i"]]
 
 # ## Chebyshev Filter
 
@@ -348,7 +472,9 @@ link_budget_report[['ber', 'ber+i']]
 
 # +
 urgent_transmitter_model.filter_component_linking.set_component("Chebyshev")
-urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = -2000
+urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = (
+    -2000
+)
 urgent_transmitter_model.filter_component_linking.component.upper_bandwidth_limit = 2000
 transmitter_spectrum_and_filter_line_chart(urgent_transmitter)
 
@@ -359,17 +485,21 @@ plt.show()
 # Refresh the Link Budget Report to see how this affects the BER+I:
 
 comm_system.clear()
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['ber', 'ber+i']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["ber", "ber+i"]]
 
 # Notice the five (5) dB ripple in the filter and filtered spectrum.
 
 # ## Graph the Receiver Filter
 
 # +
-from ansys.stk.extensions.data_analysis.graphs.receiver_graphs import receiver_filter_line_chart
+from ansys.stk.extensions.data_analysis.graphs.receiver_graphs import (
+    receiver_filter_line_chart,
+)
 
 
 receiver_filter_line_chart(urgent_receiver)
@@ -406,17 +536,21 @@ plt.show()
 
 urgent_transmitter_model.filter_component_linking.set_component("Butterworth")
 urgent_transmitter_model.filter_component_linking.component.cut_off_frequency = 100
-urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = -2000
+urgent_transmitter_model.filter_component_linking.component.lower_bandwidth_limit = (
+    -2000
+)
 urgent_transmitter_model.filter_component_linking.component.upper_bandwidth_limit = 2000
 
 
 # Refresh the Link Budget Report to see how this affects the BER+I and Bandwidth Overlap:
 
 comm_system.clear()
-link_budget_report = (comm_system.data_providers.get_item_by_name("Link Information")
-     .execute(scenario.start_time, scenario.stop_time, 60)
-     .data_sets.to_pandas_dataframe())
-link_budget_report[['ber', 'ber+i', 'bandwidth', 'bandwidth overlap']]
+link_budget_report = (
+    comm_system.data_providers.get_item_by_name("Link Information")
+    .execute(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+link_budget_report[["ber", "ber+i", "bandwidth", "bandwidth overlap"]]
 
 # Filtering both the transmitter and the receiver minimizes interference on the communication link. The Chebyshev filter removes the greatest amount of interference, but it increases the BER values.
 #
