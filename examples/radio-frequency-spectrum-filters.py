@@ -1,6 +1,6 @@
 # # STK Radio Frequency (RF) Spectrum Filters
 
-# This tutorial demonstrates how to use STK's Communications capability and RF spectrum filters to enable transmission reception using PySTK. It is inspired by [this tutorial](https://help.agi.com/stk/index.htm#training/DetailedInterferenceAnalysis.htm).
+# This tutorial demonstrates how to use STK's Communications capability and RF spectrum filters to enable transmission reception using PySTK. It is inspired by [this tutorial](https://help.agi.com/stk/Content/training/DetailedInterferenceAnalysis.htm).
 
 # ## Problem Statement
 
@@ -32,10 +32,12 @@ stk = STKEngine.start_application(no_graphics=False)
 
 # The STK scenario used in this tutorial is included with the STK installation as a VDF file. To open the scenario, first access the STK Root object:
 
+# +
 from ansys.stk.core.stkobjects import STKObjectRoot
 
 
 root: STKObjectRoot = stk.new_object_root()
+# -
 
 # Then, load the VDF from the path:
 
@@ -53,6 +55,17 @@ scenario_filepath = str(
     / "Comm_RF_Spectrum_Filters.vdf"
 )
 root.load_vdf(scenario_filepath, "")
+# -
+
+# Familiarize yourself with the scenario objects
+
+# +
+globe_widget = GlobeWidget(root, 640, 480)
+globe_widget.camera.position = [32.5007, -106.609, 1]  # Urgent_Comms
+globe_widget.show()
+
+globe_widget.camera.position = [32.5007, -106.609, 10]  # Tdrs3_19548
+globe_widget.show()
 # -
 
 # Next, get the current scenario using the root object:
@@ -74,13 +87,12 @@ globe_plotter.show()
 
 # Prior to analyzing filters, you need to double check if Urgent_Comms is being interfered with by Routine_Comms. You need to set up the three constellations (Receiver, Transmitter, Interference) to calculate interference.
 
-# Begin with the receiver constellation:
+# Begin with the receiver constellation. Create the Receiver Constellation and assign the receiver to it
 
 # +
 from ansys.stk.core.stkobjects import STKObjectType
 
 
-# Create the Receiver Constellation and assign the receiver to it
 receiver_constellation = scenario.children.new(STKObjectType.CONSTELLATION, "Receiver")
 urgent_receiver = (
     scenario.children.get_item_by_name("Urgent_Comms")
@@ -88,8 +100,11 @@ urgent_receiver = (
     .children.get_item_by_name("Urgent_Rcv")
 )
 receiver_constellation.objects.add_object(urgent_receiver)
+# -
 
 # Create the Transmitter Constellation and assign the routine transmitter to it
+
+# +
 transmitter_constellation = scenario.children.new(
     STKObjectType.CONSTELLATION, "Transmitter"
 )
@@ -98,8 +113,11 @@ urgent_transmitter = tdrs_satellite.children.get_item_by_name(
     "Tgt_Uc"
 ).children.get_item_by_name("Urgent_Xmt")
 transmitter_constellation.objects.add_object(urgent_transmitter)
+# -
 
 # Create the Interference Constellation and assign the urgent transmitter to it
+
+# +
 interference_constellation = scenario.children.new(
     STKObjectType.CONSTELLATION, "Interference"
 )
@@ -111,7 +129,7 @@ interference_constellation.objects.add_object(routine_transmitter)
 
 # ## Build the Comm System
 
-# The CommSystem object models dynamically configured communications links between constellations of transmitters and receivers. Create a new CommSystem object:
+# The CommSystem object models dynamically-configured communications links between constellations of transmitters and receivers. Create a new CommSystem object:
 
 comm_system = scenario.children.new(STKObjectType.COMM_SYSTEM, "CommSystem")
 
@@ -187,10 +205,10 @@ plt.show()
 
 # ## Set Correct Units
 
-# Before generating any data tables, the units for "ratio" need to be set correctly. The UI defaults to a linear scale while the Object Model defaults to a logarithmic scale. Setting the units of "ratio" below will make units consistent across platforms.
-# If you would like to use a logarithmic scale, simply change "units" to "dB" in .set_current_unit().
+# Before generating any data tables, the units for the "Ratio" dimension need to be set correctly. The UI defaults to a linear scale while the STK Object Model defaults to a logarithmic scale. Setting the units of "Ratio" below will make units consistent across platforms.
 
-# STKObjectRoot root: STK Object Model Root
+# If you would like to use a logarithmic scale, simply change "units" to "dB" in 'set_current_unit()'.
+
 root.units_preferences.item("Ratio").set_current_unit("units")
 
 # ## Calculate Link Budget
@@ -205,9 +223,6 @@ link_budget_report = provider.execute(
     scenario.start_time, scenario.stop_time, 60
 ).data_sets.to_pandas_dataframe()
 
-print(link_budget_report["bandwidth"].iloc[0])
-print(link_budget_report["bandwidth overlap"].iloc[0])
-
 # Focus on the BER and BER+I columns
 link_budget_report[["ber", "ber+i"]]
 # -
@@ -217,9 +232,9 @@ link_budget_report[["ber", "ber+i"]]
 # ## Bandwidth Analysis
 
 # The transmitted spectrum is modeled as a flat spectrum with unity magnitude across the transmitter’s bandwidth. The receiver’s frequency response is also modeled as a flat response across the receiver’s bandwidth. Therefore, the bandwidth ratio is computed as just a simple ratio of the receiver’s bandwidth to the transmitter’s bandwidth.
-#
+
 # If the transmitter’s bandwidth is totally contained within the receiver’s bandwidth, the ratio will be one (1.0). For a receiver that has an auto scaled bandwidth and an auto tracked frequency, this value will be one (1). Otherwise, the value may be less than one (1.0) if the receiver center frequency and the transmitter frequency are not the same or the receiver’s bandwidth is totally contained within the transmitter’s bandwidth.
-#
+
 # View the Bandwidth (MHz) and Bandwidth Overlap (units) columns on the link budget report. Note that the Bandwidth Overlap is one (1.0). This shows that all of the energy from the transmitted signal is being captured at the receiver. The bandwidth is 300 MHz, which is what it should be.
 
 link_budget_report[["bandwidth", "bandwidth overlap"]]
@@ -233,6 +248,11 @@ from ansys.stk.core.stkobjects import ReceiverModelComplex
 urgent_receiver_model = ReceiverModelComplex(
     urgent_receiver.model_component_linking.component
 )
+# -
+
+# The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter.
+
+# +
 urgent_receiver_model.scale_bandwidth_automatically = False
 urgent_receiver_model.bandwidth = 150
 # -
@@ -254,11 +274,11 @@ link_budget_report[["bandwidth", "bandwidth overlap"]]
 # ## Signal PSD
 
 # The Power Spectral Density (PSD), which describes how the power of a signal or time series is distributed with frequency. Here power can be the actual physical power, or more often, for convenience with abstract signals, can be defined as the squared value of the signal. This assumes the actual power of a signal is a 1-ohm voltage load.
-#
+
 # The units of power spectral density are commonly expressed in watts per hertz (W/Hz). A spectral filter allows only a specific bandwidth of the electromagnetic spectrum to pass.
-#
+
 # Up until now, the power has been spread equally across frequency bands. In reality, the power is concentrated around the band center. Power Spectral Density allows you to model the reality case. The PSD option allows the scenario to model the actual spectral shape of the transmitted signal based on the modulation, data rate, etc. When using Signal PSD is enabled, the modulation’s power spectral density is used to determine the Bandwidth Overlap Factor. If this option is not selected, the PSD will be modeled as a flat spectrum with unity magnitude across the transmitter’s bandwidth.
-#
+
 # Filters can be applied to enhance the magnitude over certain frequencies content while suppressing the magnitudes over other frequencies. The use of Spectral Filters on transmitters modifies the spectral shape. The use of Spectral Filters on receivers helps reduce the impact of out of band signals from jammers and other sources. Enable Signal PSD to be used for both transmitters:
 
 # +
@@ -269,6 +289,7 @@ routine_transmitter_model = TransmitterModelComplex(
     routine_transmitter.model_component_linking.component
 )
 routine_transmitter_model.modulator.enable_signal_psd = True
+
 urgent_transmitter_model = TransmitterModelComplex(
     urgent_transmitter.model_component_linking.component
 )
@@ -391,7 +412,7 @@ plt.show()
 # ## Butterworth Filter
 
 # The filter cutoff frequency controls where the signal will start being suppressed and the filter order (rolloff) controls how steep the filter magnitude is to drop or how fast the signal is to get suppressed.
-#
+
 # The Butterworth filter is less complex and maintains a flat profile over the filter bandwidth, but doesn’t have as steep a rolloff as Chebyshev. However, the Chebyshev is more complex and uses recursive equations (not a closed formula) and there is a ripple in the passband. This means there is not a flat profile over the filter bandwidth. The Butterworth filter has a frequency response with flat pass and stop bands. Regenerate a Butterworth Filter:
 
 # +
@@ -422,6 +443,8 @@ link_budget_report[["ber", "ber+i"]]
 
 # To ensure the filter has a steeper roll off at the cutoff frequency, increase the filter order and refresh the Transmitter Spectrum and Filter graph:
 
+# ## Change the Filter Order
+
 # +
 urgent_transmitter_model.filter_component_linking.component.order = 8
 transmitter_spectrum_and_filter_line_chart(urgent_transmitter)
@@ -445,6 +468,8 @@ link_budget_report[["ber", "ber+i"]]
 # The change is minimal but the BER+I is still too high.
 
 # The center beam is 300 MHz wide but the frequency cutoff is only ten (10) MHz. Widen the cutoff to -100 MHz to 100 MHz (200 MHz) and refresh the Transmitter Spectrum and Filter graph:
+
+# ## Change the Cutoff Frequency
 
 # +
 urgent_transmitter_model.filter_component_linking.component.cut_off_frequency = 100
@@ -521,7 +546,7 @@ plt.show()
 
 # Notice the five (5) dB ripple in the filter and filtered spectrum and how the filter is suppressing noise on both sides of the carrier wave.
 
-# Change the Receiver Filter to a Butterworth:
+# ## Change the Receiver Filter to a Butterworth:
 
 urgent_receiver_model.filter_component_linking.set_component("Butterworth")
 urgent_receiver_model.filter_component_linking.component.lower_bandwidth_limit = -2000
@@ -532,7 +557,7 @@ plt.show()
 
 # The ripple disappeared and the frequency cutoff isn’t so steep.
 
-# Apply the Butterworth filter to Urgent_Xmt to try and improve performance even more:
+# Apply the Butterworth filter to Urgent_Xmt.
 
 urgent_transmitter_model.filter_component_linking.set_component("Butterworth")
 urgent_transmitter_model.filter_component_linking.component.cut_off_frequency = 100
