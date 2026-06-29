@@ -60,6 +60,9 @@ root.load_vdf(scenario_filepath, "")
 # Familiarize yourself with the scenario objects
 
 # +
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
+
+
 globe_widget = GlobeWidget(root, 640, 480)
 globe_widget.camera.position = [32.5007, -106.609, 1]  # Urgent_Comms
 globe_widget.show()
