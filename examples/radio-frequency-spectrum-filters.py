@@ -57,33 +57,42 @@ scenario_filepath = str(
 root.load_vdf(scenario_filepath, "")
 # -
 
-# Familiarize yourself with the scenario objects
+# Next, get the current scenario using the root object:
+
+# +
+scenario = root.current_scenario
+# -
+
+# ## Acquaint Yourself With the Scenario
+
+# First, view the Urgent_Comms facility.
+
+# Position the camera so that both communincation facilities are seen from above. Pan around to see the full communications site. The antennas are oriented towards the communication satellite.
 
 # +
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
-globe_widget.camera.position = [32.5007, -106.609, 1]  # Urgent_Comms
-globe_widget.show()
-
-globe_widget.camera.position = [32.5007, -106.609, 10]  # Tdrs3_19548
+globe_widget.camera.position = [
+    3222.9592065208617,
+    4318.871431839066,
+    3403.315941748835,
+]  # Urgent_Comms and Routine_Comms
 globe_widget.show()
 # -
 
-# Next, get the current scenario using the root object:
+# Second, view the Tdrs3_19548 satellite.
 
-scenario = root.current_scenario
-
-# Once the scenario is loaded, it is possible to show a 3D graphics window and view the scenario by running:
+# Reposition the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
 # +
-from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
-
-
-globe_plotter = GlobeWidget(root, 640, 480)
-globe_plotter.camera.position = [0, 0, 0]
-globe_plotter.show()
+globe_widget.camera.position = [
+    -5487.455182656891,
+    42686.16671890387,
+    11571.702360892219,
+]  # Tdrs3_19548
+globe_widget.show()
 # -
 
 # ## Build the Constellations
