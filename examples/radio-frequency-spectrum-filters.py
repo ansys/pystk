@@ -65,33 +65,18 @@ scenario = root.current_scenario
 
 # ## Acquaint Yourself With the Scenario
 
-# First, view the Urgent_Comms facility.
+# Position the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
 
-# Position the camera so that both communincation facilities are seen from above. Pan around to see the full communications site. The antennas are oriented towards the communication satellite.
-
-# +
+# + tags=["nbsphinx-thumbnail"]
 from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_widget = GlobeWidget(root, 640, 480)
 globe_widget.camera.position = [
-    3222.9592065208617,
-    4318.871431839066,
-    3403.315941748835,
-]  # Urgent_Comms and Routine_Comms
-globe_widget.show()
-# -
-
-# Second, view the Tdrs3_19548 satellite.
-
-# Reposition the camera so that the satellite is viewable along with the communications site in the background. Notice how the satellite is targeting the communications site.
-
-# +
-globe_widget.camera.position = [
     -5487.455182656891,
     42686.16671890387,
     11571.702360892219,
-]  # Tdrs3_19548
+]
 globe_widget.show()
 # -
 
@@ -294,6 +279,10 @@ link_budget_report[["bandwidth", "bandwidth overlap"]]
 # Filters can be applied to enhance the magnitude over certain frequencies content while suppressing the magnitudes over other frequencies. The use of Spectral Filters on transmitters modifies the spectral shape. The use of Spectral Filters on receivers helps reduce the impact of out of band signals from jammers and other sources. Enable Signal PSD to be used for both transmitters:
 
 # +
+root.units_preferences.item("Ratio").set_current_unit(
+    "dB"
+)  # Change "Ratio" units back to a logarithmic scale to match tutorial graphs for the remainder of the tutorial.
+
 from ansys.stk.core.stkobjects import TransmitterModelComplex
 
 
