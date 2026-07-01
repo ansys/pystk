@@ -204,7 +204,7 @@ plt.show()
 
 # Before generating any data tables, the units for the "Ratio" dimension need to be set correctly. The UI defaults to a linear scale while the STK Object Model defaults to a logarithmic scale. Setting the units of "Ratio" below will make units consistent across platforms.
 
-# If you would like to use a logarithmic scale, simply change "units" to "dB" in 'set_current_unit()'.
+# If you would like to use a logarithmic scale, simply change "units" to "dB" in `set_current_unit()`.
 
 root.units_preferences.item("Ratio").set_current_unit("units")
 
@@ -245,13 +245,13 @@ from ansys.stk.core.stkobjects import ReceiverModelComplex
 urgent_receiver_model = ReceiverModelComplex(
     urgent_receiver.model_component_linking.component
 )
+urgent_receiver_model.bandwidth = 150
 # -
 
 # The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter.
 
 # +
 urgent_receiver_model.scale_bandwidth_automatically = False
-urgent_receiver_model.bandwidth = 150
 # -
 
 # Refresh the link budget report to see how this change affected the Bandwidth Overlap:
