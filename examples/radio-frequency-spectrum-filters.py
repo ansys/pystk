@@ -236,7 +236,7 @@ link_budget_report[["ber", "ber+i"]]
 
 link_budget_report[["bandwidth", "bandwidth overlap"]]
 
-# Before using filters, experiment and change the receiver’s bandwidth to determine the effect that change might have on signal quality. The smaller the bandwidth, the less information that can be sent or received. Set the bandwidth to 150 MHz:
+# Before using filters, experiment and change the receiver’s bandwidth to determine the effect that change might have on signal quality. The smaller the bandwidth, the less information that can be sent or received. The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter. To manually configure the receiver's bandwidth, disable the bandwidth autoscale option.
 
 # +
 from ansys.stk.core.stkobjects import ReceiverModelComplex
@@ -245,13 +245,13 @@ from ansys.stk.core.stkobjects import ReceiverModelComplex
 urgent_receiver_model = ReceiverModelComplex(
     urgent_receiver.model_component_linking.component
 )
-urgent_receiver_model.bandwidth = 150
+urgent_receiver_model.scale_bandwidth_automatically = False
 # -
 
-# The Bandwidth Auto Scale option allows the receiver to adjust its bandwidth to that of the current transmitter.
+# Now, set the bandwidth to 150 MHz:
 
 # +
-urgent_receiver_model.scale_bandwidth_automatically = False
+urgent_receiver_model.bandwidth = 150
 # -
 
 # Refresh the link budget report to see how this change affected the Bandwidth Overlap:
