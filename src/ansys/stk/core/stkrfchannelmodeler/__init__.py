@@ -4381,9 +4381,10 @@ agcls.AgTypeNameMap["AnalysisLinkCollection"] = AnalysisLinkCollection
 class Analysis(SupportsDeleteCallback):
     """Properties of an analysis."""
 
-    _num_methods = 1
+    _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_analysis_link_collection_method_offset = 1
+    _terminate_method_offset = 2
     _metadata = {
         "iid_data" : (5680527335101181193, 5726398768767138459),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4399,6 +4400,13 @@ class Analysis(SupportsDeleteCallback):
     def analysis_link_collection(self) -> "AnalysisLinkCollection":
         """Get the analysis link collection."""
         return self._intf.get_property(Analysis._metadata, Analysis._get_analysis_link_collection_metadata)
+
+    _terminate_metadata = { "offset" : _terminate_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def terminate(self) -> None:
+        """Terminate the analysis and free resources. Calls to the Compute method of any IAnalysisLink instance, obtained from this analysis instance, after calling terminate, will fail."""
+        return self._intf.invoke(Analysis._metadata, Analysis._terminate_metadata, )
 
     _property_names[analysis_link_collection] = "analysis_link_collection"
 

@@ -855,18 +855,23 @@ class EarlyBoundTests(TestBase):
         # string sInstanceName = o.InstanceName;
         sAllNames: str = ""
         count: int = o.data_providers.count
-        i: int = 1
+        i: int = 0
         while i < o.data_providers.count:
             sName: str = o.data_providers[i].name
-            # bool b1 = o.DataProviders[i].IsGroup();
-            # Console.WriteLine(sName);
+            if (
+                ((sName == "Debug SumMask Info") or (sName == "Debug PropMask Info"))
+                or (sName == "Graphics Attr Intervals")
+            ) or (sName == "Graphics Show Intervals"):
+                i += 1
+                continue
+
             sAllNames += sName
 
             i += 1
 
         # Console.WriteLine(sAllNames);
         Assert.assertEqual(
-            "All ConstraintsAnglesArticulationAstrogator Accel HistAstrogator LogAstrogator MCS Ephemeris SegmentsAstrogator Maneuver Ephemeris Block FinalAstrogator Maneuver Ephemeris Block HistoryAstrogator Maneuver Ephemeris Block InitialAstrogator Pass DataAstrogator Script SummaryAstrogator Targeter DataAstrogator Terminal Stopping ConditionAstrogator ValuesAttitude QuaternionsAttitude Segment DescriptionAttitude Segment ECF QuaternionsAttitude Segment Euler AnglesAttitude Segment QuaternionsAttitude Segment ScheduleAttitude Segment YPRAttitude YPRAvailable TimesAxes Choose AxesBeta AngleBody Axes OrientationBody Axes Orientation:YPR 123Body Axes Orientation:YPR 132Body Axes Orientation:YPR 213Body Axes Orientation:YPR 231Body Axes Orientation:YPR 312Body Axes Orientation:YPR 321Brouwer-Lyd Mean LongBrouwer-Lyd Mean ShortCartesian AccelerationCartesian PositionCartesian VelocityClassical ElementsClose Approach Compute ResultsClose Approach DefinitionClose Approach Filter SettingsCloseApproachCloseApproachByMinRangeCloseApproachBySSCCollection of Interval ListsConditionCondition SetConfigured ConstraintsCrdn Available TimesData Provider DetailData Provider SummaryDeckAccessDeckAccess DataDelaunay ElementsECF Attitude QuaternionsEclipse DefinitionEclipse Solar IntensityEclipse SummaryEclipse TimesEcliptic CrossingsElement SetEphemeris DiffEphemeris Diff in Curvilinear CoordinatesEquinoctial ElementsEuler AnglesGeo Station Keeping ElementsGravity ModelGround Ellipse DefinitionHeadingIIRV User InputIntervalInterval ListKozai-Izsak MeanLLA StateLLR StateLOP Mean ElementsLaunch Window DefinitionLifetimeLighting AERLighting TimesLunar Eclipse Solar IntensityMCS SummaryManeuver SummaryMassMixed Spherical ElementsModel AreaModel LOD 0 ArticulationsModel LOD 1 ArticulationsModified Equinoctial ElementsMoon AERMoon VectorParameter Set: AttitudeParameter Set: Cartographic TrajectoryParameter Set: OrbitParameter Set: TrajectoryParameter Set: VectorPass Event TimesPassesPlanes Choose SystemPlanes(Fixed)Planes(ICRF)Planes(Inertial)Planes(J2000)Pointing Covariance (Projection)Points Choose PlanePoints Choose SystemPoints(Fixed)Points(ICRF)Points(Inertial)Points(J2000)Pos Vel Projected CovariancePos Vel Rotated CovariancePosition CovariancePosition Covariance Choose AxesPosition Covariance CrossSectionPosition Covariance CrossSection Choose PlanePosition Covariance ProjectionPosition Covariance Projection Choose PlanePosition Covariance in AxesPrecision PassesPropagator InputsRIC CoordinatesRelative MotionSEET Debris FluxSEET GCR Differential Fluence by EnergySEET GCR Differential Flux by EnergySEET GCR Integral Fluence by EnergySEET GCR Integral Flux by EnergySEET GCR ModelSEET Magnetic ConjugacySEET Magnetic CoordinatesSEET Magnetic FieldSEET Magnetic Field ModelSEET Meteor FluxSEET Particle Distribution FluenceSEET Particle FluenceSEET Particle Flux ModelSEET Radiation Accumulated DoseSEET Radiation Accumulated Dose By ThicknessSEET Radiation Average Dose RateSEET Radiation Average Dose Rate By ThicknessSEET Radiation Dose DepthSEET Radiation Dose RateSEET Radiation Dose Rate By ThicknessSEET Radiation FluxSEET Radiation Flux by EnergySEET Radiation Integral FluxSEET Radiation Integral Flux by EnergySEET Radiation ModelSEET SAA Contour SettingsSEET SAA Crossing TimesSEET SAA Flux IntensitySEET SEP Energy by FluenceSEET SEP Fluence by Probability per EnergySEET SEP ModelSEET Vehicle TemperatureSEET Vehicle Temperature ModelSTM EigendecompositionScalar CalculationsSegment SummaryShadow LLASolar Apparent TimeSolar IntensitySolar Panel AnglesSolar Panel AreaSolar Panel Area No SumSolar Panel PowerSolar Panel Power No SumSolar Specular PointSpherical ElementsState Transition MatrixSun VectorSwath PointsTLE Residual DataTLE Set DataTLE Summary DataTime ArrayTime InstantTrue Anomaly StepUser Supplied DataVector Choose AxesVector Choose PlaneVectors(Body)Vectors(Fixed)Vectors(Fixed_VVLH)Vectors(ICRF)Vectors(Inertial)Vectors(J2000)Vectors(LVLH)Vectors(VNC)Vectors(VVLH(CBF))Vectors(VVLH)Velocity Projected Covariance",
+            "Access ListingActive ConstraintsAll ConstraintsAnglesArticulationAstrogator Accel HistAstrogator LogAstrogator MCS Ephemeris SegmentsAstrogator Maneuver Ephemeris Block FinalAstrogator Maneuver Ephemeris Block HistoryAstrogator Maneuver Ephemeris Block InitialAstrogator Pass DataAstrogator Script SummaryAstrogator Targeter DataAstrogator Terminal Stopping ConditionAstrogator ValuesAttitude QuaternionsAttitude Segment DescriptionAttitude Segment ECF QuaternionsAttitude Segment Euler AnglesAttitude Segment QuaternionsAttitude Segment ScheduleAttitude Segment YPRAttitude YPRAvailable TimesAxes Choose AxesBeta AngleBody Axes OrientationBody Axes Orientation:YPR 123Body Axes Orientation:YPR 132Body Axes Orientation:YPR 213Body Axes Orientation:YPR 231Body Axes Orientation:YPR 312Body Axes Orientation:YPR 321Brouwer-Lyd Mean LongBrouwer-Lyd Mean ShortCartesian AccelerationCartesian PositionCartesian VelocityClassical ElementsClose Approach Compute ResultsClose Approach DefinitionClose Approach Filter SettingsCloseApproachCloseApproachByMinRangeCloseApproachBySSCCollection of Interval ListsConditionCondition SetConfigured ConstraintsCrdn Available TimesData Provider DetailData Provider SummaryDeckAccessDeckAccess DataDelaunay ElementsECF Attitude QuaternionsEclipse DefinitionEclipse Solar IntensityEclipse SummaryEclipse TimesEcliptic CrossingsElement SetEphemeris DiffEphemeris Diff in Curvilinear CoordinatesEquinoctial ElementsEuler AnglesGeo Station Keeping ElementsGravity ModelGround Ellipse DefinitionHeadingIIRV User InputIntervalInterval ListKozai-Izsak MeanLLA StateLLR StateLOP Mean ElementsLaunch Window DefinitionLifetimeLighting AERLighting TimesLunar Eclipse Solar IntensityMCS SummaryManeuver SummaryMassMixed Spherical ElementsModel AreaModel LOD 0 ArticulationsModel LOD 1 ArticulationsModified Equinoctial ElementsMoon AERMoon VectorParameter Set: AttitudeParameter Set: Cartographic TrajectoryParameter Set: OrbitParameter Set: TrajectoryParameter Set: VectorPass Event TimesPassesPlanes Choose SystemPlanes(Fixed)Planes(ICRF)Planes(Inertial)Planes(J2000)Pointing Covariance (Projection)Points Choose PlanePoints Choose SystemPoints(Fixed)Points(ICRF)Points(Inertial)Points(J2000)Pos Vel Projected CovariancePos Vel Rotated CovariancePosition CovariancePosition Covariance Choose AxesPosition Covariance CrossSectionPosition Covariance CrossSection Choose PlanePosition Covariance ProjectionPosition Covariance Projection Choose PlanePosition Covariance in AxesPrecision PassesPropagator InputsRIC CoordinatesRelative MotionSEET Debris FluxSEET GCR Differential Fluence by EnergySEET GCR Differential Flux by EnergySEET GCR Integral Fluence by EnergySEET GCR Integral Flux by EnergySEET GCR ModelSEET Magnetic ConjugacySEET Magnetic CoordinatesSEET Magnetic FieldSEET Magnetic Field ModelSEET Meteor FluxSEET Particle Distribution FluenceSEET Particle FluenceSEET Particle Flux ModelSEET Radiation Accumulated DoseSEET Radiation Accumulated Dose By ThicknessSEET Radiation Average Dose RateSEET Radiation Average Dose Rate By ThicknessSEET Radiation Dose DepthSEET Radiation Dose RateSEET Radiation Dose Rate By ThicknessSEET Radiation FluxSEET Radiation Flux by EnergySEET Radiation Integral FluxSEET Radiation Integral Flux by EnergySEET Radiation ModelSEET SAA Contour SettingsSEET SAA Crossing TimesSEET SAA Flux IntensitySEET SEP Energy by FluenceSEET SEP Fluence by Probability per EnergySEET SEP ModelSEET Vehicle TemperatureSEET Vehicle Temperature ModelSTM EigendecompositionScalar CalculationsSegment SummaryShadow LLASolar Apparent TimeSolar IntensitySolar Panel AnglesSolar Panel AreaSolar Panel Area No SumSolar Panel PowerSolar Panel Power No SumSolar Specular PointSpherical ElementsState Transition MatrixSun VectorSwath PointsTLE Residual DataTLE Set DataTLE Summary DataTime ArrayTime InstantTrue Anomaly StepUser Supplied DataVector Choose AxesVector Choose PlaneVectors(Body)Vectors(Fixed)Vectors(Fixed_VVLH)Vectors(ICRF)Vectors(Inertial)Vectors(J2000)Vectors(LVLH)Vectors(VNC)Vectors(VVLH(CBF))Vectors(VVLH)Velocity Projected Covariance",
             sAllNames,
         )
 
@@ -1075,7 +1080,7 @@ class EarlyBoundTests(TestBase):
         someSchemaEntries: "List[str]" = [
             '<DataProviderCollection STKObject="Antenna">',
             '<DataPrv Name="AntennaGain" Desc="Antenna Gain" PropBitMask="513">',
-            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
+            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between -180 and 180 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
             '<Element Name="Elevation" Type="0" Dim="AngleUnit"/>',
             '<DataPrv Name="AntennaGainMatrix" Desc="Antenna Gain Matrix" PropBitMask="513">',
             '<PreData Desc="&quot;{Parameters}&quot;. {Parameters} can be entered in any order. The following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt;. The following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos; }. The Min, Max and Step &lt;Value&gt; are entered in scenario angle units. The Min and Max values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
@@ -1796,7 +1801,7 @@ class EarlyBoundTests(TestBase):
         someSchemaEntries: "List[str]" = [
             '<DataProviderCollection STKObject="Radar">',
             '<DataPrv Name="AntennaGain" Desc="Antenna Gain" PropBitMask="513">',
-            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
+            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between -180 and 180 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
             '<Element Name="Elevation" Type="0" Dim="AngleUnit"/>',
             '<DataPrv Name="AxesChooseAxes" Desc="Axes Choose Axes" PropBitMask="2" UsesSameElements="true">',
             '<PreData Desc="&quot;&lt;TruncObjectPath&gt; &lt;AxesName&gt;&quot; - e.g. &quot;CentralBody/Moon J2000&quot;"/>',
@@ -1855,7 +1860,7 @@ class EarlyBoundTests(TestBase):
         someSchemaEntries: "List[str]" = [
             '<DataProviderCollection STKObject="Receiver">',
             '<DataPrv Name="AntennaGain" Desc="Antenna Gain" PropBitMask="513">',
-            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
+            '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between -180 and 180 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
             '<Element Name="Elevation" Type="0" Dim="AngleUnit"/>',
             '<DataPrv Name="AntennaGainMatrix" Desc="Antenna Gain Matrix" PropBitMask="513">',
             '<PreData Desc="&quot;{Parameters}&quot;. {Parameters} can be entered in any order. The following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt;. The following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos; }. The Min, Max and Step &lt;Value&gt; are entered in scenario angle units. The Min and Max values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
@@ -2149,7 +2154,7 @@ class EarlyBoundTests(TestBase):
             someSchemaEntries: "List[str]" = [
                 '<DataProviderCollection STKObject="Transmitter">',
                 '<DataPrv Name="AntennaGain" Desc="Antenna Gain" PropBitMask="513">',
-                '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
+                '<PreData Desc="&quot;GainCutType { Azimuth | Elevation } {Parameters}&quot;. {Parameters} can be entered in any order. If GainCutType is Azimuth, then the following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; AzimuthValue &lt;Value&gt;. If GainCutType is Elevation, then the following {Parameters} are required: MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt; ElevationValue &lt;Value&gt;. In both cases, the following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos;}. All above &lt;Value&gt; are entered in scenario angle units. The Min, Max, AzimuthValue and ElevationValue values should be between -180 and 180 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
                 '<Element Name="Elevation" Type="0" Dim="AngleUnit"/>',
                 '<DataPrv Name="AntennaGainMatrix" Desc="Antenna Gain Matrix" PropBitMask="513">',
                 '<PreData Desc="&quot;{Parameters}&quot;. {Parameters} can be entered in any order. The following {Parameters} are required: MinElevation &lt;Value&gt; MaxElevation &lt;Value&gt; ElevationStep &lt;Value&gt; MinAzimuth &lt;Value&gt; MaxAzimuth &lt;Value&gt; AzimuthStep &lt;Value&gt;. The following {Parameters} are optional: Time &apos;&lt;DateTimeValue&gt;&apos; CoordinateSystem { Polar | Rectangular | &apos;Spherical Az/El&apos; | &apos;UV Grid&apos; | &apos;Elev Over Azi&apos; }. The Min, Max and Step &lt;Value&gt; are entered in scenario angle units. The Min and Max values should be between 0 and 360 degrees. The Min must be less than the Max. The Step value should be between 0.001 and 30.0 degrees. The Time option allows the user to enter the time of the computation. If not entered the current scenario animation time will be used. If entered, the &apos;&lt;DateTimeValue&gt;&apos; is either in Object Model Date units (when using Object Model) or Scenario Date units, and is enclosed in single quotes."/>',
@@ -3353,20 +3358,21 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(oInfo.is_group())
         oProvider: "IDataProvider" = IDataProvider(oInfo)
         Assert.assertIsNotNone(oProvider)
-        Assert.assertEqual(13, oProvider.elements.count)
+        Assert.assertEqual(14, oProvider.elements.count)
         Assert.assertEqual("Constraint", oProvider.elements[0].name)
         Assert.assertEqual("Value", oProvider.elements[1].name)
         Assert.assertEqual("Display Name", oProvider.elements[2].name)
-        Assert.assertEqual("Dimension", oProvider.elements[3].name)
-        Assert.assertEqual("Units for Min/Max", oProvider.elements[4].name)
-        Assert.assertEqual("Min", oProvider.elements[5].name)
-        Assert.assertEqual("Max", oProvider.elements[6].name)
-        Assert.assertEqual("Data Value with Units", oProvider.elements[7].name)
-        Assert.assertEqual("Value with Units", oProvider.elements[8].name)
-        Assert.assertEqual("Action", oProvider.elements[9].name)
-        Assert.assertEqual("Max Time Step", oProvider.elements[10].name)
-        Assert.assertEqual("Max Relative Motion", oProvider.elements[11].name)
-        Assert.assertEqual("To Classes", oProvider.elements[12].name)
+        Assert.assertEqual("From Linked Object", oProvider.elements[3].name)
+        Assert.assertEqual("Dimension", oProvider.elements[4].name)
+        Assert.assertEqual("Units for Min/Max", oProvider.elements[5].name)
+        Assert.assertEqual("Min", oProvider.elements[6].name)
+        Assert.assertEqual("Max", oProvider.elements[7].name)
+        Assert.assertEqual("Data Value with Units", oProvider.elements[8].name)
+        Assert.assertEqual("Value with Units", oProvider.elements[9].name)
+        Assert.assertEqual("Action", oProvider.elements[10].name)
+        Assert.assertEqual("Max Time Step", oProvider.elements[11].name)
+        Assert.assertEqual("Max Relative Motion", oProvider.elements[12].name)
+        Assert.assertEqual("To Classes", oProvider.elements[13].name)
 
         iIndex: int = 0
         while iIndex < oProvider.elements.count:
@@ -4378,3 +4384,77 @@ class EarlyBoundTests(TestBase):
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
         )
         Assert.assertTrue(dp.is_time_varying_extremum_available(stat, elemName))
+
+    def test_BUGFIX_COMMRAD_4058(self):
+        objFac: "ISTKObject" = TestBase.Application.current_scenario.children.new(
+            STKObjectType.FACILITY, "Fac_CommRad4058"
+        )
+        objRec: "ISTKObject" = objFac.children.new(STKObjectType.RECEIVER, "Rec_CommRad4058")
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
+            STKObjectType.SATELLITE, "Sat_CommRad4058"
+        )
+        objTrans: "ISTKObject" = objSat.children.new(STKObjectType.TRANSMITTER, "Trans_CommRad4058")
+
+        sat: "Satellite" = clr.CastAs(objSat, Satellite)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
+        twoBody.propagate()
+
+        trans: "Transmitter" = clr.CastAs(objTrans, Transmitter)
+        trans.model_component_linking.set_component("Complex Transmitter Model")
+        complexTrans: "TransmitterModelComplex" = clr.CastAs(
+            trans.model_component_linking.component, TransmitterModelComplex
+        )
+        complexTrans.antenna_control.embedded_model_component_linking.set_component("ANSYS ffd Format")
+
+        dp: "IDataProvider" = clr.CastAs(objTrans.data_providers["Antenna Gain"], IDataProvider)
+        dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
+        result: "DataProviderResult" = dpFixed.execute()
+        Assert.assertEqual("No Data", str(result.message.messages[0]))
+
+        access: "Access" = objTrans.get_access_to_object(objRec)
+        access.compute_access()
+        dp = clr.CastAs(access.data_providers["Link Information"], IDataProvider)
+        dpTimeVar: "DataProviderTimeVarying" = clr.CastAs(dp, DataProviderTimeVarying)
+        result = dpTimeVar.execute("1 Jun 2004 12:00:00.000", "2 Jun 2004 12:00:00.000", 60)
+        Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
+
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat_CommRad4058")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, "Fac_CommRad4058")
+
+    def test_BUGFIX_COMMRAD_4059(self):
+        objFac: "ISTKObject" = TestBase.Application.current_scenario.children.new(
+            STKObjectType.FACILITY, "Fac_CommRad4059"
+        )
+        objRec: "ISTKObject" = objFac.children.new(STKObjectType.RECEIVER, "Rec_CommRad4059")
+        objSat: "ISTKObject" = TestBase.Application.current_scenario.children.new(
+            STKObjectType.SATELLITE, "Sat_CommRad4059"
+        )
+        objTrans: "ISTKObject" = objSat.children.new(STKObjectType.TRANSMITTER, "Trans_CommRad4059")
+
+        sat: "Satellite" = clr.CastAs(objSat, Satellite)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
+        twoBody.propagate()
+
+        trans: "Transmitter" = clr.CastAs(objTrans, Transmitter)
+        trans.model_component_linking.set_component("Complex Transmitter Model")
+        complexTrans: "TransmitterModelComplex" = clr.CastAs(
+            trans.model_component_linking.component, TransmitterModelComplex
+        )
+        complexTrans.antenna_control.embedded_model_component_linking.set_component("HFSS EEP Array")
+
+        dp: "IDataProvider" = clr.CastAs(objTrans.data_providers["Antenna Gain"], IDataProvider)
+        dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
+        result: "DataProviderResult" = dpFixed.execute()
+        Assert.assertEqual("No Data", str(result.message.messages[0]))
+
+        access: "Access" = objTrans.get_access_to_object(objRec)
+        access.compute_access()
+        dp = clr.CastAs(access.data_providers["Link Information"], IDataProvider)
+        dpTimeVar: "DataProviderTimeVarying" = clr.CastAs(dp, DataProviderTimeVarying)
+        result = dpTimeVar.execute("1 Jun 2004 12:00:00.000", "2 Jun 2004 12:00:00.000", 60)
+        Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
+
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat_CommRad4059")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, "Fac_CommRad4059")

@@ -35,6 +35,9 @@ import socket
 import subprocess  # nosec B404
 import typing
 
+if typing.TYPE_CHECKING:
+    pass
+
 from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 from .internal.coclassutil import attach_to_stk_by_pid
 from .internal.comutil import (
@@ -319,7 +322,7 @@ class STKDesktop(object):
                 unknown = IUnknown()
                 iid_iunknown = GUID(IUnknown._guid)
                 if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_aguiapplication), None, CLSCTX_LOCAL_SERVER, byref(iid_iunknown), byref(unknown.p))):
-                    unknown.take_ownership(isApplication=True)
+                    unknown.take_ownership(is_application=True)
                     app = STKDesktopApplication()
                     app._private_init(unknown)
                     app.visible = visible
@@ -398,7 +401,7 @@ class STKDesktop(object):
             if Succeeded(OLE32Lib.CLSIDFromString("STK13.Application", clsid_aguiapplication)):
                 unknown = IUnknown()
                 if Succeeded(OLEAut32Lib.GetActiveObject(byref(clsid_aguiapplication), None, byref(unknown.p))):
-                    unknown.take_ownership(isApplication=True)
+                    unknown.take_ownership(is_application=True)
                     app = STKDesktopApplication()
                     app._private_init(unknown)
                     return app

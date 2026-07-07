@@ -26,6 +26,8 @@ Overview
               - Given an index, returns an element in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array`
               - Return the entire dataset collection in row format.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array_subset`
+              - Return a subset of the dataset collection in row format beginning at a given zero-indexed row and containing a specified number of rows.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_numpy_array`
               - Return a row formatted dataset collection as a numpy array. This function requires ``numpy``.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_pandas_dataframe`
@@ -255,6 +257,22 @@ Method detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array
 
     Return the entire dataset collection in row format.
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: to_array_subset(self, index: int, subset_length: int) -> list
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_array_subset
+
+    Return a subset of the dataset collection in row format beginning at a given zero-indexed row and containing a specified number of rows.
+
+    :Parameters:
+
+        **index** : :obj:`~int`
+
+        **subset_length** : :obj:`~int`
+
 
     :Returns:
 

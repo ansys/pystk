@@ -3289,6 +3289,7 @@ class VORangeContoursHelper(object):
         self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oContours.show_graphics)
         Assert.assertEqual(True, oContours.show_graphics)
         # TranslucentLines
+        oContours.border_wall.use_border_wall = False  # This needs to be false or TranslucentLines is read-only
         self.m_logger.WriteLine4("\t\tThe current TranslucentLines flag is: {0}", oContours.translucent_lines)
         oContours.translucent_lines = False
         self.m_logger.WriteLine4("\t\tThe new TranslucentLines flag is: {0}", oContours.translucent_lines)

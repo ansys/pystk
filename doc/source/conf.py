@@ -182,6 +182,7 @@ autosectionlabel_maxdepth = 6
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_exclude_documents = ["artifacts", "changelog"]
 linkcheck_ignore = [
     r"https://www.ansys.com/*",
     # Requires sign-in
@@ -374,7 +375,7 @@ jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "PYSTK_VERSION": version,
-    "STK_VERSION": "13.0.1",
+    "STK_VERSION": "13.1.0",
 }
 
 jinja_contexts = {
@@ -423,6 +424,13 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- Mermaid configuration ---------------------------------------------------
+# Load mermaid's d3 dependency before nbsphinx's RequireJS (priority 500) so
+# d3's UMD bundle exports a global instead of registering an anonymous AMD
+# module. Otherwise d3's anonymous define() corrupts RequireJS and breaks the
+# theme's Fuse.js static search (search.html).
+mermaid_js_priority = 100
 
 # -- LaTeX configuration
 latex_elements = {

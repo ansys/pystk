@@ -86,6 +86,8 @@ def _grpc_post_process_return_vals(return_vals, marshallers, *input_args):
     """
     if return_vals is None:
         return
+    if type(return_vals) == bytes:
+        return return_vals
     multiple_returns = True if type(return_vals) == tuple else False
     ret_val_iter = 0
     temp_return_list = []
@@ -464,6 +466,7 @@ class GrpcClient(object):
         AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsKmlGraphicsEvents : {},
         AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsImageCollectionEvents : {},
         AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsTerrainCollectionEvents : {},
+        AgGrpcServices_pb2.EventHandler.eIAgRemoteFrameBufferHost : {},
        }
 
     def set_grpc_options(self, options:dict) -> None:
@@ -516,7 +519,7 @@ class GrpcClient(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "13.0.1"
+        expected_version = "13.1.0"
         if server_version != expected_version:
             raise RuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id
@@ -672,14 +675,19 @@ class GrpcClient(object):
         return intf
 
     def new_object_root(self) -> GrpcInterface:
-        self._execute_batched_invoke()
-        grpc_response = self.stub.EngineNewRoot(AgGrpcServices_pb2.EmptyMessage())
-        intf = GrpcInterface(obj=grpc_response.obj, client=self)
-        return intf
+        return self._NewCoClassImpl(AgGrpcServices_pb2.NewCoClassRequest.eAgStkObjectRoot)
 
     def new_object_model_context(self) -> GrpcInterface:
+        return self._NewCoClassImpl(AgGrpcServices_pb2.NewCoClassRequest.eAgStkObjectModelContext)
+
+    def NewGraphicsControl(self, class_type:AgGrpcServices_pb2.NewCoClassRequest) -> GrpcInterface:
+        return self._NewCoClassImpl(class_type)
+
+    def _NewCoClassImpl(self, class_type:AgGrpcServices_pb2.NewCoClassRequest) -> GrpcInterface:
         self._execute_batched_invoke()
-        grpc_response = self.stub.EngineNewRootContext(AgGrpcServices_pb2.EmptyMessage())
+        request = AgGrpcServices_pb2.NewCoClassRequest()
+        request.type = class_type
+        grpc_response = self.stub.EngineNewCoClass(request)
         intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
 
@@ -701,6 +709,8 @@ class GrpcClient(object):
             return None
         elif which_val=="nested_array":
             return self._marshall_return_arg(val.nested_array)
+        elif which_val=="byte_array":
+            return val.byte_array
 
     def _marshall_return_arg(self, arg:AgGrpcServices_pb2.Variant, manage_ref_counts:bool=True) -> typing.Any:
         if arg.num_columns_in_repeated_values > 0:

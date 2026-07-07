@@ -132,31 +132,31 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod",
 "StateCalcOrbitSemilatusRectum", "StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA",
 "StateCalcOutVelocityAzAtPeriapsis", "StateCalcPi", "StateCalcPositionDifferenceOtherSegment",
-"StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", "StateCalcRA",
-"StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis",
-"StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate",
-"StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster",
+"StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", "StateCalcPythonScript",
+"StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis",
+"StateCalcRadOfPeriapsis", "StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient",
+"StateCalcRangeRate", "StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster",
 "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination", "StateCalcRelativeMotion",
 "StateCalcRelativePositionDecAngle", "StateCalcRelativePositionInPlaneAngle", "StateCalcRepeatingGroundTrackErr",
 "StateCalcSEETMagneticFieldLineSeparationAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea",
 "StateCalcSTMEigenval", "StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemimajorAxis",
-"StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", "StateCalcSignedEccentricity", "StateCalcSolarBetaAngle",
-"StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation", "StateCalcTemperature",
-"StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon",
-"StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY",
-"StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment",
-"StateCalcValueAtSegmentOtherSat", "StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude",
-"StateCalcVectorRA", "StateCalcVectorX", "StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz",
-"StateCalcVelocityDifferenceOtherSegment", "StateConfig", "StateConfigCollection", "StateTransformationFunction",
-"StateType", "StochasticDensityCorrection", "StochasticModel", "StochasticModelParameters", "StochasticParameters",
-"StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "StoppingConditionType", "SunPosition",
-"TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl",
-"TargeterGraphActiveControlCollection", "TargeterGraphCollection", "TargeterGraphResult",
-"TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode", "ThrottleTableOperationMode", "ThrustType",
-"Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", "USStandardAtmosphere",
-"UpdateAction", "UpdateParameter", "UserVariable", "UserVariableCollection", "UserVariableDefinition",
-"UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005",
-"VenusGRAMDensityType", "YarkovskyFunc"]
+"StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", "StateCalcSignedEccentricity",
+"StateCalcSignedInclination", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight",
+"StateCalcStandardDeviation", "StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis",
+"StateCalcTrueAnomaly", "StateCalcTrueLon", "StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate",
+"StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY", "StateCalcUnitAngularMomentumZ", "StateCalcUserValue",
+"StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", "StateCalcVectorDec",
+"StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX",
+"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz", "StateCalcVelocityDifferenceOtherSegment", "StateConfig",
+"StateConfigCollection", "StateTransformationFunction", "StateType", "StochasticDensityCorrection", "StochasticModel",
+"StochasticModelParameters", "StochasticParameters", "StoppingCondition", "StoppingConditionCollection",
+"StoppingConditionElement", "StoppingConditionType", "SunPosition", "TabVecInterpolationMethod", "TargetSequenceAction",
+"TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", "TargeterGraphCollection",
+"TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode",
+"ThrottleTableOperationMode", "ThrustType", "Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection",
+"TwoBodyFunction", "USStandardAtmosphere", "UpdateAction", "UpdateParameter", "UserVariable", "UserVariableCollection",
+"UserVariableDefinition", "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection",
+"VenusGRAM2005", "VenusGRAMDensityType", "YarkovskyFunc"]
 
 from ctypes import POINTER
 from enum import IntEnum
@@ -415,11 +415,14 @@ class ProfileMode(IntEnum):
     """Run Once - the Target Sequence will run the profile once according to its current configuration."""
     ACTIVE = 3
     """Active - the Target Sequence will apply the change that the profile passes when running."""
+    ITERATE_ACTIVE = 4
+    """Iterate/Active - this combined mode option is for use with the MCS level Set All Profile Modes action in place of the individual Iterate and Active options."""
 
 ProfileMode.ITERATE.__doc__ = "Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."
 ProfileMode.NOT_ACTIVE.__doc__ = "Not Active - the Target Sequence will ignore the profile when running."
 ProfileMode.RUN_ONCE.__doc__ = "Run Once - the Target Sequence will run the profile once according to its current configuration."
 ProfileMode.ACTIVE.__doc__ = "Active - the Target Sequence will apply the change that the profile passes when running."
+ProfileMode.ITERATE_ACTIVE.__doc__ = "Iterate/Active - this combined mode option is for use with the MCS level Set All Profile Modes action in place of the individual Iterate and Active options."
 
 agcls.AgTypeNameMap["ProfileMode"] = ProfileMode
 
@@ -1648,10 +1651,13 @@ class Language(IntEnum):
     """JScript."""
     MATLAB = 2
     """MATLAB."""
+    PYTHON = 3
+    """Python."""
 
 Language.VB_SCRIPT.__doc__ = "VBScript."
 Language.J_SCRIPT.__doc__ = "JScript."
 Language.MATLAB.__doc__ = "MATLAB."
+Language.PYTHON.__doc__ = "Python."
 
 agcls.AgTypeNameMap["Language"] = Language
 
@@ -4290,12 +4296,12 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     >>> driver.run_mcs()
     """
 
-    _num_methods = 15
+    _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_main_sequence_method_offset = 1
     _get_options_method_offset = 2
     _get_auto_sequence_method_offset = 3
-    _run_mcs_method_offset = 4
+
     _begin_run_method_offset = 5
     _end_run_method_offset = 6
     _clear_draw_while_calculating_graphics_method_offset = 7
@@ -4304,9 +4310,15 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     _append_run_method_offset = 10
     _append_run_from_time_method_offset = 11
     _append_run_from_state_method_offset = 12
-    _run_mcs2_method_offset = 13
+    _run_mcs_method_offset = 13
     _get_calculation_graphs_method_offset = 14
     _get_flight_dynamics_record_creator_method_offset = 15
+    _get_set_all_target_sequence_actions_to_method_offset = 16
+    _set_set_all_target_sequence_actions_to_method_offset = 17
+    _set_all_sequence_actions_method_offset = 18
+    _get_set_all_profile_modes_to_method_offset = 19
+    _set_set_all_profile_modes_to_method_offset = 20
+    _set_all_profile_modes_method_offset = 21
     _metadata = {
         "iid_data" : (4994733263183903758, 17552885387466519222),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4339,12 +4351,6 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Get the Automatic Sequences."""
         return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_auto_sequence_metadata)
 
-    _run_mcs_metadata = { "offset" : _run_mcs_method_offset,
-            "arg_types" : (),
-            "marshallers" : () }
-    def run_mcs(self) -> None:
-        """Run the current MCS."""
-        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs_metadata, )
 
     _begin_run_metadata = { "offset" : _begin_run_method_offset,
             "arg_types" : (),
@@ -4402,12 +4408,12 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction."""
         return self._intf.invoke(MCSDriver._metadata, MCSDriver._append_run_from_state_metadata, append_state, clear_ephemeris_direction)
 
-    _run_mcs2_metadata = { "offset" : _run_mcs2_method_offset,
+    _run_mcs_metadata = { "offset" : _run_mcs_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RunCode),) }
-    def run_mcs2(self) -> "RunCode":
+    def run_mcs(self) -> "RunCode":
         """Run the current MCS and returns an error code."""
-        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs2_metadata, OutArg())
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs_metadata, OutArg())
 
     _get_calculation_graphs_metadata = { "offset" : _get_calculation_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4425,11 +4431,57 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
         """Get the flight dynamics record creator."""
         return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_flight_dynamics_record_creator_metadata)
 
+    _get_set_all_target_sequence_actions_to_metadata = { "offset" : _get_set_all_target_sequence_actions_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(TargetSequenceAction),) }
+    @property
+    def set_all_target_sequence_actions_to(self) -> "TargetSequenceAction":
+        """The action setting that will be applied to all target sequences in the MCS when the SetAllSequenceActions method is invoked."""
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_set_all_target_sequence_actions_to_metadata)
+
+    _set_set_all_target_sequence_actions_to_metadata = { "offset" : _set_set_all_target_sequence_actions_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(TargetSequenceAction),) }
+    @set_all_target_sequence_actions_to.setter
+    def set_all_target_sequence_actions_to(self, value:"TargetSequenceAction") -> None:
+        return self._intf.set_property(MCSDriver._metadata, MCSDriver._set_set_all_target_sequence_actions_to_metadata, value)
+
+    _set_all_sequence_actions_metadata = { "offset" : _set_all_sequence_actions_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_sequence_actions(self) -> None:
+        """Set the action for all target sequences to the value held by the SetAllTargetSequenceActionsTo property."""
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._set_all_sequence_actions_metadata, )
+
+    _get_set_all_profile_modes_to_metadata = { "offset" : _get_set_all_profile_modes_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @property
+    def set_all_profile_modes_to(self) -> "ProfileMode":
+        """The mode setting that will be applied to all profiles in all target sequences in the MCS when the SetAllProfileModes method is invoked."""
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_set_all_profile_modes_to_metadata)
+
+    _set_set_all_profile_modes_to_metadata = { "offset" : _set_set_all_profile_modes_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @set_all_profile_modes_to.setter
+    def set_all_profile_modes_to(self, value:"ProfileMode") -> None:
+        return self._intf.set_property(MCSDriver._metadata, MCSDriver._set_set_all_profile_modes_to_metadata, value)
+
+    _set_all_profile_modes_metadata = { "offset" : _set_all_profile_modes_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_profile_modes(self) -> None:
+        """Set the mode for all profiles in all target sequences to the value held by the SetAllProfileModesTo property."""
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._set_all_profile_modes_metadata, )
+
     _property_names[main_sequence] = "main_sequence"
     _property_names[options] = "options"
     _property_names[auto_sequence] = "auto_sequence"
     _property_names[calculation_graphs] = "calculation_graphs"
     _property_names[flight_dynamics_record_creator] = "flight_dynamics_record_creator"
+    _property_names[set_all_target_sequence_actions_to] = "set_all_target_sequence_actions_to"
+    _property_names[set_all_profile_modes_to] = "set_all_profile_modes_to"
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSDriver."""
@@ -12832,7 +12884,7 @@ agcls.AgTypeNameMap["MCSStop"] = MCSStop
 class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """General properties of a TargetSequence segment."""
 
-    _num_methods = 16
+    _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_action_method_offset = 1
     _set_action_method_offset = 2
@@ -12850,6 +12902,9 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     _reset_profile_by_name_method_offset = 14
     _get_reset_inner_targeters_method_offset = 15
     _set_reset_inner_targeters_method_offset = 16
+    _get_set_all_profile_modes_to_method_offset = 17
+    _set_set_all_profile_modes_to_method_offset = 18
+    _set_all_profile_modes_method_offset = 19
     _metadata = {
         "iid_data" : (5553564801331532023, 7167747684923605155),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -12976,12 +13031,35 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     def reset_inner_targeters(self, value:bool) -> None:
         return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_reset_inner_targeters_metadata, value)
 
+    _get_set_all_profile_modes_to_metadata = { "offset" : _get_set_all_profile_modes_to_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @property
+    def set_all_profile_modes_to(self) -> "ProfileMode":
+        """The mode setting that will be applied to all profiles in this target sequence when the SetAllProfileModes method is invoked."""
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_set_all_profile_modes_to_metadata)
+
+    _set_set_all_profile_modes_to_metadata = { "offset" : _set_set_all_profile_modes_to_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ProfileMode),) }
+    @set_all_profile_modes_to.setter
+    def set_all_profile_modes_to(self, value:"ProfileMode") -> None:
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_set_all_profile_modes_to_metadata, value)
+
+    _set_all_profile_modes_metadata = { "offset" : _set_all_profile_modes_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def set_all_profile_modes(self) -> None:
+        """Set the mode for all profiles in this target sequence to the value held by the SetAllProfileModesTo property."""
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._set_all_profile_modes_metadata, )
+
     _property_names[action] = "action"
     _property_names[when_profiles_finish] = "when_profiles_finish"
     _property_names[continue_on_failure] = "continue_on_failure"
     _property_names[segments] = "segments"
     _property_names[profiles] = "profiles"
     _property_names[reset_inner_targeters] = "reset_inner_targeters"
+    _property_names[set_all_profile_modes_to] = "set_all_profile_modes_to"
 
     def __init__(self, source_object=None):
         """Construct an object of type MCSTargetSequence."""
@@ -24182,6 +24260,76 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5023536122523339839, 12094850900364107927), StateCalcInclination)
 agcls.AgTypeNameMap["StateCalcInclination"] = StateCalcInclination
 
+class StateCalcSignedInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Properties for a SignedInclination calculation object."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_coord_system_name_method_offset = 1
+    _set_coord_system_name_method_offset = 2
+    _get_element_type_method_offset = 3
+    _set_element_type_method_offset = 4
+    _metadata = {
+        "iid_data" : (5336129723023411026, 6180034959401188000),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateCalcSignedInclination)
+
+    _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def coord_system_name(self) -> str:
+        """Get or set the coordinate system within which the element is defined."""
+        return self._intf.get_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._get_coord_system_name_metadata)
+
+    _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @coord_system_name.setter
+    def coord_system_name(self, value:str) -> None:
+        return self._intf.set_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._set_coord_system_name_metadata, value)
+
+    _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(CalculationObjectElement),) }
+    @property
+    def element_type(self) -> "CalculationObjectElement":
+        """Get or set the element type."""
+        return self._intf.get_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._get_element_type_metadata)
+
+    _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(CalculationObjectElement),) }
+    @element_type.setter
+    def element_type(self, value:"CalculationObjectElement") -> None:
+        return self._intf.set_property(StateCalcSignedInclination._metadata, StateCalcSignedInclination._set_element_type_metadata, value)
+
+    _property_names[coord_system_name] = "coord_system_name"
+    _property_names[element_type] = "element_type"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateCalcSignedInclination."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateCalcSignedInclination)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateCalcSignedInclination, [StateCalcSignedInclination, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5139349186531030664, 13193042394187492498), StateCalcSignedInclination)
+agcls.AgTypeNameMap["StateCalcSignedInclination"] = StateCalcSignedInclination
+
 class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a True Longitude calculation object."""
 
@@ -25315,7 +25463,7 @@ agcls.AgClassCatalog.add_catalog_entry((5732359752868410995, 1334661584183029180
 agcls.AgTypeNameMap["StateCalcCurvilinearRelativeMotion"] = StateCalcCurvilinearRelativeMotion
 
 class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
-    """Properties for a Custom Function calculation object."""
+    """Do not use this interface, as it is deprecated. Properties for a Custom Function calculation object."""
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -25491,6 +25639,114 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((4930661583049638533, 10611274137171509637), StateCalcScript)
 agcls.AgTypeNameMap["StateCalcScript"] = StateCalcScript
+
+class StateCalcPythonScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """Properties for a Python script calculation object."""
+
+    _num_methods = 8
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_calculation_object_arguments_method_offset = 1
+    _get_custom_script_method_offset = 2
+    _set_custom_script_method_offset = 3
+    _get_unit_dimension_method_offset = 4
+    _set_unit_dimension_method_offset = 5
+    _get_return_variable_method_offset = 6
+    _set_return_variable_method_offset = 7
+    _get_calculation_object_arguments_link_embed_method_offset = 8
+    _metadata = {
+        "iid_data" : (5417608154021342011, 4501083988592545983),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, StateCalcPythonScript)
+
+    _get_calculation_object_arguments_metadata = { "offset" : _get_calculation_object_arguments_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def calculation_object_arguments(self) -> "CalculationObjectCollection":
+        """Get the arguments to be applied to the function."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_calculation_object_arguments_metadata)
+
+    _get_custom_script_metadata = { "offset" : _get_custom_script_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def custom_script(self) -> str:
+        """Get or set the user-supplied script to be evaluated as Python code."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_custom_script_metadata)
+
+    _set_custom_script_metadata = { "offset" : _set_custom_script_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @custom_script.setter
+    def custom_script(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_custom_script_metadata, value)
+
+    _get_unit_dimension_metadata = { "offset" : _get_unit_dimension_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def unit_dimension(self) -> str:
+        """Get or set the unit dimension."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_unit_dimension_metadata)
+
+    _set_unit_dimension_metadata = { "offset" : _set_unit_dimension_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @unit_dimension.setter
+    def unit_dimension(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_unit_dimension_metadata, value)
+
+    _get_return_variable_metadata = { "offset" : _get_return_variable_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def return_variable(self) -> str:
+        """Get or set the name of the Python variable containing the calculated value."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_return_variable_metadata)
+
+    _set_return_variable_metadata = { "offset" : _set_return_variable_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @return_variable.setter
+    def return_variable(self, value:str) -> None:
+        return self._intf.set_property(StateCalcPythonScript._metadata, StateCalcPythonScript._set_return_variable_metadata, value)
+
+    _get_calculation_object_arguments_link_embed_metadata = { "offset" : _get_calculation_object_arguments_link_embed_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def calculation_object_arguments_link_embed(self) -> "CalculationObjectLinkEmbedControlCollection":
+        """Get the arguments to be applied to the function."""
+        return self._intf.get_property(StateCalcPythonScript._metadata, StateCalcPythonScript._get_calculation_object_arguments_link_embed_metadata)
+
+    _property_names[calculation_object_arguments] = "calculation_object_arguments"
+    _property_names[custom_script] = "custom_script"
+    _property_names[unit_dimension] = "unit_dimension"
+    _property_names[return_variable] = "return_variable"
+    _property_names[calculation_object_arguments_link_embed] = "calculation_object_arguments_link_embed"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type StateCalcPythonScript."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, StateCalcPythonScript)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateCalcPythonScript, [StateCalcPythonScript, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5265659296244567948, 9545404042462404505), StateCalcPythonScript)
+agcls.AgTypeNameMap["StateCalcPythonScript"] = StateCalcPythonScript
 
 class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Cd calculation object."""

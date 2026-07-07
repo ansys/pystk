@@ -28,6 +28,8 @@ Overview
               - Get or set the user antenna data filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.gain_type`
               - Get or set the gain type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.polarization_reference_axis`
+              - Get or set the polarization reference axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.user_gain_factor`
               - Get or set the User Gain Factor.
 
@@ -67,6 +69,12 @@ Property detail
     :type: HFSSFarFieldDataGainType
 
     Get or set the gain type.
+
+.. py:property:: polarization_reference_axis
+    :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.polarization_reference_axis
+    :type: PolarizationReferenceAxis
+
+    Get or set the polarization reference axis.
 
 .. py:property:: user_gain_factor
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.user_gain_factor

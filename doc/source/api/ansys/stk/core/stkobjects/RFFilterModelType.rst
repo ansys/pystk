@@ -74,7 +74,7 @@ Overview
               - FIR.
 
             * - :py:attr:`~IIR`
-              - FIR.
+              - IIR.
 
 
 Import detail

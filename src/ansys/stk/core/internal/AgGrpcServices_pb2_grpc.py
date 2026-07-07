@@ -18,97 +18,92 @@ class STKGrpcServiceStub(object):
                 '/AgGrpcServices.STKGrpcService/GetConnectionMetadata',
                 request_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.ConnectionMetadata.FromString,
-                )
+                _registered_method=True)
         self.ShutDownServer = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/ShutDownServer',
                 request_serializer=AgGrpcServices__pb2.ShutDownRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.GetStkApplication = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/GetStkApplication',
                 request_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.ObjReturn.FromString,
-                )
-        self.EngineNewRoot = channel.unary_unary(
-                '/AgGrpcServices.STKGrpcService/EngineNewRoot',
-                request_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
+                _registered_method=True)
+        self.EngineNewCoClass = channel.unary_unary(
+                '/AgGrpcServices.STKGrpcService/EngineNewCoClass',
+                request_serializer=AgGrpcServices__pb2.NewCoClassRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.ObjReturn.FromString,
-                )
-        self.EngineNewRootContext = channel.unary_unary(
-                '/AgGrpcServices.STKGrpcService/EngineNewRootContext',
-                request_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
-                response_deserializer=AgGrpcServices__pb2.ObjReturn.FromString,
-                )
+                _registered_method=True)
         self.AddRef = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/AddRef',
                 request_serializer=AgGrpcServices__pb2.RefCountRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.RefCountReturn.FromString,
-                )
+                _registered_method=True)
         self.Release = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/Release',
                 request_serializer=AgGrpcServices__pb2.RefCountRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.RefCountReturn.FromString,
-                )
+                _registered_method=True)
         self.BatchedRelease = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/BatchedRelease',
                 request_serializer=AgGrpcServices__pb2.BatchedReleaseRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.SupportsInterface = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/SupportsInterface',
                 request_serializer=AgGrpcServices__pb2.SupportsInterfaceRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.SupportsInterfaceReturn.FromString,
-                )
+                _registered_method=True)
         self.Invoke = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/Invoke',
                 request_serializer=AgGrpcServices__pb2.InvokeRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.InvokeReturn.FromString,
-                )
+                _registered_method=True)
         self.GetProperty = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/GetProperty',
                 request_serializer=AgGrpcServices__pb2.GetPropertyRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.GetPropertyReturn.FromString,
-                )
+                _registered_method=True)
         self.SetProperty = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/SetProperty',
                 request_serializer=AgGrpcServices__pb2.SetPropertyRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.EnumerateCollection = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/EnumerateCollection',
                 request_serializer=AgGrpcServices__pb2.CollectionRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.CollectionReturn.FromString,
-                )
+                _registered_method=True)
         self.BatchedInvoke = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/BatchedInvoke',
                 request_serializer=AgGrpcServices__pb2.BatchedInvokeRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.BatchedInvokeReturn.FromString,
-                )
+                _registered_method=True)
         self.StartEventLoop = channel.unary_stream(
                 '/AgGrpcServices.STKGrpcService/StartEventLoop',
                 request_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EventLoopResponse.FromString,
-                )
+                _registered_method=True)
         self.StopEventLoop = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/StopEventLoop',
                 request_serializer=AgGrpcServices__pb2.EventLoopData.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.AcknowledgeEvent = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/AcknowledgeEvent',
                 request_serializer=AgGrpcServices__pb2.EventLoopData.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.Subscribe = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/Subscribe',
                 request_serializer=AgGrpcServices__pb2.SubscriptionData.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
         self.Unsubscribe = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/Unsubscribe',
                 request_serializer=AgGrpcServices__pb2.SubscriptionData.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                )
+                _registered_method=True)
 
 
 class STKGrpcServiceServicer(object):
@@ -134,13 +129,7 @@ class STKGrpcServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def EngineNewRoot(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def EngineNewRootContext(self, request, context):
+    def EngineNewCoClass(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -250,14 +239,9 @@ def add_STKGrpcServiceServicer_to_server(servicer, server):
                     request_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
                     response_serializer=AgGrpcServices__pb2.ObjReturn.SerializeToString,
             ),
-            'EngineNewRoot': grpc.unary_unary_rpc_method_handler(
-                    servicer.EngineNewRoot,
-                    request_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
-                    response_serializer=AgGrpcServices__pb2.ObjReturn.SerializeToString,
-            ),
-            'EngineNewRootContext': grpc.unary_unary_rpc_method_handler(
-                    servicer.EngineNewRootContext,
-                    request_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
+            'EngineNewCoClass': grpc.unary_unary_rpc_method_handler(
+                    servicer.EngineNewCoClass,
+                    request_deserializer=AgGrpcServices__pb2.NewCoClassRequest.FromString,
                     response_serializer=AgGrpcServices__pb2.ObjReturn.SerializeToString,
             ),
             'AddRef': grpc.unary_unary_rpc_method_handler(
@@ -334,6 +318,7 @@ def add_STKGrpcServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'AgGrpcServices.STKGrpcService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('AgGrpcServices.STKGrpcService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -351,11 +336,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/GetConnectionMetadata',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/GetConnectionMetadata',
             AgGrpcServices__pb2.EmptyMessage.SerializeToString,
             AgGrpcServices__pb2.ConnectionMetadata.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ShutDownServer(request,
@@ -368,11 +363,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/ShutDownServer',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/ShutDownServer',
             AgGrpcServices__pb2.ShutDownRequest.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetStkApplication(request,
@@ -385,14 +390,24 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/GetStkApplication',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/GetStkApplication',
             AgGrpcServices__pb2.EmptyMessage.SerializeToString,
             AgGrpcServices__pb2.ObjReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
-    def EngineNewRoot(request,
+    def EngineNewCoClass(request,
             target,
             options=(),
             channel_credentials=None,
@@ -402,28 +417,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/EngineNewRoot',
-            AgGrpcServices__pb2.EmptyMessage.SerializeToString,
-            AgGrpcServices__pb2.ObjReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def EngineNewRootContext(request,
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/EngineNewRootContext',
-            AgGrpcServices__pb2.EmptyMessage.SerializeToString,
+            '/AgGrpcServices.STKGrpcService/EngineNewCoClass',
+            AgGrpcServices__pb2.NewCoClassRequest.SerializeToString,
             AgGrpcServices__pb2.ObjReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def AddRef(request,
@@ -436,11 +444,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/AddRef',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/AddRef',
             AgGrpcServices__pb2.RefCountRequest.SerializeToString,
             AgGrpcServices__pb2.RefCountReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Release(request,
@@ -453,11 +471,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/Release',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/Release',
             AgGrpcServices__pb2.RefCountRequest.SerializeToString,
             AgGrpcServices__pb2.RefCountReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def BatchedRelease(request,
@@ -470,11 +498,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/BatchedRelease',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/BatchedRelease',
             AgGrpcServices__pb2.BatchedReleaseRequest.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SupportsInterface(request,
@@ -487,11 +525,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/SupportsInterface',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/SupportsInterface',
             AgGrpcServices__pb2.SupportsInterfaceRequest.SerializeToString,
             AgGrpcServices__pb2.SupportsInterfaceReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Invoke(request,
@@ -504,11 +552,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/Invoke',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/Invoke',
             AgGrpcServices__pb2.InvokeRequest.SerializeToString,
             AgGrpcServices__pb2.InvokeReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetProperty(request,
@@ -521,11 +579,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/GetProperty',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/GetProperty',
             AgGrpcServices__pb2.GetPropertyRequest.SerializeToString,
             AgGrpcServices__pb2.GetPropertyReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def SetProperty(request,
@@ -538,11 +606,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/SetProperty',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/SetProperty',
             AgGrpcServices__pb2.SetPropertyRequest.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def EnumerateCollection(request,
@@ -555,11 +633,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/EnumerateCollection',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/EnumerateCollection',
             AgGrpcServices__pb2.CollectionRequest.SerializeToString,
             AgGrpcServices__pb2.CollectionReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def BatchedInvoke(request,
@@ -572,11 +660,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/BatchedInvoke',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/BatchedInvoke',
             AgGrpcServices__pb2.BatchedInvokeRequest.SerializeToString,
             AgGrpcServices__pb2.BatchedInvokeReturn.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def StartEventLoop(request,
@@ -589,11 +687,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/AgGrpcServices.STKGrpcService/StartEventLoop',
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/StartEventLoop',
             AgGrpcServices__pb2.EmptyMessage.SerializeToString,
             AgGrpcServices__pb2.EventLoopResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def StopEventLoop(request,
@@ -606,11 +714,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/StopEventLoop',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/StopEventLoop',
             AgGrpcServices__pb2.EventLoopData.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def AcknowledgeEvent(request,
@@ -623,11 +741,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/AcknowledgeEvent',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/AcknowledgeEvent',
             AgGrpcServices__pb2.EventLoopData.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Subscribe(request,
@@ -640,11 +768,21 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/Subscribe',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/Subscribe',
             AgGrpcServices__pb2.SubscriptionData.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Unsubscribe(request,
@@ -657,8 +795,18 @@ class STKGrpcService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/Unsubscribe',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/AgGrpcServices.STKGrpcService/Unsubscribe',
             AgGrpcServices__pb2.SubscriptionData.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

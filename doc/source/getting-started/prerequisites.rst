@@ -49,6 +49,9 @@ The STK desktop application or STK Engine must be installed and licensed on your
     * - 2025r2.2
       - 13.0.1
       - 0.2.1
+    * - 2026r1
+      - 13.1
+      - 0.3
 
 Install the STK Desktop application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

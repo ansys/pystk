@@ -269,28 +269,18 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEOpenLogFileMode",
-            "OldName": "eOpenLogFileForWriting",
-            "NewName": "FOR_WRITING"
-        },
-        {
-            "ParentScope": "AgEOpenLogFileMode",
             "OldName": "eOpenLogFileForAppending",
             "NewName": "FOR_APPENDING"
         },
         {
-            "ParentScope": "AgEUiLogMsgType",
-            "OldName": "eUiLogMsgDebug",
-            "NewName": "DEBUG"
+            "ParentScope": "AgEOpenLogFileMode",
+            "OldName": "eOpenLogFileForWriting",
+            "NewName": "FOR_WRITING"
         },
         {
             "ParentScope": "AgEUiLogMsgType",
-            "OldName": "eUiLogMsgInfo",
-            "NewName": "INFO"
-        },
-        {
-            "ParentScope": "AgEUiLogMsgType",
-            "OldName": "eUiLogMsgForceInfo",
-            "NewName": "FORCE_INFO"
+            "OldName": "eUiLogMsgAlarm",
+            "NewName": "ALARM"
         },
         {
             "ParentScope": "AgEUiLogMsgType",
@@ -299,13 +289,23 @@
         },
         {
             "ParentScope": "AgEUiLogMsgType",
-            "OldName": "eUiLogMsgAlarm",
-            "NewName": "ALARM"
+            "OldName": "eUiLogMsgForceInfo",
+            "NewName": "FORCE_INFO"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgInfo",
+            "NewName": "INFO"
+        },
+        {
+            "ParentScope": "AgEUiLogMsgType",
+            "OldName": "eUiLogMsgDebug",
+            "NewName": "DEBUG"
         },
         {
             "ParentScope": "AgEPrefFilesMode",
-            "OldName": "ePrefFiles_NoLoad_NoSave",
-            "NewName": "_NO_LOAD_NO_SAVE"
+            "OldName": "ePrefFiles_Load_And_Save",
+            "NewName": "_LOAD_AND_SAVE"
         },
         {
             "ParentScope": "AgEPrefFilesMode",
@@ -314,8 +314,8 @@
         },
         {
             "ParentScope": "AgEPrefFilesMode",
-            "OldName": "ePrefFiles_Load_And_Save",
-            "NewName": "_LOAD_AND_SAVE"
+            "OldName": "ePrefFiles_NoLoad_NoSave",
+            "NewName": "_NO_LOAD_NO_SAVE"
         },
         {
             "ParentScope": "AgEAppConstants",
@@ -324,18 +324,8 @@
         },
         {
             "ParentScope": "AgEAppErrorCodes",
-            "OldName": "eAppErrorPersLoadFail",
-            "NewName": "PERSONALITY_LOAD_FAILED"
-        },
-        {
-            "ParentScope": "AgEAppErrorCodes",
-            "OldName": "eAppErrorAlreadyLoadFail",
-            "NewName": "PERSONALITY_ALREADY_LOADED"
-        },
-        {
-            "ParentScope": "AgEAppErrorCodes",
-            "OldName": "eAppErrorPersLoadFirst",
-            "NewName": "PERSONALITY_NOT_LOADED"
+            "OldName": "eAppErrorNoLicenseError",
+            "NewName": "NO_LICENSE_ERROR"
         },
         {
             "ParentScope": "AgEAppErrorCodes",
@@ -344,8 +334,18 @@
         },
         {
             "ParentScope": "AgEAppErrorCodes",
-            "OldName": "eAppErrorNoLicenseError",
-            "NewName": "NO_LICENSE_ERROR"
+            "OldName": "eAppErrorPersLoadFirst",
+            "NewName": "PERSONALITY_NOT_LOADED"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorAlreadyLoadFail",
+            "NewName": "PERSONALITY_ALREADY_LOADED"
+        },
+        {
+            "ParentScope": "AgEAppErrorCodes",
+            "OldName": "eAppErrorPersLoadFail",
+            "NewName": "PERSONALITY_LOAD_FAILED"
         }
     ],
     "NamedArgumentMappings": []

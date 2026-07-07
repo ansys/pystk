@@ -252,18 +252,18 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEWindowService",
-            "OldName": "eWindowService2DWindow",
-            "NewName": "WINDOW_2D"
-        },
-        {
-            "ParentScope": "AgEWindowService",
             "OldName": "eWindowService3DWindow",
             "NewName": "WINDOW_3D"
         },
         {
+            "ParentScope": "AgEWindowService",
+            "OldName": "eWindowService2DWindow",
+            "NewName": "WINDOW_2D"
+        },
+        {
             "ParentScope": "AgEWindowState",
-            "OldName": "eWindowStateMaximized",
-            "NewName": "MAXIMIZED"
+            "OldName": "eWindowStateNormal",
+            "NewName": "NORMAL"
         },
         {
             "ParentScope": "AgEWindowState",
@@ -272,13 +272,13 @@
         },
         {
             "ParentScope": "AgEWindowState",
-            "OldName": "eWindowStateNormal",
-            "NewName": "NORMAL"
+            "OldName": "eWindowStateMaximized",
+            "NewName": "MAXIMIZED"
         },
         {
             "ParentScope": "AgEArrangeStyle",
-            "OldName": "eArrangeStyleCascade",
-            "NewName": "CASCADE"
+            "OldName": "eArrangeStyleTiledVertical",
+            "NewName": "TILED_VERTICAL"
         },
         {
             "ParentScope": "AgEArrangeStyle",
@@ -287,28 +287,13 @@
         },
         {
             "ParentScope": "AgEArrangeStyle",
-            "OldName": "eArrangeStyleTiledVertical",
-            "NewName": "TILED_VERTICAL"
+            "OldName": "eArrangeStyleCascade",
+            "NewName": "CASCADE"
         },
         {
             "ParentScope": "AgEDockStyle",
-            "OldName": "eDockStyleIntegrated",
-            "NewName": "INTEGRATED"
-        },
-        {
-            "ParentScope": "AgEDockStyle",
-            "OldName": "eDockStyleDockedLeft",
-            "NewName": "DOCKED_LEFT"
-        },
-        {
-            "ParentScope": "AgEDockStyle",
-            "OldName": "eDockStyleDockedRight",
-            "NewName": "DOCKED_RIGHT"
-        },
-        {
-            "ParentScope": "AgEDockStyle",
-            "OldName": "eDockStyleDockedTop",
-            "NewName": "DOCKED_TOP"
+            "OldName": "eDockStyleFloating",
+            "NewName": "FLOATING"
         },
         {
             "ParentScope": "AgEDockStyle",
@@ -317,18 +302,33 @@
         },
         {
             "ParentScope": "AgEDockStyle",
-            "OldName": "eDockStyleFloating",
-            "NewName": "FLOATING"
+            "OldName": "eDockStyleDockedTop",
+            "NewName": "DOCKED_TOP"
         },
         {
-            "ParentScope": "AgEFloatState",
-            "OldName": "eFloatStateFloated",
-            "NewName": "FLOATED"
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedRight",
+            "NewName": "DOCKED_RIGHT"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleDockedLeft",
+            "NewName": "DOCKED_LEFT"
+        },
+        {
+            "ParentScope": "AgEDockStyle",
+            "OldName": "eDockStyleIntegrated",
+            "NewName": "INTEGRATED"
         },
         {
             "ParentScope": "AgEFloatState",
             "OldName": "eFloatStateDocked",
             "NewName": "DOCKED"
+        },
+        {
+            "ParentScope": "AgEFloatState",
+            "OldName": "eFloatStateFloated",
+            "NewName": "FLOATED"
         }
     ],
     "NamedArgumentMappings": []

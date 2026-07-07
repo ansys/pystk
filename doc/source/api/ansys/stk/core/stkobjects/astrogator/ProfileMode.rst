@@ -31,6 +31,9 @@ Overview
             * - :py:attr:`~ACTIVE`
               - Active - the Target Sequence will apply the change that the profile passes when running.
 
+            * - :py:attr:`~ITERATE_ACTIVE`
+              - Iterate/Active - this combined mode option is for use with the MCS level Set All Profile Modes action in place of the individual Iterate and Active options.
+
 
 Import detail
 -------------

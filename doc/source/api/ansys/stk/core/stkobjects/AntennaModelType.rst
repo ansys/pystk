@@ -178,6 +178,9 @@ Overview
             * - :py:attr:`~HFSS_EEP_ARRAY`
               - HFSS EEP array antenna model.
 
+            * - :py:attr:`~HFSS_DESIGN`
+              - HFSS Design antenna model.
+
 
 Import detail
 -------------

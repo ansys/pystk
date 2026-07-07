@@ -47,7 +47,7 @@ class COMEventHandlerImpl(object):
     def __init__(self, pUnk, pUnkSink, iid):
         self._connection_id = None
         self._base_pUnkSink = pUnkSink
-        self._cpc = agcls.IConnectionPointContainer(IUnknown(pUnk))
+        self._cpc = agcls.IConnectionPointContainer(pUnk)
         self._cp = self._cpc.find_connection_point(iid)
 
     def __del__(self):

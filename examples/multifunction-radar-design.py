@@ -39,7 +39,7 @@ root.new_scenario("MultifunctionRadar")
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+from ansys.stk.core.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(root, 640, 480)
@@ -49,7 +49,7 @@ globe_plotter.show()
 # Show a 2D graphics window by running:
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+from ansys.stk.core.experimental.jupyterwidgets import MapWidget
 
 
 map_plotter = MapWidget(root, 640, 480)

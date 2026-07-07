@@ -1463,6 +1463,136 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region TargetSequence_SetAllRunModes
+    def test_TargetSequence_SetAllRunModes(self):
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+
+        profDC: "IProfile" = ts.profiles["Differential Corrector"]  # Iterate, Not Active, Run Once
+        profGSS: "IProfile" = ts.profiles.add("Golden Section Search")  # Iterate, Not Active, Run Once
+        profCMT: "IProfile" = ts.profiles.add("Change Maneuver Type")  # Active, Not Active
+        profCP: "IProfile" = ts.profiles.add("Change Propagator")  # Active, Not Active
+
+        # Initial state
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.RUN_ONCE
+        Assert.assertEqual(ProfileMode.RUN_ONCE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profDC.mode)
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.NOT_ACTIVE
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profDC.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCP.mode)
+
+        ts.set_all_profile_modes_to = ProfileMode.ITERATE_ACTIVE
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        ts.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+
+    # endregion
+
+    # region MCSOptions_SetAllRunModes
+    def test_MCSOptions_SetAllRunModes(self):
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+
+        profDC: "IProfile" = ts.profiles["Differential Corrector"]  # Iterate, Not Active, Run Once
+        profGSS: "IProfile" = ts.profiles.add("Golden Section Search")  # Iterate, Not Active, Run Once
+        profCMT: "IProfile" = ts.profiles.add("Change Maneuver Type")  # Active, Not Active
+        profCP: "IProfile" = ts.profiles.add("Change Propagator")  # Active, Not Active
+
+        # Initial state
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, ts.set_all_profile_modes_to)
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.RUN_ONCE
+        Assert.assertEqual(ProfileMode.RUN_ONCE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profDC.mode)
+        Assert.assertEqual(ProfileMode.RUN_ONCE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.NOT_ACTIVE
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profDC.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.NOT_ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.set_all_profile_modes_to = ProfileMode.ITERATE_ACTIVE
+        Assert.assertEqual(ProfileMode.ITERATE_ACTIVE, EarlyBoundTests.AG_VA.set_all_profile_modes_to)
+        EarlyBoundTests.AG_VA.set_all_profile_modes()
+        Assert.assertEqual(ProfileMode.ITERATE, profDC.mode)
+        Assert.assertEqual(ProfileMode.ITERATE, profGSS.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCMT.mode)
+        Assert.assertEqual(ProfileMode.ACTIVE, profCP.mode)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+
+    # endregion
+
+    # region MCSOptions_SetAllTargetSequenceActions
+    def test_MCSOptions_SetAllTargetSequenceActions(self):
+        ts2: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
+        )
+        ts3: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts3", "-")
+        )
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_NOMINAL_SEQUENCE, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_NOMINAL_SEQUENCE, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_NOMINAL_SEQUENCE, ts3.action)
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_ACTIVE_PROFILES, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES, ts3.action)
+
+        EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to = TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE
+        Assert.assertEqual(
+            TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, EarlyBoundTests.AG_VA.set_all_target_sequence_actions_to
+        )
+        EarlyBoundTests.AG_VA.set_all_sequence_actions()
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, ts2.action)
+        Assert.assertEqual(TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE, ts3.action)
+
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts2")
+        EarlyBoundTests.AG_VA.main_sequence.remove("ts3")
+
+    # endregion
+
     # region MoonMission
     def test_MoonMission(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission START")
@@ -3076,7 +3206,7 @@ longitude = 121;"""
             driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
         )
         targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
-        code: "RunCode" = driver.run_mcs2()
+        code: "RunCode" = driver.run_mcs()
         code0: "RunCode" = RunCode.ERROR
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3105,7 +3235,7 @@ longitude = 121;"""
         diffCorr.control_parameters[0].enable = True
         diffCorr.results[0].enable = True
         diffCorr.max_iterations = 1
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.PROFILE_FAILURE
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3116,7 +3246,7 @@ longitude = 121;"""
         driver.main_sequence.remove("TargetSequence")
 
         stop: "IMCSSegment" = driver.main_sequence.insert(SegmentType.STOP, "STOP", "Initial_State")
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.STOPPED
         Assert.assertEqual(code0, code)
         driver.begin_run()
@@ -3126,7 +3256,7 @@ longitude = 121;"""
 
         driver.main_sequence.remove("STOP")
 
-        code = driver.run_mcs2()
+        code = driver.run_mcs()
         code0 = RunCode.MARCHING
         Assert.assertEqual(code0, code)
         seg: "IMCSSegment" = driver.main_sequence["Propagate"]

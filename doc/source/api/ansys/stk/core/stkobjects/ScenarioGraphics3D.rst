@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.chunk_terrain_cache_size`
               - Chunk terrain cache size (MB).
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.draw_on_terrain`
-              - If true, lines drawn on the globe such as those that define area and line targets, range rings, vehicle paths, map details, etc. will conform to the terrain on the globe. Otherwise, if terrain is present, the lines may go under or float over the terrain.
+              - Property determining how surface lines conform to the terrain on the globe, such as area and line targets boundaries, range rings, map details, etc.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.is_negative_altitude_allowed`
               - Specify whether to allow negative altitudes for great arc vehicles and for facilities, places and targets.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.large_font`
@@ -98,11 +98,12 @@ Property detail
 
     Chunk terrain cache size (MB).
 
+
 .. py:property:: draw_on_terrain
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.draw_on_terrain
-    :type: bool
+    :type: SurfaceLinesTerrain
 
-    If true, lines drawn on the globe such as those that define area and line targets, range rings, vehicle paths, map details, etc. will conform to the terrain on the globe. Otherwise, if terrain is present, the lines may go under or float over the terrain.
+    Property determining how surface lines conform to the terrain on the globe, such as area and line targets boundaries, range rings, map details, etc.
 
 .. py:property:: is_negative_altitude_allowed
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.is_negative_altitude_allowed
@@ -164,6 +165,8 @@ Method detail
     :Returns:
 
         :obj:`~list`
+
+
 
 
 

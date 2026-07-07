@@ -9928,7 +9928,7 @@ class Constraints(TestBase):
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 GMT -12:12:12 12:12:12")
         TestBase.Application.execute_command("SetConstraint */Satellite/Satellite1 ApparentTime -04:00:00 18:00:00")
         TestBase.Application.execute_command(
-            (('SetConstraint */Satellite/Satellite1 Intervals Exclude "' + strPath) + '"')
+            (('SetConstraint */Satellite/Satellite1 Intervals Exclude Files Add "' + strPath) + '"')
         )
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
@@ -9942,7 +9942,7 @@ class Constraints(TestBase):
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
-            (('SetConstraint */Satellite/Satellite1 Intervals Include "' + strPath) + '"')
+            (('SetConstraint */Satellite/Satellite1 Intervals Include Files Add "' + strPath) + '"')
         )
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
@@ -9983,6 +9983,7 @@ class Constraints(TestBase):
             acc.add_constraint(AccessConstraintType.INTERVALS)
         )
         intervals.filename = strPath
+        intervals.exclusion_interval = True
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 

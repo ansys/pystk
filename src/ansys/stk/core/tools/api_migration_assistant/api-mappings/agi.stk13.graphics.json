@@ -1550,6 +1550,11 @@
             "NewName": "view_offset_direction"
         },
         {
+            "ParentScope": "IAgStkGraphicsCamera",
+            "OldName": "ViewCentralBodyFromPosition",
+            "NewName": "view_central_body_from_position"
+        },
+        {
             "ParentScope": "IAgStkGraphicsCentralBodyGraphics",
             "OldName": "Color",
             "NewName": "color"
@@ -7823,13 +7828,8 @@
     "EnumValueMappings": [
         {
             "ParentScope": "AgEStkGraphicsCylinderFill",
-            "OldName": "eStkGraphicsCylinderFillWall",
-            "NewName": "WALL"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsCylinderFill",
-            "OldName": "eStkGraphicsCylinderFillBottomCap",
-            "NewName": "BOTTOM_CAP"
+            "OldName": "eStkGraphicsCylinderFillAll",
+            "NewName": "ALL"
         },
         {
             "ParentScope": "AgEStkGraphicsCylinderFill",
@@ -7838,13 +7838,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsCylinderFill",
-            "OldName": "eStkGraphicsCylinderFillAll",
-            "NewName": "ALL"
+            "OldName": "eStkGraphicsCylinderFillBottomCap",
+            "NewName": "BOTTOM_CAP"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCylinderFill",
+            "OldName": "eStkGraphicsCylinderFillWall",
+            "NewName": "WALL"
         },
         {
             "ParentScope": "AgEStkGraphicsWindingOrder",
-            "OldName": "eStkGraphicsWindingOrderCounterClockwise",
-            "NewName": "COUNTER_CLOCKWISE"
+            "OldName": "eStkGraphicsWindingOrderCompute",
+            "NewName": "COMPUTE"
         },
         {
             "ParentScope": "AgEStkGraphicsWindingOrder",
@@ -7853,18 +7858,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsWindingOrder",
-            "OldName": "eStkGraphicsWindingOrderCompute",
-            "NewName": "COMPUTE"
+            "OldName": "eStkGraphicsWindingOrderCounterClockwise",
+            "NewName": "COUNTER_CLOCKWISE"
         },
         {
             "ParentScope": "AgEStkGraphicsCameraSnapshotFileFormat",
-            "OldName": "eStkGraphicsCameraSnapshotFileFormatBmp",
-            "NewName": "BMP"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsCameraSnapshotFileFormat",
-            "OldName": "eStkGraphicsCameraSnapshotFileFormatTiff",
-            "NewName": "TIFF"
+            "OldName": "eStkGraphicsCameraSnapshotFileFormatPng",
+            "NewName": "PNG"
         },
         {
             "ParentScope": "AgEStkGraphicsCameraSnapshotFileFormat",
@@ -7873,13 +7873,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsCameraSnapshotFileFormat",
-            "OldName": "eStkGraphicsCameraSnapshotFileFormatPng",
-            "NewName": "PNG"
+            "OldName": "eStkGraphicsCameraSnapshotFileFormatTiff",
+            "NewName": "TIFF"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCameraSnapshotFileFormat",
+            "OldName": "eStkGraphicsCameraSnapshotFileFormatBmp",
+            "NewName": "BMP"
         },
         {
             "ParentScope": "AgEStkGraphicsCameraVideoFormat",
-            "OldName": "eStkGraphicsCameraVideoFormatH264",
-            "NewName": "H264"
+            "OldName": "eStkGraphicsCameraVideoFormatProRes",
+            "NewName": "PRO_RES"
         },
         {
             "ParentScope": "AgEStkGraphicsCameraVideoFormat",
@@ -7887,29 +7892,14 @@
             "NewName": "WMV"
         },
         {
-            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisX",
-            "NewName": "X"
+            "ParentScope": "AgEStkGraphicsCameraVideoFormat",
+            "OldName": "eStkGraphicsCameraVideoFormatH264",
+            "NewName": "H264"
         },
         {
             "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisY",
-            "NewName": "Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisZ",
-            "NewName": "Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisNegativeX",
-            "NewName": "NEGATIVE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisNegativeY",
-            "NewName": "NEGATIVE_Y"
+            "OldName": "eStkGraphicsConstrainedUpAxisNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
@@ -7918,23 +7908,33 @@
         },
         {
             "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
-            "OldName": "eStkGraphicsConstrainedUpAxisNone",
+            "OldName": "eStkGraphicsConstrainedUpAxisNegativeY",
+            "NewName": "NEGATIVE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
+            "OldName": "eStkGraphicsConstrainedUpAxisNegativeX",
+            "NewName": "NEGATIVE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
+            "OldName": "eStkGraphicsConstrainedUpAxisZ",
+            "NewName": "Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
+            "OldName": "eStkGraphicsConstrainedUpAxisY",
+            "NewName": "Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsConstrainedUpAxis",
+            "OldName": "eStkGraphicsConstrainedUpAxisX",
+            "NewName": "X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
+            "OldName": "eStkGraphicsGlobeOverlayRoleNone",
             "NewName": "NONE"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
-            "OldName": "eStkGraphicsGlobeOverlayRoleBase",
-            "NewName": "BASE"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
-            "OldName": "eStkGraphicsGlobeOverlayRoleNight",
-            "NewName": "NIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
-            "OldName": "eStkGraphicsGlobeOverlayRoleSpecular",
-            "NewName": "SPECULAR"
         },
         {
             "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
@@ -7943,13 +7943,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
-            "OldName": "eStkGraphicsGlobeOverlayRoleNone",
-            "NewName": "NONE"
+            "OldName": "eStkGraphicsGlobeOverlayRoleSpecular",
+            "NewName": "SPECULAR"
         },
         {
-            "ParentScope": "AgEStkGraphicsIndicesOrderHint",
-            "OldName": "eStkGraphicsIndicesOrderHintNotSorted",
-            "NewName": "NOT_SORTED"
+            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
+            "OldName": "eStkGraphicsGlobeOverlayRoleNight",
+            "NewName": "NIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGlobeOverlayRole",
+            "OldName": "eStkGraphicsGlobeOverlayRoleBase",
+            "NewName": "BASE"
         },
         {
             "ParentScope": "AgEStkGraphicsIndicesOrderHint",
@@ -7957,9 +7962,14 @@
             "NewName": "SORTED_ASCENDING"
         },
         {
+            "ParentScope": "AgEStkGraphicsIndicesOrderHint",
+            "OldName": "eStkGraphicsIndicesOrderHintNotSorted",
+            "NewName": "NOT_SORTED"
+        },
+        {
             "ParentScope": "AgEStkGraphicsMaintainAspectRatio",
-            "OldName": "eStkGraphicsMaintainAspectRatioNone",
-            "NewName": "NONE"
+            "OldName": "eStkGraphicsMaintainAspectRatioHeight",
+            "NewName": "HEIGHT"
         },
         {
             "ParentScope": "AgEStkGraphicsMaintainAspectRatio",
@@ -7968,13 +7978,8 @@
         },
         {
             "ParentScope": "AgEStkGraphicsMaintainAspectRatio",
-            "OldName": "eStkGraphicsMaintainAspectRatioHeight",
-            "NewName": "HEIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsMapProjection",
-            "OldName": "eStkGraphicsMapProjectionMercator",
-            "NewName": "MERCATOR"
+            "OldName": "eStkGraphicsMaintainAspectRatioNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgEStkGraphicsMapProjection",
@@ -7982,14 +7987,14 @@
             "NewName": "EQUIDISTANT_CYLINDRICAL"
         },
         {
-            "ParentScope": "AgEStkGraphicsMarkerBatchRenderingMethod",
-            "OldName": "eStkGraphicsMarkerBatchRenderingMethodGeometryShader",
-            "NewName": "GEOMETRY_SHADER"
+            "ParentScope": "AgEStkGraphicsMapProjection",
+            "OldName": "eStkGraphicsMapProjectionMercator",
+            "NewName": "MERCATOR"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderingMethod",
-            "OldName": "eStkGraphicsMarkerBatchRenderingMethodVertexShader",
-            "NewName": "VERTEX_SHADER"
+            "OldName": "eStkGraphicsMarkerBatchRenderingMethodFixedFunction",
+            "NewName": "FIXED_FUNCTION"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderingMethod",
@@ -7998,13 +8003,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderingMethod",
-            "OldName": "eStkGraphicsMarkerBatchRenderingMethodFixedFunction",
-            "NewName": "FIXED_FUNCTION"
+            "OldName": "eStkGraphicsMarkerBatchRenderingMethodVertexShader",
+            "NewName": "VERTEX_SHADER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsMarkerBatchRenderingMethod",
+            "OldName": "eStkGraphicsMarkerBatchRenderingMethodGeometryShader",
+            "NewName": "GEOMETRY_SHADER"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderPass",
-            "OldName": "eStkGraphicsMarkerBatchRenderPassOpaque",
-            "NewName": "OPAQUE"
+            "OldName": "eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency",
+            "NewName": "BASED_ON_TRANSLUCENCY"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderPass",
@@ -8013,13 +8023,8 @@
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchRenderPass",
-            "OldName": "eStkGraphicsMarkerBatchRenderPassBasedOnTranslucency",
-            "NewName": "BASED_ON_TRANSLUCENCY"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsMarkerBatchSizeSource",
-            "OldName": "eStkGraphicsMarkerBatchSizeSourceFromTexture",
-            "NewName": "FROM_TEXTURE"
+            "OldName": "eStkGraphicsMarkerBatchRenderPassOpaque",
+            "NewName": "OPAQUE"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchSizeSource",
@@ -8027,9 +8032,14 @@
             "NewName": "USER_DEFINED"
         },
         {
+            "ParentScope": "AgEStkGraphicsMarkerBatchSizeSource",
+            "OldName": "eStkGraphicsMarkerBatchSizeSourceFromTexture",
+            "NewName": "FROM_TEXTURE"
+        },
+        {
             "ParentScope": "AgEStkGraphicsMarkerBatchSortOrder",
-            "OldName": "eStkGraphicsMarkerBatchSortOrderBackToFront",
-            "NewName": "BACK_TO_FRONT"
+            "OldName": "eStkGraphicsMarkerBatchSortOrderByTexture",
+            "NewName": "BY_TEXTURE"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchSortOrder",
@@ -8038,13 +8048,8 @@
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchSortOrder",
-            "OldName": "eStkGraphicsMarkerBatchSortOrderByTexture",
-            "NewName": "BY_TEXTURE"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsMarkerBatchUnit",
-            "OldName": "eStkGraphicsMarkerBatchUnitPixels",
-            "NewName": "PIXELS"
+            "OldName": "eStkGraphicsMarkerBatchSortOrderBackToFront",
+            "NewName": "BACK_TO_FRONT"
         },
         {
             "ParentScope": "AgEStkGraphicsMarkerBatchUnit",
@@ -8052,114 +8057,14 @@
             "NewName": "METERS"
         },
         {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTranslateX",
-            "NewName": "TRANSLATE_X"
+            "ParentScope": "AgEStkGraphicsMarkerBatchUnit",
+            "OldName": "eStkGraphicsMarkerBatchUnitPixels",
+            "NewName": "PIXELS"
         },
         {
             "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTranslateY",
-            "NewName": "TRANSLATE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTranslateZ",
-            "NewName": "TRANSLATE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeRotateX",
-            "NewName": "ROTATE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeRotateY",
-            "NewName": "ROTATE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeRotateZ",
-            "NewName": "ROTATE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeScaleX",
-            "NewName": "SCALE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeScaleY",
-            "NewName": "SCALE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeScaleZ",
-            "NewName": "SCALE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeScaleUniform",
-            "NewName": "SCALE_UNIFORM"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateX",
-            "NewName": "TEXTURE_TRANSLATE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateY",
-            "NewName": "TEXTURE_TRANSLATE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateZ",
-            "NewName": "TEXTURE_TRANSLATE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateX",
-            "NewName": "TEXTURE_ROTATE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateY",
-            "NewName": "TEXTURE_ROTATE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateZ",
-            "NewName": "TEXTURE_ROTATE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleX",
-            "NewName": "TEXTURE_SCALE_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleY",
-            "NewName": "TEXTURE_SCALE_Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleZ",
-            "NewName": "TEXTURE_SCALE_Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleUniform",
-            "NewName": "TEXTURE_SCALE_UNIFORM"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTranslateRed",
-            "NewName": "TRANSLATE_RED"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeTranslateGreen",
-            "NewName": "TRANSLATE_GREEN"
+            "OldName": "eStkGraphicsModelTransformationTypeAnimation",
+            "NewName": "ANIMATION"
         },
         {
             "ParentScope": "AgEStkGraphicsModelTransformationType",
@@ -8168,43 +8073,118 @@
         },
         {
             "ParentScope": "AgEStkGraphicsModelTransformationType",
-            "OldName": "eStkGraphicsModelTransformationTypeAnimation",
-            "NewName": "ANIMATION"
+            "OldName": "eStkGraphicsModelTransformationTypeTranslateGreen",
+            "NewName": "TRANSLATE_GREEN"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTranslateRed",
+            "NewName": "TRANSLATE_RED"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleUniform",
+            "NewName": "TEXTURE_SCALE_UNIFORM"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleZ",
+            "NewName": "TEXTURE_SCALE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleY",
+            "NewName": "TEXTURE_SCALE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureScaleX",
+            "NewName": "TEXTURE_SCALE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateZ",
+            "NewName": "TEXTURE_ROTATE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateY",
+            "NewName": "TEXTURE_ROTATE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureRotateX",
+            "NewName": "TEXTURE_ROTATE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateZ",
+            "NewName": "TEXTURE_TRANSLATE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateY",
+            "NewName": "TEXTURE_TRANSLATE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTextureTranslateX",
+            "NewName": "TEXTURE_TRANSLATE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeScaleUniform",
+            "NewName": "SCALE_UNIFORM"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeScaleZ",
+            "NewName": "SCALE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeScaleY",
+            "NewName": "SCALE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeScaleX",
+            "NewName": "SCALE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeRotateZ",
+            "NewName": "ROTATE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeRotateY",
+            "NewName": "ROTATE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeRotateX",
+            "NewName": "ROTATE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTranslateZ",
+            "NewName": "TRANSLATE_Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTranslateY",
+            "NewName": "TRANSLATE_Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelTransformationType",
+            "OldName": "eStkGraphicsModelTransformationTypeTranslateX",
+            "NewName": "TRANSLATE_X"
         },
         {
             "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginBottomLeft",
-            "NewName": "BOTTOM_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginBottomCenter",
-            "NewName": "BOTTOM_CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginBottomRight",
-            "NewName": "BOTTOM_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginCenterLeft",
-            "NewName": "CENTER_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginCenter",
-            "NewName": "CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginCenterRight",
-            "NewName": "CENTER_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginTopLeft",
-            "NewName": "TOP_LEFT"
+            "OldName": "eStkGraphicsOriginTopRight",
+            "NewName": "TOP_RIGHT"
         },
         {
             "ParentScope": "AgEStkGraphicsOrigin",
@@ -8213,8 +8193,43 @@
         },
         {
             "ParentScope": "AgEStkGraphicsOrigin",
-            "OldName": "eStkGraphicsOriginTopRight",
-            "NewName": "TOP_RIGHT"
+            "OldName": "eStkGraphicsOriginTopLeft",
+            "NewName": "TOP_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginCenterRight",
+            "NewName": "CENTER_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginCenter",
+            "NewName": "CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginCenterLeft",
+            "NewName": "CENTER_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginBottomRight",
+            "NewName": "BOTTOM_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginBottomCenter",
+            "NewName": "BOTTOM_CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOrigin",
+            "OldName": "eStkGraphicsOriginBottomLeft",
+            "NewName": "BOTTOM_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsPathPrimitiveRemoveLocation",
+            "OldName": "eStkGraphicsRemoveLocationBack",
+            "NewName": "BACK"
         },
         {
             "ParentScope": "AgEStkGraphicsPathPrimitiveRemoveLocation",
@@ -8223,13 +8238,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsPathPrimitiveRemoveLocation",
-            "OldName": "eStkGraphicsRemoveLocationBack",
+            "OldName": "eStkGraphicsPathPrimitiveRemoveLocationBack",
             "NewName": "BACK"
         },
         {
-            "ParentScope": "AgEStkGraphicsPrimitivesSortOrder",
-            "OldName": "eStkGraphicsPrimitivesSortOrderByState",
-            "NewName": "BY_STATE"
+            "ParentScope": "AgEStkGraphicsPathPrimitiveRemoveLocation",
+            "OldName": "eStkGraphicsPathPrimitiveRemoveLocationFront",
+            "NewName": "FRONT"
         },
         {
             "ParentScope": "AgEStkGraphicsPrimitivesSortOrder",
@@ -8237,9 +8252,9 @@
             "NewName": "BACK_TO_FRONT"
         },
         {
-            "ParentScope": "AgEStkGraphicsRefreshRate",
-            "OldName": "eStkGraphicsRefreshRateFastest",
-            "NewName": "FASTEST"
+            "ParentScope": "AgEStkGraphicsPrimitivesSortOrder",
+            "OldName": "eStkGraphicsPrimitivesSortOrderByState",
+            "NewName": "BY_STATE"
         },
         {
             "ParentScope": "AgEStkGraphicsRefreshRate",
@@ -8247,24 +8262,14 @@
             "NewName": "TARGETED_FRAMES_PER_SECOND"
         },
         {
-            "ParentScope": "AgEStkGraphicsRenderPass",
-            "OldName": "eStkGraphicsRenderPassOpaque",
-            "NewName": "OPAQUE"
+            "ParentScope": "AgEStkGraphicsRefreshRate",
+            "OldName": "eStkGraphicsRefreshRateFastest",
+            "NewName": "FASTEST"
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPass",
-            "OldName": "eStkGraphicsRenderPassTranslucent",
-            "NewName": "TRANSLUCENT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRenderPass",
-            "OldName": "eStkGraphicsRenderPassCentralBodyClipped",
-            "NewName": "CENTRAL_BODY_CLIPPED"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRenderPass",
-            "OldName": "eStkGraphicsRenderPassOrderedCompositeCentralBodyClipped",
-            "NewName": "ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED"
+            "OldName": "eStkGraphicsRenderPassTerrain",
+            "NewName": "TERRAIN"
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPass",
@@ -8273,13 +8278,28 @@
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPass",
-            "OldName": "eStkGraphicsRenderPassTerrain",
-            "NewName": "TERRAIN"
+            "OldName": "eStkGraphicsRenderPassOrderedCompositeCentralBodyClipped",
+            "NewName": "ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRenderPass",
+            "OldName": "eStkGraphicsRenderPassCentralBodyClipped",
+            "NewName": "CENTRAL_BODY_CLIPPED"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRenderPass",
+            "OldName": "eStkGraphicsRenderPassTranslucent",
+            "NewName": "TRANSLUCENT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRenderPass",
+            "OldName": "eStkGraphicsRenderPassOpaque",
+            "NewName": "OPAQUE"
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPassHint",
-            "OldName": "eStkGraphicsRenderPassHintOpaque",
-            "NewName": "OPAQUE"
+            "OldName": "eStkGraphicsRenderPassHintUnknown",
+            "NewName": "UNKNOWN"
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPassHint",
@@ -8288,43 +8308,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsRenderPassHint",
-            "OldName": "eStkGraphicsRenderPassHintUnknown",
-            "NewName": "UNKNOWN"
+            "OldName": "eStkGraphicsRenderPassHintOpaque",
+            "NewName": "OPAQUE"
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginBottomLeft",
-            "NewName": "BOTTOM_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginBottomCenter",
-            "NewName": "BOTTOM_CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginBottomRight",
-            "NewName": "BOTTOM_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginCenterLeft",
-            "NewName": "CENTER_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginCenter",
-            "NewName": "CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginCenterRight",
-            "NewName": "CENTER_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginTopLeft",
-            "NewName": "TOP_LEFT"
+            "OldName": "eStkGraphicsScreenOverlayOriginTopRight",
+            "NewName": "TOP_RIGHT"
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
@@ -8333,48 +8323,43 @@
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
-            "OldName": "eStkGraphicsScreenOverlayOriginTopRight",
-            "NewName": "TOP_RIGHT"
+            "OldName": "eStkGraphicsScreenOverlayOriginTopLeft",
+            "NewName": "TOP_LEFT"
         },
         {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomLeft",
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginCenterRight",
+            "NewName": "CENTER_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginCenter",
+            "NewName": "CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginCenterLeft",
+            "NewName": "CENTER_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginBottomRight",
+            "NewName": "BOTTOM_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginBottomCenter",
+            "NewName": "BOTTOM_CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayOrigin",
+            "OldName": "eStkGraphicsScreenOverlayOriginBottomLeft",
             "NewName": "BOTTOM_LEFT"
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomCenter",
-            "NewName": "BOTTOM_CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomRight",
-            "NewName": "BOTTOM_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenterLeft",
-            "NewName": "CENTER_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenter",
-            "NewName": "CENTER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenterRight",
-            "NewName": "CENTER_RIGHT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginTopLeft",
-            "NewName": "TOP_LEFT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginTopCenter",
-            "NewName": "TOP_CENTER"
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginAutomatic",
+            "NewName": "AUTOMATIC"
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
@@ -8383,13 +8368,43 @@
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
-            "OldName": "eStkGraphicsScreenOverlayPinningOriginAutomatic",
-            "NewName": "AUTOMATIC"
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginTopCenter",
+            "NewName": "TOP_CENTER"
         },
         {
-            "ParentScope": "AgEStkGraphicsScreenOverlayUnit",
-            "OldName": "eStkGraphicsScreenOverlayUnitPixels",
-            "NewName": "PIXEL"
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginTopLeft",
+            "NewName": "TOP_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenterRight",
+            "NewName": "CENTER_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenter",
+            "NewName": "CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginCenterLeft",
+            "NewName": "CENTER_LEFT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomRight",
+            "NewName": "BOTTOM_RIGHT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomCenter",
+            "NewName": "BOTTOM_CENTER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsScreenOverlayPinningOrigin",
+            "OldName": "eStkGraphicsScreenOverlayPinningOriginBottomLeft",
+            "NewName": "BOTTOM_LEFT"
         },
         {
             "ParentScope": "AgEStkGraphicsScreenOverlayUnit",
@@ -8397,9 +8412,14 @@
             "NewName": "PERCENT"
         },
         {
+            "ParentScope": "AgEStkGraphicsScreenOverlayUnit",
+            "OldName": "eStkGraphicsScreenOverlayUnitPixels",
+            "NewName": "PIXEL"
+        },
+        {
             "ParentScope": "AgEStkGraphicsSurfaceMeshRenderingMethod",
-            "OldName": "eStkGraphicsSurfaceMeshRenderingMethodGeometryShader",
-            "NewName": "GEOMETRY_SHADER"
+            "OldName": "eStkGraphicsSurfaceMeshRenderingMethodAutomatic",
+            "NewName": "AUTOMATIC"
         },
         {
             "ParentScope": "AgEStkGraphicsSurfaceMeshRenderingMethod",
@@ -8408,13 +8428,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsSurfaceMeshRenderingMethod",
-            "OldName": "eStkGraphicsSurfaceMeshRenderingMethodAutomatic",
-            "NewName": "AUTOMATIC"
+            "OldName": "eStkGraphicsSurfaceMeshRenderingMethodGeometryShader",
+            "NewName": "GEOMETRY_SHADER"
         },
         {
             "ParentScope": "AgEStkGraphicsVisibility",
-            "OldName": "eStkGraphicsVisibilityNone",
-            "NewName": "NONE"
+            "OldName": "eStkGraphicsVisibilityAll",
+            "NewName": "ALL"
         },
         {
             "ParentScope": "AgEStkGraphicsVisibility",
@@ -8423,38 +8443,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsVisibility",
-            "OldName": "eStkGraphicsVisibilityAll",
-            "NewName": "ALL"
+            "OldName": "eStkGraphicsVisibilityNone",
+            "NewName": "NONE"
         },
         {
             "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingOff",
-            "NewName": "OFF"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingFXAA",
-            "NewName": "FXAA"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingTwoX",
-            "NewName": "TWO_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingFourX",
-            "NewName": "FOUR_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingEightX",
-            "NewName": "EIGHT_X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingSixteenX",
-            "NewName": "SIXTEEN_X"
+            "OldName": "eStkGraphicsAntiAliasingSixtyFourX",
+            "NewName": "SIXTY_FOUR_X"
         },
         {
             "ParentScope": "AgEStkGraphicsAntiAliasing",
@@ -8463,13 +8458,33 @@
         },
         {
             "ParentScope": "AgEStkGraphicsAntiAliasing",
-            "OldName": "eStkGraphicsAntiAliasingSixtyFourX",
-            "NewName": "SIXTY_FOUR_X"
+            "OldName": "eStkGraphicsAntiAliasingSixteenX",
+            "NewName": "SIXTEEN_X"
         },
         {
-            "ParentScope": "AgEStkGraphicsBinaryLogicOperation",
-            "OldName": "eStkGraphicsBinaryLogicOperationAnd",
-            "NewName": "AND"
+            "ParentScope": "AgEStkGraphicsAntiAliasing",
+            "OldName": "eStkGraphicsAntiAliasingEightX",
+            "NewName": "EIGHT_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsAntiAliasing",
+            "OldName": "eStkGraphicsAntiAliasingFourX",
+            "NewName": "FOUR_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsAntiAliasing",
+            "OldName": "eStkGraphicsAntiAliasingTwoX",
+            "NewName": "TWO_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsAntiAliasing",
+            "OldName": "eStkGraphicsAntiAliasingFXAA",
+            "NewName": "FXAA"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsAntiAliasing",
+            "OldName": "eStkGraphicsAntiAliasingOff",
+            "NewName": "OFF"
         },
         {
             "ParentScope": "AgEStkGraphicsBinaryLogicOperation",
@@ -8477,9 +8492,9 @@
             "NewName": "OR"
         },
         {
-            "ParentScope": "AgEStkGraphicsBlurMethod",
-            "OldName": "eStkGraphicsBlurMethodMean",
-            "NewName": "MEAN"
+            "ParentScope": "AgEStkGraphicsBinaryLogicOperation",
+            "OldName": "eStkGraphicsBinaryLogicOperationAnd",
+            "NewName": "AND"
         },
         {
             "ParentScope": "AgEStkGraphicsBlurMethod",
@@ -8487,34 +8502,14 @@
             "NewName": "BASIC"
         },
         {
-            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodVertical",
-            "NewName": "VERTICAL"
+            "ParentScope": "AgEStkGraphicsBlurMethod",
+            "OldName": "eStkGraphicsBlurMethodMean",
+            "NewName": "MEAN"
         },
         {
             "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodHorizontal",
-            "NewName": "HORIZONTAL"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodLeftDiagonal",
-            "NewName": "LEFT_DIAGONAL"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodRightDiagonal",
-            "NewName": "RIGHT_DIAGONAL"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodLaplacian",
-            "NewName": "LAPLACIAN"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodPrewittLaplacian",
-            "NewName": "PREWITT_LAPLACIAN"
+            "OldName": "eStkGraphicsEdgeDetectMethodSobelHorizontal",
+            "NewName": "SOBEL_HORIZONTAL"
         },
         {
             "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
@@ -8523,13 +8518,33 @@
         },
         {
             "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
-            "OldName": "eStkGraphicsEdgeDetectMethodSobelHorizontal",
-            "NewName": "SOBEL_HORIZONTAL"
+            "OldName": "eStkGraphicsEdgeDetectMethodPrewittLaplacian",
+            "NewName": "PREWITT_LAPLACIAN"
         },
         {
-            "ParentScope": "AgEStkGraphicsFlipAxis",
-            "OldName": "eStkGraphicsFlipAxisHorizontal",
+            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
+            "OldName": "eStkGraphicsEdgeDetectMethodLaplacian",
+            "NewName": "LAPLACIAN"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
+            "OldName": "eStkGraphicsEdgeDetectMethodRightDiagonal",
+            "NewName": "RIGHT_DIAGONAL"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
+            "OldName": "eStkGraphicsEdgeDetectMethodLeftDiagonal",
+            "NewName": "LEFT_DIAGONAL"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
+            "OldName": "eStkGraphicsEdgeDetectMethodHorizontal",
             "NewName": "HORIZONTAL"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsEdgeDetectMethod",
+            "OldName": "eStkGraphicsEdgeDetectMethodVertical",
+            "NewName": "VERTICAL"
         },
         {
             "ParentScope": "AgEStkGraphicsFlipAxis",
@@ -8537,34 +8552,14 @@
             "NewName": "VERTICAL"
         },
         {
-            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodEast",
-            "NewName": "EAST"
+            "ParentScope": "AgEStkGraphicsFlipAxis",
+            "OldName": "eStkGraphicsFlipAxisHorizontal",
+            "NewName": "HORIZONTAL"
         },
         {
             "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodNorth",
-            "NewName": "NORTH"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodWest",
-            "NewName": "WEST"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodSouth",
-            "NewName": "SOUTH"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodNorthEast",
-            "NewName": "NORTH_EAST"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodNorthWest",
-            "NewName": "NORTH_WEST"
+            "OldName": "eStkGraphicsGradientDetectMethodSouthWest",
+            "NewName": "SOUTH_WEST"
         },
         {
             "ParentScope": "AgEStkGraphicsGradientDetectMethod",
@@ -8573,13 +8568,38 @@
         },
         {
             "ParentScope": "AgEStkGraphicsGradientDetectMethod",
-            "OldName": "eStkGraphicsGradientDetectMethodSouthWest",
-            "NewName": "SOUTH_WEST"
+            "OldName": "eStkGraphicsGradientDetectMethodNorthWest",
+            "NewName": "NORTH_WEST"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
+            "OldName": "eStkGraphicsGradientDetectMethodNorthEast",
+            "NewName": "NORTH_EAST"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
+            "OldName": "eStkGraphicsGradientDetectMethodSouth",
+            "NewName": "SOUTH"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
+            "OldName": "eStkGraphicsGradientDetectMethodWest",
+            "NewName": "WEST"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
+            "OldName": "eStkGraphicsGradientDetectMethodNorth",
+            "NewName": "NORTH"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsGradientDetectMethod",
+            "OldName": "eStkGraphicsGradientDetectMethodEast",
+            "NewName": "EAST"
         },
         {
             "ParentScope": "AgEStkGraphicsJpeg2000CompressionProfile",
-            "OldName": "eStkGraphicsJpeg2000CompressionProfileDefault",
-            "NewName": "DEFAULT"
+            "OldName": "eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE",
+            "NewName": "NITF_BIIF_EPJE"
         },
         {
             "ParentScope": "AgEStkGraphicsJpeg2000CompressionProfile",
@@ -8588,23 +8608,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsJpeg2000CompressionProfile",
-            "OldName": "eStkGraphicsJpeg2000CompressionProfileNITF_BIIF_EPJE",
-            "NewName": "NITF_BIIF_EPJE"
+            "OldName": "eStkGraphicsJpeg2000CompressionProfileDefault",
+            "NewName": "DEFAULT"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterBand",
-            "OldName": "eStkGraphicsRasterBandRed",
-            "NewName": "RED"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterBand",
-            "OldName": "eStkGraphicsRasterBandGreen",
-            "NewName": "GREEN"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterBand",
-            "OldName": "eStkGraphicsRasterBandBlue",
-            "NewName": "BLUE"
+            "OldName": "eStkGraphicsRasterBandLuminance",
+            "NewName": "LUMINANCE"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterBand",
@@ -8613,48 +8623,23 @@
         },
         {
             "ParentScope": "AgEStkGraphicsRasterBand",
-            "OldName": "eStkGraphicsRasterBandLuminance",
-            "NewName": "LUMINANCE"
+            "OldName": "eStkGraphicsRasterBandBlue",
+            "NewName": "BLUE"
         },
         {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatRed",
+            "ParentScope": "AgEStkGraphicsRasterBand",
+            "OldName": "eStkGraphicsRasterBandGreen",
+            "NewName": "GREEN"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterBand",
+            "OldName": "eStkGraphicsRasterBandRed",
             "NewName": "RED"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatGreen",
-            "NewName": "GREEN"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatBlue",
-            "NewName": "BLUE"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatAlpha",
-            "NewName": "ALPHA"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatRgb",
-            "NewName": "RGB"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatBgr",
-            "NewName": "BGR"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatRgba",
-            "NewName": "RGBA"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatBgra",
-            "NewName": "BGRA"
+            "OldName": "eStkGraphicsRasterFormatLuminanceAlpha",
+            "NewName": "LUMINANCE_ALPHA"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterFormat",
@@ -8663,13 +8648,43 @@
         },
         {
             "ParentScope": "AgEStkGraphicsRasterFormat",
-            "OldName": "eStkGraphicsRasterFormatLuminanceAlpha",
-            "NewName": "LUMINANCE_ALPHA"
+            "OldName": "eStkGraphicsRasterFormatBgra",
+            "NewName": "BGRA"
         },
         {
-            "ParentScope": "AgEStkGraphicsRasterOrientation",
-            "OldName": "eStkGraphicsRasterOrientationTopToBottom",
-            "NewName": "TOP_TO_BOTTOM"
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatRgba",
+            "NewName": "RGBA"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatBgr",
+            "NewName": "BGR"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatRgb",
+            "NewName": "RGB"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatAlpha",
+            "NewName": "ALPHA"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatBlue",
+            "NewName": "BLUE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatGreen",
+            "NewName": "GREEN"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterFormat",
+            "OldName": "eStkGraphicsRasterFormatRed",
+            "NewName": "RED"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterOrientation",
@@ -8677,34 +8692,14 @@
             "NewName": "BOTTOM_TO_TOP"
         },
         {
-            "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeUnsignedByte",
-            "NewName": "UNSIGNED_BYTE"
+            "ParentScope": "AgEStkGraphicsRasterOrientation",
+            "OldName": "eStkGraphicsRasterOrientationTopToBottom",
+            "NewName": "TOP_TO_BOTTOM"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeByte",
-            "NewName": "BYTE"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeUnsignedShort",
-            "NewName": "UNSIGNED_SHORT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeShort",
-            "NewName": "SHORT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeUnsignedInt",
-            "NewName": "UNSIGNED_INT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeInt",
-            "NewName": "INT"
+            "OldName": "eStkGraphicsRasterTypeDouble",
+            "NewName": "DOUBLE"
         },
         {
             "ParentScope": "AgEStkGraphicsRasterType",
@@ -8713,13 +8708,33 @@
         },
         {
             "ParentScope": "AgEStkGraphicsRasterType",
-            "OldName": "eStkGraphicsRasterTypeDouble",
-            "NewName": "DOUBLE"
+            "OldName": "eStkGraphicsRasterTypeInt",
+            "NewName": "INT"
         },
         {
-            "ParentScope": "AgEStkGraphicsSharpenMethod",
-            "OldName": "eStkGraphicsSharpenMethodMeanRemoval",
-            "NewName": "MEAN_REMOVAL"
+            "ParentScope": "AgEStkGraphicsRasterType",
+            "OldName": "eStkGraphicsRasterTypeUnsignedInt",
+            "NewName": "UNSIGNED_INT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterType",
+            "OldName": "eStkGraphicsRasterTypeShort",
+            "NewName": "SHORT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterType",
+            "OldName": "eStkGraphicsRasterTypeUnsignedShort",
+            "NewName": "UNSIGNED_SHORT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterType",
+            "OldName": "eStkGraphicsRasterTypeByte",
+            "NewName": "BYTE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsRasterType",
+            "OldName": "eStkGraphicsRasterTypeUnsignedByte",
+            "NewName": "UNSIGNED_BYTE"
         },
         {
             "ParentScope": "AgEStkGraphicsSharpenMethod",
@@ -8727,9 +8742,9 @@
             "NewName": "BASIC"
         },
         {
-            "ParentScope": "AgEStkGraphicsVideoPlayback",
-            "OldName": "eStkGraphicsVideoPlaybackRealTime",
-            "NewName": "REAL_TIME"
+            "ParentScope": "AgEStkGraphicsSharpenMethod",
+            "OldName": "eStkGraphicsSharpenMethodMeanRemoval",
+            "NewName": "MEAN_REMOVAL"
         },
         {
             "ParentScope": "AgEStkGraphicsVideoPlayback",
@@ -8737,9 +8752,14 @@
             "NewName": "MAPPED"
         },
         {
+            "ParentScope": "AgEStkGraphicsVideoPlayback",
+            "OldName": "eStkGraphicsVideoPlaybackRealTime",
+            "NewName": "REAL_TIME"
+        },
+        {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkRefreshMode",
-            "OldName": "eStkGraphicsKmlNetworkLinkRefreshModeOnChange",
-            "NewName": "ON_CHANGE"
+            "OldName": "eStkGraphicsKmlNetworkLinkRefreshModeOnExpire",
+            "NewName": "ON_EXPIRE"
         },
         {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkRefreshMode",
@@ -8748,18 +8768,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkRefreshMode",
-            "OldName": "eStkGraphicsKmlNetworkLinkRefreshModeOnExpire",
-            "NewName": "ON_EXPIRE"
+            "OldName": "eStkGraphicsKmlNetworkLinkRefreshModeOnChange",
+            "NewName": "ON_CHANGE"
         },
         {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkViewRefreshMode",
-            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeNever",
-            "NewName": "NEVER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsKmlNetworkLinkViewRefreshMode",
-            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeOnRequest",
-            "NewName": "ON_REQUEST"
+            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion",
+            "NewName": "ON_REGION"
         },
         {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkViewRefreshMode",
@@ -8768,28 +8783,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsKmlNetworkLinkViewRefreshMode",
-            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeOnRegion",
-            "NewName": "ON_REGION"
+            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeOnRequest",
+            "NewName": "ON_REQUEST"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsKmlNetworkLinkViewRefreshMode",
+            "OldName": "eStkGraphicsKmlNetworkLinkViewRefreshModeNever",
+            "NewName": "NEVER"
         },
         {
             "ParentScope": "AgEStkGraphicsModelUpAxis",
-            "OldName": "eStkGraphicsModelUpAxisX",
-            "NewName": "X"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelUpAxis",
-            "OldName": "eStkGraphicsModelUpAxisY",
-            "NewName": "Y"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelUpAxis",
-            "OldName": "eStkGraphicsModelUpAxisZ",
-            "NewName": "Z"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsModelUpAxis",
-            "OldName": "eStkGraphicsModelUpAxisNegativeX",
-            "NewName": "NEGATIVE_X"
+            "OldName": "eStkGraphicsModelUpAxisNegativeZ",
+            "NewName": "NEGATIVE_Z"
         },
         {
             "ParentScope": "AgEStkGraphicsModelUpAxis",
@@ -8798,13 +8803,28 @@
         },
         {
             "ParentScope": "AgEStkGraphicsModelUpAxis",
-            "OldName": "eStkGraphicsModelUpAxisNegativeZ",
-            "NewName": "NEGATIVE_Z"
+            "OldName": "eStkGraphicsModelUpAxisNegativeX",
+            "NewName": "NEGATIVE_X"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelUpAxis",
+            "OldName": "eStkGraphicsModelUpAxisZ",
+            "NewName": "Z"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelUpAxis",
+            "OldName": "eStkGraphicsModelUpAxisY",
+            "NewName": "Y"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsModelUpAxis",
+            "OldName": "eStkGraphicsModelUpAxisX",
+            "NewName": "X"
         },
         {
             "ParentScope": "AgEStkGraphicsOutlineAppearance",
-            "OldName": "eStkGraphicsFrontAndBackLines",
-            "NewName": "FRONT_AND_BACK_LINES"
+            "OldName": "eStkGraphicsStylizeBackLines",
+            "NewName": "STYLIZE_BACK_LINES"
         },
         {
             "ParentScope": "AgEStkGraphicsOutlineAppearance",
@@ -8813,13 +8833,28 @@
         },
         {
             "ParentScope": "AgEStkGraphicsOutlineAppearance",
-            "OldName": "eStkGraphicsStylizeBackLines",
+            "OldName": "eStkGraphicsFrontAndBackLines",
+            "NewName": "FRONT_AND_BACK_LINES"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOutlineAppearance",
+            "OldName": "eStkGraphicsOutlineAppearanceStylizeBackLines",
             "NewName": "STYLIZE_BACK_LINES"
         },
         {
+            "ParentScope": "AgEStkGraphicsOutlineAppearance",
+            "OldName": "eStkGraphicsOutlineAppearanceFrontLinesOnly",
+            "NewName": "FRONT_LINES_ONLY"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsOutlineAppearance",
+            "OldName": "eStkGraphicsOutlineAppearanceFrontAndBackLines",
+            "NewName": "FRONT_AND_BACK_LINES"
+        },
+        {
             "ParentScope": "AgEStkGraphicsPolylineType",
-            "OldName": "eStkGraphicsPolylineTypeLines",
-            "NewName": "LINES"
+            "OldName": "eStkGraphicsPolylineTypePoints",
+            "NewName": "POINTS"
         },
         {
             "ParentScope": "AgEStkGraphicsPolylineType",
@@ -8828,18 +8863,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsPolylineType",
-            "OldName": "eStkGraphicsPolylineTypePoints",
-            "NewName": "POINTS"
+            "OldName": "eStkGraphicsPolylineTypeLines",
+            "NewName": "LINES"
         },
         {
             "ParentScope": "AgEStkGraphicsCullFace",
-            "OldName": "eStkGraphicsECullFaceFront",
-            "NewName": "CULL_FACE_FRONT"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsCullFace",
-            "OldName": "eStkGraphicsECullFaceBack",
-            "NewName": "CULL_FACE_BACK"
+            "OldName": "eStkGraphicsECullFaceNeither",
+            "NewName": "CULL_FACE_NEITHER"
         },
         {
             "ParentScope": "AgEStkGraphicsCullFace",
@@ -8848,178 +8878,38 @@
         },
         {
             "ParentScope": "AgEStkGraphicsCullFace",
-            "OldName": "eStkGraphicsECullFaceNeither",
+            "OldName": "eStkGraphicsECullFaceBack",
+            "NewName": "CULL_FACE_BACK"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCullFace",
+            "OldName": "eStkGraphicsECullFaceFront",
+            "NewName": "CULL_FACE_FRONT"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCullFace",
+            "OldName": "eStkGraphicsCullFaceNeither",
             "NewName": "CULL_FACE_NEITHER"
         },
         {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatAlpha4",
-            "NewName": "ALPHA4"
+            "ParentScope": "AgEStkGraphicsCullFace",
+            "OldName": "eStkGraphicsCullFaceFrontAndBack",
+            "NewName": "CULL_FACE_FRONT_AND_BACK"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCullFace",
+            "OldName": "eStkGraphicsCullFaceBack",
+            "NewName": "CULL_FACE_BACK"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsCullFace",
+            "OldName": "eStkGraphicsCullFaceFront",
+            "NewName": "CULL_FACE_FRONT"
         },
         {
             "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatAlpha8",
-            "NewName": "ALPHA8"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatAlpha12",
-            "NewName": "ALPHA12"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatAlpha16",
-            "NewName": "ALPHA16"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatR3G3B2",
-            "NewName": "R3G3B2"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb4",
-            "NewName": "RGB4"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb5",
-            "NewName": "RGB5"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb8",
-            "NewName": "RGB8"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb10",
-            "NewName": "RGB10"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb12",
-            "NewName": "RGB12"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb16",
-            "NewName": "RGB16"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb16F",
-            "NewName": "RGB16_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb32F",
-            "NewName": "RGB32_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba2",
-            "NewName": "RGBA2"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba4",
-            "NewName": "RGBA4"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb5A1",
-            "NewName": "RGB5_A1"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba8",
-            "NewName": "RGBA8"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgb10A2",
-            "NewName": "RGB10_A2"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba12",
-            "NewName": "RGBA12"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba16",
-            "NewName": "RGBA16"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba16F",
-            "NewName": "RGBA16_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatRgba32F",
-            "NewName": "RGBA32_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance4",
-            "NewName": "LUMINANCE4"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance8",
-            "NewName": "LUMINANCE8"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance12",
-            "NewName": "LUMINANCE12"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance16",
-            "NewName": "LUMINANCE16"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance16F",
-            "NewName": "LUMINANCE16_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance32F",
-            "NewName": "LUMINANCE32_F"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance4Alpha4",
-            "NewName": "LUMINANCE4_ALPHA4"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance6Alpha2",
-            "NewName": "LUMINANCE6_ALPHA2"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance8Alpha8",
-            "NewName": "LUMINANCE8_ALPHA8"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance12Alpha4",
-            "NewName": "LUMINANCE12_ALPHA4"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance12Alpha12",
-            "NewName": "LUMINANCE12_ALPHA12"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance16Alpha16",
-            "NewName": "LUMINANCE16_ALPHA16"
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance32Alpha32F",
+            "NewName": "LUMINANCE32_ALPHA32_F"
         },
         {
             "ParentScope": "AgEStkGraphicsInternalTextureFormat",
@@ -9028,13 +8918,173 @@
         },
         {
             "ParentScope": "AgEStkGraphicsInternalTextureFormat",
-            "OldName": "eStkGraphicsInternalTextureFormatLuminance32Alpha32F",
-            "NewName": "LUMINANCE32_ALPHA32_F"
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance16Alpha16",
+            "NewName": "LUMINANCE16_ALPHA16"
         },
         {
-            "ParentScope": "AgEStkGraphicsMagnificationFilter",
-            "OldName": "eStkGraphicsMagnificationFilterNearest",
-            "NewName": "NEAREST"
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance12Alpha12",
+            "NewName": "LUMINANCE12_ALPHA12"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance12Alpha4",
+            "NewName": "LUMINANCE12_ALPHA4"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance8Alpha8",
+            "NewName": "LUMINANCE8_ALPHA8"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance6Alpha2",
+            "NewName": "LUMINANCE6_ALPHA2"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance4Alpha4",
+            "NewName": "LUMINANCE4_ALPHA4"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance32F",
+            "NewName": "LUMINANCE32_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance16F",
+            "NewName": "LUMINANCE16_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance16",
+            "NewName": "LUMINANCE16"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance12",
+            "NewName": "LUMINANCE12"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance8",
+            "NewName": "LUMINANCE8"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatLuminance4",
+            "NewName": "LUMINANCE4"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba32F",
+            "NewName": "RGBA32_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba16F",
+            "NewName": "RGBA16_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba16",
+            "NewName": "RGBA16"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba12",
+            "NewName": "RGBA12"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb10A2",
+            "NewName": "RGB10_A2"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba8",
+            "NewName": "RGBA8"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb5A1",
+            "NewName": "RGB5_A1"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba4",
+            "NewName": "RGBA4"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgba2",
+            "NewName": "RGBA2"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb32F",
+            "NewName": "RGB32_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb16F",
+            "NewName": "RGB16_F"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb16",
+            "NewName": "RGB16"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb12",
+            "NewName": "RGB12"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb10",
+            "NewName": "RGB10"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb8",
+            "NewName": "RGB8"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb5",
+            "NewName": "RGB5"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatRgb4",
+            "NewName": "RGB4"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatR3G3B2",
+            "NewName": "R3G3B2"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatAlpha16",
+            "NewName": "ALPHA16"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatAlpha12",
+            "NewName": "ALPHA12"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatAlpha8",
+            "NewName": "ALPHA8"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsInternalTextureFormat",
+            "OldName": "eStkGraphicsInternalTextureFormatAlpha4",
+            "NewName": "ALPHA4"
         },
         {
             "ParentScope": "AgEStkGraphicsMagnificationFilter",
@@ -9042,24 +9092,14 @@
             "NewName": "LINEAR"
         },
         {
-            "ParentScope": "AgEStkGraphicsMinificationFilter",
-            "OldName": "eStkGraphicsMinificationFilterNearest",
+            "ParentScope": "AgEStkGraphicsMagnificationFilter",
+            "OldName": "eStkGraphicsMagnificationFilterNearest",
             "NewName": "NEAREST"
         },
         {
             "ParentScope": "AgEStkGraphicsMinificationFilter",
-            "OldName": "eStkGraphicsMinificationFilterLinear",
-            "NewName": "LINEAR"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsMinificationFilter",
-            "OldName": "eStkGraphicsMinificationFilterNearestMipMapNearest",
-            "NewName": "NEAREST_MIP_MAP_NEAREST"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsMinificationFilter",
-            "OldName": "eStkGraphicsMinificationFilterLinearMipMapNearest",
-            "NewName": "LINEAR_MIP_MAP_NEAREST"
+            "OldName": "eStkGraphicsMinificationFilterLinearMipMapLinear",
+            "NewName": "LINEAR_MIP_MAP_LINEAR"
         },
         {
             "ParentScope": "AgEStkGraphicsMinificationFilter",
@@ -9068,13 +9108,23 @@
         },
         {
             "ParentScope": "AgEStkGraphicsMinificationFilter",
-            "OldName": "eStkGraphicsMinificationFilterLinearMipMapLinear",
-            "NewName": "LINEAR_MIP_MAP_LINEAR"
+            "OldName": "eStkGraphicsMinificationFilterLinearMipMapNearest",
+            "NewName": "LINEAR_MIP_MAP_NEAREST"
         },
         {
-            "ParentScope": "AgEStkGraphicsRendererShadeModel",
-            "OldName": "eStkGraphicsRendererShadeModelFlat",
-            "NewName": "FLAT"
+            "ParentScope": "AgEStkGraphicsMinificationFilter",
+            "OldName": "eStkGraphicsMinificationFilterNearestMipMapNearest",
+            "NewName": "NEAREST_MIP_MAP_NEAREST"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsMinificationFilter",
+            "OldName": "eStkGraphicsMinificationFilterLinear",
+            "NewName": "LINEAR"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsMinificationFilter",
+            "OldName": "eStkGraphicsMinificationFilterNearest",
+            "NewName": "NEAREST"
         },
         {
             "ParentScope": "AgEStkGraphicsRendererShadeModel",
@@ -9082,19 +9132,14 @@
             "NewName": "GOURAUD"
         },
         {
-            "ParentScope": "AgEStkGraphicsTextureWrap",
-            "OldName": "eStkGraphicsTextureWrapClamp",
-            "NewName": "CLAMP"
+            "ParentScope": "AgEStkGraphicsRendererShadeModel",
+            "OldName": "eStkGraphicsRendererShadeModelFlat",
+            "NewName": "FLAT"
         },
         {
             "ParentScope": "AgEStkGraphicsTextureWrap",
-            "OldName": "eStkGraphicsTextureWrapClampToBorder",
-            "NewName": "CLAMP_TO_BORDER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsTextureWrap",
-            "OldName": "eStkGraphicsTextureWrapClampToEdge",
-            "NewName": "CLAMP_TO_EDGE"
+            "OldName": "eStkGraphicsTextureWrapRepeat",
+            "NewName": "REPEAT"
         },
         {
             "ParentScope": "AgEStkGraphicsTextureWrap",
@@ -9103,13 +9148,23 @@
         },
         {
             "ParentScope": "AgEStkGraphicsTextureWrap",
-            "OldName": "eStkGraphicsTextureWrapRepeat",
-            "NewName": "REPEAT"
+            "OldName": "eStkGraphicsTextureWrapClampToEdge",
+            "NewName": "CLAMP_TO_EDGE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsTextureWrap",
+            "OldName": "eStkGraphicsTextureWrapClampToBorder",
+            "NewName": "CLAMP_TO_BORDER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsTextureWrap",
+            "OldName": "eStkGraphicsTextureWrapClamp",
+            "NewName": "CLAMP"
         },
         {
             "ParentScope": "AgEStkGraphicsSetHint",
-            "OldName": "eStkGraphicsSetHintInfrequent",
-            "NewName": "INFREQUENT"
+            "OldName": "eStkGraphicsSetHintFrequent",
+            "NewName": "FREQUENT"
         },
         {
             "ParentScope": "AgEStkGraphicsSetHint",
@@ -9118,13 +9173,13 @@
         },
         {
             "ParentScope": "AgEStkGraphicsSetHint",
-            "OldName": "eStkGraphicsSetHintFrequent",
-            "NewName": "FREQUENT"
+            "OldName": "eStkGraphicsSetHintInfrequent",
+            "NewName": "INFREQUENT"
         },
         {
             "ParentScope": "AgEStkGraphicsStereoProjectionMode",
-            "OldName": "eStkGraphicsStereoProjectionParallel",
-            "NewName": "PARALLEL"
+            "OldName": "eStkGraphicsStereoProjectionAutomatic",
+            "NewName": "AUTOMATIC"
         },
         {
             "ParentScope": "AgEStkGraphicsStereoProjectionMode",
@@ -9133,28 +9188,28 @@
         },
         {
             "ParentScope": "AgEStkGraphicsStereoProjectionMode",
-            "OldName": "eStkGraphicsStereoProjectionAutomatic",
+            "OldName": "eStkGraphicsStereoProjectionParallel",
+            "NewName": "PARALLEL"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsStereoProjectionMode",
+            "OldName": "eStkGraphicsStereoProjectionModeAutomatic",
             "NewName": "AUTOMATIC"
         },
         {
-            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
-            "OldName": "eStkGraphicsStereoscopicDisplayModeOff",
-            "NewName": "OFF"
+            "ParentScope": "AgEStkGraphicsStereoProjectionMode",
+            "OldName": "eStkGraphicsStereoProjectionModeFixedDistance",
+            "NewName": "FIXED_DISTANCE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsStereoProjectionMode",
+            "OldName": "eStkGraphicsStereoProjectionModeParallel",
+            "NewName": "PARALLEL"
         },
         {
             "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
-            "OldName": "eStkGraphicsStereoscopicDisplayModeQuadBuffer",
-            "NewName": "QUAD_BUFFER"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
-            "OldName": "eStkGraphicsStereoscopicDisplayModeAnaglyph",
-            "NewName": "ANAGLYPH"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
-            "OldName": "eStkGraphicsStereoscopicDisplayModeLeftEye",
-            "NewName": "LEFT_EYE"
+            "OldName": "eStkGraphicsStereoscopicDisplayModeSideBySide",
+            "NewName": "SIDE_BY_SIDE"
         },
         {
             "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
@@ -9163,23 +9218,28 @@
         },
         {
             "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
-            "OldName": "eStkGraphicsStereoscopicDisplayModeSideBySide",
-            "NewName": "SIDE_BY_SIDE"
+            "OldName": "eStkGraphicsStereoscopicDisplayModeLeftEye",
+            "NewName": "LEFT_EYE"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
+            "OldName": "eStkGraphicsStereoscopicDisplayModeAnaglyph",
+            "NewName": "ANAGLYPH"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
+            "OldName": "eStkGraphicsStereoscopicDisplayModeQuadBuffer",
+            "NewName": "QUAD_BUFFER"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsStereoscopicDisplayMode",
+            "OldName": "eStkGraphicsStereoscopicDisplayModeOff",
+            "NewName": "OFF"
         },
         {
             "ParentScope": "AgEStkGraphicsFontStyle",
-            "OldName": "eStkGraphicsFontStyleRegular",
-            "NewName": "REGULAR"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsFontStyle",
-            "OldName": "eStkGraphicsFontStyleBold",
-            "NewName": "BOLD"
-        },
-        {
-            "ParentScope": "AgEStkGraphicsFontStyle",
-            "OldName": "eStkGraphicsFontStyleItalic",
-            "NewName": "ITALIC"
+            "OldName": "eStkGraphicsFontStyleStrikeout",
+            "NewName": "STRIKEOUT"
         },
         {
             "ParentScope": "AgEStkGraphicsFontStyle",
@@ -9188,8 +9248,18 @@
         },
         {
             "ParentScope": "AgEStkGraphicsFontStyle",
-            "OldName": "eStkGraphicsFontStyleStrikeout",
-            "NewName": "STRIKEOUT"
+            "OldName": "eStkGraphicsFontStyleItalic",
+            "NewName": "ITALIC"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsFontStyle",
+            "OldName": "eStkGraphicsFontStyleBold",
+            "NewName": "BOLD"
+        },
+        {
+            "ParentScope": "AgEStkGraphicsFontStyle",
+            "OldName": "eStkGraphicsFontStyleRegular",
+            "NewName": "REGULAR"
         }
     ],
     "NamedArgumentMappings": []

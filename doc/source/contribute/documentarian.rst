@@ -121,7 +121,7 @@ Finally, here are some tips for writing examples:
   yourself. However, do include the graphics widgets (2D or 3D) at points in
   your example. When the documentation is built, a screenshot of the widget
   is inserted in its place. Jupyter widgets are included in
-  :py:mod:`~ansys.stk.core.stkengine.experimental.jupyterwidgets`.
+  :py:mod:`~ansys.stk.core.experimental.jupyterwidgets`.
 
 .. _write-snippets:
 
